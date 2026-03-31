@@ -7,7 +7,6 @@
 
     // ---- Sticky nav with background swap ----
     const nav = document.getElementById('nav');
-    const hero = document.getElementById('hero');
 
     function onScroll() {
         if (window.scrollY > 60) {
@@ -80,6 +79,53 @@
         });
     });
 
+    // Google Sheets Web App URL
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbzd4i7cn8vj9O8j2dhvQVdEk6ltNPweToX-oppo_N6tlzykdl7MsT77ii_cYYTDbCK6wA/exec';
+
+    // ---- Hero form submission ----
+    var heroForm = document.getElementById('hero-form');
+    if (heroForm) {
+        heroForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = document.getElementById('hero-submit');
+            var originalText = btn.textContent;
+
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            btn.style.cursor = 'not-allowed';
+
+            // Map hero form fields to match the Google Sheet columns
+            var formData = new FormData();
+            formData.append('name', document.getElementById('hero-name').value);
+            formData.append('email', document.getElementById('hero-email').value);
+            formData.append('phone', '');
+            formData.append('message', 'Vehicle interest: ' + (document.getElementById('hero-vehicle').value || 'Not specified'));
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(function() {
+                btn.textContent = 'Sent!';
+                btn.style.opacity = '0.5';
+                btn.style.cursor = 'default';
+                heroForm.reset();
+
+                // Redirect to success page for conversion tracking
+                window.location.href = 'success.html';
+            })
+            .catch(function(error) {
+                console.error('Error!', error.message);
+                btn.textContent = 'Failed. Try Again.';
+                btn.disabled = false;
+                btn.style.opacity = '';
+                btn.style.cursor = 'pointer';
+            });
+        });
+    }
+
     // ---- Contact form (Google Sheets Integration) ----
     var form = document.getElementById('contact-form');
     if (form) {
@@ -87,9 +133,6 @@
             e.preventDefault();
             var btn = document.getElementById('contact-submit');
             var originalText = btn.textContent;
-            
-            // Web App URL for Google Sheets integration
-            var scriptURL = 'https://script.google.com/macros/s/AKfycbzd4i7cn8vj9O8j2dhvQVdEk6ltNPweToX-oppo_N6tlzykdl7MsT77ii_cYYTDbCK6wA/exec';
 
             btn.textContent = 'Sending...';
             btn.disabled = true;
@@ -101,7 +144,7 @@
             fetch(scriptURL, { 
                 method: 'POST', 
                 body: formData, 
-                mode: 'no-cors' // Allows submitting without dealing with strict CORS policy
+                mode: 'no-cors'
             })
             .then(function() {
                 btn.textContent = 'Inquiry Sent';
