@@ -1515,3 +1515,21 @@ ul { list-style: none; }
         padding-left: 24px;
     }
 }
+
+/* =============================================
+   12. CTA CONTAINERS
+   ============================================= */
+.section-cta-container {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+}
+
+.faq__cta-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(20px, 4vw, 26px);
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
