@@ -156,9 +156,6 @@
       ]
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google tag (gtag.js) -->
@@ -183,10 +180,21 @@
                 <span></span>
             </button>
             <ul class="nav__links" id="nav-links">
+                <li><a href="#">File</a></li>
+                <li><a href="#">Edit</a></li>
+                <li><a href="#">View</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact" class="btn--primary nav__cta">Get a Free Quote</a></li>
+                <li><a href="#">Help</a></li>
             </ul>
+        </div>
+        <div style="background:#ECE9D8;border-top:1px solid #D4D0C8;padding:2px 8px;display:flex;gap:6px;align-items:center;font-family:Tahoma,Arial,sans-serif;font-size:11px;color:#444;">
+            <span style="padding:1px 6px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #404040;border-bottom:1px solid #404040;cursor:pointer;background:#D4D0C8;" onclick="history.back()">&#9664; Back</span>
+            <span style="padding:1px 6px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #404040;border-bottom:1px solid #404040;cursor:pointer;background:#D4D0C8;" onclick="history.forward()">Forward &#9654;</span>
+            <span style="padding:1px 6px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #404040;border-bottom:1px solid #404040;cursor:pointer;background:#D4D0C8;" onclick="window.location.reload()">&#8635; Refresh</span>
+            <span style="flex:1;padding:2px 6px;border-top:2px solid #808080;border-left:2px solid #808080;border-right:2px solid #fff;border-bottom:2px solid #fff;background:#fff;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">https://www.the-auto-advocate.com/</span>
+            <span style="padding:1px 10px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #404040;border-bottom:1px solid #404040;cursor:pointer;background:#D4D0C8;font-weight:bold;color:#003399;">Go</span>
         </div>
     </nav>
 
@@ -198,6 +206,19 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Get a Free Quote</a></li>
         </ul>
+    </div>
+
+    <!-- ===== MARQUEE TICKER ===== -->
+    <div style="background:#003399;color:#fff;font-family:Tahoma,Arial,sans-serif;font-size:11px;padding:2px 0;border-top:1px solid #FFFFFF22;overflow:hidden;">
+        <marquee behavior="scroll" direction="left" scrollamount="3">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &#9658; Save $3,200 on average — New &amp; Used Car Buying Service &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            &#9658; 500+ Happy Clients in Austin, TX &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            &#9658; Flat $999 Fee — No hidden costs, no dealer kickbacks &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            &#9658; Free Consultation — Click "Get a Free Quote" to get started &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            &#9658; Rated 4.9 Stars by our Clients &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            &#9658; We handle ALL negotiations so you don't have to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </marquee>
     </div>
 
     <main>
@@ -558,6 +579,38 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Windows 2000 Status Bar -->
+    <div class="win-statusbar" id="win-statusbar">
+        <div class="win-statusbar__pane" id="status-main">Done</div>
+        <div class="win-statusbar__pane" style="min-width:120px;">Local intranet</div>
+        <div class="win-statusbar__pane" style="min-width:100px;" id="status-time"></div>
+    </div>
+    <script>
+        // Status bar clock
+        function updateClock() {
+            var el = document.getElementById('status-time');
+            if (el) {
+                var now = new Date();
+                var h = now.getHours(), m = now.getMinutes();
+                el.textContent = (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + ' ' + (h < 12 ? 'AM' : 'PM');
+            }
+        }
+        updateClock();
+        setInterval(updateClock, 30000);
+
+        // Status bar interaction
+        document.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('mouseover', function() {
+                var sm = document.getElementById('status-main');
+                if (sm) sm.textContent = this.href || 'Done';
+            });
+            a.addEventListener('mouseout', function() {
+                var sm = document.getElementById('status-main');
+                if (sm) sm.textContent = 'Done';
+            });
+        });
+    </script>
 </body>
 
 </html>
