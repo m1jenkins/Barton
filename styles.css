@@ -851,7 +851,7 @@ ul { list-style: none; }
 }
 
 .service-row::before { display: none; }
-.service-row:first-child { border-top: none; }
+
 
 .service-row__number {
     display: inline-flex;
