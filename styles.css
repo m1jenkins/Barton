@@ -47,8 +47,8 @@
     --serif: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
     /* Spacing */
-    --section-pad:     100px;
-    --section-pad-mob: 64px;
+    --section-pad:     80px;
+    --section-pad-mob: 48px;
     --radius:          12px;
     --radius-sm:       8px;
     --radius-lg:       16px;
@@ -86,7 +86,7 @@ ul { list-style: none; }
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--primary);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     text-align: center;
 }
 
@@ -375,7 +375,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     background: var(--bg-warm);
-    padding: 158px 32px 80px; /* Adjusted for 38px banner + original 120px */
+    padding: 140px 32px 64px; /* Adjusted for 38px banner + original 120px, then tightened */
     overflow: hidden;
 }
 
@@ -567,7 +567,7 @@ ul { list-style: none; }
    ============================================= */
 .brand-statement {
     background: var(--bg-cream);
-    padding: 72px 32px;
+    padding: 56px 32px;
 }
 
 .brand-statement__inner {
@@ -605,7 +605,7 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 48px;
+    margin-top: 40px;
 }
 
 .comparison__card {
@@ -710,7 +710,7 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 48px;
+    margin-top: 40px;
 }
 
 .process__step {
@@ -764,7 +764,7 @@ ul { list-style: none; }
     border: 1.5px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 32px 24px;
-    margin: 48px auto 16px;
+    margin: 40px auto 16px;
     max-width: 520px;
     text-align: center;
 }
@@ -816,7 +816,7 @@ ul { list-style: none; }
 }
 
 .services__header {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .services__editorial {
@@ -910,7 +910,7 @@ ul { list-style: none; }
 
 .services__exotic {
     text-align: center;
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 .exotic-link {
@@ -946,7 +946,7 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-top: 48px;
+    margin-top: 40px;
 }
 
 .testimonial-card {
@@ -1132,7 +1132,7 @@ ul { list-style: none; }
 
 .faq__top {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .faq__accordion {
@@ -1528,8 +1528,8 @@ ul { list-style: none; }
    ============================================= */
 .section-cta-container {
     text-align: center;
-    margin-top: 56px;
-    padding-top: 40px;
+    margin-top: 48px;
+    padding-top: 32px;
     border-top: 1px solid var(--border);
 }
 
