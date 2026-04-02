@@ -114,7 +114,7 @@
                 heroForm.reset();
 
                 // Redirect to Stripe for payment
-                window.location.href = 'https://buy.stripe.com/your-payment-link';
+                window.location.href = 'https://book.stripe.com/cNi14ge357rZena29e04800';
             })
             .catch(function(error) {
                 console.error('Error!', error.message);
@@ -153,7 +153,7 @@
                 form.reset();
                 
                 // Redirect to Stripe for payment
-                window.location.href = 'https://buy.stripe.com/your-payment-link';
+                window.location.href = 'https://book.stripe.com/cNi14ge357rZena29e04800';
             })
             .catch(function(error) {
                 console.error('Error!', error.message);
