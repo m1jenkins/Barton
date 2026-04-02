@@ -1596,3 +1596,92 @@ ul { list-style: none; }
     color: var(--text-dark);
     margin-bottom: 20px;
 }
+
+/* ---------- Sticky CTA (Mobile Only) ---------- */
+.sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-white);
+    padding: 12px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1100; /* Above nav and banners */
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .sticky-cta {
+        display: block;
+        animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    body {
+        padding-bottom: 74px; /* Space for sticky bar */
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+    }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.sticky-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 16px;
+}
+
+.sticky-cta__text {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.sticky-cta .btn--primary {
+    background: var(--accent);
+    padding: 10px 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+}
+
+.sticky-cta .btn--primary:hover {
+    background: var(--accent);
+    opacity: 0.9;
+    transform: none;
+}
+
+/* Service Area Cross-linking */
+.services__all-link {
+    display: inline-block;
+    margin-top: 24px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.25s ease;
+}
+
+.services__all-link:hover {
+    border-bottom-color: var(--accent);
+}
+
+.section-cta-container .services__all-link {
+    margin-top: 16px;
+    display: block;
+}
