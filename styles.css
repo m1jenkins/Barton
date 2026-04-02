@@ -955,6 +955,26 @@ ul { list-style: none; }
     color: var(--primary-hover);
 }
 
+.services__exotic {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.exotic-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.exotic-link:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+
 
 /* =============================================
    6. TESTIMONIALS
