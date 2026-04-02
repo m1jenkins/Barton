@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.the-auto-advocate.com/sitemap.xml
+Sitemap: https://www.driverightcarbuying.com/sitemap.xml
