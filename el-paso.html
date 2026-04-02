@@ -35,7 +35,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "LocalBusiness",
       "name": "Drive Right - El Paso",
       "alternateName": "Drive Right",
       "image": "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/US-local/Press-Releases/2021/September-2021/20210923-Porsche-Austin/Porsche-dealership-2.jpg/jcr:content/Porsche%20dealership-2.jpg",
@@ -55,17 +55,15 @@
         "latitude": 31.7619,
         "longitude": -106.4850
       },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "El Paso",
-          "sameAs": "https://en.wikipedia.org/wiki/El_Paso,_Texas"
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 31.7619,
+          "longitude": -106.4850
         },
-        {
-          "@type": "State",
-          "name": "Texas"
-        }
-      ],
+        "geoRadius": "40000"
+      },
       "description": "Drive Right is a car buying service in El Paso, TX that negotiates on your behalf, saves you money, and takes the stress out of buying new or used vehicles.",
       "openingHours": "Mo-Fr 09:00-18:00",
       "openingHoursSpecification": {
@@ -73,44 +71,6 @@
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "09:00",
         "closes": "18:00"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Car Buying Advisory Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "New Car Buying Service",
-              "description": "We negotiate with dealers on your behalf to get you the best price on a new car, handling everything from research to delivery."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Used Car Advisory",
-              "description": "Expert guidance on pre-owned vehicles including inspections, market pricing, and negotiation."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Trade-In & Vehicle Sales",
-              "description": "Maximize the value of your current vehicle through expert positioning and negotiation."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Personal Automotive Consulting",
-              "description": "One-on-one guidance to find the perfect vehicle for your needs, lifestyle, and budget."
-            }
-          }
-        ]
       }
     }
     </script>
@@ -515,6 +475,22 @@
                 </details>
             </div>
             <!-- Removed: FAQ CTA container -->
+        </div>
+    </section>
+
+    <!-- ===== SERVICE AREA MAP ===== -->
+    <section class="service-area-map">
+        <div class="service-area-map__inner reveal">
+            <p class="section-label">Service Area</p>
+            <h2 class="section-heading">Serving Greater El Paso.</h2>
+            <p class="section-subtext">Our car buying experts serve clients throughout El Paso and the surrounding Borderland region.</p>
+            <div class="service-area-map__container">
+                <iframe 
+                    src="https://www.google.com/maps?q=El+Paso,TX&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
