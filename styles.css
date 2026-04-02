@@ -561,53 +561,6 @@ ul { list-style: none; }
 }
 
 
-/* =============================================
-   3. TRUST BAR
-   ============================================= */
-.trust-bar {
-    background: var(--bg-white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 28px 32px;
-    text-align: center;
-}
-
-.trust-bar__inner {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.trust-bar__label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 14px;
-}
-
-.trust-bar__logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.trust-bar__logo {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--text-light);
-    opacity: 0.6;
-    transition: opacity 0.25s ease;
-    letter-spacing: -0.01em;
-}
-
-.trust-bar__logo:hover {
-    opacity: 0.9;
-}
-
 
 /* =============================================
    3b. VALUE PROPOSITION / BRAND STATEMENT
@@ -1510,18 +1463,6 @@ ul { list-style: none; }
 
     .brand-statement__quote {
         font-size: clamp(19px, 5vw, 26px);
-    }
-
-    .trust-bar {
-        padding: 24px 20px;
-    }
-
-    .trust-bar__logos {
-        gap: 20px;
-    }
-
-    .trust-bar__logo {
-        font-size: 13px;
     }
 
     .comparison {
