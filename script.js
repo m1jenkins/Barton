@@ -113,8 +113,8 @@
                 btn.style.cursor = 'default';
                 heroForm.reset();
 
-                // Redirect to success page for conversion tracking
-                window.location.href = 'success.html';
+                // Redirect to Stripe for payment
+                window.location.href = 'https://buy.stripe.com/your-payment-link';
             })
             .catch(function(error) {
                 console.error('Error!', error.message);
@@ -152,8 +152,8 @@
                 btn.style.cursor = 'default';
                 form.reset();
                 
-                // Redirect to success page for conversion tracking
-                window.location.href = 'success.html';
+                // Redirect to Stripe for payment
+                window.location.href = 'https://buy.stripe.com/your-payment-link';
             })
             .catch(function(error) {
                 console.error('Error!', error.message);
