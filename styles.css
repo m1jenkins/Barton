@@ -1836,3 +1836,15 @@ ul { list-style: none; }
         padding: 80px 24px;
     }
 }
+
+/* ---------- Calendly Section ---------- */
+.calendly-section {
+    position: relative;
+    z-index: 1;
+    scroll-margin-top: 100px; /* Offset for sticky nav */
+}
+
+.calendly-section__header {
+    max-width: 640px;
+    margin: 0 auto 40px;
+}
