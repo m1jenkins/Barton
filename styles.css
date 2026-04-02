@@ -1738,16 +1738,20 @@ ul { list-style: none; }
 .selection__card--featured::before {
     content: 'Most Popular';
     position: absolute;
-    top: 20px;
-    right: -35px;
+    top: 28px;
+    right: -48px;
     background: var(--accent);
     color: #fff;
     font-size: 11px;
     font-weight: 700;
-    padding: 6px 40px;
+    padding: 10px 60px;
+    width: 240px;
     transform: rotate(45deg);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    line-height: 1;
 }
 
 .selection__card-icon {
