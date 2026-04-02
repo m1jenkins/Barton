@@ -181,16 +181,62 @@ ul { list-style: none; }
 }
 
 
+/* ---------- Announcement Banner ---------- */
+.announcement-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    background: linear-gradient(90deg, #1e1b4b 0%, #2563eb 50%, #1e1b4b 100%);
+    color: #ffffff;
+    z-index: 1100;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.announcement-banner__track {
+    display: flex;
+    white-space: nowrap;
+    animation: banner-scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.announcement-banner__item {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 40px;
+    flex-shrink: 0;
+}
+
+.announcement-banner__item b {
+    color: #fbbf24; /* Amber/Yellow for importance */
+    font-weight: 700;
+    margin: 0 4px;
+}
+
+@keyframes banner-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* =============================================
    1. NAVIGATION
    ============================================= */
 .nav {
     position: fixed;
-    top: 0;
+    top: 38px; /* Height of the banner */
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: background 0.35s ease, box-shadow 0.35s ease;
+    transition: background 0.35s ease, box-shadow 0.35s ease, top 0.3s ease;
     background: transparent;
 }
 
@@ -329,7 +375,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     background: var(--bg-warm);
-    padding: 120px 32px 80px;
+    padding: 158px 32px 80px; /* Adjusted for 38px banner + original 120px */
     overflow: hidden;
 }
 
