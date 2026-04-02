@@ -1690,35 +1690,25 @@ ul { list-style: none; }
    12. SELECTION PAGE (schedule.html)
    ============================================= */
 .selection {
-    padding: 20px 32px 40px;
+    padding: clamp(140px, 15vw, 180px) 32px 80px;
     background: var(--bg-warm);
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 }
 
 .selection__header {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 56px;
     max-width: 600px;
-}
-
-.selection__header .section-heading {
-    font-size: clamp(20px, 3vw, 28px);
-}
-
-.selection__header .section-subtext {
-    font-size: 13px;
-    margin-top: 4px;
-    line-height: 1.4;
 }
 
 .selection__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    max-width: 900px;
+    gap: 32px;
+    max-width: 1000px;
     width: 100%;
 }
 
@@ -1726,7 +1716,7 @@ ul { list-style: none; }
     background: var(--bg-white);
     border: 1.5px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 20px 18px;
+    padding: 48px 40px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -1766,22 +1756,15 @@ ul { list-style: none; }
     z-index: 1;
 }
 
-.selection__card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-}
-
 .selection__card-icon {
-    width: 36px;
-    height: 36px;
+    width: 56px;
+    height: 56px;
     background: var(--primary-subtle);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    margin-bottom: 24px;
     color: var(--primary);
 }
 
@@ -1792,39 +1775,40 @@ ul { list-style: none; }
 
 .selection__price {
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 32px;
     color: var(--text-dark);
-    margin: 4px 0 8px;
+    margin: 12px 0 24px;
     font-weight: 400;
 }
 
 .selection__title {
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: 24px;
     color: var(--text-dark);
-    margin-bottom: 0;
+    margin-bottom: 12px;
     font-weight: 400;
 }
 
 .selection__desc {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-muted);
-    margin-bottom: 12px;
-    line-height: 1.4;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .selection__features {
-    margin-bottom: 16px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 12px;
 }
 
 .selection__feature {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12px;
+    gap: 10px;
+    font-size: 14px;
     color: var(--text-body);
 }
 
