@@ -147,13 +147,12 @@
                 mode: 'no-cors'
             })
             .then(function() {
-                btn.textContent = 'Inquiry Sent';
+                btn.textContent = 'Message Sent';
                 btn.style.opacity = '0.5';
                 btn.style.cursor = 'default';
                 form.reset();
                 
-                // Redirect to Stripe for payment
-                window.location.href = 'https://book.stripe.com/cNi14ge357rZena29e04800';
+                // Note: Redirect removed as this is now a general contact form for questions.
             })
             .catch(function(error) {
                 console.error('Error!', error.message);
