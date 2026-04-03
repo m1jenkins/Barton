@@ -78,5 +78,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <!-- Blog Hub -->
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-roi-car-buying-service.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-negotiation-mastery.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
