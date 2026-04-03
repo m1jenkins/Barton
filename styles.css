@@ -1690,7 +1690,7 @@ ul { list-style: none; }
    12. SELECTION PAGE (schedule.html)
    ============================================= */
 .selection {
-    padding: clamp(100px, 10vw, 120px) 32px 40px;
+    padding: clamp(60px, 8vw, 100px) 32px 24px;
     background: var(--bg-warm);
     min-height: auto;
     display: flex;
@@ -1700,14 +1700,23 @@ ul { list-style: none; }
 
 .selection__header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     max-width: 600px;
+}
+
+.selection__header .section-heading {
+    font-size: clamp(26px, 4vw, 36px);
+}
+
+.selection__header .section-subtext {
+    margin: 8px auto 0;
+    line-height: 1.5;
 }
 
 .selection__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 24px;
     max-width: 1000px;
     width: 100%;
 }
@@ -1716,7 +1725,7 @@ ul { list-style: none; }
     background: var(--bg-white);
     border: 1.5px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 32px 32px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -1757,14 +1766,14 @@ ul { list-style: none; }
 }
 
 .selection__card-icon {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     background: var(--primary-subtle);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: var(--primary);
 }
 
@@ -1775,33 +1784,33 @@ ul { list-style: none; }
 
 .selection__price {
     font-family: var(--serif);
-    font-size: 32px;
+    font-size: 28px;
     color: var(--text-dark);
-    margin: 8px 0 16px;
+    margin: 4px 0 12px;
     font-weight: 400;
 }
 
 .selection__title {
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 22px;
     color: var(--text-dark);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-weight: 400;
 }
 
 .selection__desc {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-muted);
-    margin-bottom: 24px;
-    line-height: 1.6;
+    margin-bottom: 16px;
+    line-height: 1.5;
     flex-grow: 1;
 }
 
 .selection__features {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .selection__feature {
