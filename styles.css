@@ -1851,9 +1851,26 @@ ul { list-style: none; }
     position: relative;
     z-index: 1;
     scroll-margin-top: 100px; /* Offset for sticky nav */
+    padding: 24px 20px 0;
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
 }
 
 .calendly-section__header {
     max-width: 640px;
-    margin: 0 auto 40px;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+
+.calendly-section__header .section-heading {
+    font-size: clamp(26px, 4vw, 36px);
+}
+
+.calendly-section__header .section-subtext {
+    margin: 6px auto 0;
+    line-height: 1.5;
+}
+
+.calendly-inline-widget {
+    margin-top: -10px;
 }
