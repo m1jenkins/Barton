@@ -1857,3 +1857,153 @@ ul { list-style: none; }
     max-width: 640px;
     margin: 0 auto 40px;
 }
+
+/* =============================================
+   BREADCRUMB
+   ============================================= */
+.breadcrumb {
+    background: transparent;
+    padding: 8px 0 0;
+}
+
+.breadcrumb__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: var(--text-light);
+    font-family: var(--sans);
+}
+
+.breadcrumb li + li::before {
+    content: "›";
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--text-dark);
+}
+
+.breadcrumb li[aria-current="page"] {
+    color: var(--text-body);
+    font-weight: 500;
+}
+
+/* =============================================
+   CITIES WE SERVE SECTION (Homepage)
+   ============================================= */
+.cities {
+    background: var(--bg-white);
+    padding: var(--section-pad) 32px;
+}
+
+.cities__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.cities__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.city-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: var(--bg-warm);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+}
+
+.city-card:hover {
+    background: var(--bg-white);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07);
+}
+
+.city-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.city-card__name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.city-card__desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: var(--sans);
+    letter-spacing: 0.02em;
+}
+
+.city-card__arrow {
+    font-size: 18px;
+    color: var(--accent);
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.city-card:hover .city-card__arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .cities {
+        padding: var(--section-pad-mob) 20px;
+    }
+
+    .cities__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .city-card {
+        padding: 16px 18px;
+    }
+
+    .city-card__name {
+        font-size: 15px;
+    }
+
+    .breadcrumb__inner {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cities__grid {
+        grid-template-columns: 1fr;
+    }
+}
