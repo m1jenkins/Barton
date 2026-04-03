@@ -1690,7 +1690,7 @@ ul { list-style: none; }
    12. SELECTION PAGE (schedule.html)
    ============================================= */
 .selection {
-    padding: clamp(60px, 8vw, 100px) 32px 24px;
+    padding: clamp(80px, 10vw, 120px) 32px 24px;
     background: var(--bg-warm);
     min-height: auto;
     display: flex;
