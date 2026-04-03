@@ -1494,8 +1494,10 @@ ul { list-style: none; }
     }
 
     .hero__stats {
-        flex-direction: column;
-        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
         align-items: center;
     }
 
