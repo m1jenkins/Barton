@@ -1690,9 +1690,9 @@ ul { list-style: none; }
    12. SELECTION PAGE (schedule.html)
    ============================================= */
 .selection {
-    padding: clamp(140px, 15vw, 180px) 32px 80px;
+    padding: clamp(100px, 10vw, 120px) 32px 40px;
     background: var(--bg-warm);
-    min-height: 80vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1700,7 +1700,7 @@ ul { list-style: none; }
 
 .selection__header {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     max-width: 600px;
 }
 
@@ -1716,7 +1716,7 @@ ul { list-style: none; }
     background: var(--bg-white);
     border: 1.5px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 48px 40px;
+    padding: 32px 32px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -1764,7 +1764,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     color: var(--primary);
 }
 
@@ -1777,7 +1777,7 @@ ul { list-style: none; }
     font-family: var(--serif);
     font-size: 32px;
     color: var(--text-dark);
-    margin: 12px 0 24px;
+    margin: 8px 0 16px;
     font-weight: 400;
 }
 
@@ -1792,16 +1792,16 @@ ul { list-style: none; }
 .selection__desc {
     font-size: 15px;
     color: var(--text-muted);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     line-height: 1.6;
     flex-grow: 1;
 }
 
 .selection__features {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .selection__feature {
@@ -1833,7 +1833,7 @@ ul { list-style: none; }
     }
 
     .selection {
-        padding: 80px 24px;
+        padding: 80px 24px 40px;
     }
 }
 
