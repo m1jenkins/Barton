@@ -34,11 +34,13 @@
         document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', openMenu);
-    mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-    });
+    if (hamburger && mobileMenu && mobileClose) {
+        hamburger.addEventListener('click', openMenu);
+        mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+        });
+    }
 
     // ---- Scroll-reveal (IntersectionObserver) ----
     var reveals = document.querySelectorAll('.reveal');
