@@ -70,6 +70,22 @@
     }
     </script>
 
+    <!-- JSON-LD Schema: WebSite (enables sitelinks search box) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Drive Right",
+      "alternateName": "Drive Right Car Buying Service",
+      "url": "https://www.driverightcarbuying.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.driverightcarbuying.com/blog.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- JSON-LD Schema: FAQPage -->
     <script type="application/ld+json">
     {
