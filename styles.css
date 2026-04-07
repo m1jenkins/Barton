@@ -106,4 +106,4 @@
 /* Hero secondary consultation link */
 .hero__cta-group{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .hero__consult-link{color:var(--accent);font-size:15px;font-weight:500;text-decoration:none;font-family:var(--sans);transition:color .2s}
-.hero__consult-link:hover{color:var(--primary);text-decoration:underline}.cities__image{margin-top:32px;border-radius:var(--radius-lg);overflow:hidden}.cities__image img{width:100%;height:420px;object-fit:cover;display:block}
+.hero__consult-link:hover{color:var(--primary);text-decoration:underline}.cities__bg-wrapper{margin-top:32px;border-radius:var(--radius-lg);overflow:hidden;background-image:linear-gradient(rgba(15,23,42,0.4),rgba(15,23,42,0.4)),url('https://i.imgur.com/QFQmvLj.jpg');background-size:cover;background-position:center;padding:clamp(24px,4vw,40px)}.cities__bg-wrapper .cities__grid{margin-top:0}
