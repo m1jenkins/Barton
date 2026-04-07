@@ -112,7 +112,7 @@
 .hero .hero__label{color:#fff;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
 .hero .hero__headline{color:#fff}
 .hero .hero__headline span{color:#93c5fd}
-.hero .hero__subtext{color:rgba(255,255,255,0.8)}
+.hero .hero__subtext{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.4);font-weight:500}
 .hero .hero__stats{border-top-color:rgba(255,255,255,0.2)}
 .hero .hero__stat-value{color:#fff}
 .hero .hero__stat-label{color:rgba(255,255,255,0.65)}
