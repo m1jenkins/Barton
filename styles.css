@@ -99,7 +99,6 @@
 
 /* Free consultation card highlight */
 .selection__card--free{border-color:var(--success);background:var(--success-light);position:relative;overflow:hidden}
-.selection__card--free:before{content:"Best Starting Point";background:var(--success);color:#fff;text-transform:uppercase;letter-spacing:.1em;z-index:1;justify-content:center;align-items:center;width:220px;height:24px;font-size:10px;font-weight:700;display:flex;position:absolute;top:29px;right:-55px;transform:rotate(45deg);box-shadow:0 2px 4px #0000001a}
 .selection__card--free .selection__card-icon{background:var(--success);color:#fff}
 .selection__card--free:hover{border-color:var(--success);transform:translateY(-8px);box-shadow:0 20px 40px #10b98120}
 
