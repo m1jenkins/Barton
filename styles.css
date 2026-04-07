@@ -212,6 +212,13 @@
 .contact--blog-cta{padding:80px 20px}
 .success-hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;margin-top:80px}
 .success-hero__inner{max-width:600px;margin:0 auto;padding:2rem}
+.success-hero__headline{margin-bottom:1rem}
+.success-hero__body{margin-bottom:2rem}
+.success-hero__btn{display:inline-flex;align-items:center;justify-content:center}
+
+/* Touch targets: ensure 44px minimum across all viewports */
+.btn--primary,.btn--outline{min-height:48px}
+.faq__summary{min-height:48px}
 
 /* =============================================
    MOBILE OPTIMIZATION — 768px additions
@@ -361,13 +368,15 @@ body{font-size:15px}
 .sticky-cta{padding:10px 16px}
 .sticky-cta .btn--primary{width:100%;justify-content:center;padding:14px;font-size:15px}
 
-/* --- Touch targets: ensure 44px minimum --- */
-.btn--primary,.btn--outline{min-height:48px}
-.faq__summary{min-height:48px}
+/* --- Touch targets: mobile menu --- */
 .mobile-menu__links a{font-size:17px;padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
 
 /* --- Content-visibility for performance --- */
-.faq,.testimonials,.about,.cities,.service-area-map{content-visibility:auto;contain-intrinsic-size:auto 500px}
+.faq{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.testimonials{content-visibility:auto;contain-intrinsic-size:auto 400px}
+.about{content-visibility:auto;contain-intrinsic-size:auto 500px}
+.cities{content-visibility:auto;contain-intrinsic-size:auto 450px}
+.service-area-map{content-visibility:auto;contain-intrinsic-size:auto 350px}
 
 /* --- Inquiry & blog CTA --- */
 .contact--inquiry{padding-top:80px;min-height:auto}
