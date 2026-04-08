@@ -519,7 +519,7 @@ body{font-size:15px}
 .selection__trust-value{font-size:20px}
 }
 @media (max-width:480px){
-.selection__trust-bar{flex-direction:row;gap:12px;padding:14px 16px}
+.selection__trust-bar{gap:12px;padding:14px 16px}
 .selection__trust-value{font-size:18px}
 .selection__trust-label{font-size:11px}
 .selection__trust-divider{height:28px}
