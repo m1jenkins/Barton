@@ -131,6 +131,43 @@
       ]
     }
     </script>
+
+    <!-- JSON-LD Schema: Review / Aggregate Rating -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Drive Right",
+      "url": "https://www.driverightcarbuying.com/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "ratingCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Michael R."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Drive Right saved us over $3,200 on a new Tahoe. I was dreading the dealership process, but they handled everything — I just showed up to sign and drive away."
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Sarah K."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "As a first-time buyer, I had no idea where to start. My advisor found three great options within 48 hours and negotiated a deal I never could have gotten on my own."
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "David L."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "I used the $295 consultation first, and it was worth every penny. The research report alone helped me avoid a bad lease deal. I upgraded to full service the same week."
+        }
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="https://i.imgur.com/i4diUoq.png">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -382,6 +419,43 @@
     </section>
 
 
+    <!-- ===== TESTIMONIALS / SOCIAL PROOF ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials__inner">
+            <div class="testimonials__header reveal">
+                <p class="section-label">What Our Clients Say</p>
+                <h2 class="section-heading">Real results from real Texans.</h2>
+            </div>
+            <div class="testimonials__grid reveal">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"Drive Right saved us over $3,200 on a new Tahoe. I was dreading the dealership process, but they handled everything — I just showed up to sign and drive away."</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">Michael R.</span>
+                        <span class="testimonial-card__location">Houston, TX</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"As a first-time buyer, I had no idea where to start. My advisor found three great options within 48 hours and negotiated a deal I never could have gotten on my own."</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">Sarah K.</span>
+                        <span class="testimonial-card__location">Austin, TX</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"I used the $295 consultation first, and it was worth every penny. The research report alone helped me avoid a bad lease deal. I upgraded to full service the same week."</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">David L.</span>
+                        <span class="testimonial-card__location">Dallas, TX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- ===== FAQ ===== -->
     <section class="faq" id="faq">
@@ -428,7 +502,9 @@
                     </div>
                 </details>
             </div>
-            <!-- Removed: FAQ CTA container -->
+            <div class="section-cta-container reveal">
+                <a href="schedule.html" class="btn--primary">See Pricing &amp; Get Started →</a>
+            </div>
         </div>
     </section>
 
