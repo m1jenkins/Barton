@@ -28,8 +28,9 @@
 /* Mobile responsive */
 @media (width<=768px){
 .transform{padding:var(--section-pad-mob) 20px}
-.transform__rows{gap:32px;margin-top:36px}
-.transform__row{flex-direction:column;align-items:center;gap:12px;text-align:center}
+.transform__rows{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px;margin-top:32px;padding-bottom:24px;margin-inline:-20px;padding-inline:20px}
+.transform__rows::-webkit-scrollbar{display:none}
+.transform__row{flex:0 0 85%;scroll-snap-align:center;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;margin-bottom:0;background:rgba(255,255,255,0.03);padding:40px 24px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.05)}
 .transform__arrow{transform:rotate(90deg)}
 }
 
