@@ -204,3 +204,224 @@
 .legal-section__inner a{color:var(--accent);text-decoration:underline}
 .legal-section+.legal-section{border-top:1px solid var(--primary-subtle)}
 @media(max-width:640px){.legal-hero{padding:100px 20px 32px}.legal-section{padding:32px 20px}.legal-section__heading{font-size:22px}}
+
+/* =============================================
+   INLINE-STYLE REPLACEMENTS (class-based)
+   ============================================= */
+.contact--inquiry{padding-top:140px;min-height:80vh}
+.contact--blog-cta{padding:80px 20px}
+.success-hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;margin-top:80px}
+.success-hero__inner{max-width:600px;margin:0 auto;padding:2rem}
+.success-hero__headline{margin-bottom:1rem}
+.success-hero__body{margin-bottom:2rem}
+.success-hero__btn{display:inline-flex;align-items:center;justify-content:center}
+
+/* Touch targets: ensure 44px minimum across all viewports */
+.btn--primary,.btn--outline{min-height:48px}
+.faq__summary{min-height:48px}
+
+/* =============================================
+   MOBILE OPTIMIZATION — 768px additions
+   ============================================= */
+@media(max-width:768px){
+.contact--inquiry{padding-top:100px;min-height:auto}
+.contact--blog-cta{padding:48px 20px}
+.success-hero{margin-top:60px;min-height:60vh}
+.blog-series__grid{grid-template-columns:1fr;gap:24px}
+.article-content__inner{font-size:17px}
+.article-content__inner h2{font-size:26px;margin:40px 0 20px}
+}
+
+/* =============================================
+   MOBILE OPTIMIZATION — 480px & below
+   ============================================= */
+@media(max-width:480px){
+/* --- Global spacing & typography --- */
+body{font-size:15px}
+.section-heading{font-size:clamp(20px,5.5vw,26px)}
+.section-subtext{font-size:15px;margin-top:10px}
+
+/* --- Navigation --- */
+.nav__inner{padding:12px 16px}
+
+/* --- Hero --- */
+.hero{padding:68px 16px 40px}
+.hero__headline{font-size:clamp(26px,7.5vw,34px)}
+.hero__subtext{font-size:15px;margin-bottom:24px}
+.hero__stats{gap:10px 16px;margin-top:24px;padding-top:20px}
+.hero__stat-value{font-size:22px}
+.hero__cta-group{align-items:stretch;width:100%}
+.hero__cta-group .btn--primary{width:100%;justify-content:center;padding:16px 24px;font-size:16px}
+.hero__consult-link{text-align:center;font-size:14px}
+
+/* --- Brand statement --- */
+.brand-statement{padding:40px 16px}
+.brand-statement__quote{font-size:clamp(18px,4.5vw,24px)}
+
+/* --- Comparison --- */
+.comparison{padding:var(--section-pad-mob) 16px}
+.comparison__card{padding:20px}
+
+/* --- Process --- */
+.process{padding:var(--section-pad-mob) 16px}
+.process__step{padding:22px 18px}
+.process__title{font-size:17px}
+.process__pricing{padding:24px 18px}
+.process__pricing-amount{font-size:32px}
+
+/* --- Services --- */
+.services{padding:var(--section-pad-mob) 16px}
+.service-row{padding:20px 18px}
+.service-row:hover{padding-left:18px}
+.service-row__title{font-size:18px}
+
+/* --- Testimonials --- */
+.testimonials{padding:var(--section-pad-mob) 16px}
+.testimonial-card{flex:0 0 90%;padding:22px}
+.testimonial-card__text{font-size:14px}
+
+/* --- About (dark section on homepage) --- */
+.about{padding:var(--section-pad-mob) 16px}
+.about__pullquote{font-size:clamp(16px,4vw,20px)}
+.about__body{font-size:14px}
+
+/* --- FAQ --- */
+.faq{padding:var(--section-pad-mob) 16px}
+.faq__summary{padding:20px 16px;font-size:15px}
+.faq__content{padding:0 16px 20px;font-size:14px}
+.faq__cta-heading{font-size:clamp(18px,5vw,24px)}
+
+/* --- Contact form --- */
+.contact{padding:var(--section-pad-mob) 16px}
+.contact__headline{font-size:clamp(22px,5vw,28px)}
+.contact__input,.contact__textarea{padding:14px 14px;font-size:16px}
+
+/* --- Footer --- */
+.footer{padding:32px 16px}
+.footer__grid{gap:20px}
+
+/* --- Pricing / Schedule page --- */
+.selection{padding:80px 16px 24px}
+.selection__card{padding:20px}
+.selection__price{font-size:clamp(28px,8vw,36px)}
+.pricing-toggle-btn{padding:10px 20px;font-size:14px}
+
+/* --- Cities grid --- */
+.cities{padding:var(--section-pad-mob) 16px}
+.city-card{padding:14px 16px}
+.city-card__name{font-size:14px}
+
+/* --- Blog series grid: prevent overflow --- */
+.blog-series{padding:var(--section-pad-mob) 16px}
+.blog-series__grid{grid-template-columns:1fr;gap:20px}
+.blog-card{padding:24px}
+.blog-card__title{font-size:19px}
+.blog-card__excerpt{font-size:14px}
+
+/* --- Article pages --- */
+.article-header{padding:100px 16px 40px}
+.article-title{font-size:clamp(24px,6vw,32px)}
+.article-content{padding:40px 16px 60px}
+.article-content__inner{font-size:16px;line-height:1.75}
+.article-content__inner h2{font-size:22px;margin:36px 0 18px}
+.article-content__inner h3{font-size:18px;margin:28px 0 12px}
+.article-content__inner blockquote{font-size:17px;padding-left:18px;margin:24px 0}
+.article-content__inner .highlight-box{padding:18px}
+
+/* --- About page --- */
+.about-hero{padding:100px 16px 48px}
+.about-hero__headline{font-size:clamp(32px,7vw,44px)}
+.about-hero__subtext{font-size:16px}
+.founder-story{padding:var(--section-pad-mob) 16px}
+.founder-stats{margin-bottom:40px}
+.founder-stat{padding:24px 16px}
+.founder-stat__value{font-size:clamp(32px,8vw,44px)}
+.team-section{padding:var(--section-pad-mob) 16px}
+.team-card{padding:24px}
+.team-card__name{font-size:18px}
+.about-values{padding:var(--section-pad-mob) 16px}
+.about-value-card{padding:22px 18px}
+
+/* --- Service area map --- */
+.service-area-map{padding:var(--section-pad-mob) 16px}
+.service-area-map__container{height:320px;margin-top:32px}
+
+/* --- Transform section --- */
+.transform{padding:var(--section-pad-mob) 16px}
+.transform__bad{font-size:clamp(20px,5vw,30px)}
+.transform__good{font-size:clamp(24px,6vw,36px)}
+.transform__row{margin-bottom:24px}
+
+/* --- Breadcrumb --- */
+.breadcrumb__inner{padding:0 16px}
+
+/* --- Payment success --- */
+.ps-hero{padding:80px 16px 32px}
+.ps-hero__sub{font-size:16px}
+.ps-timeline{padding:var(--section-pad-mob) 16px}
+.ps-onboarding{padding:var(--section-pad-mob) 16px}
+
+/* --- Calendly widget responsive height --- */
+.calendly-inline-widget{min-width:0!important;height:550px!important}
+
+/* --- Sticky CTA --- */
+.sticky-cta{padding:10px 16px}
+.sticky-cta .btn--primary{width:100%;justify-content:center;padding:14px;font-size:15px}
+
+/* --- Touch targets: mobile menu --- */
+.mobile-menu__links a{font-size:17px;padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
+
+/* --- Content-visibility for performance --- */
+.faq{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.testimonials{content-visibility:auto;contain-intrinsic-size:auto 400px}
+.about{content-visibility:auto;contain-intrinsic-size:auto 500px}
+.cities{content-visibility:auto;contain-intrinsic-size:auto 450px}
+.service-area-map{content-visibility:auto;contain-intrinsic-size:auto 350px}
+
+/* --- Inquiry & blog CTA --- */
+.contact--inquiry{padding-top:80px;min-height:auto}
+.contact--blog-cta{padding:40px 16px}
+.success-hero{margin-top:40px;min-height:auto;padding:var(--section-pad-mob) 16px}
+}
+
+/* =============================================
+   MOBILE OPTIMIZATION — 360px & below (very small phones)
+   ============================================= */
+@media(max-width:360px){
+.hero{padding:60px 12px 32px}
+.hero__headline{font-size:clamp(22px,7vw,28px)}
+.hero__subtext{font-size:14px}
+.hero__stat-value{font-size:20px}
+.hero__stat-label{font-size:11px}
+.section-heading{font-size:clamp(18px,5.5vw,22px)}
+.brand-statement__quote{font-size:clamp(16px,4.5vw,20px)}
+.comparison__card{padding:16px}
+.process__step{padding:18px 14px}
+.service-row{padding:16px 14px}
+.service-row:hover{padding-left:14px}
+.testimonial-card{flex:0 0 95%}
+.faq__summary{font-size:14px;padding:16px 12px}
+.faq__content{padding:0 12px 16px;font-size:13px}
+.contact__input,.contact__textarea{font-size:16px}
+.footer{padding:28px 12px}
+.selection{padding:70px 12px 20px}
+.selection__card{padding:16px}
+.blog-card{padding:20px}
+.blog-card__title{font-size:17px}
+.article-header{padding:80px 12px 32px}
+.article-title{font-size:clamp(20px,6vw,26px)}
+.article-content{padding:32px 12px 48px}
+.article-content__inner{font-size:15px}
+.article-content__inner h2{font-size:20px}
+.article-content__inner h3{font-size:17px}
+.about-hero{padding:80px 12px 36px}
+.about-hero__headline{font-size:clamp(28px,7vw,36px)}
+.transform__bad{font-size:clamp(18px,5vw,26px)}
+.transform__good{font-size:clamp(20px,6vw,32px)}
+.cities__grid{gap:8px}
+.city-card{padding:12px 14px}
+.ps-hero{padding:70px 12px 28px}
+.calendly-inline-widget{height:480px!important}
+.nav__inner{padding:10px 12px}
+.mobile-menu__links a{font-size:16px}
+}
