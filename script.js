@@ -87,6 +87,36 @@
             });
             rows.forEach(function (row) { scrollObserver.observe(row); });
         }
+
+        // Carousel dots + swipe hint
+        var dots = document.querySelectorAll('.transform__dot');
+        var hint = document.getElementById('transform-hint');
+        if (dots.length && transformContainer.scrollWidth > transformContainer.clientWidth) {
+            var hintDismissed = false;
+            transformContainer.addEventListener('scroll', function () {
+                var scrollLeft = transformContainer.scrollLeft;
+                var cardWidth = transformContainer.querySelector('.transform__row').offsetWidth;
+                var gap = 16;
+                var idx = Math.round(scrollLeft / (cardWidth + gap));
+                idx = Math.max(0, Math.min(idx, dots.length - 1));
+                dots.forEach(function (d) { d.classList.remove('active'); });
+                dots[idx].classList.add('active');
+                if (!hintDismissed && scrollLeft > 20) {
+                    hintDismissed = true;
+                    if (hint) hint.classList.add('hidden');
+                }
+            }, { passive: true });
+
+            // Tap dot to scroll to card
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    var i = parseInt(this.dataset.index, 10);
+                    var cardWidth = transformContainer.querySelector('.transform__row').offsetWidth;
+                    var gap = 16;
+                    transformContainer.scrollTo({ left: i * (cardWidth + gap), behavior: 'smooth' });
+                });
+            });
+        }
     }
 
     // ---- Smooth scroll for anchor links (fallback for older browsers) ----

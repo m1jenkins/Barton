@@ -34,6 +34,28 @@
 .transform__arrow{transform:rotate(90deg)}
 }
 
+/* --- Transform carousel: pagination dots & swipe hint (mobile only) --- */
+.transform__dots{display:none}
+.transform__swipe-hint{display:none}
+
+@media (width<=768px){
+.transform__dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.transform__dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);transition:all .3s ease;cursor:pointer}
+.transform__dot.active{width:24px;border-radius:4px;background:rgba(255,255,255,0.7)}
+.transform__swipe-hint{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;color:rgba(255,255,255,0.45);font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;animation:swipeNudge 2s ease-in-out infinite;transition:opacity .5s ease}
+.transform__swipe-hint.hidden{opacity:0;pointer-events:none}
+.transform__swipe-icon{animation:swipeArrow 2s ease-in-out infinite}
+}
+
+@keyframes swipeNudge{
+0%,100%{opacity:.45}
+50%{opacity:.8}
+}
+@keyframes swipeArrow{
+0%,100%{transform:translateX(0)}
+50%{transform:translateX(4px)}
+}
+
 /* ===== PRICING TOGGLE ===== */
 .pricing-toggle-container {
     display: flex;
