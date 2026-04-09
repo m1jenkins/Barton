@@ -586,3 +586,30 @@ body{font-size:15px}
 .transform__cta{margin-top:20px}
 .section-cta-container{margin-top:24px;padding-top:20px}
 }
+
+/* ===== LARGE DESKTOP HERO SCALING ===== */
+@media (min-width:1200px){
+.hero__content{max-width:1400px;grid-template-columns:1.2fr 1fr}
+.hero__text{max-width:720px}
+.hero__headline{font-size:clamp(60px,5.5vw,96px);margin-bottom:28px;letter-spacing:-.02em}
+.hero__subtext{font-size:21px;max-width:600px;margin-bottom:40px;line-height:1.7}
+.hero .hero__cta-group .btn--primary{padding:18px 40px;font-size:18px;border-radius:14px}
+.hero__consult-link{font-size:17px}
+.hero__stats{margin-top:44px;padding-top:32px;gap:36px}
+.hero__stat-value{font-size:34px}
+.hero__stat-label{font-size:14px}
+.hero__stat-divider{height:44px}
+}
+@media (min-width:1600px){
+.hero{padding:180px 48px 80px}
+.hero__content{max-width:1600px}
+.hero__text{max-width:840px}
+.hero__headline{font-size:clamp(80px,6vw,110px);margin-bottom:32px}
+.hero__subtext{font-size:24px;max-width:700px;margin-bottom:48px}
+.hero .hero__cta-group .btn--primary{padding:22px 48px;font-size:20px;border-radius:16px}
+.hero__consult-link{font-size:18px}
+.hero__stats{margin-top:52px;padding-top:36px;gap:44px}
+.hero__stat-value{font-size:40px}
+.hero__stat-label{font-size:15px}
+.hero__stat-divider{height:52px}
+}
