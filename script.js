@@ -68,6 +68,27 @@
         });
     }
 
+    // ---- Transform rows: fix strike animation in horizontal scroll ----
+    var transformContainer = document.querySelector('.transform__rows');
+    if (transformContainer && 'IntersectionObserver' in window) {
+        var rows = transformContainer.querySelectorAll('.transform__row');
+        if (transformContainer.scrollWidth > transformContainer.clientWidth) {
+            rows.forEach(function (row) { observer.unobserve(row); });
+            var scrollObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: transformContainer,
+                threshold: 0.5
+            });
+            rows.forEach(function (row) { scrollObserver.observe(row); });
+        }
+    }
+
     // ---- Smooth scroll for anchor links (fallback for older browsers) ----
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
