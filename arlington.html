@@ -290,6 +290,15 @@
                     <div class="transform__good">Complete Confidence</div>
                 </div>
             </div>
+            <div class="transform__dots" id="transform-dots" aria-label="Carousel position">
+                <span class="transform__dot active" data-index="0"></span>
+                <span class="transform__dot" data-index="1"></span>
+                <span class="transform__dot" data-index="2"></span>
+            </div>
+            <div class="transform__swipe-hint" id="transform-hint">
+                <span class="transform__swipe-text">Swipe to explore</span>
+                <svg class="transform__swipe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
             <div class="transform__cta reveal">
                 <a href="schedule.html#schedule-call" class="btn--primary transform__btn">
                     <span class="btn__text">Book a Free Consultation</span>
@@ -301,93 +310,122 @@
         </div>
     </section>
 
-    <!-- ===== HOW IT WORKS ===== -->
-    <section class="process" id="how-it-works">
-        <div class="process__inner reveal">
-            <p class="section-label">How It Works</p>
-            <h2 class="section-heading">Three simple steps to the price you deserve.</h2>
-            <p class="section-subtext">Skip the stress, get a dedicated car-buying expert to find and secure your next car, start to finish. We handle the research, dealer outreach, price negotiation, paperwork review, and delivery logistics.</p>
 
-            <div class="process__pricing">
-                <div class="process__pricing-badge">Transparent Pricing</div>
-                <h3 class="process__pricing-amount">$795 Flat Fee</h3>
-                <p class="process__pricing-note">Average client saves over $2,400 on their purchase.</p>
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section class="included" id="services">
+        <div class="included__inner">
+            <div class="included__header reveal">
+                <p class="section-label">What's Included</p>
+                <h2 class="section-heading">Everything you need from search to signed deal.</h2>
             </div>
-
-            <div class="process__steps">
-                <div class="process__step">
-                    <span class="process__number">01</span>
-                    <h3 class="process__title">Tell us what you want</h3>
-                    <p class="process__desc">Share the make, model, budget, and desired features. We'll take it from there.</p>
+            <div class="included__layout reveal">
+                <div class="included__spotlight">
+                    <p class="included__eyebrow">The bottom line</p>
+                    <div class="included__metric">
+                        <span class="included__metric-value">$2,400</span>
+                        <span class="included__metric-label">average client savings</span>
+                    </div>
+                    <p class="included__spotlight-copy">You get a flat-fee advocate who manages your entire deal — from search to signed paperwork.</p>
+                    <ul class="included__highlights">
+                        <li>
+                            <strong>12+ hours back</strong>
+                            <span>Research, outreach, and follow-up handled for you.</span>
+                        </li>
+                        <li>
+                            <strong>Zero dealer games</strong>
+                            <span>We push back on hidden fees, inflated add-ons, and pressure tactics.</span>
+                        </li>
+                        <li>
+                            <strong>Independent advice</strong>
+                            <span>We do not take commissions from dealerships.</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="process__step">
-                    <span class="process__number">02</span>
-                    <h3 class="process__title">We do the work</h3>
-                    <p class="process__desc">We handle the search, dealer outreach, and negotiation, no stress, no gimmicks, just results.</p>
-                </div>
-                <div class="process__step">
-                    <span class="process__number">03</span>
-                    <h3 class="process__title">You get the keys</h3>
-                    <p class="process__desc">We guide you through signing and delivery so you never overpay or get surprised by hidden fees.</p>
+                <div class="included__details">
+                    <div class="included__details-header">
+                        <p class="included__details-kicker">What we handle</p>
+                        <p class="included__details-copy">Every step of the buying process, managed start to finish.</p>
+                    </div>
+                    <div class="included__detail-list">
+                        <article class="included__detail">
+                            <span class="included__detail-number" aria-hidden="true">01</span>
+                            <div>
+                                <h3 class="included__detail-title">Custom search & shortlist</h3>
+                                <p class="included__detail-desc">We scan the market, filter by your budget and priorities, and bring you the strongest options instead of making you sort through thousands of listings.</p>
+                            </div>
+                        </article>
+                        <article class="included__detail">
+                            <span class="included__detail-number" aria-hidden="true">02</span>
+                            <div>
+                                <h3 class="included__detail-title">Dealer outreach & negotiation</h3>
+                                <p class="included__detail-desc">We communicate with dealers directly, request the real numbers, and negotiate on your behalf so you do not have to field calls or sit through a sales pitch.</p>
+                            </div>
+                        </article>
+                        <article class="included__detail">
+                            <span class="included__detail-number" aria-hidden="true">03</span>
+                            <div>
+                                <h3 class="included__detail-title">Hidden fee & paperwork review</h3>
+                                <p class="included__detail-desc">Before you sign, we audit the deal sheet for markups, add-ons, and other surprises that can quietly inflate the total.</p>
+                            </div>
+                        </article>
+                        <article class="included__detail">
+                            <span class="included__detail-number" aria-hidden="true">04</span>
+                            <div>
+                                <h3 class="included__detail-title">Finance & lease term review</h3>
+                                <p class="included__detail-desc">We review your loan or lease structure to make sure the payment, rate, and extras all make sense for the deal you are getting.</p>
+                            </div>
+                        </article>
+                        <article class="included__detail">
+                            <span class="included__detail-number" aria-hidden="true">05</span>
+                            <div>
+                                <h3 class="included__detail-title">Signing & delivery support</h3>
+                                <p class="included__detail-desc">We stay involved through final paperwork, pickup, or transport coordination so the finish line stays as smooth as the search.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
             <div class="section-cta-container reveal">
                 <a href="schedule.html" class="btn--primary">Start My Search →</a>
             </div>
+            <div class="services__exotic reveal">
+                <a href="https://provenance-auto.com/" rel="noopener noreferrer" target="_blank" class="exotic-link">Interested in an exotic car? Consider our exclusive services</a>
+            </div>
         </div>
     </section>
 
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services" id="services">
-        <div class="services__inner">
-            <div class="services__header reveal">
-                <p class="section-label">What We Do</p>
-                <h2 class="section-heading">Expert car buying, simplified.</h2>
-                <p class="section-subtext">Whether you're buying new, used, or selling, we've got you covered.</p>
+    <!-- ===== TESTIMONIALS / SOCIAL PROOF ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials__inner">
+            <div class="testimonials__header reveal">
+                <p class="section-label">What Our Clients Say</p>
+                <h2 class="section-heading">Real results from real Texans.</h2>
             </div>
-            <div class="services__editorial reveal">
-                <div class="services__list" id="services-list">
-                    <div class="service-row">
-                        <div class="service-row__number">01</div>
-                        <div class="service-row__content">
-                            <h3 class="service-row__title">New Car Buying</h3>
-                            <p class="service-row__desc">We negotiate with dealers so you don't have to. From factory orders to lot inventory, we find the exact car you want at a price that's actually fair.</p>
-                        </div>
-                        <a href="schedule.html" class="service-row__link">Get started →</a>
-                    </div>
-                    <div class="service-row">
-                        <div class="service-row__number">02</div>
-                        <div class="service-row__content">
-                            <h3 class="service-row__title">Used Car Advisory</h3>
-                            <p class="service-row__desc">Get expert guidance on pre-owned vehicles. We verify history, inspect condition, assess fair market value, and negotiate terms you can feel good about.</p>
-                        </div>
-                        <a href="schedule.html" class="service-row__link">Get started →</a>
-                    </div>
-                    <div class="service-row">
-                        <div class="service-row__number">03</div>
-                        <div class="service-row__content">
-                            <h3 class="service-row__title">Trade-In &amp; Selling</h3>
-                            <p class="service-row__desc">When it's time to sell or trade in, we maximize your return. Professional positioning, market analysis, and negotiation to get you top dollar.</p>
-                        </div>
-                        <a href="schedule.html" class="service-row__link">Get started →</a>
-                    </div>
-                    <div class="service-row">
-                        <div class="service-row__number">04</div>
-                        <div class="service-row__content">
-                            <h3 class="service-row__title">Personal Car Advisor</h3>
-                            <p class="service-row__desc">Not sure what car fits your life? First sports car, family SUV, or the right daily driver, we listen, advise, and guide you to the perfect vehicle.</p>
-                        </div>
-                        <a href="schedule.html" class="service-row__link">Get started →</a>
+            <div class="testimonials__grid reveal">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"I wanted a new Tahoe, but a lot of the dealers local were putting on a ton of fees and add-ons I didn't want. Drive Right found me a new Chevy Tahoe from Baton Rouge that was well under MSRP and had zero misc dealer add ons. Probably saved $6k-$8k easy!"</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">Michael R.</span>
+                        <span class="testimonial-card__location">Houston, TX</span>
                     </div>
                 </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time."</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">Sarah K.</span>
+                        <span class="testimonial-card__location">Austin, TX</span>
+                    </div>
                 </div>
-                <div class="services__exotic reveal">
-                    <a href="https://provenance-auto.com/" rel="noopener noreferrer" target="_blank" class="exotic-link">Interested in an exotic car? consider our exclusive services</a>
-                </div>
-                <!-- Cross-linking Loop -->
-                <div class="reveal" style="text-align: center;">
-                    <a href="index.html#services" class="services__all-link">View All Car Buying Services →</a>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="testimonial-card__text">"I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars."</p>
+                    <div class="testimonial-card__author">
+                        <span class="testimonial-card__name">David L.</span>
+                        <span class="testimonial-card__location">Dallas, TX</span>
+                    </div>
                 </div>
             </div>
         </div>
