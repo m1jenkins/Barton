@@ -278,8 +278,11 @@
                                     <option value="45k-60k">$45,000 – $60,000</option>
                                     <option value="60k-80k">$60,000 – $80,000</option>
                                     <option value="80k-100k">$80,000 – $100,000</option>
-                                    <option value="100k-plus">$100,000+</option>
+                                    <option value="100k-150k">$100,000 – $150,000</option>
+                                    <option value="150k-plus">$150,000+</option>
+                                    <option value="other">Other</option>
                                 </select>
+                                <input class="ps-form__input" type="text" id="ob-budget-other" name="budget_other" placeholder="Please specify your budget" style="display:none; margin-top:8px;">
                             </div>
                             <div class="ps-form__group">
                                 <label class="ps-form__label" for="ob-payment">How Are You Paying? *</label>
@@ -331,8 +334,9 @@
                                 <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="towing"> Towing Package</label>
                                 <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="safety-suite"> Advanced Safety Suite</label>
                                 <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="fuel-efficient"> High Fuel Efficiency</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="low-insurance"> Low Insurance Cost</label>
+                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="other" id="features-other-check"> Other</label>
                             </div>
+                            <input class="ps-form__input" type="text" id="features-other-text" name="features_other" placeholder="Please describe…" style="display:none; margin-top:8px;">
                         </div>
                     </fieldset>
 
@@ -422,7 +426,16 @@
                 // Collect checkbox values into a single field
                 var features = [];
                 form.querySelectorAll('input[name="features"]:checked').forEach(function (cb) {
-                    features.push(cb.value);
+                    if (cb.value === 'other') {
+                        var otherText = document.getElementById('features-other-text');
+                        if (otherText && otherText.value.trim()) {
+                            features.push('Other: ' + otherText.value.trim());
+                        } else {
+                            features.push('Other');
+                        }
+                    } else {
+                        features.push(cb.value);
+                    }
                 });
                 formData.set('features', features.join(', '));
 
@@ -443,6 +456,25 @@
                     btn.style.opacity = '';
                     btn.style.cursor = 'pointer';
                 });
+            });
+        }
+        // Show/hide budget "Other" text field
+        var budgetSelect = document.getElementById('ob-budget');
+        var budgetOther = document.getElementById('ob-budget-other');
+        if (budgetSelect && budgetOther) {
+            budgetSelect.addEventListener('change', function () {
+                var show = this.value === 'other';
+                budgetOther.style.display = show ? 'block' : 'none';
+                budgetOther.required = show;
+            });
+        }
+
+        // Show/hide features "Other" text field
+        var featuresOtherCheck = document.getElementById('features-other-check');
+        var featuresOtherText = document.getElementById('features-other-text');
+        if (featuresOtherCheck && featuresOtherText) {
+            featuresOtherCheck.addEventListener('change', function () {
+                featuresOtherText.style.display = this.checked ? 'block' : 'none';
             });
         }
     })();
