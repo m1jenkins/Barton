@@ -75,7 +75,58 @@
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "09:00",
         "closes": "18:00"
+      },
+      "telephone": "(512) 910-4938",
+      "sameAs": [
+        "https://www.facebook.com/people/Drive-Right-Car-Buying/61571999696043/",
+        "https://www.reddit.com/user/DriveRightCarBuying/",
+        "https://share.google/0ox4kNSOh9ge6JXIN"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Drive Right",
+      "alternateName": "Drive Right Car Buying Service",
+      "url": "https://www.driverightcarbuying.com/",
+      "logo": "https://i.imgur.com/i4diUoq.png",
+      "email": "hello@driverightcarbuying.com",
+      "telephone": "(512) 910-4938",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "postalCode": "78701",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/people/Drive-Right-Car-Buying/61571999696043/",
+        "https://www.reddit.com/user/DriveRightCarBuying/",
+        "https://share.google/0ox4kNSOh9ge6JXIN"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "(512) 910-4938",
+        "contactType": "customer service",
+        "email": "hello@driverightcarbuying.com",
+        "areaServed": "US-TX",
+        "availableLanguage": "English"
       }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.driverightcarbuying.com/" }
+      ]
     }
     </script>
 
@@ -596,7 +647,7 @@
                 <button type="submit" class="btn--primary" id="contact-submit">Contact Us →</button>
             </form>
             <div class="contact__alt">
-                <p>hello@driverightcarbuying.com · Based in Austin, Texas</p>
+                <p><a href="tel:+15129104938">(512) 910-4938</a> · hello@driverightcarbuying.com · Based in Austin, Texas</p>
                 <p class="contact__channels">WhatsApp · <a href="https://signal.me/#eu/3Qt3tskYypWeG5ZsT9nigsOMLvf4CP4vXeK-FSj1GANJiJPJOipMdL6HtICsxm3g" rel="noopener noreferrer" target="_blank">Signal</a></p>
             </div>
         </div>
@@ -634,6 +685,7 @@
                     </ul>
                 </div>
             </div>
+            <p class="footer__contact"><a href="tel:+15129104938">(512) 910-4938</a> · hello@driverightcarbuying.com</p>
             <p class="footer__copy">© 2026 Drive Right. All rights reserved.</p>
         </div>
     </footer>
