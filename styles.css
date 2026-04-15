@@ -1717,17 +1717,48 @@ ul {
 }
 
 .selection__card--featured {
+    border-color: #38bdf8;
+    background: var(--bg-dark);
+    color: #fff;
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.25)
+}
+
+.selection__card--featured:hover {
     border-color: var(--accent);
-    background: var(--accent-light)
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 32px 64px rgba(15, 23, 42, 0.35)
+}
+
+.selection__card--featured .selection__title, 
+.selection__card--featured .selection__price {
+    color: #fff;
+}
+
+.selection__card--featured .selection__desc {
+    color: #cbd5e1;
+}
+
+.selection__card--featured .selection__price-label {
+    color: #94a3b8;
+}
+
+.selection__card--featured .selection__feature {
+    color: #f1f5f9;
+}
+
+.selection__card--featured .selection__feature-icon {
+    color: #38bdf8;
 }
 
 .selection__card--featured:before {
     content: "Most Popular";
-    background: var(--accent);
+    background: linear-gradient(135deg, #38bdf8, var(--accent));
     color: #fff;
     text-transform: uppercase;
     letter-spacing: .1em;
-    z-index: 1;
+    z-index: 3;
     justify-content: center;
     align-items: center;
     width: 200px;
@@ -1739,7 +1770,7 @@ ul {
     top: 29px;
     right: -59px;
     transform: rotate(45deg);
-    box-shadow: 0 2px 4px #0000001a
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5)
 }
 
 .selection__card-icon {
@@ -1755,7 +1786,7 @@ ul {
 }
 
 .selection__card--featured .selection__card-icon {
-    background: var(--accent);
+    background: linear-gradient(135deg, #38bdf8, var(--accent));
     color: #fff
 }
 
@@ -4340,12 +4371,14 @@ ul {
 }
 
 /* =============================================
-   SCHEDULE PAGE — 4-Tier Grid
+   SCHEDULE PAGE — 3-Tier Grid
    ============================================= */
-.selection__grid--four-tiers {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px;
-    margin-inline: auto
+.selection__grid--three-tiers {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin-inline: auto;
+    align-items: center;
+    gap: 24px;
 }
 
 .selection__price-label {
@@ -4363,7 +4396,7 @@ ul {
     justify-content: center;
     gap: 12px;
     max-width: 600px;
-    margin: 24px auto 0;
+    margin: 36px auto 0;
     padding: 16px 24px;
     background: var(--bg-white);
     border: 1.5px solid var(--border);
@@ -4385,20 +4418,32 @@ ul {
 }
 
 /* =============================================
-   SCHEDULE PAGE — Responsive: 4-tier grid
+   SCHEDULE PAGE — Responsive: 3-tier grid
    ============================================= */
 @media (max-width:1100px) {
-    .selection__grid--four-tiers {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 800px
+    .selection__grid--three-tiers {
+        max-width: 960px;
+        gap: 16px;
+    }
+}
+
+@media (max-width:960px) {
+    .selection__grid--three-tiers {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 24px;
+    }
+    
+    .selection__card--featured {
+        transform: none;
+    }
+
+    .selection__card--featured:hover {
+        transform: translateY(-8px);
     }
 }
 
 @media (max-width:768px) {
-    .selection__grid--four-tiers {
-        grid-template-columns: 1fr;
-        max-width: 500px
-    }
 
     .selection__trust-bar {
         gap: 20px;
