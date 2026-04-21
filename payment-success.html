@@ -22,9 +22,21 @@
 <!-- Reddit Pixel -->
 <script>
 !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_ivr99kvj93as",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_ivr99kvj93as');rdt('track', 'PageVisit');
-var redditPurchaseConversionId = (window.crypto && typeof window.crypto.randomUUID === 'function')
-  ? window.crypto.randomUUID()
-  : 'purchase-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+function generateRedditConversionId(prefix) {
+  if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+    return window.crypto.randomUUID();
+  }
+  if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+    var bytes = new Uint8Array(16);
+    window.crypto.getRandomValues(bytes);
+    var randomHex = Array.from(bytes, function(byte) {
+      return byte.toString(16).padStart(2, '0');
+    }).join('');
+    return prefix + '-' + randomHex + '-' + Date.now();
+  }
+  return prefix + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+}
+var redditPurchaseConversionId = generateRedditConversionId('purchase');
 rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
 </script>
 <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
