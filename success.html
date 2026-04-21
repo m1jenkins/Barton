@@ -36,7 +36,10 @@ function generateRedditConversionId(prefix) {
     }).join('');
     return prefix + '-' + randomHex + '-' + Date.now();
   }
-  return prefix + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+  var perfNow = (window.performance && typeof window.performance.now === 'function')
+    ? Math.floor(window.performance.now() * 1000)
+    : 0;
+  return prefix + '-' + Date.now() + '-' + perfNow;
 }
 var redditLeadConversionId = generateRedditConversionId('lead');
 rdt('track', 'Lead', { conversionId: redditLeadConversionId });
