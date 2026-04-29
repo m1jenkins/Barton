@@ -4417,6 +4417,48 @@ ul {
     margin: 0
 }
 
+.selection__guarantee--savings {
+    background: var(--success-light);
+    border-color: var(--success-border);
+    align-items: flex-start
+}
+
+.selection__guarantee--savings svg {
+    color: var(--success);
+    margin-top: 2px;
+    flex-shrink: 0
+}
+
+.selection__guarantee-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.selection__guarantee-title {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--success);
+    margin: 0
+}
+
+.selection__guarantee-text {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.55;
+    margin: 0
+}
+
+.selection__guarantee-sub {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0
+}
+
 /* =============================================
    SCHEDULE PAGE — Responsive: 3-tier grid
    ============================================= */
@@ -4475,9 +4517,17 @@ ul {
 
     .selection__guarantee {
         flex-direction: column;
-        text-align: center;
         gap: 8px;
         padding: 14px 16px
+    }
+
+    .selection__guarantee--savings {
+        align-items: center;
+        text-align: center
+    }
+
+    .selection__guarantee-body {
+        align-items: center
     }
 }
 
