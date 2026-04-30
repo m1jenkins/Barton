@@ -493,6 +493,38 @@ ul {
     font-weight: 700
 }
 
+/* Hero Review / Testimonial */
+.hero__review {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 480px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero__review-stars {
+    color: #fbbf24;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.hero__review-text {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-body);
+    font-size: 14px;
+}
+
+.hero__review-text strong {
+    color: var(--text-dark);
+}
+
 /* Promoted FAQ block ("Why Drive Right?") shown right after the hero */
 .why-promo {
     background: var(--bg-warm, var(--bg-cream));
@@ -4855,5 +4887,11 @@ ul {
 
     .hero__stat-divider {
         height: 52px
+    }
+}
+@media (max-width: 768px) {
+    .hero__review {
+        margin: 20px auto 12px;
+        text-align: center;
     }
 }
