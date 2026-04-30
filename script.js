@@ -217,4 +217,22 @@
         });
     }
 
+    // ---- CTA click tracking (for Clarity / GA comparison) ----
+    document.querySelectorAll('[data-cta-location]').forEach(function (el) {
+        el.addEventListener('click', function () {
+            var location = el.getAttribute('data-cta-location') || 'unknown';
+            try {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'cta_click', {
+                        cta_location: location,
+                        cta_label: (el.textContent || '').trim().slice(0, 40)
+                    });
+                }
+                if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'cta_location', location);
+                }
+            } catch (err) { /* tracking should never break navigation */ }
+        });
+    });
+
 })();
