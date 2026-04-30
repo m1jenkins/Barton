@@ -464,34 +464,7 @@ ul {
     height: 36px
 }
 
-/* Hero trust strip — quick reinforcement for users who don't scroll */
-.hero__trust {
-    list-style: none;
-    margin: 18px 0 28px;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .02em;
-    color: var(--text-muted);
-    text-transform: uppercase
-}
 
-.hero__trust li {
-    position: relative;
-    padding-left: 18px
-}
-
-.hero__trust li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent, var(--primary));
-    font-weight: 700
-}
 
 /* Hero Review / Testimonial Card Redesign */
 .hero__review-card {
@@ -1608,12 +1581,7 @@ ul {
         margin-bottom: 18px
     }
 
-    .hero__trust {
-        margin: 14px 0 18px;
-        justify-content: center;
-        font-size: 12px;
-        gap: 6px 14px
-    }
+
 
     .hero__stats {
         flex-flow: wrap;
