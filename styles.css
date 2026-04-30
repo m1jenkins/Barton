@@ -389,7 +389,7 @@ ul {
 .hero__content {
     z-index: 2;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: end;
     gap: 56px;
     width: 100%;
     max-width: 1160px;
@@ -481,12 +481,6 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
 }
 
 .hero__review-header {
@@ -1525,7 +1519,8 @@ ul {
 @media (width<=960px) {
     .hero__content {
         grid-template-columns: 1fr;
-        gap: 40px
+        gap: 40px;
+        align-items: center
     }
 
     .hero__text {
