@@ -1110,6 +1110,11 @@ ul {
     display: flex
 }
 
+.testimonial-card__author-info {
+    display: flex;
+    flex-direction: column;
+}
+
 .testimonial-card__name {
     color: var(--text-dark);
     font-size: 14px;
