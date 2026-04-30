@@ -469,7 +469,7 @@ ul {
 /* Hero Review / Testimonial Card Redesign */
 .hero__review-card {
     margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     padding: 20px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(16px);
