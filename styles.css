@@ -365,12 +365,12 @@ ul {
 
 .hero {
     background: url('https://i.imgur.com/9w8MEXq.jpg') center/cover no-repeat;
-    align-items: center;
     min-height: clamp(600px, 92vh, 900px);
     padding: 140px 32px 64px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    overflow: hidden
 }
 
 .hero:before {
