@@ -2131,17 +2131,6 @@ ul {
     }
 }
 
-.calendly-section {
-    z-index: 1;
-    scroll-margin-top: 100px;
-    position: relative
-}
-
-.calendly-section__header {
-    max-width: 640px;
-    margin: 0 auto 40px
-}
-
 .breadcrumb {
     background: 0 0;
     padding: 96px 0 0
@@ -4116,12 +4105,6 @@ ul {
         padding: var(--section-pad-mob) 16px
     }
 
-    /* --- Calendly widget responsive height --- */
-    .calendly-inline-widget {
-        min-width: 0 !important;
-        height: 550px !important
-    }
-
     /* --- Sticky CTA --- */
     .sticky-cta {
         padding: 10px 16px
@@ -4323,10 +4306,6 @@ ul {
 
     .ps-hero {
         padding: 70px 12px 28px
-    }
-
-    .calendly-inline-widget {
-        height: 480px !important
     }
 
     .nav__inner {
