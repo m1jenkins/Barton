@@ -1454,7 +1454,7 @@ ul {
 .call-text-cta__phone {
     display: inline-block;
     font-family: var(--serif);
-    color: var(--accent);
+    color: var(--accent) !important;
     background: var(--bg-white);
     border: 2px solid var(--accent);
     border-radius: var(--radius);
