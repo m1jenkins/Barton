@@ -1454,9 +1454,9 @@ ul {
 a.call-text-cta__phone {
     display: inline-block;
     font-family: var(--serif);
-    color: var(--accent);
+    color: var(--primary);
     background: var(--bg-white);
-    border: 2px solid var(--accent);
+    border: 2px solid var(--primary);
     border-radius: var(--radius);
     padding: 16px 32px;
     margin-bottom: 16px;
@@ -1467,10 +1467,10 @@ a.call-text-cta__phone {
 }
 
 a.call-text-cta__phone:hover {
-    background: var(--accent);
+    background: var(--primary);
     color: var(--bg-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2)
+    box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2)
 }
 
 .call-text-cta__note {
