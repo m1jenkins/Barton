@@ -1417,6 +1417,78 @@ ul {
     font-size: 12px
 }
 
+.call-text-cta {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg-warm) 100%);
+    padding: var(--section-pad) 32px;
+    text-align: center
+}
+
+.call-text-cta__inner {
+    max-width: 600px;
+    margin: 0 auto
+}
+
+.call-text-cta__icon {
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+.call-text-cta__headline {
+    font-family: var(--serif);
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 600
+}
+
+.call-text-cta__subtext {
+    color: var(--text-body);
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6
+}
+
+.call-text-cta__phone {
+    display: inline-block;
+    font-family: var(--serif);
+    color: var(--accent);
+    background: var(--bg-white);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .3s ease
+}
+
+.call-text-cta__phone:hover {
+    background: var(--accent);
+    color: var(--bg-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2)
+}
+
+.call-text-cta__note {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto
+}
+
+.call-text-cta--bordered {
+    background: var(--bg-white);
+    padding: 48px 24px;
+    margin-top: 48px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border)
+}
+
 .footer {
     background: var(--bg-dark);
     text-align: center;
@@ -1713,6 +1785,15 @@ ul {
 
     .contact {
         padding: var(--section-pad-mob) 20px
+    }
+
+    .call-text-cta {
+        padding: var(--section-pad-mob) 20px
+    }
+
+    .call-text-cta__phone {
+        font-size: clamp(20px, 5vw, 28px);
+        padding: 14px 24px
     }
 
     .contact__input,
