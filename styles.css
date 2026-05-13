@@ -1451,10 +1451,10 @@ ul {
     line-height: 1.6
 }
 
-.call-text-cta__phone {
+a.call-text-cta__phone {
     display: inline-block;
     font-family: var(--serif);
-    color: var(--accent) !important;
+    color: var(--accent);
     background: var(--bg-white);
     border: 2px solid var(--accent);
     border-radius: var(--radius);
@@ -1466,7 +1466,7 @@ ul {
     transition: all .3s ease
 }
 
-.call-text-cta__phone:hover {
+a.call-text-cta__phone:hover {
     background: var(--accent);
     color: var(--bg-white);
     transform: translateY(-2px);
@@ -1791,7 +1791,7 @@ ul {
         padding: var(--section-pad-mob) 20px
     }
 
-    .call-text-cta__phone {
+    a.call-text-cta__phone {
         font-size: clamp(20px, 5vw, 28px);
         padding: 14px 24px
     }
