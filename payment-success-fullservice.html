@@ -328,17 +328,17 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                         <div id="trade-in-details" style="display:none; margin-top:18px;">
                             <div class="ps-form__row ps-form__row--two">
                                 <div class="ps-form__group">
-                                    <label class="ps-form__label" for="ob-trade-identifier">Trade-In Plate Number or VIN <span class="ps-form__hint" id="ob-trade-identifier-hint">(optional)</span></label>
-                                    <input class="ps-form__input" type="text" id="ob-trade-identifier" name="trade_identifier" placeholder="Plate number or VIN" aria-required="false" aria-describedby="ob-trade-identifier-hint">
+                                    <label class="ps-form__label" for="ob-trade-identifier">Trade-In Plate Number or VIN (optional)</label>
+                                    <input class="ps-form__input" type="text" id="ob-trade-identifier" name="trade_identifier" placeholder="Plate number or VIN" aria-required="false">
                                 </div>
                                 <div class="ps-form__group">
-                                    <label class="ps-form__label" for="ob-trade-mileage">Trade-In Mileage <span class="ps-form__hint">(required if trading in)</span></label>
+                                    <label class="ps-form__label" for="ob-trade-mileage">Trade-In Mileage (optional)</label>
                                     <input class="ps-form__input" type="number" id="ob-trade-mileage" name="trade_mileage" min="0" inputmode="numeric" placeholder="e.g. 72500" aria-required="false">
                                 </div>
                             </div>
                             <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-trade-condition">Trade-In Condition <span class="ps-form__hint">(required if trading in)</span></label>
-                                <select class="ps-form__select" id="ob-trade-condition" name="trade_condition">
+                                <label class="ps-form__label" for="ob-trade-condition">Trade-In Condition (optional)</label>
+                                <select class="ps-form__select" id="ob-trade-condition" name="trade_condition" aria-required="false">
                                     <option value="" disabled selected>Select condition…</option>
                                     <option value="excellent">Excellent</option>
                                     <option value="good">Good</option>
@@ -534,16 +534,11 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
         if (tradeInSelect && tradeInDetails) {
             tradeInSelect.addEventListener('change', function () {
                 var hasTrade = this.value === 'yes' || this.value === 'maybe';
-                var needsDetails = this.value === 'yes';
                 tradeInDetails.style.display = hasTrade ? 'block' : 'none';
                 if (tradeMileage) {
-                    tradeMileage.required = needsDetails;
-                    tradeMileage.setAttribute('aria-required', needsDetails ? 'true' : 'false');
                     if (!hasTrade) tradeMileage.value = '';
                 }
                 if (tradeCondition) {
-                    tradeCondition.required = needsDetails;
-                    tradeCondition.setAttribute('aria-required', needsDetails ? 'true' : 'false');
                     if (!hasTrade) tradeCondition.value = '';
                 }
             });
