@@ -211,6 +211,8 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                 <form class="ps-form" id="onboarding-form" autocomplete="on">
 
                     <input type="hidden" name="service_tier" value="Hire Drive Right Full Service ($495)">
+                    <input type="hidden" name="submission_type" value="full_service_onboarding">
+                    <input type="hidden" name="source_page" value="payment-success-fullservice.html">
 
                     <!-- , , ,  SECTION: Contact , , ,  -->
                     <fieldset class="ps-form__fieldset">
@@ -301,19 +303,7 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                         <div class="ps-form__row ps-form__row--two">
                             <div class="ps-form__group">
                                 <label class="ps-form__label" for="ob-budget">Total Budget *</label>
-                                <select class="ps-form__select" id="ob-budget" name="budget" required>
-                                    <option value="" disabled selected>Select range…</option>
-                                    <option value="under-20k">Under $20,000</option>
-                                    <option value="20k-30k">$20,000 – $30,000</option>
-                                    <option value="30k-45k">$30,000 – $45,000</option>
-                                    <option value="45k-60k">$45,000 – $60,000</option>
-                                    <option value="60k-80k">$60,000 – $80,000</option>
-                                    <option value="80k-100k">$80,000 – $100,000</option>
-                                    <option value="100k-150k">$100,000 – $150,000</option>
-                                    <option value="150k-plus">$150,000+</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <input class="ps-form__input" type="text" id="ob-budget-other" name="budget_other" placeholder="Please specify your budget" style="display:none; margin-top:8px;">
+                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
                             </div>
                             <div class="ps-form__group">
                                 <label class="ps-form__label" for="ob-payment">How Are You Paying? *</label>
@@ -335,24 +325,35 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                                 <option value="maybe">Maybe, I'm undecided</option>
                             </select>
                         </div>
+                        <div id="trade-in-details" style="display:none; margin-top:18px;">
+                            <div class="ps-form__row ps-form__row--two">
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-trade-identifier">Trade-In Plate Number or VIN (optional)</label>
+                                    <input class="ps-form__input" type="text" id="ob-trade-identifier" name="trade_identifier" placeholder="Plate number or VIN">
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-trade-mileage">Trade-In Mileage (optional)</label>
+                                    <input class="ps-form__input" type="number" id="ob-trade-mileage" name="trade_mileage" min="0" inputmode="numeric" placeholder="e.g. 72500">
+                                </div>
+                            </div>
+                            <div class="ps-form__group">
+                                <label class="ps-form__label" for="ob-trade-condition">Trade-In Condition (optional)</label>
+                                <select class="ps-form__select" id="ob-trade-condition" name="trade_condition">
+                                    <option value="" disabled selected>Select condition…</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                    <option value="poor">Poor</option>
+                                    <option value="unknown">Not sure</option>
+                                </select>
+                            </div>
+                        </div>
                     </fieldset>
 
                     <!-- , , ,  SECTION: Priorities & Must-Haves , , ,  -->
                     <fieldset class="ps-form__fieldset">
                         <legend class="ps-form__legend">Priorities &amp; Must-Haves</legend>
 
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-primary-use">Primary Use *</label>
-                            <select class="ps-form__select" id="ob-primary-use" name="primary_use" required>
-                                <option value="" disabled selected>Select one…</option>
-                                <option value="daily">Daily commute</option>
-                                <option value="family">Family vehicle</option>
-                                <option value="weekend">Weekend / fun car</option>
-                                <option value="work">Work / hauling</option>
-                                <option value="first-car">First car</option>
-                                <option value="multiple">Multiple uses</option>
-                            </select>
-                        </div>
                         <div class="ps-form__group">
                             <label class="ps-form__label">Must-Have Features <span class="ps-form__hint">(select all that apply)</span></label>
                             <div class="ps-form__checkbox-grid">
@@ -469,6 +470,7 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                     }
                 });
                 formData.set('features', features.join(', '));
+                formData.set('message', buildOnboardingSummary(formData));
 
                 fetch(scriptURL, {
                     method: 'POST',
@@ -489,14 +491,56 @@ rdt('track', 'Purchase', { conversionId: redditPurchaseConversionId });
                 });
             });
         }
-        // Show/hide budget "Other" text field
-        var budgetSelect = document.getElementById('ob-budget');
-        var budgetOther = document.getElementById('ob-budget-other');
-        if (budgetSelect && budgetOther) {
-            budgetSelect.addEventListener('change', function () {
-                var show = this.value === 'other';
-                budgetOther.style.display = show ? 'block' : 'none';
-                budgetOther.required = show;
+
+        function buildOnboardingSummary(formData) {
+            var labels = {
+                submission_type: 'Submission Type',
+                service_tier: 'Service Tier',
+                source_page: 'Source Page',
+                name: 'Full Name',
+                email: 'Email',
+                phone: 'Phone',
+                city: 'City / Area',
+                contact_preference: 'Preferred Contact Method',
+                vehicle_type: 'Vehicle Type',
+                condition: 'New or Used',
+                preferred_makes: 'Preferred Makes / Models',
+                year_min: 'Oldest Model Year Acceptable',
+                max_mileage: 'Max Mileage',
+                budget: 'Total Budget',
+                payment_method: 'Payment Method',
+                trade_in: 'Trade-In',
+                trade_identifier: 'Trade-In Plate or VIN',
+                trade_mileage: 'Trade-In Mileage',
+                trade_condition: 'Trade-In Condition',
+                features: 'Must-Have Features',
+                features_other: 'Other Features',
+                timeline: 'Timeline',
+                colors: 'Color Preferences',
+                dealbreakers: 'Deal-Breakers',
+                notes: 'Additional Notes'
+            };
+            return Object.keys(labels).map(function (key) {
+                var value = (formData.get(key) || '').toString().trim();
+                return value ? labels[key] + ': ' + value : null;
+            }).filter(Boolean).join('\n');
+        }
+
+        // Show/hide trade-in details
+        var tradeInSelect = document.getElementById('ob-trade-in');
+        var tradeInDetails = document.getElementById('trade-in-details');
+        var tradeIdentifier = document.getElementById('ob-trade-identifier');
+        var tradeMileage = document.getElementById('ob-trade-mileage');
+        var tradeCondition = document.getElementById('ob-trade-condition');
+        if (tradeInSelect && tradeInDetails) {
+            tradeInSelect.addEventListener('change', function () {
+                var hasTrade = this.value === 'yes' || this.value === 'maybe';
+                tradeInDetails.style.display = hasTrade ? 'block' : 'none';
+                if (!hasTrade) {
+                    if (tradeIdentifier) tradeIdentifier.value = '';
+                    if (tradeMileage) tradeMileage.value = '';
+                    if (tradeCondition) tradeCondition.value = '';
+                }
             });
         }
 
