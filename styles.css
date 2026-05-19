@@ -5389,7 +5389,7 @@ a.call-text-cta__phone:hover {
 /* Step 1: Spec Sheet Mockup */
 .pipeline__mockup--spec-sheet {
     max-width: 320px;
-    animation: floatMockup 4s ease-in-out infinite;
+    /* Static premium card design */
 }
 
 .pipeline__mockup-header {
@@ -5410,80 +5410,52 @@ a.call-text-cta__phone:hover {
 .pipeline__mockup-status {
     font-size: 9px;
     font-weight: 700;
-    background: var(--success);
-    padding: 2px 6px;
-    border-radius: 10px;
-    animation: blinkStatus 1.5s infinite;
-}
-
-@keyframes blinkStatus {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success-border);
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.03em;
 }
 
 .pipeline__mockup-body {
     padding: 20px 16px;
 }
 
-.pipeline__mockup-specs {
-    list-style: none;
+.pipeline__spec-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 14px;
 }
 
-.pipeline__mockup-spec-item {
+.pipeline__spec-row {
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.pipeline__mockup-check {
-    color: var(--success);
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1;
-}
-
-.pipeline__mockup-spec-label {
-    color: var(--text-muted);
-    font-weight: 500;
-    flex-shrink: 0;
-}
-
-.pipeline__mockup-spec-value {
-    color: var(--text-dark);
-    font-weight: 600;
-}
-
-.pipeline__mockup-footer {
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
 }
 
-.pipeline__advocate-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
-    color: white;
-    font-size: 9px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.pipeline__spec-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.pipeline__advocate-name {
+.pipeline__spec-label {
+    font-family: var(--sans);
     font-size: 11px;
     font-weight: 600;
-    color: var(--text-body);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.pipeline__spec-value {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: right;
 }
 
 /* Step 2: Inventory Sourcing Radar */
@@ -5577,14 +5549,39 @@ a.call-text-cta__phone:hover {
     gap: 8px;
 }
 
-.pipeline__match-badge {
-    font-size: 9px;
-    font-weight: 700;
-    color: white;
+.pipeline__match-dot {
+    width: 8px;
+    height: 8px;
     background: var(--success);
-    padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 50%;
     flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 6px var(--success);
+    margin-right: 4px;
+}
+
+.pipeline__match-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 1.5px solid var(--success);
+    opacity: 0;
+    animation: matchDotPulse 2s infinite;
+}
+
+@keyframes matchDotPulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
 }
 
 .pipeline__match-details {
@@ -5628,8 +5625,7 @@ a.call-text-cta__phone:hover {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    animation: floatMockup 4s ease-in-out infinite;
-    animation-delay: 0.4s;
+    /* Static grounded card design */
 }
 
 .pipeline__audit-firewall {
