@@ -5618,46 +5618,57 @@ a.call-text-cta__phone:hover {
     letter-spacing: 0.05em;
 }
 
-/* Step 3: Dealer Firewall Markup & Price Audit */
+/* Step 3: Secure Price Lock & Pricing Audit Card */
 .pipeline__mockup--price-audit {
     max-width: 320px;
-    padding: 20px;
+    padding: 24px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* Static grounded card design */
+    background: var(--bg-white);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-.pipeline__audit-firewall {
-    background: var(--danger-light);
-    border: 1px solid var(--danger-border);
-    color: var(--danger);
-    padding: 8px 12px;
+.pipeline__audit-lock-badge {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #059669;
+    padding: 8px 14px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
+    font-family: var(--sans);
 }
 
-.pipeline__audit-shield {
-    color: var(--danger);
-    animation: shieldPulse 2s infinite;
+.pipeline__audit-lock-icon {
+    color: #059669;
     flex-shrink: 0;
 }
 
-@keyframes shieldPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+.pipeline__audit-sheet-title {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
 }
 
 .pipeline__audit-table {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .pipeline__audit-row {
@@ -5670,11 +5681,14 @@ a.call-text-cta__phone:hover {
 .pipeline__audit-label {
     color: var(--text-muted);
     font-weight: 500;
+    font-family: var(--sans);
 }
 
 .pipeline__audit-value {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
+    font-family: var(--serif);
+    font-variant-numeric: tabular-nums;
 }
 
 .pipeline__audit-row.row-markup .pipeline__audit-value {
@@ -5694,13 +5708,13 @@ a.call-text-cta__phone:hover {
     top: 50%;
     height: 1.5px;
     background: var(--danger);
-    transform: rotate(-6deg);
+    transform: rotate(-4deg);
 }
 
-.pipeline__audit-divider {
+.pipeline__audit-divider-dashed {
     height: 1px;
-    background: var(--border);
-    margin: 4px 0;
+    border-top: 1px dashed var(--border);
+    margin: 6px 0;
 }
 
 .pipeline__audit-row.row-final {
@@ -5710,39 +5724,41 @@ a.call-text-cta__phone:hover {
 .pipeline__audit-row.row-final .pipeline__audit-label {
     color: var(--text-dark);
     font-weight: 700;
+    font-family: var(--sans);
 }
 
 .final-highlight {
-    font-size: 15px;
-    color: var(--success) !important;
+    font-size: 16px;
+    color: #059669 !important;
     font-weight: 800;
-    background: var(--success-light);
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--success-border);
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
+    background: rgba(16, 185, 129, 0.08);
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.04);
+    font-family: var(--serif);
 }
 
-.pipeline__audit-savings {
+.pipeline__audit-footer {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    font-family: var(--sans);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
     margin-top: 4px;
 }
 
-.pipeline__savings-badge {
-    font-size: 11px;
-    font-weight: 700;
+.pipeline__audit-check {
     color: white;
-    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-    padding: 6px 14px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
-    animation: bounceBadge 2.5s infinite;
-}
-
-@keyframes bounceBadge {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    flex-shrink: 0;
 }
 
 /* Step 4: Home Delivery Tracker */
