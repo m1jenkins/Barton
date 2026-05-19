@@ -5774,14 +5774,22 @@ a.call-text-cta__phone:hover {
 .case-study-card__wins-list li {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 16px;
     font-size: 13px;
     color: var(--text-body);
+}
+
+.case-study-card__wins-list li span {
+    text-align: left;
+    flex: 1;
 }
 
 .case-study-card__wins-list li strong {
     font-weight: 600;
     color: var(--text-dark);
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .case-study-card__wins-list li.case-study-card__total-win {
