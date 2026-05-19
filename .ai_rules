@@ -1,0 +1,28 @@
+# Barton UI & UX Design System Rules
+
+All AI agents editing files in this codebase must strictly adhere to the following design directives to maintain a premium, human-crafted, and cohesive digital experience.
+
+## 1. NO Pulsing Dots or Marker Animations
+- **Directive**: Do not use pulsing circular dots, radar rings, or radiating markers. These animations look cheap and template-heavy.
+- **Implementation**:
+  - Keep indicator dots steady and solid.
+  - Avoid `animation: pulseGlow`, `markerPulse`, `scanningPulse`, or similar keyframed loop animations on indicator dots.
+  - Status indicators should be simple, static, high-contrast, and clean.
+
+## 2. Eliminate Pointless "Confirmed" or Redundant Status Pills
+- **Directive**: Do not add redundant "completed," "confirmed," or "intake completed" pill badges to cards or panels when the context, headings, and details already make the status clear.
+- **Why**: Redundant status indicators (e.g., adding a "Keys in Hand" or "Intake Completed" pill right under a header that says "Keys in Hand" or "Perfect Spec Defined") clutter the interface, look extremely AI-generated, and decrease visual breathing room.
+- **Implementation**:
+  - Rely on clean typography, distinct section headings, or subtle checkmark icons.
+  - Do not use redundant `.pipeline__step-status` or status-dot pill rows.
+
+## 3. Minimize AI-Dashboard Pill Boxes (Same-Color Text & Background Tints)
+- **Directive**: Avoid using fully rounded, pill-shaped badges (`border-radius: 20px` or `50px`) with same-color text and light background tints (e.g., green text on green tint background with green border). This is a hallmark signature of generic AI template designs.
+- **Instead, Use Premium Human-Designed Tags**:
+  - **Sleek Geometry**: Use modern, clean rectangular tags with subtle corner rounding (e.g., `border-radius: 4px;` or `border-radius: 6px;`).
+  - **Minimalist Colors**: Use off-white or clean white backgrounds with thin, subtle, neutral borders (`1px solid var(--border)`) and neutral grey or charcoal text.
+  - **Elegant Status Indicators**: To convey status (e.g., success or alert), insert a tiny, static, solid colored dot next to neutral text inside the badge rather than coloring the entire badge container or text (e.g., a simple `#10b981` green dot next to clean text).
+  - **No Striking Contrast Fills**: Keep badges light and clean, letting the typography do the work.
+
+---
+*Failure to follow these rules results in a cheap, template-like user interface. Elevate the design by keeping it clean, minimal, and premium.*
