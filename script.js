@@ -234,5 +234,151 @@
             } catch (err) { /* tracking should never break navigation */ }
         });
     });
+    // ---- Interactive "How it Works" Pipeline ----
+    const pipelineProgress = document.getElementById('pipeline-progress');
+    const stepButtons = document.querySelectorAll('.pipeline__step-btn');
+    const contentCards = document.querySelectorAll('.pipeline__card');
+
+    function setStep(stepNum) {
+        // Update buttons active/completed states
+        stepButtons.forEach(btn => {
+            const btnStep = parseInt(btn.getAttribute('data-step'), 10);
+            if (btnStep === stepNum) {
+                btn.classList.add('active');
+                btn.classList.remove('completed');
+            } else if (btnStep < stepNum) {
+                btn.classList.remove('active');
+                btn.classList.add('completed');
+            } else {
+                btn.classList.remove('active');
+                btn.classList.remove('completed');
+            }
+        });
+
+        // Update cards active states
+        contentCards.forEach(card => {
+            const cardStep = parseInt(card.getAttribute('data-step-content'), 10);
+            if (cardStep === stepNum) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+
+        // Update progress line width via CSS Custom Property
+        if (pipelineProgress) {
+            const percent = ((stepNum - 1) / (stepButtons.length - 1)) * 100;
+            pipelineProgress.style.setProperty('--progress', percent + '%');
+        }
+    }
+
+    if (stepButtons.length) {
+        // Initialize step 1
+        setStep(1);
+
+        stepButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const stepNum = parseInt(this.getAttribute('data-step'), 10);
+                setStep(stepNum);
+            });
+        });
+    }
+
+    // ---- Interactive Savings Calculator ----
+    const priceSlider = document.getElementById('calc-price-slider');
+    const toggleButtons = document.querySelectorAll('.calculator__toggle-btn');
+
+    function calculateSavings() {
+        if (!priceSlider) return;
+
+        const price = parseInt(priceSlider.value, 10);
+        
+        // Update price display
+        const priceDisplay = document.getElementById('calc-price-display');
+        if (priceDisplay) {
+            priceDisplay.textContent = '$' + price.toLocaleString();
+        }
+
+        // Get active condition
+        const activeConditionBtn = document.querySelector('.calculator__toggle-btn[data-condition].active');
+        const condition = activeConditionBtn ? activeConditionBtn.getAttribute('data-condition') : 'new';
+
+        // Get active trade
+        const activeTradeBtn = document.querySelector('.calculator__toggle-btn[data-trade].active');
+        const trade = activeTradeBtn ? activeTradeBtn.getAttribute('data-trade') : 'no';
+
+        // Get active pay
+        const activePayBtn = document.querySelector('.calculator__toggle-btn[data-pay].active');
+        const pay = activePayBtn ? activePayBtn.getAttribute('data-pay') : 'finance';
+
+        // Calculations
+        // 1. Dealer Discount: 6% for new, 8% for used
+        const discountRate = condition === 'new' ? 0.06 : 0.08;
+        const dealerDiscount = Math.round(price * discountRate);
+
+        // 2. Junk Fees: Flat $1,200
+        const junkFees = 1200;
+
+        // 3. Financing Interest Saved: price * (1750 / 45000) if financing, 0 if cash
+        const interestSaved = pay === 'finance' ? Math.round(price * (1750 / 45000)) : 0;
+
+        // 4. Trade-in Valuation: $2,500 if yes, 0 if no
+        const tradeBoost = trade === 'yes' ? 2500 : 0;
+
+        // 5. Total Estimated Savings
+        const totalSavings = dealerDiscount + junkFees + interestSaved + tradeBoost;
+
+        // 6. Net ROI
+        const netRoi = totalSavings - 495;
+
+        // 7. Multiplier
+        const multiplier = (netRoi / 495).toFixed(1);
+
+        // Update DOM elements
+        const dealerDiscountEl = document.getElementById('calc-dealer-discount');
+        if (dealerDiscountEl) dealerDiscountEl.textContent = '$' + dealerDiscount.toLocaleString();
+
+        const addonsAvoidedEl = document.getElementById('calc-addons-avoided');
+        if (addonsAvoidedEl) addonsAvoidedEl.textContent = '$' + junkFees.toLocaleString();
+
+        const interestSavedEl = document.getElementById('calc-interest-saved');
+        if (interestSavedEl) interestSavedEl.textContent = '$' + interestSaved.toLocaleString();
+
+        const tradeBoostEl = document.getElementById('calc-trade-boost');
+        if (tradeBoostEl) tradeBoostEl.textContent = '$' + tradeBoost.toLocaleString();
+
+        const totalSavingsEl = document.getElementById('calc-total-savings');
+        if (totalSavingsEl) totalSavingsEl.textContent = '$' + totalSavings.toLocaleString();
+
+        const netRoiEl = document.getElementById('calc-net-roi');
+        if (netRoiEl) netRoiEl.textContent = '$' + netRoi.toLocaleString();
+
+        const roiMultiplierEl = document.getElementById('calc-roi-multiplier');
+        if (roiMultiplierEl) {
+            roiMultiplierEl.textContent = multiplier + 'x Return';
+        }
+    }
+
+    if (priceSlider) {
+        // Listen to slider changes
+        priceSlider.addEventListener('input', calculateSavings);
+
+        // Listen to active toggle buttons
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const parent = this.parentElement;
+                if (parent) {
+                    parent.querySelectorAll('.calculator__toggle-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                }
+                this.classList.add('active');
+                calculateSavings();
+            });
+        });
+
+        // Run initial calculation to match active slider state on page load
+        calculateSavings();
+    }
 
 })();
