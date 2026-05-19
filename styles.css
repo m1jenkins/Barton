@@ -2072,9 +2072,9 @@ a.call-text-cta__phone:hover {
 .selection__title {
     font-family: var(--serif);
     color: var(--text-dark);
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     font-size: 20px;
-    font-weight: 400
+    font-weight: 700
 }
 
 .selection__desc {
@@ -4627,7 +4627,7 @@ a.call-text-cta__phone:hover {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1100px;
     margin-inline: auto;
-    align-items: center;
+    align-items: stretch;
     gap: 24px;
 }
 
