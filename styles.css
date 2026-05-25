@@ -175,23 +175,7 @@ ul {
 }
 
 .announcement-banner {
-    color: #fff;
-    z-index: 1100;
-    width: 100%;
-    height: 38px;
-    font-family: var(--sans);
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #1e1b4b 0%, #2563eb 50%, #1e1b4b 100%);
-    align-items: center;
-    font-size: 13px;
-    font-weight: 500;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    box-shadow: 0 2px 4px #0000001a
+    display: none;
 }
 
 .announcement-banner__track {
@@ -236,7 +220,7 @@ ul {
     width: 100%;
     transition: background .35s, box-shadow .35s, top .3s;
     position: fixed;
-    top: 38px;
+    top: 0;
     left: 0
 }
 
