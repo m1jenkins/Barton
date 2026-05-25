@@ -234,55 +234,7 @@
             } catch (err) { /* tracking should never break navigation */ }
         });
     });
-    // ---- Interactive "How it Works" Pipeline ----
-    const pipelineProgress = document.getElementById('pipeline-progress');
-    const stepButtons = document.querySelectorAll('.pipeline__step-btn');
-    const contentCards = document.querySelectorAll('.pipeline__card');
 
-    function setStep(stepNum) {
-        // Update buttons active/completed states
-        stepButtons.forEach(btn => {
-            const btnStep = parseInt(btn.getAttribute('data-step'), 10);
-            if (btnStep === stepNum) {
-                btn.classList.add('active');
-                btn.classList.remove('completed');
-            } else if (btnStep < stepNum) {
-                btn.classList.remove('active');
-                btn.classList.add('completed');
-            } else {
-                btn.classList.remove('active');
-                btn.classList.remove('completed');
-            }
-        });
-
-        // Update cards active states
-        contentCards.forEach(card => {
-            const cardStep = parseInt(card.getAttribute('data-step-content'), 10);
-            if (cardStep === stepNum) {
-                card.classList.add('active');
-            } else {
-                card.classList.remove('active');
-            }
-        });
-
-        // Update progress line width via CSS Custom Property
-        if (pipelineProgress) {
-            const percent = ((stepNum - 1) / (stepButtons.length - 1)) * 100;
-            pipelineProgress.style.setProperty('--progress', percent + '%');
-        }
-    }
-
-    if (stepButtons.length) {
-        // Initialize step 1
-        setStep(1);
-
-        stepButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-                const stepNum = parseInt(this.getAttribute('data-step'), 10);
-                setStep(stepNum);
-            });
-        });
-    }
 
 
 })();
