@@ -1220,7 +1220,9 @@ ul {
 }
 
 .faq {
-    background: var(--bg-page);
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: var(--section-pad) 32px
 }
 
@@ -1558,6 +1560,8 @@ a.call-text-cta__phone:hover {
 
 .service-area-map {
     background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: var(--section-pad) 32px
 }
 
@@ -5538,3 +5542,32 @@ a.call-text-cta__phone:hover {
     }
 }
 
+/* ==========================================================================
+   Section Contrast & Alternating Rhythm Custom Overrides
+   ========================================================================== */
+
+/* City-specific pages layout adjustments (Dynamic sibling selectors) */
+
+/* 1. When the map immediately follows FAQ (e.g., on City pages where .cities is omitted)
+   Shift map background from warm back to white, and remove borders to alternate smoothly */
+.faq + .service-area-map {
+    background: var(--bg-white);
+    border-top: none;
+    border-bottom: none;
+}
+
+/* 2. When the contact section follows a shifted map, make contact warm with a top border */
+.faq + .service-area-map + .contact {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    border-bottom: none; /* Blends perfectly with dark footer */
+}
+
+/* About page layout adjustments */
+
+/* When the contact section immediately follows the about-values section on the About page */
+.about-values + .contact {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+}
