@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordStatus": "observed_current_pending_owner_approval",
+  "lastObservedAt": "2026-08-12",
+  "currency": "USD",
+  "sourceOfTruth": {
+    "url": "https://www.driverightcarbuying.com/schedule.html",
+    "file": "schedule.html",
+    "note": "Prices and features below are transcribed from the current page and checkout links; they are not an owner or legal approval."
+  },
+  "services": [
+    {
+      "id": "https://www.driverightcarbuying.com/#service-consultation",
+      "name": "Car Buying Consultant",
+      "price": 295,
+      "priceType": "flat_fee",
+      "features": [
+        "Research report",
+        "Personalized shortlist with pros and cons",
+        "Total cost of ownership analysis",
+        "30-minute consultation",
+        "Written recommendation"
+      ],
+      "creditTowardFullService": 100,
+      "checkoutUrl": "https://book.stripe.com/eVqcMY3ordQncf201604801",
+      "availability": "pending_owner_confirmation"
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-full",
+      "name": "Hire Drive Right Full Service",
+      "price": 495,
+      "priceType": "flat_fee",
+      "features": [
+        "New used and certified pre-owned search",
+        "Price negotiation and fee review",
+        "Dedicated advisor",
+        "Documented vehicle recommendations",
+        "Expected start time confirmed after payment and intake verification"
+      ],
+      "checkoutUrl": "https://book.stripe.com/cNi14ge357rZena29e04800",
+      "availability": "pending_owner_confirmation",
+      "serviceLevelReview": "pending_operations_confirmation"
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-concierge",
+      "name": "Ultimate Concierge",
+      "price": 895,
+      "priceType": "flat_fee",
+      "features": [
+        "Everything in Full Service",
+        "Auction forum and niche-market sourcing",
+        "Priority access",
+        "Specialized luxury and exotic vehicle research",
+        "Expanded transaction coordination",
+        "Delivery coordination where available"
+      ],
+      "checkoutUrl": "https://buy.stripe.com/8x2fZa6AD27Ffre7ty04803",
+      "availability": "pending_owner_confirmation"
+    }
+  ],
+  "commercialTerms": {
+    "guarantee": {
+      "status": "pending_owner_and_legal_review",
+      "approvedPublicCopy": null,
+      "reason": "The site uses Savings Guarantee language while the policy page also limits guarantees. No governed terms artifact was found."
+    },
+    "refund": {
+      "status": "pending_owner_and_legal_review",
+      "approvedPublicCopy": null,
+      "reason": "Refund eligibility timing exclusions remedy and relationship to the savings claim require one approved policy."
+    },
+    "freeConsultation": {
+      "status": "conflicts_with_observed_295_price",
+      "approvedPublicCopy": null
+    }
+  },
+  "approval": {
+    "businessOwner": null,
+    "legalReviewer": null,
+    "approvedAt": null,
+    "nextReviewAt": null
+  }
+}

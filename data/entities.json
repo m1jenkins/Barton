@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "recordStatus": "draft_pending_owner_confirmation",
+  "lastObservedAt": "2026-08-12",
+  "organization": {
+    "id": "https://www.driverightcarbuying.com/#organization",
+    "schemaType": "Organization",
+    "name": "Drive Right",
+    "url": "https://www.driverightcarbuying.com/",
+    "telephone": "+15129104938",
+    "email": "hello@driverightcarbuying.com",
+    "areaServed": "Texas",
+    "sameAs": [],
+    "sameAsStatus": "pending_owner_confirmation"
+  },
+  "businessLocations": [
+    {
+      "id": "https://www.driverightcarbuying.com/#austin-business",
+      "schemaTypes": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "name": "Drive Right Austin",
+      "url": "https://www.driverightcarbuying.com/austin.html",
+      "parentOrganizationRef": "https://www.driverightcarbuying.com/#organization",
+      "telephone": "+15129104938",
+      "email": "hello@driverightcarbuying.com",
+      "address": {
+        "status": "pending_owner_confirmation",
+        "streetAddress": null,
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "postalCode": null,
+        "addressCountry": "US",
+        "publicDisplayApproved": false
+      },
+      "geo": {
+        "status": "pending_owner_confirmation",
+        "latitude": null,
+        "longitude": null
+      },
+      "note": "Do not publish a street address geo point or business-profile URL until the owner confirms a real customer-facing or policy-compliant location and approves public display."
+    }
+  ],
+  "serviceAreas": [
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-arlington",
+      "schemaType": "City",
+      "name": "Arlington",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/arlington.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-dallas",
+      "schemaType": "City",
+      "name": "Dallas",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/dallas.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-el-paso",
+      "schemaType": "City",
+      "name": "El Paso",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/el-paso.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-fort-worth",
+      "schemaType": "City",
+      "name": "Fort Worth",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/fort-worth.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-houston",
+      "schemaType": "City",
+      "name": "Houston",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/houston.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-new-braunfels",
+      "schemaType": "City",
+      "name": "New Braunfels",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/new-braunfels.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-san-antonio",
+      "schemaType": "City",
+      "name": "San Antonio",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/san-antonio.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-san-marcos",
+      "schemaType": "City",
+      "name": "San Marcos",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/san-marcos.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    }
+  ],
+  "schemaParityRule": "Only render facts that are approved in this record and visibly supported on the corresponding page. Service-area pages must not create fictional LocalBusiness locations.",
+  "approval": {
+    "businessOwner": null,
+    "approvedAt": null,
+    "nextReviewAt": null
+  }
+}

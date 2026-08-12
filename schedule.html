@@ -6,19 +6,11 @@
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18071301983"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-18071301983');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295</title>
     <meta name="description"
-        content="Compare Drive Right's car buying service plans. From a $295 advisory consultation to full-service negotiation at $495 flat fee. Average client saves $2,400. Book today.">
+        content="Compare Drive Right's car buying service plans, from a $295 advisory consultation to $495 Full Service and $895 Concierge options.">
     <meta name="keywords"
         content="car buying service pricing, hire car broker, car buying consultation, Drive Right pricing, car negotiation service cost, car buying service Texas cost">
     <meta name="robots" content="index, follow">
@@ -29,69 +21,83 @@
     <meta property="og:url" content="https://www.driverightcarbuying.com/schedule.html">
     <meta property="og:title" content="Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295">
     <meta property="og:description"
-        content="Compare Drive Right's car buying service plans. Average client saves $2,400. From advisory consultations to full-service negotiation.">
-    <meta property="og:image" content="https://i.imgur.com/9w8MEXq.jpg">
+        content="Compare Drive Right's $295 consultation, $495 Full Service, and $895 Concierge options.">
+    <meta property="og:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.driverightcarbuying.com/schedule.html">
     <meta name="twitter:title" content="Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295">
     <meta name="twitter:description"
-        content="Compare Drive Right's car buying plans. Average client saves $2,400. From advisory consultations to full-service negotiation.">
-    <meta name="twitter:image" content="https://i.imgur.com/9w8MEXq.jpg">
+        content="Compare Drive Right's $295 consultation, $495 Full Service, and $895 Concierge options.">
+    <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
 
-    <!-- JSON-LD: Service Offerings -->
+<!-- JSON-LD: governed service tiers -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Car Buying Service",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Drive Right",
-        "url": "https://www.driverightcarbuying.com/"
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Texas",
-        "sameAs": "https://en.wikipedia.org/wiki/Texas"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Car Buying Services",
-        "itemListElement": [
-          {
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-consultation",
+          "name": "Car Buying Consultation",
+          "serviceType": "Car Buying Consultation",
+          "url": "https://www.driverightcarbuying.com/schedule.html#consultation",
+          "provider": {
+            "@id": "https://www.driverightcarbuying.com/#organization"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
+          "offers": {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Car Buying Consultant",
-              "description": "Expert vehicle research, personalized shortlist with pros and cons, total cost of ownership analysis, and a 30-minute consultation."
-            },
             "price": "295",
-            "priceCurrency": "USD"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hire Drive Right: Full Service",
-              "description": "Full car search across new, used, and CPO inventory with price negotiation, hidden-fee protection, and a dedicated advisor from search to signing."
-            },
-            "price": "495",
-            "priceCurrency": "USD"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Ultimate Concierge",
-              "description": "White-glove car buying experience including expanded search across auctions and niche platforms, top-priority access, and door-to-door delivery coordination."
-            },
-            "price": "895",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#consultation"
           }
-        ]
-      }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-full",
+          "name": "Full Service Car Buying",
+          "serviceType": "Full Service Car Buying",
+          "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+          "provider": {
+            "@id": "https://www.driverightcarbuying.com/#organization"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "495",
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#full-service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-concierge",
+          "name": "Ultimate Concierge Car Buying",
+          "serviceType": "Concierge Car Buying",
+          "url": "https://www.driverightcarbuying.com/schedule.html#concierge",
+          "provider": {
+            "@id": "https://www.driverightcarbuying.com/#organization"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "895",
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#concierge"
+          }
+        }
+      ]
     }
     </script>
 
@@ -107,7 +113,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="https://i.imgur.com/i4diUoq.png">
+    <link rel="icon" type="image/png" href="https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-64.png">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -123,56 +129,29 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP9W4DQD97"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-KP9W4DQD97');
-    </script>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0"
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    </div>
+<!-- End Google Tag Manager (noscript) -->
 
     <!-- ===== NAVIGATION ===== -->
     <nav class="nav" id="nav">
         <div class="nav__inner">
-            <a href="index.html" class="nav__wordmark">Drive Right</a>
+            <a href="/" class="nav__wordmark">Drive Right</a>
             <ul class="nav__links">
-                <li><a href="index.html">Back to Home</a></li>
+                <li><a href="/">Back to Home</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <section class="selection">
+        <section class="selection" id="pricing">
             <div class="selection__header reveal visible">
                 <h1 class="section-heading">Choose the right service for your car search.</h1>
                 
-            </div>
-
-            <!-- Trust Stats Bar -->
-            <div class="selection__trust-bar reveal visible" style="transition-delay: 0.1s;">
-                <div class="selection__trust-stat">
-                    <span class="selection__trust-value">$2,400+</span>
-                    <span class="selection__trust-label">avg. client savings</span>
-                </div>
-                <div class="selection__trust-divider"></div>
-                <div class="selection__trust-stat">
-                    <span class="selection__trust-value">12+ hrs</span>
-                    <span class="selection__trust-label">of time saved</span>
-                </div>
-                <div class="selection__trust-divider"></div>
-                <div class="selection__trust-stat">
-                    <span class="selection__trust-value">$0</span>
-                    <span class="selection__trust-label">dealer kickbacks</span>
-                </div>
             </div>
 
             <!-- ALL 3 Service Tiers - No Tabs -->
@@ -188,7 +167,7 @@
                         </svg>
                     </div>
                     <h2 class="selection__title">Car Buying Consultant</h2>
-                    <p class="selection__desc">Not sure what car is right for you? Get expert research, a personalized report, and a 30-minute walkthrough.</p>
+                    <p class="selection__desc">Not sure what car is right for you? Get vehicle research, a personalized report, and a 30-minute walkthrough.</p>
                     <div class="selection__price">$295 <span class="selection__price-label">Advisory Fee</span></div>
                     <div class="selection__features">
                         <div class="selection__feature">
@@ -221,7 +200,7 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>30-minute expert consultation</span>
+                            <span>30-minute consultation</span>
                         </div>
                         <div class="selection__feature">
                             <span class="selection__feature-icon-wrapper">
@@ -235,7 +214,7 @@
                     <div class="selection__credit-note">
                         $100 credited toward Full Service if you upgrade
                     </div>
-                    <a href="https://book.stripe.com/eVqcMY3ordQncf201604801" rel="noopener noreferrer" target="_blank"
+                    <a href="#pricing" data-service-tier="consultation"
                         class="btn--outline">Book Consultation</a>
                 </div>
  
@@ -254,7 +233,7 @@
                         </svg>
                     </div>
                     <h2 class="selection__title">Hire Drive Right</h2>
-                    <p class="selection__desc">Ready to find your next car? We'll start your full search within 12 hours — from sourcing to signing.</p>
+                    <p class="selection__desc">Ready to find your next car? Your advisor will confirm the expected start time after payment and intake verification.</p>
                     <div class="selection__price">$495 <span class="selection__price-label">Flat Fee</span></div>
                     <div class="selection__features">
                         <div class="selection__feature">
@@ -271,7 +250,7 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>Full price negotiation &amp; hidden-fee protection</span>
+                            <span>Price negotiation and fee review</span>
                         </div>
                         <div class="selection__feature">
                             <span class="selection__feature-icon-wrapper">
@@ -287,7 +266,7 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>Unbiased vehicle recommendations</span>
+                            <span>Documented vehicle recommendations</span>
                         </div>
                         <div class="selection__feature">
                             <span class="selection__feature-icon-wrapper">
@@ -295,10 +274,10 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>Search begins within 12 hours</span>
+                            <span>Expected start time confirmed after intake</span>
                         </div>
                     </div>
-                    <a href="https://book.stripe.com/cNi14ge357rZena29e04800" rel="noopener noreferrer" target="_blank"
+                    <a href="#pricing" data-service-tier="full_service"
                         class="btn--primary">Book Now — $495</a>
                 </div>
  
@@ -314,7 +293,7 @@
                         </svg>
                     </div>
                     <h2 class="selection__title">Ultimate Concierge</h2>
-                    <p class="selection__desc">White-glove experience: we source rare vehicles, manage the full transaction, and coordinate door-to-door delivery.</p>
+                    <p class="selection__desc">Expanded support: we can search specialized sources, coordinate transaction steps, and request delivery where available.</p>
                     <div class="selection__price">$895 <span class="selection__price-label">Concierge Fee</span></div>
                     <div class="selection__features">
                         <div class="selection__feature">
@@ -347,7 +326,7 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>Luxury &amp; exotic brand expertise</span>
+                            <span>Specialized luxury and exotic research</span>
                         </div>
                         <div class="selection__feature">
                             <span class="selection__feature-icon-wrapper">
@@ -355,7 +334,7 @@
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <span>Full transaction management</span>
+                            <span>Expanded transaction coordination</span>
                         </div>
                         <div class="selection__feature">
                             <span class="selection__feature-icon-wrapper">
@@ -366,24 +345,11 @@
                             <span>Door-to-door delivery coordination</span>
                         </div>
                     </div>
-                    <a href="https://buy.stripe.com/8x2fZa6AD27Ffre7ty04803" rel="noopener noreferrer" target="_blank"
+                    <a href="#pricing" data-service-tier="concierge"
                         class="btn--primary">Book Now — $895</a>
                 </div>
             </div>
-
-            <!-- Guarantee / Trust Signal -->
-            <div class="selection__guarantee selection__guarantee--savings reveal visible" style="transition-delay: 0.3s;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <polyline points="9 12 11 14 15 10" />
-                </svg>
-                <div class="selection__guarantee-body">
-                    <p class="selection__guarantee-title">Our Savings Guarantee</p>
-                    <p class="selection__guarantee-text">If Drive Right doesn't save you at least the cost of your service fee on your vehicle purchase, we'll refund it in full — no questions asked.</p>
-                    <p class="selection__guarantee-sub">We never accept kickbacks or commissions from dealerships. Our only loyalty is to you.</p>
-                </div>
-            </div>
+            <noscript><p class="checkout-script-note">Secure online checkout requires JavaScript so the payment can be linked to a verified service record. Call or text <a href="tel:+15129104938">(512) 910-4938</a> for help booking.</p></noscript>
 
             <!-- Call or Text for More Info -->
             <div class="call-text-cta call-text-cta--bordered reveal visible">
@@ -396,7 +362,7 @@
                     <h2 class="call-text-cta__headline">Want More Information?</h2>
                     <p class="call-text-cta__subtext">Have questions about our services? Call or text us at:</p>
                     <a href="tel:+15129104938" class="call-text-cta__phone">(512) 910-4938</a>
-                    <p class="call-text-cta__note">We're here to help you find the perfect car with no pressure, no hassle.</p>
+                    <p class="call-text-cta__note">Contact us to discuss your vehicle criteria and the available service options.</p>
                 </div>
             </div>
 

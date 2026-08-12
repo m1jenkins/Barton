@@ -1,0 +1,74 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "austincarbuyingservice.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.austincarbuyingservice.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "driverightcarbuying.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry.html",
+      "destination": "/schedule.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-dealer-addons-exposed.html",
+      "destination": "/blog-dealership-addons-complete-guide.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-roi-car-buying-service.html",
+      "destination": "/how-it-works.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-flat-fees-vs-commissions.html",
+      "destination": "/how-it-works.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-zero-kickbacks-promise.html",
+      "destination": "/how-it-works.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-skip-dealership-marathon.html",
+      "destination": "/how-it-works.html",
+      "permanent": true
+    }
+  ]
+}

@@ -6,6 +6,10 @@
     padding: 0
 }
 
+[hidden] {
+    display: none !important
+}
+
 :root {
     --primary: #0f172a;
     --primary-hover: #1e293b;
@@ -164,14 +168,71 @@ ul {
 }
 
 .reveal {
-    opacity: 0;
-    transition: opacity .6s, transform .6s;
-    transform: translateY(20px)
+    opacity: 1;
+    transform: none
 }
 
 .reveal.visible {
     opacity: 1;
     transform: translateY(0)
+}
+
+.form-honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important
+}
+
+.form-status {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600
+}
+
+.form-status--success {
+    color: #047857
+}
+
+.form-status--error {
+    color: #b91c1c
+}
+
+.payment-verification {
+    min-height: 60vh;
+    padding: 160px 24px 80px;
+    background: var(--bg-warm)
+}
+
+body[data-purchase-tier] .nav {
+    background: rgba(2, 6, 23, 0.96);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08)
+}
+
+.payment-verification__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-white);
+    text-align: center
+}
+
+.payment-verification__inner h1 {
+    color: var(--text-dark);
+    margin-bottom: 12px
+}
+
+.payment-verification__inner p + p {
+    margin-top: 12px
+}
+
+.payment-verification__inner a {
+    color: var(--accent);
+    text-decoration: underline
 }
 
 .announcement-banner {
@@ -348,13 +409,26 @@ ul {
 }
 
 .hero {
-    background: url('https://i.imgur.com/SLxIl6Y.jpg') center/cover no-repeat;
+    background: var(--bg-warm);
     min-height: clamp(600px, 92vh, 900px);
     padding: 100px 32px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+}
+
+.hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden
+}
+
+.hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
 }
 
 .hero:before {
@@ -3400,7 +3474,12 @@ a.call-text-cta__phone:hover {
     margin-top: 32px;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url('https://i.imgur.com/luaJenu.jpg');
+    background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), image-set(
+        url('/assets/external/optimized/cities-austin-skyline-960.avif') type('image/avif') 1x,
+        url('/assets/external/optimized/cities-austin-skyline-1183.avif') type('image/avif') 2x,
+        url('/assets/external/optimized/cities-austin-skyline-960.webp') type('image/webp') 1x,
+        url('/assets/external/optimized/cities-austin-skyline-1183.webp') type('image/webp') 2x
+    );
     background-size: cover;
     background-position: center;
     padding: clamp(24px, 4vw, 40px)
@@ -5643,4 +5722,38 @@ a.call-text-cta__phone:hover {
     background: var(--bg-warm);
     border-top: 1px solid var(--border);
     border-bottom: none;
+}
+/* Editorial containment and source status */
+.editorial-status {
+    max-width: 920px;
+    margin: 28px auto 0;
+    padding: 16px 20px;
+    border: 1px solid #d8a343;
+    border-radius: 10px;
+    background: #fff8e8;
+    color: #3d321e;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.editorial-status a,
+.article-source-note a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.article-source-note {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.checkout-script-note {
+    margin: 24px auto 0;
+    max-width: 720px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-warm);
+    color: var(--text-muted);
+    text-align: center;
 }
