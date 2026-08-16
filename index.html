@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
+    <script>(function (w, d, s, l, i) { if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); } })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
@@ -95,21 +95,21 @@
               "author": {"@type": "Person", "name": "Michael R."},
               "reviewRating": {"@type": "Rating", "ratingValue": "5"},
               "reviewBody": "Drive Right found me a new Tahoe under MSRP and negoaited away the dealer add-ons. I saved over $5k and didn't have to waste a Saturday in a dealer",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-michael-r-160.webp"
+              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-michael-r-ai-160.webp"
             },
             {
               "@type": "Review",
               "author": {"@type": "Person", "name": "Sarah K."},
               "reviewRating": {"@type": "Rating", "ratingValue": "5"},
               "reviewBody": "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time.",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-sarah-k-160.webp"
+              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-sarah-k-ai-160.webp"
             },
             {
               "@type": "Review",
               "author": {"@type": "Person", "name": "David L."},
               "reviewRating": {"@type": "Rating", "ratingValue": "5"},
               "reviewBody": "I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-david-l-160.webp"
+              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-david-l-ai-160.webp"
             }
           ]
         }
@@ -146,18 +146,19 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload"
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+        media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
     </noscript>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="preload" as="image"
         href="/assets/external/hero/hero-aerial-car-dealership-960.avif"
         imagesrcset="/assets/external/hero/hero-aerial-car-dealership-640.avif 640w, /assets/external/hero/hero-aerial-car-dealership-960.avif 960w, /assets/external/hero/hero-aerial-car-dealership-1440.avif 1440w, /assets/external/hero/hero-aerial-car-dealership-1920.avif 1920w"
-        imagesizes="100vw" type="image/avif" fetchpriority="high">
+        imagesizes="100vw"
+        type="image/avif" fetchpriority="high">
 
     <!-- Google tag (gtag.js) -->
 </head>
@@ -206,7 +207,7 @@
                 <source type="image/webp"
                     srcset="/assets/external/hero/hero-aerial-car-dealership-640.webp 640w, /assets/external/hero/hero-aerial-car-dealership-960.webp 960w, /assets/external/hero/hero-aerial-car-dealership-1440.webp 1440w, /assets/external/hero/hero-aerial-car-dealership-1920.webp 1920w"
                     sizes="100vw">
-                <img src="/assets/external/hero/hero-aerial-car-dealership-1440.webp" alt="" width="1440" height="786"
+                <img src="/assets/external/hero/hero-aerial-car-dealership-960.webp" alt="" width="1672" height="941"
                     fetchpriority="high" decoding="async">
             </picture>
             <div class="hero__content">
@@ -245,7 +246,10 @@
                         </button>
                     </form>
                     <div class="hero__card-testimonial" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); text-align: left; display: flex; align-items: center; gap: 10px;">
-                        <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="32" height="32" loading="lazy" decoding="async" style="border-radius: 50%; object-fit: cover;">
+                        <picture>
+                            <source type="image/avif" srcset="/assets/external/optimized/testimonial-michael-r-160.avif">
+                            <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="32" height="32" loading="lazy" decoding="async" style="border-radius: 50%; object-fit: cover;">
+                        </picture>
                         <div>
                             <strong>Michael R.</strong> <span style="color: #f59e0b;">★★★★★</span>
                             <p style="margin: 2px 0 0; font-family: var(--serif); font-style: italic; line-height: 1.4;">"Drive Right found me a new Tahoe under MSRP... I saved over $5k!"</p>
@@ -570,7 +574,10 @@
                         <p class="testimonial-card__text">"Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons. I saved over $7k and didn't have to waste a Saturday in a dealer lobby."</p>
                         <div class="testimonial-card__author">
                             <div class="testimonial-card__avatar">
-                                <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                <picture>
+                                    <source type="image/avif" srcset="/assets/external/optimized/testimonial-michael-r-160.avif">
+                                    <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                </picture>
                             </div>
                             <div class="testimonial-card__author-info">
                                 <span class="testimonial-card__name">Michael R.</span>
@@ -583,7 +590,10 @@
                         <p class="testimonial-card__text">"I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time."</p>
                         <div class="testimonial-card__author">
                             <div class="testimonial-card__avatar">
-                                <img src="/assets/external/optimized/testimonial-sarah-k-160.webp" alt="Sarah K. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                <picture>
+                                    <source type="image/avif" srcset="/assets/external/optimized/testimonial-sarah-k-160.avif">
+                                    <img src="/assets/external/optimized/testimonial-sarah-k-160.webp" alt="Sarah K. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                </picture>
                             </div>
                             <div class="testimonial-card__author-info">
                                 <span class="testimonial-card__name">Sarah K.</span>
@@ -596,7 +606,10 @@
                         <p class="testimonial-card__text">"I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars."</p>
                         <div class="testimonial-card__author">
                             <div class="testimonial-card__avatar">
-                                <img src="/assets/external/optimized/testimonial-david-l-160.webp" alt="David L. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                <picture>
+                                    <source type="image/avif" srcset="/assets/external/optimized/testimonial-david-l-160.avif">
+                                    <img src="/assets/external/optimized/testimonial-david-l-160.webp" alt="David L. profile photo" width="160" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                                </picture>
                             </div>
                             <div class="testimonial-card__author-info">
                                 <span class="testimonial-card__name">David L.</span>
@@ -852,7 +865,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
