@@ -7,7 +7,7 @@
     "node": "24.x"
   },
   "scripts": {
-    "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js",
+    "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/analytics-outbox.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js",
     "test": "node --test api/_tests/*.test.mjs"
   },
   "dependencies": {

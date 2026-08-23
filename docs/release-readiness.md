@@ -1,6 +1,6 @@
 # Drive Right Release Readiness
 
-Status date: August 12, 2026
+Status date: August 20, 2026
 
 ## Local release-candidate status
 
@@ -25,7 +25,7 @@ node scripts/check-redirects.mjs
 
 ## Gate 1: infrastructure and payment setup
 
-- Apply `db/001_durable_leads_and_payments.sql` to the production PostgreSQL database.
+- Apply the numbered `db/*.sql` migrations in order to the production PostgreSQL database.
 - Set the production variables listed in `.env.example`; keep optional Turnstile enforcement disabled until the visible client widget is installed and tested.
 - Configure each Stripe Payment Link to return to its matching confirmation page with the literal `{CHECKOUT_SESSION_ID}` parameter.
 - Register the signature-verified Stripe webhook and complete duplicate-delivery, amount/currency, refresh, direct-visit, bot, and delayed-webhook tests.
@@ -36,13 +36,15 @@ node scripts/check-redirects.mjs
 
 - Remove the live GTM container's stale all-form and price/click-text conversion triggers before release.
 - Configure only the approved client events: `cta_click`, `phone_click`, `generate_lead`, and `begin_checkout`.
-- Add a consent-aware dispatcher for durable outbox events. `consultation_booked`, `service_purchase`, and `onboarding_complete` must originate from verified server records, not success-page loads.
+- Configure the consent-approved HTTPS collector for the implemented outbox dispatcher. Standard `purchase` and `onboarding_complete` events must originate from verified server records, not success-page loads; the collector must honor the durable event ID and idempotency header.
+- Add a scheduled invocation path for unattended retries and alert when outbox rows reach the configured attempt cap; request-triggered dispatch alone cannot guarantee recovery during quiet periods.
 - Reconcile Stripe purchases, the purchase ledger, outbox deliveries, and analytics daily until the verified consultation count is within 5%.
 - Do not describe the measurement goal as complete while the dispatcher or destination credentials are absent.
 
 ## Gate 3: deployment and canonical verification
 
 - Deploy to a preview, run the full form/payment/browser matrix, then promote the same artifact to production.
+- Live check on August 20, 2026: the apex-to-`www` hop preserves the path and query string but still returns temporary `307`; the other ten host/path cases pass. Correct the upstream Vercel/domain redirect and rerun the matrix before promotion.
 - Verify Cloudflare and Vercel produce one permanent hop for HTTP, apex/www, `/index.html`, malformed `.html/`, the legacy domain, and `inquiry.html`; preserve query strings.
 - Confirm the legacy domain no longer serves a competing 200 response.
 - Inspect sanitized edge/function logs and validate crawler IPs using the applicable official method before concluding that named crawlers have access.

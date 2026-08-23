@@ -1,13 +1,85 @@
 #!/usr/bin/env node
 
+import { readFile } from 'node:fs/promises';
+
 const permanentStatuses = new Set([301, 308]);
 const failures = [];
 const timeoutMs = Number(process.env.REDIRECT_TIMEOUT_MS ?? 15_000);
+const configOnly = process.argv.includes('--config-only');
+
+const requiredRedirects = [
+  {
+    name: 'legacy apex domain',
+    source: '/:path*',
+    host: 'austincarbuyingservice.com',
+    destination: 'https://www.driverightcarbuying.com/:path*',
+  },
+  {
+    name: 'legacy www domain',
+    source: '/:path*',
+    host: 'www.austincarbuyingservice.com',
+    destination: 'https://www.driverightcarbuying.com/:path*',
+  },
+  {
+    name: 'canonical apex domain',
+    source: '/:path*',
+    host: 'driverightcarbuying.com',
+    destination: 'https://www.driverightcarbuying.com/:path*',
+  },
+  { name: 'index.html', source: '/index.html', destination: '/' },
+  { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
+  {
+    name: 'legacy dealer add-ons route',
+    source: '/blog-dealer-addons-exposed.html',
+    destination: '/blog-dealership-addons-complete-guide.html',
+  },
+  { name: 'legacy ROI route', source: '/blog-roi-car-buying-service.html', destination: '/how-it-works.html' },
+  { name: 'legacy flat-fee route', source: '/blog-flat-fees-vs-commissions.html', destination: '/how-it-works.html' },
+  { name: 'legacy kickbacks route', source: '/blog-zero-kickbacks-promise.html', destination: '/how-it-works.html' },
+  { name: 'legacy dealership-marathon route', source: '/blog-skip-dealership-marathon.html', destination: '/how-it-works.html' },
+];
 
 function usageError(message) {
   console.error(`Configuration error: ${message}`);
   console.error('Usage: BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://www.austincarbuyingservice.com node scripts/check-redirects.mjs');
+  console.error('       node scripts/check-redirects.mjs --config-only');
   process.exit(2);
+}
+
+function redirectHost(rule) {
+  return rule.has?.find((condition) => condition.type === 'host')?.value;
+}
+
+async function checkLocalConfig() {
+  let config;
+  try {
+    config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+  } catch (error) {
+    failures.push(`Local redirect config: could not read vercel.json: ${error.message}`);
+    return;
+  }
+
+  if (!Array.isArray(config.redirects)) {
+    failures.push('Local redirect config: vercel.json must contain a redirects array.');
+    return;
+  }
+
+  for (const expected of requiredRedirects) {
+    const match = config.redirects.find((rule) => (
+      rule.source === expected.source
+      && rule.destination === expected.destination
+      && redirectHost(rule) === expected.host
+    ));
+
+    if (!match) {
+      failures.push(
+        `Local redirect config: missing ${expected.name} redirect ${expected.source} → ${expected.destination}`
+        + `${expected.host ? ` for host ${expected.host}` : ''}.`,
+      );
+    } else if (match.permanent !== true) {
+      failures.push(`Local redirect config: ${expected.name} must set permanent: true so Vercel emits HTTP 308.`);
+    }
+  }
 }
 
 function parseBase(name) {
@@ -36,6 +108,19 @@ function buildUrl(base, pathname, query) {
   return url;
 }
 
+await checkLocalConfig();
+
+if (configOnly) {
+  if (failures.length) {
+    console.error(`Redirect configuration validation failed with ${failures.length} issue${failures.length === 1 ? '' : 's'}:`);
+    for (const failure of failures) console.error(`✖ ${failure}`);
+    process.exitCode = 1;
+  } else {
+    console.log(`✓ Redirect configuration retains ${requiredRedirects.length} permanent redirects, including apex and legacy routes.`);
+  }
+  process.exit();
+}
+
 const base = parseBase('BASE_URL');
 const legacy = parseBase('LEGACY_BASE_URL');
 
@@ -61,6 +146,7 @@ if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.
     name: 'Apex/www host canonicalization',
     source: alternateSource,
     target: buildUrl(base, '/about.html', query),
+    statuses: new Set([308]),
   });
 }
 
@@ -85,6 +171,31 @@ cases.push(
     source: buildUrl(base, '/inquiry.html', query),
     target: buildUrl(base, '/schedule.html', query),
   },
+  {
+    name: 'Legacy dealer add-ons route',
+    source: buildUrl(base, '/blog-dealer-addons-exposed.html', query),
+    target: buildUrl(base, '/blog-dealership-addons-complete-guide.html', query),
+  },
+  {
+    name: 'Legacy ROI route',
+    source: buildUrl(base, '/blog-roi-car-buying-service.html', query),
+    target: buildUrl(base, '/how-it-works.html', query),
+  },
+  {
+    name: 'Legacy flat-fee route',
+    source: buildUrl(base, '/blog-flat-fees-vs-commissions.html', query),
+    target: buildUrl(base, '/how-it-works.html', query),
+  },
+  {
+    name: 'Legacy kickbacks route',
+    source: buildUrl(base, '/blog-zero-kickbacks-promise.html', query),
+    target: buildUrl(base, '/how-it-works.html', query),
+  },
+  {
+    name: 'Legacy dealership-marathon route',
+    source: buildUrl(base, '/blog-skip-dealership-marathon.html', query),
+    target: buildUrl(base, '/how-it-works.html', query),
+  },
 );
 
 async function request(url) {
@@ -108,8 +219,11 @@ async function checkRedirect(testCase) {
     return;
   }
 
-  if (!permanentStatuses.has(response.status)) {
-    failures.push(`${testCase.name}: expected status 301 or 308 from ${testCase.source.href}, received ${response.status}.`);
+  const acceptedStatuses = testCase.statuses ?? permanentStatuses;
+  if (!acceptedStatuses.has(response.status)) {
+    failures.push(
+      `${testCase.name}: expected status ${[...acceptedStatuses].join(' or ')} from ${testCase.source.href}, received ${response.status}.`,
+    );
     return;
   }
 

@@ -10,17 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Car Buying Service | Drive Right</title>
     <meta name="description"
-        content="Drive Right is a Texas car buying service that compares available vehicles and deal terms, negotiates with sellers, and helps coordinate the purchase. See plans and pricing.">
+        content="Texas car buying service comparing vehicles and deal terms, negotiating with sellers, and coordinating your purchase. Flat-fee plans from $295.">
     <meta name="keywords"
         content="car buying service Texas, car broker Texas, save money on car, car negotiation service, car buying concierge Texas, auto advisor Texas, new car buying help, used car advisor Texas">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.driverightcarbuying.com/">
-
-    <!-- Geo Meta Tags (Local SEO) -->
-    <meta name="geo.region" content="US-TX" />
-    <meta name="geo.placename" content="Texas" />
-    <meta name="geo.position" content="31.9686;-99.9018" />
-    <meta name="ICBM" content="31.9686, -99.9018" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -38,7 +32,7 @@
         content="Drive Right compares available vehicles and deal terms, negotiates with sellers, and helps coordinate purchases for clients across Texas.">
     <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
 
-<!-- JSON-LD: canonical business entities -->
+    <!-- JSON-LD: governed organization and service entities -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -55,10 +49,10 @@
           },
           "email": "hello@driverightcarbuying.com",
           "telephone": "+1-512-910-4938",
-          "sameAs": [
-            "https://www.facebook.com/people/Drive-Right-Car-Buying/61571999696043/",
-            "https://www.reddit.com/user/DriveRightCarBuying/"
-          ],
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+1-512-910-4938",
@@ -69,49 +63,64 @@
           }
         },
         {
-          "@type": "LocalBusiness",
-          "@id": "https://www.driverightcarbuying.com/#austin-business",
-          "name": "Drive Right",
-          "url": "https://www.driverightcarbuying.com/",
-          "image": "https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg",
-          "parentOrganization": {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-consultation",
+          "name": "Car Buying Consultation",
+          "serviceType": "Car Buying Consultation",
+          "url": "https://www.driverightcarbuying.com/schedule.html#consultation",
+          "provider": {
             "@id": "https://www.driverightcarbuying.com/#organization"
           },
-          "telephone": "+1-512-910-4938",
-          "priceRange": "$$",
           "areaServed": {
             "@type": "State",
             "name": "Texas"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "ratingCount": "3"
+          "offers": {
+            "@type": "Offer",
+            "price": "295",
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#consultation"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-full",
+          "name": "Full Service Car Buying",
+          "serviceType": "Full Service Car Buying",
+          "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+          "provider": {
+            "@id": "https://www.driverightcarbuying.com/#organization"
           },
-          "review": [
-            {
-              "@type": "Review",
-              "author": {"@type": "Person", "name": "Michael R."},
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "reviewBody": "Drive Right found me a new Tahoe under MSRP and negoaited away the dealer add-ons. I saved over $5k and didn't have to waste a Saturday in a dealer",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-michael-r-ai-160.webp"
-            },
-            {
-              "@type": "Review",
-              "author": {"@type": "Person", "name": "Sarah K."},
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "reviewBody": "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time.",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-sarah-k-ai-160.webp"
-            },
-            {
-              "@type": "Review",
-              "author": {"@type": "Person", "name": "David L."},
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "reviewBody": "I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.",
-              "image": "https://www.driverightcarbuying.com/assets/external/optimized/testimonial-david-l-ai-160.webp"
-            }
-          ]
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "495",
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#full-service"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.driverightcarbuying.com/#service-concierge",
+          "name": "Ultimate Concierge Car Buying",
+          "serviceType": "Concierge Car Buying",
+          "url": "https://www.driverightcarbuying.com/schedule.html#concierge",
+          "provider": {
+            "@id": "https://www.driverightcarbuying.com/#organization"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Texas"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "895",
+            "priceCurrency": "USD",
+            "url": "https://www.driverightcarbuying.com/schedule.html#concierge"
+          }
         }
       ]
     }
@@ -140,7 +149,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -154,16 +163,29 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
     </noscript>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <script defer src="accessibility.js"></script>
+    <noscript>
+        <style>
+            @media (max-width: 768px) {
+                .nav { position: static; }
+                .nav__inner { align-items: flex-start; gap: 16px; }
+                .nav__links { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: flex-end; }
+                .nav__hamburger { display: none; }
+                .hero { padding-top: 48px; }
+            }
+        </style>
+    </noscript>
     <link rel="preload" as="image"
-        href="/assets/external/hero/hero-aerial-car-dealership-960.avif"
-        imagesrcset="/assets/external/hero/hero-aerial-car-dealership-640.avif 640w, /assets/external/hero/hero-aerial-car-dealership-960.avif 960w, /assets/external/hero/hero-aerial-car-dealership-1440.avif 1440w, /assets/external/hero/hero-aerial-car-dealership-1920.avif 1920w"
-        imagesizes="100vw"
-        type="image/avif" fetchpriority="high">
+        href="/assets/external/hero/hero-aerial-car-dealership-ai-960.avif"
+        imagesrcset="/assets/external/hero/hero-aerial-car-dealership-ai-640.avif 640w, /assets/external/hero/hero-aerial-car-dealership-ai-960.avif 960w, /assets/external/hero/hero-aerial-car-dealership-ai-1440.avif 1440w, /assets/external/hero/hero-aerial-car-dealership-ai-1920.avif 1920w"
+        imagesizes="100vw" type="image/avif" fetchpriority="high">
 
     <!-- Google tag (gtag.js) -->
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -179,6 +201,7 @@
             </button>
             <ul class="nav__links" id="nav-links">
                 <li><a href="#services">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="schedule.html" class="btn--primary nav__cta">Find My Perfect Car</a></li>
@@ -191,23 +214,24 @@
         <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">✕</button>
         <ul class="mobile-menu__links">
             <li><a href="#services">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="schedule.html">Find My Perfect Car</a></li>
         </ul>
     </div>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- ===== HERO ===== -->
         <section class="hero" id="hero">
             <picture class="hero__media" aria-hidden="true">
                 <source type="image/avif"
-                    srcset="/assets/external/hero/hero-aerial-car-dealership-640.avif 640w, /assets/external/hero/hero-aerial-car-dealership-960.avif 960w, /assets/external/hero/hero-aerial-car-dealership-1440.avif 1440w, /assets/external/hero/hero-aerial-car-dealership-1920.avif 1920w"
+                    srcset="/assets/external/hero/hero-aerial-car-dealership-ai-640.avif 640w, /assets/external/hero/hero-aerial-car-dealership-ai-960.avif 960w, /assets/external/hero/hero-aerial-car-dealership-ai-1440.avif 1440w, /assets/external/hero/hero-aerial-car-dealership-ai-1920.avif 1920w"
                     sizes="100vw">
                 <source type="image/webp"
-                    srcset="/assets/external/hero/hero-aerial-car-dealership-640.webp 640w, /assets/external/hero/hero-aerial-car-dealership-960.webp 960w, /assets/external/hero/hero-aerial-car-dealership-1440.webp 1440w, /assets/external/hero/hero-aerial-car-dealership-1920.webp 1920w"
+                    srcset="/assets/external/hero/hero-aerial-car-dealership-ai-640.webp 640w, /assets/external/hero/hero-aerial-car-dealership-ai-960.webp 960w, /assets/external/hero/hero-aerial-car-dealership-ai-1440.webp 1440w, /assets/external/hero/hero-aerial-car-dealership-ai-1920.webp 1920w"
                     sizes="100vw">
-                <img src="/assets/external/hero/hero-aerial-car-dealership-960.webp" alt="" width="1672" height="941"
+                <img src="/assets/external/hero/hero-aerial-car-dealership-ai-960.webp" alt="" width="960" height="540"
                     fetchpriority="high" decoding="async">
             </picture>
             <div class="hero__content">
@@ -238,8 +262,11 @@
                         <div class="form-honeypot" aria-hidden="true">
                             <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
                         </div>
+                        <label class="sr-only" for="hero-name">Your name</label>
                         <input type="text" id="hero-name" name="name" placeholder="Your Name" class="hero__card-input" required autocomplete="name">
+                        <label class="sr-only" for="hero-email">Email address</label>
                         <input type="email" id="hero-email" name="email" placeholder="Email Address" class="hero__card-input" required autocomplete="email">
+                        <label class="sr-only" for="hero-vehicle">Vehicle you are looking for</label>
                         <input type="text" id="hero-vehicle" name="vehicle" placeholder="What car are you looking for? (e.g. Mazda CX-90)" class="hero__card-input" required>
                         <button type="submit" class="btn--primary" id="hero-submit" style="width: 100%; margin-top: 4px; padding: 14px; font-size: 15px;">
                             <span class="btn__text">Review My Options →</span>
@@ -252,7 +279,7 @@
                         </picture>
                         <div>
                             <strong>Michael R.</strong> <span style="color: #f59e0b;">★★★★★</span>
-                            <p style="margin: 2px 0 0; font-family: var(--serif); font-style: italic; line-height: 1.4;">"Drive Right found me a new Tahoe under MSRP... I saved over $5k!"</p>
+                            <p style="margin: 2px 0 0; font-family: var(--serif); font-style: italic; line-height: 1.4;">“Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.”</p>
                         </div>
                     </div>
                 </div>
@@ -571,7 +598,7 @@
                 <div class="testimonials__grid reveal">
                     <div class="testimonial-card">
                         <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <p class="testimonial-card__text">"Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons. I saved over $7k and didn't have to waste a Saturday in a dealer lobby."</p>
+                        <p class="testimonial-card__text">“Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.”</p>
                         <div class="testimonial-card__author">
                             <div class="testimonial-card__avatar">
                                 <picture>
@@ -696,76 +723,27 @@
             </div>
         </section>
 
-        <!-- ===== CITIES WE SERVE ===== -->
+        <!-- ===== REVIEWED SERVICE-AREA RESOURCES ===== -->
         <section class="cities" id="cities">
             <div class="cities__inner">
                 <div class="reveal">
-                    <p class="section-label">Where We Work</p>
-                    <h2 class="section-heading">Serving Major Texas Cities.</h2>
-                    <p class="section-subtext">Explore the current Texas service areas. Availability and transaction logistics are confirmed for each request.</p>
+                    <p class="section-label">Texas Resources</p>
+                    <h2 class="section-heading">Start with the statewide guide.</h2>
+                    <p class="section-subtext">City-specific pages remain out of search and sitewide navigation until their local evidence and review are complete.</p>
                 </div>
                 <div class="cities__bg-wrapper reveal">
                     <div class="cities__grid">
-                        <a href="arlington.html" class="city-card">
+                        <a href="texas-local-market-intelligence.html" class="city-card">
                             <div class="city-card__text">
-                                <div class="city-card__name">Arlington</div>
-                                <div class="city-card__desc">DFW Mid-Cities · North Texas</div>
+                                <div class="city-card__name">Texas Local Market Guide</div>
+                                <div class="city-card__desc">Statewide sources · Metro release status</div>
                             </div>
                             <div class="city-card__arrow">→</div>
                         </a>
-                        <a href="austin.html" class="city-card">
+                        <a href="how-it-works.html" class="city-card">
                             <div class="city-card__text">
-                                <div class="city-card__name">Austin</div>
-                                <div class="city-card__desc">Central Texas</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="dallas.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">Dallas</div>
-                                <div class="city-card__desc">DFW Metroplex · North Texas</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="el-paso.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">El Paso</div>
-                                <div class="city-card__desc">West Texas · Border City</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="fort-worth.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">Fort Worth</div>
-                                <div class="city-card__desc">Tarrant County · North Texas</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="houston.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">Houston</div>
-                                <div class="city-card__desc">Gulf Coast</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="new-braunfels.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">New Braunfels</div>
-                                <div class="city-card__desc">Hill Country · Central Texas</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="san-antonio.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">San Antonio</div>
-                                <div class="city-card__desc">South Central Texas</div>
-                            </div>
-                            <div class="city-card__arrow">→</div>
-                        </a>
-                        <a href="san-marcos.html" class="city-card">
-                            <div class="city-card__text">
-                                <div class="city-card__name">San Marcos</div>
-                                <div class="city-card__desc">College Town · I-35 Corridor</div>
+                                <div class="city-card__name">How Drive Right Works</div>
+                                <div class="city-card__desc">Scope · Pricing · Buyer responsibilities</div>
                             </div>
                             <div class="city-card__arrow">→</div>
                         </a>
@@ -799,15 +777,19 @@
                 <div class="form-honeypot" aria-hidden="true">
                     <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
                 </div>
-                    <input type="text" name="name" placeholder="Your name" aria-label="Name" class="contact__input"
-                        id="contact-name" required>
-                    <input type="email" name="email" placeholder="Email address" aria-label="Email"
-                        class="contact__input" id="contact-email" required>
-                    <input type="tel" name="phone" placeholder="Phone (optional)" aria-label="Phone"
-                        class="contact__input" id="contact-phone">
+                    <label class="sr-only" for="contact-name">Your name</label>
+                    <input type="text" name="name" placeholder="Your name" class="contact__input"
+                        id="contact-name" required autocomplete="name">
+                    <label class="sr-only" for="contact-email">Email address</label>
+                    <input type="email" name="email" placeholder="Email address"
+                        class="contact__input" id="contact-email" required autocomplete="email">
+                    <label class="sr-only" for="contact-phone">Phone number (optional)</label>
+                    <input type="tel" name="phone" placeholder="Phone (optional)"
+                        class="contact__input" id="contact-phone" autocomplete="tel">
+                    <label class="sr-only" for="contact-message">How can we help?</label>
                     <textarea name="message"
                         placeholder="How can we help you? (Ask us anything about our process, pricing, or your car search)"
-                        aria-label="Message" class="contact__textarea" id="contact-message" rows="3"
+                        class="contact__textarea" id="contact-message" rows="3"
                         required></textarea>
                     <button type="submit" class="btn--primary" id="contact-submit">Contact Us →</button>
                 </form>
@@ -832,6 +814,7 @@
                     <h3 class="footer__heading">Company</h3>
                     <ul class="footer__links">
                         <li><a href="#services">Services</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="schedule.html">Contact</a></li>
@@ -839,17 +822,11 @@
                     </ul>
                 </div>
                 <div class="footer__col">
-                    <h3 class="footer__heading">Service Areas</h3>
+                    <h3 class="footer__heading">Texas Resources</h3>
                     <ul class="footer__links">
-                        <li><a href="arlington.html">Arlington, TX</a></li>
-                        <li><a href="austin.html">Austin, TX</a></li>
-                        <li><a href="dallas.html">Dallas, TX</a></li>
-                        <li><a href="el-paso.html">El Paso, TX</a></li>
-                        <li><a href="fort-worth.html">Fort Worth, TX</a></li>
-                        <li><a href="houston.html">Houston, TX</a></li>
-                        <li><a href="new-braunfels.html">New Braunfels, TX</a></li>
-                        <li><a href="san-antonio.html">San Antonio, TX</a></li>
-                        <li><a href="san-marcos.html">San Marcos, TX</a></li>
+                        <li><a href="texas-local-market-intelligence.html">Texas Local Market Guide</a></li>
+                        <li><a href="blog.html">Car-Buying Resources</a></li>
+                        <li><a href="schedule.html">Pricing &amp; Plans</a></li>
                     </ul>
                 </div>
             </div>

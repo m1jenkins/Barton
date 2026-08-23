@@ -56,7 +56,9 @@ The function reads the raw request body and verifies `Stripe-Signature`. Subscri
 - `checkout.session.completed`
 - `checkout.session.async_payment_succeeded`
 
-An event is purchase evidence only when it contains a one-time Checkout Session whose `payment_status` is `paid`, whose `client_reference_id` maps to a stored attempt, and whose currency and total exactly match that tier. The transaction inserts the Stripe event, one purchase keyed by Checkout Session ID, updates the attempt, and inserts one analytics-outbox row keyed by that same session ID: `consultation_booked` for the $295 tier or `service_purchase` for the other tiers. Replayed event IDs and second paid events for the same Checkout Session cannot create another purchase or outbox event.
+An event is purchase evidence only when it contains a one-time Checkout Session whose `payment_status` is `paid`, whose `client_reference_id` maps to a stored attempt, and whose currency and total exactly match that tier. The transaction inserts the Stripe event, one purchase keyed by Checkout Session ID, updates the attempt, and inserts one standard `purchase` analytics-outbox row keyed by that same session ID. Its payload includes a durable event ID, transaction and purchase IDs, service tier, value, currency, governed page context, and allowlisted first/last-touch attribution. Replayed event IDs and second paid events for the same Checkout Session cannot create another purchase or outbox event.
+
+After the ledger transaction commits, the function opportunistically dispatches an atomically claimed outbox batch when `ANALYTICS_FORWARD_URL` is configured. Each HTTPS request carries the durable event ID in both the body and `Idempotency-Key` header. Acknowledged `2xx` responses mark the row sent; timeouts and non-`2xx` responses return it to `failed` with capped exponential backoff. A delivery failure never rolls back or changes the response for an already verified purchase.
 
 Unmatched sessions and amount mismatches are retained with review outcomes but return `2xx` after the record commits. Monitor those outcomes; they usually indicate an old direct Payment Link, inconsistent live/test configuration, or a Stripe price changed without a matching application release.
 
@@ -114,6 +116,13 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
 | `LEAD_FORWARD_BEARER_TOKEN` | Optional bearer credential for that downstream destination. |
 | `DATABASE_MAX_CONNECTIONS` | Optional per-function-process limit, default `1`, allowed `1`–`5`. Use a pooled database endpoint. |
+| `ANALYTICS_FORWARD_URL` | Optional credential-free HTTPS endpoint for the server-side analytics collector. When absent, outbox rows remain pending. |
+| `ANALYTICS_FORWARD_BEARER_TOKEN` | Optional bearer credential for the analytics collector. |
+| `ANALYTICS_OUTBOX_BATCH_SIZE` | Optional claim size, default `10`, allowed `1`–`50`. |
+| `ANALYTICS_OUTBOX_LEASE_SECONDS` | Optional processing lease, default `60`, allowed `15`–`600`. Expired claims can be recovered. |
+| `ANALYTICS_OUTBOX_MAX_ATTEMPTS` | Optional delivery-attempt cap, default `8`, allowed `1`–`25`. |
+| `ANALYTICS_OUTBOX_RETRY_SECONDS` | Optional initial retry delay, default `30`, allowed `5`–`3600`; subsequent retries back off to six hours. |
+| `ANALYTICS_FORWARD_TIMEOUT_MS` | Optional per-request timeout, default `5000`, allowed `500`–`15000`. |
 
 No secrets belong in HTML, JavaScript, SQL, or committed environment files.
 
@@ -131,12 +140,12 @@ Register `https://www.driverightcarbuying.com/api/stripe-webhook` as a Stripe we
 
 ## Release order and verification
 
-1. Run `db/001_durable_leads_and_payments.sql` against a new or backed-up target database. The migration is additive and transactional.
+1. Run the numbered SQL files in `db/` order against a new or backed-up target database. They are transactional; `002_standard_purchase_analytics.sql` normalizes any unsent legacy sale events to `purchase` without changing acknowledged history.
 2. Add the required environment variables separately to Development, Preview, and Production. Use different Stripe keys, webhook secrets, and databases where practical.
 3. Configure the three Payment Link success URLs and the webhook destination in Stripe.
 4. Deploy the API, then change browser forms and checkout links to the contracts above. Remove client-side purchase/conversion calls from confirmation pages.
 5. Run `npm test` and `npm run check:api`; send a test lead twice with the same key, then with a conflicting payload.
-6. Complete one Stripe test purchase for each tier. Confirm one `purchases` row and one `analytics_outbox` row per Checkout Session, even after resending the webhook from Stripe.
+6. Complete one Stripe test purchase for each tier. Confirm one `purchases` row and one `purchase` outbox row per Checkout Session, even after resending the webhook from Stripe. Confirm the configured collector receives the same `event_id` and `Idempotency-Key` once.
 7. Verify that a direct visit with a fabricated or unpaid session never unlocks onboarding.
 
 Useful reconciliation queries:
@@ -150,7 +159,9 @@ SELECT status, count(*) FROM lead_forward_outbox GROUP BY status ORDER BY status
 
 ## Deliberate operational gaps
 
-This foundation writes `consultation_booked`, `service_purchase`, and `onboarding_complete` events durably but does not dispatch them to GA4, Google Ads, Reddit, or another destination. Destination credentials and consent policy were not provided, so none were invented. A separate server-side worker must atomically claim pending outbox rows, deliver each event with `dedupe_key` as the destination event ID, and mark rows sent only after an acknowledged response. Until that worker and destination credentials exist, purchase ledger counts—not ad-platform counts—are authoritative.
+The application now writes and dispatches a standard `purchase` event plus `onboarding_complete`. No destination URL, credentials, destination-specific mapping, or consent policy was provided, so none was invented or activated. The configured analytics collector must acknowledge only durable ingestion, honor `Idempotency-Key`, map `purchase` to the approved analytics destinations, and preserve `event_id`/`transaction_id` for destination deduplication. Until that collector and credentials are configured and verified, purchase-ledger counts—not ad-platform counts—are authoritative.
+
+Dispatch is triggered opportunistically by verified Stripe webhook and onboarding requests. A periodic invocation mechanism is still required for bounded, unattended retry during periods with no new traffic and for alerting on exhausted attempts; no new public endpoint or scheduler configuration was added. Daily reconciliation must compare paid Stripe Checkout Sessions, `purchases`, `analytics_outbox` status, and collector/destination acknowledgements.
 
 Leave `TURNSTILE_SECRET_KEY` unset until a matching client widget is installed and its token is submitted with the lead form. Enabling the secret without the widget intentionally causes browser lead submissions to fail verification.
 

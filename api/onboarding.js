@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto';
+import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
 import { pageContext } from './_lib/analytics.js';
 import { database } from './_lib/db.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
@@ -88,6 +89,7 @@ async function handle(req, res) {
     return { id: idempotentRace.id, created: false };
   });
 
+  await dispatchAnalyticsOutboxSafely();
   return sendJson(res, persisted.created ? 201 : 200, { ok: true, onboarding_id: persisted.id });
 }
 

@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
-import { pageContext } from './_lib/analytics.js';
+import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
+import { purchaseEventPayload } from './_lib/analytics.js';
 import { requiredEnv } from './_lib/config.js';
 import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
@@ -100,21 +101,19 @@ async function recordEvent(event) {
     await tx`
       INSERT INTO analytics_outbox (event_name, dedupe_key, payload)
       VALUES (
-        ${attempt.tier_id === 'consultation' ? 'consultation_booked' : 'service_purchase'},
+        'purchase',
         ${session.id},
-        ${tx.json({
-          event_id: `purchase:${session.id}`,
-          checkout_session_id: session.id,
-          purchase_id: purchaseId,
-          checkout_attempt_id: attempt.id,
-          lead_id: attempt.lead_id,
-          source_page: attempt.source_page,
-          ...pageContext(attempt.source_page),
-          service_tier: attempt.tier_id,
-          value: amountTotal / 100,
-          currency: currency.toUpperCase(),
+        ${tx.json(purchaseEventPayload({
+          checkoutSessionId: session.id,
+          purchaseId,
+          checkoutAttemptId: attempt.id,
+          leadId: attempt.lead_id,
+          sourcePage: attempt.source_page,
+          serviceTier: attempt.tier_id,
+          amountTotal,
+          currency,
           attribution: attempt.attribution
-        })}
+        }))}
       )
       ON CONFLICT (event_name, dedupe_key) DO NOTHING
     `;
@@ -144,6 +143,7 @@ async function handle(req, res) {
   }
 
   const result = await recordEvent(event);
+  await dispatchAnalyticsOutboxSafely();
   return sendJson(res, 200, { ok: true, duplicate: result.duplicate });
 }
 

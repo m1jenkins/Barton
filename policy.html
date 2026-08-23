@@ -39,7 +39,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -48,11 +48,15 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"></noscript>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <script defer src="accessibility.js"></script>
+    <noscript><style>@media (max-width: 768px) {.nav {position: static}.nav__inner {align-items: flex-start;gap: 16px}.nav__links {display: flex;flex-wrap: wrap;gap: 10px 16px;justify-content: flex-end}.nav__hamburger {display: none}}</style></noscript>
 
     <!-- Google tag (gtag.js) -->
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -85,7 +89,7 @@
         </ul>
     </div>
 
-    <main>
+    <main id="main-content" tabindex="-1">
 
     <!-- ===== BREADCRUMB ===== -->
     <div class="breadcrumb">

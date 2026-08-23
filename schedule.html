@@ -8,7 +8,7 @@
     <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295</title>
+    <title>Plans &amp; Pricing | Drive Right Car Buying Service</title>
     <meta name="description"
         content="Compare Drive Right's car buying service plans, from a $295 advisory consultation to $495 Full Service and $895 Concierge options.">
     <meta name="keywords"
@@ -19,7 +19,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.driverightcarbuying.com/schedule.html">
-    <meta property="og:title" content="Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295">
+    <meta property="og:title" content="Plans &amp; Pricing | Drive Right Car Buying Service">
     <meta property="og:description"
         content="Compare Drive Right's $295 consultation, $495 Full Service, and $895 Concierge options.">
     <meta property="og:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
@@ -27,7 +27,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.driverightcarbuying.com/schedule.html">
-    <meta name="twitter:title" content="Pricing &amp; Plans | Drive Right: Texas Car Buying Service from $295">
+    <meta name="twitter:title" content="Plans &amp; Pricing | Drive Right Car Buying Service">
     <meta name="twitter:description"
         content="Compare Drive Right's $295 consultation, $495 Full Service, and $895 Concierge options.">
     <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
@@ -113,7 +113,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -127,11 +127,15 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
     </noscript>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <script defer src="accessibility.js"></script>
+    <noscript><style>@media (max-width: 768px) {.nav {position: static}.nav__inner {align-items: flex-start;gap: 16px}.nav__links {display: flex;flex-wrap: wrap;gap: 10px 16px;justify-content: flex-end}.nav__hamburger {display: none}.selection {padding-top: 48px}}</style></noscript>
 
     <!-- Google tag (gtag.js) -->
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -147,7 +151,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <section class="selection" id="pricing">
             <div class="selection__header reveal visible">
                 <h1 class="section-heading">Choose the right service for your car search.</h1>
@@ -158,7 +162,7 @@
             <div class="selection__grid selection__grid--three-tiers reveal visible" style="transition-delay: 0.2s;">
  
                 <!-- Tier 2: Car Buying Consultant -->
-                <div class="selection__card">
+                <div class="selection__card" id="consultation">
                     <div class="selection__card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -219,7 +223,7 @@
                 </div>
  
                 <!-- Tier 3: Full Service (FEATURED - Most Popular) -->
-                <div class="selection__card selection__card--featured">
+                <div class="selection__card selection__card--featured" id="full-service">
                     <span class="selection__badge-floating selection__badge-floating--featured">Most Popular</span>
                     <div class="selection__card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -282,7 +286,7 @@
                 </div>
  
                 <!-- Tier 4: Ultimate Concierge -->
-                <div class="selection__card selection__card--ultimate">
+                <div class="selection__card selection__card--ultimate" id="concierge">
                     <span class="selection__badge-floating selection__badge-floating--ultimate">White Glove</span>
                     <div class="selection__card-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -40,3 +40,30 @@ export function pageContext(sourcePage) {
     city: CITY_BY_FILE[path] || ''
   };
 }
+
+export function purchaseEventPayload({
+  checkoutSessionId,
+  purchaseId,
+  checkoutAttemptId,
+  leadId,
+  sourcePage,
+  serviceTier,
+  amountTotal,
+  currency,
+  attribution
+}) {
+  return {
+    event_id: `purchase:${checkoutSessionId}`,
+    transaction_id: checkoutSessionId,
+    checkout_session_id: checkoutSessionId,
+    purchase_id: purchaseId,
+    checkout_attempt_id: checkoutAttemptId,
+    lead_id: leadId,
+    source_page: sourcePage,
+    ...pageContext(sourcePage),
+    service_tier: serviceTier,
+    value: amountTotal / 100,
+    currency: currency.toUpperCase(),
+    attribution
+  };
+}

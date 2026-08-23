@@ -13,36 +13,18 @@
     "sameAs": [],
     "sameAsStatus": "pending_owner_confirmation"
   },
-  "businessLocations": [
-    {
-      "id": "https://www.driverightcarbuying.com/#austin-business",
-      "schemaTypes": [
-        "LocalBusiness",
-        "ProfessionalService"
-      ],
-      "name": "Drive Right Austin",
-      "url": "https://www.driverightcarbuying.com/austin.html",
-      "parentOrganizationRef": "https://www.driverightcarbuying.com/#organization",
-      "telephone": "+15129104938",
-      "email": "hello@driverightcarbuying.com",
-      "address": {
-        "status": "pending_owner_confirmation",
-        "streetAddress": null,
-        "addressLocality": "Austin",
-        "addressRegion": "TX",
-        "postalCode": null,
-        "addressCountry": "US",
-        "publicDisplayApproved": false
-      },
-      "geo": {
-        "status": "pending_owner_confirmation",
-        "latitude": null,
-        "longitude": null
-      },
-      "note": "Do not publish a street address geo point or business-profile URL until the owner confirms a real customer-facing or policy-compliant location and approves public display."
-    }
-  ],
+  "businessLocations": [],
   "serviceAreas": [
+    {
+      "id": "https://www.driverightcarbuying.com/#service-area-austin",
+      "schemaType": "City",
+      "name": "Austin",
+      "region": "TX",
+      "country": "US",
+      "pageUrl": "https://www.driverightcarbuying.com/austin.html",
+      "providerRef": "https://www.driverightcarbuying.com/#organization",
+      "localBusinessEntity": false
+    },
     {
       "id": "https://www.driverightcarbuying.com/#service-area-arlington",
       "schemaType": "City",

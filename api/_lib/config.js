@@ -85,8 +85,8 @@ export function paymentLinkForTier(tierId) {
   return url;
 }
 
-export function integerEnv(name, fallback, { min, max }) {
-  const raw = process.env[name];
+export function integerEnv(name, fallback, { min, max }, environment = process.env) {
+  const raw = environment[name];
   if (!raw) return fallback;
   const value = Number.parseInt(raw, 10);
   if (!Number.isInteger(value) || value < min || value > max) {

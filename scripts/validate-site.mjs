@@ -22,8 +22,9 @@ const confirmationPages = [
   'payment-success-concierge.html',
 ];
 
-const nonAustinCityPages = [
+const containedMetroPages = [
   'arlington.html',
+  'austin.html',
   'dallas.html',
   'el-paso.html',
   'fort-worth.html',
@@ -35,7 +36,6 @@ const nonAustinCityPages = [
 
 const stableSchemaIds = {
   organization: `${primaryOrigin}/#organization`,
-  austinBusiness: `${primaryOrigin}/#austin-business`,
   consultation: `${primaryOrigin}/#service-consultation`,
   fullService: `${primaryOrigin}/#service-full`,
   concierge: `${primaryOrigin}/#service-concierge`,
@@ -200,6 +200,15 @@ const htmlFiles = rootFiles.filter((file) => file.endsWith('.html'));
 const publicSourceFiles = rootFiles.filter((file) => /\.(?:html|js|css|xml)$/i.test(file));
 const sources = new Map();
 
+let entityRegistry;
+let serviceRegistry;
+try {
+  entityRegistry = JSON.parse(await readFile(path.join(repoRoot, 'data/entities.json'), 'utf8'));
+  serviceRegistry = JSON.parse(await readFile(path.join(repoRoot, 'data/services.json'), 'utf8'));
+} catch (error) {
+  fail('data', `Governed entity/service registry could not be parsed: ${error.message}.`, undefined, undefined, 'Restore valid JSON before release.');
+}
+
 await Promise.all(
   publicSourceFiles.map(async (file) => {
     sources.set(file, await readFile(path.join(repoRoot, file), 'utf8'));
@@ -300,6 +309,64 @@ for (const file of htmlFiles) {
     } else if (canonicals[0].href !== expectedUrl) {
       fail(file, `Canonical is ${JSON.stringify(canonicals[0].href)}, expected ${expectedUrl}.`, canonicals[0].index, html);
     }
+
+    if (!/<link\b[^>]*\bhref\s*=\s*["'](?:\.\/)?accessibility\.css["'][^>]*>/i.test(html)) {
+      fail(file, 'Indexable page is missing the shared accessibility stylesheet.', 0, html, 'Load accessibility.css after the page stylesheet.');
+    }
+    if (!/<script\b[^>]*\bsrc\s*=\s*["'](?:\.\/)?accessibility\.js["'][^>]*>/i.test(html)) {
+      fail(file, 'Indexable page is missing the shared accessibility behavior.', 0, html, 'Load accessibility.js so skip-link and mobile-menu focus are deterministic.');
+    }
+    if (!/<a\b[^>]*\bclass\s*=\s*["'][^"']*\bskip-link\b[^"']*["'][^>]*\bhref\s*=\s*["']#main-content["'][^>]*>/i.test(html)
+        && !/<a\b[^>]*\bhref\s*=\s*["']#main-content["'][^>]*\bclass\s*=\s*["'][^"']*\bskip-link\b[^"']*["'][^>]*>/i.test(html)) {
+      fail(file, 'Indexable page is missing a keyboard skip link to #main-content.', 0, html);
+    }
+    if (!/<main\b(?=[^>]*\bid\s*=\s*["']main-content["'])(?=[^>]*\btabindex\s*=\s*["']-1["'])[^>]*>/i.test(html)) {
+      fail(file, 'Indexable page has no #main-content target.', 0, html, 'Give the main element id="main-content" and tabindex="-1".');
+    }
+    if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html)) {
+      fail(file, 'Indexable page has no usable no-JavaScript mobile navigation override.', 0, html, 'Expose ordinary navigation links and hide the inert hamburger inside a noscript style.');
+    }
+    if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*>/i.test(html)
+        && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
+      fail(file, 'Indexable page does not reference the stable square /favicon.png.', 0, html);
+    }
+  }
+}
+
+if (!(await fileExists('favicon.png'))) {
+  fail('favicon.png', 'Stable favicon is missing.', undefined, undefined, 'Add a square favicon at /favicon.png.');
+}
+
+const accessibilityCss = await readFile(path.join(repoRoot, 'accessibility.css'), 'utf8').catch(() => '');
+if (!/@media\s*\(prefers-reduced-motion\s*:\s*reduce\)/i.test(accessibilityCss)) {
+  fail('accessibility.css', 'Reduced-motion coverage is missing.', 0, accessibilityCss, 'Disable nonessential animation, smooth scrolling, and long transitions for reduced-motion users.');
+}
+
+const homepageHtml = sources.get('index.html') ?? '';
+const heroWidths = [640, 960, 1440, 1920];
+for (const width of heroWidths) {
+  for (const format of ['avif', 'webp']) {
+    const asset = `assets/external/hero/hero-aerial-car-dealership-ai-${width}.${format}`;
+    if (!(await fileExists(asset))) {
+      fail(asset, 'Responsive homepage hero derivative is missing.');
+    }
+    if (!homepageHtml.includes(`/${asset} ${width}w`)) {
+      fail('index.html', `Responsive homepage hero srcset is missing ${asset}.`, 0, homepageHtml);
+    }
+  }
+}
+if (!/<link\b(?=[^>]*\brel\s*=\s*["']preload["'])(?=[^>]*\bimagesrcset\s*=)(?=[^>]*\bimagesizes\s*=)[^>]*>/i.test(homepageHtml)) {
+  fail('index.html', 'Homepage hero preload is not responsive.', 0, homepageHtml, 'Keep imagesrcset and imagesizes aligned with the hero picture sources.');
+}
+if (!/<source\b(?=[^>]*\btype\s*=\s*["']image\/avif["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(homepageHtml)
+    || !/<source\b(?=[^>]*\btype\s*=\s*["']image\/webp["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(homepageHtml)) {
+  fail('index.html', 'Homepage hero picture is missing responsive AVIF/WebP sources.', 0, homepageHtml);
+}
+
+for (const controlId of ['hero-name', 'hero-email', 'hero-vehicle', 'contact-name', 'contact-email', 'contact-phone', 'contact-message']) {
+  const escaped = controlId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (!new RegExp(`<label\\b[^>]*\\bfor\\s*=\\s*["']${escaped}["'][^>]*>`, 'i').test(homepageHtml)) {
+    fail('index.html', `Homepage form control #${controlId} has no explicit label.`, 0, homepageHtml);
   }
 }
 
@@ -338,6 +405,20 @@ for (const post of containedPosts) {
   });
   for (const reference of references) {
     fail('blog.html', `Blog hub links to contained post ${post}.`, reference.index, blogHtml, 'Remove the card/link while the post is contained.');
+  }
+}
+
+const homepageLinks = anchorLinks(sources.get('index.html') ?? '');
+for (const metro of containedMetroPages) {
+  const references = homepageLinks.filter(({ href }) => {
+    try {
+      return fileForSiteUrl(new URL(href, `${primaryOrigin}/`)) === metro;
+    } catch {
+      return false;
+    }
+  });
+  for (const reference of references) {
+    fail('index.html', `Homepage links to contained metro page ${metro}.`, reference.index, sources.get('index.html') ?? '', 'Keep contained metro templates out of sitewide navigation until their evidence gate passes.');
   }
 }
 
@@ -414,12 +495,22 @@ for (const file of htmlFiles) {
 }
 
 const observedStableIds = new Set();
+const observedNodesById = new Map();
 for (const document of parsedJsonLd) {
   const html = sources.get(document.file) ?? '';
   walkJson(document.value, (node) => {
     const id = typeof node['@id'] === 'string' ? node['@id'] : undefined;
+    const types = typeList(node);
     if (id) {
-      if (requiredStableIds.has(id)) observedStableIds.add(id);
+      const isTypedStableDefinition = id === stableSchemaIds.organization
+        ? types.includes('Organization')
+        : types.includes('Service');
+      if (requiredStableIds.has(id) && isTypedStableDefinition) {
+        observedStableIds.add(id);
+        const entriesForId = observedNodesById.get(id) ?? [];
+        entriesForId.push({ file: document.file, index: document.index, node });
+        observedNodesById.set(id, entriesForId);
+      }
       for (const stableId of requiredStableIds) {
         const fragment = stableId.slice(stableId.indexOf('#'));
         if (id.endsWith(fragment) && id !== stableId) {
@@ -428,19 +519,17 @@ for (const document of parsedJsonLd) {
       }
     }
 
-    const types = typeList(node);
     const isLocalBusiness = types.some((type) => type === 'LocalBusiness' || type === 'AutomotiveBusiness');
     if (types.includes('Organization') && !isLocalBusiness && id !== stableSchemaIds.organization) {
       fail(document.file, `Organization entity must use @id ${stableSchemaIds.organization}; found ${id ?? 'none'}.`, document.index, html);
     }
 
     if (isLocalBusiness) {
-      if (id !== stableSchemaIds.austinBusiness) {
-        fail(document.file, `LocalBusiness entity must use @id ${stableSchemaIds.austinBusiness}; found ${id ?? 'none'}.`, document.index, html);
-      }
-      if (nonAustinCityPages.includes(document.file)) {
-        fail(document.file, 'Non-Austin city page declares a LocalBusiness entity.', document.index, html, 'Use Service/WebPage areaServed markup and reference the stable Organization instead.');
-      }
+      fail(document.file, 'LocalBusiness markup is not approved for this service-area business.', document.index, html, 'Use the governed Organization as provider and express geography through Service.areaServed.');
+    }
+
+    if (types.includes('Review') || types.includes('AggregateRating')) {
+      fail(document.file, 'Self-serving Review or AggregateRating markup is not approved.', document.index, html, 'Keep permitted testimonials visible, but do not mark up reviews of Drive Right on Drive Right pages.');
     }
 
     if (types.includes('Service')) {
@@ -455,7 +544,7 @@ for (const document of parsedJsonLd) {
       }
       if (expectedId) {
         const providerId = node.provider && typeof node.provider === 'object' ? node.provider['@id'] : undefined;
-        if (![stableSchemaIds.organization, stableSchemaIds.austinBusiness].includes(providerId)) {
+        if (providerId !== stableSchemaIds.organization) {
           fail(document.file, `Service ${expectedId} must reference the stable provider @id; found ${providerId ?? 'none'}.`, document.index, html);
         }
       }
@@ -465,8 +554,83 @@ for (const document of parsedJsonLd) {
 
 for (const id of requiredStableIds) {
   if (!observedStableIds.has(id)) {
-    fail('schema', `Required stable schema ID is not present: ${id}.`, undefined, undefined, 'Declare it on the appropriate Organization, Austin business, or service-tier entity.');
+    fail('schema', `Required stable schema ID is not present: ${id}.`, undefined, undefined, 'Declare it on the governed Organization or service-tier entity.');
   }
+}
+
+function normalizedPhone(value) {
+  return typeof value === 'string' ? value.replace(/\D/g, '') : '';
+}
+
+const governedOrganization = entityRegistry?.organization;
+for (const observed of observedNodesById.get(stableSchemaIds.organization) ?? []) {
+  const { file, index, node } = observed;
+  const html = sources.get(file) ?? '';
+  for (const property of ['name', 'url', 'email']) {
+    if (node[property] !== undefined && governedOrganization?.[property] && node[property] !== governedOrganization[property]) {
+      fail(file, `Organization.${property} disagrees with data/entities.json.`, index, html, `Use ${JSON.stringify(governedOrganization[property])}.`);
+    }
+  }
+  if (node.telephone !== undefined && governedOrganization?.telephone && normalizedPhone(node.telephone) !== normalizedPhone(governedOrganization.telephone)) {
+    fail(file, 'Organization.telephone disagrees with data/entities.json.', index, html, `Use ${governedOrganization.telephone}.`);
+  }
+
+  const governedSameAs = Array.isArray(governedOrganization?.sameAs) ? [...governedOrganization.sameAs].sort() : [];
+  const renderedSameAs = Array.isArray(node.sameAs) ? [...node.sameAs].sort() : node.sameAs ? [node.sameAs] : [];
+  const sameAsApproved = governedOrganization?.sameAsStatus === 'approved';
+  if ((!sameAsApproved && renderedSameAs.length) || (node.sameAs !== undefined && sameAsApproved && JSON.stringify(renderedSameAs) !== JSON.stringify(governedSameAs))) {
+    fail(file, 'Organization.sameAs exposes URLs that are not approved in data/entities.json.', index, html, 'Approve the exact official URLs in the registry before rendering them.');
+  }
+}
+
+const serviceIdsByRegistry = new Map((serviceRegistry?.services ?? []).map((service) => [service.id, service]));
+const serviceTargets = new Map([
+  [stableSchemaIds.consultation, `${primaryOrigin}/schedule.html#consultation`],
+  [stableSchemaIds.fullService, `${primaryOrigin}/schedule.html#full-service`],
+  [stableSchemaIds.concierge, `${primaryOrigin}/schedule.html#concierge`],
+]);
+
+for (const [id, governedService] of serviceIdsByRegistry) {
+  for (const observed of observedNodesById.get(id) ?? []) {
+    const { file, index, node } = observed;
+    const html = sources.get(file) ?? '';
+    const target = serviceTargets.get(id);
+    if (target && node.url !== target) {
+      fail(file, `Service ${id} has URL ${JSON.stringify(node.url)}, expected ${target}.`, index, html);
+    }
+    const offers = Array.isArray(node.offers) ? node.offers : node.offers ? [node.offers] : [];
+    for (const offer of offers) {
+      if (Number(offer.price) !== Number(governedService.price) || offer.priceCurrency !== serviceRegistry.currency) {
+        fail(file, `Service ${id} offer disagrees with data/services.json.`, index, html, `Use ${governedService.price} ${serviceRegistry.currency}.`);
+      }
+      if (target && offer.url !== target) {
+        fail(file, `Service ${id} offer URL does not resolve to its governed pricing card.`, index, html, `Use ${target}.`);
+      }
+    }
+  }
+}
+
+for (const document of parsedJsonLd) {
+  const html = sources.get(document.file) ?? '';
+  walkJson(document.value, (node) => {
+    for (const candidate of [node.url, node.offers?.url]) {
+      if (typeof candidate !== 'string') continue;
+      let url;
+      try {
+        url = new URL(candidate);
+      } catch {
+        continue;
+      }
+      if (url.origin !== primaryOrigin || !url.hash) continue;
+      const targetFile = fileForSiteUrl(url);
+      const targetHtml = targetFile ? sources.get(targetFile) : undefined;
+      const fragment = decodeURIComponent(url.hash.slice(1));
+      const escaped = fragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (!targetHtml || !new RegExp(`\\bid\\s*=\\s*["']${escaped}["']`, 'i').test(targetHtml)) {
+        fail(document.file, `Structured-data URL fragment does not resolve: ${candidate}.`, document.index, html, 'Add the matching pricing-card ID or correct the URL.');
+      }
+    }
+  });
 }
 
 const claimRules = [
@@ -488,7 +652,7 @@ const claimRules = [
   },
   {
     label: '$5k/$7k savings testimonial',
-    pattern: /(?:\bsav(?:e|ed|ing|ings)\b|\btestimonial\b|\breview\b|\bclient\b|\bcustomer\b)[\s\S]{0,140}?\$\s*(?:5,?000|7,?000)\b|\$\s*(?:5,?000|7,?000)\b[\s\S]{0,140}?(?:\bsav(?:e|ed|ing|ings)\b|\btestimonial\b|\breview\b|\bclient\b|\bcustomer\b)/gi,
+    pattern: /(?:\bsav(?:e|ed|ing|ings)\b|\btestimonial\b|\breview\b|\bclient\b|\bcustomer\b)[\s\S]{0,140}?\$\s*(?:5,?000|7,?000|[57]k)\b|\$\s*(?:5,?000|7,?000|[57]k)\b[\s\S]{0,140}?(?:\bsav(?:e|ed|ing|ings)\b|\btestimonial\b|\breview\b|\bclient\b|\bcustomer\b)/gi,
   },
 ];
 
