@@ -18,7 +18,7 @@
     padding: 10px 14px;
     border-radius: 8px;
     background: #fff;
-    color: #0D1212;
+    color: #0f172a;
     font-weight: 700;
     box-shadow: 0 4px 16px #0003;
     transform: translateY(-160%);
@@ -26,7 +26,7 @@
 
 .skip-link:focus {
     transform: translateY(0);
-    outline: 3px solid #2E6B5B;
+    outline: 3px solid #2563eb;
     outline-offset: 2px;
 }
 

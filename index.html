@@ -156,11 +156,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap">
     </noscript>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="accessibility.css">
@@ -236,7 +236,7 @@
             </picture>
             <div class="hero__content">
                 <div class="hero__text">
-                    <h1 class="hero__headline">Vehicle research and deal review<br><mark class="hero__highlight">without the dealership runaround.</mark></h1>
+                    <h1 class="hero__headline">Vehicle research and deal review<br><span>without the dealership runaround.</span></h1>
                     <p class="hero__subtext">Tell us the vehicle and terms that matter to you. We can compare available
                         options, negotiate with dealers, review the paperwork, and coordinate delivery when available.
                         Pricing, availability, and outcomes vary by purchase.</p>
@@ -251,16 +251,39 @@
                                 </svg>
                             </span>
                         </a>
-                        <a href="how-it-works.html" class="btn--ghost" data-cta-location="hero-how-it-works">
-                            <span class="btn__text">How It Works</span>
-                        </a>
-                    </div>
-                    <div class="hero__trust">
-                        <span class="hero__trust-stars" aria-label="Rated five stars by clients">★★★★★</span>
-                        <span class="hero__trust-note">Client-rated · Serving all of Texas</span>
-                        <span class="hero__trust-stat">from $295 flat</span>
+                        <a href="tel:+15129104938" class="hero__consult-link">or call/text (512) 910-4938 →</a>
                     </div>
                 </div>
+
+                <div class="hero__card reveal">
+                    <h2 class="hero__card-title">Find Your Perfect Car</h2>
+                    <p class="hero__card-subtitle">Tell us what you're looking for and which terms matter to you.</p>
+                    <form class="hero__card-form" id="hero-form">
+                        <div class="form-honeypot" aria-hidden="true">
+                            <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                        </div>
+                        <label class="sr-only" for="hero-name">Your name</label>
+                        <input type="text" id="hero-name" name="name" placeholder="Your Name" class="hero__card-input" required autocomplete="name">
+                        <label class="sr-only" for="hero-email">Email address</label>
+                        <input type="email" id="hero-email" name="email" placeholder="Email Address" class="hero__card-input" required autocomplete="email">
+                        <label class="sr-only" for="hero-vehicle">Vehicle you are looking for</label>
+                        <input type="text" id="hero-vehicle" name="vehicle" placeholder="What car are you looking for? (e.g. Mazda CX-90)" class="hero__card-input" required>
+                        <button type="submit" class="btn--primary" id="hero-submit" style="width: 100%; margin-top: 4px; padding: 14px; font-size: 15px;">
+                            <span class="btn__text">Review My Options →</span>
+                        </button>
+                    </form>
+                    <div class="hero__card-testimonial" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); text-align: left; display: flex; align-items: center; gap: 10px;">
+                        <picture>
+                            <source type="image/avif" srcset="/assets/external/optimized/testimonial-michael-r-160.avif">
+                            <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="32" height="32" loading="lazy" decoding="async" style="border-radius: 50%; object-fit: cover;">
+                        </picture>
+                        <div>
+                            <strong>Michael R.</strong> <span style="color: #f59e0b;">★★★★★</span>
+                            <p style="margin: 2px 0 0; font-family: var(--serif); font-style: italic; line-height: 1.4;">“Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.”</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -292,42 +315,6 @@
                 </div>
             </div>
             <p class="why-promo__closing">Drive Right can organize the options, flag terms for review, and communicate with sellers on your behalf.</p>
-        </div>
-    </section>
-
-    <!-- ===== START YOUR SEARCH (lead form) ===== -->
-    <section class="lead-capture" id="lead-capture" aria-labelledby="lead-capture-title">
-        <div class="lead-capture__inner reveal">
-            <p class="section-label">Start Your Search</p>
-            <h2 class="section-heading" id="lead-capture-title">Tell us what you're looking for.</h2>
-            <div class="lead-capture__card">
-                <h3 class="hero__card-title">Find Your Perfect Car</h3>
-                <p class="hero__card-subtitle">Tell us what you're looking for and which terms matter to you.</p>
-                <form class="hero__card-form" id="hero-form">
-                    <div class="form-honeypot" aria-hidden="true">
-                        <label>Leave this field blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-                    </div>
-                    <label class="sr-only" for="hero-name">Your name</label>
-                    <input type="text" id="hero-name" name="name" placeholder="Your Name" class="hero__card-input" required autocomplete="name">
-                    <label class="sr-only" for="hero-email">Email address</label>
-                    <input type="email" id="hero-email" name="email" placeholder="Email Address" class="hero__card-input" required autocomplete="email">
-                    <label class="sr-only" for="hero-vehicle">Vehicle you are looking for</label>
-                    <input type="text" id="hero-vehicle" name="vehicle" placeholder="What car are you looking for? (e.g. Mazda CX-90)" class="hero__card-input" required>
-                    <button type="submit" class="btn--primary" id="hero-submit" style="width: 100%; margin-top: 4px; padding: 14px; font-size: 15px;">
-                        <span class="btn__text">Review My Options →</span>
-                    </button>
-                </form>
-                <div class="hero__card-testimonial" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); text-align: left; display: flex; align-items: center; gap: 10px;">
-                    <picture>
-                        <source type="image/avif" srcset="/assets/external/optimized/testimonial-michael-r-160.avif">
-                        <img src="/assets/external/optimized/testimonial-michael-r-160.webp" alt="Michael R. profile photo" width="32" height="32" loading="lazy" decoding="async" style="border-radius: 50%; object-fit: cover;">
-                    </picture>
-                    <div>
-                        <strong>Michael R.</strong> <span style="color: #FFAC00;">★★★★★</span>
-                        <p style="margin: 2px 0 0; font-family: var(--serif); font-style: italic; line-height: 1.4;">“Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.”</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
