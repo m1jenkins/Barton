@@ -68,9 +68,9 @@ Each profile derivative is a centered square crop resized to 160×160, appropria
 
 | Person | AVIF | WebP |
 |---|---:|---:|
-| Michael R. | `assets/external/optimized/testimonial-michael-r-160.avif` — 8,355 bytes | `assets/external/optimized/testimonial-michael-r-160.webp` — 6,932 bytes |
-| Sarah K. | `assets/external/optimized/testimonial-sarah-k-160.avif` — 6,477 bytes | `assets/external/optimized/testimonial-sarah-k-160.webp` — 5,626 bytes |
-| David L. | `assets/external/optimized/testimonial-david-l-160.avif` — 3,807 bytes | `assets/external/optimized/testimonial-david-l-160.webp` — 3,220 bytes |
+| Michael R. | `assets/external/optimized/testimonial-michael-r-160.avif` — 9,527 bytes | `assets/external/optimized/testimonial-michael-r-160.webp` — 9,026 bytes |
+| Sarah K. | `assets/external/optimized/testimonial-sarah-k-160.avif` — 7,783 bytes | `assets/external/optimized/testimonial-sarah-k-160.webp` — 6,986 bytes |
+| David L. | `assets/external/optimized/testimonial-david-l-160.avif` — 4,683 bytes | `assets/external/optimized/testimonial-david-l-160.webp` — 4,056 bytes |
 
 ### Logo and social image
 
