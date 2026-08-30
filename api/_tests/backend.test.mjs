@@ -10,6 +10,7 @@ import {
   retryDelaySeconds
 } from '../_lib/analytics-outbox.js';
 import { pageContext, purchaseEventPayload } from '../_lib/analytics.js';
+import { SERVICE_TIERS } from '../_lib/config.js';
 import {
   idempotencyKey,
   isPaidCheckoutEvent,
@@ -104,6 +105,22 @@ test('checkout validation uses an allowlisted tier and optional lead UUID', () =
     () => validateCheckoutPayload({ tier: 'invented' }),
     (error) => error instanceof HttpError && error.code === 'invalid_tier'
   );
+});
+
+test('AI Agent Buying Service uses the $195 Stripe amount', () => {
+  assert.deepEqual(SERVICE_TIERS.consultation, {
+    amount: 19500,
+    currency: 'usd',
+    paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONSULTATION_URL'
+  });
+});
+
+test('AI Agent landing page has a distinct analytics classification', () => {
+  assert.deepEqual(pageContext('/ai-car-buying-agent.html'), {
+    page_type: 'service_landing',
+    topic_cluster: 'agent_service',
+    city: ''
+  });
 });
 
 test('payment link keeps configured parameters and replaces client_reference_id', () => {

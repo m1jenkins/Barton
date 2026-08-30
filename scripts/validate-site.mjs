@@ -537,7 +537,7 @@ for (const document of parsedJsonLd) {
       let expectedId;
       if (/concierge/.test(descriptor)) expectedId = stableSchemaIds.concierge;
       else if (/full[\s-]*service/.test(descriptor)) expectedId = stableSchemaIds.fullService;
-      else if (/consult(?:ant|ation)|strategy\s+call/.test(descriptor)) expectedId = stableSchemaIds.consultation;
+      else if (/consult(?:ant|ation)|strategy\s+call|ai\s+agent/.test(descriptor)) expectedId = stableSchemaIds.consultation;
 
       if (expectedId && id !== expectedId) {
         fail(document.file, `Service tier must use stable @id ${expectedId}; found ${id ?? 'none'}.`, document.index, html);

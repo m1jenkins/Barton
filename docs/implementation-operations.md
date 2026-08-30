@@ -109,7 +109,7 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `ALLOWED_ORIGINS` | Optional comma-separated additional exact origins, such as an explicitly approved preview. Do not use wildcards. |
 | `STRIPE_SECRET_KEY` | Required for webhook construction and purchase-status verification. Keep test and live environments separate. |
 | `STRIPE_WEBHOOK_SECRET` | Required. Signing secret for this exact deployed webhook endpoint and mode. |
-| `STRIPE_PAYMENT_LINK_CONSULTATION_URL` | Required for the $295 consultation tier. |
+| `STRIPE_PAYMENT_LINK_CONSULTATION_URL` | Required for the $195 AI Agent Buying Service tier. The environment variable name remains for compatibility with the `consultation` internal tier ID. |
 | `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $495 full-service tier. |
 | `STRIPE_PAYMENT_LINK_CONCIERGE_URL` | Required for the $895 concierge tier. |
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
@@ -128,11 +128,11 @@ No secrets belong in HTML, JavaScript, SQL, or committed environment files.
 
 ## Stripe dashboard configuration
 
-Keep each Payment Link at the application amount and currency: consultation `29500 usd`, full service `49500 usd`, and concierge `89500 usd`. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
+Keep each Payment Link at the application amount and currency: AI Agent Buying Service `19500 usd`, full service `49500 usd`, and concierge `89500 usd`. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
 
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
-- Consultation: `https://www.driverightcarbuying.com/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}`
+- AI Agent Buying Service: `https://www.driverightcarbuying.com/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}`
 - Full service: `https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
 - Concierge: `https://www.driverightcarbuying.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 

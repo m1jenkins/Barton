@@ -40,7 +40,7 @@ Controls receive only urgent correctness or security fixes. Log every concurrent
 
 ## Prompt panel and run design
 
-`data/ai-prompt-panel.csv` contains 24 seed prompts: eight query families with three natural variants each.
+`data/ai-prompt-panel.csv` contains 27 seed prompts: nine query families with three natural variants each. The `agent_service_discovery` family is a separate commercial launch baseline and should be reported separately from the informational treatment/control cohort until its page and claims are approved.
 
 For each measurement wave, instantiate every seed as follows:
 
@@ -50,7 +50,7 @@ For each measurement wave, instantiate every seed as follows:
 - Conditions: record platform, model or surface, account state, location setting, device condition, exact run time, and any personalization. Do not mix logged-in and logged-out runs without labeling them.
 - Archive: preserve the response or screenshot where permitted and record the archive path.
 
-The full baseline is `24 prompts × 5 platforms × 2 repetitions × 2 waves = 480 planned runs`. Invalid, blocked, truncated, or materially personalized runs remain in the file but have `valid_run=false` with the reason in notes.
+The full baseline is `27 prompts × 5 platforms × 2 repetitions × 2 waves = 540 planned runs`. Invalid, blocked, truncated, or materially personalized runs remain in the file but have `valid_run=false` with the reason in notes.
 
 ## Scoring rules
 
@@ -110,4 +110,3 @@ Pause the decision, rather than declaring failure, when a platform-wide change o
 - **Decision:** Pending baseline, cohort declaration, treatment deployment, and 42-day observation window.
 - **Evidence:** Add links to the frozen prompt panel, Search Console exports, analytics export, URL assignment sheet, change log, and scoring audit.
 - **Follow-up:** If positive, roll out in a second matched batch. If mixed, retain only components supported by segment-level evidence. If negative or unsafe, roll back and record the learning without deleting the run history.
-

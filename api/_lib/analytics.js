@@ -12,6 +12,7 @@ const CITY_BY_FILE = Object.freeze({
 
 const HUB_CLUSTERS = Object.freeze({
   '/blog.html': 'all_topics',
+  '/ai-car-buying-agent.html': 'agent_service',
   '/how-it-works.html': 'service_comparison',
   '/texas-car-buying-rules-paperwork.html': 'texas_rules_and_risk',
   '/auto-financing-credit-fi.html': 'financing',
@@ -27,6 +28,8 @@ export function pageContext(sourcePage) {
   return {
     page_type: path === '/' || path === '/index.html'
       ? 'home'
+      : path === '/ai-car-buying-agent.html'
+        ? 'service_landing'
       : path === '/schedule.html'
         ? 'service'
         : CITY_BY_FILE[path]

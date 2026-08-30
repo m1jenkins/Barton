@@ -11,18 +11,18 @@
   "services": [
     {
       "id": "https://www.driverightcarbuying.com/#service-consultation",
-      "name": "Car Buying Consultant",
-      "price": 295,
+      "name": "AI Agent Buying Service",
+      "price": 195,
       "priceType": "flat_fee",
       "features": [
-        "Research report",
-        "Personalized shortlist with pros and cons",
-        "Total cost of ownership analysis",
-        "30-minute consultation",
-        "Written recommendation"
+        "AI-assisted car-buying research",
+        "Dealer outreach and email negotiation where available",
+        "Tailored options organized in a deal sheet",
+        "Buyer review before any purchase decision",
+        "Deal-sheet delivered for review"
       ],
       "creditTowardFullService": 100,
-      "checkoutUrl": "https://book.stripe.com/eVqcMY3ordQncf201604801",
+      "checkoutUrl": "https://book.stripe.com/6oU3co4svaEb92QcNS04804",
       "availability": "pending_owner_confirmation"
     },
     {

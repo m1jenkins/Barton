@@ -7,7 +7,7 @@ export class ConfigError extends Error {
 
 export const SERVICE_TIERS = Object.freeze({
   consultation: Object.freeze({
-    amount: 29500,
+    amount: 19500,
     currency: 'usd',
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONSULTATION_URL'
   }),
