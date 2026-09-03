@@ -19,6 +19,11 @@
     <meta property="og:title" content="About Drive Right | Meet the Team Behind Texas's Car Buying Service">
     <meta property="og:description" content="Meet the Drive Right team and learn how its Texas car buying service compares vehicles, reviews deal terms, and communicates with sellers.">
     <meta property="og:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Drive Right">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -26,15 +31,49 @@
     <meta name="twitter:title" content="About Drive Right | Meet Mason &amp; the Team">
     <meta name="twitter:description" content="Meet the Drive Right team and learn about its approach to vehicle research, deal review, and seller communication.">
     <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
+    <meta name="twitter:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
 
-    <!-- JSON-LD: BreadcrumbList -->
+    <!-- JSON-LD: About page entities -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.driverightcarbuying.com/" },
-        { "@type": "ListItem", "position": 2, "name": "About Drive Right", "item": "https://www.driverightcarbuying.com/about.html" }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.driverightcarbuying.com/#organization",
+          "name": "Drive Right",
+          "url": "https://www.driverightcarbuying.com/",
+          "email": "hello@driverightcarbuying.com",
+          "telephone": "+1-512-910-4938",
+          "logo": { "@type": "ImageObject", "url": "https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-180.png" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.driverightcarbuying.com/about.html#mason",
+          "name": "Mason",
+          "jobTitle": "Founder & Lead Advisor",
+          "worksFor": { "@id": "https://www.driverightcarbuying.com/#organization" },
+          "url": "https://www.driverightcarbuying.com/about.html"
+        },
+        {
+          "@type": "AboutPage",
+          "@id": "https://www.driverightcarbuying.com/about.html#webpage",
+          "url": "https://www.driverightcarbuying.com/about.html",
+          "name": "About Drive Right",
+          "description": "Meet the Drive Right team and learn how its Texas car buying service compares vehicles, reviews deal terms, and communicates with sellers.",
+          "publisher": { "@id": "https://www.driverightcarbuying.com/#organization" },
+          "mainEntity": { "@id": "https://www.driverightcarbuying.com/#organization" },
+          "about": { "@id": "https://www.driverightcarbuying.com/about.html#mason" },
+          "breadcrumb": { "@id": "https://www.driverightcarbuying.com/about.html#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.driverightcarbuying.com/about.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.driverightcarbuying.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About Drive Right", "item": "https://www.driverightcarbuying.com/about.html" }
+          ]
+        }
       ]
     }
     </script>

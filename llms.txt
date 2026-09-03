@@ -1,0 +1,23 @@
+# Drive Right
+
+> Texas car buying service. Flat-fee vehicle research, dealer outreach, deal review, and purchase coordination for buyers across Texas. Based in Austin. Pricing, availability, and outcomes vary by purchase.
+
+Drive Right is a service-area business, not a car dealer. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com · (512) 910-4938.
+
+## Primary pages
+
+- [Home](https://www.driverightcarbuying.com/): Overview of the service, plans, Texas coverage, and how Drive Right compares vehicles and deal terms.
+- [How it works](https://www.driverightcarbuying.com/how-it-works.html): Process, listed fees, buyer responsibilities, and current disclosures.
+- [Plans and pricing](https://www.driverightcarbuying.com/schedule.html): $195 AI Agent Buying Service, $495 Full Service, and $895 Concierge.
+- [AI car-buying agent](https://www.driverightcarbuying.com/ai-car-buying-agent.html): Details of the $195 AI-assisted research and dealer-outreach plan.
+- [About](https://www.driverightcarbuying.com/about.html): Founder Mason and the service approach.
+- [Resource hubs](https://www.driverightcarbuying.com/blog.html): Index of decision guides. Several older articles remain unpublished to search pending source review.
+- [Texas local markets](https://www.driverightcarbuying.com/texas-local-market-intelligence.html): Statewide service-area overview for nine Texas metros.
+- [Used Teslas with FSD](https://www.driverightcarbuying.com/tesla-fsd-for-sale.html): Help finding used Teslas that still include factory Full Self-Driving.
+- [Policies](https://www.driverightcarbuying.com/policy.html): Privacy, terms, and refund policy.
+
+## Optional
+
+Contact: hello@driverightcarbuying.com
+Phone: +1-512-910-4938
+Sitemap: https://www.driverightcarbuying.com/sitemap.xml

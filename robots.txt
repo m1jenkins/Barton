@@ -31,7 +31,16 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: *
 Allow: /
+
+# Content map for language-model crawlers (not a Google ranking signal)
+# https://www.driverightcarbuying.com/llms.txt
 
 Sitemap: https://www.driverightcarbuying.com/sitemap.xml
