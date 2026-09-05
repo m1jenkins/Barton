@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "recordStatus": "observed_current_pending_owner_approval",
-  "lastObservedAt": "2026-08-12",
+  "lastObservedAt": "2026-09-05",
   "currency": "USD",
   "sourceOfTruth": {
     "url": "https://www.driverightcarbuying.com/schedule.html",
@@ -79,5 +79,16 @@
     "legalReviewer": null,
     "approvedAt": null,
     "nextReviewAt": null
+  },
+  "checkoutObservation": {
+    "observedAt": "2026-09-05",
+    "method": "Read-only public Stripe checkout rendering; no checkout submission",
+    "baseAmountsUSD": [
+      195,
+      495,
+      895
+    ],
+    "tax": "All three public checkouts show address-dependent tax calculation",
+    "scopeConflicts": "Live checkout descriptions include unsupported outcome and deliverable promises. See docs/seo-release-preparation-2026-09-05.md. Observation is not owner approval."
   }
 }

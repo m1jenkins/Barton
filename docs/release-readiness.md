@@ -85,3 +85,7 @@ node scripts/check-redirects.mjs
 ## Rollback boundary
 
 Roll back the promoted application artifact if forms, payment verification, factual accuracy, privacy, accessibility, indexation, or consultation tracking regresses. Keep correct permanent canonical/legacy redirects unless the redirect matrix itself fails. Keep consequential content contained until its exact release gate is satisfied.
+
+## September 5, 2026 SEO preparation
+
+See [the page-specific preparation and review packet](seo-release-preparation-2026-09-05.md). The three priority articles and Austin page have revised drafts and primary-source mapping, but remain noindexed pending their exact author, evidence, and review gates. Homepage positioning is updated. No deployment or bulk release occurred; the sitemap still has nine URLs.

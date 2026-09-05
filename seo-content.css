@@ -1,0 +1,25 @@
+/* Prepared editorial pages use a light background beneath the fixed navigation. */
+.seo-content-page .nav:not(.scrolled) {
+    background: var(--bg-white);
+}
+.seo-content-page .nav:not(.scrolled) .nav__wordmark,
+.seo-content-page .nav:not(.scrolled) .nav__links a:not(.nav__cta) {
+    color: var(--text-dark);
+}
+.seo-content-page .nav:not(.scrolled) .nav__hamburger span {
+    background: var(--text-dark);
+}
+.seo-content-page .article-meta {
+    display: grid;
+    gap: 6px;
+    text-align: center;
+}
+.seo-content-page > .breadcrumb {
+    padding-top: 96px;
+}
+.seo-location-page main > .editorial-status {
+    margin-top: 96px;
+}
+.seo-content-page [id] {
+    scroll-margin-top: 88px;
+}

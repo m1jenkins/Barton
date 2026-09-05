@@ -111,5 +111,18 @@
     "businessOwner": null,
     "approvedAt": null,
     "nextReviewAt": null
+  },
+  "businessBase": {
+    "city": "Austin",
+    "region": "TX",
+    "country": "US",
+    "sourceRecords": [
+      "docs/local-seo-package.md",
+      "about.html"
+    ],
+    "observedAt": "2026-09-05",
+    "publicStorefrontConfirmed": false,
+    "approvalStatus": "pending_owner_confirmation",
+    "note": "Existing Austin base recorded; no street address or additional business location created. Exact coverage and in-person logistics remain pending."
   }
 }
