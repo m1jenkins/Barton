@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseConversation, parseOpening, nextField, isComplete } from './intake.js';
+import { fields, parseConversation, parseOpening, nextField, isComplete } from './intake.js';
 import { restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js';
 import { createCheckout, plans } from './checkout.js';
 import { validateLeadPayload, validateCheckoutPayload } from '../api/_lib/validation.js';
@@ -80,6 +80,35 @@ test('onboarding carries a complete brief without assigning price to total budge
   assert.match(result.notes,/not an all-in budget/);
   for (const name of ['Search radius','Trim','Transmission']) assert.ok(result.notes.includes(name));
   assert.equal(onboardingValues(applyAnswer(draft(),{values:{year:'2020 or older'}})).year_min,undefined);
+});
+test('customer intake survives persistence, editing, download, and onboarding mapping', () => {
+  const notes = 'Please call before visiting.\nI have a listing to share: https://example.test/car?price=30000';
+  const brief = applyAnswer(draft(), { values: { condition: 'cpo', timeline: 'Within a month', payment_method: 'Financing', trade_in: 'No trade-in', needs: 'Space for two car seats and a dog.', notes } });
+  const restored = restoreBrief(JSON.parse(JSON.stringify(brief)));
+  assert.deepEqual(restored, brief);
+  assert.equal(restored.priorities.notes, undefined);
+  assert.equal(restored.priorities.payment_method, undefined);
+  const result = onboardingValues(restored);
+  assert.equal(result.condition, 'cpo');
+  assert.equal(result.timeline, '1-month');
+  assert.equal(result.payment_method, 'finance');
+  assert.equal(result.trade_in, 'no');
+  assert.ok(briefText(restored).includes(notes));
+  assert.ok(result.notes.includes('Everyday needs: Space for two car seats and a dog.'));
+  assert.ok(result.notes.includes(`Anything else?: ${notes}`));
+  const edited = applyAnswer(restored, parseConversation('Change my notes to Please arrange Saturday delivery.', 'year'));
+  assert.equal(edited.answers.notes, 'Please arrange Saturday delivery.');
+  assert.equal(edited.answers.budget, restored.answers.budget);
+  assert.equal(onboardingValues(applyAnswer(draft(), { values: { timeline: 'Before October 10', trade_in: '2018 Civic with 70,000 miles' } })).timeline, undefined);
+});
+test('a maximum-length complete brief fits the existing lead and onboarding notes limit', () => {
+  const values = Object.fromEntries(fields.map(field => [field.key, 'x'.repeat(field.maxLength || 180)]));
+  Object.assign(values, { year: '2024 or newer', mileage: '999999 miles', budget: '$10000000', zip: '02108', radius: '5000 miles', transmission: 'Automatic' });
+  const brief = applyAnswer(restoreBrief(null), { values });
+  const message = briefText(brief);
+  assert.ok(message.length <= 3000, `Brief has ${message.length} characters`);
+  assert.equal(onboardingValues(brief).notes, message);
+  assert.doesNotThrow(() => validateLeadPayload({ name: 'Ada Buyer', email: 'ada@example.test', message }));
 });
 for (const [tier,plan] of Object.entries(plans)) {
   test(`${plan.name} links its validated lead to the selected checkout`, async () => {

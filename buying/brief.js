@@ -82,6 +82,15 @@ export function createStore(w, key = BRIEF_KEY, { local = true } = {}) {
 export function onboardingValues(brief, contact = {}) {
   const { answers } = restoreBrief(brief);
   const values = { name: contact.name || '', email: contact.email || '', phone: contact.phone || '', preferred_makes: answers.vehicle || '', colors: answers.color || '' };
+  const selections = {
+    condition: { New: 'new', Used: 'used', 'Certified pre-owned': 'cpo', 'Open to all': 'open' },
+    payment_method: { Cash: 'cash', Financing: 'finance', Lease: 'lease', 'Not sure yet': 'undecided' },
+    trade_in: { 'No trade-in': 'no', 'Yes, I have a trade-in': 'yes', 'Not sure yet': 'maybe' },
+    timeline: { 'As soon as possible': 'asap', 'Within 2 weeks': '2-weeks', 'Within a month': '1-month', 'No rush': 'flexible' },
+  };
+  for (const [key, options] of Object.entries(selections)) {
+    if (options[answers[key]]) values[key] = options[answers[key]];
+  }
   const types = [['suv', /\b(?:suv|crossover)\b/i], ['truck', /\b(?:truck|pickup)\b/i], ['sedan', /\bsedan\b/i], ['minivan', /\bminivan\b/i], ['wagon', /\b(?:wagon|hatchback)\b/i], ['coupe', /\b(?:coupe|sports car)\b/i]];
   const matches = types.filter(([, pattern]) => pattern.test(answers.vehicle || ''));
   if (matches.length === 1) values.vehicle_type = matches[0][0];

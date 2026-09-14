@@ -4,14 +4,22 @@ export const fields = [
   { key: 'mileage', label: 'Mileage', question: 'How many miles are you comfortable with?', placeholder: 'For example, under 40,000 miles', choices: ['Under 20,000 mi', 'Under 40,000 mi', 'Under 60,000 mi'], defaultPriority: 'prefer' },
   { key: 'budget', label: 'Car-price budget', question: 'What’s the most you’d like to spend on the car itself?', placeholder: 'For example, $30,000', choices: ['$25,000', '$30,000', '$40,000'], hint: 'Vehicle price, before taxes, fees, and delivery.', required: true, defaultPriority: 'must' },
   { key: 'zip', label: 'ZIP code', question: 'What ZIP code should I start from?', placeholder: 'Your 5-digit ZIP code', choices: [], inputMode: 'numeric', hint: 'I’ll use this as the starting point for your search.', required: true, priority: false },
+  { key: 'condition', label: 'Condition', question: 'Are you thinking new, used, or certified pre-owned?', placeholder: 'Your preferred condition', choices: ['New', 'Used', 'Certified pre-owned', 'Open to all'], intake: true, direct: true, maxLength: 40, defaultPriority: 'prefer' },
+  { key: 'timeline', label: 'Buying timeline', question: 'When would you like to have the keys?', placeholder: 'A timeframe or a specific date', choices: ['As soon as possible', 'Within 2 weeks', 'Within a month', 'No rush'], intake: true, direct: true, maxLength: 80, priority: false },
+  { key: 'payment_method', label: 'Payment plans', question: 'How are you planning to pay for your next car?', placeholder: 'Cash, financing, or still deciding', choices: ['Cash', 'Financing', 'Lease', 'Not sure yet'], hint: 'Just your plans for now. No financial documents needed.', intake: true, direct: true, maxLength: 80, priority: false },
+  { key: 'trade_in', label: 'Trade-in', question: 'Do you have a car you’d like to trade in?', placeholder: 'For example, a 2018 Civic with 70,000 miles', choices: ['No trade-in', 'Yes, I have a trade-in', 'Not sure yet'], hint: 'If so, a make, model, and approximate mileage help.', intake: true, direct: true, priority: false },
+  { key: 'needs', label: 'Everyday needs', question: 'What does your next car need to do for you?', placeholder: 'Two car seats, room for the dog, a daily commute…', choices: [], hint: 'Think passengers, cargo, driving habits, and must-have features.', intake: true, direct: true, multiline: true, maxLength: 300, defaultPriority: 'must' },
   { key: 'radius', label: 'Search radius', question: 'And how far should I look? The right car might be a little further afield.', placeholder: 'For example, 250 miles', choices: ['100 miles', '250 miles', '500 miles', 'Nationwide'], defaultPriority: 'prefer' },
   { key: 'color', label: 'Color', question: 'Any colors you love? Or any you’d rather avoid?', placeholder: 'Green or white, but not black', choices: ['Green', 'White', 'Black', 'Open to any color'], defaultPriority: 'prefer' },
   { key: 'trim', label: 'Trim', question: 'Do you have a trim level in mind? It’s okay to keep your options open.', placeholder: 'A preferred trim, or “open to any”', choices: [], defaultPriority: 'prefer' },
-  { key: 'transmission', label: 'Transmission', question: 'One last detail. Manual, automatic, or either?', placeholder: 'Your transmission preference', choices: ['Manual', 'Automatic', 'Either'], defaultPriority: 'prefer' },
+  { key: 'transmission', label: 'Transmission', question: 'Do you prefer manual, automatic, or either?', placeholder: 'Your transmission preference', choices: ['Manual', 'Automatic', 'Either'], defaultPriority: 'prefer' },
+  { key: 'notes', label: 'Anything else?', question: 'Anything else you’d like us to know before we put your brief together?', placeholder: 'Dealbreakers, listings you like, delivery needs, or any final details…', choices: [], hint: 'Add as much context as you like, up to 1,000 characters. It’s okay to skip.', intake: true, direct: true, multiline: true, maxLength: 1000, priority: false },
 ];
 
-// Required details come first; optional preferences never delay the brief.
-fields.sort((a, b) => Number(Boolean(b.required)) - Number(Boolean(a.required)));
+// Start with the essentials, then a short customer intake. Finer car preferences
+// remain optional, and the open-ended note always comes last.
+const fieldOrder = field => field.required ? 0 : field.key === 'notes' ? 3 : field.intake ? 1 : 2;
+fields.sort((a, b) => fieldOrder(a) - fieldOrder(b));
 
 const fieldByKey = key => fields.find(field => field.key === key);
 const optionalKeys = fields.filter(field => !field.required).map(field => field.key);
@@ -37,20 +45,33 @@ export function isUnrestricted(key, value) {
     color: 'Open to any color',
     trim: 'Open to any trim',
     transmission: 'Either',
+    condition: 'Open to all',
   }[key] === value;
 }
 
 export function isConcrete(key, value) {
-  return Boolean(value) && key !== 'zip' && !isUnrestricted(key, value);
+  return Boolean(value) && fieldByKey(key)?.priority !== false && !isUnrestricted(key, value);
 }
 
 /** Validate and normalize only one concrete field. */
 export function normalizeAnswer(key, raw) {
-  const text = String(raw ?? '').trim().replace(/\s+/g, ' ');
-  if (!text) throw new Error('Add an answer so I know what to look for.');
-  if (text.length > 180) throw new Error('Could you keep that to 180 characters or fewer?');
   const field = fieldByKey(key);
   if (!field) throw new Error('I don’t recognize that detail yet.');
+  const text = String(raw ?? '').trim().replace(field.multiline ? /[^\S\n]+/g : /\s+/g, ' ');
+  if (!text) throw new Error('Add an answer so I know what to look for.');
+  const maxLength = field.maxLength || 180;
+  if (text.length > maxLength) throw new Error(`Could you keep that to ${maxLength.toLocaleString('en-US')} characters or fewer?`);
+  if (field.multiline) return text;
+  if (field.direct) {
+    const common = {
+      condition: { new: 'New', used: 'Used', cpo: 'Certified pre-owned', 'certified pre-owned': 'Certified pre-owned', 'open to all': 'Open to all', either: 'Open to all' },
+      timeline: { asap: 'As soon as possible', 'no rush': 'No rush', flexible: 'No rush' },
+      payment_method: { cash: 'Cash', finance: 'Financing', financing: 'Financing', loan: 'Financing', lease: 'Lease', 'not sure': 'Not sure yet' },
+      trade_in: { no: 'No trade-in', none: 'No trade-in', yes: 'Yes, I have a trade-in', maybe: 'Not sure yet', 'not sure': 'Not sure yet' },
+    };
+    if (key === 'condition' && flexible.test(text)) return 'Open to all';
+    return common[key]?.[text.toLowerCase()] || text.charAt(0).toUpperCase() + text.slice(1);
+  }
 
   if (key === 'zip') {
     if (!/^\d{5}$/.test(text)) throw new Error('Please enter a 5-digit US ZIP code, like 78701.');
@@ -107,6 +128,10 @@ const aliases = {
   radius: 'radius', distance: 'radius', area: 'radius',
   color: 'color', colour: 'color', trim: 'trim',
   transmission: 'transmission', gearbox: 'transmission',
+  condition: 'condition', timeline: 'timeline', timing: 'timeline',
+  payment: 'payment_method', 'payment plans': 'payment_method', payment_method: 'payment_method',
+  'trade-in': 'trade_in', 'trade in': 'trade_in', trade_in: 'trade_in',
+  needs: 'needs', notes: 'notes', 'anything else': 'notes',
 };
 
 function keyForAlias(value) {
@@ -134,6 +159,10 @@ function hasAmbiguousAmount(text) {
 
 /** Extract common local patterns without mutating anything until all values validate. */
 export function parseDetails(raw, currentKey = null) {
+  if (currentKey && isSkipAnswer(currentKey, raw)) return { values: {}, skipped: [currentKey], correction: false };
+  // Customer context can contain prices, model years, mileage, or color exclusions.
+  // Keep it intact instead of interpreting it as changes to the car search.
+  if (fieldByKey(currentKey)?.direct) return { values: { [currentKey]: normalizeAnswer(currentKey, raw) }, skipped: [], correction: false };
   const text = String(raw ?? '').trim().replace(/\s+/g, ' ');
   if (!text) throw new Error('Add an answer so I know what to look for.');
   if (text.length > 180) throw new Error('Could you keep that to 180 characters or fewer?');
@@ -144,7 +173,6 @@ export function parseDetails(raw, currentKey = null) {
     remaining = remaining.replace(match[0], ' ');
   };
 
-  if (currentKey && isSkipAnswer(currentKey, text)) return { values: {}, skipped: [currentKey], correction: false };
   if (!currentKey && hasAmbiguousAmount(text)) throw new Error('Which detail should I change—budget or mileage? Please name the detail.');
 
   const nationwide = text.match(/\b(?:nationwide|anywhere|all (?:of )?(?:the )?(?:us|usa|united states))\b/i);
@@ -229,18 +257,19 @@ export function parseDetails(raw, currentKey = null) {
 }
 
 /** Parse an explicit correction and keep it separate from the unanswered current question. */
-export function parseCorrection(raw) {
-  const text = String(raw ?? '').trim().replace(/\s+/g, ' ');
+export function parseCorrection(raw, { explicitOnly = false } = {}) {
+  const text = String(raw ?? '').trim();
   if (!correctionPrefix.test(text)) return null;
-  const explicit = text.match(/^(?:change|update|edit|set|make)\s+(?:my\s+)?(car|vehicle|make|model|year|years|mileage|miles|budget|price|cost|zip(?:\s+code)?|zipcode|radius|distance|area|color|colour|trim|transmission|gearbox)\s*(?:to|at|as|:|=)?\s*(.+)$/i);
+  const explicit = text.match(/^(?:change|update|edit|set|make)\s+(?:my\s+)?(car|vehicle|make|model|year|years|mileage|miles|budget|price|cost|zip(?:\s+code)?|zipcode|radius|distance|area|color|colour|trim|transmission|gearbox|condition|timeline|timing|payment plans|payment_method|payment|trade-in|trade in|trade_in|needs|notes|anything else)\b\s*(?:to\b|at\b|as\b|:|=)?\s*([\s\S]+)$/i);
   if (explicit) {
     const key = keyForAlias(explicit[1]);
-    const target = explicit[2].replace(/[.!?]+$/, '').trim();
+    const target = fieldByKey(key)?.multiline ? explicit[2].trim() : explicit[2].replace(/[.!?]+$/, '').trim();
     if (!key || !target) throw new Error('Which detail should I change? Name it and include the new value.');
     const values = {};
     assign(values, key, target);
     return { values, skipped: [], correction: true };
   }
+  if (explicitOnly) return null;
   const remainder = text.replace(/^(?:actually|wait|correction)\s*[,;:]?\s*/i, '').replace(/[.!?]+$/, '').trim();
   if (!remainder) throw new Error('Which detail should I change? Name it and include the new value.');
   const parsed = parseDetails(remainder, null);
@@ -248,7 +277,7 @@ export function parseCorrection(raw) {
 }
 
 export function parseConversation(raw, currentKey) {
-  const correction = parseCorrection(raw);
+  const correction = parseCorrection(raw, { explicitOnly: Boolean(fieldByKey(currentKey)?.direct) });
   return correction || parseDetails(raw, currentKey);
 }
 
@@ -259,6 +288,10 @@ export function parseOpening(raw) {
 
 export function nextField(answers = {}, skipped = {}) {
   return fields.find(field => !answers[field.key] && !skipped[field.key]);
+}
+
+export function nextIntakeField(answers = {}, skipped = {}) {
+  return fields.find(field => (field.required || field.intake) && !answers[field.key] && !skipped[field.key]);
 }
 
 export function isComplete(answers = {}) {

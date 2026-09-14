@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  normalizeAnswer, parseOpening, parseDetails, parseConversation, nextField,
+  fields, normalizeAnswer, parseOpening, parseDetails, parseConversation, nextField, nextIntakeField,
   restoredAnswers, restoredSkipped, restoredPriorities, isComplete, isFullyResolved,
   locationText,
 } from './intake.js';
@@ -46,9 +46,50 @@ test('the three required details unlock review while optional details can be ski
   const answers = { vehicle: 'Mazda MX-5 Miata', budget: 'Up to $30,000', zip: '02108' };
   const skipped = { year: true, mileage: true };
   assert.equal(isComplete(answers), true);
-  assert.equal(nextField(answers, skipped).key, 'radius');
+  assert.equal(nextField(answers, skipped).key, 'condition');
   assert.equal(isFullyResolved(answers, skipped), false);
   assert.throws(() => normalizeAnswer('budget', 'Flexible'));
+});
+
+test('the guided intake asks about the customer and ends with final details', () => {
+  const answers = parseOpening('A family SUV under $30k in 78701');
+  const skipped = {};
+  const asked = [];
+  let field;
+  while ((field = nextIntakeField(answers, skipped))) {
+    asked.push(field.key);
+    assert.equal(Boolean(field.required), false);
+    skipped[field.key] = true;
+  }
+  assert.deepEqual(asked, ['condition', 'timeline', 'payment_method', 'trade_in', 'needs', 'notes']);
+  assert.equal(isComplete(answers), true);
+  assert.equal(nextField(answers, skipped).key, 'year');
+  assert.equal(fields.at(-1).key, 'notes');
+});
+
+test('customer context keeps numbers, exclusions, and correction-like wording intact', () => {
+  const cases = {
+    trade_in: '2018 Honda Civic, 70000 miles, $12000 still owed',
+    timeline: 'Before October 2026',
+    payment_method: 'Financing with $5000 down',
+    needs: 'Actually, room for 3 kids, no black seats, and 40 miles of commuting.',
+    notes: 'Make room for a wheelchair.\nPlease avoid black; delivery to 02108 after October 2026.',
+  };
+  for (const [key, value] of Object.entries(cases)) {
+    assert.deepEqual(parseConversation(value, key), { values: { [key]: value }, skipped: [], correction: false });
+  }
+  assert.deepEqual(parseConversation('Change my budget to $35k', 'notes'), { values: { budget: 'Up to $35,000' }, skipped: [], correction: true });
+  assert.equal(parseConversation('Change my notes to Please call first.\nDelivery on Saturday.', 'timeline').values.notes, 'Please call first.\nDelivery on Saturday.');
+});
+
+test('long notes validate, restore, and skip without receiving a priority', () => {
+  const notes = 'a'.repeat(1000);
+  assert.equal(parseConversation(notes, 'notes').values.notes, notes);
+  assert.throws(() => parseConversation(`${notes}a`, 'notes'), /1,000/);
+  assert.throws(() => normalizeAnswer('needs', 'a'.repeat(301)), /300/);
+  assert.deepEqual(restoredAnswers({ notes }), { notes });
+  assert.deepEqual(parseConversation('Skip for now', 'notes').skipped, ['notes']);
+  assert.deepEqual(restoredPriorities({ notes: 'must', timeline: 'must', condition: 'must' }, { notes, timeline: 'Within a month', condition: 'Open to all' }), {});
 });
 
 test('common multi-detail answers are extracted locally and retained together', () => {

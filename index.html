@@ -164,8 +164,7 @@
 
     <meta name="theme-color" content="#f7f6f2">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="preload" href="/assets/buying/fonts/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/assets/buying/fonts/instrument-serif-italic.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/assets/buying/fonts/barlow-medium.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/buying/daisy.css">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
@@ -184,26 +183,85 @@
   <section id="intake-view" aria-label="Find your next car">
     <div class="intake-shell">
       <div class="hero-intro" id="hero"><h1>Your next car.<br><em>Consider it found.</em></h1><p>Tell us what you’re looking for. We’ll take it from here.</p></div>
-      <div class="chat-heading" hidden><a class="back-link" href="/"><span data-icon="back"></span> Back to home</a><h1>Let’s find <em>your kind of car.</em></h1><div class="chat-meta"><span>Build your buying brief</span><span id="step-label">0 of 3 essentials</span></div><progress id="intake-progress" max="3" value="0" aria-label="Required details"></progress></div>
+      <div class="chat-heading" hidden><a class="back-link" href="/"><span data-icon="back"></span> Back to home</a><h1>Let’s find <em>your kind of car.</em></h1><div class="chat-meta"><span>Build your buying brief</span><span id="step-label">0 of 9 details</span></div><progress id="intake-progress" max="9" value="0" aria-label="Buying brief progress"></progress></div>
       <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Your guided buying brief" hidden></div>
       <div id="composer-area" class="composer-area">
         <div id="choices" class="choices" aria-label="Suggested answers" hidden></div><button id="skip-detail" class="skip-detail" type="button" hidden>Skip for now</button>
-        <form id="composer" class="composer" autocomplete="off"><label for="answer" class="sr-only" id="answer-label">What car are you dreaming of?</label><input id="answer" name="answer" placeholder="What car are you dreaming of?" maxlength="180" aria-describedby="input-error input-hint" enterkeyhint="send" required><button class="send-button" type="submit" aria-label="Send answer"><span data-icon="up"></span></button></form>
+        <form id="composer" class="composer" autocomplete="off"><label for="answer" class="sr-only" id="answer-label">What car are you dreaming of?</label><textarea id="answer" name="answer" rows="1" placeholder="What car are you dreaming of?" maxlength="180" aria-describedby="input-error input-hint" enterkeyhint="send" required></textarea><button class="send-button" type="submit" aria-label="Send answer"><span data-icon="up"></span></button></form>
         <p id="input-error" class="input-error" role="alert"></p><button id="example" class="example-link" type="button">Try “A Mazda Miata, under $30k”</button>
-        <div class="conversation-controls" hidden><span id="input-hint">Your preferences, at your pace.</span></div>
-        <div id="brief-ready" class="brief-ready" hidden><a href="/#brief" class="primary-button">See your brief <span data-icon="arrow"></span></a><button id="add-details" class="text-link" type="button">Add a few more details</button></div>
+        <div class="conversation-controls" hidden><span id="input-hint">Your preferences, at your pace.</span><a id="review-progress" class="text-link" href="/#brief" hidden>Review brief so far</a></div>
+        <div id="brief-ready" class="brief-ready" hidden><a href="/#brief" class="primary-button">See your brief <span data-icon="arrow"></span></a><button id="add-details" class="text-link" type="button">Add car preferences</button></div>
       </div>
     </div>
     <figure class="hero-photo page-width"><picture><source type="image/avif" srcset="/assets/buying/coastal-roadster-640.avif 640w, /assets/buying/coastal-roadster-960.avif 960w, /assets/buying/coastal-roadster-1440.avif 1440w, /assets/buying/coastal-roadster-1920.avif 1920w" sizes="(max-width: 760px) 810px, (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px"><source type="image/webp" srcset="/assets/buying/coastal-roadster-640.webp 640w, /assets/buying/coastal-roadster-960.webp 960w, /assets/buying/coastal-roadster-1440.webp 1440w, /assets/buying/coastal-roadster-1920.webp 1920w" sizes="(max-width: 760px) 810px, (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px"><img src="/assets/buying/coastal-roadster.jpg" alt="An olive green roadster beside the ocean on a sunlit coastal road" width="2172" height="724" fetchpriority="high"></picture><figcaption><span>The right car starts with you.</span><span>A better way to buy.</span></figcaption></figure>
   </section>
   <section id="summary-view" class="summary-view page-width" aria-labelledby="summary-title" hidden>
     <a href="/#conversation" class="back-link"><span data-icon="back"></span> Back to conversation</a><h1 id="summary-title" tabindex="-1">A little particular.<br><em>Exactly your kind of car.</em></h1>
-    <div class="summary-layout"><article class="search-brief" aria-label="Your buying brief"><header class="brief-header"><h2>Your buying brief</h2><button id="edit-brief" class="outline-button" type="button"><span data-icon="edit"></span> Edit</button></header><h3 id="brief-vehicle"></h3><dl id="brief-details" class="brief-details"></dl><p class="budget-note">Car-price budget is before taxes, fees, and delivery.</p><div class="brief-footer"><a href="/schedule.html" class="primary-button">Choose my plan <span data-icon="arrow"></span></a></div><div class="brief-secondary"><button id="save-brief" type="button" class="text-link">Save on this device</button><button id="download-brief" type="button" class="text-link">Download brief <span data-icon="download"></span></button></div><p id="brief-status" role="status" class="small-note"></p></article>
+    <div class="summary-layout"><article class="search-brief" aria-label="Your buying brief"><header class="brief-header"><h2>Your buying brief</h2><button id="edit-brief" class="outline-button" type="button"><span data-icon="edit"></span> Edit</button></header><h3 id="brief-vehicle"></h3><dl id="brief-details" class="brief-details"></dl><section class="brief-notes" aria-labelledby="brief-notes-title"><h4 id="brief-notes-title">Anything else?</h4><button id="brief-notes-value" type="button" data-edit="notes" aria-label="Edit final details">Add any final details</button></section><p class="budget-note">Car-price budget is before taxes, fees, and delivery.</p><div class="brief-footer"><a href="/schedule.html" class="primary-button">Choose my plan <span data-icon="arrow"></span></a></div><div class="brief-secondary"><button id="save-brief" type="button" class="text-link">Save on this device</button><button id="download-brief" type="button" class="text-link">Download brief <span data-icon="download"></span></button></div><p id="brief-status" role="status" class="small-note"></p></article>
       <aside class="concierge"><figure class="concierge-figure"><img src="/assets/buying/driveway-arrival.jpg" alt="An olive green roadster in a quiet residential driveway" width="1672" height="941" loading="lazy"><figcaption class="concierge-copy"><h2>A good place<br>to start.</h2><p>Your preferences are in one place. Choose the support that fits, then your advisor will confirm the next steps after payment and intake.</p><a href="/how-it-works.html" class="text-link">How Drive Right works <span data-icon="arrow"></span></a></figcaption></figure></aside>
     </div><p class="assurance">Your preferences, in one place. Your decisions, always yours.</p>
   </section>
   <div id="home-content">
-    <section class="process-section page-width section-space" id="how-it-works"><div class="section-intro"><h2>A little direction.<br><em>A lot less legwork.</em></h2><a href="/how-it-works.html" class="text-link">How it works <span data-icon="arrow"></span></a></div><ol class="process-list"><li><span>01</span><h3>Tell us about your car.</h3><p>Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p></li><li><span>02</span><h3>Make the brief yours.</h3><p>Review your preferences, then choose the service and support that fit your search.</p></li><li><span>03</span><h3>Let’s take the next step.</h3><p>Add your contact details and check out. We confirm the scope and timing after payment and intake.</p></li></ol></section>
+    <section class="process-section page-width section-space" id="how-it-works" aria-labelledby="process-title">
+      <div class="section-intro">
+        <h2 id="process-title">A little direction.<br><em>A lot less legwork.</em></h2>
+        <a href="/how-it-works.html" class="text-link">How it works <span data-icon="arrow"></span></a>
+      </div>
+      <div class="process-layout">
+        <ol class="process-list">
+          <li class="process-step is-active">
+            <h3><button class="process-trigger" id="process-trigger-1" type="button" data-process-step="0" aria-expanded="true" aria-controls="process-detail-1 process-example-1" disabled><span class="process-number" aria-hidden="true">01</span><span>Tell us about your car.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
+            <p id="process-detail-1">Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p>
+          </li>
+          <li class="process-step">
+            <h3><button class="process-trigger" id="process-trigger-2" type="button" data-process-step="1" aria-expanded="true" aria-controls="process-detail-2 process-example-2" disabled><span class="process-number" aria-hidden="true">02</span><span>Make the brief yours.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
+            <p id="process-detail-2">Review your preferences, then choose the service and support that fit your search.</p>
+          </li>
+          <li class="process-step">
+            <h3><button class="process-trigger" id="process-trigger-3" type="button" data-process-step="2" aria-expanded="true" aria-controls="process-detail-3 process-example-3" disabled><span class="process-number" aria-hidden="true">03</span><span>Let’s take the next step.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
+            <p id="process-detail-3">Add your contact details and check out. We confirm the scope and timing after payment and intake.</p>
+          </li>
+        </ol>
+        <figure class="process-preview" aria-label="An example buying journey">
+          <div class="process-preview-top"><span>From a thought to a plan.</span><span class="process-counter" aria-hidden="true"><span data-process-counter>01</span> / 03</span></div>
+          <div class="process-examples">
+            <div class="process-example" id="process-example-1" role="region" aria-labelledby="process-trigger-1">
+              <div class="process-paper process-request">
+                <p class="process-paper-title">Your starting point</p>
+                <blockquote>“A Mazda Miata,<br>under $30k.<br>I’m in Austin.”</blockquote>
+                <div class="process-request-location"><span>Austin, Texas</span><span>ZIP 78704</span></div>
+                <p class="process-paper-note">A car. A budget. A place to look.<br>That’s enough to get started.</p>
+              </div>
+            </div>
+            <div class="process-example" id="process-example-2" role="region" aria-labelledby="process-trigger-2" hidden>
+              <div class="process-paper">
+                <p class="process-paper-title">Your buying brief</p>
+                <p class="process-paper-heading">A little more<br>you.</p>
+                <dl class="process-brief-fields">
+                  <div><dt>Vehicle</dt><dd>Mazda Miata</dd></div>
+                  <div><dt>Car-price budget</dt><dd>Under $30,000</dd></div>
+                  <div><dt>ZIP</dt><dd>78704</dd></div>
+                </dl>
+                <p class="process-paper-note">Review the essentials.<br>Add the details that matter to you.</p>
+              </div>
+            </div>
+            <div class="process-example" id="process-example-3" role="region" aria-labelledby="process-trigger-3" hidden>
+              <div class="process-paper">
+                <p class="process-paper-title">Your next step</p>
+                <p class="process-paper-heading">The support<br>that fits.</p>
+                <dl class="process-brief-fields process-plan-options">
+                  <div><dt>AI Agent Buying Service</dt><dd>$195</dd></div>
+                  <div><dt>Hire Drive Right</dt><dd>$495</dd></div>
+                  <div><dt>Ultimate Concierge</dt><dd>$895</dd></div>
+                </dl>
+                <p class="process-paper-note">One-time service fees.<br>Then, contact details and checkout.</p>
+              </div>
+            </div>
+          </div>
+          <figcaption><span>An example. Your search is your own.</span><a href="/#conversation" class="text-link">Start my brief <span data-icon="arrow"></span></a></figcaption>
+        </figure>
+      </div>
+    </section>
     <section class="pricing-preview section-space" id="services"><div class="page-width" id="pricing"><div class="section-intro"><h2>Your search.<br><em>Your level of support.</em></h2><p>Three clear service fees.<br>A choice that stays yours.</p></div><div class="plan-grid"><article class="plan-card"><h3>AI Agent Buying Service</h3><p class="plan-description">A considered shortlist, with a little help from AI.</p><p class="plan-price">$195<span>one-time service fee</span></p><a href="/schedule.html#consultation" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Hire Drive Right</h3><p class="plan-description">An advisor by your side, from search to signing.</p><p class="plan-price">$495<span>one-time service fee</span></p><a href="/schedule.html#full-service" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Ultimate Concierge</h3><p class="plan-description">More support for a more particular search.</p><p class="plan-price">$895<span>one-time service fee</span></p><a href="/schedule.html#concierge" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article></div></div></section>
     <section class="faq-section page-width section-space" id="faq"><h2>A few things<br><em>you might be wondering.</em></h2><div class="faq-list">
       <details><summary>What does Drive Right do?</summary><p>We help Texas car buyers research vehicles, compare offers, and negotiate purchases. Your plan determines whether you receive AI-assisted research and outreach, an advisor through the buying process, or expanded sourcing and coordination.</p></details>
