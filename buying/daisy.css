@@ -1,7 +1,6 @@
-@font-face{font-family:Barlow;src:url('../assets/buying/fonts/barlow-medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:Barlow;src:url('../assets/buying/fonts/barlow-semibold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url('../assets/buying/fonts/instrument-serif.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:Inter;src:url('../assets/buying/fonts/inter.ttf') format('truetype');font-weight:400 600;font-style:normal;font-display:swap}
-:root{--paper:#f7f6f2;--ink:#242923;--muted:#62675f;--line:#ddded7;--sage:#dce3d6;--green:#576b5c;--white:#fff;--error:#963c2e;--display:Barlow,"Arial Narrow",sans-serif;--sans:Inter,-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.2,1.45,.45,1)}
+:root{--paper:#f7f6f2;--ink:#242923;--muted:#62675f;--line:#ddded7;--sage:#dce3d6;--green:#576b5c;--white:#fff;--error:#963c2e;--display:'Instrument Serif',Georgia,serif;--sans:Inter,-apple-system,BlinkMacSystemFont,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.2,1.45,.45,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:28px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
