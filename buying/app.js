@@ -178,12 +178,12 @@ function navigate(next, focus = true) {
 }
 function submit(raw) {
   if (replyPending) return;
-  if (view === 'home') navigate('conversation', false);
   const field = currentField();
   if (!field) { navigate('brief'); return; }
   try {
     brief = applyAnswer(brief, parseConversation(raw, field.key));
     persist(); input.value = ''; $('#input-error').textContent = ''; input.removeAttribute('aria-invalid');
+    if (view === 'home') navigate('conversation', false);
     prepareReply();
   } catch (error) {
     $('#input-error').textContent = error.message; input.setAttribute('aria-invalid','true'); input.focus();
@@ -209,11 +209,10 @@ function download() {
 }
 if (home) {
   $('#composer').addEventListener('submit', e => { e.preventDefault(); submit(input.value); });
-  input.addEventListener('focus', () => { if (view === 'home') navigate('conversation', false); });
   input.addEventListener('input', () => { $('#input-error').textContent = ''; input.removeAttribute('aria-invalid'); });
   input.addEventListener('input', sizeAnswer);
   input.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && !currentField()?.multiline) { e.preventDefault(); $('#composer').requestSubmit(); }
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (view === 'home' || !currentField()?.multiline)) { e.preventDefault(); $('#composer').requestSubmit(); }
   });
   $('#example').addEventListener('click', () => Object.keys(brief.answers).length ? navigate(isComplete(brief.answers) ? 'brief' : 'conversation') : submit('A Mazda Miata, under $30k'));
   $('#choices').addEventListener('click', e => { const b = e.target.closest('[data-choice]'); if (b) submit(b.dataset.choice); });
