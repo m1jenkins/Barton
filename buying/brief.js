@@ -38,7 +38,7 @@ export function briefText(brief) {
     const value = answers[field.key] || (skipped[field.key] ? 'Not specified (skipped)' : 'Not specified (not yet answered)');
     const priority = isConcrete(field.key, answers[field.key]) ? ` [${priorities[field.key] === 'must' ? 'Must-have' : 'Prefer'}]` : '';
     const note = field.key === 'budget' ? ' (vehicle price before taxes, fees, and delivery; not an all-in budget)' : field.key === 'zip' ? ' (search origin)' : '';
-    lines.push(`${field.label}: ${value}${priority}${note}`);
+    lines.push(`${field.label.replace(/\?$/, '')}: ${value}${priority}${note}`);
   }
   return lines.join('\n');
 }
@@ -89,7 +89,7 @@ export function onboardingValues(brief, contact = {}) {
     timeline: { 'As soon as possible': 'asap', 'Within 2 weeks': '2-weeks', 'Within a month': '1-month', 'No rush': 'flexible' },
   };
   for (const [key, options] of Object.entries(selections)) {
-    if (options[answers[key]]) values[key] = options[answers[key]];
+    if (Object.hasOwn(options, answers[key])) values[key] = options[answers[key]];
   }
   const types = [['suv', /\b(?:suv|crossover)\b/i], ['truck', /\b(?:truck|pickup)\b/i], ['sedan', /\bsedan\b/i], ['minivan', /\bminivan\b/i], ['wagon', /\b(?:wagon|hatchback)\b/i], ['coupe', /\b(?:coupe|sports car)\b/i]];
   const matches = types.filter(([, pattern]) => pattern.test(answers.vehicle || ''));

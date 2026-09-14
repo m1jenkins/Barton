@@ -95,7 +95,7 @@ test('customer intake survives persistence, editing, download, and onboarding ma
   assert.equal(result.trade_in, 'no');
   assert.ok(briefText(restored).includes(notes));
   assert.ok(result.notes.includes('Everyday needs: Space for two car seats and a dog.'));
-  assert.ok(result.notes.includes(`Anything else?: ${notes}`));
+  assert.ok(result.notes.includes(`Anything else: ${notes}`));
   const edited = applyAnswer(restored, parseConversation('Change my notes to Please arrange Saturday delivery.', 'year'));
   assert.equal(edited.answers.notes, 'Please arrange Saturday delivery.');
   assert.equal(edited.answers.budget, restored.answers.budget);
@@ -118,13 +118,17 @@ for (const [tier,plan] of Object.entries(plans)) {
       if(url==='/api/leads'){validateLeadPayload(body);return {ok:true,lead_id:'71ce2e4c-99b0-4d62-91ef-334605514dcf'};}
       validateCheckoutPayload(body);return {ok:true,url:'https://buy.stripe.com/test-example',attempt_id:'attempt'};
     }});
-    await flow.submit({tier,contact:{name:'Ada Buyer',email:'ADA@example.test'},brief:draft()});
+    const brief = applyAnswer(draft(), { values: { condition: 'Used', timeline: 'Within a month', payment_method: 'Financing', trade_in: '2018 Civic, 70000 miles', needs: 'Room for two car seats', notes: 'Saturday delivery, please.\nCall before a viewing.' } });
+    await flow.submit({tier,contact:{name:'Ada Buyer',email:'ADA@example.test'},brief});
     assert.equal(calls[0].body.email,'ada@example.test');
     assert.equal(calls[0].body.phone,'');
     assert.match(calls[0].body.message,/ZIP code: 02108/);
+    assert.match(calls[0].body.message,/Trade-in: 2018 Civic, 70000 miles/);
+    assert.ok(calls[0].body.message.includes('Saturday delivery, please.\nCall before a viewing.'));
     assert.equal(calls[1].body.tier,tier);
     assert.equal(calls[1].body.lead_id,'71ce2e4c-99b0-4d62-91ef-334605514dcf');
     assert.equal(store.read().lastCheckout.tier,tier);
+    assert.deepEqual(store.read().lastCheckout.brief, brief);
   });
 }
 test('a lost lead response retries identical key and payload even after refresh and attribution change', async () => {

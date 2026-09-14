@@ -70,7 +70,9 @@ export function normalizeAnswer(key, raw) {
       trade_in: { no: 'No trade-in', none: 'No trade-in', yes: 'Yes, I have a trade-in', maybe: 'Not sure yet', 'not sure': 'Not sure yet' },
     };
     if (key === 'condition' && flexible.test(text)) return 'Open to all';
-    return common[key]?.[text.toLowerCase()] || text.charAt(0).toUpperCase() + text.slice(1);
+    const options = common[key];
+    if (options && Object.hasOwn(options, text.toLowerCase())) return options[text.toLowerCase()];
+    return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
   if (key === 'zip') {

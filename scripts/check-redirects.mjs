@@ -9,6 +9,24 @@ const configOnly = process.argv.includes('--config-only');
 
 const requiredRedirects = [
   {
+    name: 'legacy apex domain root',
+    source: '/',
+    host: 'austincarbuyingservice.com',
+    destination: 'https://www.driverightcarbuying.com/',
+  },
+  {
+    name: 'legacy www domain root',
+    source: '/',
+    host: 'www.austincarbuyingservice.com',
+    destination: 'https://www.driverightcarbuying.com/',
+  },
+  {
+    name: 'canonical apex domain root',
+    source: '/',
+    host: 'driverightcarbuying.com',
+    destination: 'https://www.driverightcarbuying.com/',
+  },
+  {
     name: 'legacy apex domain',
     source: '/:path*',
     host: 'austincarbuyingservice.com',
@@ -148,6 +166,14 @@ if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.
     target: buildUrl(base, '/about.html', query),
     statuses: new Set([308]),
   });
+  const alternateRootSource = buildUrl(base, '/', query);
+  alternateRootSource.hostname = alternateHost;
+  cases.push({
+    name: 'Apex/www root canonicalization',
+    source: alternateRootSource,
+    target: buildUrl(base, '/', query),
+    statuses: new Set([308]),
+  });
 }
 
 cases.push(
@@ -165,6 +191,11 @@ cases.push(
     name: 'Legacy-domain migration',
     source: buildUrl(legacy, '/about.html', query),
     target: buildUrl(base, '/about.html', query),
+  },
+  {
+    name: 'Legacy-domain root migration',
+    source: buildUrl(legacy, '/', query),
+    target: buildUrl(base, '/', query),
   },
   {
     name: 'Legacy inquiry route',

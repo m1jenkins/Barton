@@ -14,6 +14,39 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "austincarbuyingservice.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.austincarbuyingservice.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "driverightcarbuying.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -22,7 +55,7 @@
         }
       ],
       "destination": "https://www.driverightcarbuying.com/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/:path*",
@@ -33,7 +66,7 @@
         }
       ],
       "destination": "https://www.driverightcarbuying.com/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/:path*",
@@ -44,7 +77,7 @@
         }
       ],
       "destination": "https://www.driverightcarbuying.com/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/index.html",

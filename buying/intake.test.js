@@ -80,6 +80,9 @@ test('customer context keeps numbers, exclusions, and correction-like wording in
   }
   assert.deepEqual(parseConversation('Change my budget to $35k', 'notes'), { values: { budget: 'Up to $35,000' }, skipped: [], correction: true });
   assert.equal(parseConversation('Change my notes to Please call first.\nDelivery on Saturday.', 'timeline').values.notes, 'Please call first.\nDelivery on Saturday.');
+  for (const value of ['constructor', '__proto__', 'toString']) {
+    assert.equal(typeof normalizeAnswer('condition', value), 'string');
+  }
 });
 
 test('long notes validate, restore, and skip without receiving a priority', () => {
