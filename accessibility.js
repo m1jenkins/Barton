@@ -12,7 +12,10 @@ function activateSkipLink(event) {
         block: 'start',
         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
     });
-    history.replaceState(null, '', `${location.pathname}${location.search}#${targetId}`);
+    // Buying views use the hash as a route and history state as a storage fallback.
+    if (!document.body.dataset.buyingPage) {
+        history.replaceState(history.state, '', `${location.pathname}${location.search}#${targetId}`);
+    }
 }
 
 skipLink?.addEventListener('click', activateSkipLink, { capture: true });

@@ -6,6 +6,7 @@ import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { stripeClient } from './_lib/stripe-client.js';
 import { isPaidCheckoutEvent, validateClientReferenceId } from './_lib/validation.js';
+import { trackOpenAIAdsConversion } from './_lib/openai-ads-capi.js';
 
 export const config = { api: { bodyParser: false } };
 
@@ -121,7 +122,18 @@ async function recordEvent(event) {
       UPDATE stripe_events SET outcome = 'recorded', processed_at = now()
       WHERE event_id = ${event.id}
     `;
-    return { duplicate: false, recorded: true };
+    return {
+      duplicate: false,
+      recorded: true,
+      openaiAdsCapi: {
+        eventType: 'order_created',
+        eventId: `purchase:${session.id}`,
+        timestampMs: Date.parse(stripeCreatedAt),
+        sourcePage: attempt.source_page,
+        amount: amountTotal,
+        currency
+      }
+    };
   });
 }
 
@@ -143,6 +155,9 @@ async function handle(req, res) {
   }
 
   const result = await recordEvent(event);
+  if (result?.openaiAdsCapi) {
+    trackOpenAIAdsConversion(result.openaiAdsCapi, req);
+  }
   await dispatchAnalyticsOutboxSafely();
   return sendJson(res, 200, { ok: true, duplicate: result.duplicate });
 }

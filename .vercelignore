@@ -1,0 +1,10 @@
+.git
+.vercel
+node_modules
+.env*
+.agents
+.codex
+.ai_rules
+.cursorrules
+api/_tests
+docs/openai-ads-*.md

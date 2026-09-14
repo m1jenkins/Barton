@@ -3,6 +3,7 @@ import { paymentLinkForTier, serviceTier } from './_lib/config.js';
 import { database } from './_lib/db.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { idempotencyKey, payloadHash, paymentLinkWithReference, validateCheckoutPayload } from './_lib/validation.js';
+import { trackOpenAIAdsConversion } from './_lib/openai-ads-capi.js';
 
 async function handle(req, res) {
   requireMethod(req, 'POST');
@@ -55,6 +56,15 @@ async function handle(req, res) {
     }
     return { record, created: inserted.length === 1 };
   });
+
+  if (persisted.created) {
+    trackOpenAIAdsConversion({
+      eventType: 'checkout_started',
+      eventId: `checkout:${persisted.record.id}`,
+      timestampMs: Date.now(),
+      sourcePage: checkout.source_page
+    }, req);
+  }
 
   return sendJson(res, persisted.created ? 201 : 200, {
     ok: true,

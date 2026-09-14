@@ -1,0 +1,52 @@
+{
+  "status": "Prepared in open GPT Ads creation wizard; NOT published. Budget and final Publish approval pending.",
+  "campaign": "Drive Right | Texas Car Buying | Sep 2026",
+  "adGroup": "Texas | Car Buying Help",
+  "geography": "Texas, United States",
+  "objective": "Conversions",
+  "event": "Lead Created",
+  "bidStrategy": "Maximize results",
+  "billing": "CPM",
+  "textCustomization": false,
+  "budget": {
+    "type": "daily",
+    "amount": 100,
+    "authorization": "UNAPPROVED WIZARD DEFAULT",
+    "displayedMaximumDailySpend": 200,
+    "displayedMaximumSevenDaySpend": 700
+  },
+  "tracking": "utm_source=chatgpt&utm_medium=paid&utm_campaign=texas_car_buying_sep2026&utm_content={ad_id}",
+  "contextHints": "Texas car buying help; choosing a new, used, or certified pre-owned vehicle; comparing car listings and dealer offers; understanding out-the-door prices and dealer fees; hiring a car-buying advisor; help negotiating a car purchase.",
+  "ads": [
+    {
+      "name": "01 | Find Your Fit | Full Service",
+      "title": "Find a car that fits your life",
+      "description": "Drive Right searches new, used and CPO options around your needs. Full Service: $495 flat fee.",
+      "image": "images/find-your-fit.png",
+      "url": "https://www.driverightcarbuying.com/",
+      "titleCharacters": 30,
+      "descriptionCharacters": 94,
+      "grounding": "Live pricing page: new, used and CPO research, price negotiation, fee review, and $495 Full Service flat fee."
+    },
+    {
+      "name": "02 | Deal Clarity | Full Service",
+      "title": "Get help with the price, fees and negotiation",
+      "description": "Buying in Texas? Get vehicle search, price negotiation and fee review for a $495 flat fee.",
+      "image": "images/deal-clarity.png",
+      "url": "https://www.driverightcarbuying.com/",
+      "titleCharacters": 45,
+      "descriptionCharacters": 90,
+      "grounding": "Live pricing page: new, used and CPO research, price negotiation, fee review, and $495 Full Service flat fee."
+    },
+    {
+      "name": "03 | AI Research | $195",
+      "title": "Start your car search with an AI buying agent",
+      "description": "Get AI-assisted research and a tailored deal sheet for $195. Dealer outreach where available.",
+      "image": "images/ai-shortlist.png",
+      "url": "https://www.driverightcarbuying.com/ai-car-buying-agent.html",
+      "titleCharacters": 45,
+      "descriptionCharacters": 93,
+      "grounding": "Live AI service page: AI-assisted research, tailored deal sheet, $195 fee, and dealer outreach where available."
+    }
+  ]
+}

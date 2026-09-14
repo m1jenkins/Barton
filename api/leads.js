@@ -3,6 +3,7 @@ import { database } from './_lib/db.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { verifyTurnstile } from './_lib/turnstile.js';
 import { idempotencyKey, payloadHash, validateLeadPayload } from './_lib/validation.js';
+import { trackOpenAIAdsConversion } from './_lib/openai-ads-capi.js';
 
 function configuredForwardUrl() {
   const raw = process.env.LEAD_FORWARD_URL?.trim();
@@ -128,6 +129,14 @@ async function handle(req, res) {
   });
 
   await forwardAfterCommit(sql, persisted.record, destination);
+  if (persisted.created) {
+    trackOpenAIAdsConversion({
+      eventType: 'lead_created',
+      eventId: `lead:${persisted.record.id}`,
+      timestampMs: Date.now(),
+      sourcePage: persisted.record.source_page
+    }, req);
+  }
   return sendJson(res, persisted.created ? 201 : 200, { ok: true, lead_id: persisted.record.id });
 }
 

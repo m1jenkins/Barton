@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W577B3D4');</script> <!-- End Google Tag Manager -->
+<!-- Google Tag Manager --> <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W577B3D4');</script> <!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,134 +37,24 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="https://www.driverightcarbuying.com/assets/external/optimized/drive-right-logo-64.png">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap"></noscript>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google tag (gtag.js) -->
+    <meta name="theme-color" content="#f7f6f2">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="preload" href="/assets/buying/fonts/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/assets/buying/fonts/instrument-serif-italic.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="/buying/daisy.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <script defer src="accessibility.js"></script>
+    <link rel="stylesheet" href="/buying/drive-right.css">
 </head>
-
-<body data-purchase-tier="concierge">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="nav" id="nav">
-        <div class="nav__inner">
-            <a href="/" class="nav__wordmark">Drive Right</a>
-            <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav__links" id="nav-links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ===== MOBILE MENU OVERLAY ===== -->
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
-        <button class="mobile-menu__close" id="mobile-close" aria-label="Close menu">✕</button>
-        <ul class="mobile-menu__links">
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#contact">Contact</a></li>
-        </ul>
-    </div>
-
-    <section class="payment-verification" id="payment-verification" data-state="pending" aria-live="polite">
-        <div class="payment-verification__inner">
-            <h2 data-verification-heading>Verifying payment</h2>
-            <p data-verification-message>Checking this checkout session with Stripe. No purchase is recorded from loading this page.</p>
-            <noscript><p>JavaScript is required to verify the signed checkout record and unlock the intake form. Use the link in your Stripe receipt on a JavaScript-enabled browser or contact support.</p></noscript>
-            <p>If verification does not complete, use the return link from your Stripe receipt or <a href="schedule.html">contact Drive Right</a>.</p>
-        </div>
-    </section>
-
-    <main id="verified-purchase-content" hidden>
-
-        <!-- ===== PAYMENT CONFIRMATION HERO ===== -->
-        <section class="ps-hero">
-            <div class="ps-hero__inner">
-                <div class="ps-hero__checkmark" aria-hidden="true">
-                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                        <circle cx="32" cy="32" r="30" stroke="var(--success)" stroke-width="3" fill="var(--success-light)"/>
-                        <path d="M20 33l8 8 16-16" stroke="var(--success)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    </svg>
-                </div>
-                <h1 class="ps-hero__headline">Welcome to the Ultimate Concierge</h1>
-                <p class="ps-hero__sub">Thank you for choosing our white-glove service. Your concierge team is standing by to source, secure, and deliver your vehicle.</p>
-                <p class="ps-hero__receipt">A receipt for your $895 concierge fee has been sent to your email. If you don't see it, check your spam folder.</p>
-            </div>
-        </section>
-
-        <!-- ===== WHAT HAPPENS NEXT, ONBOARDING TIMELINE ===== -->
-        <section class="ps-timeline">
-            <div class="ps-timeline__inner">
-                <p class="section-label">What Happens Next</p>
-                <h2 class="section-heading">Your Concierge Experience</h2>
-                <p class="section-subtext">Here's exactly how our white-glove team will source, secure, and deliver your vehicle.</p>
-
-                <ol class="ps-timeline__steps">
-                    <li class="ps-timeline__step ps-timeline__step--active">
-                        <div class="ps-timeline__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                        </div>
-                        <div class="ps-timeline__content">
-                            <h3>Complete Your Concierge Intake</h3>
-                            <p>Fill out the intake below so we understand exactly what you're looking for, including any rare, luxury, or exotic preferences, delivery location, and white-glove requests.</p>
-                        </div>
-                    </li>
-                    <li class="ps-timeline__step">
-                        <div class="ps-timeline__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        </div>
-                        <div class="ps-timeline__content">
-                            <h3>Priority Kickoff Call</h3>
-                            <p>After payment and intake are verified, your concierge lead will confirm the expected start time and next steps using your selected contact method.</p>
-                        </div>
-                    </li>
-                    <li class="ps-timeline__step">
-                        <div class="ps-timeline__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        </div>
-                        <div class="ps-timeline__content">
-                            <h3>Nationwide Sourcing &amp; Auctions</h3>
-                            <p>We scour dealer inventories, auctions, private collectors, forums, and niche platforms nationwide to find the right vehicle, including hard-to-find luxury and exotic options.</p>
-                        </div>
-                    </li>
-                    <li class="ps-timeline__step">
-                        <div class="ps-timeline__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <div class="ps-timeline__content">
-                            <h3>Full Transaction Management</h3>
-                            <p>Once you approve a vehicle, we negotiate, manage the paperwork, coordinate inspections and escrow where needed, and protect you from hidden fees and unnecessary add-ons.</p>
-                        </div>
-                    </li>
-                    <li class="ps-timeline__step">
-                        <div class="ps-timeline__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-                        </div>
-                        <div class="ps-timeline__content">
-                            <h3>Door-to-Door Delivery</h3>
-                            <p>We coordinate enclosed or open transport and deliver your vehicle directly to your driveway. You simply sign, inspect, and enjoy the drive.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ===== ONBOARDING QUESTIONNAIRE ===== -->
-        <section class="ps-onboarding" id="onboarding">
+<body class="dr" data-buying-page="payment" data-purchase-tier="concierge"><a class="skip-link" href="#payment-verification">Skip to main content</a>
+<header class="site-header page-width">
+  <a class="wordmark" href="/" aria-label="Drive Right home">Drive Right</a>
+  <nav aria-label="Main navigation">
+    <a class="nav-link" href="/how-it-works.html">How it works</a>
+    <a class="nav-link" href="/schedule.html">Pricing</a>
+    <a class="nav-link" href="/#brief" data-brief-link>Your brief</a>
+  </nav>
+</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">Ultimate Concierge · $895</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Check your saved brief and fill in the remaining details below. We’ll confirm scope and timing after your intake.</p><aside id="paid-brief" class="compact-brief" hidden></aside></div><section class="ps-onboarding" id="onboarding">
             <div class="ps-onboarding__inner">
                 <p class="section-label">Step 1 of 5</p>
                 <h2 class="section-heading">Tell Us About Your Dream Vehicle</h2>
@@ -262,7 +152,7 @@
 
                         <div class="ps-form__row ps-form__row--two">
                             <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-budget">Total Budget *</label>
+                                <p class="small-note budget-context">Include taxes, fees, and delivery in this amount. Your earlier car-price budget is kept separately in the brief.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
                                 <select class="ps-form__select" id="ob-budget" name="budget" required>
                                     <option value="" disabled selected>Select range…</option>
                                     <option value="under-20k">Under $20,000</option>
@@ -382,25 +272,13 @@
                     <a href="/" class="btn--outline" style="margin-top: 24px; display:inline-flex; align-items:center; justify-content:center;">Return Home</a>
                 </div>
             </div>
-        </section>
-
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer" id="footer">
-        <div class="footer__inner">
-            <p class="footer__wordmark">Drive Right</p>
-            <ul class="footer__links">
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#contact">Contact</a></li>
-                <li><a href="policy.html">Policy</a></li>
-            </ul>
-            <p class="footer__copy">© 2026 Drive Right. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        </section></main><footer class="site-footer page-width" id="footer">
+  <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">A better way to buy a car.<br>Based in Austin. Here for Texas.</p></div>
+    <nav aria-label="Company"><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/ai-car-buying-agent.html">AI Agent service</a><a href="/policy.html">Policy</a></nav>
+    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
+</footer><script src="/script.js"></script>
+<script type="module" src="/buying/app.js"></script>
 </body>
-
 </html>

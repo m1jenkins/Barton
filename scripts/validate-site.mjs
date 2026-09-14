@@ -323,7 +323,7 @@ for (const file of htmlFiles) {
     if (!/<main\b(?=[^>]*\bid\s*=\s*["']main-content["'])(?=[^>]*\btabindex\s*=\s*["']-1["'])[^>]*>/i.test(html)) {
       fail(file, 'Indexable page has no #main-content target.', 0, html, 'Give the main element id="main-content" and tabindex="-1".');
     }
-    if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html)) {
+    if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html) && !/<header class="site-header page-width">[\s\S]*?<nav aria-label="Main navigation">[\s\S]*?<a[^>]+href="\/how-it-works.html"/i.test(html)) {
       fail(file, 'Indexable page has no usable no-JavaScript mobile navigation override.', 0, html, 'Expose ordinary navigation links and hide the inert hamburger inside a noscript style.');
     }
     if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*>/i.test(html)
@@ -346,7 +346,7 @@ const homepageHtml = sources.get('index.html') ?? '';
 const heroWidths = [640, 960, 1440, 1920];
 for (const width of heroWidths) {
   for (const format of ['avif', 'webp']) {
-    const asset = `assets/external/hero/hero-aerial-car-dealership-ai-${width}.${format}`;
+    const asset = `assets/buying/coastal-roadster-${width}.${format}`;
     if (!(await fileExists(asset))) {
       fail(asset, 'Responsive homepage hero derivative is missing.');
     }
@@ -363,7 +363,7 @@ if (!/<source\b(?=[^>]*\btype\s*=\s*["']image\/avif["'])(?=[^>]*\bsrcset\s*=)(?=
   fail('index.html', 'Homepage hero picture is missing responsive AVIF/WebP sources.', 0, homepageHtml);
 }
 
-for (const controlId of ['hero-name', 'hero-email', 'hero-vehicle', 'contact-name', 'contact-email', 'contact-phone', 'contact-message']) {
+for (const controlId of ['answer']) {
   const escaped = controlId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   if (!new RegExp(`<label\\b[^>]*\\bfor\\s*=\\s*["']${escaped}["'][^>]*>`, 'i').test(homepageHtml)) {
     fail('index.html', `Homepage form control #${controlId} has no explicit label.`, 0, homepageHtml);
