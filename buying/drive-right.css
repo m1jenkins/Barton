@@ -9,7 +9,7 @@
 .dr .site-header { height:100px; }
 .dr .hero-intro { padding-top:32px; }
 .dr .hero-intro h1 { color:var(--ink); }
-.dr .hero-intro p { font-size:20px; line-height:1.5; letter-spacing:-.3px; }
+.dr .hero-intro p { max-width:980px; margin-inline:auto; font-size:20px; line-height:1.5; letter-spacing:-.3px; }
 .dr .hero-photo { margin-top:34px; }
 .dr .hero-photo figcaption { font:14px/1.5 var(--sans); color:var(--green); }
 .dr input::placeholder,.dr textarea::placeholder { color:#6e746b; }
