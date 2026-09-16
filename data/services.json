@@ -23,7 +23,7 @@
       ],
       "creditTowardFullService": 100,
       "checkoutUrl": "https://book.stripe.com/6oU3co4svaEb92QcNS04804",
-      "availability": "pending_owner_confirmation"
+      "availability": "owner_confirmed_all_states_cities"
     },
     {
       "id": "https://www.driverightcarbuying.com/#service-full",
@@ -38,7 +38,7 @@
         "Expected start time confirmed after payment and intake verification"
       ],
       "checkoutUrl": "https://book.stripe.com/cNi14ge357rZena29e04800",
-      "availability": "pending_owner_confirmation",
+      "availability": "owner_confirmed_all_states_cities",
       "serviceLevelReview": "pending_operations_confirmation"
     },
     {
@@ -55,7 +55,7 @@
         "Delivery coordination where available"
       ],
       "checkoutUrl": "https://buy.stripe.com/8x2fZa6AD27Ffre7ty04803",
-      "availability": "pending_owner_confirmation"
+      "availability": "owner_confirmed_all_states_cities"
     }
   ],
   "commercialTerms": {
@@ -90,5 +90,11 @@
     ],
     "tax": "All three public checkouts show address-dependent tax calculation",
     "scopeConflicts": "Live checkout descriptions include unsupported outcome and deliverable promises. See docs/seo-release-preparation-2026-09-05.md. Observation is not owner approval."
+  },
+  "availabilityConfirmation": {
+    "record": "data/metro-release.json#OWNER-2026-09-16",
+    "confirmedOn": "2026-09-16",
+    "scope": "All currently advertised tiers across all states/cities, per captain instruction",
+    "limits": "Availability confirmation does not approve exact commercial/qualified copy or document specific logistics, delivery or response commitments."
   }
 }

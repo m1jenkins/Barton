@@ -8,16 +8,20 @@
   },
   "scripts": {
     "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/analytics-outbox.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js",
-    "test": "node --test api/_tests/*.test.mjs buying/*.test.js",
+    "test": "node --test api/_tests/*.test.mjs buying/*.test.js scripts/_tests/*.test.mjs",
     "test:buying": "node --test buying/*.test.js",
     "preview": "node scripts/preview.mjs",
-    "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node scripts/validate-site.mjs"
+    "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node scripts/validate-site.mjs",
+    "draft:metros": "node scripts/render-metro-drafts.mjs",
+    "preview:metros": "node scripts/preview-metros.mjs",
+    "check:metros": "node scripts/render-metro-drafts.mjs --check"
   },
   "dependencies": {
     "postgres": "3.4.9",
     "stripe": "22.5.0"
   },
   "devDependencies": {
+    "parse5": "^8.0.1",
     "sharp": "^0.35.3"
   }
 }

@@ -1,0 +1,420 @@
+[
+  {
+    "marketId": "M04",
+    "asOf": "2026-09-16",
+    "author": null,
+    "reviewer": null,
+    "reviewedOn": null,
+    "nextReview": null,
+    "intendedQuery": "car buying service Dallas Fort Worth",
+    "queryStatus": "research_seed_not_demand_evidence",
+    "modules": [
+      {
+        "id": "DFW-PROP-01",
+        "title": "Check your registration county before planning emissions work",
+        "body": "DFW spans several emissions-program counties. Check the county where you will register the vehicle, its fuel type and model year against TCEQ guidance before scheduling the registration steps. Ending the non-commercial safety-inspection requirement did not end applicable emissions testing.",
+        "decision": "Distinguish registration requirements from mechanical inspection; avoid assuming a car sourced beyond core Dallas/Fort Worth follows the seller county rules.",
+        "limitations": "No individual applicability determination; county list and vehicle exceptions supplied in source row.",
+        "sources": [
+          {
+            "id": "TX-EV-001",
+            "url": "https://www.tceq.texas.gov/airquality/mobilesource/vim/overview.html",
+            "title": "Vehicle Emissions Inspections in Texas"
+          },
+          {
+            "id": "TX-EV-002",
+            "url": "https://www.txdmv.gov/motorists/register-your-vehicle",
+            "title": "Register Your Vehicle"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "DFW-PROP-01"
+        ],
+        "sourceIds": [
+          "TX-EV-001",
+          "TX-EV-002"
+        ],
+        "requiredReviewer": "qualified Texas vehicle-regulation reviewer",
+        "reviewStatus": "pending_qualified_review"
+      },
+      {
+        "id": "DFW-PROP-02",
+        "title": "Separate seller location from the title-service route",
+        "body": "Buying across Dallas, Fort Worth and Arlington can involve a different county from your home. For a transaction handled in Tarrant County, start with its title-transfer guidance and confirm whether the dealer handles the filing or you need an individual-sale submission. Confirm the correct service route before arranging your visit.",
+        "decision": "Record buyer county, seller type and who files; avoid booking an individual into dealer-only appointment navigation.",
+        "limitations": "Opening routing only; conflicting county inspection checklist explicitly excluded. This is a Tarrant example, not all-DFW legal instructions.",
+        "sources": [
+          {
+            "id": "DFW-EV-001",
+            "url": "https://www.tarrantcountytx.gov/en/tax/motor-vehicle/FAQs-Motor-Vehicle-Titles/how-do-i-transfer-a-title-.html",
+            "title": "Question 1: How do I transfer a title?"
+          },
+          {
+            "id": "DFW-EV-002",
+            "url": "https://www.tarrantcountytx.gov/en/tax/motor-vehicle.html",
+            "title": "Motor Vehicle"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "DFW-PROP-02"
+        ],
+        "sourceIds": [
+          "DFW-EV-001",
+          "DFW-EV-002"
+        ],
+        "requiredReviewer": "qualified Texas title reviewer and local-content reviewer",
+        "reviewStatus": "pending_qualified_review"
+      }
+    ],
+    "example": {
+      "type": "worksheet",
+      "title": "Compare the same decision, not just the asking price",
+      "disclosure": "Blank planning worksheet. This is not a customer engagement, quote, savings calculation or promise of availability.",
+      "rows": [
+        "Vehicle / VIN and seller location",
+        "Buyer registration county / vehicle year / fuel type",
+        "Written vehicle price and itemized charges",
+        "Conditions, optional products and unresolved questions",
+        "Independent inspection arrangements and responsibility",
+        "Pickup or carrier arrangement / separate quoted cost",
+        "What must be confirmed before proceeding"
+      ]
+    },
+    "firstPartyProof": {
+      "status": "pending_source_permission_and_transaction_evidence",
+      "review": {
+        "name": "David L.",
+        "exact_quote": "I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.",
+        "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
+        "repo_anchor": "index.html:647",
+        "source_url": "https://github.com/m1jenkins/Barton/blob/5ef774f6b0449c167c175d0781554fbc0a803b3d/index.html#L647",
+        "city_label_in_historical_site": "Dallas, TX",
+        "actual_metro_connection": "Historical label only; no independently supported transaction or residency record",
+        "original_public_review_url": null,
+        "statement_date": null,
+        "written_customer_permission": "not found",
+        "owner_reuse_authorization": "Explicit in launch brief; does not establish customer permission",
+        "material_connection_disclosure": "not found",
+        "transaction_evidence": "not found",
+        "current_homepage_presence": false,
+        "recommendation": "Private source candidate only; do not republish testimonial/outcomes as approved or count it as a metro deal"
+      },
+      "approvedCopy": null
+    },
+    "citySwapReview": "DFW focuses on cross-county emissions/title coordination; Houston on historical flood context, vehicle-specific history and private-sale total-budget questions. Austin coordinates Travis title appointments and I-35 travel. Shared state rules alone do not establish distinct demand.",
+    "retainedLegacyMaterial": "Preserve URLs and link targets. Retain only bounded buying-process intent; do not carry over generic savings/testimonial, response-time or dealer-network claims.",
+    "sourceConflicts": [
+      "Tarrant title FAQ includes out-of-state safety-inspection wording conflicting with TxDMV non-commercial 2025 change; exclude checklist pending qualified scope/currentness review.",
+      "Harris County older vehicle-age signature text not adopted."
+    ],
+    "searchSample": {
+      "metro": "M04",
+      "query": "car buying service Dallas Fort Worth concierge",
+      "method": "web search tool; not geolocated or mobile",
+      "representative_results": [
+        {
+          "url": "https://txcarconcierge.com/",
+          "type": "buyer-service concierge, statewide"
+        },
+        {
+          "url": "https://www.autoconciergedallas.com/",
+          "type": "automotive concierge, DFW"
+        },
+        {
+          "url": "https://www.carwhere.com/concierge/tx/fort-worth",
+          "type": "multi-city concierge landing page"
+        },
+        {
+          "url": "https://mhrautogroup.com/",
+          "type": "buying/leasing concierge"
+        },
+        {
+          "url": "https://www.johneaglehondaofdallas.com/concierge.htm",
+          "type": "dealer concierge"
+        }
+      ],
+      "retrieved_on": "2026-09-16",
+      "classification_basis": "Observed search result title/description, not licensing verification",
+      "volume": null,
+      "rank": null
+    },
+    "searchSampleLimits": "Not metro-geolocated/mobile; no volume/rank or measured non-brand demand. Browser Google attempts hit an unusual-traffic challenge; no bypass.",
+    "evidenceProvenance": "barton-texas-evidence-20260916; primary pages opened and DOM read September 16, 2026. Source retrieval is not qualified approval."
+  },
+  {
+    "marketId": "M05",
+    "asOf": "2026-09-16",
+    "author": null,
+    "reviewer": null,
+    "reviewedOn": null,
+    "nextReview": null,
+    "intendedQuery": "car buying service Houston",
+    "queryStatus": "research_seed_not_demand_evidence",
+    "modules": [
+      {
+        "id": "HOU-PROP-01",
+        "title": "Ask about the vehicle history before arranging Houston pickup",
+        "body": "Harris County has documented historic flooding. For a used vehicle, ask for its VIN and review title-history information before committing to pickup. TxDMV describes NMVTIS title-history checks and separately recommends a mechanic inspection. A report is not a condition guarantee.",
+        "decision": "Request records and arrange qualified inspection before travel or handover; evaluate vehicle-specific evidence rather than seller location.",
+        "limitations": "Flood context is historical; no current prevalence, accusation against Houston sellers, or guaranteed flood detection.",
+        "sources": [
+          {
+            "id": "HOU-EV-001",
+            "url": "https://www.hcfcd.org/About/Harris-Countys-Flooding-History/Roles-Responsibilities/Reports-on-the-Storm-and-HCFCD-Response",
+            "title": "Reports on the Storm and HCFCD Response"
+          },
+          {
+            "id": "HOU-EV-002",
+            "url": "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/title-check-look-before-you-buy",
+            "title": "Title Check - Look before you buy"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "HOU-PROP-01"
+        ],
+        "sourceIds": [
+          "HOU-EV-001",
+          "HOU-EV-002"
+        ],
+        "requiredReviewer": "qualified safety/mechanical and Texas consumer/title reviewer",
+        "reviewStatus": "pending_qualified_review"
+      },
+      {
+        "id": "HOU-PROP-02",
+        "title": "Compare a private-sale price with the full purchase budget",
+        "body": "For a Harris County private-party purchase, a lower advertised price may not be the full basis used to calculate motor-vehicle tax. Review the county guidance and the Comptroller\u2019s current SPV rules, exclusions and appraisal provisions before comparing your total budget with a dealer quote.",
+        "decision": "Separate seller price from tax estimate and county filing work before choosing dealer versus individual.",
+        "limitations": "Statewide tax law, locally anchored to Harris County instructions; do not present as a Houston-only tax or as sufficient unique value alone. No tax quote.",
+        "sources": [
+          {
+            "id": "HOU-EV-003",
+            "url": "https://www.hctax.net/Auto/UsedCar",
+            "title": "Buying A Used Motor Vehicle"
+          },
+          {
+            "id": "TX-EV-003",
+            "url": "https://comptroller.texas.gov/taxes/publications/96-254/spv.php",
+            "title": "Motor Vehicle Tax Guide: Standard Presumptive Value on Private-Party Transactions"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "HOU-PROP-02"
+        ],
+        "sourceIds": [
+          "HOU-EV-003",
+          "TX-EV-003"
+        ],
+        "requiredReviewer": "qualified Texas tax/title reviewer",
+        "reviewStatus": "pending_qualified_review"
+      },
+      {
+        "id": "HOU-PROP-03",
+        "title": "Verify the actual Houston-area registration county",
+        "body": "TCEQ lists Brazoria, Fort Bend, Galveston, Harris and Montgomery in the Houston-area emissions program. Check the actual registration county and vehicle applicability before setting your registration schedule.",
+        "decision": "Buyer address and vehicle eligibility determine planning; Houston metro label is insufficient.",
+        "limitations": "Shared state rule supplementary to Houston history and cost modules, not a cloned standalone page.",
+        "sources": [
+          {
+            "id": "TX-EV-001",
+            "url": "https://www.tceq.texas.gov/airquality/mobilesource/vim/overview.html",
+            "title": "Vehicle Emissions Inspections in Texas"
+          },
+          {
+            "id": "TX-EV-002",
+            "url": "https://www.txdmv.gov/motorists/register-your-vehicle",
+            "title": "Register Your Vehicle"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "HOU-PROP-03"
+        ],
+        "sourceIds": [
+          "TX-EV-001",
+          "TX-EV-002"
+        ],
+        "requiredReviewer": "qualified Texas vehicle-regulation reviewer",
+        "reviewStatus": "pending_qualified_review"
+      }
+    ],
+    "example": {
+      "type": "worksheet",
+      "title": "Compare the same decision, not just the asking price",
+      "disclosure": "Blank planning worksheet. This is not a customer engagement, quote, savings calculation or promise of availability.",
+      "rows": [
+        "Vehicle / VIN and seller location",
+        "Buyer registration county / vehicle year / fuel type",
+        "Written vehicle price and itemized charges",
+        "Conditions, optional products and unresolved questions",
+        "Independent inspection arrangements and responsibility",
+        "Pickup or carrier arrangement / separate quoted cost",
+        "What must be confirmed before proceeding"
+      ]
+    },
+    "firstPartyProof": {
+      "status": "pending_source_permission_and_transaction_evidence",
+      "review": {
+        "name": "Michael R.",
+        "exact_quote": "Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.",
+        "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
+        "repo_anchor": "index.html:615",
+        "source_url": "https://github.com/m1jenkins/Barton/blob/5ef774f6b0449c167c175d0781554fbc0a803b3d/index.html#L615",
+        "city_label_in_historical_site": "Houston, TX",
+        "actual_metro_connection": "Historical label only; no independently supported transaction or residency record",
+        "original_public_review_url": null,
+        "statement_date": null,
+        "written_customer_permission": "not found",
+        "owner_reuse_authorization": "Explicit in launch brief; does not establish customer permission",
+        "material_connection_disclosure": "not found",
+        "transaction_evidence": "not found",
+        "current_homepage_presence": false,
+        "recommendation": "Private source candidate only; do not republish testimonial/outcomes as approved or count it as a metro deal"
+      },
+      "approvedCopy": null
+    },
+    "citySwapReview": "DFW focuses on cross-county emissions/title coordination; Houston on historical flood context, vehicle-specific history and private-sale total-budget questions. Austin coordinates Travis title appointments and I-35 travel. Shared state rules alone do not establish distinct demand.",
+    "retainedLegacyMaterial": "Preserve URLs and link targets. Retain only bounded buying-process intent; do not carry over generic savings/testimonial, response-time or dealer-network claims.",
+    "sourceConflicts": [
+      "Tarrant title FAQ includes out-of-state safety-inspection wording conflicting with TxDMV non-commercial 2025 change; exclude checklist pending qualified scope/currentness review.",
+      "Harris County older vehicle-age signature text not adopted."
+    ],
+    "searchSample": {
+      "metro": "M05",
+      "query": "car buying service Houston concierge",
+      "method": "web search tool; not geolocated or mobile",
+      "representative_results": [
+        {
+          "url": "https://carsideconcierge.com/",
+          "type": "buyer advisory/negotiation service"
+        },
+        {
+          "url": "https://60minutecar.com/find-car/car-buying-service-in-houston-tx/",
+          "type": "buying/leasing concierge"
+        },
+        {
+          "url": "https://txcarconcierge.com/",
+          "type": "buyer-service concierge, statewide"
+        },
+        {
+          "url": "https://eliteluxautoconcierge.com/",
+          "type": "vehicle pickup/delivery, adjacent intent"
+        },
+        {
+          "url": "https://rafamotors.com/",
+          "type": "sales/consignment/service, mixed seller intent"
+        }
+      ],
+      "retrieved_on": "2026-09-16",
+      "classification_basis": "Observed search result title/description, not licensing verification",
+      "volume": null,
+      "rank": null
+    },
+    "searchSampleLimits": "Not metro-geolocated/mobile; no volume/rank or measured non-brand demand. Browser Google attempts hit an unusual-traffic challenge; no bypass.",
+    "evidenceProvenance": "barton-texas-evidence-20260916; primary pages opened and DOM read September 16, 2026. Source retrieval is not qualified approval."
+  },
+  {
+    "marketId": "TX-AUS",
+    "asOf": "2026-09-16",
+    "author": null,
+    "reviewer": null,
+    "reviewedOn": null,
+    "nextReview": null,
+    "intendedQuery": "car buying service Austin",
+    "queryStatus": "research_seed_not_demand_evidence",
+    "modules": [
+      {
+        "id": "AUS-PROP-01",
+        "title": "Coordinate an individual-sale title check",
+        "body": "If your individual-sale transaction belongs with Travis County, consider arranging for the seller to accompany you so the county can check the title before application. Check current office instructions and service availability before agreeing to meet.",
+        "decision": "Coordinate seller availability with county service instead of assuming a handover alone finishes title work.",
+        "limitations": "Original SEP-AUS-01 already pending review; current sourcing is not approval.",
+        "sources": [
+          {
+            "id": "AUS-EV-001",
+            "url": "https://tax-office.traviscountytx.gov/vehicles/titles/titles-options/transfers/buying",
+            "title": "Vehicle title transfer, buying a vehicle"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "AUS-PROP-01"
+        ],
+        "sourceIds": [
+          "AUS-EV-001"
+        ],
+        "requiredReviewer": "qualified Texas title reviewer",
+        "reviewStatus": "pending_qualified_review"
+      },
+      {
+        "id": "AUS-PROP-02",
+        "title": "Schedule around I-35 Central construction",
+        "body": "Check TxDOT\u2019s I-35 Central closure map before a test drive or pickup, and reconfirm the seller entrance and appointment time.",
+        "decision": "Avoid tight multi-dealer scheduling dependent on an assumed uninterrupted I-35 trip.",
+        "limitations": "Scheduling suggestion is editorial inference; no fixed delay or current closure claimed.",
+        "sources": [
+          {
+            "id": "AUS-EV-002",
+            "url": "https://www.txdot.gov/mymobility35/projects/capex-central.html",
+            "title": "I-35 Capital Express Central Project"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "claimIds": [
+          "AUS-PROP-02"
+        ],
+        "sourceIds": [
+          "AUS-EV-002"
+        ],
+        "requiredReviewer": "local-content reviewer",
+        "reviewStatus": "pending_qualified_review"
+      }
+    ],
+    "example": {
+      "type": "worksheet",
+      "title": "Compare the same decision, not just the asking price",
+      "disclosure": "Blank planning worksheet. This is not a customer engagement, quote, savings calculation or promise of availability.",
+      "rows": [
+        "Vehicle / VIN and seller location",
+        "Buyer registration county / vehicle year / fuel type",
+        "Written vehicle price and itemized charges",
+        "Conditions, optional products and unresolved questions",
+        "Independent inspection arrangements and responsibility",
+        "Pickup or carrier arrangement / separate quoted cost",
+        "What must be confirmed before proceeding"
+      ]
+    },
+    "firstPartyProof": {
+      "status": "pending_source_permission_and_transaction_evidence",
+      "review": {
+        "name": "Sarah K.",
+        "exact_quote": "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time.",
+        "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
+        "repo_anchor": "index.html:631",
+        "source_url": "https://github.com/m1jenkins/Barton/blob/5ef774f6b0449c167c175d0781554fbc0a803b3d/index.html#L631",
+        "city_label_in_historical_site": "Austin, TX",
+        "actual_metro_connection": "Historical label only; no independently supported transaction or residency record",
+        "original_public_review_url": null,
+        "statement_date": null,
+        "written_customer_permission": "not found",
+        "owner_reuse_authorization": "Explicit in launch brief; does not establish customer permission",
+        "material_connection_disclosure": "not found",
+        "transaction_evidence": "not found",
+        "current_homepage_presence": false,
+        "recommendation": "Private source candidate only; do not republish testimonial/outcomes as approved or count it as a metro deal"
+      },
+      "approvedCopy": null
+    },
+    "citySwapReview": "DFW focuses on cross-county emissions/title coordination; Houston on historical flood context, vehicle-specific history and private-sale total-budget questions. Austin coordinates Travis title appointments and I-35 travel. Shared state rules alone do not establish distinct demand.",
+    "retainedLegacyMaterial": "Preserve URLs and link targets. Retain only bounded buying-process intent; do not carry over generic savings/testimonial, response-time or dealer-network claims.",
+    "sourceConflicts": [
+      "Earlier TxDOT graphic date not independently re-established; do not advance that claim date."
+    ],
+    "searchSample": null,
+    "searchSampleLimits": "Not metro-geolocated/mobile; no volume/rank or measured non-brand demand. Browser Google attempts hit an unusual-traffic challenge; no bypass.",
+    "evidenceProvenance": "barton-texas-evidence-20260916; primary pages opened and DOM read September 16, 2026. Source retrieval is not qualified approval."
+  }
+]

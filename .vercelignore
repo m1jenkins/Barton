@@ -8,3 +8,11 @@ node_modules
 .cursorrules
 api/_tests
 docs/openai-ads-*.md
+
+# Private metro source, governance, local tools and rendered drafts.
+draft-artifacts
+docs
+data
+scripts
+AGENTS.md
+CLAUDE.md
