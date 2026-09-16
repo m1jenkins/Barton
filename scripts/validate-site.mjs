@@ -3,6 +3,7 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { validateMetroRelease } from './metro-release.mjs';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const primaryOrigin = 'https://www.driverightcarbuying.com';
@@ -20,18 +21,6 @@ const confirmationPages = [
   'payment-success-consultant.html',
   'payment-success-fullservice.html',
   'payment-success-concierge.html',
-];
-
-const containedMetroPages = [
-  'arlington.html',
-  'austin.html',
-  'dallas.html',
-  'el-paso.html',
-  'fort-worth.html',
-  'houston.html',
-  'new-braunfels.html',
-  'san-antonio.html',
-  'san-marcos.html',
 ];
 
 const stableSchemaIds = {
@@ -408,20 +397,6 @@ for (const post of containedPosts) {
   }
 }
 
-const homepageLinks = anchorLinks(sources.get('index.html') ?? '');
-for (const metro of containedMetroPages) {
-  const references = homepageLinks.filter(({ href }) => {
-    try {
-      return fileForSiteUrl(new URL(href, `${primaryOrigin}/`)) === metro;
-    } catch {
-      return false;
-    }
-  });
-  for (const reference of references) {
-    fail('index.html', `Homepage links to contained metro page ${metro}.`, reference.index, sources.get('index.html') ?? '', 'Keep contained metro templates out of sitewide navigation until their evidence gate passes.');
-  }
-}
-
 for (const file of htmlFiles) {
   const html = sources.get(file) ?? '';
 
@@ -686,6 +661,8 @@ for (const file of htmlFiles) {
     }
   }
 }
+
+for (const message of await validateMetroRelease(repoRoot)) fail('data/metro-release.json', message);
 
 failures.sort((left, right) => {
   const fileOrder = left.file.localeCompare(right.file);

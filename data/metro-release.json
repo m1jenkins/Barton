@@ -1,0 +1,1197 @@
+{
+  "schemaVersion": 1,
+  "ownerConfirmation": {
+    "id": "OWNER-2026-09-16",
+    "date": "2026-09-16",
+    "authority": "Captain through Firstmate launch brief",
+    "coverageQuote": "They can do everything in all states/cities",
+    "pageApprovalQuote": "i approve all pages, do not wait for my approval",
+    "reviewReuseQuote": "Use existing reviews on the website now. There might be some in the codebase if not present",
+    "scope": "All current advertised tiers across all states/cities; rollout page sign-off and merge preapproval. Not exact claim approval, logistics evidence, qualified review or deployment authorization."
+  },
+  "markets": [
+    {
+      "id": "M01",
+      "name": "New York\u2013Newark\u2013Jersey City",
+      "slug": "new-york.html",
+      "jurisdictions": [
+        "NY",
+        "NJ"
+      ],
+      "researchPrompt": "How would buyer location, seller location, pickup, and any broker terminology change the service?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M02",
+      "name": "Los Angeles\u2013Long Beach\u2013Anaheim",
+      "slug": "los-angeles.html",
+      "jurisdictions": [
+        "CA"
+      ],
+      "researchPrompt": "What may Drive Right offer under California rules, and how would sourcing and delivery work across the metro?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M03",
+      "name": "Chicago\u2013Naperville\u2013Elgin",
+      "slug": "chicago.html",
+      "jurisdictions": [
+        "IL",
+        "IN"
+      ],
+      "researchPrompt": "Which buyer/seller combinations cross a state line, and what transaction steps differ?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M04",
+      "name": "Dallas\u2013Fort Worth\u2013Arlington",
+      "slug": "dallas-fort-worth.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "What makes the combined DFW buyer journey distinct, and which material from the three existing drafts deserves retention?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [
+        "DFW-PROP-01",
+        "DFW-PROP-02"
+      ],
+      "sourceIds": [
+        "DFW-EV-001",
+        "DFW-EV-002",
+        "TX-EV-001",
+        "TX-EV-002"
+      ],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M05",
+      "name": "Houston\u2013Pasadena\u2013The Woodlands",
+      "slug": "houston.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "What documented sourcing, history-check, inspection, and pickup decisions are useful to Houston buyers?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [
+        "HOU-PROP-01",
+        "HOU-PROP-02",
+        "HOU-PROP-03"
+      ],
+      "sourceIds": [
+        "HOU-EV-001",
+        "HOU-EV-002",
+        "HOU-EV-003",
+        "TX-EV-001",
+        "TX-EV-002",
+        "TX-EV-003"
+      ],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M06",
+      "name": "Atlanta\u2013Sandy Springs\u2013Roswell",
+      "slug": "atlanta.html",
+      "jurisdictions": [
+        "GA"
+      ],
+      "researchPrompt": "What seller outreach radius and buyer paperwork decisions can Drive Right actually support?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M07",
+      "name": "Washington\u2013Arlington\u2013Alexandria",
+      "slug": "washington-dc.html",
+      "jurisdictions": [
+        "DC",
+        "VA",
+        "MD",
+        "WV"
+      ],
+      "researchPrompt": "Which parts of this four-jurisdiction metro are genuinely served, and how do cross-border purchases work?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M08",
+      "name": "Miami\u2013Fort Lauderdale\u2013West Palm Beach",
+      "slug": "miami.html",
+      "jurisdictions": [
+        "FL"
+      ],
+      "researchPrompt": "Which vehicle-history and inspection questions are locally useful, and how far can sourcing extend?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M09",
+      "name": "Philadelphia\u2013Camden\u2013Wilmington",
+      "slug": "philadelphia.html",
+      "jurisdictions": [
+        "PA",
+        "NJ",
+        "DE",
+        "MD"
+      ],
+      "researchPrompt": "How will service scope, pickup, title, and registration be explained across jurisdictions?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M10",
+      "name": "Phoenix\u2013Mesa\u2013Chandler",
+      "slug": "phoenix.html",
+      "jurisdictions": [
+        "AZ"
+      ],
+      "researchPrompt": "Which inspection and inventory questions appear in local buyer searches and first-party inquiries?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M11",
+      "name": "Boston\u2013Cambridge\u2013Newton",
+      "slug": "boston.html",
+      "jurisdictions": [
+        "MA",
+        "NH"
+      ],
+      "researchPrompt": "How are Massachusetts/New Hampshire buyer and seller cases handled and disclosed?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M12",
+      "name": "Riverside\u2013San Bernardino\u2013Ontario",
+      "slug": "inland-empire.html",
+      "jurisdictions": [
+        "CA"
+      ],
+      "researchPrompt": "What distinct sourcing, travel, and delivery value separates this market from Los Angeles?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M13",
+      "name": "San Francisco\u2013Oakland\u2013Fremont",
+      "slug": "san-francisco-oakland.html",
+      "jurisdictions": [
+        "CA"
+      ],
+      "researchPrompt": "What local inventory and transaction evidence can support a page distinct from other California markets?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M14",
+      "name": "Detroit\u2013Warren\u2013Dearborn",
+      "slug": "detroit.html",
+      "jurisdictions": [
+        "MI"
+      ],
+      "researchPrompt": "Which vehicle-selection and inspection questions recur in actual local searches or inquiries?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M15",
+      "name": "Seattle\u2013Tacoma\u2013Bellevue",
+      "slug": "seattle.html",
+      "jurisdictions": [
+        "WA"
+      ],
+      "researchPrompt": "What purchase-cost, seller communication, and pickup information can Drive Right verify?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M16",
+      "name": "Minneapolis\u2013St. Paul\u2013Bloomington",
+      "slug": "minneapolis-st-paul.html",
+      "jurisdictions": [
+        "MN",
+        "WI"
+      ],
+      "researchPrompt": "Which cross-state and used-vehicle inspection decisions need a locally reviewed explanation?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M17",
+      "name": "Tampa\u2013St. Petersburg\u2013Clearwater",
+      "slug": "tampa-bay.html",
+      "jurisdictions": [
+        "FL"
+      ],
+      "researchPrompt": "What vehicle-history, inspection, and seller/pickup concerns differ from Miami and Orlando?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M18",
+      "name": "San Diego\u2013Chula Vista\u2013Carlsbad",
+      "slug": "san-diego.html",
+      "jurisdictions": [
+        "CA"
+      ],
+      "researchPrompt": "What local buyer questions and sourcing radius distinguish San Diego from the other California pages?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M19",
+      "name": "Denver\u2013Aurora\u2013Centennial",
+      "slug": "denver.html",
+      "jurisdictions": [
+        "CO"
+      ],
+      "researchPrompt": "Which registration, total-cost, inspection, and travel questions have evidence and search demand?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "M20",
+      "name": "Orlando\u2013Kissimmee\u2013Sanford",
+      "slug": "orlando.html",
+      "jurisdictions": [
+        "FL"
+      ],
+      "researchPrompt": "What makes Orlando's buyer workflow distinct from Tampa and Miami?",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "TX-AUS",
+      "name": "Austin",
+      "slug": "austin.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "Austin base dossier",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [
+        "AUS-PROP-01",
+        "AUS-PROP-02"
+      ],
+      "sourceIds": [
+        "AUS-EV-001",
+        "AUS-EV-002"
+      ],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "TX-ELP",
+      "name": "El Paso",
+      "slug": "el-paso.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "Separate Texas backlog market",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "TX-SAT",
+      "name": "San Antonio",
+      "slug": "san-antonio.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "Separate Texas backlog market",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "TX-NBF",
+      "name": "New Braunfels",
+      "slug": "new-braunfels.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "Distinct intent or consolidation pending baseline",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    },
+    {
+      "id": "TX-SMA",
+      "name": "San Marcos",
+      "slug": "san-marcos.html",
+      "jurisdictions": [
+        "TX"
+      ],
+      "researchPrompt": "Distinct intent or consolidation pending baseline",
+      "availabilityRef": "OWNER-2026-09-16",
+      "tierIds": [
+        "https://www.driverightcarbuying.com/#service-consultation",
+        "https://www.driverightcarbuying.com/#service-full",
+        "https://www.driverightcarbuying.com/#service-concierge"
+      ],
+      "confirmedBuyerZips": null,
+      "serviceBoundary": null,
+      "sellerLimits": null,
+      "pickupDeliveryLimits": null,
+      "responseCapacity": null,
+      "primaryQuery": null,
+      "supportingIntents": [],
+      "serp": null,
+      "baseline": null,
+      "demandEvidence": null,
+      "logisticsEvidence": null,
+      "checkoutParity": null,
+      "qualifiedReview": null,
+      "editorialReview": null,
+      "qa": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "ctaDestination": "/schedule.html",
+      "releaseStatus": "draft",
+      "publishedSha256": null
+    }
+  ],
+  "legacyTexas": [
+    {
+      "slug": "austin.html",
+      "marketId": "TX-AUS",
+      "decision": "Retain Austin base; complete local gate",
+      "sha256": "2f7941832ce806ea40d22625adec3f881c9ad0e57b640bd2fffc90dd745642fd",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "houston.html",
+      "marketId": "M05",
+      "decision": "Rewrite only after Houston gate passes",
+      "sha256": "0d1f0ac41f747a5082197d358892bcfaab63ddfc3dc041674ed1d4ddba5eca7a",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "dallas.html",
+      "marketId": "M04",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
+      "sha256": "d5640c47e5329ed410dee814e2a4114fda9ad432d01e2e4f753d690f5a5749f1",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "fort-worth.html",
+      "marketId": "M04",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
+      "sha256": "8b9d0eb3b5a6ca904ed4ad62c32cb8c861835ffb09ecf1d28bd7d55a4246b1f4",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "arlington.html",
+      "marketId": "M04",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
+      "sha256": "4fb70de286a0b8ea97c7f849a328b7ac02816db47d3355f772229a3467ee3cd4",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "san-antonio.html",
+      "marketId": "TX-SAT",
+      "decision": "Separate backlog; evidence and demand pending",
+      "sha256": "93ddaf90d51baaf102b075aad2585412dc5839a22c1669cd22c3e89d64ec7ce6",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "el-paso.html",
+      "marketId": "TX-ELP",
+      "decision": "Separate backlog; evidence and demand pending",
+      "sha256": "594712d5c93fa80171532a6f5edca38b8c2e314fa92b0bd8ab69720a3b23efef",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "new-braunfels.html",
+      "marketId": "TX-NBF",
+      "decision": "Distinct-intent review before retain/merge decision",
+      "sha256": "ccc40b2b68074f10ef462ab4ca726076c43451027ccf1367913b00237500b616",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    },
+    {
+      "slug": "san-marcos.html",
+      "marketId": "TX-SMA",
+      "decision": "Distinct-intent review before retain/merge decision",
+      "sha256": "1654cc1c5c4ab8edbe25318f65419c73e026e29f584412af11206fcdf0ca7a9f",
+      "redirectTo": null,
+      "gscBaseline": null,
+      "backlinkBaseline": null
+    }
+  ],
+  "legacyDiscoveryLinks": [
+    {
+      "source": "about.html",
+      "target": "arlington.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "austin.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "dallas.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "el-paso.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "fort-worth.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "houston.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "new-braunfels.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "san-antonio.html",
+      "count": 1
+    },
+    {
+      "source": "about.html",
+      "target": "san-marcos.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "arlington.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "austin.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "dallas.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "el-paso.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "fort-worth.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "houston.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "new-braunfels.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "san-antonio.html",
+      "count": 1
+    },
+    {
+      "source": "policy.html",
+      "target": "san-marcos.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "arlington.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "austin.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "dallas.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "el-paso.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "fort-worth.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "houston.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "new-braunfels.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "san-antonio.html",
+      "count": 1
+    },
+    {
+      "source": "tesla-fsd-for-sale.html",
+      "target": "san-marcos.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "arlington.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "austin.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "dallas.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "el-paso.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "fort-worth.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "houston.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "new-braunfels.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "san-antonio.html",
+      "count": 1
+    },
+    {
+      "source": "texas-local-market-intelligence.html",
+      "target": "san-marcos.html",
+      "count": 1
+    }
+  ],
+  "hub": {
+    "slug": "service-areas.html",
+    "releaseStatus": "draft",
+    "editorialReview": null,
+    "qualifiedReview": null,
+    "qa": null,
+    "publishedSha256": null
+  }
+}

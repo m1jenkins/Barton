@@ -8,7 +8,7 @@ Position Drive Right as practical help turning car research into a purchase deci
 
 OpenAI recommends useful, specific creative variations with landing pages that match the advertised service. The proposed intent themes below are creative hypotheses, not promises about which conversations will trigger an ad. [OpenAI creative guidance](https://help.openai.com/en/articles/20001212)
 
-Business basis: the local service records list research, pricing/fee review, dealer negotiation and advisory support. Current local prices are $195, $495 and $895, but public search snapshots and older records conflict. Availability and some scope details remain marked for owner confirmation. Avoid price-led ads until the landing page, Stripe checkout and service terms agree. Do not reuse unsupported savings, loan-rate reductions, customer counts, guarantees or testimonials from older copy.
+Business basis: the local service records list research, pricing/fee review, dealer negotiation and advisory support. Current local prices are $195, $495 and $895, but public search snapshots and older records conflict. Use `availabilityConfirmation` in [the service registry](../data/services.json) for owner-confirmed coverage and its limits; operating details and exact commercial copy still need their recorded reviews. Avoid price-led ads until the landing page, Stripe checkout and service terms agree. Do not reuse unsupported savings, loan-rate reductions, customer counts, guarantees or testimonials from older copy.
 
 ## Three initial angles
 

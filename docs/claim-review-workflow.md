@@ -63,7 +63,7 @@ For testimonials, include the original statement, written publication permission
 
 Draft only what the evidence supports. Define market, period, population, conditions, and limitations near the claim. Replace absolute phrasing unless exhaustive evidence truly supports it. Keep advice and examples distinct from guarantees.
 
-The proposed exact wording goes in `approved_copy`; it stays blank until review is complete.
+Keep proposed wording in `claim_text` and its referenced draft. Leave `approved_copy` blank until the reviewer approves the exact wording, then record that wording there.
 
 ### 5. Review and approval
 
