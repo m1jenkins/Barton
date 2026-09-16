@@ -163,7 +163,10 @@ export async function validateMetroRelease(root, { today = new Date().toISOStrin
     if (hub && !eligible.size) fail('service-areas.html: public hub has no eligible markets');
     if (eligible.size && (!hub || hub.document.noindex || !sitemapUrls.includes(`${origin}/service-areas.html`))) fail('Approved markets need an indexable sitemap-listed hub');
     for (const [file, page] of publicHtml) {
-      for (const marker of page.document.markers) if (!ids.has(marker) || !eligible.has(file)) fail(`${file}: unapproved metro artifact published`);
+      for (const marker of page.document.markers) {
+        const invalid = marker === 'hub' ? file !== 'service-areas.html' : !ids.has(marker) || !eligible.has(file);
+        if (invalid) fail(`${file}: unapproved metro artifact published`);
+      }
       for (const href of page.document.links) {
         const url = new URL(href, `${origin}/${file}`);
         if (url.origin !== origin) continue;
