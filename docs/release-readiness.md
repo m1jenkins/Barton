@@ -6,14 +6,7 @@ Status date: August 20, 2026
 
 The repository-side containment, canonical model, content architecture, media migration, form/payment contracts, governance data, and automated checks are implemented. The local candidate is not a production deployment and does not by itself establish analytics reconciliation, live redirects, database durability, or crawler access.
 
-Local acceptance commands:
-
-```sh
-node scripts/validate-site.mjs
-npm run check:api
-npm test
-git diff --check
-```
+Run the local acceptance commands defined in [the checks workflow](../.github/workflows/checks.yml), using the Node version it specifies. [The package scripts](../package.json) define the individual checks.
 
 After deployment, run the one-hop host/path matrix:
 
@@ -64,6 +57,7 @@ node scripts/check-redirects.mjs
 - Obtain owner/legal approval for guarantees, refund boundaries, operational start times, independence/referral disclosures, and any first-party outcome claim before reuse.
 - Publish the requested case studies, Texas title-transfer checklist, and deal-sheet worksheet only with customer consent, reproducible evidence, and the required reviewer. No placeholder case study or synthetic testimonial is an acceptable substitute.
 - Keep all nine metro pages noindexed until each has unique verified logistics, dated regional evidence, a real example where available, and either attributable consultation activity or genuine non-brand demand. Merge/redirect failures at the day-90 gate.
+- Apply the [metro release contract](metro-execution-2026-09-16.md#release-contract) to each proposed market and the service-areas hub; use the [baseline capture and cohort review template](metro-baseline-template.md) for their evidence packets.
 - Complete Google Business Profile, Bing Places, Apple Business Connect, review-request, and outreach work in the owned accounts; keep name, phone, URL, hours, and service area synchronized.
 
 ## Gate 6: rendered quality and performance
