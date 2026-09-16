@@ -61,7 +61,7 @@ export function releaseReasons(market, context) {
   if (!currentReview(market.qualifiedReview, today) || !present(market.qualifiedReview?.qualification)) reasons.push('qualified review missing or expired');
   if (!date(market.serp?.observedOn) || market.serp.observedOn > today || !market.serp?.location || market.serp?.competitors?.length !== 5) reasons.push('dated five-competitor search record missing');
   const dossier = dossiers.find(d => d.marketId === market.id);
-  if (!dossier || dossier.modules?.length < 2 || !['worksheet', 'permissioned_case'].includes(dossier.example?.type)) reasons.push('two local modules and example/worksheet missing');
+  if (!Array.isArray(dossier?.modules) || dossier.modules.length < 2 || !['worksheet', 'permissioned_case'].includes(dossier.example?.type)) reasons.push('two local modules and example/worksheet missing');
   if (!market.claimIds?.length || !market.sourceIds?.length) reasons.push('claim/source mapping missing');
   for (const id of market.claimIds ?? []) {
     const claim = claims.find(c => c.claim_id === id);
@@ -73,8 +73,8 @@ export function releaseReasons(market, context) {
     if (!source || source.verification_status !== 'approved' || !present(source.reviewer) || !present(source.source_url)
       || !date(source.next_review) || source.next_review <= today) reasons.push(`${id}: source review missing or expired`);
   }
-  for (const module of dossier?.modules ?? []) {
-    if (!module.claimIds?.length || !module.sourceIds?.length || !module.claimIds.every(id => market.claimIds?.includes(id))
+  if (Array.isArray(dossier?.modules)) for (const module of dossier.modules) {
+    if (!module?.claimIds?.length || !module.sourceIds?.length || !module.claimIds.every(id => market.claimIds?.includes(id))
       || !module.sourceIds.every(id => market.sourceIds?.includes(id))) reasons.push('local module lacks mapped claim/source');
   }
   return reasons;

@@ -44,7 +44,7 @@ The one existing FirstMate decision task `barton-metro-release-evidence-20260916
 
 ## URL preservation and maintenance
 
-`data/metro-link-inventory.csv` captures repository anchor counts for all nine old Texas URLs (including self-links), not external backlinks. Reproduce with `node scripts/inventory-metro-links.mjs`; do not regenerate the approved baseline merely to silence a new-link validation error. DFW has 58 Dallas, 50 Fort Worth and 50 Arlington anchors across 48 source files each at intake. Preserve these URLs until real traffic/backlinks are captured and a reviewed destination exists. No redirect is applied here.
+`data/metro-link-inventory.csv` captures repository anchor counts for all nine old Texas URLs (including self-links), not external backlinks. The committed snapshot records September 16, 2026 observations. Running `node scripts/inventory-metro-links.mjs` rescans current root-level HTML and replaces the CSV; every row's `observed_on` is the UTC date captured once at scan start. It is an observation date, not an approval date or a reproduction of the historical snapshot. Preserve the committed snapshot unless intentionally collecting a new observation; do not regenerate the approved baseline merely to silence a new-link validation error. DFW has 58 Dallas, 50 Fort Worth and 50 Arlington anchors across 48 source files each at intake. Preserve these URLs until real traffic/backlinks are captured and a reviewed destination exists. No redirect is applied here.
 
 The original release and editorial workflows remain authoritative. Refresh sources before publication and at material changes. The baseline template includes 30/60/90-day decisions; no invented targets or page scores are assigned.
 

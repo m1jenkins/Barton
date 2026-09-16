@@ -9,20 +9,20 @@ import { createDraftServer } from '../preview-metros.mjs';
 const today='2026-09-16';
 const review=()=>({status:'approved',reviewer:'Fixture reviewer',qualification:'Fixture subject specialist',reviewedOn:'2026-09-15',expiresOn:'2026-12-15',evidenceRef:'fixture-evidence/record'});
 const tier=`${origin}/#service-full`, organization=`${origin}/#organization`;
-async function fixture(t,{approved=true}={}) {
+async function fixture(t,{approved=true,marketDetails={}}={}) {
  const root=await mkdtemp(path.join(tmpdir(),'barton-metro-'));t.after(()=>rm(root,{recursive:true,force:true}));await mkdir(path.join(root,'data'));
  const write=(file,value)=>writeFile(path.join(root,file),typeof value==='string'?value:JSON.stringify(value));
- const market={id:'M04',slug:'dallas-fort-worth.html',name:'Dallas–Fort Worth',availabilityRef:'owner',tierIds:[tier],releaseStatus:approved?'approved':'draft',serviceBoundary:'Remote only in fixture',sellerLimits:'Fixture seller scope',pickupDeliveryLimits:'Buyer arranges pickup in fixture',responseCapacity:'Fixture operating record',primaryQuery:'Fixture query',serp:{observedOn:today,location:'Dallas fixture',competitors:['a','b','c','d','e']},claimIds:['C1'],sourceIds:['S1']};
+ const market={id:'M04',slug:'dallas-fort-worth.html',name:'Dallas–Fort Worth',...marketDetails,availabilityRef:'owner',tierIds:[tier],releaseStatus:approved?'approved':'draft',serviceBoundary:'Remote only in fixture',sellerLimits:'Fixture seller scope',pickupDeliveryLimits:'Buyer arranges pickup in fixture',responseCapacity:'Fixture operating record',primaryQuery:'Fixture query',serp:{observedOn:today,location:'Fixture market',competitors:['a','b','c','d','e']},claimIds:['C1'],sourceIds:['S1']};
  for(const k of ['baseline','demandEvidence','logisticsEvidence','checkoutParity','qualifiedReview','editorialReview','qa'])market[k]=review();
- const page=`<!doctype html><html lang="en"><head><link rel="canonical" href="${origin}/${market.slug}"></head><body><h1>Car buying in Dallas–Fort Worth</h1><p>Fixture approved local statement.</p><a href="/service-areas.html">Areas</a><script type="application/ld+json">${JSON.stringify({'@type':'Service','@id':tier,provider:{'@id':organization},areaServed:{name:market.name}})}</script></body></html>`;
+ const page=`<!doctype html><html lang="en"><head><link rel="canonical" href="${origin}/${market.slug}"></head><body><h1>Car buying in ${market.name}</h1><p>Fixture approved local statement.</p><a href="/service-areas.html">Areas</a><script type="application/ld+json">${JSON.stringify({'@type':'Service','@id':tier,provider:{'@id':organization},areaServed:{name:market.name}})}</script></body></html>`;
  market.publishedSha256=sha256(page);
- const hubHtml=`<meta name="barton-metro-id" content="hub"><link rel="canonical" href="${origin}/service-areas.html"><h1>Areas</h1><a href="/${market.slug}">Dallas–Fort Worth</a>`;
+ const hubHtml=`<meta name="barton-metro-id" content="hub"><link rel="canonical" href="${origin}/service-areas.html"><h1>Areas</h1><a href="/${market.slug}">${market.name}</a>`;
  const registry={hub:{releaseStatus:approved?'approved':'draft',editorialReview:review(),qualifiedReview:review(),qa:review(),publishedSha256:sha256(hubHtml)},ownerConfirmation:{id:'owner',date:today},markets:[market],legacyTexas:[]};
  const files={
   'data/metro-release.json':registry,
   'data/entities.json':{organization:{id:organization},serviceAreas:approved?[{pageUrl:`${origin}/${market.slug}`,name:market.name,releaseStatus:'approved',providerRef:organization,localBusinessEntity:false}]:[]},
-  'data/services.json':{services:[{id:tier,marketApprovals:{M04:review()}}]},
-  'data/metro-dossiers.json':[{marketId:'M04',modules:[{claimIds:['C1'],sourceIds:['S1']},{claimIds:['C1'],sourceIds:['S1']}],example:{type:'worksheet'}}],
+  'data/services.json':{services:[{id:tier,marketApprovals:{[market.id]:review()}}]},
+  'data/metro-dossiers.json':[{marketId:market.id,modules:[{claimIds:['C1'],sourceIds:['S1']},{claimIds:['C1'],sourceIds:['S1']}],example:{type:'worksheet'}}],
   'data/claims.csv':'claim_id,status,approved_copy,reviewer,last_reviewed,expires_on\nC1,approved,Fixture approved local statement.,Fixture reviewer,2026-09-15,2026-12-15\n',
   'data/source-registry.csv':'source_id,verification_status,source_url,reviewer,next_review\nS1,approved,https://example.org/authority,Fixture reviewer,2026-12-15\n',
   'data/content-inventory.csv':`canonical_url,source_file,lifecycle_status\n${origin}/${market.slug},${market.slug},${approved?'approved_indexable':'local_only_draft'}\n${origin}/service-areas.html,service-areas.html,${approved?'approved_indexable':'local_only_draft'}\n`,
@@ -34,6 +34,28 @@ async function fixture(t,{approved=true}={}) {
  return {root,write,market,registry,files,page,check:()=>validateMetroRelease(root,{today})};
 }
 test('eligible approved page, marked hub, registry and sitemap pass together',async t=>{const f=await fixture(t);assert.deepEqual(await f.check(),[]);});
+const nonpilotMarket = { id: 'TX-AUS', slug: 'austin.html', name: 'Austin' };
+const mappedModule = () => ({ claimIds: ['C1'], sourceIds: ['S1'] });
+test('nonpilot market with two mapped modules passes release validation', async t => {
+  const f = await fixture(t, { marketDetails: nonpilotMarket });
+  assert.deepEqual(await f.check(), []);
+});
+for (const [label, modules] of [
+  ['missing', undefined], ['null', null], ['empty', []], ['non-array', { length: 2 }],
+  ['single', [mappedModule()]], ['null entry', [mappedModule(), null]],
+  ['unmapped', [mappedModule(), { claimIds: ['C2'], sourceIds: ['S2'] }]],
+]) {
+  test(`nonpilot market with ${label} modules cannot become eligible`, async t => {
+    const f = await fixture(t, { marketDetails: nonpilotMarket });
+    const dossiers = f.files['data/metro-dossiers.json'];
+    dossiers[0].modules = modules;
+    await f.write('data/metro-dossiers.json', dossiers);
+    const errors = await f.check();
+    const reason = ['null entry', 'unmapped'].includes(label) ? 'local module lacks mapped claim/source' : 'two local modules and example/worksheet missing';
+    assert.ok(errors.some(error => error.startsWith('TX-AUS: unsafe release:') && error.includes(reason)), errors.join('\n'));
+    assert.ok(errors.some(error => error.startsWith('austin.html: unapproved new/replaced page')));
+  });
+}
 test('private pending market with no public artifacts passes',async t=>{const f=await fixture(t,{approved:false});f.market.qualifiedReview=null;await f.write('data/metro-release.json',f.registry);assert.deepEqual(await f.check(),[]);});
 for(const status of ['pending_evidence','pending_qualified_review','revoked','retired'])test(`${status} claim blocks publication`,async t=>{const f=await fixture(t);await f.write('data/claims.csv',f.files['data/claims.csv'].replace('C1,approved,',`C1,${status},`));assert.match((await f.check()).join('\n'),/claim pending, expired, revoked or incomplete/);});
 for(const change of ['expired','blank copy','missing reviewer'])test(`${change} claim blocks publication`,async t=>{const f=await fixture(t);let csv=f.files['data/claims.csv'];csv=change==='expired'?csv.replace('2026-12-15','2026-09-15'):change==='blank copy'?csv.replace('Fixture approved local statement.',''):csv.replace('Fixture reviewer','');await f.write('data/claims.csv',csv);assert.notDeepEqual(await f.check(),[]);});
