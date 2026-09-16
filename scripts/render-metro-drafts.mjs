@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { origin } from './metro-release.mjs';
+import { csvRows, origin } from './metro-release.mjs';
 export const draftRoot = fileURLToPath(new URL('../draft-artifacts/metros/', import.meta.url));
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
 function layout({ title, description, slug, marketId = 'hub', body }) {
@@ -19,12 +19,19 @@ function layout({ title, description, slug, marketId = 'hub', body }) {
 <footer class="page-width site-footer"><p>Drive Right · Based in Austin, Texas<br>512-910-4938 · hello@driverightcarbuying.com</p><p>Local review copy. No form sends, checkout or tracking.<br><a href="/policy.html">Policy reference</a></p></footer>
 </body></html>\n`;
 }
-export function renderMarket(market, dossier, services) {
+export function renderMarket(market, dossier, services, sources) {
   const localName = market.id === 'M04' ? 'Dallas–Fort Worth' : 'Houston';
   const intro = market.id === 'M04'
     ? 'Compare a Dallas, Fort Worth or Arlington shortlist as one buying decision. Keep the vehicle, seller location, registration county and handover plan together before making a trip.'
     : 'Build a Houston-area shortlist around the car and the transaction. A listing in Houston, Pasadena or The Woodlands still needs its own history, paperwork and pickup questions.';
-  const modules = dossier.modules.map((m, i) => `<section class="local-module" aria-labelledby="module-${i}"><p class="eyebrow">Local decision ${String(i + 1).padStart(2, '0')}</p><h2 id="module-${i}">${escape(m.title)}</h2><p>${escape(m.body)}</p><p><strong>Your next step.</strong> ${escape(m.decision)}</p><p>${escape(m.limitations)}</p><p class="source">Sources: ${m.sources.map(s => `<a href="${escape(s.url)}">${escape(s.title)}</a>`).join('; ')} · Retrieved ${escape(m.asOf)}. Draft interpretation; qualified review pending.</p></section>`).join('\n');
+  const modules = dossier.modules.map((m, i) => {
+    const citations = m.sourceIds.map(id => {
+      const source = sources.find(s => s.source_id === id);
+      if (!source?.source_url?.trim() || !source.source_title?.trim()) throw new Error(`${m.id}: missing citation URL or title for source ${id}`);
+      return `<a href="${escape(source.source_url)}">${escape(source.source_title)}</a>`;
+    }).join('; ');
+    return `<section class="local-module" aria-labelledby="module-${i}"><p class="eyebrow">Local decision ${String(i + 1).padStart(2, '0')}</p><h2 id="module-${i}">${escape(m.title)}</h2><p>${escape(m.body)}</p><p><strong>Your next step.</strong> ${escape(m.decision)}</p><p>${escape(m.limitations)}</p><p class="source">Sources: ${citations} · Retrieved ${escape(m.asOf)}. Draft interpretation; qualified review pending.</p></section>`;
+  }).join('\n');
   const body = `<nav aria-label="Breadcrumb" class="breadcrumbs"><a href="/service-areas.html">Service areas</a><span aria-hidden="true"> / </span>${escape(localName)}</nav>
 <section class="metro-hero"><p class="eyebrow">A considered car search</p><h1>Car-buying help in<br><em>${escape(localName)}.</em></h1><p class="lead">${escape(intro)}</p><a class="draft-button" href="#buying-brief">Prepare your buying brief <span aria-hidden="true">↗</span></a></section>
 <section class="intro-grid" aria-labelledby="approach"><h2 id="approach">Start with the decision<br>you need to make.</h2><div><p>Drive Right is based in Austin. Its service plans cover research, comparing options and seller communication at different levels of support. You choose the plan and decide whether to purchase.</p><p>This draft is for buyers comparing new, used or certified pre-owned vehicles. Owner-confirmed tier availability includes this market. In-person attendance, seller participation, delivery arrangements and response times still need an engagement-specific scope; none is promised here.</p><ol><li>Write down your vehicle needs, budget, buyer ZIP and acceptable seller locations.</li><li>Compare written quotes on the same basis and keep unresolved conditions visible.</li><li>Confirm inspection, paperwork and handover responsibilities before committing.</li></ol></div></section>
@@ -40,9 +47,12 @@ export function renderHub(markets) {
 }
 export async function renderDrafts({ root = fileURLToPath(new URL('..', import.meta.url)), output = draftRoot, check = false } = {}) {
   const readJson = async file => JSON.parse(await readFile(path.join(root, file), 'utf8'));
-  const [registry, dossiers, services] = await Promise.all(['data/metro-release.json','data/metro-dossiers.json','data/services.json'].map(readJson));
+  const [registry, dossiers, services, sources] = await Promise.all([
+    ...['data/metro-release.json','data/metro-dossiers.json','data/services.json'].map(readJson),
+    readFile(path.join(root, 'data/source-registry.csv'), 'utf8').then(csvRows),
+  ]);
   const markets = registry.markets.filter(m => ['M04','M05'].includes(m.id));
-  const pages = new Map(markets.map(m => [m.slug, renderMarket(m, dossiers.find(d => d.marketId === m.id), services)]));
+  const pages = new Map(markets.map(m => [m.slug, renderMarket(m, dossiers.find(d => d.marketId === m.id), services, sources)]));
   pages.set('service-areas.html', renderHub(markets));
   await mkdir(output, { recursive:true });
   for (const [file, html] of pages) {

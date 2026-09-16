@@ -11,10 +11,10 @@ The captain said “i approve all pages, do not wait for my approval”; “They
 ## Files and local workflow
 
 - `data/metro-release.json`: 20 candidate MSAs, five additional Texas dossier/backlog records, all nine existing URL dispositions, and the dated authority record. Null means unknown; empty claim/source lists on untouched candidates mean research not started.
-- `data/metro-dossiers.json`: DFW, Houston and Austin evidence, proposed wording, source limitations, provisional search samples, exact historical review provenance and transparent worksheet.
+- `data/metro-dossiers.json`: DFW, Houston and Austin evidence, proposed wording, source limitations, provisional search samples, exact historical review provenance and transparent worksheet. Modules reference `sourceIds`; citation URLs and titles come only from the matching rows in `data/source-registry.csv`.
 - `data/claims.csv`, `data/source-registry.csv`, `data/content-inventory.csv`: the existing governance inventories, extended with proposed claims/sources and local-only lifecycle rows. All new approved-copy fields are blank.
 - `scripts/metro-release.mjs`: release eligibility and public-artifact checks, called by `scripts/validate-site.mjs`.
-- `scripts/render-metro-drafts.mjs`: small static renderer. `npm run draft:metros` writes only `draft-artifacts/metros/{service-areas,dallas-fort-worth,houston}.html`; `npm run check:metros` rejects stale generated HTML.
+- `scripts/render-metro-drafts.mjs`: small static renderer. `npm run draft:metros` writes only `draft-artifacts/metros/{service-areas,dallas-fort-worth,houston}.html`; `npm run check:metros` rejects stale generated HTML, including citations changed in the source registry. Missing referenced sources or citation URLs/titles stop rendering before any drafts are written.
 - `npm run preview:metros`: allowlisted loopback-only server on port 4176. Main-site references resolve to an explanatory local boundary page; no production forms, checkout links, analytics or scripts are loaded. GET/HEAD only; API/private-file requests fail. Worksheet fields have no submission or storage behavior.
 - `.vercelignore`: excludes `draft-artifacts`, `docs`, `data`, `scripts`, and agent memory from automatic Vercel preview/production uploads. The existing site consumes none of these data files at runtime. Do not configure a build to copy these private artifacts into a public output directory.
 
