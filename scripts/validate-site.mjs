@@ -346,7 +346,7 @@ const homepageHtml = sources.get('index.html') ?? '';
 const heroWidths = [640, 960, 1440, 1920];
 for (const width of heroWidths) {
   for (const format of ['avif', 'webp']) {
-    const asset = `assets/buying/coastal-roadster-${width}.${format}`;
+    const asset = `assets/buying/mx-5-coastal-hero-${width}.${format}`;
     if (!(await fileExists(asset))) {
       fail(asset, 'Responsive homepage hero derivative is missing.');
     }
