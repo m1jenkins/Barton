@@ -44,6 +44,7 @@ test('four current drafts render privately with exact attested historical quotes
     assert.ok(doc.links.includes('#main-content'));
     assert.match(doc.visibleText, /private|Private/);
     assert.match(doc.visibleText, /shipping charges/);
+    assert.match(doc.visibleText, /does not inspect vehicles/);
     assert.equal(html, await read(`draft-artifacts/metros/${file}`));
     for (const id of withdrawn) assert.ok(!html.includes(id));
     for (const passage of withdrawnCopy) assert.ok(!html.includes(passage));
@@ -91,7 +92,9 @@ test('mapped local modules render with validated source citations', async () => 
   };
   const market = release.markets.find(item => item.id === 'M04');
   const html = renderMarket(market, dossier, services, sources);
-  assert.match(htmlDocument(html).visibleText, /Compare remote offers/);
+  const text = htmlDocument(html).visibleText;
+  assert.match(text, /Compare remote offers/);
   assert.ok(htmlDocument(html).links.includes(source.source_url));
+  assert.doesNotMatch(text, /two claim\/source-mapped local modules are still missing/);
   assert.throws(() => renderMarket(market, dossier, services, [{ ...source, source_url: '' }]), /missing citation URL or title/);
 });
