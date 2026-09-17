@@ -80,23 +80,30 @@ test('mapped local modules render with validated source citations', async () => 
   const services = JSON.parse(await read('data/services.json'));
   const sources = csvRows(await read('data/source-registry.csv'));
   const source = sources.find(row => row.source_url && row.source_title);
+  const claimId = 'M04-C1';
+  const module = (id, title) => ({
+    id,
+    title,
+    body: 'Compare written offers before choosing a car.',
+    decision: 'Keep the buyer-paid shipping charge visible.',
+    limitations: 'Planning example only.',
+    claimIds: [claimId],
+    sourceIds: [source.source_id],
+    asOf: '2026-09-16',
+  });
   const dossier = {
     ...dossiers.find(item => item.marketId === 'M04'),
-    modules: [{
-      id: 'M04-M01',
-      title: 'Compare remote offers',
-      body: 'Compare written offers before choosing a car.',
-      decision: 'Keep the buyer-paid shipping charge visible.',
-      limitations: 'Planning example only.',
-      sourceIds: [source.source_id],
-      asOf: '2026-09-16',
-    }],
+    modules: [module('M04-M01', 'Compare remote offers')],
   };
-  const market = release.markets.find(item => item.id === 'M04');
+  const market = { ...release.markets.find(item => item.id === 'M04'), claimIds: [claimId], sourceIds: [source.source_id] };
   const html = renderMarket(market, dossier, services, sources);
   const text = htmlDocument(html).visibleText;
   assert.match(text, /Compare remote offers/);
   assert.ok(htmlDocument(html).links.includes(source.source_url));
-  assert.doesNotMatch(text, /two claim\/source-mapped local modules are still missing/);
+  assert.match(text, /two claim\/source-mapped local modules are still missing/);
+  dossier.modules.push(module('M04-M02', 'Keep shipping visible'));
+  const completeText = htmlDocument(renderMarket(market, dossier, services, sources)).visibleText;
+  assert.match(completeText, /Claim\/source-mapped local modules are present/);
+  assert.doesNotMatch(completeText, /two claim\/source-mapped local modules are still missing/);
   assert.throws(() => renderMarket(market, dossier, services, [{ ...source, source_url: '' }]), /missing citation URL or title/);
 });

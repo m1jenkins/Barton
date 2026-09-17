@@ -30,6 +30,12 @@ export function renderMarket(market, dossier, services, sources) {
   if (!localName || !dossier?.firstPartyProof?.review) throw new Error(`${market.id}: missing draft or attested review`);
   const review = dossier.firstPartyProof.review;
   const hasModules = Array.isArray(dossier.modules) && dossier.modules.length > 0;
+  const hasCompleteModules = hasModules
+    && dossier.modules.length >= 2
+    && dossier.modules.every(module => Array.isArray(module?.claimIds) && module.claimIds.length > 0
+      && Array.isArray(module?.sourceIds) && module.sourceIds.length > 0
+      && module.claimIds.every(id => market.claimIds?.includes(id))
+      && module.sourceIds.every(id => market.sourceIds?.includes(id)));
   const modules = hasModules
     ? `\n<div class="module-grid">${dossier.modules.map((module, i) => {
       const citations = module.sourceIds.map(id => {
@@ -40,7 +46,7 @@ export function renderMarket(market, dossier, services, sources) {
       return `<section class="local-module" aria-labelledby="module-${i}"><p class="eyebrow">Local decision ${String(i + 1).padStart(2, '0')}</p><h2 id="module-${i}">${escape(module.title)}</h2><p>${escape(module.body)}</p><p><strong>Your next step.</strong> ${escape(module.decision)}</p><p>${escape(module.limitations)}</p><p class="source">Sources: ${citations} · Retrieved ${escape(module.asOf)}. Draft interpretation; qualified review pending.</p></section>`;
     }).join('\n')}</div>`
     : '';
-  const moduleStatus = hasModules
+  const moduleStatus = hasCompleteModules
     ? 'Claim/source-mapped local modules are present.'
     : 'Distinct local buyer evidence and two claim/source-mapped local modules are still missing.';
   const intro = `Remote car-finding and buying support for ${localName} buyers. Start with your vehicle needs, then compare real offers before you choose.`;
