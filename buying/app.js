@@ -59,8 +59,10 @@ function persist() {
 function currentField() { return (optionalQuestions ? nextField : nextIntakeField)(brief.answers, brief.skipped); }
 function sizeAnswer() {
   input.style.height = 'auto';
-  const limit = view === 'conversation' && matchMedia('(max-width: 760px)').matches ? 104 : 160;
+  const compact = view === 'conversation' && matchMedia('(max-width: 760px)').matches;
+  const limit = compact ? 104 : 160;
   input.style.height = `${Math.min(input.scrollHeight, limit)}px`;
+  if (compact) $('#messages').scrollTop = $('#messages').scrollHeight;
 }
 function syncConversationViewport() {
   const panel = $('#intake-view');
@@ -71,6 +73,13 @@ function syncConversationViewport() {
   }
   panel.style.setProperty('--conversation-height', `${window.visualViewport.height}px`);
   panel.style.setProperty('--conversation-top', `${window.visualViewport.offsetTop}px`);
+}
+function resizeConversation() {
+  syncConversationViewport();
+  if (view === 'conversation') requestAnimationFrame(() => {
+    sizeAnswer();
+    $('#messages').scrollTop = $('#messages').scrollHeight;
+  });
 }
 function cancelReply() {
   clearTimeout(replyTimer);
@@ -138,7 +147,7 @@ function renderConversation() {
   $('#review-progress').hidden = !isComplete(brief.answers) || replyPending;
   $('#brief-ready').hidden = Boolean(field) || !isComplete(brief.answers) || replyPending;
   $('#add-details').hidden = !nextField(brief.answers, brief.skipped) || optionalQuestions;
-  requestAnimationFrame(() => { sizeAnswer(); log.scrollTo({ top:log.scrollHeight, behavior:reduced() ? 'instant' : 'smooth' }); });
+  requestAnimationFrame(() => { sizeAnswer(); log.scrollTop = log.scrollHeight; });
 }
 function detailSummary(value = brief) {
   const a = value.answers;
@@ -258,8 +267,8 @@ if (home) {
   $('#save-brief').addEventListener('click', () => { const saved = persist(); $('#brief-status').textContent = saved === 'localStorage' ? 'Your brief is saved on this device.' : 'This browser cannot save a lasting draft. Download your brief to keep a copy.'; });
   window.addEventListener('hashchange', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('popstate', () => setView(location.hash.slice(1) || 'home'));
-  window.addEventListener('resize', syncConversationViewport);
-  window.visualViewport?.addEventListener('resize', syncConversationViewport);
+  window.addEventListener('resize', resizeConversation);
+  window.visualViewport?.addEventListener('resize', resizeConversation);
   window.visualViewport?.addEventListener('scroll', syncConversationViewport);
   setView(location.hash.slice(1) || 'home', false);
 }

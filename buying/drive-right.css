@@ -23,11 +23,8 @@
 .dr .assistant-name { padding:0; margin:0 0 8px; }
 .dr .assistant-hint { display:none; }
 .dr .typing-bubble { display:flex; align-items:center; justify-content:center; gap:5px; width:72px; height:44px; background:var(--white); border:1px solid #dedfd8; border-radius:20px 20px 20px 6px; }
-.dr .typing-dot { width:6px; height:6px; border-radius:50%; background:var(--green); opacity:.4; animation:dr-typing 1.05s ease-in-out infinite; }
-.dr .typing-dot:nth-of-type(3) { animation-delay:150ms; }
-.dr .typing-dot:nth-of-type(4) { animation-delay:300ms; }
+.dr .typing-dot { width:6px; height:6px; border-radius:50%; background:var(--green); }
 .dr .assistant-reply { animation:rise .3s var(--ease) both; }
-@keyframes dr-typing { 0%,60%,100% { transform:translateY(0); opacity:.4; } 30% { transform:translateY(-4px); opacity:1; } }
 .dr .composer:focus-within { outline:2px solid var(--green); outline-offset:3px; }
 .dr .text-link,.dr .back-link,.dr .example-link,.dr .skip-detail { min-height:44px; }
 .dr .example-link { margin-top:8px; }
@@ -248,7 +245,7 @@
  .dr[data-view="conversation"] .message { max-width:88%; }
  .dr[data-view="conversation"] .message.assistant { padding:0 14px 0 0; }
  .dr[data-view="conversation"] .message p { font-size:16px; line-height:1.45; }
- .dr[data-view="conversation"] .assistant-hint { display:block; margin-top:8px; color:var(--muted); font-size:12px; line-height:1.45; }
+ .dr[data-view="conversation"] .message p.assistant-hint { display:block; margin-top:8px; color:var(--muted); font-size:12px; line-height:1.45; }
  .dr[data-view="conversation"] .message.user .bubble { padding:10px 14px; border-radius:20px 20px 6px 20px; }
  .dr[data-view="conversation"] .composer-area { flex:none; width:100%; margin:0; padding:8px 16px calc(10px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); background:var(--white); box-shadow:0 -8px 22px #24292308; }
  .dr[data-view="conversation"] .answer-actions:not([hidden]) { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
