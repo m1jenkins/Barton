@@ -59,7 +59,18 @@ function persist() {
 function currentField() { return (optionalQuestions ? nextField : nextIntakeField)(brief.answers, brief.skipped); }
 function sizeAnswer() {
   input.style.height = 'auto';
-  input.style.height = `${Math.min(input.scrollHeight, 160)}px`;
+  const limit = view === 'conversation' && matchMedia('(max-width: 760px)').matches ? 104 : 160;
+  input.style.height = `${Math.min(input.scrollHeight, limit)}px`;
+}
+function syncConversationViewport() {
+  const panel = $('#intake-view');
+  if (view !== 'conversation' || !matchMedia('(max-width: 760px)').matches || !window.visualViewport) {
+    panel.style.removeProperty('--conversation-height');
+    panel.style.removeProperty('--conversation-top');
+    return;
+  }
+  panel.style.setProperty('--conversation-height', `${window.visualViewport.height}px`);
+  panel.style.setProperty('--conversation-top', `${window.visualViewport.offsetTop}px`);
 }
 function cancelReply() {
   clearTimeout(replyTimer);
@@ -101,12 +112,14 @@ function renderConversation() {
   }
   const reply = replyPending
     ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span></div>'
-    : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Take a look, make it yours, and we’ll go from there.')}</p>`;
+    : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Take a look, make it yours, and we’ll go from there.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
   const responseMarkup = `<span class="message-label assistant-name">Drive Right</span>${reply}`;
   if (response.innerHTML !== responseMarkup) response.innerHTML = responseMarkup;
-  $('#choices').innerHTML = field && !replyPending ? choicesFor(field, brief.answers).map(choice => `<button class="choice-button" type="button" data-choice="${escape(choice)}">${escape(choice)}</button>`).join('') : '';
-  $('#choices').hidden = !field || replyPending;
+  const choices = field && !replyPending ? choicesFor(field, brief.answers) : [];
+  $('#choices').innerHTML = choices.map(choice => `<button class="choice-button" type="button" data-choice="${escape(choice)}">${escape(choice)}</button>`).join('');
+  $('#choices').hidden = !choices.length;
   $('#skip-detail').hidden = !field || field.required || replyPending;
+  $('#answer-actions').hidden = $('#choices').hidden && $('#skip-detail').hidden;
   $('#skip-detail').textContent = field?.key === 'notes' ? 'Nothing else to add' : 'Skip for now';
   $('#composer').hidden = !field && !replyPending;
   $('#composer').setAttribute('aria-busy', String(replyPending));
@@ -115,10 +128,10 @@ function renderConversation() {
   input.inputMode = field?.inputMode || 'text';
   // Keep correction phrases possible even while asking for a five-digit ZIP.
   input.maxLength = field?.maxLength || 180;
-  input.rows = !replyPending && field?.multiline ? 3 : 1;
+  input.rows = 1;
   input.enterKeyHint = field?.multiline ? 'enter' : 'send';
   $('#composer').classList.toggle('is-multiline', !replyPending && Boolean(field?.multiline));
-  input.placeholder = replyPending ? 'Your reply…' : field?.placeholder || 'Your answer';
+  input.placeholder = replyPending ? 'Your reply…' : matchMedia('(max-width: 760px)').matches ? field?.mobilePlaceholder || field?.placeholder || 'Your answer' : field?.placeholder || 'Your answer';
   $('#answer-label').textContent = replyPending ? 'Your reply' : field?.question || 'Your answer';
   $('#input-hint').textContent = replyPending ? '' : field?.hint || 'You can edit any answer.';
   $('.conversation-controls').hidden = !field;
@@ -154,9 +167,10 @@ function setView(next, focus = true) {
   if (next === 'brief') $('[data-brief-link]').setAttribute('aria-current', 'page');
   else $('[data-brief-link]').removeAttribute('aria-current');
   if (next === 'conversation') renderConversation();
+  syncConversationViewport();
   if (next === 'brief') renderBrief();
   if (next === 'home') {
-    $('#composer').hidden = false; $('#choices').hidden = true; $('#skip-detail').hidden = true;
+    $('#composer').hidden = false; $('#choices').hidden = true; $('#skip-detail').hidden = true; $('#answer-actions').hidden = true;
     $('#brief-ready').hidden = true; $('.conversation-controls').hidden = true;
     input.placeholder = 'What car are you dreaming of?'; input.inputMode = 'text';
     input.readOnly = false; input.maxLength = 180; input.rows = 1; input.enterKeyHint = 'send';
@@ -244,6 +258,9 @@ if (home) {
   $('#save-brief').addEventListener('click', () => { const saved = persist(); $('#brief-status').textContent = saved === 'localStorage' ? 'Your brief is saved on this device.' : 'This browser cannot save a lasting draft. Download your brief to keep a copy.'; });
   window.addEventListener('hashchange', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('popstate', () => setView(location.hash.slice(1) || 'home'));
+  window.addEventListener('resize', syncConversationViewport);
+  window.visualViewport?.addEventListener('resize', syncConversationViewport);
+  window.visualViewport?.addEventListener('scroll', syncConversationViewport);
   setView(location.hash.slice(1) || 'home', false);
 }
 
