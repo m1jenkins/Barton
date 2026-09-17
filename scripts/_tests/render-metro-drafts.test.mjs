@@ -58,7 +58,9 @@ test('four current drafts render privately with exact attested historical quotes
     assert.equal(market.baseline, null);
     assert.match(market.baselineStatus, /^pending_/);
     assert.equal(dossier.modules.length, 0);
-    assert.ok(htmlDocument(pages.get(file)).visibleText.includes(review.exact_quote));
+    const document = htmlDocument(pages.get(file));
+    assert.ok(document.visibleText.includes(review.exact_quote));
+    assert.ok(document.visibleText.includes(`Historical city label: ${review.historical_city_label}`));
     assert.match(review.attestation, /permission/);
     for (const withdrawnId of withdrawn) {
       assert.ok(!market.claimIds.includes(withdrawnId));
