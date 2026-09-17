@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { access, readFile, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateMetroRelease } from './metro-release.mjs';
@@ -203,6 +204,22 @@ await Promise.all(
     sources.set(file, await readFile(path.join(repoRoot, file), 'utf8'));
   }),
 );
+
+// The live asset cache outlives HTML. A changed homepage asset needs a new URL.
+const homepage = sources.get('index.html') ?? '';
+for (const [asset, tagName, attribute] of [
+  ['buying/drive-right.css', 'link', 'href'],
+  ['buying/app.js', 'script', 'src'],
+]) {
+  const content = await readFile(path.join(repoRoot, asset));
+  const version = createHash('sha256').update(content).digest('hex').slice(0, 12);
+  const expected = `/${asset}?v=${version}`;
+  const references = allMatches(homepage, new RegExp(`<${tagName}\\b[^>]*>`, 'gi'))
+    .filter((match) => attributeValue(match[0], attribute)?.split('?')[0] === `/${asset}`);
+  if (references.length !== 1 || attributeValue(references[0][0], attribute) !== expected) {
+    fail('index.html', `Homepage asset URL is missing or stale for ${asset}.`, references[0]?.index ?? 0, homepage, `Use ${attribute}="${expected}" so cached releases cannot mix.`);
+  }
+}
 
 for (const requiredFile of [...containedPosts, ...confirmationPages, 'blog.html', 'sitemap.xml']) {
   if (!(await fileExists(requiredFile))) {

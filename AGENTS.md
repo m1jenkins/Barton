@@ -4,6 +4,7 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 
 - Use Node 24 and the checks in `package.json` / `.github/workflows/checks.yml`.
 - Read `.ai_rules` and `.cursorrules` before UI changes.
+- Homepage CSS/JS URLs use content hashes to avoid stale live caches; `scripts/validate-site.mjs` checks them and reports the required URLs after asset changes.
 - Metro drafts and release gates: `docs/metro-execution-2026-09-16.md`, `data/metro-release.json`, and `docs/release-readiness.md`. Draft generation is local-only; noindex is not publication authorization.
 - Claim approval and source mapping: `docs/claim-review-workflow.md`. Keep exact-copy approval separate from owner availability/page sign-off.
 
