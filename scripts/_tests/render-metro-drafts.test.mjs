@@ -33,6 +33,8 @@ test('four current drafts render privately with exact attested historical quotes
   const release = JSON.parse(await read('data/metro-release.json'));
   const claims = csvRows(await read('data/claims.csv'));
   const activeClaimIds = new Set(claims.map(row => row.claim_id));
+  const ignoredEntries = new Set((await read('.vercelignore')).split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#')));
+  assert.ok(![...ignoredEntries].some(entry => entry === '!draft-artifacts' || entry.startsWith('!draft-artifacts/')));
   assert.deepEqual([...pages.keys()], draftFiles.slice(0, 3).concat('service-areas.html'));
   for (const file of draftFiles) {
     const html = pages.get(file);
@@ -43,7 +45,6 @@ test('four current drafts render privately with exact attested historical quotes
     assert.match(doc.visibleText, /private|Private/);
     assert.match(doc.visibleText, /shipping charges/);
     assert.equal(html, await read(`draft-artifacts/metros/${file}`));
-    assert.ok(!(await read('.vercelignore')).includes('!draft-artifacts'));
     for (const id of withdrawn) assert.ok(!html.includes(id));
     for (const passage of withdrawnCopy) assert.ok(!html.includes(passage));
   }
