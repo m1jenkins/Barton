@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { origin } from './metro-release.mjs';
+import { csvRows, origin } from './metro-release.mjs';
 export const draftRoot = fileURLToPath(new URL('../draft-artifacts/metros/', import.meta.url));
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
 function layout({ title, description, slug, marketId = 'hub', body }) {
@@ -19,7 +19,7 @@ function layout({ title, description, slug, marketId = 'hub', body }) {
 <footer class="page-width site-footer"><p>Drive Right · Based in Austin, Texas<br>512-910-4938 · hello@driverightcarbuying.com</p><p>Local review copy. No form sends, checkout or tracking.<br><a href="/policy.html">Policy reference</a></p></footer>
 </body></html>\n`;
 }
-export function renderMarket(market, dossier, services) {
+export function renderMarket(market, dossier, services, sources) {
   const names = { M04: 'Dallas–Fort Worth', M05: 'Houston', 'TX-AUS': 'Austin' };
   const scenarios = {
     M04: 'If you live in the Dallas–Fort Worth area and see a car outside your immediate search area, compare the written vehicle offer and the buyer-paid shipping charge before deciding.',
@@ -29,11 +29,21 @@ export function renderMarket(market, dossier, services) {
   const localName = names[market.id];
   if (!localName || !dossier?.firstPartyProof?.review) throw new Error(`${market.id}: missing draft or attested review`);
   const review = dossier.firstPartyProof.review;
+  const modules = Array.isArray(dossier.modules) && dossier.modules.length > 0
+    ? `\n<div class="module-grid">${dossier.modules.map((module, i) => {
+      const citations = module.sourceIds.map(id => {
+        const source = sources.find(item => item.source_id === id);
+        if (!source?.source_url?.trim() || !source.source_title?.trim()) throw new Error(`${module.id}: missing citation URL or title for source ${id}`);
+        return `<a href="${escape(source.source_url)}">${escape(source.source_title)}</a>`;
+      }).join('; ');
+      return `<section class="local-module" aria-labelledby="module-${i}"><p class="eyebrow">Local decision ${String(i + 1).padStart(2, '0')}</p><h2 id="module-${i}">${escape(module.title)}</h2><p>${escape(module.body)}</p><p><strong>Your next step.</strong> ${escape(module.decision)}</p><p>${escape(module.limitations)}</p><p class="source">Sources: ${citations} · Retrieved ${escape(module.asOf)}. Draft interpretation; qualified review pending.</p></section>`;
+    }).join('\n')}</div>`
+    : '';
   const intro = `Remote car-finding and buying support for ${localName} buyers. Start with your vehicle needs, then compare real offers before you choose.`;
   const body = `<nav aria-label="Breadcrumb" class="breadcrumbs"><a href="/service-areas.html">Service areas</a><span aria-hidden="true"> / </span>${escape(localName)}</nav>
 <section class="metro-hero"><p class="eyebrow">Private local draft</p><h1>Car-buying help in<br><em>${escape(localName)}.</em></h1><p class="lead">${escape(intro)}</p><a class="draft-button" href="#buying-brief">Prepare your buying brief <span aria-hidden="true">↗</span></a></section>
 <section class="intro-grid" aria-labelledby="approach"><h2 id="approach">A clearer search,<br>from wherever you are.</h2><div><p>Drive Right helps buyers remotely find cars, compare options, communicate with sellers and negotiate purchase terms within the chosen plan. You decide whether to buy. The agency does not attend visits, handle vehicle registration or perform vehicle safety work.</p><p>Start with the car you want, your budget and the locations you would consider. Seller participation and vehicle availability depend on the particular search. Buyers pay vehicle shipping charges, in addition to the vehicle price and Drive Right service fee.</p><ol><li>Describe the vehicle and the decision you need help making.</li><li>Compare written offers and unresolved seller terms.</li><li>Choose the car and shipping arrangement that work for you.</li></ol></div></section>
-<section class="local-module" aria-labelledby="scenario-title"><p class="eyebrow">Hypothetical buyer scenario</p><h2 id="scenario-title">Compare offers across locations.</h2><p>${escape(scenarios[market.id])}</p><p>This is a planning example, not a finding about local prices, supply or buyer demand.</p></section>
+<section class="local-module" aria-labelledby="scenario-title"><p class="eyebrow">Hypothetical buyer scenario</p><h2 id="scenario-title">Compare offers across locations.</h2><p>${escape(scenarios[market.id])}</p><p>This is a planning example, not a finding about local prices, supply or buyer demand.</p></section>${modules}
 <section class="worksheet" aria-labelledby="worksheet-title"><p class="eyebrow">A practical comparison</p><h2 id="worksheet-title">${escape(dossier.example.title)}</h2><p>${escape(dossier.example.disclosure)}</p><div class="table-scroll" role="region" aria-label="Vehicle comparison worksheet" tabindex="0"><table><caption>Complete from written information; leave unknowns unresolved.</caption><thead><tr><th scope="col">Question to resolve</th><th scope="col">Option A</th><th scope="col">Option B</th></tr></thead><tbody>${dossier.example.rows.map(r => `<tr><th scope="row">${escape(r)}</th><td>Not yet recorded</td><td>Not yet recorded</td></tr>`).join('')}</tbody></table></div></section>
 <section class="local-module" aria-labelledby="review-title"><p class="eyebrow">Historical customer words</p><h2 id="review-title">A buyer’s own account.</h2><blockquote><p>${escape(review.exact_quote)}</p><footer>— ${escape(review.name)}</footer></blockquote><p>This historical statement is presented with the business owner’s attestation of the original, publication permission and supporting records. It does not establish a ${escape(localName)} transaction or a typical result.</p></section>
 <section class="plans" aria-labelledby="plans"><h2 id="plans">Choose the support<br>your search needs.</h2><p>These are the current central-page service fees. Check the central plan and policy for scope and terms. Vehicle price and buyer-paid shipping charges are separate.</p><ul>${services.services.map(s => `<li><h3>${escape(s.name)}</h3><p class="price">$${s.price} <span>service fee</span></p></li>`).join('')}</ul><a class="text-link" href="/schedule.html">Read the central plan reference</a></section>
@@ -47,11 +57,12 @@ export function renderHub(markets) {
 }
 export async function renderDrafts({ root = fileURLToPath(new URL('..', import.meta.url)), output = draftRoot, check = false } = {}) {
   const readJson = async file => JSON.parse(await readFile(path.join(root, file), 'utf8'));
-  const [registry, dossiers, services] = await Promise.all(
-    ['data/metro-release.json','data/metro-dossiers.json','data/services.json'].map(readJson)
-  );
+  const [registry, dossiers, services, sources] = await Promise.all([
+    ...['data/metro-release.json','data/metro-dossiers.json','data/services.json'].map(readJson),
+    readFile(path.join(root, 'data/source-registry.csv'), 'utf8').then(csvRows),
+  ]);
   const markets = registry.markets.filter(m => ['M04','M05','TX-AUS'].includes(m.id));
-  const pages = new Map(markets.map(m => [m.slug, renderMarket(m, dossiers.find(d => d.marketId === m.id), services)]));
+  const pages = new Map(markets.map(m => [m.slug, renderMarket(m, dossiers.find(d => d.marketId === m.id), services, sources)]));
   pages.set('service-areas.html', renderHub(markets));
   await mkdir(output, { recursive:true });
   for (const [file, html] of pages) {

@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { csvRows, htmlDocument } from '../metro-release.mjs';
-import { renderDrafts } from '../render-metro-drafts.mjs';
+import { renderDrafts, renderMarket } from '../render-metro-drafts.mjs';
 
 const root = new URL('../../', import.meta.url);
 const read = file => readFile(new URL(file, root), 'utf8');
@@ -69,4 +69,29 @@ test('four current drafts render privately with exact attested historical quotes
   await renderDrafts({ output, check: true });
   await writeFile(path.join(output, 'austin.html'), 'stale');
   await assert.rejects(renderDrafts({ output, check: true }), /stale draft/);
+});
+
+test('mapped local modules render with validated source citations', async () => {
+  const dossiers = JSON.parse(await read('data/metro-dossiers.json'));
+  const release = JSON.parse(await read('data/metro-release.json'));
+  const services = JSON.parse(await read('data/services.json'));
+  const sources = csvRows(await read('data/source-registry.csv'));
+  const source = sources.find(row => row.source_url && row.source_title);
+  const dossier = {
+    ...dossiers.find(item => item.marketId === 'M04'),
+    modules: [{
+      id: 'M04-M01',
+      title: 'Compare remote offers',
+      body: 'Compare written offers before choosing a car.',
+      decision: 'Keep the buyer-paid shipping charge visible.',
+      limitations: 'Planning example only.',
+      sourceIds: [source.source_id],
+      asOf: '2026-09-16',
+    }],
+  };
+  const market = release.markets.find(item => item.id === 'M04');
+  const html = renderMarket(market, dossier, services, sources);
+  assert.match(htmlDocument(html).visibleText, /Compare remote offers/);
+  assert.ok(htmlDocument(html).links.includes(source.source_url));
+  assert.throws(() => renderMarket(market, dossier, services, [{ ...source, source_url: '' }]), /missing citation URL or title/);
 });
