@@ -124,7 +124,7 @@
       "jurisdictions": [
         "TX"
       ],
-      "researchPrompt": "What makes the combined DFW buyer journey distinct, and which material from the three existing drafts deserves retention?",
+      "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
         "https://www.driverightcarbuying.com/#service-consultation",
@@ -146,19 +146,12 @@
       "qualifiedReview": null,
       "editorialReview": null,
       "qa": null,
-      "claimIds": [
-        "DFW-PROP-01",
-        "DFW-PROP-02"
-      ],
-      "sourceIds": [
-        "DFW-EV-001",
-        "DFW-EV-002",
-        "TX-EV-001",
-        "TX-EV-002"
-      ],
+      "claimIds": [],
+      "sourceIds": [],
       "ctaDestination": "/schedule.html",
       "releaseStatus": "draft",
-      "publishedSha256": null
+      "publishedSha256": null,
+      "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
     },
     {
       "id": "M05",
@@ -167,7 +160,7 @@
       "jurisdictions": [
         "TX"
       ],
-      "researchPrompt": "What documented sourcing, history-check, inspection, and pickup decisions are useful to Houston buyers?",
+      "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
         "https://www.driverightcarbuying.com/#service-consultation",
@@ -189,22 +182,12 @@
       "qualifiedReview": null,
       "editorialReview": null,
       "qa": null,
-      "claimIds": [
-        "HOU-PROP-01",
-        "HOU-PROP-02",
-        "HOU-PROP-03"
-      ],
-      "sourceIds": [
-        "HOU-EV-001",
-        "HOU-EV-002",
-        "HOU-EV-003",
-        "TX-EV-001",
-        "TX-EV-002",
-        "TX-EV-003"
-      ],
+      "claimIds": [],
+      "sourceIds": [],
       "ctaDestination": "/schedule.html",
       "releaseStatus": "draft",
-      "publishedSha256": null
+      "publishedSha256": null,
+      "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
     },
     {
       "id": "M06",
@@ -746,7 +729,7 @@
       "jurisdictions": [
         "TX"
       ],
-      "researchPrompt": "Austin base dossier",
+      "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
         "https://www.driverightcarbuying.com/#service-consultation",
@@ -768,17 +751,12 @@
       "qualifiedReview": null,
       "editorialReview": null,
       "qa": null,
-      "claimIds": [
-        "AUS-PROP-01",
-        "AUS-PROP-02"
-      ],
-      "sourceIds": [
-        "AUS-EV-001",
-        "AUS-EV-002"
-      ],
+      "claimIds": [],
+      "sourceIds": [],
       "ctaDestination": "/schedule.html",
       "releaseStatus": "draft",
-      "publishedSha256": null
+      "publishedSha256": null,
+      "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
     },
     {
       "id": "TX-ELP",
@@ -1198,6 +1176,7 @@
     "editorialReview": null,
     "qualifiedReview": null,
     "qa": null,
-    "publishedSha256": null
+    "publishedSha256": null,
+    "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
   }
 }

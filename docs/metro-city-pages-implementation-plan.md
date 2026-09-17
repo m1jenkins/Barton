@@ -21,8 +21,8 @@ The following slugs are proposed canonical URLs. Confirm the primary search term
 | M01 | New York–Newark–Jersey City | `new-york.html` | NY, NJ | How would buyer location, seller location, pickup, and any broker terminology change the service? |
 | M02 | Los Angeles–Long Beach–Anaheim | `los-angeles.html` | CA | What may Drive Right offer under California rules, and how would sourcing and delivery work across the metro? |
 | M03 | Chicago–Naperville–Elgin | `chicago.html` | IL, IN | Which buyer/seller combinations cross a state line, and what transaction steps differ? |
-| M04 | Dallas–Fort Worth–Arlington | `dallas-fort-worth.html` | TX | What makes the combined DFW buyer journey distinct, and which material from the three existing drafts deserves retention? |
-| M05 | Houston–Pasadena–The Woodlands | **Reuse** `houston.html` | TX | What documented sourcing, history-check, inspection, and pickup decisions are useful to Houston buyers? |
+| M04 | Dallas–Fort Worth–Arlington | `dallas-fort-worth.html` | TX | What distinct local buyer needs can support remote car-finding, written-offer comparison, seller communication, and buyer-paid shipping? |
+| M05 | Houston–Pasadena–The Woodlands | **Reuse** `houston.html` | TX | What distinct local buyer needs can support remote car-finding, written-offer comparison, seller communication, and buyer-paid shipping? |
 | M06 | Atlanta–Sandy Springs–Roswell | `atlanta.html` | GA | What seller outreach radius and buyer paperwork decisions can Drive Right actually support? |
 | M07 | Washington–Arlington–Alexandria | `washington-dc.html` | DC, VA, MD, WV | Which parts of this four-jurisdiction metro are genuinely served, and how do cross-border purchases work? |
 | M08 | Miami–Fort Lauderdale–West Palm Beach | `miami.html` | FL | Which vehicle-history and inspection questions are locally useful, and how far can sourcing extend? |
