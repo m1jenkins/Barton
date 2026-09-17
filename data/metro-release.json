@@ -913,7 +913,7 @@
       "slug": "houston.html",
       "marketId": "M05",
       "decision": "Houston-only visual pilot for local review; publication remains gated",
-      "sha256": "d41004a656522e748772c7727e60542a98d646bc6d7a4d58944309550fad3275",
+      "sha256": "0678bca21a6bfa979a11a152e467a3c76525cee8fb140d35e610623562a64e34",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -922,6 +922,12 @@
         "scope": "Homepage-aligned Houston presentation; preserve SEO, existing business copy and conversion behavior; no deployment",
         "previousSha256": "0d1f0ac41f747a5082197d358892bcfaab63ddfc3dc041674ed1d4ddba5eca7a",
         "authorityRef": "docs/metro-execution-2026-09-16.md#houston-visual-pilot--september-17-2026"
+      },
+      "searchEntry": {
+        "authorizedOn": "2026-09-17",
+        "scope": "Homepage car-search text box on Houston; hand off entered details to the existing buying brief; no deployment",
+        "previousSha256": "d41004a656522e748772c7727e60542a98d646bc6d7a4d58944309550fad3275",
+        "authorityRef": "docs/metro-execution-2026-09-16.md#houston-search-entry--september-17-2026"
       }
     },
     {

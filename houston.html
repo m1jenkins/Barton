@@ -119,10 +119,19 @@
         </nav>
         <h1 id="houston-title">Car-buying help.<br><em>For Houston.</em></h1>
         <p>Tell us the vehicle you are considering. We can research options, communicate with dealers, review deal terms, and help coordinate the next steps so you can make a more informed purchase with less dealership pressure.</p>
-        <div class="houston-hero-actions">
-          <a href="/schedule.html" class="primary-button" data-cta-location="hero">Find My Perfect Car <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
-          <a href="#contact" class="text-link">Still have questions? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
-        </div>
+      </div>
+      <div class="composer-area">
+        <form id="houston-search" class="composer" autocomplete="off">
+          <label for="houston-answer" class="sr-only">What car are you dreaming of?</label>
+          <textarea id="houston-answer" name="answer" rows="1" placeholder="What car are you dreaming of?" maxlength="180" enterkeyhint="send" aria-describedby="houston-search-error" required></textarea>
+          <button class="send-button" type="submit" aria-label="Send answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V4m-7 7 7-7 7 7"/></svg></button>
+        </form>
+        <p id="houston-search-error" class="input-error" role="alert"></p>
+        <button id="houston-example" class="example-link" type="button">Try “A Mazda Miata, under $30k”</button>
+      </div>
+      <div class="houston-hero-actions">
+        <a href="/schedule.html" class="text-link" data-cta-location="hero">See plans &amp; pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
+        <a href="#contact" class="text-link">Still have questions? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
       </div>
       <figure class="hero-photo page-width"><picture><source type="image/avif" srcset="/assets/buying/mx-5-coastal-hero-640.avif 640w, /assets/buying/mx-5-coastal-hero-960.avif 960w, /assets/buying/mx-5-coastal-hero-1440.avif 1440w, /assets/buying/mx-5-coastal-hero-1920.avif 1920w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px"><source type="image/webp" srcset="/assets/buying/mx-5-coastal-hero-640.webp 640w, /assets/buying/mx-5-coastal-hero-960.webp 960w, /assets/buying/mx-5-coastal-hero-1440.webp 1440w, /assets/buying/mx-5-coastal-hero-1920.webp 1920w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px"><img src="/assets/buying/mx-5-coastal-hero-fallback.jpg" alt="Three Mazda MX-5 roadsters on a coastal road beside rocky cliffs" width="2172" height="724" fetchpriority="high"></picture><figcaption><span>The right car starts with you.</span><span>A better way to buy.</span></figcaption></figure>
     </section>
@@ -233,8 +242,9 @@
     <div class="footer-bottom"><span>© 2026 Drive Right. All rights reserved.</span></div>
   </footer>
   <div class="houston-mobile-cta">
-    <a href="/schedule.html" class="primary-button" data-cta-location="sticky">Find My Perfect Car <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
+    <a href="#houston-search" class="primary-button" data-cta-location="sticky">Search for your car <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
   </div>
   <script src="/script.js"></script>
+  <script type="module" src="/buying/houston-search.js"></script>
 </body>
 </html>

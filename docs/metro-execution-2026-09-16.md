@@ -23,3 +23,7 @@ The user explicitly requested implementation and testing of a Houston-only redes
 See the [initial verification record](../draft-artifacts/verification/README.md) for local results, preview screenshots and the dependency advisory. Those results describe the initial implementation revision. The current required checks are defined in [the GitHub workflow](../.github/workflows/checks.yml); follow-up changes require their own validation evidence from the active delivery run.
 
 The user subsequently instructed that this branch and all its changes be merged into `main`. That authorizes merging the visual pilot; the private metro drafts, other-city rollout and indexing gates are unchanged.
+
+### Houston search entry — September 17, 2026
+
+The user requested the homepage car-search text box on the Houston page. The Houston hero now starts the existing buying brief with the entered vehicle details; the mobile CTA returns to that box. The hero pricing link remains available. `buying/houston-search.js` handles the same opening parser and browser brief storage used by the homepage, with the existing hash handoff as a storage fallback. The `legacyTexas` Houston hash records this authorized page revision. This is not a content-claim approval, metro release, indexing change, or production deployment.
