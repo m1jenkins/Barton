@@ -50,4 +50,8 @@ The original release and editorial workflows remain authoritative. Refresh sourc
 
 ## Implementation verification
 
+### Houston visual pilot — September 17, 2026
+
+The user explicitly requested implementation and testing of a Houston-only redesign against the current homepage, preserving `/houston.html`, existing metadata/indexability, local content and conversion behavior, with no production deployment or other-city rollout. This supersedes the byte-preservation instruction only for this visual revision of Houston. `legacyTexas` records the original hash and this authorization reference alongside the new preserved artifact hash; this is not a content-claim approval, release approval, or indexing change. Houston remains `draft` / `noindex, follow`, and the existing claim, evidence, publication and production gates still apply. The release validator and all other city baselines remain unchanged. Houston imports the existing buying-page styles and adds only `buying/houston.css`; the homepage and shared styles/scripts are unchanged.
+
 See the [initial verification record](../draft-artifacts/verification/README.md) for local results, preview screenshots and the dependency advisory. Those results describe the initial implementation revision. The current required checks are defined in [the GitHub workflow](../.github/workflows/checks.yml); follow-up changes require their own validation evidence from the active delivery run.

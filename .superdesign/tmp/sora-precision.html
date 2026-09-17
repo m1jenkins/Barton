@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive Right — Sora Precision</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; src: url("https://www.driverightcarbuying.com/assets/buying/fonts/inter.ttf") format("truetype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+    html { background: #ffffff; }
+    body { margin: 0; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#171a18", quiet: "#5c625d", line: "#dfe3de", green: "#48634f", mist: "#f6f8f6" },
+          fontFamily: { display: ["Sora", "Arial", "sans-serif"], sans: ["Inter", "Arial", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="min-h-screen bg-white font-sans text-ink">
+    <a id="sora-skip-main" href="#sora-main" class="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-5 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-3 focus:text-white">Skip to main content</a>
+
+    <header class="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
+      <a id="sora-header-home" href="https://www.driverightcarbuying.com/" class="flex items-center gap-3" aria-label="Drive Right home">
+        <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-external-optimized-drive-right-logo-180.png/drive-right-logo-180.png" alt="Drive Right" class="h-9 w-9 object-contain" />
+        <span class="font-display text-[22px] font-semibold tracking-[-.055em]">Drive Right</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-quiet md:flex" aria-label="Main navigation">
+        <a id="sora-nav-how" href="https://www.driverightcarbuying.com/how-it-works.html" class="hover:text-ink">How it works</a>
+        <a id="sora-nav-price" href="https://www.driverightcarbuying.com/schedule.html" class="hover:text-ink">Pricing</a>
+        <a id="sora-nav-brief" href="#sora-brief" class="border border-ink px-4 py-2.5 text-ink transition hover:bg-ink hover:text-white">Your brief</a>
+      </nav>
+      <a id="sora-mobile-brief" href="#sora-brief" class="border border-ink px-3 py-2 text-sm font-medium md:hidden">Start</a>
+    </header>
+
+    <main id="sora-main">
+      <section class="border-y border-line">
+        <div class="mx-auto grid max-w-[1440px] gap-0 lg:grid-cols-[1.08fr_.92fr]">
+          <div class="px-5 py-16 sm:px-8 lg:px-12 lg:py-28">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-green">Texas car buying service</p>
+            <h1 class="mt-5 max-w-[770px] font-display text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[.92] tracking-[-.065em]">Texas car buying.<br><span class="text-green">Consider it handled.</span></h1>
+            <p class="mt-8 max-w-[650px] text-[17px] leading-7 text-quiet">Based in Austin, Drive Right is a flat-fee Texas car buying service. We help buyers research vehicles, compare offers, communicate with participating sellers, and negotiate purchases. Service plans start at $195, and you remain in control of every purchase decision.</p>
+          </div>
+          <div id="sora-brief" class="flex border-t border-line bg-mist p-5 sm:p-8 lg:border-l lg:border-t-0 lg:p-12">
+            <div class="flex w-full flex-col justify-between border border-line bg-white p-6 sm:p-8">
+              <div><p class="text-xs font-bold uppercase tracking-[.18em] text-green">Start your brief</p><h2 class="mt-4 font-display text-3xl font-semibold tracking-[-.045em]">A car, a budget,<br>and a place to look.</h2><p class="mt-4 max-w-[360px] text-sm leading-6 text-quiet">That’s enough to get started. The finer details can wait.</p></div>
+              <form class="mt-10 border-t border-line pt-5" aria-label="Start your buying brief"><label class="text-xs font-semibold uppercase tracking-[.14em] text-quiet" for="sora-answer">Your starting point</label><div class="mt-3 flex gap-3"><input id="sora-answer" type="text" placeholder="A Mazda Miata, under $30k" class="min-w-0 flex-1 border border-line px-4 py-3 text-sm outline-none focus:border-green" /><button type="submit" class="flex h-[46px] w-[46px] shrink-0 items-center justify-center bg-ink text-xl text-white hover:bg-green" aria-label="Send answer"><iconify-icon icon="lucide:arrow-up"></iconify-icon></button></div><button type="button" class="mt-4 text-xs font-medium text-green underline underline-offset-4">Try the example</button></form>
+            </div>
+          </div>
+        </div>
+        <figure class="mx-auto max-w-[1440px] px-5 py-5 sm:px-8 lg:px-12 lg:py-8">
+          <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/content-assets/assets-buying-mx-5-coastal-hero-1440.webp/mx-5-coastal-hero-1440.webp" alt="Three Mazda MX-5 roadsters on a coastal road beside rocky cliffs" class="h-[clamp(250px,30vw,460px)] w-full object-cover object-center" />
+          <figcaption class="mt-3 grid grid-cols-2 text-xs font-semibold uppercase tracking-[.14em] text-quiet"><span>The right car starts with you.</span><span class="text-right">A better way to buy.</span></figcaption>
+        </figure>
+      </section>
+
+      <section id="sora-how" class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="grid gap-12 lg:grid-cols-[.92fr_1.08fr]">
+          <div><p class="text-xs font-bold uppercase tracking-[.2em] text-green">How it works</p><h2 class="mt-5 font-display text-[clamp(3rem,5vw,5.8rem)] font-semibold leading-[.92] tracking-[-.06em]">A little direction.<br><span class="text-green">A lot less legwork.</span></h2><a id="sora-process-link" href="https://www.driverightcarbuying.com/how-it-works.html" class="mt-8 inline-flex items-center gap-2 border-b border-ink pb-2 text-sm font-semibold hover:text-green hover:border-green">How Drive Right works <span aria-hidden="true">→</span></a></div>
+          <div class="grid divide-y divide-line border-y border-line">
+            <article class="grid gap-3 py-7 sm:grid-cols-[72px_1fr]"><p class="font-display text-2xl font-semibold text-green">01</p><div><h3 class="font-display text-2xl font-semibold tracking-[-.04em]">Tell us about your car.</h3><p class="mt-3 max-w-[520px] text-sm leading-6 text-quiet">Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p></div></article>
+            <article class="grid gap-3 py-7 sm:grid-cols-[72px_1fr]"><p class="font-display text-2xl font-semibold text-green">02</p><div><h3 class="font-display text-2xl font-semibold tracking-[-.04em]">Make the brief yours.</h3><p class="mt-3 max-w-[520px] text-sm leading-6 text-quiet">Review your preferences, then choose the service and support that fit your search.</p></div></article>
+            <article class="grid gap-3 py-7 sm:grid-cols-[72px_1fr]"><p class="font-display text-2xl font-semibold text-green">03</p><div><h3 class="font-display text-2xl font-semibold tracking-[-.04em]">Let’s take the next step.</h3><p class="mt-3 max-w-[520px] text-sm leading-6 text-quiet">Add your contact details and check out. We confirm the scope and timing after payment and intake.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="sora-services" class="border-y border-line bg-mist">
+        <div class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><div><p class="text-xs font-bold uppercase tracking-[.2em] text-green">Straightforward support</p><h2 class="mt-5 font-display text-[clamp(3rem,5vw,5.8rem)] font-semibold leading-[.92] tracking-[-.06em]">Your search.<br><span class="text-green">Your level of support.</span></h2></div><p class="max-w-[260px] text-sm leading-6 text-quiet">Three clear service fees.<br>A choice that stays yours.</p></div>
+          <div class="mt-12 grid gap-px border border-line bg-line lg:grid-cols-3">
+            <article class="flex min-h-[340px] flex-col bg-white p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-green">AI Agent Buying Service</p><p class="mt-5 text-sm leading-6 text-quiet">A considered shortlist, with a little help from AI.</p><p class="mt-auto pt-10 font-display text-6xl font-semibold tracking-[-.07em]">$195</p><p class="mt-1 text-xs text-quiet">one-time service fee</p><a id="sora-plan-ai" href="https://www.driverightcarbuying.com/schedule.html#consultation" class="mt-6 inline-flex items-center justify-between border-t border-line pt-4 text-sm font-semibold hover:text-green">Explore this plan <span aria-hidden="true">→</span></a></article>
+            <article class="flex min-h-[340px] flex-col bg-ink p-6 text-white sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-[#b8cbb9]">Hire Drive Right</p><p class="mt-5 text-sm leading-6 text-[#d5d9d5]">An advisor by your side, from search to signing.</p><p class="mt-auto pt-10 font-display text-6xl font-semibold tracking-[-.07em]">$495</p><p class="mt-1 text-xs text-[#b8cbb9]">one-time service fee</p><a id="sora-plan-full" href="https://www.driverightcarbuying.com/schedule.html#full-service" class="mt-6 inline-flex items-center justify-between border-t border-white/20 pt-4 text-sm font-semibold hover:text-[#b8cbb9]">Explore this plan <span aria-hidden="true">→</span></a></article>
+            <article class="flex min-h-[340px] flex-col bg-white p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-green">Ultimate Concierge</p><p class="mt-5 text-sm leading-6 text-quiet">More support for a more particular search.</p><p class="mt-auto pt-10 font-display text-6xl font-semibold tracking-[-.07em]">$895</p><p class="mt-1 text-xs text-quiet">one-time service fee</p><a id="sora-plan-concierge" href="https://www.driverightcarbuying.com/schedule.html#concierge" class="mt-6 inline-flex items-center justify-between border-t border-line pt-4 text-sm font-semibold hover:text-green">Explore this plan <span aria-hidden="true">→</span></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="sora-faq" class="mx-auto max-w-[1040px] px-5 py-20 sm:px-8 lg:py-28">
+        <p class="text-xs font-bold uppercase tracking-[.2em] text-green">Helpful details</p>
+        <h2 class="mt-5 font-display text-[clamp(3rem,5vw,5.8rem)] font-semibold leading-[.92] tracking-[-.06em]">A few things<br><span class="text-green">you might be wondering.</span></h2>
+        <div class="mt-12 divide-y divide-line border-y border-line">
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-xl font-semibold tracking-[-.04em]">What does Drive Right do?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 text-sm leading-6 text-quiet">We help Texas car buyers research vehicles, compare offers, and negotiate purchases. Your plan determines whether you receive AI-assisted research and outreach, an advisor through the buying process, or expanded sourcing and coordination.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-xl font-semibold tracking-[-.04em]">What will it cost?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 text-sm leading-6 text-quiet">AI Agent Buying Service is $195, Hire Drive Right is $495, and Ultimate Concierge is $895. These are service fees. The vehicle, taxes, registration, inspection, financing, and any delivery costs are separate. Confirm current terms before booking.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-xl font-semibold tracking-[-.04em]">Where can you help me buy?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 text-sm leading-6 text-quiet">We’re based in Austin and serve buyers across Texas. Search reach, seller participation, and delivery options depend on your plan and vehicle. We confirm those details with you before work begins.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-xl font-semibold tracking-[-.04em]">Am I in control of the final decision?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 text-sm leading-6 text-quiet">Always. Building a brief doesn’t commit you to a vehicle. You choose your plan and decide whether to buy, after reviewing the vehicle, financing, insurance, and final paperwork. A specific discount or vehicle outcome isn’t guaranteed.</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line bg-white">
+      <div class="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12">
+        <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+          <div><a id="sora-footer-home" href="https://www.driverightcarbuying.com/" class="flex items-center gap-3"><img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-external-optimized-drive-right-logo-180.png/drive-right-logo-180.png" alt="Drive Right" class="h-9 w-9 object-contain" /><span class="font-display text-2xl font-semibold tracking-[-.055em]">Drive Right</span></a><p class="mt-5 max-w-[260px] text-sm leading-6 text-quiet">A better way to buy a car.<br>Based in Austin. Here for Texas.</p></div>
+          <nav class="flex flex-col gap-3 text-sm text-quiet" aria-label="Company"><a id="sora-footer-about" href="https://www.driverightcarbuying.com/about.html" class="hover:text-ink">About</a><a id="sora-footer-resources" href="https://www.driverightcarbuying.com/blog.html" class="hover:text-ink">Resources</a><a id="sora-footer-ai" href="https://www.driverightcarbuying.com/ai-car-buying-agent.html" class="hover:text-ink">AI Agent service</a><a id="sora-footer-policy" href="https://www.driverightcarbuying.com/policy.html" class="hover:text-ink">Policy</a></nav>
+          <div class="flex flex-col gap-3 text-sm text-quiet"><a id="sora-footer-email" href="mailto:hello@driverightcarbuying.com" class="hover:text-ink">hello@driverightcarbuying.com</a><a id="sora-footer-phone" href="tel:+15129104938" class="hover:text-ink">(512) 910-4938</a></div>
+        </div>
+        <div class="mt-12 border-t border-line pt-5 text-xs text-quiet">© 2026 Drive Right</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

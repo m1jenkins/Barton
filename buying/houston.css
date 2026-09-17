@@ -1,0 +1,43 @@
+/* Houston-only pilot. Shared presentation stays in daisy.css and drive-right.css. */
+.houston-pilot .houston-breadcrumb { margin-bottom:22px; color:var(--muted); font-size:12px; line-height:1.6; }
+.houston-pilot .houston-breadcrumb ol { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:0; }
+.houston-pilot .houston-breadcrumb li+li::before { content:'/'; margin-right:8px; color:var(--muted); }
+.houston-pilot .houston-breadcrumb a { text-decoration:underline; text-underline-offset:3px; }
+.houston-pilot .houston-hero-actions { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px 28px; margin-top:36px; }
+.houston-pilot .houston-section-description { margin:-16px 0 38px; font-size:16px; line-height:1.65; color:var(--muted); }
+.houston-pilot .houston-step-title { color:var(--ink); grid-template-columns:32px minmax(0,1fr); }
+.houston-pilot .houston-service-area { padding-bottom:24px; }
+.houston-pilot .houston-service-area h3 { font:500 clamp(38px,3.6vw,52px)/1.06 var(--display); letter-spacing:-1px; margin:26px 0 18px; }
+.houston-pilot .houston-area-description { font-size:15px; line-height:1.75; margin-bottom:24px; }
+.houston-pilot .houston-service-area iframe { display:block; width:100%; height:320px; border:0; border-radius:12px; background:var(--paper); }
+.houston-pilot .pricing-preview .section-intro>p { max-width:38ch; }
+.houston-pilot .pricing-preview .plan-description { margin-bottom:0; }
+.houston-pilot .faq-list summary:focus-visible { outline:2px solid var(--green); outline-offset:5px; }
+.houston-pilot .houston-contact { border-top:1px solid var(--line); }
+.houston-pilot .houston-contact-description,.houston-pilot .houston-contact-alternatives p { font-size:15px; line-height:1.8; color:var(--muted); max-width:43ch; }
+.houston-pilot .houston-contact-alternatives { margin-top:28px; }
+.houston-pilot .houston-phone { display:inline-block; font:500 clamp(32px,3vw,42px)/1.2 var(--display); color:var(--green); margin:14px 0; }
+.houston-pilot .houston-contact-form { align-self:start; }
+.houston-pilot .houston-contact-form textarea { resize:vertical; }
+.houston-pilot .houston-footer-contact { display:flex; flex-direction:column; gap:6px; }
+.houston-pilot .houston-city-links { display:flex; flex-wrap:wrap; align-items:center; gap:0 22px; padding-top:28px; font-size:12px; }
+.houston-pilot .houston-city-links span { width:100%; padding-bottom:8px; }
+.houston-pilot .houston-city-links a { display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:4px; }
+.houston-pilot .houston-city-links a[aria-current] { color:var(--ink); }
+.houston-pilot .houston-mobile-cta { display:none; }
+@media(max-width:1100px) {
+ .houston-pilot .houston-contact-form .ps-form__row { grid-template-columns:1fr; gap:0; }
+}
+@media(max-width:760px) {
+ .houston-pilot .hero-intro.page-width { padding-inline:0; }
+ .houston-pilot .houston-breadcrumb { margin-bottom:20px; font-size:11px; }
+ .houston-pilot .houston-hero-actions { flex-direction:column; gap:8px; margin-top:28px; }
+ .houston-pilot .houston-section-description { margin:-10px 0 28px; font-size:14px; }
+ .houston-pilot .houston-step-title { grid-template-columns:28px minmax(0,1fr); }
+ .houston-pilot .houston-service-area iframe { height:280px; }
+ .houston-pilot .site-footer { padding-bottom:98px; }
+ .houston-pilot .houston-mobile-cta { position:fixed; inset:auto 0 0; display:flex; justify-content:center; padding:10px 20px max(10px,env(safe-area-inset-bottom)); background:var(--paper); border-top:1px solid var(--line); z-index:10; }
+ .houston-pilot .houston-mobile-cta .primary-button { width:100%; min-height:50px; padding-block:12px; font-size:16px; }
+ .houston-pilot { scroll-padding-bottom:90px; }
+ .houston-pilot :is(a,button,input,textarea,summary) { scroll-margin-bottom:100px; }
+}

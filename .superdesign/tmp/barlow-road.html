@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive Right — Barlow Road</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @font-face { font-family: "Barlow Road"; src: url("https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-buying-fonts-barlow-semibold.ttf/barlow-semibold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("https://www.driverightcarbuying.com/assets/buying/fonts/inter.ttf") format("truetype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+    html { background: #ffffff; }
+    body { margin: 0; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#171a18", quiet: "#5c625d", line: "#dfe3de", green: "#48634f", mist: "#f6f8f6" },
+          fontFamily: { display: ["Barlow Road", "Arial Narrow", "sans-serif"], sans: ["Inter", "Arial", "sans-serif"] },
+          boxShadow: { composer: "0 14px 38px rgba(23,26,24,.10)" }
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="min-h-screen bg-white font-sans text-ink">
+    <a id="barlow-skip-main" href="#barlow-main" class="sr-only focus:not-sr-only focus:absolute focus:left-5 focus:top-5 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-3 focus:text-white">Skip to main content</a>
+
+    <header class="mx-auto flex max-w-[1440px] items-center justify-between border-b border-line px-5 py-5 sm:px-8 lg:px-12">
+      <a id="barlow-header-home" href="https://www.driverightcarbuying.com/" class="flex items-center gap-3" aria-label="Drive Right home">
+        <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-external-optimized-drive-right-logo-180.png/drive-right-logo-180.png" alt="Drive Right" class="h-9 w-9 object-contain" />
+        <span class="font-display text-[30px] leading-none tracking-[-.06em]">Drive Right</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-quiet md:flex" aria-label="Main navigation">
+        <a id="barlow-nav-how" href="https://www.driverightcarbuying.com/how-it-works.html" class="transition hover:text-ink">How it works</a>
+        <a id="barlow-nav-price" href="https://www.driverightcarbuying.com/schedule.html" class="transition hover:text-ink">Pricing</a>
+        <a id="barlow-nav-brief" href="#barlow-brief" class="rounded-md bg-ink px-4 py-2.5 text-white transition hover:bg-green">Your brief <span aria-hidden="true">↗</span></a>
+      </nav>
+      <a id="barlow-mobile-brief" href="#barlow-brief" class="rounded-md bg-ink px-3 py-2 text-sm font-medium text-white md:hidden">Start</a>
+    </header>
+
+    <main id="barlow-main">
+      <section class="mx-auto max-w-[1440px] px-5 pb-10 pt-16 sm:px-8 lg:px-12 lg:pb-14 lg:pt-24">
+        <div class="mx-auto max-w-[1060px] text-center">
+          <p class="mb-5 text-xs font-bold uppercase tracking-[.2em] text-green">Texas car buying service</p>
+          <h1 class="font-display text-[clamp(4.25rem,9vw,9.25rem)] leading-[.82] tracking-[-.065em]">Texas car buying.<br><span class="text-green">Consider it handled.</span></h1>
+          <p class="mx-auto mt-8 max-w-[760px] text-[17px] leading-7 text-quiet sm:text-[19px]">Based in Austin, Drive Right is a flat-fee Texas car buying service. We help buyers research vehicles, compare offers, communicate with participating sellers, and negotiate purchases. Service plans start at $195, and you remain in control of every purchase decision.</p>
+        </div>
+
+        <div id="barlow-brief" class="mx-auto mt-10 max-w-[780px]">
+          <form class="flex items-center gap-3 rounded-[22px] border border-ink bg-white p-2 pl-5 shadow-composer sm:pl-7" aria-label="Start your buying brief">
+            <label class="sr-only" for="barlow-answer">What car are you dreaming of?</label>
+            <input id="barlow-answer" type="text" placeholder="What car are you dreaming of?" class="min-w-0 flex-1 bg-transparent py-3 text-base outline-none placeholder:text-[#8a8f8a] sm:text-lg" />
+            <button type="submit" class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink text-xl text-white transition hover:bg-green" aria-label="Send answer"><iconify-icon icon="lucide:arrow-up"></iconify-icon></button>
+          </form>
+          <button type="button" class="mt-3 text-sm text-green underline decoration-1 underline-offset-4 hover:text-ink">Try “A Mazda Miata, under $30k”</button>
+        </div>
+
+        <figure class="mt-12">
+          <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/content-assets/assets-buying-mx-5-coastal-hero-1440.webp/mx-5-coastal-hero-1440.webp" alt="Three Mazda MX-5 roadsters on a coastal road beside rocky cliffs" class="h-[clamp(250px,34vw,500px)] w-full rounded-[16px] object-cover object-center" />
+          <figcaption class="mt-4 flex items-center justify-between border-t border-line pt-3 text-xs font-medium uppercase tracking-[.13em] text-quiet"><span>The right car starts with you.</span><span>A better way to buy.</span></figcaption>
+        </figure>
+      </section>
+
+      <section id="barlow-how" class="border-y border-line bg-white">
+        <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:px-12 lg:py-28">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-green">How it works</p>
+            <h2 class="mt-4 max-w-[540px] font-display text-[clamp(3rem,6vw,6.5rem)] leading-[.86] tracking-[-.055em]">A little direction.<br><span class="text-green">A lot less legwork.</span></h2>
+            <a id="barlow-process-link" href="https://www.driverightcarbuying.com/how-it-works.html" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4 hover:text-green">How Drive Right works <span aria-hidden="true">→</span></a>
+          </div>
+          <ol class="border-t border-ink">
+            <li class="grid gap-4 border-b border-line py-6 sm:grid-cols-[64px_1fr]">
+              <span class="font-display text-3xl text-green">01</span><div><h3 class="font-display text-3xl tracking-[-.035em]">Tell us about your car.</h3><p class="mt-3 max-w-[540px] text-sm leading-6 text-quiet">Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p></div>
+            </li>
+            <li class="grid gap-4 border-b border-line py-6 sm:grid-cols-[64px_1fr]">
+              <span class="font-display text-3xl text-green">02</span><div><h3 class="font-display text-3xl tracking-[-.035em]">Make the brief yours.</h3><p class="mt-3 max-w-[540px] text-sm leading-6 text-quiet">Review your preferences, then choose the service and support that fit your search.</p></div>
+            </li>
+            <li class="grid gap-4 border-b border-line py-6 sm:grid-cols-[64px_1fr]">
+              <span class="font-display text-3xl text-green">03</span><div><h3 class="font-display text-3xl tracking-[-.035em]">Let’s take the next step.</h3><p class="mt-3 max-w-[540px] text-sm leading-6 text-quiet">Add your contact details and check out. We confirm the scope and timing after payment and intake.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="barlow-services" class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="max-w-[700px]">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-green">Straightforward support</p>
+          <h2 class="mt-4 font-display text-[clamp(3rem,6vw,6.5rem)] leading-[.86] tracking-[-.055em]">Your search.<br><span class="text-green">Your level of support.</span></h2>
+          <p class="mt-6 text-base leading-7 text-quiet">Three clear service fees. A choice that stays yours.</p>
+        </div>
+        <div class="mt-12 grid gap-4 lg:grid-cols-3">
+          <article class="flex min-h-[330px] flex-col border border-line p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-green">01</p><h3 class="mt-6 font-display text-[34px] leading-none tracking-[-.04em]">AI Agent Buying Service</h3><p class="mt-4 text-sm leading-6 text-quiet">A considered shortlist, with a little help from AI.</p><p class="mt-auto pt-10 font-display text-6xl tracking-[-.06em]">$195</p><p class="mt-1 text-xs uppercase tracking-[.12em] text-quiet">one-time service fee</p><a id="barlow-plan-ai" href="https://www.driverightcarbuying.com/schedule.html#consultation" class="mt-7 inline-flex items-center justify-between border-t border-ink pt-4 text-sm font-semibold hover:text-green">Explore this plan <span aria-hidden="true">→</span></a></article>
+          <article class="flex min-h-[330px] flex-col border border-ink bg-ink p-6 text-white sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-[#b8cbb9]">02</p><h3 class="mt-6 font-display text-[34px] leading-none tracking-[-.04em]">Hire Drive Right</h3><p class="mt-4 text-sm leading-6 text-[#d5d9d5]">An advisor by your side, from search to signing.</p><p class="mt-auto pt-10 font-display text-6xl tracking-[-.06em]">$495</p><p class="mt-1 text-xs uppercase tracking-[.12em] text-[#b8cbb9]">one-time service fee</p><a id="barlow-plan-full" href="https://www.driverightcarbuying.com/schedule.html#full-service" class="mt-7 inline-flex items-center justify-between border-t border-white/30 pt-4 text-sm font-semibold hover:text-[#b8cbb9]">Explore this plan <span aria-hidden="true">→</span></a></article>
+          <article class="flex min-h-[330px] flex-col border border-line p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-[.16em] text-green">03</p><h3 class="mt-6 font-display text-[34px] leading-none tracking-[-.04em]">Ultimate Concierge</h3><p class="mt-4 text-sm leading-6 text-quiet">More support for a more particular search.</p><p class="mt-auto pt-10 font-display text-6xl tracking-[-.06em]">$895</p><p class="mt-1 text-xs uppercase tracking-[.12em] text-quiet">one-time service fee</p><a id="barlow-plan-concierge" href="https://www.driverightcarbuying.com/schedule.html#concierge" class="mt-7 inline-flex items-center justify-between border-t border-ink pt-4 text-sm font-semibold hover:text-green">Explore this plan <span aria-hidden="true">→</span></a></article>
+        </div>
+      </section>
+
+      <section id="barlow-faq" class="border-t border-line bg-mist">
+        <div class="mx-auto max-w-[980px] px-5 py-20 sm:px-8 lg:py-28">
+          <h2 class="font-display text-[clamp(3rem,6vw,6rem)] leading-[.86] tracking-[-.055em]">A few things<br><span class="text-green">you might be wondering.</span></h2>
+          <div class="mt-12 divide-y divide-line border-y border-line">
+            <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-2xl tracking-[-.03em]">What does Drive Right do?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 max-w-[780px] text-sm leading-6 text-quiet">We help Texas car buyers research vehicles, compare offers, and negotiate purchases. Your plan determines whether you receive AI-assisted research and outreach, an advisor through the buying process, or expanded sourcing and coordination.</p></details>
+            <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-2xl tracking-[-.03em]">What will it cost?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 max-w-[780px] text-sm leading-6 text-quiet">AI Agent Buying Service is $195, Hire Drive Right is $495, and Ultimate Concierge is $895. These are service fees. The vehicle, taxes, registration, inspection, financing, and any delivery costs are separate. Confirm current terms before booking.</p></details>
+            <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-2xl tracking-[-.03em]">Where can you help me buy?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 max-w-[780px] text-sm leading-6 text-quiet">We’re based in Austin and serve buyers across Texas. Search reach, seller participation, and delivery options depend on your plan and vehicle. We confirm those details with you before work begins.</p></details>
+            <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-8 font-display text-2xl tracking-[-.03em]">Am I in control of the final decision?<span class="text-green group-open:rotate-45">+</span></summary><p class="mt-4 max-w-[780px] text-sm leading-6 text-quiet">Always. Building a brief doesn’t commit you to a vehicle. You choose your plan and decide whether to buy, after reviewing the vehicle, financing, insurance, and final paperwork. A specific discount or vehicle outcome isn’t guaranteed.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink text-white">
+      <div class="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12">
+        <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+          <div><a id="barlow-footer-home" href="https://www.driverightcarbuying.com/" class="flex items-center gap-3"><img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-external-optimized-drive-right-logo-180.png/drive-right-logo-180.png" alt="Drive Right" class="h-9 w-9 object-contain" /><span class="font-display text-3xl tracking-[-.06em]">Drive Right</span></a><p class="mt-5 max-w-[260px] text-sm leading-6 text-[#d5d9d5]">A better way to buy a car.<br>Based in Austin. Here for Texas.</p></div>
+          <nav class="flex flex-col gap-3 text-sm text-[#d5d9d5]" aria-label="Company"><a id="barlow-footer-about" href="https://www.driverightcarbuying.com/about.html" class="hover:text-white">About</a><a id="barlow-footer-resources" href="https://www.driverightcarbuying.com/blog.html" class="hover:text-white">Resources</a><a id="barlow-footer-ai" href="https://www.driverightcarbuying.com/ai-car-buying-agent.html" class="hover:text-white">AI Agent service</a><a id="barlow-footer-policy" href="https://www.driverightcarbuying.com/policy.html" class="hover:text-white">Policy</a></nav>
+          <div class="flex flex-col gap-3 text-sm text-[#d5d9d5]"><a id="barlow-footer-email" href="mailto:hello@driverightcarbuying.com" class="hover:text-white">hello@driverightcarbuying.com</a><a id="barlow-footer-phone" href="tel:+15129104938" class="hover:text-white">(512) 910-4938</a></div>
+        </div>
+        <div class="mt-12 border-t border-white/20 pt-5 text-xs text-[#b8cbb9]">© 2026 Drive Right</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

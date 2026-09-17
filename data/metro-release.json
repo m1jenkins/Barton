@@ -934,11 +934,17 @@
     {
       "slug": "houston.html",
       "marketId": "M05",
-      "decision": "Rewrite only after Houston gate passes",
-      "sha256": "0d1f0ac41f747a5082197d358892bcfaab63ddfc3dc041674ed1d4ddba5eca7a",
+      "decision": "Houston-only visual pilot for local review; publication remains gated",
+      "sha256": "d41004a656522e748772c7727e60542a98d646bc6d7a4d58944309550fad3275",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "visualPilot": {
+        "authorizedOn": "2026-09-17",
+        "scope": "Homepage-aligned Houston presentation; preserve SEO, existing business copy and conversion behavior; no deployment",
+        "previousSha256": "0d1f0ac41f747a5082197d358892bcfaab63ddfc3dc041674ed1d4ddba5eca7a",
+        "authorityRef": "docs/metro-execution-2026-09-16.md#houston-visual-pilot--september-17-2026"
+      }
     },
     {
       "slug": "dallas.html",

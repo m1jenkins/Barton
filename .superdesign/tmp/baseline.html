@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas Car Buying Service | Drive Right</title>
+  <meta name="description" content="Austin-based Drive Right helps Texas buyers research vehicles, compare offers, and negotiate purchases. Flat-fee plans from $195.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @font-face{font-family:'Instrument Serif';src:url('https://www.driverightcarbuying.com/assets/buying/fonts/instrument-serif.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Inter;src:url('https://www.driverightcarbuying.com/assets/buying/fonts/inter.ttf') format('truetype');font-weight:400 600;font-style:normal;font-display:swap}
+    html{scroll-behavior:smooth;scroll-padding-top:28px;background:#f7f6f2}
+    *{box-sizing:border-box}
+    summary::-webkit-details-marker{display:none}
+    details[open] .faq-plus{display:none}
+    details:not([open]) .faq-minus{display:none}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  </style>
+  <script>
+    tailwind.config={theme:{extend:{colors:{paper:'#f7f6f2',ink:'#242923',muted:'#62675f',line:'#ddded7',sage:'#dce3d6',green:'#576b5c'},fontFamily:{display:['Instrument Serif','Georgia','serif'],sans:['Inter','sans-serif']},boxShadow:{composer:'0 7px 22px #2429230b, 0 1px 3px #24292305'}}}}
+  </script>
+</head>
+<body>
+<div class="min-h-screen bg-paper font-sans text-ink antialiased selection:bg-sage" data-sd-id="1">
+  <a id="skip-main-link" href="#main-content" class="fixed left-3 top-2 z-50 -translate-y-[200%] rounded-lg bg-ink px-[18px] py-3 text-white focus:translate-y-0 focus:outline focus:outline-2 focus:outline-green" data-sd-id="2">Skip to main content</a>
+
+  <header class="mx-auto flex h-[84px] w-[calc(100%-128px)] max-w-[1440px] items-center justify-between gap-6" data-sd-id="3">
+    <a id="header-home-link" href="/" aria-label="Drive Right home" class="whitespace-nowrap pb-2 font-display text-[38px] font-normal leading-[.9] tracking-[-1.2px] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="4">Drive Right</a>
+    <nav aria-label="Main navigation" class="flex items-center gap-8 text-[15px] leading-[1.4]" data-sd-id="5">
+      <a id="nav-how-link" href="/how-it-works.html" class="flex min-h-11 items-center border-b border-transparent transition-colors hover:border-ink focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="6">How it works</a>
+      <a id="nav-pricing-link" href="/schedule.html" class="flex min-h-11 items-center border-b border-transparent transition-colors hover:border-ink focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="7">Pricing</a>
+      <a id="nav-brief-link" href="#brief" class="flex min-h-11 items-center border-b border-transparent transition-colors hover:border-ink focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="8">Your brief</a>
+    </nav>
+  </header>
+
+  <main id="main-content" class="relative" data-sd-id="9">
+    <section aria-label="Find your next car" data-sd-id="10">
+      <div class="pt-5 text-center" data-sd-id="11">
+        <h1 class="font-display text-[clamp(64px,6.4vw,96px)] font-normal leading-[1.02] tracking-[-.035em] text-[#191c18]" data-sd-id="12">Texas car buying.<br><em class="text-[.94em] not-italic text-green">Consider it handled.</em></h1>
+        <p class="mx-auto mt-[26px] max-w-[980px] text-[20px] leading-[1.5] tracking-[-.3px]" data-sd-id="13">Based in Austin, Drive Right is a flat-fee Texas car buying service. We help buyers research vehicles, compare offers, communicate with participating sellers, and negotiate purchases. Service plans start at $195, and you remain in control of every purchase decision.</p>
+      </div>
+
+      <div id="brief" class="mx-auto mt-9 w-[min(774px,calc(100%-48px))] text-center" data-sd-id="14">
+        <form class="flex min-h-[82px] items-center gap-3 rounded-[48px] border border-[#d4d6ce] bg-white py-[10px] pl-8 pr-[18px] shadow-composer transition duration-300 hover:shadow-[0_10px_28px_#24292312] focus-within:-translate-y-0.5 focus-within:border-[#8b9e86] focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-green" data-sd-id="15">
+          <label for="answer" class="sr-only" data-sd-id="16">What car are you dreaming of?</label>
+          <textarea id="answer" rows="1" maxlength="180" placeholder="What car are you dreaming of?" class="w-full min-w-0 resize-none border-0 bg-transparent py-2 text-[21px] leading-7 tracking-[-.4px] text-ink outline-none placeholder:text-[#8b8e87]" data-sd-id="17"></textarea>
+          <button type="submit" aria-label="Send answer" class="grid h-[58px] w-[58px] shrink-0 place-items-center rounded-full bg-ink text-white transition hover:-translate-y-px hover:bg-[#41533d] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="18">
+            <iconify-icon icon="lucide:arrow-up" class="text-2xl"></iconify-icon>
+          </button>
+        </form>
+        <button type="button" class="mt-2 min-h-11 px-1 text-[16px] leading-6 text-green underline underline-offset-4 hover:text-ink focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-green" data-sd-id="19">Try “A Mazda Miata, under $30k”</button>
+      </div>
+
+      <figure class="mx-auto mt-[34px] w-[calc(100%-128px)] max-w-[1440px]" data-sd-id="20">
+        <img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/content-assets/assets-buying-mx-5-coastal-hero-1440.webp/mx-5-coastal-hero-1440.webp" alt="Three Mazda MX-5 roadsters on a coastal road beside rocky cliffs" width="1440" height="480" class="block h-[clamp(250px,23.7vw,380px)] w-full rounded-[26px] object-cover object-[center_52%]" data-sd-id="21">
+        <figcaption class="mt-[18px] flex justify-between gap-6 text-[14px] leading-[1.5] text-green" data-sd-id="22"><span data-sd-id="23">The right car starts with you.</span><span data-sd-id="24">A better way to buy.</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="how-it-works" aria-labelledby="process-title" class="mx-auto w-[calc(100%-128px)] max-w-[1440px] py-[88px]" data-sd-id="25">
+      <div class="mb-[38px] flex items-end justify-between gap-8" data-sd-id="26">
+        <h2 id="process-title" class="font-display text-[clamp(42px,4.2vw,64px)] font-normal leading-[1.04] tracking-[-1px]" data-sd-id="27">A little direction.<br><em class="not-italic text-green">A lot less legwork.</em></h2>
+        <a id="process-details-link" href="/how-it-works.html" class="flex min-h-11 items-center gap-1.5 py-1.5 text-sm text-green underline underline-offset-4 hover:text-ink focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="28">How it works <iconify-icon icon="lucide:arrow-right" class="text-[17px]"></iconify-icon></a>
+      </div>
+
+      <div class="grid grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)] items-start gap-[clamp(36px,5vw,80px)]" data-sd-id="29">
+        <ol class="m-0 list-none pt-[10px]" data-sd-id="30">
+          <li class="border-t border-line" data-sd-id="31">
+            <button type="button" data-step="0" class="process-trigger grid w-full grid-cols-[32px_minmax(0,1fr)_22px] items-center gap-[18px] py-7 text-left font-display text-[clamp(23px,2.15vw,32px)] leading-[1.2] text-ink focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="32">
+              <span class="text-xl text-green" data-sd-id="33">01</span><span data-sd-id="34">Tell us about your car.</span><iconify-icon icon="lucide:arrow-right"></iconify-icon>
+            </button>
+            <p class="mb-[30px] ml-[50px] mr-[30px] max-w-[38ch] text-[15px] leading-[1.75] text-muted" data-sd-id="35">Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p>
+          </li>
+          <li class="border-t border-line" data-sd-id="36">
+            <button type="button" data-step="1" class="process-trigger grid w-full grid-cols-[32px_minmax(0,1fr)_22px] items-center gap-[18px] py-7 text-left font-display text-[clamp(23px,2.15vw,32px)] leading-[1.2] text-muted focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="37">
+              <span class="text-xl text-green" data-sd-id="38">02</span><span data-sd-id="39">Make the brief yours.</span><iconify-icon icon="lucide:arrow-right" class="opacity-0"></iconify-icon>
+            </button>
+            <p class="mb-[30px] ml-[50px] mr-[30px] max-w-[38ch] text-[15px] leading-[1.75] text-muted" data-sd-id="40">Review your preferences, then choose the service and support that fit your search.</p>
+          </li>
+          <li class="border-y border-line" data-sd-id="41">
+            <button type="button" data-step="2" class="process-trigger grid w-full grid-cols-[32px_minmax(0,1fr)_22px] items-center gap-[18px] py-7 text-left font-display text-[clamp(23px,2.15vw,32px)] leading-[1.2] text-muted focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-green" data-sd-id="42">
+              <span class="text-xl text-green" data-sd-id="43">03</span><span data-sd-id="44">Let’s take the next step.</span><iconify-icon icon="lucide:arrow-right" class="opacity-0"></iconify-icon>
+            </button>
+            <p class="mb-[30px] ml-[50px] mr-[30px] max-w-[38ch] text-[15px] leading-[1.75] text-muted" data-sd-id="45">Add your contact details and check out. We confirm the scope and timing after payment and intake.</p>
+          </li>
+        </ol>
+
+        <figure class="min-w-0 rounded-[18px] bg-sage px-[30px] pb-[18px] pt-[26px]" data-sd-id="46">
+          <div class="flex items-center justify-between gap-4 text-[13px] leading-[1.5]" data-sd-id="47"><span data-sd-id="48">From a thought to a plan.</span><span data-sd-id="49"><strong id="process-count">01</strong> / 03</span></div>
+          <div class="mx-auto my-6 max-w-[440px]" data-sd-id="50">
+            <div id="process-paper" class="min-h-[414px] bg-paper px-[30px] py-[26px] [clip-path:polygon(0_0,calc(100%-24px)_0,100%_24px,100%_100%,0_100%)]" data-sd-id="51">
+              <p id="paper-label" class="border-b border-line pb-5 text-xs leading-[1.5] text-green" data-sd-id="52">Your starting point</p>
+              <blockquote id="paper-heading" class="my-6 font-display text-[clamp(34px,3.2vw,48px)] leading-[1.08] tracking-[-.025em]" data-sd-id="53">“A Mazda Miata,<br>under $30k.<br>I’m in Austin.”</blockquote>
+              <div id="paper-fields" class="flex justify-between gap-3 border-b border-line pb-[18px] text-xs leading-[1.5]" data-sd-id="54"><span data-sd-id="55">Austin, Texas</span><span data-sd-id="56">ZIP 78704</span></div>
+              <p id="paper-note" class="mt-5 text-xs leading-[1.7] text-muted" data-sd-id="57">A car. A budget. A place to look.<br>That’s enough to get started.</p>
+            </div>
+          </div>
+          <figcaption class="flex flex-wrap items-center justify-between gap-x-5 text-[11px]" data-sd-id="58"><span data-sd-id="59">An example. Your search is your own.</span><a id="preview-start-link" href="#brief" class="flex min-h-11 items-center gap-2 text-xs underline underline-offset-4 focus:outline focus:outline-2 focus:outline-green" data-sd-id="60">Start my brief <iconify-icon icon="lucide:arrow-right"></iconify-icon></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="services" class="bg-[#ecefe7] py-[88px]" data-sd-id="61">
+      <div class="mx-auto w-[calc(100%-128px)] max-w-[1440px]" data-sd-id="62">
+        <div class="mb-[38px] flex items-end justify-between gap-8" data-sd-id="63">
+          <h2 class="font-display text-[clamp(42px,4.2vw,64px)] font-normal leading-[1.04] tracking-[-1px]" data-sd-id="64">Your search.<br><em class="not-italic text-green">Your level of support.</em></h2>
+          <p class="text-base leading-[1.65] text-muted" data-sd-id="65">Three clear service fees.<br>A choice that stays yours.</p>
+        </div>
+        <div class="grid grid-cols-3 gap-[22px]" data-sd-id="66">
+          <article class="flex min-w-0 flex-col rounded-[22px] border border-[#dfe3d9] bg-white px-7 py-8" data-sd-id="67">
+            <h3 class="font-display text-[30px] leading-[1.15] tracking-[-.4px]" data-sd-id="68">AI Agent Buying Service</h3>
+            <p class="my-[14px] mb-[26px] min-h-12 text-sm leading-[1.7] text-muted" data-sd-id="69">A considered shortlist, with a little help from AI.</p>
+            <p class="mb-7 font-display text-[56px] leading-none tracking-[-1px]" data-sd-id="70">$195<span class="mt-[10px] block font-sans text-xs leading-[1.5] tracking-normal text-muted" data-sd-id="71">one-time service fee</span></p>
+            <a id="plan-ai-link" href="/schedule.html#consultation" class="mt-auto flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[40px] border border-[#819083] px-4 py-3 text-sm text-green transition hover:border-ink hover:bg-ink hover:text-white focus:outline focus:outline-2 focus:outline-offset-3 focus:outline-green" data-sd-id="72">Explore this plan <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+          </article>
+          <article class="flex min-w-0 flex-col rounded-[22px] border border-[#dfe3d9] bg-white px-7 py-8" data-sd-id="73">
+            <h3 class="font-display text-[30px] leading-[1.15] tracking-[-.4px]" data-sd-id="74">Hire Drive Right</h3>
+            <p class="my-[14px] mb-[26px] min-h-12 text-sm leading-[1.7] text-muted" data-sd-id="75">An advisor by your side, from search to signing.</p>
+            <p class="mb-7 font-display text-[56px] leading-none tracking-[-1px]" data-sd-id="76">$495<span class="mt-[10px] block font-sans text-xs leading-[1.5] tracking-normal text-muted" data-sd-id="77">one-time service fee</span></p>
+            <a id="plan-full-link" href="/schedule.html#full-service" class="mt-auto flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[40px] border border-[#819083] px-4 py-3 text-sm text-green transition hover:border-ink hover:bg-ink hover:text-white focus:outline focus:outline-2 focus:outline-offset-3 focus:outline-green" data-sd-id="78">Explore this plan <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+          </article>
+          <article class="flex min-w-0 flex-col rounded-[22px] border border-[#dfe3d9] bg-white px-7 py-8" data-sd-id="79">
+            <h3 class="font-display text-[30px] leading-[1.15] tracking-[-.4px]" data-sd-id="80">Ultimate Concierge</h3>
+            <p class="my-[14px] mb-[26px] min-h-12 text-sm leading-[1.7] text-muted" data-sd-id="81">More support for a more particular search.</p>
+            <p class="mb-7 font-display text-[56px] leading-none tracking-[-1px]" data-sd-id="82">$895<span class="mt-[10px] block font-sans text-xs leading-[1.5] tracking-normal text-muted" data-sd-id="83">one-time service fee</span></p>
+            <a id="plan-concierge-link" href="/schedule.html#concierge" class="mt-auto flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[40px] border border-[#819083] px-4 py-3 text-sm text-green transition hover:border-ink hover:bg-ink hover:text-white focus:outline focus:outline-2 focus:outline-offset-3 focus:outline-green" data-sd-id="84">Explore this plan <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto grid w-[calc(100%-128px)] max-w-[1440px] grid-cols-[1fr_1.2fr] gap-16 py-[88px]" data-sd-id="85">
+      <h2 class="font-display text-[clamp(42px,4.2vw,64px)] font-normal leading-[1.04] tracking-[-1px]" data-sd-id="86">A few things<br><em class="not-italic text-green">you might be wondering.</em></h2>
+      <div data-sd-id="87">
+        <details class="border-b border-line" data-sd-id="88">
+          <summary class="relative cursor-pointer list-none py-[22px] pr-9 text-base leading-[1.5] focus:outline focus:outline-2 focus:outline-green" data-sd-id="89">What does Drive Right do?<span class="faq-plus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="90">+</span><span class="faq-minus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="91">−</span></summary>
+          <p class="pb-6 pr-6 text-[15px] leading-[1.8] text-muted" data-sd-id="92">We help Texas car buyers research vehicles, compare offers, and negotiate purchases. Your plan determines whether you receive AI-assisted research and outreach, an advisor through the buying process, or expanded sourcing and coordination.</p>
+        </details>
+        <details class="border-b border-line" data-sd-id="93">
+          <summary class="relative cursor-pointer list-none py-[22px] pr-9 text-base leading-[1.5] focus:outline focus:outline-2 focus:outline-green" data-sd-id="94">What will it cost?<span class="faq-plus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="95">+</span><span class="faq-minus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="96">−</span></summary>
+          <p class="pb-6 pr-6 text-[15px] leading-[1.8] text-muted" data-sd-id="97">AI Agent Buying Service is $195, Hire Drive Right is $495, and Ultimate Concierge is $895. These are service fees. The vehicle, taxes, registration, inspection, financing, and any delivery costs are separate. Confirm current terms before booking.</p>
+        </details>
+        <details class="border-b border-line" data-sd-id="98">
+          <summary class="relative cursor-pointer list-none py-[22px] pr-9 text-base leading-[1.5] focus:outline focus:outline-2 focus:outline-green" data-sd-id="99">Where can you help me buy?<span class="faq-plus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="100">+</span><span class="faq-minus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="101">−</span></summary>
+          <p class="pb-6 pr-6 text-[15px] leading-[1.8] text-muted" data-sd-id="102">We’re based in Austin and serve buyers across Texas. Search reach, seller participation, and delivery options depend on your plan and vehicle. We confirm those details with you before work begins.</p>
+        </details>
+        <details class="border-b border-line" data-sd-id="103">
+          <summary class="relative cursor-pointer list-none py-[22px] pr-9 text-base leading-[1.5] focus:outline focus:outline-2 focus:outline-green" data-sd-id="104">Am I in control of the final decision?<span class="faq-plus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="105">+</span><span class="faq-minus absolute right-1.5 top-[17px] text-2xl text-green" data-sd-id="106">−</span></summary>
+          <p class="pb-6 pr-6 text-[15px] leading-[1.8] text-muted" data-sd-id="107">Always. Building a brief doesn’t commit you to a vehicle. You choose your plan and decide whether to buy, after reviewing the vehicle, financing, insurance, and final paperwork. A specific discount or vehicle outcome isn’t guaranteed.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="mx-auto w-[calc(100%-128px)] max-w-[1440px] border-t border-line pb-3 pt-11 text-[13px] leading-5 text-muted" data-sd-id="108">
+    <div class="flex justify-between gap-10" data-sd-id="109">
+      <div data-sd-id="110">
+        <a id="footer-home-link" href="/" class="pb-2 font-display text-[34px] leading-none tracking-[-1.2px] text-ink focus:outline focus:outline-2 focus:outline-green" data-sd-id="111">Drive Right</a>
+        <p class="mt-[18px] leading-[1.7]" data-sd-id="112">A better way to buy a car.<br>Based in Austin. Here for Texas.</p>
+      </div>
+      <nav aria-label="Company" class="flex flex-col gap-1.5 text-ink" data-sd-id="113">
+        <a id="footer-about-link" href="/about.html" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="114">About</a>
+        <a id="footer-resources-link" href="/blog.html" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="115">Resources</a>
+        <a id="footer-ai-link" href="/ai-car-buying-agent.html" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="116">AI Agent service</a>
+        <a id="footer-policy-link" href="/policy.html" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="117">Policy</a>
+      </nav>
+      <div class="flex flex-col gap-1.5 text-ink" data-sd-id="118">
+        <a id="footer-email-link" href="mailto:hello@driverightcarbuying.com" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="119">hello@driverightcarbuying.com</a>
+        <a id="footer-phone-link" href="tel:+15129104938" class="flex min-h-9 items-center hover:underline hover:underline-offset-4" data-sd-id="120">(512) 910-4938</a>
+      </div>
+    </div>
+    <div class="mt-9 flex justify-between gap-6 border-t border-line pt-[22px]" data-sd-id="121"><span data-sd-id="122">© 2026 Drive Right</span><span data-sd-id="123"></span></div>
+  </footer>
+
+  <div class="hidden" aria-hidden="true" data-sd-id="124"><img src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/cc0a11c1-cf5a-4a7a-8d5f-c21a7eda5ce8/brand-assets/assets-external-optimized-drive-right-logo-180.png/drive-right-logo-180.png" alt="" data-sd-id="125"></div>
+</div>
+<script>
+  const data=[
+    {count:'01',label:'Your starting point',heading:'“A Mazda Miata,<br>under $30k.<br>I’m in Austin.”',fields:'<span>Austin, Texas</span><span>ZIP 78704</span>',note:'A car. A budget. A place to look.<br>That’s enough to get started.'},
+    {count:'02',label:'Your buying brief',heading:'A little more<br>you.',fields:'<dl class="w-full text-xs"><div class="flex justify-between border-b border-line py-2"><dt class="text-muted">Vehicle</dt><dd>Mazda Miata</dd></div><div class="flex justify-between border-b border-line py-2"><dt class="text-muted">Car-price budget</dt><dd>Under $30,000</dd></div><div class="flex justify-between border-b border-line py-2"><dt class="text-muted">ZIP</dt><dd>78704</dd></div></dl>',note:'Review the essentials.<br>Add the details that matter to you.'},
+    {count:'03',label:'Your next step',heading:'The support<br>that fits.',fields:'<dl class="w-full text-xs"><div class="flex justify-between border-b border-line py-2"><dt>AI Agent Buying Service</dt><dd class="font-display text-xl">$195</dd></div><div class="flex justify-between border-b border-line py-2"><dt>Hire Drive Right</dt><dd class="font-display text-xl">$495</dd></div><div class="flex justify-between border-b border-line py-2"><dt>Ultimate Concierge</dt><dd class="font-display text-xl">$895</dd></div></dl>',note:'One-time service fees.<br>Then, contact details and checkout.'}
+  ];
+  document.querySelectorAll('.process-trigger').forEach((button,index)=>button.addEventListener('click',()=>{
+    const item=data[index];
+    document.getElementById('process-count').textContent=item.count;
+    document.getElementById('paper-label').textContent=item.label;
+    document.getElementById('paper-heading').innerHTML=item.heading;
+    document.getElementById('paper-fields').innerHTML=item.fields;
+    document.getElementById('paper-note').innerHTML=item.note;
+    document.querySelectorAll('.process-trigger').forEach((b,i)=>{
+      b.classList.toggle('text-ink',i===index); b.classList.toggle('text-muted',i!==index);
+      b.querySelector('iconify-icon').classList.toggle('opacity-0',i!==index);
+    });
+  }));
+  document.querySelector('form').addEventListener('submit',e=>e.preventDefault());
+</script>
+
+</body></html>
