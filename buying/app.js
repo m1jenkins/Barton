@@ -8,32 +8,79 @@ const icons = { up:'M12 20V4m-7 7 7-7 7 7', arrow:'M4 12h16m-7-7 7 7-7 7', back:
 const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${icons[name] || ''}"/></svg>`;
 document.querySelectorAll('[data-icon]').forEach(element => { element.innerHTML = icon(element.dataset.icon); });
 
-// A guided example stays separate from the buyer's saved brief.
-const processSteps = [...document.querySelectorAll('[data-process-step]')];
-function showProcessStep(index) {
-  processSteps.forEach((button, step) => {
-    const active = step === index;
-    button.setAttribute('aria-expanded', String(active));
-    button.closest('li').classList.toggle('is-active', active);
-    button.getAttribute('aria-controls').split(' ').forEach(id => {
-      document.getElementById(id).hidden = !active;
+// Static scenes are the fallback. The head script prepares blank artwork before
+// paint; only take over if it is still prepared, so a late load never rewinds it.
+function initLegworkMotion() {
+  const cards = [...document.querySelectorAll('[data-legwork-card]')];
+  const root = document.documentElement;
+  if (!cards.length || !root.classList.contains('legwork-motion')) return;
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  if (preference.matches || !('IntersectionObserver' in window)) {
+    root.classList.remove('legwork-motion');
+    clearTimeout(window.driveRightLegworkFallback);
+    return;
+  }
+  const played = new Set();
+  const visible = new Set();
+  const active = new Map();
+  let nextTimer = null;
+  let stopped = false;
+  const playNext = () => {
+    if (stopped || nextTimer !== null || document.hidden) return;
+    const card = cards.find(card => visible.has(card) && !played.has(card));
+    if (!card) return;
+    played.add(card);
+    card.classList.add('is-playing');
+    // Follow the actual CSS sequence, handing over during its last second.
+    const duration = Math.max(0, ...card.getAnimations({ subtree:true }).map(animation => animation.effect.getComputedTiming().endTime));
+    active.set(card, setTimeout(() => {
+      finish(card);
+      playNext();
+    }, duration));
+    nextTimer = setTimeout(() => {
+      nextTimer = null;
+      playNext();
+    }, Math.max(0, duration - 1000));
+  };
+  const finish = card => {
+    if (!active.has(card)) return;
+    clearTimeout(active.get(card));
+    // Remove animation styles so reopening the home view cannot replay a card.
+    card.classList.add('is-complete');
+    card.classList.remove('is-playing');
+    visible.delete(card);
+    observer.unobserve(card);
+    active.delete(card);
+    if (!active.size) {
+      clearTimeout(nextTimer);
+      nextTimer = null;
+    }
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(({ target:card, isIntersecting, intersectionRatio }) => {
+      if (isIntersecting && intersectionRatio >= .35) visible.add(card);
+      else visible.delete(card);
+      if (!isIntersecting) finish(card);
     });
+    playNext();
+  }, { threshold:[0, .35] });
+  cards.forEach(card => observer.observe(card));
+  preference.addEventListener('change', event => {
+    if (!event.matches) return;
+    stopped = true;
+    clearTimeout(nextTimer);
+    root.classList.remove('legwork-motion');
+    [...active.keys()].forEach(finish);
+    visible.clear();
+    observer.disconnect();
   });
-  $('[data-process-counter]').textContent = String(index + 1).padStart(2, '0');
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) [...active.keys()].forEach(finish);
+    else playNext();
+  });
+  clearTimeout(window.driveRightLegworkFallback);
 }
-processSteps.forEach((button, index) => {
-  button.disabled = false;
-  button.addEventListener('click', () => showProcessStep(index));
-  button.addEventListener('keydown', event => {
-    const directions = { ArrowDown:1, ArrowUp:-1, Home:-index, End:processSteps.length - 1 - index };
-    if (!(event.key in directions)) return;
-    event.preventDefault();
-    const next = (index + directions[event.key] + processSteps.length) % processSteps.length;
-    processSteps[next].focus();
-    showProcessStep(next);
-  });
-});
-if (processSteps.length) showProcessStep(0);
+initLegworkMotion();
 
 const briefStore = createStore(window);
 const checkoutStore = createStore(window, 'drive_right_buying_checkout_v1', { local:false });

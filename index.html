@@ -164,6 +164,15 @@
     </script>
 
     <meta name="theme-color" content="#f7f6f2">
+    <script>
+      // Prepare blank artwork before first paint; failed startup restores static scenes.
+      if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        document.documentElement.classList.add('legwork-motion');
+        window.driveRightLegworkFallback = setTimeout(() => {
+          document.documentElement.classList.remove('legwork-motion');
+        }, 4000);
+      }
+    </script>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="preload" href="/assets/buying/fonts/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/buying/daisy.css">
@@ -203,65 +212,91 @@
     </div><p class="assurance">Your preferences, in one place. Your decisions, always yours.</p>
   </section>
   <div id="home-content">
-    <section class="process-section page-width section-space" id="how-it-works" aria-labelledby="process-title">
+    <section class="legwork-section page-width section-space" id="how-it-works" aria-labelledby="process-title">
       <div class="section-intro">
-        <h2 id="process-title">A little direction.<br><em>A lot less legwork.</em></h2>
-        <a href="/how-it-works.html" class="text-link">How it works <span data-icon="arrow"></span></a>
+        <h2 id="process-title">How we do<br><em>the legwork.</em></h2>
+        <div class="legwork-intro"><p>Your brief sets the direction.<br>You stay in charge of the decision.</p><a href="/#conversation" class="primary-button">Start my brief <span data-icon="arrow"></span></a></div>
       </div>
-      <div class="process-layout">
-        <ol class="process-list">
-          <li class="process-step is-active">
-            <h3><button class="process-trigger" id="process-trigger-1" type="button" data-process-step="0" aria-expanded="true" aria-controls="process-detail-1 process-example-1" disabled><span class="process-number" aria-hidden="true">01</span><span>Tell us about your car.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
-            <p id="process-detail-1">Start with what you need, your car-price budget, and your ZIP. The finer details can wait.</p>
-          </li>
-          <li class="process-step">
-            <h3><button class="process-trigger" id="process-trigger-2" type="button" data-process-step="1" aria-expanded="true" aria-controls="process-detail-2 process-example-2" disabled><span class="process-number" aria-hidden="true">02</span><span>Make the brief yours.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
-            <p id="process-detail-2">Review your preferences, then choose the service and support that fit your search.</p>
-          </li>
-          <li class="process-step">
-            <h3><button class="process-trigger" id="process-trigger-3" type="button" data-process-step="2" aria-expanded="true" aria-controls="process-detail-3 process-example-3" disabled><span class="process-number" aria-hidden="true">03</span><span>Let’s take the next step.</span><span class="process-step-arrow" data-icon="arrow"></span></button></h3>
-            <p id="process-detail-3">Add your contact details and check out. We confirm the scope and timing after payment and intake.</p>
-          </li>
-        </ol>
-        <figure class="process-preview" aria-label="An example buying journey">
-          <div class="process-preview-top"><span>From a thought to a plan.</span><span class="process-counter" aria-hidden="true"><span data-process-counter>01</span> / 03</span></div>
-          <div class="process-examples">
-            <div class="process-example" id="process-example-1" role="region" aria-labelledby="process-trigger-1">
-              <div class="process-paper process-request">
-                <p class="process-paper-title">Your starting point</p>
-                <blockquote>“A Mazda Miata,<br>under $30k.<br>I’m in Austin.”</blockquote>
-                <div class="process-request-location"><span>Austin, Texas</span><span>ZIP 78704</span></div>
-                <p class="process-paper-note">A car. A budget. A place to look.<br>That’s enough to get started.</p>
-              </div>
-            </div>
-            <div class="process-example" id="process-example-2" role="region" aria-labelledby="process-trigger-2" hidden>
-              <div class="process-paper">
-                <p class="process-paper-title">Your buying brief</p>
-                <p class="process-paper-heading">A little more<br>you.</p>
-                <dl class="process-brief-fields">
-                  <div><dt>Vehicle</dt><dd>Mazda Miata</dd></div>
-                  <div><dt>Car-price budget</dt><dd>Under $30,000</dd></div>
-                  <div><dt>ZIP</dt><dd>78704</dd></div>
-                </dl>
-                <p class="process-paper-note">Review the essentials.<br>Add the details that matter to you.</p>
-              </div>
-            </div>
-            <div class="process-example" id="process-example-3" role="region" aria-labelledby="process-trigger-3" hidden>
-              <div class="process-paper">
-                <p class="process-paper-title">Your next step</p>
-                <p class="process-paper-heading">The support<br>that fits.</p>
-                <dl class="process-brief-fields process-plan-options">
-                  <div><dt>AI Agent Buying Service</dt><dd>$195</dd></div>
-                  <div><dt>Hire Drive Right</dt><dd>$495</dd></div>
-                  <div><dt>Ultimate Concierge</dt><dd>$895</dd></div>
-                </dl>
-                <p class="process-paper-note">One-time service fees.<br>Then, contact details and checkout.</p>
-              </div>
-            </div>
+      <ol class="legwork-grid" role="list">
+        <li class="legwork-card" data-legwork-card>
+          <div class="legwork-art">
+            <svg class="legwork-graphic" viewBox="0 0 360 224" role="img" aria-labelledby="legwork-search-title" aria-describedby="legwork-search-desc">
+              <title id="legwork-search-title">A buying brief opens a wider search</title>
+              <desc id="legwork-search-desc">Inquiries travel from your brief through a branching network of dealerships. Replies return for review. The storefronts illustrate outreach, not a promised number of dealers or replies.</desc>
+              <defs>
+                <g id="legwork-store" fill="none" stroke="#576b5c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path fill="#f7f6f2" d="M-18-8h36v26h-36z"/><path fill="#f7f6f2" d="m-21-8 5-10h32l5 10Z"/><path d="M-21-8v5q5 5 10 0 5 5 11 0 5 5 11 0 5 5 10 0v-5M-7-18l-4 10m18-10 4 10M-10 18V6h9v12M6 6h7v6H6z"/></g>
+                <g id="legwork-envelope" fill="none" stroke="#576b5c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect fill="#f7f6f2" x="-6" y="-4" width="12" height="8" rx="1"/><path d="m-6-4 6 4 6-4"/></g>
+              </defs>
+              <g aria-hidden="true">
+                <path class="legwork-line legwork-network" d="M108 112h42V45h156M150 112h156M150 112v61h156"/>
+                <use href="#legwork-store" x="214" y="45"/><use href="#legwork-store" x="306" y="45"/>
+                <use href="#legwork-store" x="214" y="109"/><use href="#legwork-store" x="306" y="109"/>
+                <use href="#legwork-store" x="214" y="173"/><use href="#legwork-store" x="306" y="173"/>
+                <g class="legwork-line"><path class="legwork-paper" d="M12 50h76l20 20v96H12Z"/><path d="M88 50v20h20M28 126h64M28 138h48M28 150h34"/></g>
+                <text x="27" y="102" class="legwork-label">Your brief</text>
+                <g class="legwork-packet legwork-send" style="--branch-y:45px;--dealer-x:188px;--delay:.15s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-send" style="--branch-y:112px;--dealer-x:188px;--delay:.3s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-send" style="--branch-y:173px;--dealer-x:188px;--delay:.45s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-send" style="--branch-y:45px;--dealer-x:280px;--delay:.6s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-send" style="--branch-y:112px;--dealer-x:280px;--delay:.75s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-send" style="--branch-y:173px;--dealer-x:280px;--delay:.9s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-reply" style="--branch-y:45px;--dealer-x:188px;--delay:1.6s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-reply" style="--branch-y:112px;--dealer-x:280px;--delay:1.85s"><use href="#legwork-envelope"/></g>
+                <g class="legwork-packet legwork-reply" style="--branch-y:173px;--dealer-x:188px;--delay:2.1s"><use href="#legwork-envelope"/></g>
+              </g>
+            </svg>
           </div>
-          <figcaption><span>An example. Your search is your own.</span><a href="/#conversation" class="text-link">Start my brief <span data-icon="arrow"></span></a></figcaption>
-        </figure>
-      </div>
+          <div class="legwork-copy"><span class="legwork-number" aria-hidden="true">01</span><h3>Search &amp; outreach.</h3><p>We use your brief to research vehicles and contact participating dealers. Their replies shape the options you review.</p></div>
+        </li>
+        <li class="legwork-card" data-legwork-card>
+          <div class="legwork-art">
+            <svg class="legwork-graphic" viewBox="0 0 360 224" role="img" aria-labelledby="legwork-compare-title" aria-describedby="legwork-compare-desc">
+              <title id="legwork-compare-title">Offers become a clear comparison</title>
+              <desc id="legwork-compare-desc">Two illustrative offer cards and messages move back and forth. Car price and fee details settle side by side for your review, without ranking either offer or promising savings.</desc>
+              <g aria-hidden="true">
+                <g class="legwork-offer legwork-offer-a">
+                  <rect class="legwork-paper legwork-line" x="54" y="39" width="114" height="170" rx="4"/><text x="70" y="65" class="legwork-label">Offer A</text><path class="legwork-line legwork-rule" d="M70 78h82"/>
+                  <g class="legwork-price"><text x="70" y="95" class="legwork-caption">Car price</text><text x="70" y="127" class="legwork-value">$ —</text></g>
+                  <g class="legwork-fees"><path class="legwork-line legwork-rule" d="M70 143h82"/><text x="70" y="162" class="legwork-caption">Fees</text><text x="70" y="194" class="legwork-value">$ —</text></g>
+                </g>
+                <g class="legwork-offer legwork-offer-b">
+                  <rect class="legwork-paper legwork-line" x="192" y="39" width="114" height="170" rx="4"/><text x="208" y="65" class="legwork-label">Offer B</text><path class="legwork-line legwork-rule" d="M208 78h82"/>
+                  <g class="legwork-price"><text x="208" y="95" class="legwork-caption">Car price</text><text x="208" y="127" class="legwork-value">$ —</text></g>
+                  <g class="legwork-fees"><path class="legwork-line legwork-rule" d="M208 143h82"/><text x="208" y="162" class="legwork-caption">Fees</text><text x="208" y="194" class="legwork-value">$ —</text></g>
+                </g>
+                <g class="legwork-message legwork-message-out legwork-line"><path class="legwork-paper" d="M0 0h42v24H14l-8 7v-7H0Z"/><path d="M9 8h24M9 15h16"/></g>
+                <g class="legwork-message legwork-message-back legwork-line"><path class="legwork-paper" d="M0 0h42v24h-6v7l-8-7H0Z"/><path d="M9 8h24M9 15h16"/></g>
+              </g>
+            </svg>
+          </div>
+          <div class="legwork-copy"><span class="legwork-number" aria-hidden="true">02</span><h3>Compare &amp; negotiate.</h3><p>We compare available offers and discuss price and fees with sellers, with email negotiation where available.</p></div>
+        </li>
+        <li class="legwork-card" id="legwork-coordinate" data-legwork-card>
+          <div class="legwork-art">
+            <svg class="legwork-graphic" viewBox="0 0 360 224" role="img" aria-labelledby="legwork-coordinate-title" aria-describedby="legwork-coordinate-desc">
+              <title id="legwork-coordinate-title">The next step, with the decision still yours</title>
+              <desc id="legwork-coordinate-desc">A document becomes a checklist with empty boxes for your review and decision. Your signature line stays blank. A pickup location appears. Confirm paperwork and pickup support for your plan; Ultimate Concierge lists delivery coordination where available.</desc>
+              <g aria-hidden="true">
+                <g class="legwork-checklist">
+                  <rect class="legwork-paper legwork-line" x="56" y="44" width="128" height="160" rx="3"/>
+                  <g class="legwork-checklist-heading"><text x="70" y="69" class="legwork-label">For your review</text><path class="legwork-line legwork-rule" d="M70 82h100"/></g>
+                  <g class="legwork-review-row"><path class="legwork-line" d="M71 97h9v9h-9z"/><text x="88" y="105" class="legwork-caption">Read the terms</text></g>
+                  <g class="legwork-decision-row"><path class="legwork-line" d="M71 121h9v9h-9z"/><text x="88" y="129" class="legwork-caption">Your decision</text></g>
+                  <g class="legwork-signature"><path class="legwork-line" d="M70 169h99" stroke-dasharray="2 4"/><text x="70" y="188" class="legwork-caption">Your signature</text></g>
+                </g>
+                <g class="legwork-pickup">
+                  <text x="269" y="53" text-anchor="middle" class="legwork-label">Pickup</text>
+                  <rect class="legwork-map" x="212" y="65" width="114" height="103" rx="4"/>
+                  <path class="legwork-map-road" d="M212 90h114M240 65v103m-28-20 114-58M294 65v103"/>
+                  <path class="legwork-pin" d="M269 88c-11 0-19 8-19 19 0 14 19 30 19 30s19-16 19-30c0-11-8-19-19-19Z"/><circle class="legwork-paper" cx="269" cy="107" r="6"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="legwork-copy"><span class="legwork-number" aria-hidden="true">03</span><h3>Coordinate the next step.</h3><p>We help clarify what comes next. You review the paperwork, sign, and decide whether to buy.</p><p class="legwork-scope"><a href="/schedule.html#concierge">Ultimate Concierge</a>: delivery coordination where available. Confirm paperwork and pickup support for your plan.</p></div>
+        </li>
+      </ol>
+      <a href="/how-it-works.html#scope" class="text-link legwork-details">Explore the process and service scope <span data-icon="arrow"></span></a>
     </section>
     <section class="pricing-preview section-space" id="services"><div class="page-width" id="pricing"><div class="section-intro"><h2>Your search.<br><em>Your level of support.</em></h2><p>Three clear service fees.<br>A choice that stays yours.</p></div><div class="plan-grid"><article class="plan-card"><h3>AI Agent Buying Service</h3><p class="plan-description">A considered shortlist, with a little help from AI.</p><p class="plan-price">$195<span>one-time service fee</span></p><a href="/schedule.html#consultation" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Hire Drive Right</h3><p class="plan-description">An advisor by your side, from search to signing.</p><p class="plan-price">$495<span>one-time service fee</span></p><a href="/schedule.html#full-service" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Ultimate Concierge</h3><p class="plan-description">More support for a more particular search.</p><p class="plan-price">$895<span>one-time service fee</span></p><a href="/schedule.html#concierge" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article></div></div></section>
     <section class="faq-section page-width section-space" id="faq"><h2>A few things<br><em>you might be wondering.</em></h2><div class="faq-list">
