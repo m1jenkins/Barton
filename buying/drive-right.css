@@ -90,7 +90,6 @@
 .dr .legwork-pin { fill:var(--green); }
 .dr .legwork-packet,.dr .legwork-message { opacity:0; }
 .dr .legwork-copy { padding:24px 26px 28px; }
-.dr .legwork-number { display:block; margin-bottom:12px; color:var(--green); font:400 18px/1 var(--display); font-variant-numeric:tabular-nums; }
 .dr .legwork-copy h3 { font:400 clamp(29px,2.5vw,36px)/1.12 var(--display); letter-spacing:-.5px; text-wrap:initial; }
 .dr .legwork-copy p { margin-top:14px; color:var(--muted); font:500 16px/1.65 'Barlow',var(--sans); }
 .dr .legwork-copy .legwork-scope { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); font-size:12px; line-height:1.65; }
