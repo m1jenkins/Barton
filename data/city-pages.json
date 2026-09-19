@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "createdOn": "2026-09-17",
+  "revisedOn": "2026-09-18",
+  "status": "private_draft",
+  "scope": "The requested 20 cities, using the homepage except for city references, one local sentence, and page metadata.",
+  "availabilityRef": "data/services.json#availabilityConfirmation",
+  "publicationReview": null,
+  "editorialReview": null,
+  "measurementBaseline": null,
+  "cities": [
+    { "name": "New York City", "state": "New York", "slug": "new-york.html", "localSentence": "Tell us about your borough, parking setup, and trips beyond the city so we can focus on the right fit." },
+    { "name": "Los Angeles", "state": "California", "slug": "los-angeles.html", "localSentence": "Share your Los Angeles commute, parking space, and weekend plans so we can shape the search around your routine." },
+    { "name": "Chicago", "state": "Illinois", "slug": "chicago.html", "localSentence": "Whether you drive every day or save the car for trips beyond Chicago, we’ll shape the search around your routine." },
+    { "name": "Houston", "state": "Texas", "slug": "houston.html", "localSentence": "From your Houston commute to family trips across town, we’ll help you focus on the space and comfort you need." },
+    { "name": "Phoenix", "state": "Arizona", "slug": "phoenix.html", "localSentence": "For drives around Phoenix and weekends beyond the Valley, tell us what comfort, space, and parking fit look like for you." },
+    { "name": "Philadelphia", "state": "Pennsylvania", "slug": "philadelphia.html", "localSentence": "From neighborhood parking in Philadelphia to weekends outside the city, we’ll help you narrow the search around your everyday needs." },
+    { "name": "San Antonio", "state": "Texas", "slug": "san-antonio.html", "localSentence": "Tell us about your San Antonio commute, family stops, and weekend plans, and we’ll use those details to guide your search." },
+    { "name": "San Diego", "state": "California", "slug": "san-diego.html", "localSentence": "Whether your San Diego routine calls for commuter comfort or room for beach gear, we’ll help you find the right fit." },
+    { "name": "Dallas", "state": "Texas", "slug": "dallas.html", "localSentence": "From your Dallas commute to weekend trips across North Texas, we’ll help you compare cars that fit your everyday plans." },
+    { "name": "Fort Worth", "state": "Texas", "slug": "fort-worth.html", "localSentence": "For life in Fort Worth and trips across the Metroplex, start with the passenger space and parking fit that work for you." },
+    { "name": "Jacksonville", "state": "Florida", "slug": "jacksonville.html", "localSentence": "From trips across Jacksonville to weekends at the beach, we’ll help you keep the search focused on your everyday needs." },
+    { "name": "Austin", "state": "Texas", "slug": "austin.html", "localSentence": "When your Austin routine takes you from the daily commute to Hill Country weekends, we’ll help you find a car that fits both." },
+    { "name": "San Jose", "state": "California", "slug": "san-jose.html", "localSentence": "Tell us about your commute, parking, and weekend plans so we can focus your South Bay car search on what matters to you." },
+    { "name": "Charlotte", "state": "North Carolina", "slug": "charlotte.html", "localSentence": "From your Charlotte commute to weekends away, we’ll help you compare cars with the space and comfort you have in mind." },
+    { "name": "Columbus", "state": "Ohio", "slug": "columbus.html", "localSentence": "For downtown trips, neighborhood errands, or drives beyond Columbus, we’ll help you narrow the search around your routine." },
+    { "name": "Indianapolis", "state": "Indiana", "slug": "indianapolis.html", "localSentence": "Whether you drive around Indianapolis every day or need room for weekend plans, we’ll help you focus on the fit that matters to you." },
+    { "name": "San Francisco", "state": "California", "slug": "san-francisco.html", "localSentence": "From your San Francisco parking space to trips beyond the city, we’ll help you focus on a car that fits the way you live." },
+    { "name": "Seattle", "state": "Washington", "slug": "seattle.html", "localSentence": "Tell us about your Seattle commute, parking, and weekend gear so your search starts with the space and comfort you need." },
+    { "name": "Denver", "state": "Colorado", "slug": "denver.html", "localSentence": "From your Denver commute to weekends in the mountains, we’ll help you compare the features and cargo space that matter to you." },
+    { "name": "Nashville", "state": "Tennessee", "slug": "nashville.html", "localSentence": "From your Nashville commute to evenings out and weekends away, we’ll help you find a car that fits your routine and budget." }
+  ]
+}

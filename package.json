@@ -14,7 +14,10 @@
     "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node scripts/validate-site.mjs",
     "draft:metros": "node scripts/render-metro-drafts.mjs",
     "preview:metros": "node scripts/preview-metros.mjs",
-    "check:metros": "node scripts/render-metro-drafts.mjs --check"
+    "check:metros": "node scripts/render-metro-drafts.mjs --check",
+    "draft:cities": "node scripts/render-city-pages.mjs",
+    "preview:cities": "node scripts/preview-cities.mjs",
+    "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check"
   },
   "dependencies": {
     "postgres": "3.4.9",

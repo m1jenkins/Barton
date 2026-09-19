@@ -95,6 +95,7 @@ let optionalQuestions = false;
 let replyPending = false;
 let replyTimer;
 const home = document.body.dataset.buyingPage === 'home';
+const homeTitle = document.title;
 const input = $('#answer');
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function persist() {
@@ -234,7 +235,7 @@ function setView(next, focus = true) {
     $('#answer-label').textContent = 'What car are you dreaming of?';
     requestAnimationFrame(sizeAnswer);
   }
-  document.title = next === 'brief' ? 'Your buying brief | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : 'Texas Car Buying Service | Drive Right';
+  document.title = next === 'brief' ? 'Your buying brief | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : homeTitle;
   if (focus) {
     window.scrollTo({ top:0, behavior:'instant' });
     (next === 'brief' ? $('#summary-title') : next === 'conversation' && currentField() ? input : $('#main-content')).focus({ preventScroll:true });
