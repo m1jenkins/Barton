@@ -2,7 +2,7 @@
 
 Prepared September 18, 2026, America/Los_Angeles (account reads September 19 UTC). This is a concrete activation dependency, not authority to change accounts or deploy. Starting revision: `3bf03f6288a16b578e49cb1375254c7285a70855`. Candidate reference and final checks: [release-candidate.md](release-candidate.md).
 
-Follow-up on tested revision `acf9116bdcc48372340b94688f3476b9dc8a35b6`: [connected evidence](SEO-09-connected-validation.md) records four actual test payments, real PostgreSQL migration/replay, tax/discount/retirement diagnostics, scoped missing inputs and proposed terms. The user supplied Stripe MCP test mode; all mutations were test-only. No live mutation/payment occurred. Remaining application/destination boundaries and accountable decisions prevent activation.
+Follow-up on tested revision `acf9116bdcc48372340b94688f3476b9dc8a35b6`: [connected evidence](SEO-09-connected-validation.md) records four actual test payments, real PostgreSQL migration/replay, tax/discount/retirement diagnostics, scoped missing inputs and proposed terms. The user supplied Stripe MCP test mode; all mutations were test-only. No live mutation/payment occurred. The subsequent [owner scope correction](SEO-09-connected-validation.md#scope-correction-after-owner-feedback) narrows remaining work to checkout configuration, the application paid-order/receipt path and applicable terms decisions. Analytics and monitored-email tests are deferred from checkout activation; no further general validation cycle or new checkout/tax infrastructure is planned.
 
 ## Observed account and links
 
@@ -49,7 +49,9 @@ Test current links initially used matching `http://localhost:8765` receipt paths
 
 Environment values to map privately: `APP_ORIGIN`, explicit `ALLOWED_ORIGINS`, `DATABASE_URL`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL`, `STRIPE_PAYMENT_LINK_CONCIERGE_URL`, and `CHECKOUT_PAUSED`. The retired consultation URL is no longer consumed for new sales. Confirm optional lead forwarding, Turnstile and analytics configuration separately; enabling Turnstile without its matching client widget blocks leads.
 
-## Connected test gate
+## Connected checklist and current scope
+
+The original checklist below preserves the test specification and evidence gaps. Apply the owner scope correction linked above: do not rerun passing cases, and do not block checkout on collector setup, monitored-email delivery or a broader positive-tax/location matrix. Required payment amount checks and historical fulfillment remain intact.
 
 Local fixtures exercise application branches but are not PostgreSQL or Stripe integration evidence. In the authorized sandbox, apply numbered migrations including additive `db/003_checkout_offer_snapshot.sql`, then record redacted results for:
 
@@ -67,7 +69,7 @@ Local fixtures exercise application branches but are not PostgreSQL or Stripe in
 
 This order supersedes older staged API-then-form instructions. It may be executed only after the concrete candidate, account scope, tax treatment, content gates and production activation are authorized.
 
-1. Freeze the reviewed candidate revision; complete the sandbox gate above. Capture current live deployment, non-secret price/link IDs, protected artifacts and aggregate ledger/outbox counts. Back up the target database through its approved process.
+1. Freeze the reviewed candidate revision; resolve the checkout-specific dependencies under the current scope above. Capture current live deployment, non-secret price/link IDs, protected artifacts and aggregate ledger/outbox counts. Back up the target database through its approved process.
 2. Apply the additive migration to production. It leaves old `offer_key` values null so old attempts cannot silently reuse a new-priced link. Never backfill historical prices, delete purchase rows, or drop the new column during rollback.
 3. Prepare reviewed live $295/$895 links, immutable prices and matching success redirects. Keep new acquisition unavailable until the coordinated boundary; confirm no promotion/quantity/tax surprise and approved scope descriptions. Record IDs and configuration, not credentials.
 4. Build the candidate with matching API, HTML, hashed assets and live environment together, **`CHECKOUT_PAUSED=true`**. Preserve paid webhook/status/onboarding routes. At the agreed boundary retire the old AI/$495 acquisition links and their stale promotional messages, then promote the paused candidate. Cached older clients receive safe retirement/stale-offer responses. Confirm treatment of already-created sessions from the sandbox evidence.
@@ -79,4 +81,4 @@ This order supersedes older staged API-then-form instructions. It may be execute
 
 Set `CHECKOUT_PAUSED=true` on a deployment that implements the guard; verify it returns 503 for new checkout while historical fulfillment remains available. Keep compatible ledger/webhook/receipt code and the additive column. Do not blindly restore the old three-offer API/UI or point a $295 attempt at a $495 link. A source rollback needs a reviewed two-offer-compatible patch or continued checkout pause. Restore link/environment/deployment combinations as one verified unit, preserve all paid history, then replay/reconcile failed events after the corrected release. Any refund or customer communication requires its own authorized scope.
 
-**Next action:** supply application test API/signing credentials and an authorized reachable webhook, local receipt browser permission, approved collector/consent/destination and monitored test inbox; resolve tax/address/scope/historical-credit decisions. Finish the remaining external boundaries at the exact tested revision. [Missing-input table](SEO-09-connected-validation.md#simple-terms-proposal-and-exact-missing-inputs). Production is unchanged. The candidate is not ready for the separate activation prompt.
+**Next action:** match the intended $295/$895 link settings to application totals, confirm the application paid-order/receipt path, and resolve only applicable terms/settings decisions including the historical $100 credit. Keep passing Stripe/database evidence and defer analytics/email work; do not build a replacement checkout or custom tax solution. Production remains unchanged. **Activation readiness remains unresolved; separate activation authority is still required.**

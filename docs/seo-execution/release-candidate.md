@@ -1,12 +1,16 @@
 # Nationwide offer and SEO release candidate
 
-Prepared September 18, 2026 (America/Los_Angeles); connected follow-up September 19 UTC. **Four Stripe test payments and isolated PostgreSQL validation pass; remaining application/destination boundaries and accountable decisions are unresolved. Not ready for the separate activation prompt.**
+Prepared September 18, 2026 (America/Los_Angeles); connected follow-up September 19 UTC. **Four Stripe test payments and isolated PostgreSQL validation pass. The owner requested a simple checkout; no rebuild or further general validation cycle is planned. Checkout-specific configuration and fulfillment dependencies remain; analytics and email-delivery testing are deferred.**
 
 - Starting production/repository revision: `3bf03f6288a16b578e49cb1375254c7285a70855`.
 - Tested implementation commit: `e7b0a153ecc69f65705a6835f9d1ca6013ae668a`.
 - Latest tested repository revision: `acf9116bdcc48372340b94688f3476b9dc8a35b6`. Application files are unchanged from the implementation commit; two local commits add a database runner and sanitized Stripe test evidence. All 160 tests, eight PostgreSQL scenario groups and relevant Node 24 checks passed; [connected evidence](SEO-09-connected-validation.md).
 - Local branch: `codex/seo-release-candidate`.
 - This packet and the connected-validation follow-up are documentation-only updates over the latest tested revision; deployment files are unchanged. No branch was pushed, merged or deployed.
+
+## Current checkout scope
+
+The September 19 owner direction supersedes the broader gate list only as described in the [scope correction](SEO-09-connected-validation.md#scope-correction-after-owner-feedback). Keep Stripe-hosted Payment Links and the passing payment/database evidence. Analytics collector setup, monitored receipt-email testing and a broader tax-location matrix do not block this checkout release. Matching link totals, the application paid-order/receipt path and applicable existing terms still matter. No new checkout, tax engine, discount system or terms rewrite is proposed. Unperformed checks remain unverified.
 
 ## Included implementation
 
@@ -76,7 +80,7 @@ Verified Search Console baseline: August 20–September 16, 2026, **27 clicks / 
 
 ## Cutover and rollback
 
-Use [stripe-cutover.md](stripe-cutover.md) as the single detailed account/environment/order packet. It maps verified live IDs, missing test IDs, success URLs, migration and tax decision; it requires the connected test gate before live operations.
+Use [stripe-cutover.md](stripe-cutover.md) as the single detailed account/environment/order packet. It maps verified live IDs, missing test IDs, success URLs, migration and tax decision; its connected checklist is narrowed by the owner scope correction above; live operations still require separate authority and matching checkout configuration.
 
 At an authorized boundary, apply the additive migration, prepare reviewed matching live links, retire old acquisition links, and promote matching HTML/API/hashed assets/environment with `CHECKOUT_PAUSED=true`. Verify the paused deployment and paid fulfillment before enabling new checkout with that reviewed configuration. Preserve old paid sessions and ledger amounts. Do not deploy API and offer UI independently or weaken payment validation.
 
@@ -93,4 +97,4 @@ For rollback, pause new checkout on a deployment that implements the guard; pres
 - Recheck deployed asset hashes, console/network failures, mobile/keyboard/no-JS behavior and loading order; retain lab/field distinctions.
 - Record actual live evidence and activation date before starting SEO-10's first comparable reporting cycle. No automatic indexing submission, outreach or automation is implied.
 
-**Next task:** supply the exact access and decision inputs in [SEO-09-connected-validation.md](SEO-09-connected-validation.md), execute the seven connected gates, then review/activate only the resulting verified revision and scope. **This candidate is not ready for the separate activation prompt.** SEO-10 remains `not_started` until actual activation. Full dependency tracker: [status.md](status.md).
+**Next task:** close only the checkout-specific configuration, paid-order/receipt and applicable terms dependencies in the [scope correction](SEO-09-connected-validation.md#scope-correction-after-owner-feedback). Do not repeat all seven gates or require collector/inbox setup for checkout. **Activation readiness remains unresolved.** SEO-10 remains `not_started` until actual activation. Full dependency tracker: [status.md](status.md).

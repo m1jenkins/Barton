@@ -1,8 +1,18 @@
 # SEO-09 connected validation — September 19, 2026 UTC
 
-**Partial connected validation is complete. Application/destination access and accountable decisions remain unresolved. Not ready for the separate activation prompt.**
+**Stripe-hosted payments and isolated database checks pass. The owner requested a simple checkout and no further general validation cycle. Remaining checkout-specific dependencies are described below; broader measurement work is deferred.**
 
 Exact tested revision: `acf9116bdcc48372340b94688f3476b9dc8a35b6`, branch `codex/seo-release-candidate`, Node `v24.20.0`. Application files and migrations remain identical to implementation commit `e7b0a153ecc69f65705a6835f9d1ca6013ae668a`. Local commits `07fa041` and `acf9116` add the isolated database runner and sanitized Stripe evidence; these release documents are a documentation-only follow-up. No application defect was established and no application patch was required.
+
+## Scope correction after owner feedback
+
+On September 19 the owner stated: “stripe works fine, don't over engineer a simple checkout.” Keep the existing Stripe-hosted Payment Links and application integration. Do not build a new checkout, tax engine or discount system, or repeat successful payments and database checks without a demonstrated defect. This instruction accepts the existing payment evidence for planning; it does not turn unperformed checks into passes or authorize production changes.
+
+External analytics/collector reconciliation stays with SEO-07 and is **not a checkout activation blocker**. Monitored receipt-email delivery and a broader location/positive-tax test matrix are deferred from this checkout task. Retain their unverified status below. No new terms proposal is part of this scope; existing copy review requirements and customer entitlements remain recorded.
+
+Limit remaining checkout work to matching the $295/$895 links and application totals, confirming the application's paid-order/receipt path against the intended environment, and resolving any settings or existing terms that would change those totals. The observed $10 discount produces a paid-total mismatch; the existing $100 upgrade-credit clause needs an explicit disposition without erasing an entitlement. Preserve existing tax settings pending a concrete decision; do not treat `not_collecting` as an exemption. No automatic approval denial or environment isolation requirement is waived.
+
+The matrix and missing-input table below retain the original comprehensive checklist for audit history. Their analytics, monitored-email and broader tax-matrix entries are follow-up work, not additional checkout release gates. No new infrastructure is required merely to repeat existing evidence.
 
 ## Environment and authority
 
@@ -97,4 +107,4 @@ Proposed refund basis follows existing policy: full refund before active negotia
 
 On `acf9116bdcc48372340b94688f3476b9dc8a35b6`, Node `v24.20.0`: **160 regression tests passed, 0 failed, 0 skipped; eight PostgreSQL groups passed**. Runner syntax, site/API/metro/city/buying checks, config-only redirects and diff checks passed. Site: 64 HTML files/seven sitemap URLs; four metro drafts; 20 city drafts plus hub; 14 redirect rules. Dependencies were unchanged from the prior clean install. No new audit/performance result is inferred.
 
-Provide the remaining application credential/endpoint, collector/inbox references and accountable decisions, then finish the external boundary checks against the exact current revision. **The release candidate is not ready for the separate activation prompt.**
+Next: resolve only the checkout-specific dependencies in the scope correction above. Do not request collector/inbox access or repeat the complete connected checklist to unblock checkout. The unchanged application checks remain valid at the recorded revision. **Activation readiness remains unresolved; no live change is authorized.**
