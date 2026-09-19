@@ -3,6 +3,16 @@ import { assertSameSiteRead, requestUrl, requireMethod, sendJson, withApiErrors 
 import { stripeClient } from './_lib/stripe-client.js';
 import { validateSessionId, validateTier } from './_lib/validation.js';
 
+export function verifiedPurchase(session, purchase, requestedTier) {
+  return Boolean(
+    session && purchase && purchase.payment_status === 'paid' &&
+    session.payment_status === 'paid' && session.mode === 'payment' &&
+    purchase.tier_id === requestedTier && purchase.amount_total === session.amount_total &&
+    purchase.currency === String(session.currency || '').toLowerCase() &&
+    purchase.client_reference_id === session.client_reference_id
+  );
+}
+
 async function retrieveSession(sessionId) {
   try {
     return await stripeClient().checkout.sessions.retrieve(sessionId);
@@ -32,16 +42,7 @@ async function handle(req, res) {
     return sendJson(res, 200, { ok: true, verified: false, tier: requestedTier, status: 'not_found' });
   }
 
-  const verified = Boolean(
-    purchase &&
-    purchase.payment_status === 'paid' &&
-    session.payment_status === 'paid' &&
-    session.mode === 'payment' &&
-    purchase.tier_id === requestedTier &&
-    purchase.amount_total === session.amount_total &&
-    purchase.currency === String(session.currency || '').toLowerCase() &&
-    purchase.client_reference_id === session.client_reference_id
-  );
+  const verified = verifiedPurchase(session, purchase, requestedTier);
 
   if (verified) {
     return sendJson(res, 200, {

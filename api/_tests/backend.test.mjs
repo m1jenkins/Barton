@@ -10,7 +10,7 @@ import {
   retryDelaySeconds
 } from '../_lib/analytics-outbox.js';
 import { pageContext, purchaseEventPayload } from '../_lib/analytics.js';
-import { SERVICE_TIERS } from '../_lib/config.js';
+import { SERVICE_TIERS, NEW_CHECKOUT_TIERS } from '../_lib/config.js';
 import {
   idempotencyKey,
   isPaidCheckoutEvent,
@@ -107,7 +107,10 @@ test('checkout validation uses an allowlisted tier and optional lead UUID', () =
   );
 });
 
-test('AI Agent Buying Service uses the $195 Stripe amount', () => {
+test('legacy AI fulfillment retains $195 while new checkout allows only current plans', () => {
+  assert.deepEqual(NEW_CHECKOUT_TIERS, ['full_service', 'concierge']);
+  assert.equal(SERVICE_TIERS.full_service.amount, 29500);
+  assert.throws(() => validateCheckoutPayload({ tier: 'consultation' }), error => error.status === 410 && error.code === 'tier_retired');
   assert.deepEqual(SERVICE_TIERS.consultation, {
     amount: 19500,
     currency: 'usd',

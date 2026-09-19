@@ -47,7 +47,7 @@ Request:
 }
 ```
 
-Allowed tier IDs are `consultation`, `full_service`, and `concierge`. The server selects the corresponding environment-configured Stripe Payment Link, persists an attempt with allowlisted first/last-touch attribution, and returns `{ "ok": true, "url": "…", "attempt_id": "…" }`. It adds a server-generated UUID as Stripe's `client_reference_id`; the browser cannot supply a price or redirect URL.
+New-sale tier IDs are `full_service` ($295 USD) and `concierge` ($895 USD). `consultation` returns `410 tier_retired` for new checkout but remains valid for paid receipt verification and onboarding. The server selects the corresponding environment-configured Stripe Payment Link, persists an attempt with allowlisted first/last-touch attribution, and returns `{ "ok": true, "url": "…", "attempt_id": "…" }`. It adds a server-generated UUID as Stripe's `client_reference_id`; the browser cannot supply a price or redirect URL.
 
 ### `POST /api/stripe-webhook`
 
@@ -56,7 +56,7 @@ The function reads the raw request body and verifies `Stripe-Signature`. Subscri
 - `checkout.session.completed`
 - `checkout.session.async_payment_succeeded`
 
-An event is purchase evidence only when it contains a one-time Checkout Session whose `payment_status` is `paid`, whose `client_reference_id` maps to a stored attempt, and whose currency and total exactly match that tier. The transaction inserts the Stripe event, one purchase keyed by Checkout Session ID, updates the attempt, and inserts one standard `purchase` analytics-outbox row keyed by that same session ID. Its payload includes a durable event ID, transaction and purchase IDs, service tier, value, currency, governed page context, and allowlisted first/last-touch attribution. Replayed event IDs and second paid events for the same Checkout Session cannot create another purchase or outbox event.
+An event is purchase evidence only when it contains a one-time Checkout Session whose `payment_status` is `paid`, whose `client_reference_id` maps to a stored attempt, and whose currency and total exactly match that stored attempt's immutable amount/currency, including historical $195/$495 attempts. The transaction inserts the Stripe event, one purchase keyed by Checkout Session ID, updates the attempt, and inserts one standard `purchase` analytics-outbox row keyed by that same session ID. Its payload includes a durable event ID, transaction and purchase IDs, service tier, value, currency, governed page context, and allowlisted first/last-touch attribution. Replayed event IDs and second paid events for the same Checkout Session cannot create another purchase or outbox event.
 
 After the ledger transaction commits, the function opportunistically dispatches an atomically claimed outbox batch when `ANALYTICS_FORWARD_URL` is configured. Each HTTPS request carries the durable event ID in both the body and `Idempotency-Key` header. Acknowledged `2xx` responses mark the row sent; timeouts and non-`2xx` responses return it to `failed` with capped exponential backoff. A delivery failure never rolls back or changes the response for an already verified purchase.
 
@@ -109,8 +109,8 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `ALLOWED_ORIGINS` | Optional comma-separated additional exact origins, such as an explicitly approved preview. Do not use wildcards. |
 | `STRIPE_SECRET_KEY` | Required for webhook construction and purchase-status verification. Keep test and live environments separate. |
 | `STRIPE_WEBHOOK_SECRET` | Required. Signing secret for this exact deployed webhook endpoint and mode. |
-| `STRIPE_PAYMENT_LINK_CONSULTATION_URL` | Required for the $195 AI Agent Buying Service tier. The environment variable name remains for compatibility with the `consultation` internal tier ID. |
-| `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $495 full-service tier. |
+| `CHECKOUT_PAUSED` | Set `true` during coordinated cutover to stop new checkout creation. Does not disable paid receipts/webhooks/onboarding. Default false. |
+| `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $295 full-service tier; must be a new, verified link for this release. |
 | `STRIPE_PAYMENT_LINK_CONCIERGE_URL` | Required for the $895 concierge tier. |
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
@@ -126,13 +126,17 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 
 No secrets belong in HTML, JavaScript, SQL, or committed environment files.
 
+Apply `db/003_checkout_offer_snapshot.sql` before this candidate. New attempts snapshot an `offer_key` derived from tier, amount, currency and configured Payment Link. Retries with a missing/stale key, changed amount or currency return `409 stale_offer` without a URL. The UI shows the current fee and requires another explicit submit (Restart checkout), preserving the old attempt and creating a new idempotency key. A conflicting payload still returns `409 idempotency_conflict`. Never backfill old offers or rewrite historical amounts.
+
+Current live links enable automatic tax and promotion codes; Stripe tax behavior is unspecified on each price and inferred by currency in account settings. This is unresolved parity, not a successful checkout check. See [the Stripe cutover packet](seo-execution/stripe-cutover.md). Do not disable lawful tax collection or weaken amount checks to force a passing payment.
+
 ## Stripe dashboard configuration
 
-Keep each Payment Link at the application amount and currency: AI Agent Buying Service `19500 usd`, full service `49500 usd`, and concierge `89500 usd`. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
+For new sales, keep the final payable total at full service `29500 usd` and concierge `89500 usd`. Retire the old AI/$495 acquisition links after the coordinated cutover. Preserve historical attempts, prices, receipts and valid already-created sessions. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
 
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
-- AI Agent Buying Service: `https://www.driverightcarbuying.com/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}`
+- Historical AI receipts remain supported at `https://www.driverightcarbuying.com/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}`; do not reactivate new AI sales.
 - Full service: `https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
 - Concierge: `https://www.driverightcarbuying.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 
@@ -142,10 +146,10 @@ Register `https://www.driverightcarbuying.com/api/stripe-webhook` as a Stripe we
 
 1. Run the numbered SQL files in `db/` order against a new or backed-up target database. They are transactional; `002_standard_purchase_analytics.sql` normalizes any unsent legacy sale events to `purchase` without changing acknowledged history.
 2. Add the required environment variables separately to Development, Preview, and Production. Use different Stripe keys, webhook secrets, and databases where practical.
-3. Configure the three Payment Link success URLs and the webhook destination in Stripe.
-4. Deploy the API, then change browser forms and checkout links to the contracts above. Remove client-side purchase/conversion calls from confirmation pages.
+3. Configure the two active Payment Link success URLs and the webhook destination in Stripe; retain historical receipt verification.
+4. For this offer transition, use the atomic paused cutover in [stripe-cutover.md](seo-execution/stripe-cutover.md). Deploy matching API, browser assets and environment values together with new checkout paused; verify preview/test-mode parity before any production promotion. Do not expose the new $295 API with an old $495 link or separately deploy the old acquisition UI.
 5. Run `npm test` and `npm run check:api`; send a test lead twice with the same key, then with a conflicting payload.
-6. Complete one Stripe test purchase for each tier. Confirm one `purchases` row and one `purchase` outbox row per Checkout Session, even after resending the webhook from Stripe. Confirm the configured collector receives the same `event_id` and `Idempotency-Key` once.
+6. Complete one Stripe test purchase for each active tier, plus replay already-created historical $195/$495 fixtures. Confirm one `purchases` row and one `purchase` outbox row per Checkout Session, even after resending the webhook from Stripe. Confirm the configured collector receives the same `event_id` and `Idempotency-Key` once.
 7. Verify that a direct visit with a fabricated or unpaid session never unlocks onboarding.
 
 Useful reconciliation queries:
@@ -161,10 +165,14 @@ SELECT status, count(*) FROM lead_forward_outbox GROUP BY status ORDER BY status
 
 The application now writes and dispatches a standard `purchase` event plus `onboarding_complete`. No destination URL, credentials, destination-specific mapping, or consent policy was provided, so none was invented or activated. The configured analytics collector must acknowledge only durable ingestion, honor `Idempotency-Key`, map `purchase` to the approved analytics destinations, and preserve `event_id`/`transaction_id` for destination deduplication. Until that collector and credentials are configured and verified, purchase-ledger counts—not ad-platform counts—are authoritative.
 
-Dispatch is triggered opportunistically by verified Stripe webhook and onboarding requests. A periodic invocation mechanism is still required for bounded, unattended retry during periods with no new traffic and for alerting on exhausted attempts; no new public endpoint or scheduler configuration was added. Daily reconciliation must compare paid Stripe Checkout Sessions, `purchases`, `analytics_outbox` status, and collector/destination acknowledgements.
+Dispatch is triggered opportunistically by verified Stripe webhook and onboarding requests. `npm run analytics:dispatch` now provides a bounded worker invocation. It sends one due batch, reports aggregate delivery/exhaustion counts, exits nonzero for missing collector, delivery failure or expired exhausted leases, and fences acknowledgements by attempt number. Wire an authorized external scheduler and alerting to it during activation. No public endpoint or scheduler has been activated. Daily reconciliation must compare paid Stripe Checkout Sessions, `purchases`, `analytics_outbox` status, and collector/destination acknowledgements.
 
 Leave `TURNSTILE_SECRET_KEY` unset until a matching client widget is installed and its token is submitted with the lead form. Enabling the secret without the widget intentionally causes browser lead submissions to fail verification.
 
 Likewise, failed optional lead forwards remain durable for review but need a scheduled retry worker for unattended recovery. Downstream systems must honor the durable lead ID as an idempotency key.
 
 Define and apply an approved retention/deletion policy for lead and onboarding PII, restrict database access, encrypt backups, and avoid logging request bodies. Webhook rows intentionally omit the full Stripe event payload and customer fields.
+
+## September 18, 2026 local measurement changes
+
+Internal navigation preserves the last acquisition touch; a new external referrer or explicit campaign can replace it. Stripe returns and confirmation routes preserve acquisition instead of creating a payment-provider referral. First touch remains the stored first acquisition. Browser and API restrict referrer to HTTP(S) origin and source/landing paths to pathname (no credentials, query or fragment). Delivery sanitizes historical queued payload copies too, without rewriting the ledger. Pre-change lead retries compare normalized stored business fields when the old hash differs; changed business data still conflicts. Existing consent mechanisms are retained; the live GTM consent/configuration still needs the documented account audit. `generate_lead` uses `lead:<lead_id>` and `begin_checkout` uses `checkout:<attempt_id>`, with session and memory guards. CTA/phone clicks remain intent only. No contact or buying-brief content is added to analytics. GA4 identity and collector/destination reconciliation remain unresolved.

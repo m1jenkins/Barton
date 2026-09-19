@@ -1,0 +1,3639 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-09-19T02:38:17.114510+00:00",
+  "starting_revision": "3bf03f6288a16b578e49cb1375254c7285a70855",
+  "cli_version": "0.1.34",
+  "session": "seo-perf",
+  "raw_trace_directory": "/private/tmp/barton-seo-perf-traces",
+  "environments": {
+    "candidate": {
+      "origin": "http://127.0.0.1:4175",
+      "root": "/Users/user/Documents/GitHub/Barton",
+      "revision_type": "working_tree"
+    },
+    "before": {
+      "origin": "http://127.0.0.1:4176",
+      "root": "/private/tmp/barton-seo-perf-before-_zbu23ih",
+      "revision_type": "git_archive_HEAD"
+    }
+  },
+  "conditions": {
+    "mobile": {
+      "viewport": "390x844x3,mobile,touch",
+      "network": "Slow 4G",
+      "cpu_slowdown": 4
+    },
+    "desktop": {
+      "viewport": "1440x900x1",
+      "network": "Fast 4G",
+      "cpu_slowdown": 1
+    }
+  },
+  "cache_note": "Preview Cache-Control:no-store for local assets. Browser reused; third-party cache not explicitly cleared. perf-start default reload+auto-stop. Local state cleared before each navigation. Not a cold browser/network run.",
+  "field_data": {
+    "source": "GSC Chrome UX report",
+    "last_updated": "2026-09-15",
+    "mobile": "insufficient usage data in last90days",
+    "desktop": "insufficient usage data in last90days",
+    "lcp": null,
+    "inp": null,
+    "cls": null
+  },
+  "snapshots": {
+    "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af": {
+      "cohort": "before",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "1a671b8587cd53da0d3f147598f4e8227be92e6b0638ba0d8e29c43a940ed3fa",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "4624d1b676c7cdcc7c9027aed180daf74628a181930aed0248e25653cd452cc4",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e62eddba71a4bca795f357ec7d978107ecda7fe24648796e384b933952bccfc2",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "index.html": "a45509b5b0a2329ceb8d37cf684e18b6a6a43b90ee26d3940f57d27f69d32d9c",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "9e5ea93d04ba8b8e443e8f035ccd1b94263b10a7f4d9ff3d0c0e416a2e0e59e2",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "index.html": "841e40fb233ce62f7cd2df916c1cc2110f50e016fa683ea6e8de46c4eabbb972",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "03a8b7a6967224b79fbf293a0b22a4eb7affb5700c775e04c028f233cd2f6974",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e": {
+      "cohort": "before",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "1a671b8587cd53da0d3f147598f4e8227be92e6b0638ba0d8e29c43a940ed3fa",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "4624d1b676c7cdcc7c9027aed180daf74628a181930aed0248e25653cd452cc4",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e62eddba71a4bca795f357ec7d978107ecda7fe24648796e384b933952bccfc2",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "schedule.html": "5d9a4f96314cc65a2f991ebb3c8003a78c1c9c65011a60f33368fb708afc00a3",
+        "script.js": "9e5ea93d04ba8b8e443e8f035ccd1b94263b10a7f4d9ff3d0c0e416a2e0e59e2",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "schedule.html": "57a107a43466a781d0094a337852f5a21ff457213fce59673aec8ce452b2b5c6",
+        "script.js": "03a8b7a6967224b79fbf293a0b22a4eb7affb5700c775e04c028f233cd2f6974",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93": {
+      "cohort": "before",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "blog-buy-new-car-below-msrp.html": "687451ba6927ab89418cb1f7d2955414065b2499a93817699297b97bf8c4dd90",
+        "buying/app.js": "1a671b8587cd53da0d3f147598f4e8227be92e6b0638ba0d8e29c43a940ed3fa",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "4624d1b676c7cdcc7c9027aed180daf74628a181930aed0248e25653cd452cc4",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e62eddba71a4bca795f357ec7d978107ecda7fe24648796e384b933952bccfc2",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "9e5ea93d04ba8b8e443e8f035ccd1b94263b10a7f4d9ff3d0c0e416a2e0e59e2",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "c562885e534c27eab688d71bfb18b1ba1497b4feb9c9e7c3576f6b0cf673de92": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "blog-buy-new-car-below-msrp.html": "885aafb6fec5dd6698e8a0c08fcf45edee61d15673232f79092a4cf0f1b45906",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "03a8b7a6967224b79fbf293a0b22a4eb7affb5700c775e04c028f233cd2f6974",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "blog-buy-new-car-below-msrp.html": "885aafb6fec5dd6698e8a0c08fcf45edee61d15673232f79092a4cf0f1b45906",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "caabeeac6625b55c3edecd8f97e3a47cd590d0a9b2783f0150ff6b9a15a6ddbe",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "index.html": "471f42b8c4aa6ff3f1325a07e78d6993c379b6215eaecae1a6d6415619ef2bde",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "caabeeac6625b55c3edecd8f97e3a47cd590d0a9b2783f0150ff6b9a15a6ddbe",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "schedule.html": "52a41dda4663f8caa55548035e6a79f1bdcde8a609ed359180530c7473ea4ccf",
+        "script.js": "caabeeac6625b55c3edecd8f97e3a47cd590d0a9b2783f0150ff6b9a15a6ddbe",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    },
+    "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a": {
+      "cohort": "candidate",
+      "hashes": {
+        "accessibility.css": "f7952eff09c8819873d65f6fc4e9c734ba03c803f9ee1f07a684b1dbeeca2703",
+        "accessibility.js": "f9797ba96925deed7ecbc27f288bb39c35f6825d50c22a68dde5389550870853",
+        "ad-consent.css": "9a62c56ca2f58192cfbc3b8e3754d2673bbcf2fcd0522be6d7dc8b2692f32577",
+        "ad-consent.js": "a43c093518738ad01ea0c1eccc666461732dd001f5760a516f75dcbf6d5c33f8",
+        "assets/buying/coastal-roadster-1440.avif": "c19a51806ba15ec7bec939d9003b46b207e3e88ace3cddec3537b74d9b61c7ce",
+        "assets/buying/coastal-roadster-1440.webp": "ab130a734d3f990632106f085524b892a0e468af0d16a2cec961d12357d14b28",
+        "assets/buying/coastal-roadster-1920.avif": "1c9e47134dc09ef3870e3abfd58476d8425df93c8468637c7395755f0ba2492b",
+        "assets/buying/coastal-roadster-1920.webp": "864700be1fd93ec9278b8777d4bc59c1c4b3495667cd84a5e45db3c5dd92a21f",
+        "assets/buying/coastal-roadster-640.avif": "a6be1b69867af4806d4c473d2e66b89f84a1b3ac94437547b8b53c6292831880",
+        "assets/buying/coastal-roadster-640.webp": "7da4ece5ce31af32d4685a05e3acfeb910c6e56283aaf8589ee4dba5833dccec",
+        "assets/buying/coastal-roadster-960.avif": "92fea0b54b60861025da71d238c4d0c3dab1b816da9ad6a3bdacb056877a288d",
+        "assets/buying/coastal-roadster-960.webp": "872bf1a4723afc5264ca24704f8adf243091606d3f39bb2fe8763ea55cc10948",
+        "assets/buying/coastal-roadster.jpg": "9e42b65be3fbc6b337fe07efcfe2809379a3e65f750b47bf0cc9ddcdc4e86481",
+        "assets/buying/driveway-arrival.jpg": "4d800d26b6cc114bb66712b09c3a098185c3a28160a3ebc1b15bbba7f36a941d",
+        "assets/buying/fonts/barlow-medium.ttf": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+        "assets/buying/fonts/barlow-semibold.ttf": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+        "assets/buying/fonts/instrument-serif-italic.ttf": "fecf4861d5202405b8bd45c683858b6870642a026784fe0dbf88ff55dedee8a0",
+        "assets/buying/fonts/instrument-serif.ttf": "a99e3db50076202713812ed541feeb23ffeebb61db1fa6b1cf48fe590d37ef18",
+        "assets/buying/fonts/inter.ttf": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba",
+        "assets/buying/mx-5-coastal-hero-1440.avif": "b192807c45e64be6bcb44199bc99fa0d3c3668bb019624eab36d02a6f0c128f7",
+        "assets/buying/mx-5-coastal-hero-1440.webp": "267250965269fe83854e6c8d79dfb0054a3a8a024399935ab4897fdde0dbff9c",
+        "assets/buying/mx-5-coastal-hero-1920.avif": "2fec524e7ca167478c8585ad7204b416e047877493073b1a7cc08cff844d6fd5",
+        "assets/buying/mx-5-coastal-hero-1920.webp": "0ff7b9b3b51f9074ab010323afef7afe91bf3debbe52b4ccdb50121362a02c6a",
+        "assets/buying/mx-5-coastal-hero-640.avif": "c76fca217b21a8eda909272d923d0bfe591b50c8c78386480052c32003d2eec1",
+        "assets/buying/mx-5-coastal-hero-640.webp": "e182815e1a852e4ed8ce0dbc3e66c4778b3ff5b9860a63a1ab2517c5d6f28a6b",
+        "assets/buying/mx-5-coastal-hero-960.avif": "744dae799b43f43850a517e20b62cabdcf8c0de518d74d1cac1968a0aec0a85d",
+        "assets/buying/mx-5-coastal-hero-960.webp": "1d5ea60ccf13df0f46866306cc904441a4980812f2eadff5d92edf6d8ce0a0a0",
+        "assets/buying/mx-5-coastal-hero-fallback.jpg": "0f53c65e5dbd754cffe02b144660718ee5644a730e9da823d84543e9363bf1fb",
+        "blog-buy-new-car-below-msrp.html": "24d754838e7e464d4177bb79250aa7765193214cd76ffd388c1c0747191d5e00",
+        "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+        "buying/brief.js": "70c8211a7a80388887f15a8fdff3a3a4d444968c67e8778c04df33200d15fe82",
+        "buying/checkout.js": "ac202b0cf4919d4cca39460adbad721f6343c446cfa54b614fe275db10086dce",
+        "buying/daisy.css": "df6a0852ea6bbf1b104f737fded6906786dd03bbecd5c920ebf681e743042ea3",
+        "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973",
+        "buying/houston-search.js": "4a5fb871fe9e2624f87e57a752a97602bb443e28ed0ff37720a9735960f52cbf",
+        "buying/houston.css": "6d86e2bc8843aaf812568fde21fa17882d74a16d9673c9427e8d9b5f800a30d9",
+        "buying/intake.js": "60545b7d4231a88cbe54f651283295f46759566818c1b43134f4f21482f2a169",
+        "index.css": "cf158f8866eb4a8e917c17c9f27a3b30a132c3305e9a81fb98fa14966769bf81",
+        "openai-ads.js": "91eb12ad5a376ef5ad278f216bfa710884b63e6ba00a8fdfb312cca564f2b1bb",
+        "script.js": "caabeeac6625b55c3edecd8f97e3a47cd590d0a9b2783f0150ff6b9a15a6ddbe",
+        "seo-content.css": "42d324416af1a9bfe6e4e9cba913e3824987670d0852b6d8f4146f1281c9114c",
+        "styles.css": "4cfebf35a64d388678f08b3f13ca358ddd7022c752863c77a9a42d6b46e70095"
+      }
+    }
+  },
+  "runs": [
+    {
+      "lcp_ms": 1966.861,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.068,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 53966,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5071.887,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "c2c17f620289a89c20dba5058bd5516a736ecb84c3daa64838d05e5ca40bdcbd",
+      "run_id": "before-mobile-home-1",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:38:24.387306+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-home-1.json.gz",
+      "first_paint_ms": 1966.861,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1995.64,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.091,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5096.902,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "12a89c15cb9cc2e0bb6238082448f095530765f879b08907e64afc428d040edc",
+      "run_id": "candidate-mobile-home-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:38:42.205950+00:00",
+      "source_snapshot": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "source_snapshot_after": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-1.json.gz",
+      "first_paint_ms": 1995.64,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2067.697,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.169,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 53966,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5176.649,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "4a81e05840fd4f6163764fb85d727171ee24788b884146847af875861b5de808",
+      "run_id": "before-mobile-home-2",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:39:00.096996+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-home-2.json.gz",
+      "first_paint_ms": 2067.697,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2011.802,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.111,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5117.743,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "37d02208b147322259fb9eec04afe219c76e601e9d6883bf184475347419bd7f",
+      "run_id": "candidate-mobile-home-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:39:18.126827+00:00",
+      "source_snapshot": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "source_snapshot_after": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-2.json.gz",
+      "first_paint_ms": 2011.802,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2047.24,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.148,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 53966,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5154.566,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "43cc4371d68e9d79ae54dc42cb664d68932253c7cbe9132b3bd38c118f10135d",
+      "run_id": "before-mobile-home-3",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:39:36.037812+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-home-3.json.gz",
+      "first_paint_ms": 2047.24,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1997.741,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.1,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5104.651,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "be5e4983750cb79cfea14cd1b9f38e1f44c04d6e0c4f5b0deb21891e6101eb46",
+      "run_id": "candidate-mobile-home-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:39:53.923641+00:00",
+      "source_snapshot": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "source_snapshot_after": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-3.json.gz",
+      "first_paint_ms": 1997.741,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2009.586,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.11,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 53966,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5115.308,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "a0200d037b1519fe3d6b8e85d233f1ef4cdf20b10d8baac7d01d0222a2116985",
+      "run_id": "before-mobile-home-4",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:40:11.739525+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-home-4.json.gz",
+      "first_paint_ms": 2009.586,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1997.948,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.1,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5106.317,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "67963eaf69e97934b05a43ff2eb4fa79519121942d06e274ab2f930a23e472da",
+      "run_id": "candidate-mobile-home-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:40:29.491060+00:00",
+      "source_snapshot": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "source_snapshot_after": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-4.json.gz",
+      "first_paint_ms": 1997.948,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2014.444,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.098,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 53966,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5106.636,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "9e9b35be7d12aa87769a32202d61dc16b6b0d93472dfd250dcd15de6a06c57e1",
+      "run_id": "before-mobile-home-5",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:40:47.348561+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-home-5.json.gz",
+      "first_paint_ms": 2014.444,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1985.388,
+      "cls": 0.01025096,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.086,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5091.469,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "ab03156e500c1223f4089b474c2e203df2dae78a766d3046a4e74661f2e444ab",
+      "run_id": "candidate-mobile-home-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:41:05.135308+00:00",
+      "source_snapshot": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "source_snapshot_after": "9842bf5e7b00df1f2b5354987bc327055ae5386117e157607331ae9ca725b4fa",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-5.json.gz",
+      "first_paint_ms": 1985.388,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2028.474,
+      "cls": 1.02419778,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.652,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 60588,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 2018.137,
+          "duration_ms": 87.39,
+          "score": 1.02419778,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4659.259,
+          "duration_ms": 0.0,
+          "score": 0.00975648,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "LI",
+        "P class='plan-description'",
+        "P class='plan-price'",
+        "UL"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "80e6008ee60f236d455c4fbfd59e273693282cc99e9d331c910e7f581e2b2229",
+      "run_id": "before-mobile-pricing-1",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:42:08.035094+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-pricing-1.json.gz",
+      "first_paint_ms": 2028.474,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.02419778,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1958.174,
+      "cls": 1.05844004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.581,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1949.198,
+          "duration_ms": 274.83,
+          "score": 1.05844004,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4587.716,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "DIV class='plan-grid'",
+        "LI",
+        "P",
+        "P id='retired-plan' class='direct-note'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "279eaa8f02290951778fe0d2411f5ec1ca8adf053f2f37c58e1752180c12e746",
+      "run_id": "candidate-mobile-pricing-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:42:25.401250+00:00",
+      "source_snapshot": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "source_snapshot_after": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-1.json.gz",
+      "first_paint_ms": 1958.174,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2019.814,
+      "cls": 1.02419778,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.648,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 60588,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 2006.34,
+          "duration_ms": 116.912,
+          "score": 1.02419778,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4655.126,
+          "duration_ms": 0.0,
+          "score": 0.00975648,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "LI",
+        "P class='plan-description'",
+        "P class='plan-price'",
+        "UL"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "aad37c43e8ea9b17c8bc9dfd8492c210f16c41b5631378beb3b8186f1544675f",
+      "run_id": "before-mobile-pricing-2",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:42:42.465158+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-pricing-2.json.gz",
+      "first_paint_ms": 2019.814,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.02419778,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1972.356,
+      "cls": 1.05844004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.6,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1964.302,
+          "duration_ms": 275.217,
+          "score": 1.05844004,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4607.161,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "DIV class='plan-grid'",
+        "LI",
+        "P",
+        "P id='retired-plan' class='direct-note'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "669b85645fc9efe0df26685f60940a92a21ef3b4362bd0a2d6526b2a629ce4ca",
+      "run_id": "candidate-mobile-pricing-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:42:59.744825+00:00",
+      "source_snapshot": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "source_snapshot_after": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-2.json.gz",
+      "first_paint_ms": 1972.356,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1945.683,
+      "cls": 1.02419778,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.6,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 60588,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1937.556,
+          "duration_ms": 288.025,
+          "score": 1.02419778,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4606.601,
+          "duration_ms": 0.0,
+          "score": 0.00975648,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "LI",
+        "P class='plan-description'",
+        "P class='plan-price'",
+        "UL"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "b70fec43bd42a768da547c50bb163b61e9ff1756ab95cbc7dd0ad84fd5ffa5c3",
+      "run_id": "before-mobile-pricing-3",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:43:16.753971+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-pricing-3.json.gz",
+      "first_paint_ms": 1945.683,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.02419778,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 2003.17,
+      "cls": 1.05844004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.174,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1994.643,
+          "duration_ms": 265.718,
+          "score": 1.05844004,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4637.502,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "DIV class='plan-grid'",
+        "LI",
+        "P",
+        "P id='retired-plan' class='direct-note'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 36,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "bffd1696c5216d06af2c962d7eb545ff6d306800ce18d3fc376a2c3036e48e86",
+      "run_id": "candidate-mobile-pricing-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:43:33.645962+00:00",
+      "source_snapshot": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "source_snapshot_after": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-3.json.gz",
+      "first_paint_ms": 2003.17,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1951.725,
+      "cls": 1.02419778,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.571,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 60588,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1937.832,
+          "duration_ms": 283.123,
+          "score": 1.02419778,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4577.418,
+          "duration_ms": 0.0,
+          "score": 0.00975648,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "LI",
+        "P class='plan-description'",
+        "P class='plan-price'",
+        "UL"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "f69f440ccc6fb928122f1fde985defef9e4da1583c1815ad48f7e787c0a99e21",
+      "run_id": "before-mobile-pricing-4",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:43:51.051698+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-pricing-4.json.gz",
+      "first_paint_ms": 1951.725,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.02419778,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1975.457,
+      "cls": 1.05844004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.606,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1964.817,
+          "duration_ms": 270.935,
+          "score": 1.05844004,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4611.879,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "DIV class='plan-grid'",
+        "LI",
+        "P",
+        "P id='retired-plan' class='direct-note'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "011ed9294637c0aa378746c5ca1b488229ca6eac7e97b838be6c7d06b003c2ef",
+      "run_id": "candidate-mobile-pricing-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:44:07.919982+00:00",
+      "source_snapshot": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "source_snapshot_after": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-4.json.gz",
+      "first_paint_ms": 1975.457,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1965.716,
+      "cls": 1.02419778,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.615,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 60588,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1947.737,
+          "duration_ms": 277.324,
+          "score": 1.02419778,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4619.564,
+          "duration_ms": 0.0,
+          "score": 0.00975648,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "LI",
+        "P class='plan-description'",
+        "P class='plan-price'",
+        "UL"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "0f02ad7895ad2fca1e40711dbf7e6bff7581bd9eebf48732a036d6a0f6aa64c3",
+      "run_id": "before-mobile-pricing-5",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:44:25.250652+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-pricing-5.json.gz",
+      "first_paint_ms": 1965.716,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.02419778,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1999.722,
+      "cls": 1.05844004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.627,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 3,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1987.516,
+          "duration_ms": 255.272,
+          "score": 1.05844004,
+          "shift_count": 2
+        },
+        {
+          "start_after_navigation_ms": 4634.476,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "DIV class='plan-grid'",
+        "LI",
+        "P",
+        "P id='retired-plan' class='direct-note'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "c66c06c7616ef444f5bb6ebb360132ed4132c86c45161e81d0f61fe13e29d0ec",
+      "run_id": "candidate-mobile-pricing-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:44:45.117453+00:00",
+      "source_snapshot": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "source_snapshot_after": "07563a64ffe7ae699cc337cfd4917af62b5c082fbc5f3dc31974d60b99633875",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-5.json.gz",
+      "first_paint_ms": 1999.722,
+      "layout_shifts_total": 3,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1815.535,
+      "cls": 0.00872004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.912,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1837.554,
+          "duration_ms": 0.0,
+          "score": 0.00872004,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "acce97dc29b8453832fe0129d6e4550f34a913a7d00a29d64914061b735a71ca",
+      "run_id": "before-mobile-guide-1",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:01.249977+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-guide-1.json.gz",
+      "first_paint_ms": 1815.535,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.00872004,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1877.348,
+      "cls": 0.35989336,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.889,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1867.187,
+          "duration_ms": 0.0,
+          "score": 0.35989336,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "7026cc2569517c6da13dfcf746ee8868b068cfc1967bfb31a2ff620f0127809b",
+      "run_id": "candidate-mobile-guide-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:13.068797+00:00",
+      "source_snapshot": "c562885e534c27eab688d71bfb18b1ba1497b4feb9c9e7c3576f6b0cf673de92",
+      "source_snapshot_after": "c562885e534c27eab688d71bfb18b1ba1497b4feb9c9e7c3576f6b0cf673de92",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-1.json.gz",
+      "first_paint_ms": 1877.348,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1882.941,
+      "cls": 0.35989336,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.913,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1873.703,
+          "duration_ms": 0.0,
+          "score": 0.35989336,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "f639d999ef3ec2b284e971ec2078dadc4ab946eb3fba9ad35f3febbe9a582cbd",
+      "run_id": "before-mobile-guide-2",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:24.765001+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-guide-2.json.gz",
+      "first_paint_ms": 1882.941,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1922.12,
+      "cls": 0.35989336,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.915,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1900.164,
+          "duration_ms": 0.0,
+          "score": 0.35989336,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "736bd41c58176b7a28fd2d0ad4723cdf8caa935525e563aab6f8e2f24fa10ecd",
+      "run_id": "candidate-mobile-guide-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:36.474732+00:00",
+      "source_snapshot": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "source_snapshot_after": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-2.json.gz",
+      "first_paint_ms": 1922.12,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1866.393,
+      "cls": 0.0,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.895,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "5af5de63524d48684c3425ed9f4830ba19ec51d5a20e255a58ef68f62dbeb8a5",
+      "run_id": "before-mobile-guide-3",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:48.169063+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-guide-3.json.gz",
+      "first_paint_ms": 1866.393,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1894.305,
+      "cls": 0.35989336,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.904,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1883.783,
+          "duration_ms": 0.0,
+          "score": 0.35989336,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "ebafa5cd303cc87855926e13f4302ceecc2104094b4e5f3cfa7cb4f42a600e1b",
+      "run_id": "candidate-mobile-guide-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:45:59.810027+00:00",
+      "source_snapshot": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "source_snapshot_after": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-3.json.gz",
+      "first_paint_ms": 1894.305,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1873.453,
+      "cls": 0.35989336,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.904,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1864.365,
+          "duration_ms": 0.0,
+          "score": 0.35989336,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "4449d0c09d0dec1870bba7ee961c25db6cfd1f6b741840adebf0f6119c8a113f",
+      "run_id": "before-mobile-guide-4",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:46:11.445369+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-guide-4.json.gz",
+      "first_paint_ms": 1873.453,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1828.815,
+      "cls": 0.00872004,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.916,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1853.236,
+          "duration_ms": 0.0,
+          "score": 0.00872004,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "42caaf0e506f9ba42e8db79f6eb32354bad15e23f7fc6ca38f1255b0098aa755",
+      "run_id": "candidate-mobile-guide-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:46:23.069305+00:00",
+      "source_snapshot": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "source_snapshot_after": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-4.json.gz",
+      "first_paint_ms": 1828.815,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.00872004,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1874.067,
+      "cls": 0.0,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.888,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_excluded_recent_input": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "7a8f3ee6782bbdec200d33831952a7ee0d66c6c6ee0d3bf3591d2567ec828ea1",
+      "run_id": "before-mobile-guide-5",
+      "cohort": "before",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:46:34.757587+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-mobile-guide-5.json.gz",
+      "first_paint_ms": 1874.067,
+      "layout_shifts_total": 1,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "pre_first_paint_layout_shifts": 0,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 1878.622,
+      "cls": 0.36979824,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.911,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 2,
+      "layout_shifts_excluded_recent_input": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1862.856,
+          "duration_ms": 41.154,
+          "score": 0.36979824,
+          "shift_count": 2
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 23,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "ce67ecd5451738df55cc889a2a154880fd5dc7ba2f4fe40ca63f10dccdb8cd55",
+      "run_id": "candidate-mobile-guide-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:46:46.423809+00:00",
+      "source_snapshot": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "source_snapshot_after": "9494da9370589af84f4b531b669dcccc3333244f06d587a315bc32987ac03195",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-5.json.gz",
+      "first_paint_ms": 1878.622,
+      "layout_shifts_total": 2,
+      "post_first_paint_cls_diagnostic": 0.00872004,
+      "pre_first_paint_layout_shifts": 1,
+      "phase": "paired"
+    },
+    {
+      "lcp_ms": 553.264,
+      "cls": 0.00165093,
+      "post_first_paint_cls_diagnostic": 0.00165093,
+      "first_paint_ms": 553.264,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.17,
+      "lcp_element": {
+        "nodeName": "IMG",
+        "type": "image",
+        "size": 377856,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1183.215,
+          "duration_ms": 0.0,
+          "score": 0.00165093,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BUTTON id='example' class='example-link'",
+        "NAV"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "effe460d2bf196f3cf2abd87656536466248ce60104dcde37c2cfc3511204494",
+      "run_id": "before-desktop-home-1",
+      "cohort": "before",
+      "device": "desktop",
+      "template": "home",
+      "phase": "paired",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:54:19.373684+00:00",
+      "source_snapshot": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "source_snapshot_after": "f226b5364a38f0181baf3eb5fc42c965e1480ad3e546e3cdd2d12970470179af",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-desktop-home-1.json.gz"
+    },
+    {
+      "lcp_ms": 507.69,
+      "cls": 0.76730241,
+      "post_first_paint_cls_diagnostic": 0.001634,
+      "first_paint_ms": 507.69,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.013,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 111036,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 2,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 497.83,
+          "duration_ms": 526.182,
+          "score": 0.76730241,
+          "shift_count": 2
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BODY class='dr'",
+        "NAV"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 27,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "8bd18921e70cb5cef8f4955fa36a56b861431c26677f0a8d26a8045eee14ae29",
+      "run_id": "before-desktop-pricing-1",
+      "cohort": "before",
+      "device": "desktop",
+      "template": "pricing",
+      "phase": "paired",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:54:27.653843+00:00",
+      "source_snapshot": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "source_snapshot_after": "399547b1fa58712feec9dfdca186346a11d9a80ddf4dc553871773b7ff74739e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-desktop-pricing-1.json.gz"
+    },
+    {
+      "lcp_ms": 483.943,
+      "cls": 0.68059896,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 483.943,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 5.567,
+      "lcp_element": {
+        "nodeName": "H1 class='article-title'",
+        "type": "text",
+        "size": 74980,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 1,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 471.097,
+          "duration_ms": 0.0,
+          "score": 0.68059896,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "BODY class='seo-content-page'"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "bd81a96f13ac1dd121cfe82de1f53c811a17c0c32e940e67c33dd13586277d76",
+      "run_id": "before-desktop-guide-1",
+      "cohort": "before",
+      "device": "desktop",
+      "template": "guide",
+      "phase": "paired",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:54:35.441439+00:00",
+      "source_snapshot": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "source_snapshot_after": "9773e73eda422aa22dc8b0fc8512f4ffb1b935a5c1eed2d808694cf6eb2bbc93",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/before-desktop-guide-1.json.gz"
+    },
+    {
+      "lcp_ms": 2000.955,
+      "cls": 0.01025096,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "first_paint_ms": 2000.955,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.106,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5109.773,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "e406a2028d20a6330e2daa94f3851b33bc8a88aae304439f925eb37b8a8ff61b",
+      "run_id": "candidate-mobile-home-final-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "phase": "final_confirmation",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:56:56.206822+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-final-1.json.gz"
+    },
+    {
+      "lcp_ms": 2006.424,
+      "cls": 0.01025096,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "first_paint_ms": 2006.424,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.103,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5109.284,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "4a8661bad361443098656d4d3c9e5632869e48e9886b2d0ab65fa49b5e5420a3",
+      "run_id": "candidate-mobile-home-final-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "phase": "final_confirmation",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:57:14.086931+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-final-2.json.gz"
+    },
+    {
+      "lcp_ms": 2005.39,
+      "cls": 0.01025096,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "first_paint_ms": 2005.39,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.113,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5118.697,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "10eee881bbc874c1f6899cb413b8ba37a9b4faef06ce66de14fa68b6399f9857",
+      "run_id": "candidate-mobile-home-final-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "phase": "final_confirmation",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:57:31.888113+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-final-3.json.gz"
+    },
+    {
+      "lcp_ms": 2005.043,
+      "cls": 0.01025096,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "first_paint_ms": 2005.043,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.106,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5113.441,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "8dbac7c4577a9c6a2dd290429c6e107ac41b74dde25365c750da143d9d2d06ca",
+      "run_id": "candidate-mobile-home-final-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "phase": "final_confirmation",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:57:49.739439+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-final-4.json.gz"
+    },
+    {
+      "lcp_ms": 2004.392,
+      "cls": 0.01025096,
+      "post_first_paint_cls_diagnostic": 0.01025096,
+      "first_paint_ms": 2004.392,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 10.108,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 61548,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 5114.519,
+          "duration_ms": 0.0,
+          "score": 0.01025096,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "1ff9bcdac8d90d9a369c16bb917c72c56180156f2ab22ccec5aaae0683a1fbf0",
+      "run_id": "candidate-mobile-home-final-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "home",
+      "phase": "final_confirmation",
+      "path": "/",
+      "started_at_utc": "2026-09-19T02:58:07.569202+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-home-final-5.json.gz"
+    },
+    {
+      "lcp_ms": 2010.275,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "first_paint_ms": 2010.275,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.707,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 4714.045,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "DIV class='plan-grid'",
+        "LI"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "cc7768c4f559a2c6a9d0bcf924978df8127a8db3b75b2cfc76fd902b23289575",
+      "run_id": "candidate-mobile-pricing-final-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "phase": "final_confirmation",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:58:26.558070+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-final-1.json.gz"
+    },
+    {
+      "lcp_ms": 2006.761,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "first_paint_ms": 2006.761,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.703,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 4710.615,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "DIV class='plan-grid'",
+        "LI"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "ae46efed0c56cac5ce4ed8f50745269431eae6fe03989781e356aaa9114491c3",
+      "run_id": "candidate-mobile-pricing-final-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "phase": "final_confirmation",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:58:43.664605+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-final-2.json.gz"
+    },
+    {
+      "lcp_ms": 2010.689,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "first_paint_ms": 2010.689,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.714,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 4721.264,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "DIV class='plan-grid'",
+        "LI"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 29,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "d3dc41870f4d522d48429c9f1e674a72b7e181d7c38f2f20df7f0d51e959e6b8",
+      "run_id": "candidate-mobile-pricing-final-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "phase": "final_confirmation",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:59:00.831243+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-final-3.json.gz"
+    },
+    {
+      "lcp_ms": 2012.034,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "first_paint_ms": 2012.034,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.714,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 4721.733,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "DIV class='plan-grid'",
+        "LI"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "a5f37fad7c1051df3bf5328065be9cddc0882da3d9ed0ab31e0f262967f1b77f",
+      "run_id": "candidate-mobile-pricing-final-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "phase": "final_confirmation",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:59:18.055003+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-final-4.json.gz"
+    },
+    {
+      "lcp_ms": 2011.519,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "first_paint_ms": 2011.519,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 9.705,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 51238,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 2,
+      "layout_shifts_excluded_recent_input": 1,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 4712.719,
+          "duration_ms": 0.0,
+          "score": 0.030559,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "DIV class='plan-grid'",
+        "LI"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 28,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "34942922220d598de2f25c86d2d91882a8cddb89d97c27a34c64074a637f364b",
+      "run_id": "candidate-mobile-pricing-final-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "pricing",
+      "phase": "final_confirmation",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T02:59:35.193649+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-pricing-final-5.json.gz"
+    },
+    {
+      "lcp_ms": 1832.46,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 1832.46,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 8.488,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "bc6f2a0c9e781b925a0fa0cccc648e0dc68a229e6d79b0b32137eee4d5c2a8c4",
+      "run_id": "candidate-mobile-guide-final-1",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "phase": "final_confirmation",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T02:59:51.198924+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-final-1.json.gz"
+    },
+    {
+      "lcp_ms": 1828.184,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 1828.184,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 8.492,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "4c63fd0f462cb1dc4a9def59cf2cfe0fd64157b2284800e08813a5e0ce9f59ae",
+      "run_id": "candidate-mobile-guide-final-2",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "phase": "final_confirmation",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T03:00:05.869055+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-final-2.json.gz"
+    },
+    {
+      "lcp_ms": 1832.544,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 1832.544,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 8.492,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "c01aa012d236e1efd0230516e977e01a1f37b6bc7392ab87672ea530f5398fd9",
+      "run_id": "candidate-mobile-guide-final-3",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "phase": "final_confirmation",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T03:00:20.551029+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-final-3.json.gz"
+    },
+    {
+      "lcp_ms": 1811.754,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 1811.754,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 8.493,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "cb5a26f61efc0d78e7fffb82c5c2c1d9539570851e7aeb4d21802b99134f690c",
+      "run_id": "candidate-mobile-guide-final-4",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "phase": "final_confirmation",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T03:00:35.338207+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-final-4.json.gz"
+    },
+    {
+      "lcp_ms": 1808.363,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 1808.363,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 8.489,
+      "lcp_element": {
+        "nodeName": "ASIDE class='editorial-status'",
+        "type": "text",
+        "size": 47265,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "4599f6c2c8595fd660c887f9c657e5b98d5a11a60cb67698f643dbbdc5ebc07d",
+      "run_id": "candidate-mobile-guide-final-5",
+      "cohort": "candidate",
+      "device": "mobile",
+      "template": "guide",
+      "phase": "final_confirmation",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T03:00:49.966009+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-mobile-guide-final-5.json.gz"
+    },
+    {
+      "lcp_ms": 550.825,
+      "cls": 0.00058429,
+      "post_first_paint_cls_diagnostic": 0.00058429,
+      "first_paint_ms": 550.825,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.166,
+      "lcp_element": {
+        "nodeName": "IMG",
+        "type": "image",
+        "size": 377856,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1173.988,
+          "duration_ms": 0.0,
+          "score": 0.00058429,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "BUTTON id='example' class='example-link'",
+        "NAV"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 17,
+      "observed_resource_hosts": [
+        "127.0.0.1"
+      ],
+      "failed_resource_finish_count": 0,
+      "raw_trace_sha256": "2d855cbd6c4730186cabe22dd44ddca63f141ef68ccc38b97dd3e24d3612518a",
+      "run_id": "candidate-desktop-home-1",
+      "cohort": "candidate",
+      "device": "desktop",
+      "template": "home",
+      "phase": "paired",
+      "path": "/",
+      "started_at_utc": "2026-09-19T03:01:18.425609+00:00",
+      "source_snapshot": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "source_snapshot_after": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-desktop-home-1.json.gz"
+    },
+    {
+      "lcp_ms": 534.39,
+      "cls": 0.0018936,
+      "post_first_paint_cls_diagnostic": 0.0018936,
+      "first_paint_ms": 534.39,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 6.042,
+      "lcp_element": {
+        "nodeName": "H1",
+        "type": "text",
+        "size": 86868,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 1,
+      "layout_shifts_total": 1,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [
+        {
+          "start_after_navigation_ms": 1042.801,
+          "duration_ms": 0.0,
+          "score": 0.0018936,
+          "shift_count": 1
+        }
+      ],
+      "shift_elements": [
+        "#text",
+        "NAV"
+      ],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 27,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "9e64771fcf8cc9f454747f3ca047ecd46bc01c78ac2721c9251cfbcf098c6ec6",
+      "run_id": "candidate-desktop-pricing-1",
+      "cohort": "candidate",
+      "device": "desktop",
+      "template": "pricing",
+      "phase": "paired",
+      "path": "/schedule.html",
+      "started_at_utc": "2026-09-19T03:01:26.685643+00:00",
+      "source_snapshot": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "source_snapshot_after": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-desktop-pricing-1.json.gz"
+    },
+    {
+      "lcp_ms": 478.963,
+      "cls": 0.0,
+      "post_first_paint_cls_diagnostic": 0.0,
+      "first_paint_ms": 478.963,
+      "navigation_id_matched": true,
+      "main_frame_navigation_count": 1,
+      "trace_observation_seconds": 5.966,
+      "lcp_element": {
+        "nodeName": "H1 class='article-title'",
+        "type": "text",
+        "size": 74980,
+        "candidateIndex": 1
+      },
+      "lcp_candidates": 1,
+      "layout_shifts_included": 0,
+      "layout_shifts_total": 0,
+      "layout_shifts_excluded_recent_input": 0,
+      "pre_first_paint_layout_shifts": 0,
+      "other_frame_layout_shifts": 0,
+      "cls_windows": [],
+      "shift_elements": [],
+      "unexpected_input_dispatches": 0,
+      "resource_request_count": 22,
+      "observed_resource_hosts": [
+        "127.0.0.1",
+        "ad.doubleclick.net",
+        "f.clarity.ms",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleads.g.doubleclick.net",
+        "scripts.clarity.ms",
+        "www.clarity.ms",
+        "www.google.com",
+        "www.googletagmanager.com"
+      ],
+      "failed_resource_finish_count": 4,
+      "raw_trace_sha256": "541ad003d0775e85a557c78a90106aff7523875588e6a2a59b3b86a360025755",
+      "run_id": "candidate-desktop-guide-1",
+      "cohort": "candidate",
+      "device": "desktop",
+      "template": "guide",
+      "phase": "paired",
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "started_at_utc": "2026-09-19T03:01:34.848906+00:00",
+      "source_snapshot": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "source_snapshot_after": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a",
+      "sources_stable_during_run": true,
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/candidate-desktop-guide-1.json.gz"
+    }
+  ],
+  "discarded_pilot": "candidate-home-pilot before formal batch; no pilot metrics included",
+  "last_updated_at_utc": "2026-09-19T03:03:23.801962+00:00",
+  "cls_method": "Maximum session window of all matching-main-frame LayoutShift entries after navigationStart, excluding had_recent_input. Pre-firstPaint BODY entries are retained in primary CLS because exact Slow4G/CPU4 PerformanceObserver corroborated them. A separate post_first_paint_cls_diagnostic is supplemental only and must not be presented as CLS or field evidence.",
+  "controlled_pricing_probes": [
+    {
+      "variant": "unchanged_control",
+      "captured_at_utc": "2026-09-19T02:50:54.733490+00:00",
+      "source_sha256": "59c6b195fff2d263c3df53dae22b96e3e3db28eee594b8c27029221f5a424db8",
+      "source_matches_final_pricing": false,
+      "lcp_ms": 1996.45,
+      "cls": 1.05844004,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "observer_cls": 1.0584400378311098,
+      "first_paint_ms": 1996.45,
+      "observer_shifts": [
+        {
+          "start_ms": 1984.9000000022352,
+          "value": 1,
+          "had_recent_input": false,
+          "nodes": [
+            "BODY"
+          ]
+        },
+        {
+          "start_ms": 2240.5,
+          "value": 0.05844003783110996,
+          "had_recent_input": false,
+          "nodes": [
+            "DIV",
+            "P",
+            "P",
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "start_ms": 4654.10000000149,
+          "value": 0.030558999180702106,
+          "had_recent_input": false,
+          "nodes": [
+            "DIV",
+            "#text",
+            "#text",
+            "LI"
+          ]
+        }
+      ],
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/probe-schedule.json.gz",
+      "raw_trace_sha256": "a46f50d0e8bbf83b6c74a5a350368d7b6e31ebae6edf7a641bd98706294cafc4"
+    },
+    {
+      "variant": "early_body_margin_reset",
+      "captured_at_utc": "2026-09-19T02:51:12.625007+00:00",
+      "source_sha256": "88a37bd81b9528b4bd6238581f28f630a38ece0eacc383238c4476076a65f6bc",
+      "source_matches_final_pricing": false,
+      "lcp_ms": 1978.508,
+      "cls": 1.0537007,
+      "post_first_paint_cls_diagnostic": 0.05844004,
+      "observer_cls": 1.053700701338219,
+      "first_paint_ms": 1978.508,
+      "observer_shifts": [
+        {
+          "start_ms": 1969.199999999255,
+          "value": 0.995260663507109,
+          "had_recent_input": false,
+          "nodes": [
+            "MAIN",
+            "ARTICLE",
+            "HEADER",
+            "UL",
+            "DIV"
+          ]
+        },
+        {
+          "start_ms": 2242.699999999255,
+          "value": 0.05844003783110996,
+          "had_recent_input": false,
+          "nodes": [
+            "DIV",
+            "P",
+            "P",
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "start_ms": 4641.199999999255,
+          "value": 0.030558999180702106,
+          "had_recent_input": false,
+          "nodes": [
+            "DIV",
+            "#text",
+            "#text",
+            "LI"
+          ]
+        }
+      ],
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/probe-perf-pricing-reset.json.gz",
+      "raw_trace_sha256": "29736980a63ed6b62aa4c4d88a494aed62794d2c94b840fb20d1cf17190bb490"
+    },
+    {
+      "variant": "gtm_after_stylesheets",
+      "captured_at_utc": "2026-09-19T02:53:09.394083+00:00",
+      "source_sha256": "52a41dda4663f8caa55548035e6a79f1bdcde8a609ed359180530c7473ea4ccf",
+      "source_matches_final_pricing": true,
+      "lcp_ms": 2012.143,
+      "cls": 0.030559,
+      "post_first_paint_cls_diagnostic": 0.030559,
+      "observer_cls": 0.030558999180702106,
+      "first_paint_ms": 2012.143,
+      "observer_shifts": [
+        {
+          "start_ms": 2143.199999999255,
+          "value": 0.05844003783110996,
+          "had_recent_input": true,
+          "nodes": [
+            "DIV",
+            "P",
+            "P",
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "start_ms": 4718.900000002235,
+          "value": 0.030558999180702106,
+          "had_recent_input": false,
+          "nodes": [
+            "DIV",
+            "#text",
+            "#text",
+            "LI"
+          ]
+        }
+      ],
+      "raw_trace": "/private/tmp/barton-seo-perf-traces/probe-perf-pricing-gtm-after-css.json.gz",
+      "raw_trace_sha256": "e28ad68e39b4cd716832259490c44742d3456926f21938437f91971b11a13538"
+    }
+  ],
+  "independent_normal_navigation_observer": {
+    "path": "/schedule.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "dpr": 3,
+    "visible": "visible",
+    "paint": [
+      {
+        "name": "first-paint",
+        "start_ms": 1988
+      },
+      {
+        "name": "first-contentful-paint",
+        "start_ms": 1988
+      }
+    ],
+    "cls": 1.0584400378311098,
+    "shifts": [
+      {
+        "start_ms": 1975.5,
+        "value": 1,
+        "had_recent_input": false,
+        "nodes": [
+          "BODY"
+        ]
+      },
+      {
+        "start_ms": 2231.699999999255,
+        "value": 0.05844003783110996,
+        "had_recent_input": false,
+        "nodes": [
+          "DIV",
+          "P",
+          "P",
+          "#text",
+          "#text"
+        ]
+      },
+      {
+        "start_ms": 4620.800000000745,
+        "value": 0.030558999180702106,
+        "had_recent_input": false,
+        "nodes": [
+          "DIV",
+          "#text",
+          "#text",
+          "LI"
+        ]
+      }
+    ],
+    "conditions": {
+      "viewport": "390x844x3,mobile,touch",
+      "network": "Slow 4G",
+      "cpu_slowdown": 4,
+      "cohort": "initial_candidate"
+    }
+  },
+  "validation": {
+    "validated_at_utc": "2026-09-19T03:03:23.801828+00:00",
+    "unique_formal_trace_count": 51,
+    "all_reparsed_metrics_match": true,
+    "all_sources_stable_during_each_run": true,
+    "all_final_candidate_source_snapshots_match_current_files": true,
+    "all_navigation_ids_matched": true,
+    "unexpected_input_dispatches": 0,
+    "other_frame_layout_shifts": 0,
+    "failed_local_resource_count": 0,
+    "failed_third_party_resource_paths": [
+      {
+        "host": "ad.doubleclick.net",
+        "path": "/ccm/s/collect",
+        "count": 34
+      },
+      {
+        "host": "www.google.com",
+        "path": "/ccm/collect",
+        "count": 68
+      },
+      {
+        "host": "www.google.com",
+        "path": "/rmkt/collect/18071301983/",
+        "count": 34
+      }
+    ],
+    "final_source_snapshots": {
+      "home": "e59775890faeceed0cd4e4e324e60a75c5750a6df2ed2369f044445450e8862e",
+      "pricing": "9e9217437baf6d3497aa571d86f45b0a9e1510e73aebabcb20418f97f03b5ffc",
+      "guide": "71e1bba1adea77638d787885724b023d053c7acac3f601bd69399fe251e3b49a"
+    },
+    "final_file_sha256": {
+      "index.html": "471f42b8c4aa6ff3f1325a07e78d6993c379b6215eaecae1a6d6415619ef2bde",
+      "schedule.html": "52a41dda4663f8caa55548035e6a79f1bdcde8a609ed359180530c7473ea4ccf",
+      "blog-buy-new-car-below-msrp.html": "24d754838e7e464d4177bb79250aa7765193214cd76ffd388c1c0747191d5e00",
+      "script.js": "caabeeac6625b55c3edecd8f97e3a47cd590d0a9b2783f0150ff6b9a15a6ddbe",
+      "buying/app.js": "4aea63a6aea2c320b966911d7093c8495f94a80a28b4a91af955327df140b937",
+      "buying/drive-right.css": "e69cbc1841e2d533374c823199c67266d528b8f0bfcd45ec79ab0fc7cbf54973"
+    },
+    "trace_observation_seconds_range": [
+      5.567,
+      10.174
+    ]
+  },
+  "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "underlying_chrome_devtools_mcp_version": "1.9.0"
+}

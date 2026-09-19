@@ -76,6 +76,19 @@ async function forwardAfterCommit(sql, lead, destination) {
   }
 }
 
+export function leadRequestHash(value) {
+  const normalized = validateLeadPayload(value);
+  delete normalized.turnstile_token;
+  return payloadHash(normalized);
+}
+
+export function matchesLeadRequest(record, hash) {
+  if (record.request_hash === hash) return true;
+  // Recheck stored business fields under the current privacy normalization.
+  // This preserves pre-release lost-response retries without changing history.
+  try { return leadRequestHash(record) === hash; } catch { return false; }
+}
+
 async function handle(req, res) {
   requireMethod(req, 'POST');
   assertSameOrigin(req);
@@ -92,7 +105,7 @@ async function handle(req, res) {
     FROM leads WHERE idempotency_key = ${key}
   `;
   if (prior) {
-    if (prior.request_hash !== hash) throw new HttpError(409, 'idempotency_conflict', 'Idempotency-Key was already used');
+    if (!matchesLeadRequest(prior, hash)) throw new HttpError(409, 'idempotency_conflict', 'Idempotency-Key was already used');
     await forwardAfterCommit(sql, prior, configuredForwardUrl());
     return sendJson(res, 200, { ok: true, lead_id: prior.id });
   }
@@ -116,7 +129,7 @@ async function handle(req, res) {
       SELECT id, request_hash, name, email, phone, message, vehicle, source, source_page, attribution, created_at
       FROM leads WHERE idempotency_key = ${key}
     `)[0];
-    if (!record || record.request_hash !== hash) {
+    if (!record || !matchesLeadRequest(record, hash)) {
       throw new HttpError(409, 'idempotency_conflict', 'Idempotency-Key was already used');
     }
     if (destination) {

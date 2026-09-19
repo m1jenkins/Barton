@@ -45,6 +45,7 @@ const requiredRedirects = [
     destination: 'https://www.driverightcarbuying.com/:path*',
   },
   { name: 'index.html', source: '/index.html', destination: '/' },
+  { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html' },
   { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
   {
     name: 'legacy dealer add-ons route',
@@ -177,6 +178,7 @@ if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.
 }
 
 cases.push(
+  { name: 'Retired AI service', source: buildUrl(base, '/ai-car-buying-agent.html', query), target: buildUrl(base, '/schedule.html', query) },
   {
     name: 'index.html canonicalization',
     source: buildUrl(base, '/index.html', query),

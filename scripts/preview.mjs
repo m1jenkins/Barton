@@ -10,12 +10,12 @@ createServer(async (req, res) => {
   if (url.pathname.startsWith('/api/')) { res.writeHead(503, {'Content-Type':'application/json'}).end(JSON.stringify({ok:false,error:'Secure checkout is available in the configured payment environment. This local preview has no payment credentials.'})); return; }
   try {
     const path = decodeURIComponent(url.pathname);
-    if (path.split('/').some(p => p.startsWith('.') || ['node_modules','db','docs','scripts'].includes(p))) throw new Error('Private file');
+    if (path.split('/').some(p => p.startsWith('.') || ['node_modules','db','docs','data','scripts','draft-artifacts','outputs'].includes(p)) || path.includes('.test.')) throw new Error('Private file');
     let file = resolve(root, '.' + path);
     if (!file.startsWith(root + sep) && file !== root) throw new Error('Invalid path');
     if ((await stat(file)).isDirectory()) file = resolve(file, 'index.html');
     const type = mime[extname(file)];
     if (!type) throw new Error('Private file');
-    res.writeHead(200, {'Content-Type':type,'Cache-Control':'no-store'}).end(await readFile(file));
+    res.writeHead(200, {'Content-Type':type,'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow'}).end(await readFile(file));
   } catch { res.writeHead(404).end('Not found'); }
 }).listen(port, '127.0.0.1', () => console.log(`Drive Right preview: http://127.0.0.1:${port}`));

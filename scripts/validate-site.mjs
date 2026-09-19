@@ -31,9 +31,8 @@ const stableSchemaIds = {
   concierge: `${primaryOrigin}/#service-concierge`,
 };
 
-const requiredStableIds = new Set(Object.values(stableSchemaIds));
+const requiredStableIds = new Set([stableSchemaIds.organization, stableSchemaIds.fullService, stableSchemaIds.concierge]);
 const allowedServiceIds = new Set([
-  stableSchemaIds.consultation,
   stableSchemaIds.fullService,
   stableSchemaIds.concierge,
 ]);
@@ -210,6 +209,7 @@ const homepage = sources.get('index.html') ?? '';
 for (const [asset, tagName, attribute] of [
   ['buying/drive-right.css', 'link', 'href'],
   ['buying/app.js', 'script', 'src'],
+  ['script.js', 'script', 'src'],
 ]) {
   const content = await readFile(path.join(repoRoot, asset));
   const version = createHash('sha256').update(content).digest('hex').slice(0, 12);
@@ -525,6 +525,9 @@ for (const document of parsedJsonLd) {
     }
 
     if (types.includes('Service')) {
+      if (id === stableSchemaIds.consultation) {
+        fail(document.file, 'Retired AI offer must not be advertised in Service schema.', document.index, html, 'Keep historical paid fulfillment separate from acquisition schema.');
+      }
       const descriptor = `${node.name ?? ''} ${node.serviceType ?? ''}`.toLowerCase();
       let expectedId;
       if (/concierge/.test(descriptor)) expectedId = stableSchemaIds.concierge;

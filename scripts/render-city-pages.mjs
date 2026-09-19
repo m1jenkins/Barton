@@ -57,15 +57,15 @@ function pageMetadata(homepage, { slug, title, description, city }) {
 // shared with the homepage; only change geography and one sentence of context.
 export function renderCity(city, homepage) {
   const name = escape(city.name);
-  const description = homepage.match(/<meta name="description" content="([^"]+)">/)[1].replace('Texas buyers', `${city.name} buyers`);
+  const description = homepage.match(/<meta name="description" content="([^"]+)">/)[1].replace('nationwide', `buyers in ${city.name}`);
   let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
   for (const [from, to] of [
-    ['Texas car buying.<br>', `${name} car buying.<br>`],
-    ['flat-fee Texas car buying service.', `flat-fee car buying service for ${name} buyers.`],
-    ['Service plans start at', `${escape(city.localSentence)} Service plans start at`],
-    ['We help Texas car buyers', `We help ${name} car buyers`],
-    ['We’re based in Austin and serve buyers across Texas.', `We’re based in Austin and help buyers in ${name} remotely.`],
-    ['Based in Austin. Here for Texas.', `Based in Austin. Here for ${name}.`],
+    ['Nationwide car buying.<br>', `${name} car buying.<br>`],
+    ['flat-fee nationwide car buying service.', `flat-fee car buying service for ${name} buyers.`],
+    ['Full Service is $295 USD one time, and you remain', `${escape(city.localSentence)} Full Service is $295 USD one time, and you remain`],
+    ['We help car buyers nationwide', `We help ${name} car buyers`],
+    ['We’re based in Austin and serve buyers nationwide through remote support.', `We’re based in Austin and help buyers in ${name} remotely.`],
+    ['Based in Austin. Here for buyers nationwide.', `Based in Austin. Here for ${name}.`],
   ]) html = replaceRequired(html, from, to);
   return html;
 }
@@ -75,7 +75,7 @@ function renderHub(data, homepage) {
   html = html.replace('data-buying-page="home"', 'data-buying-page="cities"');
   html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Consider it handled.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
   html = html.replace(/<dialog id="edit-dialog"[\s\S]*?<\/dialog>/, '');
-  return replaceRequired(html, 'Based in Austin. Here for Texas.', 'Based in Austin. Here for you.');
+  return replaceRequired(html, 'Based in Austin. Here for buyers nationwide.', 'Based in Austin. Here for you.');
 }
 
 export async function renderCityPages({ root = projectRoot, output = cityDraftRoot, check = false } = {}) {

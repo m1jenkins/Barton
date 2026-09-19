@@ -7,7 +7,7 @@
     "node": "24.x"
   },
   "scripts": {
-    "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/analytics-outbox.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js",
+    "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/analytics-outbox.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js && node --check api/_lib/checkout-offer.js && node --check scripts/dispatch-analytics.mjs",
     "test": "node --test api/_tests/*.test.mjs buying/*.test.js scripts/_tests/*.test.mjs",
     "test:buying": "node --test buying/*.test.js",
     "preview": "node scripts/preview.mjs",
@@ -17,7 +17,10 @@
     "check:metros": "node scripts/render-metro-drafts.mjs --check",
     "draft:cities": "node scripts/render-city-pages.mjs",
     "preview:cities": "node scripts/preview-cities.mjs",
-    "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check"
+    "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check",
+    "analytics:dispatch": "node scripts/dispatch-analytics.mjs",
+    "preview:worksheet": "node scripts/preview-worksheet.mjs",
+    "preview:guides": "node scripts/preview-guides.mjs"
   },
   "dependencies": {
     "postgres": "3.4.9",
@@ -25,6 +28,6 @@
   },
   "devDependencies": {
     "parse5": "^8.0.1",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   }
 }

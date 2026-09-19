@@ -155,7 +155,7 @@ test('checkout failure and cancellation reuse the saved lead and checkout reques
 test('changing brief or contact creates a distinct request; a double submit is coalesced', async () => {
   const store=memoryStore(),leads=[];let id=0;
   const flow=createCheckout({store,createId:()=>`request-${++id}`,attribution:{},request:async(url,opts)=>{if(url==='/api/leads'){leads.push(JSON.parse(opts.body));return {ok:true,lead_id:crypto.randomUUID()};}return {ok:true,url:'https://buy.stripe.com/test-example'};}});
-  const input={tier:'consultation',contact:{name:'Ada',email:'ada@example.test'},brief:draft()};
+  const input={tier:'full_service',contact:{name:'Ada',email:'ada@example.test'},brief:draft()};
   await Promise.all([flow.submit(input),flow.submit(input)]);
   assert.equal(leads.length,1);
   await flow.submit({...input,brief:applyAnswer(draft(),{correction:true,values:{budget:'$35000'}})});
@@ -169,4 +169,29 @@ test('direct purchases require contact and include a readable message without a 
   await assert.rejects(flow.submit({tier:'full_service',contact:{name:'Ada',email:'ada@example.test'},honeypot:'spam'}),/submit this form/);
   await flow.submit({tier:'full_service',contact:{name:'Ada',email:'ada@example.test'},brief:null});
   assert.match(lead.message,/No buying brief/);
+});
+test('stale offer requires another user submit with a new key and preserves the old attempt', async () => {
+  const store=memoryStore(),calls=[],events=[];let attempts=0;
+  const options={store,createId:()=>crypto.randomUUID(),attribution:{},track:(...e)=>events.push(e),request:async(url,opts)=>{
+    calls.push({url,key:opts.headers['Idempotency-Key']});
+    if(url==='/api/leads')return {ok:true,lead_id:'71ce2e4c-99b0-4d62-91ef-334605514dcf'};
+    if(++attempts===1){const e=new Error('stale_offer');e.code='stale_offer';throw e;}
+    return {ok:true,url:'https://buy.stripe.com/new295',attempt_id:'new-attempt'};
+  }};
+  const input={tier:'full_service',contact:{name:'Buyer',email:'buyer@example.test'},brief:draft()};
+  await assert.rejects(createCheckout(options).submit(input), /\$295 USD.*Restart checkout/);
+  assert.equal(attempts,1);
+  await createCheckout(options).submit(input);
+  const checkoutCalls=calls.filter(c=>c.url==='/api/checkout-start');
+  assert.notEqual(checkoutCalls[0].key,checkoutCalls[1].key);
+  assert.equal(calls.filter(c=>c.url==='/api/leads').length,1);
+  assert.equal(store.read().checkouts.length,2);
+  assert.equal(store.read().checkouts[0].stale,true);
+  assert.equal(events.filter(e=>e[0]==='begin_checkout').length,1);
+});
+test('retired consultation cannot collect a new lead or checkout',async()=>{
+  let called=false;
+  const flow=createCheckout({store:memoryStore(),request:()=>{called=true;},createId:()=>crypto.randomUUID(),attribution:{}});
+  await assert.rejects(flow.submit({tier:'consultation',contact:{name:'Buyer',email:'buyer@example.test'}}),/Full Service or Ultimate Concierge/);
+  assert.equal(called,false);
 });

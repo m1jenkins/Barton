@@ -11,6 +11,7 @@ docs/openai-ads-*.md
 
 # Private metro source, governance, local tools and rendered drafts.
 draft-artifacts
+outputs
 docs
 data
 scripts

@@ -1,6 +1,8 @@
 # Drive Right Release Readiness
 
-Status date: August 20, 2026
+Status date: September 18, 2026
+
+Current local candidate: [SEO release-candidate record](seo-execution/release-candidate.md). The historical sections below are context; current measured evidence and exact unresolved dependencies are in that record. No activation has occurred.
 
 ## Local release-candidate status
 
@@ -31,7 +33,7 @@ node scripts/check-redirects.mjs
 - Configure only the approved client events: `cta_click`, `phone_click`, `generate_lead`, and `begin_checkout`.
 - Configure the consent-approved HTTPS collector for the implemented outbox dispatcher. Standard `purchase` and `onboarding_complete` events must originate from verified server records, not success-page loads; the collector must honor the durable event ID and idempotency header.
 - Add a scheduled invocation path for unattended retries and alert when outbox rows reach the configured attempt cap; request-triggered dispatch alone cannot guarantee recovery during quiet periods.
-- Reconcile Stripe purchases, the purchase ledger, outbox deliveries, and analytics daily until the verified consultation count is within 5%.
+- Reconcile Stripe purchases, the purchase ledger, outbox deliveries, and analytics daily until the verified purchase count is within 5%.
 - Do not describe the measurement goal as complete while the dispatcher or destination credentials are absent.
 
 ## Gate 3: deployment and canonical verification
@@ -46,7 +48,7 @@ node scripts/check-redirects.mjs
 ## Gate 4: search, analytics, and AI baselines
 
 - Verify both domains as Google Search Console and Bing Webmaster Tools domain properties; connect GSC to GA4 and enable Bing AI Performance where the account exposes it.
-- Export 16 months of query/page/device/country data before consolidating redirects. Record the initial 28-day baseline by topic cluster, metro, branded/non-branded query, landing page, and verified consultation.
+- Export 16 months of query/page/device/country data before consolidating redirects. Record the initial 28-day baseline by topic cluster, metro, branded/non-branded query, landing page, and verified purchase.
 - Run the 24-prompt panel in `data/ai-prompt-panel.csv` twice, 14 days apart, with two repetitions per platform/prompt condition. Treat citations as observations, never rankings.
 - Start the 42-day matched-page retrieval experiment only after the 28-day baseline and factual/indexation/accessibility/privacy guardrails are recorded.
 
@@ -63,7 +65,7 @@ node scripts/check-redirects.mjs
 ## Gate 6: rendered quality and performance
 
 - Repeat desktop/mobile keyboard navigation, JavaScript-disabled visibility, form error/success, payment gating, internal-link, structured-data, and accessibility checks on the deployed artifact.
-- The required five-run mobile performance trace is still external to this repository. Add a Chrome DevTools MCP server to the Codex config if it is not available:
+- Current browser/field measurement evidence is tracked in [SEO-03](seo-execution/SEO-03.md). Chrome DevTools CLI is available. The original optional MCP configuration reference is:
 
 ```json
 {
@@ -82,4 +84,4 @@ Roll back the promoted application artifact if forms, payment verification, fact
 
 ## September 5, 2026 SEO preparation
 
-See [the page-specific preparation and review packet](seo-release-preparation-2026-09-05.md). The three priority articles and Austin page have revised drafts and primary-source mapping, but remain noindexed pending their exact author, evidence, and review gates. Homepage positioning is updated. No deployment or bulk release occurred; the sitemap still has nine URLs.
+See [the page-specific preparation and review packet](seo-release-preparation-2026-09-05.md). The three priority articles and Austin page have revised drafts and primary-source mapping, but remain noindexed pending their exact author, evidence, and review gates. Homepage positioning is updated. No deployment or bulk release occurred; that historical sitemap had nine URLs. The current candidate contains seven after AI retirement and Tesla claim containment.

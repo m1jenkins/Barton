@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="description" content="Private review draft of a worksheet comparing two itemized vehicle purchase quotes and their missing information.">
+  <title>Compare Vehicle Quotes — Private Review Draft | Drive Right</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to worksheet</a>
+  <header><span class="wordmark">Drive Right</span><span class="review-label">Private review draft</span></header>
+  <main id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">Written offers, side by side</p>
+      <h1 id="title">Compare two vehicle quotes.</h1>
+      <p class="lede">A lower selling price is only one part of the offer. Bring the itemized quotes together, check the conditions, and keep unanswered questions visible.</p>
+      <aside class="review-note"><strong>Review pending.</strong> This private worksheet needs author acceptance and qualified consumer-finance review before publication. It organizes entered figures; it is not a purchase recommendation.</aside>
+    </section>
+
+    <section class="instructions" aria-labelledby="how">
+      <h2 id="how">Copy the amounts from each written quote.</h2>
+      <ol>
+        <li>Use USD amounts. Leave missing figures blank; enter <strong>0</strong> only when the quote confirms no charge.</li>
+        <li>Use the taxes and charges supplied for that particular offer. This worksheet does not estimate tax or eligibility.</li>
+        <li>List each incentive separately and say whether it is already included in the selling price. Keep trade-in, down payment, financing interest, and loan payments out of these purchase-cost fields.</li>
+      </ol>
+      <p class="privacy">No name, VIN, contact information, or documents are needed. Entries stay in this tab and are not saved or submitted. Reloading clears them; use the download or print controls to keep your own copy.</p>
+    </section>
+
+    <section class="examples" aria-labelledby="examples-title">
+      <h2 id="examples-title">Try an example</h2>
+      <p>Both examples use invented vehicles and amounts, including taxes. They are not seller quotes, tax estimates, or customer stories.</p>
+      <div class="actions"><button type="button" data-example="0">Load package comparison</button><button type="button" data-example="1">Load uncertain rebate</button><button type="button" id="clear">Clear worksheet</button></div>
+      <p id="example-note" role="status"></p>
+    </section>
+
+    <noscript><div class="review-note"><strong>Calculation needs JavaScript.</strong> The explanation and fields remain available for printing. Add the entered purchase costs and count each confirmed incentive once; leave unknown totals unresolved.</div></noscript>
+
+    <form id="worksheet" novalidate>
+      <div class="quotes">
+        <section class="quote" aria-labelledby="quote-a-title" data-quote="0">
+          <h2 id="quote-a-title">Quote A</h2>
+          <fieldset class="costs"><legend>Written purchase costs · USD</legend>
+            <label for="a-sellingPrice">Vehicle selling price<input id="a-sellingPrice" name="a-sellingPrice" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-dealerFees">Dealer fees<input id="a-dealerFees" name="a-dealerFees" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-addOns">Selected products / add-ons<input id="a-addOns" name="a-addOns" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-taxes">Quoted taxes<input id="a-taxes" name="a-taxes" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-registration">Title / registration charges<input id="a-registration" name="a-registration" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-delivery">Delivery charge<input id="a-delivery" name="a-delivery" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="a-other">Other quoted purchase costs<input id="a-other" name="a-other" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+          </fieldset>
+          <h3>Incentives</h3><p>One row per rebate or conditional discount. Ordinary discounts already reflected in the selling price need no second subtraction.</p>
+          <div class="incentives" id="a-incentives"></div><button type="button" class="add-incentive" data-quote="0">Add an incentive to Quote A</button>
+          <label class="check"><input id="a-confirmed" type="checkbox">I listed every incentive and checked which can be combined, or this quote has none.</label>
+          <div class="quote-result" id="a-result" aria-labelledby="quote-a-title"></div>
+        </section>
+        <section class="quote" aria-labelledby="quote-b-title" data-quote="1">
+          <h2 id="quote-b-title">Quote B</h2>
+          <fieldset class="costs"><legend>Written purchase costs · USD</legend>
+            <label for="b-sellingPrice">Vehicle selling price<input id="b-sellingPrice" name="b-sellingPrice" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-dealerFees">Dealer fees<input id="b-dealerFees" name="b-dealerFees" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-addOns">Selected products / add-ons<input id="b-addOns" name="b-addOns" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-taxes">Quoted taxes<input id="b-taxes" name="b-taxes" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-registration">Title / registration charges<input id="b-registration" name="b-registration" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-delivery">Delivery charge<input id="b-delivery" name="b-delivery" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+            <label for="b-other">Other quoted purchase costs<input id="b-other" name="b-other" type="text" inputmode="decimal" autocomplete="off" aria-describedby="amount-help"></label>
+          </fieldset>
+          <h3>Incentives</h3><p>One row per rebate or conditional discount. Ordinary discounts already reflected in the selling price need no second subtraction.</p>
+          <div class="incentives" id="b-incentives"></div><button type="button" class="add-incentive" data-quote="1">Add an incentive to Quote B</button>
+          <label class="check"><input id="b-confirmed" type="checkbox">I listed every incentive and checked which can be combined, or this quote has none.</label>
+          <div class="quote-result" id="b-result" aria-labelledby="quote-b-title"></div>
+        </section>
+      </div>
+      <p id="amount-help" class="help">Enter a non-negative amount such as 33500 or 33,500.25. Blank means unknown. Include each charge once.</p>
+      <section class="comparison" aria-labelledby="comparison-title">
+        <h2 id="comparison-title">Your comparison</h2>
+        <label class="check"><input id="comparable" type="checkbox">I checked that vehicle specification, equipment, quote dates, and terms are comparable, and these amounts exclude trade-in, down payment, and financing costs.</label>
+        <p id="comparison-result" role="status" aria-live="polite"></p>
+        <p class="help">Incentives with unconfirmed eligibility are shown only as scenarios. If an unconfirmed incentive is already in the selling price, the first scenario adds it back. Both scenarios hold other entered charges fixed. Request a revised itemized quote when terms change, and confirm that incentives can be combined and remain valid through purchase.</p>
+        <div class="actions"><button type="button" id="download" class="primary">Download comparison CSV</button><button type="button" id="print">Print or save as PDF</button></div>
+        <p id="export-note" role="status"></p>
+      </section>
+    </form>
+    <section class="next-step"><h2>Ask for the missing details.</h2><p>Send the seller the unresolved line items, request written answers, and check the final documents against the quote. A complete worksheet shows arithmetic from your inputs; it does not verify the quote, availability, contract, vehicle condition, or financing.</p></section>
+  </main>
+  <footer>Drive Right · Draft prepared September 18, 2026 · Author acceptance and qualified review pending.</footer>
+</body>
+</html>
