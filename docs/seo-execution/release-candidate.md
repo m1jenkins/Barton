@@ -1,11 +1,12 @@
 # Nationwide offer and SEO release candidate
 
-Prepared September 18, 2026 (America/Los_Angeles). **Ready for review and connected testing; production activation is not complete.**
+Prepared September 18, 2026 (America/Los_Angeles); connected follow-up September 19 UTC. **Four Stripe test payments and isolated PostgreSQL validation pass; remaining application/destination boundaries and accountable decisions are unresolved. Not ready for the separate activation prompt.**
 
 - Starting production/repository revision: `3bf03f6288a16b578e49cb1375254c7285a70855`.
 - Tested implementation commit: `e7b0a153ecc69f65705a6835f9d1ca6013ae668a`.
+- Latest tested repository revision: `acf9116bdcc48372340b94688f3476b9dc8a35b6`. Application files are unchanged from the implementation commit; two local commits add a database runner and sanitized Stripe test evidence. All 160 tests, eight PostgreSQL scenario groups and relevant Node 24 checks passed; [connected evidence](SEO-09-connected-validation.md).
 - Local branch: `codex/seo-release-candidate`.
-- This packet is a documentation-only follow-up to that implementation commit; deployment files are unchanged. No branch was pushed, merged or deployed.
+- This packet and the connected-validation follow-up are documentation-only updates over the latest tested revision; deployment files are unchanged. No branch was pushed, merged or deployed.
 
 ## Included implementation
 
@@ -53,7 +54,9 @@ Node `v24.20.0`, clean lockfile install. All applicable workflow commands passed
 | `git diff --check` | Passed |
 | Preview, mobile/desktop, keyboard, no-JS, worksheet print/export | Passed within the documented scope; [browser evidence](browser-evidence.md), [worksheet evidence](SEO-06.md) |
 
-Payment tests execute handler/transaction branches against controlled SQL fixtures: retired new sale, current $295/$895, historical $195/$495, stale/missing offer key, old request hashes, conflict/race, unsigned/wrong currency/amount/reference, delayed and replayed webhooks, receipt refresh and collector retry/fencing. Browser checkout responses were synthetic. **Real PostgreSQL migration, Stripe sandbox payment, collector ingestion and live reconciliation remain unverified.**
+The initial payment/browser evidence used controlled SQL/fetch fixtures. The continuation now verifies **real PostgreSQL migrations/concurrency and actual Stripe test-mode payments at $295/$895/$195/$495**, with sanitized paid snapshots reconciled through locally signed replay into the isolated ledger and intake. Real Stripe-origin webhook delivery, application SDK session retrieval, email delivery, external collector ingestion and production reconciliation remain unverified. See the [precise gate matrix](SEO-09-connected-validation.md#connected-gate-disposition).
+
+Latest follow-up at `acf9116bdcc48372340b94688f3476b9dc8a35b6`, Node `v24.20.0`: **160/160 regression tests and eight PostgreSQL groups passed**, plus runner syntax and site/API/metro/city/buying/redirect/diff checks. Dependencies are unchanged from the prior clean install. Stripe-hosted current/historical payments and receipts were checked; performance and production were not retested. A test $10 discount produces $285 and is incompatible with exact-total validation. Austin 78701 tax calculation returns zero with `not_collecting`; configured head-office ZIP is 78704, requiring owner confirmation. Deactivating the test AI link blocks new visits and its pre-opened unpaid session while preserving the paid record/receipt. Test access is now available through MCP; scoped application credentials, webhook endpoint/secret, collector and accountable decisions are still missing. Local browser receipt access was denied by automatic approval review; an exact-origin permission request is pending. No application defect was established or application code changed.
 
 [performance-evidence.md](performance-evidence.md) and its sanitized JSON contain five mobile runs per template, paired starting-revision data, controlled loading-order probes, final source hashes and desktop spot checks. Final mobile median LCP/CLS: homepage approximately **2.005s / 0.01025**, pricing **2.011s / 0.03056**, MSRP guide **1.828s / 0**. Pricing before the fix was **1.05844 CLS**. Do not infer field performance, lifetime CLS, INP, SEO gains or precise production latency from these local traces. GSC reports insufficient field data on both mobile and desktop.
 
@@ -61,10 +64,10 @@ Payment tests execute handler/transaction branches against controlled SQL fixtur
 
 | Gate | Verified preparation | Still required before the relevant activation |
 | --- | --- | --- |
-| Commercial decision | Owner authorized $295, AI retirement, $895 default and existing nationwide availability | Accountable review of exact bounded scope/terms copy and existing unresolved guarantee/refund/identity claims; no new approval inferred |
-| Stripe parity | Read-only correct live account/link/tax settings; immutable amount checks and concrete cutover packet | Correct sandbox and isolated preview DB; new $295 link; reviewed lawful total/tax/discount treatment; actual connected test results |
+| Commercial decision | Owner authorized $295, AI retirement, $895 default and existing nationwide availability; Austin 78701 reconfirmed and simple terms drafted | Named accountable review of exact scope/refund/liability copy and historical $100 credit; draft is not sign-off |
+| Stripe parity | Confirmed test MCP context; actual $295/$895/$195/$495 payments; local PostgreSQL migration/replay; tax/discount/retirement diagnostics | Scoped application test key + signing secret/reachable webhook, application receipt checks, tax/address/credit decisions and remaining external gate results |
 | Deployment/environment | Local branch/config/migration and observed Barton deployment | Confirm target/environment/webhook identity, protected preview, backup and exact atomic promotion; separate activation authority |
-| Measurement | GSC/GTM access and dated baseline; local event/outbox tests | Drive Right GA4 property/stream; approved collector/consent mapping and credentials; authorized worker scheduling; real reconciliation |
+| Measurement | GSC/GTM baseline; real PostgreSQL outbox retry/fencing and test-session snapshot reconciliation using stub transport | Drive Right GA4 property/stream; approved collector/consent credentials; external acknowledgement/reconciliation; scheduling at separately authorized activation |
 | Canonical host | Live apex root and path return 307; repository rules already permanent | Inspect actual Vercel domain or upstream Cloudflare setting; authorized 308 correction and live matrix |
 | New guides/worksheet | Exact private artifacts, primary sources, tests and review packets | Real author acceptance and qualified subject review; release individually later |
 | Proof/GBP/outreach | Two hypothetical examples, 30 prospects, ten pitches, neutral review drafts; actual account audit | Actual permissioned customer evidence, correct profile/in-person eligibility evidence, explicit sending instructions |
@@ -90,4 +93,4 @@ For rollback, pause new checkout on a deployment that implements the guard; pres
 - Recheck deployed asset hashes, console/network failures, mobile/keyboard/no-JS behavior and loading order; retain lab/field distinctions.
 - Record actual live evidence and activation date before starting SEO-10's first comparable reporting cycle. No automatic indexing submission, outreach or automation is implied.
 
-**Next task:** SEO-09 connected validation using the missing sandbox/database and measurement identity, then review/activate only the resulting verified scope. SEO-10 remains `not_started` until actual activation. Full dependency tracker: [status.md](status.md).
+**Next task:** supply the exact access and decision inputs in [SEO-09-connected-validation.md](SEO-09-connected-validation.md), execute the seven connected gates, then review/activate only the resulting verified revision and scope. **This candidate is not ready for the separate activation prompt.** SEO-10 remains `not_started` until actual activation. Full dependency tracker: [status.md](status.md).

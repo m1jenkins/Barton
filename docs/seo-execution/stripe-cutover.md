@@ -2,9 +2,11 @@
 
 Prepared September 18, 2026, America/Los_Angeles (account reads September 19 UTC). This is a concrete activation dependency, not authority to change accounts or deploy. Starting revision: `3bf03f6288a16b578e49cb1375254c7285a70855`. Candidate reference and final checks: [release-candidate.md](release-candidate.md).
 
+Follow-up on tested revision `acf9116bdcc48372340b94688f3476b9dc8a35b6`: [connected evidence](SEO-09-connected-validation.md) records four actual test payments, real PostgreSQL migration/replay, tax/discount/retirement diagnostics, scoped missing inputs and proposed terms. The user supplied Stripe MCP test mode; all mutations were test-only. No live mutation/payment occurred. Remaining application/destination boundaries and accountable decisions prevent activation.
+
 ## Observed account and links
 
-Read-only Stripe account discovery returned **Drive Right Car Buying**, `acct_1THdU32RwNuweXRL`, **live mode**. No test account/sandbox was surfaced. Account listing alone does not prove target-environment credentials or webhook configuration. Payment Link, line-item, and Tax Settings reads were successful; no Stripe writes or payments were made.
+Initial read-only discovery returned **Drive Right Car Buying**, `acct_1THdU32RwNuweXRL`, **live mode**. After the user connected test access, discovery returned the same business context with **livemode=false**. Initial live reads below remain historical configuration evidence; subsequent writes/payments were exclusively in confirmed test mode. MCP access does not provide the application's API credentials or prove webhook delivery.
 
 | Existing live offer | Payment Link / price | Observed configuration | Required transition |
 | --- | --- | --- | --- |
@@ -14,7 +16,13 @@ Read-only Stripe account discovery returned **Drive Right Car Buying**, `acct_1T
 
 Other old links `plink_1TIFCQ2RwNuweXRLcY0BQ39p` and `plink_1TJ3eP2RwNuweXRLCzmRiXrZ` are inactive. The former's inactive message still promotes AI; include that copy in the eventual retirement change. Do not reactivate either.
 
+The refreshed expanded-line-item read shows `plink_1TIFCQ2RwNuweXRLcY0BQ39p` has a $295 price, `price_1TIFA12RwNuweXRL696B0Hkl`, on the old AI product and consultant receipt route. It is not the required new Full Service link. Do not select it by matching the amount alone.
+
 All three current prices report `tax_behavior: unspecified`. Account Tax Settings report active, provider `stripe`, `tax_behavior: inferred_by_currency`, tax code `txcd_20060048`. These facts do **not** establish tax liability, exemption, or a lawful new configuration. Do not disable lawful tax or weaken amount validation to force a passing checkout.
+
+Fresh `GetTaxRegistrations(status=all, limit=100)` returned an empty list with `has_more=false`. An active Tax Settings object is not an active registration. Stripe documents that missing registrations produce zero calculated tax; this is not evidence of exemption. [Stripe tax guidance](https://docs.stripe.com/tax/payment-links). The user confirmed Austin, TX 78701 and requested a simple solution. Proposed preparation is quantity 1, no discounts, fixed final $295/$895 totals using approved tax treatment; no custom tax engine. Classification and historical $100 upgrade-credit handling still require a recorded accountable decision.
+
+Test mode also has no registrations. Actual Austin 78701 calculation `taxcalc_1UHId22RwNuweXRLKCXffn9K` returns zero for both inclusive service lines with `taxability_reason=not_collecting`. Configured head-office ZIP is 78704; confirm the user's correct address before any change. The $10 test discount probe returns 28500 instead of 29500; it is not part of the candidate links. No registration, exemption override or shared Tax Settings change was made.
 
 The candidate requires final paid totals of **29500 USD cents** and **89500 USD cents**. Discounts, variable quantities, or extra service taxes that change those totals intentionally fail the current exact-total check. Activation therefore needs an accountable tax/operations decision and sandbox evidence: either a lawful fixed, inclusive total with appropriate disclosures, or a separately reviewed implementation that models additional tax/discount components. The latter would be new code and a new candidate. Today's links are not proven compatible.
 
@@ -22,12 +30,12 @@ The candidate requires final paid totals of **29500 USD cents** and **89500 USD 
 
 | Item | Preview/test | Production/live |
 | --- | --- | --- |
-| Business account | Drive Right sandbox/test-mode identity unconfirmed | Verified account above; reconfirm at activation |
-| New Full Service price/link | Missing; create under authorized test scope | Missing; create only after test validation and activation authority |
-| Concierge link | Test equivalent missing | Existing link requires parity review |
-| Database | Isolated preview PostgreSQL access missing | Confirm target, backup, migration state and restricted credentials |
-| Stripe credentials | Matching test API key and endpoint signing secret missing | Confirm matching live key/signing secret; never copy into Git |
-| Webhook | Configured preview endpoint required | `https://www.driverightcarbuying.com/api/stripe-webhook`; actual subscription/configuration still to verify |
+| Business account | Confirmed `acct_1THdU32RwNuweXRL`, `livemode=false` | Verified account above; reconfirm at activation |
+| New Full Service price/link | `price_1UHIS02RwNuweXRLmjLL9lM1` / `plink_1UHIS02RwNuweXRLQrlEwBy3`; actual 29500 paid base-total test | Missing; create only after test validation and activation authority |
+| Concierge link | `price_1UHISD2RwNuweXRL8WaTp3GQ` / `plink_1UHISD2RwNuweXRLgdPmzzCa`; actual 89500 paid base-total test | Existing link requires parity review |
+| Database | Disposable loopback PostgreSQL 17.6 provisioned and validated; recreate for final boundary tests | Confirm target, backup, migration state and restricted credentials |
+| Stripe credentials | MCP test access available; application test API key and endpoint signing secret still missing | Confirm matching live key/signing secret; never copy into Git |
+| Webhook | Configured preview endpoint and matching signing secret required | Enabled `we_1U6VpH2RwNuweXRLx7jBbwfr`: `https://www.driverightcarbuying.com/api/stripe-webhook`, API `2026-06-24.dahlia`, `checkout.session.completed` + `checkout.session.async_payment_succeeded`; signing-secret parity and delivery remain unverified |
 
 Success URLs must contain the **literal** replacement token `{CHECKOUT_SESSION_ID}`:
 
@@ -36,6 +44,8 @@ Success URLs must contain the **literal** replacement token `{CHECKOUT_SESSION_I
 - Historical AI receipt: retain `/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}` and legacy fulfillment. This is not a new-sale link.
 
 Current live success redirects already have the correct corresponding paths/token. For sandbox validation, use the explicitly allowed preview origin and test webhook, never mix modes.
+
+Test current links initially used matching `http://localhost:8765` receipt paths/token. Automatic approval review blocked browser access to that origin; permission is pending. The $295 payment itself succeeded. Concierge was separately completed using Stripe-hosted confirmation, which its test link now retains. These diagnostic links have automatic tax disabled for base-total validation and are not approved production templates. Actual Stripe-hosted $295/$895/$195 receipts were viewed; application receipts and email delivery remain incomplete.
 
 Environment values to map privately: `APP_ORIGIN`, explicit `ALLOWED_ORIGINS`, `DATABASE_URL`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL`, `STRIPE_PAYMENT_LINK_CONCIERGE_URL`, and `CHECKOUT_PAUSED`. The retired consultation URL is no longer consumed for new sales. Confirm optional lead forwarding, Turnstile and analytics configuration separately; enabling Turnstile without its matching client widget blocks leads.
 
@@ -50,6 +60,8 @@ Local fixtures exercise application branches but are not PostgreSQL or Stripe in
 5. Unsigned, wrong-amount, wrong-currency, unpaid and mismatched-reference requests do not create a purchase. Receipt refresh/direct fake receipt does not emit purchase or unlock intake. Valid historical receipt still permits its original intake.
 6. Collector failure/retry, durable acknowledgement, destination mapping and `event_id` deduplication; reconcile Stripe paid sessions → purchases → outbox → acknowledged destination. Test onboarding once with stable identity.
 7. Document the actual behavior of deactivated acquisition links and previously created unpaid sessions. Do not cancel or rewrite historical orders as a shortcut.
+
+**Observed gate 7 result:** deactivating the test AI link blocked both new visitors and payment from a session opened before deactivation. That open session stayed unpaid. Temporarily re-enabling only this test fixture allowed its $195 historical payment; subsequent deactivation preserved the paid session/receipt. Thus the cutover must not promise old unpaid sessions remain payable. Current/historical test payments and PostgreSQL snapshot reconciliation pass, but real Stripe-origin delivery and external collector acknowledgements remain pending; see the [current gate matrix](SEO-09-connected-validation.md#connected-gate-disposition).
 
 ## Atomic, paused activation order
 
@@ -67,4 +79,4 @@ This order supersedes older staged API-then-form instructions. It may be execute
 
 Set `CHECKOUT_PAUSED=true` on a deployment that implements the guard; verify it returns 503 for new checkout while historical fulfillment remains available. Keep compatible ledger/webhook/receipt code and the additive column. Do not blindly restore the old three-offer API/UI or point a $295 attempt at a $495 link. A source rollback needs a reviewed two-offer-compatible patch or continued checkout pause. Restore link/environment/deployment combinations as one verified unit, preserve all paid history, then replay/reconcile failed events after the corrected release. Any refund or customer communication requires its own authorized scope.
 
-**Next action:** connect the correct sandbox and isolated preview database, identify the accountable tax/operations decision, and execute the connected test gate. Production is unchanged.
+**Next action:** supply application test API/signing credentials and an authorized reachable webhook, local receipt browser permission, approved collector/consent/destination and monitored test inbox; resolve tax/address/scope/historical-credit decisions. Finish the remaining external boundaries at the exact tested revision. [Missing-input table](SEO-09-connected-validation.md#simple-terms-proposal-and-exact-missing-inputs). Production is unchanged. The candidate is not ready for the separate activation prompt.
