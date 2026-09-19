@@ -15,8 +15,7 @@ function objectId(value) {
   return value && typeof value.id === 'string' ? value.id : null;
 }
 
-async function recordEvent(event) {
-  const sql = database();
+export async function recordEvent(event, sql = database()) {
   const session = event.data?.object;
   const sessionId = session?.object === 'checkout.session' ? session.id : null;
   const stripeCreatedAt = new Date(event.created * 1000).toISOString();

@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { SERVICE_TIERS } from './config.js';
+import { SERVICE_TIERS, NEW_CHECKOUT_TIERS } from './config.js';
 import { HttpError, header } from './http.js';
 
 const IDEMPOTENCY_PATTERN = /^[A-Za-z0-9._:-]{8,128}$/;
@@ -37,6 +37,11 @@ function validateAttributionTouch(value, field) {
   if (touch.landing_path && (!touch.landing_path.startsWith('/') || touch.landing_path.startsWith('//'))) {
     throw new HttpError(422, 'invalid_payload', `${field}.landing_path must be a same-site path`);
   }
+  touch.landing_path = touch.landing_path.split(/[?#]/)[0];
+  try {
+    const referrer = new URL(touch.referrer);
+    touch.referrer = ['https:', 'http:'].includes(referrer.protocol) ? referrer.origin : '';
+  } catch { touch.referrer = ''; }
   return touch;
 }
 
@@ -93,11 +98,13 @@ export function validateLeadPayload(body) {
   if (!result.source_page.startsWith('/') || result.source_page.startsWith('//')) {
     throw new HttpError(422, 'invalid_payload', 'source_page must be a same-site path');
   }
+  result.source_page = result.source_page.split(/[?#]/)[0];
   return result;
 }
 
 export function validateCheckoutPayload(body) {
   const tier = validateTier(body.tier ?? body.tier_id);
+  if (!NEW_CHECKOUT_TIERS.includes(tier)) throw new HttpError(410, 'tier_retired', 'Choose a current plan at /schedule.html');
   const sourcePage = cleanString(body.source_page ?? body.source_path, 'source_page', { max: 300 }) || '/schedule.html';
   if (!sourcePage.startsWith('/') || sourcePage.startsWith('//')) {
     throw new HttpError(422, 'invalid_payload', 'source_page must be a same-site path');
@@ -106,7 +113,7 @@ export function validateCheckoutPayload(body) {
   if (leadId && !UUID_PATTERN.test(leadId)) throw new HttpError(422, 'invalid_payload', 'lead_id is invalid');
   return {
     tier,
-    source_page: sourcePage,
+    source_page: sourcePage.split(/[?#]/)[0],
     lead_id: leadId?.toLowerCase() || null,
     attribution: validateAttribution(body.attribution)
   };

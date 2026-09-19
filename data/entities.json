@@ -9,9 +9,10 @@
     "url": "https://www.driverightcarbuying.com/",
     "telephone": "+15129104938",
     "email": "hello@driverightcarbuying.com",
-    "areaServed": "Texas",
+    "areaServed": "United States",
     "sameAs": [],
-    "sameAsStatus": "pending_owner_confirmation"
+    "sameAsStatus": "pending_owner_confirmation",
+    "areaServedEvidence": "data/services.json#availabilityConfirmation"
   },
   "businessLocations": [],
   "serviceAreas": [

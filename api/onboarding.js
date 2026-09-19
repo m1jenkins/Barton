@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
-import { pageContext } from './_lib/analytics.js';
+import { analyticsProperties, pageContext } from './_lib/analytics.js';
 import { database } from './_lib/db.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { idempotencyKey, payloadHash, validateOnboardingPayload } from './_lib/validation.js';
@@ -66,7 +66,7 @@ async function handle(req, res) {
         VALUES (
           'onboarding_complete',
           ${onboarding.session_id},
-          ${tx.json({
+          ${tx.json(analyticsProperties({
             event_id: `onboarding:${onboarding.session_id}`,
             onboarding_id: inserted[0].id,
             purchase_id: purchase.id,
@@ -74,7 +74,7 @@ async function handle(req, res) {
             ...pageContext(purchase.source_page),
             service_tier: purchase.tier_id,
             attribution: purchase.attribution
-          })}
+          }))}
         )
         ON CONFLICT (event_name, dedupe_key) DO NOTHING
       `;

@@ -12,7 +12,7 @@ export const SERVICE_TIERS = Object.freeze({
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONSULTATION_URL'
   }),
   full_service: Object.freeze({
-    amount: 49500,
+    amount: 29500,
     currency: 'usd',
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_FULL_SERVICE_URL'
   }),
@@ -22,6 +22,10 @@ export const SERVICE_TIERS = Object.freeze({
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONCIERGE_URL'
   })
 });
+
+// Historical tiers remain valid for receipts, webhooks and paid onboarding.
+// Only these tiers can create a new checkout attempt.
+export const NEW_CHECKOUT_TIERS = Object.freeze(['full_service', 'concierge']);
 
 export function requiredEnv(name) {
   const value = process.env[name]?.trim();
@@ -62,12 +66,13 @@ export function allowedOrigins() {
 }
 
 export function serviceTier(tierId) {
-  const service = SERVICE_TIERS[tierId];
+  const service = Object.hasOwn(SERVICE_TIERS, tierId) ? SERVICE_TIERS[tierId] : null;
   if (!service) return null;
   return service;
 }
 
 export function paymentLinkForTier(tierId) {
+  if (!NEW_CHECKOUT_TIERS.includes(tierId)) return null;
   const service = serviceTier(tierId);
   if (!service) return null;
 
@@ -79,7 +84,7 @@ export function paymentLinkForTier(tierId) {
     throw new ConfigError(`${service.paymentLinkEnv} must be a valid URL`);
   }
 
-  if (url.protocol !== 'https:' || url.username || url.password || url.hash) {
+  if (url.protocol !== 'https:' || !['buy.stripe.com', 'book.stripe.com'].includes(url.hostname) || url.username || url.password || url.hash) {
     throw new ConfigError(`${service.paymentLinkEnv} must be a credential-free HTTPS URL without a fragment`);
   }
   return url;

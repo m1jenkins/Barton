@@ -1,6 +1,6 @@
 import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js';
 import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js';
-import { plans, createCheckout } from './checkout.js';
+import { plans, createCheckout } from './checkout.js?v=ac202b0cf491';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
@@ -372,6 +372,10 @@ if (contactDialog) {
   };
   document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); showPlan(a.dataset.plan); }));
   const syncPlan = () => {
+    if (['#consultation', '#contact-consultation'].includes(location.hash)) {
+      history.replaceState(history.state, '', location.pathname + location.search + '#retired-plan');
+      document.getElementById('retired-plan')?.focus();
+    }
     const tier = location.hash.replace('#contact-', '');
     if (plans[tier] && location.hash.startsWith('#contact-')) showPlan(tier, false);
     else if (contactDialog.open) contactDialog.close();
@@ -393,6 +397,7 @@ if (contactDialog) {
     const data = new FormData(e.currentTarget), button = $('#checkout-submit');
     const contact = Object.fromEntries(['name','email','phone'].map(k => [k, data.get(k)]));
     const requestTier = selectedTier;
+    let restartNeeded = false;
     checkoutPending = true;
     button.disabled = true; button.setAttribute('aria-busy','true'); button.textContent = 'Saving your request…'; $('#contact-error').textContent = '';
     try {
@@ -400,13 +405,14 @@ if (contactDialog) {
       if (!contactDialog.open || selectedTier !== requestTier) return;
       button.textContent = 'Opening secure checkout…'; window.location.assign(result.url);
     } catch (error) {
+      restartNeeded = error.code === 'stale_offer';
       $('#contact-error').textContent = `${error.message || 'We couldn’t open checkout.'} Your details are still here. Please try again.`;
       button.disabled = false; button.setAttribute('aria-busy','false'); button.innerHTML = 'Continue to checkout '+icon('arrow');
     } finally {
       checkoutPending = false;
       button.disabled = false;
       button.setAttribute('aria-busy','false');
-      button.innerHTML = 'Continue to checkout '+icon('arrow');
+      button.innerHTML = (restartNeeded ? 'Restart checkout ' : 'Continue to checkout ')+icon('arrow');
     }
   });
   window.addEventListener('pageshow', () => { const b = $('#checkout-submit'); b.disabled = false; b.setAttribute('aria-busy','false'); b.innerHTML = 'Continue to checkout '+icon('arrow'); });

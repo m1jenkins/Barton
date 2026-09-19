@@ -1,5 +1,6 @@
 import { ConfigError, integerEnv } from './config.js';
 import { database } from './db.js';
+import { analyticsProperties } from './analytics.js';
 
 const DEFAULT_BATCH_SIZE = 10;
 const DEFAULT_LEASE_SECONDS = 60;
@@ -35,7 +36,7 @@ export function deliveryEvent(row) {
     event_name: row.event_name,
     dedupe_key: row.dedupe_key,
     occurred_at: row.created_at,
-    properties: payload
+    properties: analyticsProperties(payload)
   };
 }
 
@@ -72,7 +73,7 @@ async function markSent(sql, row) {
   await sql`
     UPDATE analytics_outbox
     SET status = 'sent', sent_at = now(), available_at = now(), last_error = NULL
-    WHERE id = ${row.id} AND status = 'processing'
+    WHERE id = ${row.id} AND status = 'processing' AND attempts = ${row.attempts}
   `;
 }
 
@@ -84,7 +85,7 @@ async function markFailed(sql, row, error, retrySeconds) {
     SET status = 'failed',
         available_at = now() + ${delay} * interval '1 second',
         last_error = ${message}
-    WHERE id = ${row.id} AND status = 'processing'
+    WHERE id = ${row.id} AND status = 'processing' AND attempts = ${row.attempts}
   `;
   console.error('[analytics_delivery_failed]', {
     outbox_id: row.id,

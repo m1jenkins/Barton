@@ -22,8 +22,39 @@ const HUB_CLUSTERS = Object.freeze({
   '/texas-local-market-intelligence.html': 'texas_metros'
 });
 
+export function analyticsPath(value) {
+  return typeof value === 'string' && value.startsWith('/') && !value.startsWith('//') ? value.split(/[?#]/)[0].slice(0, 300) : '/';
+}
+
+export function analyticsProperties(payload) {
+  const result = {};
+  for (const key of ['event_id','transaction_id','checkout_session_id','purchase_id','checkout_attempt_id','lead_id','onboarding_id','page_type','topic_cluster','city','service_tier','value','currency']) {
+    if (Object.hasOwn(payload, key)) result[key] = payload[key];
+  }
+  if (Object.hasOwn(payload, 'source_page')) result.source_page = analyticsPath(payload.source_page);
+  if (payload.attribution && typeof payload.attribution === 'object') {
+    result.attribution = {};
+    for (const key of ['first_touch', 'last_touch']) {
+      if (!Object.hasOwn(payload.attribution, key)) continue;
+      const touch = payload.attribution[key];
+      if (!touch || typeof touch !== 'object' || Array.isArray(touch)) { result.attribution[key] = null; continue; }
+      const clean = {};
+      for (const field of ['captured_at','utm_source','utm_medium','utm_campaign','utm_content','utm_term']) {
+        if (typeof touch[field] === 'string') clean[field] = touch[field].slice(0, field === 'captured_at' ? 40 : field === 'utm_source' || field === 'utm_medium' ? 200 : 300);
+      }
+      if (Object.hasOwn(touch, 'landing_path')) clean.landing_path = analyticsPath(touch.landing_path);
+      if (Object.hasOwn(touch, 'referrer')) {
+        clean.referrer = '';
+        try { const url = new URL(touch.referrer); if (['https:', 'http:'].includes(url.protocol)) clean.referrer = url.origin; } catch {}
+      }
+      result.attribution[key] = clean;
+    }
+  }
+  return result;
+}
+
 export function pageContext(sourcePage) {
-  const path = typeof sourcePage === 'string' ? sourcePage : '';
+  const path = analyticsPath(sourcePage);
   const isArticle = /^\/blog-[a-z0-9-]+\.html$/.test(path);
   return {
     page_type: path === '/' || path === '/index.html'
@@ -55,7 +86,7 @@ export function purchaseEventPayload({
   currency,
   attribution
 }) {
-  return {
+  return analyticsProperties({
     event_id: `purchase:${checkoutSessionId}`,
     transaction_id: checkoutSessionId,
     checkout_session_id: checkoutSessionId,
@@ -68,5 +99,5 @@ export function purchaseEventPayload({
     value: amountTotal / 100,
     currency: currency.toUpperCase(),
     attribution
-  };
+  });
 }

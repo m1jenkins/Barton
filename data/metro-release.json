@@ -21,7 +21,6 @@
       "researchPrompt": "How would buyer location, seller location, pickup, and any broker terminology change the service?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -56,7 +55,6 @@
       "researchPrompt": "What may Drive Right offer under California rules, and how would sourcing and delivery work across the metro?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -92,7 +90,6 @@
       "researchPrompt": "Which buyer/seller combinations cross a state line, and what transaction steps differ?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -127,7 +124,6 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -163,7 +159,6 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -199,7 +194,6 @@
       "researchPrompt": "What seller outreach radius and buyer paperwork decisions can Drive Right actually support?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -237,7 +231,6 @@
       "researchPrompt": "Which parts of this four-jurisdiction metro are genuinely served, and how do cross-border purchases work?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -272,7 +265,6 @@
       "researchPrompt": "Which vehicle-history and inspection questions are locally useful, and how far can sourcing extend?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -310,7 +302,6 @@
       "researchPrompt": "How will service scope, pickup, title, and registration be explained across jurisdictions?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -345,7 +336,6 @@
       "researchPrompt": "Which inspection and inventory questions appear in local buyer searches and first-party inquiries?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -381,7 +371,6 @@
       "researchPrompt": "How are Massachusetts/New Hampshire buyer and seller cases handled and disclosed?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -416,7 +405,6 @@
       "researchPrompt": "What distinct sourcing, travel, and delivery value separates this market from Los Angeles?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -451,7 +439,6 @@
       "researchPrompt": "What local inventory and transaction evidence can support a page distinct from other California markets?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -486,7 +473,6 @@
       "researchPrompt": "Which vehicle-selection and inspection questions recur in actual local searches or inquiries?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -521,7 +507,6 @@
       "researchPrompt": "What purchase-cost, seller communication, and pickup information can Drive Right verify?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -557,7 +542,6 @@
       "researchPrompt": "Which cross-state and used-vehicle inspection decisions need a locally reviewed explanation?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -592,7 +576,6 @@
       "researchPrompt": "What vehicle-history, inspection, and seller/pickup concerns differ from Miami and Orlando?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -627,7 +610,6 @@
       "researchPrompt": "What local buyer questions and sourcing radius distinguish San Diego from the other California pages?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -662,7 +644,6 @@
       "researchPrompt": "Which registration, total-cost, inspection, and travel questions have evidence and search demand?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -697,7 +678,6 @@
       "researchPrompt": "What makes Orlando's buyer workflow distinct from Tampa and Miami?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -732,7 +712,6 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -768,7 +747,6 @@
       "researchPrompt": "Separate Texas backlog market",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -803,7 +781,6 @@
       "researchPrompt": "Separate Texas backlog market",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -838,7 +815,6 @@
       "researchPrompt": "Distinct intent or consolidation pending baseline",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],
@@ -873,7 +849,6 @@
       "researchPrompt": "Distinct intent or consolidation pending baseline",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-consultation",
         "https://www.driverightcarbuying.com/#service-full",
         "https://www.driverightcarbuying.com/#service-concierge"
       ],

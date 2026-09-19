@@ -1,5 +1,7 @@
 # Drive Right Local SEO Package
 
+> September 18, 2026 correction: remote nationwide coverage alone does not establish Google Business Profile eligibility. See [the actual account/eligibility audit](seo-execution/SEO-08.md); appropriate in-person customer contact and the correct Drive Right managing profile remain unverified.
+
 Status date: August 21, 2026. Companion to `docs/release-readiness.md` Gate 5 and `data/entities.json`.
 
 ## Entity model constraint

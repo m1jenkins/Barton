@@ -1,34 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "recordStatus": "observed_current_pending_owner_approval",
-  "lastObservedAt": "2026-09-05",
+  "recordStatus": "local_offer_candidate_activation_pending",
+  "lastObservedAt": "2026-09-18",
   "currency": "USD",
   "sourceOfTruth": {
     "url": "https://www.driverightcarbuying.com/schedule.html",
     "file": "schedule.html",
-    "note": "Prices and features below are transcribed from the current page and checkout links; they are not an owner or legal approval."
+    "note": "Owner-authorized local offer in docs/seo-agent-runbook.md. Pricing/retirement approval does not approve service-level promises, policy terms or live checkout parity."
   },
   "services": [
     {
-      "id": "https://www.driverightcarbuying.com/#service-consultation",
-      "name": "AI Agent Buying Service",
-      "price": 195,
-      "priceType": "flat_fee",
-      "features": [
-        "AI-assisted car-buying research",
-        "Dealer outreach and email negotiation where available",
-        "Tailored options organized in a deal sheet",
-        "Buyer review before any purchase decision",
-        "Deal-sheet delivered for review"
-      ],
-      "creditTowardFullService": 100,
-      "checkoutUrl": "https://book.stripe.com/6oU3co4svaEb92QcNS04804",
-      "availability": "owner_confirmed_all_states_cities"
-    },
-    {
       "id": "https://www.driverightcarbuying.com/#service-full",
-      "name": "Hire Drive Right Full Service",
-      "price": 495,
+      "name": "Full Service",
+      "price": 295,
       "priceType": "flat_fee",
       "features": [
         "New used and certified pre-owned search",
@@ -37,9 +21,10 @@
         "Documented vehicle recommendations",
         "Expected start time confirmed after payment and intake verification"
       ],
-      "checkoutUrl": "https://book.stripe.com/cNi14ge357rZena29e04800",
+      "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
-      "serviceLevelReview": "pending_operations_confirmation"
+      "serviceLevelReview": "pending_operations_confirmation",
+      "checkoutStatus": "new_295_link_required_before_activation"
     },
     {
       "id": "https://www.driverightcarbuying.com/#service-concierge",
@@ -70,7 +55,7 @@
       "reason": "Refund eligibility timing exclusions remedy and relationship to the savings claim require one approved policy."
     },
     "freeConsultation": {
-      "status": "conflicts_with_observed_295_price",
+      "status": "historical_wording_not_a_current_paid_offer",
       "approvedPublicCopy": null
     }
   },
@@ -89,12 +74,39 @@
       895
     ],
     "tax": "All three public checkouts show address-dependent tax calculation",
-    "scopeConflicts": "Live checkout descriptions include unsupported outcome and deliverable promises. See docs/seo-release-preparation-2026-09-05.md. Observation is not owner approval."
+    "scopeConflicts": "Live checkout descriptions include unsupported outcome and deliverable promises. See docs/seo-release-preparation-2026-09-05.md. Observation is not owner approval.",
+    "supersededBy": "docs/seo-execution/stripe-cutover.md#observed-account-and-links"
   },
   "availabilityConfirmation": {
     "record": "data/metro-release.json#OWNER-2026-09-16",
     "confirmedOn": "2026-09-16",
     "scope": "All currently advertised tiers across all states/cities, per captain instruction",
     "limits": "Availability confirmation does not approve exact commercial/qualified copy or document specific logistics, delivery or response commitments."
+  },
+  "retiredServices": [
+    {
+      "id": "https://www.driverightcarbuying.com/#service-consultation",
+      "name": "AI Agent Buying Service",
+      "price": 195,
+      "priceType": "flat_fee",
+      "features": [
+        "AI-assisted car-buying research",
+        "Dealer outreach and email negotiation where available",
+        "Tailored options organized in a deal sheet",
+        "Buyer review before any purchase decision",
+        "Deal-sheet delivered for review"
+      ],
+      "creditTowardFullService": 100,
+      "checkoutUrl": "https://book.stripe.com/6oU3co4svaEb92QcNS04804",
+      "availability": "owner_confirmed_all_states_cities",
+      "status": "retired_for_new_sales",
+      "retiredBy": "SEO-PRICE-2026-09-18"
+    }
+  ],
+  "pricingDecision": {
+    "record": "SEO-PRICE-2026-09-18",
+    "date": "2026-09-18",
+    "status": "owner_authorized_local_implementation",
+    "productionActivation": "pending"
   }
 }

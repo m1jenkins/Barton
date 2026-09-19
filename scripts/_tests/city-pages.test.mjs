@@ -42,7 +42,8 @@ test('all 20 city pages preserve the entire homepage layout, assets, navigation 
       assert.equal(html.match(pattern)[0], homepage.match(pattern)[0], `${city.name}: ${section} differs`);
     }
     const nodes = doc.schemas[0]['@graph'];
-    assert.equal(nodes.filter(n => n['@type'] === 'Service').length, 3);
+    assert.equal(nodes.filter(n => n['@type'] === 'Service').length, 2);
+    assert.deepEqual(nodes.filter(n => n['@type'] === 'Service').map(n => Number(n.offers.price)).sort((a,b) => a-b), [295, 895]);
     for (const node of nodes.filter(n => n['@type'] === 'Service')) {
       assert.equal(node.areaServed.name, city.name);
       assert.equal(node.provider['@id'], 'https://www.driverightcarbuying.com/#organization');
