@@ -189,10 +189,44 @@ try {
     const rows = await sql`SELECT status, attempts FROM analytics_outbox`;
     assert.ok(rows.every(row => row.status === 'sent' && row.attempts === 2));
   });
+  let stripeSnapshotReplay = 0;
+  if (process.env.SEO09_STRIPE_EVIDENCE) {
+    await check('MCP-read paid test session snapshots reconcile to purchases and intake under locally signed replay', async () => {
+      const evidence = JSON.parse(await readFile(process.env.SEO09_STRIPE_EVIDENCE, 'utf8'));
+      assert.equal(evidence.livemode, false);
+      assert.equal(evidence.sessions.length, 4);
+      for (const { session, tier_id, expected_amount } of evidence.sessions) {
+        assert.equal(session.livemode, false); assert.equal(session.payment_status, 'paid');
+        assert.match(session.id, /^cs_test_/); assert.equal(session.amount_total, expected_amount);
+        assert.ok([19500, 29500, 49500, 89500].includes(expected_amount));
+        const attempt = await seedAttempt(tier_id, expected_amount);
+        await sql`UPDATE checkout_attempts SET client_reference_id = ${session.client_reference_id} WHERE id = ${attempt.id}`;
+        // This is deliberately a synthetic envelope/signature, not a claim of Stripe webhook delivery.
+        const event = { id: `evt_local_replay_${randomUUID().replaceAll('-', '')}`, type: 'checkout.session.completed',
+          created: session.created, livemode: false, data: { object: session } };
+        const responses = await Promise.all([deliver(event), deliver(event), deliver({ ...event, id: `${event.id}_other` })]);
+        assert.ok(responses.every(res => res.statusCode === 200));
+        const rows = await sql`SELECT * FROM purchases WHERE checkout_session_id = ${session.id}`;
+        assert.equal(rows.length, 1); assert.equal(verifiedPurchase(session, rows[0], tier_id), true);
+        assert.equal((await sql`SELECT * FROM analytics_outbox WHERE dedupe_key = ${session.id}`).length, 1);
+        const intake = { tier: tier_id, session_id: session.id,
+          fields: { name: 'Synthetic Buyer', email: 'buyer@example.test', phone: '512-555-0100', city: 'Austin' } };
+        const key = randomUUID();
+        const saved = await Promise.all([call(onboarding, intake, key), call(onboarding, intake, key)]);
+        assert.deepEqual(saved.map(res => res.statusCode).sort(), [200, 201]);
+        stripeSnapshotReplay++;
+      }
+      assert.equal(await count('purchases'), 8); assert.equal(await count('onboarding_submissions'), 8);
+      assert.equal(await count('analytics_outbox'), 16);
+      const delivery = { sql, environment: { ANALYTICS_FORWARD_URL: 'https://collector.example.test/synthetic', ANALYTICS_OUTBOX_BATCH_SIZE: '50' } };
+      assert.equal((await dispatchAnalyticsOutbox(delivery)).sent, 8);
+      assert.equal((await dispatchAnalyticsOutbox(delivery)).claimed, 0);
+    });
+  }
   console.log(JSON.stringify({ checks: checks.length, passed: checks.length, purchases: await count('purchases'),
     onboarding: await count('onboarding_submissions'), outbox: await count('analytics_outbox'),
     realPostgres: true, stripeEvents: 'locally signed synthetic', collector: 'transport stub',
-    stripePaymentsVerified: false, destinationDeliveryVerified: false }));
+    stripeSnapshotReplay, stripePaymentsVerified: false, destinationDeliveryVerified: false }));
 } finally {
   globalThis.fetch = originalFetch;
   await sql.end({ timeout: 5 });

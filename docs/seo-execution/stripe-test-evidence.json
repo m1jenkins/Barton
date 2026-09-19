@@ -1,0 +1,157 @@
+{
+  "collected_date_utc": "2026-09-19",
+  "account": "acct_1THdU32RwNuweXRL",
+  "livemode": false,
+  "application_revision": "e7b0a153ecc69f65705a6835f9d1ca6013ae668a",
+  "collection_revision": "07fa041ca2091ef4fa57a769c5094a1b2d516df3",
+  "source": "Stripe MCP GetCheckoutSessions; synthetic contacts and Stripe test card only",
+  "limitations": [
+    "No Stripe-origin webhook signature/delivery verified",
+    "No application SDK session retrieval verified",
+    "No email delivery or external analytics acknowledgement verified",
+    "Zero-tax base payment cases do not establish tax classification"
+  ],
+  "sessions": [
+    {
+      "tier_id": "full_service",
+      "expected_amount": 29500,
+      "receipt_generated": true,
+      "session": {
+        "id": "cs_test_a1WEYD1RcqYyE06J7bFTVGX5cbG4w9EHtmg76WLSh4w2jd57gVkiBXscyy",
+        "object": "checkout.session",
+        "mode": "payment",
+        "livemode": false,
+        "status": "complete",
+        "payment_status": "paid",
+        "client_reference_id": "5927206a-e8b3-411a-9cc4-f70408e59471",
+        "currency": "usd",
+        "amount_subtotal": 29500,
+        "amount_total": 29500,
+        "total_details": {
+          "amount_discount": 0,
+          "amount_shipping": 0,
+          "amount_tax": 0
+        },
+        "payment_link": "plink_1UHIS02RwNuweXRLQrlEwBy3",
+        "metadata": {
+          "purpose": "seo09_connected_validation",
+          "revision": "07fa041ca2091ef4fa57a769c5094a1b2d516df3",
+          "tax_case": "base_total_only_not_tax_approval",
+          "tier": "full_service"
+        },
+        "created": 1789802103
+      }
+    },
+    {
+      "tier_id": "concierge",
+      "expected_amount": 89500,
+      "receipt_generated": true,
+      "session": {
+        "id": "cs_test_a1aRVA1tELowhniRzl8blLo0eUe5dw7bM4QVYnlkGTLGTgFG6AjmJia0kd",
+        "object": "checkout.session",
+        "mode": "payment",
+        "livemode": false,
+        "status": "complete",
+        "payment_status": "paid",
+        "client_reference_id": "be13c0e8-3df9-48e0-bb93-56175e309e42",
+        "currency": "usd",
+        "amount_subtotal": 89500,
+        "amount_total": 89500,
+        "total_details": {
+          "amount_discount": 0,
+          "amount_shipping": 0,
+          "amount_tax": 0
+        },
+        "payment_link": "plink_1UHISD2RwNuweXRLgdPmzzCa",
+        "metadata": {
+          "purpose": "seo09_connected_validation",
+          "revision": "07fa041ca2091ef4fa57a769c5094a1b2d516df3",
+          "tax_case": "base_total_only_not_tax_approval",
+          "tier": "concierge"
+        },
+        "created": 1789802480
+      }
+    },
+    {
+      "tier_id": "consultation",
+      "expected_amount": 19500,
+      "receipt_generated": true,
+      "session": {
+        "id": "cs_test_a1yEAQoWhEz7zWWLW3HSHcakyWRnUlFXuXGFCawfgWMlAznahor3HWssAo",
+        "object": "checkout.session",
+        "mode": "payment",
+        "livemode": false,
+        "status": "complete",
+        "payment_status": "paid",
+        "client_reference_id": "7d48d2ef-c3c6-453d-8e9f-c7972c1fca3e",
+        "currency": "usd",
+        "amount_subtotal": 19500,
+        "amount_total": 19500,
+        "total_details": {
+          "amount_discount": 0,
+          "amount_shipping": 0,
+          "amount_tax": 0
+        },
+        "payment_link": "plink_1UHIWd2RwNuweXRLjSXMHfAj",
+        "metadata": {
+          "purpose": "seo09_connected_validation",
+          "revision": "07fa041ca2091ef4fa57a769c5094a1b2d516df3",
+          "tax_case": "historical_base_total_fixture",
+          "tier": "consultation"
+        },
+        "created": 1789802299
+      }
+    },
+    {
+      "tier_id": "full_service",
+      "expected_amount": 49500,
+      "receipt_generated": true,
+      "session": {
+        "id": "cs_test_a1sm0rH2KBwALMzj6Bg3eHxrc5hp7nZMCmCeYCby33X0DVKuaGki4lcICJ",
+        "object": "checkout.session",
+        "mode": "payment",
+        "livemode": false,
+        "status": "complete",
+        "payment_status": "paid",
+        "client_reference_id": "4bda4b07-0753-4b37-8413-151cbb9a2c86",
+        "currency": "usd",
+        "amount_subtotal": 49500,
+        "amount_total": 49500,
+        "total_details": {
+          "amount_discount": 0,
+          "amount_shipping": 0,
+          "amount_tax": 0
+        },
+        "payment_link": "plink_1UHIXI2RwNuweXRL5BJOLhYo",
+        "metadata": {
+          "purpose": "seo09_connected_validation",
+          "revision": "07fa041ca2091ef4fa57a769c5094a1b2d516df3",
+          "tax_case": "historical_base_total_fixture",
+          "tier": "full_service"
+        },
+        "created": 1789802407
+      }
+    }
+  ],
+  "tax_diagnostic": {
+    "id": "taxcalc_1UHId22RwNuweXRLKCXffn9K",
+    "postal_code": "78701",
+    "tax_code": "txcd_20060048",
+    "taxability_reason": "not_collecting",
+    "tax_amount": 0,
+    "registered_locations": 0
+  },
+  "discount_diagnostic": {
+    "id": "cs_test_a1J0gLoI950yGkVsvjttdxmd1C2fuM15WzAYbxaslhpc2MtD4l0pxLQ3Re",
+    "status": "open",
+    "payment_status": "unpaid",
+    "amount_subtotal": 29500,
+    "amount_total": 28500,
+    "total_details": {
+      "amount_discount": 1000,
+      "amount_shipping": 0,
+      "amount_tax": 0
+    },
+    "coupon": "4ryTROBq"
+  }
+}
