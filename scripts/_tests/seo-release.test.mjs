@@ -40,7 +40,7 @@ test('every indexable sitemap landing page is reachable through ordinary homepag
 });
 test('retirement redirects and unapproved content stay contained',async()=>{
  const config=JSON.parse(await read('vercel.json'));
- assert.ok(config.redirects.some(r=>r.source==='/ai-car-buying-agent.html'&&r.destination==='/schedule.html'&&r.permanent));
+ assert.ok(config.redirects.some(r=>r.source==='/ai-car-buying-agent.html'&&r.destination==='/schedule.html'&&[301,308].includes(r.statusCode??(r.permanent===true?308:0))));
  for(const file of ['ai-car-buying-agent.html','tesla-fsd-for-sale.html','payment-success-consultant.html','blog-buy-new-car-below-msrp.html','blog-dealership-addons-complete-guide.html','blog-used-car-inspection-checklist.html'])assert.equal(htmlDocument(await read(file)).noindex,true,file);
  for(const file of ['index.html','schedule.html','how-it-works.html','about.html','blog.html'])assert.ok(!htmlDocument(await read(file)).links.some(h=>/ai-car-buying-agent|tesla-fsd-for-sale/.test(h)),file);
 });
