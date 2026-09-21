@@ -76,3 +76,55 @@ Commercial service copy uses “Austin-based” and “nationwide remote support
 - [x] `data/content-inventory.csv` records the new page intent and lifecycle.
 - [x] Repository tests and `scripts/validate-site.mjs` pass.
 
+## GSC: Crawled currently not indexed (2026-09-21)
+
+Do not mass-request index for these URLs. GSC’s “crawled currently not indexed” report here is expected crawl waste and containment, not a publication queue.
+
+### `/uuyh/` is not a site page
+
+Checked 2026-09-21 against the repository and live origin:
+
+- The string `uuyh` does not appear in navigation, HTML, or other committed site files.
+- `https://www.driverightcarbuying.com/uuyh/` returns HTTP 200 `application/javascript` from Cloudflare. The body is Google Tag Manager container JavaScript (`Copyright 2012 Google Inc`, GTM macros). This is consistent with a first-party Google Tag Gateway / measurement path, not an HTML landing page.
+- `https://www.driverightcarbuying.com/uuyh` (no trailing slash) returns HTTP 404 HTML. Ordinary unknown paths such as `/zzzzjunkpath/` 308-strip the slash under `trailingSlash: false`.
+
+Handling in this change:
+
+- `robots.txt` disallows `/uuyh` for Googlebot, Bingbot, and `*` (prefix match also covers `/uuyh/`).
+- `vercel.json` sets `X-Robots-Tag: noindex, nofollow, noarchive` on `/uuyh` and `/uuyh/`.
+- Permanent 308 applies only to slashless `/uuyh` → `/`, matching other junk/legacy `vercel.json` redirects.
+- Do **not** 308 `/uuyh/`. Redirecting the slash URL would risk breaking the Cloudflare-served GTM script if browsers or tags request that path.
+
+If GSC still lists `/uuyh/` after robots pickup, treat it as measurement-path noise. Do not add it to the sitemap or Request Indexing.
+
+### Legacy `blog-*.html` URLs
+
+These are **intentional noindex**, not soft-orphan pages that should be indexed. They stay off `sitemap.xml`. Reindexing is page-specific after claim review (`docs/claim-review-workflow.md`); it is not a bulk GSC action.
+
+**Must remain at URL with `noindex, follow` (do not redirect to hide unresolved claims):**
+
+- `blog-texas-title-transfer.html`
+- `blog-texas-car-buying-laws.html`
+- `blog-spot-delivery-scam.html`
+- `blog-private-party-vs-dealership.html`
+
+**Already 308 in `vercel.json` (historical aliases, not index candidates):**
+
+- `blog-dealer-addons-exposed.html` → `blog-dealership-addons-complete-guide.html` (target remains noindex)
+- `blog-roi-car-buying-service.html` → `how-it-works.html`
+- `blog-flat-fees-vs-commissions.html` → `how-it-works.html`
+- `blog-zero-kickbacks-promise.html` → `how-it-works.html`
+- `blog-skip-dealership-marathon.html` → `how-it-works.html`
+
+**Remaining public-root `blog-*.html` files** (price, dealer, financing, inspection, and similar articles) stay `noindex, follow` with inventory lifecycle `contained_pending_*`. Google can still crawl them from historical links; that shows up as crawled-not-indexed. That is acceptable waste until an individual article is approved.
+
+**Contained hubs** (also noindex; hub cards exist on `blog.html` but are labeled as excluded from search):
+
+- `texas-car-buying-rules-paperwork.html`
+- `auto-financing-credit-fi.html`
+- `used-car-due-diligence.html`
+- `new-car-pricing-incentives.html`
+- `vehicle-selection-total-cost.html`
+
+**Indexable on the resource hub, not part of the blog-archive waste set:** `car-buying-service.html`, `how-it-works.html`, `schedule.html`, and `texas-local-market-intelligence.html`. Three draft cards (`blog-used-car-inspection-checklist.html`, `blog-dealership-addons-complete-guide.html`, `blog-buy-new-car-below-msrp.html`) remain noindex pending author and qualified review.
+

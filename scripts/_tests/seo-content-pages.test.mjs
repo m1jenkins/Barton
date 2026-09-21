@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import { htmlDocument } from '../metro-release.mjs';
 
 const root = new URL('../../', import.meta.url);
@@ -80,5 +80,62 @@ test('city and editorial containment remains accurate after homepage copy change
   const hub = htmlDocument(await read('blog.html'));
   assert.match(hub.visibleText, /service guides below are indexable/i);
   assert.match(hub.visibleText, /consequential topic hubs and older articles remain excluded from search/i);
+});
+
+const legalBlogs = [
+  'blog-texas-title-transfer.html',
+  'blog-texas-car-buying-laws.html',
+  'blog-spot-delivery-scam.html',
+  'blog-private-party-vs-dealership.html',
+];
+
+test('junk /uuyh path is unlinked, disallowed, and not redirected at the GTM slash URL', async () => {
+  const robots = await read('robots.txt');
+  for (const agent of ['Googlebot', 'Bingbot', '*']) {
+    const group = robots.match(new RegExp(`User-agent:\\s*${agent === '*' ? '\\*' : agent}\\s*[\\s\\S]*?(?=\\nUser-agent:|\\n#|$)`));
+    assert.ok(group, `robots.txt should include a ${agent} group`);
+    assert.match(group[0], /Disallow:\s*\/uuyh\b/, `${agent} must disallow /uuyh`);
+  }
+
+  const config = JSON.parse(await read('vercel.json'));
+  const slashless = config.redirects.find((rule) => rule.source === '/uuyh' && !rule.has);
+  assert.equal(slashless?.destination, '/');
+  assert.equal(slashless?.permanent, true);
+  assert.equal(
+    config.redirects.some((rule) => rule.source === '/uuyh/'),
+    false,
+    'must not 308 /uuyh/; live Cloudflare serves GTM JavaScript there',
+  );
+
+  for (const source of ['/uuyh', '/uuyh/']) {
+    const rule = config.headers.find((entry) => entry.source === source);
+    assert.ok(rule, `vercel.json should set headers for ${source}`);
+    assert.ok(rule.headers.some((header) => header.key === 'X-Robots-Tag' && /noindex/i.test(header.value)));
+  }
+
+  assert.doesNotMatch(await read('sitemap.xml'), /uuyh/);
+
+  const htmlFiles = (await readdir(new URL('.', root))).filter((file) => file.endsWith('.html'));
+  for (const file of htmlFiles) {
+    assert.doesNotMatch(await read(file), /\bhref\s*=\s*["'][^"']*uuyh/i, file);
+  }
+});
+
+test('legacy blog HTML stays noindex and is documented as crawl waste, not an index request', async () => {
+  const files = (await readdir(new URL('.', root))).filter((file) => /^blog-.*\.html$/.test(file));
+  assert.ok(files.length >= 30, 'expected the contained blog archive to remain in the public root');
+  for (const file of files) {
+    assert.equal(htmlDocument(await read(file)).noindex, true, file);
+  }
+
+  const sitemap = await read('sitemap.xml');
+  assert.doesNotMatch(sitemap, /blog-/);
+
+  const docs = await read('docs/seo/2026-09-21-content-pages.md');
+  assert.match(docs, /do not (?:mass[- ])?request index/i);
+  assert.match(docs, /crawled currently not indexed/i);
+  for (const file of legalBlogs) {
+    assert.match(docs, new RegExp(file.replaceAll('.', '\\.')));
+  }
 });
 

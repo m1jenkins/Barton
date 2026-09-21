@@ -3,6 +3,24 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/uuyh",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/uuyh/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
@@ -130,6 +148,11 @@
       "source": "/ai-car-buying-agent.html",
       "destination": "/schedule.html",
       "statusCode": 301
+    },
+    {
+      "source": "/uuyh",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
