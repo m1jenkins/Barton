@@ -56,6 +56,7 @@ const requiredRedirects = [
   { name: 'legacy flat-fee route', source: '/blog-flat-fees-vs-commissions.html', destination: '/how-it-works.html' },
   { name: 'legacy kickbacks route', source: '/blog-zero-kickbacks-promise.html', destination: '/how-it-works.html' },
   { name: 'legacy dealership-marathon route', source: '/blog-skip-dealership-marathon.html', destination: '/how-it-works.html' },
+  { name: 'junk GTM-adjacent slashless path', source: '/uuyh', destination: '/' },
 ];
 
 function usageError(message) {

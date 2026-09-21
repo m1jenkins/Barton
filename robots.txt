@@ -1,44 +1,57 @@
 # Search crawlers
 User-agent: Googlebot
 Allow: /
+Disallow: /uuyh
 
 User-agent: Bingbot
 Allow: /
+Disallow: /uuyh
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /uuyh
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /uuyh
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /uuyh
 
 # Training and product-control tokens are tracked separately from search.
 User-agent: GPTBot
 Allow: /
+Disallow: /uuyh
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /uuyh
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /uuyh
 
 # User-initiated retrieval agents
 User-agent: Claude-User
 Allow: /
+Disallow: /uuyh
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /uuyh
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /uuyh
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /uuyh
 
 User-agent: *
 Allow: /
+Disallow: /uuyh
 
 # Content map for language-model crawlers (not a Google ranking signal)
 # https://www.driverightcarbuying.com/llms.txt
