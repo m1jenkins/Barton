@@ -2,7 +2,7 @@
 
 > Texas car buying service. Flat-fee vehicle research, dealer outreach, deal review, and purchase coordination for buyers across Texas. Based in Austin. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-09-14
+Updated: 2026-09-21
 
 Drive Right is a service-area business, not a car dealer. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com · (512) 910-4938.
 
@@ -10,13 +10,16 @@ Drive Right is a service-area business, not a car dealer. It does not operate st
 
 - [Home](https://www.driverightcarbuying.com/): Overview of the service, plans, Texas coverage, and how Drive Right compares vehicles and deal terms.
 - [How it works](https://www.driverightcarbuying.com/how-it-works.html): Process, listed fees, buyer responsibilities, and current disclosures.
-- [Plans and pricing](https://www.driverightcarbuying.com/schedule.html): $195 AI Agent Buying Service, $495 Full Service, and $895 Concierge.
+- [Plans and pricing](https://www.driverightcarbuying.com/schedule.html): $295 Full Service and $895 Ultimate Concierge, each a one-time service fee.
 - [Machine-readable pricing](https://www.driverightcarbuying.com/pricing.md): Current fees, inclusions, and purchase-cost exclusions in Markdown.
-- [AI car-buying agent](https://www.driverightcarbuying.com/ai-car-buying-agent.html): Details of the $195 AI-assisted research and dealer-outreach plan.
 - [About](https://www.driverightcarbuying.com/about.html): Founder Mason and the service approach.
 - [Resource hubs](https://www.driverightcarbuying.com/blog.html): Index of decision guides. Several older articles remain unpublished to search pending source review.
 - [Texas local markets](https://www.driverightcarbuying.com/texas-local-market-intelligence.html): Statewide service-area overview for nine Texas metros.
 - [Policies](https://www.driverightcarbuying.com/policy.html): Privacy, terms, and refund policy.
+
+## Retired offers
+
+The standalone AI Agent Buying Service is retired for new sales. Existing customers can still use the secure link in their payment receipt. Its former page, https://www.driverightcarbuying.com/ai-car-buying-agent.html, redirects to the current plans page.
 
 ## Optional
 

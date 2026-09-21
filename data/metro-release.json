@@ -878,8 +878,8 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Retain Austin base; complete local gate",
-      "sha256": "2f7941832ce806ea40d22625adec3f881c9ad0e57b640bd2fffc90dd745642fd",
+      "decision": "Retain Austin base; complete local gate. Contained bytes re-pinned on 2026-09-21 after removing retired $195/$495 plan copy; see docs/seo/2026-09-21-claim-safety-redirects.md",
+      "sha256": "f84740379c5bf2831b6b8d67c188f1dabcef7a03236f6025b74fd40a3a7181e8",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null

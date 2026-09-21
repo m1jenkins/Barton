@@ -45,7 +45,7 @@ const requiredRedirects = [
     destination: 'https://www.driverightcarbuying.com/:path*',
   },
   { name: 'index.html', source: '/index.html', destination: '/' },
-  { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html' },
+  { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html', status: 301 },
   { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
   {
     name: 'legacy dealer add-ons route',
@@ -67,6 +67,14 @@ function usageError(message) {
 
 function redirectHost(rule) {
   return rule.has?.find((condition) => condition.type === 'host')?.value;
+}
+
+// Vercel emits `statusCode` verbatim and maps `permanent: true` to 308.
+function declaredStatus(rule) {
+  if (Number.isInteger(rule.statusCode)) return rule.statusCode;
+  if (rule.permanent === true) return 308;
+  if (rule.permanent === false) return 307;
+  return undefined;
 }
 
 async function checkLocalConfig() {
@@ -95,8 +103,17 @@ async function checkLocalConfig() {
         `Local redirect config: missing ${expected.name} redirect ${expected.source} → ${expected.destination}`
         + `${expected.host ? ` for host ${expected.host}` : ''}.`,
       );
-    } else if (match.permanent !== true) {
-      failures.push(`Local redirect config: ${expected.name} must set permanent: true so Vercel emits HTTP 308.`);
+      continue;
+    }
+
+    const status = declaredStatus(match);
+    if (!permanentStatuses.has(status)) {
+      failures.push(
+        `Local redirect config: ${expected.name} must declare a permanent status`
+        + ` ("statusCode": 301 or "permanent": true for 308); found ${status ?? 'no status'}.`,
+      );
+    } else if (expected.status && status !== expected.status) {
+      failures.push(`Local redirect config: ${expected.name} must emit HTTP ${expected.status}; found ${status}.`);
     }
   }
 }
@@ -158,6 +175,8 @@ cases.push({
 });
 
 if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.\d+){3}$/.test(base.hostname)) {
+  // The live apex status comes from the host's domain redirect, which sits in front of
+  // vercel.json routing, so either permanent status passes; 307 is the failure to catch.
   const alternateHost = base.hostname.startsWith('www.') ? base.hostname.slice(4) : `www.${base.hostname}`;
   const alternateSource = buildUrl(base, '/about.html', query);
   alternateSource.hostname = alternateHost;
@@ -165,7 +184,6 @@ if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.
     name: 'Apex/www host canonicalization',
     source: alternateSource,
     target: buildUrl(base, '/about.html', query),
-    statuses: new Set([308]),
   });
   const alternateRootSource = buildUrl(base, '/', query);
   alternateRootSource.hostname = alternateHost;
@@ -173,12 +191,16 @@ if (!base.hostname.includes(':') && base.hostname !== 'localhost' && !/^\d+(?:\.
     name: 'Apex/www root canonicalization',
     source: alternateRootSource,
     target: buildUrl(base, '/', query),
-    statuses: new Set([308]),
   });
 }
 
 cases.push(
-  { name: 'Retired AI service', source: buildUrl(base, '/ai-car-buying-agent.html', query), target: buildUrl(base, '/schedule.html', query) },
+  {
+    name: 'Retired AI service',
+    source: buildUrl(base, '/ai-car-buying-agent.html', query),
+    target: buildUrl(base, '/schedule.html', query),
+    statuses: new Set([301]),
+  },
   {
     name: 'index.html canonicalization',
     source: buildUrl(base, '/index.html', query),

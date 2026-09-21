@@ -129,7 +129,7 @@
     {
       "source": "/ai-car-buying-agent.html",
       "destination": "/schedule.html",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
