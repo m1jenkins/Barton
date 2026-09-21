@@ -67,12 +67,12 @@ Commercial service copy uses “Austin-based” and “nationwide remote support
 
 ## Acceptance checks
 
-- [ ] Homepage has one `h1` element and no retired `$195` or `$495` offer.
-- [ ] All updated metadata uses current nationwide/Austin framing and current prices.
-- [ ] New explainer is `index, follow`, has one canonical URL, and is included in `sitemap.xml`.
-- [ ] Home, How It Works, About, Pricing, and Resources provide contextual routes to the explainer where appropriate.
-- [ ] New copy contains no savings percentage or average, guarantee, refund promise, street address, LocalBusiness markup, testimonial, or review count.
-- [ ] City pages and contained blog/resource pages retain their current robots state.
-- [ ] `data/content-inventory.csv` records the new page intent and lifecycle.
-- [ ] Repository tests and `scripts/validate-site.mjs` pass.
+- [x] Homepage has one `h1` element and no retired `$195` or `$495` offer.
+- [x] All updated metadata uses current nationwide/Austin framing and current prices.
+- [x] New explainer is `index, follow`, has one canonical URL, and is included in `sitemap.xml`.
+- [x] Home, How It Works, About, Pricing, and Resources provide contextual routes to the explainer where appropriate.
+- [x] New copy contains no savings percentage or average, guarantee, refund promise, street address, LocalBusiness markup, testimonial, or review count.
+- [x] City pages and contained blog/resource pages retain their current robots state.
+- [x] `data/content-inventory.csv` records the new page intent and lifecycle.
+- [x] Repository tests and `scripts/validate-site.mjs` pass.
 
