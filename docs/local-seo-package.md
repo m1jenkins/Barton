@@ -1,12 +1,14 @@
 # Drive Right Local SEO Package
 
-> September 18, 2026 correction: remote nationwide coverage alone does not establish Google Business Profile eligibility. See [the actual account/eligibility audit](seo-execution/SEO-08.md); appropriate in-person customer contact and the correct Drive Right managing profile remain unverified.
+> September 22, 2026: owner confirmed a live Auto broker **service-area** Google Business Profile. Google verification is still processing, so there is **no public Maps/GBP URL** yet. Do not invent a CID or `sameAs` URL. Do not publish the hidden verification address, `streetAddress`, `geo`, or `LocalBusiness` markup.
+>
+> September 18, 2026 correction: remote nationwide coverage alone does not establish Google Business Profile eligibility. See [the actual account/eligibility audit](seo-execution/SEO-08.md). The 2026-09-22 owner confirmation covers profile existence and SAB mode; it does not authorize storefront listings or a public address.
 
-Status date: August 21, 2026. Companion to `docs/release-readiness.md` Gate 5 and `data/entities.json`.
+Status date: September 22, 2026. Companion to `docs/release-readiness.md` Gate 5 and `data/entities.json`.
 
 ## Entity model constraint
 
-Drive Right is a **service-area business**: one Austin-based operation serving nine Texas metros (`data/entities.json`, `localBusinessEntity: false` for all metros). Do not create storefront listings in Dallas, Houston, or any other metro. One profile per platform, service-area mode.
+Drive Right is a **service-area business**: one Austin-based operation serving nine Texas metros (`data/entities.json`, `localBusinessEntity: false` for all metros) plus remote nationwide support. Do not create storefront listings in Dallas, Houston, or any other metro. One profile per platform, service-area mode.
 
 ## Canonical NAP record (sync everywhere)
 
@@ -15,20 +17,23 @@ Drive Right is a **service-area business**: one Austin-based operation serving n
 | Name | Drive Right | `data/entities.json` |
 | Phone | +1 (512) 910-4938 | footer, JSON-LD `Organization.telephone` |
 | URL | https://www.driverightcarbuying.com/ | canonical |
-| Email | hello@driverightcarbuying.com | schema + footer |
-| Area served | Texas (9 named metros) | `data/entities.json` |
+| Email | hello@driverightcarbuying.com | schema, footer, and `policy.html` |
+| Hours | Monday–Friday 09:00–17:00 America/Chicago; weekends closed | `data/entities.json`, homepage JSON-LD |
+| Area served | United States, plus nine named Texas metros | `data/entities.json` |
+| sameAs | omit until a public GBP URL exists | `organization.sameAsStatus` remains pending |
 
-Open inconsistency to resolve with owner: `policy.html` displays mason@driverightcarbuying.com while schema/footer use hello@. Pick one public contact email and sync all surfaces.
+Public contact email is `hello@driverightcarbuying.com`. Schema, footer, and `policy.html` use that address. Do not publish `mason@driverightcarbuying.com` as the public inbox.
 
 ## Google Business Profile (do first)
 
-1. Owner confirms the real Austin address (kept hidden for SAB verification) plus hours and phone.
-2. Create profile in **Service Area Business** mode: hide address, set Texas service area, list the 9 metros as areas served.
-3. Category: pick the most accurate available category at setup time; evaluate candidates rather than defaulting to "Car dealer", which misrepresents the model.
-4. Add services matching the three approved tiers from `data/services.json`; keep prices consistent with schedule.html.
+1. ~~Owner confirms the real Austin address (kept hidden for SAB verification) plus hours and phone.~~ Owner-confirmed 2026-09-21/22. Hidden verification address stays out of schema and NAP.
+2. ~~Create profile in **Service Area Business** mode.~~ Live as Auto broker SAB. Service cities: Austin, Arlington, Dallas, El Paso, Fort Worth, Houston, New Braunfels, San Antonio, San Marcos. Public Maps URL still pending verification.
+3. Category in use: Auto broker. Do not switch to "Car dealer".
+4. Add services matching the current paid tiers from `data/services.json` (Full Service $295, Ultimate Concierge $895). AI Agent is retired for new sales. Keep prices consistent with schedule.html.
 5. Fill description within GBP limits using homepage-approved copy; no savings claims beyond what `data/claims.csv` has approved.
 6. Upload logo + real photos (media inventory: `docs/media-inventory.md`).
 7. Enable messaging/chat only if response SLA is operationally staffed.
+8. After Google publishes a profile URL, add that exact URL to `organization.sameAs` and set `sameAsStatus` to `approved`. Until then, leave `sameAs` empty.
 
 ## Bing Places and Apple Business Connect
 

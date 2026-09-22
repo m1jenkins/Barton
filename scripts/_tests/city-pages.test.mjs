@@ -32,7 +32,7 @@ test('all 20 city pages preserve the entire homepage layout, assets, navigation 
     assert.deepEqual(bodyStructure(html), homeStructure, `${city.name}: homepage structure drifted`);
     assert.deepEqual([...html.matchAll(/<link rel="stylesheet"[^>]+>/g)].map(match => match[0]), homeStyles);
     assert.equal(doc.noindex, true);
-    assert.equal(doc.h1[0], `${city.name} car buying.Remote research and negotiation.`);
+    assert.equal(doc.h1[0], `Skip the hours at the dealer in ${city.name}.Let us find you the perfect car.`);
     assert.deepEqual(doc.canonical, [`https://www.driverightcarbuying.com/${city.slug}`]);
     assert.ok(hub.links.includes(`/${city.slug}`));
     assert.ok(doc.visibleText.includes(city.localSentence));

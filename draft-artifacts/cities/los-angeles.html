@@ -57,6 +57,21 @@
         "@type": "Country",
         "name": "United States"
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00",
+          "timeZone": "America/Chicago"
+        }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-512-910-4938",
@@ -157,7 +172,7 @@
 }
     </script>
 
-    <meta name="theme-color" content="#E8E6E1">
+    <meta name="theme-color" content="#FFFFFF">
     <script>
       // Prepare blank artwork before first paint; failed startup restores static scenes.
       if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
@@ -169,10 +184,10 @@
     </script>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="preload" href="/assets/buying/fonts/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/buying/daisy.css">
+    <link rel="stylesheet" href="/buying/daisy.css?v=48aaa112250b">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=347d1a301ef4">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=e5727d358cc5">
 <link rel="preload" as="image" type="image/avif" href="/assets/buying/mx-5-coastal-hero-1440.avif" fetchpriority="high" imagesrcset="/assets/buying/mx-5-coastal-hero-640.avif 640w, /assets/buying/mx-5-coastal-hero-960.avif 960w, /assets/buying/mx-5-coastal-hero-1440.avif 1440w, /assets/buying/mx-5-coastal-hero-1920.avif 1920w" imagesizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px">
 </head>
 <body class="dr" data-view="home" data-buying-page="home"><a class="skip-link" href="#main-content">Skip to main content</a>
@@ -187,12 +202,12 @@
 </header><main id="main-content" tabindex="-1">
   <section id="intake-view" aria-label="Find your next car">
     <div class="intake-shell">
-      <div class="hero-intro" id="hero"><h1>Los Angeles car buying.<br><em>Remote research and negotiation.</em></h1><p>We research vehicles, compare offers, and negotiate purchases. Add your Los Angeles commute, parking space, and weekend plans to the brief.</p></div>
-      <div class="chat-heading" hidden><a class="back-link" href="/"><span data-icon="back"></span> Back to home</a><h2>Describe <em>the car you want.</em></h2><div class="chat-meta"><span>Build your buying brief</span><span id="step-label">0 of 9 details</span></div><progress id="intake-progress" max="9" value="0" aria-label="Buying brief progress"></progress></div>
+      <div class="hero-intro" id="hero"><h1>Skip the hours at the dealer in Los Angeles.<br>Let us find you the perfect car.</h1><p>Let us know what you want. We go on the hunt — calling dealers, sending emails, comparing offers, and negotiating — so you don’t burn evenings on the lot. You stay in control of whether to buy. Add your Los Angeles commute, parking space, and weekend plans to the brief.</p></div>
+      <div class="chat-heading" hidden><a class="back-link" href="/"><span data-icon="back"></span> Back to home</a><h2>Let us know what you want.</h2><div class="chat-meta"><span>Build your buying brief</span><span id="step-label">0 of 9 details</span></div><progress id="intake-progress" max="9" value="0" aria-label="Buying brief progress"></progress></div>
       <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Your guided buying brief" hidden></div>
       <div id="composer-area" class="composer-area">
         <div id="answer-actions" class="answer-actions" hidden><div id="choices" class="choices" aria-label="Suggested answers" hidden></div><button id="skip-detail" class="skip-detail" type="button" hidden>Skip for now</button></div>
-        <form id="composer" class="composer" autocomplete="off"><label for="answer" class="sr-only" id="answer-label">What car are you looking for?</label><textarea id="answer" name="answer" rows="1" placeholder="What car are you looking for?" maxlength="180" aria-describedby="input-error input-hint" enterkeyhint="send" required></textarea><button class="send-button" type="submit" aria-label="Send answer"><span data-icon="up"></span></button></form>
+        <form id="composer" class="composer" autocomplete="off"><label for="answer" class="sr-only" id="answer-label">Let us know what you want</label><textarea id="answer" name="answer" rows="1" placeholder="Let us know what you want" maxlength="180" aria-describedby="input-error input-hint" enterkeyhint="send" required></textarea><button class="send-button" type="submit" aria-label="Send answer"><span data-icon="up"></span></button></form>
         <p id="input-error" class="input-error" role="alert"></p><button id="example" class="example-link" type="button">Try “Miata under $30k”</button>
         <div class="conversation-controls" hidden><span id="input-hint">You can edit any answer.</span><a id="review-progress" class="text-link" href="/#brief" hidden>Review brief so far</a></div>
         <div id="brief-ready" class="brief-ready" hidden><a href="/#brief" class="primary-button">See your brief <span data-icon="arrow"></span></a><button id="add-details" class="text-link" type="button">Add car preferences</button></div>
@@ -202,7 +217,7 @@
     <section class="hero-fees" aria-labelledby="hero-fees-title"><div class="hero-fees-inner page-width"><div class="hero-fees-lead"><h2 id="hero-fees-title">Service fees</h2></div><ul class="hero-fees-plans"><li><a href="/schedule.html#full-service"><span>Full Service</span><span>$295 USD</span></a></li><li><a href="/schedule.html#concierge"><span>Ultimate Concierge</span><span>$895 USD</span></a></li></ul></div></section>
   </section>
   <section id="summary-view" class="summary-view page-width" aria-labelledby="summary-title" hidden>
-    <a href="/#conversation" class="back-link"><span data-icon="back"></span> Back to conversation</a><h2 id="summary-title" tabindex="-1">Review this brief.<br><em>Then choose a plan.</em></h2>
+    <a href="/#conversation" class="back-link"><span data-icon="back"></span> Back to conversation</a><h2 id="summary-title" tabindex="-1">Review this brief.<br>Then choose a plan.</h2>
     <div class="summary-layout"><article class="search-brief" aria-label="Your buying brief"><header class="brief-header"><h2>Your buying brief</h2><button id="edit-brief" class="outline-button" type="button"><span data-icon="edit"></span> Edit</button></header><h3 id="brief-vehicle"></h3><dl id="brief-details" class="brief-details"></dl><section class="brief-notes" aria-labelledby="brief-notes-title"><h4 id="brief-notes-title">Anything else?</h4><button id="brief-notes-value" type="button" data-edit="notes" aria-label="Edit final details">Add any final details</button></section><p class="budget-note">Car-price budget is before taxes, fees, and delivery.</p><div class="brief-footer"><a href="/schedule.html" class="primary-button">Choose my plan <span data-icon="arrow"></span></a></div><div class="brief-secondary"><button id="save-brief" type="button" class="text-link">Save on this device</button><button id="download-brief" type="button" class="text-link">Download brief <span data-icon="download"></span></button></div><p id="brief-status" role="status" class="small-note"></p></article>
       <aside class="concierge"><figure class="concierge-figure"><img src="/assets/buying/driveway-arrival.jpg" alt="An olive green roadster in a quiet residential driveway" width="1672" height="941" loading="lazy"><figcaption class="concierge-copy"><h2>Choose a plan.</h2><p>Your preferences are in one place. Your advisor confirms the next steps after payment and intake.</p><a href="/how-it-works.html" class="text-link">How Drive Right works <span data-icon="arrow"></span></a></figcaption></figure></aside>
     </div>
@@ -210,8 +225,8 @@
   <div id="home-content">
     <section class="legwork-section page-width section-space" id="how-it-works" aria-labelledby="process-title">
       <div class="section-intro">
-        <h2 id="process-title">How we do<br><em>the legwork.</em></h2>
-        <div class="legwork-intro"><p>Your brief sets the search.</p><a href="/#conversation" class="primary-button">Start my brief <span data-icon="arrow"></span></a></div>
+        <h2 id="process-title">How we do<br>the legwork.</h2>
+        <div class="legwork-intro"><p>Your brief replaces hours of dealer visits and back-and-forth.</p><a href="/#conversation" class="primary-button">Start my brief <span data-icon="arrow"></span></a></div>
       </div>
       <ol class="legwork-grid" role="list">
         <li class="legwork-card" data-legwork-card>
@@ -220,8 +235,8 @@
               <title id="legwork-search-title">A buying brief opens a wider search</title>
               <desc id="legwork-search-desc">Inquiries travel from your brief through a branching network of dealerships. Replies return for review. The storefronts illustrate outreach, not a promised number of dealers or replies.</desc>
               <defs>
-                <g id="legwork-store" fill="none" stroke="#3F4A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path fill="#E8E6E1" d="M-18-8h36v26h-36z"/><path fill="#E8E6E1" d="m-21-8 5-10h32l5 10Z"/><path d="M-21-8v5q5 5 10 0 5 5 11 0 5 5 11 0 5 5 10 0v-5M-7-18l-4 10m18-10 4 10M-10 18V6h9v12M6 6h7v6H6z"/></g>
-                <g id="legwork-envelope" fill="none" stroke="#3F4A3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect fill="#E8E6E1" x="-6" y="-4" width="12" height="8" rx="1"/><path d="m-6-4 6 4 6-4"/></g>
+                <g id="legwork-store" fill="none" stroke="#1B4D3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path fill="#FFFFFF" d="M-18-8h36v26h-36z"/><path fill="#FFFFFF" d="m-21-8 5-10h32l5 10Z"/><path d="M-21-8v5q5 5 10 0 5 5 11 0 5 5 11 0 5 5 10 0v-5M-7-18l-4 10m18-10 4 10M-10 18V6h9v12M6 6h7v6H6z"/></g>
+                <g id="legwork-envelope" fill="none" stroke="#1B4D3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect fill="#FFFFFF" x="-6" y="-4" width="12" height="8" rx="1"/><path d="m-6-4 6 4 6-4"/></g>
               </defs>
               <g aria-hidden="true">
                 <path class="legwork-line legwork-network" d="M108 112h42V45h156M150 112h156M150 112v61h156"/>
@@ -295,8 +310,8 @@
       <a href="/how-it-works.html#scope" class="text-link legwork-details">Explore the process and service scope <span data-icon="arrow"></span></a>
       <a href="/car-buying-service.html" class="text-link legwork-details">What a car buying and negotiation service does <span data-icon="arrow"></span></a>
     </section>
-    <section class="pricing-preview section-space" id="services"><div class="page-width" id="pricing"><div class="section-intro"><h2>Two plans.<br><em>$295 or $895.</em></h2><p>Full Service or Ultimate Concierge. Both are one-time fees.</p></div><div class="plan-grid"><article class="plan-card"><h3>Full Service</h3><p class="plan-description">Research, negotiation, and fee review with a dedicated advisor.</p><p class="plan-price">$295<span>one-time service fee</span></p><a href="/schedule.html#full-service" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Ultimate Concierge</h3><p class="plan-description">Expanded sourcing and coordination.</p><p class="plan-price">$895<span>one-time service fee</span></p><a href="/schedule.html#concierge" class="outline-button">Explore this plan <span data-icon="arrow"></span></a></article></div></div></section>
-    <section class="faq-section page-width section-space" id="faq"><h2>Questions<br><em>about the service.</em></h2><div class="faq-list">
+    <section class="pricing-preview section-space" id="services"><div class="page-width" id="pricing"><div class="section-intro"><h2>Two plans.<br>$295 or $895.</h2><p>Full Service or Ultimate Concierge. Both are one-time service fees — so you spend less time chasing dealers yourself.</p></div><div class="plan-grid"><article class="plan-card"><h3>Full Service</h3><p class="plan-description">A dedicated advisor handles research, negotiation, and fee review for you.</p><p class="plan-price">$295<span>one-time service fee</span></p><a href="/schedule.html#full-service" class="outline-button">Choose this plan <span data-icon="arrow"></span></a></article><article class="plan-card"><h3>Ultimate Concierge</h3><p class="plan-description">Expanded sourcing and more coordination when the search gets wider.</p><p class="plan-price">$895<span>one-time service fee</span></p><a href="/schedule.html#concierge" class="outline-button">Choose this plan <span data-icon="arrow"></span></a></article></div></div></section>
+    <section class="faq-section page-width section-space" id="faq"><h2>Questions<br>about the service.</h2><div class="faq-list">
       <details><summary>What does Drive Right do?</summary><p>We help Los Angeles car buyers research vehicles, compare offers, communicate with participating sellers, and negotiate purchases. Full Service includes a dedicated advisor, price negotiation, fee review, and documented recommendations; Ultimate Concierge adds expanded sourcing and coordination. <a href="/car-buying-service.html">Read what the car buying service covers</a>.</p></details>
       <details><summary>What will it cost?</summary><p>Full Service is $295 USD one time, and Ultimate Concierge is $895 USD one time. These are service fees. The vehicle, taxes, registration, inspection, financing, and any delivery costs are separate. Confirm current terms before booking.</p></details>
       <details><summary>Where can you help me buy?</summary><p>We’re based in Austin and help buyers in Los Angeles remotely. Search reach, seller participation, and delivery options depend on your plan and vehicle. We confirm those details with you before work begins.</p></details>
@@ -306,7 +321,7 @@
 </main><footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for Los Angeles.</p></div>
     <nav aria-label="Company"><a href="/car-buying-service.html">Car buying service</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a></div>
+    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Monday–Friday 09:00–17:00 America/Chicago</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><dialog id="edit-dialog" aria-labelledby="edit-title">
@@ -314,7 +329,7 @@
   <p class="dialog-description">Keep the essentials. Add a preference only if it matters to you.</p>
   <div id="edit-fields" class="edit-fields"></div><p id="edit-error" class="input-error" role="alert"></p>
   <footer class="dialog-footer"><button type="button" class="text-link" data-close>Cancel</button><button type="submit" class="primary-button">Save changes <span data-icon="check"></span></button></footer></form>
-</dialog><noscript><p class="noscript">Enable JavaScript to create a brief, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=caabeeac6625"></script>
-<script type="module" src="/buying/app.js?v=49fc1cb88383"></script>
+</dialog><noscript><p class="noscript">Enable JavaScript to create a brief, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=8a1279275d7c"></script>
+<script type="module" src="/buying/app.js?v=b407e382c403"></script>
 </body>
 </html>
