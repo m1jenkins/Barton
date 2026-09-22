@@ -64,11 +64,46 @@ export function createCheckout({ store, request, createId, attribution, track = 
     persist();
     return result;
   }
+  async function runDirect(tier) {
+    if (!Object.hasOwn(plans, tier)) throw new Error('Please choose Full Service or Ultimate Concierge.');
+    let checkout = state.checkouts.find(item => !item.stale && item.tier === tier && !item.leadId);
+    if (!checkout) {
+      checkout = { tier, leadId: null, key: createId(), payload: { tier, source_page: sourcePage, attribution } };
+      state.checkouts.push(checkout);
+    }
+    persist();
+    let result;
+    try {
+      result = await request('/api/checkout-start', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': checkout.key }, body: JSON.stringify(checkout.payload) });
+    } catch (error) {
+      if (error.code === 'stale_offer' || error.message === 'stale_offer') {
+        checkout.stale = true;
+        persist();
+        const stale = new Error(`The offer has changed. Review ${plans[tier].name} at $${plans[tier].fee} USD, then select Restart checkout.`);
+        stale.code = 'stale_offer';
+        throw stale;
+      }
+      throw error;
+    }
+    const url = new URL(result.url);
+    if (url.protocol !== 'https:') throw new Error('The secure checkout link could not be confirmed. Please retry.');
+    state.lastCheckout = { tier, brief: restoreBrief({}), contact: state.contact || {} };
+    if (!checkout.tracked) {
+      checkout.tracked = true;
+      track('begin_checkout', { service_tier: tier, checkout_attempt_id: result.attempt_id || '', direct: true });
+    }
+    persist();
+    return result;
+  }
   return {
     contact: state.contact,
     lastCheckout: () => state.lastCheckout,
     submit(input) {
       if (!pending) pending = run(input).finally(() => { pending = null; });
+      return pending;
+    },
+    startDirect(tier) {
+      if (!pending) pending = runDirect(tier).finally(() => { pending = null; });
       return pending;
     },
   };

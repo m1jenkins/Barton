@@ -195,3 +195,24 @@ test('retired consultation cannot collect a new lead or checkout',async()=>{
   await assert.rejects(flow.submit({tier:'consultation',contact:{name:'Buyer',email:'buyer@example.test'}}),/Full Service or Ultimate Concierge/);
   assert.equal(called,false);
 });
+
+test('startDirect skips leads and opens Stripe for a plan', async () => {
+  const calls = [];
+  const store = memoryStore();
+  const flow = createCheckout({
+    store,
+    createId: () => 'direct-key-1',
+    attribution: { first_touch: { utm_source: 'test' } },
+    request: async (url, options) => {
+      calls.push({ url, key: options.headers['Idempotency-Key'], body: JSON.parse(options.body) });
+      assert.equal(url, '/api/checkout-start');
+      return { ok: true, url: 'https://buy.stripe.com/test-direct', attempt_id: 'attempt-1' };
+    },
+  });
+  const result = await flow.startDirect('full_service');
+  assert.equal(result.url, 'https://buy.stripe.com/test-direct');
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].body.tier, 'full_service');
+  assert.equal(calls[0].body.lead_id, undefined);
+  assert.equal(calls.filter(c => c.url === '/api/leads').length, 0);
+});

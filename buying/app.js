@@ -1,6 +1,6 @@
 import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js';
 import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js';
-import { plans, createCheckout } from './checkout.js?v=ac202b0cf491';
+import { plans, createCheckout } from './checkout.js?v=3d24c048a0cd';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
@@ -362,23 +362,48 @@ window.addEventListener('pageshow', event => {
 if (contactDialog) {
   const remembered = checkoutStore.read()?.contact || {};
   for (const key of ['name','email','phone']) $(`#buyer-${key}`).value = typeof remembered[key] === 'string' ? remembered[key] : '';
-  const showPlan = (tier, updateURL = true) => {
-    if (!plans[tier]) return;
+  const startPlanCheckout = async (tier) => {
+    if (!plans[tier] || checkoutPending) return;
+    const client = window.driveRightClient;
+    if (!client) {
+      $('#contact-error').textContent = 'The page is still loading. Please try again.';
+      if (!contactDialog.open) contactDialog.showModal();
+      return;
+    }
     selectedTier = tier;
-    $('#chosen-plan').innerHTML = `<span>${escape(plans[tier].name)}<br><small>One-time service fee</small></span><strong>$${plans[tier].fee}</strong>`;
-    $('#contact-error').textContent = '';
-    if (updateURL) history.pushState({ ...history.state, buyingContact: true }, '', `#contact-${tier}`);
-    if (!contactDialog.open) contactDialog.showModal();
+    checkoutPending = true;
+    const buttons = [...document.querySelectorAll(`[data-plan="${tier}"]`)];
+    buttons.forEach(b => { b.setAttribute('aria-busy', 'true'); b.classList.add('is-loading'); });
+    try {
+      checkoutFlow ||= createCheckout({ store:checkoutStore, request:client.requestJson, createId:client.createId, attribution:client.attribution, track:client.track });
+      const result = await checkoutFlow.startDirect(tier);
+      window.location.assign(result.url);
+    } catch (error) {
+      $('#contact-error').textContent = `${error.message || 'We couldn’t open checkout.'} Please try again.`;
+      $('#chosen-plan').innerHTML = `<span>${escape(plans[tier].name)}<br><small>One-time service fee</small></span><strong>$${plans[tier].fee}</strong>`;
+      if (!contactDialog.open) contactDialog.showModal();
+      const button = $('#checkout-submit');
+      if (button) {
+        button.disabled = false;
+        button.setAttribute('aria-busy', 'false');
+        button.innerHTML = (error.code === 'stale_offer' ? 'Restart checkout ' : 'Continue to checkout ') + icon('arrow');
+      }
+    } finally {
+      checkoutPending = false;
+      buttons.forEach(b => { b.removeAttribute('aria-busy'); b.classList.remove('is-loading'); });
+    }
   };
-  document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); showPlan(a.dataset.plan); }));
+  document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); startPlanCheckout(a.dataset.plan); }));
   const syncPlan = () => {
     if (['#consultation', '#contact-consultation'].includes(location.hash)) {
       history.replaceState(history.state, '', location.pathname + location.search + '#retired-plan');
       document.getElementById('retired-plan')?.focus();
     }
     const tier = location.hash.replace('#contact-', '');
-    if (plans[tier] && location.hash.startsWith('#contact-')) showPlan(tier, false);
-    else if (contactDialog.open) contactDialog.close();
+    if (plans[tier] && location.hash.startsWith('#contact-')) {
+      history.replaceState(history.state, '', location.pathname + location.search + '#pricing');
+      startPlanCheckout(tier);
+    } else if (contactDialog.open) contactDialog.close();
   };
   window.addEventListener('popstate', syncPlan);
   window.addEventListener('hashchange', syncPlan);
