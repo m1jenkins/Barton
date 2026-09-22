@@ -1,6 +1,6 @@
 /* Daisy's established visual system, extended only on the redesigned pages. */
-.dr { --muted:#5C5B57; --paper:#E8E6E1; --ink:#1A1A18; --green:#3F4A3C; --line:#D0CEC7; --sage:#DDDBD5; background:var(--paper); color:var(--ink); }
-.dr[data-buying-page="home"] { --paper:#E8E6E1; --ink:#1A1A18; --green:#3F4A3C; --muted:#5C5B57; --line:#D0CEC7; --sage:#DDDBD5; background:var(--paper); color:var(--ink); }
+.dr { --muted:#5C5C5A; --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
+.dr[data-buying-page="home"] { --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --muted:#5C5C5A; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
 .dr ::selection { background:var(--green); color:var(--paper); }
 .dr :is(input,textarea) { caret-color:var(--green); }
 .dr .page-width { max-width:1440px; }
@@ -25,16 +25,16 @@
   font-weight: 600;
 }
 
-.dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:#3A3A36; }
+.dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:var(--muted); }
 .dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2,.legwork-copy h3,.plan-card h3) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
 /* killed Instrument Serif em accents — all sans */
 .dr[data-buying-page="home"] .plan-price { font-family:var(--sans); font-weight:600; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
-.dr .hero-fees { margin-top:8px; background:#DEDDD8; color:var(--ink); }
+.dr .hero-fees { margin-top:8px; background:var(--sage); color:var(--ink); }
 .dr .hero-fees-inner { display:grid; grid-template-columns:minmax(180px,.72fr) minmax(0,1.3fr); gap:18px 48px; align-items:end; padding-block:22px 26px; }
 .dr .hero-fees h2 { font:600 15px/1.3 var(--sans); color:var(--green); }
-.dr .hero-fees p { max-width:34ch; margin-top:6px; font-size:14px; line-height:1.45; color:#3A3A36; }
+.dr .hero-fees p { max-width:34ch; margin-top:6px; font-size:14px; line-height:1.45; color:var(--muted); }
 .dr .hero-fees-plans { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:8px 40px; margin:0; padding:0; }
-.dr .hero-fees-plans a { display:inline-flex; align-items:baseline; gap:14px; min-height:44px; padding:8px 0; border-bottom:1px solid #1A1A1826; color:var(--ink); font-size:15px; line-height:1.3; }
+.dr .hero-fees-plans a { display:inline-flex; align-items:baseline; gap:14px; min-height:44px; padding:8px 0; border-bottom:1px solid #11111126; color:var(--ink); font-size:15px; line-height:1.3; }
 .dr .hero-fees-plans a span:last-child { font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .dr .hero-fees-plans a:hover { color:var(--green); }
 .dr[data-view="conversation"] .hero-fees { display:none; }
@@ -170,7 +170,7 @@
 @media(max-width:760px) {
  .dr .legwork-section .section-intro { gap:24px; }.dr .legwork-intro { width:100%; }.dr .legwork-intro .primary-button { margin-top:20px; }.dr .legwork-card { display:block; }.dr .legwork-art { height:auto; min-height:0; padding:18px 12px; }.dr .legwork-graphic { max-width:360px; }.dr .legwork-copy { padding:24px; }.dr .legwork-copy h3 { font-size:32px; }.dr .legwork-details { font-size:12px; }
 }
-.dr .pricing-preview { background:#DEDDD8; }
+.dr .pricing-preview { background:var(--sage); }
 .dr .plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
 .dr .plan-card { background:var(--white); border:1px solid var(--line); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; scroll-margin-top:30px; min-width:0; }
 .dr .plan-card h2,.dr .plan-card h3 { font:500 30px/1.15 var(--display); letter-spacing:-.4px; }
@@ -247,7 +247,7 @@
 .dr .pricing-page { padding-bottom:64px; }
 .dr .plan-notes { max-width:860px; margin:30px auto 0; display:grid; gap:10px; text-align:center; font-size:12px; line-height:1.8; color:var(--muted); }
 .dr .direct-note { margin-top:28px; font-size:14px; text-align:center; line-height:1.6; }
-.dr .compact-brief { background:#DEDDD8; border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin:0 auto 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.dr .compact-brief { background:var(--sage); border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin:0 auto 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .dr .compact-brief h2 { font:500 26px/1.2 var(--display); }
 .dr .compact-brief p { font-size:13px; line-height:1.65; color:var(--green); margin-top:7px; }
 .dr #contact-dialog { width:min(520px,calc(100vw - 32px)); }
