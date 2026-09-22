@@ -58,9 +58,23 @@ All files in this table are under `assets/external/optimized/`.
 | Gray Porsche Cayman, 640×480 | `about-gray-porsche-cayman-640.avif` — 83,322 | `about-gray-porsche-cayman-640.webp` — 77,888 |
 | Gray Porsche Cayman, 960×720 | `about-gray-porsche-cayman-960.avif` — 198,576 | `about-gray-porsche-cayman-960.webp` — 171,644 |
 | Ford Maverick at Petrified Forest, 640×852/853 | `about-ford-maverick-petrified-forest-640.avif` — 62,598 | `about-ford-maverick-petrified-forest-640.webp` — 63,802 |
-| Ford Maverick at Petrified Forest, 960×1279 | `about-ford-maverick-petrified-forest-960.avif` — 158,065 | `about-ford-maverick-petrified-forest-960.webp` — 126,992 |
+| Ford Maverick at Petrified Forest, 960×1279 | `about-ford-maverick-petrified-forest-960.avif` — 113,219 (re-encoded 2026-09-22) | `about-ford-maverick-petrified-forest-960.webp` — 126,992 |
 
 All files in this table are under `assets/external/optimized/`. WebP uses quality 80; AVIF uses format option 70.
+
+The original `sips` encode of `about-ford-maverick-petrified-forest-960.avif` could not be decoded by Chromium, so the gallery showed a blank tile. It was re-encoded on 2026-09-22 from the same source JPEG with `sharp` (resize to 960 wide, AVIF quality 60); no crop or pixel edits.
+
+### Founder headshot
+
+Owner-supplied selfie of Mason, provided in the 2026-09-22 design session for the homepage founder section and the About page. The 1500×2000 WebP source carried an ICC profile and no EXIF or location metadata. Derivatives were resized only (no crop or retouching) with `sharp`; metadata is not written.
+
+| Width | AVIF bytes | WebP bytes |
+|---|---:|---:|
+| 480×640 | `mason-headshot-480.avif` — 30,931 | `mason-headshot-480.webp` — 43,770 |
+| 800×1067 | `mason-headshot-800.avif` — 73,613 | `mason-headshot-800.webp` — 102,294 |
+| 1200×1600 | `mason-headshot-1200.avif` — 131,460 | `mason-headshot-1200.webp` — 178,014 |
+
+JPEG fallback: `mason-headshot-1200.jpg` — 1200×1600, 222,580 bytes (mozjpeg quality 82). All files are under `assets/buying/`; AVIF quality 58, WebP quality 80.
 
 ### Testimonial profiles
 

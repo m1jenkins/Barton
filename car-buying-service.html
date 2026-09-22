@@ -72,11 +72,10 @@
     </script>
     <meta name="theme-color" content="#E8E6E1">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="preload" href="/assets/buying/fonts/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/buying/daisy.css?v=d37e468349d6">
+    <link rel="stylesheet" href="/buying/daisy.css?v=5c34c5207147">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=5c05d1a6655d">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=051bdee3eb5d">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
@@ -88,8 +87,9 @@
   <nav aria-label="Main navigation">
     <a class="nav-link" href="/how-it-works.html">How it works</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
-    <a class="nav-link" href="/#brief" data-brief-link>Your brief</a>
+    <a class="nav-link" href="/about.html">About</a>
   </nav>
+  <a class="header-cta" href="/#conversation" data-brief-link data-cta-location="header">Start my brief</a>
 </header>
 <main id="main-content" tabindex="-1">
   <section class="page-width how-page">
@@ -130,9 +130,9 @@
   </section>
 
   <section class="page-width service-scope section-space" id="plans">
-    <h2>Two plans.<br><em>$295 or $895.</em></h2>
+    <h2>Two plans.<br>$295 or $895.</h2>
     <div class="plan-grid">
-      <article class="plan-card" id="full-service">
+      <article class="plan-card" data-featured id="full-service">
         <h3>Full Service</h3>
         <p class="plan-description">Research, negotiation, and fee review with a dedicated advisor.</p>
         <p class="plan-price">$295<span>one-time service fee</span></p>
@@ -142,7 +142,7 @@
           <li>Dedicated advisor through the process</li>
           <li>Documented vehicle recommendations</li>
         </ul>
-        <a href="/schedule.html#full-service" class="outline-button">Review Full Service <span data-icon="arrow"></span></a>
+        <a href="/schedule.html#full-service" class="primary-button">Review Full Service <span data-icon="arrow"></span></a>
       </article>
       <article class="plan-card" id="concierge">
         <h3>Ultimate Concierge</h3>
@@ -160,7 +160,7 @@
   </section>
 
   <section class="faq-section page-width section-space" id="questions">
-    <h2>Questions about<br><em>the service.</em></h2>
+    <h2>Questions about<br>the service.</h2>
     <div class="faq-list">
       <details><summary>Can Drive Right help if I already know the exact car?</summary><p>Yes. Your brief can name a specific year, make, model, trim, mileage range, color, transmission, and search radius. The available research and seller communication still depend on inventory, seller participation, and the plan you choose.</p></details>
       <details><summary>Can Drive Right choose the car for me?</summary><p>No. Drive Right can research and document options, but you choose the vehicle and decide whether to proceed after reviewing its condition and the final terms.</p></details>
@@ -170,13 +170,13 @@
   </section>
 </main>
 <footer class="site-footer page-width" id="footer">
-  <div class="footer-top">
-    <div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
-    <nav aria-label="Company"><a href="/car-buying-service.html">Car buying service</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a></div>
+  <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
+    <nav aria-label="Company"><a href="/how-it-works.html">How it works</a><a href="/car-buying-service.html">Car buying service</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
+    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Monday–Friday 09:00–17:00 America/Chicago</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
 <script src="/script.js?v=8a1279275d7c"></script>
+<script type="module" src="/buying/app.js?v=1d7c05f77984"></script>
 </body>
 </html>
