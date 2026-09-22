@@ -12,10 +12,22 @@
 .dr[data-view="home"] .composer-area { width:min(560px,100%); margin:28px 0 0; text-align:left; }
 .dr[data-buying-page="home"] .hero-intro { padding-top:8px; padding-inline:0; text-align:left; }
 .dr[data-buying-page="home"] .hero-intro h1 { color:var(--ink); font-family:var(--sans); font-weight:600; font-size:clamp(46px,6.2vw,76px); line-height:.94; letter-spacing:-.04em; }
-.dr[data-buying-page="home"] .hero-intro h1 em { font-family:var(--display); font-weight:400; font-style:normal; font-size:1em; color:var(--green); letter-spacing:-.03em; }
+/* killed Instrument Serif em accents — all sans */
+/* Home: no Instrument Serif accents or display headlines */
+.dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2,.service-scope>h2,.legwork-copy h3,.plan-card h3,.process-title,#process-title) {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -.03em;
+}
+.dr[data-buying-page="home"] .plan-price {
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
 .dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:#3A3A36; }
 .dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2,.legwork-copy h3,.plan-card h3) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
-.dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2) em { font-family:var(--display); font-weight:400; font-style:normal; letter-spacing:-.02em; }
+/* killed Instrument Serif em accents — all sans */
 .dr[data-buying-page="home"] .plan-price { font-family:var(--sans); font-weight:600; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
 .dr .hero-fees { margin-top:8px; background:#DEDDD8; color:var(--ink); }
 .dr .hero-fees-inner { display:grid; grid-template-columns:minmax(180px,.72fr) minmax(0,1.3fr); gap:18px 48px; align-items:end; padding-block:22px 26px; }
@@ -367,7 +379,7 @@
 .dr .ps-form__hint { color:var(--muted); font-size:12px; font-weight:400; }
 /* Homepage visual lock: one serif word, Inter for the rest, fee strip on stone. */
 .dr[data-buying-page="home"] :is(.chat-heading h2,.summary-view>h2,.search-brief h3,.concierge-copy h2,dialog h2,#drive-right-ad-privacy h2) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
-.dr[data-buying-page="home"] :is(.chat-heading h2,.summary-view>h2) em { font-family:var(--display); font-weight:400; font-style:normal; font-size:1em; letter-spacing:-.02em; }
+/* killed Instrument Serif em accents — all sans */
 .dr[data-buying-page="home"] .legwork-copy p { font-family:var(--sans); font-weight:400; letter-spacing:-.011em; }
 .dr[data-buying-page="home"] .hero-photo img { border-radius:16px; }
 .dr[data-buying-page="home"] .hero-fees { margin-top:32px; background:transparent; border-block:1px solid var(--line); }
