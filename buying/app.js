@@ -360,10 +360,9 @@ window.addEventListener('pageshow', event => {
   }
 });
 if (contactDialog) {
-  const remembered = checkoutStore.read()?.contact || {};
-  for (const key of ['name','email','phone']) $(`#buyer-${key}`).value = typeof remembered[key] === 'string' ? remembered[key] : '';
   const startPlanCheckout = async (tier) => {
     if (!plans[tier] || checkoutPending) return;
+    selectedTier = tier;
     const client = window.driveRightClient;
     if (!client) {
       $('#contact-error').textContent = 'The page is still loading. Please try again.';
@@ -386,7 +385,7 @@ if (contactDialog) {
       if (button) {
         button.disabled = false;
         button.setAttribute('aria-busy', 'false');
-        button.innerHTML = (error.code === 'stale_offer' ? 'Restart checkout ' : 'Continue to checkout ') + icon('arrow');
+        button.innerHTML = (error.code === 'stale_offer' ? 'Restart checkout ' : 'Retry secure checkout ') + icon('arrow');
       }
     } finally {
       checkoutPending = false;
@@ -413,34 +412,8 @@ if (contactDialog) {
     else history.replaceState(history.state, '', '#pricing');
   });
   syncPlan();
-  $('#plan-contact-form').addEventListener('submit', async e => {
-    e.preventDefault();
-    if (checkoutPending) return;
-    const client = window.driveRightClient;
-    if (!client) { $('#contact-error').textContent = 'The page is still loading. Please try again.'; return; }
-    checkoutFlow ||= createCheckout({ store:checkoutStore, request:client.requestJson, createId:client.createId, attribution:client.attribution, track:client.track });
-    const data = new FormData(e.currentTarget), button = $('#checkout-submit');
-    const contact = Object.fromEntries(['name','email','phone'].map(k => [k, data.get(k)]));
-    const requestTier = selectedTier;
-    let restartNeeded = false;
-    checkoutPending = true;
-    button.disabled = true; button.setAttribute('aria-busy','true'); button.textContent = 'Saving your request…'; $('#contact-error').textContent = '';
-    try {
-      const result = await checkoutFlow.submit({ tier:requestTier, contact, brief, honeypot:data.get('website') || '', token:data.get('cf-turnstile-response') || '' });
-      if (!contactDialog.open || selectedTier !== requestTier) return;
-      button.textContent = 'Opening secure checkout…'; window.location.assign(result.url);
-    } catch (error) {
-      restartNeeded = error.code === 'stale_offer';
-      $('#contact-error').textContent = `${error.message || 'We couldn’t open checkout.'} Your details are still here. Please try again.`;
-      button.disabled = false; button.setAttribute('aria-busy','false'); button.innerHTML = 'Continue to checkout '+icon('arrow');
-    } finally {
-      checkoutPending = false;
-      button.disabled = false;
-      button.setAttribute('aria-busy','false');
-      button.innerHTML = (restartNeeded ? 'Restart checkout ' : 'Continue to checkout ')+icon('arrow');
-    }
-  });
-  window.addEventListener('pageshow', () => { const b = $('#checkout-submit'); b.disabled = false; b.setAttribute('aria-busy','false'); b.innerHTML = 'Continue to checkout '+icon('arrow'); });
+  $('#checkout-submit').addEventListener('click', () => startPlanCheckout(selectedTier));
+
 }
 
 const paidBrief = $('#paid-brief');

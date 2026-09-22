@@ -1,0 +1,7 @@
+The homepage now paints ink on cool stone. Pull request: https://github.com/m1jenkins/Barton/pull/61
+
+The buying palette is cool stone `#E8E6E1`, ink `#1A1A18`, and asphalt green `#3F4A3C`. Sage fills and the warm cream paper are gone. Instrument Serif stays on the one-word headline accent; the rest of the type is Inter. Hero copy, the `$295` / `$895` fees, and Stripe checkout are unchanged.
+
+Checked in the browser: the page background computes to `rgb(232, 230, 225)` and the accent to `rgb(63, 74, 60)` on both the desktop and phone folds. The MX-5 photo is still the hero. `validate-site`, buying tests, and the city-draft check passed. Nothing was deployed.
+
+The pinned Houston HTML still declares a cream theme color, so that page’s browser chrome can lag the new paper. The shared stylesheet is what the page itself uses.The local preview server stopped after the homepage screenshots. The ink-and-asphalt pull request is still https://github.com/m1jenkins/Barton/pull/61.
