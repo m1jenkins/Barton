@@ -16,10 +16,19 @@ test('service-intent pages publish current prices without retired or unapproved 
     assert.doesNotMatch(html, forbidden, file);
   }
 
-  const homepage = htmlDocument(await read('index.html'));
+  const homepageHtml = await read('index.html');
+  const homepage = htmlDocument(homepageHtml);
+  const hero = homepageHtml.match(/<div class="hero-intro" id="hero">([\s\S]*?)<\/div>/)?.[1] ?? '';
   assert.equal(homepage.h1.length, 1);
+  assert.match(hero, /Nationwide car buying/);
+  assert.match(hero, /Consider it handled/);
+  assert.match(hero, /We research vehicles, compare offers, and negotiate purchases\./);
+  assert.doesNotMatch(hero, /\$295|\$895|you remain in control|Full Service|Ultimate Concierge/i);
+  assert.match(homepageHtml, /class="hero-fees"/);
   assert.match(homepage.visibleText, /\$295/);
   assert.match(homepage.visibleText, /\$895/);
+  assert.match(homepage.visibleText, /Full Service/);
+  assert.match(homepage.visibleText, /Ultimate Concierge/);
 
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html']) {
     const head = (await read(file)).match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? '';
