@@ -4,6 +4,7 @@ node_modules
 .env*
 .agents
 .dr-*
+.superdesign
 .codex
 .ai_rules
 .cursorrules
