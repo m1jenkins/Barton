@@ -61,9 +61,7 @@ export function renderCity(city, homepage) {
   let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
   for (const [from, to] of [
     ['Nationwide car buying.<br>', `${name} car buying.<br>`],
-    ['flat-fee nationwide car buying and negotiation service.', `flat-fee car buying and negotiation service for ${name} buyers.`],
-    ['Full Service is $295 USD one time, Ultimate Concierge is $895 USD one time, and you remain', `${escape(city.localSentence)} Full Service is $295 USD one time, Ultimate Concierge is $895 USD one time, and you remain`],
-    ['We help buyers research vehicles', `We help ${name} buyers research vehicles`],
+    ['We research vehicles, compare offers, and negotiate purchases.', `We research vehicles, compare offers, and negotiate purchases. ${escape(city.localSentence)}`],
     ['We help car buyers nationwide', `We help ${name} car buyers`],
     ['We’re based in Austin and serve buyers nationwide through remote support.', `We’re based in Austin and help buyers in ${name} remotely.`],
     ['Based in Austin. Here for buyers nationwide.', `Based in Austin. Here for ${name}.`],
