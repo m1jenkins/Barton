@@ -126,5 +126,7 @@ These are **intentional noindex**, not soft-orphan pages that should be indexed.
 - `new-car-pricing-incentives.html`
 - `vehicle-selection-total-cost.html`
 
+**Tesla FSD park (closed 2026-09-22):** `tesla-fsd-for-sale.html` stays at its URL with `noindex, follow`, off `sitemap.xml`. Do not 301 or 410. It is archived discovery copy, not a live inventory listing. See `docs/seo/2026-09-22-tesla-fsd-disposition.md`.
+
 **Indexable on the resource hub, not part of the blog-archive waste set:** `car-buying-service.html`, `how-it-works.html`, `schedule.html`, and `texas-local-market-intelligence.html`. Three draft cards (`blog-used-car-inspection-checklist.html`, `blog-dealership-addons-complete-guide.html`, `blog-buy-new-car-below-msrp.html`) remain noindex pending author and qualified review.
 
