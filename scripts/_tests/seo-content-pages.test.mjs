@@ -72,6 +72,50 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(pricingClaim, /about\.html/);
 });
 
+test('marketing nav surfaces the car-buying-service explainer with existing CTAs intact', async () => {
+  const buyingNav = /<nav aria-label="Main navigation">[\s\S]*?<a class="nav-link" href="\/how-it-works.html">How it works<\/a>\s*<a class="nav-link" href="\/car-buying-service.html">Car buying service<\/a>\s*<a class="nav-link" href="\/schedule.html">Pricing<\/a>\s*<a class="nav-link" href="\/#brief" data-brief-link>Your brief<\/a>\s*<\/nav>/;
+  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html']) {
+    const html = await read(file);
+    assert.match(html, buyingNav, `${file} header should include the explainer beside Pricing and Your brief`);
+  }
+
+  const about = await read('about.html');
+  assert.match(about, /id="nav-links"[\s\S]*href="\/car-buying-service\.html">Car buying service</);
+  assert.match(about, /mobile-menu__links[\s\S]*href="\/car-buying-service\.html">Car buying service</);
+  assert.match(about, /class="btn--primary nav__cta">See plans</);
+
+  const blog = await read('blog.html');
+  assert.match(blog, /id="nav-links"[\s\S]*href="\/car-buying-service\.html">Car buying service</);
+  assert.match(blog, /mobile-menu__links[\s\S]*href="\/car-buying-service\.html">Car buying service</);
+  assert.match(blog, /class="btn--primary nav__cta">Get Started</);
+});
+
+test('car-buying-service FAQPage schema matches visible questions and approved fees', async () => {
+  const html = await read(newPage);
+  const visible = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)].map(([, question, answer]) => ({
+    question: question.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+    answer: answer.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+  }));
+  assert.equal(visible.length, 5);
+  assert.match(visible[0].question, /cost/i);
+  assert.match(visible[0].answer, /\$295 USD one-time service fee/);
+  assert.match(visible[0].answer, /\$895 USD one-time service fee/);
+
+  const faq = htmlDocument(html).schemas.flatMap(schema => schema['@graph'] || [schema]).find(node => node['@type'] === 'FAQPage');
+  assert.ok(faq, 'explainer should include FAQPage JSON-LD');
+  const encoded = faq.mainEntity.map(item => ({
+    question: item.name,
+    answer: item.acceptedAnswer.text,
+  }));
+  assert.deepEqual(encoded, visible);
+
+  const indexable = ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html'];
+  for (const file of indexable) {
+    const hasFaq = htmlDocument(await read(file)).schemas.flatMap(schema => schema['@graph'] || [schema]).some(node => node['@type'] === 'FAQPage');
+    assert.equal(hasFaq, false, `${file} should not gain FAQPage schema in this change`);
+  }
+});
+
 test('city and editorial containment remains accurate after homepage copy changes', async () => {
   const cityData = JSON.parse(await read('data/city-pages.json'));
   for (const city of cityData.cities) {
