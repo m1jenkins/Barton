@@ -73,21 +73,19 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
 });
 
 test('marketing nav surfaces the car-buying-service explainer with existing CTAs intact', async () => {
-  const buyingNav = /<nav aria-label="Main navigation">[\s\S]*?<a class="nav-link" href="\/how-it-works.html">How it works<\/a>\s*<a class="nav-link" href="\/car-buying-service.html">Car buying service<\/a>\s*<a class="nav-link" href="\/schedule.html">Pricing<\/a>\s*<a class="nav-link" href="\/#brief" data-brief-link>Your brief<\/a>\s*<\/nav>/;
-  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html']) {
+  const explainer = '<a class="nav-link" href="/car-buying-service.html"';
+  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
-    assert.match(html, buyingNav, `${file} header should include the explainer beside Pricing and Your brief`);
+    const nav = html.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+    const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
+    assert.deepEqual(links, ['/how-it-works.html', '/car-buying-service.html', '/schedule.html', '/about.html'], `${file} header should list the explainer after How it works`);
+    assert.match(nav, new RegExp(explainer.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&') + '[^>]*>Car buying service</a>'));
+    assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my brief<\/a>/, `${file} keeps the header brief CTA`);
   }
+  assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
 
-  const about = await read('about.html');
-  assert.match(about, /id="nav-links"[\s\S]*href="\/car-buying-service\.html">Car buying service</);
-  assert.match(about, /mobile-menu__links[\s\S]*href="\/car-buying-service\.html">Car buying service</);
-  assert.match(about, /class="btn--primary nav__cta">See plans</);
-
-  const blog = await read('blog.html');
-  assert.match(blog, /id="nav-links"[\s\S]*href="\/car-buying-service\.html">Car buying service</);
-  assert.match(blog, /mobile-menu__links[\s\S]*href="\/car-buying-service\.html">Car buying service</);
-  assert.match(blog, /class="btn--primary nav__cta">Get Started</);
+  const css = await read('buying/drive-right.css');
+  assert.match(css, /@media\(max-width:960px\) \{ \.dr \.site-header \.nav-link\[href="\/car-buying-service\.html"\] \{ display:none; \} \}/, 'narrow headers hide the extra link so the nav and CTA fit one row');
 });
 
 test('car-buying-service FAQPage schema matches visible questions and approved fees', async () => {
