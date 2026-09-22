@@ -72,6 +72,44 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(pricingClaim, /about\.html/);
 });
 
+test('homepage Organization schema records owner-confirmed hours and service areas without a storefront', async () => {
+  const entities = JSON.parse(await read('data/entities.json'));
+  const homepage = htmlDocument(await read('index.html'));
+  const organization = homepage.schemas.flatMap(schema => schema['@graph'] || [schema]).find(node => node['@type'] === 'Organization');
+  const cities = entities.serviceAreas.map(area => area.name);
+
+  assert.equal(entities.googleBusinessProfile.status, 'owner_confirmed_live');
+  assert.equal(entities.googleBusinessProfile.publicUrl, null);
+  assert.equal(entities.organization.sameAsStatus, 'pending_owner_confirmation');
+  assert.deepEqual(entities.organization.sameAs, []);
+  assert.match(entities.organization.sameAsTodo, /TODO: add the public Google Business Profile/);
+  assert.equal(entities.businessBase.city, 'Austin');
+  assert.equal(entities.businessBase.publicStorefrontConfirmed, false);
+  assert.ok(entities.serviceAreas.every(area => area.localBusinessEntity === false));
+  assert.equal(entities.businessLocations.length, 0);
+
+  const hours = organization.openingHoursSpecification;
+  assert.equal(hours.length, 1);
+  assert.deepEqual(hours[0].dayOfWeek, ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
+  assert.equal(hours[0].opens, '09:00');
+  assert.equal(hours[0].closes, '17:00');
+  assert.equal(hours[0].timeZone, 'America/Chicago');
+  assert.equal(organization.sameAs, undefined);
+  assert.equal(organization.streetAddress, undefined);
+  assert.equal(organization.address, undefined);
+  assert.equal(organization.geo, undefined);
+
+  const served = organization.areaServed.map(entry => entry.name);
+  assert.ok(served.includes('United States'));
+  for (const city of cities) assert.ok(served.includes(city), city);
+
+  assert.match(homepage.visibleText, /Monday–Friday 09:00–17:00 America\/Chicago/);
+  assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
+  assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
+  assert.match(await read('llms.txt'), /\$295 Full Service and \$895 Ultimate Concierge/);
+  assert.match(await read('llms.txt'), /AI Agent Buying Service is retired for new sales/);
+});
+
 test('city and editorial containment remains accurate after homepage copy changes', async () => {
   const cityData = JSON.parse(await read('data/city-pages.json'));
   for (const city of cityData.cities) {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "recordStatus": "draft_pending_owner_confirmation",
-  "lastObservedAt": "2026-08-12",
+  "recordStatus": "owner_confirmed_service_area_business",
+  "lastObservedAt": "2026-09-22",
   "organization": {
     "id": "https://www.driverightcarbuying.com/#organization",
     "schemaType": "Organization",
@@ -9,12 +9,87 @@
     "url": "https://www.driverightcarbuying.com/",
     "telephone": "+15129104938",
     "email": "hello@driverightcarbuying.com",
-    "areaServed": "United States",
+    "areaServed": [
+      {
+        "schemaType": "Country",
+        "name": "United States"
+      },
+      {
+        "schemaType": "City",
+        "name": "Austin",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "Arlington",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "Dallas",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "El Paso",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "Fort Worth",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "Houston",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "New Braunfels",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "San Antonio",
+        "region": "TX"
+      },
+      {
+        "schemaType": "City",
+        "name": "San Marcos",
+        "region": "TX"
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00",
+        "timeZone": "America/Chicago"
+      }
+    ],
     "sameAs": [],
     "sameAsStatus": "pending_owner_confirmation",
+    "sameAsTodo": "TODO: add the public Google Business Profile / Maps URL to sameAs after Google verification publishes a URL. Do not invent a CID or placeholder Maps URL.",
     "areaServedEvidence": "data/services.json#availabilityConfirmation"
   },
   "businessLocations": [],
+  "googleBusinessProfile": {
+    "profileType": "service_area_business",
+    "status": "owner_confirmed_live",
+    "category": "Auto broker",
+    "publicUrl": null,
+    "publicUrlStatus": "pending_verification",
+    "addressVisibility": "hidden_for_verification_not_for_schema",
+    "note": "Owner confirmed a live SAB on 2026-09-21/22. Google verification is still processing. Do not render streetAddress, geo, LocalBusiness, or sameAs until a public URL exists."
+  },
   "serviceAreas": [
     {
       "id": "https://www.driverightcarbuying.com/#service-area-austin",
@@ -109,9 +184,10 @@
   ],
   "schemaParityRule": "Only render facts that are approved in this record and visibly supported on the corresponding page. Service-area pages must not create fictional LocalBusiness locations.",
   "approval": {
-    "businessOwner": null,
-    "approvedAt": null,
-    "nextReviewAt": null
+    "businessOwner": "owner_confirmed_2026-09-21",
+    "approvedAt": "2026-09-21",
+    "nextReviewAt": "2026-12-21",
+    "scope": "SAB profile existence, Austin city base, weekday hours, phone, public email, and nine named service cities plus United States. Does not approve a public street address, Maps sameAs URL, LocalBusiness markup, or metro indexability."
   },
   "businessBase": {
     "city": "Austin",
@@ -121,9 +197,9 @@
       "docs/local-seo-package.md",
       "about.html"
     ],
-    "observedAt": "2026-09-05",
+    "observedAt": "2026-09-22",
     "publicStorefrontConfirmed": false,
-    "approvalStatus": "pending_owner_confirmation",
-    "note": "Existing Austin base recorded; no street address or additional business location created. Exact coverage and in-person logistics remain pending."
+    "approvalStatus": "owner_confirmed_city_only",
+    "note": "Austin city base owner-confirmed. Service-area business only; no public street address, additional business location, or geo. Hidden GBP verification address is not for schema or NAP."
   }
 }
