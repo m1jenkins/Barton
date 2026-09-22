@@ -169,7 +169,7 @@ function renderConversation() {
   }
   const reply = replyPending
     ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span></div>'
-    : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Take a look, make it yours, and we’ll go from there.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
+    : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Review it, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
   const responseMarkup = `<span class="message-label assistant-name">Drive Right</span>${reply}`;
   if (response.innerHTML !== responseMarkup) response.innerHTML = responseMarkup;
   const choices = field && !replyPending ? choicesFor(field, brief.answers) : [];
@@ -229,10 +229,10 @@ function setView(next, focus = true) {
   if (next === 'home') {
     $('#composer').hidden = false; $('#choices').hidden = true; $('#skip-detail').hidden = true; $('#answer-actions').hidden = true;
     $('#brief-ready').hidden = true; $('.conversation-controls').hidden = true;
-    input.placeholder = 'What car are you dreaming of?'; input.inputMode = 'text';
+    input.placeholder = 'What car are you looking for?'; input.inputMode = 'text';
     input.readOnly = false; input.maxLength = 180; input.rows = 1; input.enterKeyHint = 'send';
     $('#composer').classList.remove('is-multiline'); $('#composer').setAttribute('aria-busy', 'false'); $('#composer .send-button').disabled = false;
-    $('#answer-label').textContent = 'What car are you dreaming of?';
+    $('#answer-label').textContent = 'What car are you looking for?';
     requestAnimationFrame(sizeAnswer);
   }
   document.title = next === 'brief' ? 'Your buying brief | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : homeTitle;
