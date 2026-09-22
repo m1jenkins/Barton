@@ -98,10 +98,19 @@ const home = document.body.dataset.buyingPage === 'home';
 const homeTitle = document.title;
 const input = $('#answer');
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+// The header button starts a brief, or returns to one already in progress.
+function syncBriefLink() {
+  const link = $('[data-brief-link]');
+  if (!link) return;
+  const started = Object.keys(brief.answers).length > 0;
+  link.textContent = started ? 'Your brief' : 'Start my brief';
+  link.setAttribute('href', started ? '/#brief' : '/#conversation');
+}
 function persist() {
   const storage = briefStore.write(brief);
   const message = storage === 'localStorage' ? '' : storage === 'sessionStorage' ? 'Draft saved for this tab. Download a copy to keep it.' : 'Browser storage is unavailable. Keep a downloaded copy of your brief.';
   if ($('#saved-indicator')) $('#saved-indicator').textContent = message;
+  syncBriefLink();
   return storage;
 }
 function currentField() { return (optionalQuestions ? nextField : nextIntakeField)(brief.answers, brief.skipped); }
