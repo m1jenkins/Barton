@@ -3,6 +3,7 @@
 node_modules
 .env*
 .agents
+.dr-*
 .codex
 .ai_rules
 .cursorrules

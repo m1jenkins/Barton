@@ -39,7 +39,7 @@ node scripts/check-redirects.mjs
 ## Gate 3: deployment and canonical verification
 
 - Deploy to a preview, run the full form/payment/browser matrix, then promote the same artifact to production.
-- Live check on August 20, 2026: the apex-to-`www` hop preserves the path and query string but still returns temporary `307`; the other ten host/path cases pass. Correct the upstream Vercel/domain redirect and rerun the matrix before promotion.
+- Live check on September 22, 2026: the Vercel domain setting for `driverightcarbuying.com` now redirects to `www` with a permanent `301`, and `/about.html` keeps its path (it was a temporary `307` on August 20). `http://driverightcarbuying.com` still takes two permanent hops (Cloudflare to HTTPS, then Vercel to `www`). Query-string preservation and the legacy apex were not rechecked; rerun the full matrix from an unrestricted network.
 - Verify Cloudflare and Vercel produce one permanent hop for HTTP, apex/www, `/index.html`, malformed `.html/`, the legacy domain, and `inquiry.html`; preserve query strings.
 - Confirm the legacy domain no longer serves a competing 200 response.
 - Inspect sanitized edge/function logs and validate crawler IPs using the applicable official method before concluding that named crawlers have access.

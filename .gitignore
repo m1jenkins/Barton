@@ -6,7 +6,4 @@ node_modules/
 .DS_Store
 npm-debug.log*
 .env*
-.dr-seo-*
-.dr-checkout-stripe.log
-.dr-checkout-stripe.pid
-.dr-checkout-stripe.prompt.txt
+.dr-*
