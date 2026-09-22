@@ -72,6 +72,56 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(pricingClaim, /about\.html/);
 });
 
+test('brand-collision copy keeps Drive Right a service, not Drive Right Auto Sales', async () => {
+  const html = await read(newPage);
+  const document = htmlDocument(html);
+  const explainer = 'car-buying-service.html#not-a-dealer';
+
+  assert.match(html, /<h2 id="not-a-dealer">Not a vehicle dealer or Drive Right Auto Sales<\/h2>/);
+  assert.match(document.visibleText, /not a vehicle dealer/i);
+  assert.match(document.visibleText, /Drive Right Auto Sales/);
+  assert.match(document.visibleText, /Is Drive Right the same as Drive Right Auto Sales or a dealership\?/);
+  assert.match(document.visibleText, /you may be looking for a different company/i);
+  assert.doesNotMatch(html, /sameAs/i);
+  assert.doesNotMatch(html, /streetAddress|LocalBusiness/i);
+
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
+  const description = html.match(/<meta name="description"\s+content="([^"]+)"/i)?.[1] ?? '';
+  assert.match(title, /car buying service/i);
+  assert.match(title, /not a dealership/i);
+  assert.doesNotMatch(title, /inventory|cars for sale|auto sales/i);
+  assert.match(description, /not a vehicle dealer/i);
+  assert.match(description, /\$295/);
+  assert.match(description, /\$895/);
+  assert.doesNotMatch(description, /inventory|cars for sale|guarantee|refund/i);
+
+  const faqPage = document.schemas.flatMap((schema) => schema['@graph'] || [schema]).find((node) => node['@type'] === 'FAQPage');
+  if (faqPage) {
+    const serialized = JSON.stringify(faqPage);
+    assert.match(serialized, /Drive Right Auto Sales/);
+    assert.match(serialized, /not a vehicle dealer/i);
+  }
+
+  for (const file of ['index.html', 'about.html', 'how-it-works.html', 'schedule.html', 'blog.html', 'texas-local-market-intelligence.html']) {
+    const page = htmlDocument(await read(file));
+    assert.ok(page.links.some((link) => link.includes(explainer)), `${file} should link to ${explainer}`);
+    assert.match(page.visibleText, /not a vehicle dealer/i, file);
+  }
+
+  const sitemap = await read('sitemap.xml');
+  for (const file of [
+    'tesla-fsd-for-sale.html',
+    'texas-car-buying-rules-paperwork.html',
+    'auto-financing-credit-fi.html',
+    'used-car-due-diligence.html',
+    'new-car-pricing-incentives.html',
+    'vehicle-selection-total-cost.html',
+  ]) {
+    assert.equal(htmlDocument(await read(file)).noindex, true, file);
+    assert.doesNotMatch(sitemap, new RegExp(file.replaceAll('.', '\\.')));
+  }
+});
+
 test('city and editorial containment remains accurate after homepage copy changes', async () => {
   const cityData = JSON.parse(await read('data/city-pages.json'));
   for (const city of cityData.cities) {
