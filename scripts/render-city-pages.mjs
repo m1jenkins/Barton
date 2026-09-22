@@ -60,8 +60,8 @@ export function renderCity(city, homepage) {
   const description = homepage.match(/<meta name="description" content="([^"]+)">/)[1].replace('buyers nationwide', `buyers in ${city.name}`);
   let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
   for (const [from, to] of [
-    ['Skip hours on the dealer lot.<br>', `Skip dealer-lot hours for ${name}.<br>`],
-    ['Describe the car once. We research vehicles, compare offers, and negotiate remotely — so you don’t burn evenings at the dealership. You stay in control of whether to buy.', `Describe the car once. We research vehicles, compare offers, and negotiate remotely — so you don’t burn evenings at the dealership. You stay in control of whether to buy. ${escape(city.localSentence)}`],
+    ['Skip the hours at the dealer.<br>', `Skip the hours at the dealer in ${name}.<br>`],
+    ['Let us know what you want. We go on the hunt — calling dealers, sending emails, comparing offers, and negotiating — so you don’t burn evenings on the lot. You stay in control of whether to buy.', `Let us know what you want. We go on the hunt — calling dealers, sending emails, comparing offers, and negotiating — so you don’t burn evenings on the lot. You stay in control of whether to buy. ${escape(city.localSentence)}`],
     ['We help car buyers nationwide', `We help ${name} car buyers`],
     ['We’re based in Austin and serve buyers nationwide through remote support.', `We’re based in Austin and help buyers in ${name} remotely.`],
     ['Based in Austin. Here for buyers nationwide.', `Based in Austin. Here for ${name}.`],
