@@ -21,7 +21,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   const hero = homepageHtml.match(/<div class="hero-intro" id="hero">([\s\S]*?)<\/div>/)?.[1] ?? '';
   assert.equal(homepage.h1.length, 1);
   assert.match(hero, /Nationwide car buying/);
-  assert.match(hero, /Consider it handled/);
+  assert.match(hero, /Remote research and negotiation/);
   assert.match(hero, /We research vehicles, compare offers, and negotiate purchases\./);
   assert.doesNotMatch(hero, /\$295|\$895|you remain in control|Full Service|Ultimate Concierge/i);
   assert.match(homepageHtml, /class="hero-fees"/);
