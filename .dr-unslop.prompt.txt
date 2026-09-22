@@ -1,0 +1,56 @@
+# Drive Right — /unslop website copy (post Ink & asphalt)
+
+## Skill
+Follow the Unslop skill at `/Users/user/.codex/skills/unslop/SKILL.md`.
+Required reads before rewriting:
+1. `/Users/user/.codex/skills/unslop/references/core-contract.md`
+2. `/Users/user/.codex/skills/unslop/references/commands/rewrite.md`
+3. Preset `crisp` from `/Users/user/.codex/skills/unslop/presets/`
+
+Default command = rewrite (two-pass: diagnose, reconstruct, validate).
+
+## Goal
+Humanize AI-sounding marketing copy on the live Barton marketing pages after the Ink & asphalt visual merge. Make it sound like a real Austin car-buying service, not a template.
+
+## Claim-safe guards (do not violate)
+- Fees stay $295 Full Service / $895 Ultimate Concierge when mentioned
+- No Savings Guarantee / invented savings / outcome promises
+- AI Agent stays retired
+- Do not invent dealer storefronts, local offices, or new service features
+- Prefer `docs/agents/business-reference.json` or `data/services.json` / live schedule.html for facts
+- Keep Buy → Stripe flow intact
+
+## Priority pages
+1. `index.html` (homepage body, FAQ, section intros — not schema JSON-LD blobs)
+2. `schedule.html`
+3. `how-it-works.html`
+4. `about.html`
+5. `car-buying-service.html` if present and customer-facing
+
+Also update city draft templates / `scripts/render-city-pages.mjs` if they embed homepage marketing sentences, then regenerate drafts.
+
+## Targets to kill
+- Soft AI cadence: “Your search. Your level of support.” / “A little particular.” / stacked fragment poetry
+- Brochure filler and throat-clearing
+- Repetitive “you stay in control / choice that stays yours” looping
+- Emoji heading gimmicks on about.html if they read as AI template
+- Generic “Ready to get started?” closers
+
+## Keep
+- Clear CTAs into brief / plans
+- Accurate process disclosures on how-it-works
+- Ink & asphalt design tokens (do not revert cream)
+
+## Process
+1. Branch from latest main: `fix/unslop-marketing-copy`
+2. Diagnose worst AI tells, then rewrite under unslop guards
+3. Run `node scripts/validate-site.mjs` (and buying tests if touched)
+4. Commit, push, open PR with gh
+5. Do not deploy manually
+
+## Success
+- Marketing pages read human and direct
+- Claim-safe
+- PR open and checks runnable
+
+Work in `/Users/user/Documents/GitHub/Barton`.
