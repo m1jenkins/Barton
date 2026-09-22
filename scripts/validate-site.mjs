@@ -612,6 +612,20 @@ function normalizedPhone(value) {
   return typeof value === 'string' ? value.replace(/\D/g, '') : '';
 }
 
+function hoursKey(spec) {
+  const list = Array.isArray(spec) ? spec : spec ? [spec] : [];
+  return JSON.stringify(
+    list.map((entry) => ({
+      days: [...(Array.isArray(entry.dayOfWeek) ? entry.dayOfWeek : entry.dayOfWeek ? [entry.dayOfWeek] : [])]
+        .map((day) => String(day).replace(/^https:\/\/schema\.org\//, ''))
+        .sort(),
+      opens: entry.opens,
+      closes: entry.closes,
+      timeZone: entry.timeZone || entry.timezone || null,
+    })),
+  );
+}
+
 const governedOrganization = entityRegistry?.organization;
 for (const observed of observedNodesById.get(stableSchemaIds.organization) ?? []) {
   const { file, index, node } = observed;
@@ -631,6 +645,46 @@ for (const observed of observedNodesById.get(stableSchemaIds.organization) ?? []
   if ((!sameAsApproved && renderedSameAs.length) || (node.sameAs !== undefined && sameAsApproved && JSON.stringify(renderedSameAs) !== JSON.stringify(governedSameAs))) {
     fail(file, 'Organization.sameAs exposes URLs that are not approved in data/entities.json.', index, html, 'Approve the exact official URLs in the registry before rendering them.');
   }
+
+  if (node.streetAddress || node.address || node.geo || node.hasMap) {
+    fail(file, 'Organization schema includes a storefront address, geo, or map URL that is not approved for this service-area business.', index, html, 'Keep the hidden GBP verification address out of JSON-LD.');
+  }
+
+  const governedHours = hoursKey(governedOrganization?.openingHoursSpecification);
+  const renderedHours = hoursKey(node.openingHoursSpecification);
+  if (file === 'index.html' && governedHours && renderedHours !== governedHours) {
+    fail(file, 'Homepage Organization.openingHoursSpecification disagrees with data/entities.json.', index, html, 'Use the owner-confirmed Monday–Friday 09:00–17:00 America/Chicago hours.');
+  }
+  if (file !== 'index.html' && node.openingHoursSpecification !== undefined && renderedHours !== governedHours) {
+    fail(file, 'Organization.openingHoursSpecification disagrees with data/entities.json.', index, html, 'Match the governed hours or omit the property.');
+  }
+
+  if (file === 'index.html') {
+    const served = Array.isArray(node.areaServed) ? node.areaServed : node.areaServed ? [node.areaServed] : [];
+    const servedNames = served.map((entry) => (typeof entry === 'string' ? entry : entry?.name)).filter(Boolean);
+    if (!servedNames.includes('United States')) {
+      fail(file, 'Homepage Organization.areaServed must include the United States.', index, html);
+    }
+    for (const area of entityRegistry?.serviceAreas ?? []) {
+      if (!servedNames.includes(area.name)) {
+        fail(file, `Homepage Organization.areaServed is missing ${area.name}.`, index, html, 'List the nine owner-confirmed service cities plus the United States.');
+      }
+    }
+  }
+}
+
+if ((entityRegistry?.businessLocations ?? []).length) {
+  fail('data/entities.json', 'businessLocations is not approved for this service-area business.', undefined, undefined, 'Keep the array empty; do not add storefronts.');
+}
+
+for (const area of entityRegistry?.serviceAreas ?? []) {
+  if (area.localBusinessEntity !== false) {
+    fail('data/entities.json', `${area.name} must keep localBusinessEntity false.`, undefined, undefined, 'Named cities are service areas, not LocalBusiness locations.');
+  }
+}
+
+if (entityRegistry?.businessBase && (entityRegistry.businessBase.city !== 'Austin' || entityRegistry.businessBase.region !== 'TX' || entityRegistry.businessBase.publicStorefrontConfirmed !== false)) {
+  fail('data/entities.json', 'businessBase must remain Austin, TX with no public storefront.', undefined, undefined, 'Do not add a street address or additional bases.');
 }
 
 const serviceIdsByRegistry = new Map((serviceRegistry?.services ?? []).map((service) => [service.id, service]));
@@ -710,6 +764,10 @@ for (const file of htmlFiles) {
   const html = sources.get(file) ?? '';
   const text = searchTextFromHtml(html);
   const claimSurfaces = [html, text];
+
+  if (/mason@driverightcarbuying\.com/i.test(html)) {
+    fail(file, 'Public contact email must be hello@driverightcarbuying.com.', html.toLowerCase().indexOf('mason@driverightcarbuying.com'), html, 'Keep schema, footer, and policy on the hello@ address until an owner decision records a different public inbox.');
+  }
 
   for (const rule of claimRules) {
     const reportedLines = new Set();

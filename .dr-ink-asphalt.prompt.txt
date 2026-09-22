@@ -1,0 +1,36 @@
+# Drive Right — Ink & asphalt visual redesign (homepage-first)
+
+## Context
+Mason still sees the cream AI-beige homepage. Copy/checkout PRs already merged (#58–#60). Now ship the locked visual direction.
+
+## Direction 1 — Ink & asphalt (LOCKED)
+- Near-white paper `#F4F2EC` → cool stone `#E8E6E1` (NOT warm cream `#f7f6f2`)
+- Ink `#1A1A18` (or very close)
+- Muted asphalt green accent `#3F4A3C` (replace sage-green AI luxury accent)
+- Theme-color / body background must visibly leave beige/cream
+- Instrument Serif: keep for H1 emphasis / one-word accent only — body and UI stay sharper sans (Inter/Inter Tight/Geist energy; current Inter OK if tightened)
+- Less soft sage fills, less beige card stack, more editorial-real
+- Keep real MX-5 photography
+
+## Scope
+- Primary: homepage buying design system — `buying/daisy.css`, `buying/drive-right.css`, `index.html` (theme-color, any inline tokens)
+- Update content-hash cache busts so `scripts/validate-site.mjs` passes
+- City draft templates may inherit from homepage CSS; regenerate drafts if needed (`npm run draft:cities`)
+- Do NOT invent claims, change $295/$895, reintroduce Savings Guarantee, or revert Buy→Stripe
+- Keep hero copy short (already: “We research vehicles, compare offers, and negotiate purchases.”) — no fee/control brochure lines in hero
+
+## Process
+1. Branch from latest main: `fix/ink-asphalt-home`
+2. Retoken `:root` in daisy.css and any drive-right overrides
+3. Sweep hard-coded cream/sage hexes that fight the new tokens
+4. Preview + screenshot mobile/desktop fold if possible
+5. Commit, push, open PR with gh
+6. Do not deploy manually
+
+## Success
+- Homepage no longer reads as warm cream / AI beige
+- Clear ink-on-cool-paper look with asphalt green accents
+- Validate-site + buying tests pass
+- PR ready for merge
+
+Work in `/Users/user/Documents/GitHub/Barton`. Model path is already Cursor — implement the redesign fully.

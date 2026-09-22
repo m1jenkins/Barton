@@ -1,10 +1,10 @@
 /* Daisy's established visual system, extended only on the redesigned pages. */
-.dr { --muted:#5C5B57; --paper:#E8E6E1; --ink:#1A1A18; --green:#3F4A3C; --line:#D0CEC7; --sage:#DDDBD5; background:var(--paper); color:var(--ink); }
-.dr[data-buying-page="home"] { --paper:#E8E6E1; --ink:#1A1A18; --green:#3F4A3C; --muted:#5C5B57; --line:#D0CEC7; --sage:#DDDBD5; background:var(--paper); color:var(--ink); }
+.dr { --muted:#5C5C5A; --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
+.dr[data-buying-page="home"] { --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --muted:#5C5C5A; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
 .dr ::selection { background:var(--green); color:var(--paper); }
 .dr :is(input,textarea) { caret-color:var(--green); }
 .dr .page-width { max-width:1440px; }
-.dr .wordmark { letter-spacing:-1.2px; font-size:38px; font-weight:600; white-space:nowrap; }
+.dr .wordmark { font-family:var(--sans); letter-spacing:-.04em; font-size:32px; font-weight:600; line-height:1; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding-bottom:0; }
 .dr .nav-link { font:15px/1.4 var(--sans); min-height:44px; display:flex; align-items:center; }
 .dr .site-header nav { gap:32px; }
 .dr .site-header { height:100px; }
@@ -12,17 +12,29 @@
 .dr[data-view="home"] .composer-area { width:min(560px,100%); margin:28px 0 0; text-align:left; }
 .dr[data-buying-page="home"] .hero-intro { padding-top:8px; padding-inline:0; text-align:left; }
 .dr[data-buying-page="home"] .hero-intro h1 { color:var(--ink); font-family:var(--sans); font-weight:600; font-size:clamp(46px,6.2vw,76px); line-height:.94; letter-spacing:-.04em; }
-.dr[data-buying-page="home"] .hero-intro h1 em { font-family:var(--display); font-weight:400; font-style:normal; color:var(--green); letter-spacing:-.03em; }
-.dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:#3A3A36; }
+/* killed Instrument Serif em accents — all sans */
+/* Home: no Instrument Serif accents or display headlines */
+.dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2,.service-scope>h2,.legwork-copy h3,.plan-card h3,.process-title,#process-title) {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -.03em;
+}
+.dr[data-buying-page="home"] .plan-price {
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+.dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:var(--muted); }
 .dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2,.legwork-copy h3,.plan-card h3) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
-.dr[data-buying-page="home"] :is(.section-intro h2,.faq-section>h2) em { font-family:var(--display); font-weight:400; font-style:normal; letter-spacing:-.02em; }
+/* killed Instrument Serif em accents — all sans */
 .dr[data-buying-page="home"] .plan-price { font-family:var(--sans); font-weight:600; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
-.dr .hero-fees { margin-top:8px; background:#DEDDD8; color:var(--ink); }
+.dr .hero-fees { margin-top:8px; background:var(--sage); color:var(--ink); }
 .dr .hero-fees-inner { display:grid; grid-template-columns:minmax(180px,.72fr) minmax(0,1.3fr); gap:18px 48px; align-items:end; padding-block:22px 26px; }
 .dr .hero-fees h2 { font:600 15px/1.3 var(--sans); color:var(--green); }
-.dr .hero-fees p { max-width:34ch; margin-top:6px; font-size:14px; line-height:1.45; color:#3A3A36; }
+.dr .hero-fees p { max-width:34ch; margin-top:6px; font-size:14px; line-height:1.45; color:var(--muted); }
 .dr .hero-fees-plans { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:8px 40px; margin:0; padding:0; }
-.dr .hero-fees-plans a { display:inline-flex; align-items:baseline; gap:14px; min-height:44px; padding:8px 0; border-bottom:1px solid #1A1A1826; color:var(--ink); font-size:15px; line-height:1.3; }
+.dr .hero-fees-plans a { display:inline-flex; align-items:baseline; gap:14px; min-height:44px; padding:8px 0; border-bottom:1px solid #11111126; color:var(--ink); font-size:15px; line-height:1.3; }
 .dr .hero-fees-plans a span:last-child { font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .dr .hero-fees-plans a:hover { color:var(--green); }
 .dr[data-view="conversation"] .hero-fees { display:none; }
@@ -158,7 +170,7 @@
 @media(max-width:760px) {
  .dr .legwork-section .section-intro { gap:24px; }.dr .legwork-intro { width:100%; }.dr .legwork-intro .primary-button { margin-top:20px; }.dr .legwork-card { display:block; }.dr .legwork-art { height:auto; min-height:0; padding:18px 12px; }.dr .legwork-graphic { max-width:360px; }.dr .legwork-copy { padding:24px; }.dr .legwork-copy h3 { font-size:32px; }.dr .legwork-details { font-size:12px; }
 }
-.dr .pricing-preview { background:#DEDDD8; }
+.dr .pricing-preview { background:var(--sage); }
 .dr .plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
 .dr .plan-card { background:var(--white); border:1px solid var(--line); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; scroll-margin-top:30px; min-width:0; }
 .dr .plan-card h2,.dr .plan-card h3 { font:500 30px/1.15 var(--display); letter-spacing:-.4px; }
@@ -182,7 +194,7 @@
 .dr .footer-top .wordmark { font-size:34px; color:var(--ink); }
 .dr .footer-top p { margin-top:18px; font-size:13px; line-height:1.7; }
 .dr .footer-top nav,.dr .footer-top #contact { display:flex; flex-direction:column; gap:6px; }
-.dr .footer-top a:not(.wordmark) { min-height:36px; display:flex; align-items:center; color:var(--ink); }
+.dr .footer-top a:not(.wordmark) { min-height:44px; display:flex; align-items:center; color:var(--ink); }
 .dr .footer-top a:hover { text-decoration:underline; text-underline-offset:4px; }
 .dr .footer-bottom { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding-top:22px; margin-top:36px; }
 .dr .small-note,.dr .budget-note { font-size:12px; line-height:1.7; color:var(--muted); }
@@ -235,7 +247,7 @@
 .dr .pricing-page { padding-bottom:64px; }
 .dr .plan-notes { max-width:860px; margin:30px auto 0; display:grid; gap:10px; text-align:center; font-size:12px; line-height:1.8; color:var(--muted); }
 .dr .direct-note { margin-top:28px; font-size:14px; text-align:center; line-height:1.6; }
-.dr .compact-brief { background:#DEDDD8; border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin:0 auto 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.dr .compact-brief { background:var(--sage); border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin:0 auto 28px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .dr .compact-brief h2 { font:500 26px/1.2 var(--display); }
 .dr .compact-brief p { font-size:13px; line-height:1.65; color:var(--green); margin-top:7px; }
 .dr #contact-dialog { width:min(520px,calc(100vw - 32px)); }
@@ -365,3 +377,21 @@
 .dr .ps-form__fieldset { border:0; border-top:1px solid var(--line); padding:26px 0 0; margin:34px 0 0; min-width:0; }
 .dr .ps-form__legend { font:500 30px/1.2 var(--display); padding:0 16px 0 0; }
 .dr .ps-form__hint { color:var(--muted); font-size:12px; font-weight:400; }
+/* Homepage visual lock: one serif word, Inter for the rest, fee strip on stone. */
+.dr[data-buying-page="home"] :is(.chat-heading h2,.summary-view>h2,.search-brief h3,.concierge-copy h2,dialog h2,#drive-right-ad-privacy h2) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
+/* killed Instrument Serif em accents — all sans */
+.dr[data-buying-page="home"] .legwork-copy p { font-family:var(--sans); font-weight:400; letter-spacing:-.011em; }
+.dr[data-buying-page="home"] .hero-photo img { border-radius:16px; }
+.dr[data-buying-page="home"] .hero-fees { margin-top:32px; background:transparent; border-block:1px solid var(--line); }
+.dr[data-buying-page="home"] .hero-fees-inner { align-items:center; padding-block:18px 20px; }
+.dr[data-buying-page="home"] .hero-fees h2 { color:var(--ink); font-size:13px; letter-spacing:.01em; }
+.dr[data-buying-page="home"] .hero-fees-plans a { font-size:16px; border-bottom-color:var(--line); }
+.dr[data-buying-page="home"] .hero-fees-plans a span:last-child { font-size:20px; letter-spacing:-.03em; }
+.dr[data-buying-page="home"] .pricing-preview { background:transparent; border-top:1px solid var(--line); }
+.dr[data-buying-page="home"] .plan-card .outline-button { min-height:44px; }
+@media(max-width:760px) {
+ .dr[data-buying-page="home"] .hero-photo figcaption { font-size:13px; line-height:1.4; }
+ .dr[data-buying-page="home"] .hero-photo figcaption>span { max-width:none; }
+ .dr[data-buying-page="home"] .hero-fees { margin-top:24px; }
+ .dr[data-buying-page="home"] .hero-fees-plans a span:last-child { font-size:18px; }
+}

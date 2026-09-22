@@ -1,0 +1,7 @@
+The marketing pages now say what Drive Right does and what it costs. The pull request is https://github.com/m1jenkins/Barton/pull/63.
+
+Homepage, pricing, how-it-works, about, and the car-buying service page use direct lines: “Nationwide car buying. Remote research and negotiation.” and “Two plans. $295 or $895.” About drops the emoji cards and the “Ready to get started?” closer. The button there now says “See plans,” and the closer names the $295 and $895 fees. Plan buttons still go to Stripe. The retired AI Agent note and the process disclosures are unchanged. Ink and paper colors are unchanged.
+
+Private city drafts were regenerated from the homepage. Their local lines ask for commute, parking, and weekend details in the brief.
+
+`validate-site`, the buying tests, and the city and SEO content tests passed. I checked the five pages on the local preview server. I did not click through a live Stripe checkout.The local preview server stopped after the page check. That was expected — I shut it down once the five marketing pages had been read. The copy changes are in https://github.com/m1jenkins/Barton/pull/63.
