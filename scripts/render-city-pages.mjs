@@ -72,7 +72,7 @@ export function renderCity(city, homepage) {
 function renderHub(data, homepage) {
   let html = pageMetadata(homepage, { slug: 'service-areas.html', title: 'Car Buying Service by City | Drive Right', description: 'Find your Drive Right city page for remote vehicle research, offer comparison, and car buying support from our Austin-based team.' });
   html = html.replace('data-buying-page="home"', 'data-buying-page="cities"');
-  html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Consider it handled.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
+  html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
   html = html.replace(/<dialog id="edit-dialog"[\s\S]*?<\/dialog>/, '');
   return replaceRequired(html, 'Based in Austin. Here for buyers nationwide.', 'Based in Austin. Here for you.');
 }
