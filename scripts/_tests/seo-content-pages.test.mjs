@@ -72,6 +72,98 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(pricingClaim, /about\.html/);
 });
 
+test('brand-collision copy keeps Drive Right a service, not Drive Right Auto Sales', async () => {
+  const html = await read(newPage);
+  const document = htmlDocument(html);
+  const explainer = 'car-buying-service.html#not-a-dealer';
+
+  assert.match(html, /<h2 id="not-a-dealer">Not a vehicle dealer or Drive Right Auto Sales<\/h2>/);
+  assert.match(document.visibleText, /not a vehicle dealer/i);
+  assert.match(document.visibleText, /Drive Right Auto Sales/);
+  assert.match(document.visibleText, /Is Drive Right the same as Drive Right Auto Sales or a dealership\?/);
+  assert.match(document.visibleText, /you may be looking for a different company/i);
+  assert.doesNotMatch(html, /sameAs/i);
+  assert.doesNotMatch(html, /streetAddress|LocalBusiness/i);
+
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
+  const description = html.match(/<meta name="description"\s+content="([^"]+)"/i)?.[1] ?? '';
+  assert.match(title, /car buying service/i);
+  assert.match(title, /not a dealership/i);
+  assert.doesNotMatch(title, /inventory|cars for sale|auto sales/i);
+  assert.match(description, /not a vehicle dealer/i);
+  assert.match(description, /\$295/);
+  assert.match(description, /\$895/);
+  assert.doesNotMatch(description, /inventory|cars for sale|guarantee|refund/i);
+
+  const faqPage = document.schemas.flatMap((schema) => schema['@graph'] || [schema]).find((node) => node['@type'] === 'FAQPage');
+  if (faqPage) {
+    const serialized = JSON.stringify(faqPage);
+    assert.match(serialized, /Drive Right Auto Sales/);
+    assert.match(serialized, /not a vehicle dealer/i);
+  }
+
+  for (const file of ['index.html', 'about.html', 'how-it-works.html', 'schedule.html', 'blog.html', 'texas-local-market-intelligence.html']) {
+    const page = htmlDocument(await read(file));
+    assert.ok(page.links.some((link) => link.includes(explainer)), `${file} should link to ${explainer}`);
+    assert.match(page.visibleText, /not a vehicle dealer/i, file);
+  }
+
+  const sitemap = await read('sitemap.xml');
+  for (const file of [
+    'tesla-fsd-for-sale.html',
+    'texas-car-buying-rules-paperwork.html',
+    'auto-financing-credit-fi.html',
+    'used-car-due-diligence.html',
+    'new-car-pricing-incentives.html',
+    'vehicle-selection-total-cost.html',
+  ]) {
+    assert.equal(htmlDocument(await read(file)).noindex, true, file);
+    assert.doesNotMatch(sitemap, new RegExp(file.replaceAll('.', '\\.')));
+  }
+});
+
+test('marketing nav surfaces the car-buying-service explainer with existing CTAs intact', async () => {
+  const explainer = '<a class="nav-link" href="/car-buying-service.html"';
+  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
+    const html = await read(file);
+    const nav = html.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+    const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
+    assert.deepEqual(links, ['/how-it-works.html', '/car-buying-service.html', '/schedule.html', '/about.html'], `${file} header should list the explainer after How it works`);
+    assert.match(nav, new RegExp(explainer.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&') + '[^>]*>Car buying service</a>'));
+    assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my brief<\/a>/, `${file} keeps the header brief CTA`);
+  }
+  assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
+
+  const css = await read('buying/drive-right.css');
+  assert.match(css, /@media\(max-width:960px\) \{ \.dr \.site-header \.nav-link\[href="\/car-buying-service\.html"\] \{ display:none; \} \}/, 'narrow headers hide the extra link so the nav and CTA fit one row');
+});
+
+test('car-buying-service FAQPage schema matches visible questions and approved fees', async () => {
+  const html = await read(newPage);
+  const visible = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)].map(([, question, answer]) => ({
+    question: question.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+    answer: answer.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+  }));
+  assert.equal(visible.length, 6);
+  assert.match(visible[0].question, /cost/i);
+  assert.match(visible[0].answer, /\$295 USD one-time service fee/);
+  assert.match(visible[0].answer, /\$895 USD one-time service fee/);
+
+  const faq = htmlDocument(html).schemas.flatMap(schema => schema['@graph'] || [schema]).find(node => node['@type'] === 'FAQPage');
+  assert.ok(faq, 'explainer should include FAQPage JSON-LD');
+  const encoded = faq.mainEntity.map(item => ({
+    question: item.name,
+    answer: item.acceptedAnswer.text,
+  }));
+  assert.deepEqual(encoded, visible);
+
+  const indexable = ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html'];
+  for (const file of indexable) {
+    const hasFaq = htmlDocument(await read(file)).schemas.flatMap(schema => schema['@graph'] || [schema]).some(node => node['@type'] === 'FAQPage');
+    assert.equal(hasFaq, false, `${file} should not gain FAQPage schema in this change`);
+  }
+});
+
 test('homepage Organization schema records owner-confirmed hours and service areas without a storefront', async () => {
   const entities = JSON.parse(await read('data/entities.json'));
   const homepage = htmlDocument(await read('index.html'));
