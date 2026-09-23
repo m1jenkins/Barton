@@ -11,7 +11,7 @@ Improve the indexable service pages for nationwide car-buying-service and car-ne
 - `https://www.driverightcarbuying.com/car-buying-service.html`
   - Intent: explain what a car-buying and negotiation service does.
   - Positioning: Drive Right is an Austin-based service-area business providing remote support nationwide, not a vehicle dealer.
-  - Name disambiguation: visitors looking for a dealership or a similarly named “Drive Right Auto Sales” business are told they may be looking for a different company.
+  - Name disambiguation: visitors looking for a dealership or a similarly named “Drive Right Auto Sales” business are told they may be looking for a different company. Visible copy lives under `#not-a-dealer`. Home and About carry a short cue that links there; commercial pages that mention dealers use the same fragment. Visible FAQ answers the Auto Sales/dealership question. FAQPage JSON-LD for that block is owned by the nav/FAQ sibling change, not this page-copy pass.
   - Conversion path: compare Full Service at $295 USD one time and Ultimate Concierge at $895 USD one time.
 
 ### Updated
