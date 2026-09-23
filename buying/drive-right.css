@@ -455,6 +455,8 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .closing-cta p a { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
 .dr .closing-cta .primary-button { font-size:16px; min-height:52px; }
 @media(max-width:1200px) { .dr .site-header,.dr #drive-right-ad-privacy { padding-inline:40px; } }
+.dr .site-header .nav-link { white-space:nowrap; }
+@media(max-width:960px) { .dr .site-header .nav-link[href="/car-buying-service.html"] { display:none; } }
 @media(max-width:1000px) { .dr :is(.founder-section,.story) { grid-template-columns:1fr; }.dr .story-heading { position:static; } }
 @media(max-width:760px) {
  html:has(> body.dr) { scroll-padding-top:72px; }
