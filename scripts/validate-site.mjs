@@ -16,6 +16,8 @@ const containedPosts = [
   'blog-private-party-vs-dealership.html',
 ];
 
+const teslaFsdPark = 'tesla-fsd-for-sale.html';
+
 const confirmationPages = [
   'success.html',
   'payment-success.html',
@@ -221,7 +223,7 @@ for (const [asset, tagName, attribute] of [
   }
 }
 
-for (const requiredFile of [...containedPosts, ...confirmationPages, 'blog.html', 'sitemap.xml']) {
+for (const requiredFile of [...containedPosts, ...confirmationPages, teslaFsdPark, 'blog.html', 'sitemap.xml']) {
   if (!(await fileExists(requiredFile))) {
     fail(requiredFile, 'Required validation target is missing.', undefined, undefined, 'Restore it or update the validator intentionally.');
   }
@@ -396,6 +398,59 @@ for (const file of [...containedPosts, ...confirmationPages]) {
   }
   if (sitemapFiles.has(file)) {
     fail(file, 'Contained/confirmation page must not appear in sitemap.xml.', 0, html, 'Remove its <url> entry.');
+  }
+}
+
+{
+  const teslaHtml = sources.get(teslaFsdPark) ?? '';
+  const teslaUrl = expectedPageUrl(teslaFsdPark);
+  const teslaRobots = robotsDirectives(teslaHtml);
+  const teslaParkValid = teslaRobots.length === 1
+    && teslaRobots[0].tokens.has('noindex')
+    && teslaRobots[0].tokens.has('follow')
+    && !teslaRobots[0].tokens.has('nofollow')
+    && !teslaRobots[0].tokens.has('index');
+  if (!teslaParkValid) {
+    fail(
+      teslaFsdPark,
+      `Tesla FSD park must keep noindex,follow; found ${teslaRobots.map((item) => item.content).join(' | ') || 'none'}.`,
+      teslaRobots[0]?.index ?? 0,
+      teslaHtml,
+      'Use <meta name="robots" content="noindex, follow">. Do not index this URL.',
+    );
+  }
+  const teslaCanonicals = canonicalLinks(teslaHtml);
+  if (teslaCanonicals.length !== 1 || teslaCanonicals[0].href !== teslaUrl) {
+    fail(
+      teslaFsdPark,
+      `Tesla FSD park must self-canonicalize to ${teslaUrl}.`,
+      teslaCanonicals[0]?.index ?? 0,
+      teslaHtml,
+      'Keep one self-canonical. Do not 301 or 410 this URL.',
+    );
+  }
+  if (sitemapFiles.has(teslaFsdPark)) {
+    fail(teslaFsdPark, 'Tesla FSD park must not appear in sitemap.xml.', 0, teslaHtml, 'Remove its <url> entry. Keep-noindex park is not publication.');
+  }
+
+  let vercelConfig;
+  try {
+    vercelConfig = JSON.parse(await readFile(path.join(repoRoot, 'vercel.json'), 'utf8'));
+  } catch (error) {
+    fail('vercel.json', `Could not parse redirects config: ${error.message}.`);
+    vercelConfig = { redirects: [], headers: [] };
+  }
+  const teslaRedirect = (vercelConfig.redirects ?? []).find((rule) =>
+    rule.source === `/${teslaFsdPark}` || rule.source === teslaFsdPark || rule.destination === `/${teslaFsdPark}`,
+  );
+  if (teslaRedirect) {
+    fail(
+      'vercel.json',
+      `Tesla FSD park must not 301 or 410; found redirect ${teslaRedirect.source} → ${teslaRedirect.destination}.`,
+      undefined,
+      undefined,
+      'Keep tesla-fsd-for-sale.html as a real noindex page.',
+    );
   }
 }
 

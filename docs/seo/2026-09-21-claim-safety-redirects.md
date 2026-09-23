@@ -81,20 +81,27 @@ access) has to change it where it is configured:
 The other `vercel.json` host rules keep `permanent: true` (308), which preserves the request method
 for any non-GET request that reaches the apex or legacy host.
 
-## Open decision for Mason: `tesla-fsd-for-sale.html`
+## Closed decision (2026-09-22): `tesla-fsd-for-sale.html`
 
-Left exactly as it is in this PR: 200 with `noindex, follow`, self-canonical, off sitemap, and no
-redirect or 410. No repository record was found that decides its disposition, so nothing was
-guessed. Pick one:
+**Chosen option: Keep noindex park (status quo).** Date: 2026-09-22. Rationale: owner standing SEO queue / next-wave brief.
 
-| Option | When it fits | Consequence |
-| --- | --- | --- |
-| Keep noindex park (status quo) | The page may return, or its links still matter | Stays crawlable and excluded; no further action |
-| 301 to a relevant page | A current page covers the same intent | Needs a named target; do not send it to a page that does not answer the query |
-| 410 | Permanently retired with no equivalent | Drops from the index fastest; existing inbound links dead-end |
+The page stays a real HTML document that answers **200**, with `<meta name="robots" content="noindex, follow">`, self-canonical `https://www.driverightcarbuying.com/tesla-fsd-for-sale.html`, and **no** `sitemap.xml` entry. It is crawlable so existing inbound and footer discovery links still resolve; it is not a publication or inventory URL.
 
-`data/metro-release.json` lists `tesla-fsd-for-sale.html` in `legacyDiscoveryLinks` as a source of
-one link to each Texas city page, so a redirect or removal also changes those discovery paths.
+**301 and 410 remain explicitly rejected for now.** Do not add a `vercel.json` redirect or gone status without a later named Mason decision.
+
+The option table below is the menu that was open on 2026-09-21. Only the first row is in force.
+
+| Option | When it fits | Consequence | 2026-09-22 |
+| --- | --- | --- | --- |
+| Keep noindex park (status quo) | The page may return, or its links still matter | Stays crawlable and excluded | **Chosen** |
+| 301 to a relevant page | A current page covers the same intent | Needs a named target; do not send it to a page that does not answer the query | Rejected |
+| 410 | Permanently retired with no equivalent | Drops from the index fastest; existing inbound links dead-end | Rejected |
+
+`data/metro-release.json` lists `tesla-fsd-for-sale.html` in `legacyDiscoveryLinks` as a source of one link to each Texas city page. Those edges stay as recorded while the page remains crawlable under noindex.
+
+Inventory: `data/content-inventory.csv` marks the URL `contained_pending_qualified_review` / `none_while_contained`. Claim `SEO-TESLA-2026-09-18` stays contained; this park is not exact-copy approval.
+
+See `docs/seo/2026-09-22-tesla-fsd-disposition.md`.
 
 ## Also open, not changed here
 
@@ -120,6 +127,7 @@ Content checks:
 - [x] `rg -n 'ai-car-buying-agent' austin.html` returns nothing.
 - [x] `llms.txt` money tokens are exactly $295 and $895, matching `pricing.md`.
 - [x] `austin.html` still has `<meta name="robots" content="noindex, follow">` and is absent from `sitemap.xml`.
+- [x] `tesla-fsd-for-sale.html` keep-noindex park closed 2026-09-22: `noindex, follow`, self-canonical, absent from `sitemap.xml`, no 301/410 in `vercel.json`.
 - [x] No Savings Guarantee, refund promise, average-savings figure, or street address added anywhere.
 
 After any deploy (Mason, live):
