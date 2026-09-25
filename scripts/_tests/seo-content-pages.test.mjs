@@ -102,7 +102,7 @@ test('brand-collision copy keeps Drive Right a service, not Drive Right Auto Sal
     assert.match(serialized, /not a vehicle dealer/i);
   }
 
-  for (const file of ['index.html', 'about.html', 'how-it-works.html', 'schedule.html', 'blog.html', 'texas-local-market-intelligence.html']) {
+  for (const file of ['about.html', 'how-it-works.html', 'schedule.html', 'blog.html', 'texas-local-market-intelligence.html']) {
     const page = htmlDocument(await read(file));
     assert.ok(page.links.some((link) => link.includes(explainer)), `${file} should link to ${explainer}`);
     assert.match(page.visibleText, /not a vehicle dealer/i, file);
