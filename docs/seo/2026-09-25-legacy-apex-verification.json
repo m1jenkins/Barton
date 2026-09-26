@@ -1,0 +1,845 @@
+{
+  "observedLocalDate": "2026-09-25",
+  "observationTimezone": "America/Chicago",
+  "recordedAtUtc": "2026-09-26T03:31:35.591589+00:00",
+  "status": "Partially remediated; authoritative DNS write access is still required. Public apex DNS, TLS and HTTPS redirects do not pass.",
+  "baseRevision": "31a835f",
+  "cloudflare": {
+    "zone": "austincarbuyingservice.com",
+    "status": "active",
+    "nameservers": [
+      "lloyd.ns.cloudflare.com",
+      "yolanda.ns.cloudflare.com"
+    ],
+    "access": {
+      "zoneRead": "Succeeded after normal refresh of existing Wrangler OAuth session",
+      "dnsRecordsRead": "HTTP 403, Cloudflare code 10000: Authentication error",
+      "dnsRecordsWrite": "Not attempted; existing OAuth scopes lack DNS access",
+      "browser": "Cloudflare dashboard redirected to login; no authenticated browser session established"
+    },
+    "requiredAccess": "Cloudflare dashboard DNS-edit access to this zone, or an API token restricted to this zone with Zone:DNS:Edit and Zone:Zone:Read. Do not grant broader account access.",
+    "changes": []
+  },
+  "vercelBefore": {
+    "checkedAtUtc": "2026-09-26T03:27:59.165574+00:00",
+    "domains": {
+      "domains": [
+        {
+          "name": "driverightcarbuying.com",
+          "apexName": "driverightcarbuying.com",
+          "redirect": "www.driverightcarbuying.com",
+          "redirectStatusCode": 301,
+          "verified": true
+        },
+        {
+          "name": "www.driverightcarbuying.com",
+          "apexName": "driverightcarbuying.com",
+          "redirect": null,
+          "redirectStatusCode": null,
+          "verified": true
+        },
+        {
+          "name": "austincarbuyingservice.com",
+          "apexName": "austincarbuyingservice.com",
+          "redirect": "www.austincarbuyingservice.com",
+          "redirectStatusCode": null,
+          "verified": true
+        },
+        {
+          "name": "www.austincarbuyingservice.com",
+          "apexName": "austincarbuyingservice.com",
+          "redirect": null,
+          "redirectStatusCode": null,
+          "verified": true
+        },
+        {
+          "name": "barton-one.vercel.app",
+          "apexName": "vercel.app",
+          "redirect": null,
+          "verified": true
+        }
+      ]
+    },
+    "apexConfig": {
+      "configuredBy": null,
+      "nameservers": [
+        "yolanda.ns.cloudflare.com",
+        "lloyd.ns.cloudflare.com"
+      ],
+      "serviceType": "external",
+      "cnames": [],
+      "aValues": [],
+      "conflicts": [],
+      "acceptedChallenges": [],
+      "recommendedIPv4": [
+        {
+          "rank": 1,
+          "value": [
+            "216.150.1.1",
+            "216.150.16.1"
+          ]
+        },
+        {
+          "rank": 2,
+          "value": [
+            "76.76.21.21"
+          ]
+        }
+      ],
+      "recommendedCNAME": [
+        {
+          "rank": 1,
+          "value": "172ff48f5e356dac.vercel-dns-017.com."
+        },
+        {
+          "rank": 2,
+          "value": "cname.vercel-dns.com."
+        }
+      ],
+      "ipStatus": null,
+      "misconfigured": true
+    }
+  },
+  "vercelChange": {
+    "changedAtUtc": "2026-09-26T03:27:59.787353+00:00",
+    "patch": {
+      "redirect": "www.driverightcarbuying.com",
+      "redirectStatusCode": 308
+    },
+    "result": {
+      "name": "austincarbuyingservice.com",
+      "apexName": "austincarbuyingservice.com",
+      "redirect": "www.driverightcarbuying.com",
+      "redirectStatusCode": 308,
+      "verified": true
+    },
+    "allOtherProjectDomainsUnchanged": true,
+    "after": {
+      "domains": [
+        {
+          "name": "driverightcarbuying.com",
+          "apexName": "driverightcarbuying.com",
+          "redirect": "www.driverightcarbuying.com",
+          "redirectStatusCode": 301,
+          "verified": true
+        },
+        {
+          "name": "www.driverightcarbuying.com",
+          "apexName": "driverightcarbuying.com",
+          "redirect": null,
+          "redirectStatusCode": null,
+          "verified": true
+        },
+        {
+          "name": "austincarbuyingservice.com",
+          "apexName": "austincarbuyingservice.com",
+          "redirect": "www.driverightcarbuying.com",
+          "redirectStatusCode": 308,
+          "verified": true
+        },
+        {
+          "name": "www.austincarbuyingservice.com",
+          "apexName": "austincarbuyingservice.com",
+          "redirect": null,
+          "redirectStatusCode": null,
+          "verified": true
+        },
+        {
+          "name": "barton-one.vercel.app",
+          "apexName": "vercel.app",
+          "redirect": null,
+          "verified": true
+        }
+      ]
+    }
+  },
+  "pendingAdministratorRecord": {
+    "operation": "Create only if an apex A/CNAME record is still absent; re-read the zone before applying",
+    "zone": "austincarbuyingservice.com",
+    "type": "A",
+    "name": "@",
+    "content": "216.150.1.1",
+    "ttl": 300,
+    "proxied": false,
+    "source": "Authenticated Vercel domain-configuration response for austincarbuyingservice.com; rank-1 recommendation. 216.150.16.1 is also rank 1; the documented API contract allows one IP. Private account identifiers are omitted.",
+    "preserve": "Nameservers, all existing DNS records including email and legacy www, Cloudflare rules/security settings, all other Vercel domains. Do not add a guessed AAAA or change nameservers."
+  },
+  "dns": {
+    "checkedAtUtc": "2026-09-26T03:29:29.152771+00:00",
+    "queries": [
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 881\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61612\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "NS"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com NS +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13423\n;; flags: qr aa rd; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\naustincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.\naustincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "MX"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com MX +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34827\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "TXT"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com TXT +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25958\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "CAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com austincarbuyingservice.com CAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 31460\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com www.austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51688\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com www.austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23773\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@lloyd.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "CNAME"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @lloyd.ns.cloudflare.com www.austincarbuyingservice.com CNAME +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19352\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50891\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65255\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "NS"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com NS +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58518\n;; flags: qr aa rd; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\naustincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.\naustincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "MX"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com MX +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61340\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "TXT"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com TXT +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53813\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "austincarbuyingservice.com",
+          "CAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com austincarbuyingservice.com CAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19982\n;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com www.austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32208\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com www.austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1408\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@yolanda.ns.cloudflare.com",
+          "www.austincarbuyingservice.com",
+          "CNAME"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @yolanda.ns.cloudflare.com www.austincarbuyingservice.com CNAME +time=4 +tries=1 +noall +comments +answer +authority\n; (6 servers found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35269\n;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n;; WARNING: recursion requested but not available\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 9611\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33925\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "NS"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com NS +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21302\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\naustincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.\naustincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "MX"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com MX +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22424\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "TXT"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com TXT +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46188\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "austincarbuyingservice.com",
+          "CAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 austincarbuyingservice.com CAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23068\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "www.austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40512\n;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.16.193\n172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.1.193\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "www.austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6764\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n;; AUTHORITY SECTION:\nvercel-dns-017.com.\t900\tIN\tSOA\tns1.vercel-dns-017.com. awsdns-hostmaster.amazon.com. 1 3600 900 1209600 900\n\n"
+      },
+      {
+        "arguments": [
+          "@1.1.1.1",
+          "www.austincarbuyingservice.com",
+          "CNAME"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.austincarbuyingservice.com CNAME +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 14804\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 1232\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24076\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41354\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "NS"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com NS +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55586\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; ANSWER SECTION:\naustincarbuyingservice.com. 21600 IN\tNS\tlloyd.ns.cloudflare.com.\naustincarbuyingservice.com. 21600 IN\tNS\tyolanda.ns.cloudflare.com.\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "MX"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com MX +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53444\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "TXT"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com TXT +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21914\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "austincarbuyingservice.com",
+          "CAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 austincarbuyingservice.com CAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13702\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; AUTHORITY SECTION:\naustincarbuyingservice.com. 1800 IN\tSOA\tlloyd.ns.cloudflare.com. dns.cloudflare.com. 2411663230 10000 2400 604800 1800\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "www.austincarbuyingservice.com",
+          "A"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.austincarbuyingservice.com A +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 62793\n;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.1.129\n172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.16.129\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "www.austincarbuyingservice.com",
+          "AAAA"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.austincarbuyingservice.com AAAA +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40359\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n;; AUTHORITY SECTION:\nvercel-dns-017.com.\t900\tIN\tSOA\tns1.vercel-dns-017.com. awsdns-hostmaster.amazon.com. 1 3600 900 1209600 900\n\n"
+      },
+      {
+        "arguments": [
+          "@8.8.8.8",
+          "www.austincarbuyingservice.com",
+          "CNAME"
+        ],
+        "exitCode": 0,
+        "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.austincarbuyingservice.com CNAME +time=4 +tries=1 +noall +comments +answer +authority\n; (1 server found)\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 505\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 512\n;; ANSWER SECTION:\nwww.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.\n\n"
+      }
+    ]
+  },
+  "httpAfterHostingChangeBeforeDnsRepair": {
+    "checkedAtUtc": "2026-09-26T03:29:29.863148+00:00",
+    "requests": [
+      {
+        "url": "https://austincarbuyingservice.com/",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 60,
+        "headers": "",
+        "error": "curl: (60) SSL: no alternative certificate subject name matches target host name 'austincarbuyingservice.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 1,
+        "url_effective": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": null,
+        "curlExitCode": 6,
+        "headers": "",
+        "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+        "http_code": 0,
+        "redirect_url": null,
+        "remote_ip": "",
+        "ssl_verify_result": 0,
+        "url_effective": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      },
+      {
+        "url": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "forcedAddress": "216.150.1.1",
+        "curlExitCode": 0,
+        "headers": "HTTP/1.0 308 Permanent Redirect\nContent-Type: text/plain\nLocation: https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b\nRefresh: 0;url=https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b\nserver: Vercel\n\n",
+        "error": "",
+        "http_code": 308,
+        "redirect_url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "remote_ip": "216.150.1.1",
+        "ssl_verify_result": 0,
+        "url_effective": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b"
+      }
+    ]
+  },
+  "certificatesAfterHostingChangeBeforeDnsRepair": {
+    "checkedAtUtc": "2026-09-26T03:29:30.748392+00:00",
+    "certificates": [
+      {
+        "connectionTarget": "austincarbuyingservice.com",
+        "serverName": "austincarbuyingservice.com",
+        "validated": false,
+        "error": "[Errno 8] nodename nor servname provided, or not known"
+      },
+      {
+        "connectionTarget": "216.150.1.1",
+        "serverName": "austincarbuyingservice.com",
+        "validated": false,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'austincarbuyingservice.com'. (_ssl.c:1129)"
+      },
+      {
+        "connectionTarget": "216.150.16.1",
+        "serverName": "austincarbuyingservice.com",
+        "validated": false,
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'austincarbuyingservice.com'. (_ssl.c:1129)"
+      },
+      {
+        "connectionTarget": "www.austincarbuyingservice.com",
+        "serverName": "www.austincarbuyingservice.com",
+        "validated": true,
+        "certificate": {
+          "subject": [
+            [
+              [
+                "commonName",
+                "www.austincarbuyingservice.com"
+              ]
+            ]
+          ],
+          "issuer": [
+            [
+              [
+                "countryName",
+                "US"
+              ]
+            ],
+            [
+              [
+                "organizationName",
+                "Let's Encrypt"
+              ]
+            ],
+            [
+              [
+                "commonName",
+                "YR2"
+              ]
+            ]
+          ],
+          "version": 3,
+          "serialNumber": "06D26177A2893BFD7A33DF9AF54C62640029",
+          "notBefore": "Aug  3 16:57:16 2026 GMT",
+          "notAfter": "Nov  1 16:57:15 2026 GMT",
+          "subjectAltName": [
+            [
+              "DNS",
+              "www.austincarbuyingservice.com"
+            ]
+          ],
+          "caIssuers": [
+            "http://yr2.i.lencr.org/"
+          ],
+          "crlDistributionPoints": [
+            "http://yr2.c.lencr.org/42.crl"
+          ]
+        },
+        "protocol": "TLSv1.2"
+      }
+    ]
+  },
+  "repositoryLiveChecks": {
+    "node": "24.20.0",
+    "www": {
+      "command": "BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://www.austincarbuyingservice.com node scripts/check-redirects.mjs",
+      "exitCode": 0,
+      "passed": 14,
+      "failed": 0,
+      "output": "\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://www.austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://www.austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n"
+    },
+    "apex": {
+      "command": "BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://austincarbuyingservice.com node scripts/check-redirects.mjs",
+      "exitCode": 1,
+      "passed": 12,
+      "failed": 2,
+      "failure": "Both legacy apex requests fail because the hostname does not resolve.",
+      "output": "\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation failed with 2 issues:\n\u2716 Legacy-domain migration: request failed for https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme: fetch failed\n\u2716 Legacy-domain root migration: request failed for https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme: fetch failed\n"
+    }
+  },
+  "localChecks": {
+    "node": "24.20.0",
+    "npmCi": "passed; 0 vulnerabilities",
+    "site": "65 HTML files, 8 sitemap URLs",
+    "apiSyntax": "passed",
+    "metroDrafts": "4 private drafts verified",
+    "cityDrafts": "20 private drafts and hub verified",
+    "redirectConfig": "15 permanent rules verified",
+    "tests": {
+      "passed": 181,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "boundaries": {
+    "dnsWrites": 0,
+    "hostingMutation": "Only the existing legacy apex project-domain redirect and status; API comparison confirmed all other project domains unchanged.",
+    "certificateValidationDisabled": false,
+    "searchConsoleRequests": 0,
+    "sitemapSubmissions": 0,
+    "siteContentChanges": 0,
+    "notes": "No pricing, guide/city/Tesla gate, source date, sitemap, asset, checkout, or DNS/email changes. The original working tree was not edited."
+  },
+  "remainingDependencies": [
+    "DNS administrator applies the verified apex A record or establishes narrowly scoped DNS edit access.",
+    "Wait for authoritative and public resolver convergence; current negative response SOA minimum/TTL is 1800 seconds.",
+    "Verify Vercel detects the A record and serves a valid apex certificate, then rerun public root/path/query and both live matrices without forced addresses."
+  ],
+  "sources": [
+    "https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration",
+    "https://vercel.com/docs/rest-api/projects/update-a-project-domain",
+    "https://vercel.com/kb/guide/cloudflare-with-vercel",
+    "https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/create/"
+  ],
+  "publicationNote": "Public DNS/HTTP/TLS observations and the narrowly relevant hosting result only. Account/zone/project identifiers, account email, credentials, and authenticated administration request URLs are excluded. Exact account identity is supplied separately to the owner."
+}

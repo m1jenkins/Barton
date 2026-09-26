@@ -341,5 +341,22 @@
       "browser": "Authenticated preview process/schema/pricing verified; production process/pricing/schema verified. Direct Full Service confirmation visit blocks intake and records no purchase. Requested mobile viewport override did not take effect (actual width 744); fresh 390px rendering not claimed. Earlier local mobile evidence remains historical.",
       "limits": "No real payment, new Stripe session, customer data or Google site-name selection verification. Paid checkout success and analytics delivery not newly tested."
     }
+  },
+  "legacyApexFollowUp": {
+    "evidence": "2026-09-25-legacy-apex-verification.json",
+    "status": "Partial remediation; A01 remains open",
+    "hostingChange": "Only legacy apex domain redirect: www.austincarbuyingservice.com / null status -> www.driverightcarbuying.com / 308",
+    "dnsChange": "Not applied: Cloudflare DNS API 403; authenticated zone read identifies the account and zone",
+    "verifiedPendingRecord": {
+      "type": "A",
+      "name": "@",
+      "content": "216.150.1.1",
+      "ttl": 300,
+      "proxied": false
+    },
+    "liveWwwMatrix": "14 passed",
+    "liveApexMatrix": "12 passed, 2 DNS failures",
+    "apexTls": "Public DNS fails; both confirmed target IPs fail apex SNI certificate hostname validation",
+    "searchConsoleOrSitemapResubmissions": 0
   }
 }
