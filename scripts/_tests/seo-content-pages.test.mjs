@@ -52,8 +52,7 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.deepEqual(document.canonical, [canonical]);
   assert.equal(document.h1.length, 1);
   assert.match(document.h1[0], /car buying (?:and negotiation )?service/i);
-  assert.match(document.visibleText, /not a vehicle dealer/i);
-  assert.match(document.visibleText, /Drive Right Auto Sales/i);
+  assert.doesNotMatch(document.visibleText, /not a vehicle dealer|Drive Right Auto Sales|not-a-dealer/i);
   assert.match(document.visibleText, /\$295/);
   assert.match(document.visibleText, /\$895/);
   assert.ok(document.visibleText.split(/\s+/).length >= 650, 'explainer should not be thin');
@@ -72,16 +71,13 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(pricingClaim, /about\.html/);
 });
 
-test('brand-collision copy keeps Drive Right a service, not Drive Right Auto Sales', async () => {
+test('dealer-name disclaimer is absent from published HTML', async () => {
   const html = await read(newPage);
   const document = htmlDocument(html);
-  const explainer = 'car-buying-service.html#not-a-dealer';
+  const forbidden = /Drive Right Auto Sales|not a vehicle dealer|not-a-dealer/i;
 
-  assert.match(html, /<h2 id="not-a-dealer">Not a vehicle dealer or Drive Right Auto Sales<\/h2>/);
-  assert.match(document.visibleText, /not a vehicle dealer/i);
-  assert.match(document.visibleText, /Drive Right Auto Sales/);
-  assert.match(document.visibleText, /Is Drive Right the same as Drive Right Auto Sales or a dealership\?/);
-  assert.match(document.visibleText, /you may be looking for a different company/i);
+  assert.doesNotMatch(html, forbidden);
+  assert.doesNotMatch(document.visibleText, forbidden);
   assert.doesNotMatch(html, /sameAs/i);
   assert.doesNotMatch(html, /streetAddress|LocalBusiness/i);
 
@@ -90,22 +86,16 @@ test('brand-collision copy keeps Drive Right a service, not Drive Right Auto Sal
   assert.match(title, /car buying service/i);
   assert.match(title, /not a dealership/i);
   assert.doesNotMatch(title, /inventory|cars for sale|auto sales/i);
-  assert.match(description, /not a vehicle dealer/i);
+  assert.doesNotMatch(description, forbidden);
   assert.match(description, /\$295/);
   assert.match(description, /\$895/);
   assert.doesNotMatch(description, /inventory|cars for sale|guarantee|refund/i);
 
   const faqPage = document.schemas.flatMap((schema) => schema['@graph'] || [schema]).find((node) => node['@type'] === 'FAQPage');
-  if (faqPage) {
-    const serialized = JSON.stringify(faqPage);
-    assert.match(serialized, /Drive Right Auto Sales/);
-    assert.match(serialized, /not a vehicle dealer/i);
-  }
+  if (faqPage) assert.doesNotMatch(JSON.stringify(faqPage), forbidden);
 
-  for (const file of ['about.html', 'how-it-works.html', 'schedule.html', 'blog.html', 'texas-local-market-intelligence.html']) {
-    const page = htmlDocument(await read(file));
-    assert.ok(page.links.some((link) => link.includes(explainer)), `${file} should link to ${explainer}`);
-    assert.match(page.visibleText, /not a vehicle dealer/i, file);
+  for (const file of (await readdir(root)).filter((name) => name.endsWith('.html'))) {
+    assert.doesNotMatch(await read(file), forbidden, file);
   }
 
   const sitemap = await read('sitemap.xml');
@@ -144,7 +134,7 @@ test('car-buying-service FAQPage schema matches visible questions and approved f
     question: question.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
     answer: answer.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
   }));
-  assert.equal(visible.length, 6);
+  assert.equal(visible.length, 5);
   assert.match(visible[0].question, /cost/i);
   assert.match(visible[0].answer, /\$295 USD one-time service fee/);
   assert.match(visible[0].answer, /\$895 USD one-time service fee/);
