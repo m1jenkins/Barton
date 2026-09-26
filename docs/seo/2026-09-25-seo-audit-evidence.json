@@ -1,0 +1,692 @@
+{
+  "capturedAt": "2026-09-26T01:39:25.582085+00:00",
+  "repositoryRevision": "a1c3597",
+  "method": "Public GET requests; initial HTML parsed; redirects followed; root HTML inventory only, not every historical URL. User-agent probes are not verified crawler-IP tests.",
+  "localHtmlFiles": 65,
+  "localIndexFollow": 8,
+  "localNoindexFollow": 57,
+  "liveRootIndexFollow": 8,
+  "liveRootNoindexFollow": 50,
+  "liveRootRedirects": 7,
+  "corePages": [
+    {
+      "url": "https://www.driverightcarbuying.com/about.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/about.html",
+      "title": "About Drive Right Car Buying Service | Austin Based",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Meet Mason and learn how Austin-based Drive Right provides nationwide car buying and negotiation support through research, offer comparison and seller communication.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/blog.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/blog.html",
+      "title": "Car-Buying Resources and Buying Process | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Explore car-buying resources, the nationwide service process, and clearly labeled guides awaiting editorial review. Compare Full Service at $295 USD.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "title": "Car Buying Service, Not a Dealership | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Drive Right is an Austin-based car buying and negotiation service. Compare $295 Full Service with $895 Ultimate Concierge.",
+      "googleIndexState": "Unknown to Google; live test passes"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/how-it-works.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/how-it-works.html",
+      "title": "How a Car Buying & Negotiation Service Works | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "See how Drive Right\u2019s nationwide car buying and negotiation service works. Full Service is $295 USD one time; Ultimate Concierge is $895 USD one time.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/",
+      "title": "Nationwide Car Buying Service: $295 & $895 | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Austin-based car buying and negotiation service for buyers nationwide. Full Service is $295 USD one time; Ultimate Concierge is $895 USD one time.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/policy.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/policy.html",
+      "title": "Policies | Drive Right: Privacy, Terms & Refund Policy",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Read Drive Right's privacy policy, terms of service, and refund policy. We believe in transparency, here's how we handle your data and our commitments to you.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/schedule.html",
+      "title": "Car Negotiator & Buying Service Pricing | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Compare $295 USD Full Service and $895 USD Ultimate Concierge for Austin-based car buying and negotiation support available nationwide.",
+      "googleIndexState": "Listed indexed in aggregate report"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "title": "Texas Local Car-Market Resource Hub | Drive Right",
+      "h1Count": 1,
+      "schemaParseErrors": [],
+      "description": "Explore Drive Right service-area pages for Austin, Dallas, Fort Worth, Houston, San Antonio, El Paso, Arlington, New Braunfels, and San Marcos.",
+      "googleIndexState": "Discovered, not indexed; live test passes"
+    }
+  ],
+  "probes": [
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Googlebot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "1f78f486701ca28531fe0a7c05b05f94dfd87b60525b8a4eed38698dd5261c18"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Bingbot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "635c6c70a403c6e83886e86b21ace1adbf6571c74b7d975e8a9b27aa43b21039"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "OAI-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "2cfd0caf1d9786919c88b56cdf473b0ae89d149c9b97990fb29177623d32109a"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "ChatGPT-User",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "b9a20e5fe80d6ecc514eb2ccaa2ce6100b299ac352408d6d025398ddf3cdae0b"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Claude-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "7c1f953e98c6580cec17a0eab8283031177c8b10f3c18e6fc9bf7d4f303e34f2"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Claude-User",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "41c351969b4ce15eeee121280f4bdd20fc30bcbc2151f23b07c08c0d8c82f492"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "PerplexityBot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "02e6abbf5535cdcf82ae1c28b4c634184186de74a2c86baa36cf335f9e22c68f"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Perplexity-User",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "42a6a58d0bf70f3058b227fabb9225064f484842c08b3bd2794eec0bc2049968"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "ua": "Applebot",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "429aad17ea01030b36d463d66c959329e9d7cb598133a6dd8aa8bc5199934a15"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Googlebot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "b1e69f4b17fcd27837621df8213ca63b8c33ae64711f976b121a268e82ac1a8b"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Bingbot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "b782ee703ee828d9a3d19abfc6de3abcea9aafa8bf763d2883685ad5854b749e"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "OAI-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "d69f0094b8327fe8e5cee82a7ea27e784a5f0cac11ae0a89726c012ac9c6c98c"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "ChatGPT-User",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "49ceaee8d36636a93b61244263fe25d451ec3ce9f2d85da5086b66f500e1a8b3"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Claude-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "22ee1dcb6f888431e17196648ca218451f565ac42a4761681be5f43c575b0cc7"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Claude-User",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "dc9f7f380d43fbda526efc3b55bf9b4d2862dcad810d4342e7099ae7992dd18c"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "PerplexityBot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "41b0970b426f93990f32f5b37872b70df083311d036d3240ab54fbe17692779a"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Perplexity-User",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "2190811cc6965df11e2cf12bb23ea87e78a5ac4e2149f3286da10c1ea04b9e43"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "ua": "Applebot",
+      "http": "200\thttps://www.driverightcarbuying.com/car-buying-service.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "f9972ee3a920b0164524be485d2a3f0baf8a96522cdd5be8d7f9625efb568244"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Googlebot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "30d2bf2c4218bbc3de5087af82d18eaf2c40f727b39068bbac30c37b97dabd25"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Bingbot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "631bdbbbc451d2a51fdcc7966b0648bca7b9bd098913edd6ee951608542b4e29"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "OAI-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "57edbde734bb7389c194d19799f2b756f518ea2047788fb7d5d4a40826a59dd8"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "ChatGPT-User",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "aa718ae4878855e58486ec900a1794acfcb8b42821be015db65cffe390189085"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Claude-SearchBot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "9113cde58e885e5c570f664b3ab4d8b4f7a83d0e8be9a9f2a0a0ce0ad02b526d"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Claude-User",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "90dea366cd32d5b3beaff9a581613bc0ccf425a1637661e032e30826ed1ac782"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "PerplexityBot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "31307abd0f202cbf98d1ef9350a657748dd4971e321210a771138c7a77f03645"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Perplexity-User",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "7cba9c950524f47ad7b6375d5be5278dba13eb890e090715935d3d9e7377aeda"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "ua": "Applebot",
+      "http": "200\thttps://www.driverightcarbuying.com/schedule.html",
+      "error": "",
+      "chain": [
+        "200"
+      ],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "c94dad9faa550cf1189bea6f8eeec641fb9c073c79828de1d770c071153826e1"
+    },
+    {
+      "url": "http://driverightcarbuying.com/",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "301",
+        "301",
+        "200"
+      ],
+      "locations": [
+        "https://driverightcarbuying.com/",
+        "https://www.driverightcarbuying.com/"
+      ],
+      "xRobots": [],
+      "sha256": "6d23ecd60849b5d24928715263ce2192433d0d2cbb4b178d9a192fed1a316dc1"
+    },
+    {
+      "url": "http://driverightcarbuying.com/about.html",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/about.html",
+      "error": "",
+      "chain": [
+        "301",
+        "301",
+        "200"
+      ],
+      "locations": [
+        "https://driverightcarbuying.com/about.html",
+        "https://www.driverightcarbuying.com/about.html"
+      ],
+      "xRobots": [],
+      "sha256": "4ac17c0542b45418d95fa32ec3021cb5e5fd26a46d21e46a379468b006a4cfad"
+    },
+    {
+      "url": "https://driverightcarbuying.com/",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "301",
+        "200"
+      ],
+      "locations": [
+        "https://www.driverightcarbuying.com/"
+      ],
+      "xRobots": [],
+      "sha256": "ecea300bceac1332eee38076187470c70d6db3f49b27bf8b93ccaf520abce5c6"
+    },
+    {
+      "url": "https://driverightcarbuying.com/about.html",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/about.html",
+      "error": "",
+      "chain": [
+        "301",
+        "200"
+      ],
+      "locations": [
+        "https://www.driverightcarbuying.com/about.html"
+      ],
+      "xRobots": [],
+      "sha256": "1c63d661747b19c6c97550601b81246fa3067e6d73bcbdc1b692834b717235ef"
+    },
+    {
+      "url": "https://austincarbuyingservice.com/",
+      "ua": "Mozilla/5.0",
+      "http": "000\thttps://austincarbuyingservice.com/",
+      "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+      "chain": [],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://austincarbuyingservice.com/about.html",
+      "ua": "Mozilla/5.0",
+      "http": "000\thttps://austincarbuyingservice.com/about.html",
+      "error": "curl: (6) Could not resolve host: austincarbuyingservice.com\n",
+      "chain": [],
+      "locations": [],
+      "xRobots": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.austincarbuyingservice.com/",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/",
+      "error": "",
+      "chain": [
+        "308",
+        "200"
+      ],
+      "locations": [
+        "https://www.driverightcarbuying.com/"
+      ],
+      "xRobots": [],
+      "sha256": "d2ff1531da64c9fce598194daf7716f4deeca69ff2538a2062169dfb88e2d943"
+    },
+    {
+      "url": "https://www.austincarbuyingservice.com/about.html",
+      "ua": "Mozilla/5.0",
+      "http": "200\thttps://www.driverightcarbuying.com/about.html",
+      "error": "",
+      "chain": [
+        "308",
+        "200"
+      ],
+      "locations": [
+        "https://www.driverightcarbuying.com/about.html"
+      ],
+      "xRobots": [],
+      "sha256": "43578bcb844839ae52c684bef5a0832fb4a6756625196764595082290954816a"
+    }
+  ],
+  "specialPaths": [
+    {
+      "url": "https://www.driverightcarbuying.com/seo-audit-nonexistent-20260925",
+      "http": "404\thttps://www.driverightcarbuying.com/seo-audit-nonexistent-20260925",
+      "chain": [
+        "404"
+      ]
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/service-areas.html",
+      "http": "404\thttps://www.driverightcarbuying.com/service-areas.html",
+      "chain": [
+        "404"
+      ]
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/draft-artifacts/cities/austin.html",
+      "http": "404\thttps://www.driverightcarbuying.com/draft-artifacts/cities/austin.html",
+      "chain": [
+        "404"
+      ]
+    }
+  ],
+  "limits": [
+    "Bing index data not checked",
+    "Google-selected canonical not individually inspected for six listed intended URLs",
+    "No production bot-IP logs",
+    "No new production performance trace; GSC field CWV has no data",
+    "No current qualified-lead/revenue figures",
+    "Search-tool homepage was stale; fresh origin fetches determine current website findings"
+  ],
+  "searchConsole": {
+    "observedLocalDate": "2026-09-25",
+    "timezone": "America/Chicago",
+    "property": "https://www.driverightcarbuying.com/",
+    "access": "Authenticated read-only, after user sign-in",
+    "method": "Visible Search Console UI. No settings saved, indexing requests, sitemap submissions or exports of personal account data.",
+    "performance": {
+      "source": "https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F&num_of_days=28",
+      "searchType": "Web (text)",
+      "filters": "No query/page/country/device filters",
+      "start": "2026-08-27",
+      "end": "2026-09-23",
+      "clicks": 21,
+      "impressionsDisplay": "1.69K",
+      "impressionsExact": null,
+      "ctrDisplay": "1.2%",
+      "averagePositionDisplay": "26.2",
+      "queriesObserved": [
+        {
+          "query": "car buying service",
+          "clicks": 0,
+          "impressions": 152
+        },
+        {
+          "query": "car buying services",
+          "clicks": 0,
+          "impressions": 49
+        },
+        {
+          "query": "car broker service",
+          "clicks": 0,
+          "impressions": 46
+        }
+      ],
+      "queryLimits": "Selected visible rows only; anonymized queries omitted by GSC. No exact prior-window comparison gathered in this audit."
+    },
+    "indexSummary": {
+      "source": "https://search.google.com/search-console/index?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+      "reportUpdated": "2026-09-20",
+      "indexed": 12,
+      "notIndexed": 45,
+      "reasons": {
+        "noindex": 29,
+        "redirect": 3,
+        "crawledCurrentlyNotIndexed": 12,
+        "discoveredCurrentlyNotIndexed": 1
+      },
+      "currentIntendedUrlsListedIndexed": [
+        "/",
+        "/about.html",
+        "/how-it-works.html",
+        "/schedule.html",
+        "/blog.html",
+        "/policy.html"
+      ],
+      "otherIndexedExamples": [
+        "/ai-car-buying-agent.html",
+        "/fort-worth.html",
+        "/blog-best-dealerships-austin.html",
+        "/blog-depreciation-myth-20-percent.html",
+        "/blog-used-car-rip-offs.html",
+        "/blog-best-dealerships-dallas-fort-worth.html"
+      ],
+      "limit": "Summary is lagged. Google-selected canonical not inspected individually for the six listed intended URLs."
+    },
+    "inspections": [
+      {
+        "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+        "indexState": "URL is unknown to Google",
+        "sitemapDetected": false,
+        "lastCrawl": null,
+        "liveTest": "URL is available to Google; page can be indexed",
+        "liveTestLocal": "2026-09-25 20:51",
+        "breadcrumbItemsValid": 1
+      },
+      {
+        "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+        "indexState": "Discovered - currently not indexed",
+        "sitemapDetected": true,
+        "lastCrawl": null,
+        "liveTest": "URL is available to Google; page can be indexed",
+        "liveTestLocal": "2026-09-25 20:52",
+        "breadcrumbItemsValid": 1
+      }
+    ],
+    "sitemap": {
+      "source": "https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+      "path": "/sitemap.xml",
+      "submitted": "2026-04-06",
+      "lastRead": "2026-09-19",
+      "status": "Success",
+      "discoveredPages": 7,
+      "currentLiveSitemapUrls": 8
+    },
+    "aiControl": {
+      "source": "https://search.google.com/search-console/settings/search-gen-ai?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+      "inheritFrom": "driverightcarbuying.com",
+      "currentControl": "Include",
+      "changed": false
+    },
+    "aiPerformance": {
+      "source": "https://search.google.com/search-console/performance/search-analytics/ai?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+      "start": "2026-06-24",
+      "end": "2026-09-23",
+      "impressions": 748,
+      "homepageImpressions": 360,
+      "limit": "Three-month UI report. Not a citation rate or current 28-day result. Includes historical URLs now contained."
+    },
+    "coreWebVitals": {
+      "source": "Search Console overview",
+      "mobile": "No data",
+      "desktop": "No data"
+    },
+    "remainingUnknown": [
+      "Bing index coverage",
+      "Verified crawler-IP logs",
+      "Current organic qualified leads and revenue",
+      "Field Core Web Vitals values"
+    ]
+  }
+}
