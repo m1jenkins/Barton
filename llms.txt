@@ -1,14 +1,15 @@
 # Drive Right
 
-> Texas car buying service. Flat-fee vehicle research, dealer outreach, deal review, and purchase coordination for buyers across Texas. Based in Austin. Pricing, availability, and outcomes vary by purchase.
+> Austin-based car buying and negotiation service supporting buyers nationwide. Full Service is $295 USD one time; Ultimate Concierge is $895 USD one time. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-09-22
+Updated: 2026-09-25
 
 Drive Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com · (512) 910-4938.
 
 ## Primary pages
 
-- [Home](https://www.driverightcarbuying.com/): Overview of the service, plans, Texas coverage, and how Drive Right compares vehicles and deal terms.
+- [Home](https://www.driverightcarbuying.com/): Overview of the service, plans, nationwide support, and how Drive Right compares vehicles and deal terms.
+- [Car buying service](https://www.driverightcarbuying.com/car-buying-service.html): Service scope, current fees, and buyer responsibilities.
 - [How it works](https://www.driverightcarbuying.com/how-it-works.html): Process, listed fees, buyer responsibilities, and current disclosures.
 - [Plans and pricing](https://www.driverightcarbuying.com/schedule.html): $295 Full Service and $895 Ultimate Concierge, each a one-time service fee.
 - [Machine-readable pricing](https://www.driverightcarbuying.com/pricing.md): Current fees, inclusions, and purchase-cost exclusions in Markdown.
