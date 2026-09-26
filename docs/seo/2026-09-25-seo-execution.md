@@ -6,6 +6,7 @@ Executed against `a1c3597` in America/Chicago; public checks also fall on Septem
 
 | Plan item | Result | Remaining boundary |
 |---|---|---|
+| A01 legacy apex | Confirmed Cloudflare authority and Vercel’s recommended A target; changed only the Vercel legacy-apex redirect to the canonical www host with explicit 308. | DNS edit access is unavailable; public DNS/TLS/redirect acceptance remains open. See the apex follow-up below. |
 | A02 discovery | Resubmitted the existing eight-URL sitemap. Google displayed **Sitemap submitted successfully**. Requested indexing of the service explainer; Google accepted it into the priority crawl queue. | A submission is not indexing. Sitemap report still showed last read September 19 and seven discovered pages immediately after submission. |
 | A02 core-page verification | Individually inspected all six intended indexed pages. All use the inspected URL as Google's selected canonical. Requested a targeted Policy recrawl because its recorded crawl was August 20; Google accepted it. | Await actual recrawling; do not repeat accepted requests merely to seek a faster result. |
 | A03 process correction | Replaced the pre-payment introduction step with payment followed by intake. Step 04 reuses the pricing page's existing Stripe instruction; step 05 preserves the existing scope/timing confirmation and buyer control. | A reviewed deliverable example is a separate open part of A03. No new commercial promise or checkout behavior was introduced. |
@@ -73,7 +74,7 @@ Future releases should update a page's sitemap date alongside meaningful content
 
 ## Work requiring another input or a later release
 
-The legacy apex still returns NOERROR with zero A/AAAA answers; `https://www.austincarbuyingservice.com/about.html` still returns 308 to the matching canonical page. DNS/hosting administrator access was not established, so A01 remains open. A repository redirect cannot repair missing DNS.
+At the release checkpoint, the legacy apex returned NOERROR with zero A/AAAA answers while legacy www redirected correctly. The follow-up below establishes hosting access and corrects its redirect, but DNS administrator access remains missing and A01 remains open. A repository redirect cannot repair missing DNS.
 
 A07–A11 remain governed by the existing exact-copy, qualified-review, compensation, customer-permission and local-evidence gates in [claim review](../claim-review-workflow.md) and [release readiness](../release-readiness.md). Preparing more unapproved claims would not complete those items. A06 production performance work and the rest of A12/A13 were not represented as complete.
 
@@ -107,6 +108,56 @@ Search Console's sitemap report now shows **last read September 25, Success, eig
 
 ### Remaining dependencies and next task
 
-**Highest-value next task: restore DNS for `austincarbuyingservice.com` at the authoritative DNS/hosting account, then verify its HTTPS certificate and permanent path/query-preserving redirects to the canonical www site.** The intended destination must be confirmed from the hosting configuration; do not guess an address or change the working legacy www record. Administrator access/confirmation remains the dependency. The current repository redirect cannot fix missing DNS.
+**Highest-value next task: have the Cloudflare zone administrator apply the verified apex A record below (or establish zone-scoped DNS edit access), then complete public DNS, certificate and redirect verification.** Vercel’s target and the permanent hosting redirect are now verified in the account; public acceptance still depends on the DNS write and a valid apex certificate.
 
 Also open: Google's crawl/index decision for the service explainer and eventual site-name selection; the reviewed deliverable example; compensation attestation/customer permission and individual guide/worksheet/local release reviews; GA4/Bing account and qualified-lead/order/revenue reconciliation; current performance evidence and AI prompt-panel waves. These remain separate work and none is represented as completed by this release. No recurring monitor was created.
+
+## Legacy-apex follow-up — September 25/26, 2026
+
+**Partial remediation; A01 remains open.** [Dated verification evidence](2026-09-25-legacy-apex-verification.json) records the authenticated account reads, exact hosting mutation, authoritative/public DNS answers, certificate failures, and both repository live matrices. Work started from `31a835f` in an isolated `codex/legacy-apex-dns` worktree; the original `design/caption-trim` working tree and cleanup PR #74 were not changed.
+
+### Authority, hosting and exact change
+
+- Cloudflare is authoritative: `lloyd.ns.cloudflare.com` and `yolanda.ns.cloudflare.com`. An authenticated read confirms the active `austincarbuyingservice.com` zone and the same nameservers as both authoritative servers and public resolvers. Exact account/zone identifiers are supplied separately to the owner and excluded from this public repository.
+- The existing Vercel `barton` project, already owns and verifies both legacy hosts. The apex previously had `redirect: www.austincarbuyingservice.com`, `redirectStatusCode: null`. Only that existing apex domain was PATCHed to **`redirect: www.driverightcarbuying.com`, `redirectStatusCode: 308`**, at **2026-09-26 03:27:59 UTC**. A fresh project-domain listing confirmed all four other entries, including working legacy www, unchanged. This is an account setting, not a `vercel.json` edit or a content deployment. Its public HTTPS behavior is still unverified because DNS/TLS fail below.
+- Authenticated `GET /v6/domains/austincarbuyingservice.com/config` returned `configuredBy: null`, `misconfigured: true`, no A values, and rank-1 recommended IPv4 values **`216.150.1.1` and `216.150.16.1`**. These came from this hosting account, not a generic IP guess. The [Vercel API contract](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) explicitly permits using one preferred IP; the narrow pending change uses the first.
+- **No DNS record was changed.** A normal refresh restored the existing Wrangler session’s zone-read access, but DNS record listing returned HTTP 403 / Cloudflare code 10000 (`Authentication error`). The OAuth scopes lack DNS access despite the user’s zone role reporting DNS permissions. The browser dashboard was signed out. Access needed: an authenticated dashboard session with DNS edit permission for this exact zone, or a zone-restricted API token with **Zone → DNS → Edit** and **Zone → Zone → Read**. No new credential or permission grant was created.
+
+### Verified change for the DNS administrator
+
+Before applying, inspect/export the zone and confirm an apex A/CNAME has not been added by another administrator. Add exactly this record in the account/zone identified above:
+
+| Field | Value |
+|---|---|
+| Type | `A` |
+| Name | `@` (`austincarbuyingservice.com`) |
+| IPv4 address | `216.150.1.1` |
+| Proxy status | **DNS only** (`proxied: false`) |
+| TTL | `300` seconds |
+
+Keep both nameservers, every email/unrelated DNS record, and `www CNAME 172ff48f5e356dac.vercel-dns-017.com` (observed TTL 600) unchanged. Do not add an AAAA record, replace the zone, or change Cloudflare security/rules. DNS-only sends this new host to Vercel directly, consistent with [Vercel’s Cloudflare guidance](https://vercel.com/kb/guide/cloudflare-with-vercel). This does not change the proxy status of any existing record. Full zone inventory could not be read; public apex MX/TXT/CAA queries returned no records, which is not proof that no email or verification records exist at other names.
+
+### Acceptance results and remaining dependency
+
+| Check | Observed result |
+|---|---|
+| Authoritative DNS | Both Cloudflare nameservers: apex A and AAAA **NOERROR, zero answers**. Nameservers unchanged. |
+| Public DNS | `1.1.1.1` and `8.8.8.8`: same empty apex A/AAAA result. Negative-response SOA TTL/minimum is 1,800 seconds. |
+| Ordinary public apex HTTPS | Root, query-bearing root, About, Process, Pricing, Texas hub, Tesla park and legacy inquiry probes all fail DNS resolution (`curl` exit 6). No public redirect pass is claimed. |
+| Apex certificate | DNS-based TLS connection fails resolution. Forced-address/SNI diagnostics to **both** Vercel-confirmed rank-1 addresses fail hostname validation; a valid apex certificate is not yet being served there. TLS verification stayed enabled. |
+| Forced-address HTTP diagnostic | The About URL returns 308 to HTTPS on the same apex with the full query intact. This is not a public DNS, valid-TLS, or canonical-host redirect pass. |
+| Working legacy www | Valid hostname/chain/date certificate (Let’s Encrypt YR2; Aug 3–Nov 1, 2026). Existing root/About migrations remain 308 and preserve queries. |
+| Repository www live matrix | **14/14 passed**, including permanent statuses, complete query preservation and terminal 2xx targets. |
+| Repository explicitly using legacy apex | **12 passed, 2 failed**: its root and About migration checks fail DNS resolution. This prevents the www-only pass from concealing the apex outage. |
+| Node 24 local checks | Node `24.20.0`; `npm ci`, site/API/metro/city checks, 15-rule redirect config, all **181 tests**, and whitespace validation passed. |
+
+Live commands (run both after repair):
+
+```sh
+BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://www.austincarbuyingservice.com node scripts/check-redirects.mjs
+BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://austincarbuyingservice.com node scripts/check-redirects.mjs
+```
+
+After the DNS write, check both authoritative servers and public resolvers, allowing existing negative caches to expire. Confirm Vercel detects the A record and serves a trusted, unexpired certificate whose SAN covers the apex; if issuance remains blocked, inspect that domain’s certificate/configuration status in the same Vercel project. Repeat ordinary public HTTPS root and representative path probes without `--resolve`, including `utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b`. Each HTTPS host migration must be a permanent redirect to the matching canonical path with the exact query preserved; follow to its terminal response. Existing retired paths such as `/inquiry.html` can additionally perform their already-approved canonical-site route redirect. Verify the final Tesla target still returns 200 with `noindex, follow`, self-canonical and no sitemap membership.
+
+No pricing, checkout, guide/city/Tesla release gates, source dates, sitemap membership or content changed. No Search Console inspection/indexing request or sitemap submission was made in this follow-up. The DNS write, apex certificate and successful public redirect acceptance remain dependencies, not completed results.
