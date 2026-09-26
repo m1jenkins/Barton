@@ -358,5 +358,29 @@
     "liveApexMatrix": "12 passed, 2 DNS failures",
     "apexTls": "Public DNS fails; both confirmed target IPs fail apex SNI certificate hostname validation",
     "searchConsoleOrSitemapResubmissions": 0
+  },
+  "legacyApexCompletion": {
+    "evidence": "2026-09-25-legacy-apex-completion.json",
+    "status": "DNS and hosting repaired; public-recursive and normal-system-resolver acceptance passed",
+    "dnsRecordAdded": {
+      "type": "A",
+      "name": "@",
+      "content": "216.150.1.1",
+      "ttl": 300,
+      "proxied": false
+    },
+    "certificate": "Valid apex certificate issued; autoRenew true",
+    "publicPathChecks": {
+      "passed": 20,
+      "failed": 0
+    },
+    "publicResolverRepositoryMatrices": {
+      "www": "14/14 passed",
+      "apex": "14/14 passed"
+    },
+    "normalSystemResolver": "www 14/14 and apex 14/14 passed without lookup adapter",
+    "remainingDependency": "None for legacy-apex DNS, hosting access, certificate or tested redirect acceptance",
+    "searchConsoleOrSitemapSubmissions": 0,
+    "normalSystemResolverCheckedAtUtc": "2026-09-26T04:06:58.500725+00:00"
   }
 }
