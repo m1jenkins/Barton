@@ -1,0 +1,315 @@
+{
+  "observedLocalDate": "2026-09-25",
+  "observationTimezone": "America/Chicago",
+  "observationWindowUtc": {
+    "start": "2026-09-26T04:23:27.109Z",
+    "end": "2026-09-26T04:25:21.357715+00:00",
+    "note": "Public response observation timestamps record the start of each GET."
+  },
+  "baseRevision": "dc15c6f3eee5b286e6a1fed0dd7c59ab83fa2d54",
+  "completedLegacyApexRepair": "https://github.com/m1jenkins/Barton/pull/79",
+  "method": "Authenticated visible Search Console URL Inspection and Sitemaps report in the existing signed-in in-app browser; public curl GET responses with normal DNS and TLS validation. No indexing request, sitemap submission, live URL test, or account-setting mutation.",
+  "property": "https://www.driverightcarbuying.com/",
+  "comparisonBaseline": {
+    "file": "2026-09-25-seo-execution-evidence.json",
+    "section": "releaseReview.searchConsole",
+    "observedAtUtc": "2026-09-26T03:02:49.343826+00:00",
+    "serviceExplainer": {
+      "indexState": "Discovered - currently not indexed",
+      "lastCrawlDisplay": null,
+      "sitemap": "https://www.driverightcarbuying.com/sitemap.xml",
+      "canonical": null
+    },
+    "sitemap": {
+      "submittedDisplay": "Sep 25, 2026",
+      "lastReadDisplay": "Sep 25, 2026",
+      "statusDisplay": "Success",
+      "discoveredPagesDisplay": 8
+    },
+    "earlierSitemapCheckpoint": {
+      "lastReadDisplay": "Sep 19, 2026",
+      "discoveredPagesDisplay": 7,
+      "note": "Historical initial execution checkpoint; already superseded by the release review before this follow-up."
+    }
+  },
+  "urlInspection": {
+    "observedAtUtc": "2026-09-26T04:23:27.109Z",
+    "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+    "dataSource": "Google index; not a live URL test",
+    "summaryDisplay": "URL is not on Google",
+    "indexingStatusDisplay": "Page is not indexed: Discovered - currently not indexed",
+    "indexed": false,
+    "exclusionReasonDisplay": "Discovered - currently not indexed",
+    "referringSitemap": {
+      "display": "https://www.driverightcarbuying.com/sitemap.xml",
+      "value": "https://www.driverightcarbuying.com/sitemap.xml",
+      "availability": "confirmed displayed result"
+    },
+    "referringPage": {
+      "display": "None detected",
+      "value": null,
+      "availability": "confirmed displayed result; not proof of no incoming links"
+    },
+    "lastCrawl": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "crawledAs": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "crawlAllowed": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "pageFetch": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "indexingAllowed": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "userDeclaredCanonical": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "googleSelectedCanonical": {
+      "display": "N/A",
+      "value": null,
+      "availability": "unavailable in Google index inspection"
+    },
+    "viewCrawledPageEnabled": false,
+    "visibleEvidence": [
+      "URL is not on Google",
+      "This page is not indexed. Pages that aren't indexed can't be served on Google.",
+      "Page is not indexed: Discovered - currently not indexed",
+      "Discovery | Sitemaps | https://www.driverightcarbuying.com/sitemap.xml | Referring page | None detected",
+      "Crawl | Last crawl | N/A | Crawled as | N/A | Crawl allowed? | N/A | Page fetch | N/A | Indexing allowed? | N/A",
+      "Indexing | User-declared canonical | N/A | Google-selected canonical | N/A"
+    ],
+    "evidenceFormat": "Transcription of the displayed URL Inspection panel, cross-checked with its accessibility tree and screenshot; account identity and opaque inspection token omitted.",
+    "limits": "N/A is unavailable, not a failed fetch, denied crawl/indexing, missing public canonical, or confirmation that Google has never crawled the URL. The public declared canonical below does not establish Google's selected canonical. The UI does not state a crawl timestamp timezone; no crawl timestamp is available here."
+  },
+  "sitemapReport": {
+    "observedAtUtc": "2026-09-26T04:23:53.167Z",
+    "reportUrl": "https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+    "path": "/sitemap.xml",
+    "typeDisplay": "Sitemap",
+    "submittedDisplay": "Sep 25, 2026",
+    "lastReadDisplay": "Sep 25, 2026",
+    "statusDisplay": "Success",
+    "discoveredPagesDisplay": 8,
+    "discoveredVideosDisplay": 0,
+    "submittedSitemapRowCount": 1,
+    "visibleEvidence": {
+      "columns": [
+        "Sitemap",
+        "Type",
+        "Submitted",
+        "Last read",
+        "Status",
+        "Discovered pages",
+        "Discovered videos"
+      ],
+      "row": [
+        "/sitemap.xml",
+        "Sitemap",
+        "Sep 25, 2026",
+        "Sep 25, 2026",
+        "Success",
+        "8",
+        "0"
+      ]
+    },
+    "limits": "Report dates preserved as displayed. Success and discovered-page count are not confirmation that the service explainer is indexed or that Google fetched the latest sitemap bytes. No submission control used."
+  },
+  "publicHttp": {
+    "car-buying-service.html": {
+      "observedAtUtc": "2026-09-26T04:25:20.639307+00:00",
+      "observedAtLocal": "2026-09-25T23:25:20.639307-05:00",
+      "requestedUrl": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "headers": {
+        "date": "Sat, 26 Sep 2026 04:25:20 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "age": "41",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "last-modified": "Sat, 26 Sep 2026 04:24:39 GMT",
+        "x-vercel-cache": "HIT",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "xRobotsTag": {
+        "present": false,
+        "value": null
+      },
+      "sha256": "af6032896d72555559f43cd9f617fc7a6477704023f034b172c5f8e6f8dc4904",
+      "canonical": [
+        "https://www.driverightcarbuying.com/car-buying-service.html"
+      ],
+      "robotsMeta": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ]
+    },
+    "robots.txt": {
+      "observedAtUtc": "2026-09-26T04:25:21.023622+00:00",
+      "observedAtLocal": "2026-09-25T23:25:21.023622-05:00",
+      "requestedUrl": "https://www.driverightcarbuying.com/robots.txt",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/robots.txt",
+      "headers": {
+        "date": "Sat, 26 Sep 2026 04:25:21 GMT",
+        "content-type": "text/plain; charset=utf-8",
+        "age": "93855",
+        "cache-control": "public, max-age=14400, must-revalidate",
+        "last-modified": "Thu, 24 Sep 2026 10:52:25 GMT",
+        "x-vercel-cache": "HIT",
+        "cf-cache-status": "REVALIDATED"
+      },
+      "xRobotsTag": {
+        "present": false,
+        "value": null
+      },
+      "sha256": "0cd032c1b11d110f68f1f5d4131fef9ba4d868de7eb7a4ac919cf8676c726243",
+      "body": "# Search crawlers\nUser-agent: Googlebot\nAllow: /\nDisallow: /uuyh\n\nUser-agent: Bingbot\nAllow: /\nDisallow: /uuyh\n\nUser-agent: OAI-SearchBot\nAllow: /\nDisallow: /uuyh\n\nUser-agent: Claude-SearchBot\nAllow: /\nDisallow: /uuyh\n\nUser-agent: PerplexityBot\nAllow: /\nDisallow: /uuyh\n\n# Training and product-control tokens are tracked separately from search.\nUser-agent: GPTBot\nAllow: /\nDisallow: /uuyh\n\nUser-agent: Google-Extended\nAllow: /\nDisallow: /uuyh\n\nUser-agent: ClaudeBot\nAllow: /\nDisallow: /uuyh\n\n# User-initiated retrieval agents\nUser-agent: Claude-User\nAllow: /\nDisallow: /uuyh\n\nUser-agent: Perplexity-User\nAllow: /\nDisallow: /uuyh\n\nUser-agent: ChatGPT-User\nAllow: /\nDisallow: /uuyh\n\nUser-agent: Applebot-Extended\nAllow: /\nDisallow: /uuyh\n\nUser-agent: *\nAllow: /\nDisallow: /uuyh\n\n# Content map for language-model crawlers (not a Google ranking signal)\n# https://www.driverightcarbuying.com/llms.txt\n\nSitemap: https://www.driverightcarbuying.com/sitemap.xml\n",
+      "matchesCommittedSource": true
+    },
+    "sitemap.xml": {
+      "observedAtUtc": "2026-09-26T04:25:21.357715+00:00",
+      "observedAtLocal": "2026-09-25T23:25:21.357715-05:00",
+      "requestedUrl": "https://www.driverightcarbuying.com/sitemap.xml",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/sitemap.xml",
+      "headers": {
+        "date": "Sat, 26 Sep 2026 04:25:21 GMT",
+        "content-type": "application/xml",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "last-modified": "Sat, 26 Sep 2026 04:25:21 GMT",
+        "x-vercel-cache": "MISS",
+        "cf-cache-status": "DYNAMIC"
+      },
+      "xRobotsTag": {
+        "present": false,
+        "value": null
+      },
+      "sha256": "3240da7681e57cf5a079fc3f9046906701d740158e7f03c6c477c252b796528c",
+      "urls": [
+        {
+          "url": "https://www.driverightcarbuying.com/",
+          "lastmod": "2026-09-25"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/about.html",
+          "lastmod": "2026-09-22"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/schedule.html",
+          "lastmod": "2026-09-22"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/policy.html",
+          "lastmod": "2026-09-18"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/blog.html",
+          "lastmod": "2026-09-22"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/how-it-works.html",
+          "lastmod": "2026-09-25"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+          "lastmod": "2026-09-23"
+        },
+        {
+          "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+          "lastmod": "2026-09-22"
+        }
+      ],
+      "urlCount": 8,
+      "serviceExplainerOccurrences": 1,
+      "matchesCommittedSource": true
+    }
+  },
+  "publicInterpretation": {
+    "serviceStatus": 200,
+    "redirectObserved": false,
+    "robotsMeta": "index, follow",
+    "xRobotsTagPresent": false,
+    "canonical": "https://www.driverightcarbuying.com/car-buying-service.html",
+    "robotsTxtGooglebotRule": {
+      "allow": "/",
+      "disallow": "/uuyh",
+      "servicePathAllowed": true
+    },
+    "sitemapMembership": {
+      "occurrences": 1,
+      "totalUrls": 8,
+      "serviceLastmod": "2026-09-23",
+      "matchesCommittedMain": true
+    },
+    "limits": "A public 200 and permissive robots directives confirm this client's response and published crawl/index directives, not a successful Googlebot fetch or an indexing decision.",
+    "initialClientFailure": {
+      "client": "Python 3.9 urllib.request, default user agent",
+      "status": 403,
+      "exactTimestampAvailable": false,
+      "result": "Initial GET failed before evidence collection; no body was retained. Normal curl GET then returned 200 at 04:24:39 UTC and again in the timestamped evidence. Cause not established; no Cloudflare or Googlebot block inferred and no security setting changed."
+    }
+  },
+  "comparison": {
+    "indexingStatusChanged": false,
+    "crawlDataBecameAvailable": false,
+    "canonicalDataBecameAvailable": false,
+    "referringSitemapChanged": false,
+    "sitemapReportChanged": false,
+    "observedChange": "None since the latest committed release-review observation. The explainer remains discovered, currently not indexed, with its sitemap recognized and crawl/canonical fields unavailable.",
+    "causality": "No indexing benefit attributed to the accepted request, sitemap resubmission, website release, or legacy-apex repair. Submission does not guarantee indexing."
+  },
+  "actions": {
+    "indexingRequests": 0,
+    "sitemapSubmissions": 0,
+    "liveUrlTests": 0,
+    "dnsHostingWrites": 0,
+    "pricingContentOrReleaseGateChanges": 0,
+    "newAutomations": 0
+  },
+  "nextTask": {
+    "task": "One later read-only Search Console URL Inspection of the service explainer, recording whether a crawl and Google-selected canonical become available.",
+    "suggestedDateLocal": "2026-09-28",
+    "constraints": "Preserve accepted indexing/sitemap requests and all guide/city/Tesla release gates. No automated monitor scheduled."
+  },
+  "validation": {
+    "node": "24.20.0",
+    "dependencyInstall": "npm ci passed; 0 vulnerabilities reported",
+    "site": "65 HTML files and 8 sitemap URLs passed",
+    "apiSyntax": "Passed",
+    "buyingSyntax": "Passed",
+    "metroDrafts": "4 private drafts passed",
+    "cityDrafts": "20 private drafts and hub passed",
+    "redirectConfig": "15 permanent rules passed",
+    "tests": {
+      "total": 181,
+      "passed": 181,
+      "failed": 0,
+      "skipped": 0
+    },
+    "whitespace": "Passed",
+    "originalWorkingTree": {
+      "preExistingModifiedOrUntrackedFiles": 20,
+      "sha256Changes": 0
+    },
+    "scope": "Three docs/seo documentation/evidence files only; no site or account writes."
+  }
+}

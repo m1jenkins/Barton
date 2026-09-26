@@ -185,3 +185,38 @@ Vercel now reports `configuredBy: A`, `aValues: [216.150.1.1]`, `misconfigured: 
 **No DNS, certificate or hosting-access dependency remains.** Some DNS-over-HTTPS requests and this Mac’s ordinary resolver retained pre-change negative results during propagation (observed SOA negative TTL/minimum 1,800 seconds); a local cache flush did not immediately clear them. The final ordinary live runs now pass for both hosts. The evidence preserves those earlier failures separately and identifies the resolver used for each successful run. No system nameserver or hosts-file change, TLS bypass, new account grant, Search Console request or sitemap submission was made.
 
 This completion changes documentation only in the repository. The original working tree, cleanup PR #74, pricing, checkout, guides/cities/Tesla restrictions, source dates, and all site assets remain unchanged. The service explainer’s subsequent Google crawl/index decision is the single highest-value next check; use read-only inspection and preserve the accepted requests.
+
+## Service-explainer indexing follow-up — September 25/26, 2026
+
+**No observed indexing change.** Read-only inspection at **September 25, 11:23 PM America/Chicago (September 26, 04:23 UTC)** still reports **Discovered — currently not indexed** for `https://www.driverightcarbuying.com/car-buying-service.html`. This follows the latest committed release-review observation, not the earlier “unknown to Google” audit. [Dated supporting evidence](2026-09-25-service-indexing-progress.json) contains the sanitized visible report transcription, comparison baseline, public response metadata and exact field availability.
+
+Work started from `main` revision `dc15c6f3eee5b286e6a1fed0dd7c59ab83fa2d54` in an isolated documentation worktree. [PR #79](https://github.com/m1jenkins/Barton/pull/79) has already completed the legacy-apex repair; it is not an open dependency or evidence of a change in this URL's indexing.
+
+| Google index inspection field | Current displayed result | Interpretation / comparison |
+|---|---|---|
+| Overall status | **URL is not on Google** | Confirmed displayed status; not indexed |
+| Exclusion reason | **Discovered - currently not indexed** | Unchanged from the latest release review |
+| Last crawl / crawled as | **N/A / N/A** | Unavailable; no new crawl information exposed |
+| Crawl allowed? / page fetch / indexing allowed? | **N/A / N/A / N/A** | Unavailable, not confirmed failures or denials |
+| Referring sitemap | `https://www.driverightcarbuying.com/sitemap.xml` | Still recognized |
+| Referring page | **None detected** | Displayed result, not proof of no incoming links |
+| User-declared canonical | **N/A** | Unavailable in Google's index report; the public HTML declaration is separately confirmed below |
+| Google-selected canonical | **N/A** | Unavailable; no canonical selection can be claimed |
+
+“View crawled page” is disabled. These are Google index-report values; no live URL test or indexing request was run. N/A does not establish that Google has never crawled the URL. There is no crawl timestamp to convert, and the inspection UI does not state a crawl timezone.
+
+The existing **Sitemaps** report at **04:23:53 UTC** shows `/sitemap.xml`, type **Sitemap**, submitted **September 25, 2026**, last read **September 25, 2026**, **Success**, **eight discovered pages**, and **zero discovered videos**. This is unchanged from the latest committed release review. September 19/seven was the older initial checkpoint and is not the current comparison baseline. The report was read without submitting it; success and discovery counts do not establish indexing or a fresh fetch of the latest sitemap bytes.
+
+Public GETs at **04:25:20–04:25:21 UTC** independently confirmed:
+
+- The service URL returns **HTTP 200** directly, with `<meta name="robots" content="index, follow">`, no `X-Robots-Tag` response header, and exactly one canonical pointing to the inspected URL.
+- `robots.txt` returns **200** and matches committed `main`. Its Googlebot group allows `/` and disallows only `/uuyh`, so it permits this page's path; it declares the canonical sitemap URL.
+- `sitemap.xml` returns **200**, exactly matches committed `main`, and contains **eight URLs**. The service explainer appears **once**, with `lastmod` **2026-09-23**.
+
+The initial Python urllib GET returned 403; normal curl GETs then returned 200, including the captured check above. The cause of that client-specific difference is unverified. A public 200 and permissive directives do not establish a successful Googlebot fetch or Google's indexing eligibility assessment; those GSC fields remain unavailable. No security setting was changed.
+
+**Single highest-value next task: perform one later read-only URL Inspection of the service explainer on September 28, 2026, and record whether crawl/fetch and Google-selected canonical data have become available.** The current follow-up exposed no new Google crawl or canonical data. Keep the accepted request and sitemap submission intact; neither submission guarantees indexing. No recurring monitor was created.
+
+This follow-up changes documentation and evidence only. No indexing request, sitemap resubmission, DNS/hosting write, pricing/content change, or guide/city/Tesla restriction change occurred. The original working tree and unrelated cleanup PR #74 are outside this change.
+
+Validation for this documentation follow-up used **Node 24.20.0**: locked dependency installation, site validation (65 HTML files/eight sitemap URLs), API/buying syntax, four private metro drafts, 20 private city drafts plus hub, 15-rule redirect configuration, **181/181 tests** with no skips, and whitespace checks passed. All 20 pre-existing modified/untracked files in the original checkout retain their saved SHA-256 hashes.
