@@ -1,6 +1,6 @@
 # SEO priority execution — September 25, 2026
 
-Executed against `a1c3597` in America/Chicago; public checks also fall on September 26 UTC. This records implementation of the [growth plan](2026-09-25-seo-growth-plan.md), not a second audit. [Sanitized evidence](2026-09-25-seo-execution-evidence.json) contains the URL matrix, account observations and verification limits.
+Executed against `a1c3597` in America/Chicago; public checks also fall on September 26 UTC. Released through [PR #76](https://github.com/m1jenkins/Barton/pull/76) at production revision `444a053264da214251b97e5e5e492879b5246d4b`; see the release verification below. This records implementation of the [growth plan](2026-09-25-seo-growth-plan.md), not a second audit. [Sanitized evidence](2026-09-25-seo-execution-evidence.json) contains the URL matrix, account observations and verification limits.
 
 ## Completed actions
 
@@ -9,12 +9,12 @@ Executed against `a1c3597` in America/Chicago; public checks also fall on Septem
 | A02 discovery | Resubmitted the existing eight-URL sitemap. Google displayed **Sitemap submitted successfully**. Requested indexing of the service explainer; Google accepted it into the priority crawl queue. | A submission is not indexing. Sitemap report still showed last read September 19 and seven discovered pages immediately after submission. |
 | A02 core-page verification | Individually inspected all six intended indexed pages. All use the inspected URL as Google's selected canonical. Requested a targeted Policy recrawl because its recorded crawl was August 20; Google accepted it. | Await actual recrawling; do not repeat accepted requests merely to seek a faster result. |
 | A03 process correction | Replaced the pre-payment introduction step with payment followed by intake. Step 04 reuses the pricing page's existing Stripe instruction; step 05 preserves the existing scope/timing confirmation and buyer control. | A reviewed deliverable example is a separate open part of A03. No new commercial promise or checkout behavior was introduced. |
-| A04 site name | Homepage `WebSite.name` now says **Drive Right**, keeping the existing alternate name, homepage URL, page title and Organization reference. | Source implementation is complete; production deployment and Google's later site-name selection are not verified. |
+| A04 site name | Homepage `WebSite.name` now says **Drive Right**, keeping the existing alternate name, homepage URL, page title and Organization reference. | Production raw HTML and rendered schema verified after release; Google's later site-name selection remains unverified. |
 | A05 freshness | Corrected Resources' inventory date from its actual September 22 reorganization; replaced the obsolete Texas draft-update label with its current pending-review status. Updated only three sitemap dates with specific supporting changes. | The Texas source-check date remains August 12. No new source review or guide approval is claimed. |
 | A12 search baseline | Captured the preceding non-overlapping 28 days, exact impression values exposed by GSC's visible cards, and the complete page tables for both periods. | Qualified leads, orders, service revenue, GA4 account delivery and Bing remain unverified. |
 | A13 factual cleanup | Updated existing `llms.txt` from Texas-only positioning to the already advertised nationwide service and added the service-explainer link. | No AI visibility lift is claimed; prompt-panel waves remain open. |
 
-At the initial execution checkpoint, website changes were local and uncommitted. The Google submissions above are completed account actions. No production deployment, DNS write, customer communication, payment, new guide release or city release occurred.
+At the initial execution checkpoint, website changes were local and uncommitted, while the Google submissions above were completed account actions. The website changes are now deployed as recorded below. No DNS write, customer communication, payment, new guide release or city release occurred.
 
 ## Google index matrix
 
@@ -89,4 +89,24 @@ Fresh validation used Node `24.13.0`: locked dependency installation, site valid
 
 Authenticated Search Console follow-up: Policy now shows **September 25, 2026, 9:35:54 PM** as its last crawl, a successful Googlebot smartphone fetch, crawl/indexing allowed, and the inspected URL as both declared and Google-selected canonical. Its sitemap is now recognized, replacing the prior temporary-processing-error observation. The service explainer remains **Discovered — currently not indexed**, with the sitemap recognized and no crawl/canonical yet. These are observed states, not proof that the requests caused a change. Neither request nor the sitemap was resubmitted. GSC does not state the crawl timestamp timezone.
 
-Production deployment and public verification are pending at this review checkpoint; the final deployment record will be added after release.
+### Deployed revision and public verification
+
+[PR #76](https://github.com/m1jenkins/Barton/pull/76) merged as **`444a053264da214251b97e5e5e492879b5246d4b`**. Vercel production deployment **`dpl_2vnWdmfu2DWfqAWCud7SQ5SE8YCo`** is READY ([deployment](https://vercel.com/m1jenkins-projects/barton/2vnWdmfu2DWfqAWCud7SQ5SE8YCo)). The checked preview was `f2567830f1f6f79de17d9aebd61a37c734098987`, deployment `dpl_7XxzzoTxN93Lno49nfHP68vFj6iV`; preview and merged public source match. PR checks passed 3/3 and the merged-main [Node 24 run](https://github.com/m1jenkins/Barton/actions/runs/36213802862) succeeded. The evidence follow-up changes deployment-excluded documentation only.
+
+[Durable public verification](2026-09-25-seo-release-verification.json) records the response matrix and timestamps (September 25 America/Chicago, September 26 UTC):
+
+- **Payment and intake:** production raw HTML and browser show payment at step 04, intake after verification at step 05; obsolete introduction copy is absent. Pricing remains $295/$895. Both checkout modules match source exactly. A direct unpaid Full Service confirmation visit says payment could not be verified and does not expose intake or record a purchase. No live checkout session or payment was created; paid success/analytics reconciliation remain separate dependencies.
+- **Site name:** exactly one rendered and raw WebSite node, named Drive Right, retaining its alternate name, canonical homepage URL and Organization reference. This proves deployment, not Google's eventual site-name choice.
+- **Sitemap:** eight URLs and exact source match. Home/process dates are September 25; service explainer September 23; other dates unchanged. Resources' visible date is September 22, guide reviews remain pending, and Texas retains its August 12 source check.
+- **Canonicals and indexing:** all 58 direct HTML pages match source after the identified Cloudflare email-protection/beacon transformations; all eight intended indexed URLs are 200 with self-canonicals and `index, follow`. The other 50 direct HTML pages retain `noindex, follow`. Seven existing redirects remain, including retired AI to Pricing. All legacy city pages and protected legal/finance/safety guides remain contained. Tesla remains 200, self-canonical, `noindex, follow`, off sitemap, without a redirect.
+- **Deployment exclusions:** sampled documentation, governance data, private metro/city drafts and validation scripts return 404. No draft publication or gate changes occurred. All original working-tree SEO files retain their starting hashes; unrelated cleanup PR #74 and the local interactive artifact remain untouched.
+- **Redirects:** all 14 live permanent, query-preserving one-hop checks passed. The legacy apex is outside that www-host matrix and still returns NOERROR with zero A/AAAA answers.
+- **Browser limits:** preview and production process/pricing/schema were inspected. The requested 390px viewport override did not take effect (actual width 744px), so this follow-up does not claim a fresh 390px check; the earlier local mobile observation above remains historical. No CSS or behavior changed.
+
+Search Console's sitemap report now shows **last read September 25, Success, eight discovered pages**, up from September 19/seven. This observation predates Google's fetch of the newly deployed sitemap dates; no post-deploy fetch is claimed. Policy recrawl progress and the service explainer's pending state are recorded above. No indexing or sitemap request was resubmitted.
+
+### Remaining dependencies and next task
+
+**Highest-value next task: restore DNS for `austincarbuyingservice.com` at the authoritative DNS/hosting account, then verify its HTTPS certificate and permanent path/query-preserving redirects to the canonical www site.** The intended destination must be confirmed from the hosting configuration; do not guess an address or change the working legacy www record. Administrator access/confirmation remains the dependency. The current repository redirect cannot fix missing DNS.
+
+Also open: Google's crawl/index decision for the service explainer and eventual site-name selection; the reviewed deliverable example; compensation attestation/customer permission and individual guide/worksheet/local release reviews; GA4/Bing account and qualified-lead/order/revenue reconciliation; current performance evidence and AI prompt-panel waves. These remain separate work and none is represented as completed by this release. No recurring monitor was created.

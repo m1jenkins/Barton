@@ -1,0 +1,1183 @@
+{
+  "observedAtUtc": "2026-09-26T03:08:57.651690+00:00",
+  "baseUrl": "https://www.driverightcarbuying.com",
+  "method": "Public GET; raw response parsing, SHA-256 and source comparison. Normalized comparison decodes Cloudflare email protection, removes its email-decode and beacon scripts, and normalizes inter-tag whitespace. Python 3.9 retains 308 responses; 301/302 redirects followed. No checkout session or payment submitted.",
+  "checks": {
+    "sitemapMatchesSource": true,
+    "sitemapCount": 8,
+    "siteName": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Drive Right",
+        "alternateName": "Drive Right Car Buying Service",
+        "url": "https://www.driverightcarbuying.com/",
+        "inLanguage": "en-US",
+        "description": "Austin-based car buying and negotiation service for buyers nationwide. Full Service is $295 USD one time; Ultimate Concierge is $895 USD one time.",
+        "publisher": {
+          "@id": "https://www.driverightcarbuying.com/#organization"
+        }
+      }
+    ],
+    "paymentBeforeIntake": true,
+    "obsoleteIntroductionAbsent": true,
+    "pricingUnchanged": true,
+    "robotsMatchesSource": true
+  },
+  "sitemap": [
+    {
+      "url": "https://www.driverightcarbuying.com/",
+      "lastmod": "2026-09-25"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/about.html",
+      "lastmod": "2026-09-22"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "lastmod": "2026-09-22"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/policy.html",
+      "lastmod": "2026-09-18"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/blog.html",
+      "lastmod": "2026-09-22"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/how-it-works.html",
+      "lastmod": "2026-09-25"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "lastmod": "2026-09-23"
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "lastmod": "2026-09-22"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/about.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/about.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/about.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "1f1708170a9f03277d0ad242d11fc9cbd4f928c04c3018890314066cd7d0a45a",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/ai-car-buying-agent.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/schedule.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/schedule.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "dc152a370885aa417f1433e56676416d126b9baec4b655cbe0d9655a82cc41e8",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": false,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/arlington.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/arlington.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/arlington.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "857c12f5a6627f738fbc6d9886b4ecd1246c5b934bc260af0a50999b0eee4b11",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/austin.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/austin.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/austin.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "a42e35ba9943e13ddb191d0d289ea1910b699aa13f1ba5550ead0b6778b4c447",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/auto-financing-credit-fi.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/auto-financing-credit-fi.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/auto-financing-credit-fi.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "ede50535135bca72686d07b46e1ca4873831eb34a9035737e165e3afe5023cc4",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-auto-loan-rate-texas.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-auto-loan-rate-texas.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-auto-loan-rate-texas.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "2247ec2d03b5d6efc540a02a657b147cb2e5b9b51901df522f875764aceeb69d",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-cars-texas-families.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-cars-texas-families.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-cars-texas-families.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "86ce68898a0c358cd321127ec2d9c9ced12f80a5dcb14975e5e505ab76d693c5",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-cars-under-30k.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-cars-under-30k.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-cars-under-30k.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "0b749abfc412e4d11ab3993dadca45b9b7cb114f0998d08b23e00f2a50d8aaf4",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-dealerships-austin.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-dealerships-austin.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-austin.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "6240997da6cc2a8fa775a30e44c3ce1b617e906ba96bee49ff451167f0b81eeb",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-dealerships-dallas-fort-worth.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "e4bd4ce30ef53b87d2654702fa1a8f4faa735321ce3d2d8bf065b2e391159a5f",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-dealerships-houston.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-dealerships-houston.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-houston.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "ff263829c4ce502a493ce3cd32075ffd190f104cff93ee02091758d198f877d3",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-dealerships-san-antonio.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-dealerships-san-antonio.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-san-antonio.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "a17fc86f58a34689fd38a6e27ca23358572dca2d0c5087b74c4c52d9da2da70b",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-first-cars-texas.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-first-cars-texas.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-first-cars-texas.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "09863962be2ee4af57241a823326a089c7257569f12eea2c7fde502e76c08e6c",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-best-time-buy-car-texas.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-best-time-buy-car-texas.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-time-buy-car-texas.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "102de046e1de8b8c89148237351c56b7ec54dd4c6775651741d802539456e3f9",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-buy-new-car-below-msrp.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-buy-new-car-below-msrp.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-buy-new-car-below-msrp.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "be5b7b52f7693cfc2893b1bbc08111819aa5fc9b36250e47f5005b0fd822eed4",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-car-history-beyond-carfax.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-car-history-beyond-carfax.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-car-history-beyond-carfax.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "69c7b785ff6c9ba758da38a24884ea82bea2604e24bd75999a0e868dbc168a54",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-cpo-vs-used.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-cpo-vs-used.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-cpo-vs-used.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "617ed581f5c3661f959c709406bdf4a464b29d6569041eecd99e533a19edd18e",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-credit-score-car-buying.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-credit-score-car-buying.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-credit-score-car-buying.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "6dc6520b7f6708f7f63f2af2d03e577ea8e0f25603eee97053d293c290a1ff74",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-dealer-addons-exposed.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html",
+      "location": "/blog-dealership-addons-complete-guide.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-dealer-vs-bank-financing.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-dealer-vs-bank-financing.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-dealer-vs-bank-financing.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "fc75adb8de234526d010cab1186b2215457821eccd76d05196814c82f00d5402",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-dealership-addons-complete-guide.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "74eafc6d7ed0015d880429e1816428144564abd462a5011e9cb86d5e5346859a",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-depreciation-myth-20-percent.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-depreciation-myth-20-percent.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-depreciation-myth-20-percent.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "391cad70a34596fc079626aceecc721318465484f0fde2f23415288c3069cb3b",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-finance-department-scams.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-finance-department-scams.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-finance-department-scams.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "c805b5742c2f8b89f2bcac0333845d5636dc474dbef482677dce5373641d9b87",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-flat-fees-vs-commissions.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html",
+      "location": "/how-it-works.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-high-demand-vehicles-msrp.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-high-demand-vehicles-msrp.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-high-demand-vehicles-msrp.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "10a469c1a653cb68d84e901c9e2965c890768c3c2e96185ca3072ab347d4ce45",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-leasing-vs-buying.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-leasing-vs-buying.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-leasing-vs-buying.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "99818d0d5cf59c87262c4a83ebfdbdd9bfd712198eef38bdf2bc6947c5ce7743",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-mazda-secret.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-mazda-secret.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-mazda-secret.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "98f0f326bd84576849870e0d8d758478a12c4cc9d212365a489c97ecaca49f42",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-myth-brand-reliability.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-myth-brand-reliability.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-myth-brand-reliability.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "7c7534b4ad6d18ebee5649bfd14e5fbf6091937368d2b2798e4f08c58953817a",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-negotiation-mastery.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-negotiation-mastery.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-negotiation-mastery.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "cd3bf85a7ffcffbf6a3842a1f3db655489413cd08fd0bcc2cccb4cced0e0e721",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-new-vs-near-new.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-new-vs-near-new.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-new-vs-near-new.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "93bbb49819303838c08db8e246d70d9eac1888d24874238d0f993d1996fd3934",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-private-party-vs-dealership.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-private-party-vs-dealership.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-private-party-vs-dealership.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "ec49fe76ccaa2b9e40fdbe71c72b579f241cbd93224e6b89f7c4b15669b0a594",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-roi-car-buying-service.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-roi-car-buying-service.html",
+      "location": "/how-it-works.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-skip-dealership-marathon.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html",
+      "location": "/how-it-works.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-spot-delivery-scam.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-spot-delivery-scam.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-spot-delivery-scam.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "12627f73a5015fccea7168b9b4ed4d335a4f0267ee59e1f06964b2c4ab748c09",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-texas-car-buying-laws.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-texas-car-buying-laws.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-texas-car-buying-laws.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "88bba7d93af44c54d2533a3ba16c34c7e1fa89a641586708321aaf763eb907cc",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-texas-title-transfer.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-texas-title-transfer.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-texas-title-transfer.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "53ab383515ae803aaaf82474c5899e8cc0cf7d9e02128f1d30ae343bb78116b4",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-used-car-inspection-checklist.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-used-car-inspection-checklist.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-car-inspection-checklist.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "6c7ff060bd0d3788b5621c8d062e3bca7f8bb177273556ec7f2321b83d0fe270",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-used-car-rip-offs.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-used-car-rip-offs.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-car-rip-offs.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "33f6a582edb666779bc2c8b0e6f42b451f0ae51423e12ddfd5d59d90597d2077",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-used-ev-pros-cons-risks.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-used-ev-pros-cons-risks.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-ev-pros-cons-risks.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "38d89e12bb4f689002b4b875ef050fbf1fc6f0fa82d7ddc168d6cdf97ab7daee",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog-zero-kickbacks-promise.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html",
+      "location": "/how-it-works.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/blog.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/blog.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "29c2845f6ef52766f1a9e7ca7043ab6c51a2d9f92759cf29d5b2e287aa223bbb",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/car-buying-service.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/car-buying-service.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "0023f442961684da6d1fb3b1ef50f6bee004c986977d9b37e66df52eba47a849",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/dallas.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/dallas.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/dallas.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "58352604efceec86b307f2be1fd6965af590d0ef25bbf4f696f03a692b464275",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/el-paso.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/el-paso.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/el-paso.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "0772414d94a9853cef2223cc643d419d1cfcaf10646473e3893a1f55e96281e5",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/fort-worth.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/fort-worth.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/fort-worth.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "0074ef3d50d07f542132811a739df039ead33388d286c456b726077b11c4dafb",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/houston.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/houston.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/houston.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "a843b53eb578232cbea7fc7c2dc3610cee5c9e9b4dfc660bf0004ed813109c2b",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/how-it-works.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/how-it-works.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/how-it-works.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "7a090ab6c380fa805be6db81f29aaec7e5a9d8af055b8da758144322fb797a30",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/",
+      "canonical": [
+        "https://www.driverightcarbuying.com/"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "30fd4f97c24678f2c848343862fe8bd416a8732273274b67bca79bff0e226f9a",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/inquiry.html",
+      "status": 308,
+      "finalUrl": "https://www.driverightcarbuying.com/inquiry.html",
+      "location": "/schedule.html",
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/new-braunfels.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/new-braunfels.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/new-braunfels.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "e878705d8555e688b4e40d7a1cfb35e92428353c8b65608713f770debccfca95",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/new-car-pricing-incentives.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/new-car-pricing-incentives.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/new-car-pricing-incentives.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "39698dd9d5ca678da91dda33b73e281cddbf182111edb4df31859310bc3de263",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/payment-success-concierge.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/payment-success-concierge.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-concierge.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "6a5ccead6736d548ae0ed6ebda25712682ad8e6364bdc3d9838b486d325fb838",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/payment-success-consultant.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/payment-success-consultant.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-consultant.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "4d9a3edc1e6fe6112a5a1569fb17a294706a01fefcb13e9a95f80843d1c5b3b1",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/payment-success-fullservice.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/payment-success-fullservice.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-fullservice.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "fff6520c53650992c5b87ff1f2a0166c2424b6819725b61d0af16b47c170f334",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/payment-success.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/payment-success.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "c1bf0421caf523f047ea4547badf82d471b672cb6687e4550b3094543bc1f66e",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/policy.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/policy.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/policy.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "1e55e87e44789bd05a47af44bbcef95706736b76eb94e68d1823e1079a445c40",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/san-antonio.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/san-antonio.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/san-antonio.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "40e81759ed6144b25d45065dc659f6102d9313b16329826f9de8f045adbaa19b",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/san-marcos.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/san-marcos.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/san-marcos.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "ca168fbb26c6c54c633aa6aca285ad9dc3814572c4379846bdd0f3e50d887eeb",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/schedule.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/schedule.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/schedule.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "b5711112e955319f7cddca706a6729ae62148b9df7ed94300a483b0581556db4",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/success.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/success.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/success.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "da6fadbe6871d68867e872ead2fb5ba48061960aa350a26042d52d3365f0147b",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/tesla-fsd-for-sale.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "ca29987fab154a6bdb3f3f9dfa72ae5fa5a31051584fbe5c727d85c0e2ba3f83",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/texas-car-buying-rules-paperwork.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/texas-car-buying-rules-paperwork.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/texas-car-buying-rules-paperwork.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "b9480c34bd838be41246a12a8c9f32b9cd195e54612fe81dca3210a3cb63011d",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/texas-local-market-intelligence.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/texas-local-market-intelligence.html"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "222324a049451f03e3d1d16533c2629d2fcd169f281591bed8e9bf5fd34ad988",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/used-car-due-diligence.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/used-car-due-diligence.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/used-car-due-diligence.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "f4f40b41bd0a6aee6cc9b5e9a2aa0a61f4447c4181147b2b2d45ae9b8c7e35e7",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/vehicle-selection-total-cost.html",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/vehicle-selection-total-cost.html",
+      "canonical": [
+        "https://www.driverightcarbuying.com/vehicle-selection-total-cost.html"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "xRobotsTag": null,
+      "sha256": "6d91335101f6d78b10a97f4efd7f9fb87428177fb024627b5555eb6478dca4c1",
+      "matchesSource": false,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/sitemap.xml",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "3240da7681e57cf5a079fc3f9046906701d740158e7f03c6c477c252b796528c",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/robots.txt",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "0cd032c1b11d110f68f1f5d4131fef9ba4d868de7eb7a4ac919cf8676c726243",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/llms.txt",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "a8e3cc324fbdbac00c29cf7825cdea7a3fbc9f1316f5382421eeb4363e88548b",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/pricing.md",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/pricing.md",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "f23567eb5acb05832be3b34400f7c73733f6d82c7286fde6355373aa5b94cfd8",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/buying/app.js",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/buying/app.js",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "1d7c05f779842cb01c37a9726202fdf31da0891922ec5c879d70d1725393b665",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    },
+    {
+      "path": "/buying/checkout.js",
+      "status": 200,
+      "finalUrl": "https://www.driverightcarbuying.com/buying/checkout.js",
+      "canonical": [],
+      "robots": [],
+      "xRobotsTag": null,
+      "sha256": "3d24c048a0cdea23d380d39eff488508445a7b559aed59c3c99996bd5331d9b9",
+      "matchesSource": true,
+      "matchesSourceAfterEdgeTransforms": true,
+      "schemaParseErrors": []
+    }
+  ],
+  "deploymentExclusions": [
+    {
+      "path": "/docs/seo/2026-09-25-seo-execution.md",
+      "status": 404,
+      "finalUrl": "https://www.driverightcarbuying.com/docs/seo/2026-09-25-seo-execution.md",
+      "location": null
+    },
+    {
+      "path": "/data/metro-release.json",
+      "status": 404,
+      "finalUrl": "https://www.driverightcarbuying.com/data/metro-release.json",
+      "location": null
+    },
+    {
+      "path": "/draft-artifacts/cities/austin.html",
+      "status": 404,
+      "finalUrl": "https://www.driverightcarbuying.com/draft-artifacts/cities/austin.html",
+      "location": null
+    },
+    {
+      "path": "/draft-artifacts/metros/houston.html",
+      "status": 404,
+      "finalUrl": "https://www.driverightcarbuying.com/draft-artifacts/metros/houston.html",
+      "location": null
+    },
+    {
+      "path": "/scripts/validate-site.mjs",
+      "status": 404,
+      "finalUrl": "https://www.driverightcarbuying.com/scripts/validate-site.mjs",
+      "location": null
+    }
+  ],
+  "deployment": {
+    "revision": "444a053264da214251b97e5e5e492879b5246d4b",
+    "pullRequest": "https://github.com/m1jenkins/Barton/pull/76",
+    "productionDeploymentId": "dpl_2vnWdmfu2DWfqAWCud7SQ5SE8YCo",
+    "productionDeploymentUrl": "https://barton-6uhvnjpy0-m1jenkins-projects.vercel.app",
+    "productionState": "READY",
+    "previewRevision": "f2567830f1f6f79de17d9aebd61a37c734098987",
+    "previewDeploymentId": "dpl_7XxzzoTxN93Lno49nfHP68vFj6iV",
+    "githubChecks": "PR: 3/3 passed; merged main Barton checks run 36213802862 succeeded",
+    "site": "https://www.driverightcarbuying.com/",
+    "verificationFile": "2026-09-25-seo-release-verification.json",
+    "verifiedAtUtc": "2026-09-26T03:10:49.435648+00:00"
+  },
+  "summary": {
+    "paymentBeforeIntake": true,
+    "singleWebSiteName": "Drive Right",
+    "pricingUsd": [
+      295,
+      895
+    ],
+    "sitemap": "8 URLs; exact source match; only home/process/service dates changed",
+    "indexing": "8 direct indexable pages; 50 direct noindex pages; 7 existing redirects",
+    "canonical": "All 58 direct HTML pages match source canonical and robots; eight sitemap URLs self-canonical",
+    "sourceMatch": "All 58 direct HTML responses match source after explicitly accounting for Cloudflare email protection and beacon scripts; sitemap, robots, llms, pricing.md and checkout JS match source",
+    "privatePaths": "5 sampled governance/draft/tool URLs return 404",
+    "redirects": "14 permanent, query-preserving one-hop checks passed",
+    "legacyApex": "NOERROR; zero A and AAAA answers",
+    "browser": "Authenticated preview process/schema/pricing verified; production process/pricing/schema verified. Direct Full Service confirmation visit blocks intake and records no purchase. Requested mobile viewport override did not take effect (actual width 744); fresh 390px rendering not claimed. Earlier local mobile evidence remains historical.",
+    "limits": "No real payment, new Stripe session, customer data or Google site-name selection verification. Paid checkout success and analytics delivery not newly tested."
+  }
+}
