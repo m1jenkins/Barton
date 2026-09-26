@@ -1,0 +1,120 @@
+{
+  "observedLocalDate": "2026-09-25",
+  "timezone": "America/Chicago",
+  "property": "https://www.driverightcarbuying.com/",
+  "access": "Authenticated read-only, after user sign-in",
+  "method": "Visible Search Console UI. No settings saved, indexing requests, sitemap submissions or exports of personal account data.",
+  "performance": {
+    "source": "https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F&num_of_days=28",
+    "searchType": "Web (text)",
+    "filters": "No query/page/country/device filters",
+    "start": "2026-08-27",
+    "end": "2026-09-23",
+    "clicks": 21,
+    "impressionsDisplay": "1.69K",
+    "impressionsExact": null,
+    "ctrDisplay": "1.2%",
+    "averagePositionDisplay": "26.2",
+    "queriesObserved": [
+      {
+        "query": "car buying service",
+        "clicks": 0,
+        "impressions": 152
+      },
+      {
+        "query": "car buying services",
+        "clicks": 0,
+        "impressions": 49
+      },
+      {
+        "query": "car broker service",
+        "clicks": 0,
+        "impressions": 46
+      }
+    ],
+    "queryLimits": "Selected visible rows only; anonymized queries omitted by GSC. No exact prior-window comparison gathered in this audit."
+  },
+  "indexSummary": {
+    "source": "https://search.google.com/search-console/index?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+    "reportUpdated": "2026-09-20",
+    "indexed": 12,
+    "notIndexed": 45,
+    "reasons": {
+      "noindex": 29,
+      "redirect": 3,
+      "crawledCurrentlyNotIndexed": 12,
+      "discoveredCurrentlyNotIndexed": 1
+    },
+    "currentIntendedUrlsListedIndexed": [
+      "/",
+      "/about.html",
+      "/how-it-works.html",
+      "/schedule.html",
+      "/blog.html",
+      "/policy.html"
+    ],
+    "otherIndexedExamples": [
+      "/ai-car-buying-agent.html",
+      "/fort-worth.html",
+      "/blog-best-dealerships-austin.html",
+      "/blog-depreciation-myth-20-percent.html",
+      "/blog-used-car-rip-offs.html",
+      "/blog-best-dealerships-dallas-fort-worth.html"
+    ],
+    "limit": "Summary is lagged. Google-selected canonical not inspected individually for the six listed intended URLs."
+  },
+  "inspections": [
+    {
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "indexState": "URL is unknown to Google",
+      "sitemapDetected": false,
+      "lastCrawl": null,
+      "liveTest": "URL is available to Google; page can be indexed",
+      "liveTestLocal": "2026-09-25 20:51",
+      "breadcrumbItemsValid": 1
+    },
+    {
+      "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "indexState": "Discovered - currently not indexed",
+      "sitemapDetected": true,
+      "lastCrawl": null,
+      "liveTest": "URL is available to Google; page can be indexed",
+      "liveTestLocal": "2026-09-25 20:52",
+      "breadcrumbItemsValid": 1
+    }
+  ],
+  "sitemap": {
+    "source": "https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+    "path": "/sitemap.xml",
+    "submitted": "2026-04-06",
+    "lastRead": "2026-09-19",
+    "status": "Success",
+    "discoveredPages": 7,
+    "currentLiveSitemapUrls": 8
+  },
+  "aiControl": {
+    "source": "https://search.google.com/search-console/settings/search-gen-ai?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+    "inheritFrom": "driverightcarbuying.com",
+    "currentControl": "Include",
+    "changed": false
+  },
+  "aiPerformance": {
+    "source": "https://search.google.com/search-console/performance/search-analytics/ai?resource_id=https%3A%2F%2Fwww.driverightcarbuying.com%2F",
+    "start": "2026-06-24",
+    "end": "2026-09-23",
+    "impressions": 748,
+    "homepageImpressions": 360,
+    "limit": "Three-month UI report. Not a citation rate or current 28-day result. Includes historical URLs now contained."
+  },
+  "coreWebVitals": {
+    "source": "Search Console overview",
+    "mobile": "No data",
+    "desktop": "No data"
+  },
+  "remainingUnknown": [
+    "Bing index coverage",
+    "Verified crawler-IP logs",
+    "Current organic qualified leads and revenue",
+    "Field Core Web Vitals values"
+  ]
+}

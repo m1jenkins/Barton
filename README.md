@@ -31,7 +31,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
 
-- **Current design** (indexed): `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `ai-car-buying-agent.html`, `houston.html`, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`.
+- **Current design**: `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `ai-car-buying-agent.html`, `houston.html`, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
 - **Legacy design** (`noindex`): the `blog-*.html` posts, the other Texas city pages (`austin.html`, `dallas.html`, and so on), `inquiry.html`, `success.html`, `tesla-fsd-for-sale.html` and the topic pages. They load `styles.css`.
 
 Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same file).

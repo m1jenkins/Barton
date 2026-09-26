@@ -1,0 +1,246 @@
+[
+  {
+    "id": "A02",
+    "tier": "1 \u00b7 Index",
+    "priority": "P0",
+    "title": "Get the service explainer discovered and resolve the Texas hub",
+    "owner": "SEO owner with GSC/Bing access",
+    "effort": "0.5\u20131 day",
+    "dependency": "GSC access is now available; Bing access and production logs still needed",
+    "finding": "Google lists six of the eight intended search URLs as indexed. Direct inspection says car-buying-service.html is unknown to Google and texas-local-market-intelligence.html is discovered, currently not indexed. Both pass Google\u2019s live availability test.",
+    "evidence": "Authenticated September 25: sitemap Success, last read September 19, seven discovered URLs versus eight in the current file. Indexed report dated September 20 lists 12 URLs, six of them current intended pages. The two direct inspections show no last crawl. Google AI control inherits Include. REQUIRED: indexed, snippet-eligible content for Google AI supporting links.",
+    "impact": "The service explainer cannot currently win Google traffic despite good raw HTML and existing internal links. The Texas hub also cannot appear, but needs a stronger reader benefit as well as crawl follow-up.",
+    "change": "Resubmit the current eight-URL sitemap and request indexing of the live-test-passing service explainer during implementation; retain its existing global navigation links. Inspect the six listed core pages for Google-selected canonical and freshness. For the Texas hub, strengthen useful approved local information under A11 before a targeted recrawl; do not release nine contained city pages just to fill it. Check Bing and verified bot-IP logs. Monitor older noindex/redirect URLs as Google recrawls; do not request them for indexing.",
+    "verify": "Save a dated URL-level matrix and sitemap fetch status. Confirm the explainer moves from unknown to discovered/crawled/indexed; request submission itself is not success. Verify selected canonicals. Record the Texas hub\u2019s subsequent crawl/index decision. Google AI Include is already confirmed; no setting change is needed.",
+    "risk": "No bulk noindex removal. The aggregate report lags current HTML; its old indexed archive URLs are not authorization to release them. Live tests confirm Google can fetch these two pages now, not that either is indexed. This planning audit did not submit a sitemap or request indexing.",
+    "sources": [
+      "ai",
+      "control",
+      "sitemap",
+      "bots"
+    ]
+  },
+  {
+    "id": "A01",
+    "tier": "0 \u00b7 Access",
+    "priority": "P0",
+    "title": "Restore the legacy domain\u2019s bare hostname",
+    "owner": "Domain administrator",
+    "effort": "0.5 day",
+    "dependency": "Confirm the existing domain/DNS account",
+    "finding": "The old www hostname redirects, but austincarbuyingservice.com cannot be resolved. This is a real broken migration entry point, not the previously fixed temporary redirect on the current domain.",
+    "evidence": "Live curl requests to the legacy apex root and /about.html failed DNS resolution. Google Public DNS returned no A or AAAA answer. The legacy www versions returned 308 directly to the matching current URL. REQUIRED: permanent moves need working redirects; see Google\u2019s redirect guidance.",
+    "impact": "Recover visitors and any historical link signals that still use the bare old domain. The amount of affected traffic/backlink value is unmeasured.",
+    "change": "Restore the correct apex DNS/hosting attachment and valid HTTPS certificate, then redirect root and paths permanently to the matching www.driverightcarbuying.com URL. Keep the working legacy www route. In the same maintenance window, shorten current HTTP apex \u2192 HTTPS apex \u2192 HTTPS www where the edge configuration safely permits.",
+    "verify": "Test HTTP and HTTPS, bare and www, root and /about.html. Require resolvable DNS, valid TLS, 301/308, preserved paths, and final 200/self-canonical. Run the live redirect script with both legacy base hostnames; record any remaining two-hop chains.",
+    "risk": "Incorrect DNS changes can interrupt the legacy hostname or mail. Preserve unrelated records. This fix is not a claim that the canonical site is inaccessible.",
+    "sources": [
+      "redirect"
+    ]
+  },
+  {
+    "id": "A03",
+    "tier": "2 \u00b7 Foundations",
+    "priority": "P1",
+    "title": "Align the process page with the current purchase path",
+    "owner": "Site editor + operations owner",
+    "effort": "0.5\u20131 day",
+    "dependency": "A02 for search promotion; confirm the intended checkout sequence",
+    "finding": "The process page says buyers introduce themselves before paying. Pricing says details are collected after payment, and the current page controller starts direct checkout. Search visitors can receive conflicting expectations.",
+    "evidence": "Live how-it-works.html steps 04\u201305 versus schedule.html; buying/app.js calls checkoutFlow.startDirect(tier). Current live prices already agree at $295/$895. RECOMMENDED: clear, reliable people-first information; the conversion effect is a HYPOTHESIS.",
+    "impact": "Make the commercial landing pages easier to trust and reduce uncertainty before payment.",
+    "change": "Correct the workflow explanation to the actual approved sequence. Keep / as the broad service entry, car-buying-service.html as the explainer, how-it-works.html as the workflow and schedule.html as pricing. Add a concrete approved deliverable example or annotated sample to the explainer; describe what changes between plans and what the buyer still does. Preserve current URLs, truthful fees and buyer control.",
+    "verify": "Walk the unpaid start path in a suitable test environment; compare visible text, links, metadata and schema across the four pages. Do not charge a real card for SEO QA. Evaluate qualified inquiry/checkout behavior after release, not raw clicks alone.",
+    "risk": "Do not rebuild checkout under this task, promise a response time, or invent deliverables. Keep exact-copy approval requirements for any new commercial commitments.",
+    "sources": [
+      "content"
+    ]
+  },
+  {
+    "id": "A04",
+    "tier": "2 \u00b7 Foundations",
+    "priority": "P2",
+    "title": "Use the brand as the structured site name",
+    "owner": "Site editor",
+    "effort": "0.25 day",
+    "dependency": "A02",
+    "finding": "Homepage WebSite.name contains the full keyword-and-price title instead of a concise brand name.",
+    "evidence": "Live JSON-LD: WebSite.name = \u201cNationwide Car Buying Service: $295 & $895 | Drive Right\u201d. Organization.name already says Drive Right. RECOMMENDED: Google site-name guidance favors the site\u2019s actual concise name.",
+    "impact": "Make the preferred search-result site name consistent with the visible brand. This does not guarantee Google will use it or improve rankings.",
+    "change": "Set WebSite.name to Drive Right and retain the truthful alternateName Drive Right Car Buying Service. Keep the page title as a separate search snippet title. Preserve the canonical homepage URL and existing Organization identifier.",
+    "verify": "Check raw JSON-LD, Schema Markup Validator and URL Inspection after release. Google\u2019s Rich Results Test does not validate the site-name feature.",
+    "risk": "Avoid generic service keywords or prices in the site-name field; do not create a second competing Organization.",
+    "sources": [
+      "sitename"
+    ]
+  },
+  {
+    "id": "A05",
+    "tier": "2 \u00b7 Foundations",
+    "priority": "P2",
+    "title": "Make freshness dates follow meaningful content changes",
+    "owner": "Site editor",
+    "effort": "0.5 day",
+    "dependency": "Review the actual content change history",
+    "finding": "The resource hub says its inventory was updated September 5; the Texas hub says draft/source links were checked August 12. Sitemap entries largely remain September 22 while later page edits exist.",
+    "evidence": "Live blog.html, texas-local-market-intelligence.html and sitemap.xml; homepage history contains September 23 and 25 changes. Not every edit warrants a new lastmod. RECOMMENDED: Google uses consistently accurate lastmod values tied to significant updates.",
+    "impact": "Give readers and crawlers honest freshness signals, particularly when reviewed guides become available.",
+    "change": "Review page-level significant changes and update sitemap lastmod in the same release. Separate published, substantively updated and source-checked dates on editorial pages. Remove obsolete \u201cdraft updated\u201d labels from any genuinely approved public resource; keep an accurate review status until then.",
+    "verify": "Compare each changed page against its release record, visible dates and sitemap. No daily date bump, blanket timestamp rewrite or fabricated source-check date.",
+    "risk": "False freshness erodes credibility; small caption or formatting changes do not automatically justify a new editorial date.",
+    "sources": [
+      "sitemap"
+    ]
+  },
+  {
+    "id": "A06",
+    "tier": "2 \u00b7 Foundations",
+    "priority": "P2",
+    "title": "Measure the current mobile site before more performance work",
+    "owner": "Developer",
+    "effort": "0.5\u20131 day diagnosis; fixes depend on results",
+    "dependency": "Current production measurements",
+    "finding": "Current production Core Web Vitals are unknown. The existing good mobile lab results belong to a September 19 local build; the homepage has changed since then.",
+    "evidence": "Current authenticated GSC overview shows no mobile or desktop Core Web Vitals data. docs/seo-execution/performance-evidence.md reports local LCP near 2.0s and low CLS for September 19 only. This audit obtained no new production trace. RECOMMENDED: field p75 LCP \u22642.5s, INP \u2264200ms, CLS \u22640.1.",
+    "impact": "Catch regressions without spending time redoing an already measured loading-order fix.",
+    "change": "Measure current home, pricing, About and the first released guide on mobile. Exercise brief editing, plan selection and consent controls. Inspect hero/founder image loading, fonts and third-party scripts only where a trace shows a bottleneck. Retain responsive picture sources and explicit image dimensions already present.",
+    "verify": "Record live build, device/network settings, repeated lab samples and field data separately. Use CrUX/GSC if available; absence of field data is \u201cunknown,\u201d not a pass. Preserve homepage asset hashes and run the repository validator after asset edits.",
+    "risk": "A Lighthouse score or localhost trace cannot prove real-user INP or ranking improvement. Avoid an unrelated redesign.",
+    "sources": [
+      "vitals"
+    ]
+  },
+  {
+    "id": "A07",
+    "tier": "3 \u00b7 Content",
+    "priority": "P1",
+    "title": "Release the three prepared guides one page at a time",
+    "owner": "Mason + editorial owner + qualified reviewers",
+    "effort": "4\u20137 working days total, excluding reviewer wait",
+    "dependency": "A02 on each URL; exact-copy/source approvals",
+    "finding": "The site has only eight intended indexable pages and no released independent editorial article in this crawl. Three substantially revised guides already exist privately, while the public versions remain noindex.",
+    "evidence": "Live Resources links to eight in-review pages; private guides and review packets are documented in SEO-05. Fifty root URLs return 200/noindex, including utility pages and the editorial/local archive. RECOMMENDED: original useful content; REQUIRED: avoid scaled low-value publication. Local project policy requires exact-copy approval.",
+    "impact": "Expand useful coverage around car quote comparison, add-ons and inspection with assets already partly prepared. These are commercially relevant opportunities, not measured search-volume forecasts.",
+    "change": "Start with the below-MSRP quote-comparison guide if its reviewer is ready, then add-ons and used-car inspection; readiness can reorder the batch. Refresh primary sources, add an accepted named author linked to About, name the qualified reviewer where appropriate, show a useful worksheet/example and honest dates. Move only each approved revision into its existing public URL; then switch that page to index/follow, add it to the sitemap and approved Resources cards, and link to the service/pricing pages contextually.",
+    "verify": "For every page: exact approved text/source/expiry record, 200, self-canonical, no unintended noindex/nosnippet, accurate Article/Breadcrumb data, raw-HTML value, mobile QA, internal links and URL Inspection. Record release date and compare qualified outcomes over subsequent complete windows.",
+    "risk": "No bulk archive release. Mechanical/safety, finance/warranty and consumer-law review differ. Keep the four specifically protected legal articles and the Tesla FSD park unchanged unless their separate gates are met.",
+    "sources": [
+      "content",
+      "spam"
+    ]
+  },
+  {
+    "id": "A08",
+    "tier": "3 \u00b7 Content",
+    "priority": "P1",
+    "title": "Turn the existing quote worksheet into a useful public resource",
+    "owner": "Editorial owner + developer + consumer-finance reviewer",
+    "effort": "2\u20133 days after approval",
+    "dependency": "A07 quote guide; worksheet review packet accepted",
+    "finding": "The quote comparison worksheet is already implemented and tested as a deployment-excluded private draft. It has no public URL yet.",
+    "evidence": "draft-artifacts/quote-comparison/ and docs/seo-execution/SEO-06.md document the working draft, hypothetical examples, privacy constraints and review requirements. RECOMMENDED: useful first-hand material. Its ability to earn links/citations is a HYPOTHESIS.",
+    "impact": "Provide a concrete reason to visit, refer to and share Drive Right beyond generic buying advice.",
+    "change": "Complete the existing review packet and publish the proposed /quote-comparison.html only when eligible. Keep the method, definitions, limitations and at least one clearly hypothetical worked example in initial HTML; interactive arithmetic can enhance it. Link it from the quote guide, Resources and relevant service page. Preserve local-only input handling and user-entered tax assumptions.",
+    "verify": "Run the existing calculation/privacy tests plus responsive, keyboard and print/CSV checks. Test unknown values and discounts already included in a quote. Validate search eligibility and make one clear path back to service pricing.",
+    "risk": "Do not imply the tool supplies a legal/tax answer, guarantees savings or represents a real customer result. Avoid duplicating the guide\u2019s search intent: guide explains the comparison; tool performs it.",
+    "sources": [
+      "content"
+    ]
+  },
+  {
+    "id": "A09",
+    "tier": "3 \u00b7 Content",
+    "priority": "P1",
+    "title": "Resolve compensation disclosure and add permissioned proof",
+    "owner": "Mason + claims/editorial reviewers",
+    "effort": "1\u20133 days of preparation; evidence dependent",
+    "dependency": "Actual relationship records and customer permission",
+    "finding": "Founder biography and real vehicle photos already exist. The larger remaining trust gap is an unresolved compensation disclosure and the lack of a verified, useful customer-process case study.",
+    "evidence": "Live how-it-works.html explicitly says dealer referral/commission statements await owner attestation; CLM-013 remains pending_evidence. SEO-06 has proof packets, not approved case-study outcomes. RECOMMENDED: identifiable expertise and verifiable first-hand evidence.",
+    "impact": "Help buyers assess incentives and understand the work they receive; give writers and AI systems specific facts they can responsibly reference.",
+    "change": "Use actual revenue-source/relationship records to replace the pending disclosure with the approved factual statement. Produce one anonymized, permissioned case study showing initial requirements, written comparison, decisions, scope and limitations. Reuse existing proof packets; distinguish hypothetical examples from customer stories. Link author information to the existing About page rather than duplicating it.",
+    "verify": "Reviewer can reproduce every monetary/outcome claim and confirm permissions. Visible text, metadata/schema and approved_copy agree. Publish relevant methodology and limitations; do not expose customer identifiers or private deal records.",
+    "risk": "Never assume \u201czero commissions,\u201d invent savings or turn personal car ownership into credentials. A real case study is valuable even without a savings headline.",
+    "sources": [
+      "content",
+      "organization"
+    ]
+  },
+  {
+    "id": "A10",
+    "tier": "4\u20135 \u00b7 Local & authority",
+    "priority": "P1",
+    "title": "Finish one accurate business identity across local platforms",
+    "owner": "Mason / profile owner",
+    "effort": "1\u20132 days plus platform verification",
+    "dependency": "Public profile verification and platform eligibility",
+    "finding": "The latest project record says the Google Auto broker service-area profile is awaiting verification; no public Maps URL is recorded. Organization markup is already present and sameAs is intentionally empty.",
+    "evidence": "data/entities.json and docs/local-seo-package.md, dated September 22. Current private profile status was not accessible in this audit. REQUIRED: truthful business representation; RECOMMENDED: current entity information.",
+    "impact": "Strengthen brand disambiguation and local discovery for the real Austin-based business.",
+    "change": "First check whether verification has completed; reuse the existing profile. When its public URL exists, add that exact URL to Organization.sameAs and a visible contact/review path. Align name, phone, hours, URL and current $295/$895 services. Reuse or claim Bing/Apple profiles only where the actual service model meets current platform rules. Ask genuine completed customers for honest reviews through an approved workflow. Use the existing relevant outreach prospect list after a useful resource/case study is public.",
+    "verify": "Check the public profile and website side by side. Keep the verification address hidden, one real operation, and no fictional city offices. Tag profile website links; measure qualified contacts and review activity. Any outreach is a later explicitly authorized action.",
+    "risk": "Do not create another GBP, publish a private address, add LocalBusiness markup against the project\u2019s current restriction, buy links or gate/incentivize reviews. Remote nationwide service does not establish a physical local presence.",
+    "sources": [
+      "business",
+      "organization",
+      "spam"
+    ]
+  },
+  {
+    "id": "A11",
+    "tier": "4\u20135 \u00b7 Local & authority",
+    "priority": "P2",
+    "title": "Build one genuinely useful Austin page before expanding cities",
+    "owner": "Mason + local editorial owner",
+    "effort": "2\u20134 days per evidence-ready pilot",
+    "dependency": "A02; metro release gates and distinct local evidence",
+    "finding": "All nine legacy Texas city pages are noindex. Twenty private city drafts largely reuse the homepage with city substitutions; they are not twenty SEO launch opportunities.",
+    "evidence": "Live city responses and data/metro-release.json; README documents the shared template and one local sentence. The Texas hub currently routes to nine contained city pages. REQUIRED: avoid doorway/scaled pages; project gates remain authoritative.",
+    "impact": "Test local search demand and conversion on a page supported by the actual Austin operation.",
+    "change": "Prioritize Austin when baseline demand and logistics evidence support it. Explain real service boundaries, seller/inspection/delivery coordination and a verified local example without asserting an office. Update the Texas hub only with approved useful destinations. Evaluate Houston or a combined DFW page afterward; decide Dallas/Fort Worth/Arlington consolidation only after query/backlink review. Do not launch the 20-city collection unchanged.",
+    "verify": "Complete the market dossier, owner/page sign-off, distinct-intent evidence, qualified/editorial review, QA and release hash. Re-pin any edited contained legacy Texas page. Verify internal links, sitemap and Google/Bing indexing after authorized release.",
+    "risk": "Availability confirmation is not page approval or unique local evidence. No automatic city redirects, duplicate storefronts or national-scale doorway expansion.",
+    "sources": [
+      "spam",
+      "business"
+    ]
+  },
+  {
+    "id": "A12",
+    "tier": "6 \u00b7 Measure \u2014 start now",
+    "priority": "P1",
+    "title": "Use the refreshed search baseline and connect qualified outcomes",
+    "owner": "Analytics owner + developer",
+    "effort": "1\u20132 days setup; 30\u201345 minutes weekly",
+    "dependency": "Correct GSC/Bing/GA4 identities and aggregate outcome access",
+    "finding": "Search performance is now freshly observed in GSC, but organic-qualified-lead and revenue reporting remain unverified. Existing tracking code/test evidence does not establish account delivery.",
+    "evidence": "Authenticated GSC, Web (text), all countries/devices: August 27\u2013September 23 shows 21 clicks, 1.69K displayed impressions, 1.2% CTR and position 26.2. The 1.69K value is rounded, not an exact export. Reported queries include car buying service: 152 impressions/0 clicks; car buying services: 49/0; car broker service: 46/0. These are property metrics, not search volumes.",
+    "impact": "Prioritize pages by qualified customer demand and judge releases without mistaking clicks, sample answers or form attempts for purchases.",
+    "change": "Use this dated baseline and capture the preceding non-overlapping 28 days with matching filters/timezone. Identify the actual Drive Right GA4 property/stream and confirm current tag delivery. Reuse cta_click, phone_click, durable generate_lead, begin_checkout and server-verified purchase; reconcile with approved aggregate records. Retain organic and AI referral attribution. Remove duplicate/stale conversion definitions only after checking the current container. Do not request GSC access again while this signed-in session is available.",
+    "verify": "Record impressions, clicks, CTR and average position by intended page/intent; separate exact brand, ambiguous auto-sales names and nonbrand without assigning suppressed queries. Record qualified inquiries, paid orders and service revenue with dedupe definitions. Report missing metrics as unavailable. Compare comparable complete windows and log release dates.",
+    "risk": "The older traffic decline is not evidence that the new prices or recent changes caused it. Avoid a second overlapping tag, PII in analytics, premature purchase events or treating phone clicks as qualified leads.",
+    "sources": [
+      "ai"
+    ]
+  },
+  {
+    "id": "A13",
+    "tier": "6 \u00b7 Measure \u2014 start now",
+    "priority": "P2",
+    "title": "Update the AI prompt panel and measure repeatable visibility",
+    "owner": "SEO/editorial owner",
+    "effort": "0.5 day setup; small monthly sample",
+    "dependency": "A12; pages eligible under A02",
+    "finding": "The existing prompt panel still emphasizes Texas and the retired standalone AI Agent offer. It has seed rows rather than a current measured baseline.",
+    "evidence": "Authenticated Google Search generative-AI report shows 748 impressions for June 24\u2013September 23, including 360 on the homepage; this is not a cross-engine citation rate. data/ai-prompt-panel.csv still has not_run seeds, including retired DR-AGENT-* questions. No new multi-engine prompt baseline was run. Expected incremental citation gains remain a HYPOTHESIS.",
+    "impact": "Measure whether the right service facts and URLs appear, rather than optimizing for obsolete offers or one fluctuating answer.",
+    "change": "Version a small panel of real buying questions: nationwide service, negotiation help, two-plan fees, Austin support, quote comparison, add-ons and inspection. Keep retired-service prompts only as accuracy/retirement checks. Run two baseline waves with consistent location, engine/model/search settings and record whether web search occurred, cited URLs and brands. Repeat monthly; retain history. Add IndexNow notifications for eligible public changes only after Bing setup. Track the authenticated Google AI impression report alongside the prompt panel; keep its period distinct from the 28-day Web baseline.",
+    "verify": "Use rolling results, citation correctness and referred qualified inquiries. Keep missing engine observations blank and never call a single answer market share. Confirm IndexNow\u2019s response separately from actual indexing; no indexing guarantee.",
+    "risk": "No special AI schema, new llms.txt project, MCP server or content chunking campaign. Existing llms.txt can receive a low-cost factual cleanup alongside service edits, but is not a Google SEO priority. No recurring automation is created by this planning task.",
+    "sources": [
+      "ai",
+      "bots",
+      "indexnow"
+    ]
+  }
+]
