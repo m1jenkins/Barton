@@ -6,7 +6,7 @@ Executed against `a1c3597` in America/Chicago; public checks also fall on Septem
 
 | Plan item | Result | Remaining boundary |
 |---|---|---|
-| A01 legacy apex | Confirmed Cloudflare authority and Vercel’s recommended A target; changed only the Vercel legacy-apex redirect to the canonical www host with explicit 308. | DNS edit access is unavailable; public DNS/TLS/redirect acceptance remains open. See the apex follow-up below. |
+| A01 legacy apex | Added the Vercel-confirmed Cloudflare apex A record; valid auto-renewing certificate and canonical 308 now verified through public DNS. Both public-recursive and normal-system-resolver live matrices pass 14/14 per host. | No remaining DNS, certificate or access dependency; existing permanent HTTP chains are recorded below. |
 | A02 discovery | Resubmitted the existing eight-URL sitemap. Google displayed **Sitemap submitted successfully**. Requested indexing of the service explainer; Google accepted it into the priority crawl queue. | A submission is not indexing. Sitemap report still showed last read September 19 and seven discovered pages immediately after submission. |
 | A02 core-page verification | Individually inspected all six intended indexed pages. All use the inspected URL as Google's selected canonical. Requested a targeted Policy recrawl because its recorded crawl was August 20; Google accepted it. | Await actual recrawling; do not repeat accepted requests merely to seek a faster result. |
 | A03 process correction | Replaced the pre-payment introduction step with payment followed by intake. Step 04 reuses the pricing page's existing Stripe instruction; step 05 preserves the existing scope/timing confirmation and buyer control. | A reviewed deliverable example is a separate open part of A03. No new commercial promise or checkout behavior was introduced. |
@@ -15,7 +15,7 @@ Executed against `a1c3597` in America/Chicago; public checks also fall on Septem
 | A12 search baseline | Captured the preceding non-overlapping 28 days, exact impression values exposed by GSC's visible cards, and the complete page tables for both periods. | Qualified leads, orders, service revenue, GA4 account delivery and Bing remain unverified. |
 | A13 factual cleanup | Updated existing `llms.txt` from Texas-only positioning to the already advertised nationwide service and added the service-explainer link. | No AI visibility lift is claimed; prompt-panel waves remain open. |
 
-At the initial execution checkpoint, website changes were local and uncommitted, while the Google submissions above were completed account actions. The website changes are now deployed as recorded below. No DNS write, customer communication, payment, new guide release or city release occurred.
+At the initial execution checkpoint, website changes were local and uncommitted, while the Google submissions above were completed account actions. The website changes are now deployed as recorded below. At that initial checkpoint, no DNS write, customer communication, payment, new guide release or city release occurred; the later DNS repair is recorded below.
 
 ## Google index matrix
 
@@ -74,7 +74,7 @@ Future releases should update a page's sitemap date alongside meaningful content
 
 ## Work requiring another input or a later release
 
-At the release checkpoint, the legacy apex returned NOERROR with zero A/AAAA answers while legacy www redirected correctly. The follow-up below establishes hosting access and corrects its redirect, but DNS administrator access remains missing and A01 remains open. A repository redirect cannot repair missing DNS.
+At the release checkpoint, the legacy apex returned NOERROR with zero A/AAAA answers while legacy www redirected correctly. The initial follow-up below established hosting access; the final follow-up restores DNS and verifies a valid certificate and permanent redirects through public resolvers. A repository redirect cannot repair missing DNS.
 
 A07–A11 remain governed by the existing exact-copy, qualified-review, compensation, customer-permission and local-evidence gates in [claim review](../claim-review-workflow.md) and [release readiness](../release-readiness.md). Preparing more unapproved claims would not complete those items. A06 production performance work and the rest of A12/A13 were not represented as complete.
 
@@ -108,13 +108,13 @@ Search Console's sitemap report now shows **last read September 25, Success, eig
 
 ### Remaining dependencies and next task
 
-**Highest-value next task: have the Cloudflare zone administrator apply the verified apex A record below (or establish zone-scoped DNS edit access), then complete public DNS, certificate and redirect verification.** Vercel’s target and the permanent hosting redirect are now verified in the account; public acceptance still depends on the DNS write and a valid apex certificate.
+**Highest-value next task: inspect the service explainer’s subsequent crawl/index state and Google-selected canonical in Search Console, read-only.** Its accepted indexing request and the sitemap must not be resubmitted. Legacy apex DNS, certificate and redirect acceptance through both public-recursive and normal system DNS are now complete as recorded below.
 
 Also open: Google's crawl/index decision for the service explainer and eventual site-name selection; the reviewed deliverable example; compensation attestation/customer permission and individual guide/worksheet/local release reviews; GA4/Bing account and qualified-lead/order/revenue reconciliation; current performance evidence and AI prompt-panel waves. These remain separate work and none is represented as completed by this release. No recurring monitor was created.
 
 ## Legacy-apex follow-up — September 25/26, 2026
 
-**Partial remediation; A01 remains open.** [Dated verification evidence](2026-09-25-legacy-apex-verification.json) records the authenticated account reads, exact hosting mutation, authoritative/public DNS answers, certificate failures, and both repository live matrices. Work started from `31a835f` in an isolated `codex/legacy-apex-dns` worktree; the original `design/caption-trim` working tree and cleanup PR #74 were not changed.
+**Initial checkpoint: partial remediation; superseded by the completed DNS/hosting repair below.** [Dated verification evidence](2026-09-25-legacy-apex-verification.json) records the authenticated account reads, exact hosting mutation, authoritative/public DNS answers, certificate failures, and both repository live matrices. Work started from `31a835f` in an isolated `codex/legacy-apex-dns` worktree; the original `design/caption-trim` working tree and cleanup PR #74 were not changed.
 
 ### Authority, hosting and exact change
 
@@ -123,9 +123,9 @@ Also open: Google's crawl/index decision for the service explainer and eventual 
 - Authenticated `GET /v6/domains/austincarbuyingservice.com/config` returned `configuredBy: null`, `misconfigured: true`, no A values, and rank-1 recommended IPv4 values **`216.150.1.1` and `216.150.16.1`**. These came from this hosting account, not a generic IP guess. The [Vercel API contract](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) explicitly permits using one preferred IP; the narrow pending change uses the first.
 - **No DNS record was changed.** A normal refresh restored the existing Wrangler session’s zone-read access, but DNS record listing returned HTTP 403 / Cloudflare code 10000 (`Authentication error`). The OAuth scopes lack DNS access despite the user’s zone role reporting DNS permissions. The browser dashboard was signed out. Access needed: an authenticated dashboard session with DNS edit permission for this exact zone, or a zone-restricted API token with **Zone → DNS → Edit** and **Zone → Zone → Read**. No new credential or permission grant was created.
 
-### Verified change for the DNS administrator
+### Original DNS administrator handoff (now applied)
 
-Before applying, inspect/export the zone and confirm an apex A/CNAME has not been added by another administrator. Add exactly this record in the account/zone identified above:
+The initial handoff specified the following record, after checking for a competing apex A/CNAME. The final browser-assisted follow-up below applied it:
 
 | Field | Value |
 |---|---|
@@ -137,7 +137,7 @@ Before applying, inspect/export the zone and confirm an apex A/CNAME has not bee
 
 Keep both nameservers, every email/unrelated DNS record, and `www CNAME 172ff48f5e356dac.vercel-dns-017.com` (observed TTL 600) unchanged. Do not add an AAAA record, replace the zone, or change Cloudflare security/rules. DNS-only sends this new host to Vercel directly, consistent with [Vercel’s Cloudflare guidance](https://vercel.com/kb/guide/cloudflare-with-vercel). This does not change the proxy status of any existing record. Full zone inventory could not be read; public apex MX/TXT/CAA queries returned no records, which is not proof that no email or verification records exist at other names.
 
-### Acceptance results and remaining dependency
+### Initial acceptance results before DNS access
 
 | Check | Observed result |
 |---|---|
@@ -160,4 +160,28 @@ BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://austincarbu
 
 After the DNS write, check both authoritative servers and public resolvers, allowing existing negative caches to expire. Confirm Vercel detects the A record and serves a trusted, unexpired certificate whose SAN covers the apex; if issuance remains blocked, inspect that domain’s certificate/configuration status in the same Vercel project. Repeat ordinary public HTTPS root and representative path probes without `--resolve`, including `utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b`. Each HTTPS host migration must be a permanent redirect to the matching canonical path with the exact query preserved; follow to its terminal response. Existing retired paths such as `/inquiry.html` can additionally perform their already-approved canonical-site route redirect. Verify the final Tesla target still returns 200 with `noindex, follow`, self-canonical and no sitemap membership.
 
-No pricing, checkout, guide/city/Tesla release gates, source dates, sitemap membership or content changed. No Search Console inspection/indexing request or sitemap submission was made in this follow-up. The DNS write, apex certificate and successful public redirect acceptance remain dependencies, not completed results.
+No pricing, checkout, guide/city/Tesla release gates, source dates, sitemap membership or content changed. No Search Console inspection/indexing request or sitemap submission was made in this follow-up. At this initial checkpoint, DNS, certificate and public redirect acceptance were dependencies; the final follow-up below supersedes that status.
+
+## Legacy-apex completion — September 25/26, 2026
+
+**The DNS and hosting repair is applied and passes both public-recursive and normal-system-resolver verification.** The user supplied an authenticated Cloudflare browser session. [Completion evidence](2026-09-25-legacy-apex-completion.json) preserves the final DNS, TLS, full redirect chains and repository matrix results separately from the earlier failed checkpoint.
+
+The legacy zone contained exactly two records before the change: the DNS-only `www` CNAME and `_vercel` verification TXT, both with TTL 600. Added **one `A @ → 216.150.1.1`, DNS only, TTL 300** after re-reading Vercel’s rank-1 recommendation. A full dashboard reload showed all three records and confirmed both original records’ values, TTLs and proxy states unchanged. Nameservers remain `lloyd.ns.cloudflare.com` and `yolanda.ns.cloudflare.com`; no email or unrelated record was changed. First authoritative and public confirmation was **2026-09-26 03:51:54 UTC**.
+
+Vercel now reports `configuredBy: A`, `aValues: [216.150.1.1]`, `misconfigured: false`, no conflicts, and HTTP-01 certificate eligibility. Because HTTPS initially still served a nonmatching certificate, requested a Vercel-managed certificate **only for the legacy apex**. Issuance succeeded, and its account metadata confirms automatic renewal. The served certificate is **Let’s Encrypt YR1**, SAN `austincarbuyingservice.com`, valid **September 26, 2026 02:55:34 UTC through December 25, 2026 02:55:33 UTC**. TLS 1.3, trust chain, hostname and dates passed from both public-resolver paths. All Vercel project-domain settings remain identical to the earlier verified hosting fix, including the direct canonical-host 308 and the working www host.
+
+| Final verification | Result |
+|---|---|
+| Both authoritative nameservers; public `1.1.1.1` and `8.8.8.8` | Apex A returns `216.150.1.1`; authoritative TTL 300. AAAA remains absent; no guessed IPv6 record added. |
+| Explicit HTTP/HTTPS matrix | **20/20 passed** using fresh recursive DNS from each public resolver, with certificate validation enabled and no fixed connection addresses. |
+| HTTPS root and real paths | Root, query-bearing root, About, Process, Pricing, Texas hub and Tesla park return **308 directly to the matching canonical www URL**, then 200 with the intended self-canonical. |
+| Query preservation | Exact `utm_source`, `utm_campaign`, encoded `keep%2Bme`, duplicate `multi` keys, and `space=a%20b` retained throughout every tested chain. |
+| Existing route chains | HTTPS `/inquiry.html` migrates to the canonical same path, then its existing 308 to Pricing. HTTP root/About retain **two permanent 308 hops**: HTTPS apex, then canonical www. No temporary hop, loop or changed route destination. |
+| Repository live matrices with public DNS | **14/14 www and 14/14 legacy apex passed** on Node `24.20.0`. The repository script and expectations were unchanged; the evidence includes the temporary public-DNS lookup adapter used to avoid the local stale negative cache. |
+| Normal system-resolver matrix | **14/14 www and 14/14 legacy apex passed** on the final run at **2026-09-26 04:06:58 UTC**, using the unmodified repository script, normal system DNS, and default TLS validation, without the lookup adapter. |
+| Preservation | Pricing still $295/$895. Tesla’s canonical target remains 200, `noindex, follow`, self-canonical, absent from the unchanged eight-URL sitemap. Existing www redirects pass. |
+| Repository checks | Node `24.20.0`: locked install, site/API/metro/city checks, 15 permanent redirect rules, **181/181 tests**, and whitespace checks passed. |
+
+**No DNS, certificate or hosting-access dependency remains.** Some DNS-over-HTTPS requests and this Mac’s ordinary resolver retained pre-change negative results during propagation (observed SOA negative TTL/minimum 1,800 seconds); a local cache flush did not immediately clear them. The final ordinary live runs now pass for both hosts. The evidence preserves those earlier failures separately and identifies the resolver used for each successful run. No system nameserver or hosts-file change, TLS bypass, new account grant, Search Console request or sitemap submission was made.
+
+This completion changes documentation only in the repository. The original working tree, cleanup PR #74, pricing, checkout, guides/cities/Tesla restrictions, source dates, and all site assets remain unchanged. The service explainer’s subsequent Google crawl/index decision is the single highest-value next check; use read-only inspection and preserve the accepted requests.

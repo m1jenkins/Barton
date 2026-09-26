@@ -1,0 +1,1236 @@
+{
+  "observedLocalDate": "2026-09-25",
+  "observationTimezone": "America/Chicago",
+  "recordedAtUtc": "2026-09-26T04:07:48.814802+00:00",
+  "baseRevision": "b4ceefd",
+  "status": "Authoritative DNS and hosting repair completed; public-recursive and normal-system-resolver acceptance passed. No unresolved DNS, certificate or access dependency.",
+  "previousCheckpoint": "2026-09-25-legacy-apex-verification.json",
+  "cloudflare": {
+    "authority": "Cloudflare",
+    "zone": "austincarbuyingservice.com",
+    "nameservers": [
+      "lloyd.ns.cloudflare.com",
+      "yolanda.ns.cloudflare.com"
+    ],
+    "access": "User supplied an authenticated browser session. No new API token or permission grant was created.",
+    "before": {
+      "recordCount": 2,
+      "records": [
+        {
+          "type": "CNAME",
+          "name": "www",
+          "content": "172ff48f5e356dac.vercel-dns-017.com",
+          "ttl": 600,
+          "proxied": false
+        },
+        {
+          "type": "TXT",
+          "name": "_vercel",
+          "content": "Existing Vercel verification value unchanged; omitted from public evidence",
+          "ttl": 600,
+          "proxied": false
+        }
+      ]
+    },
+    "change": {
+      "operation": "create",
+      "record": {
+        "type": "A",
+        "name": "@",
+        "content": "216.150.1.1",
+        "ttl": 300,
+        "proxied": false
+      },
+      "firstAuthoritativeAndPublicVerificationAtUtc": "2026-09-26T03:51:54.022271+00:00"
+    },
+    "after": {
+      "recordCount": 3,
+      "records": [
+        {
+          "type": "A",
+          "name": "@",
+          "content": "216.150.1.1",
+          "ttl": 300,
+          "proxied": false
+        },
+        {
+          "type": "CNAME",
+          "name": "www",
+          "content": "172ff48f5e356dac.vercel-dns-017.com",
+          "ttl": 600,
+          "proxied": false
+        },
+        {
+          "type": "TXT",
+          "name": "_vercel",
+          "content": "Existing Vercel verification value unchanged; omitted from public evidence",
+          "ttl": 600,
+          "proxied": false
+        }
+      ],
+      "verification": "Saved record verified again after full dashboard reload; both pre-existing record contents/proxy states/TTLs unchanged."
+    }
+  },
+  "hosting": {
+    "checkedAtUtc": "2026-09-26T04:00:20.982253+00:00",
+    "certificate": {
+      "cns": [
+        "austincarbuyingservice.com"
+      ],
+      "autoRenew": true,
+      "createdAt": 1790394845510,
+      "expiresAt": 1798167333000
+    },
+    "configuration": {
+      "configuredBy": "A",
+      "nameservers": [
+        "yolanda.ns.cloudflare.com",
+        "lloyd.ns.cloudflare.com"
+      ],
+      "serviceType": "external",
+      "cnames": [],
+      "aValues": [
+        "216.150.1.1"
+      ],
+      "conflicts": [],
+      "acceptedChallenges": [
+        "http-01"
+      ],
+      "recommendedIPv4": [
+        {
+          "rank": 1,
+          "value": [
+            "216.150.1.1",
+            "216.150.16.1"
+          ]
+        },
+        {
+          "rank": 2,
+          "value": [
+            "76.76.21.21"
+          ]
+        }
+      ],
+      "recommendedCNAME": [
+        {
+          "rank": 1,
+          "value": "172ff48f5e356dac.vercel-dns-017.com."
+        },
+        {
+          "rank": 2,
+          "value": "cname.vercel-dns.com."
+        }
+      ],
+      "ipStatus": "no-change",
+      "misconfigured": false
+    },
+    "allProjectDomainSettingsUnchangedSinceHostingFix": true,
+    "legacyApex": {
+      "redirect": "www.driverightcarbuying.com",
+      "redirectStatusCode": 308
+    }
+  },
+  "certificateAction": {
+    "operation": "Requested Vercel-managed certificate for austincarbuyingservice.com only after the account reported valid DNS and HTTPS still failed hostname validation.",
+    "command": "vercel certs issue austincarbuyingservice.com --scope m1jenkins-projects",
+    "result": "Success; certificate entry created; autoRenew true verified by authenticated API",
+    "privateCertificateIdOmitted": true
+  },
+  "dns": {
+    "checkedAtUtc": "2026-09-26T03:51:54.022271+00:00",
+    "queries": [
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "austincarbuyingservice.com. 300\tIN\tA\t216.150.1.1"
+        ]
+      },
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 0,
+        "answers": []
+      },
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "NS",
+        "status": "NOERROR",
+        "answerCount": 2,
+        "answers": [
+          "austincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.",
+          "austincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com."
+        ]
+      },
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "lloyd.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "CNAME",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "austincarbuyingservice.com. 300\tIN\tA\t216.150.1.1"
+        ]
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 0,
+        "answers": []
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "austincarbuyingservice.com",
+        "type": "NS",
+        "status": "NOERROR",
+        "answerCount": 2,
+        "answers": [
+          "austincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.",
+          "austincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com."
+        ]
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "yolanda.ns.cloudflare.com",
+        "name": "www.austincarbuyingservice.com",
+        "type": "CNAME",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "austincarbuyingservice.com. 300\tIN\tA\t216.150.1.1"
+        ]
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 0,
+        "answers": []
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "austincarbuyingservice.com",
+        "type": "NS",
+        "status": "NOERROR",
+        "answerCount": 2,
+        "answers": [
+          "austincarbuyingservice.com. 86400 IN\tNS\tlloyd.ns.cloudflare.com.",
+          "austincarbuyingservice.com. 86400 IN\tNS\tyolanda.ns.cloudflare.com."
+        ]
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "www.austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 3,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.",
+          "172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.16.193",
+          "172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.1.193"
+        ]
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "www.austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.",
+          "vercel-dns-017.com.\t900\tIN\tSOA\tns1.vercel-dns-017.com. awsdns-hostmaster.amazon.com. 1 3600 900 1209600 900"
+        ]
+      },
+      {
+        "resolver": "1.1.1.1",
+        "name": "www.austincarbuyingservice.com",
+        "type": "CNAME",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "austincarbuyingservice.com. 300\tIN\tA\t216.150.1.1"
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 0,
+        "answers": []
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "austincarbuyingservice.com",
+        "type": "NS",
+        "status": "NOERROR",
+        "answerCount": 2,
+        "answers": [
+          "austincarbuyingservice.com. 21600 IN\tNS\tyolanda.ns.cloudflare.com.",
+          "austincarbuyingservice.com. 21600 IN\tNS\tlloyd.ns.cloudflare.com."
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "www.austincarbuyingservice.com",
+        "type": "A",
+        "status": "NOERROR",
+        "answerCount": 3,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.",
+          "172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.1.129",
+          "172ff48f5e356dac.vercel-dns-017.com. 300 IN A\t216.150.16.129"
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "www.austincarbuyingservice.com",
+        "type": "AAAA",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com.",
+          "vercel-dns-017.com.\t900\tIN\tSOA\tns1.vercel-dns-017.com. awsdns-hostmaster.amazon.com. 1 3600 900 1209600 900"
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "name": "www.austincarbuyingservice.com",
+        "type": "CNAME",
+        "status": "NOERROR",
+        "answerCount": 1,
+        "answers": [
+          "www.austincarbuyingservice.com.\t600 IN\tCNAME\t172ff48f5e356dac.vercel-dns-017.com."
+        ]
+      }
+    ]
+  },
+  "publicAcceptance": {
+    "checkedAtUtc": "2026-09-26T03:59:56.647Z",
+    "method": "Node 24 http/https requests with a DNS Resolver querying each named public recursive resolver directly. No hardcoded connection addresses, hosts-file edits, or disabled certificate verification. This bypasses only the client OS negative cache.",
+    "cases": [
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/about.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/how-it-works.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/schedule.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/texas-local-market-intelligence.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html"
+        ],
+        "terminalRobots": [
+          "noindex, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/schedule.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "http://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "http://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": null
+          },
+          {
+            "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "1.1.1.1",
+        "source": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": null
+          },
+          {
+            "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/about.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/about.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/how-it-works.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/schedule.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/texas-local-market-intelligence.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html"
+        ],
+        "terminalRobots": [
+          "noindex, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "https://austincarbuyingservice.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/schedule.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "http://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "http://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": null
+          },
+          {
+            "url": "https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      },
+      {
+        "resolver": "8.8.8.8",
+        "source": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+        "chain": [
+          {
+            "url": "http://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": null
+          },
+          {
+            "url": "https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 308,
+            "location": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          },
+          {
+            "url": "https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme&multi=one&multi=two&space=a%20b",
+            "status": 200,
+            "location": null,
+            "tls": {
+              "authorized": true,
+              "protocol": "TLSv1.3"
+            }
+          }
+        ],
+        "terminalCanonical": [
+          "https://www.driverightcarbuying.com/about.html"
+        ],
+        "terminalRobots": [
+          "index, follow"
+        ],
+        "passed": true
+      }
+    ],
+    "certificates": [
+      {
+        "resolver": "1.1.1.1",
+        "hostname": "austincarbuyingservice.com",
+        "authorized": true,
+        "protocol": "TLSv1.3",
+        "subject": {
+          "CN": "austincarbuyingservice.com"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "Let's Encrypt",
+          "CN": "YR1"
+        },
+        "subjectAltName": "DNS:austincarbuyingservice.com",
+        "validFrom": "Sep 26 02:55:34 2026 GMT",
+        "validTo": "Dec 25 02:55:33 2026 GMT",
+        "fingerprint256": "BE:61:0F:34:19:D3:86:E6:F4:A3:4F:9D:DC:D2:9E:65:B0:78:C5:2B:A1:96:21:29:E8:69:2F:00:BA:F6:BB:B5"
+      },
+      {
+        "resolver": "8.8.8.8",
+        "hostname": "austincarbuyingservice.com",
+        "authorized": true,
+        "protocol": "TLSv1.3",
+        "subject": {
+          "CN": "austincarbuyingservice.com"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "Let's Encrypt",
+          "CN": "YR1"
+        },
+        "subjectAltName": "DNS:austincarbuyingservice.com",
+        "validFrom": "Sep 26 02:55:34 2026 GMT",
+        "validTo": "Dec 25 02:55:33 2026 GMT",
+        "fingerprint256": "BE:61:0F:34:19:D3:86:E6:F4:A3:4F:9D:DC:D2:9E:65:B0:78:C5:2B:A1:96:21:29:E8:69:2F:00:BA:F6:BB:B5"
+      }
+    ],
+    "canonicalContent": [
+      {
+        "resolver": "1.1.1.1",
+        "sitemapStatus": 200,
+        "sitemapUrlCount": 8,
+        "teslaAbsentFromSitemap": true,
+        "dnsLookups": [
+          {
+            "host": "austincarbuyingservice.com",
+            "addresses": [
+              "216.150.1.1"
+            ]
+          },
+          {
+            "host": "www.driverightcarbuying.com",
+            "addresses": [
+              "172.67.153.134",
+              "104.21.90.54"
+            ]
+          },
+          {
+            "host": "www.driverightcarbuying.com",
+            "addresses": [
+              "104.21.90.54",
+              "172.67.153.134"
+            ]
+          }
+        ]
+      },
+      {
+        "resolver": "8.8.8.8",
+        "sitemapStatus": 200,
+        "sitemapUrlCount": 8,
+        "teslaAbsentFromSitemap": true,
+        "dnsLookups": [
+          {
+            "host": "austincarbuyingservice.com",
+            "addresses": [
+              "216.150.1.1"
+            ]
+          },
+          {
+            "host": "www.driverightcarbuying.com",
+            "addresses": [
+              "172.67.153.134",
+              "104.21.90.54"
+            ]
+          },
+          {
+            "host": "www.driverightcarbuying.com",
+            "addresses": [
+              "104.21.90.54",
+              "172.67.153.134"
+            ]
+          }
+        ]
+      }
+    ],
+    "allPassed": true
+  },
+  "repositoryLiveMatrices": {
+    "node": "24.20.0",
+    "publicResolverMethod": "Unmodified scripts/check-redirects.mjs; a temporary Node import changes DNS lookup for the four tested public hosts to query 1.1.1.1/8.8.8.8. No fixed IP, source edits, changed expectations, disabled TLS, or skipped checks.",
+    "publicResolverAdapterSource": "import dns from 'node:dns';\nimport { syncBuiltinESMExports } from 'node:module';\nconst resolver = new dns.promises.Resolver({ timeout: 5000, tries: 2 });\nresolver.setServers(['1.1.1.1', '8.8.8.8']);\nconst nativeLookup = dns.lookup;\ndns.lookup = function lookup(hostname, options, callback) {\n  if (typeof options === 'function') { callback = options; options = {}; }\n  if (typeof options === 'number') options = { family: options };\n  options ??= {};\n  if (!['austincarbuyingservice.com','www.austincarbuyingservice.com','driverightcarbuying.com','www.driverightcarbuying.com'].includes(hostname)) return nativeLookup(hostname, options, callback);\n  const family = options.family || 4;\n  const resolve = family === 6 ? resolver.resolve6(hostname) : resolver.resolve4(hostname);\n  resolve.then(addresses => {\n    if (options.all) callback(null, addresses.map(address => ({address, family})));\n    else callback(null, addresses[0], family);\n  }, error => callback(error));\n};\nsyncBuiltinESMExports();\n",
+    "publicResolvers": {
+      "www": {
+        "passed": 14,
+        "failed": 0,
+        "exitCode": 0,
+        "output": "\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://www.austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://www.austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n"
+      },
+      "apex": {
+        "passed": 14,
+        "failed": 0,
+        "exitCode": 0,
+        "output": "\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n"
+      }
+    },
+    "normalSystemResolver": {
+      "checkedAtUtc": "2026-09-26T04:06:58.500725+00:00",
+      "method": "Unmodified scripts/check-redirects.mjs using normal system DNS, default TLS validation and no lookup adapter",
+      "runs": [
+        {
+          "host": "www",
+          "exitCode": 0,
+          "output": "\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://www.austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://www.austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n",
+          "passed": 14,
+          "failed": 0
+        },
+        {
+          "host": "apex",
+          "exitCode": 0,
+          "output": "\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n",
+          "passed": 14,
+          "failed": 0
+        }
+      ]
+    },
+    "normalSystemResolverDuringPropagation": {
+      "checkedAtUtc": "2026-09-26T04:01:03.360997+00:00",
+      "runs": [
+        {
+          "host": "www",
+          "exitCode": 0,
+          "output": "\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain migration: 308 https://www.austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy-domain root migration: 308 https://www.austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation passed: 14 permanent, query-preserving one-hop redirects checked.\n",
+          "passed": 14,
+          "failed": 0
+        },
+        {
+          "host": "apex",
+          "exitCode": 1,
+          "output": "\u2713 HTTP to canonical HTTPS: 301 http://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy inquiry route: 308 https://www.driverightcarbuying.com/inquiry.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Malformed .html/ canonicalization: 308 https://www.driverightcarbuying.com/about.html/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealership-marathon route: 308 https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy flat-fee route: 308 https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Retired AI service: 301 https://www.driverightcarbuying.com/ai-car-buying-agent.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/schedule.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy kickbacks route: 308 https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 index.html canonicalization: 308 https://www.driverightcarbuying.com/index.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy ROI route: 308 https://www.driverightcarbuying.com/blog-roi-car-buying-service.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/how-it-works.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Legacy dealer add-ons route: 308 https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www host canonicalization: 301 https://driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\u2713 Apex/www root canonicalization: 301 https://driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme \u2192 https://www.driverightcarbuying.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme\n\nRedirect validation failed with 2 issues:\n\u2716 Legacy-domain migration: request failed for https://austincarbuyingservice.com/about.html?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme: fetch failed\n\u2716 Legacy-domain root migration: request failed for https://austincarbuyingservice.com/?utm_source=redirect-validator&utm_campaign=query-preservation&seo_redirect_probe=keep%2Bme: fetch failed\n",
+          "passed": 12,
+          "failed": 2
+        }
+      ]
+    }
+  },
+  "localChecks": {
+    "node": "24.20.0",
+    "npmCi": "passed; zero vulnerabilities",
+    "site": "65 HTML files, 8 sitemap URLs",
+    "apiSyntax": "passed",
+    "metroDrafts": "4 private drafts verified",
+    "cityDrafts": "20 private drafts and hub verified",
+    "redirectConfig": "15 permanent rules",
+    "tests": {
+      "passed": 181,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "preserved": {
+    "workingLegacyWww": "CNAME, DNS-only status, 600-second TTL, Vercel domain settings and working redirects preserved",
+    "otherDns": "Existing verification TXT and nameservers unchanged; no email or unrelated record edited",
+    "site": "No content, pricing, checkout, sitemap membership, guide/city/Tesla release restrictions or assets changed",
+    "originalWorkingTree": "Untouched; separate managed worktree reused",
+    "searchConsoleRequests": 0,
+    "sitemapSubmissions": 0
+  },
+  "remainingDependencies": [],
+  "nextTask": "Read-only Search Console follow-up for car-buying-service.html crawl/index state and Google-selected canonical; do not repeat the accepted indexing request or resubmit the sitemap.",
+  "publicationNote": "No account/zone/project IDs, account email, DNS verification value, credentials, or authenticated administration URLs are included. Dashboard screenshot retained locally only.",
+  "propagationObservation": "Pre-change negative DNS cache results persisted during propagation (observed SOA negative TTL/minimum 1800 seconds). A local dscacheutil flush did not immediately clear them. The final unmodified repository matrices now pass 14/14 for each legacy host using normal system DNS and default TLS validation, without hosts-file or system nameserver changes.",
+  "knownRedirectBehavior": "HTTP apex entry points retain two permanent hops (HTTP to HTTPS apex, then canonical www). HTTPS real-page host migrations take one hop; retired inquiry additionally redirects on the canonical host. No temporary redirect remains in the tested chains."
+}
