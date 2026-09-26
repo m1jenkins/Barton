@@ -769,6 +769,11 @@ for (const file of htmlFiles) {
     fail(file, 'Public contact email must be hello@driverightcarbuying.com.', html.toLowerCase().indexOf('mason@driverightcarbuying.com'), html, 'Keep schema, footer, and policy on the hello@ address until an owner decision records a different public inbox.');
   }
 
+  const dealerName = html.match(/Drive Right Auto Sales|not a vehicle dealer|not-a-dealer/i);
+  if (dealerName) {
+    fail(file, `Dealer-name disclaimer must not appear in published HTML: ${JSON.stringify(dealerName[0])}.`, dealerName.index, html, 'Remove the disclaimer and any #not-a-dealer links.');
+  }
+
   for (const rule of claimRules) {
     const reportedLines = new Set();
     for (const surface of claimSurfaces) {

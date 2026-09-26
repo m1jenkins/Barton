@@ -2,7 +2,7 @@
 
 Updated: 2026-09-18
 
-Drive Right offers two flat-fee car-buying service plans for buyers nationwide through remote support. Drive Right is a service-area business based in Austin, not a vehicle dealer or a storefront in every listed metro.
+Drive Right offers two flat-fee car-buying service plans for buyers nationwide through remote support. Drive Right is a service-area business based in Austin, not a storefront in every listed metro.
 
 ## Full Service
 

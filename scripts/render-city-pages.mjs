@@ -86,6 +86,7 @@ export async function renderCityPages({ root = projectRoot, output = cityDraftRo
   for (const [slug, html] of pages) {
     const doc = htmlDocument(html);
     if (!doc.noindex || doc.canonical[0] !== `${origin}/${slug}`) throw new Error(`${slug}: invalid metadata`);
+    if (/Drive Right Auto Sales|not a vehicle dealer|not-a-dealer/i.test(html)) throw new Error(`${slug}: dealer-name disclaimer must not appear`);
   }
   if (!check) await mkdir(output, { recursive: true });
   for (const [file, html] of pages) {
