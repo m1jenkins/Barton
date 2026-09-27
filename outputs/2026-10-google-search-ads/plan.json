@@ -1,0 +1,1405 @@
+{
+  "meta": {
+    "name": "Drive Right Google Search launch",
+    "prepared": "2026-09-27",
+    "status": "draft_not_published",
+    "approved_plan": "docs/google-ads-launch-plan-2026-09-27.md",
+    "copy_claim": "ADS-GOOGLE-2026-10 (data/claims.csv); nothing here may go live until that row is approved",
+    "source_of_truth": "This file. Regenerate editor-import/ with: node outputs/2026-10-google-search-ads/build-editor-csv.mjs"
+  },
+  "facts": {
+    "offer": "Full Service: $295 USD one-time service fee. Ultimate Concierge: $895 USD one-time service fee.",
+    "verified_facts": [
+      "car buying and negotiation service",
+      "Austin city base; service area United States; remote support",
+      "new, used and CPO inventory search",
+      "price negotiation and fee review",
+      "dedicated advisor",
+      "documented vehicle recommendations",
+      "Concierge: auctions, forums and niche sources; priority communication and coordination; delivery coordination where available",
+      "buyer makes every purchase decision"
+    ],
+    "verified_claims": [],
+    "forbidden_terms": [
+      "guarantee",
+      "save",
+      "savings",
+      "kickback",
+      "commission",
+      "free consultation",
+      "licensed",
+      "fiduciary",
+      "best",
+      "lowest",
+      "perfect",
+      "flat fee",
+      "flat-fee",
+      "broker"
+    ],
+    "brand_terms": [
+      "drive right",
+      "driveright",
+      "driverightcarbuying"
+    ],
+    "allowed_caps": [
+      "CPO"
+    ]
+  },
+  "governance": {
+    "mode": "CREATE_PAUSED",
+    "monthly_cap": 1500,
+    "allow_enable": false,
+    "allow_broad": false,
+    "allow_search_partners": false,
+    "allow_display_expansion": false,
+    "allow_final_url_expansion": false,
+    "allow_text_customization": false,
+    "allow_interest_geo": false,
+    "allow_auto_exact_negatives": true,
+    "allow_competitor_terms": false,
+    "max_budget_change_pct": 20,
+    "max_target_change_pct": 15
+  },
+  "tracking": {
+    "primary_conversion_verified": false,
+    "primary_conversion": "Purchase - verified (GTM custom event purchase_verified); must pass launch gate G2 before enabling",
+    "conversions_30d": 0,
+    "valued_conversions_30d_at_action": 0,
+    "business_model": "ECOM",
+    "conversion_lag_days": 7
+  },
+  "account": {
+    "final_url_suffix": "utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_content={adgroupid}&utm_term={keyword}",
+    "auto_tagging": true,
+    "recommendation_auto_apply": false,
+    "enhanced_conversions": false,
+    "conversion_actions": {
+      "primary": [
+        "Purchase - verified"
+      ],
+      "secondary": [
+        "Begin checkout",
+        "Call Button (phone_click)",
+        "Calls from ads (60s+)",
+        "legacy: Book Appointment, Schedule Free Call, Submit Lead Form"
+      ]
+    }
+  },
+  "campaigns": [
+    {
+      "name": "Search | NonBrand | Car Buying Service | US",
+      "type": "NON_BRAND",
+      "campaign_type": "Search",
+      "status": "PAUSED",
+      "daily_budget": 46,
+      "languages": [
+        "en"
+      ],
+      "networks": {
+        "search_partners": false,
+        "display_expansion": false
+      },
+      "geo": {
+        "targets": [
+          "United States"
+        ],
+        "location_ids": [
+          2840
+        ],
+        "mode": "PRESENCE"
+      },
+      "bidding": {
+        "strategy": "MAXIMIZE_CONVERSIONS",
+        "target_cpa": null,
+        "target_roas": null,
+        "goal": "Purchase - verified only (campaign-specific goal)"
+      },
+      "ai_max": {
+        "enabled": false,
+        "text_customization": false,
+        "final_url_expansion": false,
+        "brand_exclusions": []
+      },
+      "audiences_observation": [
+        "In-market: Motor vehicles"
+      ],
+      "negatives": [
+        {
+          "text": "drive right",
+          "match_type": "PHRASE",
+          "reason": "own brand (lives in the brand campaign)"
+        },
+        {
+          "text": "driveright",
+          "match_type": "PHRASE",
+          "reason": "own brand (lives in the brand campaign)"
+        },
+        {
+          "text": "driverightcarbuying",
+          "match_type": "PHRASE",
+          "reason": "own brand (lives in the brand campaign)"
+        },
+        {
+          "text": "sell",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "selling",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "we buy",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "buy my car",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "cash for",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "junk",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "scrap",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "instant offer",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "trade in value",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "trade-in value",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "what is my car worth",
+          "match_type": "PHRASE",
+          "reason": "selling or appraising a car"
+        },
+        {
+          "text": "broker",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: broker searches"
+        },
+        {
+          "text": "brokers",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: broker searches"
+        },
+        {
+          "text": "lease",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: lease searches"
+        },
+        {
+          "text": "leases",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: lease searches"
+        },
+        {
+          "text": "leasing",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: lease searches"
+        },
+        {
+          "text": "costco",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "usaa",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "aaa",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "sams club",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "sam's club",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "credit union",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "credit unions",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "navy federal",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "penfed",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "pen fed",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: membership buying programs"
+        },
+        {
+          "text": "carvana",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "carmax",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "car max",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "truecar",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "true car",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "autotrader",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "auto trader",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "cargurus",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "car gurus",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "vroom",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "cars.com",
+          "match_type": "PHRASE",
+          "reason": "owner exclusion: car retailers and marketplaces"
+        },
+        {
+          "text": "job",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "jobs",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "career",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "careers",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "salary",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "salaries",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "hiring",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "how to become",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "course",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "courses",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "training",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "license",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "licensed",
+          "match_type": "PHRASE",
+          "reason": "jobs and education"
+        },
+        {
+          "text": "driving school",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "driving lessons",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "driving test",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "dmv",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "rental",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "rentals",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "rent a car",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "insurance",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "repair",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "repairs",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "mechanic",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "mechanics",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "parts",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "detailing",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "valet",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "oil change",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "shipping",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "transport",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "gps",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "tracker",
+          "match_type": "PHRASE",
+          "reason": "wrong service"
+        },
+        {
+          "text": "financing",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "bad credit",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "buy here pay here",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "car loan",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "car loans",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "auto loan",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "auto loans",
+          "match_type": "PHRASE",
+          "reason": "financing intent"
+        },
+        {
+          "text": "ai",
+          "match_type": "PHRASE",
+          "reason": "retired AI Agent offer"
+        },
+        {
+          "text": "motorcycle",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "motorcycles",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "boat",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "boats",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "forklift",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "forklifts",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "tractor",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "tractors",
+          "match_type": "PHRASE",
+          "reason": "out-of-scope vehicles"
+        },
+        {
+          "text": "free car buying service",
+          "match_type": "EXACT",
+          "reason": "free-program intent; Drive Right has no free offer (CLM-012)"
+        },
+        {
+          "text": "free car buying services",
+          "match_type": "EXACT",
+          "reason": "free-program intent; Drive Right has no free offer (CLM-012)"
+        }
+      ],
+      "assets": {
+        "sitelinks": [
+          {
+            "text": "Compare Plans and Pricing",
+            "d1": "Full Service is $295 one time",
+            "d2": "Ultimate Concierge is $895",
+            "url": "https://www.driverightcarbuying.com/schedule.html"
+          },
+          {
+            "text": "How It Works",
+            "d1": "See each step of the process",
+            "d2": "You make every purchase decision",
+            "url": "https://www.driverightcarbuying.com/how-it-works.html"
+          },
+          {
+            "text": "Car Buying Service",
+            "d1": "Service scope and current fees",
+            "d2": "What the buyer stays in charge of",
+            "url": "https://www.driverightcarbuying.com/car-buying-service.html"
+          },
+          {
+            "text": "About Drive Right",
+            "d1": "Based in Austin, Texas",
+            "d2": "Remote support nationwide",
+            "url": "https://www.driverightcarbuying.com/about.html"
+          },
+          {
+            "text": "Start Your Buying Brief",
+            "d1": "Tell us what you are looking for",
+            "d2": "Then choose the plan that fits",
+            "url": "https://www.driverightcarbuying.com/"
+          }
+        ],
+        "callouts": [
+          "One-Time Service Fee",
+          "Full Service $295",
+          "Ultimate Concierge $895",
+          "Remote Support Nationwide",
+          "Based in Austin, Texas",
+          "Dedicated Advisor",
+          "New, Used and CPO Search",
+          "Price Negotiation",
+          "Fee Review",
+          "Vehicle Recommendations"
+        ],
+        "snippets": [
+          {
+            "header": "Service catalog",
+            "values": [
+              "Inventory Search",
+              "Price Negotiation",
+              "Fee Review",
+              "Vehicle Recommendations"
+            ]
+          },
+          {
+            "header": "Types",
+            "values": [
+              "New Cars",
+              "Used Cars",
+              "Certified Pre-Owned"
+            ]
+          }
+        ],
+        "call": {
+          "phone": "(512) 910-4938",
+          "country": "US",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "hours": "09:00-17:00",
+          "time_zone": "America/Chicago",
+          "call_reporting": true,
+          "conversion": "Calls from ads (60s+), secondary"
+        }
+      },
+      "ad_groups": [
+        {
+          "name": "Car Buying Service",
+          "keywords": [
+            {
+              "text": "car buying service",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car buying service",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying services",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "nationwide car buying service",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying agent",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car buying agent",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying service cost",
+              "match_type": "PHRASE"
+            }
+          ],
+          "rsas": [
+            {
+              "final_url": "https://www.driverightcarbuying.com/car-buying-service.html",
+              "path1": "car-buying",
+              "path2": "service",
+              "headlines": [
+                {
+                  "text": "Drive Right Car Buying",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right Buying Service",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Car Buying Service",
+                  "pin": null
+                },
+                {
+                  "text": "One-Time $295 Service Fee",
+                  "pin": null
+                },
+                {
+                  "text": "Car Buying and Negotiation",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service: $295 One Time",
+                  "pin": null
+                },
+                {
+                  "text": "Ultimate Concierge: $895",
+                  "pin": null
+                },
+                {
+                  "text": "Remote Support Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "Austin-Based Car Buying Help",
+                  "pin": null
+                },
+                {
+                  "text": "New, Used and CPO Search",
+                  "pin": null
+                },
+                {
+                  "text": "Negotiation and Fee Review",
+                  "pin": null
+                },
+                {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "You Make Every Decision",
+                  "pin": null
+                },
+                {
+                  "text": "Compare Our Two Plans",
+                  "pin": null
+                },
+                {
+                  "text": "See How Drive Right Works",
+                  "pin": null
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": "Car buying help with inventory search, price negotiation and fee review. Plans from $295.",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service is $295 and Ultimate Concierge is $895, one time. Vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
+                  "pin": null
+                },
+                {
+                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "pin": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Car Negotiation",
+          "keywords": [
+            {
+              "text": "car negotiation service",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car negotiation service",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car negotiator",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car negotiator",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "vehicle negotiator",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car price negotiation service",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "hire someone to negotiate car price",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "negotiate car price for me",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying negotiator",
+              "match_type": "PHRASE"
+            }
+          ],
+          "rsas": [
+            {
+              "final_url": "https://www.driverightcarbuying.com/car-buying-service.html",
+              "path1": "car-buying",
+              "path2": "negotiation",
+              "headlines": [
+                {
+                  "text": "Drive Right Car Buying Help",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right Buying Service",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Car Negotiation Service",
+                  "pin": null
+                },
+                {
+                  "text": "Hire a Car Negotiator",
+                  "pin": null
+                },
+                {
+                  "text": "Price Negotiation Help",
+                  "pin": null
+                },
+                {
+                  "text": "Negotiation and Fee Review",
+                  "pin": null
+                },
+                {
+                  "text": "Two Plans From $295",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service: $295 One Time",
+                  "pin": null
+                },
+                {
+                  "text": "Ultimate Concierge: $895",
+                  "pin": null
+                },
+                {
+                  "text": "Remote Support Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "You Make Every Decision",
+                  "pin": null
+                },
+                {
+                  "text": "See How Drive Right Works",
+                  "pin": null
+                },
+                {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "Car Buying and Negotiation",
+                  "pin": null
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": "Full Service includes price negotiation and fee review for a $295 one-time fee.",
+                  "pin": null
+                },
+                {
+                  "text": "See what the service covers, what it costs and what stays your decision.",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service is $295 and Ultimate Concierge is $895, one time. Vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "pin": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Car Buying Concierge",
+          "keywords": [
+            {
+              "text": "car buying concierge",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car buying concierge",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car concierge service",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "auto buying concierge",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "nationwide car concierge",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car finder service",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car locator service",
+              "match_type": "EXACT"
+            }
+          ],
+          "rsas": [
+            {
+              "final_url": "https://www.driverightcarbuying.com/schedule.html",
+              "path1": "concierge",
+              "path2": "pricing",
+              "headlines": [
+                {
+                  "text": "Drive Right Car Buying",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right Buying Service",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Car Buying Concierge",
+                  "pin": null
+                },
+                {
+                  "text": "Car Concierge Service",
+                  "pin": null
+                },
+                {
+                  "text": "Ultimate Concierge: $895",
+                  "pin": null
+                },
+                {
+                  "text": "Auctions and Niche Sources",
+                  "pin": null
+                },
+                {
+                  "text": "Priority Communication",
+                  "pin": null
+                },
+                {
+                  "text": "One-Time Concierge Fee",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service: $295 One Time",
+                  "pin": null
+                },
+                {
+                  "text": "Compare Our Two Plans",
+                  "pin": null
+                },
+                {
+                  "text": "Remote Support Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "Car Finder Service",
+                  "pin": null
+                },
+                {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "You Make Every Decision",
+                  "pin": null
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": "Ultimate Concierge is $895 one time and includes everything in Full Service.",
+                  "pin": null
+                },
+                {
+                  "text": "Concierge adds auctions, forums and niche sources plus priority communication.",
+                  "pin": null
+                },
+                {
+                  "text": "Delivery coordination where available. Delivery and vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "pin": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Car Buying Advisor",
+          "keywords": [
+            {
+              "text": "car buying advisor",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car buying advisor",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying consultant",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "car buying consultant",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car shopping service",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "personal car shopper",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "someone to help me buy a car",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "help buying a car",
+              "match_type": "EXACT"
+            }
+          ],
+          "rsas": [
+            {
+              "final_url": "https://www.driverightcarbuying.com/",
+              "path1": "car-buying",
+              "path2": "help",
+              "headlines": [
+                {
+                  "text": "Drive Right Car Buying Help",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right Buying Service",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Car Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "Car Buying Consultant",
+                  "pin": null
+                },
+                {
+                  "text": "Help Buying Your Next Car",
+                  "pin": null
+                },
+                {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "Car Buying Help Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "Two Plans From $295",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service: $295 One Time",
+                  "pin": null
+                },
+                {
+                  "text": "Ultimate Concierge: $895",
+                  "pin": null
+                },
+                {
+                  "text": "New, Used and CPO Search",
+                  "pin": null
+                },
+                {
+                  "text": "Remote Support Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "You Make Every Decision",
+                  "pin": null
+                },
+                {
+                  "text": "Start Your Buying Brief",
+                  "pin": null
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service is $295 and Ultimate Concierge is $895, one time. Vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "Price negotiation and fee review are included. You make every purchase decision.",
+                  "pin": null
+                },
+                {
+                  "text": "Austin-based car buying help with remote support for buyers nationwide.",
+                  "pin": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Search | Brand | Drive Right | US",
+      "type": "BRAND",
+      "campaign_type": "Search",
+      "status": "PAUSED",
+      "daily_budget": 3,
+      "languages": [
+        "en"
+      ],
+      "networks": {
+        "search_partners": false,
+        "display_expansion": false
+      },
+      "geo": {
+        "targets": [
+          "United States"
+        ],
+        "location_ids": [
+          2840
+        ],
+        "mode": "PRESENCE"
+      },
+      "bidding": {
+        "strategy": "MAXIMIZE_CLICKS",
+        "max_cpc_limit": 2,
+        "reason": "tiny navigational budget; conversions too sparse to bid on"
+      },
+      "ai_max": {
+        "enabled": false
+      },
+      "negatives": [
+        {
+          "text": "auto sales",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "motors",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "automotive",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "dealership",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "dealerships",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "inventory",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "for sale",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "driving school",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "insurance",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "tires",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        },
+        {
+          "text": "tire",
+          "match_type": "PHRASE",
+          "reason": "Drive Right Auto Sales / dealer-name collision"
+        }
+      ],
+      "assets": {
+        "sitelinks": [
+          {
+            "text": "Compare Plans and Pricing",
+            "d1": "Full Service is $295 one time",
+            "d2": "Ultimate Concierge is $895",
+            "url": "https://www.driverightcarbuying.com/schedule.html"
+          },
+          {
+            "text": "How It Works",
+            "d1": "See each step of the process",
+            "d2": "You make every purchase decision",
+            "url": "https://www.driverightcarbuying.com/how-it-works.html"
+          },
+          {
+            "text": "Car Buying Service",
+            "d1": "Service scope and current fees",
+            "d2": "What the buyer stays in charge of",
+            "url": "https://www.driverightcarbuying.com/car-buying-service.html"
+          },
+          {
+            "text": "About Drive Right",
+            "d1": "Based in Austin, Texas",
+            "d2": "Remote support nationwide",
+            "url": "https://www.driverightcarbuying.com/about.html"
+          },
+          {
+            "text": "Start Your Buying Brief",
+            "d1": "Tell us what you are looking for",
+            "d2": "Then choose the plan that fits",
+            "url": "https://www.driverightcarbuying.com/"
+          }
+        ],
+        "callouts": [
+          "One-Time Service Fee",
+          "Remote Support Nationwide",
+          "Based in Austin, Texas",
+          "Dedicated Advisor"
+        ],
+        "call": {
+          "phone": "(512) 910-4938",
+          "country": "US",
+          "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "hours": "09:00-17:00",
+          "time_zone": "America/Chicago",
+          "call_reporting": true,
+          "conversion": "Calls from ads (60s+), secondary"
+        }
+      },
+      "ad_groups": [
+        {
+          "name": "Brand",
+          "keywords": [
+            {
+              "text": "drive right car buying",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "drive right car buying",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "driveright car buying",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "driverightcarbuying",
+              "match_type": "EXACT"
+            },
+            {
+              "text": "driverightcarbuying.com",
+              "match_type": "EXACT"
+            }
+          ],
+          "rsas": [
+            {
+              "final_url": "https://www.driverightcarbuying.com/",
+              "path1": "car-buying",
+              "path2": "",
+              "headlines": [
+                {
+                  "text": "Drive Right Car Buying",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right Buying Service",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Drive Right, Based in Austin",
+                  "pin": "HEADLINE_1"
+                },
+                {
+                  "text": "Car Buying and Negotiation",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service: $295 One Time",
+                  "pin": null
+                },
+                {
+                  "text": "Ultimate Concierge: $895",
+                  "pin": null
+                },
+                {
+                  "text": "Remote Support Nationwide",
+                  "pin": null
+                },
+                {
+                  "text": "Compare Our Two Plans",
+                  "pin": null
+                },
+                {
+                  "text": "See How Drive Right Works",
+                  "pin": null
+                },
+                {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
+                  "text": "You Make Every Decision",
+                  "pin": null
+                },
+                {
+                  "text": "New, Used and CPO Search",
+                  "pin": null
+                }
+              ],
+              "descriptions": [
+                {
+                  "text": "Drive Right is an Austin-based car buying and negotiation service for buyers nationwide.",
+                  "pin": null
+                },
+                {
+                  "text": "Full Service is $295 and Ultimate Concierge is $895, one time. Vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
+                  "pin": null
+                },
+                {
+                  "text": "Compare both plans, see how the process works and choose the help that fits your search.",
+                  "pin": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pending_assets": {
+    "requires": "CLM-013 approved (reviewer, date, expiry, approved_copy) and how-it-works.html disclosure replaced in the same release",
+    "headlines": [
+      "No Dealer Commissions",
+      "Paid Only by Our Customers"
+    ],
+    "callouts": [
+      "No Dealer Commissions"
+    ],
+    "descriptions": [
+      "We are paid only by our customers, never by dealers, sellers or lenders."
+    ]
+  }
+}

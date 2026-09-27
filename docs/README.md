@@ -32,3 +32,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 
 - [openai-ads-setup.md](openai-ads-setup.md): ChatGPT ads conversion tracking setup.
 - [openai-ads-marketing.md](openai-ads-marketing.md): ad strategy and draft copy.
+- [google-ads-launch-plan-2026-09-27.md](google-ads-launch-plan-2026-09-27.md): approved Google Search launch plan: launch gates, campaigns, ad copy and the 30-day operating plan.
+- [google-ads-setup.md](google-ads-setup.md): the owner's Google Ads, Tag Manager and Editor steps.
+- [clm-013-compensation-attestation.md](clm-013-compensation-attestation.md): draft packet for the "no dealer commissions" claim.
+- Campaign files live outside `docs/`, in `outputs/2026-10-google-search-ads/`.
