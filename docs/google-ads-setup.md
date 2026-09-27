@@ -19,7 +19,7 @@ Order: 1 → 2 → 3 happen before the Editor import (4). Launch (6) only after 
 - [ ] **Campaigns:** pause every enabled campaign. Pause, don't remove, so history is kept. Log each name and its last-30-day spend.
 - [ ] **Recommendations → Auto-apply:** turn every type off, on every tab.
 - [ ] **Experiments:** end any running experiment. Experiments made in the web interface auto-apply results by default.
-- [ ] **Assets at account level:** pause or remove any asset with old prices ($1,850, $795, $495, $195), "free", savings, speed or other claims not on `outputs/2026-10-google-search-ads/ad-copy-approval.md`. Account-level assets show on every campaign.
+- [ ] **Assets at account level:** pause or remove any asset with old prices ($1,850, $895, $795, $495, $295, $195), "free", savings, speed or other claims not on `outputs/2026-10-google-search-ads/ad-copy-approval.md`. Account-level assets show on every campaign.
 - [ ] **Account-level and shared negative keyword lists:** note any that would block the new keywords (`editor-import/04-keywords.csv`).
 - [ ] **Account settings:**
   - [ ] Auto-tagging **on**.
@@ -33,7 +33,7 @@ Order: 1 → 2 → 3 happen before the Editor import (4). Launch (6) only after 
 
 | Action | Setup | Goal role |
 |---|---|---|
-| **Purchase – verified** (new) | Website; manual setup with Google Tag Manager. Category **Purchase**. Value: use different values per conversion (default 295). Count: **Every**, deduplicated by transaction ID. Click-through window: 30 days. Attribution: data-driven. Copy the **conversion label** for step 3. | **Primary.** The only goal of the non-brand campaign. |
+| **Purchase – verified** (new) | Website; manual setup with Google Tag Manager. Category **Purchase**. Value: use different values per conversion (default 395; the tag sends the amount actually paid). Count: **Every**, deduplicated by transaction ID. Click-through window: 30 days. Attribution: data-driven. Copy the **conversion label** for step 3. | **Primary.** The only goal of the non-brand campaign. |
 | **Begin checkout** (new) | Category Begin checkout. Don't use a value. Count **One**. Copy the label. | Secondary |
 | **Call Button** (existing) | Keep, re-pointed to the `phone_click` event in step 3. Count **One**. | Secondary |
 | **Calls from ads** | Created with the call asset in step 4. Count a call at **60 seconds** or longer. | Secondary |

@@ -14,14 +14,15 @@ The approved text is kept verbatim below. In it, "you" is the owner and "I" is t
 - **Setup doc moved.** `docs/google-ads-setup.md` ships with the docs change instead of the tracking PR, so every account step is available at once.
 - **Negatives are campaign-level.** Non-brand negatives import as campaign negatives, not a shared list, because there is only one non-brand campaign. The Editor import is simpler this way.
 - **The checker blocks until G2.** `plan.json` keeps `tracking.primary_conversion_verified: false` until gate G2 passes, so `gads_tools.py check` blocks until then by design.
-- **G1 detail.** The Stripe cutover record shows no live $295 Full Service Payment Link yet, only a test-mode one. See `outputs/2026-10-google-search-ads/stripe-checklist.md`.
+- **Prices changed after approval.** On September 27, 2026 the owner moved Full Service from $295 to $395 and Ultimate Concierge from $895 to $695 (PR #84, claim `SEO-PRICE-2026-09-27`). Every price, amount and conversion value in the approved text below, in `plan.json`, in the Editor files and in the copy sheet was updated to match. Nothing else in the approved text changed.
+- **G1 detail.** The owner reports the live $395/$695 Payment Links and the Vercel production env vars were updated on September 27. G1 still needs the checks in `outputs/2026-10-google-search-ads/stripe-checklist.md` (promo codes, tax, descriptions, a look at each checkout).
 - **Generator added.** `outputs/2026-10-google-search-ads/build-editor-csv.mjs` rebuilds the Editor files from `plan.json`, and `--check` detects drift.
 
 ---
 
 ## Context
 
-Drive Right (www.driverightcarbuying.com) is an Austin-based car buying and negotiation service. It supports buyers nationwide remotely and sells two one-time service fees, paid up front through Stripe: **Full Service $295** and **Ultimate Concierge $895**.
+Drive Right (www.driverightcarbuying.com) is an Austin-based car buying and negotiation service. It supports buyers nationwide remotely and sells two one-time service fees, paid up front through Stripe: **Full Service $395** and **Ultimate Concierge $695**.
 
 Organic search brings little business today: 21 clicks in the last 28 days. "Car buying service" had 152 impressions and 0 clicks.
 
@@ -49,7 +50,7 @@ Three facts shape the plan:
 
 | # | Gate | Who | Why |
 |---|---|---|---|
-| G1 | **Live Stripe checkout is right.** Full Service charges $295 (last recorded live link was the old $495); Concierge charges $895. Product descriptions drop old claims ("lowest price", "average savings $1,500–$4,000", "door-to-door"). Promo codes are off, and tax doesn't change the total. Any total other than exactly 29500/89500 cents records no purchase, fires no conversion and breaks onboarding. | You, in Stripe; I list every link, amount and text to check | `data/services.json:24-27`, `docs/seo-execution/stripe-cutover.md:13-34`, `api/stripe-webhook.js:62-71` |
+| G1 | **Live Stripe checkout is right.** Full Service charges $395; Concierge charges $695 (new live links reported set on Sep 27). Product descriptions drop old claims ("lowest price", "average savings $1,500–$4,000", "door-to-door"). Promo codes are off, and tax doesn't change the total. Any total other than exactly 39500/69500 cents records no purchase, fires no conversion and breaks onboarding. | You, in Stripe; I list every link, amount and text to check | `data/services.json:24-27`, `docs/seo-execution/stripe-cutover.md:13-34`, `api/stripe-webhook.js:62-71` |
 | G2 | **Purchase tracking works end to end.** PR 1 below plus GTM and Google Ads setup, verified in GTM Preview on a Vercel preview with Stripe in test mode. Then one live purchase by you, refunded (about $9 in Stripe fees) and retracted in Google Ads by transaction ID. | Me (code), you (merge, GTM publish, test purchase) | Today's conversions would train bidding on chat turns and phone-link clicks |
 | G3 | **Account cleaned.** Old campaigns paused. Legacy conversion actions set to secondary. Recommendation auto-apply off. Auto-tagging on. Account time zone noted. Advertiser verification, billing and Policy Manager checked. | You, following my checklist | Old campaigns would spend against the cap and pollute bidding |
 | G4 | **Ad copy approved.** One claims row per the workflow, `ADS-GOOGLE-2026-10`, lists every asset's exact text with reviewer, date and expiry. | Mason | `docs/claim-review-workflow.md`: only approved copy goes on a new surface |
@@ -125,23 +126,23 @@ The collision check passed: no negative blocks one of our keywords.
 Two brand headlines are pinned to H1 (Google's Limited Ad Serving guidance for newer advertisers). Everything else stays unpinned.
 
 Shared descriptions:
-- **D-Scope:** "Car buying help with inventory search, price negotiation and fee review. Plans from $295."
-- **D-Price:** "Full Service is $295 and Ultimate Concierge is $895, one time. Vehicle costs are separate."
+- **D-Scope:** "Car buying help with inventory search, price negotiation and fee review. Plans from $395."
+- **D-Price:** "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate."
 - **D-Advisor:** "A dedicated advisor searches new, used and CPO options and documents recommendations."
 - **D-Remote:** "Based in Austin with remote support nationwide. You make every purchase decision."
 
 **Car Buying Service**
 - Path: `car-buying/service`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service
-- Headlines: Car Buying Service · One-Time $295 Service Fee · Car Buying and Negotiation · Full Service: $295 One Time · Ultimate Concierge: $895 · Remote Support Nationwide · Austin-Based Car Buying Help · New, Used and CPO Search · Negotiation and Fee Review · A Dedicated Buying Advisor · You Make Every Decision · Compare Our Two Plans · See How Drive Right Works
+- Headlines: Car Buying Service · One-Time $395 Service Fee · Car Buying and Negotiation · Full Service: $395 One Time · Ultimate Concierge: $695 · Remote Support Nationwide · Austin-Based Car Buying Help · New, Used and CPO Search · Negotiation and Fee Review · A Dedicated Buying Advisor · You Make Every Decision · Compare Our Two Plans · See How Drive Right Works
 - Descriptions: D-Scope, D-Price, D-Advisor, D-Remote
 
 **Car Negotiation**
 - Path: `car-buying/negotiation`
 - H1 pinned: Drive Right Car Buying Help · Drive Right Buying Service
-- Headlines: Car Negotiation Service · Hire a Car Negotiator · Price Negotiation Help · Negotiation and Fee Review · Two Plans From $295 · Full Service: $295 One Time · Ultimate Concierge: $895 · Remote Support Nationwide · You Make Every Decision · See How Drive Right Works · A Dedicated Buying Advisor · Car Buying and Negotiation
+- Headlines: Car Negotiation Service · Hire a Car Negotiator · Price Negotiation Help · Negotiation and Fee Review · Two Plans From $395 · Full Service: $395 One Time · Ultimate Concierge: $695 · Remote Support Nationwide · You Make Every Decision · See How Drive Right Works · A Dedicated Buying Advisor · Car Buying and Negotiation
 - Descriptions:
-  - "Full Service includes price negotiation and fee review for a $295 one-time fee."
+  - "Full Service includes price negotiation and fee review for a $395 one-time fee."
   - "See what the service covers, what it costs and what stays your decision."
   - D-Price
   - D-Remote
@@ -149,9 +150,9 @@ Shared descriptions:
 **Car Buying Concierge**
 - Path: `concierge/pricing`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service
-- Headlines: Car Buying Concierge · Car Concierge Service · Ultimate Concierge: $895 · Auctions and Niche Sources · Priority Communication · One-Time Concierge Fee · Full Service: $295 One Time · Compare Our Two Plans · Remote Support Nationwide · Car Finder Service · A Dedicated Buying Advisor · You Make Every Decision
+- Headlines: Car Buying Concierge · Car Concierge Service · Ultimate Concierge: $695 · Auctions and Niche Sources · Priority Communication · One-Time Concierge Fee · Full Service: $395 One Time · Compare Our Two Plans · Remote Support Nationwide · Car Finder Service · A Dedicated Buying Advisor · You Make Every Decision
 - Descriptions:
-  - "Ultimate Concierge is $895 one time and includes everything in Full Service."
+  - "Ultimate Concierge is $695 one time and includes everything in Full Service."
   - "Concierge adds auctions, forums and niche sources plus priority communication."
   - "Delivery coordination where available. Delivery and vehicle costs are separate."
   - D-Remote
@@ -159,7 +160,7 @@ Shared descriptions:
 **Car Buying Advisor**
 - Path: `car-buying/help`
 - H1 pinned: Drive Right Car Buying Help · Drive Right Buying Service
-- Headlines: Car Buying Advisor · Car Buying Consultant · Help Buying Your Next Car · A Dedicated Buying Advisor · Car Buying Help Nationwide · Two Plans From $295 · Full Service: $295 One Time · Ultimate Concierge: $895 · New, Used and CPO Search · Remote Support Nationwide · You Make Every Decision · Start Your Buying Brief
+- Headlines: Car Buying Advisor · Car Buying Consultant · Help Buying Your Next Car · A Dedicated Buying Advisor · Car Buying Help Nationwide · Two Plans From $395 · Full Service: $395 One Time · Ultimate Concierge: $695 · New, Used and CPO Search · Remote Support Nationwide · You Make Every Decision · Start Your Buying Brief
 - Descriptions:
   - D-Advisor
   - D-Price
@@ -169,7 +170,7 @@ Shared descriptions:
 **Brand**
 - Path: `car-buying`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service · Drive Right, Based in Austin
-- Headlines: Car Buying and Negotiation · Full Service: $295 One Time · Ultimate Concierge: $895 · Remote Support Nationwide · Compare Our Two Plans · See How Drive Right Works · A Dedicated Buying Advisor · You Make Every Decision · New, Used and CPO Search
+- Headlines: Car Buying and Negotiation · Full Service: $395 One Time · Ultimate Concierge: $695 · Remote Support Nationwide · Compare Our Two Plans · See How Drive Right Works · A Dedicated Buying Advisor · You Make Every Decision · New, Used and CPO Search
 - Descriptions:
   - "Drive Right is an Austin-based car buying and negotiation service for buyers nationwide."
   - D-Price
@@ -179,7 +180,7 @@ Shared descriptions:
 ### Assets (both campaigns)
 
 **Sitelinks** (text | description 1 | description 2 → page):
-- Compare Plans and Pricing | Full Service is $295 one time | Ultimate Concierge is $895 → `/schedule.html`
+- Compare Plans and Pricing | Full Service is $395 one time | Ultimate Concierge is $695 → `/schedule.html`
 - How It Works | See each step of the process | You make every purchase decision → `/how-it-works.html`
 - Car Buying Service | Service scope and current fees | What the buyer stays in charge of → `/car-buying-service.html`
 - About Drive Right | Based in Austin, Texas | Remote support nationwide → `/about.html`
@@ -187,7 +188,7 @@ Shared descriptions:
 
 There are five, not six, on purpose. The blog, policy page and Texas hub carry content still pending review.
 
-**Callouts:** One-Time Service Fee · Full Service $295 · Ultimate Concierge $895 · Remote Support Nationwide · Based in Austin, Texas · Dedicated Advisor · New, Used and CPO Search · Price Negotiation · Fee Review · Vehicle Recommendations
+**Callouts:** One-Time Service Fee · Full Service $395 · Ultimate Concierge $695 · Remote Support Nationwide · Based in Austin, Texas · Dedicated Advisor · New, Used and CPO Search · Price Negotiation · Fee Review · Vehicle Recommendations
 
 **Structured snippets:**
 - Service catalog: Inventory Search, Price Negotiation, Fee Review, Vehicle Recommendations
@@ -205,7 +206,7 @@ There are five, not six, on purpose. The blog, policy page and Texas hub carry c
 
 ### Copy sources and blocked claims
 - **Approved today:**
-  - Plan names and prices: `SEO-PRICE-2026-09-18`, expires 2026-12-18.
+  - Plan names and prices: `SEO-PRICE-2026-09-27`, expires 2026-12-26.
   - Austin base, US service area, phone and hours: `data/entities.json` owner approval.
 - **Live on the site but needing ad-copy approval (G4):**
   - Inventory search (new, used, CPO), price negotiation and fee review, dedicated advisor, documented recommendations.
@@ -271,7 +272,7 @@ The checker already passes this variant. It goes in as one logged creative chang
 - **Why it's worth it:** reconciliation by click ID now, offline conversion import later. Until then, the final URL suffix UTMs mark paid purchases in the ledger.
 
 ### Known limits accepted for launch
-- **Totals that aren't exactly $295/$895** record no purchase. G1 fixes promo codes and tax.
+- **Totals that aren't exactly $395/$695** record no purchase. G1 fixes promo codes and tax.
 - **Stripe webhook later than about 15 seconds:** the confirmation page shows an error and no conversion fires. The weekly reconciliation of the ledger against Google Ads catches the gap.
 - **Ad blockers and Safari limits** undercount browser conversions. Reconciliation covers this now; offline import after PR 2.
 
@@ -354,7 +355,7 @@ Guardrails: search-term quality, refunds (net revenue) and your client capacity.
 - These must pass on Node 24: `node scripts/validate-site.mjs && npm run check:api && npm run check:buying && npm run check:metros && npm run check:cities && npm test && git diff --check`, plus `node scripts/check-redirects.mjs --config-only`.
 - On a Vercel preview with Stripe in test mode, GTM Preview must show:
   - `begin_checkout` before the redirect, from both `/car-buying-service.html` and `/schedule.html`;
-  - `purchase_verified` exactly once with the purchase UUID, 295/895 and USD;
+  - `purchase_verified` exactly once with the purchase UUID, 395/695 and USD;
   - no second event on refresh;
   - an immediate redirect when `googletagmanager.com` is blocked.
 - In production, one test purchase by you must:
