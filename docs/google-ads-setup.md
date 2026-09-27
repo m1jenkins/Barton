@@ -82,7 +82,7 @@ Whether GPC should also deny `ad_storage` is an owner or legal decision; the def
 - **Keep** the Google tag (`AW-18071301983`) and Conversion Linker on All Pages.
 - **Google tag configuration:** add the parameter `page_location` = `{{Page URL – sanitized}}`.
   - The payment pages already remove the Stripe `session_id` before GTM loads, so this is defense in depth.
-  - It doesn't change the conversion tags' `url` parameter or what Clarity records.
+  - Measured on the old pages, it cleaned the Google tag's hits, conversions included, but not GTM's own `ccm/collect` page view or Clarity.
 - **Existing Microsoft Clarity tag:** add an exception trigger so Clarity doesn't record the payment pages.
   - Trigger: Page View "Payment pages", Page Path matches RegEx `^/payment-success[^/]*\.html$`.
   - Why: these pages hold the paid intake form and, after verification, show the buyer's saved brief. This Clarity project records page text unmasked.

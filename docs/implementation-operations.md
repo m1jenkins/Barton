@@ -211,10 +211,11 @@ Measured in an offline headless Chrome with the live Version 6 container, the Go
 | Clarity uploads: page URL, and `data-verified-session-id` in the DOM recording | Yes | No |
 | The next page's referrer (Google `dr`/`ref`, Clarity) | Yes | No |
 
-The same hits still fire after the change, only without the ID. Two alternatives failed the same measurement:
+The same hits still fire after the change, only without the ID. Three alternatives failed the same measurement:
 
 - **Removing the ID from `script.js` only.** `script.js` loads at the end of `<body>`, after GTM has started. Google stayed clean only while `script.js` ran before the Google tag read the address. With `script.js` 400 ms slower (as after a deploy or on a cache miss), every Google hit and Clarity still got the ID, and later Google hits sent the old URL as `ref`. The DOM attribute still reached Clarity either way.
 - **A `#session_id=` fragment in Stripe.** Google hits dropped the fragment, but Clarity recorded it.
+- **GTM `page_location` sanitizing only.** With a sanitized `page_location` on the Google tag, its remarketing, page-view and conversion hits dropped the ID. GTM's own `ccm/collect` page view still sent it, and Clarity isn't affected.
 
 Still visible, all first party or on the buyer's device:
 
@@ -225,6 +226,6 @@ Still visible, all first party or on the buyer's device:
 Account-side steps, not applied (see `docs/google-ads-setup.md` §3):
 
 - **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. After verification, `buying/app.js` shows the buyer's saved brief as page text.
-- **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover the conversion tags' `url` or Clarity, so the page code is the fix.
+- **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover GTM's own page view or Clarity, so the page code is the fix.
 
 After deploy, check a payment page: once it loads, the address bar shows no `session_id`, and no request to a Google or Clarity host contains `session_id`, `cs_live_` or `cs_test_`.
