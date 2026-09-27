@@ -37,7 +37,9 @@ function paymentPage(responses, { session = storage(), tier = 'full_service' } =
   const retryTimeout = (fn, ms) => { delays.push(ms); return setTimeout(fn, 0); };
   vm.runInNewContext(source, { window, document, URL, URLSearchParams, Date, Set, setTimeout: retryTimeout, clearTimeout, console, crypto, AbortController, fetch });
   const settled = async () => {
-    for (let i = 0; i < 500 && !['verified', 'error'].includes(gate.dataset.state); i++) await new Promise(resolve => setImmediate(resolve));
+    // Wait on the clock, not a turn count: five 1 ms retry timers can outlast 500 immediates on a slow CI runner.
+    const deadline = Date.now() + 5000;
+    while (!['verified', 'error'].includes(gate.dataset.state) && Date.now() < deadline) await new Promise(resolve => setTimeout(resolve, 1));
     return gate.dataset.state;
   };
   return { window, body, content, requests, delays, settled, purchases: () => window.dataLayer.filter(item => item.event === 'purchase_verified') };
