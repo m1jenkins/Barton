@@ -187,3 +187,21 @@ Google tags are GTM-only (container `GTM-W577B3D4`): pages only push to `dataLay
 - `purchase_verified`: pushed on a confirmation page only after `/api/purchase-status` returns `verified: true` with a UUID `purchase_id`, a finite positive `value` and a three-letter uppercase `currency`. It carries `transaction_id` (the server purchase ID), `value`, `currency` and `service_tier` with the usual page context and first/last-touch attribution; `event_id` is `purchase_verified:<purchase_id>`. Memory and `sessionStorage` guards send it once per browser session, so map `transaction_id` in the Google Ads conversion tag to dedupe a receipt reopened elsewhere. `processing`, `unverified`, `not_found`, request errors and sessions held for review never fire it. No contact data or Checkout Session ID enters the data layer.
 
 The OpenAI Ads pixel ignores `purchase_verified`. The server `purchase` outbox event keeps the Checkout Session ID as its `transaction_id`, so do not send both to the same Google Ads conversion action. GTM tag, trigger and conversion-action setup is account work; this change does not modify the container.
+
+### Google ad click IDs (stored for reconciliation)
+
+`attribution()` keeps Google's `gclid`, `gbraid` and `wbraid` in the first and last touch when they match `^[A-Za-z0-9_-]{8,256}$`; a new ad click starts a new last touch. Under Global Privacy Control they are not captured, and any stored ones are dropped on the next page load. `validateAttributionTouch` adds a click-ID key only when it is valid and never rejects a request for a bad one, so touches without click IDs keep the eight legacy keys and existing request hashes still match. The IDs are stored in `leads.attribution` and `checkout_attempts.attribution` (no migration) and travel with the lead-forwarding payload. They are not added to the data layer and not forwarded to the analytics collector, whose allowlist in `api/_lib/analytics.js` omits them. `policy.html` discloses this; publish that text only once the GTM consent step in `docs/google-ads-setup.md` is live.
+
+Reconcile paid purchases with ad clicks for a completed window (aggregate outcomes only; no contact tables):
+
+```sql
+SELECT p.id AS order_id, p.paid_at, p.tier_id, p.amount_total / 100.0 AS value, upper(p.currency) AS currency,
+       COALESCE(a.attribution->'last_touch'->>'gclid', a.attribution->'first_touch'->>'gclid') AS gclid,
+       COALESCE(a.attribution->'last_touch'->>'gbraid', a.attribution->'first_touch'->>'gbraid') AS gbraid,
+       COALESCE(a.attribution->'last_touch'->>'wbraid', a.attribution->'first_touch'->>'wbraid') AS wbraid,
+       a.attribution->'last_touch'->>'utm_source' AS last_source, a.attribution->'last_touch'->>'utm_medium' AS last_medium
+FROM purchases p JOIN checkout_attempts a ON a.id = p.checkout_attempt_id
+WHERE p.livemode AND p.paid_at >= $1 AND p.paid_at < $2;
+```
+
+Attempts with `status = 'review_required'` were paid in Stripe but produced no purchase row (for example a promotion code or tax changed the total); list them separately.
