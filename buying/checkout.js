@@ -1,8 +1,8 @@
 import { briefText, restoreBrief } from './brief.js';
 
 export const plans = Object.freeze({
-  full_service: { name: 'Full Service', fee: 295 },
-  concierge: { name: 'Ultimate Concierge', fee: 895 },
+  full_service: { name: 'Full Service', fee: 395 },
+  concierge: { name: 'Ultimate Concierge', fee: 695 },
 });
 
 // Persist the exact payload and key before sending. A timeout may mean the server

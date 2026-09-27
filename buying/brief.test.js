@@ -176,10 +176,10 @@ test('stale offer requires another user submit with a new key and preserves the 
     calls.push({url,key:opts.headers['Idempotency-Key']});
     if(url==='/api/leads')return {ok:true,lead_id:'71ce2e4c-99b0-4d62-91ef-334605514dcf'};
     if(++attempts===1){const e=new Error('stale_offer');e.code='stale_offer';throw e;}
-    return {ok:true,url:'https://buy.stripe.com/new295',attempt_id:'new-attempt'};
+    return {ok:true,url:'https://buy.stripe.com/new395',attempt_id:'new-attempt'};
   }};
   const input={tier:'full_service',contact:{name:'Buyer',email:'buyer@example.test'},brief:draft()};
-  await assert.rejects(createCheckout(options).submit(input), /\$295 USD.*Restart checkout/);
+  await assert.rejects(createCheckout(options).submit(input), /\$395 USD.*Restart checkout/);
   assert.equal(attempts,1);
   await createCheckout(options).submit(input);
   const checkoutCalls=calls.filter(c=>c.url==='/api/checkout-start');
