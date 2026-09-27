@@ -23,7 +23,7 @@ async function call(handler, input=body, key='checkout:current') {
  return res;
 }
 function attempt(overrides={}) {
- return {id:'attempt',client_reference_id:ref,tier_id:'full_service',request_hash:payloadHash(validateCheckoutPayload(body)),expected_amount:29500,currency:'usd',offer_key:offerKey('full_service',SERVICE_TIERS.full_service,link),...overrides};
+ return {id:'attempt',client_reference_id:ref,tier_id:'full_service',request_hash:payloadHash(validateCheckoutPayload(body)),expected_amount:39500,currency:'usd',offer_key:offerKey('full_service',SERVICE_TIERS.full_service,link),...overrides};
 }
 function checkoutDb(prior,{race=false}={}) {
  const calls=[];let selects=0;
@@ -35,15 +35,15 @@ function checkoutDb(prior,{race=false}={}) {
  };
  sql.begin=fn=>fn(sql);sql.json=v=>v;return {sql,calls};
 }
-test('new Full Service creates a $295 snapshot; retired checkout never touches database',async t=>{
+test('new Full Service creates a $395 snapshot; retired checkout never touches database',async t=>{
  env(t);const db=checkoutDb();const handler=checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}});
  const res=await call(handler);assert.equal(res.statusCode,201);assert.match(res.body.url,/client_reference_id=/);
- assert.equal(db.calls.find(c=>c.query.includes('INSERT')).values[5],29500);
+ assert.equal(db.calls.find(c=>c.query.includes('INSERT')).values[5],39500);
  const count=db.calls.length;const retired=await call(handler,{tier:'consultation'});assert.equal(retired.statusCode,410);assert.equal(retired.body.error,'tier_retired');assert.equal(db.calls.length,count);
 });
 test('current retry returns same reference; old amount, currency, missing or changed offer key require restart',async t=>{
  env(t);
- for(const overrides of [{},{expected_amount:49500},{currency:'eur'},{offer_key:null},{offer_key:'old-link'}]) {
+ for(const overrides of [{},{expected_amount:49500},{expected_amount:29500},{currency:'eur'},{offer_key:null},{offer_key:'old-link'}]) {
   const record=attempt(overrides),saved=structuredClone(record),db=checkoutDb(record);
   const res=await call(checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}}));
   assert.equal(res.statusCode,Object.keys(overrides).length?409:200);
@@ -74,8 +74,8 @@ function ledger(initialAttempt) {
  };sql.begin=fn=>fn(sql);sql.json=v=>v;return {sql,events,purchases,outbox,status:()=>status};
 }
 function event(tier,amount,overrides={}) {return {id:`evt_${tier}`,type:'checkout.session.completed',created:1789776000,livemode:false,data:{object:{id:`cs_test_${tier.replace('_','')}12345678`,object:'checkout.session',mode:'payment',payment_status:'paid',client_reference_id:ref,currency:'usd',amount_total:amount,...overrides}}};}
-test('historical $195/$495 and new $295/$895 paid sessions retain their amounts through delayed/replayed webhooks and receipt refresh',async()=>{
- for(const [tier,amount] of [['consultation',19500],['full_service',49500],['full_service',29500],['concierge',89500]]){
+test('historical $195/$495/$295/$895 and new $395/$695 paid sessions retain their amounts through delayed/replayed webhooks and receipt refresh',async()=>{
+ for(const [tier,amount] of [['consultation',19500],['full_service',49500],['full_service',29500],['concierge',89500],['full_service',39500],['concierge',69500]]){
   const record=attempt({tier_id:tier,expected_amount:amount,offer_key:null}),db=ledger(record),e=event(tier,amount);
   const unpaid={...e,id:'evt_wait',data:{object:{...e.data.object,payment_status:'unpaid'}}};
   assert.equal((await recordEvent(unpaid,db.sql)).recorded,false);
@@ -92,8 +92,8 @@ test('historical $195/$495 and new $295/$895 paid sessions retain their amounts 
  }
 });
 test('tax, discount, currency, wrong reference and unpaid mismatch do not produce a purchase',async()=>{
- for(const overrides of [{amount_total:31934},{amount_total:28000},{currency:'eur'},{client_reference_id:'f5dbf6c1-fb6c-4452-9190-a440527bad07'},{payment_status:'unpaid'}]){
-  const db=ledger(attempt());assert.equal((await recordEvent(event('full_service',29500,overrides),db.sql)).recorded,false);assert.equal(db.purchases.size,0);assert.equal(db.outbox.size,0);
+ for(const overrides of [{amount_total:42759},{amount_total:38500},{amount_total:29500},{currency:'eur'},{client_reference_id:'f5dbf6c1-fb6c-4452-9190-a440527bad07'},{payment_status:'unpaid'}]){
+  const db=ledger(attempt());assert.equal((await recordEvent(event('full_service',39500,overrides),db.sql)).recorded,false);assert.equal(db.purchases.size,0);assert.equal(db.outbox.size,0);
  }
 });
 test('unsigned webhook rejected before database use',async()=>{

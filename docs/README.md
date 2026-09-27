@@ -12,7 +12,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 ## SEO decisions and execution
 
 - [seo/](seo/): dated SEO decisions (redirects and claim safety, content pages, the Tesla FSD page park).
-- [seo-execution/](seo-execution/): task-by-task SEO work (`SEO-01` to `SEO-10`), with [status.md](seo-execution/status.md) as the tracker and [release-candidate.md](seo-execution/release-candidate.md) as the evidence summary.
+- [seo-execution/](seo-execution/): task-by-task SEO work (`SEO-01` to `SEO-10`), with [status.md](seo-execution/status.md) as the tracker and [release-candidate.md](seo-execution/release-candidate.md) as the evidence summary. Current Stripe price work: [stripe-cutover-2026-09-27.md](seo-execution/stripe-cutover-2026-09-27.md) ($395/$695).
 - [seo-agent-runbook.md](seo-agent-runbook.md) and [seo-agent-prompts.md](seo-agent-prompts.md): the plan and prompts behind that work.
 - [seo-release-preparation-2026-09-05.md](seo-release-preparation-2026-09-05.md), [local-seo-package.md](local-seo-package.md), [MAPS-ANALYSIS-driverightcarbuying.com.md](MAPS-ANALYSIS-driverightcarbuying.com.md), [ai-retrieval-experiment.md](ai-retrieval-experiment.md).
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "recordStatus": "local_offer_candidate_activation_pending",
-  "lastObservedAt": "2026-09-18",
+  "lastObservedAt": "2026-09-27",
   "currency": "USD",
   "sourceOfTruth": {
     "url": "https://www.driverightcarbuying.com/schedule.html",
@@ -12,7 +12,7 @@
     {
       "id": "https://www.driverightcarbuying.com/#service-full",
       "name": "Full Service",
-      "price": 295,
+      "price": 395,
       "priceType": "flat_fee",
       "features": [
         "New used and certified pre-owned search",
@@ -24,12 +24,12 @@
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
       "serviceLevelReview": "pending_operations_confirmation",
-      "checkoutStatus": "new_295_link_required_before_activation"
+      "checkoutStatus": "new_395_link_required_before_activation"
     },
     {
       "id": "https://www.driverightcarbuying.com/#service-concierge",
       "name": "Ultimate Concierge",
-      "price": 895,
+      "price": 695,
       "priceType": "flat_fee",
       "features": [
         "Everything in Full Service",
@@ -39,8 +39,9 @@
         "Expanded transaction coordination",
         "Delivery coordination where available"
       ],
-      "checkoutUrl": "https://buy.stripe.com/8x2fZa6AD27Ffre7ty04803",
-      "availability": "owner_confirmed_all_states_cities"
+      "checkoutUrl": null,
+      "availability": "owner_confirmed_all_states_cities",
+      "checkoutStatus": "new_695_link_required_before_activation"
     }
   ],
   "commercialTerms": {
@@ -104,8 +105,10 @@
     }
   ],
   "pricingDecision": {
-    "record": "SEO-PRICE-2026-09-18",
-    "date": "2026-09-18",
+    "record": "SEO-PRICE-2026-09-27",
+    "date": "2026-09-27",
+    "supersedes": "SEO-PRICE-2026-09-18",
+    "stripeCutover": "docs/seo-execution/stripe-cutover-2026-09-27.md",
     "status": "owner_authorized_local_implementation",
     "productionActivation": "pending"
   }
