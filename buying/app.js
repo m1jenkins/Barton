@@ -1,6 +1,6 @@
 import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js';
 import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js';
-import { plans, createCheckout } from './checkout.js?v=315f2ac9c409';
+import { plans, createCheckout } from './checkout.js?v=ef15537620a6';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);

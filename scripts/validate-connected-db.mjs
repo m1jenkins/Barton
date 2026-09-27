@@ -100,8 +100,8 @@ try {
     assert.equal((await call(leads, { ...body, vehicle: 'Changed vehicle' }, key)).statusCode, 409);
   });
   const current = [];
-  await check('concurrent $295/$895 checkout retries persist one snapshot per tier; AI returns 410', async () => {
-    for (const [tier, amount] of [['full_service', 29500], ['concierge', 89500]]) {
+  await check('concurrent $395/$695 checkout retries persist one snapshot per tier; AI returns 410', async () => {
+    for (const [tier, amount] of [['full_service', 39500], ['concierge', 69500]]) {
       const key = randomUUID(), body = { tier, lead_id: leadId, source_page: '/schedule.html' };
       const results = await Promise.all(Array.from({ length: 5 }, () => call(checkout, body, key)));
       assert.equal(results.filter(r => r.statusCode === 201).length, 1);
@@ -126,7 +126,7 @@ try {
     assert.equal(old.expected_amount, 49500); assert.equal(old.offer_key, null);
   });
   const paid = [];
-  await check('signed synthetic $195/$495/$295/$895 events dedupe under concurrent replay and preserve intake', async () => {
+  await check('signed synthetic $195/$495/$395/$695 events dedupe under concurrent replay and preserve intake', async () => {
     const attempts = [await seedAttempt('consultation', 19500), legacy, ...current];
     for (const attempt of attempts) {
       const event = paidEvent(attempt);
@@ -151,7 +151,7 @@ try {
     assert.equal(await count('analytics_outbox'), 8);
   });
   await check('invalid signature, increased tax total, discount, currency, unpaid and unmatched references cannot purchase', async () => {
-    const attempt = await seedAttempt('full_service', 29500);
+    const attempt = await seedAttempt('full_service', 39500);
     assert.equal((await deliver(paidEvent(attempt), false)).statusCode, 400);
     const tampered = paidEvent(attempt), raw = JSON.stringify(tampered);
     const signature = Stripe.webhooks.generateTestHeaderString({ payload: raw, secret: 'whsec_wrong' });
@@ -198,7 +198,7 @@ try {
       for (const { session, tier_id, expected_amount } of evidence.sessions) {
         assert.equal(session.livemode, false); assert.equal(session.payment_status, 'paid');
         assert.match(session.id, /^cs_test_/); assert.equal(session.amount_total, expected_amount);
-        assert.ok([19500, 29500, 49500, 89500].includes(expected_amount));
+        assert.ok([19500, 29500, 39500, 49500, 69500, 89500].includes(expected_amount));
         const attempt = await seedAttempt(tier_id, expected_amount);
         await sql`UPDATE checkout_attempts SET client_reference_id = ${session.client_reference_id} WHERE id = ${attempt.id}`;
         // This is deliberately a synthetic envelope/signature, not a claim of Stripe webhook delivery.
