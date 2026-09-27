@@ -59,7 +59,10 @@ export function createCheckout({ store, request, createId, attribution, track = 
     state.lastCheckout = { tier, brief: draft, contact: clean };
     if (!checkout.tracked) {
       checkout.tracked = true;
-      track('begin_checkout', { service_tier: tier, checkout_attempt_id: result.attempt_id || '' });
+      persist();
+      // Saved before waiting: GTM gets up to 1 s to send this before the caller opens
+      // Stripe. An old track() returns undefined, and a failing one never blocks checkout.
+      try { await track('begin_checkout', { service_tier: tier, checkout_attempt_id: result.attempt_id || '' }, { beforeNavigation: true }); } catch {}
     }
     persist();
     return result;
@@ -90,7 +93,8 @@ export function createCheckout({ store, request, createId, attribution, track = 
     state.lastCheckout = { tier, brief: restoreBrief({}), contact: state.contact || {} };
     if (!checkout.tracked) {
       checkout.tracked = true;
-      track('begin_checkout', { service_tier: tier, checkout_attempt_id: result.attempt_id || '', direct: true });
+      persist();
+      try { await track('begin_checkout', { service_tier: tier, checkout_attempt_id: result.attempt_id || '', direct: true }, { beforeNavigation: true }); } catch {}
     }
     persist();
     return result;

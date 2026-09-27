@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { htmlDocument } from '../metro-release.mjs';
 import { SERVICE_TIERS, NEW_CHECKOUT_TIERS } from '../../api/_lib/config.js';
@@ -46,7 +46,16 @@ test('retirement redirects and unapproved content stay contained',async()=>{
 });
 test('payment adapter and checkout module URLs invalidate cached old offers',async()=>{
  const hash=s=>createHash('sha256').update(s).digest('hex').slice(0,12);
- const scriptHash=hash(await read('script.js')),checkoutHash=hash(await read('buying/checkout.js'));
+ const scriptHash=hash(await read('script.js')),appHash=hash(await read('buying/app.js')),checkoutHash=hash(await read('buying/checkout.js'));
  for(const file of ['index.html','schedule.html','how-it-works.html'])assert.ok((await read(file)).includes(`/script.js?v=${scriptHash}`),file);
  assert.ok((await read('buying/app.js')).includes(`./checkout.js?v=${checkoutHash}`));
+ // Any root page that versions the shared script or buying app must load the current build.
+ let versioned=0;
+ for(const file of (await readdir(root)).filter(name=>name.endsWith('.html'))){
+  const html=await read(file);
+  for(const [pattern,current] of [[/src="\/script\.js\?v=([0-9a-f]+)"/g,scriptHash],[/src="\/buying\/app\.js\?v=([0-9a-f]+)"/g,appHash]]){
+   for(const [,version] of html.matchAll(pattern)){versioned++;assert.equal(version,current,`${file} ${pattern.source}`);}
+  }
+ }
+ assert.ok(versioned>=24,`${versioned} versioned page references`);
 });
