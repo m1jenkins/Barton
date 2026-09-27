@@ -1,6 +1,6 @@
 # Durable lead and payment operations
 
-This implementation makes PostgreSQL the source of truth for lead receipt, checkout attempts, verified purchases, and onboarding. Browser redirects and confirmation-page loads are not purchase evidence and must not emit purchase conversions.
+This implementation makes PostgreSQL the source of truth for lead receipt, checkout attempts, verified purchases, and onboarding. Browser redirects and confirmation-page loads alone are not purchase evidence and must not emit purchase conversions. The browser may emit `purchase_verified` only after `/api/purchase-status` returns `verified: true`, keyed by the server purchase ID, for ad-platform conversion measurement (Google Ads via GTM).
 
 ## API contract
 
@@ -64,18 +64,20 @@ Unmatched sessions and amount mismatches are retained with review outcomes but r
 
 ### `GET /api/purchase-status?session_id=…&tier=…`
 
-The endpoint retrieves the Checkout Session from Stripe and compares it with the database purchase. It returns only verification state, tier, and—when verified—the internal purchase ID:
+The endpoint retrieves the Checkout Session from Stripe and compares it with the database purchase. It returns only verification state, tier, and—when verified—the internal purchase ID with the purchase's `value` (major currency units) and uppercase `currency`:
 
 ```json
 {
   "ok": true,
   "verified": true,
   "tier": "full_service",
-  "purchase_id": "…"
+  "purchase_id": "…",
+  "value": 295,
+  "currency": "USD"
 }
 ```
 
-If Stripe reports paid before its webhook has committed, the status is `processing`; the client can retry with bounded backoff. No name, email, phone, Stripe customer, or payment-method data is returned.
+`value` and `currency` come from the `purchases` ledger row, not the current offer, so a historical $495 purchase reports `495`. If Stripe reports paid before its webhook has committed, the status is `processing`; the client can retry with bounded backoff. Unverified responses (`processing`, `unverified`, `not_found`) and errors are unchanged and carry no amount. No name, email, phone, Stripe customer, or payment-method data is returned.
 
 ### `POST /api/onboarding`
 
@@ -176,3 +178,12 @@ Define and apply an approved retention/deletion policy for lead and onboarding P
 ## September 18, 2026 local measurement changes
 
 Internal navigation preserves the last acquisition touch; a new external referrer or explicit campaign can replace it. Stripe returns and confirmation routes preserve acquisition instead of creating a payment-provider referral. First touch remains the stored first acquisition. Browser and API restrict referrer to HTTP(S) origin and source/landing paths to pathname (no credentials, query or fragment). Delivery sanitizes historical queued payload copies too, without rewriting the ledger. Pre-change lead retries compare normalized stored business fields when the old hash differs; changed business data still conflicts. Existing consent mechanisms are retained; the live GTM consent/configuration still needs the documented account audit. `generate_lead` uses `lead:<lead_id>` and `begin_checkout` uses `checkout:<attempt_id>`, with session and memory guards. CTA/phone clicks remain intent only. No contact or buying-brief content is added to analytics. GA4 identity and collector/destination reconciliation remain unresolved.
+
+## September 27, 2026 Google Ads purchase measurement
+
+Google tags are GTM-only (container `GTM-W577B3D4`): pages only push to `dataLayer`, and `scripts/validate-site.mjs` rejects gtag.js loaders, direct `AW-`/`G-` config and hard-coded conversion calls. Browser event contracts:
+
+- `begin_checkout`: pushed once per checkout attempt after `/api/checkout-start` succeeds, with `event_id` `checkout:<attempt_id>`, `service_tier` and `checkout_attempt_id`. The push carries `eventCallback` and `eventTimeout: 1000`; the Stripe redirect waits for GTM's callback for at most one second, does not wait when GTM has not loaded, and is never blocked by a tracking error.
+- `purchase_verified`: pushed on a confirmation page only after `/api/purchase-status` returns `verified: true` with a UUID `purchase_id`, a finite positive `value` and a three-letter uppercase `currency`. It carries `transaction_id` (the server purchase ID), `value`, `currency` and `service_tier` with the usual page context and first/last-touch attribution; `event_id` is `purchase_verified:<purchase_id>`. Memory and `sessionStorage` guards send it once per browser session, so map `transaction_id` in the Google Ads conversion tag to dedupe a receipt reopened elsewhere. `processing`, `unverified`, `not_found`, request errors and sessions held for review never fire it. No contact data or Checkout Session ID enters the data layer.
+
+The OpenAI Ads pixel ignores `purchase_verified`. The server `purchase` outbox event keeps the Checkout Session ID as its `transaction_id`, so do not send both to the same Google Ads conversion action. GTM tag, trigger and conversion-action setup is account work; this change does not modify the container.
