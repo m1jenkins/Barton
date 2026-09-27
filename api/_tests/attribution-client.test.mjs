@@ -141,6 +141,6 @@ test('server keeps valid click IDs, drops bad ones without rejecting, and the an
  assert.equal(value.first_touch.gclid,'Valid_Click-0001');assert.equal(value.first_touch.gbraid,undefined);assert.equal(value.first_touch.wbraid,undefined);
  assert.equal(value.last_touch.gclid,undefined);assert.equal(value.last_touch.wbraid,'Web-Braid_000001');
  const {purchaseEventPayload}=await import('../_lib/analytics.js');
- const payload=JSON.stringify(purchaseEventPayload({checkoutSessionId:'cs_test_123',purchaseId:'purchase',checkoutAttemptId:'attempt',leadId:null,sourcePage:'/schedule.html',serviceTier:'full_service',amountTotal:29500,currency:'usd',attribution:value}));
+ const payload=JSON.stringify(purchaseEventPayload({checkoutSessionId:'cs_test_123',purchaseId:'purchase',checkoutAttemptId:'attempt',leadId:null,sourcePage:'/schedule.html',serviceTier:'full_service',amountTotal:39500,currency:'usd',attribution:value}));
  assert.equal(payload.includes('Valid_Click-0001'),false);assert.equal(payload.includes('Web-Braid'),false);assert.equal(payload.includes('"attribution"'),true);
 });
