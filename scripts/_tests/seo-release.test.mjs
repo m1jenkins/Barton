@@ -13,17 +13,17 @@ const fileFor=href=>new URL(href,origin).pathname==='/'?'index.html':new URL(hre
 test('active server, browser, registry, visible cards and schema agree on the two authorized offers',async()=>{
  const registry=JSON.parse(await read('data/services.json'));
  assert.deepEqual(Object.keys(plans),NEW_CHECKOUT_TIERS);
- assert.deepEqual(registry.services.map(s=>s.price),[295,895]);
+ assert.deepEqual(registry.services.map(s=>s.price),[395,695]);
  for(const tier of NEW_CHECKOUT_TIERS)assert.equal(plans[tier].fee*100,SERVICE_TIERS[tier].amount);
  for(const file of ['index.html','schedule.html','how-it-works.html']) {
   const html=await read(file),doc=htmlDocument(html);
   assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
   assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
-  assert.match(doc.visibleText,/\$295/);assert.match(doc.visibleText,/\$895/);
+  assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);
  }
  for(const file of ['index.html','schedule.html']) {
   const services=htmlDocument(await read(file)).schemas.flatMap(s=>s['@graph']||[]).filter(n=>n['@type']==='Service');
-  assert.deepEqual(services.map(s=>Number(s.offers.price)),[295,895]);
+  assert.deepEqual(services.map(s=>Number(s.offers.price)),[395,695]);
   for(const s of services)assert.equal(s.areaServed.name,'United States');
  }
 });

@@ -67,7 +67,7 @@ test('initializes once and maps only confirmed events, with stable IDs and no fo
   f.ads.track('begin_checkout', { checkout_attempt_id: 'xyz' });
   for (const event of ['cta_click', 'phone_click', 'purchase', 'onboarding_complete', 'generate_lead', 'begin_checkout']) f.ads.track(event);
   // The Google Ads purchase event is GTM-only; it must never become an OpenAI event.
-  f.ads.track('purchase_verified', { transaction_id: '06a28d37-b5d9-4f0e-a20c-c8e506ef5477', value: 295, currency: 'USD', service_tier: 'full_service' });
+  f.ads.track('purchase_verified', { transaction_id: '06a28d37-b5d9-4f0e-a20c-c8e506ef5477', value: 395, currency: 'USD', service_tier: 'full_service' });
   assert.equal(f.scripts.length, 1);
   assert.equal(f.scripts[0].src, 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
   assert.equal(f.scripts[0].async, true);
