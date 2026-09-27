@@ -6,7 +6,7 @@ import { readFile } from 'node:fs/promises';
 const source = await readFile(new URL('../../script.js', import.meta.url), 'utf8');
 const purchaseId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 const sessionId = 'cs_test_a1B2c3D4e5F6g7H8';
-const verified = { ok: true, verified: true, tier: 'full_service', purchase_id: purchaseId, value: 295, currency: 'USD' };
+const verified = { ok: true, verified: true, tier: 'full_service', purchase_id: purchaseId, value: 395, currency: 'USD' };
 const processing = { ok: true, verified: false, tier: 'full_service', status: 'processing' };
 const storage = () => { const values = new Map(); return { getItem: k => values.get(k) ?? null, setItem: (k, v) => values.set(k, String(v)), removeItem: k => values.delete(k) }; };
 
@@ -53,7 +53,7 @@ test('a verified purchase-status response sends one purchase_verified with the s
   const [event] = p.purchases();
   assert.equal(event.event_id, `purchase_verified:${purchaseId}`);
   assert.equal(event.transaction_id, purchaseId);
-  assert.equal(event.value, 295);
+  assert.equal(event.value, 395);
   assert.equal(event.currency, 'USD');
   assert.equal(event.service_tier, 'full_service');
   assert.equal(event.page_type, 'payment_confirmation');
@@ -65,14 +65,18 @@ test('a verified purchase-status response sends one purchase_verified with the s
   assert.equal(JSON.stringify(p.window.dataLayer).includes(sessionId), false);
 });
 
-test('the purchase keeps its recorded value and tier, including a historical $495 receipt', async () => {
-  const p = paymentPage([{ ...verified, value: 495 }]);
-  assert.equal(await p.settled(), 'verified');
-  assert.equal(p.purchases()[0].value, 495);
-  const concierge = paymentPage([{ ...verified, tier: 'concierge', value: 895 }], { tier: 'concierge' });
-  assert.equal(await concierge.settled(), 'verified');
-  assert.equal(concierge.purchases()[0].service_tier, 'concierge');
-  assert.equal(concierge.purchases()[0].value, 895);
+test('the purchase keeps its recorded value and tier, including historical $295, $495 and $895 receipts', async () => {
+  for (const value of [295, 495]) {
+    const p = paymentPage([{ ...verified, value }]);
+    assert.equal(await p.settled(), 'verified');
+    assert.equal(p.purchases()[0].value, value);
+  }
+  for (const value of [695, 895]) {
+    const concierge = paymentPage([{ ...verified, tier: 'concierge', value }], { tier: 'concierge' });
+    assert.equal(await concierge.settled(), 'verified');
+    assert.equal(concierge.purchases()[0].service_tier, 'concierge');
+    assert.equal(concierge.purchases()[0].value, value);
+  }
 });
 
 test('reloading the confirmation page in the same browser session does not resend the purchase', async () => {
@@ -122,7 +126,7 @@ test('a verified response without a valid purchase ID, value or currency is not 
   const { purchase_id: id, ...withoutId } = verified;
   assert.ok(value && currency && id);
   for (const response of [
-    withoutValue, { ...verified, value: 0 }, { ...verified, value: -295 }, { ...verified, value: '295' }, { ...verified, value: null },
+    withoutValue, { ...verified, value: 0 }, { ...verified, value: -395 }, { ...verified, value: '395' }, { ...verified, value: null },
     withoutId, { ...verified, purchase_id: sessionId }, { ...verified, purchase_id: 'purchase-1' },
     withoutCurrency, { ...verified, currency: 'usd' }, { ...verified, currency: 'US' }, { ...verified, currency: 'USDX' },
     { ...verified, verified: 'true' }

@@ -93,9 +93,11 @@ test('historical $195/$495/$295/$895 and new $395/$695 paid sessions retain thei
  }
 });
 test('verified purchase-status reports the recorded ledger amount, not the current price',()=>{
- const row={id:'06a28d37-b5d9-4f0e-a20c-c8e506ef5477',checkout_session_id:'cs_test_fullservice12345678',client_reference_id:ref,tier_id:'full_service',amount_total:29500,currency:'usd',payment_status:'paid'};
- assert.deepEqual(verifiedPurchaseBody(row),{ok:true,verified:true,tier:'full_service',purchase_id:row.id,value:295,currency:'USD'});
- assert.equal(verifiedPurchaseBody({...row,amount_total:49500}).value,495);
+ const row={id:'06a28d37-b5d9-4f0e-a20c-c8e506ef5477',checkout_session_id:'cs_test_fullservice12345678',client_reference_id:ref,tier_id:'full_service',amount_total:39500,currency:'usd',payment_status:'paid'};
+ assert.deepEqual(verifiedPurchaseBody(row),{ok:true,verified:true,tier:'full_service',purchase_id:row.id,value:395,currency:'USD'});
+ assert.equal(verifiedPurchaseBody({...row,tier_id:'concierge',amount_total:69500}).value,695);
+ for(const [amount,value] of [[29500,295],[49500,495]]) assert.equal(verifiedPurchaseBody({...row,amount_total:amount}).value,value);
+ assert.equal(verifiedPurchaseBody({...row,tier_id:'concierge',amount_total:89500}).value,895);
 });
 test('tax, discount, currency, wrong reference and unpaid mismatch do not produce a purchase',async()=>{
  for(const overrides of [{amount_total:42759},{amount_total:38500},{amount_total:29500},{currency:'eur'},{client_reference_id:'f5dbf6c1-fb6c-4452-9190-a440527bad07'},{payment_status:'unpaid'}]){

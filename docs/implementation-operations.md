@@ -72,12 +72,12 @@ The endpoint retrieves the Checkout Session from Stripe and compares it with the
   "verified": true,
   "tier": "full_service",
   "purchase_id": "…",
-  "value": 295,
+  "value": 395,
   "currency": "USD"
 }
 ```
 
-`value` and `currency` come from the `purchases` ledger row, not the current offer, so a historical $495 purchase reports `495`. If Stripe reports paid before its webhook has committed, the status is `processing`; the client can retry with bounded backoff. Unverified responses (`processing`, `unverified`, `not_found`) and errors are unchanged and carry no amount. No name, email, phone, Stripe customer, or payment-method data is returned.
+`value` and `currency` come from the `purchases` ledger row, not the current offer, so a historical $295 Full Service purchase still reports `295` after the $395 price change. If Stripe reports paid before its webhook has committed, the status is `processing`; the client can retry with bounded backoff. Unverified responses (`processing`, `unverified`, `not_found`) and errors are unchanged and carry no amount. No name, email, phone, Stripe customer, or payment-method data is returned.
 
 ### `POST /api/onboarding`
 
