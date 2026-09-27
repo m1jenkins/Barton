@@ -12,12 +12,12 @@ export const SERVICE_TIERS = Object.freeze({
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONSULTATION_URL'
   }),
   full_service: Object.freeze({
-    amount: 29500,
+    amount: 39500,
     currency: 'usd',
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_FULL_SERVICE_URL'
   }),
   concierge: Object.freeze({
-    amount: 89500,
+    amount: 69500,
     currency: 'usd',
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONCIERGE_URL'
   })

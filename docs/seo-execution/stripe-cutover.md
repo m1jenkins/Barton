@@ -1,5 +1,7 @@
 # Stripe offer cutover packet
 
+> **Superseded prices (2026-09-27):** Full Service is now $395 and Ultimate Concierge $695. The $295/$895 links below are historical. For the current Stripe work, use [stripe-cutover-2026-09-27.md](stripe-cutover-2026-09-27.md).
+
 Prepared September 18, 2026, America/Los_Angeles (account reads September 19 UTC). This is a concrete activation dependency, not authority to change accounts or deploy. Starting revision: `3bf03f6288a16b578e49cb1375254c7285a70855`. Candidate reference and final checks: [release-candidate.md](release-candidate.md).
 
 Follow-up on tested revision `acf9116bdcc48372340b94688f3476b9dc8a35b6`: [connected evidence](SEO-09-connected-validation.md) records four actual test payments, real PostgreSQL migration/replay, tax/discount/retirement diagnostics, scoped missing inputs and proposed terms. The user supplied Stripe MCP test mode; all mutations were test-only. No live mutation/payment occurred. The subsequent [owner scope correction](SEO-09-connected-validation.md#scope-correction-after-owner-feedback) narrows remaining work to checkout configuration, the application paid-order/receipt path and applicable terms decisions. Analytics and monitored-email tests are deferred from checkout activation; no further general validation cycle or new checkout/tax infrastructure is planned.

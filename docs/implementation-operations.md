@@ -47,7 +47,7 @@ Request:
 }
 ```
 
-New-sale tier IDs are `full_service` ($295 USD) and `concierge` ($895 USD). `consultation` returns `410 tier_retired` for new checkout but remains valid for paid receipt verification and onboarding. The server selects the corresponding environment-configured Stripe Payment Link, persists an attempt with allowlisted first/last-touch attribution, and returns `{ "ok": true, "url": "…", "attempt_id": "…" }`. It adds a server-generated UUID as Stripe's `client_reference_id`; the browser cannot supply a price or redirect URL.
+New-sale tier IDs are `full_service` ($395 USD) and `concierge` ($695 USD); these replaced $295/$895 on 2026-09-27. `consultation` returns `410 tier_retired` for new checkout but remains valid for paid receipt verification and onboarding. The server selects the corresponding environment-configured Stripe Payment Link, persists an attempt with allowlisted first/last-touch attribution, and returns `{ "ok": true, "url": "…", "attempt_id": "…" }`. It adds a server-generated UUID as Stripe's `client_reference_id`; the browser cannot supply a price or redirect URL.
 
 ### `POST /api/stripe-webhook`
 
@@ -110,8 +110,8 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `STRIPE_SECRET_KEY` | Required for webhook construction and purchase-status verification. Keep test and live environments separate. |
 | `STRIPE_WEBHOOK_SECRET` | Required. Signing secret for this exact deployed webhook endpoint and mode. |
 | `CHECKOUT_PAUSED` | Set `true` during coordinated cutover to stop new checkout creation. Does not disable paid receipts/webhooks/onboarding. Default false. |
-| `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $295 full-service tier; must be a new, verified link for this release. |
-| `STRIPE_PAYMENT_LINK_CONCIERGE_URL` | Required for the $895 concierge tier. |
+| `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $395 full-service tier; must be the new 39500-cent link from [stripe-cutover-2026-09-27.md](seo-execution/stripe-cutover-2026-09-27.md). |
+| `STRIPE_PAYMENT_LINK_CONCIERGE_URL` | Required for the $695 concierge tier; must be the new 69500-cent link from the same packet. |
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
 | `LEAD_FORWARD_BEARER_TOKEN` | Optional bearer credential for that downstream destination. |
@@ -132,7 +132,7 @@ Current live links enable automatic tax and promotion codes; Stripe tax behavior
 
 ## Stripe dashboard configuration
 
-For new sales, keep the final payable total at full service `29500 usd` and concierge `89500 usd`. Retire the old AI/$495 acquisition links after the coordinated cutover. Preserve historical attempts, prices, receipts and valid already-created sessions. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
+For new sales, keep the final payable total at full service `39500 usd` and concierge `69500 usd`. Retire the old AI/$495 and $295/$895 acquisition links after the coordinated cutover. Preserve historical attempts, prices, receipts and valid already-created sessions. If discounts or tax change the Checkout Session total, this version intentionally sends it to review instead of silently recording a mismatched conversion.
 
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
@@ -147,7 +147,7 @@ Register `https://www.driverightcarbuying.com/api/stripe-webhook` as a Stripe we
 1. Run the numbered SQL files in `db/` order against a new or backed-up target database. They are transactional; `002_standard_purchase_analytics.sql` normalizes any unsent legacy sale events to `purchase` without changing acknowledged history.
 2. Add the required environment variables separately to Development, Preview, and Production. Use different Stripe keys, webhook secrets, and databases where practical.
 3. Configure the two active Payment Link success URLs and the webhook destination in Stripe; retain historical receipt verification.
-4. For this offer transition, use the atomic paused cutover in [stripe-cutover.md](seo-execution/stripe-cutover.md). Deploy matching API, browser assets and environment values together with new checkout paused; verify preview/test-mode parity before any production promotion. Do not expose the new $295 API with an old $495 link or separately deploy the old acquisition UI.
+4. For the $395/$695 price change, follow [stripe-cutover-2026-09-27.md](seo-execution/stripe-cutover-2026-09-27.md); for the earlier offer transition, the atomic paused cutover in [stripe-cutover.md](seo-execution/stripe-cutover.md). Deploy matching API, browser assets and environment values together with new checkout paused; verify preview/test-mode parity before any production promotion. Do not expose the new $395/$695 API with an old $295/$895 link or separately deploy the old acquisition UI.
 5. Run `npm test` and `npm run check:api`; send a test lead twice with the same key, then with a conflicting payload.
 6. Complete one Stripe test purchase for each active tier, plus replay already-created historical $195/$495 fixtures. Confirm one `purchases` row and one `purchase` outbox row per Checkout Session, even after resending the webhook from Stripe. Confirm the configured collector receives the same `event_id` and `Idempotency-Key` once.
 7. Verify that a direct visit with a fabricated or unpaid session never unlocks onboarding.

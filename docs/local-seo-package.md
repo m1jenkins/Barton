@@ -29,7 +29,7 @@ Public contact email is `hello@driverightcarbuying.com`. Schema, footer, and `po
 1. ~~Owner confirms the real Austin address (kept hidden for SAB verification) plus hours and phone.~~ Owner-confirmed 2026-09-21/22. Hidden verification address stays out of schema and NAP.
 2. ~~Create profile in **Service Area Business** mode.~~ Live as Auto broker SAB. Service cities: Austin, Arlington, Dallas, El Paso, Fort Worth, Houston, New Braunfels, San Antonio, San Marcos. Public Maps URL still pending verification.
 3. Category in use: Auto broker. Do not switch to "Car dealer".
-4. Add services matching the current paid tiers from `data/services.json` (Full Service $295, Ultimate Concierge $895). AI Agent is retired for new sales. Keep prices consistent with schedule.html.
+4. Add services matching the current paid tiers from `data/services.json` (Full Service $395, Ultimate Concierge $695). AI Agent is retired for new sales. Keep prices consistent with schedule.html.
 5. Fill description within GBP limits using homepage-approved copy; no savings claims beyond what `data/claims.csv` has approved.
 6. Upload logo + real photos (media inventory: `docs/media-inventory.md`).
 7. Enable messaging/chat only if response SLA is operationally staffed.
