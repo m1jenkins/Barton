@@ -2,9 +2,31 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <script>
+      // Stripe returns buyers with the Checkout Session ID in the URL, and that ID also unlocks the
+      // one-time intake. Move it into this tab's sessionStorage and out of the address before GTM
+      // loads, so Google tags, Clarity and later referrers never see it. script.js reads it back.
+      (function () {
+        try {
+          var query = new URLSearchParams(location.search), hash = new URLSearchParams(location.hash.slice(1));
+          var id = '', inQuery = false, inHash = false;
+          ['session_id', 'checkout_session_id'].forEach(function (name) {
+            if (query.has(name)) { id = id || query.get(name); query.delete(name); inQuery = true; }
+            if (hash.has(name)) { id = id || hash.get(name); hash.delete(name); inHash = true; }
+          });
+          if (!inQuery && !inHash) return;
+          if (id) {
+            try { sessionStorage.setItem('drive_right_checkout_session:' + location.pathname, id); }
+            catch (e) { window.driveRightCheckoutSession = id; }
+          }
+          var search = query.toString(), fragment = inHash ? hash.toString() : location.hash.slice(1);
+          history.replaceState(history.state, '', location.pathname + (search ? '?' + search : '') + (fragment ? '#' + fragment : ''));
+        } catch (e) {}
+      })();
+    </script>
 <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W577B3D4');</script> <!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify AI Agent Buying Service Payment | Drive Right</title>
     <meta name="description" content="Securely verify an AI Agent Buying Service payment before completing the paid-service intake.">
@@ -213,7 +235,7 @@
     <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
-</footer><script src="/script.js?v=ae6981ab33d6"></script>
-<script type="module" src="/buying/app.js?v=4ec09e187c35"></script>
+</footer><script src="/script.js?v=1cd9bfe62c7e"></script>
+<script type="module" src="/buying/app.js?v=ead9b590181e"></script>
 </body>
 </html>
