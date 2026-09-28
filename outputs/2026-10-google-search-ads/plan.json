@@ -5,7 +5,8 @@
     "status": "draft_not_published",
     "approved_plan": "docs/google-ads-launch-plan-2026-09-27.md",
     "copy_claim": "ADS-GOOGLE-2026-10 (data/claims.csv); nothing here may go live until that row is approved",
-    "source_of_truth": "This file. Regenerate editor-import/ with: node outputs/2026-10-google-search-ads/build-editor-csv.mjs"
+    "source_of_truth": "This file. Regenerate editor-import/ with: node outputs/2026-10-google-search-ads/build-editor-csv.mjs",
+    "copy_version": "v2 (2026-09-27): pain-point questions pinned to H2 in non-brand ads and time-saving lines throughout; replaces the unapproved v1 fact-list copy"
   },
   "facts": {
     "offer": "Full Service: $395 USD one-time service fee. Ultimate Concierge: $695 USD one-time service fee.",
@@ -14,15 +15,18 @@
       "Austin city base; service area United States; remote support",
       "new, used and CPO inventory search",
       "price negotiation and fee review",
+      "offer comparison and seller communication (contacting participating dealers)",
       "dedicated advisor",
       "documented vehicle recommendations",
       "Concierge: auctions, forums and niche sources; priority communication and coordination; delivery coordination where available",
-      "buyer makes every purchase decision"
+      "buyer makes every purchase decision",
+      "saves buyers time: the advisor does the searching, dealer contact and negotiating (owner statement, 2026-09-27)"
     ],
     "verified_claims": [],
     "forbidden_terms": [
       "guarantee",
-      "save",
+      "save money",
+      "save $",
       "savings",
       "kickback",
       "commission",
@@ -595,9 +599,9 @@
             "url": "https://www.driverightcarbuying.com/how-it-works.html"
           },
           {
-            "text": "Car Buying Service",
-            "d1": "Service scope and current fees",
-            "d2": "What the buyer stays in charge of",
+            "text": "What We Handle for You",
+            "d1": "Search, negotiation, fee review",
+            "d2": "And what stays your decision",
             "url": "https://www.driverightcarbuying.com/car-buying-service.html"
           },
           {
@@ -614,16 +618,16 @@
           }
         ],
         "callouts": [
+          "We Negotiate for You",
+          "We Contact the Dealers",
+          "Skip Hours at the Dealer",
+          "Fee Review Included",
+          "You Make Every Decision",
+          "Dedicated Advisor",
           "One-Time Service Fee",
           "Full Service $395",
           "Ultimate Concierge $695",
-          "Remote Support Nationwide",
-          "Based in Austin, Texas",
-          "Dedicated Advisor",
-          "New, Used and CPO Search",
-          "Price Negotiation",
-          "Fee Review",
-          "Vehicle Recommendations"
+          "Remote Support Nationwide"
         ],
         "snippets": [
           {
@@ -708,15 +712,43 @@
                   "pin": "HEADLINE_1"
                 },
                 {
-                  "text": "Car Buying Service",
+                  "text": "Dreading the Dealership?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "No Time to Shop for a Car?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Not Sure It's a Good Deal?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Car Buying Service From $395",
                   "pin": null
                 },
                 {
-                  "text": "One-Time $395 Service Fee",
+                  "text": "Save Time Buying Your Car",
                   "pin": null
                 },
                 {
-                  "text": "Car Buying and Negotiation",
+                  "text": "Skip the Hours at the Dealer",
+                  "pin": null
+                },
+                {
+                  "text": "We Negotiate. You Decide.",
+                  "pin": null
+                },
+                {
+                  "text": "Let Us Do the Legwork",
+                  "pin": null
+                },
+                {
+                  "text": "We Contact Dealers for You",
+                  "pin": null
+                },
+                {
+                  "text": "Your Own Car Buying Advisor",
                   "pin": null
                 },
                 {
@@ -730,39 +762,15 @@
                 {
                   "text": "Remote Support Nationwide",
                   "pin": null
-                },
-                {
-                  "text": "Austin-Based Car Buying Help",
-                  "pin": null
-                },
-                {
-                  "text": "New, Used and CPO Search",
-                  "pin": null
-                },
-                {
-                  "text": "Negotiation and Fee Review",
-                  "pin": null
-                },
-                {
-                  "text": "A Dedicated Buying Advisor",
-                  "pin": null
-                },
-                {
-                  "text": "You Make Every Decision",
-                  "pin": null
-                },
-                {
-                  "text": "Compare Our Two Plans",
-                  "pin": null
-                },
-                {
-                  "text": "See How Drive Right Works",
-                  "pin": null
                 }
               ],
               "descriptions": [
                 {
-                  "text": "Car buying help with inventory search, price negotiation and fee review. Plans from $395.",
+                  "text": "We search, contact dealers, compare offers and negotiate. You make the final call.",
+                  "pin": null
+                },
+                {
+                  "text": "Your advisor negotiates the price and reviews the fees before you commit to anything.",
                   "pin": null
                 },
                 {
@@ -770,11 +778,7 @@
                   "pin": null
                 },
                 {
-                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
-                  "pin": null
-                },
-                {
-                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "text": "Skip the hours at the dealer. We search new, used and CPO inventory and contact dealers.",
                   "pin": null
                 }
               ]
@@ -828,19 +832,39 @@
                   "pin": "HEADLINE_1"
                 },
                 {
+                  "text": "Hate Haggling Over Price?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Outmatched by the Salesperson?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Worried About Overpaying?",
+                  "pin": "HEADLINE_2"
+                },
+                {
                   "text": "Car Negotiation Service",
                   "pin": null
                 },
                 {
-                  "text": "Hire a Car Negotiator",
+                  "text": "Hire Your Own Car Negotiator",
                   "pin": null
                 },
                 {
-                  "text": "Price Negotiation Help",
+                  "text": "Let Us Do the Haggling",
                   "pin": null
                 },
                 {
-                  "text": "Negotiation and Fee Review",
+                  "text": "We Negotiate. You Decide.",
+                  "pin": null
+                },
+                {
+                  "text": "Skip the Hours at the Dealer",
+                  "pin": null
+                },
+                {
+                  "text": "Fees Reviewed Before You Sign",
                   "pin": null
                 },
                 {
@@ -852,37 +876,21 @@
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "A Dedicated Buying Advisor",
                   "pin": null
                 },
                 {
                   "text": "Remote Support Nationwide",
                   "pin": null
-                },
-                {
-                  "text": "You Make Every Decision",
-                  "pin": null
-                },
-                {
-                  "text": "See How Drive Right Works",
-                  "pin": null
-                },
-                {
-                  "text": "A Dedicated Buying Advisor",
-                  "pin": null
-                },
-                {
-                  "text": "Car Buying and Negotiation",
-                  "pin": null
                 }
               ],
               "descriptions": [
                 {
-                  "text": "Full Service includes price negotiation and fee review for a $395 one-time fee.",
+                  "text": "Salespeople negotiate every day. Now you have a negotiator too, for a one-time $395 fee.",
                   "pin": null
                 },
                 {
-                  "text": "See what the service covers, what it costs and what stays your decision.",
+                  "text": "Your advisor negotiates the price and reviews the fees. You make every purchase decision.",
                   "pin": null
                 },
                 {
@@ -890,7 +898,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "text": "Not sure a quote is fair? We compare offers and question the fees before you sign.",
                   "pin": null
                 }
               ]
@@ -936,15 +944,27 @@
                   "pin": "HEADLINE_1"
                 },
                 {
+                  "text": "Can't Find the Car You Want?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Too Busy to Shop Around?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Tired of Endless Listings?",
+                  "pin": "HEADLINE_2"
+                },
+                {
                   "text": "Car Buying Concierge",
                   "pin": null
                 },
                 {
-                  "text": "Car Concierge Service",
+                  "text": "Car Finder Service",
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "We Search Beyond the Lot",
                   "pin": null
                 },
                 {
@@ -956,7 +976,15 @@
                   "pin": null
                 },
                 {
+                  "text": "Ultimate Concierge: $695",
+                  "pin": null
+                },
+                {
                   "text": "One-Time Concierge Fee",
+                  "pin": null
+                },
+                {
+                  "text": "We Do the Legwork. You Decide.",
                   "pin": null
                 },
                 {
@@ -964,33 +992,17 @@
                   "pin": null
                 },
                 {
-                  "text": "Compare Our Two Plans",
-                  "pin": null
-                },
-                {
-                  "text": "Remote Support Nationwide",
-                  "pin": null
-                },
-                {
-                  "text": "Car Finder Service",
-                  "pin": null
-                },
-                {
-                  "text": "A Dedicated Buying Advisor",
-                  "pin": null
-                },
-                {
-                  "text": "You Make Every Decision",
+                  "text": "Save Hours of Searching",
                   "pin": null
                 }
               ],
               "descriptions": [
                 {
-                  "text": "Ultimate Concierge is $695 one time and includes everything in Full Service.",
+                  "text": "Concierge looks past dealer lots to auctions, forums and niche sources for your car.",
                   "pin": null
                 },
                 {
-                  "text": "Concierge adds auctions, forums and niche sources plus priority communication.",
+                  "text": "Ultimate Concierge is $695 one time and includes everything in Full Service.",
                   "pin": null
                 },
                 {
@@ -998,7 +1010,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Based in Austin with remote support nationwide. You make every purchase decision.",
+                  "text": "We search, contact sellers and negotiate, with priority communication. You decide.",
                   "pin": null
                 }
               ]
@@ -1052,11 +1064,23 @@
                   "pin": "HEADLINE_1"
                 },
                 {
+                  "text": "Overwhelmed by Car Buying?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "Not Sure Which Car to Buy?",
+                  "pin": "HEADLINE_2"
+                },
+                {
+                  "text": "No Time to Car Shop?",
+                  "pin": "HEADLINE_2"
+                },
+                {
                   "text": "Car Buying Advisor",
                   "pin": null
                 },
                 {
-                  "text": "Car Buying Consultant",
+                  "text": "Your Personal Car Shopper",
                   "pin": null
                 },
                 {
@@ -1068,31 +1092,23 @@
                   "pin": null
                 },
                 {
-                  "text": "Car Buying Help Nationwide",
+                  "text": "Recommendations in Writing",
                   "pin": null
                 },
                 {
-                  "text": "Two Plans From $395",
+                  "text": "We Negotiate. You Decide.",
+                  "pin": null
+                },
+                {
+                  "text": "Let Us Do the Legwork",
+                  "pin": null
+                },
+                {
+                  "text": "Save Time Buying Your Car",
                   "pin": null
                 },
                 {
                   "text": "Full Service: $395 One Time",
-                  "pin": null
-                },
-                {
-                  "text": "Ultimate Concierge: $695",
-                  "pin": null
-                },
-                {
-                  "text": "New, Used and CPO Search",
-                  "pin": null
-                },
-                {
-                  "text": "Remote Support Nationwide",
-                  "pin": null
-                },
-                {
-                  "text": "You Make Every Decision",
                   "pin": null
                 },
                 {
@@ -1102,11 +1118,7 @@
               ],
               "descriptions": [
                 {
-                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
-                  "pin": null
-                },
-                {
-                  "text": "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate.",
+                  "text": "Your advisor searches new, used and CPO options and documents recommendations for you.",
                   "pin": null
                 },
                 {
@@ -1114,7 +1126,11 @@
                   "pin": null
                 },
                 {
-                  "text": "Austin-based car buying help with remote support for buyers nationwide.",
+                  "text": "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate.",
+                  "pin": null
+                },
+                {
+                  "text": "Get your evenings back. We research, contact dealers and negotiate. You make the call.",
                   "pin": null
                 }
               ]
@@ -1225,9 +1241,9 @@
             "url": "https://www.driverightcarbuying.com/how-it-works.html"
           },
           {
-            "text": "Car Buying Service",
-            "d1": "Service scope and current fees",
-            "d2": "What the buyer stays in charge of",
+            "text": "What We Handle for You",
+            "d1": "Search, negotiation, fee review",
+            "d2": "And what stays your decision",
             "url": "https://www.driverightcarbuying.com/car-buying-service.html"
           },
           {
@@ -1244,6 +1260,9 @@
           }
         ],
         "callouts": [
+          "We Negotiate for You",
+          "Skip Hours at the Dealer",
+          "You Make Every Decision",
           "One-Time Service Fee",
           "Remote Support Nationwide",
           "Based in Austin, Texas",
@@ -1313,6 +1332,18 @@
                   "pin": null
                 },
                 {
+                  "text": "We Negotiate. You Decide.",
+                  "pin": null
+                },
+                {
+                  "text": "Let Us Do the Legwork",
+                  "pin": null
+                },
+                {
+                  "text": "Skip the Hours at the Dealer",
+                  "pin": null
+                },
+                {
                   "text": "Full Service: $395 One Time",
                   "pin": null
                 },
@@ -1325,6 +1356,10 @@
                   "pin": null
                 },
                 {
+                  "text": "A Dedicated Buying Advisor",
+                  "pin": null
+                },
+                {
                   "text": "Compare Our Two Plans",
                   "pin": null
                 },
@@ -1333,15 +1368,7 @@
                   "pin": null
                 },
                 {
-                  "text": "A Dedicated Buying Advisor",
-                  "pin": null
-                },
-                {
-                  "text": "You Make Every Decision",
-                  "pin": null
-                },
-                {
-                  "text": "New, Used and CPO Search",
+                  "text": "Save Time Buying Your Car",
                   "pin": null
                 }
               ],
@@ -1355,7 +1382,7 @@
                   "pin": null
                 },
                 {
-                  "text": "A dedicated advisor searches new, used and CPO options and documents recommendations.",
+                  "text": "We search, contact dealers, compare offers and negotiate. You make the final call.",
                   "pin": null
                 },
                 {
@@ -1373,7 +1400,8 @@
     "requires": "CLM-013 approved (reviewer, date, expiry, approved_copy) and how-it-works.html disclosure replaced in the same release",
     "headlines": [
       "No Dealer Commissions",
-      "Paid Only by Our Customers"
+      "Paid Only by Our Customers",
+      "On Your Side, Not the Dealer's"
     ],
     "callouts": [
       "No Dealer Commissions"
