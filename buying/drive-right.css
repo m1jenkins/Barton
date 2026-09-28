@@ -454,6 +454,27 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .closing-cta p { margin-top:10px; font-size:15px; line-height:1.65; color:var(--muted); }
 .dr .closing-cta p a { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
 .dr .closing-cta .primary-button { font-size:16px; min-height:52px; }
+/* Pricing page: a selling intro, who each plan suits, the founder, and a two-plan close. */
+.dr .page-intro .page-kicker { margin:0 0 16px; font:600 15px/1.3 var(--sans); letter-spacing:0; color:var(--green); }
+.dr .plan-for { margin-top:8px; font:600 13px/1.4 var(--sans); color:var(--green); }
+.dr .content-section>h2+p a { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.dr .info-card .process-number { font-size:18px; }
+.dr .card-grid--four { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.dr .card-grid--three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media(max-width:1100px) { .dr .card-grid--four { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:860px) { .dr .card-grid--three { grid-template-columns:1fr; } }
+@media(max-width:600px) { .dr .card-grid--four { grid-template-columns:1fr; } }
+.dr .advisor-note { display:grid; grid-template-columns:120px minmax(0,44rem); gap:28px; align-items:start; }
+.dr .advisor-note img { display:block; width:120px; height:150px; object-fit:cover; object-position:50% 30%; border-radius:12px; background:var(--sage); }
+.dr .advisor-note h2 { font:600 clamp(32px,3.4vw,48px)/1.06 var(--sans); letter-spacing:-.03em; }
+.dr .advisor-note p { margin-top:12px; font-size:15px; line-height:1.65; color:var(--muted); }
+.dr .advisor-note .text-link { margin-top:6px; font-size:14px; color:var(--ink); }
+.dr .closing-actions { display:flex; flex-wrap:wrap; gap:12px; }
+.dr .closing-cta .outline-button { font-size:16px; min-height:52px; padding-inline:24px; }
+@media(max-width:760px) {
+ .dr .advisor-note { grid-template-columns:88px minmax(0,1fr); gap:18px; }.dr .advisor-note img { width:88px; height:110px; }.dr .advisor-note h2 { font-size:34px; }
+ .dr .closing-actions { width:100%; }.dr .closing-actions a { width:100%; padding-inline:16px; font-size:15px; white-space:nowrap; }
+}
 @media(max-width:1200px) { .dr .site-header,.dr #drive-right-ad-privacy { padding-inline:40px; } }
 .dr .site-header .nav-link { white-space:nowrap; }
 @media(max-width:960px) { .dr .site-header .nav-link[href="/car-buying-service.html"] { display:none; } }
