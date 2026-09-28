@@ -469,9 +469,15 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .advisor-note h2 { font:600 clamp(32px,3.4vw,48px)/1.06 var(--sans); letter-spacing:-.03em; }
 .dr .advisor-note p { margin-top:12px; font-size:15px; line-height:1.65; color:var(--muted); }
 .dr .advisor-note .text-link { margin-top:6px; font-size:14px; color:var(--ink); }
+.dr .proof-quote { max-width:980px; margin:0; }
+.dr .proof-quote blockquote { margin:0; }
+.dr .proof-quote blockquote p { font:600 clamp(30px,3.4vw,48px)/1.12 var(--sans); letter-spacing:-.03em; color:var(--ink); }
+.dr .proof-quote figcaption { margin-top:18px; font-size:15px; line-height:1.5; color:var(--green); }
+.dr .proof-quote + .small-note { margin-top:10px; }
 .dr .closing-actions { display:flex; flex-wrap:wrap; gap:12px; }
 .dr .closing-cta .outline-button { font-size:16px; min-height:52px; padding-inline:24px; }
 @media(max-width:760px) {
+ .dr .proof-quote blockquote p { font-size:27px; }
  .dr .advisor-note { grid-template-columns:88px minmax(0,1fr); gap:18px; }.dr .advisor-note img { width:88px; height:110px; }.dr .advisor-note h2 { font-size:34px; }
  .dr .closing-actions { width:100%; }.dr .closing-actions a { width:100%; padding-inline:16px; font-size:15px; white-space:nowrap; }
 }
