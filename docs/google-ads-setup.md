@@ -1,7 +1,7 @@
 # Google Ads setup: account, GTM and Editor steps
 
-**Status, September 27, 2026:** steps written; none applied yet.
-- The owner applies these steps in Google Ads, Google Tag Manager and Google Ads Editor. The repository holds no Google credentials, and no agent has written to these accounts.
+**Status, September 27, 2026:** step 2's three new conversion actions are created in Google Ads (Claude, in the owner's signed-in browser); the other steps aren't applied yet.
+- The owner applies these steps in Google Ads, Google Tag Manager and Google Ads Editor, or an agent does it in the owner's signed-in browser. The repository holds no Google credentials.
 - Plan and launch gates: [google-ads-launch-plan-2026-09-27.md](google-ads-launch-plan-2026-09-27.md).
 - Campaign files: `outputs/2026-10-google-search-ads/`.
 - Code side: the "verified purchase tracking" PR, which adds the `purchase_verified` dataLayer event and makes `begin_checkout` reach GTM before the Stripe redirect.
@@ -33,9 +33,9 @@ Order: 1 → 2 → 3 happen before the Editor import (4). Launch (6) only after 
 
 | Action | Setup | Goal role |
 |---|---|---|
-| **Purchase – verified** (new) | Website; manual setup with Google Tag Manager. Category **Purchase**. Value: use different values per conversion (default 395; the tag sends the amount actually paid). Count: **Every**, deduplicated by transaction ID. Click-through window: 30 days. Attribution: data-driven. Copy the **conversion label** for step 3. | **Primary.** The only goal of the non-brand campaign. |
-| **Begin checkout** (new) | Category Begin checkout. Don't use a value. Count **One**. Copy the label. | Secondary |
-| **Call Button** (existing) | Keep, re-pointed to the `phone_click` event in step 3. Count **One**. | Secondary |
+| **Purchase – verified** (created 2026-09-27; ID `7802445530`, label `r1JaCNq9v4gdEN_eiKlD`) | Website; manual setup with Google Tag Manager. Category **Purchase**. Value: use different values per conversion (default 395; the tag sends the amount actually paid). Count: **Every**, deduplicated by transaction ID. Click-through window: 30 days. Attribution: data-driven. | **Primary.** The only goal of the non-brand campaign. |
+| **Begin checkout** (created 2026-09-27; ID `7802581153`, label `A1cuCKHhx4gdEN_eiKlD`) | Category Begin checkout. Count **One**. Google no longer offers "Don't use a value", so the action falls back to $1 when the tag sends none; as a secondary action that doesn't affect bidding. | Secondary |
+| **Phone click** (created 2026-09-27; ID `7802581156`, label `AmVzCKThx4gdEN_eiKlD`) | Category Contact, fired by the `phone_click` event in step 3. Count **One**; same $1 fallback value. The "Call Button" action this row used to describe isn't in the Ads account. | Secondary |
 | **Calls from ads** | Created with the call asset in step 4. Count a call at **60 seconds** or longer. | Secondary |
 | Book Appointment, Schedule Free Call, Submit Lead Form (existing) | Leave as is for now; remove after they've stopped firing for 30 days. | **Secondary** |
 
@@ -71,11 +71,11 @@ Whether GPC should also deny `ad_storage` is an owner or legal decision; the def
 
 **Tags**
 - **New "Google Ads – Purchase – verified":**
-  - Google Ads Conversion Tracking, conversion ID `18071301983`, the Purchase label.
+  - Google Ads Conversion Tracking, conversion ID `18071301983`, label `r1JaCNq9v4gdEN_eiKlD`.
   - Value `{{DLV – value}}`, transaction ID `{{DLV – transaction_id}}`, currency `{{DLV – currency}}`.
   - Trigger: `purchase_verified`.
-- **New "Google Ads – Begin checkout":** Begin checkout label; transaction ID `{{DLV – checkout_attempt_id}}`; trigger `begin_checkout`.
-- **Existing "Call Button":** replace its click-text trigger with the `phone_click` trigger. Don't add a second phone tag, or clicks count twice.
+- **New "Google Ads – Begin checkout":** label `A1cuCKHhx4gdEN_eiKlD`; transaction ID `{{DLV – checkout_attempt_id}}`; trigger `begin_checkout`.
+- **Existing "Call Button":** set its label to the Phone click label `AmVzCKThx4gdEN_eiKlD` and replace its click-text trigger with the `phone_click` trigger. Don't add a second phone tag, or clicks count twice.
 - **Pause** "Book Appointment", "Schedule Free Call" and "Submit Lead Form". The All Forms trigger behind Submit Lead Form can fire on each homepage chat answer.
 - **Keep** the Google tag (`AW-18071301983`) and Conversion Linker on All Pages.
 - **Google tag configuration:** add the parameter `page_location` = `{{Page URL – sanitized}}`, so hits from `/payment-success*` don't carry the Stripe `session_id`.
