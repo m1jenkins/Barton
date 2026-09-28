@@ -1,8 +1,8 @@
 # Google Search ads copy: approval sheet (ADS-GOOGLE-2026-10)
 
-Status: **awaiting Mason's signature. Not approved.** Version 2, prepared 2026-09-27. It replaces version 1 (sha256 `491af36e…c0e7`), a list of plain facts whose approval was never recorded. Version 2 leads with the buyer's problem and the time the service saves. Nothing on this sheet is live. No ad may be enabled until the `ADS-GOOGLE-2026-10` row in `data/claims.csv` says `approved` (launch gate G4 in `docs/google-ads-launch-plan-2026-09-27.md`).
+Status: **awaiting Mason's signature. Not approved.** Version 3, prepared 2026-09-27. It replaces version 2 (sha256 `5598ede8…fe82`) and version 1 (`491af36e…c0e7`); neither was recorded as approved. Version 3 sells to the buyer's pain: hours at the dealer, nights scrolling listings, haggling with people who do it all day. It promises time and sanity saved and a better deal, and keeps the price as a one-line qualifier. Nothing on this sheet is live. No ad may be enabled until the `ADS-GOOGLE-2026-10` row in `data/claims.csv` says `approved` (launch gate G4 in `docs/google-ads-launch-plan-2026-09-27.md`).
 
-This sheet lists every string a searcher can see in the Google Ads Editor import files (`editor-import/06`-`10`, built from `plan.json` by `build-editor-csv.mjs`): 48 headlines, 16 descriptions, 15 sitelink strings, 11 callouts, 9 snippet strings, 5 display paths, 5 final URLs and 2 call-asset values: 111 rows in all. Keywords, negatives, budgets and bidding are not shown to searchers, so they are not on this sheet. A string that is not on this sheet is not approved.
+This sheet lists every string a searcher can see in the Google Ads Editor import files (`editor-import/06`-`10`, built from `plan.json` by `build-editor-csv.mjs`): 48 headlines, 15 descriptions, 15 sitelink strings, 12 callouts, 9 snippet strings, 5 display paths, 5 final URLs and 2 call-asset values: 111 rows in all. Keywords, negatives, budgets and bidding are not shown to searchers, so they are not on this sheet. A string that is not on this sheet is not approved.
 
 Signing approves exactly this text. Any later wording change needs a new approval.
 
@@ -25,8 +25,9 @@ Signing approves exactly this text. Any later wording change needs a new approva
 
 ## Notes
 
-- **How the ads read.** In every non-brand ad the brand name is pinned first and a question about the searcher's problem is pinned second ("Dreading the Dealership?", "Hate Haggling Over Price?"). The rest of the ad answers it: time saved, the legwork and negotiating done for you, the price, and your say over the purchase.
-- **Time-saving lines** rest on your statement of 2026-09-27 ("We save people time. That is the whole purpose of the service.") and on what the service does: the advisor does the searching, the dealer contact and the negotiating. "Skip the hours at the dealer" is also the homepage headline.
+- **How the ads read.** In every non-brand ad the brand name is pinned first and a question about the searcher's problem is pinned second ("Dreading the Dealership?", "Outmatched by the Salesperson?"). Every other headline and description sells the answer: your time and sanity back, the legwork and haggling done for you, a better deal, and the final call staying yours. Price appears once per ad as a qualifier ("From $395, One Time").
+- **Time and sanity lines** rest on your statement of 2026-09-27 ("We save people time. That is the whole purpose of the service.") and on what the service does: the advisor does the searching, the dealer contact and the negotiating. "Skip the hours at the dealer" is also the homepage headline.
+- **Better-deal lines** ("We Fight for a Better Price", "negotiate for a better deal", "We Tell You If It's a Bad Deal") describe what the advisor does and aims for: negotiation, fee review and documented recommendations. "Best deal" and "lowest price" stay out: `CLM-014` marks that wording `revise_to_bounded_language`, and the ad checker blocks "best". If you want the literal words, say so; it's your call as owner and I'll record it against `CLM-014`.
 - **Call hours.** Google reads the call schedule in the Ads account's time zone. If the account isn't on Central time, convert 09:00-17:00 Central before import.
 - **Expiry.** `2026-12-21` is the earliest date among the approvals these lines rest on: the Austin base and phone (`data/entities.json`, next review 2026-12-21), the hours (`ENT-HOURS-2026-09-22`, 2026-12-22) and the prices (`SEO-PRICE-2026-09-27`, 2026-12-26).
 - **Held back until `CLM-013` is approved:** "On Your Side, Not the Dealer's", "No Dealer Commissions", "Paid Only by Our Customers" and "We are paid only by our customers, never by dealers, sellers or lenders." Today `how-it-works.html:127` says the site makes no statement about dealer compensation either way.
@@ -37,7 +38,8 @@ Line numbers are for this branch as of 2026-09-27.
 
 | Key | What it covers | Evidence |
 |---|---|---|
-| TIME | The service saves buyers time | Owner statement by Mason, 2026-09-27: "We save people time. That is the whole purpose of the service." The advisor does the searching, dealer contact and negotiating (ACT, FS). The homepage headline says "Skip the hours at the dealer." (`index.html:273`). |
+| TIME | The service saves buyers time and stress | Owner statement by Mason, 2026-09-27: "We save people time. That is the whole purpose of the service." The advisor does the searching, dealer contact and negotiating (ACT, FS). The homepage headline says "Skip the hours at the dealer." (`index.html:273`). "Sanity" and "weekends/evenings back" restate the same benefit; they claim no number. |
+| DEAL | Negotiating for a better price; flagging a bad deal | The advisor negotiates the price, reviews fees and documents recommendations (FS; `car-buying-service.html:159`, `:166`, `:170`). Worded as the aim ("for a better price") and the advice ("we tell you"), never as a promised outcome. "Best" and "lowest" are excluded (`CLM-014`, `revise_to_bounded_language`). |
 | PAIN | A question naming the searcher's problem | Asks about the buyer's situation. It says nothing about Drive Right. |
 | MKT | "Salespeople negotiate every day" | A general statement about dealership sales staff, not about Drive Right. |
 | ACT | Contacting dealers, comparing offers, doing the legwork | `car-buying-service.html:153` ("remote research, offer comparison, seller communication, price negotiation, and fee review"), `:159` ("communicate with participating sellers, and handle the price negotiation and fee review included in your plan") and `:166` ("compare available offers, discuss price and fees with participating sellers"). The same service list appears at `schedule.html:153`. |
@@ -68,101 +70,101 @@ Line numbers are for this branch as of 2026-09-27.
 | 3 | Dreading the Dealership? | Headline | 24 | NB-Service; pinned H2 | Names the searcher's problem | PAIN |
 | 4 | No Time to Shop for a Car? | Headline | 26 | NB-Service; pinned H2 | Names the searcher's problem | PAIN |
 | 5 | Not Sure It's a Good Deal? | Headline | 26 | NB-Service; pinned H2 | Names the searcher's problem | PAIN |
-| 6 | Car Buying Service From $395 | Headline | 28 | NB-Service | Car buying service; lowest plan $395 | SVC, P, LIVE |
-| 7 | Save Time Buying Your Car | Headline | 25 | Brand, NB-Service, NB-Advisor | The service saves the buyer time | TIME |
-| 8 | Skip the Hours at the Dealer | Headline | 28 | Brand, NB-Service, NB-Negotiation | The buyer spends fewer hours at dealerships | TIME |
-| 9 | We Negotiate. You Decide. | Headline | 25 | Brand, NB-Service, NB-Negotiation, NB-Advisor | The advisor negotiates; the buyer decides | FS, DEC |
-| 10 | Let Us Do the Legwork | Headline | 21 | Brand, NB-Service, NB-Advisor | The advisor does the searching and dealer contact | ACT |
-| 11 | We Contact Dealers for You | Headline | 26 | NB-Service | The advisor contacts dealers | ACT |
-| 12 | Your Own Car Buying Advisor | Headline | 27 | NB-Service | Each buyer gets a dedicated advisor | FS |
-| 13 | Full Service: $395 One Time | Headline | 27 | Brand, NB-Service, NB-Negotiation, NB-Concierge, NB-Advisor | Full Service fee is $395, one time | P, LIVE |
-| 14 | Ultimate Concierge: $695 | Headline | 24 | Brand, NB-Service, NB-Concierge | Ultimate Concierge fee is $695 | P, LIVE |
-| 15 | Remote Support Nationwide | Headline | 25 | Brand, NB-Service, NB-Negotiation | Remote service for buyers anywhere in the US | ENT, NAT |
+| 6 | Save Your Time and Your Sanity | Headline | 30 | Brand, NB-Service, NB-Negotiation, NB-Concierge, NB-Advisor | The service saves the buyer time and stress | TIME |
+| 7 | Skip the Hours at the Dealer | Headline | 28 | Brand, NB-Service, NB-Advisor | The buyer spends fewer hours at dealerships | TIME |
+| 8 | Car Buying, Handled for You | Headline | 27 | NB-Service | The advisor does the buying work; the buyer decides | SVC, ACT |
+| 9 | Stop Scrolling Car Listings | Headline | 27 | NB-Service, NB-Concierge, NB-Advisor | The advisor does the listing search instead of the buyer | TIME, ACT |
+| 10 | We Haggle So You Don't Have To | Headline | 30 | NB-Service, NB-Negotiation, NB-Advisor | The advisor negotiates instead of the buyer | FS |
+| 11 | We Tell You If It's a Bad Deal | Headline | 30 | NB-Service, NB-Negotiation, NB-Advisor | The advisor compares offers and documents recommendations | DEAL, FS |
+| 12 | Get Your Weekends Back | Headline | 22 | NB-Service, NB-Concierge | The buyer spends less of their own time car shopping | TIME |
+| 13 | A Negotiator in Your Corner | Headline | 27 | Brand, NB-Service | The advisor negotiates for the buyer | FS |
+| 14 | We Negotiate. You Decide. | Headline | 25 | Brand, NB-Service, NB-Negotiation, NB-Advisor | The advisor negotiates; the buyer decides | FS, DEC |
+| 15 | From $395, One Time | Headline | 19 | NB-Service, NB-Negotiation, NB-Advisor | Lowest plan is $395, paid once | P, LIVE |
 | 16 | Drive Right Car Buying Help | Headline | 27 | NB-Negotiation, NB-Advisor; pinned H1 | Business name + "car buying help" | BR, SVC |
 | 17 | Hate Haggling Over Price? | Headline | 25 | NB-Negotiation; pinned H2 | Names the searcher's problem | PAIN |
 | 18 | Outmatched by the Salesperson? | Headline | 30 | NB-Negotiation; pinned H2 | Names the searcher's problem | PAIN |
 | 19 | Worried About Overpaying? | Headline | 25 | NB-Negotiation; pinned H2 | Names the searcher's problem | PAIN |
-| 20 | Car Negotiation Service | Headline | 23 | NB-Negotiation | Service includes car price negotiation | SVC, FS |
-| 21 | Hire Your Own Car Negotiator | Headline | 28 | NB-Negotiation | The buyer hires Drive Right to negotiate | NEG, FS |
-| 22 | Let Us Do the Haggling | Headline | 22 | NB-Negotiation | The advisor negotiates the price | FS |
-| 23 | Fees Reviewed Before You Sign | Headline | 29 | NB-Negotiation | Fee review happens before the buyer signs | FS, DEC |
-| 24 | Two Plans From $395 | Headline | 19 | NB-Negotiation | Two plans; lowest is $395 | P, LIVE |
-| 25 | A Dedicated Buying Advisor | Headline | 26 | Brand, NB-Negotiation, NB-Advisor | Each buyer gets a dedicated advisor | FS |
-| 26 | Can't Find the Car You Want? | Headline | 28 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
-| 27 | Too Busy to Shop Around? | Headline | 24 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
-| 28 | Tired of Endless Listings? | Headline | 26 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
-| 29 | Car Buying Concierge | Headline | 20 | NB-Concierge | Ultimate Concierge plan used as a category | P, UC |
-| 30 | Car Finder Service | Headline | 18 | NB-Concierge | The service finds cars for the buyer | FS, UC |
-| 31 | We Search Beyond the Lot | Headline | 24 | NB-Concierge | Concierge searches auctions, forums and niche sources | UC |
-| 32 | Auctions and Niche Sources | Headline | 26 | NB-Concierge | Concierge searches auctions and niche sources | UC |
-| 33 | Priority Communication | Headline | 22 | NB-Concierge | Concierge includes priority communication | UC |
-| 34 | One-Time Concierge Fee | Headline | 22 | NB-Concierge | Concierge fee is one time | P |
-| 35 | We Do the Legwork. You Decide. | Headline | 30 | NB-Concierge | The advisor does the legwork; the buyer decides | ACT, DEC |
-| 36 | Save Hours of Searching | Headline | 23 | NB-Concierge | Concierge does the searching, saving the buyer hours | TIME, UC |
-| 37 | Overwhelmed by Car Buying? | Headline | 26 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
-| 38 | Not Sure Which Car to Buy? | Headline | 26 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
-| 39 | No Time to Car Shop? | Headline | 20 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
-| 40 | Car Buying Advisor | Headline | 18 | NB-Advisor | A dedicated advisor handles the buying work | FS |
-| 41 | Your Personal Car Shopper | Headline | 25 | NB-Advisor | A dedicated advisor searches for the buyer | FS |
-| 42 | Help Buying Your Next Car | Headline | 25 | NB-Advisor | General description of the service | SVC |
-| 43 | Recommendations in Writing | Headline | 26 | NB-Advisor | Full Service includes documented recommendations | FS |
-| 44 | Start Your Buying Brief | Headline | 23 | NB-Advisor | Starts the buying brief (CTA) | NAV |
-| 45 | Drive Right, Based in Austin | Headline | 28 | Brand; pinned H1 | Business name; Austin city base | BR, ENT |
-| 46 | Car Buying and Negotiation | Headline | 26 | Brand | Service covers car buying and negotiation | SVC |
-| 47 | Compare Our Two Plans | Headline | 21 | Brand | Exactly two plans are offered (CTA) | P, NAV |
-| 48 | See How Drive Right Works | Headline | 25 | Brand | Links to the process (CTA) | NAV |
-| 49 | We search, contact dealers, compare offers and negotiate. You make the final call. | Description | 82 | Brand, NB-Service | What the advisor does; the buyer decides | ACT, FS, DEC |
-| 50 | Your advisor negotiates the price and reviews the fees before you commit to anything. | Description | 85 | NB-Service | Negotiation and fee review before the buyer commits | FS, DEC |
-| 51 | Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate. | Description | 90 | Brand, NB-Service, NB-Negotiation, NB-Advisor | Both prices, one time; fee excludes vehicle costs | P, LIVE, EXC |
-| 52 | Skip the hours at the dealer. We search new, used and CPO inventory and contact dealers. | Description | 88 | NB-Service | Time saved; what the advisor does | TIME, FS, ACT |
+| 20 | Bring Your Own Car Negotiator | Headline | 29 | NB-Negotiation | The buyer hires Drive Right to negotiate | NEG, FS |
+| 21 | Salespeople Haggle All Day | Headline | 26 | NB-Negotiation | Dealership sales staff negotiate daily | MKT |
+| 22 | Now You Have a Negotiator Too | Headline | 29 | NB-Negotiation | The buyer gets a negotiator (pairs with the salespeople line) | NEG, FS |
+| 23 | We Fight for a Better Price | Headline | 27 | NB-Negotiation | The advisor negotiates for a better price (aim) | DEAL |
+| 24 | Fees Checked Before You Sign | Headline | 28 | NB-Negotiation | Fee review happens before the buyer signs | FS, DEC |
+| 25 | Can't Find the Car You Want? | Headline | 28 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
+| 26 | Too Busy to Shop Around? | Headline | 24 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
+| 27 | Tired of Endless Listings? | Headline | 26 | NB-Concierge; pinned H2 | Names the searcher's problem | PAIN |
+| 28 | Your Car Buying Concierge | Headline | 25 | NB-Concierge | Ultimate Concierge plan used as a category | P, UC |
+| 29 | A Car Finder Who Haggles Too | Headline | 28 | NB-Concierge | Concierge searches for the car and negotiates | FS, UC |
+| 30 | We Search Beyond the Lot | Headline | 24 | NB-Concierge | Concierge searches auctions, forums and niche sources | UC |
+| 31 | Auctions and Niche Sources | Headline | 26 | NB-Concierge | Concierge searches auctions and niche sources | UC |
+| 32 | We Do the Legwork. You Decide. | Headline | 30 | NB-Concierge | The advisor does the legwork; the buyer decides | ACT, DEC |
+| 33 | Save Hours of Searching | Headline | 23 | NB-Concierge | Concierge does the searching, saving the buyer hours | TIME, UC |
+| 34 | Ultimate Concierge: $695 | Headline | 24 | Brand, NB-Concierge | Ultimate Concierge fee is $695 | P, LIVE |
+| 35 | Overwhelmed by Car Buying? | Headline | 26 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
+| 36 | Not Sure Which Car to Buy? | Headline | 26 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
+| 37 | No Time to Car Shop? | Headline | 20 | NB-Advisor; pinned H2 | Names the searcher's problem | PAIN |
+| 38 | Your Personal Car Shopper | Headline | 25 | NB-Advisor | A dedicated advisor searches for the buyer | FS |
+| 39 | Help Buying Your Next Car | Headline | 25 | NB-Advisor | General description of the service | SVC |
+| 40 | Get Your Evenings Back | Headline | 22 | NB-Advisor | The buyer spends less of their own time car shopping | TIME |
+| 41 | Drive Right, Based in Austin | Headline | 28 | Brand; pinned H1 | Business name; Austin city base | BR, ENT |
+| 42 | Let Us Do the Legwork | Headline | 21 | Brand | The advisor does the searching and dealer contact | ACT |
+| 43 | Car Buying and Negotiation | Headline | 26 | Brand | Service covers car buying and negotiation | SVC |
+| 44 | Full Service: $395 One Time | Headline | 27 | Brand | Full Service fee is $395, one time | P, LIVE |
+| 45 | Compare Our Two Plans | Headline | 21 | Brand | Exactly two plans are offered (CTA) | P, NAV |
+| 46 | See How Drive Right Works | Headline | 25 | Brand | Links to the process (CTA) | NAV |
+| 47 | Remote Support Nationwide | Headline | 25 | Brand | Remote service for buyers anywhere in the US | ENT, NAT |
+| 48 | Start Your Buying Brief | Headline | 23 | Brand | Starts the buying brief (CTA) | NAV |
+| 49 | Skip the hours at the dealer. We search, contact dealers and negotiate for a better deal. | Description | 89 | Brand, NB-Service | Time saved; what the advisor does; negotiating for a better deal (aim) | TIME, ACT, DEAL |
+| 50 | Save your time and your sanity. Tell us what you want and we handle the dealer for you. | Description | 87 | NB-Service, NB-Negotiation, NB-Concierge | Time and stress saved; the advisor deals with the dealer | TIME, ACT |
+| 51 | Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $395. | Description | 88 | NB-Service, NB-Advisor | Time saved; the advisor does the legwork; Full Service price | TIME, ACT, FS, P, LIVE |
+| 52 | Not sure it's a good deal? We compare offers, check the fees and tell you what we'd do. | Description | 87 | NB-Service, NB-Advisor | Names the problem; offer comparison, fee review and documented recommendations | PAIN, ACT, FS, DEAL |
 | 53 | Salespeople negotiate every day. Now you have a negotiator too, for a one-time $395 fee. | Description | 88 | NB-Negotiation | Salespeople negotiate daily; Full Service adds a negotiator for $395 | MKT, FS, P, LIVE |
-| 54 | Your advisor negotiates the price and reviews the fees. You make every purchase decision. | Description | 89 | NB-Negotiation | Negotiation and fee review; the buyer decides | FS, DEC |
-| 55 | Not sure a quote is fair? We compare offers and question the fees before you sign. | Description | 82 | NB-Negotiation | Names the problem; offer comparison and fee review | PAIN, ACT, FS |
-| 56 | Concierge looks past dealer lots to auctions, forums and niche sources for your car. | Description | 84 | NB-Concierge | Concierge search sources | UC |
-| 57 | Ultimate Concierge is $695 one time and includes everything in Full Service. | Description | 76 | NB-Concierge | Concierge price; includes all of Full Service | P, LIVE, UC |
-| 58 | Delivery coordination where available. Delivery and vehicle costs are separate. | Description | 79 | NB-Concierge | Concierge coordinates delivery where available; fee excludes delivery and vehicle costs | UC, EXC |
-| 59 | We search, contact sellers and negotiate, with priority communication. You decide. | Description | 82 | NB-Concierge | What the Concierge advisor does; the buyer decides | ACT, UC, DEC |
-| 60 | Your advisor searches new, used and CPO options and documents recommendations for you. | Description | 86 | NB-Advisor | Search scope and documented recommendations | FS |
-| 61 | Price negotiation and fee review are included. You make every purchase decision. | Description | 80 | NB-Advisor | Full Service inclusions; the buyer decides | FS, DEC |
-| 62 | Get your evenings back. We research, contact dealers and negotiate. You make the call. | Description | 86 | NB-Advisor | Time saved; what the advisor does; the buyer decides | TIME, ACT, DEC |
-| 63 | Drive Right is an Austin-based car buying and negotiation service for buyers nationwide. | Description | 88 | Brand | Brand; Austin base; service; US buyers | BR, ENT, SVC, NAT |
-| 64 | Compare both plans, see how the process works and choose the help that fits your search. | Description | 88 | Brand | Two plans; process page (CTA) | P, NAV |
+| 54 | Hate haggling? Send us in. We negotiate the price and check the fees before you sign. | Description | 85 | NB-Negotiation | Names the problem; negotiation and fee review before the buyer signs | PAIN, FS, DEC |
+| 55 | Worried about overpaying? We compare offers and push for a better price before you sign. | Description | 88 | NB-Negotiation | Names the problem; offer comparison; negotiating for a better price (aim) | PAIN, ACT, DEAL, DEC |
+| 56 | Can't find the car you want? We search past the dealer lot, auctions and forums included. | Description | 89 | NB-Concierge | Names the problem; Concierge search sources | PAIN, UC |
+| 57 | Too busy to shop around? Ultimate Concierge does the searching and the haggling for $695. | Description | 89 | NB-Concierge | Names the problem; Concierge searches and negotiates; price | PAIN, UC, FS, P, LIVE |
+| 58 | Stop scrolling listings and sitting in dealerships. We do the legwork. You make the call. | Description | 89 | NB-Concierge | Time saved; the advisor does the legwork; the buyer decides | TIME, ACT, DEC |
+| 59 | Overwhelmed by car buying? One advisor handles the search, the dealers and the haggling. | Description | 88 | NB-Advisor | Names the problem; one dedicated advisor does the search, dealer contact and negotiation | PAIN, FS, ACT |
+| 60 | Get your evenings back. We research, contact dealers and negotiate. You make the call. | Description | 86 | NB-Advisor | Time saved; what the advisor does; the buyer decides | TIME, ACT, DEC |
+| 61 | Drive Right is an Austin-based car buying and negotiation service for buyers nationwide. | Description | 88 | Brand | Brand; Austin base; service; US buyers | BR, ENT, SVC, NAT |
+| 62 | Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate. | Description | 90 | Brand | Both prices, one time; fee excludes vehicle costs | P, LIVE, EXC |
+| 63 | Compare both plans, see how the process works and choose the help that fits your search. | Description | 88 | Brand | Two plans; process page (CTA) | P, NAV |
 
 ### Sitelinks
 
 | # | Text | Type | Chars | Used in | What it claims | Evidence |
 |---|---|---|---|---|---|---|
-| 65 | Compare Plans and Pricing | Sitelink text | 25 | Brand, NB | Links to plans and prices (CTA) | NAV |
-| 66 | Full Service is $395 one time | Sitelink line 1 | 29 | Brand, NB | Full Service fee is $395, one time | P, LIVE |
-| 67 | Ultimate Concierge is $695 | Sitelink line 2 | 26 | Brand, NB | Ultimate Concierge fee is $695 | P, LIVE |
-| 68 | How It Works | Sitelink text | 12 | Brand, NB | Links to the process page | NAV |
-| 69 | See each step of the process | Sitelink line 1 | 28 | Brand, NB | How It Works shows each step | NAV |
-| 70 | You make every purchase decision | Sitelink line 2 | 32 | Brand, NB | Buyer makes every purchase decision | DEC |
-| 71 | What We Handle for You | Sitelink text | 22 | Brand, NB | Links to what the service handles | NAV, ACT |
-| 72 | Search, negotiation, fee review | Sitelink line 1 | 31 | Brand, NB | Full Service includes these three | FS |
-| 73 | And what stays your decision | Sitelink line 2 | 28 | Brand, NB | Page lists what stays with the buyer | DEC, NAV |
-| 74 | About Drive Right | Sitelink text | 17 | Brand, NB | Links to the About page | BR, NAV |
-| 75 | Based in Austin, Texas | Sitelink line 1 | 22 | Brand, NB | Austin city base | ENT |
-| 76 | Remote support nationwide | Sitelink line 2 | 25 | Brand, NB | Remote service for buyers anywhere in the US | ENT, NAT |
-| 77 | Start Your Buying Brief | Sitelink text | 23 | Brand, NB | Starts the buying brief (CTA) | NAV |
-| 78 | Tell us what you are looking for | Sitelink line 1 | 32 | Brand, NB | Brief collects the buyer's needs (CTA) | NAV |
-| 79 | Then choose the plan that fits | Sitelink line 2 | 30 | Brand, NB | Plan is chosen after the brief (CTA) | NAV, P |
+| 64 | Compare Plans and Pricing | Sitelink text | 25 | Brand, NB | Links to plans and prices (CTA) | NAV |
+| 65 | Full Service is $395 one time | Sitelink line 1 | 29 | Brand, NB | Full Service fee is $395, one time | P, LIVE |
+| 66 | Ultimate Concierge is $695 | Sitelink line 2 | 26 | Brand, NB | Ultimate Concierge fee is $695 | P, LIVE |
+| 67 | How It Works | Sitelink text | 12 | Brand, NB | Links to the process page | NAV |
+| 68 | Tell us what you want | Sitelink line 1 | 21 | Brand, NB | The brief collects what the buyer wants (CTA) | NAV |
+| 69 | We search, haggle, you decide | Sitelink line 2 | 29 | Brand, NB | The advisor searches and negotiates; the buyer decides | ACT, FS, DEC |
+| 70 | What We Handle for You | Sitelink text | 22 | Brand, NB | Links to what the service handles | NAV, ACT |
+| 71 | The search, the dealers, the haggle | Sitelink line 1 | 35 | Brand, NB | Inventory search, dealer contact and negotiation | FS, ACT |
+| 72 | And what stays your decision | Sitelink line 2 | 28 | Brand, NB | Page lists what stays with the buyer | DEC, NAV |
+| 73 | About Drive Right | Sitelink text | 17 | Brand, NB | Links to the About page | BR, NAV |
+| 74 | Based in Austin, Texas | Sitelink line 1 | 22 | Brand, NB | Austin city base | ENT |
+| 75 | Remote support nationwide | Sitelink line 2 | 25 | Brand, NB | Remote service for buyers anywhere in the US | ENT, NAT |
+| 76 | Start Your Buying Brief | Sitelink text | 23 | Brand, NB | Starts the buying brief (CTA) | NAV |
+| 77 | Describe the car you want | Sitelink line 1 | 25 | Brand, NB | The brief collects what the buyer wants (CTA) | NAV |
+| 78 | Then we get to work | Sitelink line 2 | 19 | Brand, NB | The advisor starts after the brief (CTA) | NAV, ACT |
 
 ### Callouts
 
 | # | Text | Type | Chars | Used in | What it claims | Evidence |
 |---|---|---|---|---|---|---|
-| 80 | We Negotiate for You | Callout | 20 | Brand, NB | The advisor negotiates the price | FS |
-| 81 | We Contact the Dealers | Callout | 22 | NB | The advisor contacts dealers | ACT |
+| 79 | We Haggle for You | Callout | 17 | Brand, NB | The advisor negotiates the price | FS |
+| 80 | We Contact the Dealers | Callout | 22 | NB | The advisor contacts dealers | ACT |
+| 81 | We Sort the Listings | Callout | 20 | NB | The advisor searches inventory for the buyer | ACT, FS |
 | 82 | Skip Hours at the Dealer | Callout | 24 | Brand, NB | The buyer spends fewer hours at dealerships | TIME |
-| 83 | Fee Review Included | Callout | 19 | NB | Full Service includes fee review | FS |
+| 83 | Fee Check Before You Sign | Callout | 25 | NB | Fee review happens before the buyer signs | FS, DEC |
 | 84 | You Make Every Decision | Callout | 23 | Brand, NB | Buyer makes every purchase decision | DEC |
-| 85 | Dedicated Advisor | Callout | 17 | Brand, NB | Each buyer gets a dedicated advisor | FS |
-| 86 | One-Time Service Fee | Callout | 20 | Brand, NB | Both plans are one-time fees | P |
-| 87 | Full Service $395 | Callout | 17 | NB | Full Service fee is $395 | P, LIVE |
-| 88 | Ultimate Concierge $695 | Callout | 23 | NB | Ultimate Concierge fee is $695 | P, LIVE |
-| 89 | Remote Support Nationwide | Callout | 25 | Brand, NB | Remote service for buyers anywhere in the US | ENT, NAT |
-| 90 | Based in Austin, Texas | Callout | 22 | Brand | Austin city base | ENT |
+| 85 | One-Time Service Fee | Callout | 20 | Brand, NB | Both plans are one-time fees | P |
+| 86 | Full Service $395 | Callout | 17 | NB | Full Service fee is $395 | P, LIVE |
+| 87 | Ultimate Concierge $695 | Callout | 23 | NB | Ultimate Concierge fee is $695 | P, LIVE |
+| 88 | Remote Support Nationwide | Callout | 25 | Brand, NB | Remote service for buyers anywhere in the US | ENT, NAT |
+| 89 | Based in Austin, Texas | Callout | 22 | Brand | Austin city base | ENT |
+| 90 | Dedicated Advisor | Callout | 17 | Brand | Each buyer gets a dedicated advisor | FS |
 
 ### Structured snippets
 

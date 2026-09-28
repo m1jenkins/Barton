@@ -123,80 +123,83 @@ The collision check passed: no negative blocks one of our keywords.
 
 ### Responsive search ads
 
-Two or three brand headlines are pinned to H1 in every ad (Google's Limited Ad Serving guidance for newer advertisers). In non-brand ads, three questions about the searcher's problem are pinned to H2, so each ad names the problem right after the brand and a question never sits next to another question. Everything else stays unpinned. Time-saving lines rest on the owner's statement of September 27 ("We save people time. That is the whole purpose of the service.").
+Two or three brand headlines are pinned to H1 in every ad (Google's Limited Ad Serving guidance for newer advertisers). In non-brand ads, three questions about the searcher's problem are pinned to H2, so each ad names the problem right after the brand and a question never sits next to another question. Every other headline and description sells the answer: time and sanity back, the legwork and haggling done for the buyer, a better deal, and the final call staying theirs. Price appears once per ad as a qualifier. The service is explained on the landing pages, not in the ads (owner direction, September 27). Time lines rest on the owner's statement of September 27 ("We save people time. That is the whole purpose of the service."); better-deal lines are worded as the aim, never as "best" or "lowest" (`CLM-014`).
 
 Shared descriptions:
+- **D-Skip:** "Skip the hours at the dealer. We search, contact dealers and negotiate for a better deal."
+- **D-Sanity:** "Save your time and your sanity. Tell us what you want and we handle the dealer for you."
+- **D-Legwork:** "Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $395."
+- **D-GoodDeal:** "Not sure it's a good deal? We compare offers, check the fees and tell you what we'd do."
 - **D-Price:** "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate."
-- **D-Actions:** "We search, contact dealers, compare offers and negotiate. You make the final call."
 
 **Car Buying Service**
 - Path: `car-buying/service`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service
 - H2 pinned: Dreading the Dealership? · No Time to Shop for a Car? · Not Sure It's a Good Deal?
-- Headlines: Car Buying Service From $395 · Save Time Buying Your Car · Skip the Hours at the Dealer · We Negotiate. You Decide. · Let Us Do the Legwork · We Contact Dealers for You · Your Own Car Buying Advisor · Full Service: $395 One Time · Ultimate Concierge: $695 · Remote Support Nationwide
+- Headlines: Save Your Time and Your Sanity · Skip the Hours at the Dealer · Car Buying, Handled for You · Stop Scrolling Car Listings · We Haggle So You Don't Have To · We Tell You If It's a Bad Deal · Get Your Weekends Back · A Negotiator in Your Corner · We Negotiate. You Decide. · From $395, One Time
 - Descriptions:
-  - D-Actions
-  - "Your advisor negotiates the price and reviews the fees before you commit to anything."
-  - D-Price
-  - "Skip the hours at the dealer. We search new, used and CPO inventory and contact dealers."
+  - D-Skip
+  - D-Sanity
+  - D-Legwork
+  - D-GoodDeal
 
 **Car Negotiation**
 - Path: `car-buying/negotiation`
 - H1 pinned: Drive Right Car Buying Help · Drive Right Buying Service
 - H2 pinned: Hate Haggling Over Price? · Outmatched by the Salesperson? · Worried About Overpaying?
-- Headlines: Car Negotiation Service · Hire Your Own Car Negotiator · Let Us Do the Haggling · We Negotiate. You Decide. · Skip the Hours at the Dealer · Fees Reviewed Before You Sign · Two Plans From $395 · Full Service: $395 One Time · A Dedicated Buying Advisor · Remote Support Nationwide
+- Headlines: Bring Your Own Car Negotiator · Salespeople Haggle All Day · Now You Have a Negotiator Too · We Haggle So You Don't Have To · We Fight for a Better Price · Fees Checked Before You Sign · We Tell You If It's a Bad Deal · Save Your Time and Your Sanity · We Negotiate. You Decide. · From $395, One Time
 - Descriptions:
   - "Salespeople negotiate every day. Now you have a negotiator too, for a one-time $395 fee."
-  - "Your advisor negotiates the price and reviews the fees. You make every purchase decision."
-  - D-Price
-  - "Not sure a quote is fair? We compare offers and question the fees before you sign."
+  - "Hate haggling? Send us in. We negotiate the price and check the fees before you sign."
+  - "Worried about overpaying? We compare offers and push for a better price before you sign."
+  - D-Sanity
 
 **Car Buying Concierge**
 - Path: `concierge/pricing`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service
 - H2 pinned: Can't Find the Car You Want? · Too Busy to Shop Around? · Tired of Endless Listings?
-- Headlines: Car Buying Concierge · Car Finder Service · We Search Beyond the Lot · Auctions and Niche Sources · Priority Communication · Ultimate Concierge: $695 · One-Time Concierge Fee · We Do the Legwork. You Decide. · Full Service: $395 One Time · Save Hours of Searching
+- Headlines: Your Car Buying Concierge · A Car Finder Who Haggles Too · We Search Beyond the Lot · Auctions and Niche Sources · Stop Scrolling Car Listings · We Do the Legwork. You Decide. · Save Your Time and Your Sanity · Save Hours of Searching · Get Your Weekends Back · Ultimate Concierge: $695
 - Descriptions:
-  - "Concierge looks past dealer lots to auctions, forums and niche sources for your car."
-  - "Ultimate Concierge is $695 one time and includes everything in Full Service."
-  - "Delivery coordination where available. Delivery and vehicle costs are separate."
-  - "We search, contact sellers and negotiate, with priority communication. You decide."
+  - "Can't find the car you want? We search past the dealer lot, auctions and forums included."
+  - "Too busy to shop around? Ultimate Concierge does the searching and the haggling for $695."
+  - "Stop scrolling listings and sitting in dealerships. We do the legwork. You make the call."
+  - D-Sanity
 
 **Car Buying Advisor**
 - Path: `car-buying/help`
 - H1 pinned: Drive Right Car Buying Help · Drive Right Buying Service
 - H2 pinned: Overwhelmed by Car Buying? · Not Sure Which Car to Buy? · No Time to Car Shop?
-- Headlines: Car Buying Advisor · Your Personal Car Shopper · Help Buying Your Next Car · A Dedicated Buying Advisor · Recommendations in Writing · We Negotiate. You Decide. · Let Us Do the Legwork · Save Time Buying Your Car · Full Service: $395 One Time · Start Your Buying Brief
+- Headlines: Your Personal Car Shopper · Help Buying Your Next Car · Save Your Time and Your Sanity · Skip the Hours at the Dealer · Stop Scrolling Car Listings · We Tell You If It's a Bad Deal · We Haggle So You Don't Have To · Get Your Evenings Back · We Negotiate. You Decide. · From $395, One Time
 - Descriptions:
-  - "Your advisor searches new, used and CPO options and documents recommendations for you."
-  - "Price negotiation and fee review are included. You make every purchase decision."
-  - D-Price
+  - "Overwhelmed by car buying? One advisor handles the search, the dealers and the haggling."
   - "Get your evenings back. We research, contact dealers and negotiate. You make the call."
+  - D-GoodDeal
+  - D-Legwork
 
 **Brand**
 - Path: `car-buying`
 - H1 pinned: Drive Right Car Buying · Drive Right Buying Service · Drive Right, Based in Austin
-- Headlines: Car Buying and Negotiation · We Negotiate. You Decide. · Let Us Do the Legwork · Skip the Hours at the Dealer · Full Service: $395 One Time · Ultimate Concierge: $695 · Remote Support Nationwide · A Dedicated Buying Advisor · Compare Our Two Plans · See How Drive Right Works · Save Time Buying Your Car
+- Headlines: Save Your Time and Your Sanity · Skip the Hours at the Dealer · We Negotiate. You Decide. · Let Us Do the Legwork · A Negotiator in Your Corner · Car Buying and Negotiation · Full Service: $395 One Time · Ultimate Concierge: $695 · Compare Our Two Plans · See How Drive Right Works · Remote Support Nationwide · Start Your Buying Brief
 - Descriptions:
   - "Drive Right is an Austin-based car buying and negotiation service for buyers nationwide."
   - D-Price
-  - D-Actions
+  - D-Skip
   - "Compare both plans, see how the process works and choose the help that fits your search."
 
 ### Assets (both campaigns)
 
 **Sitelinks** (text | description 1 | description 2 → page):
 - Compare Plans and Pricing | Full Service is $395 one time | Ultimate Concierge is $695 → `/schedule.html`
-- How It Works | See each step of the process | You make every purchase decision → `/how-it-works.html`
-- What We Handle for You | Search, negotiation, fee review | And what stays your decision → `/car-buying-service.html`
+- How It Works | Tell us what you want | We search, haggle, you decide → `/how-it-works.html`
+- What We Handle for You | The search, the dealers, the haggle | And what stays your decision → `/car-buying-service.html`
 - About Drive Right | Based in Austin, Texas | Remote support nationwide → `/about.html`
-- Start Your Buying Brief | Tell us what you are looking for | Then choose the plan that fits → `/`
+- Start Your Buying Brief | Describe the car you want | Then we get to work → `/`
 
 There are five, not six, on purpose. The blog, policy page and Texas hub carry content still pending review.
 
 **Callouts:**
-- Non-brand: We Negotiate for You · We Contact the Dealers · Skip Hours at the Dealer · Fee Review Included · You Make Every Decision · Dedicated Advisor · One-Time Service Fee · Full Service $395 · Ultimate Concierge $695 · Remote Support Nationwide
-- Brand: We Negotiate for You · Skip Hours at the Dealer · You Make Every Decision · One-Time Service Fee · Remote Support Nationwide · Based in Austin, Texas · Dedicated Advisor
+- Non-brand: We Haggle for You · We Contact the Dealers · We Sort the Listings · Skip Hours at the Dealer · Fee Check Before You Sign · You Make Every Decision · One-Time Service Fee · Full Service $395 · Ultimate Concierge $695 · Remote Support Nationwide
+- Brand: We Haggle for You · Skip Hours at the Dealer · You Make Every Decision · One-Time Service Fee · Remote Support Nationwide · Based in Austin, Texas · Dedicated Advisor
 
 **Structured snippets:**
 - Service catalog: Inventory Search, Price Negotiation, Fee Review, Vehicle Recommendations
@@ -222,7 +225,8 @@ There are five, not six, on purpose. The blog, policy page and Texas hub carry c
   - "You make every purchase decision" (`car-buying-service.html:160`, `pricing.md:21`).
   - "Car negotiator" wording (the `schedule.html` title).
   - Contacting dealers and comparing offers (`car-buying-service.html:153`, `:159`, `:166`).
-  - Time saved ("Save Time Buying Your Car", "Skip the Hours at the Dealer"): the owner's statement of September 27; the homepage headline already says "Skip the hours at the dealer."
+  - Time and sanity saved ("Save Your Time and Your Sanity", "Skip the Hours at the Dealer", "Get Your Weekends Back"): the owner's statement of September 27; the homepage headline already says "Skip the hours at the dealer."
+  - A better deal ("We Fight for a Better Price", "We Tell You If It's a Bad Deal"): the advisor's negotiation, fee review and documented recommendations, worded as the aim. "Best" and "lowest" stay out (`CLM-014`, `revise_to_bounded_language`).
   - Questions about the searcher's problem, pinned to H2 ("Dreading the Dealership?"). They make no claim about Drive Right.
 - **Never in ads without approval:**
   - Dollar savings or speed; customer counts; reviews or testimonials.
