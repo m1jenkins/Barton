@@ -1,5 +1,19 @@
 # OpenAI Ads conversion setup
 
+## Pixel replacement — September 28, 2026
+
+The owner supplied Pixel ID `4FeqFBVzJFUMdu8S8gatam` and authorized deployment on September 28. It replaces the previous browser destination in `openai-ads.js`, using the existing shared loader rather than installing another initializer. This release uses the existing main-branch Vercel deployment workflow; production verification follows the push. Ads Manager receipt for the new ID remains unverified. The September 13 notes below describe the earlier installation.
+
+This incremental update retains `page_viewed`, `lead_created`, and `checkout_started` at their existing success boundaries. No new event types or user-matching fields are added. Existing consent, GPC suppression, personalization opt-out, event deduplication, production-host restrictions, and payment/success-page exclusions remain in effect. Debug logging stays disabled for production despite the supplied snippet's `debug: true`. The standalone `ai-car-buying-agent.html` page does not load the shared tracker. Deferred and inapplicable events remain as listed in the inventory below.
+
+The existing server CAPI helper imports this same ID as its default; an explicit `OPENAI_ADS_CAPI_PIXEL_ID` environment override takes precedence and must match if server reporting is enabled for the new pixel. No CAPI credentials, environment settings, source-URL or attribution handling are changed, and current server deployment configuration has not been inspected. Existing automatic browser matching and server matching behavior are unchanged.
+
+Validation: Node 24 syntax, site validation (65 HTML files / 8 sitemap URLs), API checks, metro and city draft checks, the Pixel static checker, and all 194 tests passed. Three preview-server tests initially could not bind loopback inside the sandbox; rerunning with loopback access passed. A mocked-browser smoke check confirmed the supplied ID initializes exactly once after consent with debug disabled, without sending live events.
+
+Before deployment, review the destination change against the site's privacy, security, consent, and data handling requirements. After deployment, confirm a consented page view arrives under the new pixel in Ads Manager.
+
+## Earlier installation record — September 13, 2026
+
 **Production status — September 13, 2026:** The browser Pixel and opt-in controls are live at https://www.driverightcarbuying.com/. Vercel deployment `dpl_C9WyvZrn52qZnjg3DQZf36K4uBXx` was built, checked, and promoted successfully. The live homepage loaded no OpenAI SDK before consent and exactly one SDK after acceptance, with no console errors or warnings. The updated privacy disclosure is visible on the public policy page. Ads Manager event receipt remains unconfirmed: its event stream displayed no received events during the bounded verification session.
 
 **Release scope:** Production contains the browser implementation only. Separate CAPI changes arrived concurrently in the shared working tree; they were preserved but excluded from this release. The release was assembled from baseline commit `4de9a7ebf8dad49f4d331dcc9f143dfc7049e5b7` plus the tested browser/consent files in `/private/tmp/drive-right-openai-ads-release`. No source commit or push was made. The CAPI descriptions below document local work, not deployed behavior.

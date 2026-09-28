@@ -1,8 +1,8 @@
 import { initializeAdConsent } from './ad-consent.js';
 
-// Public Pixel ID verified in the SpurAuto account used for Drive Right.
+// Public Pixel ID supplied by the site owner on September 28, 2026.
 // This static site does not substitute server environment variables into JS.
-export const OPENAI_ADS_PIXEL_ID = '1FkmT28b6AkfCMFBEcxsHP';
+export const OPENAI_ADS_PIXEL_ID = '4FeqFBVzJFUMdu8S8gatam';
 
 const productionHosts = new Set(['www.driverightcarbuying.com', 'driverightcarbuying.com']);
 
