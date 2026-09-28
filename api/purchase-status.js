@@ -13,6 +13,19 @@ export function verifiedPurchase(session, purchase, requestedTier) {
   );
 }
 
+// Value and currency come from the ledger row, so a historical $495 purchase
+// reports 495 rather than the current price.
+export function verifiedPurchaseBody(purchase) {
+  return {
+    ok: true,
+    verified: true,
+    tier: purchase.tier_id,
+    purchase_id: purchase.id,
+    value: purchase.amount_total / 100,
+    currency: String(purchase.currency).toUpperCase()
+  };
+}
+
 async function retrieveSession(sessionId) {
   try {
     return await stripeClient().checkout.sessions.retrieve(sessionId);
@@ -45,12 +58,7 @@ async function handle(req, res) {
   const verified = verifiedPurchase(session, purchase, requestedTier);
 
   if (verified) {
-    return sendJson(res, 200, {
-      ok: true,
-      verified: true,
-      tier: purchase.tier_id,
-      purchase_id: purchase.id
-    });
+    return sendJson(res, 200, verifiedPurchaseBody(purchase));
   }
 
   const status = session.payment_status === 'paid' && !purchase ? 'processing' : 'unverified';

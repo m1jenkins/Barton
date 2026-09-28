@@ -7,7 +7,7 @@ import { SERVICE_TIERS } from '../_lib/config.js';
 import { payloadHash, validateCheckoutPayload, validateOnboardingPayload } from '../_lib/validation.js';
 import { recordEvent } from '../stripe-webhook.js';
 import webhook from '../stripe-webhook.js';
-import { verifiedPurchase } from '../purchase-status.js';
+import { verifiedPurchase, verifiedPurchaseBody } from '../purchase-status.js';
 
 const link='https://buy.stripe.com/test_current';
 const ref='71ce2e4c-99b0-4d62-91ef-334605514dcf';
@@ -86,10 +86,18 @@ test('historical $195/$495/$295/$895 and new $395/$695 paid sessions retain thei
   assert.equal([...db.outbox.values()][0].value,amount/100);
   const purchase=[...db.purchases.values()][0];
   for(let refresh=0;refresh<3;refresh++)assert.equal(verifiedPurchase(e.data.object,purchase,tier),true);
+  assert.deepEqual(verifiedPurchaseBody(purchase),{ok:true,verified:true,tier,purchase_id:purchase.id,value:amount/100,currency:'USD'});
   assert.equal(verifiedPurchase({...e.data.object,amount_total:amount+1},purchase,tier),false);
   assert.equal(verifiedPurchase(e.data.object,purchase,'wrong_tier'),false);
   assert.equal(validateOnboardingPayload({tier,session_id:e.data.object.id,fields:{name:'Test Buyer',email:'buyer@example.test',phone:'512-555-0100',city:'Austin'}}).tier,tier);
  }
+});
+test('verified purchase-status reports the recorded ledger amount, not the current price',()=>{
+ const row={id:'06a28d37-b5d9-4f0e-a20c-c8e506ef5477',checkout_session_id:'cs_test_fullservice12345678',client_reference_id:ref,tier_id:'full_service',amount_total:39500,currency:'usd',payment_status:'paid'};
+ assert.deepEqual(verifiedPurchaseBody(row),{ok:true,verified:true,tier:'full_service',purchase_id:row.id,value:395,currency:'USD'});
+ assert.equal(verifiedPurchaseBody({...row,tier_id:'concierge',amount_total:69500}).value,695);
+ for(const [amount,value] of [[29500,295],[49500,495]]) assert.equal(verifiedPurchaseBody({...row,amount_total:amount}).value,value);
+ assert.equal(verifiedPurchaseBody({...row,tier_id:'concierge',amount_total:89500}).value,895);
 });
 test('tax, discount, currency, wrong reference and unpaid mismatch do not produce a purchase',async()=>{
  for(const overrides of [{amount_total:42759},{amount_total:38500},{amount_total:29500},{currency:'eur'},{client_reference_id:'f5dbf6c1-fb6c-4452-9190-a440527bad07'},{payment_status:'unpaid'}]){

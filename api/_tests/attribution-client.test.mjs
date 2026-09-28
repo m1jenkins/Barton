@@ -10,7 +10,7 @@ function page(url,referrer='',local=storage(),session=storage()) {
  const document={referrer,body:{dataset:{}},getElementById:()=>null,querySelectorAll:()=>[]};
  const context=vm.createContext({window,document,URL,URLSearchParams,Date,Set,setTimeout,clearTimeout,console});
  vm.runInContext(source,context);
- return {touch:()=>JSON.parse(vm.runInContext('JSON.stringify(attributionData)',context)),track:(name,p={})=>vm.runInContext(`track(${JSON.stringify(name)},${JSON.stringify(p)})`,context),window,local,session};
+ return {touch:()=>JSON.parse(vm.runInContext('JSON.stringify(attributionData)',context)),track:(name,p={},o)=>vm.runInContext(`track(${JSON.stringify(name)},${JSON.stringify(p)}${o?`,${JSON.stringify(o)}`:''})`,context),window,local,session};
 }
 test('organic acquisition survives pricing navigation and confirmation refresh',()=>{
  const home=page('https://www.driverightcarbuying.com/','https://www.google.com/search?q=private');
@@ -49,6 +49,19 @@ test('durable lead and attempt IDs dedupe retries and reloads; intent clicks sta
  assert.equal(p.window.dataLayer.length,4);assert.equal(p.window.dataLayer[0].event_id,'lead:durable-lead');
  assert.equal(p.window.dataLayer[1].event_id,'checkout:durable-attempt');
  const reload=page('https://www.driverightcarbuying.com/','',p.local,p.session);reload.track('generate_lead',{lead_id:'durable-lead'});assert.equal(reload.window.dataLayer.length,0);
+});
+test('track stays fire-and-forget; a navigation wait resolves at once when nothing is sent or GTM is absent',async()=>{
+ const p=page('https://www.driverightcarbuying.com/');
+ const settledNow=promise=>Promise.race([promise.then(()=>true),new Promise(resolve=>setImmediate(()=>resolve(false)))]);
+ assert.equal(p.track('cta_click',{cta_location:'pricing'}),undefined);
+ assert.equal(p.track('begin_checkout',{checkout_attempt_id:'attempt'}),undefined);
+ assert.equal(p.track('begin_checkout',{checkout_attempt_id:'attempt'}),undefined);
+ for(const [event,properties] of [['begin_checkout',{}],['begin_checkout',{checkout_attempt_id:'attempt'}],['purchase_verified',{}]]){
+  assert.equal(await settledNow(p.track(event,properties,{beforeNavigation:true})),true,`${event} ${JSON.stringify(properties)}`);
+ }
+ assert.equal(p.window.dataLayer.length,2);
+ assert.equal(await settledNow(p.track('begin_checkout',{checkout_attempt_id:'next'},{beforeNavigation:true})),true);
+ assert.equal(p.window.dataLayer.length,3);assert.equal(p.window.dataLayer[2].event_id,'checkout:next');assert.equal(p.window.dataLayer[2].eventTimeout,1000);
 });
 test('server drops referrer credentials, query and fragments, even for forged client attribution',()=>{
  const value=validateAttribution({first_touch:{referrer:'https://user:secret@example.test/path?email=private#token',landing_path:'/schedule.html?session_id=private#contact'},last_touch:{referrer:'javascript:secret'}});

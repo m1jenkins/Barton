@@ -216,3 +216,32 @@ test('startDirect skips leads and opens Stripe for a plan', async () => {
   assert.equal(calls[0].body.lead_id, undefined);
   assert.equal(calls.filter(c => c.url === '/api/leads').length, 0);
 });
+
+test('startDirect and submit wait for the begin_checkout tag before returning the Stripe URL', async () => {
+  const input = { tier: 'full_service', contact: { name: 'Ada', email: 'ada@example.test' }, brief: draft() };
+  for (const [name, start, extra] of [['startDirect', flow => flow.startDirect('full_service'), { direct: true }], ['submit', flow => flow.submit(input), {}]]) {
+    const calls = [], store = memoryStore();
+    let release, returned = false;
+    const flow = createCheckout({
+      store, createId: () => crypto.randomUUID(), attribution: {},
+      track: (...args) => { calls.push(args); if (args[0] === 'begin_checkout') return new Promise(resolve => { release = resolve; }); },
+      request: async url => url === '/api/leads' ? { ok: true, lead_id: '71ce2e4c-99b0-4d62-91ef-334605514dcf' } : { ok: true, url: 'https://buy.stripe.com/test-direct', attempt_id: 'attempt-2' },
+    });
+    const started = start(flow).then(result => { returned = true; return result; });
+    for (let i = 0; i < 50 && !release; i++) await new Promise(resolve => setImmediate(resolve));
+    assert.deepEqual(calls.at(-1), ['begin_checkout', { service_tier: 'full_service', checkout_attempt_id: 'attempt-2', ...extra }, { beforeNavigation: true }], name);
+    assert.equal(store.read().checkouts.at(-1).tracked, true, `${name} saves the attempt before waiting`);
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(returned, false, `${name} waits for the tag`);
+    release();
+    assert.equal((await started).url, 'https://buy.stripe.com/test-direct', name);
+  }
+});
+
+test('a failing or old begin_checkout tracker never blocks the checkout URL', async () => {
+  for (const track of [() => { throw new Error('tag failed'); }, () => Promise.reject(new Error('tag failed')), () => undefined]) {
+    const flow = createCheckout({ store: memoryStore(), createId: () => crypto.randomUUID(), attribution: {}, track,
+      request: async () => ({ ok: true, url: 'https://buy.stripe.com/test-direct', attempt_id: 'attempt-3' }) });
+    assert.equal((await flow.startDirect('concierge')).url, 'https://buy.stripe.com/test-direct');
+  }
+});
