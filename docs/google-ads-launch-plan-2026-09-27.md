@@ -88,14 +88,14 @@ Why:
 
 ### Ad groups and keywords (non-brand)
 
-Seeds come from Search Console (`docs/seo-execution/query-map.csv`). On Day 0, Keyword Planner supplies bid ranges, and keywords with no volume are dropped.
+Seeds come from Search Console (`docs/seo-execution/query-map.csv`). On Day 0, Keyword Planner supplies bid ranges, and keywords with no volume are dropped. The September 27 run dropped five non-brand keywords. Brand keywords stay even without volume (owner decision, September 27). Results are in `outputs/2026-10-google-search-ads/keyword-planner/`.
 
 | Ad group | Landing page | Keywords (`[exact]`, `"phrase"`) |
 |---|---|---|
 | Car Buying Service | `/car-buying-service.html` | [car buying service], "car buying service", [car buying services], "nationwide car buying service", [car buying agent], "car buying agent", "car buying service cost" |
-| Car Negotiation | `/car-buying-service.html` (see note) | [car negotiation service], "car negotiation service", [car negotiator], "car negotiator", [vehicle negotiator], "car price negotiation service", "hire someone to negotiate car price", "negotiate car price for me", "car buying negotiator" |
-| Car Buying Concierge | `/schedule.html` | [car buying concierge], "car buying concierge", "car concierge service", "auto buying concierge", "nationwide car concierge", [car finder service], [car locator service] |
-| Car Buying Advisor | `/` | [car buying advisor], "car buying advisor", [car buying consultant], "car buying consultant", [car shopping service], "personal car shopper", [someone to help me buy a car], [help buying a car] |
+| Car Negotiation | `/car-buying-service.html` (see note) | [car negotiation service], "car negotiation service", [car negotiator], "car negotiator", "car price negotiation service", "hire someone to negotiate car price", "car buying negotiator" |
+| Car Buying Concierge | `/schedule.html` | [car buying concierge], "car buying concierge", "car concierge service", [car finder service], [car locator service] |
+| Car Buying Advisor | `/` | [car buying advisor], "car buying advisor", [car buying consultant], "car buying consultant", [car shopping service], "personal car shopper", [help buying a car] |
 | Brand (brand campaign) | `/` | [drive right car buying], "drive right car buying", [driveright car buying], [driverightcarbuying], [driverightcarbuying.com] |
 
 Why Car Negotiation doesn't use `/how-it-works.html` yet: that page's "Compensation and independence disclosure" says dealer-compensation statements are "pending owner attestation". It asks visitors to request a written disclosure before paying, which is friction for paid clicks. The explainer page (H1 "Car buying and negotiation service.") is used until CLM-013 is approved. How It Works stays a sitelink.

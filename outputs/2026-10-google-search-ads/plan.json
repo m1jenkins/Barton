@@ -801,19 +801,11 @@
               "match_type": "PHRASE"
             },
             {
-              "text": "vehicle negotiator",
-              "match_type": "EXACT"
-            },
-            {
               "text": "car price negotiation service",
               "match_type": "PHRASE"
             },
             {
               "text": "hire someone to negotiate car price",
-              "match_type": "PHRASE"
-            },
-            {
-              "text": "negotiate car price for me",
               "match_type": "PHRASE"
             },
             {
@@ -918,14 +910,6 @@
             },
             {
               "text": "car concierge service",
-              "match_type": "PHRASE"
-            },
-            {
-              "text": "auto buying concierge",
-              "match_type": "PHRASE"
-            },
-            {
-              "text": "nationwide car concierge",
               "match_type": "PHRASE"
             },
             {
@@ -1047,10 +1031,6 @@
             {
               "text": "personal car shopper",
               "match_type": "PHRASE"
-            },
-            {
-              "text": "someone to help me buy a car",
-              "match_type": "EXACT"
             },
             {
               "text": "help buying a car",

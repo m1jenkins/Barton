@@ -118,7 +118,7 @@ Whether GPC should also deny `ad_storage` is an owner or legal decision; the def
 ## 5. Keyword Planner (Day 0)
 
 1. Go to Tools → Planning → Keyword Planner → **Get search volume and forecasts**.
-2. Choose **Upload a file** and select `outputs/2026-10-google-search-ads/keyword-planner/keywords.csv`: one `Keyword` column, 28 unique keywords from `plan.json`, with each match type folded into one row. Or paste the same list.
+2. Choose **Upload a file** and select `outputs/2026-10-google-search-ads/keyword-planner/keywords.csv`: one `Keyword` column, 23 unique keywords from `plan.json`, with each match type folded into one row. Or paste the same list.
 3. Click **Get started**, then check the settings:
    - location: United States;
    - network: Google (not search partners);
