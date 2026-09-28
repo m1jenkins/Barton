@@ -10,6 +10,8 @@
 | `keyword-planner/historical-metrics-2026-09-27.csv` | Keyword Planner results for every keyword: volume ranges, competition and top-of-page bid ranges. Method and caveats are in `keyword-planner/README.md`. |
 | `build-editor-csv.mjs` | Rebuilds `editor-import/` and `keyword-planner/` from `plan.json`. `--check` fails if any CSV is stale. |
 | `ad-copy-approval.md` | Gate G4: every string a searcher can see (ad text, assets, display paths, final URLs, call asset), where it is used, what it claims and its evidence, plus the sign-off steps. Approved through `ADS-GOOGLE-2026-10` in `data/claims.csv`. |
+| `gtm/` | Gate G2: the GTM version for purchase tracking. `gtm-import-merge.json` holds the new variables, triggers and conversion tags; `gtm/README.md` has the manual edits, Preview checks, publish notes and rollback. |
+| `build-gtm-import.mjs` | Rebuilds `gtm/gtm-import-merge.json`; `--check` fails if it's stale or a label no longer matches `docs/google-ads-setup.md`. |
 | `stripe-checklist.md` | Gate G1: live Payment Links, webhook, Vercel variables and the test purchase. |
 | `change-log.md` | One line per account change, with reason, expected effect, rollback and review date. |
 
@@ -17,6 +19,7 @@
 
 ```sh
 node outputs/2026-10-google-search-ads/build-editor-csv.mjs --check
+node outputs/2026-10-google-search-ads/build-gtm-import.mjs --check
 python3 ~/.claude/skills/google-search-ads/gads_tools.py check outputs/2026-10-google-search-ads/plan.json
 ```
 
