@@ -119,13 +119,13 @@ Whether GPC should also deny `ad_storage` is an owner or legal decision; the def
 
 1. Go to Tools → Planning → Keyword Planner → **Get search volume and forecasts**.
 2. Choose **Upload a file** and select `outputs/2026-10-google-search-ads/keyword-planner/keywords.csv`: one `Keyword` column, 28 unique keywords from `plan.json`, with each match type folded into one row. Or paste the same list.
-3. Click **Get started**, then set:
+3. Click **Get started**, then check the settings:
    - location: United States;
-   - language: English;
    - network: Google (not search partners);
    - dates: the last 12 months.
-4. On **Historical metrics**, click **Download** → **.csv**. On **Forecast**, click **Download forecast** → **.csv**. Nothing needs saving to a plan, and nothing is created in the account.
-5. Share both files. Keywords with no volume are dropped from `plan.json` before launch, and the builder regenerates `keywords.csv`.
+   The language filter stays locked at "All languages".
+4. On **Saved keywords**, use the download icon → **.csv**. Skip the forecast: it treats the keywords as broad match, and the plan uses only exact and phrase. Keyword Planner saves a draft plan, and nothing is added to a campaign.
+5. Results go in `outputs/2026-10-google-search-ads/keyword-planner/`. The September 27 run is `historical-metrics-2026-09-27.csv`. Keywords with no volume are dropped from `plan.json` before launch, and the builder regenerates `keywords.csv`.
 
 ## 6. Launch day (Monday, October 5, 2026)
 

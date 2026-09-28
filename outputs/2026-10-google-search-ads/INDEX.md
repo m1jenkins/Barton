@@ -7,6 +7,7 @@
 | `plan.json` | Source of truth: campaigns, budgets, targeting, keywords, negatives, responsive search ads, assets and governance limits. Edit this file, never the CSVs. |
 | `editor-import/01…10-*.csv` | Google Ads Editor import files generated from `plan.json`. Import them in number order. |
 | `keyword-planner/keywords.csv` | Keyword Planner upload ("Get search volume and forecasts"): each keyword text once, generated from `plan.json`. Steps are in `docs/google-ads-setup.md` §5. |
+| `keyword-planner/historical-metrics-2026-09-27.csv` | Keyword Planner results for every keyword: volume ranges, competition and top-of-page bid ranges. Method and caveats are in `keyword-planner/README.md`. |
 | `build-editor-csv.mjs` | Rebuilds `editor-import/` and `keyword-planner/` from `plan.json`. `--check` fails if any CSV is stale. |
 | `ad-copy-approval.md` | Gate G4: every string a searcher can see (ad text, assets, display paths, final URLs, call asset), where it is used, what it claims and its evidence, plus the sign-off steps. Approved through `ADS-GOOGLE-2026-10` in `data/claims.csv`. |
 | `stripe-checklist.md` | Gate G1: live Payment Links, webhook, Vercel variables and the test purchase. |
