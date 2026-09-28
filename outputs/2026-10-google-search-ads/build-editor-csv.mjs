@@ -2,12 +2,15 @@
 // Usage: node outputs/2026-10-google-search-ads/build-editor-csv.mjs [--check]
 // Headers follow Google Ads Editor's "CSV file columns" help page (answer 57747). Editor still
 // shows a column mapping before import; confirm it, keep campaigns paused, then review changes.
+// Also writes keyword-planner/keywords.csv: the single "Keyword" column upload that Keyword
+// Planner's "Get search volume and forecasts" accepts (answer 7337243; 80 characters, 10 words max).
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const outDir = join(root, 'editor-import');
+const plannerDir = join(root, 'keyword-planner');
 const plan = JSON.parse(readFileSync(join(root, 'plan.json'), 'utf8'));
 const check = process.argv.includes('--check');
 
@@ -85,20 +88,29 @@ files['10-call-assets.csv'] = csv(
   campaigns.filter(c => c.assets.call).map(c => [c.name, c.assets.call.phone, c.assets.call.country, schedule(c.assets.call)])
 );
 
+// Historical volume ignores match type, so each keyword text appears once, in plan order.
+const plannerKeywords = [...new Set(campaigns.flatMap(c => c.ad_groups.flatMap(g => g.keywords.map(k => k.text))))];
+for (const text of plannerKeywords) {
+  if (text.length > 80 || text.split(/\s+/).length > 10) throw new Error(`Too long for Keyword Planner: ${text}`);
+}
+const plannerFiles = { 'keywords.csv': csv(['Keyword'], plannerKeywords.map(text => [text])) };
+
 let stale = [];
-if (!check) mkdirSync(outDir, { recursive: true });
-for (const [name, body] of Object.entries(files)) {
-  const path = join(outDir, name);
-  if (check) {
-    let current = null;
-    try { current = readFileSync(path, 'utf8'); } catch {}
-    if (current !== body) stale.push(name);
-  } else {
-    writeFileSync(path, body);
+for (const [dir, group] of [[outDir, files], [plannerDir, plannerFiles]]) {
+  if (!check) mkdirSync(dir, { recursive: true });
+  for (const [name, body] of Object.entries(group)) {
+    const path = join(dir, name);
+    if (check) {
+      let current = null;
+      try { current = readFileSync(path, 'utf8'); } catch {}
+      if (current !== body) stale.push(join(dir.slice(root.length + 1), name));
+    } else {
+      writeFileSync(path, body);
+    }
   }
 }
 if (check && stale.length) {
-  console.error(`Stale Editor import files (run without --check to rebuild): ${stale.join(', ')}`);
+  console.error(`Stale generated files (run without --check to rebuild): ${stale.join(', ')}`);
   process.exit(1);
 }
-console.log(`${check ? 'Checked' : 'Wrote'} ${Object.keys(files).length} Editor import files in ${outDir}`);
+console.log(`${check ? 'Checked' : 'Wrote'} ${Object.keys(files).length} Editor import files in ${outDir} and ${Object.keys(plannerFiles).length} Keyword Planner file in ${plannerDir}`);
