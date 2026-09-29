@@ -85,7 +85,7 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
   const description = html.match(/<meta name="description"\s+content="([^"]+)"/i)?.[1] ?? '';
   assert.match(title, /car buying service/i);
-  assert.match(title, /not a dealership/i);
+  assert.equal(title, 'Car Buying Service in Austin & Nationwide | Drive Right');
   assert.doesNotMatch(title, /inventory|cars for sale|auto sales/i);
   assert.doesNotMatch(description, forbidden);
   assert.match(description, /\$395/);
