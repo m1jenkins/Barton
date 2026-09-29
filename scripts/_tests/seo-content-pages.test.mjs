@@ -203,8 +203,15 @@ test('city and editorial containment remains accurate after homepage copy change
     assert.match(document.visibleText, new RegExp(`We help ${city.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} car buyers`, 'i'), city.slug);
   }
 
-  for (const file of ['austin.html', 'arlington.html', 'dallas.html', 'el-paso.html', 'fort-worth.html', 'houston.html', 'new-braunfels.html', 'san-antonio.html', 'san-marcos.html']) {
+  const austin = await read('austin.html');
+  const austinDocument = htmlDocument(austin);
+  assert.equal(austinDocument.noindex, false);
+  assert.match(austin, /<meta name="robots" content="index, follow">/);
+  assert.doesNotMatch(austin, /Pre-publication draft|creativeWorkStatus/);
+  assert.match(await read('sitemap.xml'), /<loc>https:\/\/www\.driverightcarbuying\.com\/austin\.html<\/loc>/);
+  for (const file of ['arlington.html', 'dallas.html', 'el-paso.html', 'fort-worth.html', 'houston.html', 'new-braunfels.html', 'san-antonio.html', 'san-marcos.html']) {
     assert.equal(htmlDocument(await read(file)).noindex, true, file);
+    assert.doesNotMatch(await read('sitemap.xml'), new RegExp(file.replaceAll('.', '\\.')));
   }
 
   const hub = htmlDocument(await read('blog.html'));

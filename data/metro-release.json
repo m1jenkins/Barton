@@ -878,8 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Retain Austin base; complete local gate. Contained bytes re-pinned on 2026-09-21 after removing retired $195/$495 plan copy (see docs/seo/2026-09-21-claim-safety-redirects.md) and on 2026-09-27 for the $395/$695 price change (SEO-PRICE-2026-09-27)",
-      "sha256": "2895706dc498c6a2e05af68a780b38fdb475edeff41e97fdae7f0ceda1ef36a6",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change.",
+      "indexablePublication": true,
+      "sha256": "ecca6d4c15f8a76bab92cd1dbbdf20277c6fb5752752d26fec9ede40517996de",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null

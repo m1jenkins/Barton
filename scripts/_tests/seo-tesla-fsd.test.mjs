@@ -9,7 +9,6 @@ const pageFile = 'tesla-fsd-for-sale.html';
 const canonical = 'https://www.driverightcarbuying.com/tesla-fsd-for-sale.html';
 const cities = [
   'arlington.html',
-  'austin.html',
   'dallas.html',
   'el-paso.html',
   'fort-worth.html',
@@ -102,6 +101,9 @@ test('docs close the tesla FSD decision as keep-noindex and reject 301/410', asy
 
 test('city pages and topic hubs stay noindex and off the sitemap', async () => {
   const sitemap = await read('sitemap.xml');
+  const austin = htmlDocument(await read('austin.html'));
+  assert.equal(austin.noindex, false);
+  assert.match(sitemap, /austin\.html/);
   for (const file of [...cities, ...topicHubs, pageFile]) {
     assert.equal(htmlDocument(await read(file)).noindex, true, file);
     assert.doesNotMatch(sitemap, new RegExp(file.replaceAll('.', '\\.')));
