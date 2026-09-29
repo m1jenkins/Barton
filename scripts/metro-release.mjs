@@ -113,17 +113,25 @@ export async function validateMetroRelease(root, { today = new Date().toISOStrin
     }
     await scan();
     for (const [file, page] of publicHtml) page.document = htmlDocument(page.html);
+    const publishedLegacy = new Set(registry.legacyTexas.filter(entry => entry.indexablePublication === true).map(entry => entry.slug));
     const eligible = new Set();
     for (const m of registry.markets) {
       const reasons = releaseReasons(m, context);
       if (!reasons.length) eligible.add(m.slug);
       if (m.releaseStatus === 'approved' && reasons.length) fail(`${m.id}: unsafe release: ${reasons.join('; ')}`);
       const page = publicHtml.get(m.slug), legacy = registry.legacyTexas.find(l => l.slug === m.slug);
+      const published = publishedLegacy.has(m.slug);
       if (page && !eligible.has(m.slug)) {
-        if (!legacy || sha256(page.html) !== legacy.sha256) fail(`${m.slug}: unapproved new/replaced page is publicly deployable (noindex is not containment)`);
-        if (!page.document.noindex || page.document.conflictingRobots) fail(`${m.slug}: unreleased page must remain noindex`);
+        if (published) {
+          if (!legacy || sha256(page.html) !== legacy.sha256) fail(`${m.slug}: published legacy artifact hash mismatch`);
+          if (page.document.noindex || page.document.conflictingRobots) fail(`${m.slug}: owner-published page must remain indexable`);
+          if (page.document.canonical.length !== 1 || page.document.canonical[0] !== `${origin}/${m.slug}` || page.document.h1.length !== 1) fail(`${m.slug}: canonical/H1 mismatch`);
+        } else {
+          if (!legacy || sha256(page.html) !== legacy.sha256) fail(`${m.slug}: unapproved new/replaced page is publicly deployable (noindex is not containment)`);
+          if (!page.document.noindex || page.document.conflictingRobots) fail(`${m.slug}: unreleased page must remain noindex`);
+        }
       }
-      if (!eligible.has(m.slug) && sitemapUrls.includes(`${origin}/${m.slug}`)) fail(`${m.slug}: unreleased sitemap membership`);
+      if (!eligible.has(m.slug) && !published && sitemapUrls.includes(`${origin}/${m.slug}`)) fail(`${m.slug}: unreleased sitemap membership`);
       if (eligible.has(m.slug)) {
         if (!page || page.document.noindex || page.document.conflictingRobots || !sitemapUrls.includes(`${origin}/${m.slug}`)) fail(`${m.slug}: approved page/indexing/sitemap disagreement`);
         if (page && (page.document.canonical.length !== 1 || page.document.canonical[0] !== `${origin}/${m.slug}` || page.document.h1.length !== 1)) fail(`${m.slug}: canonical/H1 mismatch`);
@@ -146,7 +154,9 @@ export async function validateMetroRelease(root, { today = new Date().toISOStrin
       if (!ids.has(old.marketId)) fail(`${old.slug}: unknown disposition market`);
       if (eligible.has(old.slug)) continue;
       const page = publicHtml.get(old.slug);
-      if (!page || !page.document.noindex || sha256(page.html) !== old.sha256 || sitemapUrls.includes(`${origin}/${old.slug}`)) fail(`${old.slug}: legacy containment/preservation changed`);
+      if (publishedLegacy.has(old.slug)) {
+        if (!page || page.document.noindex || page.document.conflictingRobots || sha256(page.html) !== old.sha256 || !sitemapUrls.includes(`${origin}/${old.slug}`)) fail(`${old.slug}: published legacy containment/indexing mismatch`);
+      } else if (!page || !page.document.noindex || sha256(page.html) !== old.sha256 || sitemapUrls.includes(`${origin}/${old.slug}`)) fail(`${old.slug}: legacy containment/preservation changed`);
       if (old.redirectTo !== null) fail(`${old.slug}: redirect pending separate baseline/release review`);
     }
     const hub = publicHtml.get('service-areas.html');
@@ -172,7 +182,7 @@ export async function validateMetroRelease(root, { today = new Date().toISOStrin
         if (url.origin !== origin) continue;
         if (url.pathname.startsWith('/draft-artifacts/')) fail(`${file}: links to private draft artifact`);
         const target = url.pathname.slice(1);
-        if ((file === 'service-areas.html' || !page.document.noindex) && (slugs.has(target) || registry.legacyTexas.some(l => l.slug === target)) && !eligible.has(target)) {
+        if ((file === 'service-areas.html' || !page.document.noindex) && (slugs.has(target) || registry.legacyTexas.some(l => l.slug === target)) && !eligible.has(target) && !publishedLegacy.has(target)) {
           const baseline = registry.legacyDiscoveryLinks?.find(l => l.source === file && l.target === target);
           const count = page.document.links.filter(h => { const u = new URL(h, `${origin}/${file}`); return u.origin === origin && u.pathname === url.pathname; }).length;
           if (file === 'service-areas.html' || !baseline || count > baseline.count) fail(`${file}: discovery link to unreleased ${target}`);
