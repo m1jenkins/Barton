@@ -179,6 +179,7 @@ function renderConversation() {
   const reply = replyPending
     ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
     : `<p class="assistant-reply">${escape(field?.question || 'Your search details are ready. Review them, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
+  // The head-on Miata (logo-motion.css) flips its headlights up as each reply arrives and switches them on when the search is complete.
   const avatar = `<span class="mx-avatar${replyPending ? '' : field ? ' is-hello' : ' is-done'}" aria-hidden="true"></span>`;
   const responseMarkup = `<span class="message-label assistant-name">${avatar}Drive Right</span>${reply}`;
   if (response.innerHTML !== responseMarkup) response.innerHTML = responseMarkup;

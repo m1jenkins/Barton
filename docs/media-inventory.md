@@ -80,7 +80,7 @@ JPEG fallback: `mason-headshot-1200.jpg` — 1200×1600, 222,580 bytes (mozjpeg 
 
 Selected by the owner in the 2026-10-01 photo review: a white Mercedes-Benz E-Class outdoors, photographed by Muhammet Raşit Kaplan. Source: [Pexels photo 17233277](https://www.pexels.com/photo/white-mercedes-e-class-17233277/), downloaded from Pexels at 5086×3391 (1,751,019 bytes). The [Pexels license](https://www.pexels.com/license/) permits free website use and modifications; attribution is optional. This is decorative stock imagery, with no statement of brand endorsement.
 
-Original: `assets/external/source/search-review-white-mercedes-e-class-original.jpg`. Web derivatives below are under `assets/external/optimized/`. The approved 16:9 crop uses the full source width, with its vertical offset at 55% of the available crop range (top 292px, height 2861px); then it is resized with `sharp`. No retouching or generated pixels. AVIF quality 58, WebP quality 80, JPEG quality 82; derivative metadata is stripped. Used in the `index.html#search` “Choose a plan” panel and inherited by the local city drafts.
+Original: `assets/external/source/search-review-white-mercedes-e-class-original.jpg`. Web derivatives below are under `assets/external/optimized/`. The approved 16:9 crop uses the full source width, with its vertical offset at 55% of the available crop range (top 292px, height 2861px); then it is resized with `sharp`. No retouching or generated pixels. AVIF quality 58, WebP quality 80, JPEG quality 82; derivative metadata is stripped. Used in the homepage’s “Choose a plan” panel and inherited by the local city drafts.
 
 | Pixels | AVIF bytes | WebP bytes |
 |---|---:|---:|
@@ -112,6 +112,22 @@ Each profile derivative is a centered square crop resized to 160×160, appropria
 | Social AVIF | `assets/external/social/drive-right-two-mazda-miatas-1200x630.avif` | 1200×630 | 145,030 | Modern derivative |
 
 The social replacement is a mechanical centered crop from 1440×1080 to 1440×756, followed by a resize to 1200×630. No objects, text, branding, or generated pixels were added.
+
+### Header mascot (Mariner Blue NA Miata)
+
+Generated pixel art, supplied by the owner on 2026-10-01 as a reference pack: 16-bit style, built with an image generator from the owner's photos. The two sheets used and the pack's `manifest.json` and handoff notes are kept in `assets/mascot/reference/`. That folder is not deployed (`.vercelignore`). `node scripts/build-mascot-sprites.mjs` rebuilds the sprites below from it. The pack's rules hold: no added eyes or mouth, and the pop-up headlights are the only expression.
+
+| Asset | Local file | Pixels | Bytes | Used by |
+|---|---|---:|---:|---|
+| Side view | `assets/mascot/side.webp` | 170×66 | 6,206 | Header drive-by, chat typing bubble |
+| Wheel | `assets/mascot/wheel.webp` | 27×27 | 870 | Spinning wheel layer |
+| Three-quarter strip, 6 headlight frames | `assets/mascot/q.webp` | 990×84 | 36,804 | Parked header car |
+| Head-on strip, 6 headlight frames | `assets/mascot/front.webp` | 552×60 | 17,486 | Chat avatar |
+| Side view, large | `assets/mascot/side-lg.webp` | 319×124 | 15,334 | Payment-success celebration |
+| Wheel, large | `assets/mascot/wheel-lg.webp` | 50×50 | 1,886 | Payment-success celebration |
+| Three-quarter strip, large | `assets/mascot/q-lg.webp` | 1854×157 | 91,146 | Payment-success celebration |
+
+Headlight frames run left to right: down, half raised, up, up and lit, left wink, right wink. Each frame is the down/off drawing with only the changed headlight regions swapped in from the pack's state, so the body never shifts between frames.
 
 ## Integration notes
 

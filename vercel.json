@@ -120,6 +120,11 @@
       "permanent": true
     },
     {
+      "source": "/pricing.html",
+      "destination": "/schedule.html",
+      "statusCode": 301
+    },
+    {
       "source": "/blog-dealer-addons-exposed.html",
       "destination": "/blog-dealership-addons-complete-guide.html",
       "permanent": true

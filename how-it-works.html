@@ -102,7 +102,7 @@
     <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
     <script>
-      // Logo intro: the car drives in on the first page of a visit. Show the wordmark if motion cannot load.
+      // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
     </script>
     <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
@@ -119,10 +119,10 @@
   </nav>
   <a class="header-cta" href="/#conversation" data-brief-link data-cta-location="header">Start my search</a>
 </header><main id="main-content" tabindex="-1"><section class="page-width how-page"><div class="page-intro"><h1>How our car buying service works.</h1><p>Drive Right is an Austin-based car buying and negotiation service supporting buyers nationwide. Choose a plan, share your search details, review the available vehicles and written terms, and keep control of every purchase decision. <a href="/car-buying-service.html">See what a car buying service can handle</a>.</p></div><ol class="journey-list">
-<li><span>01</span><div><h2>Describe your car.</h2><p>A family SUV is a good starting point. Tell us the kind of car you need, your car-price budget, and your ZIP. No exact model required.</p></div></li>
-<li><span>02</span><div><h2>Review your search details.</h2><p>Keep what matters. Edit any answer and add year, mileage, radius, color, trim, or transmission. Mark details Must-have or Prefer in the editor.</p></div></li>
-<li><span>03</span><div><h2>Choose your plan.</h2><p>Choose Full Service for research, price negotiation, fee review and documented vehicle recommendations, or Ultimate Concierge for expanded sourcing and coordination.</p></div></li>
-<li><span>04</span><div><h2>Pay the service fee.</h2><p>Pay securely with Stripe, then return here to share your details and car preferences.</p></div></li>
+<li><span>01</span><div><h2>Start your search or pay first.</h2><p>Start your car search, then choose a plan and pay. Or choose a plan and pay first, then complete your search details. A family SUV is a good starting point. Tell us the kind of car you need, your car-price budget, and your ZIP. No exact model required.</p></div></li>
+<li><span>02</span><div><h2>Review your search details.</h2><p>Before payment or after checkout, keep what matters. Edit any answer and add year, mileage, radius, color, trim, or transmission. Mark details Must-have or Prefer in the editor.</p></div></li>
+<li><span>03</span><div><h2>Choose your plan.</h2><p>If you haven’t paid yet, choose Full Service for research, price negotiation, fee review and documented vehicle recommendations, or Ultimate Concierge for expanded sourcing and coordination. If you paid first, your plan is already selected.</p></div></li>
+<li><span>04</span><div><h2>Pay the service fee.</h2><p>If you started with your search details, pay securely with Stripe, then return here to share your details and car preferences. If you paid first, continue to your intake.</p></div></li>
 <li><span>05</span><div><h2>Complete your intake.</h2><p>After payment verification, complete your intake details and car preferences. Your advisor confirms scope and expected timing. You retain the final decision on every vehicle and deal.</p></div></li>
 </ol><div class="how-action"><a href="/#conversation" class="primary-button">Describe my car <span data-icon="arrow"></span></a></div></section><section class="page-width service-scope section-space" id="plans"><h2>Two plans.<br>$395 or $695.</h2><div class="plan-grid"><article class="plan-card" data-featured id="full-service"><h2>Full Service</h2><p class="plan-description">Research, negotiation, and fee review with a dedicated advisor.</p><p class="plan-price">$395<span>one-time service fee</span></p><ul><li>New, used, and CPO inventory search</li><li>Price negotiation and fee review</li><li>Dedicated advisor through the process</li><li>Documented vehicle recommendations</li></ul><a href="/schedule.html#full-service" class="primary-button">Choose this plan <span data-icon="arrow"></span></a></article><article class="plan-card" id="concierge"><h2>Ultimate Concierge</h2><p class="plan-description">Expanded sourcing and coordination.</p><p class="plan-price">$695<span>one-time service fee</span></p><ul><li>Everything in Full Service</li><li>Auctions, forums, and niche sources</li><li>Priority communication and coordination</li><li>Delivery coordination where available</li></ul><a href="/schedule.html#concierge" class="outline-button">Choose this plan <span data-icon="arrow"></span></a></article></div></section><section class="page-width service-disclosures" id="scope">                <h2>How to evaluate the fee</h2>
 <p>Start with the tasks you want to hand over to a car negotiator: finding candidates, comparing written quotes, or communicating about price and fees with participating sellers. <a href="/schedule.html#full-service">Compare the $395 Full Service scope</a> with the $695 Concierge plan before choosing. You decide which vehicle to buy and arrange any independent inspection, financing, insurance and final signing.</p>
@@ -146,6 +146,6 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><script src="/script.js?v=ae6981ab33d6"></script>
-<script type="module" src="/buying/app.js?v=f176654b4566"></script>
+<script type="module" src="/buying/app.js?v=dfd6a85ce05e"></script>
 </body>
 </html>

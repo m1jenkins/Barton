@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://www.driverightcarbuying.com/car-buying-service.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.driverightcarbuying.com/car-buying-service.html">
-    <meta property="og:title" content="Car Buying Service, Not a Dealership | Drive Right">
+    <meta property="og:title" content="Car Buying Service in Austin &amp; Nationwide | Drive Right">
     <meta property="og:description" content="Drive Right is an Austin-based car buying and negotiation service. Compare $395 Full Service with $695 Ultimate Concierge.">
     <meta property="og:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
     <meta property="og:locale" content="en_US">
@@ -18,7 +18,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Car Buying Service, Not a Dealership | Drive Right">
+    <meta name="twitter:title" content="Car Buying Service in Austin &amp; Nationwide | Drive Right">
     <meta name="twitter:description" content="Drive Right is an Austin-based car buying and negotiation service. Compare $395 Full Service with $695 Ultimate Concierge.">
     <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
     <meta name="twitter:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
@@ -134,7 +134,7 @@
     <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
     <script>
-      // Logo intro: the car drives in on the first page of a visit. Show the wordmark if motion cannot load.
+      // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
     </script>
     <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
@@ -199,7 +199,8 @@
           <li>Dedicated advisor through the process</li>
           <li>Documented vehicle recommendations</li>
         </ul>
-        <a href="/schedule.html#full-service" class="primary-button">Review Full Service <span data-icon="arrow"></span></a>
+        <button type="button" data-plan="full_service" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></button>
+        <a href="/schedule.html#full-service" class="text-link" style="margin-top:12px">Review Full Service <span data-icon="arrow"></span></a>
       </article>
       <article class="plan-card" id="concierge">
         <h3>Ultimate Concierge</h3>
@@ -211,7 +212,8 @@
           <li>Priority communication and coordination</li>
           <li>Delivery coordination where available</li>
         </ul>
-        <a href="/schedule.html#concierge" class="outline-button">Review Concierge <span data-icon="arrow"></span></a>
+        <button type="button" data-plan="concierge" class="outline-button">Get Ultimate Concierge · $695 <span data-icon="arrow"></span></button>
+        <a href="/schedule.html#concierge" class="text-link" style="margin-top:12px">Review Concierge <span data-icon="arrow"></span></a>
       </article>
     </div>
   </section>
@@ -227,6 +229,7 @@
     </div>
   </section>
 </main>
+<dialog id="contact-dialog" aria-labelledby="contact-title"><header class="dialog-header"><h2 id="contact-title">Checkout could not open.</h2><button class="icon-button" data-close type="button" aria-label="Close checkout message"><span data-icon="close"></span></button></header><p class="dialog-description">Something went wrong starting Stripe. Please retry below. Your details will be collected after payment.</p><div id="chosen-plan" class="chosen-plan"></div><p id="contact-error" class="input-error" role="alert"></p><button id="checkout-submit" class="primary-button" type="button">Retry secure checkout <span data-icon="arrow"></span></button><p class="small-note">Pay securely with Stripe, then return here to share your details and car preferences.</p></dialog>
 <footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
     <nav aria-label="Company"><a href="/how-it-works.html">How it works</a><a href="/car-buying-service.html">Car buying service</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
@@ -235,6 +238,6 @@
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
 <script src="/script.js?v=ae6981ab33d6"></script>
-<script type="module" src="/buying/app.js?v=f176654b4566"></script>
+<script type="module" src="/buying/app.js?v=dfd6a85ce05e"></script>
 </body>
 </html>

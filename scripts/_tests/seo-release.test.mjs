@@ -59,3 +59,16 @@ test('payment adapter and checkout module URLs invalidate cached old offers',asy
  }
  assert.ok(versioned>=24,`${versioned} versioned page references`);
 });
+test('every root page loads the current header mascot and gates its intro before first paint',async()=>{
+ const hash=s=>createHash('sha256').update(s).digest('hex').slice(0,12);
+ const cssHash=hash(await read('logo-motion.css')),jsHash=hash(await read('logo-motion.js'));
+ for(const file of (await readdir(root)).filter(name=>name.endsWith('.html'))){
+  const html=await read(file),head=html.slice(0,html.indexOf('</head>'));
+  assert.match(html,/class="(?:wordmark|nav__wordmark)"/,`${file} header wordmark`);
+  assert.ok(head.includes(`<link rel="stylesheet" href="/logo-motion.css?v=${cssHash}">`),`${file} logo-motion.css`);
+  assert.ok(head.includes(`<script type="module" src="/logo-motion.js?v=${jsHash}"></script>`),`${file} logo-motion.js`);
+  assert.match(head,/sessionStorage\.getItem\('dr-logo-intro'\)[\s\S]*?classList\.add\('logo-intro'\)/,`${file} intro gate`);
+ }
+ for(const name of ['side','wheel','q','side-lg','wheel-lg','q-lg','front'])await readFile(new URL(`assets/mascot/${name}.webp`,root));
+ assert.match(await read('.vercelignore'),/^assets\/mascot\/reference$/m,'mascot reference sheets stay out of the deployment');
+});

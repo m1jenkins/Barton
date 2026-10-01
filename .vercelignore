@@ -20,5 +20,5 @@ scripts
 AGENTS.md
 CLAUDE.md
 
-# Build references stay local; the mascot sprites in assets/mascot/ deploy.
+# Mascot reference sheets; the sprites built from them in assets/mascot/ deploy.
 assets/mascot/reference
