@@ -12,6 +12,7 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 - Metro generation and release records: `docs/metro-execution-2026-09-16.md`, `data/metro-release.json`, and `docs/release-readiness.md`. Draft generation is local-only. Editing a pinned legacy Texas page also means updating its `legacyTexas[].sha256`, or `scripts/validate-site.mjs` fails.
 - Redirects: `vercel.json` plus `scripts/check-redirects.mjs` (`--config-only` for the file, env vars for the live matrix). Apex → www status is host/dashboard configuration that runs before repo routing; see `docs/seo/2026-09-21-claim-safety-redirects.md`.
 - `tesla-fsd-for-sale.html` is a keep-noindex park (2026-09-22): real page, `noindex, follow`, self-canonical, off sitemap; do not 301, 410, or index it without a later named Mason decision. See `docs/seo/2026-09-22-tesla-fsd-disposition.md`.
+- Google Ads: plan `docs/google-ads-launch-plan-2026-09-27.md`; campaign source `outputs/2026-10-google-search-ads/plan.json`. Rebuild its Editor CSVs with `build-editor-csv.mjs` in that folder; never hand-edit them. Ad text is a claims surface and goes live only through the approved `ADS-GOOGLE-2026-10` row. Google tags stay GTM-only (`scripts/validate-site.mjs`).
 
 ## Maintaining this file
 

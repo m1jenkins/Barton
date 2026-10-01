@@ -1,0 +1,3 @@
+Campaign,Campaign type,Networks,Budget,Budget type,Languages,Bid strategy type,Campaign status
+Search | NonBrand | Car Buying Service | US,Search,Google Search,46.00,Daily,en,Maximize conversions,Paused
+Search | Brand | Drive Right | US,Search,Google Search,3.00,Daily,en,Maximize clicks,Paused
