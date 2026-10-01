@@ -1,0 +1,605 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-09-27 19:45:00",
+  "containerVersion": {
+    "path": "accounts/6349220223/containers/249056149/versions/0",
+    "accountId": "6349220223",
+    "containerId": "249056149",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/6349220223/containers/249056149",
+      "accountId": "6349220223",
+      "containerId": "249056149",
+      "publicId": "GTM-W577B3D4",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "tag": [
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "tagId": "921",
+        "name": "Google Ads – Purchase – verified",
+        "type": "awct",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableNewCustomerReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableConversionLinker",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableProductReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableShippingData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "18071301983"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "r1JaCNq9v4gdEN_eiKlD"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "rdp",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionValue",
+            "value": "{{DLV – value}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "orderId",
+            "value": "{{DLV – transaction_id}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "currencyCode",
+            "value": "{{DLV – currency}}"
+          }
+        ],
+        "firingTriggerId": [
+          "911"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "tagId": "922",
+        "name": "Google Ads – Begin checkout",
+        "type": "awct",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableNewCustomerReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableConversionLinker",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableProductReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableShippingData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "18071301983"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "A1cuCKHhx4gdEN_eiKlD"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "rdp",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "orderId",
+            "value": "{{DLV – checkout_attempt_id}}"
+          }
+        ],
+        "firingTriggerId": [
+          "912"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "triggerId": "911",
+        "name": "CE – purchase_verified",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "0",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "purchase_verified"
+              }
+            ]
+          }
+        ],
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Page Hostname}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "www.driverightcarbuying.com"
+              }
+            ]
+          },
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{DLV – service_tier}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "^(full_service|concierge)$"
+              }
+            ]
+          },
+          {
+            "type": "GREATER",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{DLV – value}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{DLV – transaction_id}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "triggerId": "912",
+        "name": "CE – begin_checkout",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "0",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "begin_checkout"
+              }
+            ]
+          }
+        ],
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Page Hostname}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "www.driverightcarbuying.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "triggerId": "913",
+        "name": "CE – phone_click",
+        "type": "CUSTOM_EVENT",
+        "fingerprint": "0",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "phone_click"
+              }
+            ]
+          }
+        ],
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Page Hostname}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "www.driverightcarbuying.com"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "triggerId": "914",
+        "name": "Consent Init – GPC on",
+        "type": "CONSENT_INIT",
+        "fingerprint": "0",
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{JS – GPC}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "true"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "triggerId": "915",
+        "name": "Consent Init – GPC off",
+        "type": "CONSENT_INIT",
+        "fingerprint": "0",
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{JS – GPC}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "true"
+              }
+            ],
+            "negate": true
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "901",
+        "name": "DLV – transaction_id",
+        "type": "v",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "transaction_id"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "902",
+        "name": "DLV – value",
+        "type": "v",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "value"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "903",
+        "name": "DLV – currency",
+        "type": "v",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "currency"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "904",
+        "name": "DLV – service_tier",
+        "type": "v",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "service_tier"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "905",
+        "name": "DLV – checkout_attempt_id",
+        "type": "v",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "checkout_attempt_id"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "906",
+        "name": "JS – GPC",
+        "type": "j",
+        "fingerprint": "0",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "navigator.globalPrivacyControl"
+          }
+        ]
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "variableId": "907",
+        "name": "Page URL – sanitized",
+        "type": "remm",
+        "fingerprint": "0",
+        "notes": "Drops the query string (Stripe session_id) on /payment-success* pages; every other page passes Page URL through.",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "input",
+            "value": "{{Page Path}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "fullMatch",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "replaceAll",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "ignoreCase",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "defaultValue",
+            "value": "{{Page URL}}"
+          },
+          {
+            "type": "LIST",
+            "key": "map",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "key",
+                    "value": "^/payment-success.*$"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "https://{{Page Hostname}}{{Page Path}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "type": "EVENT",
+        "name": "Event"
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "type": "PAGE_HOSTNAME",
+        "name": "Page Hostname"
+      },
+      {
+        "accountId": "6349220223",
+        "containerId": "249056149",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      }
+    ]
+  }
+}

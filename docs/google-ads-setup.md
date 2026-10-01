@@ -46,6 +46,8 @@ Order: 1 → 2 → 3 happen before the Editor import (4). Launch (6) only after 
 
 Work in a new workspace named "Google Ads purchase tracking". Publish it only after the tracking PR is live in production.
 
+The new variables, triggers and conversion tags are in `outputs/2026-10-google-search-ads/gtm/gtm-import-merge.json` (Import → Merge). The edits to existing tags, the consent tags and the Preview checks are listed click by click in `outputs/2026-10-google-search-ads/gtm/README.md`.
+
 **Variables**
 - Data Layer Variables (version 2): `transaction_id`, `value`, `currency`, `service_tier`, `checkout_attempt_id`.
 - JavaScript Variable **JS – GPC**: `navigator.globalPrivacyControl`.
