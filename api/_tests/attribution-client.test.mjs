@@ -5,8 +5,8 @@ import { readFile } from 'node:fs/promises';
 import { validateAttribution, validateLeadPayload } from '../_lib/validation.js';
 const source=await readFile(new URL('../../script.js',import.meta.url),'utf8');
 const storage=()=>{const values=new Map();return {getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};};
-function page(url,referrer='',local=storage(),session=storage()) {
- const window={location:new URL(url),localStorage:local,sessionStorage:session,crypto,addEventListener(){},dataLayer:[],setTimeout,clearTimeout};
+function page(url,referrer='',local=storage(),session=storage(),extra={}) {
+ const window={location:new URL(url),localStorage:local,sessionStorage:session,crypto,addEventListener(){},dataLayer:[],setTimeout,clearTimeout,...extra};
  const document={referrer,body:{dataset:{}},getElementById:()=>null,querySelectorAll:()=>[]};
  const context=vm.createContext({window,document,URL,URLSearchParams,Date,Set,setTimeout,clearTimeout,console});
  vm.runInContext(source,context);
@@ -89,4 +89,58 @@ test('historical purchase and queued analytics strip private URL parts without r
  assert.equal(delivered.properties.source_page,'/');assert.equal(delivered.properties.attribution.first_touch.referrer,'https://google.com');assert.equal(delivered.properties.attribution.first_touch.landing_path,'/schedule.html');assert.equal(JSON.stringify(delivered).includes('private'),false);assert.deepEqual(old,snapshot);
  const purchased=purchaseEventPayload({checkoutSessionId:'cs_test_example',sourcePage:old.source_page,attribution:old.attribution,serviceTier:'full_service',amountTotal:49500,currency:'usd'});
  assert.equal(purchased.value,495);assert.equal(purchased.source_page,'/');assert.equal(purchased.page_type,'home');assert.equal(JSON.stringify(purchased).includes('private'),false);
+});
+
+test('Google click IDs stay in both touches across navigation and Stripe returns but never reach the dataLayer',()=>{
+ const gclid='TeSt_Click-1234567890abc';
+ const land=page(`https://www.driverightcarbuying.com/car-buying-service.html?gclid=${gclid}&utm_source=google&utm_medium=cpc`,'https://www.google.com/');
+ assert.equal(land.touch().first_touch.gclid,gclid);assert.equal(land.touch().last_touch.gclid,gclid);
+ const pricing=page('https://www.driverightcarbuying.com/schedule.html','https://www.driverightcarbuying.com/car-buying-service.html',land.local,land.session);
+ assert.deepEqual(pricing.touch(),land.touch());
+ pricing.track('begin_checkout',{checkout_attempt_id:'attempt-1'});
+ assert.equal(pricing.window.dataLayer.length,1);assert.equal(JSON.stringify(pricing.window.dataLayer).includes(gclid),false);
+ const returned=page('https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id=private','https://checkout.stripe.com/',land.local,land.session);
+ assert.equal(returned.touch().last_touch.gclid,gclid);
+});
+test('a new ad click replaces the last touch and keeps the first; gbraid and wbraid count as clicks',()=>{
+ const first=page('https://www.driverightcarbuying.com/?gclid=FirstClick_000001');
+ const second=page('https://www.driverightcarbuying.com/?gclid=SecondClick_00002','',first.local,first.session);
+ assert.equal(second.touch().first_touch.gclid,'FirstClick_000001');assert.equal(second.touch().last_touch.gclid,'SecondClick_00002');
+ const app=page('https://www.driverightcarbuying.com/?gbraid=0AAAAApp-Braid_1','',first.local,first.session);
+ assert.equal(app.touch().last_touch.gbraid,'0AAAAApp-Braid_1');assert.equal(app.touch().last_touch.gclid,undefined);
+ const web=page('https://www.driverightcarbuying.com/?wbraid=Web-Braid_000001','',first.local,first.session);
+ assert.equal(web.touch().last_touch.wbraid,'Web-Braid_000001');
+});
+test('malformed or forged click IDs are dropped, never truncated',()=>{
+ for(const bad of ['short','has%20space','%3Cscript%3E1234567','x'.repeat(257)]){
+  const p=page(`https://www.driverightcarbuying.com/?gclid=${bad}`);
+  assert.equal(p.touch().first_touch.gclid,undefined,bad);assert.equal(p.touch().last_touch.gclid,undefined,bad);
+ }
+ const session=storage();session.setItem('drive_right_last_touch',JSON.stringify({captured_at:'2026-09-01T00:00:00.000Z',landing_path:'/',referrer:'',gclid:'bad value!',gbraid:42}));
+ const p=page('https://www.driverightcarbuying.com/schedule.html','',storage(),session);
+ assert.equal(p.touch().last_touch.gclid,undefined);assert.equal(p.touch().last_touch.gbraid,undefined);
+});
+test('Global Privacy Control stops click-ID capture and scrubs stored IDs while keeping UTMs',()=>{
+ const ok=page('https://www.driverightcarbuying.com/?gclid=StoredClick_00001&utm_source=google');
+ assert.equal(ok.touch().first_touch.gclid,'StoredClick_00001');
+ const gpc=page('https://www.driverightcarbuying.com/schedule.html?gclid=NewClick_0000001&utm_source=google','',ok.local,ok.session,{navigator:{globalPrivacyControl:true}});
+ assert.equal(gpc.touch().first_touch.gclid,undefined);assert.equal(gpc.touch().last_touch.gclid,undefined);
+ assert.equal(gpc.touch().last_touch.utm_source,'google');
+ assert.equal(ok.local.getItem('drive_right_first_touch').includes('StoredClick'),false);
+ assert.equal(ok.session.getItem('drive_right_last_touch').includes('Click_'),false);
+});
+test('touches without click IDs keep exactly the legacy keys on the client and the server',()=>{
+ const legacy=['captured_at','landing_path','referrer','utm_campaign','utm_content','utm_medium','utm_source','utm_term'];
+ const p=page('https://www.driverightcarbuying.com/?utm_source=news','https://example.org/');
+ assert.deepEqual(Object.keys(p.touch().first_touch).sort(),legacy);
+ const server=validateAttribution({first_touch:{utm_source:'news'},last_touch:{gclid:'',gbraid:null}});
+ assert.deepEqual(Object.keys(server.first_touch).sort(),legacy);assert.deepEqual(Object.keys(server.last_touch).sort(),legacy);
+});
+test('server keeps valid click IDs, drops bad ones without rejecting, and the analytics forwarder strips them',async()=>{
+ const value=validateAttribution({first_touch:{gclid:' Valid_Click-0001 ',gbraid:'short',wbraid:{}},last_touch:{gclid:'bad value!',wbraid:'Web-Braid_000001'}});
+ assert.equal(value.first_touch.gclid,'Valid_Click-0001');assert.equal(value.first_touch.gbraid,undefined);assert.equal(value.first_touch.wbraid,undefined);
+ assert.equal(value.last_touch.gclid,undefined);assert.equal(value.last_touch.wbraid,'Web-Braid_000001');
+ const {purchaseEventPayload}=await import('../_lib/analytics.js');
+ const payload=JSON.stringify(purchaseEventPayload({checkoutSessionId:'cs_test_123',purchaseId:'purchase',checkoutAttemptId:'attempt',leadId:null,sourcePage:'/schedule.html',serviceTier:'full_service',amountTotal:39500,currency:'usd',attribution:value}));
+ assert.equal(payload.includes('Valid_Click-0001'),false);assert.equal(payload.includes('Web-Braid'),false);assert.equal(payload.includes('"attribution"'),true);
 });

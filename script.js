@@ -79,6 +79,10 @@ function checkoutSessionId() {
 }
 function onScroll(){nav&&nav.classList.toggle("scrolled",window.scrollY>60||nav.dataset.lightNav==="true")}window.addEventListener("scroll",onScroll,{passive:!0}),onScroll();function setMenuState(e){if(!mobileMenu||!hamburger)return;const o=()=>{mobileMenu.classList.toggle("open",e),mobileMenu.setAttribute("aria-hidden",String(!e)),mobileMenu.inert=!e,hamburger.setAttribute("aria-expanded",String(e)),document.body.style.overflow=e?"hidden":""};document.startViewTransition?document.startViewTransition(o):o(),e?(lastFocusedElement=document.activeElement,mobileMenu.querySelector('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')?.focus()):lastFocusedElement&&typeof lastFocusedElement.focus=="function"&&lastFocusedElement.focus()}hamburger&&mobileMenu&&mobileClose&&(hamburger.addEventListener("click",()=>setMenuState(!0)),mobileClose.addEventListener("click",()=>setMenuState(!1)),mobileMenu.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>setMenuState(!1))}),mobileMenu.addEventListener("keydown",e=>{if(e.key==="Escape"){setMenuState(!1);return}if(e.key!=="Tab")return;const o=Array.from(mobileMenu.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')).filter(r=>!r.disabled&&r.offsetParent!==null);if(!o.length)return;const n=o[0],t=o[o.length-1];e.shiftKey&&document.activeElement===n?(e.preventDefault(),t.focus()):!e.shiftKey&&document.activeElement===t&&(e.preventDefault(),n.focus())})),document.querySelectorAll(".reveal").forEach(e=>{e.classList.add("visible")}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",o=>{const n=e.getAttribute("href");if(!n||n==="#")return;let t;try{t=document.querySelector(n)}catch{return}if(!t)return;o.preventDefault();const r=nav?nav.offsetHeight+8:8,i=t.getBoundingClientRect().top+window.pageYOffset-r;window.scrollTo({top:i,behavior:"smooth"})})});function attribution() {
   const params = new URLSearchParams(window.location.search);
+  // Google ad click IDs let a verified purchase be matched to its ad click. Only
+  // well-formed IDs are kept, and none under Global Privacy Control (stored ones are dropped).
+  const clickIdKeys = ['gclid', 'gbraid', 'wbraid'];
+  const gpc = window.navigator?.globalPrivacyControl === true;
   const safeReferrer = value => { try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.origin : ''; } catch { return ''; } };
   const cleanTouch = value => {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
@@ -86,9 +90,10 @@ function onScroll(){nav&&nav.classList.toggle("scrolled",window.scrollY>60||nav.
     for (const key of ['captured_at', 'landing_path', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) touch[key] = typeof value[key] === 'string' ? value[key].slice(0, key === 'captured_at' ? 40 : key === 'utm_source' || key === 'utm_medium' ? 200 : 300) : '';
     touch.landing_path = touch.landing_path.startsWith('/') && !touch.landing_path.startsWith('//') ? touch.landing_path.split(/[?#]/)[0] : '/';
     touch.referrer = safeReferrer(touch.referrer);
+    for (const key of clickIdKeys) if (!gpc && typeof value[key] === 'string' && /^[A-Za-z0-9_-]{8,256}$/.test(value[key])) touch[key] = value[key];
     return touch;
   };
-  const current = cleanTouch({ captured_at: new Date().toISOString(), landing_path: window.location.pathname, referrer: document.referrer, ...Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].map(key => [key, params.get(key) || ''])) });
+  const current = cleanTouch({ captured_at: new Date().toISOString(), landing_path: window.location.pathname, referrer: document.referrer, ...Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term', ...clickIdKeys].map(key => [key, params.get(key) || ''])) });
   const read = (storage, key) => { try { return cleanTouch(JSON.parse(storage.getItem(key))); } catch { return null; } };
   let first = null, last = null;
   try { first = read(window.localStorage, 'drive_right_first_touch'); } catch {}
@@ -99,9 +104,9 @@ function onScroll(){nav&&nav.classList.toggle("scrolled",window.scrollY>60||nav.
   first ||= current;
   last ||= paymentReturn ? first : current;
   const external = current.referrer && current.referrer !== window.location.origin;
-  const campaign = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].some(key => current[key]);
+  const campaign = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term', ...clickIdKeys].some(key => current[key]);
   if (!paymentReturn && (external || campaign)) {
-    const same = last && ['landing_path','referrer','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].every(key => last[key] === current[key]);
+    const same = last && ['landing_path','referrer','utm_source','utm_medium','utm_campaign','utm_content','utm_term', ...clickIdKeys].every(key => (last[key] || '') === (current[key] || ''));
     if (!same) last = current;
   }
   // Internal navigation, reloads and payment returns keep acquisition attribution.
