@@ -7,7 +7,7 @@
     "coverageQuote": "They can do everything in all states/cities",
     "pageApprovalQuote": "i approve all pages, do not wait for my approval",
     "reviewReuseQuote": "Use existing reviews on the website now. There might be some in the codebase if not present",
-    "scope": "All current advertised tiers across all states/cities; rollout page sign-off and merge preapproval. Not exact claim approval, logistics evidence, qualified review or deployment authorization."
+    "scope": "Owner-confirmed availability across all states/cities. Current public website content is approved under WEBSITE-CONTENT-2026-10-01; separate private previews remain unpublished."
   },
   "markets": [
     {
@@ -880,16 +880,17 @@
       "marketId": "TX-AUS",
       "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change.",
       "indexablePublication": true,
-      "sha256": "296cfaeaaa0c308ce440a2b0171527e7b3ebeb3d02effdb72cb77e6931529ad8",
+      "sha256": "5f9429dbaf5df7f05efc11f3e241a001969c6ba8f3ae90e22a5a1b223fbf1d78",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "houston.html",
       "marketId": "M05",
-      "decision": "Houston-only visual pilot for local review; publication remains gated",
-      "sha256": "dd9457bcb9e13a3f78b11f363c94fdb95738cf237fe0689dc73c71bdacd4a623",
+      "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026.",
+      "sha256": "a1a798ab3ac9bddf550a2a8022d6e0258a7393e31f763bb67fa3ebcfaafebff2",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -904,70 +905,78 @@
         "scope": "Homepage car-search text box on Houston; hand off entered details to the existing buying brief; no deployment",
         "previousSha256": "d41004a656522e748772c7727e60542a98d646bc6d7a4d58944309550fad3275",
         "authorityRef": "docs/metro-execution-2026-09-16.md#houston-search-entry--september-17-2026"
-      }
+      },
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "dallas.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "8b68a4cd5939c6bf90826c46984ce3eeac03c7c4883881b2dc6e63a9376e0944",
+      "sha256": "d4864d490078a3595c72b4344234236108e6f4fd20ce71b5eb9e591c71e36217",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "fort-worth.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "cbb224aae8740327f7859cc95bda04ba9dc81ed1313a6ae9bd085f9cb7999284",
+      "sha256": "9bcad27e2042cd2d93fe563c8544ec5bdd647d77297aa876b07168c806f6745b",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "arlington.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "8e4e33e649df163ddead6d3b6e154d5fbc7f329be2f59e73ad6e9892452e4ee2",
+      "sha256": "b431423c87375bfbb39ac5934b971ea00105bd244f88508592c9fda5fb1cd7ab",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "san-antonio.html",
       "marketId": "TX-SAT",
       "decision": "Separate backlog; evidence and demand pending",
-      "sha256": "40da01db7d63ac134cfaa25b336f66148eceb01a809006f4ea16b7a98c25c02f",
+      "sha256": "2370d084b923105342e73c25a36a45b36635d4c516c6470fbf0853eb55d1de23",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "el-paso.html",
       "marketId": "TX-ELP",
       "decision": "Separate backlog; evidence and demand pending",
-      "sha256": "2c290c2938188628f16687b189b99814ef5396899aa8a80b22bb1e50b9e3025a",
+      "sha256": "ac4fd4bfab3a4c5ebff43c774630035ce565dd60e580d0b65b5ef9e2532ce8c6",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "new-braunfels.html",
       "marketId": "TX-NBF",
       "decision": "Distinct-intent review before retain/merge decision",
-      "sha256": "16a606be41b4580130483d719d5898459a99d945a44097b69731f6fd98f92672",
+      "sha256": "4db160a14a19c9b9aee9ce593c0042616e640109e666ac5989dd7f41430eb6c7",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     {
       "slug": "san-marcos.html",
       "marketId": "TX-SMA",
       "decision": "Distinct-intent review before retain/merge decision",
-      "sha256": "5eed2dec057c1c909448f62a124166704fdf4bb293827e468a01b65ef1aa26f0",
+      "sha256": "027ff73df2926764c389509e32c09b0045173bfb9da2e6139d4dbfe81cce41a1",
       "redirectTo": null,
       "gscBaseline": null,
-      "backlinkBaseline": null
+      "backlinkBaseline": null,
+      "contentApprovalRef": "WEBSITE-CONTENT-2026-10-01"
     }
   ],
   "legacyDiscoveryLinks": [
@@ -1160,5 +1169,13 @@
     "qa": null,
     "publishedSha256": null,
     "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
+  },
+  "websiteContentApproval": {
+    "id": "WEBSITE-CONTENT-2026-10-01",
+    "date": "2026-10-01",
+    "authority": "Business owner via direct instruction",
+    "quote": "I approve all content that is currently on the website.",
+    "scope": "All current public website content, including existing city pages, guides, articles, service copy, and metadata.",
+    "record": "docs/content-approval-2026-10-01.md"
   }
 }

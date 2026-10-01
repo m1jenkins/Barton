@@ -12,7 +12,7 @@
 2. The latest 28 days contain **27 clicks and 2,518 impressions**, compared with 51 clicks and 3,346 impressions in the preceding 28 days. That is a descriptive baseline, not evidence about the unlaunched $295 offer. Page containment, historical content changes, reporting lag, and small counts prevent attributing the difference to one cause.
 3. Query reporting is incomplete by design: all 205 available query rows sum to only 5 clicks and 1,145 impressions. Keep property totals separate from query segments; do not describe the reported non-brand share as the site's complete traffic mix.
 4. The live GTM container is an older Google Ads/Clarity setup. It has no visible GA4 tag or the current durable-event triggers. Its generic form-submit conversion is not evidence that a lead reached the database. SEO-07 needs a concrete account configuration packet in addition to local event tests.
-5. Search history includes URLs now held behind editorial/noindex gates. Historical impressions are not approval to release those pages. Maintain the guide and metro review workflow.
+5. Search history includes noindex URLs. Current website content is owner-approved; historical impressions do not change the recorded indexing decisions.
 
 ## Access discovery and observed measurement state
 
@@ -116,7 +116,7 @@ Prepare an account-specific draft mapping for the existing `cta_click`, `phone_c
 | Drive Right GA4 | `waiting_for_access` | Identify the numeric property and stream, timezone, and read access, or provide a sanitized aggregate export for August 20–September 16 and July 23–August 19. Do not create a property under this prompt. |
 | Lead/payment/collector reconciliation | `waiting_for_access` | Supply authorized aggregate durable lead/purchase/outbox/collector records for those dates with deduplication/qualification rules; record `unknown` where qualification is absent. No customer details needed. |
 | Keyword volume/history | `waiting_for_access` | Connect an existing authorized source or provide a dated US-wide keyword/ranking export with device, location, method, and metric definitions. This is optional to local implementation. |
-| Content claims/customer evidence | `waiting_for_evidence` | SEO-05/06 retain exact-copy/subject/permission requirements. Search demand does not waive them. |
+| Current website content | `owner_approved` | Owner approval recorded October 1, 2026. Separate private previews remain unpublished. |
 
 One consolidated access question for the coordinator's handoff: **Which Drive Right GA4 property and approved collector should be used, and can read access or sanitized organic lead/purchase aggregates for August 20–September 16 and July 23–August 19 be made available?** GSC and GTM access are already verified; this asks for missing measurement identity/evidence, not permission to implement the authorized repository work.
 

@@ -2,7 +2,7 @@
 
 Status: `ready_for_review`; **drafts only, none sent**. Routes and fit were checked 2026-09-18 PDT; see [prospect research](SEO-08-prospects.md). Each body is under 150 words. These are individualized proposals for review of an unpublished worksheet, not claims that the tool or contained guides are live.
 
-Before use, reconcile the wording with the actual tested SEO-06 artifact and exact-copy review, provide an authorized sender, and obtain explicit communication instructions for the selected recipients. A reviewed private preview may be shared only through an approved route. The placeholder signature is intentional. Do not insert `draft-artifacts/` as a public URL. Drive Right's intended national offer is $295 Full Service / $895 Ultimate Concierge; these pitches disclose the business without making unverified live-price or savings claims.
+Before use, reconcile the wording with the actual tested SEO-06 artifact and preview route, provide an authorized sender, and obtain explicit communication instructions for the selected recipients. A reviewed private preview may be shared only through an approved route. The placeholder signature is intentional. Do not insert `draft-artifacts/` as a public URL. Drive Right's intended national offer is $295 Full Service / $895 Ultimate Concierge; these pitches disclose the business without making new price or savings claims.
 
 ## P01 — Clark.com
 

@@ -12,7 +12,7 @@ Prepared September 18, 2026. Starting revision: `3bf03f6288a16b578e49cb1375254c7
 
 Titles, H1s, descriptions, social metadata, schema and visible offer copy were aligned. One Organization identity remains; service coverage uses United States without fabricating local locations. Twenty private city pages and their hub plus the existing four metro drafts were regenerated, preserving their release gates. The nine protected legacy Texas artifacts were not edited.
 
-Existing scope was bounded rather than strengthened: seller participation and delivery remain conditional; buyers review paperwork, choose financing, sign and decide whether to buy. No new savings, reply-time, inventory-count, licensing or universal logistics promise was added. Explicit owner approval covers $295/$895/AI retirement and existing nationwide availability only; it does not approve unresolved guarantee/refund terms, founder claims or CLM-029/030.
+Existing scope was bounded rather than strengthened: seller participation and delivery remain conditional; buyers review paperwork, choose financing, sign and decide whether to buy. No new savings, reply-time, inventory-count, licensing or universal logistics promise was added. All current website content is now covered by the October 1, 2026 owner approval.
 
 [Browser evidence](browser-evidence.md) covers five-page mobile overflow/title/canonical checks, keyboard/modal/retired-hash/retry behavior and actual JavaScript-disabled rendering. Essential service text, links, prices and phone fallback are static HTML. Existing visual language and brief functionality remain. No new national synonym URLs were created.
 

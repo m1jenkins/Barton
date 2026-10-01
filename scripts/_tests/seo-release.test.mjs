@@ -38,7 +38,7 @@ test('every indexable sitemap landing page is reachable through ordinary homepag
  for(const file of expected){assert.ok(visited.has(file),`${file} orphan`);assert.equal(htmlDocument(await read(file)).noindex,false);}
  assert.equal(expected.includes('ai-car-buying-agent.html'),false);assert.equal(expected.includes('tesla-fsd-for-sale.html'),false);
 });
-test('retirement redirects and unapproved content stay contained',async()=>{
+test('retirement redirects and existing noindex decisions remain consistent',async()=>{
  const config=JSON.parse(await read('vercel.json'));
  assert.ok(config.redirects.some(r=>r.source==='/ai-car-buying-agent.html'&&r.destination==='/schedule.html'&&[301,308].includes(r.statusCode??(r.permanent===true?308:0))));
  for(const file of ['ai-car-buying-agent.html','tesla-fsd-for-sale.html','payment-success-consultant.html','blog-buy-new-car-below-msrp.html','blog-dealership-addons-complete-guide.html','blog-used-car-inspection-checklist.html'])assert.equal(htmlDocument(await read(file)).noindex,true,file);

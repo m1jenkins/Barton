@@ -4,7 +4,7 @@ Prepared September 18, 2026 (America/Los_Angeles). Starting revision: `3bf03f628
 
 - Local implementation: `verified_local`.
 - Task/content status: `ready_for_review`.
-- Public release: `waiting_for_evidence` — responsible author acceptance and qualified consumer-finance review are missing.
+- Public release: this separate worksheet remains a private preview; no public route has been assigned.
 - Expanded real customer stories: `waiting_for_evidence`; two labeled worked examples and precise evidence-request packets are complete.
 
 ## Implemented artifact
@@ -33,7 +33,7 @@ The coordinator may add a convenience package command for the existing preview s
 
 Existing historical testimonial attestations in `data/metro-dossiers.json` identify privately held original statements and permission, but are explicitly for private draft use and have null approved copy. They do not establish new transaction details, expanded case permissions, comparable quote records, or either example's invented amounts. No private customer records were imported and no messages were sent.
 
-The coordinator owns shared claim, source, inventory, package, and public-site integration. Suggested source IDs `SEO06-QUOTE-01` and `SEO06-QUOTE-02` and a private inventory/claim description are in the review packet; their statuses remain pending and public URL remains unassigned.
+The coordinator owns shared claim, source, inventory, package, and public-site integration. Suggested source IDs `SEO06-QUOTE-01` and `SEO06-QUOTE-02` and a private inventory/claim description are in the review packet; the separate worksheet remains private and its public URL is unassigned.
 
 ## Verification
 
@@ -51,4 +51,4 @@ Ephemeral screenshots/PDF used for inspection are under `/tmp/seo06-worksheet-*`
 
 ## Next action
 
-Integrate the private artifact, preview command, tests, and pending governance records. Obtain a real author and qualified consumer-finance reviewer for the exact files/hashes and output method; record identities, competence, approved copy, approval/expiry dates, next review, and material-change triggers. Keep it private until those requirements pass. A core service/commerce release can proceed independently when its own gates are satisfied. A later public worksheet release must assign the final URL, synchronize approved source/author/schema information and resource placement, rerun checks, and receive activation authorization.
+Integrate the private artifact, preview command, tests, and pending governance records. Keep the worksheet private until publication is requested. Current public website content is owner-approved as of October 1, 2026. A core service/commerce release can proceed independently when its own gates are satisfied. A later public worksheet release must assign the final URL, synchronize approved source/author/schema information and resource placement, rerun checks, and receive activation authorization.

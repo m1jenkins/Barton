@@ -7,6 +7,7 @@
 //              left wink, right wink. Every frame is the down/off base with only the changed headlight
 //              regions swapped in, so the body never shimmers between frames.
 // front.webp   head-on view, same six frames, for the search chat avatar.
+// favicon.png  a centered export of the front view's parked, headlights-down frame.
 // The -lg files are the payment-success sizes; the rest are header and chat sizes (about 3x CSS size).
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -131,5 +132,14 @@ for (const [name, height] of Object.entries(SIZES)) {
   await side(height, suffix);
   console.log(await strip('front_right', Math.round(height * qRatio), `q${suffix}.webp`));
 }
-console.log(await strip('front', 60, 'front.webp'));
+const front = await strip('front', 60, 'front.webp');
+console.log(front);
+const [frameWidth, frameHeight] = front.frame;
+if (frameWidth !== 92 || frameHeight !== 60) throw new Error(`Unexpected favicon source frame: ${frameWidth}x${frameHeight}`);
+await sharp(`${out}front.webp`)
+  .extract({ left: 0, top: 0, width: frameWidth, height: frameHeight })
+  .resize(184, 120, { kernel: 'nearest' })
+  .extend({ left: 4, right: 4, top: 36, bottom: 36, background: { r: 0, g: 0, b: 0, alpha: 0 } })
+  .png()
+  .toFile(`${root}favicon.png`);
 console.log(`q height ratio ${qRatio.toFixed(4)} (side height x ratio)`);

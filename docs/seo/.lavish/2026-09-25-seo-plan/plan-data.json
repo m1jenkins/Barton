@@ -51,7 +51,7 @@
     "impact": "Make the commercial landing pages easier to trust and reduce uncertainty before payment.",
     "change": "Correct the workflow explanation to the actual approved sequence. Keep / as the broad service entry, car-buying-service.html as the explainer, how-it-works.html as the workflow and schedule.html as pricing. Add a concrete approved deliverable example or annotated sample to the explainer; describe what changes between plans and what the buyer still does. Preserve current URLs, truthful fees and buyer control.",
     "verify": "Walk the unpaid start path in a suitable test environment; compare visible text, links, metadata and schema across the four pages. Do not charge a real card for SEO QA. Evaluate qualified inquiry/checkout behavior after release, not raw clicks alone.",
-    "risk": "Do not rebuild checkout under this task, promise a response time, or invent deliverables. Keep exact-copy approval requirements for any new commercial commitments.",
+    "risk": "Do not rebuild checkout under this task, promise a response time, or invent deliverables. Use the current published service scopes for implementation consistency.",
     "sources": [
       "content"
     ]
@@ -115,13 +115,13 @@
     "tier": "3 \u00b7 Content",
     "priority": "P1",
     "title": "Release the three prepared guides one page at a time",
-    "owner": "Mason + editorial owner + qualified reviewers",
-    "effort": "4\u20137 working days total, excluding reviewer wait",
-    "dependency": "A02 on each URL; exact-copy/source approvals",
+    "owner": "Mason + editorial owner",
+    "effort": "4\u20137 working days total, ",
+    "dependency": "A02 on each URL and technical deployment checks",
     "finding": "The site has only eight intended indexable pages and no released independent editorial article in this crawl. Three substantially revised guides already exist privately, while the public versions remain noindex.",
-    "evidence": "Live Resources links to eight in-review pages; private guides and review packets are documented in SEO-05. Fifty root URLs return 200/noindex, including utility pages and the editorial/local archive. RECOMMENDED: original useful content; REQUIRED: avoid scaled low-value publication. Local project policy requires exact-copy approval.",
+    "evidence": "Live Resources links to eight in-review pages; private guides and review packets are documented in SEO-05. Fifty root URLs return 200/noindex, including utility pages and the editorial/local archive. RECOMMENDED: original useful content; REQUIRED: avoid scaled low-value publication. Current public website content is owner-approved as of October 1, 2026.",
     "impact": "Expand useful coverage around car quote comparison, add-ons and inspection with assets already partly prepared. These are commercially relevant opportunities, not measured search-volume forecasts.",
-    "change": "Start with the below-MSRP quote-comparison guide if its reviewer is ready, then add-ons and used-car inspection; readiness can reorder the batch. Refresh primary sources, add an accepted named author linked to About, name the qualified reviewer where appropriate, show a useful worksheet/example and honest dates. Move only each approved revision into its existing public URL; then switch that page to index/follow, add it to the sitemap and approved Resources cards, and link to the service/pricing pages contextually.",
+    "change": "Improve the below-MSRP, add-ons, and used-car inspection guides using their existing copy and source links. Include useful worksheets/examples and honest dates. Keep the existing article URLs, current service/pricing links, and indexing decisions consistent; separate indexing changes remain explicit work.",
     "verify": "For every page: exact approved text/source/expiry record, 200, self-canonical, no unintended noindex/nosnippet, accurate Article/Breadcrumb data, raw-HTML value, mobile QA, internal links and URL Inspection. Record release date and compare qualified outcomes over subsequent complete windows.",
     "risk": "No bulk archive release. Mechanical/safety, finance/warranty and consumer-law review differ. Keep the four specifically protected legal articles and the Tesla FSD park unchanged unless their separate gates are met.",
     "sources": [
@@ -156,10 +156,10 @@
     "effort": "1\u20133 days of preparation; evidence dependent",
     "dependency": "Actual relationship records and customer permission",
     "finding": "Founder biography and real vehicle photos already exist. The larger remaining trust gap is an unresolved compensation disclosure and the lack of a verified, useful customer-process case study.",
-    "evidence": "Live how-it-works.html explicitly says dealer referral/commission statements await owner attestation; CLM-013 remains pending_evidence. SEO-06 has proof packets, not approved case-study outcomes. RECOMMENDED: identifiable expertise and verifiable first-hand evidence.",
+    "evidence": "Current website content, including the service disclosures, is owner-approved. SEO-06 has proof packets, not approved case-study outcomes. RECOMMENDED: identifiable expertise and verifiable first-hand evidence.",
     "impact": "Help buyers assess incentives and understand the work they receive; give writers and AI systems specific facts they can responsibly reference.",
     "change": "Use actual revenue-source/relationship records to replace the pending disclosure with the approved factual statement. Produce one anonymized, permissioned case study showing initial requirements, written comparison, decisions, scope and limitations. Reuse existing proof packets; distinguish hypothetical examples from customer stories. Link author information to the existing About page rather than duplicating it.",
-    "verify": "Reviewer can reproduce every monetary/outcome claim and confirm permissions. Visible text, metadata/schema and approved_copy agree. Publish relevant methodology and limitations; do not expose customer identifiers or private deal records.",
+    "verify": "Keep visible text, metadata/schema and calculation examples consistent. Preserve methodology and limitations; keep customer identifiers and private deal records out of public artifacts.",
     "risk": "Never assume \u201czero commissions,\u201d invent savings or turn personal car ownership into credentials. A real case study is valuable even without a savings headline.",
     "sources": [
       "content",
@@ -198,8 +198,8 @@
     "evidence": "Live city responses and data/metro-release.json; README documents the shared template and one local sentence. The Texas hub currently routes to nine contained city pages. REQUIRED: avoid doorway/scaled pages; project gates remain authoritative.",
     "impact": "Test local search demand and conversion on a page supported by the actual Austin operation.",
     "change": "Prioritize Austin when baseline demand and logistics evidence support it. Explain real service boundaries, seller/inspection/delivery coordination and a verified local example without asserting an office. Update the Texas hub only with approved useful destinations. Evaluate Houston or a combined DFW page afterward; decide Dallas/Fort Worth/Arlington consolidation only after query/backlink review. Do not launch the 20-city collection unchanged.",
-    "verify": "Complete the market dossier, owner/page sign-off, distinct-intent evidence, qualified/editorial review, QA and release hash. Re-pin any edited contained legacy Texas page. Verify internal links, sitemap and Google/Bing indexing after authorized release.",
-    "risk": "Availability confirmation is not page approval or unique local evidence. No automatic city redirects, duplicate storefronts or national-scale doorway expansion.",
+    "verify": "Retain the market records and technical QA, and update any edited pinned Texas page hash. Check internal links, sitemap and indexing after an authorized indexing change.",
+    "risk": "Current public page content is approved; additional private artifacts remain separate work. No automatic city redirects, duplicate storefronts or national-scale doorway expansion.",
     "sources": [
       "spam",
       "business"

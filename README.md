@@ -10,7 +10,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | --- | --- |
 | `*.html` (root) | Public pages. Each one is a complete, standalone file: the header, footer and nav are copied into every page, so a site-wide change means editing each page. |
 | `buying/` | The current design system and the buying-brief app used by the homepage and main pages. `daisy.css` + `drive-right.css` are the shared styles; `houston.css` is the Houston pilot only. `intake.js`, `brief.js`, `checkout.js` and `app.js` run the brief-and-checkout flow. |
-| `styles.css`, `seo-content.css` | The legacy stylesheet used by older, `noindex` pages (blog posts, legacy city pages, `inquiry.html`). |
+| `styles.css`, `seo-content.css`, `legacy-refresh.css` | The older page components and the shared visual layer that aligns their typography, navigation, colors, and reading layout with the current site. |
+| `logo-motion.css`, `logo-motion.js`, `assets/mascot/` | The approved Mariner Blue Miata mark beside the header wordmark on public pages. The sprites are deployed; their reference sheets stay out of production. |
 | `script.js` | Shared page script: mobile menu, lead forms, checkout start, payment verification, analytics, and it loads `openai-ads.js`. Used by every page except `ai-car-buying-agent.html`. Parts of it are minified onto very long lines, so search for the function name before editing. |
 | `accessibility.css/js`, `ad-consent.css/js`, `openai-ads.js` | Small shared helpers loaded by pages. |
 | `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the chat avatar and the payment-success celebration. |
@@ -33,7 +34,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
 
 - **Current design**: `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `ai-car-buying-agent.html`, `houston.html`, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
-- **Legacy design** (`noindex`): the `blog-*.html` posts, the other Texas city pages (`austin.html`, `dallas.html`, and so on), `inquiry.html`, `success.html`, `tesla-fsd-for-sale.html` and the topic pages. They load `styles.css`.
+- **Legacy components**: the `blog-*.html` posts, the other Texas city pages (`austin.html`, `dallas.html`, and so on), `inquiry.html`, `success.html`, `tesla-fsd-for-sale.html` and the topic pages. They load `styles.css` and `legacy-refresh.css`. Their indexability is governed per page, independent of styling.
 
 Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same file).
 

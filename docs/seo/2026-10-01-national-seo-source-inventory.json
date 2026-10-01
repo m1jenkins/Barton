@@ -211,11 +211,11 @@
         },
         {
           "level": "h3",
-          "text": "Full Service \u2014 $395"
+          "text": "Full Service — $395"
         },
         {
           "level": "h3",
-          "text": "Ultimate Concierge \u2014 $695"
+          "text": "Ultimate Concierge — $695"
         },
         {
           "level": "h2",
@@ -259,7 +259,7 @@
         },
         {
           "level": "h3",
-          "text": "Does the service include a mechanic\u2019s inspection?"
+          "text": "Does the service include a mechanic’s inspection?"
         },
         {
           "level": "h3",
@@ -767,8 +767,8 @@
     {
       "file": "blog-best-dealerships-dallas-fort-worth.html",
       "url": "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html",
-      "title": "Best Car Dealerships in Dallas\u2013Fort Worth | Drive Right",
-      "description": "Insider rankings of the best car dealerships in Dallas\u2013Fort Worth for 2026, rated by transparency, negotiation fairness, and customer treatment.",
+      "title": "Best Car Dealerships in Dallas–Fort Worth | Drive Right",
+      "description": "Insider rankings of the best car dealerships in Dallas–Fort Worth for 2026, rated by transparency, negotiation fairness, and customer treatment.",
       "robots": "noindex, follow",
       "canonical": [
         "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html"
@@ -778,7 +778,7 @@
       "headings": [
         {
           "level": "h1",
-          "text": "Best Car Dealerships in Dallas\u2013Fort Worth (2026 Insider Rankings)"
+          "text": "Best Car Dealerships in Dallas–Fort Worth (2026 Insider Rankings)"
         },
         {
           "level": "h2",
@@ -1255,7 +1255,7 @@
         },
         {
           "level": "h2",
-          "text": "The Model Year Changeover (August\u2013October)"
+          "text": "The Model Year Changeover (August–October)"
         },
         {
           "level": "h2",
@@ -1330,7 +1330,7 @@
         },
         {
           "level": "h2",
-          "text": "What does \u201cbelow MSRP\u201d actually mean?"
+          "text": "What does “below MSRP” actually mean?"
         },
         {
           "level": "h2",
@@ -3195,7 +3195,6 @@
       "file": "blog.html",
       "url": "https://www.driverightcarbuying.com/blog.html",
       "title": "Car-Buying Resources and Buying Process | Drive Right",
-      "description": "Explore car-buying resources, the nationwide service process, and clearly labeled guides awaiting editorial review. Compare Full Service at $395 USD.",
       "robots": "index, follow",
       "canonical": [
         "https://www.driverightcarbuying.com/blog.html"
@@ -3226,10 +3225,6 @@
         {
           "level": "h3",
           "text": "Texas Local Markets"
-        },
-        {
-          "level": "h2",
-          "text": "Guides still in review"
         },
         {
           "level": "h3",
@@ -3756,7 +3751,7 @@
       "file": "how-it-works.html",
       "url": "https://www.driverightcarbuying.com/how-it-works.html",
       "title": "How a Car Buying & Negotiation Service Works | Drive Right",
-      "description": "See how Drive Right\u2019s nationwide car buying and negotiation service works. Full Service is $395 USD one time; Ultimate Concierge is $695 USD one time.",
+      "description": "See how Drive Right’s nationwide car buying and negotiation service works. Full Service is $395 USD one time; Ultimate Concierge is $695 USD one time.",
       "robots": "index, follow",
       "canonical": [
         "https://www.driverightcarbuying.com/how-it-works.html"
@@ -4183,7 +4178,7 @@
         },
         {
           "level": "h1",
-          "text": "You\u2019re in theright place."
+          "text": "You’re in theright place."
         },
         {
           "level": "h2",
@@ -4225,7 +4220,7 @@
         },
         {
           "level": "h1",
-          "text": "You\u2019re in theright place."
+          "text": "You’re in theright place."
         },
         {
           "level": "h2",
@@ -4267,7 +4262,7 @@
         },
         {
           "level": "h1",
-          "text": "You\u2019re in theright place."
+          "text": "You’re in theright place."
         },
         {
           "level": "h2",
@@ -4309,7 +4304,7 @@
         },
         {
           "level": "h1",
-          "text": "You\u2019re in theright place."
+          "text": "You’re in theright place."
         },
         {
           "level": "h2",
@@ -5257,5 +5252,6 @@
     "redirectedArticleSourceFiles": 5,
     "nonredirectedBlogArticleSourceFiles": 30,
     "noMissingLocalHTMLTargetsDetected": true
-  }
+  },
+  "contentApprovalNote": "Obsolete pending-review descriptions removed on October 1, 2026 under docs/content-approval-2026-10-01.md. Remaining observations retain their recorded dates."
 }

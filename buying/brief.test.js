@@ -168,7 +168,7 @@ test('direct purchases require contact and include a readable message without a 
   await assert.rejects(flow.submit({tier:'full_service',contact:{},brief:null}),/name/);
   await assert.rejects(flow.submit({tier:'full_service',contact:{name:'Ada',email:'ada@example.test'},honeypot:'spam'}),/submit this form/);
   await flow.submit({tier:'full_service',contact:{name:'Ada',email:'ada@example.test'},brief:null});
-  assert.match(lead.message,/No buying brief/);
+  assert.match(lead.message,/No search details/);
 });
 test('stale offer requires another user submit with a new key and preserves the old attempt', async () => {
   const store=memoryStore(),calls=[],events=[];let attempts=0;

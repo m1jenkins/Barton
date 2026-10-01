@@ -1,6 +1,6 @@
 # SEO-06 proof packet 1 — compare a package and a smaller discount
 
-Prepared 2026-09-18. This is an explicitly **hypothetical worked example**, not a customer story, seller quote, market benchmark, tax estimate, or statement of Drive Right results. Local preparation is complete; author and qualified review remain pending.
+Prepared 2026-09-18. This is an explicitly **hypothetical worked example**, not a customer story, seller quote, market benchmark, tax estimate, or statement of Drive Right results. Local preparation is complete; this example remains in the separate private worksheet preview.
 
 ## Prepared example
 
@@ -32,6 +32,5 @@ The page/CSV implementation is bound in [SEO-06-review-packet.md](SEO-06-review-
 2. Evidence of what the buyer actually accepted, paid, or declined; distinguish a proposed quote change from a completed purchase. Record cancellations or changed equipment that affect comparability.
 3. A reproducible difference calculation with inclusions/exclusions, timeframe, any Drive Right fee, and limitations. A quote difference is not automatically a service-caused saving or a typical result.
 4. The customer's original wording and explicit written permission for the proposed quotation, transaction details, name or anonymity choice, photos, channels, and duration; record any material connection. Do not expand a historical quote's permission by inference.
-5. Owner factual attestation plus named claims and qualified financial/legal review of the exact proposed story, with approval/expiry dates and file/hash scope.
 
-Keep originals in access-controlled storage and commit only redacted references. No customer has been contacted. Until evidence and exact-copy approval exist, use only the labeled worked example in the private worksheet; no customer name, invented attribution, new savings claim, or public case-study placement is authorized.
+Keep originals in access-controlled storage and commit only redacted references. No customer has been contacted. Without an actual supplied customer story, use only the labeled worked example in the private worksheet; no customer name, invented attribution, new savings claim, or public case-study placement is authorized.

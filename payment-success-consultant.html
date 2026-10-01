@@ -2,9 +2,31 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <script>
+      // Stripe returns buyers with the Checkout Session ID in the URL, and that ID also unlocks the
+      // one-time intake. Move it into this tab's sessionStorage and out of the address before GTM
+      // loads, so Google tags, Clarity and later referrers never see it. script.js reads it back.
+      (function () {
+        try {
+          var query = new URLSearchParams(location.search), hash = new URLSearchParams(location.hash.slice(1));
+          var id = '', inQuery = false, inHash = false;
+          ['session_id', 'checkout_session_id'].forEach(function (name) {
+            if (query.has(name)) { id = id || query.get(name); query.delete(name); inQuery = true; }
+            if (hash.has(name)) { id = id || hash.get(name); hash.delete(name); inHash = true; }
+          });
+          if (!inQuery && !inHash) return;
+          if (id) {
+            try { sessionStorage.setItem('drive_right_checkout_session:' + location.pathname, id); }
+            catch (e) { window.driveRightCheckoutSession = id; }
+          }
+          var search = query.toString(), fragment = inHash ? hash.toString() : location.hash.slice(1);
+          history.replaceState(history.state, '', location.pathname + (search ? '?' + search : '') + (fragment ? '#' + fragment : ''));
+        } catch (e) {}
+      })();
+    </script>
 <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W577B3D4');</script> <!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify AI Agent Buying Service Payment | Drive Right</title>
     <meta name="description" content="Securely verify an AI Agent Buying Service payment before completing the paid-service intake.">
@@ -57,9 +79,9 @@
     <a class="nav-link" href="/how-it-works.html">How it works</a>
     <a class="nav-link" href="/car-buying-service.html">Car buying service</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
-    <a class="nav-link" href="/#brief" data-brief-link>Your brief</a>
+    <a class="nav-link" href="/#search" data-brief-link>Your search</a>
   </nav>
-</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">AI Agent Buying Service · $195</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Check your saved brief and fill in the remaining details below. We’ll confirm scope and timing after your intake.</p><aside id="paid-brief" class="compact-brief" hidden></aside></div><section class="ps-onboarding" id="onboarding">
+</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">AI Agent Buying Service · $195</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Check your saved search details and fill in the remaining details below. We’ll confirm scope and timing after your intake.</p><aside id="paid-brief" class="compact-brief" hidden></aside></div><section class="ps-onboarding" id="onboarding">
             <div class="ps-onboarding__inner">
                 <p class="section-label">Step 1 of 3</p>
                 <h2 class="section-heading">Tell Us What You're Looking For</h2>
@@ -142,7 +164,7 @@
                         </div>
                         <div class="ps-form__row ps-form__row--two">
                             <div class="ps-form__group">
-                                <p class="small-note budget-context">Include taxes, fees, and delivery in this amount. Your earlier car-price budget is kept separately in the brief.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
+                                <p class="small-note budget-context">Include taxes, fees, and delivery in this amount. Your earlier car-price budget is kept separately in the search details.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
                                 <select class="ps-form__select" id="ob-budget" name="budget" required>
                                     <option value="" disabled selected>Select range…</option>
                                     <option value="under-20k">Under $20,000</option>
@@ -196,7 +218,7 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn--primary ps-form__submit" id="onboarding-submit">Submit My Buying Brief</button>
+                    <button type="submit" class="btn--primary ps-form__submit" id="onboarding-submit">Submit My Search Details</button>
                 </form>
 
                 <!-- Shown after successful submission -->
@@ -207,8 +229,8 @@
                             <path d="M15 25l6 6 12-12" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                         </svg>
                     </div>
-                    <h3 class="ps-form-success__headline">Buying Brief Received!</h3>
-                    <p class="ps-form-success__body">Your buying brief has been submitted. We will email the next steps after payment and intake verification.</p>
+                    <h3 class="ps-form-success__headline">Search Details Received!</h3>
+                    <p class="ps-form-success__body">Your search details has been submitted. We will email the next steps after payment and intake verification.</p>
                     <p class="ps-form-success__body ps-form-success__body--muted">Keep an eye on your inbox. In the meantime, feel free to browse our <a href="blog.html">blog</a> for car-buying tips.</p>
                     <a href="/" class="btn--outline" style="margin-top: 24px; display:inline-flex; align-items:center; justify-content:center;">Return Home</a>
                 </div>
@@ -219,7 +241,7 @@
     <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
-</footer><script src="/script.js?v=ae6981ab33d6"></script>
-<script type="module" src="/buying/app.js?v=da98fa0a8d54"></script>
+</footer><script src="/script.js?v=9fae8c12f582"></script>
+<script type="module" src="/buying/app.js?v=eaf4b405ebbc"></script>
 </body>
 </html>

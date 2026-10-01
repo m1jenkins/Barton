@@ -6,6 +6,8 @@ const IDEMPOTENCY_PATTERN = /^[A-Za-z0-9._:-]{8,128}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SESSION_PATTERN = /^cs_(?:(?:test|live)_)?[A-Za-z0-9]{8,220}$/;
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const CLICK_ID_PATTERN = /^[A-Za-z0-9_-]{8,256}$/;
+const CLICK_ID_KEYS = ['gclid', 'gbraid', 'wbraid'];
 
 function cleanString(value, field, { required = false, max = 500, min = 0 } = {}) {
   if (value == null) value = '';
@@ -42,6 +44,12 @@ function validateAttributionTouch(value, field) {
     const referrer = new URL(touch.referrer);
     touch.referrer = ['https:', 'http:'].includes(referrer.protocol) ? referrer.origin : '';
   } catch { touch.referrer = ''; }
+  // Google ad click IDs are optional and never rejected: a malformed one is dropped, and a
+  // touch without one keeps exactly the legacy keys, so existing request hashes still match.
+  for (const key of CLICK_ID_KEYS) {
+    const id = typeof value[key] === 'string' ? value[key].trim() : '';
+    if (CLICK_ID_PATTERN.test(id)) touch[key] = id;
+  }
   return touch;
 }
 

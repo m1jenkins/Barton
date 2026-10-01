@@ -142,6 +142,8 @@ Set each Payment Link's post-payment redirect in Stripe, including the literal S
 - Full service: `https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
 - Concierge: `https://www.driverightcarbuying.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 
+Keep these query-string URLs. The payment pages move `session_id` out of the address before GTM loads (see [Checkout Session ID privacy](#september-27-2026-checkout-session-id-privacy)), so no Stripe change is needed. The pages also accept `#session_id={CHECKOUT_SESSION_ID}`, but Stripe documents the token only in query strings, and Clarity records fragments anyway.
+
 Register `https://www.driverightcarbuying.com/api/stripe-webhook` as a Stripe webhook destination and copy its endpoint signing secret into the matching Vercel environment. Do not use the account secret from another webhook or mix test and live keys.
 
 ## Release order and verification
@@ -184,6 +186,64 @@ Internal navigation preserves the last acquisition touch; a new external referre
 Google tags are GTM-only (container `GTM-W577B3D4`): pages only push to `dataLayer`, and `scripts/validate-site.mjs` rejects gtag.js loaders, direct `AW-`/`G-` config and hard-coded conversion calls. Browser event contracts:
 
 - `begin_checkout`: pushed once per checkout attempt after `/api/checkout-start` succeeds, with `event_id` `checkout:<attempt_id>`, `service_tier` and `checkout_attempt_id`. The push carries `eventCallback` and `eventTimeout: 1000`; the Stripe redirect waits for GTM's callback for at most one second, does not wait when GTM has not loaded, and is never blocked by a tracking error.
-- `purchase_verified`: pushed on a confirmation page only after `/api/purchase-status` returns `verified: true` with a UUID `purchase_id`, a finite positive `value` and a three-letter uppercase `currency`. It carries `transaction_id` (the server purchase ID), `value`, `currency` and `service_tier` with the usual page context and first/last-touch attribution; `event_id` is `purchase_verified:<purchase_id>`. Memory and `sessionStorage` guards send it once per browser session, so map `transaction_id` in the Google Ads conversion tag to dedupe a receipt reopened elsewhere. `processing`, `unverified`, `not_found`, request errors and sessions held for review never fire it. No contact data or Checkout Session ID enters the data layer.
+- `purchase_verified`: pushed on a confirmation page only after `/api/purchase-status` returns `verified: true` with a UUID `purchase_id`, a finite positive `value` and a three-letter uppercase `currency`. It carries `transaction_id` (the server purchase ID), `value`, `currency` and `service_tier` with the usual page context and first/last-touch attribution; `event_id` is `purchase_verified:<purchase_id>`. Memory and `sessionStorage` guards send it once per browser session, so map `transaction_id` in the Google Ads conversion tag to dedupe a receipt reopened elsewhere. `processing`, `unverified`, `not_found`, request errors and sessions held for review never fire it. No contact data or Checkout Session ID enters the data layer, and the ID stays out of tag requests (next section).
 
 The OpenAI Ads pixel ignores `purchase_verified`. The server `purchase` outbox event keeps the Checkout Session ID as its `transaction_id`, so do not send both to the same Google Ads conversion action. GTM tag, trigger and conversion-action setup is account work; this change does not modify the container.
+
+### Google ad click IDs (stored for reconciliation)
+
+`attribution()` keeps Google's `gclid`, `gbraid` and `wbraid` in the first and last touch when they match `^[A-Za-z0-9_-]{8,256}$`; a new ad click starts a new last touch. Under Global Privacy Control they are not captured, and any stored ones are dropped on the next page load. `validateAttributionTouch` adds a click-ID key only when it is valid and never rejects a request for a bad one, so touches without click IDs keep the eight legacy keys and existing request hashes still match. The IDs are stored in `leads.attribution` and `checkout_attempts.attribution` (no migration) and travel with the lead-forwarding payload. They are not added to the data layer and not forwarded to the analytics collector, whose allowlist in `api/_lib/analytics.js` omits them. `policy.html` discloses this; publish that text only once the GTM consent step in `docs/google-ads-setup.md` is live.
+
+Reconcile paid purchases with ad clicks for a completed window (aggregate outcomes only; no contact tables):
+
+```sql
+SELECT p.id AS order_id, p.paid_at, p.tier_id, p.amount_total / 100.0 AS value, upper(p.currency) AS currency,
+       COALESCE(a.attribution->'last_touch'->>'gclid', a.attribution->'first_touch'->>'gclid') AS gclid,
+       COALESCE(a.attribution->'last_touch'->>'gbraid', a.attribution->'first_touch'->>'gbraid') AS gbraid,
+       COALESCE(a.attribution->'last_touch'->>'wbraid', a.attribution->'first_touch'->>'wbraid') AS wbraid,
+       a.attribution->'last_touch'->>'utm_source' AS last_source, a.attribution->'last_touch'->>'utm_medium' AS last_medium
+FROM purchases p JOIN checkout_attempts a ON a.id = p.checkout_attempt_id
+WHERE p.livemode AND p.paid_at >= $1 AND p.paid_at < $2;
+```
+
+Attempts with `status = 'review_required'` were paid in Stripe but produced no purchase row (for example a promotion code or tax changed the total); list them separately.
+
+## September 27, 2026 Checkout Session ID privacy
+
+Stripe returns buyers to the payment pages with the Checkout Session ID in the URL, and that ID is the only credential `/api/onboarding` needs for the one immutable intake. GTM (`GTM-W577B3D4`, live Version 6) runs the Google tag and Microsoft Clarity on every page, plus four Google Ads conversion tags that send `url` = `{{Page URL}}` when they fire. Before this change they sent the ID to Google and Microsoft.
+
+What the four `payment-success*.html` pages do now:
+
+- **Inline head script.** It is the first script in `<head>`, before the GTM snippet. It moves `session_id` or the legacy `checkout_session_id`, from the query or a `#session_id=` fragment, into `sessionStorage` under `drive_right_checkout_session:<path>`. It then replaces the address without the ID and keeps every other parameter and anchor. If storage is blocked, the ID stays in `window.driveRightCheckoutSession` for that page load only.
+- **`checkoutSessionId()` in `script.js`.** It reads the address first and repeats the move if the head script didn't run (for example, under a future CSP that blocks inline scripts). Then it reads `sessionStorage`, then the in-memory fallback.
+- **Verified state.** The verified ID stays in memory. `<body>` gets `data-purchase-verified="true"`, which `buying/app.js` watches to prefill the intake. The old `data-verified-session-id` attribute put the ID into the DOM that Clarity records.
+- **Reloads and new tabs.** A reload in the same tab verifies again. A bookmark, new tab or copied URL no longer carries the ID and shows the missing-link message. That is intended: the link worked as a bearer credential.
+- **Unchanged:** Stripe success URLs, `/api/purchase-status`, `/api/onboarding`, `purchase_verified` and historical receipts. `api/_tests/checkout-session-privacy.test.mjs` pins the script order and behavior.
+
+Measured in an offline headless Chrome with the live Version 6 container, the Google tag and Clarity 0.8.70, using a fake `cs_test_…` ID. Every hostname was blocked, and each tag request was captured locally and never sent.
+
+| Where the ID went | Before | After |
+|---|---|---|
+| Google tag page view (`ccm/collect` `dl`) and remarketing (`viewthroughconversion`, `rmkt/collect` `url`) | Yes | No |
+| "Submit Lead Form" conversion, fired by the intake form (`pagead/conversion`, `1p-conversion` `url`) | Yes | No |
+| Clarity uploads: page URL, and `data-verified-session-id` in the DOM recording | Yes | No |
+| The next page's referrer (Google `dr`/`ref`, Clarity) | Yes | No |
+
+The same hits still fire after the change, only without the ID. Three alternatives failed the same measurement:
+
+- **Removing the ID from `script.js` only.** `script.js` loads at the end of `<body>`, after GTM has started. Google stayed clean only while `script.js` ran before the Google tag read the address. With `script.js` 400 ms slower (as after a deploy or on a cache miss), every Google hit and Clarity still got the ID, and later Google hits sent the old URL as `ref`. The DOM attribute still reached Clarity either way.
+- **A `#session_id=` fragment in Stripe.** Google hits dropped the fragment, but Clarity recorded it.
+- **GTM `page_location` sanitizing only.** With a sanitized `page_location` on the Google tag, its remarketing, page-view and conversion hits dropped the ID. GTM's own `ccm/collect` page view still sent it, and Clarity isn't affected.
+
+Still visible, all first party or on the buyer's device:
+
+- Chrome's History list keeps the return URL; the address bar, the back/forward entry and later referrers don't.
+- Vercel request logs and the `/api/purchase-status?session_id=…` requests.
+- The page's navigation-timing entry, which page scripts could read; neither tag sent it.
+
+Account-side steps, not applied (see `docs/google-ads-setup.md` §3):
+
+- **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. After verification, `buying/app.js` shows the buyer's saved brief as page text.
+- **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover GTM's own page view or Clarity, so the page code is the fix.
+
+After deploy, check a payment page: once it loads, the address bar shows no `session_id`, and no request to a Google or Clarity host contains `session_id`, `cs_live_` or `cs_test_`.

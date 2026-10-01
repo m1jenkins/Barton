@@ -13,7 +13,7 @@ export const fields = [
   { key: 'color', label: 'Color', question: 'Any colors you love? Or any you’d rather avoid?', placeholder: 'Green or white, but not black', choices: ['Green', 'White', 'Black', 'Open to any color'], defaultPriority: 'prefer' },
   { key: 'trim', label: 'Trim', question: 'Do you have a trim level in mind? It’s okay to keep your options open.', placeholder: 'A preferred trim, or “open to any”', choices: [], defaultPriority: 'prefer' },
   { key: 'transmission', label: 'Transmission', question: 'Do you prefer manual, automatic, or either?', placeholder: 'Your transmission preference', choices: ['Manual', 'Automatic', 'Either'], defaultPriority: 'prefer' },
-  { key: 'notes', label: 'Anything else?', question: 'Anything else you’d like us to know before we put your brief together?', placeholder: 'Dealbreakers, listings you like, delivery needs, or any final details…', choices: [], hint: 'Add as much context as you like, up to 1,000 characters. It’s okay to skip.', intake: true, direct: true, multiline: true, maxLength: 1000, priority: false },
+  { key: 'notes', label: 'Anything else?', question: 'Anything else you’d like us to know before we put your search details together?', placeholder: 'Dealbreakers, listings you like, delivery needs, or any final details…', choices: [], hint: 'Add as much context as you like, up to 1,000 characters. It’s okay to skip.', intake: true, direct: true, multiline: true, maxLength: 1000, priority: false },
 ];
 
 // Start with the essentials, then a short customer intake. Finer car preferences
@@ -220,7 +220,7 @@ export function parseDetails(raw, currentKey = null) {
   const anyColor = remaining.match(/\b(?:open to any|any)\s+colou?r\b/i);
   if (anyColor) consume(anyColor, 'color', 'Open to any color');
   const foundColors = colorWords.filter(color => new RegExp(`\\b${color}\\b`, 'i').test(remaining));
-  if (foundColors.length && /\b(?:not|avoid|except|no)\b/i.test(remaining)) throw new Error('Please add color exclusions in the brief editor so we keep your preference exactly.');
+  if (foundColors.length && /\b(?:not|avoid|except|no)\b/i.test(remaining)) throw new Error('Please add color exclusions in the search editor so we keep your preference exactly.');
   if (foundColors.length) {
     const normalized = foundColors.map(color => color[0].toUpperCase() + color.slice(1)).join(' or ');
     for (const color of foundColors) remaining = remaining.replace(new RegExp(`\\b${color}\\b`, 'i'), ' ');
@@ -253,7 +253,7 @@ export function parseDetails(raw, currentKey = null) {
   }
 
   const unrecognized = stripNoise(remaining);
-  if (unrecognized && Object.keys(values).length > 1) throw new Error(`I recognized some details, but not “${unrecognized}”. Please rephrase without the extra detail so I don’t change the brief partially.`);
+  if (unrecognized && Object.keys(values).length > 1) throw new Error(`I recognized some details, but not “${unrecognized}”. Please rephrase without the extra detail so I don’t change your search details partially.`);
   if (unrecognized && !currentKey && Object.keys(values).length) throw new Error(`I recognized a detail, but not “${unrecognized}”. Please name the detail you want to change.`);
   return { values, skipped: [], correction: false };
 }

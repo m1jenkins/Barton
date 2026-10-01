@@ -1,6 +1,6 @@
-import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js';
-import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js';
-import { plans, createCheckout } from './checkout.js?v=ef15537620a6';
+import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js?v=ae8f7cd0a830';
+import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js?v=165019541eb2';
+import { plans, createCheckout } from './checkout.js?v=243426417c53';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
@@ -103,12 +103,12 @@ function syncBriefLink() {
   const link = $('[data-brief-link]');
   if (!link) return;
   const started = Object.keys(brief.answers).length > 0;
-  link.textContent = started ? 'Your brief' : 'Start my brief';
-  link.setAttribute('href', started ? '/#brief' : '/#conversation');
+  link.textContent = started ? 'Your search' : 'Start my search';
+  link.setAttribute('href', started ? '/#search' : '/#conversation');
 }
 function persist() {
   const storage = briefStore.write(brief);
-  const message = storage === 'localStorage' ? '' : storage === 'sessionStorage' ? 'Draft saved for this tab. Download a copy to keep it.' : 'Browser storage is unavailable. Keep a downloaded copy of your brief.';
+  const message = storage === 'localStorage' ? '' : storage === 'sessionStorage' ? 'Draft saved for this tab. Download a copy to keep it.' : 'Browser storage is unavailable. Keep a downloaded copy of your search details.';
   if ($('#saved-indicator')) $('#saved-indicator').textContent = message;
   syncBriefLink();
   return storage;
@@ -178,7 +178,7 @@ function renderConversation() {
   }
   const reply = replyPending
     ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
-    : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Review it, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
+    : `<p class="assistant-reply">${escape(field?.question || 'Your search details are ready. Review them, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
   // The head-on Miata (logo-motion.css) flips its headlights up as each reply arrives and switches them on when the search is complete.
   const avatar = `<span class="mx-avatar${replyPending ? '' : field ? ' is-hello' : ' is-done'}" aria-hidden="true"></span>`;
   const responseMarkup = `<span class="message-label assistant-name">${avatar}Drive Right</span>${reply}`;
@@ -220,23 +220,28 @@ function renderBrief() {
 }
 function setView(next, focus = true) {
   cancelReply();
-  if (!['home','conversation','brief'].includes(next)) next = 'home';
-  if (next === 'brief' && !isComplete(brief.answers)) {
+  // Keep existing bookmarks working while using the new public route.
+  if (next === 'brief') {
+    next = 'search';
+    history.replaceState(history.state, '', location.pathname + location.search + '#search');
+  }
+  if (!['home','conversation','search'].includes(next)) next = 'home';
+  if (next === 'search' && !isComplete(brief.answers)) {
     next = 'conversation';
     history.replaceState(history.state, '', location.pathname + location.search + '#conversation');
   }
   view = next;
-  document.body.dataset.view = next === 'brief' ? 'summary' : next;
-  $('#intake-view').hidden = next === 'brief';
-  $('#summary-view').hidden = next !== 'brief';
+  document.body.dataset.view = next === 'search' ? 'summary' : next;
+  $('#intake-view').hidden = next === 'search';
+  $('#summary-view').hidden = next !== 'search';
   $('#home-content').hidden = next !== 'home';
   $('.chat-heading').hidden = next !== 'conversation';
   $('#messages').hidden = next !== 'conversation';
-  if (next === 'brief') $('[data-brief-link]').setAttribute('aria-current', 'page');
+  if (next === 'search') $('[data-brief-link]').setAttribute('aria-current', 'page');
   else $('[data-brief-link]').removeAttribute('aria-current');
   if (next === 'conversation') renderConversation();
   syncConversationViewport();
-  if (next === 'brief') renderBrief();
+  if (next === 'search') renderBrief();
   if (next === 'home') {
     $('#composer').hidden = false; $('#choices').hidden = true; $('#skip-detail').hidden = true; $('#answer-actions').hidden = true;
     $('#brief-ready').hidden = true; $('.conversation-controls').hidden = true;
@@ -246,14 +251,14 @@ function setView(next, focus = true) {
     $('#answer-label').textContent = 'What car are you looking for?';
     requestAnimationFrame(sizeAnswer);
   }
-  document.title = next === 'brief' ? 'Your buying brief | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : homeTitle;
+  document.title = next === 'search' ? 'Your search details | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : homeTitle;
   if (focus) {
     window.scrollTo({ top:0, behavior:'instant' });
-    (next === 'brief' ? $('#summary-title') : next === 'conversation' && currentField() ? input : $('#main-content')).focus({ preventScroll:true });
+    (next === 'search' ? $('#summary-title') : next === 'conversation' && currentField() ? input : $('#main-content')).focus({ preventScroll:true });
   }
 }
 function navigate(next, focus = true) {
-  if (next === 'brief' && !isComplete(brief.answers)) next = 'conversation';
+  if (next === 'search' && !isComplete(brief.answers)) next = 'conversation';
   const fragment = next === 'home' ? '' : `#${next}`;
   if (location.hash !== fragment) history.pushState(history.state, '', location.pathname + location.search + fragment);
   setView(next, focus);
@@ -261,7 +266,7 @@ function navigate(next, focus = true) {
 function submit(raw) {
   if (replyPending) return;
   const field = currentField();
-  if (!field) { navigate('brief'); return; }
+  if (!field) { navigate('search'); return; }
   try {
     brief = applyAnswer(brief, parseConversation(raw, field.key));
     persist(); input.value = ''; $('#input-error').textContent = ''; input.removeAttribute('aria-invalid');
@@ -286,7 +291,7 @@ function openEditor(keys) {
 }
 function download() {
   const url = URL.createObjectURL(new Blob([briefText(brief)], { type:'text/plain;charset=utf-8' }));
-  const link = document.createElement('a'); link.href = url; link.download = 'drive-right-buying-brief.txt'; link.click();
+  const link = document.createElement('a'); link.href = url; link.download = 'drive-right-search-details.txt'; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 if (home) {
@@ -296,7 +301,7 @@ if (home) {
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (view === 'home' || !currentField()?.multiline)) { e.preventDefault(); $('#composer').requestSubmit(); }
   });
-  $('#example').addEventListener('click', () => Object.keys(brief.answers).length ? navigate(isComplete(brief.answers) ? 'brief' : 'conversation') : submit('A Mazda Miata, under $30k'));
+  $('#example').addEventListener('click', () => Object.keys(brief.answers).length ? navigate(isComplete(brief.answers) ? 'search' : 'conversation') : submit('A Mazda Miata, under $30k'));
   $('#choices').addEventListener('click', e => { const b = e.target.closest('[data-choice]'); if (b) submit(b.dataset.choice); });
   $('#skip-detail').addEventListener('click', () => submit('Skip for now'));
   $('#add-details').addEventListener('click', () => { optionalQuestions = true; prepareReply(); });
@@ -319,11 +324,11 @@ if (home) {
         if (isConcrete(key, next.answers[key])) next.priorities[key] = row.querySelector('.is-selected')?.dataset.priority || field.defaultPriority;
       });
       next.priorities = restoredPriorities(next.priorities, next.answers, next.skipped);
-      brief = next; persist(); if (view === 'brief') renderBrief(); else renderConversation(); $('#edit-dialog').close();
+      brief = next; persist(); if (view === 'search') renderBrief(); else renderConversation(); $('#edit-dialog').close();
     } catch (error) { $('#edit-error').textContent = error.message; }
   });
   $('#download-brief').addEventListener('click', download);
-  $('#save-brief').addEventListener('click', () => { const saved = persist(); $('#brief-status').textContent = saved === 'localStorage' ? 'Your brief is saved on this device.' : 'This browser cannot save a lasting draft. Download your brief to keep a copy.'; });
+  $('#save-brief').addEventListener('click', () => { const saved = persist(); $('#brief-status').textContent = saved === 'localStorage' ? 'Your search details are saved on this device.' : 'This browser cannot save a lasting draft. Download your search details to keep a copy.'; });
   window.addEventListener('hashchange', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('popstate', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('resize', resizeConversation);
@@ -339,7 +344,7 @@ document.addEventListener('click', e => {
   const a = e.target.closest('a[href]');
   if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return;
   const url = new URL(a.href, location.href);
-  if (home && url.origin === location.origin && ['/', '/index.html'].includes(url.pathname) && ['', '#brief', '#conversation'].includes(url.hash)) {
+  if (home && url.origin === location.origin && ['/', '/index.html'].includes(url.pathname) && ['', '#search', '#conversation'].includes(url.hash)) {
     e.preventDefault(); navigate(url.hash.slice(1) || 'home'); return;
   }
   if (briefStore.persistence === 'memory' && url.origin === location.origin && redesigned.has(url.pathname) && url.pathname !== location.pathname) {
@@ -354,7 +359,7 @@ document.querySelectorAll('dialog').forEach(dialog => {
 
 const pricingSummary = $('#pricing-brief');
 function compactMarkup(value, link = true) {
-  return `<div><h2>${escape(value.answers.vehicle || 'Your buying brief')}</h2><p>${escape(detailSummary(value))}</p></div>${link ? '<a class="text-link" href="/#brief">Review your brief '+icon('arrow')+'</a>' : ''}`;
+  return `<div><h2>${escape(value.answers.vehicle || 'Your search details')}</h2><p>${escape(detailSummary(value))}</p></div>${link ? '<a class="text-link" href="/#search">Review your search details '+icon('arrow')+'</a>' : ''}`;
 }
 if (pricingSummary && Object.keys(brief.answers).length) { pricingSummary.innerHTML = compactMarkup(brief); pricingSummary.hidden = false; }
 const contactDialog = $('#contact-dialog');
@@ -431,7 +436,7 @@ const paidBrief = $('#paid-brief');
 if (paidBrief) {
   let filled = false;
   function carryOver() {
-    if (filled || !document.body.dataset.verifiedSessionId) return;
+    if (filled || document.body.dataset.purchaseVerified !== 'true') return;
     filled = true;
     $('.skip-link').href = '#verified-purchase-content';
     const ledger = checkoutStore.read();
@@ -452,7 +457,7 @@ if (paidBrief) {
     // Existing API fields preserve the entire brief, including constraints without
     // dedicated onboarding inputs (ZIP, radius, trim, transmission, and priorities).
   }
-  new MutationObserver(carryOver).observe(document.body, { attributes:true, attributeFilter:['data-verified-session-id'] });
+  new MutationObserver(carryOver).observe(document.body, { attributes:true, attributeFilter:['data-purchase-verified'] });
   carryOver();
 }
 persist();

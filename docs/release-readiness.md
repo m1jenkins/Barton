@@ -1,6 +1,6 @@
 # Drive Right Release Readiness
 
-Status date: September 18, 2026
+Content approval updated: October 1, 2026; infrastructure notes retain their recorded dates.
 
 Current local candidate: [SEO release-candidate record](seo-execution/release-candidate.md). The historical sections below are context; current measured evidence and exact unresolved dependencies are in that record. No activation has occurred.
 
@@ -52,15 +52,13 @@ node scripts/check-redirects.mjs
 - Run the 24-prompt panel in `data/ai-prompt-panel.csv` twice, 14 days apart, with two repetitions per platform/prompt condition. Treat citations as observations, never rankings.
 - Start the 42-day matched-page retrieval experiment only after the 28-day baseline and factual/indexation/accessibility/privacy guardrails are recorded.
 
-## Gate 5: editorial and local evidence
+## Current website content and local pages
 
-- Keep every legacy blog article and the five consequential draft hubs noindexed until claim-level primary-source mapping and an accountable qualified review are complete.
-- Replace “Draft updated” with a truthful visible reviewer identity/date and matching `dateModified` only after approval; reindex only the approved page.
-- Obtain owner/legal approval for guarantees, refund boundaries, operational start times, independence/referral disclosures, and any first-party outcome claim before reuse.
-- Publish the requested case studies, Texas title-transfer checklist, and deal-sheet worksheet only with customer consent, reproducible evidence, and the required reviewer. No placeholder case study or synthetic testimonial is an acceptable substitute.
-- Keep all nine metro pages noindexed until each has unique verified logistics, dated regional evidence, a real example where available, and either attributable consultation activity or genuine non-brand demand. Merge/redirect failures at the day-90 gate.
-- Apply the [metro release contract](metro-execution-2026-09-16.md#release-contract) to each proposed market and the service-areas hub; use the [baseline capture and cohort review template](metro-baseline-template.md) for their evidence packets.
-- Complete Google Business Profile, Bing Places, Apple Business Connect, review-request, and outreach work in the owned accounts; keep name, phone, URL, hours, and service area synchronized.
+All current website content is approved by the owner. See [the October 1 approval](content-approval-2026-10-01.md). Existing city pages, resource hubs, articles, and service copy do not require further content verification or approval and must not carry pre-publication warnings.
+
+Retain the current indexing and redirect decisions when editing these pages. Separate artifacts in `draft-artifacts/` remain local previews. Update pinned city hashes after authorized edits, and run the technical checks.
+
+Keep Google Business Profile, Bing Places, Apple Business Connect, and website contact details synchronized when making authorized account changes.
 
 ## Gate 6: rendered quality and performance
 
@@ -80,8 +78,8 @@ node scripts/check-redirects.mjs
 
 ## Rollback boundary
 
-Roll back the promoted application artifact if forms, payment verification, factual accuracy, privacy, accessibility, indexation, or consultation tracking regresses. Keep correct permanent canonical/legacy redirects unless the redirect matrix itself fails. Keep consequential content contained until its exact release gate is satisfied.
+Roll back the promoted application artifact if forms, payment verification, factual accuracy, privacy, accessibility, indexation, or consultation tracking regresses. Keep correct permanent canonical/legacy redirects unless the redirect matrix itself fails. Preserve the recorded indexing decisions during rollback.
 
 ## September 5, 2026 SEO preparation
 
-See [the page-specific preparation and review packet](seo-release-preparation-2026-09-05.md). The three priority articles and Austin page have revised drafts and primary-source mapping, but remain noindexed pending their exact author, evidence, and review gates. Homepage positioning is updated. No deployment or bulk release occurred; that historical sitemap had nine URLs. The current candidate contains seven after AI retirement and Tesla claim containment.
+See [the page-specific preparation record](seo-release-preparation-2026-09-05.md) for the original revisions and sources. The current website copy, including the three priority articles and Austin, is covered by the October 1 owner approval.

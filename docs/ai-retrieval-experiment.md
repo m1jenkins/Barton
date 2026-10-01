@@ -13,7 +13,7 @@
 
 ## Eligibility gate
 
-Do not include a page unless its lifecycle is active, its claims and sources are approved, and its technical tracking is stable. The four contained legal/rules articles are excluded until qualified review and reindexing are complete. Pages with unresolved price, guarantee, testimonial, financial-outcome, or address claims are also excluded.
+Use pages that are intentionally indexable and have stable technical tracking. Current website content is owner-approved as of October 1, 2026. Pages with existing noindex directives stay out of the indexed-page experiment.
 
 ## Cohorts
 
@@ -30,7 +30,7 @@ Record the final URL assignments and matching variables here before launch. Do n
 Apply the same evidence template to every treatment page:
 
 1. Direct two-to-four sentence answer under the main heading.
-2. Visible reviewed/updated date and accountable author; qualified reviewer where the topic requires one.
+2. Visible update date and author attribution.
 3. Source-linked factual sections with scope, assumptions, and as-of dates adjacent to consequential claims.
 4. A compact comparison, checklist, or decision table when it improves extraction and reader utility.
 5. One clear next step and contextual internal links to the relevant hub and service path.

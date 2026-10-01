@@ -1,6 +1,6 @@
 # SEO-06 proof packet 2 — resolve a conditional rebate
 
-Prepared 2026-09-18. This is an explicitly **hypothetical worked example**, not an actual buyer engagement, current incentive, tax estimate, or customer outcome. Local preparation is complete; author and qualified review remain pending.
+Prepared 2026-09-18. This is an explicitly **hypothetical worked example**, not an actual buyer engagement, current incentive, tax estimate, or customer outcome. Local preparation is complete; this example remains in the separate private worksheet preview.
 
 ## Prepared example
 
@@ -33,6 +33,5 @@ The historical testimonial attestations in `data/metro-dossiers.json` are for pr
 2. The revised written quote after eligibility resolution, including any changed tax, charge, equipment, financing-dependent price, or delivery amount. Retain proof of whether the buyer actually proceeded.
 3. A calculation that distinguishes advertised/conditional price, eligible confirmed price, actual paid cost, financing/trade effects, and service fees. Explain which comparison is being made and what the evidence cannot establish.
 4. The customer's original statement and permission for the exact proposed story and identifiers, publication channels, duration, and any images. Record required material-connection disclosures and permission withdrawal handling.
-5. Named owner, claims, and qualified consumer-finance/advertising review of the exact text and calculation, with approval date, expiry, next review, and immutable copy/file reference.
 
 Commit only sanitized evidence references. No outreach or customer request was sent. No actual customer story is eligible for publication from this packet. The private hypothetical example is the completed local substitute permitted by the SEO runbook.

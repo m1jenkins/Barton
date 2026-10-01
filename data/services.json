@@ -6,7 +6,7 @@
   "sourceOfTruth": {
     "url": "https://www.driverightcarbuying.com/schedule.html",
     "file": "schedule.html",
-    "note": "Owner-authorized local offer in docs/seo-agent-runbook.md. Pricing/retirement approval does not approve service-level promises, policy terms or live checkout parity."
+    "note": "Current published service copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
   },
   "services": [
     {
@@ -23,7 +23,7 @@
       ],
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
-      "serviceLevelReview": "pending_operations_confirmation",
+      "serviceLevelReview": "owner_approved_current_website_copy_2026_10_01",
       "checkoutStatus": "new_395_link_required_before_activation"
     },
     {
@@ -46,14 +46,15 @@
   ],
   "commercialTerms": {
     "guarantee": {
-      "status": "pending_owner_and_legal_review",
+      "status": "not_advertised",
       "approvedPublicCopy": null,
-      "reason": "The site uses Savings Guarantee language while the policy page also limits guarantees. No governed terms artifact was found."
+      "reason": "Use the current published policy and service descriptions. Owner approval of existing copy does not introduce a new guarantee."
     },
     "refund": {
-      "status": "pending_owner_and_legal_review",
+      "status": "owner_approved_published_policy",
       "approvedPublicCopy": null,
-      "reason": "Refund eligibility timing exclusions remedy and relationship to the savings claim require one approved policy."
+      "source": "policy.html#refund-policy",
+      "approvalRef": "WEBSITE-CONTENT-2026-10-01"
     },
     "freeConsultation": {
       "status": "historical_wording_not_a_current_paid_offer",
@@ -61,10 +62,11 @@
     }
   },
   "approval": {
-    "businessOwner": null,
+    "businessOwner": "Business owner via direct instruction",
     "legalReviewer": null,
-    "approvedAt": null,
-    "nextReviewAt": null
+    "approvedAt": "2026-10-01",
+    "nextReviewAt": null,
+    "record": "docs/content-approval-2026-10-01.md"
   },
   "checkoutObservation": {
     "observedAt": "2026-09-05",
@@ -75,14 +77,14 @@
       895
     ],
     "tax": "All three public checkouts show address-dependent tax calculation",
-    "scopeConflicts": "Live checkout descriptions include unsupported outcome and deliverable promises. See docs/seo-release-preparation-2026-09-05.md. Observation is not owner approval.",
+    "scopeConflicts": "Historical checkout description observations are retained in the Stripe records. Current website copy is owner-approved under WEBSITE-CONTENT-2026-10-01.",
     "supersededBy": "docs/seo-execution/stripe-cutover.md#observed-account-and-links"
   },
   "availabilityConfirmation": {
     "record": "data/metro-release.json#OWNER-2026-09-16",
     "confirmedOn": "2026-09-16",
     "scope": "All currently advertised tiers across all states/cities, per captain instruction",
-    "limits": "Availability confirmation does not approve exact commercial/qualified copy or document specific logistics, delivery or response commitments."
+    "limits": "Existing published scope and service copy are owner-approved under WEBSITE-CONTENT-2026-10-01. Keep engagement-specific responsibilities consistent with the current public descriptions."
   },
   "retiredServices": [
     {
@@ -111,5 +113,13 @@
     "stripeCutover": "docs/seo-execution/stripe-cutover-2026-09-27.md",
     "status": "owner_authorized_local_implementation",
     "productionActivation": "pending"
+  },
+  "contentApproval": {
+    "id": "WEBSITE-CONTENT-2026-10-01",
+    "date": "2026-10-01",
+    "authority": "Business owner via direct instruction",
+    "quote": "I approve all content that is currently on the website.",
+    "scope": "All current public website content, including existing city pages, guides, articles, service copy, and metadata.",
+    "record": "docs/content-approval-2026-10-01.md"
   }
 }

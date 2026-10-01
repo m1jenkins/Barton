@@ -12,10 +12,7 @@ nothing here deploys, resubmits a sitemap, changes robots directives, or touches
 | `data/services.json` (`lastObservedAt` 2026-09-18) | 295 | 895 | `retired_for_new_sales` under `retiredServices` |
 | `schedule.html` / `index.html` / `how-it-works.html` | $295 | $895 | Retirement note only |
 
-No new fee, discount, savings figure, or street address was introduced. `data/services.json`
-records `commercialTerms.guarantee` and `commercialTerms.refund` as
-`pending_owner_and_legal_review` with `approvedPublicCopy: null`, so no Savings Guarantee or
-average-savings language appears in this change.
+No new fee, discount, savings figure, or street address was introduced. Current published service and policy copy is owner-approved under [the October 1 record](../content-approval-2026-10-01.md).
 
 ## Evidence for the stale surfaces (retrieved 2026-09-20 PT)
 
@@ -99,7 +96,7 @@ The option table below is the menu that was open on 2026-09-21. Only the first r
 
 `data/metro-release.json` lists `tesla-fsd-for-sale.html` in `legacyDiscoveryLinks` as a source of one link to each Texas city page. Those edges stay as recorded while the page remains crawlable under noindex.
 
-Inventory: `data/content-inventory.csv` marks the URL `contained_pending_qualified_review` / `none_while_contained`. Claim `SEO-TESLA-2026-09-18` stays contained; this park is not exact-copy approval.
+Inventory: `data/content-inventory.csv` marks the URL `approved_noindex` / `none_while_noindex`. The historical claim row is retired; current public copy is covered by the October 1 owner approval.
 
 See `docs/seo/2026-09-22-tesla-fsd-disposition.md`.
 

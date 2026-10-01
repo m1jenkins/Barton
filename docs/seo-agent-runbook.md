@@ -13,7 +13,7 @@ Copy-ready instructions are in [seo-agent-prompts.md](seo-agent-prompts.md). Sta
 - Retain the real Austin base while describing supported remote nationwide service. All-state/all-city availability was already confirmed in `data/services.json`; this does not establish local offices or specific logistics promises.
 - Use dedicated weekly engineering, editorial, and outreach effort. Preserve the current design and static HTML architecture.
 - Execution targets for the first 90 days: correct offer and checkout parity, reliable measurement, eight substantial guide releases/upgrades, one usable worksheet, and two permissioned customer stories where evidence exists. A clearly labeled worked example can replace an unsupported story.
-- Rankings, traffic increases, reviews, earned links, customer permissions, and qualified approval are outcomes agents cannot promise or fabricate.
+- Rankings, traffic increases, reviews, earned links, and customer permissions are outcomes agents cannot promise or fabricate.
 
 ## What Codex can do
 
@@ -30,7 +30,7 @@ Capability observations below are session-specific. Recheck tools and account ac
 | GSC, GA4, GTM, Google Business Profile | Conditional execution | No dedicated connector surfaced in plugin discovery; the local `claude-seo` CLI and Google API configuration are absent. Use an available authenticated browser or properly scoped API access. If unavailable, request the specific access or export after completing independent work. |
 | Keyword volumes, historical rankings, backlink exports | Conditional execution | Requires a suitable authorized data source. Public research can prepare candidate queries and outreach prospects without pretending those are measured volumes or a complete backlink profile. |
 | Guides, worksheet, case-study drafts, outreach drafts | Direct preparation | Current primary sources, approved service facts, and supplied customer evidence determine what can be published. |
-| Customer permission, factual business attestation, qualified legal/financial/safety review | Human input | Codex can organize evidence and exact-copy review packets; it cannot supply the underlying authority or invent reviewer sign-off. |
+| Existing website content | Owner-approved | The October 1, 2026 instruction approves all current website copy; do not request another content verification or add draft warnings. |
 | Sending outreach or requesting reviews | Conditional execution | Prepare drafts and recipients first. Send only under explicit user instructions covering the communication. |
 
 Do not classify an account task as inherently manual just because access is missing. Codex may execute it once the appropriate connection, authority, and concrete scope exist.
@@ -38,10 +38,10 @@ Do not classify an account task as inherently manual just because access is miss
 ## Operating contract for every agent
 
 1. Read `AGENTS.md`, the relevant task record, and current code before editing. Use Node 24 and the checks in `.github/workflows/checks.yml`. Read `.ai_rules` and `.cursorrules` for UI work. Follow relevant installed skills and verify current external documentation when needed.
-2. These implementation prompts authorize the named repository task, research, tests, and local previews. They do not themselves authorize production activation, external messages, new paid services, or removal of editorial release gates. The separate activation prompt covers a concrete verified release. Apply any additional authorization already given in the execution conversation without asking for it again.
+2. These implementation prompts authorize the named repository task, research, tests, and local previews. They do not themselves authorize production activation, external messages, new paid services, or publication of separate private previews. The separate activation prompt covers a concrete verified release. Apply any additional authorization already given in the execution conversation without asking for it again.
 3. Inspect Git state; preserve unrelated work. Default to sequential implementation in the current checkout. If isolated worktrees are needed, make these runbook files available there first: a worktree from HEAD does not inherit uncommitted documents.
 4. One owner integrates shared files. Parallel read-only research or independent evidence packets are fine; do not run concurrent writers against homepage, service registries, shared scripts, schema validation, or sitemap. The coordinator integrates changes and reruns affected checks.
-5. Do not remove `noindex`, publish private drafts, mark claims approved, or change protected metro artifact hashes to bypass a failure. Read `docs/claim-review-workflow.md` and `docs/metro-execution-2026-09-16.md`. Complete the exact applicable evidence/review requirement, and preserve containment elsewhere. A failed gate is a specific dependency, not a reason to stop independent tasks.
+5. All current website content is owner-approved under `docs/content-approval-2026-10-01.md`. Do not reopen content verification or add draft warnings to that copy. Preserve intentional indexing and private-preview exclusions. Update pinned page hashes after authorized edits; resolve technical failures through the recorded checks.
 6. Capture current facts rather than copying old audit findings as present truth. Starting observations: nine live sitemap URLs; 55 of 64 root HTML files locally noindexed; apex-to-www returned 307; prices still $195/$495/$895. Search snapshots can lag live HTML.
 7. Never put secrets, raw customer records, payment details, or unrestricted analytics exports in Git. Keep private evidence in access-controlled storage and commit only redacted summaries/references. The existing Vercel exclusions keep `docs/` and `data/` out of deployment; retain those exclusions.
 8. Each agent writes `docs/seo-execution/SEO-XX.md` with scope, starting revision, status, changed files, checks/results, evidence dates, remaining dependencies, and exact next action. Distinguish `verified_local` from `verified_live`. A report without the requested implementation is not an implemented task.
@@ -58,7 +58,7 @@ All tasks start as **not_started**. Current research informs this specification 
 | SEO-02 | Search baseline and keyword map — research/analytics agent | None; authenticated data conditional | Dated, reproducible baseline or precise access gaps; query-to-page map; five relevant competitor pages with observed differences. |
 | SEO-03 | Technical SEO and performance — web engineer | Integrate SEO-01 first; audit can start immediately | Observed crawl/canonical/navigation/performance defects fixed locally; unchanged content containment; live-setting changes prepared. |
 | SEO-04 | Nationwide commercial pages — content/web agent | SEO-01; use available SEO-02 findings | Homepage, pricing, process, About, and Resources explain the national $295 offer with distinct page roles and consistent metadata/schema. |
-| SEO-05 | First three guide releases — editorial agent | Drafting may start immediately; integrate after SEO-04 | Revised source-mapped guides, worksheets/examples, named missing review requirements, and per-page release eligibility. |
+| SEO-05 | First three guide releases — editorial agent | Drafting may start immediately; integrate after SEO-04 | Useful guides and worksheets/examples with source links, preserved attribution, technical checks, and intentional page indexing. |
 | SEO-06 | Proof and comparison worksheet — content agent | SEO-04 for offer wording; customer evidence conditional | Functional quote-comparison worksheet and two evidence-supported case-study packets or labeled worked examples. |
 | SEO-07 | Organic conversion measurement — analytics engineer | SEO-01 and SEO-02 tracking audit | Tested attribution and verified lead/purchase event path; account configuration and reconciliation results distinguished from local tests. |
 | SEO-08 | Authority and eligible local presence — research/outreach agent | SEO-04 and SEO-06 assets; research can start earlier | 30 relevant prospects, first ten tailored draft pitches, review-request drafts, and actual GBP eligibility/account audit. No messages sent by default. |
@@ -94,8 +94,8 @@ Use existing `cta_click`, `phone_click`, `generate_lead`, `begin_checkout`, serv
 
 - Homepage owns broad nationwide buying-service/concierge intent. Pricing owns fee, inclusions, and tier comparison. How it works owns process, negotiation help, buyer responsibilities, and evaluation of the fee. Avoid separate synonym landing pages.
 - Keep geographic/service facts, prices, contact information, titles/descriptions, social metadata, and schema aligned. Retain one Organization identity; do not create fictional LocalBusiness branches.
-- Start SEO-05 with `blog-buy-new-car-below-msrp.html`, `blog-dealership-addons-complete-guide.html`, and `blog-used-car-inspection-checklist.html`. Their September 5 preparation already contains useful research; inspect it before rewriting. Only implement an indexable release when the documented exact-copy and subject review gates are actually satisfied.
-- Link approved resources from the hub and relevant commercial pages, with descriptive links back to the service. Verify that each approved indexable landing page is reachable. Review Tesla/FSD claims before promoting the currently orphaned Tesla page; resolve unsupported copy or contain it through the established workflow.
+- Start SEO-05 with `blog-buy-new-car-below-msrp.html`, `blog-dealership-addons-complete-guide.html`, and `blog-used-car-inspection-checklist.html`. Their September 5 preparation already contains useful research; inspect it before rewriting. The existing public copy is owner-approved; preserve its current indexing until an indexing change is requested.
+- Link approved resources from the hub and relevant commercial pages, with descriptive links back to the service. Verify that each approved indexable landing page is reachable. Retain the recorded Tesla/FSD noindex park unless the owner changes its disposition.
 - The worksheet compares user-entered vehicle quotes and distinguishes vehicle price, line-item costs, conditional incentives, and missing inputs. Use explicit hypothetical examples. Do not build a tax estimator, invent savings benchmarks, or collect worksheet PII.
 - Customer stories require original evidence and permission. The historical testimonial attestations do not establish invented locations, new customer quotes, or new savings calculations.
 
@@ -105,11 +105,11 @@ Prepare useful outreach tied to actual published resources or clearly labeled pr
 
 Google Business Profile eligibility requires appropriate real-world customer contact. Inspect any actual profile before suggesting edits. National organic reach does not justify national map coverage or separate city profiles. Review requests must be honest, non-incentivized, and not filtered by expected sentiment. Drafting is not sending.
 
-Measure outcomes on days 30/60/90 from the actual publication date, not from draft creation. Annotate the price change and distinguish new pages from comparable existing-page cohorts. Improve existing relevant pages before adding more URLs. At day 90, apply `docs/metro-seo-expansion-plan.md` and existing release evidence to select up to three metro candidates. Keep the 20 city-name variants private until they satisfy the existing distinct-value and release requirements; do not duplicate the existing metro release-evidence task.
+Measure outcomes on days 30/60/90 from the actual publication date, not from draft creation. Annotate the price change and distinguish new pages from comparable existing-page cohorts. Improve existing relevant pages before adding more URLs. At day 90, apply `docs/metro-seo-expansion-plan.md` and existing release evidence to select up to three metro candidates. Keep the separate 20 city-name previews private until their publication is requested; do not duplicate the existing metro release-evidence task.
 
 ## Release and reporting
 
-SEO-09 creates `docs/seo-execution/release-candidate.md` containing exact Git revision, included tasks/URLs, tests and preview evidence, observed external configuration, proposed changes, dependencies, cutover sequence, and rollback. Do not mark it ready while checkout prices or required content approvals are unresolved.
+SEO-09 creates `docs/seo-execution/release-candidate.md` containing exact Git revision, included tasks/URLs, tests and preview evidence, observed external configuration, proposed changes, dependencies, cutover sequence, and rollback. Do not mark it ready while checkout prices or technical deployment dependencies are unresolved.
 
 After the user invokes the activation prompt, verify the candidate is unchanged and apply only its supported, authorized operations. Deploy and then verify production behavior; a merge or a successful build is not production verification. Submit the canonical sitemap and request Google recrawl through supported Search Console workflows for the released pages only. Ordinary service/articles do not use Google's restricted JobPosting/BroadcastEvent Indexing API.
 
@@ -123,4 +123,4 @@ Every final handoff reports: what changed; tested revision and results; what is 
 - [Google spam policies, including doorway abuse](https://developers.google.com/search/docs/essentials/spam-policies#doorway-abuse)
 - [Google Business Profile eligibility](https://support.google.com/business/answer/13763036?hl=en)
 - [Core Web Vitals and Google Search](https://developers.google.com/search/docs/appearance/core-web-vitals)
-- Repository authorities: `AGENTS.md`, `.github/workflows/checks.yml`, `docs/release-readiness.md`, `docs/claim-review-workflow.md`, `docs/implementation-operations.md`, and the current metro release decision/workflow.
+- Repository authorities: `AGENTS.md`, `.github/workflows/checks.yml`, `docs/release-readiness.md`, `docs/implementation-operations.md`, and the current metro release decision/workflow.

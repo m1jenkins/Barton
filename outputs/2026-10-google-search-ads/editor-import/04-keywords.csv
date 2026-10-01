@@ -1,0 +1,32 @@
+Campaign,Ad group,Keyword,Criterion type,Status
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying service,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying service,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying services,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,nationwide car buying service,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying agent,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying agent,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Service,car buying service cost,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car negotiation service,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car negotiation service,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car negotiator,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car negotiator,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car price negotiation service,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,hire someone to negotiate car price,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Negotiation,car buying negotiator,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Concierge,car buying concierge,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Concierge,car buying concierge,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Concierge,car concierge service,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Concierge,car finder service,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Concierge,car locator service,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,car buying advisor,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,car buying advisor,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,car buying consultant,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,car buying consultant,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,car shopping service,Exact,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,personal car shopper,Phrase,Enabled
+Search | NonBrand | Car Buying Service | US,Car Buying Advisor,help buying a car,Exact,Enabled
+Search | Brand | Drive Right | US,Brand,drive right car buying,Exact,Enabled
+Search | Brand | Drive Right | US,Brand,drive right car buying,Phrase,Enabled
+Search | Brand | Drive Right | US,Brand,driveright car buying,Exact,Enabled
+Search | Brand | Drive Right | US,Brand,driverightcarbuying,Exact,Enabled
+Search | Brand | Drive Right | US,Brand,driverightcarbuying.com,Exact,Enabled

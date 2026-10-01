@@ -28,6 +28,6 @@ Closes the open Mason decision in `docs/seo/2026-09-21-claim-safety-redirects.md
 - Not an indexable landing page.
 - Not a live Tesla / FSD inventory listing.
 - Not an approved expansion of commercial offerings.
-- Not exact-copy approval of `SEO-TESLA-2026-09-18` (still `contained_pending_qualified_review`).
+- Current public copy is now owner-approved under the October 1, 2026 instruction; the noindex park disposition remains in place.
 
 Revisit only with a later named Mason decision.
