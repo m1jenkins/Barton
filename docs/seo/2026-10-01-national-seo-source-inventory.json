@@ -1,0 +1,5261 @@
+{
+  "sourceAuditOnly": true,
+  "files": [
+    {
+      "file": "about.html",
+      "url": "https://www.driverightcarbuying.com/about.html",
+      "title": "About Drive Right Car Buying Service | Austin Based",
+      "description": "Meet Mason and learn how Austin-based Drive Right provides nationwide car buying and negotiation support through research, offer comparison and seller communication.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/about.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car buying and negotiation.From Austin."
+        },
+        {
+          "level": "h2",
+          "text": "Hi, I'm Mason."
+        },
+        {
+          "level": "h2",
+          "text": "Some of the rides along the way."
+        },
+        {
+          "level": "h2",
+          "text": "How we work."
+        },
+        {
+          "level": "h3",
+          "text": "Quoted prices and fees"
+        },
+        {
+          "level": "h3",
+          "text": "Listings and quoted terms"
+        },
+        {
+          "level": "h3",
+          "text": "Research and seller calls"
+        },
+        {
+          "level": "h2",
+          "text": "See the two plans."
+        }
+      ],
+      "schemaTypes": [
+        "AboutPage",
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 2,
+        "car-buying-service.html": 3,
+        "schedule.html": 4,
+        "about.html": 2,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "ai-car-buying-agent.html",
+      "url": "https://www.driverightcarbuying.com/ai-car-buying-agent.html",
+      "title": "Service Plans Have Changed | Drive Right",
+      "description": "See how remote car-buying support works: share your brief, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/schedule.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/ai-car-buying-agent.html",
+        "destination": "/schedule.html",
+        "statusCode": 301
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Our service plans have changed."
+        }
+      ],
+      "schemaTypes": [],
+      "htmlLinkTargets": {
+        "schedule.html": 1
+      }
+    },
+    {
+      "file": "arlington.html",
+      "url": "https://www.driverightcarbuying.com/arlington.html",
+      "title": "Arlington Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for Arlington and Mid-Cities buyers and communicates with sellers on your behalf. Outcomes vary.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/arlington.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forArlington."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater Arlington."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "austin.html",
+      "url": "https://www.driverightcarbuying.com/austin.html",
+      "title": "Austin Car Buying Service | Drive Right",
+      "description": "Austin-based car-buying help for vehicle research, offer comparisons, and negotiation. Compare service plans, local planning resources, and delivery questions.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/austin.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Austin Car Buying ServiceResearch. Compare. Negotiate."
+        },
+        {
+          "level": "h2",
+          "text": "Who this service suits"
+        },
+        {
+          "level": "h2",
+          "text": "Current plans and fees"
+        },
+        {
+          "level": "h3",
+          "text": "Full Service \u2014 $395"
+        },
+        {
+          "level": "h3",
+          "text": "Ultimate Concierge \u2014 $695"
+        },
+        {
+          "level": "h2",
+          "text": "Austin base, Texas coverage"
+        },
+        {
+          "level": "h3",
+          "text": "Remote work and in-person steps"
+        },
+        {
+          "level": "h3",
+          "text": "Pickup, delivery, and the transaction"
+        },
+        {
+          "level": "h2",
+          "text": "Austin-specific purchase planning"
+        },
+        {
+          "level": "h3",
+          "text": "Use the correct county paperwork route"
+        },
+        {
+          "level": "h3",
+          "text": "Account for Travis and Williamson emissions rules"
+        },
+        {
+          "level": "h3",
+          "text": "Plan dealer visits around the I-35 corridor"
+        },
+        {
+          "level": "h2",
+          "text": "Questions to settle before booking"
+        },
+        {
+          "level": "h3",
+          "text": "Can I use a plan if I already found a car?"
+        },
+        {
+          "level": "h3",
+          "text": "Will an advisor meet me at an Austin dealership?"
+        },
+        {
+          "level": "h3",
+          "text": "Does the service include a mechanic\u2019s inspection?"
+        },
+        {
+          "level": "h3",
+          "text": "What should I send with an inquiry?"
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Organization",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 2,
+        "how-it-works.html": 1,
+        "texas-local-market-intelligence.html": 1,
+        "blog-used-car-inspection-checklist.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "auto-financing-credit-fi.html",
+      "url": "https://www.driverightcarbuying.com/auto-financing-credit-fi.html",
+      "title": "Auto Financing, Credit & F&I Resource Hub | Drive Right",
+      "description": "Explore Drive Right resources about auto-loan preparation, credit questions, dealer financing, F&I products, and total-cost comparisons.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/auto-financing-credit-fi.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Auto financing, credit, and F&I"
+        },
+        {
+          "level": "h2",
+          "text": "A practical comparison sequence"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Financing and F&I resources"
+        },
+        {
+          "level": "h3",
+          "text": "Credit Score and Car Buying"
+        },
+        {
+          "level": "h3",
+          "text": "Dealer vs. Bank Financing"
+        },
+        {
+          "level": "h3",
+          "text": "Auto-Loan Rate Shopping"
+        },
+        {
+          "level": "h3",
+          "text": "Finance-Office Questions"
+        },
+        {
+          "level": "h3",
+          "text": "Dealership Add-ons Guide"
+        },
+        {
+          "level": "h3",
+          "text": "AI Car-Buying Agent"
+        },
+        {
+          "level": "h2",
+          "text": "Authoritative starting points"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Resource Hubs"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "blog-credit-score-car-buying.html": 1,
+        "blog-dealer-vs-bank-financing.html": 1,
+        "blog-best-auto-loan-rate-texas.html": 1,
+        "blog-finance-department-scams.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "how-it-works.html": 1,
+        "policy.html": 1,
+        "texas-car-buying-rules-paperwork.html": 1,
+        "used-car-due-diligence.html": 1,
+        "new-car-pricing-incentives.html": 1,
+        "vehicle-selection-total-cost.html": 1
+      }
+    },
+    {
+      "file": "blog-best-auto-loan-rate-texas.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-auto-loan-rate-texas.html",
+      "title": "How to Get the Best Auto Loan Rate in Texas | Drive Right",
+      "description": "Compare credit unions, banks, and dealer financing in Texas, and understand how dealer reserve markup quietly adds thousands to your loan cost.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-auto-loan-rate-texas.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Get the Best Auto Loan Rate in Texas (2026)"
+        },
+        {
+          "level": "h2",
+          "text": "Start with a pre-approval"
+        },
+        {
+          "level": "h2",
+          "text": "Credit Unions vs. Banks vs. Dealer Financing"
+        },
+        {
+          "level": "h2",
+          "text": "How dealer reserve works"
+        },
+        {
+          "level": "h2",
+          "text": "Rate Shopping Without Destroying Your Credit"
+        },
+        {
+          "level": "h2",
+          "text": "Manufacturer Subvented Rates"
+        },
+        {
+          "level": "h2",
+          "text": "How Drive Right compares rates"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-finance-department-scams.html": 2,
+        "blog-negotiation-mastery.html": 2,
+        "houston.html": 2,
+        "austin.html": 2,
+        "dallas.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-cars-texas-families.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-cars-texas-families.html",
+      "title": "Best Cars for Texas Families (2026 Guide) | Drive Right",
+      "description": "Expert picks for the best family vehicles in Texas, from three-row SUVs to minivans and trucks, chosen for heat, highway stability, and family use.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-cars-texas-families.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Cars for Texas Families (2026 Guide)"
+        },
+        {
+          "level": "h2",
+          "text": "The Texas Family Checklist"
+        },
+        {
+          "level": "h2",
+          "text": "Best Three-Row SUV (Budget), Kia Telluride or Hyundai Palisade"
+        },
+        {
+          "level": "h2",
+          "text": "Best Three-Row SUV (Premium), Toyota Grand Highlander or Mazda CX-90"
+        },
+        {
+          "level": "h2",
+          "text": "The Minivan Truth"
+        },
+        {
+          "level": "h2",
+          "text": "Best Two-Row Family SUV, Toyota RAV4 or Mazda CX-50"
+        },
+        {
+          "level": "h2",
+          "text": "Best Family Truck, Toyota Tacoma or Ford F-150 Crew Cab"
+        },
+        {
+          "level": "h2",
+          "text": "What to Skip"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-mazda-secret.html": 1,
+        "blog-best-cars-under-30k.html": 1,
+        "blog-cpo-vs-used.html": 1,
+        "blog-leasing-vs-buying.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-cars-under-30k.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-cars-under-30k.html",
+      "title": "Best Cars Under $30K in 2026 (Expert Picks) | Drive Right",
+      "description": "Our picks for the best cars under $30,000 in 2026, ranked by total ownership cost rather than sticker price: sedans, SUVs, trucks, and EVs with real value.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-cars-under-30k.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Cars Under $30K in 2026 (Expert Picks)"
+        },
+        {
+          "level": "h2",
+          "text": "Best Overall Value, Mazda3"
+        },
+        {
+          "level": "h2",
+          "text": "Best Compact SUV, Mazda CX-30 or Honda HR-V"
+        },
+        {
+          "level": "h2",
+          "text": "Best Midsize Sedan, Honda Civic or Toyota Camry"
+        },
+        {
+          "level": "h2",
+          "text": "Best for Texas Commuters, Toyota Corolla Hybrid"
+        },
+        {
+          "level": "h2",
+          "text": "Best Truck Under $30K, Hyundai Santa Cruz or Ford Maverick"
+        },
+        {
+          "level": "h2",
+          "text": "Best EV Approaching $30K"
+        },
+        {
+          "level": "h2",
+          "text": "Compare ownership costs"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-mazda-secret.html": 1,
+        "blog-used-ev-pros-cons-risks.html": 1,
+        "blog-myth-brand-reliability.html": 1,
+        "blog-roi-car-buying-service.html": 1,
+        "blog-dealer-addons-exposed.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-dealerships-austin.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-dealerships-austin.html",
+      "title": "Best Car Dealerships in Austin (2026) | Drive Right",
+      "description": "Insider rankings of the best car dealerships in Austin for 2026. Rated by transparency, negotiation fairness, and customer treatment, not advertising spend.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-austin.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Car Dealerships in Austin (2026 Insider Rankings)"
+        },
+        {
+          "level": "h2",
+          "text": "A Different Kind of Dealership Ranking"
+        },
+        {
+          "level": "h2",
+          "text": "The Six Dealership Types in Austin & What to Expect"
+        },
+        {
+          "level": "h3",
+          "text": "1. High-Volume I-35 Corridor Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "2. Family-Owned Independent Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "3. Certified Pre-Owned (CPO) Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "4. EV & Hybrid Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "5. Luxury & Premium Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "6. Suburban Growth-Market Dealers"
+        },
+        {
+          "level": "h2",
+          "text": "Austin Neighborhoods: Where to Shop & What to Know"
+        },
+        {
+          "level": "h3",
+          "text": "I-35 Corridor (Round Rock to San Marcos)"
+        },
+        {
+          "level": "h3",
+          "text": "North Lamar & Burnet Road"
+        },
+        {
+          "level": "h3",
+          "text": "Round Rock & Cedar Park"
+        },
+        {
+          "level": "h3",
+          "text": "Pflugerville & Georgetown"
+        },
+        {
+          "level": "h3",
+          "text": "South Congress & South Austin"
+        },
+        {
+          "level": "h2",
+          "text": "Austin-Specific Red Flags Every Buyer Must Know"
+        },
+        {
+          "level": "h3",
+          "text": "Market Adjustment Fees on Popular Models"
+        },
+        {
+          "level": "h3",
+          "text": "Tech-Bro Confidence Tax"
+        },
+        {
+          "level": "h3",
+          "text": "Mandatory Dealer Add-Ons"
+        },
+        {
+          "level": "h3",
+          "text": "Low Inventory Pressure Tactics"
+        },
+        {
+          "level": "h2",
+          "text": "A practical Austin buying checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-dealer-addons-exposed.html": 2,
+        "blog-high-demand-vehicles-msrp.html": 1,
+        "austin.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-dealerships-dallas-fort-worth.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html",
+      "title": "Best Car Dealerships in Dallas\u2013Fort Worth | Drive Right",
+      "description": "Insider rankings of the best car dealerships in Dallas\u2013Fort Worth for 2026, rated by transparency, negotiation fairness, and customer treatment.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-dallas-fort-worth.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Car Dealerships in Dallas\u2013Fort Worth (2026 Insider Rankings)"
+        },
+        {
+          "level": "h2",
+          "text": "Why We Rank by Transparency, Not Ad Budgets"
+        },
+        {
+          "level": "h2",
+          "text": "The Six Dealership Types in DFW & What to Expect"
+        },
+        {
+          "level": "h3",
+          "text": "1. High-Volume Franchise Mega-Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "2. Luxury & Premium Brand Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "3. Independent Used Car Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "4. Certified Pre-Owned (CPO) Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "5. Truck & SUV Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "6. Online-First & No-Haggle Dealers"
+        },
+        {
+          "level": "h2",
+          "text": "DFW Neighborhoods: Where to Shop & What to Know"
+        },
+        {
+          "level": "h3",
+          "text": "Park Place Corridor & Dallas Proper"
+        },
+        {
+          "level": "h3",
+          "text": "Arlington Auto Mile (I-20)"
+        },
+        {
+          "level": "h3",
+          "text": "I-35W Corridor, Fort Worth"
+        },
+        {
+          "level": "h3",
+          "text": "Plano, Frisco & McKinney"
+        },
+        {
+          "level": "h3",
+          "text": "Irving & Mid-Cities"
+        },
+        {
+          "level": "h2",
+          "text": "DFW-Specific Red Flags Every Buyer Must Know"
+        },
+        {
+          "level": "h3",
+          "text": "Extreme Add-On Packaging"
+        },
+        {
+          "level": "h3",
+          "text": "\"Mandatory\" Dealer Accessories"
+        },
+        {
+          "level": "h3",
+          "text": "Out-of-State Title Games"
+        },
+        {
+          "level": "h3",
+          "text": "Bait-and-Switch Online Pricing"
+        },
+        {
+          "level": "h2",
+          "text": "A practical DFW buying checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "arlington.html": 3,
+        "blog-dealer-addons-exposed.html": 2,
+        "dallas.html": 2,
+        "fort-worth.html": 2,
+        "policy.html": 1,
+        "austin.html": 1,
+        "el-paso.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-dealerships-houston.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-dealerships-houston.html",
+      "title": "Best Car Dealerships in Houston (2026) | Drive Right",
+      "description": "Insider rankings of the best car dealerships in Houston for 2026. Rated by transparency, negotiation fairness, and customer treatment, not advertising spend.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-houston.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Car Dealerships in Houston (2026 Insider Rankings)"
+        },
+        {
+          "level": "h2",
+          "text": "Why Most \"Best Dealership\" Lists Are Worthless"
+        },
+        {
+          "level": "h2",
+          "text": "The Six Dealership Types in Houston & What to Expect"
+        },
+        {
+          "level": "h3",
+          "text": "1. High-Volume New Car Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "2. Family-Owned Used Car Lots"
+        },
+        {
+          "level": "h3",
+          "text": "3. Certified Pre-Owned (CPO) Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "4. Online-First & Delivery Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "5. Luxury & Specialty Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "6. Fleet & Commercial Dealers"
+        },
+        {
+          "level": "h2",
+          "text": "Houston Neighborhoods: Where to Shop & Where to Be Careful"
+        },
+        {
+          "level": "h3",
+          "text": "Katy Freeway Auto Mile (I-10 West)"
+        },
+        {
+          "level": "h3",
+          "text": "FM 1960 Corridor"
+        },
+        {
+          "level": "h3",
+          "text": "Clear Lake & NASA Area"
+        },
+        {
+          "level": "h3",
+          "text": "Sugar Land & Fort Bend County"
+        },
+        {
+          "level": "h3",
+          "text": "The Woodlands & North Houston"
+        },
+        {
+          "level": "h2",
+          "text": "Houston-Specific Red Flags Every Buyer Must Know"
+        },
+        {
+          "level": "h3",
+          "text": "Hurricane Flood Damage Vehicles"
+        },
+        {
+          "level": "h3",
+          "text": "High-Pressure I-10 Strip Tactics"
+        },
+        {
+          "level": "h3",
+          "text": "Dealer Add-Ons & Mandatory Packages"
+        },
+        {
+          "level": "h3",
+          "text": "Finance Office Pitfalls"
+        },
+        {
+          "level": "h2",
+          "text": "A practical Houston buying checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-dealer-addons-exposed.html": 2,
+        "blog-finance-department-scams.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-dealerships-san-antonio.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-dealerships-san-antonio.html",
+      "title": "Best Car Dealerships in San Antonio (2026) | Drive Right",
+      "description": "Insider rankings of the best car dealerships in San Antonio for 2026, rated by transparency, negotiation fairness, and customer treatment.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-dealerships-san-antonio.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best Car Dealerships in San Antonio (2026 Insider Rankings)"
+        },
+        {
+          "level": "h2",
+          "text": "Why Most \"Best Dealership\" Lists Miss the Mark"
+        },
+        {
+          "level": "h2",
+          "text": "The Six Dealership Types in San Antonio & What to Expect"
+        },
+        {
+          "level": "h3",
+          "text": "1. High-Volume Franchise Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "2. Military-Adjacent Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "3. Independent Used Car Dealers"
+        },
+        {
+          "level": "h3",
+          "text": "4. Certified Pre-Owned (CPO) Programs"
+        },
+        {
+          "level": "h3",
+          "text": "5. Truck & SUV Specialists"
+        },
+        {
+          "level": "h3",
+          "text": "6. Online-First & No-Haggle Dealers"
+        },
+        {
+          "level": "h2",
+          "text": "San Antonio Neighborhoods: Where to Shop & What to Know"
+        },
+        {
+          "level": "h3",
+          "text": "I-10 West / UTSA Corridor"
+        },
+        {
+          "level": "h3",
+          "text": "Loop 1604 Growth Zones"
+        },
+        {
+          "level": "h3",
+          "text": "Downtown & Broadway"
+        },
+        {
+          "level": "h3",
+          "text": "Alamo Heights & North Central"
+        },
+        {
+          "level": "h3",
+          "text": "New Braunfels & I-35 Corridor"
+        },
+        {
+          "level": "h2",
+          "text": "San Antonio-Specific Red Flags Every Buyer Must Know"
+        },
+        {
+          "level": "h3",
+          "text": "Military-Targeted Predatory Financing"
+        },
+        {
+          "level": "h3",
+          "text": "\"First-Time Buyer\" Traps"
+        },
+        {
+          "level": "h3",
+          "text": "High-Mileage Rental Fleet Dumps"
+        },
+        {
+          "level": "h3",
+          "text": "I-35 Corridor Title Washing"
+        },
+        {
+          "level": "h2",
+          "text": "A practical San Antonio buying checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "new-braunfels.html": 4,
+        "san-marcos.html": 3,
+        "blog-dealer-addons-exposed.html": 1,
+        "san-antonio.html": 2,
+        "blog-finance-department-scams.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1
+      }
+    },
+    {
+      "file": "blog-best-first-cars-texas.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-first-cars-texas.html",
+      "title": "Best First Cars for Texas Teens (2026) | Drive Right",
+      "description": "Expert guide to the best first cars for Texas teens and college students in 2026, prioritizing safety, insurance costs, reliability, and financial education.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-first-cars-texas.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Best First Cars for Texas Teens & College Students (2026)"
+        },
+        {
+          "level": "h2",
+          "text": "Safety First"
+        },
+        {
+          "level": "h2",
+          "text": "Insurance Reality"
+        },
+        {
+          "level": "h2",
+          "text": "Best Overall First Car, Honda Civic or Toyota Corolla"
+        },
+        {
+          "level": "h2",
+          "text": "Best Budget Option (Under $15K Used), Mazda3 or Toyota Camry"
+        },
+        {
+          "level": "h2",
+          "text": "Best for Texas College Towns"
+        },
+        {
+          "level": "h2",
+          "text": "What to Avoid"
+        },
+        {
+          "level": "h2",
+          "text": "The Parent Strategy"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-mazda-secret.html": 1,
+        "blog-used-car-inspection-checklist.html": 1,
+        "blog-cpo-vs-used.html": 1,
+        "blog-credit-score-car-buying.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-best-time-buy-car-texas.html",
+      "url": "https://www.driverightcarbuying.com/blog-best-time-buy-car-texas.html",
+      "title": "The Best Time of Year to Buy a Car in Texas | Drive Right",
+      "description": "The months, days, and seasonal windows that matter when buying a car in Texas, from model year changeovers to holiday weekends and quarter-end push.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-best-time-buy-car-texas.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "The Best Time of Year to Buy a Car in Texas"
+        },
+        {
+          "level": "h2",
+          "text": "The Model Year Changeover (August\u2013October)"
+        },
+        {
+          "level": "h2",
+          "text": "End of Quarter (March, June, September, December)"
+        },
+        {
+          "level": "h2",
+          "text": "Holiday Weekends"
+        },
+        {
+          "level": "h2",
+          "text": "Monday Through Thursday"
+        },
+        {
+          "level": "h2",
+          "text": "Texas-Specific Timing"
+        },
+        {
+          "level": "h2",
+          "text": "When Timing Matters Less"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "houston.html": 3,
+        "austin.html": 2,
+        "dallas.html": 2,
+        "san-antonio.html": 2,
+        "blog-buy-new-car-below-msrp.html": 1,
+        "blog-negotiation-mastery.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-buy-new-car-below-msrp.html",
+      "url": "https://www.driverightcarbuying.com/blog-buy-new-car-below-msrp.html",
+      "title": "Buying Below MSRP: Compare New-Car Quotes | Drive Right",
+      "description": "Learn how to request comparable new-car quotes, check rebate conditions, and negotiate the total price without assuming a below-MSRP discount.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-buy-new-car-below-msrp.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Buying a New Car Below MSRP: Compare the Whole Quote"
+        },
+        {
+          "level": "h2",
+          "text": "What does \u201cbelow MSRP\u201d actually mean?"
+        },
+        {
+          "level": "h2",
+          "text": "Request the same information from each seller"
+        },
+        {
+          "level": "h3",
+          "text": "Check incentives without assuming they combine"
+        },
+        {
+          "level": "h2",
+          "text": "Compare each line before comparing the headline discount"
+        },
+        {
+          "level": "h3",
+          "text": "Compare financing and trade-in on their own terms"
+        },
+        {
+          "level": "h2",
+          "text": "Make a precise, supportable counteroffer"
+        },
+        {
+          "level": "h2",
+          "text": "Reconcile the final documents"
+        },
+        {
+          "level": "h2",
+          "text": "About this draft"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 5,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "new-car-pricing-incentives.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-car-history-beyond-carfax.html",
+      "url": "https://www.driverightcarbuying.com/blog-car-history-beyond-carfax.html",
+      "title": "How to Check a Used Car's History | Drive Right",
+      "description": "Carfax is dangerously incomplete. Learn how to use NMVTIS, AutoCheck, NICB VINCheck, and VIN decoders to uncover what a single report misses.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-car-history-beyond-carfax.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Check a Used Car's History (Beyond Carfax)"
+        },
+        {
+          "level": "h2",
+          "text": "What Carfax Actually Reports"
+        },
+        {
+          "level": "h2",
+          "text": "The Carfax Gaps"
+        },
+        {
+          "level": "h2",
+          "text": "NMVTIS: The Federal Database"
+        },
+        {
+          "level": "h2",
+          "text": "AutoCheck by Experian"
+        },
+        {
+          "level": "h2",
+          "text": "Insurance Loss Databases"
+        },
+        {
+          "level": "h2",
+          "text": "Decode the VIN"
+        },
+        {
+          "level": "h2",
+          "text": "How Drive Right Investigates"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-used-car-rip-offs.html": 1,
+        "blog-used-car-inspection-checklist.html": 1,
+        "blog-myth-brand-reliability.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-cpo-vs-used.html",
+      "url": "https://www.driverightcarbuying.com/blog-cpo-vs-used.html",
+      "title": "CPO vs. Used: Is Certified Pre-Owned Worth It? | Drive Right",
+      "description": "CPO vehicles carry a $2,000-$5,000 premium over comparable used cars. We break down when that premium is justified and when it's pure dealer profit.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-cpo-vs-used.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Certified Pre-Owned vs. Used: Is CPO Worth the Premium?"
+        },
+        {
+          "level": "h2",
+          "text": "What CPO Actually Means"
+        },
+        {
+          "level": "h2",
+          "text": "What CPO Does NOT Mean"
+        },
+        {
+          "level": "h2",
+          "text": "The CPO Math"
+        },
+        {
+          "level": "h2",
+          "text": "When CPO Makes Sense"
+        },
+        {
+          "level": "h2",
+          "text": "When CPO is a Waste"
+        },
+        {
+          "level": "h2",
+          "text": "The Drive Right Alternative"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-used-car-inspection-checklist.html": 1,
+        "blog-new-vs-near-new.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-credit-score-car-buying.html",
+      "url": "https://www.driverightcarbuying.com/blog-credit-score-car-buying.html",
+      "title": "What Credit Score Do You Need to Buy a Car? | Drive Right",
+      "description": "The real credit score tiers for auto loans, what rates to expect at each level, and practical ways to improve your score before you buy.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-credit-score-car-buying.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "What Credit Score Do You Really Need to Buy a Car?"
+        },
+        {
+          "level": "h2",
+          "text": "The Credit Score Tiers"
+        },
+        {
+          "level": "h2",
+          "text": "FICO Auto Score vs. Regular FICO"
+        },
+        {
+          "level": "h2",
+          "text": "The \"Subprime Trap\""
+        },
+        {
+          "level": "h2",
+          "text": "Quick Wins to Boost Your Score Before Buying"
+        },
+        {
+          "level": "h2",
+          "text": "How Much Does Your Score Actually Cost You?"
+        },
+        {
+          "level": "h2",
+          "text": "How Drive Right compares credit options"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-finance-department-scams.html": 1,
+        "blog-best-auto-loan-rate-texas.html": 1,
+        "blog-dealer-vs-bank-financing.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-dealer-addons-exposed.html",
+      "url": "https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html",
+      "title": "Dealer Add-Ons Exposed: 5 Fees to Refuse | Drive Right",
+      "description": "VIN etching, nitrogen tires, and fabric protection are dealer profit centers. Learn how to spot and strike these fees from your next car deal.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-dealer-addons-exposed.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/blog-dealer-addons-exposed.html",
+        "destination": "/blog-dealership-addons-complete-guide.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Dealer Add-ons Exposed: 5 Fees You Should Never Pay"
+        },
+        {
+          "level": "h2",
+          "text": "The Phantom Five"
+        },
+        {
+          "level": "h3",
+          "text": "1. VIN Etching ($299 - $399)"
+        },
+        {
+          "level": "h3",
+          "text": "2. Nitrogen-Filled Tires ($199)"
+        },
+        {
+          "level": "h3",
+          "text": "3. Fabric Protection / Paint Sealant ($800 - $1,500)"
+        },
+        {
+          "level": "h3",
+          "text": "4. Pinstriping ($150 - $400)"
+        },
+        {
+          "level": "h3",
+          "text": "5. Documentation / \"Prep\" Fees Variations ($500 - $1,200)"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "austin.html": 2,
+        "dallas.html": 2,
+        "houston.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-dealer-vs-bank-financing.html",
+      "url": "https://www.driverightcarbuying.com/blog-dealer-vs-bank-financing.html",
+      "title": "Financing Through a Dealer or Your Bank? | Drive Right",
+      "description": "Compare dealer financing with bank and credit-union auto loans, including dealer markup, incentives, and pre-approval.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-dealer-vs-bank-financing.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Should You Finance Through the Dealership or Your Bank?"
+        },
+        {
+          "level": "h2",
+          "text": "The Case for Bank & Credit Union Financing"
+        },
+        {
+          "level": "h2",
+          "text": "The Case for Dealer Financing"
+        },
+        {
+          "level": "h2",
+          "text": "When Dealer Financing Wins"
+        },
+        {
+          "level": "h2",
+          "text": "When Your Bank Wins"
+        },
+        {
+          "level": "h2",
+          "text": "Bring both offers"
+        },
+        {
+          "level": "h2",
+          "text": "The Drive Right Approach"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "blog-negotiation-mastery.html": 1,
+        "blog-finance-department-scams.html": 1,
+        "blog-best-auto-loan-rate-texas.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-dealership-addons-complete-guide.html",
+      "url": "https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html",
+      "title": "Dealership Add-Ons: Costs and Questions | Drive Right",
+      "description": "Compare dealer add-ons by price, coverage, exclusions, and financing cost. Use practical questions for GAP, service contracts, and protection packages.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Dealership Add-Ons: What to Ask Before You Agree"
+        },
+        {
+          "level": "h2",
+          "text": "Separate products from other charges"
+        },
+        {
+          "level": "h2",
+          "text": "Questions for the common product categories"
+        },
+        {
+          "level": "h3",
+          "text": "GAP protection"
+        },
+        {
+          "level": "h3",
+          "text": "Vehicle service contracts"
+        },
+        {
+          "level": "h3",
+          "text": "Paint, fabric, wheel, tire, and appearance packages"
+        },
+        {
+          "level": "h3",
+          "text": "Prepaid maintenance"
+        },
+        {
+          "level": "h2",
+          "text": "Compare the dollar cost, not just the payment"
+        },
+        {
+          "level": "h2",
+          "text": "Before you sign or seek a cancellation"
+        },
+        {
+          "level": "h2",
+          "text": "About this draft"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 5,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-buy-new-car-below-msrp.html": 1,
+        "auto-financing-credit-fi.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-depreciation-myth-20-percent.html",
+      "url": "https://www.driverightcarbuying.com/blog-depreciation-myth-20-percent.html",
+      "title": "The \"Drive-Off-The-Lot\" Depreciation Myth | Drive Right",
+      "description": "Do cars really lose 20% of their value the moment you drive them off the lot? Discover the mathematical truth behind the industry's oldest scare tactic.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-depreciation-myth-20-percent.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Fact or Fiction: The 20% Drive-Off Depreciation Myth"
+        },
+        {
+          "level": "h2",
+          "text": "The Origin of the Number"
+        },
+        {
+          "level": "h2",
+          "text": "How current demand changes the math"
+        },
+        {
+          "level": "h2",
+          "text": "When a used car is not cheaper"
+        },
+        {
+          "level": "h2",
+          "text": "Compare the numbers"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-new-vs-near-new.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-finance-department-scams.html",
+      "url": "https://www.driverightcarbuying.com/blog-finance-department-scams.html",
+      "title": "Finance Department Scams & How to Avoid Them | Drive Right",
+      "description": "Payment packing, rate markup, the four-square method, yo-yo financing, learn every finance office scam dealerships use and how to protect yourself.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-finance-department-scams.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Finance Department Scams: How to Protect Yourself in the F&I Office"
+        },
+        {
+          "level": "h2",
+          "text": "Payment Packing, Inflating Your Monthly Payment to Hide Costs"
+        },
+        {
+          "level": "h2",
+          "text": "Rate Markup (Dealer Reserve), The Hidden Interest Rate Spread"
+        },
+        {
+          "level": "h2",
+          "text": "The four-square method"
+        },
+        {
+          "level": "h2",
+          "text": "\"We Couldn't Get Your Rate Approved\", The Post-Commitment Bait-and-Switch"
+        },
+        {
+          "level": "h2",
+          "text": "Yo-Yo Financing / Spot Delivery, Drive Home, Get Called Back"
+        },
+        {
+          "level": "h2",
+          "text": "How to Protect Yourself, The Three Non-Negotiable Defenses"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 6,
+        "blog-spot-delivery-scam.html": 2,
+        "blog-dealer-addons-exposed.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "blog-negotiation-mastery.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-flat-fees-vs-commissions.html",
+      "url": "https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html",
+      "title": "Car Broker Costs: Flat Fees vs. Commissions | Drive Right",
+      "description": "Compare percentage-based auto broker fees with a flat service fee and review how each model can affect the negotiation.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-flat-fees-vs-commissions.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/blog-flat-fees-vs-commissions.html",
+        "destination": "/how-it-works.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Why Your Car Broker Might Be Costing You More"
+        },
+        {
+          "level": "h2",
+          "text": "How the starting price affects the fee"
+        },
+        {
+          "level": "h2",
+          "text": "What a flat fee changes"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-high-demand-vehicles-msrp.html",
+      "url": "https://www.driverightcarbuying.com/blog-high-demand-vehicles-msrp.html",
+      "title": "How to Buy High-Demand Vehicles at MSRP | Drive Right",
+      "description": "Tired of $10,000 dealer markups? Learn the exact strategies we use to secure heavily constrained, high-demand cars at or below MSRP.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-high-demand-vehicles-msrp.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Buy High-Demand Vehicles at MSRP"
+        },
+        {
+          "level": "h2",
+          "text": "Compare dealers outside your area"
+        },
+        {
+          "level": "h2",
+          "text": "Compare similar vehicles"
+        },
+        {
+          "level": "h2",
+          "text": "What the search requires"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "austin.html": 2,
+        "dallas.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-leasing-vs-buying.html",
+      "url": "https://www.driverightcarbuying.com/blog-leasing-vs-buying.html",
+      "title": "Leasing vs. Buying: The Real Math | Drive Right",
+      "description": "An unbiased, math-driven comparison of leasing vs. buying a car. Real cost breakdowns, Texas tax implications, lease traps, and honest recommendations.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-leasing-vs-buying.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Leasing vs. Buying: The Real Math Nobody Shows You"
+        },
+        {
+          "level": "h2",
+          "text": "How Leasing Actually Works"
+        },
+        {
+          "level": "h2",
+          "text": "How Buying Works (Financing)"
+        },
+        {
+          "level": "h2",
+          "text": "The True Cost Comparison"
+        },
+        {
+          "level": "h2",
+          "text": "When Leasing Wins"
+        },
+        {
+          "level": "h2",
+          "text": "When Buying Wins"
+        },
+        {
+          "level": "h2",
+          "text": "Texas Tax Implications"
+        },
+        {
+          "level": "h2",
+          "text": "The Lease Traps"
+        },
+        {
+          "level": "h2",
+          "text": "Drive Right's Recommendation"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-buy-new-car-below-msrp.html": 1,
+        "blog-depreciation-myth-20-percent.html": 1,
+        "blog-new-vs-near-new.html": 1,
+        "blog-negotiation-mastery.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-mazda-secret.html",
+      "url": "https://www.driverightcarbuying.com/blog-mazda-secret.html",
+      "title": "Mazda: A Strong Value in Car Quality | Drive Right",
+      "description": "Compare Mazda with Honda and Toyota on interior quality, driving dynamics, powertrains, reliability, and price.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-mazda-secret.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Mazda: A Strong Value in Automotive Quality & ROI"
+        },
+        {
+          "level": "h2",
+          "text": "1. Near-Luxury Build Quality"
+        },
+        {
+          "level": "h2",
+          "text": "2. Powertrain choices"
+        },
+        {
+          "level": "h2",
+          "text": "3. Engaging Driving Dynamics"
+        },
+        {
+          "level": "h2",
+          "text": "Buying the vehicle is only part of the decision"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-myth-brand-reliability.html",
+      "url": "https://www.driverightcarbuying.com/blog-myth-brand-reliability.html",
+      "title": "Brand Reliability Myths That Cost You | Drive Right",
+      "description": "Stop blindly trusting brand badges. Discover why smart auto buying relies on VIN analysis, TSBs, and engine configurations, not just the logo on the grille.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-myth-brand-reliability.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Beyond the Badge: The Myth of Brand Reliability"
+        },
+        {
+          "level": "h2",
+          "text": "The Tech & Software Shift"
+        },
+        {
+          "level": "h2",
+          "text": "The Danger of First-Year Iterations"
+        },
+        {
+          "level": "h2",
+          "text": "We Compare the Details"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 4,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "austin.html": 2,
+        "houston.html": 2,
+        "dallas.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-negotiation-mastery.html",
+      "url": "https://www.driverightcarbuying.com/blog-negotiation-mastery.html",
+      "title": "Negotiation Mastery: Best Trade-In Value | Drive Right",
+      "description": "Discover out how automotive insiders squeeze thousands in extra equity from your trade-in and secure rock-bottom interest rates simultaneously.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-negotiation-mastery.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Negotiation Mastery: Trade-Ins & Rates"
+        },
+        {
+          "level": "h2",
+          "text": "Separate the parts of the deal"
+        },
+        {
+          "level": "h2",
+          "text": "Get more than one trade value"
+        },
+        {
+          "level": "h2",
+          "text": "The Financing Yield Spread"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 4,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-new-vs-near-new.html",
+      "url": "https://www.driverightcarbuying.com/blog-new-vs-near-new.html",
+      "title": "The 3-Year Rule: The Near-New Car Trap | Drive Right",
+      "description": "Discover the real math behind the 3-Year Rule and learn why purchasing a lightly used car in the current market can be a disguised financial trap.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-new-vs-near-new.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "The 3-Year Rule: Why \"Near-New\" is a Financial Trap"
+        },
+        {
+          "level": "h2",
+          "text": "The Collapse of Used-Car Depreciation"
+        },
+        {
+          "level": "h2",
+          "text": "How interest rates change the comparison"
+        },
+        {
+          "level": "h2",
+          "text": "Compare the total cost"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 6,
+        "austin.html": 2,
+        "san-antonio.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-private-party-vs-dealership.html",
+      "url": "https://www.driverightcarbuying.com/blog-private-party-vs-dealership.html",
+      "title": "Private Party vs. Dealership: Where to Buy | Drive Right",
+      "description": "Private party sales promise lower prices, but dealerships offer protections. We compare both channels with Texas-specific tax, title, and legal considerations.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-private-party-vs-dealership.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Private Party vs. Dealership: Where Should You Buy Your Next Car?"
+        },
+        {
+          "level": "h2",
+          "text": "The Private Party Advantage"
+        },
+        {
+          "level": "h2",
+          "text": "The Private Party Risk"
+        },
+        {
+          "level": "h2",
+          "text": "The Dealership Advantage"
+        },
+        {
+          "level": "h2",
+          "text": "The Dealership Risk"
+        },
+        {
+          "level": "h2",
+          "text": "Texas-Specific Considerations"
+        },
+        {
+          "level": "h2",
+          "text": "The Verdict"
+        },
+        {
+          "level": "h2",
+          "text": "How Drive Right Handles Both"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-dealer-addons-exposed.html": 1,
+        "blog-used-car-rip-offs.html": 1,
+        "blog-texas-car-buying-laws.html": 1,
+        "blog-used-car-inspection-checklist.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-roi-car-buying-service.html",
+      "url": "https://www.driverightcarbuying.com/blog-roi-car-buying-service.html",
+      "title": "Car Buying Service ROI: Save $4,000+ | Drive Right",
+      "description": "Is a car buying service worth the fee? Discover the undeniable mathematical advantage of hiring a professional auto negotiator to secure your next vehicle.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-roi-car-buying-service.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/blog-roi-car-buying-service.html",
+        "destination": "/how-it-works.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "The ROI of a Car Buying Service"
+        },
+        {
+          "level": "h2",
+          "text": "Costs that can be hidden in a deal"
+        },
+        {
+          "level": "h2",
+          "text": "What the service fee covers"
+        },
+        {
+          "level": "h2",
+          "text": "The time involved"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-skip-dealership-marathon.html",
+      "url": "https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html",
+      "title": "Skip the 6-Hour Dealership Marathon | Drive Right",
+      "description": "Discover how modern car buying services eliminate the agonizing 6-hour dealership wait, putting you back in control of your weekends and your wallet.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-skip-dealership-marathon.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/blog-skip-dealership-marathon.html",
+        "destination": "/how-it-works.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Skip the 6-Hour Dealership Marathon"
+        },
+        {
+          "level": "h2",
+          "text": "Why dealership visits take so long"
+        },
+        {
+          "level": "h2",
+          "text": "Move the comparison off the lot"
+        },
+        {
+          "level": "h2",
+          "text": "What remote support can cover"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-spot-delivery-scam.html",
+      "url": "https://www.driverightcarbuying.com/blog-spot-delivery-scam.html",
+      "title": "Spot Delivery & Yo-Yo Financing Scams | Drive Right",
+      "description": "You drove the car home, then the dealer called with worse financing terms. Learn how spot delivery works, your rights in Texas, and how to protect yourself.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-spot-delivery-scam.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Spot Delivery Scam: What Happens When the Dealer Calls You Back"
+        },
+        {
+          "level": "h2",
+          "text": "What Is Spot Delivery?"
+        },
+        {
+          "level": "h2",
+          "text": "Why Dealers Do It, Emotional Attachment as a Weapon"
+        },
+        {
+          "level": "h2",
+          "text": "The Typical Script, How the Callback Works"
+        },
+        {
+          "level": "h2",
+          "text": "Your Legal Rights in Texas"
+        },
+        {
+          "level": "h2",
+          "text": "How to Protect Yourself"
+        },
+        {
+          "level": "h2",
+          "text": "What to Do If It Happens to You"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-finance-department-scams.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-texas-car-buying-laws.html",
+      "url": "https://www.driverightcarbuying.com/blog-texas-car-buying-laws.html",
+      "title": "Texas Car Buying Laws to Know Before Signing | Drive Right",
+      "description": "Know your rights before you sign: Texas lemon law basics, as-is sales, cooling-off myths, finance office disclosures, and steps to take if defrauded.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-texas-car-buying-laws.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Texas Car Buying Laws You Should Know Before Signing"
+        },
+        {
+          "level": "h2",
+          "text": "There Is NO Cooling-Off Period in Texas"
+        },
+        {
+          "level": "h2",
+          "text": "The Texas Lemon Law"
+        },
+        {
+          "level": "h2",
+          "text": "Used Car \"As-Is\" Sales"
+        },
+        {
+          "level": "h2",
+          "text": "Dealer Licensing & Advertising Requirements"
+        },
+        {
+          "level": "h2",
+          "text": "Title & Registration Requirements"
+        },
+        {
+          "level": "h2",
+          "text": "Your Rights in the Finance Office"
+        },
+        {
+          "level": "h2",
+          "text": "What to Do If You've Been Defrauded"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-used-car-rip-offs.html": 1,
+        "blog-texas-title-transfer.html": 1,
+        "blog-finance-department-scams.html": 1,
+        "blog-spot-delivery-scam.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-texas-title-transfer.html",
+      "url": "https://www.driverightcarbuying.com/blog-texas-title-transfer.html",
+      "title": "How to Transfer a Car Title in Texas | Drive Right",
+      "description": "Complete guide to transferring a car title in Texas. Covers private party purchases, dealership buys, gift transfers, SPV tax rules, fees, and common problems.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-texas-title-transfer.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Transfer a Car Title in Texas (Step-by-Step)"
+        },
+        {
+          "level": "h2",
+          "text": "What You Need Before Going to the County Tax Office"
+        },
+        {
+          "level": "h2",
+          "text": "Step-by-Step: Private Party Purchase"
+        },
+        {
+          "level": "h2",
+          "text": "Step-by-Step: Dealership Purchase"
+        },
+        {
+          "level": "h2",
+          "text": "Understanding Standard Presumptive Value (SPV)"
+        },
+        {
+          "level": "h2",
+          "text": "Common Title Transfer Problems"
+        },
+        {
+          "level": "h2",
+          "text": "Fees Breakdown"
+        },
+        {
+          "level": "h2",
+          "text": "Gift Transfers & Family Transfers"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-private-party-vs-dealership.html": 1,
+        "blog-texas-car-buying-laws.html": 1,
+        "austin.html": 2,
+        "dallas.html": 2,
+        "houston.html": 2,
+        "san-antonio.html": 2,
+        "blog-used-car-rip-offs.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-used-car-inspection-checklist.html",
+      "url": "https://www.driverightcarbuying.com/blog-used-car-inspection-checklist.html",
+      "title": "Used-Car Inspection Checklist for Buyers | Drive Right",
+      "description": "A practical used-car inspection checklist: gather records, note concerns, check recalls, and prepare questions for an independent mechanic.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-car-inspection-checklist.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Used-Car Inspection Checklist: Before You Buy"
+        },
+        {
+          "level": "h2",
+          "text": "1. Gather records before visiting"
+        },
+        {
+          "level": "h2",
+          "text": "2. Use a non-diagnostic walkaround checklist"
+        },
+        {
+          "level": "h3",
+          "text": "During an agreed test drive"
+        },
+        {
+          "level": "h3",
+          "text": "Look up recalls using the exact VIN"
+        },
+        {
+          "level": "h2",
+          "text": "3. Brief an independent mechanic"
+        },
+        {
+          "level": "h2",
+          "text": "4. Complete the decision worksheet"
+        },
+        {
+          "level": "h2",
+          "text": "About this draft"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 5,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "used-car-due-diligence.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-used-car-rip-offs.html",
+      "url": "https://www.driverightcarbuying.com/blog-used-car-rip-offs.html",
+      "title": "How to Not Get Ripped Off Buying a Used Car | Drive Right",
+      "description": "Title washing, odometer fraud, flood damage, curbstoners: learn how to spot used-car market traps and protect yourself with this 2026 guide.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-car-rip-offs.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How to Not Get Ripped Off Buying a Used Car (2026 Guide)"
+        },
+        {
+          "level": "h2",
+          "text": "Title Washing, How Dealers Launder Salvage Histories"
+        },
+        {
+          "level": "h2",
+          "text": "Odometer Fraud, Yes, It Still Happens Digitally"
+        },
+        {
+          "level": "h2",
+          "text": "Flood Damage Vehicles, A Persistent Texas Threat"
+        },
+        {
+          "level": "h2",
+          "text": "The Carfax Gap, Why a Clean Report Doesn't Mean a Clean Car"
+        },
+        {
+          "level": "h2",
+          "text": "Curbstoners, Unlicensed Dealers Posing as Private Sellers"
+        },
+        {
+          "level": "h2",
+          "text": "Buy-Here-Pay-Here Traps, Predatory Financing Disguised as Convenience"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "blog-dealer-addons-exposed.html": 1,
+        "austin.html": 2,
+        "houston.html": 2,
+        "dallas.html": 2,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-used-ev-pros-cons-risks.html",
+      "url": "https://www.driverightcarbuying.com/blog-used-ev-pros-cons-risks.html",
+      "title": "The Risks & Rewards of Buying a Used EV | Drive Right",
+      "description": "Explore the tradeoffs of buying a used EV, including depreciation discounts, battery coverage, insurance, and out-of-warranty risks.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-used-ev-pros-cons-risks.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "The Pros, Cons, and Risks of Buying a Used EV"
+        },
+        {
+          "level": "h2",
+          "text": "Lower purchase prices"
+        },
+        {
+          "level": "h2",
+          "text": "Federal warranty coverage"
+        },
+        {
+          "level": "h2",
+          "text": "Repair costs after warranty"
+        },
+        {
+          "level": "h2",
+          "text": "Insurance costs"
+        },
+        {
+          "level": "h2",
+          "text": "Questions to answer before buying"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 5,
+        "schedule.html": 5,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog-zero-kickbacks-promise.html",
+      "url": "https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html",
+      "title": "$0 Kickbacks: Our Transparency Promise | Drive Right",
+      "description": "Many car brokers operate with split loyalties. Discover why refusing dealership kickbacks is the only way to guarantee a truly objective auto consultation.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog-zero-kickbacks-promise.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/blog-zero-kickbacks-promise.html",
+        "destination": "/how-it-works.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Why We Accept $0 in Kickbacks"
+        },
+        {
+          "level": "h2",
+          "text": "When the dealer also pays the broker"
+        },
+        {
+          "level": "h2",
+          "text": "How Drive Right is paid"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BlogPosting",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "Person",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 4,
+        "blog.html": 5,
+        "schedule.html": 4,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "blog.html",
+      "url": "https://www.driverightcarbuying.com/blog.html",
+      "title": "Car-Buying Resources and Buying Process | Drive Right",
+      "description": "Explore car-buying resources, the nationwide service process, and clearly labeled guides awaiting editorial review. Compare Full Service at $395 USD.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/blog.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Research the decision, then verify the details."
+        },
+        {
+          "level": "h2",
+          "text": "Service guides"
+        },
+        {
+          "level": "h3",
+          "text": "Car Buying and Negotiation Service"
+        },
+        {
+          "level": "h3",
+          "text": "How Drive Right Works"
+        },
+        {
+          "level": "h3",
+          "text": "Car-Buying Service Plans"
+        },
+        {
+          "level": "h3",
+          "text": "Texas Local Markets"
+        },
+        {
+          "level": "h2",
+          "text": "Guides still in review"
+        },
+        {
+          "level": "h3",
+          "text": "Rules and Paperwork"
+        },
+        {
+          "level": "h3",
+          "text": "Credit and F&I"
+        },
+        {
+          "level": "h3",
+          "text": "Used-Car Due Diligence"
+        },
+        {
+          "level": "h3",
+          "text": "Pricing and Incentives"
+        },
+        {
+          "level": "h3",
+          "text": "Vehicle Selection and Total Cost"
+        },
+        {
+          "level": "h3",
+          "text": "Used-Car Inspection Checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Dealership Add-Ons"
+        },
+        {
+          "level": "h3",
+          "text": "Buying Below MSRP"
+        },
+        {
+          "level": "h2",
+          "text": "Need help with a specific purchase?"
+        }
+      ],
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 3,
+        "car-buying-service.html": 3,
+        "schedule.html": 4,
+        "about.html": 2,
+        "texas-local-market-intelligence.html": 1,
+        "texas-car-buying-rules-paperwork.html": 1,
+        "auto-financing-credit-fi.html": 1,
+        "used-car-due-diligence.html": 1,
+        "new-car-pricing-incentives.html": 1,
+        "vehicle-selection-total-cost.html": 1,
+        "blog-used-car-inspection-checklist.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "blog-buy-new-car-below-msrp.html": 1,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "car-buying-service.html",
+      "url": "https://www.driverightcarbuying.com/car-buying-service.html",
+      "title": "Car Buying Service in Austin & Nationwide | Drive Right",
+      "description": "Drive Right is an Austin-based car buying and negotiation service. Compare $395 Full Service with $695 Ultimate Concierge.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/car-buying-service.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car buying and negotiation service."
+        },
+        {
+          "level": "h2",
+          "text": "Define the search."
+        },
+        {
+          "level": "h2",
+          "text": "Research available vehicles."
+        },
+        {
+          "level": "h2",
+          "text": "Compare and communicate."
+        },
+        {
+          "level": "h2",
+          "text": "Review before deciding."
+        },
+        {
+          "level": "h2",
+          "text": "What a car-buying service does"
+        },
+        {
+          "level": "h2",
+          "text": "What a car negotiator can review"
+        },
+        {
+          "level": "h2",
+          "text": "What stays with the buyer"
+        },
+        {
+          "level": "h2",
+          "text": "Two plans.$395 or $695."
+        },
+        {
+          "level": "h3",
+          "text": "Full Service"
+        },
+        {
+          "level": "h3",
+          "text": "Ultimate Concierge"
+        },
+        {
+          "level": "h2",
+          "text": "Questions aboutthe service."
+        }
+      ],
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 3,
+        "car-buying-service.html": 2,
+        "schedule.html": 5,
+        "about.html": 2,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "dallas.html",
+      "url": "https://www.driverightcarbuying.com/dallas.html",
+      "title": "Dallas Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for Dallas and North Texas buyers and communicates with sellers on your behalf. Outcomes vary by deal.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/dallas.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forDallas."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater Dallas."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "el-paso.html",
+      "url": "https://www.driverightcarbuying.com/el-paso.html",
+      "title": "El Paso Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for El Paso and Borderland buyers and communicates with sellers on your behalf. Outcomes vary by deal.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/el-paso.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forEl Paso."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater El Paso."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "fort-worth.html",
+      "url": "https://www.driverightcarbuying.com/fort-worth.html",
+      "title": "Fort Worth Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for Fort Worth and Tarrant County buyers and communicates with sellers on your behalf. Pricing varies.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/fort-worth.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forFort Worth."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater Fort Worth."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "houston.html",
+      "url": "https://www.driverightcarbuying.com/houston.html",
+      "title": "Houston Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for Houston and Gulf Coast buyers and communicates with sellers on your behalf. Availability varies.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/houston.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-buying help.For Houston."
+        },
+        {
+          "level": "h2",
+          "text": "Your personalautomotive advocate."
+        },
+        {
+          "level": "h3",
+          "text": "01The matchmaking."
+        },
+        {
+          "level": "h3",
+          "text": "02Seller communication."
+        },
+        {
+          "level": "h3",
+          "text": "03The deal review."
+        },
+        {
+          "level": "h3",
+          "text": "04The contract check."
+        },
+        {
+          "level": "h3",
+          "text": "05The decision stays yours."
+        },
+        {
+          "level": "h3",
+          "text": "ServingGreater Houston."
+        },
+        {
+          "level": "h2",
+          "text": "The true costof doing it yourself."
+        },
+        {
+          "level": "h3",
+          "text": "Time down the drain."
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting dealership games."
+        },
+        {
+          "level": "h3",
+          "text": "Leaving money on the table."
+        },
+        {
+          "level": "h2",
+          "text": "A few thingsyou might be wondering."
+        },
+        {
+          "level": "h2",
+          "text": "Still havequestions?"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 1,
+        "schedule.html": 5,
+        "about.html": 1,
+        "blog.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "how-it-works.html",
+      "url": "https://www.driverightcarbuying.com/how-it-works.html",
+      "title": "How a Car Buying & Negotiation Service Works | Drive Right",
+      "description": "See how Drive Right\u2019s nationwide car buying and negotiation service works. Full Service is $395 USD one time; Ultimate Concierge is $695 USD one time.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/how-it-works.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "How our car buying service works."
+        },
+        {
+          "level": "h2",
+          "text": "Describe your car."
+        },
+        {
+          "level": "h2",
+          "text": "Review your brief."
+        },
+        {
+          "level": "h2",
+          "text": "Choose your plan."
+        },
+        {
+          "level": "h2",
+          "text": "Pay the service fee."
+        },
+        {
+          "level": "h2",
+          "text": "Complete your intake."
+        },
+        {
+          "level": "h2",
+          "text": "Two plans.$395 or $695."
+        },
+        {
+          "level": "h2",
+          "text": "Full Service"
+        },
+        {
+          "level": "h2",
+          "text": "Ultimate Concierge"
+        },
+        {
+          "level": "h2",
+          "text": "How to evaluate the fee"
+        },
+        {
+          "level": "h2",
+          "text": "Compensation and independence disclosure"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 2,
+        "car-buying-service.html": 3,
+        "schedule.html": 5,
+        "about.html": 2,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "index.html",
+      "url": "https://www.driverightcarbuying.com/",
+      "title": "Nationwide Car Buying Service: $395 & $695 | Drive Right",
+      "description": "Skip the hours at the dealer. Our car buying service works the dealers and negotiates below MSRP for buyers nationwide. Flat fee: $395 or $695.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/"
+      ],
+      "sitemap": true,
+      "redirect": {
+        "source": "/index.html",
+        "destination": "/",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Skip the hours at the dealer.Let us find you the perfect car."
+        },
+        {
+          "level": "h2",
+          "text": "Let us know what you want."
+        },
+        {
+          "level": "h2",
+          "text": "One flat fee, paid once"
+        },
+        {
+          "level": "h2",
+          "text": "Review this brief.Then choose a plan."
+        },
+        {
+          "level": "h2",
+          "text": "Your buying brief"
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": "Choose a plan."
+        },
+        {
+          "level": "h2",
+          "text": "Hi, I'm Mason."
+        },
+        {
+          "level": "h2",
+          "text": "How we dothe legwork."
+        },
+        {
+          "level": "h3",
+          "text": "Search & outreach."
+        },
+        {
+          "level": "h3",
+          "text": "Compare & negotiate."
+        },
+        {
+          "level": "h3",
+          "text": "Coordinate the next step."
+        },
+        {
+          "level": "h2",
+          "text": "One flat fee.Your time back."
+        },
+        {
+          "level": "h3",
+          "text": "Full Service"
+        },
+        {
+          "level": "h3",
+          "text": "Ultimate Concierge"
+        },
+        {
+          "level": "h2",
+          "text": "Questionsabout the service."
+        },
+        {
+          "level": "h2",
+          "text": "Edit your brief."
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ContactPoint",
+        "Country",
+        "ImageObject",
+        "ListItem",
+        "Offer",
+        "OpeningHoursSpecification",
+        "Organization",
+        "Service",
+        "State",
+        "WebSite"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 4,
+        "car-buying-service.html": 4,
+        "schedule.html": 9,
+        "about.html": 3,
+        "policy.html": 2,
+        "blog.html": 1
+      }
+    },
+    {
+      "file": "inquiry.html",
+      "url": "https://www.driverightcarbuying.com/inquiry.html",
+      "title": "Contact Austin's Car Buying Expert | Drive Right",
+      "description": "Contact Drive Right, Austin's expert car buying service. We negotiate on your behalf and save you thousands.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/inquiry.html"
+      ],
+      "sitemap": false,
+      "redirect": {
+        "source": "/inquiry.html",
+        "destination": "/schedule.html",
+        "permanent": true
+      },
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Begin a Conversation"
+        },
+        {
+          "level": "h2",
+          "text": "What to Expect"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "new-braunfels.html",
+      "url": "https://www.driverightcarbuying.com/new-braunfels.html",
+      "title": "New Braunfels Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for New Braunfels and Hill Country buyers and communicates with sellers on your behalf. Terms vary.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/new-braunfels.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forNew Braunfels."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater New Braunfels."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "new-car-pricing-incentives.html",
+      "url": "https://www.driverightcarbuying.com/new-car-pricing-incentives.html",
+      "title": "New-Car Pricing & Incentives Resource Hub | Drive Right",
+      "description": "Explore Drive Right resources about new-car quotes, MSRP, incentives, timing, negotiation, dealer add-ons, and professional buying support.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/new-car-pricing-incentives.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "New-car pricing and incentives"
+        },
+        {
+          "level": "h2",
+          "text": "Build a comparable quote"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Methodology and update conditions"
+        },
+        {
+          "level": "h2",
+          "text": "Editorial accountability"
+        },
+        {
+          "level": "h2",
+          "text": "New-car decision resources"
+        },
+        {
+          "level": "h3",
+          "text": "New-Car Price Comparison"
+        },
+        {
+          "level": "h3",
+          "text": "High-Demand Vehicle Questions"
+        },
+        {
+          "level": "h3",
+          "text": "Purchase-Timing Questions"
+        },
+        {
+          "level": "h3",
+          "text": "Negotiation Preparation"
+        },
+        {
+          "level": "h3",
+          "text": "Dealership Add-ons Guide"
+        },
+        {
+          "level": "h3",
+          "text": "AI Car-Buying Agent"
+        },
+        {
+          "level": "h2",
+          "text": "Authoritative starting points"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Resource Hubs"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "blog-buy-new-car-below-msrp.html": 1,
+        "blog-high-demand-vehicles-msrp.html": 1,
+        "blog-best-time-buy-car-texas.html": 1,
+        "blog-negotiation-mastery.html": 1,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "how-it-works.html": 1,
+        "policy.html": 1,
+        "texas-car-buying-rules-paperwork.html": 1,
+        "auto-financing-credit-fi.html": 1,
+        "used-car-due-diligence.html": 1,
+        "vehicle-selection-total-cost.html": 1
+      }
+    },
+    {
+      "file": "payment-success-concierge.html",
+      "url": "https://www.driverightcarbuying.com/payment-success-concierge.html",
+      "title": "Verify Concierge Payment | Drive Right",
+      "description": "Securely verify a Drive Right Concierge payment before completing the paid-service intake.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-concierge.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Verifying payment"
+        },
+        {
+          "level": "h1",
+          "text": "You\u2019re in theright place."
+        },
+        {
+          "level": "h2",
+          "text": "Tell Us About Your Dream Vehicle"
+        },
+        {
+          "level": "h3",
+          "text": "Your Concierge Team Is On It"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 1,
+        "car-buying-service.html": 1,
+        "schedule.html": 3,
+        "blog.html": 2,
+        "about.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "payment-success-consultant.html",
+      "url": "https://www.driverightcarbuying.com/payment-success-consultant.html",
+      "title": "Verify AI Agent Buying Service Payment | Drive Right",
+      "description": "Securely verify an AI Agent Buying Service payment before completing the paid-service intake.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-consultant.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Verifying payment"
+        },
+        {
+          "level": "h1",
+          "text": "You\u2019re in theright place."
+        },
+        {
+          "level": "h2",
+          "text": "Tell Us What You're Looking For"
+        },
+        {
+          "level": "h3",
+          "text": "Buying Brief Received!"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 1,
+        "car-buying-service.html": 1,
+        "schedule.html": 3,
+        "blog.html": 2,
+        "about.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "payment-success-fullservice.html",
+      "url": "https://www.driverightcarbuying.com/payment-success-fullservice.html",
+      "title": "Verify Full Service Payment | Drive Right",
+      "description": "Securely verify a Drive Right Full Service payment before completing the paid-service intake.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success-fullservice.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Verifying payment"
+        },
+        {
+          "level": "h1",
+          "text": "You\u2019re in theright place."
+        },
+        {
+          "level": "h2",
+          "text": "Tell Us About Your Ideal Car"
+        },
+        {
+          "level": "h3",
+          "text": "You're All Set!"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 1,
+        "car-buying-service.html": 1,
+        "schedule.html": 3,
+        "blog.html": 2,
+        "about.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "payment-success.html",
+      "url": "https://www.driverightcarbuying.com/payment-success.html",
+      "title": "Verify Your Payment | Drive Right",
+      "description": "Securely verify a Drive Right payment before completing intake for your selected plan.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/payment-success.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Verifying payment"
+        },
+        {
+          "level": "h1",
+          "text": "You\u2019re in theright place."
+        },
+        {
+          "level": "h2",
+          "text": "Tell Us About Your Ideal Car"
+        },
+        {
+          "level": "h3",
+          "text": "You're All Set!"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 1,
+        "car-buying-service.html": 1,
+        "schedule.html": 3,
+        "blog.html": 2,
+        "about.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "policy.html",
+      "url": "https://www.driverightcarbuying.com/policy.html",
+      "title": "Policies | Drive Right: Privacy, Terms & Refund Policy",
+      "description": "Read Drive Right's privacy policy, terms of service, and refund policy. Transparency is at the core of everything we do.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/policy.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Our Policies"
+        },
+        {
+          "level": "h2",
+          "text": "Privacy Policy"
+        },
+        {
+          "level": "h3",
+          "text": "Information We Collect"
+        },
+        {
+          "level": "h3",
+          "text": "How We Use Your Information"
+        },
+        {
+          "level": "h3",
+          "text": "Information Sharing"
+        },
+        {
+          "level": "h3",
+          "text": "Cookies & Analytics"
+        },
+        {
+          "level": "h3",
+          "text": "Optional OpenAI Ad Measurement"
+        },
+        {
+          "level": "h3",
+          "text": "Data Security"
+        },
+        {
+          "level": "h3",
+          "text": "Your Rights"
+        },
+        {
+          "level": "h3",
+          "text": "Children's Privacy"
+        },
+        {
+          "level": "h2",
+          "text": "Terms of Service"
+        },
+        {
+          "level": "h3",
+          "text": "Services Overview"
+        },
+        {
+          "level": "h3",
+          "text": "Service Scope"
+        },
+        {
+          "level": "h3",
+          "text": "Client Responsibilities"
+        },
+        {
+          "level": "h3",
+          "text": "No Guarantees"
+        },
+        {
+          "level": "h3",
+          "text": "Payment Terms"
+        },
+        {
+          "level": "h3",
+          "text": "Intellectual Property"
+        },
+        {
+          "level": "h3",
+          "text": "Limitation of Liability"
+        },
+        {
+          "level": "h3",
+          "text": "Governing Law"
+        },
+        {
+          "level": "h3",
+          "text": "Changes to Terms"
+        },
+        {
+          "level": "h2",
+          "text": "Refund Policy"
+        },
+        {
+          "level": "h3",
+          "text": "Historical AI Agent engagements"
+        },
+        {
+          "level": "h3",
+          "text": "Full Service ($395 USD one time)"
+        },
+        {
+          "level": "h3",
+          "text": "Ultimate Concierge ($695)"
+        },
+        {
+          "level": "h3",
+          "text": "Historical Service Fee Credit"
+        },
+        {
+          "level": "h3",
+          "text": "How to Request a Refund"
+        },
+        {
+          "level": "h2",
+          "text": "Contact Us"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 2,
+        "car-buying-service.html": 2,
+        "schedule.html": 3,
+        "about.html": 2,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "san-antonio.html",
+      "url": "https://www.driverightcarbuying.com/san-antonio.html",
+      "title": "San Antonio Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for San Antonio and South Texas buyers and communicates with sellers on your behalf. Pricing varies.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/san-antonio.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forSan Antonio."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater San Antonio."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "san-marcos.html",
+      "url": "https://www.driverightcarbuying.com/san-marcos.html",
+      "title": "San Marcos Car Buying Service | Drive Right",
+      "description": "Drive Right compares available vehicles and deal terms for San Marcos and Hays County buyers and communicates with sellers on your behalf. Terms vary.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/san-marcos.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Car-Buying Support forSan Marcos."
+        },
+        {
+          "level": "h2",
+          "text": "THE TRUE COST OF DOING IT YOURSELF"
+        },
+        {
+          "level": "h3",
+          "text": "Time Down the Drain"
+        },
+        {
+          "level": "h3",
+          "text": "Exhausting Dealership Games"
+        },
+        {
+          "level": "h3",
+          "text": "Leaving Money on the Table"
+        },
+        {
+          "level": "h2",
+          "text": "Your personal automotive advocate."
+        },
+        {
+          "level": "h2",
+          "text": "The Hard Way vs. The Easy Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Dealership Way"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right Way"
+        },
+        {
+          "level": "h2",
+          "text": "Want More Information?"
+        },
+        {
+          "level": "h2",
+          "text": "Everything you need to know."
+        },
+        {
+          "level": "h2",
+          "text": "Serving Greater San Marcos."
+        },
+        {
+          "level": "h2",
+          "text": "Still have questions?"
+        },
+        {
+          "level": "h3",
+          "text": "Company"
+        },
+        {
+          "level": "h3",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "City",
+        "ListItem",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 7,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "schedule.html",
+      "url": "https://www.driverightcarbuying.com/schedule.html",
+      "title": "Car Negotiator & Buying Service Pricing | Drive Right",
+      "description": "Full Service is $395 and Ultimate Concierge is $695. Drive Right researches cars, compares offers, and handles seller communication nationwide.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/schedule.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Let us deal with the dealer."
+        },
+        {
+          "level": "h2",
+          "text": "Full Service"
+        },
+        {
+          "level": "h2",
+          "text": "Ultimate Concierge"
+        },
+        {
+          "level": "h2",
+          "text": "The worst parts of car buying, off your plate."
+        },
+        {
+          "level": "h3",
+          "text": "Hours at the dealership"
+        },
+        {
+          "level": "h3",
+          "text": "Nights scrolling listings"
+        },
+        {
+          "level": "h3",
+          "text": "Paying full sticker"
+        },
+        {
+          "level": "h3",
+          "text": "Fees buried in the paperwork"
+        },
+        {
+          "level": "h2",
+          "text": "How it works."
+        },
+        {
+          "level": "h3",
+          "text": "Pick your plan."
+        },
+        {
+          "level": "h3",
+          "text": "Tell us the car."
+        },
+        {
+          "level": "h3",
+          "text": "We do the legwork. You decide."
+        },
+        {
+          "level": "h2",
+          "text": "A car person in your corner."
+        },
+        {
+          "level": "h2",
+          "text": "Questions beforeyou choose."
+        },
+        {
+          "level": "h2",
+          "text": "Get your time back."
+        },
+        {
+          "level": "h2",
+          "text": "Checkout could not open."
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "Country",
+        "ImageObject",
+        "ListItem",
+        "Offer",
+        "Organization",
+        "Service",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 3,
+        "car-buying-service.html": 2,
+        "schedule.html": 2,
+        "about.html": 3,
+        "policy.html": 2,
+        "blog.html": 1
+      }
+    },
+    {
+      "file": "success.html",
+      "url": "https://www.driverightcarbuying.com/success.html",
+      "title": "Success | Drive Right",
+      "description": "Your inquiry was sent successfully. The Drive Right team will follow up shortly about your car buying plans.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/success.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Inquiry Sent"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "htmlLinkTargets": {
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "tesla-fsd-for-sale.html",
+      "url": "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html",
+      "title": "Used Teslas With Full Self-Driving (Archived) | Drive Right",
+      "description": "Archived Drive Right note about used Teslas advertised with Full Self-Driving. This URL is excluded from search and is not a live inventory listing. Current plans are Full Service at $395 and Ultimate Concierge at $695.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/tesla-fsd-for-sale.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Used Teslas with Full Self-Driving"
+        },
+        {
+          "level": "h2",
+          "text": "Why used Teslas advertised with FSD are easy to misread"
+        },
+        {
+          "level": "h2",
+          "text": "The math: included FSD vs. subscription"
+        },
+        {
+          "level": "h3",
+          "text": "FSD included with the car"
+        },
+        {
+          "level": "h3",
+          "text": "FSD subscription"
+        },
+        {
+          "level": "h3",
+          "text": "Buying blind"
+        },
+        {
+          "level": "h2",
+          "text": "How we find them"
+        },
+        {
+          "level": "h2",
+          "text": "What we verify on every candidate"
+        },
+        {
+          "level": "h2",
+          "text": "Hunting alone vs. hunting with Drive Right"
+        },
+        {
+          "level": "h3",
+          "text": "Searching solo"
+        },
+        {
+          "level": "h3",
+          "text": "The Drive Right way"
+        },
+        {
+          "level": "h2",
+          "text": "Frequently asked questions"
+        },
+        {
+          "level": "h2",
+          "text": "Questions about Drive Right?"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Service Areas"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "WebPage"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "how-it-works.html": 1,
+        "policy.html": 1,
+        "arlington.html": 1,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "el-paso.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "new-braunfels.html": 1,
+        "san-antonio.html": 1,
+        "san-marcos.html": 1
+      }
+    },
+    {
+      "file": "texas-car-buying-rules-paperwork.html",
+      "url": "https://www.driverightcarbuying.com/texas-car-buying-rules-paperwork.html",
+      "title": "Texas Car-Buying Rules & Paperwork Hub | Drive Right",
+      "description": "Explore Drive Right resources related to Texas vehicle-buying paperwork, dealer documents, service policies, and professional support.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/texas-car-buying-rules-paperwork.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Texas car-buying rules and paperwork"
+        },
+        {
+          "level": "h2",
+          "text": "Start with the transaction, not a generic checklist"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Related Drive Right resources"
+        },
+        {
+          "level": "h3",
+          "text": "How Drive Right Works"
+        },
+        {
+          "level": "h3",
+          "text": "Dealership Add-ons Guide"
+        },
+        {
+          "level": "h3",
+          "text": "Drive Right Policy"
+        },
+        {
+          "level": "h3",
+          "text": "AI Car-Buying Agent"
+        },
+        {
+          "level": "h2",
+          "text": "Review trigger"
+        },
+        {
+          "level": "h2",
+          "text": "Authoritative starting points"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Resource Hubs"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "how-it-works.html": 2,
+        "blog-dealership-addons-complete-guide.html": 1,
+        "policy.html": 2,
+        "auto-financing-credit-fi.html": 1,
+        "used-car-due-diligence.html": 1,
+        "new-car-pricing-incentives.html": 1,
+        "texas-local-market-intelligence.html": 1
+      }
+    },
+    {
+      "file": "texas-local-market-intelligence.html",
+      "url": "https://www.driverightcarbuying.com/texas-local-market-intelligence.html",
+      "title": "Texas Local Car-Market Resource Hub | Drive Right",
+      "description": "Explore Drive Right service-area pages for Austin, Dallas, Fort Worth, Houston, San Antonio, El Paso, Arlington, New Braunfels, and San Marcos.",
+      "robots": "index, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/texas-local-market-intelligence.html"
+      ],
+      "sitemap": true,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Texas local car-market resources"
+        },
+        {
+          "level": "h2",
+          "text": "What can vary by location"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Browse Texas service areas"
+        },
+        {
+          "level": "h3",
+          "text": "Austin"
+        },
+        {
+          "level": "h3",
+          "text": "Dallas"
+        },
+        {
+          "level": "h3",
+          "text": "Fort Worth"
+        },
+        {
+          "level": "h3",
+          "text": "Houston"
+        },
+        {
+          "level": "h3",
+          "text": "San Antonio"
+        },
+        {
+          "level": "h3",
+          "text": "El Paso"
+        },
+        {
+          "level": "h3",
+          "text": "Arlington"
+        },
+        {
+          "level": "h3",
+          "text": "New Braunfels"
+        },
+        {
+          "level": "h3",
+          "text": "San Marcos"
+        },
+        {
+          "level": "h3",
+          "text": "Car-Buying Service Plans"
+        },
+        {
+          "level": "h2",
+          "text": "Official transaction resources"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "how-it-works.html": 2,
+        "car-buying-service.html": 2,
+        "schedule.html": 3,
+        "about.html": 2,
+        "austin.html": 1,
+        "dallas.html": 1,
+        "fort-worth.html": 1,
+        "houston.html": 1,
+        "san-antonio.html": 1,
+        "el-paso.html": 1,
+        "arlington.html": 1,
+        "new-braunfels.html": 1,
+        "san-marcos.html": 1,
+        "blog.html": 1,
+        "policy.html": 1
+      }
+    },
+    {
+      "file": "used-car-due-diligence.html",
+      "url": "https://www.driverightcarbuying.com/used-car-due-diligence.html",
+      "title": "Used-Car Due Diligence Resource Hub | Drive Right",
+      "description": "Explore Drive Right resources about used-car inspections, vehicle history, CPO comparisons, used EVs, seller questions, and total cost.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/used-car-due-diligence.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Used-car due diligence"
+        },
+        {
+          "level": "h2",
+          "text": "A layered review"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Methodology and update conditions"
+        },
+        {
+          "level": "h2",
+          "text": "Editorial accountability"
+        },
+        {
+          "level": "h2",
+          "text": "Used-car research paths"
+        },
+        {
+          "level": "h3",
+          "text": "Used-Car Inspection Checklist"
+        },
+        {
+          "level": "h3",
+          "text": "Vehicle-History Research"
+        },
+        {
+          "level": "h3",
+          "text": "CPO vs. Used"
+        },
+        {
+          "level": "h3",
+          "text": "Used-Car Deal Questions"
+        },
+        {
+          "level": "h3",
+          "text": "Used-EV Questions"
+        },
+        {
+          "level": "h3",
+          "text": "AI Car-Buying Agent"
+        },
+        {
+          "level": "h2",
+          "text": "Authoritative starting points"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Resource Hubs"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "blog-used-car-inspection-checklist.html": 1,
+        "blog-car-history-beyond-carfax.html": 1,
+        "blog-cpo-vs-used.html": 1,
+        "blog-used-car-rip-offs.html": 1,
+        "blog-used-ev-pros-cons-risks.html": 1,
+        "how-it-works.html": 1,
+        "policy.html": 1,
+        "texas-car-buying-rules-paperwork.html": 1,
+        "auto-financing-credit-fi.html": 1,
+        "new-car-pricing-incentives.html": 1,
+        "vehicle-selection-total-cost.html": 1
+      }
+    },
+    {
+      "file": "vehicle-selection-total-cost.html",
+      "url": "https://www.driverightcarbuying.com/vehicle-selection-total-cost.html",
+      "title": "Vehicle Selection & Total Cost Resource Hub | Drive Right",
+      "description": "Explore Drive Right resources about choosing a vehicle, comparing new and used options, leasing, depreciation, EV considerations, and ownership cost.",
+      "robots": "noindex, follow",
+      "canonical": [
+        "https://www.driverightcarbuying.com/vehicle-selection-total-cost.html"
+      ],
+      "sitemap": false,
+      "redirect": null,
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Vehicle selection and total cost"
+        },
+        {
+          "level": "h2",
+          "text": "A requirement-first shortlist"
+        },
+        {
+          "level": "h2",
+          "text": "Scope and limitations"
+        },
+        {
+          "level": "h2",
+          "text": "Selection and ownership resources"
+        },
+        {
+          "level": "h3",
+          "text": "Leasing vs. Buying"
+        },
+        {
+          "level": "h3",
+          "text": "New vs. Near-New"
+        },
+        {
+          "level": "h3",
+          "text": "Depreciation Questions"
+        },
+        {
+          "level": "h3",
+          "text": "CPO vs. Used"
+        },
+        {
+          "level": "h3",
+          "text": "Used-EV Questions"
+        },
+        {
+          "level": "h3",
+          "text": "AI Car-Buying Agent"
+        },
+        {
+          "level": "h2",
+          "text": "Authoritative starting points"
+        },
+        {
+          "level": "h2",
+          "text": "Company"
+        },
+        {
+          "level": "h2",
+          "text": "Resource Hubs"
+        }
+      ],
+      "schemaTypes": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "ImageObject",
+        "ItemList",
+        "ListItem",
+        "Organization"
+      ],
+      "htmlLinkTargets": {
+        "about.html": 3,
+        "blog.html": 3,
+        "schedule.html": 4,
+        "blog-leasing-vs-buying.html": 1,
+        "blog-new-vs-near-new.html": 1,
+        "blog-depreciation-myth-20-percent.html": 1,
+        "blog-cpo-vs-used.html": 1,
+        "blog-used-ev-pros-cons-risks.html": 1,
+        "how-it-works.html": 1,
+        "policy.html": 1,
+        "texas-car-buying-rules-paperwork.html": 1,
+        "auto-financing-credit-fi.html": 1,
+        "used-car-due-diligence.html": 1,
+        "new-car-pricing-incentives.html": 1
+      }
+    }
+  ],
+  "missingHTMLLinks": [],
+  "summary": {
+    "rootHTMLFiles": 65,
+    "sitemapURLs": 8,
+    "indexFollowSourceFiles": 8,
+    "noindexFollowSourceFiles": 57,
+    "blogArticleSourceFiles": 35,
+    "redirectedArticleSourceFiles": 5,
+    "nonredirectedBlogArticleSourceFiles": 30,
+    "noMissingLocalHTMLTargetsDetected": true
+  }
+}

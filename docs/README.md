@@ -5,7 +5,6 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 ## Start here
 
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
-- [claim-review-workflow.md](claim-review-workflow.md): how prices, guarantees and factual claims get approved.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
 - [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook and onboarding (the API contract).
 

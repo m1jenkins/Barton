@@ -1,0 +1,156 @@
+competitor,kind,label,url,note
+CarEdge,Page / tool,pricing page,https://caredge.com/pricing,
+CarEdge,Page / tool,dealer-ratings page,https://caredge.com/dealer-ratings,
+CarEdge,Page / tool,Homepage,https://caredge.com/,
+CarEdge,Page / tool,car buying service,https://caredge.com/carbuyingservice,
+CarEdge,Page / tool,Pro checkout,https://caredge.com/checkout/pro,/pro redirected to /checkout/pro when opened; do not treat old /pro snippets as current page copy.
+CarEdge,Page / tool,AI checkout,https://caredge.com/checkout/ai-buying-agent,/pro redirected to /checkout/pro when opened; do not treat old /pro snippets as current page copy.
+CarEdge,Page / tool,Inventory search,https://caredge.com/shop-cars,"Both opened; model footer link leads to a query-filtered search, not a standalone RAV4 editorial page."
+CarEdge,Page / tool,Toyota RAV4 search,https://caredge.com/shop-cars?make=Toyota&model=RAV4,"Both opened; model footer link leads to a query-filtered search, not a standalone RAV4 editorial page."
+CarEdge,Page / tool,all-dealer search,https://caredge.com/dealers,
+CarEdge,Page / tool,Texas directory,https://caredge.com/dealers/in/texas,
+CarEdge,Page / tool,individual Grapevine dealer,https://caredge.com/dealer/texas-toyota-of-grapevine--tx-grapevine,
+CarEdge,Page / tool,Scoring methodology,https://caredge.com/rating-methodology,/methodology redirected to /rating-methodology. Fee report and live negotiation pages appeared in primary company search results.
+CarEdge,Page / tool,fee report,https://caredge.com/reports/state-of-dealer-fees,/methodology redirected to /rating-methodology. Fee report and live negotiation pages appeared in primary company search results.
+CarEdge,Page / tool,live negotiations,https://caredge.com/live,/methodology redirected to /rating-methodology. Fee report and live negotiation pages appeared in primary company search results.
+CarEdge,Page / tool,Guide hub,https://caredge.com/guides,
+CarEdge,Page / tool,Deal School,https://caredge.com/deal-school,
+CarEdge,Page / tool,negotiation module,https://caredge.com/deal-school/negotiate,
+CarEdge,Page / tool,Invoice,https://caredge.com/dealer-invoice,
+CarEdge,Page / tool,financing,https://caredge.com/financing,
+CarEdge,Page / tool,depreciation,https://caredge.com/depreciation,
+CarEdge,Page / tool,depreciation comparison,https://caredge.com/compare/depreciation,
+CarEdge,Page / tool,ownership costs,https://caredge.com/costs,
+CarEdge,Page / tool,Value ratings,https://caredge.com/value-ratings,"Opened from site links; these are CarEdge's own ratings, not evidence of search ranking."
+CarEdge,Page / tool,value ranking,https://caredge.com/ranks/value,"Opened from site links; these are CarEdge's own ratings, not evidence of search ranking."
+CarEdge,Page / tool,ownership cost ranking,https://caredge.com/ranks/costs,"Opened from site links; these are CarEdge's own ratings, not evidence of search ranking."
+CarEdge,Page / tool,depreciation ranking,https://caredge.com/ranks/depreciation,"Opened from site links; these are CarEdge's own ratings, not evidence of search ranking."
+CarEdge,Page / tool,Insurance,https://caredge.com/insurance,/copilot redirected to /askcaredge; AI page body was unavailable to the extractor.
+CarEdge,Page / tool,warranty,https://caredge.com/warranty,/copilot redirected to /askcaredge; AI page body was unavailable to the extractor.
+CarEdge,Page / tool,AI assistant,https://caredge.com/askcaredge,/copilot redirected to /askcaredge; AI page body was unavailable to the extractor.
+CarEdge,Page / tool,dealer program,https://caredge.com/for-dealers,/copilot redirected to /askcaredge; AI page body was unavailable to the extractor.
+CarEdge,Page / tool,Mission,https://caredge.com/our-mission,
+CarEdge,Page / tool,team,https://caredge.com/meet-our-team,
+CarEdge,Page / tool,press,https://caredge.com/press,
+CarEdge,Page / tool,community,https://community.caredge.com/,
+CarEdge,Editorial,"Best Ford Dealerships in Michigan, Ranked by CarEdge Data",https://caredge.com/guides/best-ford-dealerships-michigan,"Article: Aug 21, 2026; hub: Sep 30, 2026. Body says Q3 2026 data. Do not silently pick one date."
+CarEdge,Editorial,"Best Buick Dealerships in San Antonio, Ranked by CarEdge Data",https://caredge.com/guides/best-buick-dealerships-san-antonio,"Hub listing: Sep 30, 2026. Direct fetch failed, so body not inspected."
+CarEdge,Editorial,"Best 0% APR Car Deals in September 2026: All 35 Zero-Percent Offers, Ranked by CarEdge Data",https://caredge.com/guides/zero-percent-financing-car-deals-september-2026,"Sep 22, 2026. Most offers explicitly expired Sep 30; content example, not currently valid offers."
+CarEdge,Editorial,"Best 0% APR Car Deals in August 2026: All 53 Zero-Percent Offers, Ranked by CarEdge Data",https://caredge.com/guides/zero-percent-financing-car-deals-august-2026,"Aug 12, 2026. Links forward to September/Labor Day edition."
+CarEdge,Editorial,The Slowest Selling New Cars in America - September 2026,https://caredge.com/guides/slowest-selling-cars,"Data updated Sep 7, 2026. A data page under /guides; no byline visible in retrieved opening."
+CarEdge,Editorial,How to Negotiate Your Car’s Trade-In Value in 5 Easy Steps (Updated For 2026),https://caredge.com/guides/how-to-negotiate-your-cars-trade-in-value-in-2026,"Jan 29, 2026, Cody Carlson; date/body observed in company search result, direct open failed."
+CarEdge,Editorial,Coming Soon: The Best Time to Trade-In Your Car,https://caredge.com/guides/best-month-to-trade-in-your-car,"Feb 16, 2026, Justin Fischer. Seasonal wording refers to spring; not an evergreen current-season promise."
+CarEdge,Editorial,What Is a Car Concierge? Understanding Car Buying Services and How They Work,https://caredge.com/guides/what-is-a-car-buying-service,"Jul 18, 2025, Justin Fischer. Evergreen explanation."
+CarEdge,Editorial,Questions to Ask When Buying a Used Car,https://caredge.com/guides/what-to-ask-when-buying-a-used-car,"Jul 18, 2025, Ray Shefska. Evergreen guide."
+CarEdge,Editorial,"The Cheapest States to Buy a Car in 2026 – Taxes, Fees, and More",https://caredge.com/guides/cheapest-state-to-buy-a-car,"Feb 11, 2025, Justin Fischer despite 2026 H1. Verify any derivative taxes/fees from regulators."
+CarEdge,Editorial,Costco versus CarEdge Car Buying Services: The Differences Explained,https://caredge.com/guides/costco-versus-caredge-car-buying-services,"May 31, 2024, Justin Fischer. Company-authored comparison, not independent review."
+CarEdge,Editorial,USAA’s Car Buying Service Has Ended. Here Are 3 Alternatives,https://caredge.com/guides/usaa-car-buying-service-has-ended-here-are-3-alternatives,"Jun 19, 2024, Justin Fischer. Older page with later-year wording."
+CarEdge,Editorial,Car Buying Cheat Sheet: Former Dealer Shares How to Negotiate Car Prices Confidently,https://caredge.com/guides/negotiate-car-prices-cheat-sheet,"Oct 28, 2022, Justin Fischer; includes links labeled new in 2024."
+CarEdge,Editorial,Car Dealer Doc Fee by State in 2026 (Updated),https://caredge.com/guides/car-dealer-doc-fee-by-state,"Dec 6, 2021, Zach Shefska despite 2026 title."
+CarEdge,Editorial,Buying a Car in Another State: The Latest Updates For 2026,https://caredge.com/guides/buying-a-vehicle-in-another-state,"Sep 8, 2021, Ray Shefska despite 2026 title."
+CarEdge,Editorial,"Car Dealership Fees: Which Add-Ons Are Legit, and Which Are Fake?",https://caredge.com/guides/understanding-car-dealer-fees,"Sep 7, 2020, Zach Shefska; current body includes 2026/2027 worksheet examples."
+CarEdge,Editorial,"How We Negotiate a Car Deal by Email (with Real Life Examples, Templates, and More!)",https://caredge.com/guides/negotiate-a-car-by-email/,"Jun 19, 2020, Ray Shefska. Old publication date with newer product links and vehicle examples."
+CarEdge,Editorial,Out-the-Door Price: The Number You Should Really Be Negotiating,https://caredge.com/guides/out-the-door-price/,"Jun 17, 2020, Ray Shefska. Older evergreen article."
+Delivrd,Page / tool,press kit,https://resources.delivrdto.me/press,
+Delivrd,Page / tool,Homepage,https://www.delivrdto.me/,
+Delivrd,Page / tool,about,https://www.delivrdto.me/about-us,
+Delivrd,Page / tool,team,https://www.delivrdto.me/team,
+Delivrd,Page / tool,contact,https://www.delivrdto.me/contact,
+Delivrd,Page / tool,Insta-Pay negotiation,https://www.delivrdto.me/insta-pay-service,
+Delivrd,Page / tool,consultation,https://www.delivrdto.me/schedule-old,
+Delivrd,Page / tool,Matchmaking Concierge,https://www.delivrdto.me/product/concierge,"Found by company-domain search and opened. Separate packages; $2,500 and $1,000 are not necessarily a price inconsistency."
+Delivrd,Page / tool,service agreement,https://www.delivrdto.me/service-agreement,"Found by company-domain search and opened. Separate packages; $2,500 and $1,000 are not necessarily a price inconsistency."
+Delivrd,Page / tool,Reviews,https://www.delivrdto.me/reviews,
+Delivrd,Page / tool,Resources,https://www.delivrdto.me/resources,
+Delivrd,Page / tool,Hiring,https://www.delivrdto.me/delivrd-career-opportunities,First two opened. Visor external search-tool link observed; fetch failed. No claim about Visor content.
+Delivrd,Page / tool,dealer application,https://drive.delivrdfor.me/apply/dealers,First two opened. Visor external search-tool link observed; fetch failed. No claim about Visor content.
+Delivrd,Editorial,Let's check out the Minivans at the 2025 Chicago Auto Show,https://www.delivrdto.me/post/lets-check-out-the-minivans-at-the-2025-chicago-auto-show,"Feb 15, 2025"
+Delivrd,Editorial,🚗 Big Toyota Market Update Nov 2024,https://www.delivrdto.me/post/big-toyota-market-update-nov-2024,"Nov 1, 0204, exactly as displayed; do not silently correct."
+Delivrd,Editorial,Unveiling the Realities of End-of-Month Car Deals,https://www.delivrdto.me/post/unveiling-the-realities-of-end-of-month-car-deals,"Oct 4, 2023"
+Delivrd,Editorial,Navigating the Seasons for Your Next Car Purchase,https://www.delivrdto.me/post/navigating-the-seasons-for-your-next-car-purchase,"Oct 2, 2023"
+Delivrd,Editorial,Unraveling the Hidden Risks of Purchasing Canadian Grey Market Cars,https://www.delivrdto.me/post/unraveling-the-hidden-risks-of-purchasing-canadian-grey-market-cars,"Sep 28, 2023"
+Delivrd,Editorial,Reversing the Drive: Mastering the Art of Car Returns,https://www.delivrdto.me/post/reversing-the-drive-mastering-the-art-of-car-returns,"Sep 26, 2023"
+Delivrd,Editorial,Mastering the Art of Car Buying: Expert Tips for Savvy Readers,https://www.delivrdto.me/post/mastering-the-art-of-car-buying-expert-tips-for-savvy-readers,"Sep 24, 2023"
+Delivrd,Editorial,"The Inside Track on Extended Car Warranties: Don't Get Played, Get Paid",https://www.delivrdto.me/post/the-inside-track-on-extended-car-warranties-dont-get-played-get-paid,"Sep 19, 2023"
+Delivrd,Editorial,Car Extended Warranties: A No-Nonsense Guide,https://www.delivrdto.me/post/car-extended-warranties-a-no-nonsense-guide,"Sep 18, 2023"
+Delivrd,Editorial,The Credit Score Myth That Could Cost You at the Car Dealership—Debunked!,https://www.delivrdto.me/post/the-credit-score-myth-that-could-cost-you-at-the-car-dealership-debunked,"Sep 17, 2023"
+Delivrd,Editorial,The Final Lap: Mastering GAP Insurance,https://www.delivrdto.me/post/the-final-lap-mastering-gap-insurance,"Sep 16, 2023"
+Delivrd,Editorial,Why GAP Insurance Could Be Your Financial Game-Changer,https://www.delivrdto.me/post/why-gap-insurance-could-be-your-financial-game-changer,"Sep 13, 2023"
+Delivrd,Editorial,Do You Really Need GAP Insurance?,https://www.delivrdto.me/post/the-10-000-question-do-you-really-need-gap-insurance,"Sep 14, 2023"
+Delivrd,Page / tool,homepage,https://www.authorityauto.com/,
+Delivrd,Page / tool,FAQ,https://www.authorityauto.com/faqs,
+Delivrd,Page / tool,FAQ,https://car-pal.com/faqs/,
+Delivrd,Page / tool,homepage,https://automatchconsulting.com/,
+Delivrd,Page / tool,reviews,https://automatchconsulting.com/reviews/,
+Delivrd,Page / tool,current overview,https://www.checkbook.org/boston-area/car-buying-strategies-for-a-good-deal,
+Authority Auto,Page / tool,Services,https://www.authorityauto.com/services,
+Authority Auto,Page / tool,Full Service,https://www.authorityauto.com/full-service,
+Authority Auto,Page / tool,Free Deal Review,https://www.authorityauto.com/improve-your-deal,"Starts with a free review; charges half the improved savings if successful, with a worked $2,000 example. Requires written quote including taxes, fees and MSRP. Limits availability, links to Edmunds and a video. This is a separately scoped offer, not an unconditional free full service."
+Authority Auto,Page / tool,About,https://www.authorityauto.com/about,
+Authority Auto,Page / tool,Mission,https://www.authorityauto.com/mission,
+Authority Auto,Page / tool,Testimonials,https://www.authorityauto.com/testimonials,"Detailed transaction anecdotes with client places, vehicles and circumstances. Not a verified savings dataset."
+Authority Auto,Page / tool,Articles,https://www.authorityauto.com/articles-edmunds,
+Authority Auto,Page / tool,Blog,https://www.authorityauto.com/blog,"Accessible shell, but web extraction shows no post listings under recent posts/topics. The source returned tool-reported 404. Search surfaced a similarly empty topic archive. Current blog post cadence/inventory is **unverified**, not evidence that the company never blogged."
+Authority Auto,Page / tool,All posts destination,https://www.authorityauto.com/blog/all,"Accessible shell, but web extraction shows no post listings under recent posts/topics. The source returned tool-reported 404. Search surfaced a similarly empty topic archive. Current blog post cadence/inventory is **unverified**, not evidence that the company never blogged."
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-oct-2008,
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-jun-2009,
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-2010,
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-jul-2010,
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-july-2010-2,
+Authority Auto,Editorial,Article,https://www.authorityauto.com/edmunds-apr-2010,
+Authority Auto,Editorial,Resource landing page,https://www.authorityauto.com/authority-auto-10-tips-0,"Promises a tip sheet covering negotiating transaction components, timing and price comparisons, supported by testimonials. Inspected page is a landing page, not the full tip-sheet text."
+Automatch,Page / tool,Payments,https://automatchconsulting.com/payments/,
+Automatch,Page / tool,Contact,https://automatchconsulting.com/contact/,
+Automatch,Page / tool,Advice,https://automatchconsulting.com/advice/,
+Automatch,Page / tool,onsite CarMax article copy,https://automatchconsulting.com/heres-why-carmax-makes-more-money-on-used-cars-than-anyone-else/,
+Automatch,Page / tool,Jalopnik,https://www.jalopnik.com/here-is-why-you-shouldn-t-expect-a-big-discount-on-a-us-1823917876/,"March 20, 2018"
+Automatch,Page / tool,Jalopnik,https://jalopnik.com/heres-why-carmax-makes-more-money-on-used-cars-than-any-1826415410,"March 25, 2022 on opened publisher page; onsite copy April 10, 2019"
+Automatch,Page / tool,Jalopnik,https://www.jalopnik.com/these-are-the-biggest-mistakes-used-car-buyers-make-1794950813/,"May 5, 2017"
+Automatch,Page / tool,Jalopnik,https://www.jalopnik.com/outdated-car-buying-myths-that-are-costing-you-money-1774425001/,"May 3, 2016"
+Automatch,Page / tool,Jalopnik,https://jalopnik.com/when-its-really-worth-it-to-buy-a-certified-pre-owned-c-1794738731,"April 28, 2017"
+Automatch,Page / tool,Jalopnik,https://jalopnik.com/these-are-the-most-common-lies-a-dealership-will-tell-y-1828853398,"September 6, 2018"
+Automatch,Page / tool,Jalopnik,https://jalopnik.com/the-truth-about-truecar-savings-1559397086,"April 10, 2014"
+Car Pal,Page / tool,Home,https://car-pal.com/,"Clear advocate/negotiation category heading, phone/text and Get Started CTA, buyer situations, three-step process, Google-linked dated reviews through July 2026 and a buyer-agent explainer link. H1 is generic despite clearer lower-level service wording."
+Car Pal,Page / tool,Pricing,https://car-pal.com/pricing/,"$495 consulting, $1,195 full service for cars/SUVs, $1,695 trucks, free 15-minute consultation; detailed deliverables and $200–$500 scarcity surcharge. Other sections list deal-beating fee split, private-sale support, DIY coaching, trade-in and shipping. Contains a second consulting offer at $295 for one hour; preserve distinction/clarity in any comparison. Includes service comparison table against named free tools; competitor claims are not independently checked."
+Car Pal,Page / tool,How It Works,https://car-pal.com/how-it-works/,
+Car Pal,Page / tool,About,https://car-pal.com/about-us/,
+Car Pal,Page / tool,Testimonials,https://car-pal.com/customer-testimonials/,"Consented-looking named case anecdotes, customer occupations, city/state and some dates/photos/Google links. Their permission status was not independently verified."
+Car Pal,Page / tool,Assess My Deal,https://car-pal.com/assess-my-deal/,A separate quote-review entry route is publicly linked. Full intake mechanics were not analyzed.
+Car Pal,Page / tool,Learn,https://car-pal.com/learn/,"Paginated onsite resource hub, displayed author/date, topic-specific headlines, excerpt links; service FAQ material below list and email newsletter signup. Five archive pages are linked, not all crawled."
+Car Pal,Editorial,Post,https://car-pal.com/why-transparency-still-eludes-the-auto-industry/,"January 27, 2026"
+Car Pal,Editorial,Post,https://car-pal.com/ai-vs-car-buying-agent-human-discernment/,"October 16, 2025"
+Car Pal,Editorial,Post,https://car-pal.com/what-is-a-car-buyers-agent/,"June 3, 2025"
+Car Pal,Editorial,Post,https://car-pal.com/is-a-car-broker-worth-it/,"February 27, 2025"
+Car Pal,Editorial,Post,https://car-pal.com/how-to-make-the-best-car-deal/,"February 3, 2025"
+Car Pal,Editorial,Post,https://car-pal.com/top-10-reasons-not-to-use-an-auto-buyers-agent-to-purchase-your-next-vehicle-online/,"October 15, 2024"
+Car Pal,Editorial,Post,https://car-pal.com/the-value-of-your-car-lease-is-more-than-you-think/,"July 17, 2024"
+Car Pal,Editorial,Post,https://car-pal.com/buying-former-rental-car/,"July 3, 2024"
+Car Pal,Editorial,Post,https://car-pal.com/shipping-a-vehicle-long-distance-steps-for-receiving-an-out-of-state-car-purchase/,"April 9, 2024"
+Checkbook,Page / tool,"October 18, 2018 primary press release",https://www.checkbook.org/pdfDocs/doc/Press_Release--Best_Car_Shopping_Strategy_10-18-2018.pdf,
+Checkbook,Page / tool,MakeDealersBid,https://www.checkbook.org/makedealersbid,
+Checkbook,Editorial,Guide,https://www.checkbook.org/boston-area/car-buying-strategies-for-a-good-deal/articles/How-to-Get-the-Best-Price-on-a-New-Car-2131,Kevin Brasler; updated October 2023; body opened.
+Checkbook,Editorial,Guide,https://www.checkbook.org/boston-area/car-buying-strategies-for-a-good-deal/articles/Understanding-Car-Leasing-Terms-2133,Checkbook Staff; updated October 2023; body opened.
+Checkbook,Editorial,Guide,https://www.checkbook.org/boston-area/used-car-certifications-often-not-meaningful/,Anthony Giorgianni; updated May 2022; body opened.
+Checkbook,Editorial,National guide,https://www.checkbook.org/national/vehicle-service-contracts,"Anthony Giorgianni; updated June 2021; detailed indexed source returned, direct open failed. Treat as search-verified page rather than live-access-confirmed."
+TrueCar,Page / tool,Homepage,https://www.truecar.com/,
+TrueCar,Page / tool,Austin used-car inventory,https://www.truecar.com/used-cars-for-sale/listings/location-austin-tx/,
+TrueCar,Page / tool,Accord/Camry comparison,https://www.truecar.com/compare/honda-accord-vs-toyota-camry/,Dedicated comparison destination for a specific vehicle choice. Navigation exposes many analogous model comparisons. Individual technical vehicle facts were not adopted for Drive Right advice.
+TrueCar,Page / tool,Auto loan calculator,https://www.truecar.com/car-loan-calculator/,
+TrueCar,Page / tool,Lease landing page,https://www.truecar.com/l/lease-a-car/,"A dedicated lease shopping destination. The date is a snapshot caveat on October 1, not evidence the displayed deal is still valid."
+TrueCar,Page / tool,Blog,https://www.truecar.com/blog/,
+TrueCar,Editorial,How to Get a Fair Price for a New Car,https://www.truecar.com/blog/getting-a-fair-price-on-your-next-vehicle/,"October 10, 2023"
+TrueCar,Editorial,See How Much Car You Can Afford Using the Buying Power Calculator,https://www.truecar.com/blog/see-how-much-car-you-can-afford-using-the-buying-power-calculator/,"May 16, 2023"
+TrueCar,Editorial,How to Buy a New Car in Five Steps,https://www.truecar.com/blog/guide-to-buying-a-new-car/,"March 5, 2024"
+TrueCar,Editorial,New Car Incentives: The Complete Savings Guide,https://www.truecar.com/blog/your-guide-to-car-buying-incentives/,"March 1, 2024"
+TrueCar,Editorial,Should I Buy an Electric Car?,https://www.truecar.com/blog/electric-car-future-part-1/,"May 29, 2024"
+TrueCar,Editorial,"Certified Pre-Owned: Definition, Pros and Cons",https://www.truecar.com/blog/new-certified-pre-owned-used/,"November 7, 2025"
+TrueCar,Editorial,Test Drives 101: No More Buyer's Remorse,https://www.truecar.com/blog/test-drives-101-no-more-buyers-remorse/,"October 10, 2023"
+TrueCar,Editorial,How to Sell a Car Successfully and For the Best Price,https://www.truecar.com/blog/selling-your-car/,"October 27, 2023"
+TrueCar,Editorial,Unlock Military Discounts at the Car Dealership,https://www.truecar.com/blog/truecar-military-incentives/,"August 25, 2026"
+TrueCar,Editorial,2026 Toyota Camry Trim Levels,https://www.truecar.com/blog/toyota-camry-trim-levels/,"December 9, 2025 on hub"
+TrueCar,Editorial,2027 Kia Telluride Trim Levels: What You Get,https://www.truecar.com/blog/kia-telluride-trim-levels/,"January 31, 2026"
+Costco,Page / tool,Current homepage,https://www.costcoauto.com/,
+Costco,Page / tool,SUV search,https://www.costcoauto.com/new_cars/results.aspx?bodystyle=SUV,"Links observed, inventory bodies not audited."
+Costco,Page / tool,FAQ link,https://www.costcoauto.com/FAQ.aspx,"FAQ and sitemap opened via text tool redirected to home; glossary body uninspected. Their links are inventory evidence, not proof the legacy pages currently serve independent content."
+Costco,Page / tool,glossary link,https://www.costcoauto.com/glossary/Default.aspx,"FAQ and sitemap opened via text tool redirected to home; glossary body uninspected. Their links are inventory evidence, not proof the legacy pages currently serve independent content."
+Costco,Page / tool,sitemap link,https://www.costcoauto.com/sitemap.aspx,"FAQ and sitemap opened via text tool redirected to home; glossary body uninspected. Their links are inventory evidence, not proof the legacy pages currently serve independent content."
