@@ -47,6 +47,7 @@ const requiredRedirects = [
   { name: 'index.html', source: '/index.html', destination: '/' },
   { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html', status: 301 },
   { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
+  { name: 'pricing route', source: '/pricing.html', destination: '/schedule.html', status: 301 },
   {
     name: 'legacy dealer add-ons route',
     source: '/blog-dealer-addons-exposed.html',

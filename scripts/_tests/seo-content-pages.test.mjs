@@ -113,7 +113,7 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   }
 });
 
-test('marketing nav surfaces the car-buying-service explainer with existing CTAs intact', async () => {
+test('marketing nav surfaces the explainer and schedule header offers both checkout plans', async () => {
   const explainer = '<a class="nav-link" href="/car-buying-service.html"';
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
@@ -121,7 +121,17 @@ test('marketing nav surfaces the car-buying-service explainer with existing CTAs
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
     assert.deepEqual(links, ['/how-it-works.html', '/car-buying-service.html', '/schedule.html', '/about.html'], `${file} header should list the explainer after How it works`);
     assert.match(nav, new RegExp(explainer.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&') + '[^>]*>Car buying service</a>'));
-    assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my brief<\/a>/, `${file} keeps the header brief CTA`);
+    if (file === 'schedule.html') {
+      const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
+      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([^<]+)<\/button>/g)].map(([, tier, label]) => ({ tier, label }));
+      assert.deepEqual(plans, [
+        { tier: 'full_service', label: 'Get Full Service · $395' },
+        { tier: 'concierge', label: 'Get Ultimate Concierge · $695' },
+      ]);
+      assert.doesNotMatch(header, /data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
+    } else {
+      assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my brief<\/a>/, `${file} keeps the header brief CTA`);
+    }
   }
   assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
 

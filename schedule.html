@@ -136,6 +136,24 @@
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=b325fcb6fb12">
+    <style>
+      .dr .header-checkout-actions { display:flex; gap:12px; flex-shrink:0; }
+      .dr .header-checkout-actions .header-cta { border:1px solid var(--ink); cursor:pointer; }
+      .dr .header-checkout-actions .header-cta-secondary { background:transparent; color:var(--ink); }
+      .dr .header-checkout-actions .header-cta-secondary:hover { background:var(--sage); }
+      @media (min-width:761px) and (max-width:1200px) {
+        .dr .site-header { height:auto; min-height:72px; padding-block:12px; display:grid; grid-template-areas:"mark checkout" "nav nav"; gap:8px 24px; }
+        .dr .site-header .wordmark { grid-area:mark; }
+        .dr .site-header nav { grid-area:nav; margin:0; justify-content:center; }
+        .dr .header-checkout-actions { grid-area:checkout; justify-self:end; }
+      }
+      @media (max-width:760px) {
+        html { scroll-padding-top:184px; }
+        .dr .site-header { grid-template-columns:1fr; grid-template-areas:"mark" "nav" "checkout"; gap:0; }
+        .dr .header-checkout-actions { grid-area:checkout; flex-direction:column; gap:8px; padding-block:4px 12px; }
+        .dr .header-checkout-actions .header-cta { min-height:44px; }
+      }
+    </style>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
     <!-- End Google Tag Manager -->
@@ -149,7 +167,10 @@
     <a class="nav-link" href="/schedule.html" aria-current="page">Pricing</a>
     <a class="nav-link" href="/about.html">About</a>
   </nav>
-  <a class="header-cta" href="/#conversation" data-brief-link data-cta-location="header">Start my brief</a>
+  <div class="header-checkout-actions">
+    <button type="button" class="header-cta" data-plan="full_service" data-cta-location="header">Get Full Service · $395</button>
+    <button type="button" class="header-cta header-cta-secondary" data-plan="concierge" data-cta-location="header">Get Ultimate Concierge · $695</button>
+  </div>
 </header><main id="main-content" tabindex="-1">
   <section id="pricing" class="page-width pricing-page">
     <div class="page-intro"><p class="page-kicker">Car buying service pricing</p><h1>Let us deal with the dealer.</h1><p>Hours on the lot. Nights scrolling listings. Haggling with a salesperson who negotiates for a living. Hand all of it to a Drive Right advisor for one flat fee. We search, work the dealers, negotiate for a price below MSRP and check the fees. You make the final call.</p></div>
@@ -159,7 +180,6 @@
       <article class="plan-card" id="concierge"><h2>Ultimate Concierge</h2><p class="plan-for">Best for hard-to-find cars</p><p class="plan-description">A rare spec, an enthusiast car or a luxury model. We search past the dealer lot and give your purchase priority.</p><p class="plan-price">$695<span>one-time service fee</span></p><ul><li>Everything in Full Service</li><li>We search auctions, forums and niche sources</li><li>Priority communication and coordination</li><li>Delivery coordination where available</li></ul><a href="#pricing" data-plan="concierge" class="outline-button">Get Ultimate Concierge <span data-icon="arrow"></span></a></article>
     </div>
     <div class="plan-notes"><p>Pay securely with Stripe, then tell us about the car. Service fees don’t include the car, taxes, registration, inspections, financing, insurance or delivery. Read the <a href="/policy.html#refund-policy">refund policy</a>.</p></div>
-    <p id="retired-plan" class="small-note retired-note" tabindex="-1">Looking for the AI Agent service? It’s retired for new purchases. Existing customers can still use the secure link in their payment receipt.</p>
   </section>
   <section class="page-width content-section" aria-labelledby="relief-title">
     <h2 id="relief-title">The worst parts of car buying, off your plate.</h2>
