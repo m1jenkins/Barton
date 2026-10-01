@@ -193,7 +193,7 @@
           <li>Dedicated advisor through the process</li>
           <li>Documented vehicle recommendations</li>
         </ul>
-        <button type="button" data-service-tier="full_service" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></button>
+        <button type="button" data-plan="full_service" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></button>
         <a href="/schedule.html#full-service" class="text-link" style="margin-top:12px">Review Full Service <span data-icon="arrow"></span></a>
       </article>
       <article class="plan-card" id="concierge">
@@ -206,7 +206,7 @@
           <li>Priority communication and coordination</li>
           <li>Delivery coordination where available</li>
         </ul>
-        <button type="button" data-service-tier="concierge" class="outline-button">Get Ultimate Concierge · $695 <span data-icon="arrow"></span></button>
+        <button type="button" data-plan="concierge" class="outline-button">Get Ultimate Concierge · $695 <span data-icon="arrow"></span></button>
         <a href="/schedule.html#concierge" class="text-link" style="margin-top:12px">Review Concierge <span data-icon="arrow"></span></a>
       </article>
     </div>
@@ -223,6 +223,7 @@
     </div>
   </section>
 </main>
+<dialog id="contact-dialog" aria-labelledby="contact-title"><header class="dialog-header"><h2 id="contact-title">Checkout could not open.</h2><button class="icon-button" data-close type="button" aria-label="Close checkout message"><span data-icon="close"></span></button></header><p class="dialog-description">Something went wrong starting Stripe. Please retry below. Your details will be collected after payment.</p><div id="chosen-plan" class="chosen-plan"></div><p id="contact-error" class="input-error" role="alert"></p><button id="checkout-submit" class="primary-button" type="button">Retry secure checkout <span data-icon="arrow"></span></button><p class="small-note">Pay securely with Stripe, then return here to share your details and car preferences.</p></dialog>
 <footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
     <nav aria-label="Company"><a href="/how-it-works.html">How it works</a><a href="/car-buying-service.html">Car buying service</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
