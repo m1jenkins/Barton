@@ -13,7 +13,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `styles.css`, `seo-content.css` | The legacy stylesheet used by older, `noindex` pages (blog posts, legacy city pages, `inquiry.html`). |
 | `script.js` | Shared page script: mobile menu, lead forms, checkout start, payment verification, analytics, and it loads `openai-ads.js`. Used by every page except `ai-car-buying-agent.html`. Parts of it are minified onto very long lines, so search for the function name before editing. |
 | `accessibility.css/js`, `ad-consent.css/js`, `openai-ads.js` | Small shared helpers loaded by pages. |
-| `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals). |
+| `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the chat avatar and the payment-success celebration. |
+| `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals); `assets/mascot/` holds the mascot sprites, built by `scripts/build-mascot-sprites.mjs` from `assets/mascot/reference/` (not deployed). |
 | `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`. Shared code in `api/_lib/`, tests in `api/_tests/`. |
 | `db/` | PostgreSQL migrations, applied in number order. |
 | `vercel.json` | Redirects and security headers. Check with `node scripts/check-redirects.mjs --config-only`. |
@@ -38,7 +39,8 @@ Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same
 
 ## Rules that trip up edits
 
-- **Homepage asset hashes.** `index.html` loads `buying/drive-right.css`, `buying/app.js` and `script.js` with a `?v=<hash>` suffix. After changing one of those files, run `node scripts/validate-site.mjs`; it prints the new URL to paste into `index.html`.
+- **Homepage asset hashes.** `index.html` loads `buying/drive-right.css`, `buying/app.js`, `script.js` and `logo-motion.css/js` with a `?v=<hash>` suffix. After changing one of those files, run `node scripts/validate-site.mjs`; it prints the new URL to paste into `index.html`.
+- **Header mascot on every page.** Every root page's `<head>` ends with the logo-intro gate script and the `logo-motion.css`/`logo-motion.js` tags. A new page copies that block, and a change to either file means updating its `?v=` on every page; `scripts/_tests/seo-release.test.mjs` checks both.
 - **Pinned legacy Texas pages.** The legacy city pages are pinned by checksum in `data/metro-release.json` (`legacyTexas[].sha256`). Editing one means updating its checksum, or the validator fails.
 - **Indexing decisions.** Which pages are indexed, `noindex`, or in the sitemap is a recorded decision (see `docs/seo/`). Do not flip `robots` tags or the sitemap as a side effect of another change.
 

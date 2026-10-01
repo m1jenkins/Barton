@@ -40,8 +40,14 @@
     </script>
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="stylesheet" href="/buying/daisy.css?v=5c34c5207147">
-    <link rel="stylesheet" href="/buying/drive-right.css?v=b325fcb6fb12">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=7e32e4b45e17">
     <link rel="stylesheet" href="accessibility.css"><script defer src="accessibility.js"></script>
+    <script>
+      // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
+      try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
+    </script>
+    <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
+    <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
 </head>
 <body class="dr" data-buying-page="local-markets">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -105,6 +111,6 @@
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
 <script src="/script.js?v=ae6981ab33d6"></script>
-<script type="module" src="/buying/app.js?v=00f24fd8aee4"></script>
+<script type="module" src="/buying/app.js?v=da98fa0a8d54"></script>
 </body>
 </html>

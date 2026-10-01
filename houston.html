@@ -99,6 +99,12 @@
     <link rel="stylesheet" href="/buying/drive-right.css">
     <link rel="stylesheet" href="/buying/houston.css">
     <link rel="preload" as="image" type="image/avif" href="/assets/buying/mx-5-coastal-hero-1440.avif" fetchpriority="high" imagesrcset="/assets/buying/mx-5-coastal-hero-640.avif 640w, /assets/buying/mx-5-coastal-hero-960.avif 960w, /assets/buying/mx-5-coastal-hero-1440.avif 1440w, /assets/buying/mx-5-coastal-hero-1920.avif 1920w" imagesizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px">
+    <script>
+      // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
+      try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
+    </script>
+    <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
+    <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
 </head>
 <body class="dr houston-pilot">
   <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

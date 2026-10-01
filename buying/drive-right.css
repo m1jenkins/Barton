@@ -32,7 +32,6 @@
 .dr .assistant-name { padding:0; margin:0 0 8px; }
 .dr .assistant-hint { display:none; }
 .dr .typing-bubble { display:flex; align-items:center; justify-content:center; gap:5px; width:72px; height:44px; background:var(--white); border:1px solid var(--line); border-radius:20px 20px 20px 6px; }
-.dr .typing-dot { width:6px; height:6px; border-radius:50%; background:var(--green); }
 .dr .assistant-reply { animation:rise .3s var(--ease) both; }
 .dr .composer:focus-within { outline:2px solid var(--green); outline-offset:3px; }
 .dr .text-link,.dr .back-link,.dr .example-link,.dr .skip-detail { min-height:44px; }

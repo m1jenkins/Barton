@@ -113,6 +113,22 @@ Each profile derivative is a centered square crop resized to 160×160, appropria
 
 The social replacement is a mechanical centered crop from 1440×1080 to 1440×756, followed by a resize to 1200×630. No objects, text, branding, or generated pixels were added.
 
+### Header mascot (Mariner Blue NA Miata)
+
+Generated pixel art, supplied by the owner on 2026-10-01 as a reference pack: 16-bit style, built with an image generator from the owner's photos. The two sheets used and the pack's `manifest.json` and handoff notes are kept in `assets/mascot/reference/`. That folder is not deployed (`.vercelignore`). `node scripts/build-mascot-sprites.mjs` rebuilds the sprites below from it. The pack's rules hold: no added eyes or mouth, and the pop-up headlights are the only expression.
+
+| Asset | Local file | Pixels | Bytes | Used by |
+|---|---|---:|---:|---|
+| Side view | `assets/mascot/side.webp` | 170×66 | 6,206 | Header drive-by, chat typing bubble |
+| Wheel | `assets/mascot/wheel.webp` | 27×27 | 870 | Spinning wheel layer |
+| Three-quarter strip, 6 headlight frames | `assets/mascot/q.webp` | 990×84 | 36,804 | Parked header car |
+| Head-on strip, 6 headlight frames | `assets/mascot/front.webp` | 552×60 | 17,486 | Chat avatar |
+| Side view, large | `assets/mascot/side-lg.webp` | 319×124 | 15,334 | Payment-success celebration |
+| Wheel, large | `assets/mascot/wheel-lg.webp` | 50×50 | 1,886 | Payment-success celebration |
+| Three-quarter strip, large | `assets/mascot/q-lg.webp` | 1854×157 | 91,146 | Payment-success celebration |
+
+Headlight frames run left to right: down, half raised, up, up and lit, left wink, right wink. Each frame is the down/off drawing with only the changed headlight regions swapped in from the pack's state, so the body never shifts between frames.
+
 ## Integration notes
 
 - Use the JPEG social replacement for `og:image`, `twitter:image`, and schema unless target-platform compatibility is explicitly verified for WebP or AVIF.

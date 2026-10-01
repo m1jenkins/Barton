@@ -212,6 +212,8 @@ for (const [asset, tagName, attribute] of [
   ['buying/drive-right.css', 'link', 'href'],
   ['buying/app.js', 'script', 'src'],
   ['script.js', 'script', 'src'],
+  ['logo-motion.css', 'link', 'href'],
+  ['logo-motion.js', 'script', 'src'],
 ]) {
   const content = await readFile(path.join(repoRoot, asset));
   const version = createHash('sha256').update(content).digest('hex').slice(0, 12);

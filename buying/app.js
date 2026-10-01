@@ -177,9 +177,11 @@ function renderConversation() {
     if (message.querySelector('p')?.textContent !== (brief.answers[f.key] || 'Skipped for now')) message.innerHTML = markup;
   }
   const reply = replyPending
-    ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span><span class="typing-dot" aria-hidden="true"></span></div>'
+    ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
     : `<p class="assistant-reply">${escape(field?.question || 'Your brief is ready. Review it, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
-  const responseMarkup = `<span class="message-label assistant-name">Drive Right</span>${reply}`;
+  // The head-on Miata (logo-motion.css) flips its headlights up as each reply arrives and switches them on when the search is complete.
+  const avatar = `<span class="mx-avatar${replyPending ? '' : field ? ' is-hello' : ' is-done'}" aria-hidden="true"></span>`;
+  const responseMarkup = `<span class="message-label assistant-name">${avatar}Drive Right</span>${reply}`;
   if (response.innerHTML !== responseMarkup) response.innerHTML = responseMarkup;
   const choices = field && !replyPending ? choicesFor(field, brief.answers) : [];
   $('#choices').innerHTML = choices.map(choice => `<button class="choice-button" type="button" data-choice="${escape(choice)}">${escape(choice)}</button>`).join('');

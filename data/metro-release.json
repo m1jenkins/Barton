@@ -880,7 +880,7 @@
       "marketId": "TX-AUS",
       "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change.",
       "indexablePublication": true,
-      "sha256": "cbcf43a867116b8ccbc841463caf8d1e821a690c9e634fd80b261e1dfc32654a",
+      "sha256": "296cfaeaaa0c308ce440a2b0171527e7b3ebeb3d02effdb72cb77e6931529ad8",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -889,7 +889,7 @@
       "slug": "houston.html",
       "marketId": "M05",
       "decision": "Houston-only visual pilot for local review; publication remains gated",
-      "sha256": "0678bca21a6bfa979a11a152e467a3c76525cee8fb140d35e610623562a64e34",
+      "sha256": "dd9457bcb9e13a3f78b11f363c94fdb95738cf237fe0689dc73c71bdacd4a623",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -910,7 +910,7 @@
       "slug": "dallas.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "d5640c47e5329ed410dee814e2a4114fda9ad432d01e2e4f753d690f5a5749f1",
+      "sha256": "8b68a4cd5939c6bf90826c46984ce3eeac03c7c4883881b2dc6e63a9376e0944",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -919,7 +919,7 @@
       "slug": "fort-worth.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "8b9d0eb3b5a6ca904ed4ad62c32cb8c861835ffb09ecf1d28bd7d55a4246b1f4",
+      "sha256": "cbb224aae8740327f7859cc95bda04ba9dc81ed1313a6ae9bd085f9cb7999284",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -928,7 +928,7 @@
       "slug": "arlington.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination",
-      "sha256": "4fb70de286a0b8ea97c7f849a328b7ac02816db47d3355f772229a3467ee3cd4",
+      "sha256": "8e4e33e649df163ddead6d3b6e154d5fbc7f329be2f59e73ad6e9892452e4ee2",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -937,7 +937,7 @@
       "slug": "san-antonio.html",
       "marketId": "TX-SAT",
       "decision": "Separate backlog; evidence and demand pending",
-      "sha256": "93ddaf90d51baaf102b075aad2585412dc5839a22c1669cd22c3e89d64ec7ce6",
+      "sha256": "40da01db7d63ac134cfaa25b336f66148eceb01a809006f4ea16b7a98c25c02f",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -946,7 +946,7 @@
       "slug": "el-paso.html",
       "marketId": "TX-ELP",
       "decision": "Separate backlog; evidence and demand pending",
-      "sha256": "594712d5c93fa80171532a6f5edca38b8c2e314fa92b0bd8ab69720a3b23efef",
+      "sha256": "2c290c2938188628f16687b189b99814ef5396899aa8a80b22bb1e50b9e3025a",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -955,7 +955,7 @@
       "slug": "new-braunfels.html",
       "marketId": "TX-NBF",
       "decision": "Distinct-intent review before retain/merge decision",
-      "sha256": "ccc40b2b68074f10ef462ab4ca726076c43451027ccf1367913b00237500b616",
+      "sha256": "16a606be41b4580130483d719d5898459a99d945a44097b69731f6fd98f92672",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
@@ -964,7 +964,7 @@
       "slug": "san-marcos.html",
       "marketId": "TX-SMA",
       "decision": "Distinct-intent review before retain/merge decision",
-      "sha256": "1654cc1c5c4ab8edbe25318f65419c73e026e29f584412af11206fcdf0ca7a9f",
+      "sha256": "5eed2dec057c1c909448f62a124166704fdf4bb293827e468a01b65ef1aa26f0",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null
