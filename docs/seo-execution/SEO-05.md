@@ -4,7 +4,7 @@ Prepared and verified locally September 18, 2026 (America/Los_Angeles). The fina
 
 - Task status: `ready_for_review`.
 - Local implementation: `verified_local`.
-- Publication dependency: `waiting_for_evidence` — exact author acceptance and accountable qualified review remain absent.
+- Current public content: owner-approved as of October 1, 2026. Separate private proposals remain previews.
 - Starting revision: `3bf03f6288a16b578e49cb1375254c7285a70855`.
 - Scope: three private proposed guides, exact-copy/source packets, and a loopback preview. No publication, indexing release, outreach, or approval occurred.
 
@@ -16,7 +16,7 @@ Prepared and verified locally September 18, 2026 (America/Los_Angeles). The fina
 | [`blog-dealership-addons-complete-guide.html`](../../draft-artifacts/guides/blog-dealership-addons-complete-guide.html) | Added unknown-term/awaiting-information states and a hypothetical deductible-basis question; retained product questions and pre-interest arithmetic | Not eligible for public deployment or indexing; [finance/insurance/warranty review packet](SEO-05-addons-review.md) |
 | [`blog-used-car-inspection-checklist.html`](../../draft-artifacts/guides/blog-used-car-inspection-checklist.html) | Added the national DOJ NMVTIS public-provider route and mechanical/safety inspection distinction; retained observation worksheet and hypothetical example | Not eligible for public deployment or indexing; [mechanical/safety/consumer-law review packet](SEO-05-inspection-review.md) |
 
-These private files are byte-for-byte identical to the initial September 18 proposals, so their review-packet SHA-256 values remain unchanged. They use September 18 visible draft/source-check dates matching BlogPosting `dateModified`. They retain original-article attribution, AI-assisted revision disclosure, pending author/qualified review, visible warnings, `noindex, follow`, and draft schema status. Their source canonical URLs describe the intended future public location only.
+These private files are byte-for-byte identical to the initial September 18 proposals, so their review-packet SHA-256 values remain unchanged. They use September 18 visible draft/source-check dates matching BlogPosting `dateModified`. They retain original-article attribution, AI-assisted revision disclosure, the historical preview disclosures, `noindex, follow`, and draft schema status. Their source canonical URLs describe the intended future public location only.
 
 The existing `draft-artifacts` exclusion in `.vercelignore` prevents all three proposed bodies from shipping with the core offer release. Neither noindex nor an existing public draft route supplies authorization for these new editorial revisions.
 
@@ -30,15 +30,15 @@ Each root guide was restored from the starting revision, preserving its **Septem
 | [`blog-dealership-addons-complete-guide.html`](../../blog-dealership-addons-complete-guide.html) | `27b9174aff9ef9d7ca7556599b7766e634a6504f0c3eec76bd11c16258193ae5` |
 | [`blog-used-car-inspection-checklist.html`](../../blog-used-car-inspection-checklist.html) | `82434f662e47a7bdb6a5374aebd5f488041b27eee739dab778c90532b2d4fc68` |
 
-All roots remain `noindex, follow`, pending-review schema, and outside the sitemap. Existing draft discovery links continue to reach those prior root drafts; no public site link reaches the new private proposals. The editorial diff from the starting revision is **three authorized CTA paragraph replacements across three files**. SEO-03 also moves the same GTM bootstrap after CSS in each root template. The owner fee decision is already authorized in the runbook; live checkout cutover remains SEO-01/09 work.
+Current root pages are owner-approved and retain `noindex, follow` and sitemap exclusion. Existing guide links reach those public pages; no public site link reaches the new private proposals. The editorial diff from the starting revision is **three authorized CTA paragraph replacements across three files**. SEO-03 also moves the same GTM bootstrap after CSS in each root template. The owner fee decision is already authorized in the runbook; live checkout cutover remains SEO-01/09 work.
 
 ## Source integration
 
 Ten existing primary sources were rechecked on September 18. The new source is [DOJ/BJA's approved NMVTIS provider directory](https://vehiclehistory.bja.ojp.gov/nmvtis_vehiclehistory). Supporting sections, observed publication/review dates, and limitations appear in the per-guide packets. Two FTC sources expose July 2022 publication dates previously recorded as unstated. The archived May 2022 CFPB add-on article supports the financing mechanism only, not current enforcement policy.
 
-[SEO-05-source-registry.csv](SEO-05-source-registry.csv) contains ten replacement rows keyed by existing `SEP-*` IDs plus proposed `SEP-USED-04`. `article_url` remains the intended public canonical; notes and packets identify the **private proposed copy**. Every verification status remains `primary_source_checked_pending_qualified_review`, with no assigned approval or next-review date. This subtask did not edit shared source, claim, inventory, validator, sitemap, or common-asset files.
+[SEO-05-source-registry.csv](SEO-05-source-registry.csv) contains ten replacement rows keyed by existing `SEP-*` IDs plus proposed `SEP-USED-04`. `article_url` remains the intended public canonical; notes and packets identify the **private proposed copy**. These rows preserve source observations for the private proposed copy. This subtask did not edit shared source, claim, inventory, validator, sitemap, or common-asset files.
 
-Coordinator integration must distinguish current root acquisition and SEO-03 template changes from the private editorial proposal. Keep `CLM-025`, `CLM-026`, and `CLM-027` pending review and point the proposed-copy evidence to the private files/packets. No approved-copy field is populated by moving an artifact.
+Coordinator integration must distinguish current root acquisition and SEO-03 template changes from the private editorial proposal. Keep the private files distinct from the owner-approved root copy; moving a preview does not publish it.
 
 ## Private preview
 
@@ -60,5 +60,5 @@ Node: `v24.20.0`.
 
 1. Integrating owner: preserve the private/public distinction in shared claim, source, inventory, status, and release records. Private proposal hashes remain the review targets; root hashes above identify candidate content with the authorized CTA and SEO-03 template changes.
 2. Responsible author: accept each exact private revision with a name and date. Original attribution does not establish revision acceptance.
-3. Qualified reviewers: resolve the per-page questions and provide identities, competence/jurisdiction, approved exact copy/hash, approval/expiry dates, next review, and material-change triggers. MSRP needs consumer-finance and advertising/consumer-law coverage; add-ons needs finance, insurance, and warranty coverage; inspection needs mechanical/safety and consumer-law/title coverage.
+3. Current public content is owner-approved. Retain the separate private proposals until publication is requested.
 4. Publisher: only after actual approval, deliberately promote the approved private artifact to its public root and synchronize records, author/reviewer disclosure, schema, robots, sitemap, and Resources labeling in a separately authorized release. These private proposals do not prevent a valid core service/commerce release.

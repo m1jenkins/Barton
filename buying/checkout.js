@@ -19,7 +19,7 @@ export function createCheckout({ store, request, createId, attribution, track = 
     const clean = { name: String(contact.name || '').trim(), email: String(contact.email || '').trim().toLowerCase(), phone: String(contact.phone || '').trim() };
     if (!clean.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email)) throw new Error('Enter your name and a valid email address.');
     const draft = restoreBrief(brief);
-    const payload = { ...clean, vehicle: draft.answers.vehicle || '', message: Object.keys(draft.answers).length ? briefText(draft) : 'Direct plan purchase. No buying brief supplied yet.', source: 'buying_brief', source_page: sourcePage };
+    const payload = { ...clean, vehicle: draft.answers.vehicle || '', message: Object.keys(draft.answers).length ? briefText(draft) : 'Direct plan purchase. No search details supplied yet.', source: 'buying_brief', source_page: sourcePage };
     const identity = JSON.stringify(payload);
     let lead = state.leads.find(item => item.identity === identity);
     if (!lead) {

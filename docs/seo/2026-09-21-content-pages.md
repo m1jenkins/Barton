@@ -55,7 +55,7 @@ The page uses the existing buying-page layout and shared assets. No new componen
 - `data/claims.csv`
   - `SEO-PRICE-2026-09-18` is the approved exact pricing and retirement record.
   - Pending savings, guarantee, refund, testimonial, experience, independence, and service-level claims are excluded.
-- `docs/claim-review-workflow.md`
+- `docs/content-approval-2026-10-01.md`
   - Only approved claims may be intentionally introduced or expanded.
   - Visible copy, metadata, schema, and conversion surfaces must remain aligned.
 - `docs/editorial-policy-draft.md`
@@ -99,7 +99,7 @@ If GSC still lists `/uuyh/` after robots pickup, treat it as measurement-path no
 
 ### Legacy `blog-*.html` URLs
 
-These are **intentional noindex**, not soft-orphan pages that should be indexed. They stay off `sitemap.xml`. Reindexing is page-specific after claim review (`docs/claim-review-workflow.md`); it is not a bulk GSC action.
+These are **intentional noindex**, not soft-orphan pages that should be indexed. They stay off `sitemap.xml`. Current public content is owner-approved; any future indexing change remains page-specific.
 
 **Must remain at URL with `noindex, follow` (do not redirect to hide unresolved claims):**
 
@@ -128,5 +128,5 @@ These are **intentional noindex**, not soft-orphan pages that should be indexed.
 
 **Tesla FSD park (closed 2026-09-22):** `tesla-fsd-for-sale.html` stays at its URL with `noindex, follow`, off `sitemap.xml`. Do not 301 or 410. It is archived discovery copy, not a live inventory listing. See `docs/seo/2026-09-22-tesla-fsd-disposition.md`.
 
-**Indexable on the resource hub, not part of the blog-archive waste set:** `car-buying-service.html`, `how-it-works.html`, `schedule.html`, and `texas-local-market-intelligence.html`. Three draft cards (`blog-used-car-inspection-checklist.html`, `blog-dealership-addons-complete-guide.html`, `blog-buy-new-car-below-msrp.html`) remain noindex pending author and qualified review.
+**Indexable on the resource hub, not part of the blog-archive waste set:** `car-buying-service.html`, `how-it-works.html`, `schedule.html`, and `texas-local-market-intelligence.html`. Three guide cards (`blog-used-car-inspection-checklist.html`, `blog-dealership-addons-complete-guide.html`, `blog-buy-new-car-below-msrp.html`) retain their existing noindex directives. Their current public copy is owner-approved as of October 1, 2026.
 

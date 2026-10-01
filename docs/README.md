@@ -4,6 +4,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 
 ## Start here
 
+- [content-approval-2026-10-01.md](content-approval-2026-10-01.md): owner approval of all current website content; replaces older pending-review instructions for public copy.
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
 - [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook and onboarding (the API contract).

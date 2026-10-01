@@ -212,6 +212,8 @@ for (const [asset, tagName, attribute] of [
   ['buying/drive-right.css', 'link', 'href'],
   ['buying/app.js', 'script', 'src'],
   ['script.js', 'script', 'src'],
+  ['logo-motion.css', 'link', 'href'],
+  ['logo-motion.js', 'script', 'src'],
 ]) {
   const content = await readFile(path.join(repoRoot, asset));
   const version = createHash('sha256').update(content).digest('hex').slice(0, 12);
@@ -297,6 +299,13 @@ for (const [url, count] of locCounts) {
 }
 
 const sitemapFiles = new Set(sitemapLocs.map((loc) => fileForSiteUrl(loc.url)).filter(Boolean));
+const brandAssets = await Promise.all([
+  ['logo-motion.css', 'link', 'href'],
+  ['logo-motion.js', 'script', 'src'],
+].map(async ([asset, tagName, attribute]) => {
+  const content = await readFile(path.join(repoRoot, asset));
+  return { asset, tagName, attribute, expected: `/${asset}?v=${createHash('sha256').update(content).digest('hex').slice(0, 12)}` };
+}));
 
 for (const file of htmlFiles) {
   const html = sources.get(file) ?? '';
@@ -304,6 +313,25 @@ for (const file of htmlFiles) {
   const noindex = robots.some((entry) => entry.tokens.has('noindex'));
   const expectedUrl = expectedPageUrl(file);
   const canonicals = canonicalLinks(html);
+
+  for (const { asset, tagName, attribute, expected } of brandAssets) {
+    const references = allMatches(html, new RegExp(`<${tagName}\\b[^>]*>`, 'gi'))
+      .filter((match) => attributeValue(match[0], attribute)?.split('?')[0] === `/${asset}`);
+    if (references.length !== 1 || attributeValue(references[0][0], attribute) !== expected) {
+      fail(file, `Brand asset URL is missing or stale for ${asset}.`, references[0]?.index ?? 0, html, `Use ${attribute}="${expected}".`);
+    }
+  }
+  if (/<link\b[^>]*\bhref\s*=\s*["']styles\.css["']/i.test(html)
+      && !/<link\b[^>]*\bhref\s*=\s*["']\/legacy-refresh\.css["']/i.test(html)) {
+    fail(file, 'Legacy page is missing its shared visual layer.', 0, html, 'Load /legacy-refresh.css after styles.css.');
+  }
+  if (/assets\/external\/optimized\/drive-right-logo-(?:64|180)\.png/i.test(html)) {
+    fail(file, 'Page still references the retired shield logo.', 0, html, 'Use /favicon.png for the icon or the approved header mascot.');
+  }
+  if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*>/i.test(html)
+      && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
+    fail(file, 'Page does not reference the current /favicon.png.', 0, html);
+  }
 
   if (!noindex && !sitemapFiles.has(file)) {
     fail(file, 'Indexable page is missing from sitemap.xml.', 0, html, `Add ${expectedUrl} or intentionally set noindex,follow.`);

@@ -6,9 +6,9 @@
 
 Build a **metro service page only where Drive Right can actually fulfill the advertised service**, then support it with useful local purchase information and verifiable evidence. Treat Google organic results and AI citations as the main national discovery surfaces. An Austin-based Google Business Profile cannot be expanded into a nationwide local-map presence merely by listing distant service areas.
 
-The live homepage says Drive Right is based in Austin and serves Texas buyers. The repository has nine Texas service-area pages, all marked `noindex`; the sitemap contains no metro pages. `docs/release-readiness.md` Gate 5 requires unique verified logistics, dated regional evidence, a real example where available, and either attributable consultation activity or genuine non-brand demand before a metro page is released. `data/entities.json` records one organization and no satellite offices. The current `robots.txt` permits the principal search crawlers, and `llms.txt` already exists. These are useful foundations, but they do not make the noindexed pages eligible to appear in Google search features.
+The live homepage says Drive Right is based in Austin and serves Texas buyers. The repository has nine Texas service-area pages, all marked `noindex`; the sitemap contains no metro pages. Current public metro-page content is now owner-approved as of October 1, 2026; its recorded indexing remains unchanged. `data/entities.json` records one organization and no satellite offices. The current `robots.txt` permits the principal search crawlers, and `llms.txt` already exists. These are useful foundations, but they do not make the noindexed pages eligible to appear in Google search features.
 
-**First business decision:** confirm whether out-of-Texas buyers are eligible today for each tier, and document what is remote, what is in person, seller reach, delivery coordination, turnaround, prices, and buyer responsibilities. Review state-specific operating and advertising requirements before claiming service in a new state. For example, the California DMV describes compensated vehicle purchase assistance and negotiation within its autobroker framework; a qualified reviewer must determine how Drive Right's actual model applies there. Until that decision is made, the outside-Texas markets below are research candidates, not service claims.
+**Current business direction:** Nationwide availability is owner-confirmed. All current website content is owner-approved under [the October 1 record](content-approval-2026-10-01.md). Additional private market pages below remain research and implementation candidates.
 
 ## 2. Define the 20-market pool
 
@@ -75,7 +75,7 @@ Sample the results from the metro itself on mobile and desktop; log ads, local p
 Each market needs a maintained record with:
 
 1. **Service facts:** eligible ZIPs or wider region, tiers available, remote/in-person boundary, who contacts sellers, who signs and pays, pickup and transport limits, response-time commitment.
-2. **Local buyer decisions:** two or more specific issues that actually change a purchase decision there, supported by a primary source or Drive Right's documented experience. Examples to investigate include local inventory mix, inspection logistics, taxes/registration, weather-related vehicle checks, and cross-state pickup. The owner and qualified reviewer approve consequential claims.
+2. **Local buyer decisions:** two or more specific issues that actually change a purchase decision there, supported by a primary source or Drive Right's documented experience. Examples to investigate include local inventory mix, inspection logistics, taxes/registration, weather-related vehicle checks, and cross-state pickup.
 3. **First-party proof:** a permissioned, anonymized example with vehicle, criteria, date range, what Drive Right did, and outcome/limitations if supported. If none exists, use a transparent worked example with no implied real customer or savings claim.
 4. **Search record:** primary query, adjacent questions, competitors, SERP date/location, current Drive Right visibility, and what distinct answer the page will provide.
 5. **Governance:** sources, effective/as-of dates, content owner, legal/financial reviewer where needed, next review date, and claim IDs in the existing registry.
@@ -120,7 +120,6 @@ Review at roughly 30, 60, and 90 days per released cohort. Leading indicators: s
 ## 9. Inputs needed to turn this into a publication plan
 
 - Owner-confirmed coverage map and tier-by-state operating model.
-- Qualified state-by-state review for broker/dealer, advertising, fee, financing, title, tax, and delivery language that the planned pages would mention.
 - GSC, GA4, Search Console Generative AI report, and verified inquiry/purchase baselines.
 - Keyword and SERP dataset for the 20 MSAs, plus accessible automotive registration data if available.
 - Permissioned case material or real internal deal records, with calculations and claims review.

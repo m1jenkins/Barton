@@ -53,7 +53,7 @@ Local packet checks using Node 24: 30 unique prospect IDs and names; a source-ba
 | Dependency | Status | Exact next action |
 | --- | --- | --- |
 | SEO-04 approved national positioning | Integration dependency | Reconcile the draft identity/service description against the integrated national pages. Do not claim deployed prices before activation. |
-| SEO-06 reviewed, tested worksheet | `waiting_for_evidence` | Record the actual asset revision, tests, exact-copy review, and permitted preview route before offering to share it. No public link is required for this draft packet. |
+| SEO-06 reviewed, tested worksheet | `waiting_for_evidence` | Record the actual asset revision, tests, and permitted preview route before offering to share it. No public link is required for this draft packet. |
 | Customer stories | `waiting_for_evidence` | Use only the two labeled worked examples unless original records, calculations, exact quotes, and publication permission are supplied and reviewed. |
 | Matching GBP | `waiting_for_access` | Open the owner's actual Drive Right Maps/profile URL in its managing account; audit the fields before proposing edits. |
 | GBP operating model | `waiting_for_evidence` | Obtain the real in-person customer-contact model and private location/hour evidence; apply current Google eligibility rules. |

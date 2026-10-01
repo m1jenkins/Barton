@@ -39,7 +39,7 @@ One timely correction: Google stopped showing FAQ rich results beginning May 7, 
 | Current evidence | Implication |
 |---|---|
 | 65 root HTML source files; 8 intended indexable pages in the sitemap | Improve a small existing search architecture, not a new site framework. Sitemap inclusion does not establish actual indexing. |
-| 35 blog source files; 5 redirect aliases, 30 contained article routes; zero intended indexable individual articles | The public-looking archive is not an approved organic content library. Do not remove noindex in bulk. |
+| 35 blog source files; 5 redirect aliases, 30 contained article routes; zero intended indexable individual articles | Current public archive content is owner-approved as of October 1, 2026. Preserve existing indexing decisions unless a change is requested. |
 | Three rewritten guides, review packets and an interactive quote worksheet already exist privately | Use the prepared work before commissioning equivalent new assets. |
 | Home, service, process, pricing, About, Resources, policy and Texas hub already have crawlable HTML links, titles and canonicals | Navigation and basic SEO metadata are present. Add contextual discovery paths after publishing useful content. |
 | Organization/Service/Offer, WebSite, breadcrumbs, About Person and Resources collection data already exist | Validate supported markup; do not describe schema as missing. |
@@ -112,13 +112,13 @@ Keep `/blog.html`. Proposed H1: **“Car buying guides for the decisions that ma
 
 Use three reader-oriented groups initially: **Compare a deal**, **Check a used car**, **Decide how much help you need**. Each card contains a specific question, what the reader can do afterward, and truthful author/review date. Feature the worksheet alongside the quote guide. Avoid empty filters, unreviewed “latest” dates and a public archive dump.
 
-Keep pending review notices on any still-accessible consequential drafts as required. Once the main hub points to approved content, replace indexing/deployment explanations with descriptions useful to a buyer. Add a Resources link to the desktop/mobile nav if visual QA confirms it fits; coordinate all copied current-family headers. Acceptance: a reader reaches an approved guide in one click; every linked published guide has its actual URL, date and relevant next step.
+Current public guides are owner-approved. Remove draft and pending-review notices and use descriptions useful to a buyer. Add a Resources link to the desktop/mobile nav if visual QA confirms it fits; coordinate all copied current-family headers. Acceptance: a reader reaches a guide in one click; every linked published guide has its actual URL, date and relevant next step.
 
 ### 5. About and proof — substantiate expertise with actual work
 
 **File:** `about.html`; proposed case-study URL only after proof is ready. **Priority:** P1/P2; about 1–2 editorial days per case plus document/review time.
 
-Use Mason's genuine experience, existing photography and a clear explanation of how guides are prepared and reviewed. Link guide bylines to a stable author section on About; name an actual qualified reviewer only after that person has accepted the exact article. Do not invent credentials, years, vehicles bought or client counts.
+Use Mason's genuine experience, existing photography and a clear explanation of how guides are prepared and reviewed. Link guide bylines to a stable author section on About; Do not invent credentials, years, vehicles bought or client counts.
 
 First case-study template: buyer goal → dated vehicle/market context → comparable original and final offer → advisor actions → outcome after charges/service fee → remaining limitations. Support it with redacted quotes and customer permission. Separate price reduction, removed products, changed financing and service fee; a changed configuration or conditional incentive is not automatically negotiated savings. A hypothetical example can teach the method while genuine proof is being collected, but cannot be presented as a client story.
 
@@ -126,20 +126,20 @@ Reuse the approved Michael R quote now; a richer case still needs its own docume
 
 ## Editorial plan: what to publish and in what order
 
-The first twelve weeks target **8–10 useful releases if review capacity permits**, not a fixed production quota. The first wave has three guides plus one worksheet. Later work can move while an individual article awaits review, but no approval is inferred from a deadline. Effort assumes one editorial/development contributor, owner expertise and access to the required reviewers.
+The first twelve weeks target 8–10 useful releases as contributor capacity permits. The first wave has three guides plus one worksheet. Existing public content is owner-approved; the schedule is a planning target for improvements and separate new artifacts.
 
 | Window / priority | Asset and existing route | Implementation brief | Distinctive value and conversion path |
 |---|---|---|---|
 | Weeks 2–4 / P1 | Quote comparison/MSRP guide: `blog-buy-new-car-below-msrp.html` | Finish existing rewrite. Cover like-for-like vehicles, written OTD quotes, fee/incentive fields and an original email request. Use a hypothetical annotated quote and missing-information checklist. | Practical action before hiring: guide → worksheet → Full Service scope/pricing. |
-| Weeks 2–4 / P1 | Add-ons guide: `blog-dealership-addons-complete-guide.html` | Finish existing rewrite. Separate quoted charges and optional products; list questions on coverage, exclusions and written terms. Verify any claim about negotiability/legal obligations from current primary sources. | Original two-offer walkthrough; contextual tool and negotiation links. |
-| Weeks 2–4 / P1 | Inspection guide: `blog-used-car-inspection-checklist.html` | Finish existing rewrite with qualified mechanical/safety and consumer review. Distinguish buyer observations from an independent inspection. Include questions to ask the inspector, report limits and next steps. | Print-friendly checklist; link relevant used/CPO search scope without suggesting Drive Right certifies condition. |
+| Weeks 2–4 / P1 | Add-ons guide: `blog-dealership-addons-complete-guide.html` | Finish existing rewrite. Separate quoted charges and optional products; list questions on coverage, exclusions and written terms. Retain the existing source links and product/contract distinctions. | Original two-offer walkthrough; contextual tool and negotiation links. |
+| Weeks 2–4 / P1 | Inspection guide: `blog-used-car-inspection-checklist.html` | Finish the existing rewrite with clear observation and inspection boundaries. Distinguish buyer observations from an independent inspection. Include questions to ask the inspector, report limits and next steps. | Print-friendly checklist; link relevant used/CPO search scope without suggesting Drive Right certifies condition. |
 | Weeks 3–4 / P1 | Quote worksheet: proposed `car-quote-comparison.html` | Promote reviewed existing tool from `draft-artifacts/quote-comparison/`; give it a crawlable explanatory page and sample. Preserve unknown versus zero, included-charge and incentive logic, print and CSV. | Usable without a lead gate. Optional next step is existing service support; no inferred free quote-review product. |
 | Weeks 5–6 / P2 | Service value: expand `how-it-works.html`; separate article conditional | Add “Is paid buying help worth it?” Compare time, work, complexity, buyer preferences and fee; include who can reasonably do it themselves. Preserve the existing ROI→process redirect. Only use new `blog-car-buying-service-worth-it.html` if fresh demand supports distinct article intent and the query map is updated. | Honest decision table and current-plan links; no promised fee recovery or obsolete ROI arithmetic. |
 | Weeks 5–8 / P2 | CPO comparison: `blog-cpo-vs-used.html` | Explain certification, exact manufacturer program/warranty terms, inspection scope and comparison questions. Use current manufacturer/consumer sources and a hypothetical matching-vehicle comparison. | Supports a used/CPO buyer decision; inspection guide → service scope. |
 | Weeks 5–8 / P2 | History limits: `blog-car-history-beyond-carfax.html` | Rewrite around layers of verification: seller documents, title/history, recalls and inspection. Sources must support each limit; avoid absolute fraud or accident-detection claims. | An original document-request checklist complements the inspection guide. |
 | Weeks 6–8 / P2 | First customer case, proposed `car-buying-case-study-01.html` | Use actual redacted documents and permission. Prefer an already supported purchase, if its records meet the template. Use a descriptive final title; generic filename is a provisional route. | Original evidence for matching guide, About, explainer and pricing. |
 | Weeks 7–10 / P2 | Out-of-state guide, proposed `blog-buying-car-out-of-state.html` | Cover verifying a remote seller/quote, independent inspection, registration questions, transport receipt and buyer responsibilities. Keep state-specific rules bounded and link actual regulators. | Real operational checklist; accurately distinguish delivery coordination from transport/insurance. |
-| Weeks 9–12 / P2 | Financing comparison: `blog-dealer-vs-bank-financing.html` | Compare written offers using APR, term, amount financed and total repayment with current CFPB/contract sources and qualified review. A simple worked example can be hypothetical. | Quote/add-on links plus relevant service limits; no universal lender recommendation or approval prediction. |
+| Weeks 9–12 / P2 | Financing comparison: `blog-dealer-vs-bank-financing.html` | Compare written offers using APR, term, amount financed and total repayment with current CFPB/contract sources . A simple worked example can be hypothetical. | Quote/add-on links plus relevant service limits; no universal lender recommendation or approval prediction. |
 
 Release `new-car-pricing-incentives.html` or `used-car-due-diligence.html` only when approved children exist and the hub offers its own useful decision path. This is an editorial rule for this site, not a Google requirement for a minimum article count. Keep the other consequential hubs contained until their content merits review.
 
@@ -151,7 +151,7 @@ Begin with the buyer's question and a direct answer. Follow with a short list of
 
 Use a real byline linked to About, truthful original/revised/reviewed dates and the named reviewer's accepted role. Recheck September draft sources; link FTC/CFPB, regulators, manufacturer program terms and NHTSA/NMVTIS where relevant, rather than citing competitors as authorities for consumer facts. Create an original example for every first-wave guide. Optional founder videos should answer the exact topic, have captions and an adjacent transcript, and load without blocking the useful text.
 
-Implementation starts from existing private guide content, not obsolete public archive bodies. On promotion, match the current design (`buying/daisy.css`, `buying/drive-right.css`, `.dr`) and retain the article URL. Keep a reproducible private source/generation path. Restyling or editing must refresh the exact artifact hash and source/date records before final acceptance; old private hashes do not approve changed publication bytes. Extend existing governance records rather than adding a parallel approval system.
+Implementation starts from existing private guide content, not obsolete public archive bodies. On promotion, match the current design (`buying/daisy.css`, `buying/drive-right.css`, `.dr`) and retain the article URL. Keep a reproducible private source/generation path. Restyling or editing must refresh the exact artifact hash and source/date records before final acceptance; record the implemented revision without adding a new approval requirement for existing public copy.
 
 ## Links that make the library work
 
@@ -174,7 +174,7 @@ Keep the static architecture. Extend the validator and content inventory only as
 
 For a content release, update the exact root page, `sitemap.xml`, `data/content-inventory.csv`, `data/claims.csv`/`data/source-registry.csv` where relevant, the topic/Resources links and current query mapping. Preserve significant-update-only `lastmod` and visible dates. `pricing.md`, `llms.txt`, service records and public copy must continue agreeing if pricing/scope changes; this plan itself changes neither.
 
-Before first editorial release, record: accepted author, completed qualified review, approved exact artifact/hash, fresh sources, factual claims, consent for any proof, current price/scope/CTA, intentional robots state and canonical. This follows the existing [SEO-05](../seo-execution/SEO-05.md), [worksheet review packet](../seo-execution/SEO-06-review-packet.md) and [release readiness](../release-readiness.md). Review preparation and deployment QA can proceed autonomously within implementation authorization; unresolved evidence gates apply to the specific public asset, not all unrelated work.
+Before deploying an implementation, record the actual artifact, technical checks, current price/scope/CTA, intentional robots state and canonical. Existing website content is covered by [the October 1 owner approval](../content-approval-2026-10-01.md). Separate private artifacts remain previews until their publication is requested.
 
 Node 24 repository checks required for implementation:
 
@@ -196,7 +196,7 @@ Every push to `main` deploys. Implement in reviewable changes/preview first and 
 
 ## Ninety-day work sequence, effort and owners
 
-Estimates are planning judgments, not quotes. Expect roughly **12–20 combined editorial/developer days** for the initial foundation, four first-wave assets and several follow-up guides; original case documentation, subject review and account waits are additional. A contributor with 1–2 days/week should treat the first four releases and commercial clarity as the committed first tranche, with later items conditional on capacity. Owner supplies operational facts; qualified reviewers own the topics they accept; SEO/editor owns query mapping and measurement; developer owns implementation/QA.
+Estimates are planning judgments, not quotes. Expect roughly **12–20 combined editorial/developer days** for the initial foundation, four first-wave assets and several follow-up guides; original case documentation, account waits are additional. A contributor with 1–2 days/week should treat the first four releases and commercial clarity as the committed first tranche, with later items conditional on capacity. Owner supplies operational facts; SEO/editor owns query mapping and measurement; developer owns implementation/QA.
 
 | Ticket | When / owner | Concrete deliverable | Dependency / acceptance |
 |---|---|---|---|
@@ -209,7 +209,7 @@ Estimates are planning judgments, not quotes. Expect roughly **12–20 combined 
 | N07 | Weeks 2–4 / editor + mechanical/safety and consumer-law/title reviewer | Existing inspection rewrite released when approved | Does not replace professional inspection; useful checklist and source-specific factual review. |
 | N08 | Weeks 3–4 / developer + reviewer | Existing worksheet promoted with explanatory page | Meaningful math/unknown/incentive/print/CSV checks; no purchase-data capture by default. |
 | N09 | First guide launch / editor + developer | Resources topic paths, relevant nav and contextual links | Published assets only represented as published; pending drafts retain required notices; coordinated copied headers. |
-| N10 | Weeks 5–8 / editor + owner | Process value section, CPO and history rewrites | Fresh demand validation, useful original module, individual qualified review; no duplicate synonym pages. |
+| N10 | Weeks 5–8 / editor + owner | Process value section, CPO and history rewrites | Fresh demand validation, useful original module, no duplicate synonym pages. |
 | N11 | Weeks 6–8 / owner + editor | One consented, documented case and About authorship links | Like-for-like evidence, calculation and fee treatment; approved wording, redaction and consent. |
 | N12 | Weeks 7–12 / editor + reviewer | Out-of-state/financing guide and useful topic hubs | Distinct actual scope, current official sources, review capacity; sensible links and maintained dates. |
 | N13 | Weeks 8–12 / local SEO + owner | Improve Texas hub; decide one Austin pilot | Existing metro release contract, distinctive facts and demand; no fabricated office, rankings or local transaction. |

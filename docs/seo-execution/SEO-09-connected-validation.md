@@ -88,7 +88,7 @@ Final test counts: **8 purchases, 8 onboarding rows, 16 outbox rows** (four synt
 
 ## Simple terms proposal and exact missing inputs
 
-The user confirmed Austin 78701 and delegated simple drafting. Price/retirement approval `SEO-PRICE-2026-09-18` remains valid. No named accountable reviewer/date/expiry or acceptance of newly drafted text was supplied. [Claim review workflow](../claim-review-workflow.md) requires: “Approval requires reviewer identity, review date, expiry, and exact copy.” No approval fields were invented.
+The user confirmed Austin 78701 and delegated simple drafting. All current public website content is now owner-approved under [the October 1 record](../content-approval-2026-10-01.md). No third-party reviewer identity or credentials are attributed to that approval.
 
 Proposed exact scope copy:
 
@@ -100,7 +100,7 @@ Proposed refund basis follows existing policy: full refund before active negotia
 | --- | --- |
 | Application credentials/endpoint | Scoped test API key via secure local reference, matching signing secret and authorized reachable test webhook. **MCP test access is available**; it does not supply application environment credentials. Browser permission for localhost:8765 is separately pending. The isolated DB can be recreated locally. |
 | Tax/discount decision | Accountable classification, correct head-office address and applicable locations; accept fixed inclusive $295/$895 totals with discounts disabled or request a reviewed implementation. Zero not_collecting is insufficient. |
-| Scope/refund/historical credit | Business/operations exact deliverables/timing approval and qualified remedy/liability review as required. Resolve the existing **$100 historical upgrade credit**: discounting $295 fails current exact-total validation. Do not erase prior entitlements, add a coupon or invent a refund workaround. Open claim families include CLM-011/024/029/030; no new CLM-013/016/017 evidence or removed claims are inferred. |
+| Scope/refund/historical credit | Published policy wording is owner-approved; operational changes remain separate work. Resolve the existing **$100 historical upgrade credit**: discounting $295 fails current exact-total validation. Do not erase prior entitlements, add a coupon or invent a refund workaround. Open claim families include CLM-011/024/029/030; no new CLM-013/016/017 evidence or removed claims are inferred. |
 | Analytics/email | Approved collector URL/credential reference, durable-ack/deduplication/consent contract and Drive Right destination/property/stream; authorized monitored test inbox. No Google publication or scheduler is implied. |
 
 ## Checks and next action

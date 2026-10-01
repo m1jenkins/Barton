@@ -1,0 +1,677 @@
+{
+  "version": 1,
+  "title": "Mariner Blue NA Miata",
+  "generation_mode": "built-in image_gen",
+  "usage": "Visual reference atlas for downstream LLM animation. Frames are not normalized for direct playback.",
+  "coordinates": "Pixels, top-left origin. row and col are zero-based. rect is [x,y,width,height] of a reference cell, not a tight sprite bounding box.",
+  "left_right": "Vehicle-relative. Front view: vehicle left appears on screen right. Rear view: vehicle left appears on screen left.",
+  "identity": {
+    "body": "Mariner Blue NA Miata",
+    "mirror_caps": "Mariner Blue",
+    "wheels": "silver daisy",
+    "interior": "black",
+    "roof": "black fabric soft top",
+    "trunk": "stock, no luggage rack",
+    "occupants": 0
+  },
+  "sheets": [
+    {
+      "id": "turnaround",
+      "title": "Roof down / eight directions",
+      "file": "01-turnaround-final.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "id": "turnaround.front.roof_down",
+          "label": "Front / roof down",
+          "view": "front",
+          "state": "roof_down",
+          "rect": [
+            0,
+            0,
+            430,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "id": "turnaround.front_right.roof_down",
+          "label": "Front right 3/4 / roof down",
+          "view": "front_right",
+          "state": "roof_down",
+          "rect": [
+            430,
+            0,
+            430,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "id": "turnaround.right.roof_down",
+          "label": "Right side / roof down",
+          "view": "right",
+          "state": "roof_down",
+          "rect": [
+            860,
+            0,
+            495,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "id": "turnaround.rear_left.roof_down",
+          "label": "Rear left 3/4 / roof down",
+          "view": "rear_left",
+          "state": "roof_down",
+          "rect": [
+            1355,
+            0,
+            419,
+            444
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "id": "turnaround.rear.roof_down",
+          "label": "Rear / roof down",
+          "view": "rear",
+          "state": "roof_down",
+          "rect": [
+            0,
+            444,
+            430,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "id": "turnaround.rear_right.roof_down",
+          "label": "Rear right 3/4 / roof down",
+          "view": "rear_right",
+          "state": "roof_down",
+          "rect": [
+            430,
+            444,
+            430,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "id": "turnaround.left.roof_down",
+          "label": "Left side / roof down",
+          "view": "left",
+          "state": "roof_down",
+          "rect": [
+            860,
+            444,
+            495,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "id": "turnaround.front_left.roof_down",
+          "label": "Front left 3/4 / roof down",
+          "view": "front_left",
+          "state": "roof_down",
+          "rect": [
+            1355,
+            444,
+            419,
+            443
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlights",
+      "title": "Pop-up headlights / six states",
+      "file": "02-headlights.png",
+      "columns": 3,
+      "rows": 4,
+      "width": 1536,
+      "height": 1024,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "id": "headlights.front.down_off",
+          "label": "Front / Down / off",
+          "view": "front",
+          "state": "down_off",
+          "rect": [
+            0,
+            0,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "id": "headlights.front.halfway_off",
+          "label": "Front / Half raised / off",
+          "view": "front",
+          "state": "halfway_off",
+          "rect": [
+            512,
+            0,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "id": "headlights.front.up_off",
+          "label": "Front / Up / off",
+          "view": "front",
+          "state": "up_off",
+          "rect": [
+            1024,
+            0,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "id": "headlights.front.up_on",
+          "label": "Front / Up / on",
+          "view": "front",
+          "state": "up_on",
+          "rect": [
+            0,
+            256,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "id": "headlights.front.left_up_right_down",
+          "label": "Front / Left up / right down",
+          "view": "front",
+          "state": "left_up_right_down",
+          "rect": [
+            512,
+            256,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "id": "headlights.front.left_down_right_up",
+          "label": "Front / Left down / right up",
+          "view": "front",
+          "state": "left_down_right_up",
+          "rect": [
+            1024,
+            256,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "id": "headlights.front_right.down_off",
+          "label": "Front right / Down / off",
+          "view": "front_right",
+          "state": "down_off",
+          "rect": [
+            0,
+            512,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "id": "headlights.front_right.halfway_off",
+          "label": "Front right / Half raised / off",
+          "view": "front_right",
+          "state": "halfway_off",
+          "rect": [
+            512,
+            512,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "id": "headlights.front_right.up_off",
+          "label": "Front right / Up / off",
+          "view": "front_right",
+          "state": "up_off",
+          "rect": [
+            1024,
+            512,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "id": "headlights.front_right.up_on",
+          "label": "Front right / Up / on",
+          "view": "front_right",
+          "state": "up_on",
+          "rect": [
+            0,
+            768,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "id": "headlights.front_right.left_up_right_down",
+          "label": "Front right / Left up / right down",
+          "view": "front_right",
+          "state": "left_up_right_down",
+          "rect": [
+            512,
+            768,
+            512,
+            256
+          ]
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "id": "headlights.front_right.left_down_right_up",
+          "label": "Front right / Left down / right up",
+          "view": "front_right",
+          "state": "left_down_right_up",
+          "rect": [
+            1024,
+            768,
+            512,
+            256
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roof",
+      "title": "Roof up / eight directions",
+      "file": "03-roof-up.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "id": "roof.front.roof_up",
+          "label": "Front / roof up",
+          "view": "front",
+          "state": "roof_up",
+          "rect": [
+            0,
+            0,
+            430,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "id": "roof.front_right.roof_up",
+          "label": "Front right 3/4 / roof up",
+          "view": "front_right",
+          "state": "roof_up",
+          "rect": [
+            430,
+            0,
+            430,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "id": "roof.right.roof_up",
+          "label": "Right side / roof up",
+          "view": "right",
+          "state": "roof_up",
+          "rect": [
+            860,
+            0,
+            495,
+            444
+          ]
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "id": "roof.rear_left.roof_up",
+          "label": "Rear left 3/4 / roof up",
+          "view": "rear_left",
+          "state": "roof_up",
+          "rect": [
+            1355,
+            0,
+            419,
+            444
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "id": "roof.rear.roof_up",
+          "label": "Rear / roof up",
+          "view": "rear",
+          "state": "roof_up",
+          "rect": [
+            0,
+            444,
+            430,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "id": "roof.rear_right.roof_up",
+          "label": "Rear right 3/4 / roof up",
+          "view": "rear_right",
+          "state": "roof_up",
+          "rect": [
+            430,
+            444,
+            430,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "id": "roof.left.roof_up",
+          "label": "Left side / roof up",
+          "view": "left",
+          "state": "roof_up",
+          "rect": [
+            860,
+            444,
+            495,
+            443
+          ]
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "id": "roof.front_left.roof_up",
+          "label": "Front left 3/4 / roof up",
+          "view": "front_left",
+          "state": "roof_up",
+          "rect": [
+            1355,
+            444,
+            419,
+            443
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lighting",
+      "title": "Brakes and indicators",
+      "file": "04-lighting.png",
+      "columns": 2,
+      "rows": 3,
+      "width": 1024,
+      "height": 1536,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "id": "lighting.rear.all_off",
+          "label": "Rear / all lights off",
+          "view": "rear",
+          "state": "all_off",
+          "rect": [
+            0,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "id": "lighting.rear.brake_on",
+          "label": "Rear / brakes on",
+          "view": "rear",
+          "state": "brake_on",
+          "rect": [
+            512,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "id": "lighting.rear.signal_left_on",
+          "label": "Rear / left indicator",
+          "view": "rear",
+          "state": "signal_left_on",
+          "rect": [
+            0,
+            512,
+            512,
+            512
+          ]
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "id": "lighting.rear.signal_right_on",
+          "label": "Rear / right indicator",
+          "view": "rear",
+          "state": "signal_right_on",
+          "rect": [
+            512,
+            512,
+            512,
+            512
+          ]
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "id": "lighting.front.signal_left_on",
+          "label": "Front / left indicator",
+          "view": "front",
+          "state": "signal_left_on",
+          "rect": [
+            0,
+            1024,
+            512,
+            512
+          ]
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "id": "lighting.front.signal_right_on",
+          "label": "Front / right indicator",
+          "view": "front",
+          "state": "signal_right_on",
+          "rect": [
+            512,
+            1024,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "steering",
+      "title": "Steering / three camera views",
+      "file": "05-steering.png",
+      "columns": 3,
+      "rows": 3,
+      "width": 1536,
+      "height": 1024,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "id": "steering.front.steer_left",
+          "label": "Front / steer left",
+          "view": "front",
+          "state": "steer_left",
+          "rect": [
+            0,
+            0,
+            512,
+            341
+          ]
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "id": "steering.front.steer_straight",
+          "label": "Front / straight",
+          "view": "front",
+          "state": "steer_straight",
+          "rect": [
+            512,
+            0,
+            512,
+            341
+          ]
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "id": "steering.front.steer_right",
+          "label": "Front / steer right",
+          "view": "front",
+          "state": "steer_right",
+          "rect": [
+            1024,
+            0,
+            512,
+            341
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "id": "steering.front_right.steer_right",
+          "label": "Front right 3/4 / steer right",
+          "view": "front_right",
+          "state": "steer_right",
+          "rect": [
+            0,
+            341,
+            512,
+            342
+          ]
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "id": "steering.front_right.steer_straight",
+          "label": "Front right 3/4 / straight",
+          "view": "front_right",
+          "state": "steer_straight",
+          "rect": [
+            512,
+            341,
+            512,
+            342
+          ]
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "id": "steering.front_right.steer_left",
+          "label": "Front right 3/4 / steer left",
+          "view": "front_right",
+          "state": "steer_left",
+          "rect": [
+            1024,
+            341,
+            512,
+            342
+          ]
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "id": "steering.front_left.steer_right",
+          "label": "Front left 3/4 / steer right",
+          "view": "front_left",
+          "state": "steer_right",
+          "rect": [
+            0,
+            683,
+            512,
+            341
+          ]
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "id": "steering.front_left.steer_straight",
+          "label": "Front left 3/4 / straight",
+          "view": "front_left",
+          "state": "steer_straight",
+          "rect": [
+            512,
+            683,
+            512,
+            341
+          ]
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "id": "steering.front_left.steer_left",
+          "label": "Front left 3/4 / steer left",
+          "view": "front_left",
+          "state": "steer_left",
+          "rect": [
+            1024,
+            683,
+            512,
+            341
+          ]
+        }
+      ]
+    }
+  ],
+  "total_reference_cells": 43
+}

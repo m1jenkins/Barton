@@ -1,0 +1,50 @@
+/* Header mascot: a Mariner Blue Miata parked beside the wordmark, driven by logo-motion.js.
+   Sizes are multiples of --mx-h, the side-view height. The wordmark reserves the car's width here, so the
+   space exists at first paint: adding the car never shifts the header or covers the nav. */
+.site-header .wordmark,.nav__wordmark{--mx-h:.74em;--mx-gap:.32em;padding-right:calc(var(--mx-gap) + var(--mx-h) * 2.574)}
+.nav__wordmark{--mx-h:.84em;--mx-gap:.36em}
+/* Set by the inline head script on the first page of a visit; the drive-by reveals the text. */
+html.logo-intro :is(.site-header .wordmark,.nav__wordmark){clip-path:inset(0 100% 0 0)}
+
+.mx-line{white-space:nowrap}
+.mx-text{display:inline-block}
+/* Zero-size box on the text baseline that the car hangs from. */
+.mx-spot{display:inline-block;position:relative;width:0;height:0;vertical-align:baseline}
+.mx{position:absolute;left:var(--mx-gap,0);bottom:-.13em;width:calc(var(--mx-h) * 2.574);height:calc(var(--mx-h) * 1.27)}
+.mx>*{position:absolute;left:0;bottom:0}
+.mx-side{width:100%;height:var(--mx-h);transform-origin:50% 100%}
+.mx-body,.mx-wheel{position:absolute;background:0 0/100% 100% no-repeat}
+.mx-body{inset:0;background-image:url(/assets/mascot/side.webp);transform-origin:70% 100%}
+.mx-wheel{width:calc(var(--mx-h) * .4046);height:calc(var(--mx-h) * .4046);top:calc(76.88% - var(--mx-h) * .2023);background-image:url(/assets/mascot/wheel.webp)}
+.mx-wheel.r{left:calc(19.21% - var(--mx-h) * .2023)}
+.mx-wheel.f{left:calc(80.9% - var(--mx-h) * .2023)}
+/* Three-quarter view: six headlight frames in one strip, picked by --mx-hl (0 down … 5 right wink). */
+.mx-q{left:calc(var(--mx-h) * .04);width:calc(var(--mx-h) * 2.495);height:calc(var(--mx-h) * 1.27);background:url(/assets/mascot/q.webp) 0 0/600% 100% no-repeat;background-position-x:calc(var(--mx-hl,0) * 20%);transform-origin:50% 100%}
+.mx[data-pose="side"] .mx-q,.mx[data-pose="q"] .mx-side{visibility:hidden}
+
+/* Payment success: plays once, after verification succeeds. */
+.mx-celebrate{position:relative;height:118px;margin-bottom:10px;--mx-h:62px;--mx-gap:0px}
+.mx-celebrate .mx{left:50%;bottom:4px;translate:-50% 0}
+.mx-celebrate .mx-body{background-image:url(/assets/mascot/side-lg.webp)}
+.mx-celebrate .mx-wheel{background-image:url(/assets/mascot/wheel-lg.webp)}
+.mx-celebrate .mx-q{background-image:url(/assets/mascot/q-lg.webp)}
+.mx-key{left:46%;bottom:calc(var(--mx-h) * 1.3);width:calc(var(--mx-h) * .62);opacity:0;transform-origin:30% 100%}
+.mx-key svg{display:block;width:100%;height:auto}
+.mx.has-key .mx-key{opacity:1}
+
+/* Search chat: the head-on Miata labels each reply, and the side view drives in place while one loads. */
+.dr .assistant-name{display:flex;align-items:center;gap:8px}
+.mx-avatar{flex:none;width:31px;height:20px;background:url(/assets/mascot/front.webp) 0 0/600% 100% no-repeat}
+.mx-avatar.is-hello{animation:mx-avatar-hello .9s .15s step-end both}
+.mx-avatar.is-done{background-position-x:60%;animation:mx-avatar-done 1.1s .15s step-end both}
+.dr .typing-bubble{overflow:hidden}
+.mx-drive{--mx-h:20px;position:relative;display:block;width:calc(var(--mx-h) * 2.574);height:var(--mx-h)}
+.mx-drive .mx-body{animation:mx-bob .22s ease-in-out infinite alternate}
+.mx-drive .mx-wheel{animation:mx-spin .36s linear infinite}
+.mx-drive::after{content:"";position:absolute;left:-40%;right:-40%;bottom:-3px;height:1px;background:repeating-linear-gradient(90deg,var(--muted,#5C5C5A) 0 5px,transparent 0 10px);opacity:.55;animation:mx-road .36s linear infinite}
+@keyframes mx-avatar-hello{0%{background-position-x:0}8%{background-position-x:20%}16%{background-position-x:40%}78%{background-position-x:20%}86%,to{background-position-x:0}}
+@keyframes mx-avatar-done{0%{background-position-x:0}6%{background-position-x:20%}12%{background-position-x:40%}30%{background-position-x:60%}45%{background-position-x:40%}60%,to{background-position-x:60%}}
+@keyframes mx-spin{to{transform:rotate(360deg)}}
+@keyframes mx-bob{to{transform:translateY(-4%)}}
+@keyframes mx-road{to{transform:translateX(-10px)}}
+@media(prefers-reduced-motion:reduce){.mx-avatar,.mx-drive *,.mx-drive::after{animation:none}}

@@ -16,7 +16,7 @@ export function applyAnswer(brief, result) {
     const field = fields.find(item => item.key === key);
     if (!field) continue;
     if (!result.correction && next.answers[key] && next.answers[key] !== value) {
-      throw new Error(`You already set ${field.label.toLowerCase()} to “${next.answers[key]}”. Say “Change my ${key} to …” or edit your brief.`);
+      throw new Error(`You already set ${field.label.toLowerCase()} to “${next.answers[key]}”. Say “Change my ${key} to …” or edit your search details.`);
     }
     next.answers[key] = normalizeAnswer(key, value);
     delete next.skipped[key];
@@ -33,7 +33,7 @@ export function applyAnswer(brief, result) {
 
 export function briefText(brief) {
   const { answers, skipped, priorities } = restoreBrief(brief);
-  const lines = ['DRIVE RIGHT — YOUR BUYING BRIEF', ''];
+  const lines = ['DRIVE RIGHT — YOUR SEARCH DETAILS', ''];
   for (const field of fields) {
     const value = answers[field.key] || (skipped[field.key] ? 'Not specified (skipped)' : 'Not specified (not yet answered)');
     const priority = isConcrete(field.key, answers[field.key]) ? ` [${priorities[field.key] === 'must' ? 'Must-have' : 'Prefer'}]` : '';

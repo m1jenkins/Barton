@@ -13,7 +13,7 @@ You may use subagents for bounded independent research, read-only audits, or dis
 
 Run SEO-02 baseline/keyword research and read-only technical/tracking audits alongside SEO-01 where useful. Then follow the task dependency order. Implement and test the requested code and local content work instead of stopping at another plan. Missing analytics access or customer evidence must not stop independent implementation. Record precise missing inputs and finish the parts you can verify.
 
-Prepare the integrated release candidate after the core offer, technical, national-page, and tracking tasks are ready. Keep unapproved guides/city drafts contained. Do not deploy to production, change live Stripe configuration, send outreach, or create scheduled automations under this implementation prompt. Finish with verified local results, the release-candidate reference, remaining access/evidence, and the next task. Reuse any additional authorization explicitly given in this execution conversation.
+Prepare the integrated release candidate after the core offer, technical, national-page, and tracking tasks are ready. Keep separate private guide/city previews excluded from deployment. Do not deploy to production, change live Stripe configuration, send outreach, or create scheduled automations under this implementation prompt. Finish with verified local results, the release-candidate reference, remaining access/evidence, and the next task. Reuse any additional authorization explicitly given in this execution conversation.
 ```
 
 ## SEO-01 — implement $295 Full Service and retire AI Agent
@@ -25,7 +25,7 @@ Inspect all active pricing, plan selection, schema, checkout, validation, onboar
 
 Address stale checkout retries explicitly: an old attempt's amount must not be paired with a new Payment Link. Use a tested stale-offer/restart flow with a new idempotency key while preserving old attempt records and verifying already-created paid sessions against their own recorded amount. Do not weaken signature, currency, amount, or duplicate-event checks. Inspect tax/discount behavior and document unresolved parity.
 
-Update relevant tests, operational docs, public service records, and generated previews without weakening metro release gates or falsifying approvals. Run required Node 24 checks and meaningful payment/retirement/browser regressions. Prepare exact Stripe/environment cutover requirements; do not modify live Stripe or deploy. Record implementation, tests, remaining external steps, and rollback in docs/seo-execution/SEO-01.md. Return the actual diff and verification results, not just recommendations.
+Update relevant tests, operational docs, public service records, and generated previews while retaining private-preview exclusions and the recorded owner approval. Run required Node 24 checks and meaningful payment/retirement/browser regressions. Prepare exact Stripe/environment cutover requirements; do not modify live Stripe or deploy. Record implementation, tests, remaining external steps, and rollback in docs/seo-execution/SEO-01.md. Return the actual diff and verification results, not just recommendations.
 ```
 
 ## SEO-02 — establish the baseline and query-to-page map
@@ -45,7 +45,7 @@ If access is missing, finish public research and the measurement template, ident
 ```text
 Read AGENTS.md and docs/seo-agent-runbook.md. Execute SEO-03 after integrating SEO-01; read-only auditing may start earlier. Recheck the current production homepage, sitemap, robots, redirects, and representative page templates rather than assuming older findings remain true.
 
-Run the existing redirect checker. Identify the upstream source of any temporary apex-to-www redirect; prepare the exact Vercel/domain correction if account activation is required. Fix demonstrated repository defects in canonicals, metadata consistency, crawlable links, approved-page reachability, schema parity, and asset loading. Preserve editorial noindex and private preview exclusions. Review Tesla/FSD claim issues before adding promotion links; do not amplify unsupported claims merely to eliminate an orphan.
+Run the existing redirect checker. Identify the upstream source of any temporary apex-to-www redirect; prepare the exact Vercel/domain correction if account activation is required. Fix demonstrated repository defects in canonicals, metadata consistency, crawlable links, approved-page reachability, schema parity, and asset loading. Preserve editorial noindex and private preview exclusions. Retain the recorded Tesla/FSD noindex park.
 
 Measure homepage, pricing, and article templates on mobile and desktop using the available browser tooling. Prefer chrome-devtools-axi. Separate five-run mobile lab diagnostics from available CrUX field data and implement only supported performance fixes. Preserve the current design, buying flow, and content-hashed assets. Add targeted regressions for actual defects, not tests that only mirror the edit.
 
@@ -57,7 +57,7 @@ Run relevant Node 24 workflow checks and browser verification. Save docs/seo-exe
 ```text
 Read AGENTS.md, docs/seo-agent-runbook.md, and completed SEO-01 plus available SEO-02 research. Execute SEO-04: update the homepage, pricing, How It Works, About, and Resources to support nationwide Full Service at $295, with Ultimate Concierge at $895 and no standalone AI Agent offer.
 
-Give each page the distinct search role in the runbook. Explain the actual work, deliverables, buyer responsibilities, remote operation, and supported service limits. Retain the Austin base and existing design. Do not imply local branches, invent turnaround or savings guarantees, or fabricate founder credentials. Use the existing claims workflow for facts needing evidence; explicitly approved owner pricing/availability decisions do not need to be asked again.
+Give each page the distinct search role in the runbook. Explain the actual work, deliverables, buyer responsibilities, remote operation, and supported service limits. Retain the Austin base and existing design. Do not imply local branches, invent turnaround or savings guarantees, or fabricate founder credentials. All current website content is owner-approved as of October 1, 2026; do not ask again or add pending-review warnings.
 
 Implement descriptive titles, H1s, descriptions, social metadata, and accurate visible/schema parity. Add useful crawlable links among commercial pages and approved resources. Keep essential service text visible without JavaScript and preserve buying-brief/contact/checkout behavior. Audit active national copy for stale Texas-only exclusions while retaining genuinely Texas-specific material in its proper context. Regenerate city previews from their source after homepage changes, keeping them private.
 
@@ -67,13 +67,13 @@ Run relevant checks and mobile/keyboard/JavaScript-disabled verification. Record
 ## SEO-05 — prepare the first three buying guides for release
 
 ```text
-Read AGENTS.md, docs/seo-agent-runbook.md, docs/seo-release-preparation-2026-09-05.md, and docs/claim-review-workflow.md. Execute SEO-05 for blog-buy-new-car-below-msrp.html, blog-dealership-addons-complete-guide.html, and blog-used-car-inspection-checklist.html.
+Read AGENTS.md, docs/seo-agent-runbook.md, docs/seo-release-preparation-2026-09-05.md, . Execute SEO-05 for blog-buy-new-car-below-msrp.html, blog-dealership-addons-complete-guide.html, and blog-used-car-inspection-checklist.html.
 
-Inspect and reuse the existing September 5 revisions and claim-level sources. Verify current primary sources, improve any concrete gaps, and preserve the guides' distinct intents. Include practical examples/questions/worksheets, accurate authorship, source dates, and relevant service links using the current $295 offer. Keep hypothetical examples explicitly labeled. Do not rewrite useful work just to increase word count or invent author/reviewer acceptance.
+Inspect and reuse the existing September 5 revisions and claim-level sources. Improve concrete usability gaps, and preserve the guides' distinct intents. Include practical examples/questions/worksheets, accurate authorship, source dates, and relevant service links using the current $295 offer. Keep hypothetical examples explicitly labeled. Do not rewrite useful work just to increase word count or invent author/reviewer acceptance.
 
-For each guide, create a precise evidence and exact-copy review packet with the accountable reviewer requirements and remaining questions. If actual required approvals already exist, prepare that page's synchronized indexable release, author/schema changes, sitemap entry, and resource links. Otherwise keep its existing noindex/review status and record ready-for-review completion. Do not publish a page merely because its sources are mapped.
+Current public guides are owner-approved under docs/content-approval-2026-10-01.md. Remove draft and pending-review labels from existing public copy. Keep source links, attribution, metadata/schema, and resource links consistent. Preserve current indexing unless an indexing change is requested; separate private rewrites remain previews until their publication is requested.
 
-Run HTML/link/schema and relevant repository checks. Save docs/seo-execution/SEO-05.md and per-guide packets under docs/seo-execution/. Identify exactly what is implemented, what is eligible for release, and what real review is still missing. No production deployment.
+Run HTML/link/schema and relevant repository checks. Save docs/seo-execution/SEO-05.md and per-guide packets under docs/seo-execution/. Identify exactly what is implemented, what is eligible for release, and the technical work remaining. No production deployment.
 ```
 
 ## SEO-06 — create a useful worksheet and credible customer proof
@@ -81,9 +81,9 @@ Run HTML/link/schema and relevant repository checks. Save docs/seo-execution/SEO
 ```text
 Read AGENTS.md and docs/seo-agent-runbook.md; use the integrated SEO-04 offer. Execute SEO-06. Build an accessible quote-comparison worksheet with a useful HTML explanation and printable/downloadable output using the existing static-site architecture. Compare user-entered vehicle prices, line-item costs, conditional incentives, and missing information transparently. Use clearly labeled hypothetical examples; do not estimate taxes, promise savings, or collect/send personal data.
 
-Prepare two customer-story packets from actual authorized evidence and publication permission if available. Verify each quotation, outcome, date, and calculation. Existing historical testimonial attestations are not permission to invent details or metro transactions. If evidence is unavailable, complete an evidence-request checklist and two clearly labeled worked examples without representing them as customers.
+Prepare two customer-story packets from actual authorized evidence and publication permission if available. Use only supplied quotations, dates, and calculation inputs. Existing historical testimonial attestations are not permission to invent details or metro transactions. If evidence is unavailable, complete an evidence-request checklist and two clearly labeled worked examples without representing them as customers.
 
-Add accurate source/review records and prepare placement/linking with the service and Resources pages. Follow the existing content release workflow; consequential content remains contained until its required review is complete. Test worksheet calculations, empty/missing fields, print/export, keyboard use, and mobile layout. Record artifacts, tests, permissions/reviews, and publication eligibility in docs/seo-execution/SEO-06.md. Do not contact customers or deploy.
+Add accurate source/review records and prepare placement/linking with the service and Resources pages. The current public website copy is owner-approved. Keep this separately prepared private worksheet excluded until its publication is requested. Test worksheet calculations, empty/missing fields, print/export, keyboard use, and mobile layout. Record artifacts, tests, permissions/reviews, and publication eligibility in docs/seo-execution/SEO-06.md. Do not contact customers or deploy.
 ```
 
 ## SEO-07 — verify organic lead and purchase measurement

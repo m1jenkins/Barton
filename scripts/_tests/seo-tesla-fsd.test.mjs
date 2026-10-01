@@ -64,7 +64,7 @@ test('tesla FSD page stays a noindex park with self-canonical and no sitemap or 
   assert.equal(
     document.schemas.some((schema) => schema['@type'] === 'FAQPage'),
     false,
-    'do not emit unreviewed FSD FAQ schema',
+    'parked page must not gain FSD FAQ schema',
   );
 });
 
@@ -72,17 +72,20 @@ test('tesla FSD inventory and claim rows record the keep-noindex park', async ()
   const inventory = csvRows(await read('data/content-inventory.csv')).find((row) => row.source_file === pageFile);
   assert.ok(inventory, 'content-inventory.csv must include tesla-fsd-for-sale.html');
   assert.equal(inventory.canonical_url, canonical);
-  assert.match(inventory.lifecycle_status, /^contained_/);
-  assert.equal(inventory.conversion_role, 'none_while_contained');
+  assert.equal(inventory.lifecycle_status, 'approved_noindex');
+  assert.equal(inventory.conversion_role, 'none_while_noindex');
   assert.equal(inventory.redirect_destination, '');
   assert.match(inventory.notes, /Keep noindex park/i);
   assert.match(inventory.notes, /2026-09-22/);
   assert.match(inventory.notes, /301 and 410 rejected/);
 
   const claim = csvRows(await read('data/claims.csv')).find((row) => row.claim_id === 'SEO-TESLA-2026-09-18');
-  assert.equal(claim.status, 'contained_pending_qualified_review');
+  assert.equal(claim.status, 'retired');
   assert.match(claim.observed_locations, /tesla-fsd-for-sale\.html/);
   assert.match(claim.conflict_or_risk, /keep-noindex park/i);
+  const approval = csvRows(await read('data/claims.csv')).find((row) => row.claim_id === 'WEBSITE-CONTENT-2026-10-01');
+  assert.equal(approval.status, 'approved');
+  assert.equal(approval.last_reviewed, '2026-10-01');
 });
 
 test('docs close the tesla FSD decision as keep-noindex and reject 301/410', async () => {

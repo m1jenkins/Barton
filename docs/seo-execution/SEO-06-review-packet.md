@@ -1,6 +1,6 @@
-# SEO-06 — private worksheet exact-copy review packet
+# SEO-06 — private worksheet implementation and source notes
 
-Prepared 2026-09-18 (America/Los_Angeles). Local implementation is `verified_local`; editorial status is `ready_for_review`. Public release is ineligible pending real author acceptance and qualified consumer-finance review.
+Prepared September 18, 2026. The worksheet is a separate local preview with no public route. Current public website content is owner-approved under [the October 1 record](../content-approval-2026-10-01.md).
 
 ## Exact review artifact
 
@@ -37,24 +37,15 @@ The CSV preserves unknown/invalid states, unresolved conditions, scenario labels
 
 Sources were opened and verified on 2026-09-18. The original arithmetic method and examples are Drive Right draft editorial work, not an FTC-certified calculator.
 
-| Proposed source ID | Private artifact / support | Primary source, section, date | Required reviewer / status |
+| Proposed source ID | Private artifact / support | Primary source, section, date | Source observation |
 | --- | --- | --- | --- |
-| `SEO06-QUOTE-01` | `draft-artifacts/quote-comparison/index.html`: itemized written offer, actual charges, discount conditions, and quote-to-document comparison | [FTC, Car Dealer Ads and Promotions: Know Before You Go](https://consumer.ftc.gov/articles/car-dealer-ads-and-promotions-know-you-go), “Know Before You Go,” low-price/discount restrictions, and “Before You Sign a Contract”; July 2022 publication; U.S.; retrieved 2026-09-18 | Qualified consumer-finance/advertising reviewer; `primary_source_checked_pending_qualified_review`; no reviewer identity or next-review date assigned |
-| `SEO06-QUOTE-02` | Purchase-cost comparison separated from financing and trade-in; no payment-based ranking | [FTC, Financing or Leasing a Car](https://consumer.ftc.gov/articles/financing-or-leasing-car), “Before You Buy or Lease a Car,” “Factoring in a Trade-in,” “Financing a Car”; July 2022 publication; U.S.; retrieved 2026-09-18 | Qualified consumer-finance reviewer; `primary_source_checked_pending_qualified_review`; no approval inferred |
+| `SEO06-QUOTE-01` | `draft-artifacts/quote-comparison/index.html`: itemized written offer, actual charges, discount conditions, and quote-to-document comparison | [FTC, Car Dealer Ads and Promotions: Know Before You Go](https://consumer.ftc.gov/articles/car-dealer-ads-and-promotions-know-you-go), “Know Before You Go,” low-price/discount restrictions, and “Before You Sign a Contract”; July 2022 publication; U.S.; retrieved 2026-09-18 | Primary source checked September 18, 2026 |
+| `SEO06-QUOTE-02` | Purchase-cost comparison separated from financing and trade-in; no payment-based ranking | [FTC, Financing or Leasing a Car](https://consumer.ftc.gov/articles/financing-or-leasing-car), “Before You Buy or Lease a Car,” “Factoring in a Trade-in,” “Financing a Car”; July 2022 publication; U.S.; retrieved 2026-09-18 | Primary source checked September 18, 2026 |
 
-Proposed claim family: **private quote comparison using entered purchase costs, explicit incentive conditions, and hypothetical examples**, class `finance_guidance`, status `pending_qualified_review`, location the four private worksheet files plus these proof packets. Evidence is this method, primary-source map, 15 automated tests, and browser/print results in [SEO-06.md](SEO-06.md). Leave `approved_copy`, reviewer identity, approval, and expiry blank. No actual customer-outcome claim should be created from either worked example.
+Proposed claim family: **private quote comparison using entered purchase costs, explicit incentive conditions, and hypothetical examples**, class `finance_guidance`, status `local_only_draft`, location the four private worksheet files plus these proof packets. Evidence is this method, primary-source map, 15 automated tests, and browser/print results in [SEO-06.md](SEO-06.md). No actual customer-outcome claim should be created from either worked example.
 
-Proposed inventory record: artifact `draft-artifacts/quote-comparison/index.html`; intent `compare_written_vehicle_quotes`; lifecycle `local_only_draft`; review `author_and_consumer_finance_review_pending`; conversion `none_while_private`; accountable editorial owner unassigned; public URL unassigned. Preserve the `draft-artifacts` deployment exclusion. The integrating owner alone updates shared registries.
+Proposed inventory record: artifact `draft-artifacts/quote-comparison/index.html`; intent `compare_written_vehicle_quotes`; lifecycle `local_only_draft`; review `private_preview`; conversion `none_while_private`; accountable editorial owner unassigned; public URL unassigned. Preserve the `draft-artifacts` deployment exclusion. The integrating owner alone updates shared registries.
 
-## Required accountable review
+## Publication scope
 
-- A real responsible author must accept the exact page, example, and output wording.
-- A named qualified consumer-finance reviewer must approve the field definitions, incentive scenarios, treatment of unknown inputs, comparable-basis confirmation, no-tax-estimation boundary, and export/print disclosures. Have consumer-advertising/legal competence review any claimed outcome or promotional wording before public use.
-- A claims/editorial reviewer must reproduce both examples and confirm that the UI does not imply a verified quote, tax rate, lender decision, or guaranteed saving.
-- Before a public version is proposed, assign its real URL and integrate approved visible source links, accepted author/review information, metadata/schema where appropriate, resource placement, and claims/inventory records. None is authorized merely by a passed test or noindex tag.
-
-The missing approval record must include legal name, role, relevant qualifications and jurisdictional scope, exact file hashes or approved text, review/approval date, expiry, next review, required edits, and material-change triggers. The existing $295/$895 service decision does not supply subject review for this worksheet. No outreach has been sent to obtain these approvals.
-
-Review questions: Are the eligibility scenarios and already-included amounts sufficiently explicit? Does the fixed-charge assumption need stronger wording? Could a user mistake entered zero for a seller-confirmed amount? Is trade/financing separation clear? Do the comparison and CSV retain enough context when saved independently? Is the hypothetical origin clear after partial edits? Is any additional limitation needed before a national public release?
-
-Publication decision: remain private until those questions and records are complete. Recheck on any calculation, field, example, source, export, or service-claim change and at least every six months after approval.
+Keep the separate worksheet in `draft-artifacts/` until publication is requested. A public implementation would need an assigned URL, consistent metadata and source links, and the existing calculation, keyboard, print/export and mobile checks. Existing public website content does not require another content verification or approval.

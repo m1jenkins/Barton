@@ -1,6 +1,6 @@
 # Homepage legwork copy review — September 17, 2026
 
-Local implementation only. No deployment or publication approval is recorded by this change. Follow `docs/claim-review-workflow.md`; the homepage remains `active_review_required` in `data/content-inventory.csv`.
+The implementation notes below describe the September 17 changes. Current homepage copy is owner-approved under [the October 1 record](content-approval-2026-10-01.md).
 
 ## Outreach volume
 
@@ -16,7 +16,7 @@ Repository search found no existing approval of this outreach-volume wording. Th
 
 ## Compare and negotiate
 
-Bounded page copy: “We compare available offers and discuss price and fees with sellers, with email negotiation where available.” Sources: `schedule.html#consultation` lists email negotiation where available; `schedule.html#full-service` lists price negotiation and fee review. The scope record remains observed, pending approval.
+Bounded page copy: “We compare available offers and discuss price and fees with sellers, with email negotiation where available.” Sources: `schedule.html#consultation` lists email negotiation where available; `schedule.html#full-service` lists price negotiation and fee review. The current website copy is owner-approved as of October 1, 2026.
 
 The graphic uses two neutral illustrative offers with price and fee placeholders. Neither is ranked, selected, or labeled best; no savings, discount, lowest price, or guaranteed result is shown.
 
@@ -24,7 +24,7 @@ The graphic uses two neutral illustrative offers with price and fee placeholders
 
 **CLM-030 bounded local draft:** “We help clarify what comes next. You review the paperwork, sign, and decide whether to buy.” Adjacent scope note: “Ultimate Concierge: delivery coordination where available. Confirm paperwork and pickup support for your plan.”
 
-`schedule.html#concierge` explicitly lists “Delivery coordination where available.” `data/services.json` also places expanded transaction coordination and conditional delivery coordination under Ultimate Concierge. Neither source establishes paperwork handling or pickup coordination for every plan. The records are observed scope, not exact-copy approval. Prices and plan pages are untouched.
+`schedule.html#concierge` explicitly lists “Delivery coordination where available.” `data/services.json` also places expanded transaction coordination and conditional delivery coordination under Ultimate Concierge. Neither source establishes paperwork handling or pickup coordination for every plan. The current website copy is covered by the October 1 owner approval. Prices and plan pages are untouched.
 
 The checklist is labeled “For your review,” with empty boxes for “Read the terms” and “Your decision,” and an unsigned line labeled “Your signature.” The map says “Pickup.” A single stationary document gains its review items and blank signature line, then the location appears; motion never signs or checks off the buyer's purchase decision. Its accessible description also states that paperwork and pickup support need confirmation for the buyer's plan.
 

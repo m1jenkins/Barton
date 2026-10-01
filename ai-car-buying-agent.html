@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Plans Have Changed | Drive Right</title>
-    <meta name="description" content="See how remote car-buying support works: share your brief, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
+    <meta name="description" content="See how remote car-buying support works: share your search details, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.driverightcarbuying.com/schedule.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.driverightcarbuying.com/schedule.html">
     <meta property="og:title" content="How Our Car Buying Service Works | Drive Right">
-    <meta property="og:description" content="See how remote car-buying support works: share your brief, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
+    <meta property="og:description" content="See how remote car-buying support works: share your search details, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
     <meta property="og:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Drive Right">
@@ -22,7 +22,7 @@
     <meta property="og:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How Our Car Buying Service Works | Drive Right">
-    <meta name="twitter:description" content="See how remote car-buying support works: share your brief, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
+    <meta name="twitter:description" content="See how remote car-buying support works: share your search details, compare vehicles and written offers, and keep the purchase decision. Full Service is $395 USD.">
     <meta name="twitter:image" content="https://www.driverightcarbuying.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg">
     <meta name="twitter:image:alt" content="Two Mazda MX-5 Miatas photographed for Drive Right">
 
@@ -33,4 +33,10 @@
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css">
+    <script>
+      // Logo intro: the car drives in on the first page of a visit. Show the wordmark if motion cannot load.
+      try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
+    </script>
+    <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
+    <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
 </head><body class="dr"><a class="skip-link" href="#main-content">Skip to main content</a><header class="site-header page-width"><a class="wordmark" href="/">Drive Right</a></header><main id="main-content" tabindex="-1" class="page-width how-page"><div class="page-intro"><h1>Our service plans have changed.</h1><p>The standalone AI Agent Buying Service is retired. Full Service is $395 USD one time; Ultimate Concierge is $695 USD one time.</p><a class="primary-button" href="/schedule.html">Compare current service plans</a><p>Existing customers can still use the secure checkout-session link in their receipt to verify payment and complete their intake.</p></div></main></body></html>

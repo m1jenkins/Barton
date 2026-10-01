@@ -73,7 +73,7 @@ Latest follow-up at `acf9116bdcc48372340b94688f3476b9dc8a35b6`, Node `v24.20.0`:
 | Deployment/environment | Local branch/config/migration and observed Barton deployment | Confirm target/environment/webhook identity, protected preview, backup and exact atomic promotion; separate activation authority |
 | Measurement | GSC/GTM baseline; real PostgreSQL outbox retry/fencing and test-session snapshot reconciliation using stub transport | Drive Right GA4 property/stream; approved collector/consent credentials; external acknowledgement/reconciliation; scheduling at separately authorized activation |
 | Canonical host | Live apex root and path return 307; repository rules already permanent | Inspect actual Vercel domain or upstream Cloudflare setting; authorized 308 correction and live matrix |
-| New guides/worksheet | Exact private artifacts, primary sources, tests and review packets | Real author acceptance and qualified subject review; release individually later |
+| New guides/worksheet | Separate private artifacts, primary sources and tests | Current public content is owner-approved; publishing separate private artifacts remains future work |
 | Proof/GBP/outreach | Two hypothetical examples, 30 prospects, ten pitches, neutral review drafts; actual account audit | Actual permissioned customer evidence, correct profile/in-person eligibility evidence, explicit sending instructions |
 
 Verified Search Console baseline: August 20–September 16, 2026, **27 clicks / 2,518 impressions**; previous 28 days **51 / 3,346**. This is pre-launch context, not an effect of this candidate. Suppressed query totals, missing GA4/business qualification and limited field history are documented in [SEO-02](SEO-02.md). Missing measures are not zero.

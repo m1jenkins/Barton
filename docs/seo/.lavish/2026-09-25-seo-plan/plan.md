@@ -113,7 +113,7 @@ The two top priorities are ordered by current commercial visibility, followed by
 
 **Verify:** Walk the unpaid start path in a suitable test environment; compare visible text, links, metadata and schema across the four pages. Do not charge a real card for SEO QA. Evaluate qualified inquiry/checkout behavior after release, not raw clicks alone.
 
-**Risk:** Do not rebuild checkout under this task, promise a response time, or invent deliverables. Keep exact-copy approval requirements for any new commercial commitments.
+**Risk:** Do not rebuild checkout under this task, promise a response time, or invent deliverables. Use the current published service scopes for implementation consistency.
 
 **Platform sources:** [content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).
 
@@ -173,15 +173,15 @@ The two top priorities are ordered by current commercial visibility, followed by
 
 ### A07 · P1 · Tier 3 · Content — Release the three prepared guides one page at a time
 
-**Owner:** Mason + editorial owner + qualified reviewers. **Effort:** 4–7 working days total, excluding reviewer wait. **Dependency:** A02 on each URL; exact-copy/source approvals.
+**Owner:** Mason + editorial owner. **Effort:** 4–7 working days total. **Dependency:** A02 on each URL and technical deployment checks.
 
 **Finding:** The site has only eight intended indexable pages and no released independent editorial article in this crawl. Three substantially revised guides already exist privately, while the public versions remain noindex.
 
-**Evidence:** Live Resources links to eight in-review pages; private guides and review packets are documented in SEO-05. Fifty root URLs return 200/noindex, including utility pages and the editorial/local archive. RECOMMENDED: original useful content; REQUIRED: avoid scaled low-value publication. Local project policy requires exact-copy approval.
+**Evidence:** Live Resources links to eight in-review pages; private guides and review packets are documented in SEO-05. Fifty root URLs return 200/noindex, including utility pages and the editorial/local archive. RECOMMENDED: original useful content; REQUIRED: avoid scaled low-value publication. Current public website content is owner-approved as of October 1, 2026.
 
 **Impact:** Expand useful coverage around car quote comparison, add-ons and inspection with assets already partly prepared. These are commercially relevant opportunities, not measured search-volume forecasts.
 
-**Change:** Start with the below-MSRP quote-comparison guide if its reviewer is ready, then add-ons and used-car inspection; readiness can reorder the batch. Refresh primary sources, add an accepted named author linked to About, name the qualified reviewer where appropriate, show a useful worksheet/example and honest dates. Move only each approved revision into its existing public URL; then switch that page to index/follow, add it to the sitemap and approved Resources cards, and link to the service/pricing pages contextually.
+**Change:** Improve the below-MSRP, add-ons, and used-car inspection guides using their existing copy and source links. Include useful worksheets/examples and honest dates. Keep the existing article URLs, current service/pricing links, and indexing decisions consistent; separate indexing changes remain explicit work.
 
 **Verify:** For every page: exact approved text/source/expiry record, 200, self-canonical, no unintended noindex/nosnippet, accurate Article/Breadcrumb data, raw-HTML value, mobile QA, internal links and URL Inspection. Record release date and compare qualified outcomes over subsequent complete windows.
 
@@ -213,13 +213,13 @@ The two top priorities are ordered by current commercial visibility, followed by
 
 **Finding:** Founder biography and real vehicle photos already exist. The larger remaining trust gap is an unresolved compensation disclosure and the lack of a verified, useful customer-process case study.
 
-**Evidence:** Live how-it-works.html explicitly says dealer referral/commission statements await owner attestation; CLM-013 remains pending_evidence. SEO-06 has proof packets, not approved case-study outcomes. RECOMMENDED: identifiable expertise and verifiable first-hand evidence.
+**Evidence:** Current website content, including the service disclosures, is owner-approved.  SEO-06 has proof packets, not approved case-study outcomes. RECOMMENDED: identifiable expertise and verifiable first-hand evidence.
 
 **Impact:** Help buyers assess incentives and understand the work they receive; give writers and AI systems specific facts they can responsibly reference.
 
 **Change:** Use actual revenue-source/relationship records to replace the pending disclosure with the approved factual statement. Produce one anonymized, permissioned case study showing initial requirements, written comparison, decisions, scope and limitations. Reuse existing proof packets; distinguish hypothetical examples from customer stories. Link author information to the existing About page rather than duplicating it.
 
-**Verify:** Reviewer can reproduce every monetary/outcome claim and confirm permissions. Visible text, metadata/schema and approved_copy agree. Publish relevant methodology and limitations; do not expose customer identifiers or private deal records.
+**Implementation:** Keep visible text, metadata/schema and calculation examples consistent. Preserve methodology and limitations; keep customer identifiers and private deal records out of public artifacts.
 
 **Risk:** Never assume “zero commissions,” invent savings or turn personal car ownership into credentials. A real case study is valuable even without a savings headline.
 
@@ -255,9 +255,9 @@ The two top priorities are ordered by current commercial visibility, followed by
 
 **Change:** Prioritize Austin when baseline demand and logistics evidence support it. Explain real service boundaries, seller/inspection/delivery coordination and a verified local example without asserting an office. Update the Texas hub only with approved useful destinations. Evaluate Houston or a combined DFW page afterward; decide Dallas/Fort Worth/Arlington consolidation only after query/backlink review. Do not launch the 20-city collection unchanged.
 
-**Verify:** Complete the market dossier, owner/page sign-off, distinct-intent evidence, qualified/editorial review, QA and release hash. Re-pin any edited contained legacy Texas page. Verify internal links, sitemap and Google/Bing indexing after authorized release.
+**Implementation:** Retain the market records and technical QA, and update any edited pinned Texas page hash. Check internal links, sitemap and indexing after an authorized indexing change.
 
-**Risk:** Availability confirmation is not page approval or unique local evidence. No automatic city redirects, duplicate storefronts or national-scale doorway expansion.
+**Risk:** Current public page content is approved; additional private artifacts remain separate work. No automatic city redirects, duplicate storefronts or national-scale doorway expansion.
 
 **Platform sources:** [spam](https://developers.google.com/search/docs/essentials/spam-policies), [business](https://support.google.com/business/answer/3038177).
 
@@ -329,7 +329,7 @@ No scheduled automation was created. No cross-engine AI citation rate, localized
 ## Keep these boundaries
 
 - Preserve the Tesla FSD page at its URL with `noindex, follow`, self-canonical, off sitemap. It has a named keep-noindex decision; it is not a redirect, deletion or indexing candidate.
-- Preserve contained legal/finance/safety articles until their individual source and exact-copy approvals are complete. A noindex warning is not a substitute for review, nor publication permission.
+- Preserve recorded indexing for existing articles. Their current public content is owner-approved; remove draft warnings and pending-review labels.
 - Keep the 20-city collection and metro drafts private. Follow `data/metro-release.json`; re-pin `legacyTexas[].sha256` when editing contained legacy pages.
 - Preserve the Austin service-area model. Do not publish the hidden verification address, invent Maps identifiers, or manufacture LocalBusiness locations.
 - No special AI optimization build is indicated. A service business does not need Merchant Center product feeds, agentic checkout or an MCP server for this plan. Existing FAQ markup is not a citation/ranking promise.

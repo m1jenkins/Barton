@@ -121,7 +121,7 @@ test('marketing nav surfaces the car-buying-service explainer with existing CTAs
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
     assert.deepEqual(links, ['/how-it-works.html', '/car-buying-service.html', '/schedule.html', '/about.html'], `${file} header should list the explainer after How it works`);
     assert.match(nav, new RegExp(explainer.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&') + '[^>]*>Car buying service</a>'));
-    assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my brief<\/a>/, `${file} keeps the header brief CTA`);
+    assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my search<\/a>/, `${file} keeps the header brief CTA`);
   }
   assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
 
@@ -193,7 +193,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.match(await read('llms.txt'), /AI Agent Buying Service is retired for new sales/);
 });
 
-test('city and editorial containment remains accurate after homepage copy changes', async () => {
+test('city and editorial indexing stays consistent with owner-approved public copy', async () => {
   const cityData = JSON.parse(await read('data/city-pages.json'));
   for (const city of cityData.cities) {
     const html = await read(`draft-artifacts/cities/${city.slug}`);
@@ -208,8 +208,9 @@ test('city and editorial containment remains accurate after homepage copy change
   }
 
   const hub = htmlDocument(await read('blog.html'));
-  assert.match(hub.visibleText, /service guides below are indexable/i);
-  assert.match(hub.visibleText, /consequential topic hubs and older articles remain excluded from search/i);
+  assert.match(hub.visibleText, /service guides/i);
+  assert.match(hub.visibleText, /car-buying guides/i);
+  assert.doesNotMatch(hub.visibleText, /pre-publication draft|review is still pending|guides still in review|awaiting editorial review/i);
 });
 
 const legalBlogs = [
@@ -268,4 +269,3 @@ test('legacy blog HTML stays noindex and is documented as crawl waste, not an in
     assert.match(docs, new RegExp(file.replaceAll('.', '\\.')));
   }
 });
-
