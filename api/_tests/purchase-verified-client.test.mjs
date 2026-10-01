@@ -49,7 +49,8 @@ test('a verified purchase-status response sends one purchase_verified with the s
   const p = paymentPage([verified]);
   assert.equal(await p.settled(), 'verified');
   assert.equal(p.content.hidden, false);
-  assert.equal(p.body.dataset.verifiedSessionId, sessionId);
+  assert.equal(p.body.dataset.purchaseVerified, 'true');
+  assert.equal(JSON.stringify(p.body.dataset).includes(sessionId), false);
   assert.deepEqual(p.requests, [`/api/purchase-status?session_id=${sessionId}&tier=full_service`]);
   assert.equal(p.window.dataLayer.length, 1);
   const [event] = p.purchases();

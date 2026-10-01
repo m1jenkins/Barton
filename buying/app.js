@@ -436,7 +436,7 @@ const paidBrief = $('#paid-brief');
 if (paidBrief) {
   let filled = false;
   function carryOver() {
-    if (filled || !document.body.dataset.verifiedSessionId) return;
+    if (filled || document.body.dataset.purchaseVerified !== 'true') return;
     filled = true;
     $('.skip-link').href = '#verified-purchase-content';
     const ledger = checkoutStore.read();
@@ -457,7 +457,7 @@ if (paidBrief) {
     // Existing API fields preserve the entire brief, including constraints without
     // dedicated onboarding inputs (ZIP, radius, trim, transmission, and priorities).
   }
-  new MutationObserver(carryOver).observe(document.body, { attributes:true, attributeFilter:['data-verified-session-id'] });
+  new MutationObserver(carryOver).observe(document.body, { attributes:true, attributeFilter:['data-purchase-verified'] });
   carryOver();
 }
 persist();

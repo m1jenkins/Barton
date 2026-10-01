@@ -4,7 +4,9 @@
 - The owner applies these steps in Google Ads, Google Tag Manager and Google Ads Editor, or an agent does it in the owner's signed-in browser. The repository holds no Google credentials.
 - Plan and launch gates: [google-ads-launch-plan-2026-09-27.md](google-ads-launch-plan-2026-09-27.md).
 - Campaign files: `outputs/2026-10-google-search-ads/`.
-- Code side: the "verified purchase tracking" PR, which adds the `purchase_verified` dataLayer event and makes `begin_checkout` reach GTM before the Stripe redirect.
+- Code side:
+  - the "verified purchase tracking" PR, which adds the `purchase_verified` dataLayer event and makes `begin_checkout` reach GTM before the Stripe redirect;
+  - the "checkout session privacy" PR, which removes the Stripe `session_id` from the payment pages' address before GTM loads.
 
 Accounts:
 - Google Ads: `AW-18071301983` (conversion ID `18071301983`).
@@ -78,14 +80,19 @@ Whether GPC should also deny `ad_storage` is an owner or legal decision; the def
   - Trigger: `purchase_verified`.
 - **New "Google Ads – Begin checkout":** label `A1cuCKHhx4gdEN_eiKlD`; transaction ID `{{DLV – checkout_attempt_id}}`; trigger `begin_checkout`.
 - **Existing "Call Button":** set its label to the Phone click label `AmVzCKThx4gdEN_eiKlD` and replace its click-text trigger with the `phone_click` trigger. Don't add a second phone tag, or clicks count twice.
-- **Pause** "Book Appointment", "Schedule Free Call" and "Submit Lead Form". The All Forms trigger behind Submit Lead Form can fire on each homepage chat answer.
+- **Pause** "Book Appointment", "Schedule Free Call" and "Submit Lead Form". The All Forms trigger behind Submit Lead Form can fire on each homepage chat answer, and it also fires on the payment pages' intake form.
 - **Keep** the Google tag (`AW-18071301983`) and Conversion Linker on All Pages.
-- **Google tag configuration:** add the parameter `page_location` = `{{Page URL – sanitized}}`, so hits from `/payment-success*` don't carry the Stripe `session_id`.
-  - In Tag Assistant, check the conversion request on a payment page.
-  - If the conversion tag still sends `session_id`, note it in the change log; it needs a code-side fix.
+- **Google tag configuration:** add the parameter `page_location` = `{{Page URL – sanitized}}`.
+  - The payment pages already remove the Stripe `session_id` before GTM loads, so this is defense in depth.
+  - Measured on the old pages, it cleaned the Google tag's hits, conversions included, but not GTM's own `ccm/collect` page view or Clarity.
+- **Existing Microsoft Clarity tag:** add an exception trigger so Clarity doesn't record the payment pages.
+  - Trigger: Page View "Payment pages", Page Path matches RegEx `^/payment-success[^/]*\.html$`.
+  - Why: these pages hold the paid intake form and, after verification, show the buyer's saved brief. This Clarity project records page text unmasked.
 
 **Test, then publish**
 1. Preview on a Vercel preview deployment with Stripe in test mode. The conversion tags should show **Not fired**, because of the hostname condition, with every variable filled.
+   - On the payment page, once it loads, the address bar shows no `session_id`, and the Clarity tag shows **Not fired**.
+   - In Tag Assistant or the browser's network panel, no request to a Google or Clarity host contains `session_id`, `cs_test_` or `cs_live_`; the site's own `/api/` calls still do. If a tag request does, stop: that page's inline head script didn't run. See "Checkout Session ID privacy" in `docs/implementation-operations.md`.
 2. After the tracking PR is merged, preview on production. Check `begin_checkout` on both `/car-buying-service.html` and `/schedule.html` without paying.
 3. Publish with version notes.
 4. The live test purchase is step 5 of `outputs/2026-10-google-search-ads/stripe-checklist.md`.

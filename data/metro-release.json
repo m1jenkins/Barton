@@ -880,7 +880,7 @@
       "marketId": "TX-AUS",
       "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change.",
       "indexablePublication": true,
-      "sha256": "c558c8ba248f5601f298bdc6deba51d93c2e5914b444530f5c26e678b22f501c",
+      "sha256": "db5e795e85b5923563562492b9b1fc65fba1911916e5fc9e2234c68a8bd981a9",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
