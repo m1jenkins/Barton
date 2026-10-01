@@ -1,0 +1,59 @@
+{
+  "status": "Created through the existing browser and verified in refreshed list: six ads total, including four new ads. Not serving: account payment failed and campaign disabled.",
+  "campaign": "Drive Right campaign",
+  "adGroup": "Recommended ad group",
+  "ads": [
+    {
+      "name": "Car search | Tired of chasing deals | Sep 30",
+      "title": "Tired of searching for the best deal on a car?",
+      "description": "We search, compare offers and negotiate with dealers. You review the deal and make the final call.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-09-13-gpt-ads/images/find-your-fit.png",
+      "titleCharacters": 46,
+      "descriptionCharacters": 98,
+      "tracking": "utm_source=chatgpt&utm_medium=paid&utm_campaign=drive_right&utm_content={ad_id}"
+    },
+    {
+      "name": "Dealer negotiation | Skip the back-and-forth | Sep 30",
+      "title": "Let us deal with the dealer",
+      "description": "Tired of back-and-forth with dealers? We handle the negotiation and review the fees for you.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-09-13-gpt-ads/images/deal-clarity.png",
+      "titleCharacters": 27,
+      "descriptionCharacters": 92,
+      "tracking": "utm_source=chatgpt&utm_medium=paid&utm_campaign=drive_right&utm_content={ad_id}"
+    },
+    {
+      "name": "Offer comparison | Stop second-guessing | Sep 30",
+      "title": "Still comparing offers on your next car?",
+      "description": "We compare offers, review dealer fees and negotiate the price. Get an advisor in your corner.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-09-13-gpt-ads/images/deal-clarity.png",
+      "titleCharacters": 40,
+      "descriptionCharacters": 93,
+      "tracking": "utm_source=chatgpt&utm_medium=paid&utm_campaign=drive_right&utm_content={ad_id}"
+    },
+    {
+      "name": "Niche search | Hard-to-find spec | Sep 30",
+      "title": "Still hunting for that hard-to-find car?",
+      "description": "Tell us your spec. We search auctions, forums and niche sources, compare offers and negotiate.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#concierge",
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-09-13-gpt-ads/images/find-your-fit.png",
+      "titleCharacters": 40,
+      "descriptionCharacters": 94,
+      "tracking": "utm_source=chatgpt&utm_medium=paid&utm_campaign=drive_right&utm_content={ad_id}"
+    }
+  ],
+  "verification": {
+    "date": "2026-09-30",
+    "newAds": 4,
+    "totalAds": 6,
+    "screenshot": "created-ads.jpg",
+    "servingBlockers": [
+      "Ad account payment failed",
+      "Campaign is disabled"
+    ],
+    "budgetChanged": false,
+    "targetingChanged": false
+  }
+}

@@ -41,7 +41,6 @@ Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same
 - **Homepage asset hashes.** `index.html` loads `buying/drive-right.css`, `buying/app.js` and `script.js` with a `?v=<hash>` suffix. After changing one of those files, run `node scripts/validate-site.mjs`; it prints the new URL to paste into `index.html`.
 - **Pinned legacy Texas pages.** The legacy city pages are pinned by checksum in `data/metro-release.json` (`legacyTexas[].sha256`). Editing one means updating its checksum, or the validator fails.
 - **Indexing decisions.** Which pages are indexed, `noindex`, or in the sitemap is a recorded decision (see `docs/seo/`). Do not flip `robots` tags or the sitemap as a side effect of another change.
-- **Claims.** Prices, guarantees and factual claims go through `docs/claim-review-workflow.md`.
 
 ## Checks
 
