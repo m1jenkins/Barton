@@ -76,6 +76,20 @@ Owner-supplied selfie of Mason, provided in the 2026-09-22 design session for th
 
 JPEG fallback: `mason-headshot-1200.jpg` — 1200×1600, 222,580 bytes (mozjpeg quality 82). All files are under `assets/buying/`; AVIF quality 58, WebP quality 80.
 
+### Search review panel
+
+Selected by the owner in the 2026-10-01 photo review: a white Mercedes-Benz E-Class outdoors, photographed by Muhammet Raşit Kaplan. Source: [Pexels photo 17233277](https://www.pexels.com/photo/white-mercedes-e-class-17233277/), downloaded from Pexels at 5086×3391 (1,751,019 bytes). The [Pexels license](https://www.pexels.com/license/) permits free website use and modifications; attribution is optional. This is decorative stock imagery, with no statement of brand endorsement.
+
+Original: `assets/external/source/search-review-white-mercedes-e-class-original.jpg`. Web derivatives below are under `assets/external/optimized/`. The approved 16:9 crop uses the full source width, with its vertical offset at 55% of the available crop range (top 292px, height 2861px); then it is resized with `sharp`. No retouching or generated pixels. AVIF quality 58, WebP quality 80, JPEG quality 82; derivative metadata is stripped. Used in the homepage’s “Choose a plan” panel and inherited by the local city drafts.
+
+| Pixels | AVIF bytes | WebP bytes |
+|---|---:|---:|
+| 640×360 | `search-review-white-mercedes-e-class-640.avif` — 24,522 | `search-review-white-mercedes-e-class-640.webp` — 38,790 |
+| 960×540 | `search-review-white-mercedes-e-class-960.avif` — 47,692 | `search-review-white-mercedes-e-class-960.webp` — 75,334 |
+| 1440×810 | `search-review-white-mercedes-e-class-1440.avif` — 90,251 | `search-review-white-mercedes-e-class-1440.webp` — 145,932 |
+
+JPEG fallback: `search-review-white-mercedes-e-class-1440.jpg` — 1440×810, 165,516 bytes.
+
 ### Testimonial profiles
 
 Each profile derivative is a centered square crop resized to 160×160, appropriate for the site's 32–38 CSS-pixel circular avatars.
