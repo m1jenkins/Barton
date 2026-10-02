@@ -1,3 +1,12 @@
+// Vercel Web Analytics initialization
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+(function() {
+  var script = document.createElement('script');
+  script.defer = true;
+  script.src = '/_vercel/insights/script.js';
+  document.head.appendChild(script);
+})();
+
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
 import("./openai-ads.js").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
