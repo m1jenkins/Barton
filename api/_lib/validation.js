@@ -86,7 +86,8 @@ export function validateLeadPayload(body) {
   const honeypot = cleanString(body.honeypot ?? body.website ?? body._company_website, 'honeypot', { max: 200 });
   if (honeypot) throw new HttpError(422, 'invalid_payload', 'Invalid form submission');
 
-  const name = cleanString(body.name, 'name', { required: true, max: 120 });
+  const source = cleanString(body.source, 'source', { max: 100 }) || 'website';
+  const name = cleanString(body.name, 'name', { required: source !== 'pricing_inquiry', max: 120 });
   const email = cleanString(body.email, 'email', { required: true, max: 254 }).toLowerCase();
   if (!EMAIL_PATTERN.test(email)) throw new HttpError(422, 'invalid_payload', 'email is invalid');
 
@@ -96,13 +97,14 @@ export function validateLeadPayload(body) {
     phone: cleanString(body.phone, 'phone', { max: 40 }),
     message: cleanString(body.message, 'message', { max: 3000 }),
     vehicle: cleanString(body.vehicle, 'vehicle', { max: 300 }),
-    source: cleanString(body.source, 'source', { max: 100 }) || 'website',
+    source,
     source_page: cleanString(body.source_page ?? body.page_path, 'source_page', { max: 300 }) || '/',
     attribution: validateAttribution(body.attribution),
     turnstile_token: cleanString(body.turnstile_token, 'turnstile_token', { max: 2048 })
   };
 
   if (!result.message && !result.vehicle) throw new HttpError(422, 'invalid_payload', 'message or vehicle is required');
+  if (source === 'pricing_inquiry' && !result.vehicle) throw new HttpError(422, 'invalid_payload', 'vehicle is required');
   if (!result.source_page.startsWith('/') || result.source_page.startsWith('//')) {
     throw new HttpError(422, 'invalid_payload', 'source_page must be a same-site path');
   }

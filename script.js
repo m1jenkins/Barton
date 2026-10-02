@@ -48,7 +48,11 @@ function trackVerifiedPurchase(result) {
     if (typeof purchaseId !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(purchaseId)) return;
     if (typeof value !== 'number' || !Number.isFinite(value) || value <= 0) return;
     if (typeof currency !== 'string' || !/^[A-Z]{3}$/.test(currency)) return;
-    track('purchase_verified', { transaction_id: purchaseId, value, currency, service_tier: tier });
+    const properties = { transaction_id: purchaseId, value, currency, service_tier: tier };
+    track('purchase_verified', properties);
+    // Verification can finish before the optional tracker imports. Reaching the same
+    // adapter after import closes that race; its purchase ID suppresses duplicates.
+    import('./openai-ads.js').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
   } catch {}
 }
 // Stripe's return URL carries the Checkout Session ID, which also unlocks the one-time intake.

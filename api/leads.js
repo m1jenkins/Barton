@@ -106,8 +106,9 @@ async function handle(req, res) {
   `;
   if (prior) {
     if (!matchesLeadRequest(prior, hash)) throw new HttpError(409, 'idempotency_conflict', 'Idempotency-Key was already used');
-    await forwardAfterCommit(sql, prior, configuredForwardUrl());
-    return sendJson(res, 200, { ok: true, lead_id: prior.id });
+    const destination = configuredForwardUrl();
+    await forwardAfterCommit(sql, prior, destination);
+    return sendJson(res, 200, { ok: true, lead_id: prior.id, forwarding_configured: Boolean(destination) });
   }
 
   const turnstileVerified = await verifyTurnstile(lead.turnstile_token);
@@ -150,7 +151,7 @@ async function handle(req, res) {
       sourcePage: persisted.record.source_page
     }, req);
   }
-  return sendJson(res, persisted.created ? 201 : 200, { ok: true, lead_id: persisted.record.id });
+  return sendJson(res, persisted.created ? 201 : 200, { ok: true, lead_id: persisted.record.id, forwarding_configured: Boolean(destination) });
 }
 
 export default withApiErrors(handle);

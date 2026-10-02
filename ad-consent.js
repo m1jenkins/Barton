@@ -31,7 +31,7 @@ export function initializeAdConsent(w, d, setConsent) {
   panel.setAttribute('aria-labelledby', 'drive-right-ad-privacy-title');
   panel.innerHTML = `
     <h2 id="drive-right-ad-privacy-title" tabindex="-1">Your ad privacy</h2>
-    <p>May we use OpenAI ad measurement? It shares page visits, saved inquiries and checkout starts with OpenAI to measure our ads. It uses a cookie and may match contact details you enter after hashing them in your browser.</p>
+    <p>May we use OpenAI ad measurement? It shares page visits, saved inquiries, checkout starts and verified purchases with OpenAI to measure our ads. It uses a cookie and may match contact details you enter after hashing them in your browser.</p>
     <p>Optional. You can use the site either way and change your choice with “Ad privacy” in the footer. <a href="/policy.html#openai-ad-measurement">Read the details</a>.</p>
     <p data-ad-privacy-status role="status"></p>
     <div class="ad-privacy-actions">

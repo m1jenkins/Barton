@@ -31,6 +31,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 ## Advertising
 
 - [openai-ads-setup.md](openai-ads-setup.md): ChatGPT ads conversion tracking setup.
+- [openai-ads-cro-2026-10-02.md](openai-ads-cro-2026-10-02.md): pricing inquiry path, verified purchase measurement, price-visible ad tests and current delivery limitations.
 - [openai-ads-marketing.md](openai-ads-marketing.md): ad strategy and draft copy.
 - [google-ads-launch-plan-2026-09-27.md](google-ads-launch-plan-2026-09-27.md): approved Google Search launch plan: launch gates, campaigns, ad copy and the 30-day operating plan.
 - [google-ads-setup.md](google-ads-setup.md): the owner's Google Ads, Tag Manager and Editor steps.

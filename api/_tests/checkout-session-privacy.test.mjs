@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { readFile, readdir } from 'node:fs/promises';
+import { createOpenAIAds } from '../../openai-ads.js';
 
 // Stripe returns buyers to the payment pages with the Checkout Session ID in the URL, and that
 // ID also unlocks the one-time intake. GTM runs the Google tag and Clarity on these pages, so the
@@ -48,7 +49,7 @@ function runHeadScript(t) {
 }
 
 // script.js on a payment page, with stubbed purchase-status and onboarding APIs.
-function runPage(t, { tier = 'full_service', responses = [verified] } = {}) {
+function runPage(t, { tier = 'full_service', responses = [verified], adMeasurement } = {}) {
   const requests = [];
   const gate = { dataset: { state: 'pending' }, hidden: false, querySelector: () => null };
   const content = { hidden: true };
@@ -64,6 +65,13 @@ function runPage(t, { tier = 'full_service', responses = [verified] } = {}) {
     querySelectorAll: () => [],
     createElement: () => ({ dataset: {}, setAttribute() {} })
   };
+  const sdkScripts = [];
+  if (adMeasurement !== undefined) {
+    document.head = { appendChild: script => sdkScripts.push(script) };
+    t.window.navigator = { globalPrivacyControl: false };
+    t.window.driveRightOpenAIAds = createOpenAIAds(t.window, document, 'test-pixel');
+    t.window.driveRightOpenAIAds.setConsent({ measurement: adMeasurement });
+  }
   const fetch = async (url, options = {}) => {
     requests.push({ url, method: options.method || 'GET', body: options.body ? JSON.parse(options.body) : null });
     if (url === '/api/onboarding') return { ok: true, status: 200, json: async () => ({ ok: true, onboarding_id: 'b3c1a1d2-0000-4000-8000-000000000001' }) };
@@ -77,8 +85,29 @@ function runPage(t, { tier = 'full_service', responses = [verified] } = {}) {
     return gate.dataset.state;
   };
   const submit = async () => { await listeners.submit({ preventDefault() {} }); return requests.at(-1); };
-  return { body, gate, form, requests, settled, submit, dataLayer: t.window.dataLayer };
+  return { body, gate, form, requests, settled, submit, dataLayer: t.window.dataLayer, sdkScripts };
 }
+
+test('the real payment verifier reports an OpenAI purchase only for consented paid receipts after address sanitization', async () => {
+  for (const [adMeasurement, responses, expected] of [[true, [verified], 1], [false, [verified], 0],
+    [true, [{ ok: true, verified: false, status: 'unverified' }], 0]]) {
+    const t = tab(`${origin}/payment-success-fullservice.html?session_id=${sessionId}`);
+    runHeadScript(t);
+    const page = runPage(t, { adMeasurement, responses });
+    await page.settled();
+    const calls = (t.window.oaiq?.q || []).map(args => Array.from(args));
+    const purchases = calls.filter(call => call[1] === 'order_created');
+    assert.equal(purchases.length, expected);
+    assert.equal(page.sdkScripts.length, expected);
+    assert.equal(calls.filter(call => call[1] === 'page_viewed').length, 0);
+    assert.equal(JSON.stringify(calls).includes(sessionId), false);
+    if (expected) {
+      assert.equal(purchases[0][2].amount, 29500);
+      assert.equal(purchases[0][3].event_id, `purchase:${purchaseId}`);
+      assert.equal(purchases[0][3].opt_out, true);
+    }
+  }
+});
 
 test('every payment page moves the session ID out of the URL before GTM loads', async () => {
   assert.deepEqual(pages, ['payment-success-concierge.html', 'payment-success-consultant.html', 'payment-success-fullservice.html', 'payment-success.html']);

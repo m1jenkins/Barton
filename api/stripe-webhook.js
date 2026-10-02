@@ -126,7 +126,7 @@ export async function recordEvent(event, sql = database()) {
       recorded: true,
       openaiAdsCapi: {
         eventType: 'order_created',
-        eventId: `purchase:${session.id}`,
+        eventId: `purchase:${purchaseId}`,
         timestampMs: Date.parse(stripeCreatedAt),
         sourcePage: attempt.source_page,
         amount: amountTotal,

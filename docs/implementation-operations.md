@@ -27,7 +27,7 @@ Request:
 }
 ```
 
-The endpoint validates and commits the lead before returning `{ "ok": true, "lead_id": "…" }`. Reusing an idempotency key with identical normalized data returns the original ID; reusing it with different data returns `409`.
+The endpoint validates and commits the lead before returning `{ "ok": true, "lead_id": "…", "forwarding_configured": false }` (the last field reflects whether a notification destination is configured). Reusing an idempotency key with identical normalized data returns the original ID; reusing it with different data returns `409`. The pricing dialog uses source `pricing_inquiry`, requires a vehicle and email, and permits an empty name. Existing lead sources still require a name. Until forwarding is configured, its success state offers an explicit email handoff; submission alone does not send an email.
 
 If `LEAD_FORWARD_URL` is configured, the endpoint creates an outbox row in the same database transaction and only calls the downstream HTTPS service after that transaction commits. The downstream request carries the durable lead ID as its own `Idempotency-Key`. A forwarding failure never changes a successfully stored lead into a failed lead response.
 
@@ -188,7 +188,7 @@ Google tags are GTM-only (container `GTM-W577B3D4`): pages only push to `dataLay
 - `begin_checkout`: pushed once per checkout attempt after `/api/checkout-start` succeeds, with `event_id` `checkout:<attempt_id>`, `service_tier` and `checkout_attempt_id`. The push carries `eventCallback` and `eventTimeout: 1000`; the Stripe redirect waits for GTM's callback for at most one second, does not wait when GTM has not loaded, and is never blocked by a tracking error.
 - `purchase_verified`: pushed on a confirmation page only after `/api/purchase-status` returns `verified: true` with a UUID `purchase_id`, a finite positive `value` and a three-letter uppercase `currency`. It carries `transaction_id` (the server purchase ID), `value`, `currency` and `service_tier` with the usual page context and first/last-touch attribution; `event_id` is `purchase_verified:<purchase_id>`. Memory and `sessionStorage` guards send it once per browser session, so map `transaction_id` in the Google Ads conversion tag to dedupe a receipt reopened elsewhere. `processing`, `unverified`, `not_found`, request errors and sessions held for review never fire it. No contact data or Checkout Session ID enters the data layer, and the ID stays out of tag requests (next section).
 
-The OpenAI Ads pixel ignores `purchase_verified`. The server `purchase` outbox event keeps the Checkout Session ID as its `transaction_id`, so do not send both to the same Google Ads conversion action. GTM tag, trigger and conversion-action setup is account work; this change does not modify the container.
+The OpenAI Ads Pixel maps `purchase_verified` to `order_created` only on a verified receipt page after its secure session ID leaves the address, with existing measurement consent and GPC gating. It uses `purchase:<purchase UUID>` and the recorded amount in cents. Ordinary receipt visits do not load it. The server `purchase` outbox event keeps the Checkout Session ID as its `transaction_id`, so do not send both to the same Google Ads conversion action. GTM tag, trigger and conversion-action setup is account work; this change does not modify the container. See [the October 2 release record](openai-ads-cro-2026-10-02.md).
 
 ### Google ad click IDs (stored for reconciliation)
 

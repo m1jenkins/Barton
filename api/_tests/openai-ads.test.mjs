@@ -18,17 +18,17 @@ test('saved consent expires and rejects malformed or future-dated choices', () =
   assert.equal(readAdConsent({ getItem() { return 'not json'; } }), null);
 });
 
-function fixture({ pixelId = 'test-pixel', hostname = 'www.driverightcarbuying.com', pathname = '/', gpc = false, storageBlocked = false } = {}) {
+function fixture({ pixelId = 'test-pixel', hostname = 'www.driverightcarbuying.com', pathname = '/', search = '', hash = '', verified = false, gpc = false, storageBlocked = false } = {}) {
   const scripts = [];
   const storage = new Map();
   const w = {
-    location: { hostname, pathname }, navigator: { globalPrivacyControl: gpc },
+    location: { hostname, pathname, search, hash }, navigator: { globalPrivacyControl: gpc },
     sessionStorage: {
       getItem(key) { if (storageBlocked) throw Error('blocked'); return storage.get(key); },
       setItem(key, value) { if (storageBlocked) throw Error('blocked'); storage.set(key, value); }
     }
   };
-  const d = { createElement: () => ({}), head: { appendChild: script => scripts.push(script) } };
+  const d = { body: { dataset: { purchaseVerified: verified ? 'true' : 'false' } }, createElement: () => ({}), head: { appendChild: script => scripts.push(script) } };
   const ads = createOpenAIAds(w, d, pixelId);
   return { w, d, ads, scripts, calls: () => (w.oaiq?.q || []).map(args => Array.from(args)) };
 }
@@ -46,7 +46,7 @@ test('no SDK or events without both a Pixel ID and explicit consent', () => {
   }
 });
 
-test('production only; GPC and payment/success pages suppress all measurement', () => {
+test('production only; GPC and unverified payment/success pages suppress all measurement', () => {
   for (const options of [{ hostname: 'localhost' }, { hostname: 'preview.vercel.app' }, { gpc: true },
     { pathname: '/payment-success.html' }, { pathname: '/payment-success-fullservice.html' }, { pathname: '/success.html' }]) {
     const f = fixture(options);
@@ -66,7 +66,7 @@ test('initializes once and maps only confirmed events, with stable IDs and no fo
   f.ads.track('begin_checkout', { checkout_attempt_id: 'xyz' });
   f.ads.track('begin_checkout', { checkout_attempt_id: 'xyz' });
   for (const event of ['cta_click', 'phone_click', 'purchase', 'onboarding_complete', 'generate_lead', 'begin_checkout']) f.ads.track(event);
-  // The Google Ads purchase event is GTM-only; it must never become an OpenAI event.
+  // A purchase-shaped event on an ordinary page is not proof of a verified receipt.
   f.ads.track('purchase_verified', { transaction_id: '06a28d37-b5d9-4f0e-a20c-c8e506ef5477', value: 395, currency: 'USD', service_tier: 'full_service' });
   assert.equal(f.scripts.length, 1);
   assert.equal(f.scripts[0].src, 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
@@ -78,6 +78,62 @@ test('initializes once and maps only confirmed events, with stable IDs and no fo
     ['measure', 'lead_created', { type: 'customer_action' }, { opt_out: true, event_id: 'lead:abc' }],
     ['measure', 'checkout_started', { type: 'contents' }, { opt_out: true, event_id: 'checkout:xyz' }]
   ]);
+});
+
+const purchase = { transaction_id: '06a28d37-b5d9-4f0e-a20c-c8e506ef5477', value: 395, currency: 'USD' };
+
+test('a consented verified receipt reports the paid amount in cents once, without a page view or checkout bearer', () => {
+  const f = fixture({ pathname: '/payment-success-fullservice.html', verified: true });
+  f.ads.setConsent({ measurement: true });
+  assert.equal(f.scripts.length, 0, 'receipt visits never initialize the Pixel by themselves');
+  f.ads.track('purchase_verified', { ...purchase, email: 'private@example.com', session_id: 'cs_test_private' });
+  f.ads.track('purchase_verified', purchase);
+  f.ads.track('generate_lead', { lead_id: 'ignored-on-receipt' });
+  f.ads.track('begin_checkout', { checkout_attempt_id: 'ignored-on-receipt' });
+  assert.equal(f.scripts.length, 1);
+  assert.deepEqual(f.calls().filter(call => call[0] === 'measure'), [
+    ['measure', 'order_created', { type: 'contents', amount: 39500, currency: 'USD' }, { opt_out: true, event_id: `purchase:${purchase.transaction_id}` }]
+  ]);
+  const reloadedWindow = { ...f.w, oaiq: undefined };
+  const reloaded = createOpenAIAds(reloadedWindow, f.d, 'test-pixel');
+  reloaded.setConsent({ measurement: true });
+  reloaded.track('purchase_verified', purchase);
+  assert.equal(reloadedWindow.oaiq, undefined, 'the duplicate receipt does not load an SDK');
+});
+
+test('receipt purchase tracking requires verification, sanitized address, consent, valid ledger fields and no GPC', () => {
+  for (const options of [{ verified: false }, { gpc: true }, { search: '?session_id=cs_test_private' },
+    { hash: '#checkout_session_id=cs_test_private' }, { hostname: 'localhost' }, { pathname: '/success.html' }]) {
+    const f = fixture({ pathname: '/payment-success-fullservice.html', verified: true, ...options });
+    f.ads.setConsent({ measurement: true });
+    f.ads.track('purchase_verified', purchase);
+    assert.equal(f.scripts.length, 0, JSON.stringify(options));
+  }
+  for (const invalid of [{ transaction_id: 'cs_test_private' }, { transaction_id: '' }, { value: 0 },
+    { value: -395 }, { value: '395' }, { value: Infinity }, { currency: 'usd' }, { currency: 'US' }]) {
+    const f = fixture({ pathname: '/payment-success-fullservice.html', verified: true });
+    f.ads.setConsent({ measurement: true });
+    f.ads.track('purchase_verified', { ...purchase, ...invalid });
+    assert.equal(f.scripts.length, 0, JSON.stringify(invalid));
+  }
+  const declined = fixture({ pathname: '/payment-success-fullservice.html', verified: true });
+  declined.ads.track('purchase_verified', purchase);
+  declined.ads.setConsent({ measurement: true });
+  assert.equal(declined.scripts.length, 0, 'suppressed purchases are not replayed on a later choice');
+  const revoked = fixture({ pathname: '/payment-success-fullservice.html', verified: true });
+  revoked.ads.setConsent({ measurement: true });
+  revoked.ads.track('purchase_verified', purchase);
+  revoked.ads.setConsent({ measurement: false });
+  assert.equal(revoked.calls().filter(call => call[0] === 'measure').length, 0);
+});
+
+test('purchase reporting uses the recorded value, including older receipts and fractional dollar amounts', () => {
+  for (const value of [295, 495, 695, 895, 395.12]) {
+    const f = fixture({ pathname: '/payment-success-concierge.html', verified: true });
+    f.ads.setConsent({ measurement: true });
+    f.ads.track('purchase_verified', { ...purchase, value });
+    assert.equal(f.calls().find(call => call[1] === 'order_created')[2].amount, Math.round(value * 100));
+  }
 });
 
 test('withdrawal clears unsent events and does not replay suppressed conversions on regrant', () => {

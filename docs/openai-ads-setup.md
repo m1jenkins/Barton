@@ -1,5 +1,9 @@
 # OpenAI Ads conversion setup
 
+## Current changes — October 2, 2026
+
+[Pricing and measurement release record](openai-ads-cro-2026-10-02.md) documents the new saved-inquiry path and verified browser `order_created` events. It supersedes the older blanket payment-page exclusion: verified receipts with consent and a sanitized address can report the ledger amount using `purchase:<purchase UUID>`. Ordinary receipt visits remain unmeasured. Current production environment metadata confirms CAPI is inactive because its server key is absent. Inquiries are stored durably, with an explicit email handoff until a notification connection is configured.
+
 ## Pixel replacement — September 28, 2026
 
 The owner supplied Pixel ID `4FeqFBVzJFUMdu8S8gatam` and authorized deployment on September 28. It replaces the previous browser destination in `openai-ads.js`, using the existing shared loader rather than installing another initializer. This release uses the existing main-branch Vercel deployment workflow; production verification follows the push. Ads Manager receipt for the new ID remains unverified. The September 13 notes below describe the earlier installation.

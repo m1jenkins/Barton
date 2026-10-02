@@ -87,6 +87,18 @@ test('lead attribution is allowlisted and normalized', () => {
   assert.equal(result.attribution.last_touch, null);
 });
 
+test('the short pricing inquiry can omit name but still requires valid contact and search details', () => {
+  const payload = { source: 'pricing_inquiry', email: 'BUYER@example.com', vehicle: 'Used Mazda CX-5', source_page: '/schedule.html#full-service' };
+  const lead = validateLeadPayload(payload);
+  assert.equal(lead.name, '');
+  assert.equal(lead.email, 'buyer@example.com');
+  assert.equal(lead.source_page, '/schedule.html');
+  for (const invalid of [{ ...payload, source: 'website' }, { ...payload, email: '' },
+    { ...payload, email: 'invalid' }, { ...payload, vehicle: '' }, { ...payload, honeypot: 'spam' }]) {
+    assert.throws(() => validateLeadPayload(invalid), error => error.status === 422);
+  }
+});
+
 test('checkout validation uses an allowlisted tier and optional lead UUID', () => {
   assert.deepEqual(
     validateCheckoutPayload({

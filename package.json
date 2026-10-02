@@ -11,7 +11,7 @@
     "test": "node --test api/_tests/*.test.mjs buying/*.test.js scripts/_tests/*.test.mjs",
     "test:buying": "node --test buying/*.test.js",
     "preview": "node scripts/preview.mjs",
-    "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node scripts/validate-site.mjs",
+    "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node --check buying/inquiry.js && node scripts/validate-site.mjs",
     "draft:metros": "node scripts/render-metro-drafts.mjs",
     "preview:metros": "node scripts/preview-metros.mjs",
     "check:metros": "node scripts/render-metro-drafts.mjs --check",

@@ -79,12 +79,16 @@ test('historical $195/$495/$295/$895 and new $395/$695 paid sessions retain thei
   const record=attempt({tier_id:tier,expected_amount:amount,offer_key:null}),db=ledger(record),e=event(tier,amount);
   const unpaid={...e,id:'evt_wait',data:{object:{...e.data.object,payment_status:'unpaid'}}};
   assert.equal((await recordEvent(unpaid,db.sql)).recorded,false);
-  assert.equal((await recordEvent({...e,type:'checkout.session.async_payment_succeeded'},db.sql)).recorded,true);
+  const paid = await recordEvent({...e,type:'checkout.session.async_payment_succeeded'},db.sql);
+  assert.equal(paid.recorded,true);
   assert.equal((await recordEvent(e,db.sql)).duplicate,true);
   assert.equal((await recordEvent({...e,id:e.id+'_second'},db.sql)).recorded,false);
   assert.equal(db.purchases.size,1);assert.equal(db.outbox.size,1);assert.equal(record.expected_amount,amount);
   assert.equal([...db.outbox.values()][0].value,amount/100);
   const purchase=[...db.purchases.values()][0];
+  assert.equal(paid.openaiAdsCapi.eventId,`purchase:${purchase.id}`);
+  assert.equal(paid.openaiAdsCapi.eventId.includes(e.data.object.id),false);
+  assert.equal(paid.openaiAdsCapi.amount,amount);
   for(let refresh=0;refresh<3;refresh++)assert.equal(verifiedPurchase(e.data.object,purchase,tier),true);
   assert.deepEqual(verifiedPurchaseBody(purchase),{ok:true,verified:true,tier,purchase_id:purchase.id,value:amount/100,currency:'USD'});
   assert.equal(verifiedPurchase({...e.data.object,amount_total:amount+1},purchase,tier),false);
