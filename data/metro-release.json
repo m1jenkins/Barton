@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change.",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after Vercel Analytics installation.",
       "indexablePublication": true,
-      "sha256": "32b0f3afc1559dff00ff9afe743cfb43a2b12db587916a67f230faa1478610a5",
+      "sha256": "4a1c709f7f3b9a6942244777777b3a97496b0e9ebf99ec3a92498203a6c36342",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
