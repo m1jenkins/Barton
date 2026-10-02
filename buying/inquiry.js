@@ -1,5 +1,3 @@
-import '../openai-ads.js';
-
 const dialog = document.getElementById('car-search-inquiry');
 const form = document.getElementById('car-search-inquiry-form');
 
