@@ -1,0 +1,99 @@
+{
+  "status": "All six created through the in-app browser and verified as Serving after a fresh reload.",
+  "campaign": "Drive Right campaign",
+  "adGroup": "Recommended ad group",
+  "budgetDailyUSD": 65,
+  "generatedWith": "Built-in image_gen tool; prompt set included below.",
+  "imageDisclosure": "Illustrative generated creatives. Mason's existing public portrait is used in 01-mason-backup; other people/objects are illustrative.",
+  "ads": [
+    {
+      "id": "01-mason-backup",
+      "name": "Dealer pain | Manager vs Mason | Oct 2",
+      "headline": "They have a manager. You have Mason.",
+      "description": "They negotiate every day. Put a car-buying advisor in your corner. Full Service: $395.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Input image 1 is a supporting REAL portrait of Mason. Preserve his exact identity, face, smile, hair, blue shirt and natural photographic appearance; keep the real portrait as a clearly bounded photo insert, do not fabricate a different person or dress him as a salesman. Composition: a striking magazine-style split editorial layout with an abstract dark-green speech bubble on the left saying exactly 'Let me ask my manager.' and Mason's welcoming real portrait on the right with a cream speech bubble saying exactly 'Let me ask Mason.' Large type; the portrait and two distinct bubbles dominate. The line under the real portrait says exactly 'Mason, founder'. Keep all text legible and within generous margins. Warm confident, a buyer's advocate, playful but credible.",
+      "reference": "/Users/user/Documents/GitHub/Barton/assets/buying/mason-headshot-1200.jpg",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 36,
+      "descriptionCharacters": 86,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/01-mason-backup.png",
+      "status": "Serving"
+    },
+    {
+      "id": "02-dealer-circus",
+      "name": "Dealer pain | Love car hate circus | Oct 2",
+      "headline": "Love the car. Hate the circus.",
+      "description": "Dealer calls, counteroffers, fee reviews. Hand the legwork to Drive Right for a $395 flat fee.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Subject: one beautiful generic unbranded deep-blue compact car, stationary in three-quarter view, rendered as sophisticated automotive editorial photography on a clean off-white studio surface. Surround the car with three large tasteful graphic speech bubbles, deliberately intrusive but elegantly arranged, text exactly 'Come on in', 'Monthly budget?' and 'Let me check'. The car is the hero, the overlapping sales-talk bubbles create the feeling of dealer noise. No literal clowns or actual circus animals. Car and bubbles all stay in the central 80%, no headline beyond the three bubbles and Drive Right wordmark. Crisp tactile editorial collage, clean high contrast.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 30,
+      "descriptionCharacters": 94,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/02-dealer-circus.png",
+      "status": "Serving"
+    },
+    {
+      "id": "03-just-come-in",
+      "name": "Dealer pain | Just come in | Oct 2",
+      "headline": "“Just come in” isn’t a price.",
+      "description": "We contact dealers, compare offers and negotiate. You review the deal and make the final call.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Subject: a bold typographic poster about a dealer answering a simple price question with a visit request. Two oversized graphic speech bubbles, not a screenshot or real messaging app. Upper deep-green bubble text exactly 'JUST COME IN'. Lower cream bubble outlined in black text exactly 'I asked what the car costs.' The first feels loud, the response dry and calm. A small car key fob and a generic blue car silhouette provide unmistakable car-buying context, keep typography the hero. Sophisticated minimal advertising art direction, large legible text, charmingly exasperated, clear speech-bubble illustration rather than an authentic customer conversation.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 29,
+      "descriptionCharacters": 94,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/03-just-come-in.png",
+      "status": "Serving"
+    },
+    {
+      "id": "04-saturday",
+      "name": "Dealer pain | Keep Saturday | Oct 2",
+      "headline": "Your Saturday isn’t a dealership waiting room.",
+      "description": "We handle the search and dealer back-and-forth. Full Service car-buying help for $395.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Scene: a believable quiet dealership waiting area, one empty slightly uncomfortable visitor chair and a very large simple wall clock above it, a generic unbranded car softly visible through showroom glass. Premium documentary-style editorial photography with slightly deadpan humor; the lonely chair and clock dominate, no people. Natural afternoon light, clean but boring room, forest-green chair upholstery. Add one large simple headline at top exactly 'There goes Saturday.' and small Drive Right wordmark at bottom. No clock countdown, no time-saving number, no other text, no badges or dealer brand.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 46,
+      "descriptionCharacters": 86,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/04-saturday.png",
+      "status": "Serving"
+    },
+    {
+      "id": "05-growing-price",
+      "name": "Dealer pain | Price grows legs | Oct 2",
+      "headline": "The price shouldn’t grow legs.",
+      "description": "Surprise add-ons? We compare offers, review dealer fees and negotiate before you decide.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Primary subject: an elegant surreal paper car-price quote whose bottom edge sprouts three long paper strips like comical walking legs. The quote is CLEARLY a conceptual illustration, not a real signed contract. A simple blue unbranded car silhouette at top of the sheet with the exact heading 'Advertised price'. Three oversized extending paper strips have only these exact labels: 'Protection package', 'Accessories', 'Dealer add-ons'. No currency amounts, no numerical totals, no savings numbers. Use tactile paper sculpture, crisp shadows, premium editorial collage on warm white. Funny but visually sophisticated, the growing-paper-leg metaphor should be instantly understood. Strong central silhouette, generously spaced labels.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 30,
+      "descriptionCharacters": 88,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/05-growing-price.png",
+      "status": "Serving"
+    },
+    {
+      "id": "06-price-vs-payment",
+      "name": "Dealer pain | Price vs payment | Oct 2",
+      "headline": "You asked for a price. You got a payment.",
+      "description": "See the deal beyond the monthly payment. We compare offers, check fees and handle negotiations.",
+      "prompt": "Use case: ads-marketing. Asset: one finished square 1024x1024 OpenAI sponsored-ad image for Drive Right, a real car-buying advisory service. Premium witty editorial creative, warm white #FFFFFF, near-black #111111, deep forest green #1B4D3E, a restrained Mariner blue accent. Clean Inter-like sans serif, bold shapes, readable at thumbnail size, spacious 8% edge safety. One coherent composition, not a sheet of variants. Bottom small wordmark text exactly 'Drive Right'. No manufacturer logos, no personal information, no watermarks, no fake reviews, no invented savings, no false urgency, no implication Drive Right owns vehicle inventory. Illustrative ad scene. Primary subject: two huge clean conversational speech bubbles beside a generic car key fob and a miniature blue car in a refined editorial tabletop composition. Left cream bubble with dark type asks exactly 'What’s the total price?'. Right forest-green bubble with white type responds exactly 'What monthly payment works?'. Make the deflection visually obvious using opposed speech-bubble tails; no real messaging UI, no people. Bold clean typography and very few objects, calm buyer question meets a sales redirect. No actual payment amount, no interest rate, no financial advice or loan promises. Editorial advertising illustration with tactile cut-paper bubbles, soft shadows, crisp type.",
+      "url": "https://www.driverightcarbuying.com/schedule.html#full-service",
+      "tracking": "utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}",
+      "headlineCharacters": 41,
+      "descriptionCharacters": 95,
+      "image": "/Users/user/Documents/GitHub/Barton/outputs/2026-10-02-dealer-pain-ads/images/06-price-vs-payment.png",
+      "status": "Serving"
+    }
+  ],
+  "verification": {
+    "date": "2026-10-02",
+    "newAds": 6,
+    "totalAds": 14,
+    "budgetDailyUSD": 65,
+    "campaignCount": 1,
+    "screenshot": "proof/all-six-ads-serving.jpg",
+    "originalAdsChanged": false,
+    "websiteChanged": false
+  }
+}
