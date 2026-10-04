@@ -197,7 +197,7 @@ function renderConversation() {
   // Keep correction phrases possible even while asking for a five-digit ZIP.
   input.maxLength = field?.maxLength || 180;
   input.rows = 1;
-  input.enterKeyHint = field?.multiline ? 'enter' : 'send';
+  input.enterKeyHint = 'send';
   $('#composer').classList.toggle('is-multiline', !replyPending && Boolean(field?.multiline));
   input.placeholder = replyPending ? 'Your reply…' : matchMedia('(max-width: 760px)').matches ? field?.mobilePlaceholder || field?.placeholder || 'Your answer' : field?.placeholder || 'Your answer';
   $('#answer-label').textContent = replyPending ? 'Your reply' : field?.question || 'Your answer';
@@ -302,7 +302,8 @@ if (home) {
   input.addEventListener('input', () => { $('#input-error').textContent = ''; input.removeAttribute('aria-invalid'); });
   input.addEventListener('input', sizeAnswer);
   input.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (view === 'home' || !currentField()?.multiline)) { e.preventDefault(); $('#composer').requestSubmit(); }
+    // Enter always sends; Shift+Enter adds a line in the longer answers.
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('#composer').requestSubmit(); }
   });
   $('#example').addEventListener('click', () => submit('A Mazda Miata, under $30k'));
   $('#choices').addEventListener('click', e => { const b = e.target.closest('[data-choice]'); if (b) submit(b.dataset.choice); });
