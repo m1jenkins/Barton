@@ -6,7 +6,7 @@ import { readFile } from 'node:fs/promises';
 const source = (await readFile(new URL('../../buying/inquiry.js', import.meta.url), 'utf8')).replace(/^import .*;\n/, '');
 const leadId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 
-function inquiry(request) {
+function inquiry(request, track) {
   const listeners = {}, requests = [], events = [], dialogListeners = {};
   const fields = { vehicle: 'Used Mazda CX-5', budget: '$35,000', timeline: 'Within a month', email: 'buyer@example.com', name: '', website: '' };
   const submit = { disabled: false, textContent: 'Send my car search inquiry', setAttribute() {}, removeAttribute() {} };
@@ -22,7 +22,7 @@ function inquiry(request) {
   const opener = { dataset: { openInquiry: 'Ultimate Concierge' }, addEventListener(event, fn) { this.click = fn; }, focus() { this.focused = true; } };
   const client = {
     attribution: { first_touch: { utm_source: 'chatgpt' } }, createId: () => crypto.randomUUID(),
-    track: (event, data) => events.push({ event, data }),
+    track: track || ((event, data) => events.push({ event, data })),
     requestJson: async (url, options) => { requests.push({ url, ...options }); return request(requests.length); }
   };
   vm.runInNewContext(source, {
@@ -66,6 +66,15 @@ test('a configured notification connection uses the saved-inquiry confirmation w
   await f.send();
   assert.equal(f.emailHandoff.hidden, true);
   assert.doesNotMatch(f.status.textContent, /button below/);
+});
+
+test('an analytics failure cannot turn a saved inquiry into a submission error', async () => {
+  const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), () => { throw new Error('Analytics unavailable'); });
+  await f.send();
+  assert.match(f.status.textContent, /inquiry is saved/);
+  assert.equal(f.form.wasReset, true);
+  assert.equal(f.emailHandoff.hidden, false);
+  assert.equal(f.submit.disabled, false);
 });
 
 test('pricing inquiry persists search and contact details and reports only the durable saved lead', async () => {

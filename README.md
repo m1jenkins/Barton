@@ -53,12 +53,15 @@ Use Node 24.
 npm ci
 node scripts/validate-site.mjs   # page metadata, asset hashes, sitemap, schema
 npm run check:api                # syntax check for the serverless functions
+npm run check:js                 # all first-party JavaScript, including browser modules and local tools
 npm run check:metros             # drafts match their generator
 npm run check:cities
 npm test
 ```
 
-CI runs the same list in `.github/workflows/checks.yml`.
+CI runs the same list in `.github/workflows/checks.yml`. Site validation also follows local HTML, CSS and browser module resources, rejects references excluded from deployment, and checks their content-hash versions. `npm run check:assets` runs that resource check alone. Database delivery tests use the development-only PGlite PostgreSQL runtime with synthetic records.
+
+`npm run leads:dispatch` retries one due batch of configured lead notifications and reports aggregate counts. It requires a configured destination and scoped database access; see [lead notification recovery](docs/implementation-operations.md#lead-notification-recovery). Connect it to an authorized scheduler for unattended recovery.
 
 ## Local preview
 

@@ -7,11 +7,13 @@
     "node": "24.x"
   },
   "scripts": {
-    "check:api": "node --check api/leads.js && node --check api/checkout-start.js && node --check api/stripe-webhook.js && node --check api/purchase-status.js && node --check api/onboarding.js && node --check api/_lib/analytics.js && node --check api/_lib/analytics-outbox.js && node --check api/_lib/config.js && node --check api/_lib/db.js && node --check api/_lib/http.js && node --check api/_lib/stripe-client.js && node --check api/_lib/turnstile.js && node --check api/_lib/validation.js && node --check api/_lib/checkout-offer.js && node --check scripts/dispatch-analytics.mjs",
+    "check:api": "node scripts/check-javascript.mjs --api",
+    "check:js": "node scripts/check-javascript.mjs",
+    "check:assets": "node scripts/check-assets.mjs",
     "test": "node --test api/_tests/*.test.mjs buying/*.test.js scripts/_tests/*.test.mjs",
     "test:buying": "node --test buying/*.test.js",
     "preview": "node scripts/preview.mjs",
-    "check:buying": "node --check buying/app.js && node --check buying/intake.js && node --check buying/brief.js && node --check buying/checkout.js && node --check buying/inquiry.js && node scripts/validate-site.mjs",
+    "check:buying": "node scripts/check-javascript.mjs --frontend && node scripts/validate-site.mjs",
     "draft:metros": "node scripts/render-metro-drafts.mjs",
     "preview:metros": "node scripts/preview-metros.mjs",
     "check:metros": "node scripts/render-metro-drafts.mjs --check",
@@ -19,6 +21,7 @@
     "preview:cities": "node scripts/preview-cities.mjs",
     "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check",
     "analytics:dispatch": "node scripts/dispatch-analytics.mjs",
+    "leads:dispatch": "node scripts/dispatch-leads.mjs",
     "preview:worksheet": "node scripts/preview-worksheet.mjs",
     "preview:guides": "node scripts/preview-guides.mjs"
   },
@@ -27,6 +30,7 @@
     "stripe": "22.5.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
     "parse5": "^8.0.1",
     "sharp": "^0.35.4"
   }

@@ -17,6 +17,7 @@ jobs:
       - run: npm ci
       - run: node scripts/validate-site.mjs
       - run: npm run check:api
+      - run: npm run check:js
       - run: npm run check:metros
       - run: npm run check:cities
       - run: npm test

@@ -117,6 +117,11 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
 | `LEAD_FORWARD_BEARER_TOKEN` | Optional bearer credential for that downstream destination. |
+| `LEAD_OUTBOX_BATCH_SIZE` | Optional lead-notification claim size, default `10`, allowed `1`–`50`. |
+| `LEAD_OUTBOX_LEASE_SECONDS` | Optional processing lease, default `60`, allowed `15`–`600`; must exceed the delivery timeout. |
+| `LEAD_OUTBOX_MAX_ATTEMPTS` | Optional attempt cap, default `8`, allowed `1`–`25`. |
+| `LEAD_OUTBOX_RETRY_SECONDS` | Optional initial retry delay, default `30`, allowed `5`–`3600`; exponential backoff is capped at six hours. |
+| `LEAD_FORWARD_TIMEOUT_MS` | Optional notification request timeout, default `8000`, allowed `500`–`15000`. |
 | `DATABASE_MAX_CONNECTIONS` | Optional per-function-process limit, default `1`, allowed `1`–`5`. Use a pooled database endpoint. |
 | `ANALYTICS_FORWARD_URL` | Optional credential-free HTTPS endpoint for the server-side analytics collector. When absent, outbox rows remain pending. |
 | `ANALYTICS_FORWARD_BEARER_TOKEN` | Optional bearer credential for the analytics collector. |
@@ -173,9 +178,21 @@ Dispatch is triggered opportunistically by verified Stripe webhook and onboardin
 
 Leave `TURNSTILE_SECRET_KEY` unset until a matching client widget is installed and its token is submitted with the lead form. Enabling the secret without the widget intentionally causes browser lead submissions to fail verification.
 
-Likewise, failed optional lead forwards remain durable for review but need a scheduled retry worker for unattended recovery. Downstream systems must honor the durable lead ID as an idempotency key.
+Failed optional lead forwards can be retried with `npm run leads:dispatch` (below). A scheduler and notification destination remain external setup; downstream systems must honor the durable lead ID as an idempotency key.
 
 Define and apply an approved retention/deletion policy for lead and onboarding PII, restrict database access, encrypt backups, and avoid logging request bodies. Webhook rows intentionally omit the full Stripe event payload and customer fields.
+
+## Lead notification recovery
+
+`npm run leads:dispatch` sends one bounded batch from the existing `lead_forward_outbox`. It uses the same HTTPS destination, bearer credential, allowlisted lead payload and durable lead ID as the immediate post-commit delivery. It requires no SQL migration. Only leads queued while forwarding was configured are eligible; configuring a destination later does not automatically backfill older unqueued leads.
+
+The dispatcher commits an atomic `FOR UPDATE SKIP LOCKED` claim before calling the destination. Pending rows are due immediately; failed rows wait for exponential backoff from their last attempt; processing rows become eligible after their lease expires. Sent rows and exhausted rows are never automatically resent. Each acknowledgement checks both processing state and attempt number, so a late worker cannot overwrite a newer outcome. The destination must durably accept the lead before returning `2xx` and deduplicate retries by `Idempotency-Key`.
+
+The CLI prints only `configured`, `claimed`, `sent`, `failed`, `exhausted` and `exitCode` counts/state. It exits nonzero for a missing destination, failed delivery, dispatcher error or an exhausted row; a final in-progress attempt becomes exhausted only when its lease expires. Logs and stored error messages omit customer fields, downstream response bodies, credentials and destination URLs. A notification claim or acknowledgement failure after the lead commits does not turn its successful API receipt into an error.
+
+Run it from a worker with narrowly scoped database and destination credentials. Connect an authorized external scheduler and alerts to the exit status for unattended recovery. Review exhausted rows and the downstream durable receipt before manually resetting an attempt count; never reset sent rows as a routine retry. This repository does not install a scheduler or activate a notification destination.
+
+Contact forms preserve their idempotency key on ordinary network retries. A confirmed `idempotency_conflict` after the visitor changes the form restarts the request once with a new key; a second conflict stops and leaves the form editable. When forwarding is unconfigured, the saved-message state offers direct contact options. Optional analytics errors cannot replace a successful saved-inquiry state. The shared 15-second request deadline covers both response headers and the response body.
 
 ## September 18, 2026 local measurement changes
 
