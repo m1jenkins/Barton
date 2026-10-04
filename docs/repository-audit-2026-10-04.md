@@ -1,10 +1,10 @@
 # Repository audit — October 4, 2026
 
-The audit found recoverable failures around saved leads and incomplete static checks. This change fixes those failures, adds a notification retry worker, and records the next useful projects. The starting point was `746b5ac`; the original 225 tests passed before the audit. The resulting suite has 249 passing tests.
+The audit found recoverable failures around saved leads and incomplete static checks. This change fixes those failures, adds a notification retry worker, and records the next useful projects. The starting point was `746b5ac`; the original 225 tests passed before the audit. The resulting suite has 263 passing tests. The owner then authorized implementation of the follow-ups and a push/merge to main.
 
 ## Scope and findings
 
-Reviewed the root marketing pages, both page styles, the guided car search, pricing inquiry, checkout/receipt/onboarding boundaries, lead and analytics queues, SQL schema, deployment exclusions, redirects, content release records, private generators, guide drafts and quote worksheet. Production services and customer records were not exercised. The existing offer, historical receipt and SEO tests passed.
+Reviewed the root marketing pages, both page styles, the guided car search, pricing inquiry, checkout/receipt/onboarding boundaries, lead and analytics queues, SQL schema, deployment exclusions, redirects, content release records, private generators, guide drafts and quote worksheet. Live Vercel project configuration and the enabled analytics script were read; customer records and payment transactions were not exercised. The existing offer, historical receipt and SEO tests passed.
 
 | Area | Finding | Implemented result |
 | --- | --- | --- |
@@ -22,34 +22,34 @@ Reviewed the root marketing pages, both page styles, the guided car search, pric
 Failures were reproduced before their fixes: saved leads returning 500, a missing response-body deadline, conflicting edited contact retries, false inquiry failures, inconsistent JSON-array handling, and partial integer parsing. Regression tests exercise the production handlers and browser source, rather than copying their implementations.
 
 - `npm ci`: clean install, zero reported vulnerabilities.
-- `npm test`: **249 passed**, zero failures or skips; **24 additional tests** over the baseline.
-- `npm run check:js`: **73** JavaScript files; `check:api`: **29**; `check:buying`: **13** browser files plus site validation.
-- `node scripts/validate-site.mjs`: **65** root HTML files, **9** sitemap URLs and **566** local resource references.
+- `npm test`: **263 passed**, zero failures or skips; **38 additional tests** over the baseline.
+- `npm run check:js`: **82** JavaScript files; `check:api`: **34**; `check:buying`: **16** browser files plus site validation.
+- `node scripts/validate-site.mjs`: **66** root HTML files, **13** sitemap URLs and **587** local resource references.
 - `npm run check:metros` and `npm run check:cities`: **4** metro drafts and **20** city drafts plus their hub match their generators.
 - `node scripts/check-redirects.mjs --config-only`: **16** permanent redirect rules retained.
 - `git diff --check`: passed.
 
 Notification tests execute the production SQL against PostgreSQL via the dev-only PGlite runtime and the existing committed schema. They cover backoff, stable downstream idempotency keys, oldest-first bounded claims, active/expired leases, exhausted attempts, late acknowledgements and private-error handling. Interleaved workers are exercised; a physical multi-connection PostgreSQL stress test is outside this local test harness.
 
-Browser checks use the real local site and a separate synthetic API fixture. They cover desktop rendering, the nine-step car search, refresh persistence, pricing handoff, a 390px mobile viewport, inquiry save/contact handoff, dialog focus restoration, and a stalled response body followed by an editable retry. The fixture never forwards a real lead or opens a payment transaction.
+Browser checks use the real local site and a separate synthetic API fixture. They cover desktop rendering, the nine-step car search, refresh persistence, pricing handoff, a 390px mobile viewport, inquiry save/contact handoff, dialog focus restoration, and a stalled response body followed by an editable retry. Follow-up browser checks cover the public worksheet arithmetic, unknown-incentive scenarios, a downloaded CSV, 390px guides/tool, table/anchor navigation and updated measurement controls. The fixture never forwards a real lead or opens a payment transaction.
 
 The static asset checker follows local HTML resources, CSS `url()` values and literal JavaScript imports. Computed imports and remote resource availability are outside that check. Its deployment patterns cover the current `.vercelignore` rules.
 
 ## Operating the new worker
 
-See [implementation-operations.md#lead-notification-recovery](implementation-operations.md#lead-notification-recovery) for configuration, exit status, downstream deduplication and exhausted-row review. It uses the existing schema. It does not backfill leads that were never queued, and installing the command does not activate a destination or scheduler.
+See [implementation-operations.md#lead-notification-recovery](implementation-operations.md#lead-notification-recovery) for configuration, exit status, downstream deduplication and exhausted-row review. It uses the existing schema. It does not backfill leads that were never queued. The protected Vercel cron now schedules both bounded workers, but it cannot deliver to missing destinations.
 
-## Next useful work, in order
+## Follow-up implementation
 
-| Priority | Project | Concrete next step and dependency |
-| --- | --- | --- |
-| 1 | Connect lead notifications and unattended recovery | Choose the actual notification destination, verify a synthetic durable receipt, then connect a scoped scheduler and alert on nonzero worker exits. The October 2 operations record reported no configured connection; live account state was not re-read by this audit. |
-| 2 | Close measurement delivery | Reconcile the existing analytics collector and `analytics:dispatch` scheduler with actual account configuration. Review existing PR #95 (Vercel Web Analytics) before adding another analytics implementation. Preserve current consent and customer-data boundaries. |
-| 3 | Reuse the completed quote worksheet and guide drafts | Continue the existing national SEO backlog with the private quote worksheet and the three guide drafts. They already have generators/governance and useful tests. Promote specific assets through their recorded release requirements; avoid starting a duplicate tool. |
-| 4 | Document one client case | Supply one consented transaction with evidence, comparable pricing, fee treatment and redaction. It can support the existing service explainer, founder authorship and guide links without inventing savings. |
+| Suggested project | Result and remaining dependency |
+| --- | --- |
+| Unattended lead recovery | Protected daily Vercel cron added; production-only secret configured. Actual notification destination and a provider credential are still absent. Failed/exhausted runs surface in cron history and generic function logs; external alerts need a real destination. |
+| Measurement delivery | Existing PR #95 reviewed; consented, filtered Vercel page measurement implemented without its stale snippet/package changes. Analytics retry gains private error handling, settled delivery outcomes and PostgreSQL checks. The purchase collector URL/credential and destination reconciliation are still absent. |
+| Guides and quote worksheet | Three prepared revisions are released at their existing URLs and a new free worksheet is published at `/compare-car-quotes.html`. Resource discovery, Article data, current design, primary source checks, owner release record, inventory and sitemap are complete. The worksheet has no quote capture, GTM or analytics. |
+| Client case | Approved testimonials remain available. No underlying transaction records were supplied for a richer comparable-price/fee case; no new evidence or savings breakdown was invented. |
 
-The existing [national SEO backlog](seo/2026-10-01-national-seo-backlog.csv), [October 2 pricing/measurement record](openai-ads-cro-2026-10-02.md), and [release checklist](release-readiness.md) remain the authoritative launch records. Existing public copy retains its October 1 owner approval.
+See [resource-release-2026-10-04.md](resource-release-2026-10-04.md) and the scheduler/website-measurement sections in [implementation-operations.md](implementation-operations.md). The outstanding account destinations and client records were requested while independent implementation continued.
 
 ## Change footprint
 
-Most HTML changes only refresh the content hash of the shared script. City files were regenerated, and the pinned Austin legacy SHA was updated with its changed cache URL. Service prices, public routes, sitemap/indexing decisions, Google tag ownership and historical payment behavior retain their existing contracts. The new PostgreSQL test dependency is development-only. Review assets live in `.lavish/`, which is excluded from deployment.
+Most HTML changes only refresh the content hash of the shared script. City files were regenerated, and the pinned Austin legacy SHA was updated with its changed cache URL. Service prices, existing public routes, Google tag ownership and historical payment behavior retain their existing contracts. The four explicitly released resources are individually indexable; other containment decisions remain intact. The new PostgreSQL test dependency is development-only. Review assets live in `.lavish/`, which is excluded from deployment.

@@ -118,8 +118,10 @@
       <h3 id="openai-ad-measurement">Optional OpenAI Ad Measurement</h3>
       <p>OpenAI ad measurement is off until you choose “Allow ad measurement.” When allowed, the OpenAI Pixel records page visits, successfully saved inquiries, checkout starts and purchases verified against Stripe and our payment records. Purchase events include the paid service amount, currency and a purchase identifier; they do not include your secure checkout link. It sends OpenAI measurement signals such as page URLs, browser and device information, event identifiers and advertising click references. It can store a click reference in a first-party cookie named <code>__oppref</code> to connect later activity with an ad.</p>
       <p>The Pixel can also recognize supported contact information entered on the site and use automatic advanced matching. It normalizes and hashes that information in your browser before sending it; automatic advanced matching does not send raw contact details. Hashing does not make this data anonymous. We use measurement to understand advertising performance, and send our measured events with the option to exclude them from future user-level personalization. See <a href="https://help.openai.com/en/articles/20001409-conversion-measurement" target="_blank" rel="noopener noreferrer">OpenAI’s explanation of conversion measurement</a> and its <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
-      <p>You can decline and still use the site, submit an inquiry or purchase a service. Use “Ad privacy” in the footer to change your choice. We remember your preference in this browser for up to 180 days; if storage is unavailable, it applies only to the current page. Turning measurement off stops future measurement events from this integration; it does not retract events already sent. A Global Privacy Control signal keeps this integration off. These controls apply to OpenAI measurement; other tools may have separate settings.</p>
-      <button type="button" data-open-ad-privacy>Manage OpenAI ad privacy</button>
+      <p>You can decline and still use the site, submit an inquiry or purchase a service. Use “Ad privacy” in the footer to change your choice. We remember your preference in this browser for up to 180 days; if storage is unavailable, it applies only to the current page. Turning measurement off stops future measurement events from this integration; it does not retract events already sent. A Global Privacy Control signal keeps this integration off. This choice also controls Vercel website analytics as described below; other tools may have separate settings.</p>
+      <button type="button" data-open-ad-privacy>Manage measurement privacy</button>
+      <h3 id="website-analytics">Vercel Website Analytics</h3>
+      <p>When you allow measurement through “Ad privacy,” Vercel measures visits to our informational pages without an analytics cookie. Vercel uses request information to group visits for a limited period; see <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s analytics privacy details</a>. Our integration strips query strings and fragments from page URLs, sends no custom events or customer identity, and excludes payment receipts and the quote comparison worksheet. It suppresses views with an external referrer that contains more than an origin. Your earlier choice about OpenAI alone does not enable Vercel analytics; allowing measurement with the updated controls enables both. Declining or Global Privacy Control stops future events from this integration.</p>
       <h3>Data Security</h3>
       <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
       <h3>Your Rights</h3>
@@ -203,7 +205,7 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
-<script src="/script.js?v=9fb9082d3f49"></script>
+<script src="/script.js?v=981c4c038361"></script>
 <script type="module" src="/buying/app.js?v=e58e0c5052c0"></script>
 </body>
 </html>

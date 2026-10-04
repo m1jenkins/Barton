@@ -1,0 +1,85 @@
+/* Worksheet controls use the shared Drive Right palette and type. */
+.dr .worksheet-page [hidden] { display: none !important; }
+.dr .worksheet-page h1, .dr .worksheet-page h2, .dr .worksheet-page h3, .dr .worksheet-page legend { color: var(--ink); }
+.dr .worksheet-page h1 { margin: 10px 0 18px; font-size: clamp(36px, 5vw, 60px); line-height: 1.08; letter-spacing: -.055em; max-width: 790px; }
+.dr .worksheet-page h2 { font-size: 24px; line-height: 1.2; letter-spacing: -.025em; margin-top: 0; }
+.dr .worksheet-page h3 { font-size: 18px; margin-bottom: 5px; }
+.dr .worksheet-page p { margin: 10px 0; }
+.dr .worksheet-page .intro { padding: 66px 0 26px; max-width: 820px; }
+.dr .worksheet-page .eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.dr .worksheet-page .lede { font-size: 20px; line-height: 1.55; }
+.dr .worksheet-page .review-note { background: var(--sage); border: 1px solid var(--line); border-radius: 6px; margin-top: 24px; padding: 15px 18px; color: var(--ink); }
+.dr .worksheet-page .instructions { max-width: 820px; }
+.dr .worksheet-page ol { padding-left: 22px; }
+.dr .worksheet-page ol { list-style:decimal; }
+.dr .worksheet-page li + li { margin-top: 8px; }
+.dr .worksheet-page .privacy, .dr .worksheet-page .help { font-size: 14px; color: var(--muted); }
+.dr .worksheet-page .examples { padding: 26px 0 32px; }
+.dr .worksheet-page .examples h2 { font-size: 19px; margin-bottom: 8px; }
+.dr .worksheet-page .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 17px; }
+.dr .worksheet-page button { appearance: none; border: 1px solid #94a3b8; background: white; color: var(--ink); border-radius: 6px; padding: 12px 16px; font: inherit; font-size: 14px; font-weight: 650; min-height: 44px; cursor: pointer; }
+.dr .worksheet-page button:hover { background: #f1f5f9; }
+.dr .worksheet-page button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.dr .worksheet-page button.primary:hover { background: #263348; }
+.dr .worksheet-page :focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.dr .worksheet-page .quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.dr .worksheet-page .quote { border: 1px solid var(--line); border-radius: 12px; padding: 28px; background: var(--sage); min-width: 0; }
+.dr .worksheet-page .quote h2 { margin-bottom: 20px; }
+.dr .worksheet-page fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.dr .worksheet-page legend { font-size: 13px; font-weight: 650; padding: 0; margin-bottom: 18px; }
+.dr .worksheet-page .costs label { display: grid; grid-template-columns: minmax(0, 1fr) 146px; gap: 16px; align-items: center; margin-bottom: 13px; font-size: 14px; }
+.dr .worksheet-page input[type="text"], .dr .worksheet-page select { display: block; width: 100%; min-width: 0; min-height: 46px; border: 1px solid #94a3b8; border-radius: 5px; background: white; color: var(--ink); padding: 9px 10px; font: inherit; font-variant-numeric: tabular-nums; }
+.dr .worksheet-page input[type="text"] { text-align: right; }
+.dr .worksheet-page input[aria-invalid="true"] { border: 2px solid #b91c1c; }
+.dr .worksheet-page .field-error { grid-column: 1 / -1; color: #991b1b; font-size: 13px; margin: 0; }
+.dr .worksheet-page .check { display: flex; align-items: flex-start; gap: 10px; margin-top: 21px; font-size: 14px; cursor: pointer; }
+.dr .worksheet-page input[type="checkbox"] { accent-color: var(--ink); width: 20px; height: 20px; flex: 0 0 20px; margin: 2px 0 0; }
+.dr .worksheet-page .quote > p { font-size: 14px; }
+.dr .worksheet-page .incentive { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; margin: 18px 0; }
+.dr .worksheet-page .incentive label { display: block; margin: 10px 0; font-size: 14px; }
+.dr .worksheet-page .incentive label input, .dr .worksheet-page .incentive label select { margin-top: 5px; }
+.dr .worksheet-page .incentive legend { margin-bottom: 0; }
+.dr .worksheet-page .remove { margin-top: 4px; padding: 7px 12px; font-size: 13px; }
+.dr .worksheet-page .quote-result { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }
+.dr .worksheet-page .quote-result h3 { margin-top: 0; }
+.dr .worksheet-page .quote-result ul { margin: 12px 0 0; padding-left: 20px; font-size: 14px; }
+.dr .worksheet-page .quote-result ul { list-style:disc; }
+.dr .worksheet-page .amount { display: block; font-size: 29px; color: var(--ink); letter-spacing: -.04em; font-weight: 650; font-variant-numeric: tabular-nums; }
+.dr .worksheet-page .comparison { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 30px 0; margin-top: 35px; }
+.dr .worksheet-page #comparison-result { color: var(--ink); font-weight: 650; font-size: 21px; margin: 24px 0 12px; }
+.dr .worksheet-page #example-note:empty, .dr .worksheet-page #export-note:empty { display: none; }
+.dr .worksheet-page #example-note { border-left: 3px solid var(--line); padding: 10px 15px; margin-top: 22px; }
+.dr .worksheet-page .next-step { max-width: 800px; padding: 38px 0; }
+@media (max-width: 760px) {
+.dr .worksheet-page .intro { padding-top: 38px; }
+.dr .worksheet-page .lede { font-size: 18px; }
+.dr .worksheet-page .quotes { grid-template-columns: 1fr; }
+.dr .worksheet-page .quote { padding: 22px 18px; }
+.dr .worksheet-page .costs label { grid-template-columns: minmax(0, 1fr) 126px; gap: 10px; }
+.dr .worksheet-page .actions { flex-direction: column; }
+.dr .worksheet-page .actions button { width: 100%; }
+}
+@media print {
+  @page { margin: 15mm; }
+.dr .worksheet-page { font-size: 10pt; line-height: 1.35; color: black; }
+.dr .worksheet-page .intro { padding: 20px 0; }
+.dr .worksheet-page h1 { font-size: 26pt; }
+.dr .worksheet-page h2 { font-size: 17pt; }
+.dr .worksheet-page .lede { font-size: 12pt; }
+.dr .worksheet-page .examples .actions, .dr .worksheet-page button, .dr .worksheet-page .skip-link, .dr .worksheet-page .privacy { display: none !important; }
+.dr .worksheet-page .quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; break-inside: avoid; }
+.dr .worksheet-page .quote { background: white; border-color: #aaa; padding: 12px; margin-bottom: 12px; break-inside: avoid; }
+.dr .worksheet-page .quote, .dr .worksheet-page .comparison, .dr .worksheet-page .incentive { box-shadow: none; }
+.dr .worksheet-page .costs label { grid-template-columns: minmax(0, 1fr) 84px; gap: 6px; margin-bottom: 6px; font-size: 9pt; }
+.dr .worksheet-page input[type="text"], .dr .worksheet-page select { min-height: 28px; padding: 4px; color: black; }
+.dr .worksheet-page .review-note, .dr .worksheet-page .quote-result, .dr .worksheet-page #comparison-result, .dr .worksheet-page .check { break-inside: avoid; }
+.dr .worksheet-page .comparison, .dr .worksheet-page .next-step { break-inside: avoid; }
+.dr .worksheet-page .quote > p, .dr .worksheet-page .quote .check, .dr .worksheet-page .incentive label { font-size: 9pt; }
+.dr .worksheet-page .examples h2, .dr .worksheet-page .examples > p:not(#example-note) { display: none; }
+.dr .worksheet-page .examples { padding: 0 0 12px; }
+.dr .worksheet-page .amount { font-size: 20pt; }
+}
+.dr .worksheet-page { max-width:1120px; padding-block:24px 48px; }
+.dr .worksheet-page .intro { padding-top:24px; }
+.dr .worksheet-page a { color:var(--green); text-decoration:underline; text-underline-offset:3px; }
+@media print { .dr .site-header nav, .dr .header-cta, .dr .site-footer { display:none; } .dr .worksheet-page { width:100%; padding:0; } }

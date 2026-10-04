@@ -502,8 +502,10 @@ for (const file of htmlFiles) {
   const html = sources.get(file) ?? '';
 
   const gtmLoaders = allMatches(html, /googletagmanager\.com\/gtm\.js(?:\?|["'])/gi);
-  if (gtmLoaders.length !== 1) {
-    fail(file, `Expected exactly one GTM loader, found ${gtmLoaders.length}.`, gtmLoaders[1]?.index ?? 0, html, 'Load the single approved GTM container once.');
+  // The local quote calculator intentionally has no analytics or session replay.
+  const expectedGtm = file === 'compare-car-quotes.html' ? 0 : 1;
+  if (gtmLoaders.length !== expectedGtm) {
+    fail(file, `Expected ${expectedGtm} GTM loader(s), found ${gtmLoaders.length}.`, gtmLoaders[1]?.index ?? 0, html, expectedGtm ? 'Load the single approved GTM container once.' : 'Keep the quote worksheet free of measurement scripts.');
   }
 
   for (const match of allMatches(html, /<script\b[^>]*\bsrc\s*=\s*["'][^"']*googletagmanager\.com\/gtag\/js\b[^"']*["'][^>]*>/gi)) {

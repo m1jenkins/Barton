@@ -78,7 +78,8 @@ async function markSent(sql, row) {
 }
 
 async function markFailed(sql, row, error, retrySeconds) {
-  const message = String(error?.message || 'analytics delivery failed').slice(0, 300);
+  // Transport errors can contain destinations, credentials or customer values.
+  const message = /^HTTP \d{3}$/.test(error?.message || '') ? error.message : 'analytics delivery failed';
   const delay = retryDelaySeconds(row.attempts, retrySeconds);
   await sql`
     UPDATE analytics_outbox
@@ -118,7 +119,7 @@ async function deliverEvent(sql, row, destination, { bearerToken, timeoutMs, ret
   }
 }
 
-export async function dispatchAnalyticsOutbox({ sql = database(), environment = process.env } = {}) {
+export async function dispatchAnalyticsOutbox({ sql, environment = process.env } = {}) {
   const destination = analyticsDestination(environment);
   if (!destination) return { configured: false, claimed: 0, sent: 0, failed: 0 };
 
@@ -127,24 +128,25 @@ export async function dispatchAnalyticsOutbox({ sql = database(), environment = 
   const maxAttempts = integerEnv('ANALYTICS_OUTBOX_MAX_ATTEMPTS', DEFAULT_MAX_ATTEMPTS, { min: 1, max: 25 }, environment);
   const retrySeconds = integerEnv('ANALYTICS_OUTBOX_RETRY_SECONDS', DEFAULT_RETRY_SECONDS, { min: 5, max: 3600 }, environment);
   const timeoutMs = integerEnv('ANALYTICS_FORWARD_TIMEOUT_MS', DEFAULT_TIMEOUT_MS, { min: 500, max: 15000 }, environment);
+  if (leaseSeconds * 1000 <= timeoutMs) throw new ConfigError('Analytics lease must exceed delivery timeout');
   const bearerToken = environment.ANALYTICS_FORWARD_BEARER_TOKEN?.trim();
+  sql ||= database();
   const rows = await claimEvents(sql, { batchSize, leaseSeconds, maxAttempts });
-  const outcomes = await Promise.all(rows.map((row) => deliverEvent(sql, row, destination, {
+  const outcomes = await Promise.allSettled(rows.map((row) => deliverEvent(sql, row, destination, {
     bearerToken,
     timeoutMs,
     retrySeconds
   })));
-  const sent = outcomes.filter(Boolean).length;
+  if (outcomes.some(outcome => outcome.status === 'rejected')) throw new Error('analytics acknowledgement failed');
+  const sent = outcomes.filter(outcome => outcome.value === true).length;
   return { configured: true, claimed: rows.length, sent, failed: rows.length - sent };
 }
 
 export async function dispatchAnalyticsOutboxSafely(options) {
   try {
     return await dispatchAnalyticsOutbox(options);
-  } catch (error) {
-    console.error('[analytics_dispatch_failed]', {
-      error: String(error?.message || 'analytics dispatch failed').slice(0, 300)
-    });
+  } catch {
+    console.error('[analytics_dispatch_failed]');
     return { configured: true, claimed: 0, sent: 0, failed: 0, dispatcher_error: true };
   }
 }

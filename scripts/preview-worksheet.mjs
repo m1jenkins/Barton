@@ -10,6 +10,7 @@ const files = new Map([
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/worksheet.mjs', ['worksheet.mjs', 'text/javascript; charset=utf-8']],
+  ['/buying/quote-worksheet.js', ['../../buying/quote-worksheet.js', 'text/javascript; charset=utf-8']],
 ]);
 
 export function createWorksheetServer() {

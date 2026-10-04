@@ -8,6 +8,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
 - [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook and onboarding (the API contract).
+- [resource-release-2026-10-04.md](resource-release-2026-10-04.md): owner-directed release of three source-checked guides and the local quote worksheet.
 - [repository-audit-2026-10-04.md](repository-audit-2026-10-04.md): repository audit, lead/form reliability fixes, expanded checks, verification and prioritized follow-up work.
 
 ## SEO decisions and execution
