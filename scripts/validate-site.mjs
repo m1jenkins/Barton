@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateMetroRelease } from './metro-release.mjs';
+import { validateAssets } from './check-assets.mjs';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const primaryOrigin = 'https://www.driverightcarbuying.com';
@@ -501,8 +502,10 @@ for (const file of htmlFiles) {
   const html = sources.get(file) ?? '';
 
   const gtmLoaders = allMatches(html, /googletagmanager\.com\/gtm\.js(?:\?|["'])/gi);
-  if (gtmLoaders.length !== 1) {
-    fail(file, `Expected exactly one GTM loader, found ${gtmLoaders.length}.`, gtmLoaders[1]?.index ?? 0, html, 'Load the single approved GTM container once.');
+  // The local quote calculator intentionally has no analytics or session replay.
+  const expectedGtm = file === 'compare-car-quotes.html' ? 0 : 1;
+  if (gtmLoaders.length !== expectedGtm) {
+    fail(file, `Expected ${expectedGtm} GTM loader(s), found ${gtmLoaders.length}.`, gtmLoaders[1]?.index ?? 0, html, expectedGtm ? 'Load the single approved GTM container once.' : 'Keep the quote worksheet free of measurement scripts.');
   }
 
   for (const match of allMatches(html, /<script\b[^>]*\bsrc\s*=\s*["'][^"']*googletagmanager\.com\/gtag\/js\b[^"']*["'][^>]*>/gi)) {
@@ -829,6 +832,8 @@ for (const file of htmlFiles) {
 }
 
 for (const message of await validateMetroRelease(repoRoot)) fail('data/metro-release.json', message);
+const assets = await validateAssets(repoRoot);
+failures.push(...assets.errors);
 
 failures.sort((left, right) => {
   const fileOrder = left.file.localeCompare(right.file);
@@ -845,5 +850,5 @@ if (failures.length) {
   }
   process.exitCode = 1;
 } else {
-  console.log(`Site validation passed: ${htmlFiles.length} HTML files and ${sitemapLocs.length} sitemap URLs checked.`);
+  console.log(`Site validation passed: ${htmlFiles.length} HTML files, ${sitemapLocs.length} sitemap URLs and ${assets.references} local asset references checked.`);
 }

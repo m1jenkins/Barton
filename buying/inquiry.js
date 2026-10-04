@@ -77,7 +77,7 @@ if (dialog && form) {
       });
       if (typeof result?.lead_id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(result.lead_id)) throw new Error('Missing saved inquiry ID');
       // Use the shared success boundary and durable ID; contact details stay out of analytics.
-      client.track('generate_lead', { form_name: 'pricing_inquiry', lead_id: result.lead_id || '' });
+      try { client.track('generate_lead', { form_name: 'pricing_inquiry', lead_id: result.lead_id }); } catch { /* Measurement cannot undo a saved inquiry. */ }
       if (result.forwarding_configured !== true) {
         const saved = JSON.parse(pendingPayload);
         const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;

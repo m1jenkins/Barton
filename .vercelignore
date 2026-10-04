@@ -6,9 +6,14 @@ node_modules
 .dr-*
 .superdesign
 .codex
+.claude
+.lavish
+.github
 .ai_rules
 .cursorrules
 api/_tests
+buying/*.test.js
+db
 docs/openai-ads-*.md
 
 # Private metro source, governance, local tools and rendered drafts.

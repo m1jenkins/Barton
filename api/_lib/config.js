@@ -93,8 +93,8 @@ export function paymentLinkForTier(tierId) {
 export function integerEnv(name, fallback, { min, max }, environment = process.env) {
   const raw = environment[name];
   if (!raw) return fallback;
-  const value = Number.parseInt(raw, 10);
-  if (!Number.isInteger(value) || value < min || value > max) {
+  const value = Number(raw);
+  if (!/^\d+$/.test(String(raw).trim()) || !Number.isInteger(value) || value < min || value > max) {
     throw new ConfigError(`${name} must be an integer between ${min} and ${max}`);
   }
   return value;

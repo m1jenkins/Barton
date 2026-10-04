@@ -1,4 +1,4 @@
-import { initializeAdConsent } from './ad-consent.js';
+import { initializeAdConsent } from './ad-consent.js?v=0aad1eb34b53';
 
 // Public Pixel ID supplied by the site owner on September 28, 2026.
 // This static site does not substitute server environment variables into JS.

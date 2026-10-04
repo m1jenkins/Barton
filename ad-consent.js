@@ -19,7 +19,10 @@ export function initializeAdConsent(w, d, setConsent) {
   let choice = readAdConsent(storage);
   let returnFocus;
   const gpc = () => w.navigator.globalPrivacyControl === true;
-  const apply = () => setConsent({ measurement: !gpc() && choice?.measurement === true, personalization: false });
+  const apply = () => {
+    setConsent({ measurement: !gpc() && choice?.measurement === true, personalization: false });
+    w.dispatchEvent(new CustomEvent('drive-right:web-analytics-consent', { detail: !gpc() && choice?.webAnalytics === true }));
+  };
   apply();
 
   const styles = d.createElement('link');
@@ -32,11 +35,12 @@ export function initializeAdConsent(w, d, setConsent) {
   panel.innerHTML = `
     <h2 id="drive-right-ad-privacy-title" tabindex="-1">Your ad privacy</h2>
     <p>May we use OpenAI ad measurement? It shares page visits, saved inquiries, checkout starts and verified purchases with OpenAI to measure our ads. It uses a cookie and may match contact details you enter after hashing them in your browser.</p>
+    <p>This choice also allows Vercel website analytics on our informational pages. It uses no analytics cookie. We strip page URL queries and fragments and exclude payment receipts and the quote worksheet.</p>
     <p>Optional. You can use the site either way and change your choice with “Ad privacy” in the footer. <a href="/policy.html#openai-ad-measurement">Read the details</a>.</p>
     <p data-ad-privacy-status role="status"></p>
     <div class="ad-privacy-actions">
       <button type="button" data-ad-privacy-reject>No thanks</button>
-      <button type="button" data-ad-privacy-accept>Allow ad measurement</button>
+      <button type="button" data-ad-privacy-accept>Allow measurement</button>
     </div>`;
   // Do not interrupt paid intake with a first-visit measurement prompt.
   panel.hidden = Boolean(choice) || gpc() || /^\/(?:payment-success[^/]*|success)\.html$/.test(w.location.pathname);
@@ -54,8 +58,8 @@ export function initializeAdConsent(w, d, setConsent) {
   const accept = panel.querySelector('[data-ad-privacy-accept]');
   function renderStatus() {
     accept.disabled = gpc();
-    status.textContent = gpc() ? 'Your browser’s Global Privacy Control keeps OpenAI ad measurement off.'
-      : choice ? `OpenAI ad measurement is ${choice.measurement ? 'on' : 'off'}.` : '';
+    status.textContent = gpc() ? 'Your browser’s Global Privacy Control keeps this measurement off.'
+      : choice ? `OpenAI ad measurement is ${choice.measurement ? 'on' : 'off'}. Vercel website analytics is ${choice.webAnalytics ? 'on' : 'off'}.` : '';
   }
   function open() {
     returnFocus = d.activeElement;
@@ -70,7 +74,7 @@ export function initializeAdConsent(w, d, setConsent) {
     if (panel.contains(d.activeElement)) (returnFocus || preferences).focus({ preventScroll: true });
   }
   function save(measurement) {
-    choice = { version: 1, measurement: measurement === true && !gpc(), savedAt: Date.now() };
+    choice = { version: 1, measurement: measurement === true && !gpc(), webAnalytics: measurement === true && !gpc(), savedAt: Date.now() };
     try { storage?.setItem(AD_CONSENT_KEY, JSON.stringify(choice)); } catch { /* No persistence; re-ask next page. */ }
     apply();
     close();

@@ -172,7 +172,8 @@ test('blocked storage, SDK exceptions, network errors, and duplicate ownership d
 
 test('real hero flow tracks accepted leads and checkout attempts only after successful API responses', async () => {
   const source = (await readFile(new URL('../../script.js', import.meta.url), 'utf8'))
-    .replace(/^const openAIAds = .*\nimport\("\.\/openai-ads\.js"\)\.catch\(\(\) => \{\}\);\n/, '');
+    .replace(/^const openAIAds = [^\n]+\n/, '')
+    .replace(/^import\([^\n]+\)\.catch\(\(\) => \{\}\);\n/gm, '');
   for (const outcome of ['lead-fails', 'checkout-fails', 'success']) {
     const events = [], requests = [], navigations = [], listeners = {};
     const status = { setAttribute() {} };

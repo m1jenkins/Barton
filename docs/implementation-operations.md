@@ -117,6 +117,11 @@ The server persists only allowlisted form fields and drops unknown keys. The all
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
 | `LEAD_FORWARD_BEARER_TOKEN` | Optional bearer credential for that downstream destination. |
+| `LEAD_OUTBOX_BATCH_SIZE` | Optional lead-notification claim size, default `10`, allowed `1`–`50`. |
+| `LEAD_OUTBOX_LEASE_SECONDS` | Optional processing lease, default `60`, allowed `15`–`600`; must exceed the delivery timeout. |
+| `LEAD_OUTBOX_MAX_ATTEMPTS` | Optional attempt cap, default `8`, allowed `1`–`25`. |
+| `LEAD_OUTBOX_RETRY_SECONDS` | Optional initial retry delay, default `30`, allowed `5`–`3600`; exponential backoff is capped at six hours. |
+| `LEAD_FORWARD_TIMEOUT_MS` | Optional notification request timeout, default `8000`, allowed `500`–`15000`. |
 | `DATABASE_MAX_CONNECTIONS` | Optional per-function-process limit, default `1`, allowed `1`–`5`. Use a pooled database endpoint. |
 | `ANALYTICS_FORWARD_URL` | Optional credential-free HTTPS endpoint for the server-side analytics collector. When absent, outbox rows remain pending. |
 | `ANALYTICS_FORWARD_BEARER_TOKEN` | Optional bearer credential for the analytics collector. |
@@ -169,13 +174,41 @@ SELECT status, count(*) FROM lead_forward_outbox GROUP BY status ORDER BY status
 
 The application now writes and dispatches a standard `purchase` event plus `onboarding_complete`. No destination URL, credentials, destination-specific mapping, or consent policy was provided, so none was invented or activated. The configured analytics collector must acknowledge only durable ingestion, honor `Idempotency-Key`, map `purchase` to the approved analytics destinations, and preserve `event_id`/`transaction_id` for destination deduplication. Until that collector and credentials are configured and verified, purchase-ledger counts—not ad-platform counts—are authoritative.
 
-Dispatch is triggered opportunistically by verified Stripe webhook and onboarding requests. `npm run analytics:dispatch` now provides a bounded worker invocation. It sends one due batch, reports aggregate delivery/exhaustion counts, exits nonzero for missing collector, delivery failure or expired exhausted leases, and fences acknowledgements by attempt number. Wire an authorized external scheduler and alerting to it during activation. No public endpoint or scheduler has been activated. Daily reconciliation must compare paid Stripe Checkout Sessions, `purchases`, `analytics_outbox` status, and collector/destination acknowledgements.
+Dispatch is triggered opportunistically by verified Stripe webhook and onboarding requests. `npm run analytics:dispatch` now provides a bounded worker invocation. It sends one due batch, reports aggregate delivery/exhaustion counts, exits nonzero for missing collector, delivery failure or expired exhausted leases, and fences acknowledgements by attempt number. The protected `GET /api/outbox-dispatch` Vercel cron now invokes both bounded workers daily. Missing destinations are reported as unconfigured and skipped; they are not marked delivered. See the scheduler section below. Daily reconciliation must compare paid Stripe Checkout Sessions, `purchases`, `analytics_outbox` status, and collector/destination acknowledgements.
 
 Leave `TURNSTILE_SECRET_KEY` unset until a matching client widget is installed and its token is submitted with the lead form. Enabling the secret without the widget intentionally causes browser lead submissions to fail verification.
 
-Likewise, failed optional lead forwards remain durable for review but need a scheduled retry worker for unattended recovery. Downstream systems must honor the durable lead ID as an idempotency key.
+Failed optional lead forwards can be retried with `npm run leads:dispatch` (below). The daily scheduler is configured in the repository; the notification destination remains external setup; downstream systems must honor the durable lead ID as an idempotency key.
 
 Define and apply an approved retention/deletion policy for lead and onboarding PII, restrict database access, encrypt backups, and avoid logging request bodies. Webhook rows intentionally omit the full Stripe event payload and customer fields.
+
+## Lead notification recovery
+
+`npm run leads:dispatch` sends one bounded batch from the existing `lead_forward_outbox`. It uses the same HTTPS destination, bearer credential, allowlisted lead payload and durable lead ID as the immediate post-commit delivery. It requires no SQL migration. Only leads queued while forwarding was configured are eligible; configuring a destination later does not automatically backfill older unqueued leads.
+
+The dispatcher commits an atomic `FOR UPDATE SKIP LOCKED` claim before calling the destination. Pending rows are due immediately; failed rows wait for exponential backoff from their last attempt; processing rows become eligible after their lease expires. Sent rows and exhausted rows are never automatically resent. Each acknowledgement checks both processing state and attempt number, so a late worker cannot overwrite a newer outcome. The destination must durably accept the lead before returning `2xx` and deduplicate retries by `Idempotency-Key`.
+
+The CLI prints only `configured`, `claimed`, `sent`, `failed`, `exhausted` and `exitCode` counts/state. It exits nonzero for a missing destination, failed delivery, dispatcher error or an exhausted row; a final in-progress attempt becomes exhausted only when its lease expires. Logs and stored error messages omit customer fields, downstream response bodies, credentials and destination URLs. A notification claim or acknowledgement failure after the lead commits does not turn its successful API receipt into an error.
+
+Run it from a worker with narrowly scoped database and destination credentials. The protected daily Vercel cron provides unattended retry when a destination is configured. Review exhausted rows and the downstream durable receipt before manually resetting an attempt count; never reset sent rows as a routine retry. This repository installs a scheduler but does not invent or activate a notification destination.
+
+Contact forms preserve their idempotency key on ordinary network retries. A confirmed `idempotency_conflict` after the visitor changes the form restarts the request once with a new key; a second conflict stops and leaves the form editable. When forwarding is unconfigured, the saved-message state offers direct contact options. Optional analytics errors cannot replace a successful saved-inquiry state. The shared 15-second request deadline covers both response headers and the response body.
+
+## Protected retry scheduler — October 4, 2026
+
+`vercel.json` schedules `GET /api/outbox-dispatch` at `17 14 * * *` (14:17 UTC daily). The conservative daily interval works without assuming an upgraded Vercel plan. Opportunistic delivery still runs after the original committed request. This schedule is a recovery sweep, not a promise of immediate downstream delivery after an outage.
+
+The route requires a production-only `CRON_SECRET` of at least 32 characters in `Authorization: Bearer …`. A random sensitive secret was installed in the linked Barton project through the Vercel connector before deployment; it is not committed or written to the review artifact. Unauthenticated requests return 401 before a database connection. A missing/short secret returns 503. Workers share the function's database client, claim one bounded batch each, and settle before the response. Missing destinations return `configured:false` and do no database work. Failed/exhausted deliveries return HTTP 503 plus aggregate counts and emit `[outbox_attention_required]`; dispatcher failures emit `[outbox_dispatch_failed]` without raw private error text. Responses are `no-store`.
+
+Check the Vercel cron run history and function logs after activation. Email/Slack failure notification is not configured: there is no existing alert destination or delivery credential. Connect that actual account destination to these failure signals before treating alerting as operational. A successful empty cron response proves authorization and scheduling only, not notification/collector delivery.
+
+The live project environment metadata was checked October 4: neither `LEAD_FORWARD_URL` nor `ANALYTICS_FORWARD_URL` was configured. No provider or credential was invented. Once actual destinations are supplied, set them only in the intended environment, verify a synthetic idempotent durable receipt, and review existing pending/exhausted counts. The cron never backfills unqueued leads.
+
+## Vercel website measurement — October 4, 2026
+
+The production `/_vercel/insights/script.js` endpoint was confirmed enabled. PR #95's unconditional snippet was superseded by `web-analytics.js`, with no static-site runtime package. The updated Ad privacy control explicitly describes both OpenAI and Vercel measurement; earlier OpenAI-only permission does not enable Vercel. Declining, revocation, expired preference and Global Privacy Control keep this integration off.
+
+Only released informational paths on production hosts can load the SDK. `beforeSend` accepts page views only, strips query/fragment data, excludes customer identity/custom-event payloads and rejects unknown paths. Receipts and the quote worksheet are excluded. Since the SDK sends external referrers intact, views with an external path/query/fragment/credentials are suppressed. The SDK identity is reset before any automatic view. Browser tests confirm the revised consent UI; regression tests cover the production host, GPC, receipt, referrer and URL filters. Cookieless page measurement does not close the separate purchase outbox collector or destination reconciliation gap.
 
 ## September 18, 2026 local measurement changes
 

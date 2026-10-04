@@ -88,6 +88,7 @@ export async function readJsonBody(req, limitBytes = 65536) {
     throw new HttpError(400, 'invalid_json', 'Request body must contain valid JSON');
   }
   if (parsedBody && typeof parsedBody === 'object' && !Buffer.isBuffer(parsedBody)) {
+    if (Array.isArray(parsedBody)) throw new HttpError(400, 'invalid_json', 'Request body must be a JSON object');
     const encoded = Buffer.byteLength(JSON.stringify(parsedBody));
     if (encoded > limitBytes) throw new HttpError(413, 'payload_too_large', 'Request body is too large');
     return parsedBody;

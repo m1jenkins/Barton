@@ -269,15 +269,15 @@ test('junk /uuyh path is unlinked, disallowed, and not redirected at the GTM sla
   }
 });
 
-test('legacy blog HTML stays noindex and is documented as crawl waste, not an index request', async () => {
+test('unreleased legacy blog HTML stays noindex while the three released guides are indexable', async () => {
   const files = (await readdir(new URL('.', root))).filter((file) => /^blog-.*\.html$/.test(file));
   assert.ok(files.length >= 30, 'expected the contained blog archive to remain in the public root');
-  for (const file of files) {
-    assert.equal(htmlDocument(await read(file)).noindex, true, file);
-  }
-
+  const released = new Set(['blog-buy-new-car-below-msrp.html', 'blog-dealership-addons-complete-guide.html', 'blog-used-car-inspection-checklist.html']);
   const sitemap = await read('sitemap.xml');
-  assert.doesNotMatch(sitemap, /blog-/);
+  for (const file of files) {
+    assert.equal(htmlDocument(await read(file)).noindex, !released.has(file), file);
+    assert.equal(sitemap.includes(`/${file}</loc>`), released.has(file), file);
+  }
 
   const docs = await read('docs/seo/2026-09-21-content-pages.md');
   assert.match(docs, /do not (?:mass[- ])?request index/i);

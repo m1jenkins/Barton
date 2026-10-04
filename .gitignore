@@ -4,5 +4,6 @@ node_modules/
 .env.*
 !.env.example
 .DS_Store
+.lavish/
 npm-debug.log*
 .dr-*

@@ -12,22 +12,24 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `buying/` | The current design system and the buying-brief app used by the homepage and main pages. `daisy.css` + `drive-right.css` are the shared styles; `houston.css` is the Houston pilot only. `intake.js`, `brief.js`, `checkout.js` and `app.js` run the brief-and-checkout flow. |
 | `styles.css`, `seo-content.css`, `legacy-refresh.css` | The older page components and the shared visual layer that aligns their typography, navigation, colors, and reading layout with the current site. |
 | `logo-motion.css`, `logo-motion.js`, `assets/mascot/` | The approved Mariner Blue Miata mark beside the header wordmark on public pages. The sprites are deployed; their reference sheets stay out of production. |
-| `script.js` | Shared page script: mobile menu, lead forms, checkout start, payment verification, analytics, and it loads `openai-ads.js`. Used by every page except `ai-car-buying-agent.html`. Parts of it are minified onto very long lines, so search for the function name before editing. |
+| `script.js` | Shared page script: mobile menu, lead forms, checkout start, payment verification, analytics, and it loads `openai-ads.js` and consented `web-analytics.js`. Used by every page except `ai-car-buying-agent.html` and the local quote worksheet. Parts of it are minified onto very long lines, so search for the function name before editing. |
 | `accessibility.css/js`, `ad-consent.css/js`, `openai-ads.js` | Small shared helpers loaded by pages. |
 | `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the chat avatar and the payment-success celebration. |
 | `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals); `assets/mascot/` holds the mascot sprites, built by `scripts/build-mascot-sprites.mjs` from `assets/mascot/reference/` (not deployed). |
-| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`. Shared code in `api/_lib/`, tests in `api/_tests/`. |
+| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
 | `db/` | PostgreSQL migrations, applied in number order. |
 | `vercel.json` | Redirects and security headers. Check with `node scripts/check-redirects.mjs --config-only`. |
 | `sitemap.xml`, `robots.txt`, `llms.txt`, `pricing.md` | Public files for search engines and AI assistants. Keep prices in `pricing.md`, `llms.txt` and `schedule.html` in sync. |
 | `scripts/` | Local tools: site validator, preview servers, draft generators. Not deployed. |
 | `data/` | Governed source data (claims, sources, metro and city page data, release gates). Not deployed. |
 | `docs/` | Plans, decision records and evidence. Not deployed. See [docs/README.md](docs/README.md). |
-| `draft-artifacts/` | Generated private drafts (city pages, metro pages, guide rewrites). Not deployed. Regenerate them; do not hand-edit. |
+| `draft-artifacts/` | Private city/metro renders and archived hand-authored guide/worksheet previews. Not deployed. Regenerate city/metro pages with their scripts. |
 | `outputs/` | Private ad-campaign review bundle. Not deployed. |
 | `.agents/`, `.superdesign/` | Tool-owned folders (installed agent skills, design scratch). Not deployed. |
 
 `.vercelignore` lists everything that stays out of the deployment.
+
+The three released guides use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
 
 ## Two page styles
 
@@ -53,12 +55,15 @@ Use Node 24.
 npm ci
 node scripts/validate-site.mjs   # page metadata, asset hashes, sitemap, schema
 npm run check:api                # syntax check for the serverless functions
+npm run check:js                 # all first-party JavaScript, including browser modules and local tools
 npm run check:metros             # drafts match their generator
 npm run check:cities
 npm test
 ```
 
-CI runs the same list in `.github/workflows/checks.yml`.
+CI runs the same list in `.github/workflows/checks.yml`. Site validation also follows local HTML, CSS and browser module resources, rejects references excluded from deployment, and checks their content-hash versions. `npm run check:assets` runs that resource check alone. Database delivery tests use the development-only PGlite PostgreSQL runtime with synthetic records.
+
+`npm run leads:dispatch` retries one due batch of configured lead notifications and reports aggregate counts. It requires a configured destination and scoped database access; see [lead notification recovery](docs/implementation-operations.md#lead-notification-recovery). Connect it to an authorized scheduler for unattended recovery.
 
 ## Local preview
 
