@@ -1,5 +1,5 @@
 import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js?v=ae8f7cd0a830';
-import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js?v=165019541eb2';
+import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js?v=5be50b503cd4';
 import { plans, createCheckout } from './checkout.js?v=243426417c53';
 
 const $ = selector => document.querySelector(selector);
@@ -83,7 +83,7 @@ function initLegworkMotion() {
 initLegworkMotion();
 
 const briefStore = createStore(window);
-const checkoutStore = createStore(window, 'drive_right_buying_checkout_v1', { local:false });
+const checkoutStore = createStore(window, 'drive_right_buying_checkout_v1');
 let brief = restoreBrief(briefStore.read());
 const handoff = new URLSearchParams(location.hash.split('?')[1] || '').get('draft');
 if (handoff) {
@@ -108,7 +108,7 @@ function syncBriefLink() {
 }
 function persist() {
   const storage = briefStore.write(brief);
-  const message = storage === 'localStorage' ? '' : storage === 'sessionStorage' ? 'Draft saved for this tab. Download a copy to keep it.' : 'Browser storage is unavailable. Keep a downloaded copy of your search details.';
+  const message = storage === 'memory' ? 'Browser storage is unavailable. Keep a downloaded copy of your search details.' : '';
   if ($('#saved-indicator')) $('#saved-indicator').textContent = message;
   syncBriefLink();
   return storage;
@@ -265,10 +265,13 @@ function navigate(next, focus = true) {
 }
 function submit(raw) {
   if (replyPending) return;
-  const field = currentField();
+  // The home box always starts a new search; it never continues an earlier one.
+  const fresh = view === 'home';
+  const field = fresh ? fields.find(f => f.key === 'vehicle') : currentField();
   if (!field) { navigate('search'); return; }
   try {
-    brief = applyAnswer(brief, parseConversation(raw, field.key));
+    if (fresh) optionalQuestions = false;
+    brief = applyAnswer(fresh ? restoreBrief() : brief, parseConversation(raw, field.key));
     persist(); input.value = ''; $('#input-error').textContent = ''; input.removeAttribute('aria-invalid');
     if (view === 'home') navigate('conversation', false);
     prepareReply();
@@ -301,7 +304,7 @@ if (home) {
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (view === 'home' || !currentField()?.multiline)) { e.preventDefault(); $('#composer').requestSubmit(); }
   });
-  $('#example').addEventListener('click', () => Object.keys(brief.answers).length ? navigate(isComplete(brief.answers) ? 'search' : 'conversation') : submit('A Mazda Miata, under $30k'));
+  $('#example').addEventListener('click', () => submit('A Mazda Miata, under $30k'));
   $('#choices').addEventListener('click', e => { const b = e.target.closest('[data-choice]'); if (b) submit(b.dataset.choice); });
   $('#skip-detail').addEventListener('click', () => submit('Skip for now'));
   $('#add-details').addEventListener('click', () => { optionalQuestions = true; prepareReply(); });
@@ -328,7 +331,6 @@ if (home) {
     } catch (error) { $('#edit-error').textContent = error.message; }
   });
   $('#download-brief').addEventListener('click', download);
-  $('#save-brief').addEventListener('click', () => { const saved = persist(); $('#brief-status').textContent = saved === 'localStorage' ? 'Your search details are saved on this device.' : 'This browser cannot save a lasting draft. Download your search details to keep a copy.'; });
   window.addEventListener('hashchange', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('popstate', () => setView(location.hash.slice(1) || 'home'));
   window.addEventListener('resize', resizeConversation);

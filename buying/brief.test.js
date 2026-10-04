@@ -61,13 +61,23 @@ test('storage denial keeps in-memory edits and restores from history on refresh'
   assert.equal(store.persistence,'memory');
   assert.deepEqual(createStore(w).read(),draft());
 });
-test('quota failures fall back to session storage and damaged JSON is ignored', () => {
-  let session;
-  const store = createStore({localStorage:{getItem(){return '{bad';},setItem(){throw new Error('quota');}},sessionStorage:{getItem(){return session || null;},setItem(k,v){session=v;}}});
+test('a search lasts for the visit only and clears one an earlier version kept on the device', () => {
+  let session = null;
+  const local = new Map([['drive_right_buying_brief_v1', JSON.stringify(draft())]]);
+  const w = {
+    localStorage:{getItem:k=>local.get(k) ?? null,setItem(){throw new Error('search details must not outlive the visit');},removeItem:k=>local.delete(k)},
+    sessionStorage:{getItem(){return session;},setItem(k,v){session=v;}},
+  };
+  const store = createStore(w);
+  assert.equal(local.size,0);
   assert.equal(store.read(),null);
   store.write(draft());
   assert.equal(store.persistence,'sessionStorage');
   assert.equal(JSON.parse(session).answers.zip,'02108');
+});
+test('damaged session JSON is ignored', () => {
+  const store = createStore({sessionStorage:{getItem(){return '{bad';},setItem(){}}});
+  assert.equal(store.read(),null);
 });
 test('onboarding carries a complete brief without assigning price to total budget or ZIP to city', () => {
   const brief=applyAnswer(draft(),{values:{year:'2019–2023',mileage:'Under 40000 mi',color:'White',transmission:'Manual',trim:'Sport',radius:'250 miles'}});

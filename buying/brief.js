@@ -43,15 +43,17 @@ export function briefText(brief) {
   return lines.join('\n');
 }
 
-// Storage access itself can throw. History is a same-tab fallback, including refresh.
-export function createStore(w, key = BRIEF_KEY, { local = true } = {}) {
+// A search lasts for one visit: sessionStorage keeps it across pages and refreshes in
+// this tab, and a new visit starts clean. Storage access itself can throw. History is a
+// same-tab fallback, including refresh.
+export function createStore(w, key = BRIEF_KEY) {
   let memory;
   let persistence = 'memory';
+  // Earlier versions kept the search in localStorage indefinitely. Drop that copy.
+  try { w.localStorage?.removeItem(key); } catch { /* Private browsing. */ }
   const stores = () => {
     const result = [];
-    for (const name of local ? ['localStorage', 'sessionStorage'] : ['sessionStorage']) {
-      try { if (w[name]) result.push([name, w[name]]); } catch { /* Private browsing. */ }
-    }
+    try { if (w.sessionStorage) result.push(['sessionStorage', w.sessionStorage]); } catch { /* Private browsing. */ }
     return result;
   };
   return {
