@@ -165,20 +165,11 @@
     </script>
 
     <meta name="theme-color" content="#FFFFFF">
-    <script>
-      // Prepare blank artwork before first paint; failed startup restores static scenes.
-      if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-        document.documentElement.classList.add('legwork-motion');
-        window.driveRightLegworkFallback = setTimeout(() => {
-          document.documentElement.classList.remove('legwork-motion');
-        }, 4000);
-      }
-    </script>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="/buying/daisy.css?v=82cf3edcc3d2">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=0771d30b0839">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=60553841c747">
     <link rel="stylesheet" href="/buying/inquiry.css?v=731b19247ff6">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
@@ -223,7 +214,7 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=981c4c038361"></script>
-<script type="module" src="/buying/app.js?v=f983b1610fa5"></script>
+<script type="module" src="/buying/app.js?v=5b4bfab04018"></script>
 <script type="module" src="/buying/inquiry.js?v=47f8769cfa07"></script>
 </body>
 </html>

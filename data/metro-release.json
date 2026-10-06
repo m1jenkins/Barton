@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes.",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes).",
       "indexablePublication": true,
-      "sha256": "8557e3f661cbe3764316c8fda17cb83da0de80c2cbaaa1ad99433323d5d4b6da",
+      "sha256": "b96f642b24f53a1aa7e360f3a7776bef39b3d0c7ae6a16e3125666dd58e3e8f2",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,

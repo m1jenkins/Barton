@@ -90,7 +90,7 @@
 .dr .process-preview figcaption>span { font-size:11px; line-height:1.6; color:var(--ink); }
 .dr .process-preview .text-link { font-size:12px; color:var(--ink); gap:10px; }
 @keyframes brief-arrive { from { transform:translateY(8px); } to { transform:translateY(0); } }
-/* Homepage process: the default artwork is the complete, static story. */
+/* Homepage process: the artwork is the complete, static story; the envelope and message groups exist only in the markup and stay hidden. */
 @font-face { font-family:'Barlow'; src:url('../assets/buying/fonts/barlow-medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
 .dr .legwork-section { scroll-margin-top:28px; }
 .dr .legwork-intro { display:flex; align-items:flex-end; gap:30px; }
@@ -117,39 +117,6 @@
 .dr .legwork-copy .legwork-scope { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); font-size:12px; line-height:1.65; }
 .dr .legwork-scope a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
 .dr .legwork-details { margin-top:22px; font-size:13px; }
-/* Motion: the scene's scaffolding (document, network, storefronts, offer cards, checklist, map) is always drawn.
-   Only the moving parts and the details that arrive are held back until a card plays, so a waiting card is never
-   an empty box, and a card that never plays (reduced motion, old browser, failed script) shows the finished scene. */
-@media(prefers-reduced-motion:no-preference) {
- html.legwork-motion .dr .legwork-card:not(.is-playing):not(.is-complete) :is(.legwork-price,.legwork-fees,.legwork-review-row,.legwork-decision-row,.legwork-signature,.legwork-pin,.legwork-pickup circle) { opacity:0; }
- .dr .legwork-card.is-playing .legwork-send { animation:legwork-inquiry 1.15s var(--delay) both; }
- .dr .legwork-card.is-playing .legwork-reply { animation:legwork-inquiry 1.1s var(--delay) reverse both; }
- .dr .legwork-card.is-playing .legwork-message-out { animation:legwork-message 1.1s .3s both; }
- .dr .legwork-card.is-playing .legwork-message-back { animation:legwork-message 1.1s 1.5s reverse both; }
- .dr .legwork-card.is-playing .legwork-price { animation:legwork-reveal .6s var(--ease) 2.2s both; }
- .dr .legwork-card.is-playing .legwork-fees { animation:legwork-reveal .6s var(--ease) 2.5s both; }
- .dr .legwork-card.is-playing .legwork-review-row { animation:legwork-reveal .6s var(--ease) .4s both; }
- .dr .legwork-card.is-playing .legwork-decision-row { animation:legwork-reveal .6s var(--ease) .9s both; }
- .dr .legwork-card.is-playing .legwork-signature { animation:legwork-reveal .6s var(--ease) 1.5s both; }
- .dr .legwork-card.is-playing :is(.legwork-pin,.legwork-pickup circle) { animation:legwork-drop .7s var(--ease) 2.1s both; }
-}
-/* An envelope leaves the document, pauses to turn at the junction, then slips into a storefront. Each leg has its own
-   easing so the right-angle route reads as deliberate turns rather than a mechanical slide. */
-@keyframes legwork-inquiry {
- 0% { opacity:0; transform:translate(108px,112px); animation-timing-function:ease-out; }
- 10% { opacity:1; }
- 30% { transform:translate(150px,112px); animation-timing-function:ease-in-out; }
- 52% { transform:translate(150px,var(--branch-y)); animation-timing-function:ease-in; }
- 86% { opacity:1; transform:translate(calc(var(--dealer-x) - 4px),var(--branch-y)) scale(1); animation-timing-function:ease-out; }
- 100% { opacity:0; transform:translate(var(--dealer-x),var(--branch-y)) scale(.6); }
-}
-@keyframes legwork-reveal { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
-@keyframes legwork-drop { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:none; } }
-@keyframes legwork-message {
- 0% { opacity:0; transform:translate(106px,15px); animation-timing-function:ease-in-out; }
- 15%,80% { opacity:1; }
- 100% { opacity:0; transform:translate(214px,15px); }
-}
 @media(max-width:1100px) { .dr .legwork-intro { display:block; }.dr .legwork-intro .primary-button { margin-top:18px; }.dr .legwork-copy { padding:22px; } }
 @media(max-width:1000px) {
  .dr .legwork-grid { grid-template-columns:1fr; gap:24px; }.dr .legwork-card { display:grid; grid-template-columns:1fr 1fr; }.dr .legwork-art { height:100%; min-height:250px; }.dr .legwork-copy { padding:28px; }.dr .legwork-copy h3 { font-size:32px; }
