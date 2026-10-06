@@ -32,12 +32,13 @@ export function initializeAdConsent(w, d, setConsent) {
   const panel = d.createElement('section');
   panel.id = 'drive-right-ad-privacy';
   panel.setAttribute('aria-labelledby', 'drive-right-ad-privacy-title');
+  // One sentence; the policy page carries the full description of what each choice allows.
   panel.innerHTML = `
-    <h2 id="drive-right-ad-privacy-title" tabindex="-1">Your ad privacy</h2>
-    <p>May we use OpenAI ad measurement? It shares page visits, saved inquiries, checkout starts and verified purchases with OpenAI to measure our ads. It uses a cookie and may match contact details you enter after hashing them in your browser.</p>
-    <p>This choice also allows Vercel website analytics on our informational pages. It uses no analytics cookie. We strip page URL queries and fragments and exclude payment receipts and the quote worksheet.</p>
-    <p>Optional. You can use the site either way and change your choice with “Ad privacy” in the footer. <a href="/policy.html#openai-ad-measurement">Read the details</a>.</p>
-    <p data-ad-privacy-status role="status"></p>
+    <div class="ad-privacy-copy">
+      <h2 id="drive-right-ad-privacy-title" tabindex="-1">Ad privacy</h2>
+      <p>May we measure our ads and site visits? Optional, and you can change it any time under “Ad privacy” in the footer. <a href="/policy.html#openai-ad-measurement">Details</a></p>
+      <p data-ad-privacy-status role="status"></p>
+    </div>
     <div class="ad-privacy-actions">
       <button type="button" data-ad-privacy-reject>No thanks</button>
       <button type="button" data-ad-privacy-accept>Allow measurement</button>

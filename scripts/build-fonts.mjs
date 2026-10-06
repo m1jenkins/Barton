@@ -19,7 +19,7 @@ for (const face of faces) {
   const input = path.join(dir, `${face}.ttf`);
   const output = path.join(dir, `${face}-latin.woff2`);
   const result = spawnSync('uvx', [
-    '--from', 'fonttools[woff2]', 'pyftsubset', input,
+    '--from', 'fonttools', '--with', 'brotli', 'pyftsubset', input,
     `--output-file=${output}`, '--flavor=woff2', '--layout-features=*', `--unicodes=${unicodes}`,
   ], { stdio: 'inherit' });
   if (result.error || result.status !== 0) {

@@ -362,12 +362,13 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .header-phone:focus-visible { outline:2px solid var(--green); outline-offset:3px; }
 @media(max-width:900px) { .dr .site-header { gap:20px; } .dr .site-header nav { gap:18px; } }
 /* Consent: a slim bottom bar instead of a card over the hero. Copy and choices are unchanged. */
-.dr #drive-right-ad-privacy { left:0; right:0; bottom:0; width:auto; max-height:min(70dvh,480px); padding:18px max(64px,calc((100% - 1440px) / 2)); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 48px; align-items:center; border:0; border-top:1px solid var(--line); border-radius:0; background:var(--paper); color:var(--muted); box-shadow:0 -10px 30px #1A1A1810; font:13px/1.55 var(--sans); }
-.dr #drive-right-ad-privacy>:not(.ad-privacy-actions) { grid-column:1; max-width:92ch; margin:0; }
-.dr #drive-right-ad-privacy>p+p { margin-top:4px; }
-.dr #drive-right-ad-privacy h2 { margin-bottom:4px; font:600 15px/1.35 var(--sans); letter-spacing:-.01em; color:var(--ink); }
-.dr #drive-right-ad-privacy .ad-privacy-actions { grid-column:2; grid-row:1 / span 4; flex-wrap:nowrap; gap:10px; }
-.dr #drive-right-ad-privacy .ad-privacy-actions button { flex:none; min-height:44px; padding:10px 20px; }
+.dr #drive-right-ad-privacy { left:0; right:0; bottom:0; width:auto; max-height:min(70dvh,480px); padding:12px max(64px,calc((100% - 1440px) / 2)); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 32px; align-items:center; border:0; border-top:1px solid var(--line); border-radius:0; background:var(--paper); color:var(--muted); box-shadow:0 -10px 30px #1A1A1810; font:13px/1.5 var(--sans); }
+.dr #drive-right-ad-privacy .ad-privacy-copy { grid-column:1; margin:0; }
+.dr #drive-right-ad-privacy .ad-privacy-copy h2 { display:inline; margin:0 6px 0 0; font:600 13px/1.5 var(--sans); letter-spacing:0; color:var(--ink); }
+.dr #drive-right-ad-privacy .ad-privacy-copy h2+p { display:inline; margin:0; }
+.dr #drive-right-ad-privacy .ad-privacy-copy [data-ad-privacy-status] { margin:4px 0 0; }
+.dr #drive-right-ad-privacy .ad-privacy-actions { grid-column:2; flex-wrap:nowrap; gap:10px; }
+.dr #drive-right-ad-privacy .ad-privacy-actions button { flex:none; min-height:40px; padding:8px 16px; }
 /* Pricing cards: Full Service leads; both show what the fee covers. */
 .dr .plan-card[data-featured] { border-color:var(--ink); }
 .dr .plan-card .primary-button { margin-top:auto; width:100%; min-height:48px; padding:12px 16px; font-size:14px; gap:10px; }
@@ -484,8 +485,8 @@ html:has(> body.dr) { scroll-padding-top:96px; }
  .dr .site-header nav { grid-area:nav; margin:0; gap:16px; }
  .dr .nav-link { min-height:52px; font-size:14px; white-space:nowrap; }
  .dr .header-cta { grid-area:cta; min-height:40px; padding:8px 14px; font-size:13px; }
- .dr #drive-right-ad-privacy { grid-template-columns:1fr; padding:16px 20px calc(16px + env(safe-area-inset-bottom)); }
- .dr #drive-right-ad-privacy .ad-privacy-actions { grid-column:1; grid-row:auto; margin-top:12px; }
+ .dr #drive-right-ad-privacy { grid-template-columns:1fr; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); }
+ .dr #drive-right-ad-privacy .ad-privacy-actions { grid-column:1; grid-row:auto; margin-top:8px; }
  .dr #drive-right-ad-privacy .ad-privacy-actions button { flex:1 1 0; padding-inline:8px; white-space:nowrap; }
  .dr .story-portrait { width:240px; margin-bottom:20px; }
  .dr .founder-copy h2 { font-size:43px; }.dr .founder-photos { gap:6px; }
