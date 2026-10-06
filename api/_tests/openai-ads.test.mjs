@@ -2,8 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-import { createOpenAIAds } from '../../openai-ads.js';
+import { OPENAI_ADS_PIXEL_ID, createOpenAIAds } from '../../openai-ads.js';
 import { AD_CONSENT_KEY, readAdConsent } from '../../ad-consent.js';
+import { OPENAI_ADS_PIXEL_ID as SERVER_PIXEL_ID } from '../_lib/openai-ads-capi.js';
+
+test('server conversions use the same public Pixel ID as the browser pixel', () => {
+  assert.match(OPENAI_ADS_PIXEL_ID, /^\w{8,}$/);
+  assert.equal(SERVER_PIXEL_ID, OPENAI_ADS_PIXEL_ID);
+});
 
 test('saved consent expires and rejects malformed or future-dated choices', () => {
   const now = Date.now();

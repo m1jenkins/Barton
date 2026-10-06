@@ -1,4 +1,8 @@
-import { OPENAI_ADS_PIXEL_ID } from '../../openai-ads.js';
+// Server code never imports browser modules. Their content-hashed imports
+// (`./ad-consent.js?v=…`) are invisible to Vercel's function file tracing, so
+// the deployed function crashed at startup. openai-ads.test.mjs keeps this
+// equal to the public Pixel ID in openai-ads.js.
+export const OPENAI_ADS_PIXEL_ID = '4FeqFBVzJFUMdu8S8gatam';
 
 const OPENAI_ADS_CAPI_ENDPOINT = 'https://bzr.openai.com/v1/events';
 const OPENAI_ADS_CAPI_KEY_ENV = 'OPENAI_ADS_CONVERSIONS_API_KEY';
