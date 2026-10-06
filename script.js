@@ -1,6 +1,6 @@
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
-import("./openai-ads.js?v=a8076f541c75").catch(() => {});
-import("./web-analytics.js?v=ac57c3e2bb88").catch(() => {});
+import("./openai-ads.js?v=8fd81e356f08").catch(() => {});
+import("./web-analytics.js?v=cbe479b5e083").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
 window.addEventListener('DOMContentLoaded', () => {
   window.driveRightClient = { requestJson, track, createId, attribution: attributionData };
@@ -53,7 +53,7 @@ function trackVerifiedPurchase(result) {
     track('purchase_verified', properties);
     // Verification can finish before the optional tracker imports. Reaching the same
     // adapter after import closes that race; its purchase ID suppresses duplicates.
-    import('./openai-ads.js?v=a8076f541c75').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
+    import('./openai-ads.js?v=8fd81e356f08').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
   } catch {}
 }
 // Stripe's return URL carries the Checkout Session ID, which also unlocks the one-time intake.

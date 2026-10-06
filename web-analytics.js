@@ -1,5 +1,3 @@
-import { readAdConsent } from './ad-consent.js?v=22b7d3163dfb';
-
 // Measure only the released informational pages. Receipts, forms' private
 // results, the quote worksheet, APIs and unknown routes are outside this list.
 const publicPaths = new Set(['/', '/index.html', '/about.html', '/how-it-works.html',
@@ -52,16 +50,8 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     if (!window.driveRightWebAnalytics) {
       const analytics = createWebAnalytics(window, document);
       window.driveRightWebAnalytics = analytics;
-      const refresh = () => {
-        let choice;
-        try { choice = readAdConsent(window.localStorage); } catch {}
-        // Old permission for OpenAI is not permission for this additional tool.
-        analytics.setConsent(choice?.webAnalytics === true);
-      };
-      window.addEventListener('drive-right:web-analytics-consent', event => analytics.setConsent(event.detail === true));
-      window.addEventListener('storage', refresh);
-      window.addEventListener('pageshow', refresh);
-      refresh();
+      // On by default; Global Privacy Control still turns it off in permitted().
+      analytics.setConsent(true);
     }
   } catch { /* Measurement cannot block any site interaction. */ }
 }

@@ -1,5 +1,3 @@
-import { initializeAdConsent } from './ad-consent.js?v=22b7d3163dfb';
-
 // Public Pixel ID supplied by the site owner on September 28, 2026.
 // This static site does not substitute server environment variables into JS.
 export const OPENAI_ADS_PIXEL_ID = '4FeqFBVzJFUMdu8S8gatam';
@@ -106,7 +104,7 @@ export function createOpenAIAds(w, d, pixelId = OPENAI_ADS_PIXEL_ID) {
   return { track, setConsent };
 }
 
-// The site's Ad privacy controls supply the actual visitor choice.
+// Measurement is on by default; Global Privacy Control still turns it off in allowed().
 export const openAIAds = (() => {
   const noop = { track() {}, setConsent() {} };
   if (typeof window === 'undefined' || typeof document === 'undefined') return noop;
@@ -115,7 +113,7 @@ export const openAIAds = (() => {
     const ads = createOpenAIAds(window, document);
     window.driveRightOpenAIAds = ads;
     window.addEventListener('drive-right:ads-consent', event => ads.setConsent(event.detail));
-    initializeAdConsent(window, document, ads.setConsent);
+    ads.setConsent({ measurement: true, personalization: false });
     return ads;
   } catch { return noop; }
 })();

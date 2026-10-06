@@ -34,7 +34,7 @@ Changed files:
 
 - `openai-ads.js`: public Pixel configuration, consent bridge, single initialization, event mapping, deduplication, and failure isolation.
 - `script.js`: imports the destination and calls it from existing `track()`.
-- `ad-consent.js` and `ad-consent.css`: visitor-facing opt-in controls, preference persistence and withdrawal.
+- Measurement is on by default (no opt-in banner since 2026-10-06); Global Privacy Control turns it off.
 - `policy.html`: factual OpenAI measurement disclosure and a preference control.
 - `.vercelignore`: keeps local secrets, agent configuration, tests and task reports out of the deployment.
 - `api/_tests/openai-ads.test.mjs`: consent, event mapping, duplicates, SDK failures, and actual hero-form success/failure tests.

@@ -3,25 +3,11 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import { OPENAI_ADS_PIXEL_ID, createOpenAIAds } from '../../openai-ads.js';
-import { AD_CONSENT_KEY, readAdConsent } from '../../ad-consent.js';
 import { OPENAI_ADS_PIXEL_ID as SERVER_PIXEL_ID } from '../_lib/openai-ads-capi.js';
 
 test('server conversions use the same public Pixel ID as the browser pixel', () => {
   assert.match(OPENAI_ADS_PIXEL_ID, /^\w{8,}$/);
   assert.equal(SERVER_PIXEL_ID, OPENAI_ADS_PIXEL_ID);
-});
-
-test('saved consent expires and rejects malformed or future-dated choices', () => {
-  const now = Date.now();
-  const read = value => readAdConsent({ getItem(key) { assert.equal(key, AD_CONSENT_KEY); return JSON.stringify(value); } }, now);
-  for (const measurement of [true, false]) {
-    assert.equal(read({ version: 1, measurement, savedAt: now }).measurement, measurement);
-  }
-  for (const value of [null, {}, { version: 1, measurement: 'true', savedAt: now },
-    { version: 1, measurement: true, savedAt: now + 1 },
-    { version: 1, measurement: true, savedAt: now - 180 * 86400000 }]) assert.equal(read(value), null);
-  assert.equal(readAdConsent({ getItem() { throw Error('storage blocked'); } }), null);
-  assert.equal(readAdConsent({ getItem() { return 'not json'; } }), null);
 });
 
 function fixture({ pixelId = 'test-pixel', hostname = 'www.driverightcarbuying.com', pathname = '/', search = '', hash = '', verified = false, gpc = false, storageBlocked = false } = {}) {
