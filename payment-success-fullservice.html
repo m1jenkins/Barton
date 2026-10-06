@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="/buying/daisy.css?v=5c34c5207147">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=7e32e4b45e17">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=2eb0ca2bb638">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -79,13 +79,11 @@
     <a class="nav-link" href="/how-it-works.html">How it works</a>
     <a class="nav-link" href="/car-buying-service.html">Car buying service</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
-    <a class="nav-link" href="/#search" data-brief-link>Your search</a>
   </nav>
-</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">Full Service · see your receipt for the amount paid</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Check your saved search details and fill in the remaining details below. We’ll confirm scope and timing after your intake.</p><aside id="paid-brief" class="compact-brief" hidden></aside></div><section class="ps-onboarding" id="onboarding">
+</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">Full Service · see your receipt for the amount paid</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Tell us about the car below, and we’ll confirm scope and timing after your intake.</p></div><section class="ps-onboarding" id="onboarding">
             <div class="ps-onboarding__inner">
-                <p class="section-label">Step 1 of 5</p>
                 <h2 class="section-heading">Tell Us About Your Ideal Car</h2>
-                <p class="section-subtext">The more detail you share, the faster we can find the right vehicle. All fields marked&nbsp;* are required.</p>
+                <p class="section-subtext">Start with the essentials. The more you add, the faster we can find the right vehicle. Fields marked&nbsp;* are required.</p>
 
                 <form class="ps-form" id="onboarding-form" autocomplete="on">
 
@@ -93,191 +91,182 @@
                     <input type="hidden" name="submission_type" value="full_service_onboarding">
                     <input type="hidden" name="source_page" value="payment-success-fullservice.html">
 
-                    <!-- , , ,  SECTION: Contact , , ,  -->
-                    <fieldset class="ps-form__fieldset">
-                        <legend class="ps-form__legend">Your Contact Info</legend>
-
-                        <div class="ps-form__row ps-form__row--two">
+                        <fieldset class="ps-form__fieldset">
+                            <legend class="ps-form__legend">The Car You Want</legend>
                             <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-name">Full Name *</label>
-                                <input class="ps-form__input" type="text" id="ob-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+                                <label class="ps-form__label" for="ob-makes">What Car Are You Looking For? *</label>
+                                <input class="ps-form__input" type="text" id="ob-makes" name="preferred_makes" required placeholder="A make and model, or the kind of car you need">
                             </div>
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-email">Email *</label>
-                                <input class="ps-form__input" type="email" id="ob-email" name="email" required autocomplete="email" placeholder="jane@example.com">
-                            </div>
-                        </div>
-                        <div class="ps-form__row ps-form__row--two">
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-phone">Phone *</label>
-                                <input class="ps-form__input" type="tel" id="ob-phone" name="phone" required autocomplete="tel" placeholder="(512) 555-1234">
-                            </div>
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-city">City / Area *</label>
-                                <input class="ps-form__input" type="text" id="ob-city" name="city" required autocomplete="address-level2" placeholder="Austin, TX">
-                            </div>
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-contact-pref">Preferred Contact Method *</label>
-                            <select class="ps-form__select" id="ob-contact-pref" name="contact_preference" required>
-                                <option value="" disabled selected>Select one…</option>
-                                <option value="call">Phone Call</option>
-                                <option value="text">Text Message</option>
-                                <option value="email">Email</option>
-                            </select>
-                        </div>
-                    </fieldset>
-
-                    <!-- , , ,  SECTION: Vehicle Preferences , , ,  -->
-                    <fieldset class="ps-form__fieldset">
-                        <legend class="ps-form__legend">Vehicle Preferences</legend>
-
-                        <div class="ps-form__row ps-form__row--two">
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-vehicle-type">Vehicle Type *</label>
-                                <select class="ps-form__select" id="ob-vehicle-type" name="vehicle_type" required>
-                                    <option value="" disabled selected>Select type…</option>
-                                    <option value="sedan">Sedan</option>
-                                    <option value="suv">SUV / Crossover</option>
-                                    <option value="truck">Truck</option>
-                                    <option value="coupe">Coupe / Sports Car</option>
-                                    <option value="minivan">Minivan</option>
-                                    <option value="wagon">Wagon / Hatchback</option>
-                                    <option value="ev">Electric Vehicle</option>
-                                    <option value="luxury">Luxury / Exotic</option>
-                                    <option value="unsure">Not sure, help me decide</option>
-                                </select>
-                            </div>
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-condition">New or Used? *</label>
-                                <select class="ps-form__select" id="ob-condition" name="condition" required>
-                                    <option value="" disabled selected>Select condition…</option>
-                                    <option value="new">New</option>
-                                    <option value="cpo">Certified Pre-Owned (CPO)</option>
-                                    <option value="used">Used</option>
-                                    <option value="open">Open to all</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-makes">Preferred Makes / Models <span class="ps-form__hint">(optional)</span></label>
-                            <input class="ps-form__input" type="text" id="ob-makes" name="preferred_makes" placeholder="e.g. Toyota Camry, Honda CR-V, BMW 3 Series">
-                        </div>
-                        <div class="ps-form__row ps-form__row--two">
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-year-min">Oldest Model Year Acceptable <span class="ps-form__hint">(optional)</span></label>
-                                <input class="ps-form__input" type="number" id="ob-year-min" name="year_min" min="2000" max="2027" placeholder="e.g. 2020">
-                            </div>
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-max-miles">Max Mileage <span class="ps-form__hint">(if used)</span></label>
-                                <input class="ps-form__input" type="number" id="ob-max-miles" name="max_mileage" min="0" placeholder="e.g. 50000">
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <!-- , , ,  SECTION: Budget & Financing , , ,  -->
-                    <fieldset class="ps-form__fieldset">
-                        <legend class="ps-form__legend">Budget &amp; Financing</legend>
-
-                        <div class="ps-form__row ps-form__row--two">
-                            <div class="ps-form__group">
-                                <p class="small-note budget-context">Include taxes, fees, and delivery in this amount. Your earlier car-price budget is kept separately in the search details.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
-                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
-                            </div>
-                            <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-payment">How Are You Paying? *</label>
-                                <select class="ps-form__select" id="ob-payment" name="payment_method" required>
-                                    <option value="" disabled selected>Select one…</option>
-                                    <option value="finance">Financing / Loan</option>
-                                    <option value="cash">Cash / Wire</option>
-                                    <option value="lease">Lease</option>
-                                    <option value="undecided">Not sure yet</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-trade-in">Do You Have a Trade-In?</label>
-                            <select class="ps-form__select" id="ob-trade-in" name="trade_in">
-                                <option value="" disabled selected>Select one…</option>
-                                <option value="yes">Yes, I'd like help maximizing its value</option>
-                                <option value="no">No trade-in</option>
-                                <option value="maybe">Maybe, I'm undecided</option>
-                            </select>
-                        </div>
-                        <div id="trade-in-details" style="display:none; margin-top:18px;">
                             <div class="ps-form__row ps-form__row--two">
                                 <div class="ps-form__group">
-                                    <label class="ps-form__label" for="ob-trade-identifier">Trade-In Plate Number or VIN (optional)</label>
-                                    <input class="ps-form__input" type="text" id="ob-trade-identifier" name="trade_identifier" placeholder="Plate number or VIN">
+                                    <label class="ps-form__label" for="ob-condition">New or Used? *</label>
+                                    <select class="ps-form__select" id="ob-condition" name="condition" required>
+                                        <option value="" disabled selected>Select condition…</option>
+                                        <option value="new">New</option>
+                                        <option value="cpo">Certified Pre-Owned (CPO)</option>
+                                        <option value="used">Used</option>
+                                        <option value="open">Open to all</option>
+                                    </select>
                                 </div>
                                 <div class="ps-form__group">
-                                    <label class="ps-form__label" for="ob-trade-mileage">Trade-In Mileage (optional)</label>
-                                    <input class="ps-form__input" type="number" id="ob-trade-mileage" name="trade_mileage" min="0" inputmode="numeric" placeholder="e.g. 72500">
+                                    <label class="ps-form__label" for="ob-timeline">How Soon Do You Need the Vehicle? *</label>
+                                    <select class="ps-form__select" id="ob-timeline" name="timeline" required>
+                                        <option value="" disabled selected>Select timeframe…</option>
+                                        <option value="asap">ASAP, as soon as possible</option>
+                                        <option value="2-weeks">Within 2 weeks</option>
+                                        <option value="1-month">Within a month</option>
+                                        <option value="flexible">No rush, I'm flexible</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="ps-form__group">
-                                <label class="ps-form__label" for="ob-trade-condition">Trade-In Condition (optional)</label>
-                                <select class="ps-form__select" id="ob-trade-condition" name="trade_condition">
-                                    <option value="" disabled selected>Select condition…</option>
-                                    <option value="excellent">Excellent</option>
-                                    <option value="good">Good</option>
-                                    <option value="fair">Fair</option>
-                                    <option value="poor">Poor</option>
-                                    <option value="unknown">Not sure</option>
+                                <p class="small-note budget-context">Include taxes, fees, and delivery in this amount.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
+                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="ps-form__fieldset">
+                            <legend class="ps-form__legend">How to Reach You</legend>
+                            <div class="ps-form__row ps-form__row--two">
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-name">Full Name *</label>
+                                    <input class="ps-form__input" type="text" id="ob-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-email">Email *</label>
+                                    <input class="ps-form__input" type="email" id="ob-email" name="email" required autocomplete="email" placeholder="jane@example.com">
+                                </div>
+                            </div>
+                            <div class="ps-form__row ps-form__row--two">
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-phone">Phone *</label>
+                                    <input class="ps-form__input" type="tel" id="ob-phone" name="phone" required autocomplete="tel" placeholder="(512) 555-1234">
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-city">City / Area *</label>
+                                    <input class="ps-form__input" type="text" id="ob-city" name="city" required autocomplete="address-level2" placeholder="Austin, TX">
+                                </div>
+                            </div>
+                            <div class="ps-form__group">
+                                <label class="ps-form__label" for="ob-contact-pref">Preferred Contact Method <span class="ps-form__hint">(optional)</span></label>
+                                <select class="ps-form__select" id="ob-contact-pref" name="contact_preference">
+                                    <option value="" disabled selected>Select one…</option>
+                                    <option value="call">Phone Call</option>
+                                    <option value="text">Text Message</option>
+                                    <option value="email">Email</option>
                                 </select>
                             </div>
-                        </div>
-                    </fieldset>
+                        </fieldset>
 
-                    <!-- , , ,  SECTION: Priorities & Must-Haves , , ,  -->
-                    <fieldset class="ps-form__fieldset">
-                        <legend class="ps-form__legend">Priorities &amp; Must-Haves</legend>
-
-                        <div class="ps-form__group">
-                            <label class="ps-form__label">Must-Have Features <span class="ps-form__hint">(select all that apply)</span></label>
-                            <div class="ps-form__checkbox-grid">
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="awd"> AWD / 4WD</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="sunroof"> Sunroof / Moonroof</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="leather"> Leather Seats</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="heated-seats"> Heated Seats</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="apple-carplay"> Apple CarPlay / Android Auto</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="3rd-row"> Third-Row Seating</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="towing"> Towing Package</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="safety-suite"> Advanced Safety Suite</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="fuel-efficient"> High Fuel Efficiency</label>
-                                <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="other" id="features-other-check"> Other</label>
-                            </div>
-                            <input class="ps-form__input" type="text" id="features-other-text" name="features_other" placeholder="Please describe…" style="display:none; margin-top:8px;">
-                        </div>
-                    </fieldset>
-
-                    <!-- , , ,  SECTION: Timeline & Notes , , ,  -->
-                    <fieldset class="ps-form__fieldset">
-                        <legend class="ps-form__legend">Timeline &amp; Anything Else</legend>
-
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-timeline">How Soon Do You Need the Vehicle? *</label>
-                            <select class="ps-form__select" id="ob-timeline" name="timeline" required>
-                                <option value="" disabled selected>Select timeframe…</option>
-                                <option value="asap">ASAP, as soon as possible</option>
-                                <option value="2-weeks">Within 2 weeks</option>
-                                <option value="1-month">Within a month</option>
-                                <option value="flexible">No rush, I'm flexible</option>
-                            </select>
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-colors">Color Preferences <span class="ps-form__hint">(optional)</span></label>
-                            <input class="ps-form__input" type="text" id="ob-colors" name="colors" placeholder="e.g. White, Black, Silver, or 'No preference'">
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-dealbreakers">Deal-Breakers <span class="ps-form__hint">(optional)</span></label>
-                            <textarea class="ps-form__textarea" id="ob-dealbreakers" name="dealbreakers" rows="3" placeholder="Anything you absolutely don't want, certain brands, features, colors, prior accidents, etc."></textarea>
-                        </div>
-                        <div class="ps-form__group">
-                            <label class="ps-form__label" for="ob-notes">Additional Notes <span class="ps-form__hint">(optional)</span></label>
-                            <textarea class="ps-form__textarea" id="ob-notes" name="notes" rows="3" placeholder="Anything else we should know, special requests, accessibility needs, delivery preferences, etc."></textarea>
-                        </div>
-                    </fieldset>
+                        <details class="ps-more">
+                            <summary>Add more preferences <span class="ps-form__hint">(optional)</span></summary>
+                            <fieldset class="ps-form__fieldset">
+                                <legend class="ps-form__legend">Vehicle Details</legend>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-vehicle-type">Vehicle Type <span class="ps-form__hint">(optional)</span></label>
+                                    <select class="ps-form__select" id="ob-vehicle-type" name="vehicle_type">
+                                        <option value="" disabled selected>Select type…</option>
+                                        <option value="sedan">Sedan</option>
+                                        <option value="suv">SUV / Crossover</option>
+                                        <option value="truck">Truck</option>
+                                        <option value="coupe">Coupe / Sports Car</option>
+                                        <option value="minivan">Minivan</option>
+                                        <option value="wagon">Wagon / Hatchback</option>
+                                        <option value="ev">Electric Vehicle</option>
+                                        <option value="luxury">Luxury / Exotic</option>
+                                        <option value="unsure">Not sure, help me decide</option>
+                                    </select>
+                                </div>
+                                <div class="ps-form__row ps-form__row--two">
+                                    <div class="ps-form__group">
+                                        <label class="ps-form__label" for="ob-year-min">Oldest Model Year Acceptable <span class="ps-form__hint">(optional)</span></label>
+                                        <input class="ps-form__input" type="number" id="ob-year-min" name="year_min" min="2000" max="2027" placeholder="e.g. 2020">
+                                    </div>
+                                    <div class="ps-form__group">
+                                        <label class="ps-form__label" for="ob-max-miles">Max Mileage <span class="ps-form__hint">(if used)</span></label>
+                                        <input class="ps-form__input" type="number" id="ob-max-miles" name="max_mileage" min="0" placeholder="e.g. 50000">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="ps-form__fieldset">
+                                <legend class="ps-form__legend">Paying &amp; Trade-In</legend>
+                                <div class="ps-form__row ps-form__row--two">
+                                    <div class="ps-form__group">
+                                        <label class="ps-form__label" for="ob-payment">How Are You Paying? <span class="ps-form__hint">(optional)</span></label>
+                                        <select class="ps-form__select" id="ob-payment" name="payment_method">
+                                            <option value="" disabled selected>Select one…</option>
+                                            <option value="finance">Financing / Loan</option>
+                                            <option value="cash">Cash / Wire</option>
+                                            <option value="lease">Lease</option>
+                                            <option value="undecided">Not sure yet</option>
+                                        </select>
+                                    </div>
+                                    <div class="ps-form__group">
+                                        <label class="ps-form__label" for="ob-trade-in">Do You Have a Trade-In?</label>
+                                        <select class="ps-form__select" id="ob-trade-in" name="trade_in">
+                                            <option value="" disabled selected>Select one…</option>
+                                            <option value="yes">Yes, I'd like help maximizing its value</option>
+                                            <option value="no">No trade-in</option>
+                                            <option value="maybe">Maybe, I'm undecided</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="trade-in-details" style="display:none; margin-top:18px;">
+                                    <div class="ps-form__row ps-form__row--two">
+                                        <div class="ps-form__group">
+                                            <label class="ps-form__label" for="ob-trade-identifier">Trade-In Plate Number or VIN (optional)</label>
+                                            <input class="ps-form__input" type="text" id="ob-trade-identifier" name="trade_identifier" placeholder="Plate number or VIN">
+                                        </div>
+                                        <div class="ps-form__group">
+                                            <label class="ps-form__label" for="ob-trade-mileage">Trade-In Mileage (optional)</label>
+                                            <input class="ps-form__input" type="number" id="ob-trade-mileage" name="trade_mileage" min="0" inputmode="numeric" placeholder="e.g. 72500">
+                                        </div>
+                                    </div>
+                                    <div class="ps-form__group">
+                                        <label class="ps-form__label" for="ob-trade-condition">Trade-In Condition (optional)</label>
+                                        <select class="ps-form__select" id="ob-trade-condition" name="trade_condition">
+                                            <option value="" disabled selected>Select condition…</option>
+                                            <option value="excellent">Excellent</option>
+                                            <option value="good">Good</option>
+                                            <option value="fair">Fair</option>
+                                            <option value="poor">Poor</option>
+                                            <option value="unknown">Not sure</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="ps-form__fieldset">
+                                <legend class="ps-form__legend">Must-Haves &amp; Anything Else</legend>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label">Must-Have Features <span class="ps-form__hint">(select all that apply)</span></label>
+                                    <div class="ps-form__checkbox-grid">
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="awd"> AWD / 4WD</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="sunroof"> Sunroof / Moonroof</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="leather"> Leather Seats</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="heated-seats"> Heated Seats</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="apple-carplay"> Apple CarPlay / Android Auto</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="3rd-row"> Third-Row Seating</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="towing"> Towing Package</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="safety-suite"> Advanced Safety Suite</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="fuel-efficient"> High Fuel Efficiency</label>
+                                        <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="other" id="features-other-check"> Other</label>
+                                    </div>
+                                    <input class="ps-form__input" type="text" id="features-other-text" name="features_other" placeholder="Please describe…" style="display:none; margin-top:8px;">
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-colors">Color Preferences <span class="ps-form__hint">(optional)</span></label>
+                                    <input class="ps-form__input" type="text" id="ob-colors" name="colors" placeholder="e.g. White, Black, Silver, or 'No preference'">
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-dealbreakers">Deal-Breakers <span class="ps-form__hint">(optional)</span></label>
+                                    <textarea class="ps-form__textarea" id="ob-dealbreakers" name="dealbreakers" rows="3" placeholder="Anything you absolutely don't want, certain brands, features, colors, prior accidents, etc."></textarea>
+                                </div>
+                                <div class="ps-form__group">
+                                    <label class="ps-form__label" for="ob-notes">Additional Notes <span class="ps-form__hint">(optional)</span></label>
+                                    <textarea class="ps-form__textarea" id="ob-notes" name="notes" rows="3" placeholder="Anything else we should know, special requests, accessibility needs, delivery preferences, etc."></textarea>
+                                </div>
+                            </fieldset>
+                        </details>
 
                     <button type="submit" class="btn--primary ps-form__submit" id="onboarding-submit">Submit &amp; Start My Search</button>
                 </form>
@@ -303,6 +292,6 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><script src="/script.js?v=981c4c038361"></script>
-<script type="module" src="/buying/app.js?v=e58e0c5052c0"></script>
+<script type="module" src="/buying/app.js?v=f1467d5d9829"></script>
 </body>
 </html>

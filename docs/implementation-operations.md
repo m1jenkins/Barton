@@ -276,7 +276,7 @@ Still visible, all first party or on the buyer's device:
 
 Account-side steps, not applied (see `docs/google-ads-setup.md` §3):
 
-- **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. After verification, `buying/app.js` shows the buyer's saved brief as page text.
+- **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. Since October 5, 2026 the payment pages no longer show saved search details as page text; the intake holds only what the buyer types.
 - **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover GTM's own page view or Clarity, so the page code is the fix.
 
 After deploy, check a payment page: once it loads, the address bar shows no `session_id`, and no request to a Google or Clarity host contains `session_id`, `cs_live_` or `cs_test_`.

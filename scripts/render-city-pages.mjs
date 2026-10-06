@@ -61,7 +61,7 @@ export function renderCity(city, homepage) {
   let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
   for (const [from, to] of [
     ['Skip the hours at the dealer.<br>', `Skip the hours at the dealer in ${name}.<br>`],
-    ['Let us know what you want. We go on the hunt — calling dealers, sending emails, comparing offers, and haggling — so you keep your evenings and your sanity. You make the final call.', `Let us know what you want. We go on the hunt — calling dealers, sending emails, comparing offers, and haggling — so you keep your evenings and your sanity. You make the final call. ${escape(city.localSentence)}`],
+    ['We go on the hunt — calling dealers, sending emails, comparing offers, and haggling — so you keep your evenings and your sanity. You make the final call.', `We go on the hunt — calling dealers, sending emails, comparing offers, and haggling — so you keep your evenings and your sanity. You make the final call. ${escape(city.localSentence)}`],
     ['We help car buyers nationwide', `We help ${name} car buyers`],
     ['We’re based in Austin and serve buyers nationwide through remote support.', `We’re based in Austin and help buyers in ${name} remotely.`],
     ['Based in Austin. Here for buyers nationwide.', `Based in Austin. Here for ${name}.`],
@@ -73,7 +73,8 @@ function renderHub(data, homepage) {
   let html = pageMetadata(homepage, { slug: 'service-areas.html', title: 'Car Buying Service by City | Drive Right', description: 'Find your Drive Right city page for remote vehicle research, offer comparison, and car buying support from our Austin-based team.' });
   html = html.replace('data-buying-page="home"', 'data-buying-page="cities"');
   html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
-  html = html.replace(/<dialog id="edit-dialog"[\s\S]*?<\/dialog>/, '');
+  // The hub has no hero, so nothing opens the homepage's inquiry dialog.
+  html = html.replace(/<dialog id="car-search-inquiry"[\s\S]*?<\/dialog>/, '');
   return replaceRequired(html, 'Based in Austin. Here for buyers nationwide.', 'Based in Austin. Here for you.');
 }
 

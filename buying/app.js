@@ -1,10 +1,8 @@
-import { fields, normalizeAnswer, parseConversation, nextField, nextIntakeField, isComplete, isConcrete, choicesFor, restoredPriorities } from './intake.js?v=ae8f7cd0a830';
-import { BRIEF_KEY, restoreBrief, applyAnswer, briefText, createStore, onboardingValues } from './brief.js?v=5be50b503cd4';
-import { plans, createCheckout } from './checkout.js?v=243426417c53';
+import { plans, createCheckout, createStore } from './checkout.js?v=585d841060e1';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
-const icons = { up:'M12 20V4m-7 7 7-7 7 7', arrow:'M4 12h16m-7-7 7 7-7 7', back:'m15 4-8 8 8 8', edit:'m16 3 5 5-12 12-6 1 1-6L16 3Zm-3 3 5 5', close:'m6 6 12 12M6 18 18 6', check:'m5 12 4 4L19 6', download:'M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4' };
+const icons = { arrow:'M4 12h16m-7-7 7 7-7 7', close:'m6 6 12 12M6 18 18 6' };
 const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${icons[name] || ''}"/></svg>`;
 document.querySelectorAll('[data-icon]').forEach(element => { element.innerHTML = icon(element.dataset.icon); });
 
@@ -45,7 +43,7 @@ function initLegworkMotion() {
   const finish = card => {
     if (!active.has(card)) return;
     clearTimeout(active.get(card));
-    // Remove animation styles so reopening the home view cannot replay a card.
+    // Remove animation styles so a later visit to the section cannot replay a card.
     card.classList.add('is-complete');
     card.classList.remove('is-playing');
     visible.delete(card);
@@ -82,385 +80,109 @@ function initLegworkMotion() {
 }
 initLegworkMotion();
 
-const briefStore = createStore(window);
-const checkoutStore = createStore(window, 'drive_right_buying_checkout_v1');
-let brief = restoreBrief(briefStore.read());
-const handoff = new URLSearchParams(location.hash.split('?')[1] || '').get('draft');
-if (handoff) {
-  try { brief = restoreBrief(JSON.parse(handoff)); } catch { /* Ignore malformed handoff. */ }
-  history.replaceState(history.state, '', location.pathname + location.search + location.hash.split('?')[0]);
-}
-let view = 'home';
-let optionalQuestions = false;
-let replyPending = false;
-let replyTimer;
-const home = document.body.dataset.buyingPage === 'home';
-const homeTitle = document.title;
-const input = $('#answer');
-const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-// The header button starts a brief, or returns to one already in progress.
-function syncBriefLink() {
-  const link = $('[data-brief-link]');
-  if (!link) return;
-  const started = Object.keys(brief.answers).length > 0;
-  link.textContent = started ? 'Your search' : 'Start my search';
-  link.setAttribute('href', started ? '/#search' : '/#conversation');
-}
-function persist() {
-  const storage = briefStore.write(brief);
-  const message = storage === 'memory' ? 'Browser storage is unavailable. Keep a downloaded copy of your search details.' : '';
-  if ($('#saved-indicator')) $('#saved-indicator').textContent = message;
-  syncBriefLink();
-  return storage;
-}
-function currentField() { return (optionalQuestions ? nextField : nextIntakeField)(brief.answers, brief.skipped); }
-function sizeAnswer() {
-  input.style.height = 'auto';
-  const compact = view === 'conversation' && matchMedia('(max-width: 760px)').matches;
-  const limit = compact ? 104 : 160;
-  input.style.height = `${Math.min(input.scrollHeight, limit)}px`;
-  if (compact) $('#messages').scrollTop = $('#messages').scrollHeight;
-}
-function syncConversationViewport() {
-  const panel = $('#intake-view');
-  if (view !== 'conversation' || !matchMedia('(max-width: 760px)').matches || !window.visualViewport) {
-    panel.style.removeProperty('--conversation-height');
-    panel.style.removeProperty('--conversation-top');
-    return;
-  }
-  panel.style.setProperty('--conversation-height', `${window.visualViewport.height}px`);
-  panel.style.setProperty('--conversation-top', `${window.visualViewport.offsetTop}px`);
-}
-function resizeConversation() {
-  syncConversationViewport();
-  if (view === 'conversation') requestAnimationFrame(() => {
-    sizeAnswer();
-    $('#messages').scrollTop = $('#messages').scrollHeight;
-  });
-}
-function cancelReply() {
-  clearTimeout(replyTimer);
-  replyPending = false;
-}
-function prepareReply() {
-  cancelReply();
-  replyPending = true;
-  renderConversation();
-  // These are guided prompts, paced briefly so the response feels conversational.
-  // The answer is already saved, including when the buyer leaves during the pause.
-  const delay = reduced() ? 250 : Math.min(1300, 750 + (currentField()?.question.length || 80) * 4);
-  replyTimer = setTimeout(() => {
-    replyPending = false;
-    if (view !== 'conversation') return;
-    renderConversation();
-    if (currentField()) input.focus({ preventScroll:true });
-    else $('#brief-ready .primary-button').focus({ preventScroll:true });
-  }, delay);
-}
-function renderConversation() {
-  const field = currentField();
-  const steps = fields.filter(f => optionalQuestions || f.required || f.intake);
-  const completed = steps.filter(f => brief.answers[f.key] || brief.skipped[f.key]).length;
-  $('#step-label').textContent = `${completed} of ${steps.length} details`;
-  $('#intake-progress').max = steps.length;
-  $('#intake-progress').value = completed;
-  const rows = fields.filter(f => brief.answers[f.key] || brief.skipped[f.key]);
-  const log = $('#messages');
-  let response = log.querySelector('.message.assistant');
-  if (!response) { response = document.createElement('div'); response.className = 'message assistant'; log.append(response); }
-  // Keep existing answers mounted so only the new turn animates and is announced.
-  log.querySelectorAll('[data-answer]').forEach(message => { if (!rows.some(f => f.key === message.dataset.answer)) message.remove(); });
-  for (const f of rows) {
-    let message = log.querySelector(`[data-answer="${f.key}"]`);
-    if (!message) { message = document.createElement('div'); message.className = 'message user'; message.dataset.answer = f.key; log.insertBefore(message, response); }
-    const markup = `<div class="bubble"><p>${escape(brief.answers[f.key] || 'Skipped for now')}</p><button class="bubble-edit" data-edit="${f.key}" aria-label="Edit ${escape(f.label)}">${icon('edit')}</button></div><span class="message-label">${escape(f.label)}</span>`;
-    if (message.querySelector('p')?.textContent !== (brief.answers[f.key] || 'Skipped for now')) message.innerHTML = markup;
-  }
-  const reply = replyPending
-    ? '<div class="typing-bubble"><span class="sr-only">Drive Right is preparing the next reply.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
-    : `<p class="assistant-reply">${escape(field?.question || 'Your search details are ready. Review them, then choose a plan.')}</p>${field?.hint ? `<p class="assistant-hint">${escape(field.hint)}</p>` : ''}`;
-  // The head-on Miata (logo-motion.css) flips its headlights up as each reply arrives and switches them on when the search is complete.
-  const avatar = `<span class="mx-avatar${replyPending ? '' : field ? ' is-hello' : ' is-done'}" aria-hidden="true"></span>`;
-  const responseMarkup = `<span class="message-label assistant-name">${avatar}Drive Right</span>${reply}`;
-  if (response.innerHTML !== responseMarkup) response.innerHTML = responseMarkup;
-  const choices = field && !replyPending ? choicesFor(field, brief.answers) : [];
-  $('#choices').innerHTML = choices.map(choice => `<button class="choice-button" type="button" data-choice="${escape(choice)}">${escape(choice)}</button>`).join('');
-  $('#choices').hidden = !choices.length;
-  $('#skip-detail').hidden = !field || field.required || replyPending;
-  $('#answer-actions').hidden = $('#choices').hidden && $('#skip-detail').hidden;
-  $('#skip-detail').textContent = field?.key === 'notes' ? 'Nothing else to add' : 'Skip for now';
-  $('#composer').hidden = !field && !replyPending;
-  $('#composer').setAttribute('aria-busy', String(replyPending));
-  input.readOnly = replyPending;
-  $('#composer .send-button').disabled = replyPending;
-  input.inputMode = field?.inputMode || 'text';
-  // Keep correction phrases possible even while asking for a five-digit ZIP.
-  input.maxLength = field?.maxLength || 180;
-  input.rows = 1;
-  input.enterKeyHint = 'send';
-  $('#composer').classList.toggle('is-multiline', !replyPending && Boolean(field?.multiline));
-  input.placeholder = replyPending ? 'Your reply…' : matchMedia('(max-width: 760px)').matches ? field?.mobilePlaceholder || field?.placeholder || 'Your answer' : field?.placeholder || 'Your answer';
-  $('#answer-label').textContent = replyPending ? 'Your reply' : field?.question || 'Your answer';
-  $('#input-hint').textContent = replyPending ? '' : field?.hint || 'You can edit any answer.';
-  $('.conversation-controls').hidden = !field;
-  $('#review-progress').hidden = !isComplete(brief.answers) || replyPending;
-  $('#brief-ready').hidden = Boolean(field) || !isComplete(brief.answers) || replyPending;
-  $('#add-details').hidden = !nextField(brief.answers, brief.skipped) || optionalQuestions;
-  requestAnimationFrame(() => { sizeAnswer(); log.scrollTop = log.scrollHeight; });
-}
-function detailSummary(value = brief) {
-  const a = value.answers;
-  return [a.budget ? `${a.budget} car price` : '', a.zip ? `ZIP ${a.zip}` : '', a.radius || ''].filter(Boolean).join(' · ');
-}
-function renderBrief() {
-  $('#brief-vehicle').textContent = brief.answers.vehicle;
-  $('#brief-details').innerHTML = fields.filter(f => !['vehicle','notes'].includes(f.key) && brief.answers[f.key]).map(f => `<div class="brief-detail"><dt>${escape(f.label)}</dt><dd><button data-edit="${f.key}" aria-label="Edit ${escape(f.label)}">${escape(brief.answers[f.key])}</button></dd></div>`).join('');
-  $('#brief-notes-value').textContent = brief.answers.notes || 'Add any final details';
-  $('#brief-notes-value').classList.toggle('is-empty', !brief.answers.notes);
-}
-function setView(next, focus = true) {
-  cancelReply();
-  // Keep existing bookmarks working while using the new public route.
-  if (next === 'brief') {
-    next = 'search';
-    history.replaceState(history.state, '', location.pathname + location.search + '#search');
-  }
-  if (!['home','conversation','search'].includes(next)) next = 'home';
-  if (next === 'search' && !isComplete(brief.answers)) {
-    next = 'conversation';
-    history.replaceState(history.state, '', location.pathname + location.search + '#conversation');
-  }
-  view = next;
-  document.body.dataset.view = next === 'search' ? 'summary' : next;
-  $('#intake-view').hidden = next === 'search';
-  $('#summary-view').hidden = next !== 'search';
-  $('#home-content').hidden = next !== 'home';
-  $('.chat-heading').hidden = next !== 'conversation';
-  $('#messages').hidden = next !== 'conversation';
-  if (next === 'search') $('[data-brief-link]').setAttribute('aria-current', 'page');
-  else $('[data-brief-link]').removeAttribute('aria-current');
-  if (next === 'conversation') renderConversation();
-  syncConversationViewport();
-  if (next === 'search') renderBrief();
-  if (next === 'home') {
-    $('#composer').hidden = false; $('#choices').hidden = true; $('#skip-detail').hidden = true; $('#answer-actions').hidden = true;
-    $('#brief-ready').hidden = true; $('.conversation-controls').hidden = true;
-    input.placeholder = 'What car are you looking for?'; input.inputMode = 'text';
-    input.readOnly = false; input.maxLength = 180; input.rows = 1; input.enterKeyHint = 'send';
-    $('#composer').classList.remove('is-multiline'); $('#composer').setAttribute('aria-busy', 'false'); $('#composer .send-button').disabled = false;
-    $('#answer-label').textContent = 'What car are you looking for?';
-    requestAnimationFrame(sizeAnswer);
-  }
-  document.title = next === 'search' ? 'Your search details | Drive Right' : next === 'conversation' ? 'Describe your next car | Drive Right' : homeTitle;
-  if (focus) {
-    window.scrollTo({ top:0, behavior:'instant' });
-    (next === 'search' ? $('#summary-title') : next === 'conversation' && currentField() ? input : $('#main-content')).focus({ preventScroll:true });
-  }
-}
-function navigate(next, focus = true) {
-  if (next === 'search' && !isComplete(brief.answers)) next = 'conversation';
-  const fragment = next === 'home' ? '' : `#${next}`;
-  if (location.hash !== fragment) history.pushState(history.state, '', location.pathname + location.search + fragment);
-  setView(next, focus);
-}
-function submit(raw) {
-  if (replyPending) return;
-  // The home box always starts a new search; it never continues an earlier one.
-  const fresh = view === 'home';
-  const field = fresh ? fields.find(f => f.key === 'vehicle') : currentField();
-  if (!field) { navigate('search'); return; }
-  try {
-    if (fresh) optionalQuestions = false;
-    brief = applyAnswer(fresh ? restoreBrief() : brief, parseConversation(raw, field.key));
-    persist(); input.value = ''; $('#input-error').textContent = ''; input.removeAttribute('aria-invalid');
-    if (view === 'home') navigate('conversation', false);
-    prepareReply();
-  } catch (error) {
-    $('#input-error').textContent = error.message; input.setAttribute('aria-invalid','true'); input.focus();
-  }
-}
-function openEditor(keys) {
-  cancelReply();
-  if (view === 'conversation') renderConversation();
-  const selected = fields.filter(f => keys.includes(f.key));
-  $('#edit-fields').innerHTML = selected.map(f => {
-    const priority = brief.priorities[f.key] || f.defaultPriority;
-    const attributes = `id="edit-${f.key}" name="${f.key}" placeholder="${escape(f.placeholder)}" maxlength="${f.maxLength || (f.key === 'zip' ? 5 : 180)}" inputmode="${f.inputMode || 'text'}" ${f.required ? 'required' : ''}`;
-    const control = f.multiline ? `<textarea ${attributes} rows="4">${escape(brief.answers[f.key] || '')}</textarea>` : `<input ${attributes} value="${escape(brief.answers[f.key] || '')}">`;
-    return `<div class="edit-field ${f.multiline ? 'edit-field-wide' : ''}" data-field="${f.key}" data-skipped="${Boolean(brief.skipped[f.key])}"><label for="edit-${f.key}">${escape(f.label)}${f.required ? ' *' : ' (optional)'}${control}</label>${f.hint ? `<span class="editor-status">${escape(f.hint)}</span>` : ''}${f.priority === false ? '' : `<div class="priority-control editor-priority-control" role="group" aria-label="${escape(f.label)} priority">${['must','prefer'].map(p => `<button type="button" class="priority-button ${priority === p ? 'is-selected' : ''}" aria-pressed="${priority === p}" data-priority="${p}">${p === 'must' ? 'Must-have' : 'Prefer'}</button>`).join('')}</div>`}${f.required ? '' : `<button type="button" class="editor-skip" data-skip="${f.key}">${brief.skipped[f.key] ? 'Skipped for now' : 'Skip for now'}</button>`}</div>`;
-  }).join('');
-  $('#edit-error').textContent = '';
-  $('#edit-dialog').showModal();
-}
-function download() {
-  const url = URL.createObjectURL(new Blob([briefText(brief)], { type:'text/plain;charset=utf-8' }));
-  const link = document.createElement('a'); link.href = url; link.download = 'drive-right-search-details.txt'; link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-if (home) {
-  $('#composer').addEventListener('submit', e => { e.preventDefault(); submit(input.value); });
-  input.addEventListener('input', () => { $('#input-error').textContent = ''; input.removeAttribute('aria-invalid'); });
-  input.addEventListener('input', sizeAnswer);
-  input.addEventListener('keydown', e => {
-    // Enter always sends; Shift+Enter adds a line in the longer answers.
-    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('#composer').requestSubmit(); }
-  });
-  $('#example').addEventListener('click', () => submit('A Mazda Miata, under $30k'));
-  $('#choices').addEventListener('click', e => { const b = e.target.closest('[data-choice]'); if (b) submit(b.dataset.choice); });
-  $('#skip-detail').addEventListener('click', () => submit('Skip for now'));
-  $('#add-details').addEventListener('click', () => { optionalQuestions = true; prepareReply(); });
-  $('#edit-brief').addEventListener('click', () => openEditor(fields.map(f => f.key)));
-  document.addEventListener('click', e => { const b = e.target.closest('[data-edit]'); if (b) openEditor(b.dataset.edit.split(',')); });
-  $('#edit-fields').addEventListener('click', e => {
-    const priority = e.target.closest('[data-priority]');
-    if (priority) priority.parentElement.querySelectorAll('button').forEach(b => { b.classList.toggle('is-selected', b === priority); b.setAttribute('aria-pressed', String(b === priority)); });
-    const skip = e.target.closest('[data-skip]');
-    if (skip) { const row = skip.closest('[data-field]'); row.dataset.skipped = 'true'; row.querySelector('input,textarea').value = ''; skip.textContent = 'Skipped for now'; }
-  });
-  $('#edit-fields').addEventListener('input', e => { const row = e.target.closest('[data-field]'); if (row) row.dataset.skipped = 'false'; });
-  $('#edit-form').addEventListener('submit', e => {
-    e.preventDefault(); const next = restoreBrief(brief);
-    try {
-      $('#edit-fields').querySelectorAll('[data-field]').forEach(row => {
-        const key = row.dataset.field, value = row.querySelector('input,textarea').value.trim(), field = fields.find(f => f.key === key);
-        if (value) { next.answers[key] = normalizeAnswer(key, value); delete next.skipped[key]; }
-        else { if (field.required) throw new Error(`${field.label} is required.`); delete next.answers[key]; if (row.dataset.skipped === 'true') next.skipped[key] = true; else delete next.skipped[key]; }
-        if (isConcrete(key, next.answers[key])) next.priorities[key] = row.querySelector('.is-selected')?.dataset.priority || field.defaultPriority;
-      });
-      next.priorities = restoredPriorities(next.priorities, next.answers, next.skipped);
-      brief = next; persist(); if (view === 'search') renderBrief(); else renderConversation(); $('#edit-dialog').close();
-    } catch (error) { $('#edit-error').textContent = error.message; }
-  });
-  $('#download-brief').addEventListener('click', download);
-  window.addEventListener('hashchange', () => setView(location.hash.slice(1) || 'home'));
-  window.addEventListener('popstate', () => setView(location.hash.slice(1) || 'home'));
-  window.addEventListener('resize', resizeConversation);
-  window.visualViewport?.addEventListener('resize', resizeConversation);
-  window.visualViewport?.addEventListener('scroll', syncConversationViewport);
-  setView(location.hash.slice(1) || 'home', false);
-}
-
-// The hash is used only when all browser stores are unavailable. It carries the
-// non-contact brief between these pages, never contact details or API credentials.
-const redesigned = new Set(['/', '/index.html', '/schedule.html', '/how-it-works.html']);
-document.addEventListener('click', e => {
-  const a = e.target.closest('a[href]');
-  if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return;
-  const url = new URL(a.href, location.href);
-  if (home && url.origin === location.origin && ['/', '/index.html'].includes(url.pathname) && ['', '#search', '#conversation'].includes(url.hash)) {
-    e.preventDefault(); navigate(url.hash.slice(1) || 'home'); return;
-  }
-  if (briefStore.persistence === 'memory' && url.origin === location.origin && redesigned.has(url.pathname) && url.pathname !== location.pathname) {
-    const route = url.hash || '#home'; url.hash = `${route}?draft=${encodeURIComponent(JSON.stringify(brief))}`; a.href = url.href;
-  }
-});
-
-document.querySelectorAll('dialog').forEach(dialog => {
+function closeOnBackdrop(dialog) {
   dialog.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => dialog.close()));
   dialog.addEventListener('click', event => { if (event.target !== dialog) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); });
-});
-
-const pricingSummary = $('#pricing-brief');
-function compactMarkup(value, link = true) {
-  return `<div><h2>${escape(value.answers.vehicle || 'Your search details')}</h2><p>${escape(detailSummary(value))}</p></div>${link ? '<a class="text-link" href="/#search">Review your search details '+icon('arrow')+'</a>' : ''}`;
 }
-if (pricingSummary && Object.keys(brief.answers).length) { pricingSummary.innerHTML = compactMarkup(brief); pricingSummary.hidden = false; }
-const contactDialog = $('#contact-dialog');
-let selectedTier, checkoutFlow, checkoutPending = false;
+document.querySelectorAll('dialog').forEach(closeOnBackdrop);
+
+// Every plan button goes straight to Stripe. The buyer describes the car after
+// payment, so nothing is asked first. Errors open one retry dialog per page.
+const checkoutStore = createStore(window);
+const planButtons = [...document.querySelectorAll('[data-plan]')];
+const planLabels = new Map(planButtons.map(button => [button, button.innerHTML]));
+let checkoutFlow, selectedTier, checkoutPending = false, checkoutDialog;
+const failureMessages = {
+  page_loading: 'The page is still loading.',
+  request_timeout: 'Stripe took too long to respond.',
+  service_unavailable: 'Secure checkout is briefly unavailable.',
+};
+function setBusy(buttons, busy) {
+  for (const button of buttons) {
+    if (busy) { button.setAttribute('aria-busy', 'true'); button.textContent = 'Opening secure checkout…'; }
+    else { button.removeAttribute('aria-busy'); if (planLabels.has(button)) button.innerHTML = planLabels.get(button); }
+  }
+}
+function retryDialog() {
+  if (checkoutDialog) return checkoutDialog;
+  checkoutDialog = document.createElement('dialog');
+  checkoutDialog.id = 'contact-dialog';
+  checkoutDialog.setAttribute('aria-labelledby', 'contact-title');
+  checkoutDialog.innerHTML = `<header class="dialog-header"><h2 id="contact-title">Checkout didn’t open.</h2><button class="icon-button" data-close type="button" aria-label="Close checkout message">${icon('close')}</button></header><p class="dialog-description">Nothing was charged. Try again, or call Mason at <a href="tel:+15129104938">(512) 910-4938</a>.</p><div id="chosen-plan" class="chosen-plan"></div><p id="contact-error" class="input-error" role="alert"></p><button id="checkout-submit" class="primary-button" type="button">Retry secure checkout ${icon('arrow')}</button><p class="small-note">Pay securely with Stripe, then tell us about the car.</p>`;
+  document.body.append(checkoutDialog);
+  closeOnBackdrop(checkoutDialog);
+  checkoutDialog.querySelector('#checkout-submit').addEventListener('click', () => startPlanCheckout(selectedTier));
+  return checkoutDialog;
+}
+function showCheckoutError(tier, error) {
+  const dialog = retryDialog();
+  const plan = plans[tier];
+  const reason = error.code === 'stale_offer' ? error.message : failureMessages[error.code] || 'We couldn’t open secure checkout.';
+  dialog.querySelector('#contact-error').textContent = reason;
+  dialog.querySelector('#chosen-plan').innerHTML = `<span>${escape(plan.name)}<br><small>One-time service fee</small></span><strong>$${plan.fee}</strong>`;
+  dialog.querySelector('#checkout-submit').innerHTML = `${error.code === 'stale_offer' ? 'Restart checkout' : 'Retry secure checkout'} ${icon('arrow')}`;
+  if (!dialog.open) dialog.showModal();
+}
+async function startPlanCheckout(tier) {
+  if (!plans[tier] || checkoutPending) return;
+  selectedTier = tier;
+  const client = window.driveRightClient;
+  if (!client) { showCheckoutError(tier, { code: 'page_loading' }); return; }
+  checkoutPending = true;
+  const retry = checkoutDialog?.open ? [checkoutDialog.querySelector('#checkout-submit')] : [];
+  const buttons = [...planButtons.filter(button => button.dataset.plan === tier), ...retry];
+  setBusy(buttons, true);
+  try {
+    checkoutFlow ||= createCheckout({ store:checkoutStore, request:client.requestJson, createId:client.createId, attribution:client.attribution, track:client.track, sourcePage:location.pathname });
+    const result = await checkoutFlow.start(tier);
+    window.location.assign(result.url);
+  } catch (error) {
+    setBusy(buttons, false);
+    showCheckoutError(tier, error);
+  } finally {
+    checkoutPending = false;
+  }
+}
+planButtons.forEach(button => button.addEventListener('click', event => { event.preventDefault(); startPlanCheckout(button.dataset.plan); }));
+// Back from Stripe, the page returns from cache with its buttons still busy.
 window.addEventListener('pageshow', event => {
   if (!event.persisted) return;
-  brief = restoreBrief(briefStore.read(true));
   checkoutStore.read(true);
   checkoutFlow = null;
-  if (home) setView(location.hash.slice(1) || 'home', false);
-  if (pricingSummary) {
-    pricingSummary.hidden = !Object.keys(brief.answers).length;
-    pricingSummary.innerHTML = compactMarkup(brief);
-  }
+  setBusy(planButtons, false);
+  if (checkoutDialog?.open) checkoutDialog.close();
 });
-if (contactDialog) {
-  const startPlanCheckout = async (tier) => {
-    if (!plans[tier] || checkoutPending) return;
-    selectedTier = tier;
-    const client = window.driveRightClient;
-    if (!client) {
-      $('#contact-error').textContent = 'The page is still loading. Please try again.';
-      if (!contactDialog.open) contactDialog.showModal();
-      return;
-    }
-    selectedTier = tier;
-    checkoutPending = true;
-    const buttons = [...document.querySelectorAll(`[data-plan="${tier}"]`)];
-    buttons.forEach(b => { b.setAttribute('aria-busy', 'true'); b.classList.add('is-loading'); });
-    try {
-      checkoutFlow ||= createCheckout({ store:checkoutStore, request:client.requestJson, createId:client.createId, attribution:client.attribution, track:client.track });
-      const result = await checkoutFlow.startDirect(tier);
-      window.location.assign(result.url);
-    } catch (error) {
-      $('#contact-error').textContent = `${error.message || 'We couldn’t open checkout.'} Please try again.`;
-      $('#chosen-plan').innerHTML = `<span>${escape(plans[tier].name)}<br><small>One-time service fee</small></span><strong>$${plans[tier].fee}</strong>`;
-      if (!contactDialog.open) contactDialog.showModal();
-      const button = $('#checkout-submit');
-      if (button) {
-        button.disabled = false;
-        button.setAttribute('aria-busy', 'false');
-        button.innerHTML = (error.code === 'stale_offer' ? 'Restart checkout ' : 'Retry secure checkout ') + icon('arrow');
-      }
-    } finally {
-      checkoutPending = false;
-      buttons.forEach(b => { b.removeAttribute('aria-busy'); b.classList.remove('is-loading'); });
-    }
-  };
-  document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); startPlanCheckout(a.dataset.plan); }));
-  const syncPlan = () => {
-    if (['#consultation', '#contact-consultation'].includes(location.hash)) {
-      history.replaceState(history.state, '', location.pathname + location.search + '#retired-plan');
-      document.getElementById('retired-plan')?.focus();
-    }
-    const tier = location.hash.replace('#contact-', '');
-    if (plans[tier] && location.hash.startsWith('#contact-')) {
-      history.replaceState(history.state, '', location.pathname + location.search + '#pricing');
-      startPlanCheckout(tier);
-    } else if (contactDialog.open) contactDialog.close();
-  };
-  window.addEventListener('popstate', syncPlan);
-  window.addEventListener('hashchange', syncPlan);
-  contactDialog.addEventListener('close', () => {
-    if (!location.hash.startsWith('#contact-')) return;
-    if (history.state?.buyingContact) history.back();
-    else history.replaceState(history.state, '', '#pricing');
-  });
-  syncPlan();
-  $('#checkout-submit').addEventListener('click', () => startPlanCheckout(selectedTier));
-
-}
-
-const paidBrief = $('#paid-brief');
-if (paidBrief) {
-  let filled = false;
-  function carryOver() {
-    if (filled || document.body.dataset.purchaseVerified !== 'true') return;
-    filled = true;
-    $('.skip-link').href = '#verified-purchase-content';
-    const ledger = checkoutStore.read();
-    const snapshot = ledger?.lastCheckout?.tier === document.body.dataset.purchaseTier ? ledger.lastCheckout : null;
-    const value = snapshot ? restoreBrief(snapshot.brief) : brief;
-    const contact = snapshot?.contact || ledger?.contact || {};
-    if (Object.keys(value.answers).length) { paidBrief.innerHTML = compactMarkup(value, false) + `<details><summary>View all saved preferences</summary><pre>${escape(briefText(value))}</pre></details>`; paidBrief.hidden = false; }
-    const form = $('#onboarding-form');
-    for (const [name, text] of Object.entries(onboardingValues(value, contact))) {
-      const control = form.elements.namedItem(name);
-      if (control && !control.value && text) {
-        // Paid plans have different timeline options; only select an exact match.
-        // Every answer also remains in the complete notes, including custom dates.
-        if (control.tagName === 'SELECT' && ![...control.options].some(option => option.value === text)) continue;
-        if (name === 'year_min') control.min = '1886'; control.value = text;
-      }
-    }
-    // Existing API fields preserve the entire brief, including constraints without
-    // dedicated onboarding inputs (ZIP, radius, trim, transmission, and priorities).
+function syncPlan() {
+  if (['#consultation', '#contact-consultation'].includes(location.hash)) {
+    history.replaceState(history.state, '', location.pathname + location.search + '#retired-plan');
+    document.getElementById('retired-plan')?.focus();
   }
-  new MutationObserver(carryOver).observe(document.body, { attributes:true, attributeFilter:['data-purchase-verified'] });
-  carryOver();
+  const tier = location.hash.replace('#contact-', '');
+  if (plans[tier] && location.hash.startsWith('#contact-')) {
+    history.replaceState(history.state, '', location.pathname + location.search + '#pricing');
+    startPlanCheckout(tier);
+  } else if (checkoutDialog?.open) checkoutDialog.close();
 }
-persist();
+window.addEventListener('popstate', syncPlan);
+window.addEventListener('hashchange', syncPlan);
+syncPlan();
+
+// Payment pages: script.js sets this non-secret flag once the paid session verifies.
+const verifiedContent = $('#verified-purchase-content');
+if (verifiedContent) {
+  const onVerified = () => {
+    if (document.body.dataset.purchaseVerified !== 'true') return;
+    $('.skip-link')?.setAttribute('href', '#verified-purchase-content');
+  };
+  new MutationObserver(onVerified).observe(document.body, { attributes:true, attributeFilter:['data-purchase-verified'] });
+  onVerified();
+  // A field the browser flags inside the collapsed preferences must be visible to fix.
+  $('#onboarding-form')?.addEventListener('invalid', event => event.target.closest('details')?.setAttribute('open', ''), true);
+  // Trade-in details appear only for a possible trade, and clear when it is withdrawn.
+  const tradeIn = $('#ob-trade-in'), tradeDetails = $('#trade-in-details');
+  tradeIn?.addEventListener('change', () => {
+    const hasTrade = ['yes', 'maybe'].includes(tradeIn.value);
+    if (tradeDetails) tradeDetails.style.display = hasTrade ? 'block' : 'none';
+    if (!hasTrade) tradeDetails?.querySelectorAll('input,select').forEach(control => { control.value = ''; });
+  });
+}

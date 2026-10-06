@@ -10,15 +10,16 @@
 .dr[data-buying-page="home"] .hero-intro { padding-top:44px; padding-inline:0; text-align:left; }
 .dr[data-buying-page="home"] .hero-intro h1 { color:var(--ink); font-family:var(--sans); font-weight:600; font-size:clamp(46px,6.2vw,76px); line-height:.94; letter-spacing:-.04em; }
 .dr[data-buying-page="home"] .hero-intro p { max-width:42rem; margin:16px 0 0; font-family:var(--sans); font-size:17px; line-height:1.4; letter-spacing:-.01em; color:var(--muted); }
-.dr .hero-fees { margin-top:8px; background:var(--sage); color:var(--ink); }
-.dr .hero-fees-inner { display:grid; grid-template-columns:minmax(180px,.72fr) minmax(0,1.3fr); gap:18px 48px; align-items:end; padding-block:22px 26px; }
-.dr .hero-fees h2 { font:600 15px/1.3 var(--sans); color:var(--green); }
-.dr .hero-fees p { max-width:34ch; margin-top:6px; font-size:14px; line-height:1.45; color:var(--muted); }
-.dr .hero-fees-plans { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:8px 40px; margin:0; padding:0; }
-.dr .hero-fees-plans a { display:inline-flex; align-items:baseline; gap:14px; min-height:44px; padding:8px 0; border-bottom:1px solid #11111126; color:var(--ink); font-size:15px; line-height:1.3; }
-.dr .hero-fees-plans a span:last-child { font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
-.dr .hero-fees-plans a:hover { color:var(--green); }
-.dr[data-view="conversation"] .hero-fees { display:none; }
+/* Plan-first hero: each plan opens Stripe directly; the buyer describes the car after payment. */
+.dr .hero-checkout { width:min(774px,calc(100% - 48px)); margin:28px auto 0; text-align:center; }
+.dr .hero-plans { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+.dr[data-buying-page="home"] .hero-checkout { width:auto; margin-inline:0; text-align:left; }
+.dr[data-buying-page="home"] .hero-plans { justify-content:flex-start; }
+.dr .hero-plans :is(.primary-button,.outline-button) { min-height:56px; padding:14px 26px; gap:14px; font-size:17px; }
+.dr .hero-plans svg { width:18px; height:18px; }
+.dr .hero-checkout-note { margin-top:14px; font-size:14px; line-height:1.5; color:var(--muted); }
+.dr .hero-inquiry { display:inline-block; margin-top:6px; padding-block:10px; font-size:15px; line-height:24px; color:var(--ink); text-align:left; }
+.dr .hero-inquiry svg { display:inline; margin-left:6px; vertical-align:-4px; }
 .dr .hero-photo { margin-top:34px; }
 .dr .hero-photo figcaption { font:14px/1.5 var(--sans); color:var(--green); }
 .dr input::placeholder,.dr textarea::placeholder { color:#6A6964; }
@@ -287,7 +288,7 @@
 @media(max-width:1200px) { .dr[data-view="home"] .intake-shell { width:calc(100% - 80px); } }
 @media(max-width:1100px) { .dr .plan-card { padding:26px 22px; }.dr .plan-card h2,.dr .plan-card h3 { font-size:27px; }.dr .plan-grid { gap:16px; }.dr .process-layout { gap:32px; }.dr .process-preview { padding-inline:22px; }.dr .process-paper { padding-inline:24px; } }
 @media(max-width:760px) {
- .dr[data-view="home"] .intake-shell { width:calc(100% - 40px); }.dr[data-buying-page="home"] .hero-intro { padding-top:24px; }.dr[data-buying-page="home"] .hero-intro h1 { font-size:clamp(42px,11vw,56px); }.dr[data-buying-page="home"] .hero-intro p { font-size:16px; line-height:1.4; max-width:none; }.dr .hero-photo { margin-top:28px; }.dr .hero-photo figcaption { font-size:11px; }.dr .hero-fees-inner { grid-template-columns:1fr; gap:8px 0; padding-block:16px 18px; }.dr .hero-fees-plans { flex-direction:column; align-items:stretch; gap:0; }.dr .hero-fees-plans a { justify-content:space-between; width:100%; }
+ .dr[data-view="home"] .intake-shell { width:calc(100% - 40px); }.dr[data-buying-page="home"] .hero-intro { padding-top:24px; }.dr[data-buying-page="home"] .hero-intro h1 { font-size:clamp(42px,11vw,56px); }.dr[data-buying-page="home"] .hero-intro p { font-size:16px; line-height:1.4; max-width:none; }.dr .hero-photo { margin-top:28px; }.dr .hero-photo figcaption { font-size:11px; }.dr .hero-checkout { margin-top:22px; }.dr .hero-plans :is(.primary-button,.outline-button) { width:100%; padding-inline:18px; font-size:16px; white-space:normal; text-align:center; }
  .dr .section-space { padding-block:52px; }.dr .section-intro { align-items:flex-start; gap:18px; margin-bottom:28px; flex-direction:column; }.dr .section-intro h2,.dr .faq-section>h2,.dr .service-scope>h2 { font-size:43px; }
  .dr .process-layout { grid-template-columns:1fr; gap:26px; }.dr .process-list { padding-top:0; }.dr .process-trigger { padding:21px 0; gap:12px; font-size:26px; grid-template-columns:28px minmax(0,1fr) 18px; }.dr .process-number { font-size:18px; }.dr .process-step p { margin:0 24px 24px 40px; font-size:14px; max-width:42ch; }.dr .process-preview { padding:22px 20px 12px; }.dr .process-examples { margin-top:20px; }.dr .process-paper { min-height:400px; padding:24px; }.dr .process-request blockquote { font-size:40px; }.dr .process-paper-heading { font-size:36px; }.dr .process-preview figcaption { gap:0 16px; }.dr .plan-grid { grid-template-columns:1fr; gap:20px; }
  .dr .plan-card { padding:28px; }.dr .plan-card h2,.dr .plan-card h3 { font-size:33px; }.dr .plan-description { min-height:0; margin-bottom:20px; }.dr .plan-price { font-size:52px; }.dr .faq-section { grid-template-columns:1fr; gap:24px; }
@@ -355,22 +356,23 @@
 .dr .ps-form__fieldset { border:0; border-top:1px solid var(--line); padding:26px 0 0; margin:34px 0 0; min-width:0; }
 .dr .ps-form__legend { font:600 30px/1.2 var(--sans); padding:0 16px 0 0; }
 .dr .ps-form__hint { color:var(--muted); font-size:12px; font-weight:400; }
+/* Optional preferences stay one tap away. Nothing inside is required. */
+.dr .ps-more { margin-top:34px; border-top:1px solid var(--line); }
+.dr .ps-more>summary { position:relative; display:block; padding:22px 44px 6px 0; font:600 24px/1.3 var(--sans); cursor:pointer; list-style:none; }
+.dr .ps-more>summary::-webkit-details-marker { display:none; }
+.dr .ps-more>summary::after { content:"+"; position:absolute; top:20px; right:6px; font:400 30px/1 var(--sans); color:var(--green); }
+.dr .ps-more[open]>summary::after { content:"−"; }
+.dr .ps-more>summary:focus-visible { outline:2px solid var(--green); outline-offset:4px; }
+.dr .ps-more .ps-form__legend { font-size:22px; }
 /* Daisy's display headings, set in Inter on every redesigned page. */
 .dr :is(.chat-heading h2,.summary-view>h2,.search-brief h3,.concierge-copy h2,dialog h2) { font-family:var(--sans); font-weight:600; letter-spacing:-.03em; }
 .dr .legwork-copy p { font-family:var(--sans); font-weight:400; letter-spacing:-.011em; }
 .dr[data-buying-page="home"] .hero-photo img { border-radius:16px; }
-.dr[data-buying-page="home"] .hero-fees { margin-top:32px; background:transparent; border-block:1px solid var(--line); }
-.dr[data-buying-page="home"] .hero-fees-inner { align-items:center; padding-block:18px 20px; }
-.dr[data-buying-page="home"] .hero-fees h2 { color:var(--ink); font-size:13px; letter-spacing:.01em; }
-.dr[data-buying-page="home"] .hero-fees-plans a { font-size:16px; border-bottom-color:var(--line); }
-.dr[data-buying-page="home"] .hero-fees-plans a span:last-child { font-size:20px; letter-spacing:-.03em; }
 .dr[data-buying-page="home"] .pricing-preview { background:transparent; border-top:1px solid var(--line); }
 .dr[data-buying-page="home"] .plan-card .outline-button { min-height:44px; }
 @media(max-width:760px) {
  .dr[data-buying-page="home"] .hero-photo figcaption { font-size:13px; line-height:1.4; }
  .dr[data-buying-page="home"] .hero-photo figcaption>span { max-width:none; }
- .dr[data-buying-page="home"] .hero-fees { margin-top:24px; }
- .dr[data-buying-page="home"] .hero-fees-plans a span:last-child { font-size:18px; }
 }
 /* Sticky header: a full-bleed paper band whose contents line up with .page-width. */
 html:has(> body.dr) { scroll-padding-top:96px; }
@@ -500,4 +502,4 @@ html:has(> body.dr) { scroll-padding-top:96px; }
  .dr .prose h2 { font-size:26px; margin-top:40px; }
  .dr .closing-cta { padding:28px 24px; margin-bottom:48px; }.dr .closing-cta .primary-button { width:100%; }
 }
-@media(max-width:374px) { .dr .site-header nav { gap:10px; }.dr .nav-link { font-size:13px; }.dr .header-cta { padding-inline:10px; font-size:12px; } }
+@media(max-width:374px) { .dr .site-header nav { gap:10px; }.dr .nav-link { font-size:13px; }.dr .header-cta { padding-inline:10px; font-size:12px; }.dr .hero-plans :is(.primary-button,.outline-button) { gap:10px; padding-inline:12px; font-size:15px; } }

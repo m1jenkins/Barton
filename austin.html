@@ -92,7 +92,8 @@
     <link rel="stylesheet" href="/buying/daisy.css?v=5c34c5207147">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=7e32e4b45e17">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=2eb0ca2bb638">
+<link rel="stylesheet" href="/buying/inquiry.css?v=bf7b13f58fc1">
     <script>(function (w, d, s, l, i) { if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); } })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
@@ -110,7 +111,7 @@
     <a class="nav-link" href="/schedule.html">Pricing</a>
     <a class="nav-link" href="/about.html">About</a>
   </nav>
-  <a class="header-cta" href="/#conversation" data-brief-link data-cta-location="header">Start my search</a>
+  <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
 </header>
 <main id="main-content" tabindex="-1">
   <section id="intake-view" aria-labelledby="austin-title">
@@ -120,14 +121,10 @@
         <h1 id="austin-title">Austin car buying service.</h1>
         <p>Drive Right is based in Austin and helps Texas buyers research vehicles, compare written offers, and negotiate purchases. You keep the purchase decision. A service engagement does not establish that a particular car is available or that a seller will accept your offer.</p>
       </div>
-      <div id="composer-area" class="composer-area">
-        <form id="composer" class="composer" autocomplete="off">
-          <label for="answer" class="sr-only" id="answer-label">Let us know what you want</label>
-          <textarea id="answer" name="answer" rows="1" placeholder="Let us know what you want" maxlength="180" aria-describedby="input-error" enterkeyhint="send" required></textarea>
-          <button class="send-button" type="submit" aria-label="Send answer"><span data-icon="up"></span></button>
-        </form>
-        <p id="input-error" class="input-error" role="alert"></p>
-        <button id="example" class="example-link" type="button">Try “Miata under $30k”</button>
+      <div class="hero-checkout">
+        <div class="hero-plans"><a href="/schedule.html" data-plan="full_service" data-cta-location="hero" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><a href="/schedule.html" data-plan="concierge" data-cta-location="hero" class="outline-button">Get Ultimate Concierge · $695 <span data-icon="arrow"></span></a></div>
+        <p class="hero-checkout-note">One flat fee, paid once. Pay securely with Stripe, then tell us about the car.</p>
+        <button type="button" class="text-link hero-inquiry" data-open-inquiry>Not ready to pay? Talk to Mason about your car search<span data-icon="arrow"></span></button>
       </div>
     </div>
   </section>
@@ -208,53 +205,28 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
-<noscript><p class="noscript">Enable JavaScript to start a car search, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript>
+<dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+  <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
+  <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
+  <form id="car-search-inquiry-form">
+    <input type="hidden" name="service_interest" value="Not sure yet">
+    <div class="inquiry-fields">
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-vehicle">What car are you looking for?<input id="inquiry-vehicle" name="vehicle" type="text" maxlength="300" placeholder="Make, model or the kind of car you have in mind" required autofocus></label>
+      <label class="inquiry-field" for="inquiry-budget"><span>Approximate vehicle budget <span class="optional">Optional</span></span><input id="inquiry-budget" name="budget" type="text" maxlength="80" placeholder="For example, $35,000–$45,000"></label>
+      <label class="inquiry-field" for="inquiry-timeline"><span>Buying timeline <span class="optional">Optional</span></span><select id="inquiry-timeline" name="timeline"><option value="">Choose a timeline</option><option>Within 2 weeks</option><option>Within a month</option><option>1–3 months</option><option>Still exploring</option></select></label>
+      <label class="inquiry-field" for="inquiry-email">Email<input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="inquiry-field" for="inquiry-name"><span>Name <span class="optional">Optional</span></span><input id="inquiry-name" name="name" type="text" autocomplete="name" maxlength="120"></label>
+    </div>
+    <div class="form-honeypot" aria-hidden="true"><label for="inquiry-website">Leave this field empty<input id="inquiry-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <button class="primary-button" type="submit">Send my car search inquiry</button>
+    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+    <a class="outline-button inquiry-email" data-email-inquiry href="mailto:hello@driverightcarbuying.com" hidden>Email Mason these details</a>
+    <p class="small-note">Prefer to call? <a href="tel:+15129104938">(512) 910-4938</a>, Monday–Friday, 9 a.m.–5 p.m. Central. See our <a href="/policy.html#privacy-policy">privacy policy</a>.</p>
+  </form>
+</dialog>
+<noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript>
 <script src="/script.js?v=981c4c038361"></script>
-<script type="module" src="/buying/app.js?v=e58e0c5052c0"></script>
-<script type="module">
-import { parseConversation } from '/buying/intake.js';
-import { applyAnswer, createStore, restoreBrief } from '/buying/brief.js';
-
-const form = document.getElementById('composer');
-const input = document.getElementById('answer');
-const error = document.getElementById('input-error');
-
-function sizeInput() {
-  input.style.height = 'auto';
-  input.style.height = `${Math.min(input.scrollHeight, 160)}px`;
-}
-
-function startBrief(raw) {
-  try {
-    const brief = applyAnswer(restoreBrief(), parseConversation(raw, 'vehicle'));
-    const store = createStore(window);
-    const persistence = store.write(brief);
-    const destination = new URL('/#conversation', location.origin);
-    if (persistence === 'memory') destination.hash += `?draft=${encodeURIComponent(JSON.stringify(brief))}`;
-    location.assign(destination.href);
-  } catch (reason) {
-    error.textContent = reason.message;
-    input.setAttribute('aria-invalid', 'true');
-    input.focus();
-  }
-}
-
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  startBrief(input.value);
-});
-input.addEventListener('input', () => {
-  error.textContent = '';
-  input.removeAttribute('aria-invalid');
-  sizeInput();
-});
-input.addEventListener('keydown', event => {
-  if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
-    event.preventDefault();
-    form.requestSubmit();
-  }
-});
-document.getElementById('example').addEventListener('click', () => startBrief('A Mazda Miata, under $30k'));
-</script>
+<script type="module" src="/buying/app.js?v=f1467d5d9829"></script>
+<script type="module" src="/buying/inquiry.js?v=fde8c1b65ba8"></script>
 </body>
 </html>

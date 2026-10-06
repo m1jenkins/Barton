@@ -10,6 +10,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook and onboarding (the API contract).
 - [resource-release-2026-10-04.md](resource-release-2026-10-04.md): owner-directed release of three source-checked guides and the local quote worksheet.
 - [repository-audit-2026-10-04.md](repository-audit-2026-10-04.md): repository audit, lead/form reliability fixes, expanded checks, verification and prioritized follow-up work.
+- [checkout-streamline-2026-10-05.md](checkout-streamline-2026-10-05.md): the October 4–6 checkout/lead/webhook outage and the plan-first checkout that replaced the chat intake.
 
 ## SEO decisions and execution
 

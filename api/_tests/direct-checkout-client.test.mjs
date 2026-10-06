@@ -71,5 +71,7 @@ test('unrelated and external schedule fragments do not trigger checkout',async()
 test('pricing retry has no pre-purchase contact inputs',async()=>{
  const html=await readFile(new URL('../../schedule.html',import.meta.url),'utf8');
  assert.doesNotMatch(html,/id="(?:buyer-name|buyer-email|plan-contact-form|checkout-turnstile)"/);
- assert.match(html,/id="checkout-submit"[^>]*type="button"/);
+ const app=await readFile(new URL('../../buying/app.js',import.meta.url),'utf8');
+ assert.match(app,/id="checkout-submit" class="primary-button" type="button"/);
+ assert.doesNotMatch(app,/<(?:input|textarea|form)\b/);
 });

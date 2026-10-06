@@ -400,10 +400,12 @@ if (!/<source\b(?=[^>]*\btype\s*=\s*["']image\/avif["'])(?=[^>]*\bsrcset\s*=)(?=
   fail('index.html', 'Homepage hero picture is missing responsive AVIF/WebP sources.', 0, homepageHtml);
 }
 
-for (const controlId of ['answer']) {
-  const escaped = controlId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  if (!new RegExp(`<label\\b[^>]*\\bfor\\s*=\\s*["']${escaped}["'][^>]*>`, 'i').test(homepageHtml)) {
-    fail('index.html', `Homepage form control #${controlId} has no explicit label.`, 0, homepageHtml);
+for (const { 0: control, index } of homepageHtml.matchAll(/<(?:input|select|textarea)\b[^>]*>/gi)) {
+  if (/\btype\s*=\s*["']hidden["']/i.test(control)) continue;
+  const controlId = control.match(/\bid\s*=\s*["']([^"']+)["']/i)?.[1];
+  const escaped = controlId?.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (!controlId || !new RegExp(`<label\\b[^>]*\\bfor\\s*=\\s*["']${escaped}["'][^>]*>`, 'i').test(homepageHtml)) {
+    fail('index.html', `Homepage form control ${controlId ? `#${controlId}` : control} has no explicit label.`, index, homepageHtml);
   }
 }
 

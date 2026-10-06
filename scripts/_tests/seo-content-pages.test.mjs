@@ -22,9 +22,13 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.equal(homepage.h1.length, 1);
   assert.match(hero, /Skip the hours at the dealer/);
   assert.match(hero, /Let us find you the perfect car/);
-  assert.match(hero, /Let us know what you want/);
   assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Full Service|Ultimate Concierge/i);
-  assert.match(homepageHtml, /class="hero-fees"/);
+  // The hero goes straight to checkout: one button per plan, plus an inquiry that needs no payment.
+  const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '';
+  assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service', 'concierge']);
+  assert.match(checkout, /data-open-inquiry/);
+  assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
+  assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
   assert.match(homepage.visibleText, /\$695/);
   assert.doesNotMatch(homepageHtml, /\$295|\$895/);
@@ -130,13 +134,19 @@ test('marketing nav surfaces the explainer and schedule header offers both check
       ]);
       assert.doesNotMatch(header, /data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
     } else {
-      assert.match(html, /<a class="header-cta" href="\/#conversation" data-brief-link data-cta-location="header">Start my search<\/a>/, `${file} keeps the header brief CTA`);
+      assert.match(html, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
     }
   }
   assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
 
   const css = await read('buying/drive-right.css');
   assert.match(css, /@media\(max-width:960px\) \{ \.dr \.site-header \.nav-link\[href="\/car-buying-service\.html"\] \{ display:none; \} \}/, 'narrow headers hide the extra link so the nav and CTA fit one row');
+});
+
+test('no page links to the retired chat intake', async () => {
+  for (const file of (await readdir(root)).filter(name => name.endsWith('.html'))) {
+    assert.doesNotMatch(await read(file), /\/#conversation|\/#search\b|data-brief-link|buying\/(?:intake|brief|houston-search)\.js/, file);
+  }
 });
 
 test('car-buying-service FAQPage schema matches visible questions and approved fees', async () => {

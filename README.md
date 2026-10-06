@@ -9,12 +9,12 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | Path | What it is |
 | --- | --- |
 | `*.html` (root) | Public pages. Each one is a complete, standalone file: the header, footer and nav are copied into every page, so a site-wide change means editing each page. |
-| `buying/` | The current design system and the buying-brief app used by the homepage and main pages. `daisy.css` + `drive-right.css` are the shared styles; `houston.css` is the Houston pilot only. `intake.js`, `brief.js`, `checkout.js` and `app.js` run the brief-and-checkout flow. |
+| `buying/` | The current design system and checkout used by the homepage and main pages. `daisy.css` + `drive-right.css` are the shared styles; `houston.css` is the Houston pilot only. `checkout.js` and `app.js` send every plan button straight to Stripe (the car details come after payment), and `inquiry.js` runs the no-payment "Talk to Mason" inquiry. |
 | `styles.css`, `seo-content.css`, `legacy-refresh.css` | The older page components and the shared visual layer that aligns their typography, navigation, colors, and reading layout with the current site. |
 | `logo-motion.css`, `logo-motion.js`, `assets/mascot/` | The approved Mariner Blue Miata mark beside the header wordmark on public pages. The sprites are deployed; their reference sheets stay out of production. |
 | `script.js` | Shared page script: mobile menu, lead forms, checkout start, payment verification, analytics, and it loads `openai-ads.js` and consented `web-analytics.js`. Used by every page except `ai-car-buying-agent.html` and the local quote worksheet. Parts of it are minified onto very long lines, so search for the function name before editing. |
 | `accessibility.css/js`, `ad-consent.css/js`, `openai-ads.js` | Small shared helpers loaded by pages. |
-| `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the chat avatar and the payment-success celebration. |
+| `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the payment-success celebration. |
 | `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals); `assets/mascot/` holds the mascot sprites, built by `scripts/build-mascot-sprites.mjs` from `assets/mascot/reference/` (not deployed). |
 | `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
 | `db/` | PostgreSQL migrations, applied in number order. |
@@ -73,7 +73,7 @@ Other previews: `npm run preview:cities` (city page drafts, port 4177), `npm run
 
 ## More detail
 
-- Buying brief and checkout flow: [docs/implementation-operations.md](docs/implementation-operations.md)
+- Checkout, leads and onboarding: [docs/implementation-operations.md](docs/implementation-operations.md); the plan-first checkout: [docs/checkout-streamline-2026-10-05.md](docs/checkout-streamline-2026-10-05.md)
 - Metro and city page drafts: [docs/metro-execution-2026-09-16.md](docs/metro-execution-2026-09-16.md), [docs/city-pages-2026-09-17.md](docs/city-pages-2026-09-17.md)
 - OpenAI ads tracking: [docs/openai-ads-setup.md](docs/openai-ads-setup.md)
 - Font and photo credits: font licenses are in `assets/buying/fonts/`.

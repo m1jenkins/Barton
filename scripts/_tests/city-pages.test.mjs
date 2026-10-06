@@ -75,7 +75,7 @@ test('preview serves the homepage, cities and real shared assets without exposin
   t.after(() => new Promise(resolve => server.close(resolve)));
   const origin = `http://127.0.0.1:${server.address().port}`;
   const pages = await renderCityPages({ check: true });
-  const paths = new Set(['/', '/accessibility.css', '/accessibility.js', '/buying/intake.js', '/buying/brief.js', '/buying/checkout.js', '/openai-ads.js']);
+  const paths = new Set(['/', '/accessibility.css', '/accessibility.js', '/buying/checkout.js', '/openai-ads.js']);
   for (const [slug, html] of pages) {
     paths.add(`/${slug}`);
     for (const match of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) paths.add(match[1]);
@@ -91,7 +91,7 @@ test('preview serves the homepage, cities and real shared assets without exposin
     assert.equal(response.headers.get('x-robots-tag'), 'noindex, nofollow');
     assert.match(response.headers.get('content-security-policy'), /form-action 'none'/);
   }
-  for (const route of ['/data/city-pages.json', '/.env', '/scripts/render-city-pages.mjs', '/draft-artifacts/cities/austin.html', '/buying/brief.test.js', '/%2e%2e/data/services.json']) assert.equal((await fetch(origin + route)).status, 404, route);
+  for (const route of ['/data/city-pages.json', '/.env', '/scripts/render-city-pages.mjs', '/draft-artifacts/cities/austin.html', '/buying/checkout.test.js', '/%2e%2e/data/services.json']) assert.equal((await fetch(origin + route)).status, 404, route);
   const api = await fetch(origin + '/api/leads', { method: 'POST', body: '{}' });
   assert.equal(api.status, 503);
   assert.match((await api.json()).error, /local preview/);
