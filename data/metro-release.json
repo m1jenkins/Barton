@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes).",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes). Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston).",
       "indexablePublication": true,
-      "sha256": "dcb36bfc9eac9f517db4033b2cc25d1e7b22220e1c2e28fbed8b6e376c006a39",
+      "sha256": "928149535a657253383c4a0971c117851e0ac1e7e9c98379ea486cd345c143d3",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -889,8 +889,8 @@
     {
       "slug": "houston.html",
       "marketId": "M05",
-      "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes.",
-      "sha256": "c860a18e47afed1947f59ffe7d9fc5b6f15f0a63ee6ef4dad9c51b878c4b9bc1",
+      "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston).",
+      "sha256": "caf7bd73535a5b0e093858f551151c40bb788aa3e68ce2886140b3a7e189851c",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,

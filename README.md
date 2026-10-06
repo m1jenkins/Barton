@@ -76,4 +76,4 @@ Other previews: `npm run preview:cities` (city page drafts, port 4177), `npm run
 - Checkout, leads and onboarding: [docs/implementation-operations.md](docs/implementation-operations.md); the plan-first checkout: [docs/checkout-streamline-2026-10-05.md](docs/checkout-streamline-2026-10-05.md)
 - Metro and city page drafts: [docs/metro-execution-2026-09-16.md](docs/metro-execution-2026-09-16.md), [docs/city-pages-2026-09-17.md](docs/city-pages-2026-09-17.md)
 - OpenAI ads tracking: [docs/openai-ads-setup.md](docs/openai-ads-setup.md)
-- Font and photo credits: font licenses are in `assets/buying/fonts/`.
+- Fonts: the pages load the Latin WOFF2 subsets in `assets/buying/fonts/`, built from the TTF sources there by `node scripts/build-fonts.mjs` (needs `uv`). The TTF sources stay out of the deployment. Font licenses are in the same folder.

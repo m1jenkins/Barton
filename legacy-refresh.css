@@ -3,14 +3,16 @@
    Inter wordmark, ink/white surfaces, quiet green accents, and reading rhythm. */
 @font-face {
   font-family: "Drive Right Inter";
-  src: url("/assets/buying/fonts/inter.ttf") format("truetype");
+  src: url("/assets/buying/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Drive Right Inter";
-  src: url("/assets/buying/fonts/inter-semibold.ttf") format("truetype");
+  src: url("/assets/buying/fonts/inter-semibold-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF;
   font-style: normal;
   font-weight: 600;
   font-display: swap;

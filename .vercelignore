@@ -27,3 +27,6 @@ CLAUDE.md
 
 # Mascot reference sheets; the sprites built from them in assets/mascot/ deploy.
 assets/mascot/reference
+
+# Font sources; the Latin WOFF2 subsets built from them by scripts/build-fonts.mjs deploy.
+assets/buying/fonts/*.ttf

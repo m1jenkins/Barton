@@ -91,7 +91,8 @@
 .dr .process-preview .text-link { font-size:12px; color:var(--ink); gap:10px; }
 @keyframes brief-arrive { from { transform:translateY(8px); } to { transform:translateY(0); } }
 /* Homepage process: the artwork is the complete, static story; the envelope and message groups exist only in the markup and stay hidden. */
-@font-face { font-family:'Barlow'; src:url('../assets/buying/fonts/barlow-medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Barlow'; src:url('../assets/buying/fonts/barlow-medium-latin.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF; }
+@font-face { font-family:'Barlow'; src:url('../assets/buying/fonts/barlow-semibold-latin.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF; }
 .dr .legwork-section { scroll-margin-top:28px; }
 .dr .legwork-intro { display:flex; align-items:flex-end; gap:30px; }
 .dr .legwork-intro .primary-button { white-space:nowrap; font-size:15px; }

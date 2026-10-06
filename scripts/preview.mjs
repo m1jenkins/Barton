@@ -4,7 +4,7 @@ import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const port = Number(process.env.DRIVE_RIGHT_PREVIEW_PORT || 4175);
-const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.jpg':'image/jpeg', '.webp':'image/webp', '.avif':'image/avif', '.png':'image/png', '.ttf':'font/ttf', '.svg':'image/svg+xml' };
+const mime = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.jpg':'image/jpeg', '.webp':'image/webp', '.avif':'image/avif', '.png':'image/png', '.ttf':'font/ttf', '.woff2':'font/woff2', '.svg':'image/svg+xml' };
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
   if (url.pathname.startsWith('/api/')) { res.writeHead(503, {'Content-Type':'application/json'}).end(JSON.stringify({ok:false,error:'Secure checkout is available in the configured payment environment. This local preview has no payment credentials.'})); return; }
