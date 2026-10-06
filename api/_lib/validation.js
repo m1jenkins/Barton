@@ -167,7 +167,13 @@ const ONBOARDING_FIELDS = Object.freeze({
   delivery_address: 1000,
   trade_identifier: 120,
   trade_mileage: 20,
-  trade_condition: 120
+  trade_condition: 120,
+  // Asked only by the chat intake (buying/intake.js).
+  model_years: 40,
+  financing_status: 80,
+  trade_vehicle: 200,
+  search_radius: 80,
+  needs: 1000
 });
 
 export function validateOnboardingPayload(body) {

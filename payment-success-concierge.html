@@ -65,6 +65,7 @@
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=fcd6acf709f7">
+    <link rel="stylesheet" href="/buying/intake-chat.css?v=a01b1918236f">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -80,7 +81,19 @@
     <a class="nav-link" href="/car-buying-service.html">Car buying service</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
   </nav>
-</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">Ultimate Concierge · see your receipt for the amount paid</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Tell us about the car below, and we’ll confirm scope and timing after your intake.</p></div><section class="ps-onboarding" id="onboarding">
+</header><section class="payment-verification page-width" id="payment-verification" tabindex="-1" data-state="pending" aria-live="polite"><h1 data-verification-heading>Verifying payment</h1><p data-verification-message>Checking your secure checkout session before opening your intake.</p><noscript><p>Enable JavaScript to verify payment and complete your intake.</p></noscript><a href="/schedule.html" class="text-link">Back to pricing</a></section><main id="verified-purchase-content" hidden tabindex="-1"><div id="main-content" class="page-width paid-intro"><p class="paid-plan">Ultimate Concierge · see your receipt for the amount paid</p><h1>You’re in the<br><em>right place.</em></h1><p>Your payment is verified. Tell us about the car below, and we’ll confirm scope and timing after your intake.</p></div><section id="intake-view" class="paid-chat" aria-labelledby="chat-title" data-clarity-mask="true" hidden>
+  <div class="intake-shell">
+    <div class="chat-heading"><h2 id="chat-title" class="sr-only">Tell us about the car</h2><div class="chat-meta"><span id="step-label">Your car search</span><button id="use-form" class="text-link" type="button">Use a form instead</button></div><progress id="intake-progress" max="1" value="0" aria-label="Questions answered"></progress></div>
+    <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Your intake conversation"><div class="message assistant" data-welcome><span class="message-label assistant-name"><span class="mx-avatar" aria-hidden="true"></span>Drive Right</span><p class="assistant-reply">Payment verified.</p></div></div>
+    <div class="composer-area">
+      <div id="answer-actions" class="answer-actions" hidden><div id="choices" class="choices" role="group" aria-label="Suggested answers" hidden></div><button id="skip-detail" class="skip-detail" type="button" hidden>Skip</button></div>
+      <div id="composer" class="composer"><label for="answer" class="sr-only" id="answer-label">Your answer</label><textarea id="answer" rows="1" maxlength="180" aria-describedby="input-error input-hint" enterkeyhint="send" autocomplete="off"></textarea><button id="send-answer" class="send-button" type="button" aria-label="Send answer"></button></div>
+      <p id="input-error" class="input-error" role="alert"></p>
+      <div id="chat-ready" class="chat-ready" hidden><button id="chat-submit" class="primary-button" type="button">Send &amp; start my search</button><p id="chat-error" class="input-error" role="alert"></p></div>
+      <div class="conversation-controls"><span id="input-hint"></span></div>
+    </div>
+  </div>
+</section><section class="ps-onboarding" id="onboarding">
             <div class="ps-onboarding__inner">
                 <h2 class="section-heading">Tell Us About Your Dream Vehicle</h2>
                 <p class="section-subtext">Start with the essentials. The more you add, the faster our concierge team can source and secure it. Fields marked&nbsp;* are required.</p>
@@ -119,19 +132,7 @@
                             </div>
                             <div class="ps-form__group">
                                 <p class="small-note budget-context">Include taxes, fees, and delivery in this amount.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
-                                <select class="ps-form__select" id="ob-budget" name="budget" required>
-                                    <option value="" disabled selected>Select range…</option>
-                                    <option value="under-20k">Under $20,000</option>
-                                    <option value="20k-30k">$20,000 – $30,000</option>
-                                    <option value="30k-45k">$30,000 – $45,000</option>
-                                    <option value="45k-60k">$45,000 – $60,000</option>
-                                    <option value="60k-80k">$60,000 – $80,000</option>
-                                    <option value="80k-100k">$80,000 – $100,000</option>
-                                    <option value="100k-150k">$100,000 – $150,000</option>
-                                    <option value="150k-plus">$150,000+</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <input class="ps-form__input" type="text" id="ob-budget-other" name="budget_other" placeholder="Please specify your budget" style="display:none; margin-top:8px;">
+                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
                             </div>
                         </fieldset>
 
@@ -298,5 +299,6 @@
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><script src="/script.js?v=981c4c038361"></script>
 <script type="module" src="/buying/app.js?v=f983b1610fa5"></script>
+<script type="module" src="/buying/intake-chat.js?v=c8a231aa2304"></script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+/* The paid intake chat (buying/intake-chat.js) on the Full Service and Ultimate Concierge
+   payment pages. It reuses the conversation styles in daisy.css and drive-right.css, which
+   key on body[data-view="conversation"] and #intake-view (on phones the panel fills the
+   screen like a messaging app); this file only fits them into the payment page. */
+.dr .paid-chat { max-width:880px; width:calc(100% - 40px); margin:0 auto 70px; background:var(--white); border:1px solid var(--line); border-radius:24px; padding:24px 36px 16px; }
+.dr[data-view="conversation"] .paid-chat .intake-shell,.dr .paid-chat .intake-shell { width:100%; min-height:0; margin:0; display:flex; flex-direction:column; }
+.dr .paid-chat .chat-meta { min-height:44px; }
+.dr .paid-chat #step-label { font-size:13px; }
+.dr .paid-chat #use-form { min-height:44px; padding:0; font-size:13px; color:var(--green); text-decoration:underline; text-underline-offset:4px; }
+.dr .paid-chat #use-form:hover { color:var(--ink); }
+.dr .paid-chat progress { margin-top:4px; }
+.dr[data-view="conversation"] .paid-chat .messages { min-height:200px; max-height:min(50dvh,560px); }
+/* While chatting, a shorter welcome keeps the first question and the answer box in view. */
+.dr[data-view="conversation"] .paid-intro { padding:20px 0 4px; }
+.dr[data-view="conversation"] .paid-intro h1 { font-size:60px; }
+.dr[data-view="conversation"] .paid-intro>p:last-of-type { margin:14px auto 24px; }
+.dr .paid-chat .message.user.is-editing .bubble { outline:2px solid var(--green); outline-offset:2px; }
+.dr .paid-chat .chat-ready { display:flex; flex-direction:column; align-items:flex-start; gap:4px; padding:8px 0 12px; }
+.dr .paid-chat .chat-ready .primary-button { font-size:16px; }
+.dr .paid-chat .chat-ready .primary-button[aria-busy="true"] { opacity:.7; cursor:progress; }
+.dr .paid-chat .bubble-edit:disabled { opacity:.25; cursor:default; }
+@media(max-width:760px) {
+ .dr[data-view="conversation"] #intake-view.paid-chat { max-width:none; margin:0; padding:0; border:0; border-radius:0; }
+ .dr[data-view="conversation"] .paid-chat .chat-heading { grid-template-columns:minmax(0,1fr); padding-bottom:0; }
+ .dr[data-view="conversation"] .paid-chat .chat-meta { grid-column:1; min-height:40px; }
+ .dr[data-view="conversation"] .paid-chat #use-form { min-height:40px; font-size:12px; }
+ .dr[data-view="conversation"] .paid-chat .messages { min-height:0; max-height:none; }
+ .dr[data-view="conversation"] .paid-chat .chat-ready { padding:4px 0 0; }
+ .dr[data-view="conversation"] .paid-chat .chat-ready .primary-button { width:100%; }
+}
+/* The first question follows the welcome from the same sender, so it needs no second name. */
+.dr .paid-chat [data-welcome]+[data-current] .assistant-name { display:none; }

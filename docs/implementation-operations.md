@@ -100,7 +100,7 @@ Request:
 
 The session must already have a webhook-verified paid purchase and its tier must match. A purchase can have only one immutable onboarding submission. A successful response is `{ "ok": true, "onboarding_id": "…" }`.
 
-The server persists only allowlisted form fields and drops unknown keys. The allowlist covers the current contact, vehicle, budget, trade-in, preference, consultation-question, and concierge-delivery fields; tier and session identity always come from the top-level verified contract. The same transaction creates one `onboarding_complete` outbox event keyed by Checkout Session ID, so browser refreshes cannot duplicate it.
+The server persists only allowlisted form fields and drops unknown keys. The allowlist covers the current contact, vehicle, budget, trade-in, preference, consultation-question, and concierge-delivery fields, plus the five the chat intake adds (`model_years`, `financing_status`, `trade_vehicle`, `search_radius`, `needs`); tier and session identity always come from the top-level verified contract. The same transaction creates one `onboarding_complete` outbox event keyed by Checkout Session ID, so browser refreshes cannot duplicate it.
 
 ## Required environment
 
@@ -249,7 +249,7 @@ What the four `payment-success*.html` pages do now:
 
 - **Inline head script.** It is the first script in `<head>`, before the GTM snippet. It moves `session_id` or the legacy `checkout_session_id`, from the query or a `#session_id=` fragment, into `sessionStorage` under `drive_right_checkout_session:<path>`. It then replaces the address without the ID and keeps every other parameter and anchor. If storage is blocked, the ID stays in `window.driveRightCheckoutSession` for that page load only.
 - **`checkoutSessionId()` in `script.js`.** It reads the address first and repeats the move if the head script didn't run (for example, under a future CSP that blocks inline scripts). Then it reads `sessionStorage`, then the in-memory fallback.
-- **Verified state.** The verified ID stays in memory. `<body>` gets `data-purchase-verified="true"`, which `buying/app.js` watches to prefill the intake. The old `data-verified-session-id` attribute put the ID into the DOM that Clarity records.
+- **Verified state.** The verified ID stays in memory. `<body>` gets `data-purchase-verified="true"`, which `buying/intake-chat.js` watches to start the chat intake. The old `data-verified-session-id` attribute put the ID into the DOM that Clarity records.
 - **Reloads and new tabs.** A reload in the same tab verifies again. A bookmark, new tab or copied URL no longer carries the ID and shows the missing-link message. That is intended: the link worked as a bearer credential.
 - **Unchanged:** Stripe success URLs, `/api/purchase-status`, `/api/onboarding`, `purchase_verified` and historical receipts. `api/_tests/checkout-session-privacy.test.mjs` pins the script order and behavior.
 
@@ -276,7 +276,7 @@ Still visible, all first party or on the buyer's device:
 
 Account-side steps, not applied (see `docs/google-ads-setup.md` §3):
 
-- **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. Since October 5, 2026 the payment pages no longer show saved search details as page text; the intake holds only what the buyer types.
+- **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. The Full Service and Ultimate Concierge chat intake (October 5, 2026) shows each answer, contact details included, as page text, so the chat panel carries `data-clarity-mask="true"`. The exclusion is still the complete fix.
 - **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover GTM's own page view or Clarity, so the page code is the fix.
 
 After deploy, check a payment page: once it loads, the address bar shows no `session_id`, and no request to a Google or Clarity host contains `session_id`, `cs_live_` or `cs_test_`.
