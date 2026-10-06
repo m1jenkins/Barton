@@ -33,6 +33,18 @@
 .dr .savings-section .info-card h3 { font-size:24px; }
 .dr .savings-section .info-card p { font-size:15px; }
 .dr .hero-photo { margin-top:34px; }
+/* Home hero photo collage: real cars from Mason's own garage fill the right side. */
+.dr[data-buying-page="home"] .home-hero .intake-shell { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); grid-template-rows:auto 1fr; column-gap:clamp(32px,4.5vw,72px); align-items:start; padding-bottom:48px; }
+.dr[data-buying-page="home"] .home-hero :is(.hero-intro,.hero-checkout) { grid-column:1; }
+.dr[data-buying-page="home"] .home-hero .hero-trust { grid-template-columns:1fr; gap:8px; }
+.dr .hero-gallery { grid-column:2; grid-row:1 / span 2; align-self:center; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1.15fr 1fr; gap:10px; aspect-ratio:1 / .98; margin-top:44px; }
+.dr .hero-gallery picture { display:block; min-height:0; }
+.dr .hero-gallery picture:first-child { grid-column:span 2; }
+.dr .hero-gallery img { display:block; width:100%; height:100%; object-fit:cover; border-radius:14px; background:var(--sage); }
+.dr .hero-gallery picture:first-child img { object-position:50% 62%; }
+.dr .hero-gallery picture:nth-child(2) img { object-position:60% 86%; }
+@media(max-width:1000px) { .dr[data-buying-page="home"] .home-hero .intake-shell { grid-template-columns:1fr; padding-bottom:40px; }.dr .hero-gallery { grid-column:1; grid-row:auto; aspect-ratio:4 / 3; margin-top:32px; } }
+@media(max-width:760px) { .dr .hero-gallery { gap:6px; margin-top:28px; }.dr .hero-gallery img { border-radius:10px; } }
 .dr .hero-photo figcaption { font:14px/1.5 var(--sans); color:var(--green); }
 .dr input::placeholder,.dr textarea::placeholder { color:#6A6964; }
 .dr :is(input,select,textarea):focus-visible { outline:2px solid var(--green); outline-offset:3px; }

@@ -62,6 +62,8 @@ All files in this table are under `assets/external/optimized/`.
 
 All files in this table are under `assets/external/optimized/`. WebP uses quality 80; AVIF uses format option 70.
 
+Since 2026-10-06 the Miatas, Cayman and Maverick photos also fill the homepage hero collage, which replaced the Mazda MX-5 press photo. They are Mason's own cars and photos.
+
 The original `sips` encode of `about-ford-maverick-petrified-forest-960.avif` could not be decoded by Chromium, so the gallery showed a blank tile. It was re-encoded on 2026-09-22 from the same source JPEG with `sharp` (resize to 960 wide, AVIF quality 60); no crop or pixel edits.
 
 ### Founder headshot
