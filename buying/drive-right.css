@@ -481,9 +481,11 @@ html:has(> body.dr) { scroll-padding-top:96px; }
  .dr .site-header .wordmark { grid-area:mark; height:52px; min-height:0; font-size:26px; }
  .dr .header-phone { grid-area:phone; justify-self:end; align-self:center; height:52px; min-height:0; font-size:14px; }
  .dr .hero-trust { grid-template-columns:1fr; gap:10px; }
- .dr .savings-section { padding-block:44px 56px; }.dr .savings-section h2 { font-size:34px; }.dr .savings-lead { font-size:16px; }
+ .dr .savings-section { padding-block:44px 56px; }.dr .savings-section h2 { font-size:31px; }.dr .savings-lead { font-size:16px; }
  .dr .proof-section>h2 { font-size:34px; }
- .dr .site-header nav { grid-area:nav; margin:0; gap:16px; }
+ .dr .site-header nav { grid-area:nav; margin:0; gap:14px; }
+ .dr .header-cta-price { display:none; }
+ .dr #drive-right-ad-privacy .ad-privacy-copy h2 { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
  .dr .nav-link { min-height:52px; font-size:14px; white-space:nowrap; }
  .dr .header-cta { grid-area:cta; min-height:40px; padding:8px 14px; font-size:13px; }
  .dr #drive-right-ad-privacy { grid-template-columns:1fr; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); }

@@ -36,7 +36,7 @@ export function initializeAdConsent(w, d, setConsent) {
   panel.innerHTML = `
     <div class="ad-privacy-copy">
       <h2 id="drive-right-ad-privacy-title" tabindex="-1">Ad privacy</h2>
-      <p>May we measure our ads and site visits? Optional, and you can change it any time under “Ad privacy” in the footer. <a href="/policy.html#openai-ad-measurement">Details</a></p>
+      <p>May we measure our ads and site visits? Optional; change it any time in the footer. <a href="/policy.html#openai-ad-measurement">Details</a></p>
       <p data-ad-privacy-status role="status"></p>
     </div>
     <div class="ad-privacy-actions">

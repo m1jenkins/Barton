@@ -130,8 +130,8 @@ test('marketing nav lists three sections, every header shows the phone, and the 
     assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
     assert.match(header, /<a class="header-phone" href="tel:\+15129104938">\(512\) 910-4938<\/a>/, `${file} header shows the phone number`);
     if (file === 'schedule.html') {
-      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([^<]+)<\/button>/g)].map(([, tier, label]) => ({ tier, label }));
-      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }]);
+      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
+      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }], 'one compact header checkout; the price span hides on phones');
       assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
     } else {
       assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);

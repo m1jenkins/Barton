@@ -1,4 +1,4 @@
-import { readAdConsent } from './ad-consent.js?v=7647dbdce8d4';
+import { readAdConsent } from './ad-consent.js?v=22b7d3163dfb';
 
 // Measure only the released informational pages. Receipts, forms' private
 // results, the quote worksheet, APIs and unknown routes are outside this list.
