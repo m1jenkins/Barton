@@ -100,6 +100,18 @@ Each profile derivative is a centered square crop resized to 160×160, appropria
 | Sarah K. | `assets/external/optimized/testimonial-sarah-k-160.avif` — 7,783 bytes | `assets/external/optimized/testimonial-sarah-k-160.webp` — 6,986 bytes |
 | David L. | `assets/external/optimized/testimonial-david-l-160.avif` — 4,683 bytes | `assets/external/optimized/testimonial-david-l-160.webp` — 4,056 bytes |
 
+### Michael R. with his C5 Corvette
+
+Client photo the owner supplied on 2026-10-05 as Michael R. (claim `TESTIMONIAL-C5-2026-10-05`). The source is `assets/external/source/client-michael-r-c5-corvette-original.webp`: 2000×1500, 433,264 bytes, with no EXIF or GPS data. It was resized only, with no crop. WebP uses `cwebp` quality 78 with metadata removed, and AVIF uses `sips` format option 68. Used beside his review on `index.html` (full size) and `schedule.html` (thumbnail).
+
+| Width | AVIF bytes | WebP bytes | JPEG fallback |
+|---:|---:|---:|---|
+| 640×480 | 59,982 | 56,520 | — |
+| 960×720 | 132,450 | 125,534 | `client-michael-r-c5-corvette-960.jpg` — 242,642 bytes, quality 72 |
+| 1440×1080 | 279,076 | 262,878 | — |
+
+All files are in `assets/buying/` and named `client-michael-r-c5-corvette-<width>.<format>`.
+
 ### Logo and social image
 
 | Asset | Local file | Pixels | Bytes | Notes |

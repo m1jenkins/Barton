@@ -14,6 +14,10 @@
 .dr .pricing-proof blockquote { margin:0; }
 .dr .pricing-proof blockquote p { color:var(--ink); font-size:17px; }
 .dr .pricing-proof figcaption { margin-top:10px; color:var(--muted); font-size:13px; line-height:1.5; }
+.dr .pricing-proof-quote { display:grid; grid-template-columns:148px minmax(0,1fr); grid-template-rows:auto 1fr; column-gap:20px; }
+.dr .pricing-proof-quote picture { grid-row:1 / -1; }
+.dr .pricing-proof-quote img { display:block; width:100%; height:auto; border-radius:8px; }
+.dr .pricing-proof-quote figcaption { grid-column:2; }
 .dr .pricing-proof .small-note { margin-top:4px; font-size:12px; }
 .dr #car-search-inquiry { width:min(620px,calc(100vw - 32px)); }
 .dr #car-search-inquiry h2 { font-size:clamp(28px,4vw,38px); line-height:1.12; }
@@ -29,5 +33,6 @@
 .dr #car-search-inquiry .small-note a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
 @media(max-width:760px) {
   .dr .pricing-proof { grid-template-columns:minmax(0,1fr); gap:20px; padding:20px; }
+  .dr .pricing-proof-quote { grid-template-columns:minmax(0,1fr); }.dr .pricing-proof-quote picture { grid-row:auto; margin-bottom:16px; }.dr .pricing-proof-quote figcaption { grid-column:1; }
   .dr .inquiry-fields { grid-template-columns:minmax(0,1fr); gap:16px; }
 }
