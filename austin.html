@@ -92,7 +92,7 @@
     <link rel="stylesheet" href="/buying/daisy.css?v=82cf3edcc3d2">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=fcd6acf709f7">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=0771d30b0839">
 <link rel="stylesheet" href="/buying/inquiry.css?v=731b19247ff6">
     <script>(function (w, d, s, l, i) { if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); } })(window, document, 'script', 'dataLayer', 'GTM-W577B3D4');</script>
     <script>
@@ -107,10 +107,10 @@
   <a class="wordmark" href="/" aria-label="Drive Right home">Drive Right</a>
   <nav aria-label="Main navigation">
     <a class="nav-link" href="/how-it-works.html">How it works</a>
-    <a class="nav-link" href="/car-buying-service.html">Car buying service</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
     <a class="nav-link" href="/about.html">About</a>
   </nav>
+  <a class="header-phone" href="tel:+15129104938">(512) 910-4938</a>
   <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
 </header>
 <main id="main-content" tabindex="-1">
@@ -118,13 +118,17 @@
     <div class="intake-shell">
       <div class="hero-intro" id="hero">
         <p class="small-note"><a href="/">Home</a></p>
-        <h1 id="austin-title">Austin car buying service.</h1>
-        <p>Drive Right is based in Austin and helps Texas buyers research vehicles, compare written offers, and negotiate purchases. You keep the purchase decision. A service engagement does not establish that a particular car is available or that a seller will accept your offer.</p>
+        <h1 id="austin-title">Austin car buying service.<br>Let us deal with the dealer.</h1>
+        <p>We find the car, work the dealers by phone and email, negotiate for a price below MSRP and strip the add-ons and junk fees. You keep your evenings and sign only when you’re happy. Based in Austin, here for Texas buyers.</p>
       </div>
       <div class="hero-checkout">
-        <div class="hero-plans"><a href="/schedule.html" data-plan="full_service" data-cta-location="hero" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><a href="/schedule.html" data-plan="concierge" data-cta-location="hero" class="outline-button">Get Ultimate Concierge · $695 <span data-icon="arrow"></span></a></div>
-        <p class="hero-checkout-note">One flat fee, paid once. Pay securely with Stripe, then tell us about the car.</p>
-        <button type="button" class="text-link hero-inquiry" data-open-inquiry>Not ready to pay? Talk to Mason about your car search<span data-icon="arrow"></span></button>
+        <div class="hero-plans"><a href="/schedule.html" data-plan="full_service" data-cta-location="hero" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><button type="button" class="outline-button" data-open-inquiry data-cta-location="hero">Talk to Mason first <span data-icon="arrow"></span></button></div>
+        <ul class="hero-trust" role="list">
+          <li>One flat fee, paid once through Stripe.</li>
+          <li>Full refund if you cancel before negotiations begin.</li>
+          <li>Dealers pay us nothing. You’re the only one we work for.</li>
+          <li>Mason replies within one business day.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -201,7 +205,7 @@
 <footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
     <nav aria-label="Company"><a href="/how-it-works.html">How it works</a><a href="/car-buying-service.html">Car buying service</a><a href="/austin.html">Austin car buying</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Monday–Friday 09:00–17:00 America/Chicago</span></div>
+    <div id="contact"><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
@@ -215,6 +219,7 @@
       <label class="inquiry-field" for="inquiry-budget"><span>Approximate vehicle budget <span class="optional">Optional</span></span><input id="inquiry-budget" name="budget" type="text" maxlength="80" placeholder="For example, $35,000–$45,000"></label>
       <label class="inquiry-field" for="inquiry-timeline"><span>Buying timeline <span class="optional">Optional</span></span><select id="inquiry-timeline" name="timeline"><option value="">Choose a timeline</option><option>Within 2 weeks</option><option>Within a month</option><option>1–3 months</option><option>Still exploring</option></select></label>
       <label class="inquiry-field" for="inquiry-email">Email<input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="inquiry-field" for="inquiry-phone"><span>Phone <span class="optional">Optional</span></span><input id="inquiry-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
       <label class="inquiry-field" for="inquiry-name"><span>Name <span class="optional">Optional</span></span><input id="inquiry-name" name="name" type="text" autocomplete="name" maxlength="120"></label>
     </div>
     <div class="form-honeypot" aria-hidden="true"><label for="inquiry-website">Leave this field empty<input id="inquiry-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
@@ -227,6 +232,6 @@
 <noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript>
 <script src="/script.js?v=981c4c038361"></script>
 <script type="module" src="/buying/app.js?v=f983b1610fa5"></script>
-<script type="module" src="/buying/inquiry.js?v=fde8c1b65ba8"></script>
+<script type="module" src="/buying/inquiry.js?v=47f8769cfa07"></script>
 </body>
 </html>

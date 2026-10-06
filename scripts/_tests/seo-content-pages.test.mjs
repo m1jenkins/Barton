@@ -20,13 +20,16 @@ test('service-intent pages publish current prices without retired or unapproved 
   const homepage = htmlDocument(homepageHtml);
   const hero = homepageHtml.match(/<div class="hero-intro" id="hero">([\s\S]*?)<\/div>/)?.[1] ?? '';
   assert.equal(homepage.h1.length, 1);
-  assert.match(hero, /Skip the hours at the dealer/);
-  assert.match(hero, /Let us find you the perfect car/);
+  assert.match(hero, /Let us deal with the dealer\./);
+  assert.match(hero, /negotiate for a price below MSRP/);
   assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Full Service|Ultimate Concierge/i);
-  // The hero goes straight to checkout: one button per plan, plus an inquiry that needs no payment.
-  const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/div>\s*<\/div>/)?.[1] ?? '';
-  assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service', 'concierge']);
-  assert.match(checkout, /data-open-inquiry/);
+  // The hero goes straight to checkout with one paid button, plus an inquiry button that needs no payment and the trust lines.
+  const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/ul>\s*<\/div>/)?.[1] ?? '';
+  assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service']);
+  assert.match(checkout, /<button[^>]*class="outline-button"[^>]*data-open-inquiry/);
+  assert.match(checkout, /Full refund if you cancel before negotiations begin\./);
+  assert.match(checkout, /Dealers pay us nothing\./);
+  assert.match(checkout, /Mason replies within one business day\./);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
@@ -117,30 +120,26 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   }
 });
 
-test('marketing nav surfaces the explainer and schedule header offers both checkout plans', async () => {
-  const explainer = '<a class="nav-link" href="/car-buying-service.html"';
+test('marketing nav lists three sections, every header shows the phone, and the schedule header offers one checkout', async () => {
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
-    const nav = html.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+    const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
+    const nav = header.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
-    assert.deepEqual(links, ['/how-it-works.html', '/car-buying-service.html', '/schedule.html', '/about.html'], `${file} header should list the explainer after How it works`);
-    assert.match(nav, new RegExp(explainer.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&') + '[^>]*>Car buying service</a>'));
+    assert.deepEqual(links, ['/how-it-works.html', '/schedule.html', '/about.html'], `${file} header nav lists the three sections`);
+    assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
+    assert.match(header, /<a class="header-phone" href="tel:\+15129104938">\(512\) 910-4938<\/a>/, `${file} header shows the phone number`);
     if (file === 'schedule.html') {
-      const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
       const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([^<]+)<\/button>/g)].map(([, tier, label]) => ({ tier, label }));
-      assert.deepEqual(plans, [
-        { tier: 'full_service', label: 'Get Full Service · $395' },
-        { tier: 'concierge', label: 'Get Ultimate Concierge · $695' },
-      ]);
-      assert.doesNotMatch(header, /data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
+      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }]);
+      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
     } else {
-      assert.match(html, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
+      assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
     }
   }
-  assert.match(await read('car-buying-service.html'), /href="\/car-buying-service\.html" aria-current="page">Car buying service</);
-
-  const css = await read('buying/drive-right.css');
-  assert.match(css, /@media\(max-width:960px\) \{ \.dr \.site-header \.nav-link\[href="\/car-buying-service\.html"\] \{ display:none; \} \}/, 'narrow headers hide the extra link so the nav and CTA fit one row');
+  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html']) {
+    assert.match(await read(file), /href="\/car-buying-service\.html"/, `${file} still links the explainer`);
+  }
 });
 
 test('no page links to the retired chat intake', async () => {
@@ -206,7 +205,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.ok(served.includes('United States'));
   for (const city of cities) assert.ok(served.includes(city), city);
 
-  assert.match(homepage.visibleText, /Monday–Friday 09:00–17:00 America\/Chicago/);
+  assert.match(homepage.visibleText, /Mon–Fri, 9 a\.m\.–5 p\.m\. Central/);
   assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
   assert.match(await read('llms.txt'), /\$395 Full Service and \$695 Ultimate Concierge/);
