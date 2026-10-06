@@ -11,6 +11,8 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [resource-release-2026-10-04.md](resource-release-2026-10-04.md): owner-directed release of three source-checked guides and the local quote worksheet.
 - [repository-audit-2026-10-04.md](repository-audit-2026-10-04.md): repository audit, lead/form reliability fixes, expanded checks, verification and prioritized follow-up work.
 - [checkout-streamline-2026-10-05.md](checkout-streamline-2026-10-05.md): the October 4–6 checkout/lead/webhook outage and the plan-first checkout that replaced the chat intake.
+- [sales-copy-2026-10-05.md](sales-copy-2026-10-05.md): the 2026-10-05 conversion rewrite (headline, hero, savings section, trust lines, reply window, Concierge scope, header phone) with owner decisions, exact strings, the client review request and the Phase 2 list.
+- [measurement-check-2026-10-05.md](measurement-check-2026-10-05.md): what the analytics events do and do not fire after the rewrite, and why Vercel Web Analytics stays empty.
 
 ## SEO decisions and execution
 
