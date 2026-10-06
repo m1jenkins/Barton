@@ -44,6 +44,17 @@ function readRequestOrigin(req) {
   }
 }
 
+// The footer opt-out cookie set by privacy-choices.js; openai-ads.test.mjs keeps
+// the two names equal. A GPC header has the same effect.
+export const MEASUREMENT_OPT_OUT_COOKIE = 'dr_ad_measurement';
+
+export function measurementDeclined(req) {
+  if (String(requestHeader(req, 'sec-gpc') ?? '').trim() === '1') return true;
+  const cookieHeader = requestHeader(req, 'cookie');
+  return typeof cookieHeader === 'string'
+    && cookieHeader.split(';').some(part => part.trim() === `${MEASUREMENT_OPT_OUT_COOKIE}=off`);
+}
+
 function readOpprefCookie(req) {
   const cookieHeader = requestHeader(req, 'cookie');
   if (typeof cookieHeader !== 'string') return '';
@@ -174,7 +185,7 @@ async function dispatchEvent(config, event) {
 
 export function trackOpenAIAdsConversion({ eventType, eventId, timestampMs, sourcePage, sourceUrl, amount, currency }, req) {
   const payload = capiConfig();
-  if (!payload || !req || !eventType || typeof eventId !== 'string') return;
+  if (!payload || !req || !eventType || typeof eventId !== 'string' || measurementDeclined(req)) return;
   const resolvedTimestamp = Number(timestampMs);
   const event = buildEvent({
     eventType,

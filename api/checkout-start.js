@@ -4,7 +4,7 @@ import { assertCurrentOffer, offerKey } from './_lib/checkout-offer.js';
 import { database } from './_lib/db.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { idempotencyKey, payloadHash, paymentLinkWithReference, validateCheckoutPayload } from './_lib/validation.js';
-import { trackOpenAIAdsConversion } from './_lib/openai-ads-capi.js';
+import { measurementDeclined, trackOpenAIAdsConversion } from './_lib/openai-ads-capi.js';
 
 export function checkoutHandler({ getDatabase = database, notify = trackOpenAIAdsConversion } = {}) {
 return async function handle(req, res) {
@@ -37,6 +37,9 @@ return async function handle(req, res) {
 
   const attemptId = randomUUID();
   const clientReferenceId = randomUUID();
+  // The Stripe webhook has no visitor request, so it reads this to skip the
+  // OpenAI purchase event for a buyer who opted out of ad measurement.
+  const attribution = measurementDeclined(req) ? { ...checkout.attribution, ad_measurement_off: true } : checkout.attribution;
   const persisted = await sql.begin(async (tx) => {
     if (checkout.lead_id) {
       const [lead] = await tx`SELECT id FROM leads WHERE id = ${checkout.lead_id}`;
@@ -49,7 +52,7 @@ return async function handle(req, res) {
       ) VALUES (
         ${attemptId}, ${clientReferenceId}, ${key}, ${hash}, ${checkout.tier},
         ${service.amount}, ${service.currency}, ${checkout.lead_id}, ${checkout.source_page},
-        ${tx.json(checkout.attribution)}, ${currentOffer}
+        ${tx.json(attribution)}, ${currentOffer}
       )
       ON CONFLICT (idempotency_key) DO NOTHING
       RETURNING id, client_reference_id, request_hash, expected_amount, currency, offer_key

@@ -1,6 +1,6 @@
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
-import("./openai-ads.js?v=8fd81e356f08").catch(() => {});
-import("./web-analytics.js?v=cbe479b5e083").catch(() => {});
+import("./openai-ads.js?v=c0c8500c3744").catch(() => {});
+import("./web-analytics.js?v=3b29c3eb6e1f").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
 window.addEventListener('DOMContentLoaded', () => {
   window.driveRightClient = { requestJson, track, createId, attribution: attributionData };
@@ -53,7 +53,7 @@ function trackVerifiedPurchase(result) {
     track('purchase_verified', properties);
     // Verification can finish before the optional tracker imports. Reaching the same
     // adapter after import closes that race; its purchase ID suppresses duplicates.
-    import('./openai-ads.js?v=8fd81e356f08').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
+    import('./openai-ads.js?v=c0c8500c3744').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
   } catch {}
 }
 // Stripe's return URL carries the Checkout Session ID, which also unlocks the one-time intake.
@@ -85,9 +85,10 @@ function checkoutSessionId() {
 function onScroll(){nav&&nav.classList.toggle("scrolled",window.scrollY>60||nav.dataset.lightNav==="true")}window.addEventListener("scroll",onScroll,{passive:!0}),onScroll();function setMenuState(e){if(!mobileMenu||!hamburger)return;const o=()=>{mobileMenu.classList.toggle("open",e),mobileMenu.setAttribute("aria-hidden",String(!e)),mobileMenu.inert=!e,hamburger.setAttribute("aria-expanded",String(e)),document.body.style.overflow=e?"hidden":""};document.startViewTransition?document.startViewTransition(o):o(),e?(lastFocusedElement=document.activeElement,mobileMenu.querySelector('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')?.focus()):lastFocusedElement&&typeof lastFocusedElement.focus=="function"&&lastFocusedElement.focus()}hamburger&&mobileMenu&&mobileClose&&(hamburger.addEventListener("click",()=>setMenuState(!0)),mobileClose.addEventListener("click",()=>setMenuState(!1)),mobileMenu.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>setMenuState(!1))}),mobileMenu.addEventListener("keydown",e=>{if(e.key==="Escape"){setMenuState(!1);return}if(e.key!=="Tab")return;const o=Array.from(mobileMenu.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')).filter(r=>!r.disabled&&r.offsetParent!==null);if(!o.length)return;const n=o[0],t=o[o.length-1];e.shiftKey&&document.activeElement===n?(e.preventDefault(),t.focus()):!e.shiftKey&&document.activeElement===t&&(e.preventDefault(),n.focus())})),document.querySelectorAll(".reveal").forEach(e=>{e.classList.add("visible")}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",o=>{const n=e.getAttribute("href");if(!n||n==="#")return;let t;try{t=document.querySelector(n)}catch{return}if(!t)return;o.preventDefault();const r=nav?nav.offsetHeight+8:8,i=t.getBoundingClientRect().top+window.pageYOffset-r;window.scrollTo({top:i,behavior:"smooth"})})});function attribution() {
   const params = new URLSearchParams(window.location.search);
   // Google ad click IDs let a verified purchase be matched to its ad click. Only
-  // well-formed IDs are kept, and none under Global Privacy Control (stored ones are dropped).
+  // well-formed IDs are kept, and none under Global Privacy Control or the footer
+  // opt-out (privacy-choices.js); stored ones are dropped.
   const clickIdKeys = ['gclid', 'gbraid', 'wbraid'];
-  const gpc = window.navigator?.globalPrivacyControl === true;
+  const gpc = window.navigator?.globalPrivacyControl === true || /(?:^|;\s*)dr_ad_measurement=off(?:;|$)/.test(document.cookie);
   const safeReferrer = value => { try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.origin : ''; } catch { return ''; } };
   const cleanTouch = value => {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return null;

@@ -35,6 +35,7 @@ Changed files:
 - `openai-ads.js`: public Pixel configuration, consent bridge, single initialization, event mapping, deduplication, and failure isolation.
 - `script.js`: imports the destination and calls it from existing `track()`.
 - Measurement is on by default (no opt-in banner since 2026-10-06); Global Privacy Control turns it off.
+- `privacy-choices.js`: the footer “Opt out of ad measurement” link (next to Policy) and the toggle in `policy.html#opt-out`. It sets a first-party `dr_ad_measurement=off` cookie for a year. The Pixel, Vercel analytics, Google click-ID storage in `script.js`, and the server's CAPI calls all treat it like GPC; the server also honors a `Sec-GPC: 1` header. Checkout start marks an opted-out attempt (`attribution.ad_measurement_off`) so the Stripe webhook skips its `order_created` event. Google tags in GTM still follow only GPC.
 - `policy.html`: factual OpenAI measurement disclosure and a preference control.
 - `.vercelignore`: keeps local secrets, agent configuration, tests and task reports out of the deployment.
 - `api/_tests/openai-ads.test.mjs`: consent, event mapping, duplicates, SDK failures, and actual hero-form success/failure tests.

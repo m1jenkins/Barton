@@ -1,3 +1,5 @@
+import { initializePrivacyChoices, measurementOptedOut } from './privacy-choices.js?v=13903db6444b';
+
 // Public Pixel ID supplied by the site owner on September 28, 2026.
 // This static site does not substitute server environment variables into JS.
 export const OPENAI_ADS_PIXEL_ID = '4FeqFBVzJFUMdu8S8gatam';
@@ -13,7 +15,8 @@ export function createOpenAIAds(w, d, pixelId = OPENAI_ADS_PIXEL_ID) {
 
   function allowed(event) {
     if (!pixelId.trim() || !productionHosts.has(w.location.hostname)
-      || w.navigator.globalPrivacyControl === true || consent.measurement !== true || failed) return false;
+      || w.navigator.globalPrivacyControl === true || measurementOptedOut(d.cookie)
+      || consent.measurement !== true || failed) return false;
     if (/^\/payment-success[^/]*\.html$/.test(w.location.pathname)) {
       // Receipt visits alone are not conversions. The paid-session verifier removes the
       // bearer from the address before setting this marker and reporting the ledger UUID.
@@ -104,7 +107,7 @@ export function createOpenAIAds(w, d, pixelId = OPENAI_ADS_PIXEL_ID) {
   return { track, setConsent };
 }
 
-// Measurement is on by default; Global Privacy Control still turns it off in allowed().
+// Measurement is on by default; the footer opt-out and Global Privacy Control turn it off in allowed().
 export const openAIAds = (() => {
   const noop = { track() {}, setConsent() {} };
   if (typeof window === 'undefined' || typeof document === 'undefined') return noop;
@@ -114,6 +117,9 @@ export const openAIAds = (() => {
     window.driveRightOpenAIAds = ads;
     window.addEventListener('drive-right:ads-consent', event => ads.setConsent(event.detail));
     ads.setConsent({ measurement: true, personalization: false });
+    // Re-checking allowed() withdraws queued events or starts measuring again.
+    window.addEventListener('drive-right:measurement-choice', () => ads.setConsent({ measurement: true, personalization: false }));
+    try { initializePrivacyChoices(window, document); } catch { /* Measurement keeps its own checks. */ }
     return ads;
   } catch { return noop; }
 })();

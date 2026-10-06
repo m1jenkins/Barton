@@ -124,7 +124,8 @@ export async function recordEvent(event, sql = database()) {
     return {
       duplicate: false,
       recorded: true,
-      openaiAdsCapi: {
+      // Checkout start records an opt-out (footer cookie or GPC) for this purchase.
+      openaiAdsCapi: attempt.attribution?.ad_measurement_off === true ? null : {
         eventType: 'order_created',
         eventId: `purchase:${purchaseId}`,
         timestampMs: Date.parse(stripeCreatedAt),

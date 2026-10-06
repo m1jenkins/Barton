@@ -121,3 +121,15 @@ test('pre-release checkout hash changes still return stale_offer, including a co
   assert.equal(res.statusCode,409);assert.equal(res.body.error,'stale_offer');assert.equal(res.body.url,undefined);
  }
 });
+test('an opted-out checkout marks its attempt so the webhook skips the OpenAI purchase event',async t=>{
+ env(t);
+ for(const [extra,off] of [[{cookie:'dr_ad_measurement=off'},true],[{'sec-gpc':'1'},true],[{},false]]){
+  const db=checkoutDb();const res={headers:{},setHeader(k,v){this.headers[k]=v;},end(v){this.body=JSON.parse(v);}};
+  await withApiErrors(checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}}))({method:'POST',headers:{origin:'http://localhost:3000','content-type':'application/json','idempotency-key':'checkout:opt-out',...extra},body},res);
+  assert.equal(res.statusCode,201);
+  const stored=db.calls.find(c=>c.query.includes('INSERT')).values[9];
+  assert.equal(stored.ad_measurement_off===true,off);
+  const paid=await recordEvent(event('full_service',39500),ledger(attempt({attribution:stored})).sql);
+  assert.equal(paid.recorded,true);assert.equal(paid.openaiAdsCapi===null,off);
+ }
+});

@@ -1,3 +1,5 @@
+import { measurementOptedOut } from './privacy-choices.js?v=13903db6444b';
+
 // Measure only the released informational pages. Receipts, forms' private
 // results, the quote worksheet, APIs and unknown routes are outside this list.
 const publicPaths = new Set(['/', '/index.html', '/about.html', '/how-it-works.html',
@@ -9,7 +11,7 @@ const hosts = new Set(['www.driverightcarbuying.com', 'driverightcarbuying.com']
 
 export function createWebAnalytics(w, d) {
   let consent = false, loaded = false;
-  const permitted = () => consent && w.navigator?.globalPrivacyControl !== true
+  const permitted = () => consent && w.navigator?.globalPrivacyControl !== true && !measurementOptedOut(d.cookie)
     && hosts.has(w.location.hostname) && publicPaths.has(w.location.pathname);
   const safeReferrer = () => {
     if (!d.referrer) return true;
@@ -50,8 +52,9 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     if (!window.driveRightWebAnalytics) {
       const analytics = createWebAnalytics(window, document);
       window.driveRightWebAnalytics = analytics;
-      // On by default; Global Privacy Control still turns it off in permitted().
+      // On by default; the footer opt-out and Global Privacy Control turn it off in permitted().
       analytics.setConsent(true);
+      window.addEventListener('drive-right:measurement-choice', () => analytics.setConsent(true));
     }
   } catch { /* Measurement cannot block any site interaction. */ }
 }

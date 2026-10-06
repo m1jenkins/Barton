@@ -11,7 +11,7 @@ const guideNames = [
 ];
 const files = new Map(guideNames.map(name => [`/${name}`, [`draft-artifacts/guides/${name}`, 'text/html; charset=utf-8']]));
 for (const name of ['styles.css', 'seo-content.css']) files.set(`/${name}`, [name, 'text/css; charset=utf-8']);
-for (const name of ['script.js', 'openai-ads.js']) files.set(`/${name}`, [name, 'text/javascript; charset=utf-8']);
+for (const name of ['script.js', 'openai-ads.js', 'privacy-choices.js']) files.set(`/${name}`, [name, 'text/javascript; charset=utf-8']);
 
 export function createGuidePreviewServer() {
   return createServer(async (req, res) => {
