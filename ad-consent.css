@@ -18,15 +18,15 @@
   text-align: left;
 }
 #drive-right-ad-privacy[hidden] { display: none !important; }
-#drive-right-ad-privacy h2 { margin: 0 0 12px; color: #0f172a; font-size: 20px; line-height: 1.3; }
-#drive-right-ad-privacy p { margin: 0 0 12px; }
+#drive-right-ad-privacy h2 { margin: 0 0 6px; color: #0f172a; font-size: 15px; line-height: 1.3; }
+#drive-right-ad-privacy p { margin: 0 0 8px; }
 #drive-right-ad-privacy p:empty { display: none; }
 #drive-right-ad-privacy a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 3px; }
 .ad-privacy-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .ad-privacy-actions button {
-  flex: 1 1 155px;
-  min-height: 44px;
-  padding: 10px 12px;
+  flex: 1 1 140px;
+  min-height: 40px;
+  padding: 8px 12px;
   border: 1px solid #0f172a;
   border-radius: 8px;
   background: #fff;

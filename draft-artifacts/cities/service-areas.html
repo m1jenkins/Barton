@@ -165,22 +165,14 @@
     </script>
 
     <meta name="theme-color" content="#FFFFFF">
-    <script>
-      // Prepare blank artwork before first paint; failed startup restores static scenes.
-      if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-        document.documentElement.classList.add('legwork-motion');
-        window.driveRightLegworkFallback = setTimeout(() => {
-          document.documentElement.classList.remove('legwork-motion');
-        }, 4000);
-      }
-    </script>
     <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="stylesheet" href="/buying/daisy.css?v=82cf3edcc3d2">
+    <link rel="preload" href="/assets/buying/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/buying/fonts/inter-semibold-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/buying/daisy.css?v=3d555457a022">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=fcd6acf709f7">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=f380bff2d465">
     <link rel="stylesheet" href="/buying/inquiry.css?v=731b19247ff6">
-<link rel="preload" as="image" type="image/avif" href="/assets/buying/mx-5-coastal-hero-1440.avif" fetchpriority="high" imagesrcset="/assets/buying/mx-5-coastal-hero-640.avif 640w, /assets/buying/mx-5-coastal-hero-960.avif 960w, /assets/buying/mx-5-coastal-hero-1440.avif 1440w, /assets/buying/mx-5-coastal-hero-1920.avif 1920w" imagesizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) calc(100vw - 80px), (max-width: 1568px) calc(100vw - 128px), 1440px">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -193,10 +185,10 @@
   <a class="wordmark" href="/" aria-label="Drive Right home">Drive Right</a>
   <nav aria-label="Main navigation">
     <a class="nav-link" href="/how-it-works.html">How it works</a>
-    <a class="nav-link" href="/car-buying-service.html">Car buying service</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
     <a class="nav-link" href="/about.html">About</a>
   </nav>
+  <a class="header-phone" href="tel:+15129104938">(512) 910-4938</a>
   <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
 </header><main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages"><a class="outline-button" href="/new-york.html">New York City <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/los-angeles.html">Los Angeles <span data-icon="arrow"></span></a>
@@ -220,11 +212,11 @@
 <a class="outline-button" href="/nashville.html">Nashville <span data-icon="arrow"></span></a></nav></section></main><footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for you.</p></div>
     <nav aria-label="Company"><a href="/how-it-works.html">How it works</a><a href="/car-buying-service.html">Car buying service</a><a href="/austin.html">Austin car buying</a><a href="/about.html">About</a><a href="/blog.html">Resources</a><a href="/schedule.html">Service plans</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Monday–Friday 09:00–17:00 America/Chicago</span></div>
+    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
-</footer><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=981c4c038361"></script>
-<script type="module" src="/buying/app.js?v=f983b1610fa5"></script>
-<script type="module" src="/buying/inquiry.js?v=fde8c1b65ba8"></script>
+</footer><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=21205ffdf465"></script>
+<script type="module" src="/buying/app.js?v=5b4bfab04018"></script>
+<script type="module" src="/buying/inquiry.js?v=47f8769cfa07"></script>
 </body>
 </html>

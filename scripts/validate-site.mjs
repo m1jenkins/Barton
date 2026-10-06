@@ -379,27 +379,29 @@ if (!/@media\s*\(prefers-reduced-motion\s*:\s*reduce\)/i.test(accessibilityCss))
   fail('accessibility.css', 'Reduced-motion coverage is missing.', 0, accessibilityCss, 'Disable nonessential animation, smooth scrolling, and long transitions for reduced-motion users.');
 }
 
-const homepageHtml = sources.get('index.html') ?? '';
+// The Mazda MX-5 hero now lives on houston.html only; the homepage opens with text and the savings section.
+const houstonHtml = sources.get('houston.html') ?? '';
 const heroWidths = [640, 960, 1440, 1920];
 for (const width of heroWidths) {
   for (const format of ['avif', 'webp']) {
     const asset = `assets/buying/mx-5-coastal-hero-${width}.${format}`;
     if (!(await fileExists(asset))) {
-      fail(asset, 'Responsive homepage hero derivative is missing.');
+      fail(asset, 'Responsive Houston hero derivative is missing.');
     }
-    if (!homepageHtml.includes(`/${asset} ${width}w`)) {
-      fail('index.html', `Responsive homepage hero srcset is missing ${asset}.`, 0, homepageHtml);
+    if (!houstonHtml.includes(`/${asset} ${width}w`)) {
+      fail('houston.html', `Responsive Houston hero srcset is missing ${asset}.`, 0, houstonHtml);
     }
   }
 }
-if (!/<link\b(?=[^>]*\brel\s*=\s*["']preload["'])(?=[^>]*\bimagesrcset\s*=)(?=[^>]*\bimagesizes\s*=)[^>]*>/i.test(homepageHtml)) {
-  fail('index.html', 'Homepage hero preload is not responsive.', 0, homepageHtml, 'Keep imagesrcset and imagesizes aligned with the hero picture sources.');
+if (!/<link\b(?=[^>]*\brel\s*=\s*["']preload["'])(?=[^>]*\bimagesrcset\s*=)(?=[^>]*\bimagesizes\s*=)[^>]*>/i.test(houstonHtml)) {
+  fail('houston.html', 'Houston hero preload is not responsive.', 0, houstonHtml, 'Keep imagesrcset and imagesizes aligned with the hero picture sources.');
 }
-if (!/<source\b(?=[^>]*\btype\s*=\s*["']image\/avif["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(homepageHtml)
-    || !/<source\b(?=[^>]*\btype\s*=\s*["']image\/webp["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(homepageHtml)) {
-  fail('index.html', 'Homepage hero picture is missing responsive AVIF/WebP sources.', 0, homepageHtml);
+if (!/<source\b(?=[^>]*\btype\s*=\s*["']image\/avif["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(houstonHtml)
+    || !/<source\b(?=[^>]*\btype\s*=\s*["']image\/webp["'])(?=[^>]*\bsrcset\s*=)(?=[^>]*\bsizes\s*=)[^>]*>/i.test(houstonHtml)) {
+  fail('houston.html', 'Houston hero picture is missing responsive AVIF/WebP sources.', 0, houstonHtml);
 }
 
+const homepageHtml = sources.get('index.html') ?? '';
 for (const { 0: control, index } of homepageHtml.matchAll(/<(?:input|select|textarea)\b[^>]*>/gi)) {
   if (/\btype\s*=\s*["']hidden["']/i.test(control)) continue;
   const controlId = control.match(/\bid\s*=\s*["']([^"']+)["']/i)?.[1];

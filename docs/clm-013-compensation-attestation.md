@@ -1,6 +1,6 @@
 # CLM-013 compensation attestation packet (draft)
 
-**Status:** `pending_evidence` (`data/claims.csv`, CLM-013 "Zero kickbacks and no dealer commissions"). Nothing here is approved. The claim stays off the site and out of ads until the approval fields on the CLM-013 row are complete.
+**Status:** `approved` since 2026-09-30 (`data/claims.csv`, CLM-013 "Zero kickbacks and no dealer commissions", reviewer "Business owner via direct owner instruction", revalidation checkpoint 2026-12-29). On 2026-10-05 the owner extended it to lenders and approved the plain-language version published in the homepage hero and FAQs (COMPENSATION-COPY-2026-10-05). The packet below is the historical draft from when the row was still `pending_evidence`.
 
 **What the owner said:** on 2026-09-27, in the Google Ads planning session, the owner said customers are Drive Right's only payer. That statement is the reason for this packet. It is **not** an attestation: the claim-review workflow needs a signed statement, evidence and a named reviewer.
 

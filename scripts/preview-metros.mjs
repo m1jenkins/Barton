@@ -15,10 +15,10 @@ export function createDraftServer() {
         res.writeHead(200,{...headers,'Content-Type':'text/html; charset=utf-8'}).end(`<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local reference boundary</title><h1>Central page reference</h1><p>The draft links to ${route}. Inspect the existing repository page for its current wording. This isolated preview does not load forms, payment links or tracking.</p><a href="/service-areas.html">Return to local drafts</a></html>`);return;
       }
       const drafts = new Set(['/service-areas.html','/dallas-fort-worth.html','/houston.html','/austin.html','/metro-draft.css']);
-      const assets = new Set(['/buying/daisy.css','/assets/buying/fonts/instrument-serif.ttf','/assets/buying/fonts/inter.ttf','/favicon.png']);
+      const assets = new Set(['/buying/daisy.css','/assets/buying/fonts/inter-latin.woff2','/assets/buying/fonts/inter-semibold-latin.woff2','/favicon.png']);
       const file = drafts.has(route) ? path.join(draftRoot,route.slice(1)) : assets.has(route) ? path.join(root,route.slice(1)) : null;
       if (!file) { res.writeHead(404,headers).end('Not found');return; }
-      const mime = {'.html':'text/html; charset=utf-8','.css':'text/css','.ttf':'font/ttf','.png':'image/png'};
+      const mime = {'.html':'text/html; charset=utf-8','.css':'text/css','.woff2':'font/woff2','.png':'image/png'};
       const bytes = await readFile(file);res.writeHead(200,{...headers,'Content-Type':mime[path.extname(file)]}).end(req.method === 'HEAD' ? undefined : bytes);
     } catch { res.writeHead(404,headers).end('Not found'); }
   });

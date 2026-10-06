@@ -48,6 +48,7 @@ if (dialog && form) {
     const payload = JSON.stringify({
       name: String(fields.get('name') || '').trim(),
       email: String(fields.get('email') || '').trim(),
+      phone: String(fields.get('phone') || '').trim(),
       vehicle,
       message: [
         `Service interest: ${interest.value}`,
@@ -80,7 +81,7 @@ if (dialog && form) {
       try { client.track('generate_lead', { form_name: 'pricing_inquiry', lead_id: result.lead_id }); } catch { /* Measurement cannot undo a saved inquiry. */ }
       if (result.forwarding_configured !== true) {
         const saved = JSON.parse(pendingPayload);
-        const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
+        const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n${saved.phone ? `Phone: ${saved.phone}\n` : ''}\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
         emailDraft = `mailto:hello@driverightcarbuying.com?subject=${encodeURIComponent('My car search inquiry')}&body=${encodeURIComponent(body)}`;
         emailHandoff.hidden = false;
       }
@@ -89,7 +90,7 @@ if (dialog && form) {
       form.reset();
       status.className = 'form-status form-status--success';
       status.textContent = result.forwarding_configured === true
-        ? 'Thanks—your car search inquiry is saved. You can also reach Mason at (512) 910-4938.'
+        ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or call (512) 910-4938.'
         : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or call (512) 910-4938.';
       status.focus();
     } catch {
