@@ -29,7 +29,7 @@ function initLegworkMotion() {
     if (!card) return;
     played.add(card);
     card.classList.add('is-playing');
-    // Follow the actual CSS sequence, handing over during its last second.
+    // Follow the actual CSS sequence. The next card starts about a second in, so a row plays as one left-to-right wave.
     const duration = Math.max(0, ...card.getAnimations({ subtree:true }).map(animation => animation.effect.getComputedTiming().endTime));
     active.set(card, setTimeout(() => {
       finish(card);
@@ -38,7 +38,7 @@ function initLegworkMotion() {
     nextTimer = setTimeout(() => {
       nextTimer = null;
       playNext();
-    }, Math.max(0, duration - 1000));
+    }, Math.min(duration, 900));
   };
   const finish = card => {
     if (!active.has(card)) return;

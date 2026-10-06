@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review).",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion).",
       "indexablePublication": true,
-      "sha256": "064ff8ad46c0f950ca95cfc946489a7ff23164b836f875684d5291ff3d5bc206",
+      "sha256": "81bd9e746d67bdb2842a703795412cbc166f09f1041a76161813d715b3a7ae10",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
