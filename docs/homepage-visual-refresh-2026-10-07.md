@@ -1,6 +1,6 @@
 # Homepage visual refresh — October 7, 2026
 
-Status: **built on branch `homepage-visual-refresh`, pending owner approval of the copy below.** Claim row: `HOMEPAGE-VISUAL-2026-10-07` in `data/claims.csv` (`pending_owner_approval`). Do not merge to `main` until the owner approves; a push to `main` deploys to production.
+Status: **published 2026-10-07** (PR #99). The user of the planning session reviewed the plan and mockups and directed publication of the copy below (“Push to main / commit”). Owner (Mason) sign-off on these strings is not separately recorded. Claim row: `HOMEPAGE-VISUAL-2026-10-07` in `data/claims.csv` (`user_directed_publication`).
 
 ## Why
 
@@ -16,7 +16,7 @@ The Oct 5 decision to take the Mazda press photo out of the hero (docs/sales-cop
 | Savings | The three text cards become a checklist of their approved headings, beside a static drawing of a dealer quote with the add-ons crossed out |
 | Closing | New band after the FAQ with both buttons and the two-Miatas photo. The red F-Type was rejected for this spot |
 | Mobile | Sticky bar with both buttons. It appears only once the hero buttons are off screen and hides over the plan cards, the closing band and the footer |
-| Copy | Trim, then the owner approves the exact strings below |
+| Copy | Trimmed to the exact strings below; publication directed by the session user |
 
 ## Photos
 
@@ -25,7 +25,7 @@ The Oct 5 decision to take the Mazda press photo out of the hero (docs/sales-cop
 - **Founder grid:** the Mustang and Supra moved to the hero, so the gray Cayman and the Ford Maverick (About page photos) take their tiles. No photo appears twice except Mason's headshot.
 - **Closing band:** `about-two-mazda-miatas`.
 
-## Exact strings for approval
+## Exact strings
 
 Unchanged: H1, hero subline, hero buttons and trust lines, savings H2 and lead, plan cards, proof, founder text, FAQ.
 
@@ -42,8 +42,8 @@ Unchanged: H1, hero subline, hero buttons and trust lines, savings H2 and lead, 
 | Closing band | — | Tell us the car. We’ll handle the dealer. / Full refund if you cancel before negotiations begin. / Get Full Service · $395 / Talk to Mason first |
 | Mobile sticky bar | — | Full Service · $395 / Talk to Mason |
 
-Notes for the owner:
-- “Salespeople negotiate every day. Now you have a negotiator too.” is also a Google Ads description (docs/google-ads-launch-plan-2026-09-27.md). Keeping it on the homepage would preserve message match; say so and it goes back in.
+Notes:
+- “Salespeople negotiate every day. Now you have a negotiator too.” is also a Google Ads description (docs/google-ads-launch-plan-2026-09-27.md). It shipped trimmed; restore it to legwork card 2 if message match with that ad matters more.
 - The Concierge shipping line stays on the Concierge plan card and in the legwork drawing’s screen-reader description.
 - Removed text: about 95 words of paragraph copy. Added text: about 25 words in the caption and closing band, plus the drawing’s labels.
 
