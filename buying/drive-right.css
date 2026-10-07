@@ -41,7 +41,7 @@
 .dr .hero-gallery picture { display:block; min-height:0; }
 .dr .hero-gallery picture:first-child { grid-column:span 2; }
 .dr .hero-gallery img { display:block; width:100%; height:100%; object-fit:cover; border-radius:14px; background:var(--sage); }
-.dr .hero-gallery picture:first-child img { object-position:50% 62%; }
+.dr .hero-gallery picture:first-child img { object-position:50% 70%; }
 .dr .hero-gallery picture:nth-child(2) img { object-position:60% 86%; }
 @media(max-width:1000px) { .dr[data-buying-page="home"] .home-hero .intake-shell { grid-template-columns:1fr; padding-bottom:40px; }.dr .hero-gallery { grid-column:1; grid-row:auto; aspect-ratio:4 / 3; margin-top:32px; } }
 @media(max-width:760px) { .dr .hero-gallery { gap:6px; margin-top:28px; }.dr .hero-gallery img { border-radius:10px; } }
