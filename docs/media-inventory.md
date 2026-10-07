@@ -62,11 +62,15 @@ All files in this table are under `assets/external/optimized/`.
 
 All files in this table are under `assets/external/optimized/`. WebP uses quality 80; AVIF uses format option 70.
 
-Since 2026-10-06 the Cayman and Maverick photos also fill the homepage hero collage, which replaced the Mazda MX-5 press photo. They are Mason's own cars and photos.
+Since 2026-10-06 the Maverick photo also fills the homepage hero collage, which replaced the Mazda MX-5 press photo. It is Mason's own car and photo.
 
 ### Homepage hero: gray Mazda MX-5
 
 Supplied by the owner on 2026-10-07 for the top tile of the homepage hero collage (replacing the two-Miatas photo there). Source: `assets/external/source/hero-gray-mazda-mx5-original.png`, 2048×1152 PNG, 3,731,632 bytes. The image shows an Ontario plate; its photographer and license are not recorded here. Resized only with `sharp` (AVIF quality 58, WebP quality 80); the tile crop is CSS `object-fit`. Files: `assets/external/optimized/hero-gray-mazda-mx5-{640,960,1440}.{avif,webp}`.
+
+### Homepage hero: red Toyota RAV4
+
+Supplied by the owner on 2026-10-07 for the bottom-right tile of the homepage hero collage (replacing the Cayman photo there). Source: `assets/external/source/hero-red-toyota-rav4-original.png`, 1200×900 PNG, 1,368,771 bytes; its photographer and license are not recorded here. Resized only with `sharp` (AVIF quality 58, WebP quality 80). Files: `assets/external/optimized/hero-red-toyota-rav4-{640,960}.{avif,webp}`.
 
 The original `sips` encode of `about-ford-maverick-petrified-forest-960.avif` could not be decoded by Chromium, so the gallery showed a blank tile. It was re-encoded on 2026-09-22 from the same source JPEG with `sharp` (resize to 960 wide, AVIF quality 60); no crop or pixel edits.
 
