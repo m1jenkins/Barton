@@ -249,6 +249,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=f380bff2d465">
     <link rel="stylesheet" href="/buying/inquiry.css?v=731b19247ff6">
+    <link rel="stylesheet" href="/buying/home.css?v=75860eb5258c">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -268,10 +269,11 @@
   <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
 </header><main id="main-content" tabindex="-1">
   <section id="get-started" class="home-hero" aria-labelledby="hero-title">
-    <div class="intake-shell">
+    <div class="intake-shell hero-layout">
+      <div class="hero-main">
       <div class="hero-intro" id="hero"><h1 id="hero-title">Let us deal with the dealer.</h1><p>We find the car, work the dealers by phone and email, negotiate for a price below MSRP and strip the add-ons and junk fees. You keep your evenings and sign only when you’re happy.</p></div>
       <div class="hero-checkout">
-        <div class="hero-plans"><a href="/schedule.html" data-plan="full_service" data-cta-location="hero" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><button type="button" class="outline-button" data-open-inquiry data-cta-location="hero">Talk to Mason first <span data-icon="arrow"></span></button></div>
+        <div class="hero-plans"><a href="/schedule.html" data-plan="full_service" data-cta-location="hero" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><button type="button" class="outline-button" data-open-inquiry data-cta-location="hero"><picture class="mason-avatar"><source type="image/avif" srcset="/assets/buying/mason-avatar-96.avif"><img src="/assets/buying/mason-avatar-96.webp" alt="" width="96" height="96" decoding="async"></picture>Talk to Mason first <span data-icon="arrow"></span></button></div>
         <ul class="hero-trust" role="list">
           <li>One flat fee, paid once through Stripe.</li>
           <li>Full refund if you cancel before negotiations begin.</li>
@@ -279,17 +281,45 @@
           <li>Mason replies within one business day.</li>
         </ul>
       </div>
+      </div>
+      <figure class="hero-mosaic">
+        <picture><source type="image/avif" srcset="/assets/buying/mason-headshot-480.avif 480w, /assets/buying/mason-headshot-800.avif 800w, /assets/buying/mason-headshot-1200.avif 1200w" sizes="(max-width: 760px) 55vw, (max-width: 1440px) 22vw, 320px"><source type="image/webp" srcset="/assets/buying/mason-headshot-480.webp 480w, /assets/buying/mason-headshot-800.webp 800w, /assets/buying/mason-headshot-1200.webp 1200w" sizes="(max-width: 760px) 55vw, (max-width: 1440px) 22vw, 320px"><img src="/assets/buying/mason-headshot-1200.jpg" alt="Mason, founder of Drive Right" width="1200" height="1600" fetchpriority="high" decoding="async"></picture>
+        <img src="/assets/external/optimized/founder-black-mustang-gt-desert-960.webp" srcset="/assets/external/optimized/founder-black-mustang-gt-desert-640.webp 640w, /assets/external/optimized/founder-black-mustang-gt-desert-960.webp 960w" sizes="(max-width: 760px) 40vw, 17vw" alt="Black Ford Mustang GT on a desert mountain road" width="960" height="720" decoding="async">
+        <img src="/assets/external/optimized/founder-black-supra-fall-road-960.webp" srcset="/assets/external/optimized/founder-black-supra-fall-road-640.webp 640w, /assets/external/optimized/founder-black-supra-fall-road-960.webp 960w" sizes="(max-width: 760px) 40vw, 17vw" alt="Black Toyota GR Supra on a winding road in fall colors" width="960" height="1219" decoding="async">
+        <figcaption>Mason, your advisor, with a few of his own cars.</figcaption>
+      </figure>
     </div>
   </section>
   <div id="home-content">
     <section class="savings-section page-width" aria-labelledby="savings-title">
-      <h2 id="savings-title">Dealers make thousands on add-ons and fees. We make sure you don’t pay them.</h2>
-      <p class="savings-lead">The average car buyer saves thousands when the worthless add-ons and misc fees come off the deal. That’s our job on every purchase.</p>
-      <ul class="card-grid card-grid--three" role="list">
-        <li class="info-card"><h3>Thousands of cars searched.</h3><p>We search thousands of listings across new, used and CPO inventory to find the exact spec you want, not the one sitting on the nearest lot.</p></li>
-        <li class="info-card"><h3>Hundreds of emails sent.</h3><p>We email and call the dealers for you so they compete for your business. You never sit in the finance office.</p></li>
-        <li class="info-card"><h3>The best spec at the best deal.</h3><p>You get the car you actually want, negotiated hard on price and stripped of the junk fees.</p></li>
-      </ul>
+      <div class="savings-layout">
+        <div class="savings-copy">
+          <h2 id="savings-title">Dealers make thousands on add-ons and fees. We make sure you don’t pay them.</h2>
+          <p class="savings-lead">The average car buyer saves thousands when the worthless add-ons and misc fees come off the deal. That’s our job on every purchase.</p>
+          <ul class="savings-points" role="list">
+            <li>Thousands of cars searched.</li>
+            <li>Hundreds of emails sent.</li>
+            <li>The best spec at the best deal.</li>
+          </ul>
+        </div>
+        <div class="savings-art">
+          <svg class="savings-quote" viewBox="0 0 360 320" role="img" aria-labelledby="savings-quote-title" aria-describedby="savings-quote-desc">
+            <title id="savings-quote-title">A dealer quote with the add-ons crossed out</title>
+            <desc id="savings-quote-desc">An illustration, not a real quote. Paint protection, nitrogen tires, a market adjustment and a dealer prep fee are crossed out. The vehicle price and tax, title and license stay.</desc>
+            <g aria-hidden="true">
+              <path class="quote-paper" d="M40 16h256l24 24v264H40Z"/><path class="quote-line" d="M296 16v24h24"/>
+              <text x="62" y="52" class="quote-title">Dealer quote</text><path class="quote-rule" d="M62 66h236"/>
+              <text x="62" y="98" class="quote-item">Vehicle price</text><text x="298" y="98" class="quote-value" text-anchor="end">$ —</text>
+              <g class="quote-removed"><text x="62" y="130" class="quote-item">Paint protection</text><text x="298" y="130" class="quote-value" text-anchor="end">$ —</text><path class="quote-strike" d="M56 125h248"/></g>
+              <g class="quote-removed"><text x="62" y="162" class="quote-item">Nitrogen tires</text><text x="298" y="162" class="quote-value" text-anchor="end">$ —</text><path class="quote-strike" d="M56 157h248"/></g>
+              <g class="quote-removed"><text x="62" y="194" class="quote-item">Market adjustment</text><text x="298" y="194" class="quote-value" text-anchor="end">$ —</text><path class="quote-strike" d="M56 189h248"/></g>
+              <g class="quote-removed"><text x="62" y="226" class="quote-item">Dealer prep fee</text><text x="298" y="226" class="quote-value" text-anchor="end">$ —</text><path class="quote-strike" d="M56 221h248"/></g>
+              <text x="62" y="258" class="quote-item">Tax, title &amp; license</text><text x="298" y="258" class="quote-value" text-anchor="end">$ —</text>
+              <path class="quote-rule" d="M62 274h236"/><text x="62" y="294" class="quote-note">Add-ons and junk fees: removed.</text>
+            </g>
+          </svg>
+        </div>
+      </div>
     </section>
     <section class="legwork-section page-width section-space" id="how-it-works" aria-labelledby="process-title">
       <div class="section-intro">
@@ -325,7 +355,7 @@
               </g>
             </svg>
           </div>
-          <div class="legwork-copy"><h3>Search &amp; outreach.</h3><p>Tell us once, and skip the late nights on listing sites. We research the cars and contact the dealers for you. Their replies shape the options you review.</p></div>
+          <div class="legwork-copy"><h3>Search &amp; outreach.</h3><p>We research the cars and contact the dealers for you. Their replies shape the options you review.</p></div>
         </li>
         <li class="legwork-card" data-legwork-card>
           <div class="legwork-art">
@@ -348,7 +378,7 @@
               </g>
             </svg>
           </div>
-          <div class="legwork-copy"><h3>Compare &amp; negotiate.</h3><p>Salespeople negotiate every day. Now you have a negotiator too. We compare the offers, negotiate for a price below MSRP and push back on the fees, by phone and email.</p></div>
+          <div class="legwork-copy"><h3>Compare &amp; negotiate.</h3><p>We compare the offers, negotiate for a price below MSRP and push back on the fees, by phone and email.</p></div>
         </li>
         <li class="legwork-card" id="legwork-coordinate" data-legwork-card>
           <div class="legwork-art">
@@ -372,7 +402,7 @@
               </g>
             </svg>
           </div>
-          <div class="legwork-copy"><h3>Pick up the keys.</h3><p>You approve the deal and sign, and the car is yours. Concierge clients get help arranging shipping for out-of-state deals.</p></div>
+          <div class="legwork-copy"><h3>Pick up the keys.</h3><p>You approve the deal and sign, and the car is yours.</p></div>
         </li>
       </ol>
       <a href="/how-it-works.html#scope" class="text-link legwork-details">Explore the process and service scope <span data-icon="arrow"></span></a>
@@ -393,10 +423,10 @@
           <picture><source type="image/avif" srcset="/assets/buying/mason-headshot-480.avif 480w, /assets/buying/mason-headshot-800.avif 800w, /assets/buying/mason-headshot-1200.avif 1200w" sizes="(max-width: 1000px) 55vw, 28vw"><source type="image/webp" srcset="/assets/buying/mason-headshot-480.webp 480w, /assets/buying/mason-headshot-800.webp 800w, /assets/buying/mason-headshot-1200.webp 1200w" sizes="(max-width: 1000px) 55vw, 28vw"><img src="/assets/buying/mason-headshot-1200.jpg" alt="Mason, founder of Drive Right" width="1200" height="1600" loading="lazy" decoding="async"></picture>
           <picture><source type="image/avif" srcset="/assets/external/optimized/about-blue-ford-bronco-640.avif 640w, /assets/external/optimized/about-blue-ford-bronco-960.avif 960w" sizes="(max-width: 1000px) 25vw, 13vw"><source type="image/webp" srcset="/assets/external/optimized/about-blue-ford-bronco-640.webp 640w, /assets/external/optimized/about-blue-ford-bronco-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw"><img src="/assets/external/source/about-blue-ford-bronco-original.jpg" alt="Blue Ford Bronco parked outdoors" width="1440" height="1322" loading="lazy" decoding="async"></picture>
           <img src="/assets/external/optimized/founder-blue-bmw-m2-datsuns-960.webp" srcset="/assets/external/optimized/founder-blue-bmw-m2-datsuns-640.webp 640w, /assets/external/optimized/founder-blue-bmw-m2-datsuns-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Blue BMW M2 parked beside two classic Datsun Z cars" width="960" height="720" loading="lazy" decoding="async">
-          <img src="/assets/external/optimized/founder-black-mustang-gt-desert-960.webp" srcset="/assets/external/optimized/founder-black-mustang-gt-desert-640.webp 640w, /assets/external/optimized/founder-black-mustang-gt-desert-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Black Ford Mustang GT on a desert mountain road" width="960" height="720" loading="lazy" decoding="async">
+          <picture><source type="image/avif" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.avif 640w, /assets/external/optimized/about-gray-porsche-cayman-960.avif 960w" sizes="(max-width: 1000px) 25vw, 13vw"><source type="image/webp" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.webp 640w, /assets/external/optimized/about-gray-porsche-cayman-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw"><img src="/assets/external/optimized/about-gray-porsche-cayman-960.webp" alt="Gray Porsche Cayman parked outdoors" width="960" height="720" loading="lazy" decoding="async"></picture>
           <img src="/assets/external/optimized/founder-white-panamera-fiesta-st-960.webp" srcset="/assets/external/optimized/founder-white-panamera-fiesta-st-640.webp 640w, /assets/external/optimized/founder-white-panamera-fiesta-st-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="White Porsche Panamera and silver Ford Fiesta ST in a driveway" width="960" height="720" loading="lazy" decoding="async">
           <img src="/assets/external/optimized/founder-blue-bmw-m5-touring-960.webp" srcset="/assets/external/optimized/founder-blue-bmw-m5-touring-640.webp 640w, /assets/external/optimized/founder-blue-bmw-m5-touring-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Blue BMW M5 Touring in a parking lot" width="960" height="720" loading="lazy" decoding="async">
-          <img src="/assets/external/optimized/founder-black-supra-fall-road-960.webp" srcset="/assets/external/optimized/founder-black-supra-fall-road-640.webp 640w, /assets/external/optimized/founder-black-supra-fall-road-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Black Toyota GR Supra on a winding road in fall colors" width="960" height="1219" loading="lazy" decoding="async">
+          <picture><source type="image/avif" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.avif 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.avif 960w" sizes="(max-width: 1000px) 25vw, 13vw"><source type="image/webp" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.webp 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw"><img src="/assets/external/optimized/about-ford-maverick-petrified-forest-960.webp" alt="Ford Maverick at Petrified Forest National Park" width="960" height="1279" loading="lazy" decoding="async"></picture>
           <img src="/assets/external/optimized/founder-red-jaguar-f-type-river-960.webp" srcset="/assets/external/optimized/founder-red-jaguar-f-type-river-640.webp 640w, /assets/external/optimized/founder-red-jaguar-f-type-river-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Red Jaguar F-Type coupe parked by a river at dusk" width="960" height="1280" loading="lazy" decoding="async">
           <img src="/assets/external/optimized/founder-black-gr-corolla-dirt-960.webp" srcset="/assets/external/optimized/founder-black-gr-corolla-dirt-640.webp 640w, /assets/external/optimized/founder-black-gr-corolla-dirt-960.webp 960w" sizes="(max-width: 1000px) 25vw, 13vw" alt="Black Toyota GR Corolla kicking up dust on a dirt road" width="960" height="639" loading="lazy" decoding="async">
         </div>
@@ -412,6 +442,14 @@
       <details><summary>Am I in control of the final decision?</summary><p>Always. We negotiate; you decide. Starting a car search doesn’t commit you to a vehicle. You choose your plan and decide whether to buy, after reviewing the vehicle, financing, insurance, and final paperwork. A specific discount or vehicle outcome isn’t guaranteed.</p></details>
       <details><summary>What does Drive Right do?</summary><p>We help car buyers nationwide get the car they want without the hours of searching, dealer calls and haggling. We research the cars, compare offers, work the dealers and negotiate the price and fees. You make the final call. <a href="/car-buying-service.html">Read what the car buying service covers</a>.</p></details>
     </div></section>
+    <section class="home-closing page-width" aria-labelledby="closing-title">
+      <div class="home-closing-copy">
+        <h2 id="closing-title">Tell us the car.<br>We’ll handle the dealer.</h2>
+        <p>Full refund if you cancel before negotiations begin.</p>
+        <div class="home-closing-actions"><a href="/schedule.html" data-plan="full_service" data-cta-location="closing" class="primary-button">Get Full Service · $395 <span data-icon="arrow"></span></a><button type="button" class="outline-button" data-open-inquiry data-cta-location="closing">Talk to Mason first <span data-icon="arrow"></span></button></div>
+      </div>
+      <picture class="home-closing-photo"><source type="image/avif" srcset="/assets/external/optimized/about-two-mazda-miatas-640.avif 640w, /assets/external/optimized/about-two-mazda-miatas-960.avif 960w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw"><source type="image/webp" srcset="/assets/external/optimized/about-two-mazda-miatas-640.webp 640w, /assets/external/optimized/about-two-mazda-miatas-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw"><img src="/assets/external/optimized/about-two-mazda-miatas-960.webp" alt="Two Mazda MX-5 Miatas parked at a scenic overlook" width="960" height="720" loading="lazy" decoding="async"></picture>
+    </section>
   </div>
 </main><footer class="site-footer page-width" id="footer">
   <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
@@ -419,7 +457,7 @@
     <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><a href="tel:+15129104938">(512) 910-4938</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
-</footer><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+</footer><div class="home-sticky-cta" data-sticky-cta inert><a href="/schedule.html" data-plan="full_service" data-cta-location="sticky" class="primary-button">Full Service · $395</a><button type="button" class="outline-button" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
   <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
   <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
   <form id="car-search-inquiry-form">
@@ -441,5 +479,6 @@
 </dialog><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a> and call (512) 910-4938.</p></noscript><script src="/script.js?v=f1ed99970ad8"></script>
 <script type="module" src="/buying/app.js?v=5b4bfab04018"></script>
 <script type="module" src="/buying/inquiry.js?v=47f8769cfa07"></script>
+<script type="module" src="/buying/home.js?v=be1ebac89c61"></script>
 </body>
 </html>

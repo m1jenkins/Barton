@@ -31,6 +31,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 ## Homepage and media
 
 - [homepage-legwork-review-2026-09-17.md](homepage-legwork-review-2026-09-17.md): homepage copy review.
+- [homepage-visual-refresh-2026-10-07.md](homepage-visual-refresh-2026-10-07.md): photo hero, savings drawing, closing band and mobile sticky buttons; exact copy changes pending owner approval.
 - [media-inventory.md](media-inventory.md): where the external photos came from.
 
 ## Advertising

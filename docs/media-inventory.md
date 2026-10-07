@@ -76,6 +76,8 @@ Owner-supplied selfie of Mason, provided in the 2026-09-22 design session for th
 
 JPEG fallback: `mason-headshot-1200.jpg` — 1200×1600, 222,580 bytes (mozjpeg quality 82). All files are under `assets/buying/`; AVIF quality 58, WebP quality 80.
 
+Avatar, added 2026-10-07 for the homepage “Talk to Mason first” button: a square face crop of `mason-headshot-1200.jpg` (left 90, top 390, 740×740), resized to 96×96 with `sharp`. No retouching; metadata is not written. `assets/buying/mason-avatar-96.avif` (AVIF quality 58, 1,770 bytes) and `assets/buying/mason-avatar-96.webp` (WebP quality 80, 2,270 bytes).
+
 ### Search review panel
 
 Selected by the owner in the 2026-10-01 photo review: a white Mercedes-Benz E-Class outdoors, photographed by Muhammet Raşit Kaplan. Source: [Pexels photo 17233277](https://www.pexels.com/photo/white-mercedes-e-class-17233277/), downloaded from Pexels at 5086×3391 (1,751,019 bytes). The [Pexels license](https://www.pexels.com/license/) permits free website use and modifications; attribution is optional. This is decorative stock imagery, with no statement of brand endorsement.
