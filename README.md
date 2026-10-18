@@ -29,13 +29,13 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 
 `.vercelignore` lists everything that stays out of the deployment.
 
-The three released guides use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
+The three released guides and the three service comparison pages (`compare-car-buying-services.html`, `caredge-alternatives.html`, `delivrd-alternatives.html`) use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
 
 ## Two page styles
 
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
 
-- **Current design**: `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `ai-car-buying-agent.html`, `houston.html`, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
+- **Current design**: `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `ai-car-buying-agent.html`, `houston.html`, the three service comparison pages, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
 - **Legacy components**: the `blog-*.html` posts, the other Texas city pages (`austin.html`, `dallas.html`, and so on), `inquiry.html`, `success.html`, `tesla-fsd-for-sale.html` and the topic pages. They load `styles.css` and `legacy-refresh.css`. Their indexability is governed per page, independent of styling.
 
 Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same file).

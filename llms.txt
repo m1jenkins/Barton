@@ -2,7 +2,7 @@
 
 > Austin-based car buying and negotiation service supporting buyers nationwide. Full Service is $395 USD one time; Ultimate Concierge is $695 USD one time. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-09-25
+Updated: 2026-10-18
 
 Drive Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com · (512) 910-4938.
 
@@ -33,3 +33,8 @@ Sitemap: https://www.driverightcarbuying.com/sitemap.xml
 - [Compare complete new-car quotes](https://www.driverightcarbuying.com/blog-buy-new-car-below-msrp.html): Written offers, rebate eligibility and whole-quote comparison.
 - [Dealership add-ons](https://www.driverightcarbuying.com/blog-dealership-addons-complete-guide.html): Questions about product cost, coverage and contract terms.
 - [Used-car inspection checklist](https://www.driverightcarbuying.com/blog-used-car-inspection-checklist.html): Buyer observations, title/history/recall sources and questions for an independent mechanic.
+
+## Comparisons
+- [Car buying services compared](https://www.driverightcarbuying.com/compare-car-buying-services.html): Published fees, who negotiates, new or used coverage, refund terms and who pays each service for Drive Right, CarEdge, Delivrd, Car Pal, Automatch Consulting, Authority Auto, Costco Auto Program and Consumer Reports Build & Buy. Competitor facts checked 2026-10-18 on each company's own pages.
+- [CarEdge alternatives](https://www.driverightcarbuying.com/caredge-alternatives.html): CarEdge's Concierge ($999 per car search) and AI Buying Agent compared with Drive Right and other services, including how CarEdge says it makes money.
+- [Delivrd alternatives](https://www.driverightcarbuying.com/delivrd-alternatives.html): Delivrd's $1,000 Insta-Pay Deal Negotiation, its refund and change rules and its used-car pause, compared with Drive Right and other services.
