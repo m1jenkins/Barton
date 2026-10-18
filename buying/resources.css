@@ -19,4 +19,17 @@
 .dr .guide-body :is(th,td) { text-align:left; padding:12px 16px; border:1px solid var(--line); min-width:110px; }
 .dr .guide-body th { background:var(--sage); font-weight:600; }
 .dr .guide-body .guide-notes { margin-top:48px; padding-top:8px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
-@media(max-width:760px) { .dr .guide-page { padding-block:24px 40px; } .dr .guide-body { font-size:16px; } .dr .guide-body .highlight-box { padding:16px 18px; } }
+/* Service comparison pages: a scrollable table region with the service name pinned on narrow screens. */
+.dr .guide-body .compare-scroll { margin:28px 0 12px; overflow-x:auto; border:1px solid var(--line); border-radius:12px; }
+.dr .guide-body .compare-scroll:focus-visible { outline:2px solid var(--green); outline-offset:3px; }
+.dr .guide-body .compare-table { display:table; min-width:760px; margin:0; border-collapse:separate; border-spacing:0; font-size:14px; line-height:1.55; }
+.dr .guide-body .compare-table :is(th,td) { min-width:0; padding:14px 16px; border:0; border-bottom:1px solid var(--line); vertical-align:top; }
+.dr .guide-body .compare-table tbody tr:last-child :is(th,td) { border-bottom:0; }
+.dr .guide-body .compare-table thead th { font-size:13px; white-space:nowrap; }
+.dr .guide-body .compare-table :is(thead th:first-child,tbody th) { position:sticky; left:0; z-index:1; width:170px; box-shadow:inset -1px 0 0 var(--line); }
+.dr .guide-body .compare-table tbody th { background:var(--paper); }
+.dr .guide-body .compare-table tbody th span { display:block; margin-top:4px; font-weight:400; font-size:13px; color:var(--muted); }
+.dr .guide-body .compare-note { margin:0 0 28px; font-size:13px; color:var(--muted); }
+.dr .guide-body .faq-list summary { font-weight:600; }
+.dr .guide-body .faq-list p { margin:0; }
+@media(max-width:760px) { .dr .guide-page { padding-block:24px 40px; } .dr .guide-body { font-size:16px; } .dr .guide-body .highlight-box { padding:16px 18px; } .dr .guide-body .compare-table :is(thead th:first-child,tbody th) { width:132px; } }
