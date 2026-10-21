@@ -21,6 +21,19 @@
       ]
     },
     {
+      "source": "/.well-known/mta-sts.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
@@ -107,6 +120,17 @@
         }
       ],
       "destination": "https://www.driverightcarbuying.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/((?!\\.well-known/mta-sts\\.txt$).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mta-sts.driverightcarbuying.com"
+        }
+      ],
+      "destination": "https://www.driverightcarbuying.com/$1",
       "permanent": true
     },
     {

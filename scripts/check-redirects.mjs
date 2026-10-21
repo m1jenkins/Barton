@@ -44,6 +44,13 @@ const requiredRedirects = [
     host: 'driverightcarbuying.com',
     destination: 'https://www.driverightcarbuying.com/:path*',
   },
+  {
+    // Everything on the MTA-STS host except the mail policy goes to the site.
+    name: 'MTA-STS host',
+    source: '/((?!\\.well-known/mta-sts\\.txt$).*)',
+    host: 'mta-sts.driverightcarbuying.com',
+    destination: 'https://www.driverightcarbuying.com/$1',
+  },
   { name: 'index.html', source: '/index.html', destination: '/' },
   { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html', status: 301 },
   { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
