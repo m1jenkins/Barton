@@ -108,6 +108,30 @@ test('tax, discount, currency, wrong reference and unpaid mismatch do not produc
   const db=ledger(attempt());assert.equal((await recordEvent(event('full_service',39500,overrides),db.sql)).recorded,false);assert.equal(db.purchases.size,0);assert.equal(db.outbox.size,0);
  }
 });
+function discounted(tier,full,discount,overrides={}) {return event(tier,full-discount,{amount_subtotal:full,total_details:{amount_discount:discount,amount_shipping:0,amount_tax:0},discounts:[{coupon:'1GEB7DeZ',promotion_code:'promo_1UTqrW2RwNuweXRLRq1pDJgE'}],...overrides});}
+test('50OFF purchases record the discounted amount when the pre-discount subtotal is the plan price',async()=>{
+ for(const [tier,full,paid] of [['full_service',39500,19750],['concierge',69500,34750]]){
+  for(const discounts of [[{coupon:'1GEB7DeZ',promotion_code:'promo_1UTqrW2RwNuweXRLRq1pDJgE'}],[{coupon:{id:'1GEB7DeZ'},promotion_code:null}],[{coupon:null,promotion_code:'promo_1UTqrW2RwNuweXRLRq1pDJgE'}]]){
+   const db=ledger(attempt({tier_id:tier,expected_amount:full}));
+   const e=discounted(tier,full,full-paid,{discounts});
+   assert.equal((await recordEvent(e,db.sql)).recorded,true,`${tier} ${JSON.stringify(discounts)}`);
+   assert.equal([...db.purchases.values()][0].amount_total,paid);
+   assert.equal(verifiedPurchase(e.data.object,[...db.purchases.values()][0],tier),true);
+  }
+ }
+});
+test('unapproved, stacked, oversized or mismatched discounts go to review',async()=>{
+ for(const e of [
+  discounted('full_service',39500,19750,{discounts:[{coupon:'SOMEOTHER',promotion_code:'promo_other'}]}),
+  discounted('full_service',49500,24750),
+  discounted('full_service',39500,29625),
+  discounted('full_service',39500,19750,{total_details:{amount_discount:10000,amount_shipping:0,amount_tax:0}}),
+  discounted('full_service',39500,19750,{discounts:[{coupon:'1GEB7DeZ'},{coupon:'1GEB7DeZ'}]}),
+  event('full_service',19750)
+ ]){
+  const db=ledger(attempt());assert.equal((await recordEvent(e,db.sql)).recorded,false,JSON.stringify(e.data.object));assert.equal(db.purchases.size,0);assert.equal(db.outbox.size,0);
+ }
+});
 test('unsigned webhook rejected before database use',async()=>{
  const res={setHeader(){},end(v){this.body=JSON.parse(v);}};await webhook({method:'POST',headers:{}},res);assert.equal(res.statusCode,400);assert.equal(res.body.error,'invalid_signature');
 });

@@ -60,3 +60,15 @@ Owner decision (Mason): go back to $395 Full Service and $695 Ultimate Concierge
 | Ultimate Concierge | `price_1UKRaB2RwNuweXRL8LLSGR4C` ($695.00) | `plink_1UKRaL2RwNuweXRLyyHblHey` `https://buy.stripe.com/bJe00ccZ14fN4MA9BG04806` (reactivated original) |
 
 The code returned to 39500/69500 by restoring the files only the price commit (`037a96b`) touched and reversing the prices in pages that later commits also changed, so the later inquiry work stayed. The same pause, set, push, verify, unpause order was used. Afterwards the $195 (`plink_1UTppv…`) and $345 (`plink_1UTpId…`) links were deactivated, and the ChatGPT ad "Full Service $195" was paused.
+
+## Promotion code 50OFF
+
+Added on 2026-10-23 at the owner's request: 50% off one payment of Full Service ($395 → $197.50) or Ultimate Concierge ($695 → $347.50).
+
+- Coupon `1GEB7DeZ` ("50% off", `percent_off` 50, `duration` once), limited to `prod_UGAAjsCtQNRd28` and `prod_UHctPBgsLqlPea`.
+- Promotion code `50OFF` (`promo_1UTqrW2RwNuweXRLRq1pDJgE`): no expiry, no redemption limit.
+- Both live Payment Links (`plink_1UTqg7…` and `plink_1UKRaL…`) have promotion codes switched on.
+
+Before this, any discount made the paid total differ from the attempt's `expected_amount`, and the webhook sent the purchase to review. `expectedPaidAmount` in `api/_lib/checkout-offer.js` now accepts exactly one discount from `APPROVED_DISCOUNTS`, and only when the pre-discount subtotal equals the plan price and the discount is exactly that coupon's percentage. The purchase records the amount actually paid, which also feeds analytics. Any other coupon, stacked discounts, a wrong subtotal or a wrong discount size still go to review. Tests are in `api/_tests/offer-transition.test.mjs`.
+
+To retire 50OFF, deactivate the promotion code in Stripe. Removing its entry from `APPROVED_DISCOUNTS` also stops new discounted payments from recording, but buyers could still enter the code until it's deactivated in Stripe.

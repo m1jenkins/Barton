@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
 import { purchaseEventPayload } from './_lib/analytics.js';
+import { expectedPaidAmount } from './_lib/checkout-offer.js';
 import { requiredEnv } from './_lib/config.js';
 import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
@@ -59,7 +60,7 @@ export async function recordEvent(event, sql = database()) {
 
     const amountTotal = Number.isInteger(session.amount_total) ? session.amount_total : null;
     const currency = typeof session.currency === 'string' ? session.currency.toLowerCase() : '';
-    if (amountTotal !== attempt.expected_amount || currency !== attempt.currency) {
+    if (amountTotal !== expectedPaidAmount(session, attempt.expected_amount) || currency !== attempt.currency) {
       await tx`
         UPDATE checkout_attempts SET status = 'review_required', stripe_checkout_session_id = ${session.id}
         WHERE id = ${attempt.id}
