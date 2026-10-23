@@ -8,7 +8,7 @@ const leadId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 
 function inquiry(request, track, web3forms = async () => { throw new Error('Offline'); }) {
   const listeners = {}, requests = [], events = [], dialogListeners = {}, emails = [];
-  const fields = { vehicle: 'Used Mazda CX-5', budget: '$35,000', timeline: 'Within a month', email: 'buyer@example.com', name: '', website: '' };
+  const fields = { vehicle: 'Used Mazda CX-5', budget: '$35,000', timeline: 'Within a month', details: '', email: 'buyer@example.com', name: '', website: '' };
   const submit = { disabled: false, textContent: 'Send my car search inquiry', setAttribute() {}, removeAttribute() {} };
   const status = { textContent: '', focus() { this.focused = true; } };
   const interest = { value: 'Not sure yet' };
@@ -23,12 +23,12 @@ function inquiry(request, track, web3forms = async () => { throw new Error('Offl
   const client = {
     attribution: { first_touch: { utm_source: 'chatgpt' } }, createId: () => crypto.randomUUID(),
     track: track || ((event, data) => events.push({ event, data })),
-    requestJson: async (url, options) => { requests.push({ url, ...options }); return request(requests.length); }
+    requestJson: async (url, options) => { requests.push({ url, ...options }); return request(requests.length); },
+    emailMason: async (lead, id) => { emails.push({ lead, id }); try { return (await web3forms())?.success === true; } catch { return false; } }
   };
   vm.runInNewContext(source, {
     document: { getElementById: id => id === 'car-search-inquiry' ? dialog : form, querySelectorAll: () => [opener] },
-    window: { location: { pathname: '/schedule.html', assign: url => navigations.push(url) }, driveRightClient: client,
-      fetch: async (url, options) => { emails.push({ url, ...options }); return { json: async () => web3forms() }; } },
+    window: { location: { pathname: '/schedule.html', assign: url => navigations.push(url) }, driveRightClient: client },
     FormData: class { get(key) { return fields[key]; } }
   });
   return { requests, events, emails, fields, form, status, submit, dialog, opener, close, interest, emailHandoff, navigations,
@@ -62,17 +62,16 @@ test('without a notification connection the saved inquiry offers an explicit ema
   assert.equal(f.emailHandoff.hidden, true);
 });
 
-test('a saved inquiry is emailed to Mason through Web3Forms without the email handoff', async () => {
+test('a saved inquiry is emailed to Mason without the email handoff', async () => {
   const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), undefined, async () => ({ success: true }));
   await f.send();
   assert.equal(f.emails.length, 1);
-  assert.equal(f.emails[0].url, 'https://api.web3forms.com/submit');
-  const email = JSON.parse(f.emails[0].body);
-  assert.match(email.access_key, /^[0-9a-f-]{36}$/);
-  assert.equal(email.email, 'buyer@example.com');
-  assert.match(email.subject, /Used Mazda CX-5/);
-  assert.match(email.message, /Vehicle budget: \$35,000/);
-  assert.match(email.message, new RegExp(leadId));
+  const { lead, id } = f.emails[0];
+  assert.equal(id, leadId);
+  assert.equal(lead.email, 'buyer@example.com');
+  assert.match(lead.subject, /Used Mazda CX-5/);
+  assert.match(lead.message, /Vehicle budget: \$35,000/);
+  assert.equal(lead.source_page, '/schedule.html');
   assert.equal(f.emailHandoff.hidden, true);
   assert.match(f.status.textContent, /Mason replies within one business day/);
 });
@@ -170,4 +169,22 @@ test('a malformed success response never becomes a saved lead conversion', async
     assert.equal(f.events.length, 0);
     assert.match(f.status.textContent, /could not be sent/);
   }
+});
+
+test('questions typed in the details box are saved and emailed in full', async () => {
+  const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), undefined, async () => ({ success: true }));
+  f.fields.details = `Do you search private sellers and deliver to California? ${'More detail. '.repeat(60)}`;
+  await f.send();
+  const payload = JSON.parse(f.requests[0].body);
+  assert.equal(payload.vehicle, 'Used Mazda CX-5');
+  assert.ok(payload.message.endsWith(f.fields.details.trim()));
+  assert.match(payload.message, /Questions and details:\nDo you search private sellers/);
+  assert.equal(f.emails[0].lead.message, payload.message);
+});
+
+test('a filled honeypot saves the request without emailing Mason', async () => {
+  const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), undefined, async () => ({ success: true }));
+  f.fields.website = 'spam.example';
+  await f.send();
+  assert.equal(f.emails.length, 0);
 });

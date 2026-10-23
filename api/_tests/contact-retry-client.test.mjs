@@ -6,9 +6,9 @@ import { readFile } from 'node:fs/promises';
 const source = await readFile(new URL('../../script.js', import.meta.url), 'utf8');
 const leadId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 
-function contactPage({ measurementFails = false, conflictAlways = false, forwardingConfigured = true } = {}) {
+function contactPage({ measurementFails = false, conflictAlways = false, forwardingConfigured = true, web3forms = async () => ({ success: true }) } = {}) {
   const fields = { name: 'Buyer', email: 'buyer@example.test', phone: '', message: 'Looking for a Mazda CX-5', website: '' };
-  const storage = new Map(), storedLeads = new Map(), requests = [], events = [];
+  const storage = new Map(), storedLeads = new Map(), requests = [], events = [], emails = [];
   const submit = { disabled: false, dataset: {}, textContent: 'Send message', setAttribute() {} };
   const status = { textContent: '', dataset: {} };
   const form = { querySelector: selector => selector === '[type="submit"]' ? submit : status,
@@ -19,6 +19,10 @@ function contactPage({ measurementFails = false, conflictAlways = false, forward
     dataLayer: { push(event) { if (measurementFails) throw new Error('Analytics blocked'); events.push(event); } } };
   const document = { referrer: '', body: { dataset: {} }, getElementById: () => null, querySelectorAll: selector => selector === '#contact-form' ? [form] : [] };
   const fetch = async (url, options) => {
+    if (url === 'https://api.web3forms.com/submit') {
+      emails.push({ url, ...options });
+      return { json: web3forms };
+    }
     requests.push({ url, ...options });
     const key = options.headers['Idempotency-Key'];
     const prior = storedLeads.get(key);
@@ -32,7 +36,7 @@ function contactPage({ measurementFails = false, conflictAlways = false, forward
     forEach(fn) { for (const [key, value] of Object.entries(fields)) fn(value, key); }
   }
   vm.runInNewContext(source, { window, document, URL, URLSearchParams, Date, Set, console, crypto, AbortController, fetch, FormData });
-  return { fields, requests, events, form, status, submit, send: () => form.submit({ preventDefault() {} }) };
+  return { fields, requests, events, emails, form, status, submit, window, send: () => form.submit({ preventDefault() {} }) };
 }
 
 test('an unchanged contact retry recovers the original saved lead with the same key', async () => {
@@ -78,4 +82,48 @@ test('blocked analytics and unconfigured forwarding still show a saved contact r
   assert.match(page.status.textContent, /hello@driverightcarbuying.com|512/);
   assert.equal(page.submit.disabled, false);
   assert.equal(page.form.resetCount, 1);
+});
+
+test('a saved contact message is emailed to Mason through Web3Forms once', async () => {
+  const page = contactPage({ forwardingConfigured: false });
+  await page.send();
+  assert.equal(page.emails.length, 0, 'a lost save response sends no email');
+  await page.send();
+  assert.equal(page.emails.length, 1);
+  const email = JSON.parse(page.emails[0].body);
+  assert.match(email.access_key, /^[0-9a-f-]{36}$/);
+  assert.equal(email.email, 'buyer@example.test');
+  assert.equal(email.replyto, 'buyer@example.test');
+  assert.equal(email.name, 'Buyer');
+  assert.match(email.subject, /Buyer/);
+  assert.match(email.message, /Looking for a Mazda CX-5/);
+  assert.match(email.message, /Page: \/austin.html/);
+  assert.match(email.message, new RegExp(leadId));
+  assert.match(page.status.textContent, /Mason replies within one business day/);
+});
+
+test('a Web3Forms failure still shows the saved message with direct contact options', async () => {
+  const page = contactPage({ forwardingConfigured: false, web3forms: async () => { throw new Error('Offline'); } });
+  await page.send();
+  await page.send();
+  assert.equal(page.emails.length, 1);
+  assert.match(page.status.textContent, /hello@driverightcarbuying.com/);
+  assert.equal(page.submit.disabled, false);
+});
+
+test('configured server forwarding or a filled honeypot skips the browser email', async () => {
+  const forwarded = contactPage({ forwardingConfigured: true });
+  await forwarded.send();
+  await forwarded.send();
+  assert.equal(forwarded.emails.length, 0);
+  const bot = contactPage({ forwardingConfigured: false });
+  bot.fields.website = 'spam.example';
+  await bot.send();
+  await bot.send();
+  assert.equal(bot.emails.length, 0);
+});
+
+test('the shared client exposes the Mason email sender to the buying pages', () => {
+  const page = contactPage();
+  assert.equal(typeof page.window.driveRightClient.emailMason, 'function');
 });
