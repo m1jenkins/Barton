@@ -30,3 +30,6 @@ assets/mascot/reference
 
 # Font sources; the Latin WOFF2 subsets built from them by scripts/build-fonts.mjs deploy.
 assets/buying/fonts/*.ttf
+
+# Remotion source for the homepage legwork videos; the rendered files in assets/buying/legwork/ deploy.
+motion

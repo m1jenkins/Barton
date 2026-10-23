@@ -98,20 +98,8 @@
 .dr .legwork-intro .primary-button { white-space:nowrap; font-size:15px; }
 .dr .legwork-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:0; padding:0; list-style:none; }
 .dr .legwork-card { min-width:0; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
-.dr .legwork-art { height:250px; padding:16px; display:grid; place-items:center; background:var(--sage); }
-.dr .legwork-graphic { width:100%; max-width:360px; height:auto; overflow:visible; }
-.dr .legwork-line { fill:none; stroke:var(--green); stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
-.dr .legwork-paper { fill:var(--paper); }
-.dr .legwork-network { stroke:#6A7268; }
-.dr .legwork-rule { stroke:var(--line); }
-.dr .legwork-graphic text { fill:var(--ink); font-family:'Barlow',var(--sans); font-weight:500; }
-.dr .legwork-graphic .legwork-label { font-family:'Barlow',var(--sans); font-size:15px; font-weight:500; letter-spacing:0; }
-.dr .legwork-caption { font-size:11.5px; }
-.dr .legwork-graphic .legwork-value { font-family:'Barlow',var(--sans); font-size:22px; font-weight:600; }
-.dr .legwork-map { fill:#C8CBC6; }
-.dr .legwork-map-road { fill:none; stroke:var(--paper); stroke-width:5; }
-.dr .legwork-pin { fill:var(--green); }
-.dr .legwork-packet,.dr .legwork-message { opacity:0; }
+.dr .legwork-art { aspect-ratio:16/9; background:var(--sage); }
+.dr .legwork-video { display:block; width:100%; height:100%; object-fit:contain; }
 .dr .legwork-copy { padding:24px 26px 28px; }
 .dr .legwork-copy h3 { font:600 clamp(29px,2.5vw,36px)/1.12 var(--sans); letter-spacing:-.03em; text-wrap:initial; }
 .dr .legwork-copy p { margin-top:14px; color:var(--muted); font:500 16px/1.65 'Barlow',var(--sans); }
@@ -120,10 +108,10 @@
 .dr .legwork-details { margin-top:22px; font-size:13px; }
 @media(max-width:1100px) { .dr .legwork-intro { display:block; }.dr .legwork-intro .primary-button { margin-top:18px; }.dr .legwork-copy { padding:22px; } }
 @media(max-width:1000px) {
- .dr .legwork-grid { grid-template-columns:1fr; gap:24px; }.dr .legwork-card { display:grid; grid-template-columns:1fr 1fr; }.dr .legwork-art { height:100%; min-height:250px; }.dr .legwork-copy { padding:28px; }.dr .legwork-copy h3 { font-size:32px; }
+ .dr .legwork-grid { grid-template-columns:1fr; gap:24px; }.dr .legwork-card { display:grid; grid-template-columns:1fr 1fr; }.dr .legwork-art { aspect-ratio:auto; display:grid; align-items:center; }.dr .legwork-copy { padding:28px; }.dr .legwork-copy h3 { font-size:32px; }
 }
 @media(max-width:760px) {
- .dr .legwork-section .section-intro { gap:24px; }.dr .legwork-intro { width:100%; }.dr .legwork-intro .primary-button { margin-top:20px; }.dr .legwork-card { display:block; }.dr .legwork-art { height:auto; min-height:0; padding:18px 12px; }.dr .legwork-graphic { max-width:360px; }.dr .legwork-copy { padding:24px; }.dr .legwork-copy h3 { font-size:32px; }.dr .legwork-details { font-size:12px; }
+ .dr .legwork-section .section-intro { gap:24px; }.dr .legwork-intro { width:100%; }.dr .legwork-intro .primary-button { margin-top:20px; }.dr .legwork-card { display:block; }.dr .legwork-art { aspect-ratio:16/9; }.dr .legwork-copy { padding:24px; }.dr .legwork-copy h3 { font-size:32px; }.dr .legwork-details { font-size:12px; }
 }
 .dr .pricing-preview { background:var(--sage); }
 .dr .plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }

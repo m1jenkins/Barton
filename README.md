@@ -25,6 +25,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `docs/` | Plans, decision records and evidence. Not deployed. See [docs/README.md](docs/README.md). |
 | `draft-artifacts/` | Private city/metro renders and archived hand-authored guide/worksheet previews. Not deployed. Regenerate city/metro pages with their scripts. |
 | `outputs/` | Private ad-campaign review bundle. Not deployed. |
+| `motion/legwork/` | Remotion source for the homepage legwork card videos, rendered to `assets/buying/legwork/` by `npm run render` in that folder. Not deployed. See [docs/homepage-legwork-motion-2026-10-23.md](docs/homepage-legwork-motion-2026-10-23.md). |
 | `.agents/`, `.superdesign/` | Tool-owned folders (installed agent skills, design scratch). Not deployed. |
 
 `.vercelignore` lists everything that stays out of the deployment.
