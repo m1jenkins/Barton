@@ -1,5 +1,28 @@
 const dialog = document.getElementById('car-search-inquiry');
 const form = document.getElementById('car-search-inquiry-form');
+// Web3Forms emails each saved inquiry to Mason. The access key is public by design.
+const WEB3FORMS_ACCESS_KEY = '316da49d-33c3-4a6a-9324-6fdd8b5dff0b';
+
+async function emailMason(saved, leadId) {
+  try {
+    const response = await window.fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New car search inquiry: ${saved.vehicle}`,
+        from_name: 'Drive Right website',
+        name: saved.name || 'Not given',
+        email: saved.email,
+        phone: saved.phone || 'Not given',
+        message: `${saved.message}\n\nPage: ${saved.source_page}\nSaved inquiry: ${leadId}`
+      })
+    });
+    return (await response.json())?.success === true;
+  } catch {
+    return false;
+  }
+}
 
 if (dialog && form) {
   const submit = form.querySelector('[type="submit"]');
@@ -79,8 +102,9 @@ if (dialog && form) {
       if (typeof result?.lead_id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(result.lead_id)) throw new Error('Missing saved inquiry ID');
       // Use the shared success boundary and durable ID; contact details stay out of analytics.
       try { client.track('generate_lead', { form_name: 'pricing_inquiry', lead_id: result.lead_id }); } catch { /* Measurement cannot undo a saved inquiry. */ }
-      if (result.forwarding_configured !== true) {
-        const saved = JSON.parse(pendingPayload);
+      const saved = JSON.parse(pendingPayload);
+      const emailed = result.forwarding_configured === true || (!saved.honeypot && await emailMason(saved, result.lead_id));
+      if (!emailed) {
         const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n${saved.phone ? `Phone: ${saved.phone}\n` : ''}\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
         emailDraft = `mailto:hello@driverightcarbuying.com?subject=${encodeURIComponent('My car search inquiry')}&body=${encodeURIComponent(body)}`;
         emailHandoff.hidden = false;
@@ -89,7 +113,7 @@ if (dialog && form) {
       pendingPayload = '';
       form.reset();
       status.className = 'form-status form-status--success';
-      status.textContent = result.forwarding_configured === true
+      status.textContent = emailed
         ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or call (512) 910-4938.'
         : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or call (512) 910-4938.';
       status.focus();
