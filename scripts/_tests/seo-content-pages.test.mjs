@@ -9,7 +9,7 @@ const newPage = 'car-buying-service.html';
 
 test('service-intent pages publish current prices without retired or unapproved claims', async () => {
   const files = ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', newPage];
-  const forbidden = /\$(?:195|495)\b|average savings|savings guarantee|refund(?:s| promise)|streetAddress|reviewCount|aggregateRating|LocalBusiness/i;
+  const forbidden = /\$(?:395|495|695)\b|average savings|savings guarantee|refund(?:s| promise)|streetAddress|reviewCount|aggregateRating|LocalBusiness/i;
 
   for (const file of files) {
     const html = await read(file);
@@ -22,7 +22,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.equal(homepage.h1.length, 1);
   assert.match(hero, /Let us deal with the dealer\./);
   assert.match(hero, /negotiate for a price below MSRP/);
-  assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Full Service|Ultimate Concierge/i);
+  assert.doesNotMatch(hero, /\$195|\$345|you remain in control|Full Service|Ultimate Concierge/i);
   // The hero goes straight to checkout with one paid button, plus an inquiry button that needs no payment and the trust lines.
   const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/ul>\s*<\/div>/)?.[1] ?? '';
   assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service']);
@@ -32,8 +32,8 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.match(checkout, /Mason replies within one business day\./);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
-  assert.match(homepage.visibleText, /\$395/);
-  assert.match(homepage.visibleText, /\$695/);
+  assert.match(homepage.visibleText, /\$195/);
+  assert.match(homepage.visibleText, /\$345/);
   assert.doesNotMatch(homepageHtml, /\$295|\$895/);
   assert.match(homepage.visibleText, /Full Service/);
   assert.match(homepage.visibleText, /Ultimate Concierge/);
@@ -45,8 +45,8 @@ test('service-intent pages publish current prices without retired or unapproved 
       ['Open Graph description', /<meta property="og:description"\s+content="([^"]+)"/i],
     ]) {
       const description = head.match(pattern)?.[1] ?? '';
-      assert.match(description, /\$395/, `${file} ${label} should include Full Service pricing`);
-      assert.match(description, /\$695/, `${file} ${label} should include Ultimate Concierge pricing`);
+      assert.match(description, /\$195/, `${file} ${label} should include Full Service pricing`);
+      assert.match(description, /\$345/, `${file} ${label} should include Ultimate Concierge pricing`);
     }
   }
 });
@@ -61,8 +61,8 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.equal(document.h1.length, 1);
   assert.match(document.h1[0], /car buying (?:and negotiation )?service/i);
   assert.doesNotMatch(document.visibleText, /not a vehicle dealer|Drive Right Auto Sales|not-a-dealer/i);
-  assert.match(document.visibleText, /\$395/);
-  assert.match(document.visibleText, /\$695/);
+  assert.match(document.visibleText, /\$195/);
+  assert.match(document.visibleText, /\$345/);
   assert.ok(document.visibleText.split(/\s+/).length >= 650, 'explainer should not be thin');
 
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html']) {
@@ -74,7 +74,7 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   const inventory = await read('data/content-inventory.csv');
   assert.match(inventory, new RegExp(`^${canonical.replaceAll('.', '\\.')},${newPage},`, 'm'));
   const claims = await read('data/claims.csv');
-  const pricingClaim = claims.split('\n').find(line => line.startsWith('SEO-PRICE-2026-09-27,'));
+  const pricingClaim = claims.split('\n').find(line => line.startsWith('SEO-PRICE-2026-10-23,'));
   assert.match(pricingClaim, /car-buying-service\.html/);
   assert.match(pricingClaim, /about\.html/);
 });
@@ -95,8 +95,8 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   assert.equal(title, 'Car Buying Service in Austin & Nationwide | Drive Right');
   assert.doesNotMatch(title, /inventory|cars for sale|auto sales/i);
   assert.doesNotMatch(description, forbidden);
-  assert.match(description, /\$395/);
-  assert.match(description, /\$695/);
+  assert.match(description, /\$195/);
+  assert.match(description, /\$345/);
   assert.doesNotMatch(description, /inventory|cars for sale|guarantee|refund/i);
 
   const faqPage = document.schemas.flatMap((schema) => schema['@graph'] || [schema]).find((node) => node['@type'] === 'FAQPage');
@@ -131,7 +131,7 @@ test('marketing nav lists three sections, every header shows the phone, and the 
     assert.match(header, /<a class="header-phone" href="tel:\+15129104938">\(512\) 910-4938<\/a>/, `${file} header shows the phone number`);
     if (file === 'schedule.html') {
       const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
-      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }], 'one compact header checkout; the price span hides on phones');
+      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $195' }], 'one compact header checkout; the price span hides on phones');
       assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
     } else {
       assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
@@ -156,8 +156,8 @@ test('car-buying-service FAQPage schema matches visible questions and approved f
   }));
   assert.equal(visible.length, 5);
   assert.match(visible[0].question, /cost/i);
-  assert.match(visible[0].answer, /\$395 USD one-time service fee/);
-  assert.match(visible[0].answer, /\$695 USD one-time service fee/);
+  assert.match(visible[0].answer, /\$195 USD one-time service fee/);
+  assert.match(visible[0].answer, /\$345 USD one-time service fee/);
 
   const faq = htmlDocument(html).schemas.flatMap(schema => schema['@graph'] || [schema]).find(node => node['@type'] === 'FAQPage');
   assert.ok(faq, 'explainer should include FAQPage JSON-LD');
@@ -208,7 +208,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.match(homepage.visibleText, /Mon–Fri, 9 a\.m\.–5 p\.m\. Central/);
   assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
-  assert.match(await read('llms.txt'), /\$395 Full Service and \$695 Ultimate Concierge/);
+  assert.match(await read('llms.txt'), /\$195 Full Service and \$345 Ultimate Concierge/);
   assert.match(await read('llms.txt'), /AI Agent Buying Service is retired for new sales/);
 });
 

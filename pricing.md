@@ -6,13 +6,13 @@ Drive Right offers two flat-fee car-buying service plans for buyers nationwide t
 
 ## Full Service
 
-- Service fee: $395 USD one time
+- Service fee: $195 USD one time
 - Includes: New, used, and certified pre-owned inventory search; price negotiation and fee review; a dedicated advisor through the buying process; and documented vehicle recommendations
 - Current plan: https://www.driverightcarbuying.com/schedule.html#full-service
 
 ## Ultimate Concierge
 
-- Service fee: $695 USD one time
+- Service fee: $345 USD one time
 - Includes: Everything in Full Service, plus a wider search across auctions, forums, private sellers, and out-of-state dealers; first-in-line service (your search starts ahead of Full Service clients); and help arranging shipping for out-of-state deals
 - Current plan: https://www.driverightcarbuying.com/schedule.html#concierge
 

@@ -9,7 +9,7 @@
     "copy_version": "v3 (2026-09-27): sells to the pain (hours at the dealer, scrolling listings, haggling) with time, sanity and a better deal; price kept as a one-line qualifier; replaces v2"
   },
   "facts": {
-    "offer": "Full Service: $395 USD one-time service fee. Ultimate Concierge: $695 USD one-time service fee.",
+    "offer": "Full Service: $195 USD one-time service fee. Ultimate Concierge: $345 USD one-time service fee.",
     "verified_facts": [
       "car buying and negotiation service",
       "Austin city base; service area United States; remote support",
@@ -589,8 +589,8 @@
         "sitelinks": [
           {
             "text": "Compare Plans and Pricing",
-            "d1": "Full Service is $395 one time",
-            "d2": "Ultimate Concierge is $695",
+            "d1": "Full Service is $195 one time",
+            "d2": "Ultimate Concierge is $345",
             "url": "https://www.driverightcarbuying.com/schedule.html"
           },
           {
@@ -626,8 +626,8 @@
           "Fee Check Before You Sign",
           "You Make Every Decision",
           "One-Time Service Fee",
-          "Full Service $395",
-          "Ultimate Concierge $695",
+          "Full Service $195",
+          "Ultimate Concierge $345",
           "Remote Support Nationwide"
         ],
         "snippets": [
@@ -761,7 +761,7 @@
                   "pin": null
                 },
                 {
-                  "text": "From $395, One Time",
+                  "text": "From $195, One Time",
                   "pin": null
                 }
               ],
@@ -775,7 +775,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $395.",
+                  "text": "Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $195.",
                   "pin": null
                 },
                 {
@@ -881,13 +881,13 @@
                   "pin": null
                 },
                 {
-                  "text": "From $395, One Time",
+                  "text": "From $195, One Time",
                   "pin": null
                 }
               ],
               "descriptions": [
                 {
-                  "text": "Salespeople negotiate every day. Now you have a negotiator too, for a one-time $395 fee.",
+                  "text": "Salespeople negotiate every day. Now you have a negotiator too, for a one-time $195 fee.",
                   "pin": null
                 },
                 {
@@ -993,7 +993,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "Ultimate Concierge: $345",
                   "pin": null
                 }
               ],
@@ -1003,7 +1003,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Too busy to shop around? Ultimate Concierge does the searching and the haggling for $695.",
+                  "text": "Too busy to shop around? Ultimate Concierge does the searching and the haggling for $345.",
                   "pin": null
                 },
                 {
@@ -1113,7 +1113,7 @@
                   "pin": null
                 },
                 {
-                  "text": "From $395, One Time",
+                  "text": "From $195, One Time",
                   "pin": null
                 }
               ],
@@ -1131,7 +1131,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $395.",
+                  "text": "Hours at the dealer, nights on listing sites, or one advisor doing the legwork for $195.",
                   "pin": null
                 }
               ]
@@ -1231,8 +1231,8 @@
         "sitelinks": [
           {
             "text": "Compare Plans and Pricing",
-            "d1": "Full Service is $395 one time",
-            "d2": "Ultimate Concierge is $695",
+            "d1": "Full Service is $195 one time",
+            "d2": "Ultimate Concierge is $345",
             "url": "https://www.driverightcarbuying.com/schedule.html"
           },
           {
@@ -1353,11 +1353,11 @@
                   "pin": null
                 },
                 {
-                  "text": "Full Service: $395 One Time",
+                  "text": "Full Service: $195 One Time",
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "Ultimate Concierge: $345",
                   "pin": null
                 },
                 {
@@ -1383,7 +1383,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate.",
+                  "text": "Full Service is $195 and Ultimate Concierge is $345, one time. Vehicle costs are separate.",
                   "pin": null
                 },
                 {

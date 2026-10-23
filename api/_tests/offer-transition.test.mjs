@@ -23,7 +23,7 @@ async function call(handler, input=body, key='checkout:current') {
  return res;
 }
 function attempt(overrides={}) {
- return {id:'attempt',client_reference_id:ref,tier_id:'full_service',request_hash:payloadHash(validateCheckoutPayload(body)),expected_amount:39500,currency:'usd',offer_key:offerKey('full_service',SERVICE_TIERS.full_service,link),...overrides};
+ return {id:'attempt',client_reference_id:ref,tier_id:'full_service',request_hash:payloadHash(validateCheckoutPayload(body)),expected_amount:19500,currency:'usd',offer_key:offerKey('full_service',SERVICE_TIERS.full_service,link),...overrides};
 }
 function checkoutDb(prior,{race=false}={}) {
  const calls=[];let selects=0;
@@ -35,15 +35,15 @@ function checkoutDb(prior,{race=false}={}) {
  };
  sql.begin=fn=>fn(sql);sql.json=v=>v;return {sql,calls};
 }
-test('new Full Service creates a $395 snapshot; retired checkout never touches database',async t=>{
+test('new Full Service creates a $195 snapshot; retired checkout never touches database',async t=>{
  env(t);const db=checkoutDb();const handler=checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}});
  const res=await call(handler);assert.equal(res.statusCode,201);assert.match(res.body.url,/client_reference_id=/);
- assert.equal(db.calls.find(c=>c.query.includes('INSERT')).values[5],39500);
+ assert.equal(db.calls.find(c=>c.query.includes('INSERT')).values[5],19500);
  const count=db.calls.length;const retired=await call(handler,{tier:'consultation'});assert.equal(retired.statusCode,410);assert.equal(retired.body.error,'tier_retired');assert.equal(db.calls.length,count);
 });
 test('current retry returns same reference; old amount, currency, missing or changed offer key require restart',async t=>{
  env(t);
- for(const overrides of [{},{expected_amount:49500},{expected_amount:29500},{currency:'eur'},{offer_key:null},{offer_key:'old-link'}]) {
+ for(const overrides of [{},{expected_amount:39500},{expected_amount:49500},{expected_amount:29500},{currency:'eur'},{offer_key:null},{offer_key:'old-link'}]) {
   const record=attempt(overrides),saved=structuredClone(record),db=checkoutDb(record);
   const res=await call(checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}}));
   assert.equal(res.statusCode,Object.keys(overrides).length?409:200);
@@ -129,7 +129,7 @@ test('an opted-out checkout marks its attempt so the webhook skips the OpenAI pu
   assert.equal(res.statusCode,201);
   const stored=db.calls.find(c=>c.query.includes('INSERT')).values[9];
   assert.equal(stored.ad_measurement_off===true,off);
-  const paid=await recordEvent(event('full_service',39500),ledger(attempt({attribution:stored})).sql);
+  const paid=await recordEvent(event('full_service',19500),ledger(attempt({attribution:stored})).sql);
   assert.equal(paid.recorded,true);assert.equal(paid.openaiAdsCapi===null,off);
  }
 });

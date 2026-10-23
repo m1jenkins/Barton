@@ -50,9 +50,9 @@ test('tesla FSD page stays a noindex park with self-canonical and no sitemap or 
 
   assert.match(document.visibleText, /Archived/);
   assert.match(document.visibleText, /not a list of Teslas for sale/i);
-  assert.match(document.visibleText, /\$395/);
-  assert.match(document.visibleText, /\$695/);
-  assert.doesNotMatch(html, /\$195|\$495|savings guarantee|streetAddress|"@type":\s*"LocalBusiness"/i);
+  assert.match(document.visibleText, /\$195/);
+  assert.match(document.visibleText, /\$345/);
+  assert.doesNotMatch(html, /\$395|\$495|\$695|savings guarantee|streetAddress|"@type":\s*"LocalBusiness"/i);
   assert.doesNotMatch(html, /Start my FSD Tesla search/i);
   assert.doesNotMatch(html, /Teslas With FSD Included For Sale/);
   assert.equal(

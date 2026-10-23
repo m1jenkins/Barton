@@ -44,7 +44,7 @@ test('a stale offer needs another click with a new key and keeps the old attempt
     if (++attempts === 1) { const error = new Error('stale_offer'); error.code = 'stale_offer'; throw error; }
     return stripe('new-attempt');
   } };
-  await assert.rejects(createCheckout(options).start('full_service'), error => error.code === 'stale_offer' && /\$395 USD.*Restart checkout/.test(error.message));
+  await assert.rejects(createCheckout(options).start('full_service'), error => error.code === 'stale_offer' && /\$195 USD.*Restart checkout/.test(error.message));
   await createCheckout(options).start('full_service');
   assert.notEqual(keys[0], keys[1]);
   assert.equal(store.read().checkouts.length, 2);

@@ -21,7 +21,7 @@ test('released guides preserve their URLs, source links, examples, byline and or
     assert.ok(sitemap.includes(`/${name}</loc>`));
     assert.match(document.visibleText, /Mason/);
     assert.match(document.visibleText, /hypothetical/i);
-    assert.match(document.visibleText, /\$395 USD/);
+    assert.match(document.visibleText, /\$195 USD/);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|review pending|draft|guaranteed savings|saved \$7,000/i);
     const article = document.schemas.find(schema => schema['@type'] === 'Article');
     assert.equal(article.dateModified, '2026-10-04');
