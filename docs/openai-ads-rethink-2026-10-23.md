@@ -40,6 +40,8 @@ Stop selling a $195 payment to a stranger in one click. Sell a free, specific fi
 
 ## Launched: "Talk to Mason | Oct 23 rethink" (Oct 23, 2026)
 
+**Update, same day:** prices went back to $395 and $695 ([revert record](seo-execution/stripe-cutover-2026-10-23.md#reverted-2026-10-23-same-day)). Ad 6, "Full Service $195", is paused. The other five name no price and were approved and serving. `SEO-PRICE-2026-10-23` below no longer exists; `SEO-PRICE-2026-09-27` is current again. The drafts and test plan below still mention $195 and need updating before reuse.
+
 Published at the owner's request. The `/quote-check` page and the free quote-check offer don't exist yet, so these ads promise only what the site already offers: a free "Talk to Mason" inquiry with "No payment needed to ask", the $195 flat fee (`SEO-PRICE-2026-10-23`), "Dealers pay us nothing" (`COMPENSATION-COPY-2026-10-05`), stripping junk fees (`BEST-DEAL-2026-10-05`) and the refund line (`REFUND-LINE-2026-10-05`).
 
 | Setting | Value |
