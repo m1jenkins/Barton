@@ -38,6 +38,33 @@ Stop selling a $195 payment to a stranger in one click. Sell a free, specific fi
 
 **Payment page fix, needed whatever happens with the ads.** Replace the $195 Full Service link with one without `setup_future_usage`, so the "future payments" line disappears. This needs a new Stripe link and the same Vercel cutover as today.
 
+## Launched: "Talk to Mason | Oct 23 rethink" (Oct 23, 2026)
+
+Published at the owner's request. The `/quote-check` page and the free quote-check offer don't exist yet, so these ads promise only what the site already offers: a free "Talk to Mason" inquiry with "No payment needed to ask", the $195 flat fee (`SEO-PRICE-2026-10-23`), "Dealers pay us nothing" (`COMPENSATION-COPY-2026-10-05`), stripping junk fees (`BEST-DEAL-2026-10-05`) and the refund line (`REFUND-LINE-2026-10-05`).
+
+| Setting | Value |
+| --- | --- |
+| Campaign | Talk to Mason \| Oct 23 rethink, Standard, objective Clicks |
+| Budget / dates | $25/day (the Ads Manager minimum; the plan's $20 isn't allowed), Oct 23 – Nov 6, 2026 |
+| Location / platforms | United States / all |
+| Conversion events reported | Saved inquiry, Verified purchase |
+| Tracking | `utm_source=chatgpt&utm_medium=cpc&utm_campaign={campaign_id}&utm_content={ad_id}` |
+| Creative enhancement | Off (it would show AI-rewritten copy without review) |
+| Ad group | Buyers holding a dealer quote, Autobid, context hints as in "Audience" above |
+
+Ads 1–4 are GPT suggestions from Ads Manager, used as generated. Ads 5–6 started as GPT suggestions (keeping their image) with the text replaced. Every ad uses the GPT-picked site photo.
+
+| # | Ad name | Headline | Description | Landing |
+| --- | --- | --- | --- | --- |
+| 1 | Hold the Quote | Have a Dealer Quote? | Get help reviewing it and negotiating the deal. | `/` |
+| 2 | Buy With Backup | Don't Negotiate Alone | Talk through the quote and move forward when ready. | `/` |
+| 3 | Quote Check | Check the Dealer Quote | Get help reviewing the deal before you sign. | `/` |
+| 4 | Fees Removed | Remove Add-On Fees | Drive Right works to strip add-ons and junk fees. | `/` |
+| 5 | Free ask Mason | Ask Mason about your car search. It's free. | Tell us the car you want and how to reach you. No payment needed to ask. Dealers pay us nothing. | `/` |
+| 6 | Full Service $195 | Car buying help for $195, flat. | We compare offers, review dealer fees and negotiate. Full refund before negotiations begin. | `/schedule.html` |
+
+All six were "In review" right after publishing and won't serve until OpenAI approves them. The old "Drive Right campaign" ($25/day, ends Nov 5) was left running, with its six price-free ads.
+
 ## Draft ads (not live; need approval)
 
 | # | Title | Description |
