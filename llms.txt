@@ -4,7 +4,7 @@
 
 Updated: 2026-10-18
 
-Drive Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com · (512) 910-4938.
+Drive Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@driverightcarbuying.com.
 
 ## Primary pages
 
@@ -25,7 +25,6 @@ The standalone AI Agent Buying Service is retired for new sales. Existing custom
 ## Optional
 
 Contact: hello@driverightcarbuying.com
-Phone: +1-512-910-4938
 Sitemap: https://www.driverightcarbuying.com/sitemap.xml
 
 ## Practical resources

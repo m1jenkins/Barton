@@ -16,7 +16,7 @@ function layout({ title, description, slug, marketId = 'hub', body }) {
 <div class="draft-notice">Local editorial draft · September 16, 2026 · factual and qualified review pending</div>
 <header class="site-header page-width"><a class="wordmark" href="/service-areas.html" aria-label="Drive Right draft service areas">Drive Right</a><nav aria-label="Main navigation"><a href="/service-areas.html">Areas</a><a href="/how-it-works.html">How it works</a><a href="/schedule.html">Plans</a></nav></header>
 <main id="main-content" tabindex="-1" class="page-width">${body}</main>
-<footer class="page-width site-footer"><p>Drive Right · Based in Austin, Texas<br>512-910-4938 · hello@driverightcarbuying.com</p><p>Local review copy. No form sends, checkout or tracking.<br><a href="/policy.html">Policy reference</a></p></footer>
+<footer class="page-width site-footer"><p>Drive Right · Based in Austin, Texas<br>hello@driverightcarbuying.com</p><p>Local review copy. No form sends, checkout or tracking.<br><a href="/policy.html">Policy reference</a></p></footer>
 </body></html>\n`;
 }
 export function renderMarket(market, dossier, services, sources) {

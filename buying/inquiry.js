@@ -37,7 +37,7 @@ if (dialog && form) {
     if (submit.disabled) return;
     const client = window.driveRightClient;
     if (!client) {
-      status.textContent = 'Please try again, or call Mason at (512) 910-4938.';
+      status.textContent = 'Please try again, or email Mason at hello@driverightcarbuying.com.';
       status.className = 'form-status form-status--error';
       return;
     }
@@ -93,12 +93,12 @@ if (dialog && form) {
       form.reset();
       status.className = 'form-status form-status--success';
       status.textContent = emailed
-        ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or call (512) 910-4938.'
-        : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or call (512) 910-4938.';
+        ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or email hello@driverightcarbuying.com.'
+        : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or email hello@driverightcarbuying.com.';
       status.focus();
     } catch {
       status.className = 'form-status form-status--error';
-      status.textContent = 'Your inquiry could not be sent. Please try again, or call Mason at (512) 910-4938.';
+      status.textContent = 'Your inquiry could not be sent. Please try again, or email Mason at hello@driverightcarbuying.com.';
     } finally {
       submit.disabled = false;
       submit.removeAttribute('aria-busy');

@@ -358,9 +358,6 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .header-cta:hover { background:var(--green); }
 .dr .header-cta:focus-visible { outline:2px solid var(--green); outline-offset:3px; }
 .dr button.header-cta { border:0; cursor:pointer; }
-.dr .header-phone { display:inline-flex; align-items:center; min-height:44px; font:600 15px/1.2 var(--sans); color:var(--ink); white-space:nowrap; letter-spacing:-.01em; }
-.dr .header-phone:hover { color:var(--green); }
-.dr .header-phone:focus-visible { outline:2px solid var(--green); outline-offset:3px; }
 @media(max-width:900px) { .dr .site-header { gap:20px; } .dr .site-header nav { gap:18px; } }
 /* Consent: a slim bottom bar instead of a card over the hero. Copy and choices are unchanged. */
 .dr #drive-right-ad-privacy { left:0; right:0; bottom:0; width:auto; max-height:min(70dvh,480px); padding:12px max(64px,calc((100% - 1440px) / 2)); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 32px; align-items:center; border:0; border-top:1px solid var(--line); border-radius:0; background:var(--paper); color:var(--muted); box-shadow:0 -10px 30px #1A1A1810; font:13px/1.5 var(--sans); }

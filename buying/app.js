@@ -34,7 +34,7 @@ function retryDialog() {
   checkoutDialog = document.createElement('dialog');
   checkoutDialog.id = 'contact-dialog';
   checkoutDialog.setAttribute('aria-labelledby', 'contact-title');
-  checkoutDialog.innerHTML = `<header class="dialog-header"><h2 id="contact-title">Checkout didn’t open.</h2><button class="icon-button" data-close type="button" aria-label="Close checkout message">${icon('close')}</button></header><p class="dialog-description">Nothing was charged. Try again, or call Mason at <a href="tel:+15129104938">(512) 910-4938</a>.</p><div id="chosen-plan" class="chosen-plan"></div><p id="contact-error" class="input-error" role="alert"></p><button id="checkout-submit" class="primary-button" type="button">Retry secure checkout ${icon('arrow')}</button><p class="small-note">Pay securely with Stripe, then tell us about the car.</p>`;
+  checkoutDialog.innerHTML = `<header class="dialog-header"><h2 id="contact-title">Checkout didn’t open.</h2><button class="icon-button" data-close type="button" aria-label="Close checkout message">${icon('close')}</button></header><p class="dialog-description">Nothing was charged. Try again, or email Mason at <a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a>.</p><div id="chosen-plan" class="chosen-plan"></div><p id="contact-error" class="input-error" role="alert"></p><button id="checkout-submit" class="primary-button" type="button">Retry secure checkout ${icon('arrow')}</button><p class="small-note">Pay securely with Stripe, then tell us about the car.</p>`;
   document.body.append(checkoutDialog);
   closeOnBackdrop(checkoutDialog);
   checkoutDialog.querySelector('#checkout-submit').addEventListener('click', () => startPlanCheckout(selectedTier));

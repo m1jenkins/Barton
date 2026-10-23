@@ -120,7 +120,7 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   }
 });
 
-test('marketing nav lists three sections, every header shows the phone, and the schedule header offers one checkout', async () => {
+test('marketing nav lists three sections, and the schedule header offers one checkout', async () => {
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
     const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
@@ -128,7 +128,6 @@ test('marketing nav lists three sections, every header shows the phone, and the 
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
     assert.deepEqual(links, ['/how-it-works.html', '/schedule.html', '/about.html'], `${file} header nav lists the three sections`);
     assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
-    assert.match(header, /<a class="header-phone" href="tel:\+15129104938">\(512\) 910-4938<\/a>/, `${file} header shows the phone number`);
     if (file === 'schedule.html') {
       const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
       assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }], 'one compact header checkout; the price span hides on phones');
