@@ -34,6 +34,8 @@ Every push to `main` deploys to production. Once this change is live, new attemp
 4. Set `CHECKOUT_PAUSED=false` and redeploy.
 5. Deactivate `plink_1UKRaI2RwNuweXRL2owI9BHC` and `plink_1UKRaL2RwNuweXRLyyHblHey`. Buyers who already paid are unaffected.
 
+Done on 2026-10-23: steps 1–5 completed in order. Production deploys `dpl_9CDgxCx6wZ5fbr6Gq6wKgMk573eg` (paused) and `dpl_CKLBbYrnAU9T8c5aksPRrXEZnMvC` (unpaused) serve commit `037a96b`; both checkout buttons opened Stripe at $195.00 and $345.00 (not paid; two unpaid verification attempts remain in `checkout_attempts`). Both old links are inactive, with a message pointing buyers back to the pricing page.
+
 Rollback: set `CHECKOUT_PAUSED=true`. Do not point the new code at the old $395/$695 links; the amounts will not match and paid purchases go to review.
 
 ## Outside this repo
