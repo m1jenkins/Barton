@@ -63,7 +63,7 @@ Ads 1–4 are GPT suggestions from Ads Manager, used as generated. Ads 5–6 sta
 | 5 | Free ask Mason | Ask Mason about your car search. It's free. | Tell us the car you want and how to reach you. No payment needed to ask. Dealers pay us nothing. | `/` |
 | 6 | Full Service $195 | Car buying help for $195, flat. | We compare offers, review dealer fees and negotiate. Full refund before negotiations begin. | `/schedule.html` |
 
-All six were "In review" right after publishing and won't serve until OpenAI approves them. The old "Drive Right campaign" ($25/day, ends Nov 5) was left running, with its six price-free ads.
+All six were "In review" right after publishing and won't serve until OpenAI approves them. The old "Drive Right campaign" ($25/day, ends Nov 5) was paused the same day at the owner's request, so only this campaign spends.
 
 ## Draft ads (not live; need approval)
 
