@@ -72,3 +72,12 @@ Added on 2026-10-23 at the owner's request: 50% off one payment of Full Service 
 Before this, any discount made the paid total differ from the attempt's `expected_amount`, and the webhook sent the purchase to review. `expectedPaidAmount` in `api/_lib/checkout-offer.js` now accepts exactly one discount from `APPROVED_DISCOUNTS`, and only when the pre-discount subtotal equals the plan price and the discount is exactly that coupon's percentage. The purchase records the amount actually paid, which also feeds analytics. Any other coupon, stacked discounts, a wrong subtotal or a wrong discount size still go to review. Tests are in `api/_tests/offer-transition.test.mjs`.
 
 To retire 50OFF, deactivate the promotion code in Stripe. Removing its entry from `APPROVED_DISCOUNTS` also stops new discounted payments from recording, but buyers could still enter the code until it's deactivated in Stripe.
+
+## Halloween code SPOOKY25
+
+Added on 2026-10-23 at the owner's request, with a scrolling Halloween banner on the site.
+
+- Coupon `Cd7Edniu` ("Halloween 25% off", 25%, once, both plan products, `redeem_by` 2026-11-01T05:00Z = midnight Central on Oct 31).
+- Promotion code `SPOOKY25` (`promo_1UTr3y2RwNuweXRLmAbkQp8w`), `expires_at` the same moment. Full Service $395 → $296.25, Ultimate Concierge $695 → $521.25.
+- Approved in `APPROVED_DISCOUNTS` (`api/_lib/checkout-offer.js`) and tested in `api/_tests/offer-transition.test.mjs`. Claim row: `PROMO-HALLOWEEN-2026-10-23`.
+- The banner lives in `script.js` (`showHalloweenBanner`). It skips `/payment-success*` pages and removes itself at the same moment the code expires, so it needs no cleanup deploy. Remove the dead code and the `APPROVED_DISCOUNTS` entry in a later cleanup.

@@ -203,5 +203,64 @@ function setButtonState(e,o,n){e&&(e.dataset.originalText||(e.dataset.originalTe
 });
 document.querySelectorAll("[data-cta-location]").forEach(e=>{e.addEventListener("click",()=>{track("cta_click",{cta_location:e.getAttribute("data-cta-location")||"unknown",cta_label:(e.textContent||"").trim().slice(0,80)})})}),document.querySelectorAll('a[href^="tel:"]').forEach(e=>{e.addEventListener("click",()=>{track("phone_click",{link_text:(e.textContent||"").trim().slice(0,80)})})});function updatePaymentGate(e,o){const n=document.getElementById("payment-verification"),t=document.getElementById("verified-purchase-content");if(n){n.dataset.state=e;const r=n.querySelector("[data-verification-heading]"),i=n.querySelector("[data-verification-message]");r&&(r.textContent=e==="verified"?"Payment verified":e==="error"?"Payment could not be verified":"Verifying payment"),i&&(i.textContent=o),n.hidden=e==="verified"}t&&(t.hidden=e!=="verified")}async function initializePaidOnboarding(){const e=document.body.dataset.purchaseTier;if(!e)return;const o=checkoutSessionId();if(!o){updatePaymentGate("error","This page needs the secure checkout session link from your Stripe receipt. No purchase was recorded from this page visit.");return}const n=[0,1e3,2e3,4e3,8e3];for(let t=0;t<n.length;t+=1){n[t]&&(updatePaymentGate("pending","Stripe confirmed payment; waiting for the signed webhook record…"),await new Promise(r=>setTimeout(r,n[t])));try{const r=await requestJson(`/api/purchase-status?session_id=${encodeURIComponent(o)}&tier=${encodeURIComponent(e)}`,{method:"GET"});if(r.verified){verifiedCheckoutSessionId=o,document.body.dataset.purchaseVerified="true",updatePaymentGate("verified","Payment verified."),trackVerifiedPurchase(r);return}if(r.status==="processing"&&t<n.length-1)continue;updatePaymentGate("error","Stripe has not confirmed a paid checkout for this service. No purchase was recorded from this page visit.");return}catch(r){if(t<n.length-1&&(!r.status||r.status>=500))continue;updatePaymentGate("error",r.message||"We could not verify this checkout. Please use the link in your receipt or contact support.");return}}}const onboardingForm=document.getElementById("onboarding-form");onboardingForm&&onboardingForm.addEventListener("submit",async e=>{e.preventDefault();const o=verifiedCheckoutSessionId,n=document.body.dataset.purchaseTier;if(!o||!n){showFormStatus(onboardingForm,"Verify the paid checkout before submitting this intake.",!0);return}const t=document.getElementById("onboarding-submit");setButtonState(t,!0,"Submitting…");try{await requestJson("/api/onboarding",{method:"POST",headers:{"Content-Type":"application/json","Idempotency-Key":idempotencyKey(`onboarding_${o}`)},body:JSON.stringify({session_id:o,tier:n,fields:objectFromForm(onboardingForm)})});const r=document.getElementById("onboarding-success");onboardingForm.hidden=!0,r&&(r.style.display="block",r.scrollIntoView({behavior:"smooth",block:"start"}))}catch(r){showFormStatus(onboardingForm,r.message||"We could not save your intake. Please try again.",!0),setButtonState(t,!1)}});const budgetSelect=document.getElementById("ob-budget"),budgetOther=document.getElementById("ob-budget-other");budgetSelect&&budgetOther&&budgetSelect.addEventListener("change",()=>{const e=budgetSelect.value==="other";budgetOther.style.display=e?"block":"none",budgetOther.required=e});const otherCheck=document.getElementById("features-other-check"),otherText=document.getElementById("features-other-text");otherCheck&&otherText&&otherCheck.addEventListener("change",()=>{otherText.style.display=otherCheck.checked?"block":"none",otherText.required=otherCheck.checked}),initializePaidOnboarding();
 
+// Halloween sale banner. SPOOKY25 is a Stripe promotion code (25% off either plan)
+// that Stripe stops accepting at midnight Central on Oct 31, 2026; the banner
+// removes itself at the same moment, so it needs no cleanup deploy.
+const HALLOWEEN_SALE_ENDS = Date.UTC(2026, 10, 1, 5);
+function showHalloweenBanner() {
+  if (Date.now() >= HALLOWEEN_SALE_ENDS || typeof document.createElement !== 'function'
+    || window.location.pathname.startsWith('/payment-success')) return;
+  const message = 'Halloween sale: 25% off Full Service or Ultimate Concierge with code SPOOKY25 at checkout. Ends October 31.';
+  const style = document.createElement('style');
+  style.textContent = `
+.halloween-banner{position:relative;z-index:41;display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:#14090f linear-gradient(90deg,#14090f,#2a0f1d 50%,#14090f);color:#ffb15c;font:600 14px/1.2 var(--sans,system-ui,sans-serif);border-bottom:1px solid #ff7a1a}
+.halloween-banner__viewport{flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+.halloween-banner__track{display:flex;width:max-content;animation:halloween-scroll 38s linear infinite;
+  @media (prefers-reduced-motion:reduce){animation:none}}
+.halloween-banner:hover .halloween-banner__track,.halloween-banner:focus-within .halloween-banner__track,.halloween-banner[data-paused] .halloween-banner__track{animation-play-state:paused}
+.halloween-banner__group{display:flex;align-items:center;gap:28px;padding:11px 14px;white-space:nowrap}
+.halloween-banner__group+.halloween-banner__group{@media (prefers-reduced-motion:reduce){display:none}}
+.halloween-banner__item{display:inline-flex;align-items:center;gap:8px}
+.halloween-banner__code{padding:2px 7px;border:1px dashed #ff7a1a;border-radius:4px;color:#fff;letter-spacing:.08em}
+.halloween-banner__link,.halloween-banner__pause{flex:none;color:#fff;font:inherit;font-size:13px}
+.halloween-banner__link{text-underline-offset:3px}
+.halloween-banner__pause{padding:5px 9px;border:1px solid #5c3243;border-radius:4px;background:transparent;cursor:pointer;
+  @media (prefers-reduced-motion:reduce){display:none}}
+.halloween-banner__pause:hover{border-color:#ff7a1a}
+.halloween-banner :focus-visible{outline:2px solid #ffb15c;outline-offset:2px}
+.halloween-banner__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media (max-width:560px){.halloween-banner__link{display:none}.halloween-banner__group{gap:20px;font-size:13px}}
+@keyframes halloween-scroll{to{translate:-50% 0}}`;
+  document.head.appendChild(style);
+  const items = [
+    ['🎃', 'Halloween sale: <b>25% off</b> any plan'],
+    ['🦇', 'Use code <span class="halloween-banner__code">SPOOKY25</span> at checkout'],
+    ['👻', 'Full Service or Ultimate Concierge'],
+    ['🕸️', 'Ends October 31']
+  ].map(([icon, text]) => `<span class="halloween-banner__item"><span>${icon}</span><span>${text}</span></span>`).join('');
+  const banner = document.createElement('div');
+  banner.className = 'halloween-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Halloween sale');
+  banner.innerHTML = `<p class="halloween-banner__sr">${message}</p>`
+    + `<div class="halloween-banner__viewport" aria-hidden="true"><div class="halloween-banner__track">`
+    + `<div class="halloween-banner__group">${items}</div><div class="halloween-banner__group">${items}</div></div></div>`
+    + '<a class="halloween-banner__link" href="/schedule.html">See plans</a>'
+    + '<button class="halloween-banner__pause" type="button" aria-pressed="false">Pause</button>';
+  const pause = banner.querySelector('.halloween-banner__pause');
+  pause.addEventListener('click', () => {
+    const paused = !banner.hasAttribute('data-paused');
+    banner.toggleAttribute('data-paused', paused);
+    pause.setAttribute('aria-pressed', String(paused));
+    pause.textContent = paused ? 'Play' : 'Pause';
+  });
+  banner.querySelector('.halloween-banner__link').addEventListener('click', () => {
+    try { track('cta_click', { cta_location: 'halloween_banner', cta_label: 'See plans' }); } catch {}
+  });
+  const header = document.querySelector('.site-header');
+  header ? header.before(banner) : document.body.prepend(banner);
+}
+showHalloweenBanner();
+
 // Available before deferred buying modules run, including direct checkout URLs.
 window.driveRightClient = { requestJson, track, createId, emailMason, attribution: attributionData };

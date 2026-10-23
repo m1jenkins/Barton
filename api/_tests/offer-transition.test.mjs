@@ -120,6 +120,16 @@ test('50OFF purchases record the discounted amount when the pre-discount subtota
   }
  }
 });
+test('SPOOKY25 purchases record 25% off either plan',async()=>{
+ for(const [tier,full,paid] of [['full_service',39500,29625],['concierge',69500,52125]]){
+  const db=ledger(attempt({tier_id:tier,expected_amount:full}));
+  const e=discounted(tier,full,full-paid,{discounts:[{coupon:'Cd7Edniu',promotion_code:'promo_1UTr3y2RwNuweXRLmAbkQp8w'}]});
+  assert.equal((await recordEvent(e,db.sql)).recorded,true,tier);
+  assert.equal([...db.purchases.values()][0].amount_total,paid);
+ }
+ const db=ledger(attempt());
+ assert.equal((await recordEvent(discounted('full_service',39500,19750,{discounts:[{coupon:'Cd7Edniu'}]}),db.sql)).recorded,false,'50% taken with the 25% coupon');
+});
 test('unapproved, stacked, oversized or mismatched discounts go to review',async()=>{
  for(const e of [
   discounted('full_service',39500,19750,{discounts:[{coupon:'SOMEOTHER',promotion_code:'promo_other'}]}),
