@@ -26,9 +26,9 @@ test('comparison pages are indexable guides with matching dates, byline and appr
     assert.equal(article.dateModified, shown, `${name} visible date matches Article.dateModified`);
     assert.match(document.visibleText, new RegExp(`checked[^.]*${new Date(`${shown}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}`, 'i'), `${name} states when competitor facts were checked`);
 
-    // Drive Right facts reuse approved claim rows word for word (SEO-PRICE-2026-10-23, COMPENSATION-COPY-2026-10-05, REFUND-LINE-2026-10-05).
-    assert.match(document.visibleText, /\$195/, name);
-    assert.match(document.visibleText, /\$345/, name);
+    // Drive Right facts reuse approved claim rows word for word (SEO-PRICE-2026-09-27, COMPENSATION-COPY-2026-10-05, REFUND-LINE-2026-10-05).
+    assert.match(document.visibleText, /\$395/, name);
+    assert.match(document.visibleText, /\$695/, name);
     assert.match(document.visibleText, /Dealers and lenders pay us nothing\./, name);
     assert.match(document.visibleText, /Full refund if you cancel before negotiations begin\./, name);
     assert.match(document.visibleText, /not affiliated with/i, `${name} non-affiliation notice`);

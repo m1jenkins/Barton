@@ -1,6 +1,6 @@
 export const plans = Object.freeze({
-  full_service: { name: 'Full Service', fee: 195 },
-  concierge: { name: 'Ultimate Concierge', fee: 345 },
+  full_service: { name: 'Full Service', fee: 395 },
+  concierge: { name: 'Ultimate Concierge', fee: 695 },
 });
 
 export const CHECKOUT_KEY = 'drive_right_buying_checkout_v1';

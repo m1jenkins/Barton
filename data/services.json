@@ -12,7 +12,7 @@
     {
       "id": "https://www.driverightcarbuying.com/#service-full",
       "name": "Full Service",
-      "price": 195,
+      "price": 395,
       "priceType": "flat_fee",
       "features": [
         "New used and certified pre-owned search",
@@ -24,12 +24,12 @@
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
       "serviceLevelReview": "owner_approved_current_website_copy_2026_10_01",
-      "checkoutStatus": "new_195_link_required_before_activation"
+      "checkoutStatus": "new_395_link_required_before_activation"
     },
     {
       "id": "https://www.driverightcarbuying.com/#service-concierge",
       "name": "Ultimate Concierge",
-      "price": 345,
+      "price": 695,
       "priceType": "flat_fee",
       "features": [
         "Everything in Full Service",
@@ -41,7 +41,7 @@
       ],
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
-      "checkoutStatus": "new_345_link_required_before_activation"
+      "checkoutStatus": "new_695_link_required_before_activation"
     }
   ],
   "commercialTerms": {
@@ -107,7 +107,7 @@
     }
   ],
   "pricingDecision": {
-    "record": "SEO-PRICE-2026-10-23",
+    "record": "SEO-PRICE-2026-09-27",
     "date": "2026-09-27",
     "supersedes": "SEO-PRICE-2026-09-18",
     "stripeCutover": "docs/seo-execution/stripe-cutover-2026-09-27.md",

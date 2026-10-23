@@ -49,3 +49,14 @@ Rollback: set `CHECKOUT_PAUSED=true`. Do not point the new code at the old $395/
 ## Not changed here
 
 Dated docs and evidence files (`docs/seo/`, earlier cutover packets, `ad-copy-approval.md`) describe what was true when recorded.
+
+## Reverted (2026-10-23, same day)
+
+Owner decision (Mason): go back to $395 Full Service and $695 Ultimate Concierge. `SEO-PRICE-2026-09-27` is the current price claim again, and `SEO-PRICE-2026-10-23` was removed with the rest of the price commit. The card-saving fix stays: the new $395 link doesn't set `setup_future_usage`.
+
+| Plan | Price | Payment Link now in Vercel |
+| --- | --- | --- |
+| Full Service | `price_1UKRa92RwNuweXRLDifV4iNz` ($395.00) | `plink_1UTqg72RwNuweXRL2Gzng7nn` `https://book.stripe.com/00wcMYgbd7rZ0wk15a0480a` (new; no saved card) |
+| Ultimate Concierge | `price_1UKRaB2RwNuweXRL8LLSGR4C` ($695.00) | `plink_1UKRaL2RwNuweXRLyyHblHey` `https://buy.stripe.com/bJe00ccZ14fN4MA9BG04806` (reactivated original) |
+
+The code returned to 39500/69500 by restoring the files only the price commit (`037a96b`) touched and reversing the prices in pages that later commits also changed, so the later inquiry work stayed. The same pause, set, push, verify, unpause order was used. Afterwards the $195 (`plink_1UTppv…`) and $345 (`plink_1UTpId…`) links were deactivated, and the ChatGPT ad "Full Service $195" was paused.
