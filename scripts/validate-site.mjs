@@ -301,6 +301,7 @@ for (const [url, count] of locCounts) {
 
 const sitemapFiles = new Set(sitemapLocs.map((loc) => fileForSiteUrl(loc.url)).filter(Boolean));
 const brandAssets = await Promise.all([
+  ['favicon.png', 'link', 'href'],
   ['logo-motion.css', 'link', 'href'],
   ['logo-motion.js', 'script', 'src'],
 ].map(async ([asset, tagName, attribute]) => {
@@ -329,8 +330,8 @@ for (const file of htmlFiles) {
   if (/assets\/external\/optimized\/drive-right-logo-(?:64|180)\.png/i.test(html)) {
     fail(file, 'Page still references the retired shield logo.', 0, html, 'Use /favicon.png for the icon or the approved header mascot.');
   }
-  if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*>/i.test(html)
-      && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
+  if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png(?:\?v=[0-9a-f]{12})?["'][^>]*>/i.test(html)
+      && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png(?:\?v=[0-9a-f]{12})?["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
     fail(file, 'Page does not reference the current /favicon.png.', 0, html);
   }
 
@@ -363,8 +364,8 @@ for (const file of htmlFiles) {
     if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html) && !/<header class="site-header page-width">[\s\S]*?<nav aria-label="Main navigation">[\s\S]*?<a[^>]+href="\/how-it-works.html"/i.test(html)) {
       fail(file, 'Indexable page has no usable no-JavaScript mobile navigation override.', 0, html, 'Expose ordinary navigation links and hide the inert hamburger inside a noscript style.');
     }
-    if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*>/i.test(html)
-        && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
+    if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png(?:\?v=[0-9a-f]{12})?["'][^>]*>/i.test(html)
+        && !/<link\b[^>]*\bhref\s*=\s*["']\/favicon\.png(?:\?v=[0-9a-f]{12})?["'][^>]*\brel\s*=\s*["']icon["'][^>]*>/i.test(html)) {
       fail(file, 'Indexable page does not reference the stable square /favicon.png.', 0, html);
     }
   }

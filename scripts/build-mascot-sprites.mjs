@@ -8,8 +8,9 @@
 //              regions swapped in, so the body never shimmers between frames.
 // front.webp   head-on view, same six frames, for the search chat avatar.
 // favicon.png  a centered export of the front view's parked, headlights-down frame.
+// favicon.ico  the same frame at 16, 32 and 48px, for clients that request /favicon.ico by default.
 // The -lg files are the payment-success sizes; the rest are header and chat sizes (about 3x CSS size).
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
@@ -142,4 +143,22 @@ await sharp(`${out}front.webp`)
   .extend({ left: 4, right: 4, top: 36, bottom: 36, background: { r: 0, g: 0, b: 0, alpha: 0 } })
   .png()
   .toFile(`${root}favicon.png`);
+// ICO with PNG entries: a 6-byte header, a 16-byte directory entry per size, then the PNG data.
+const icons = await Promise.all([16, 32, 48].map(async size => {
+  const inner = Math.round(size * frameWidth / (frameWidth + 4)), top = Math.floor((size - Math.round(inner * frameHeight / frameWidth)) / 2);
+  const png = await sharp(`${out}front.webp`).extract({ left: 0, top: 0, width: frameWidth, height: frameHeight })
+    .resize(inner, Math.round(inner * frameHeight / frameWidth), { kernel: 'lanczos3' })
+    .extend({ left: Math.floor((size - inner) / 2), right: Math.ceil((size - inner) / 2), top, bottom: size - top - Math.round(inner * frameHeight / frameWidth), background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png().toBuffer();
+  return { size, png };
+}));
+const header = Buffer.alloc(6 + 16 * icons.length);
+header.writeUInt16LE(1, 2); header.writeUInt16LE(icons.length, 4);
+let offset = header.length;
+icons.forEach(({ size, png }, i) => {
+  const e = 6 + 16 * i;
+  header.writeUInt8(size, e); header.writeUInt8(size, e + 1); header.writeUInt16LE(1, e + 4); header.writeUInt16LE(32, e + 6);
+  header.writeUInt32LE(png.length, e + 8); header.writeUInt32LE(offset, e + 12); offset += png.length;
+});
+await writeFile(`${root}favicon.ico`, Buffer.concat([header, ...icons.map(icon => icon.png)]));
 console.log(`q height ratio ${qRatio.toFixed(4)} (side height x ratio)`);
