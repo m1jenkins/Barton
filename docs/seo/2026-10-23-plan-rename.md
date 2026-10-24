@@ -67,4 +67,11 @@ Do the rename in the same window as the push to `main`, so checkout and site mat
 
 ### Change record
 
-Pending Mason's go-ahead. Record here: time (CT), product ID, old → new name, description changed (yes/no), who ran it.
+Done 2026-10-23 at 20:29 CT, right after the site push (`d664811`, live on production at 20:29 CT), on Mason's go-ahead ("Push + approve all changes"). Run through the Stripe API by Claude Code; prices, Payment Links and env vars untouched.
+
+| Product | Old name | New name | Description |
+| --- | --- | --- | --- |
+| `prod_UGAAjsCtQNRd28` ($395) | Car Buying Service | Drive Right | Replaced with the text above |
+| `prod_UHctPBgsLqlPea` ($695) | Ultimate Concierge | Drive Right Pro | Replaced with the text above |
+
+Checked afterwards by opening both live Payment Links (not paid): the hosted checkout shows "Drive Right" at $395.00 and "Drive Right Pro" at $695.00 with the new descriptions. Each link's stored line-item `description` still reads the old name (Stripe snapshots it when the link is made); it is not what buyers see. The price nicknames ("Full Service - $395", "Ultimate Concierge - $695") are dashboard-only and were left as they are.
