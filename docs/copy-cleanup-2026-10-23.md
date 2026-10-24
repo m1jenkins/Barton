@@ -21,13 +21,25 @@ Mason approved a plain-language pass over the public site copy. It removes AI-so
 - `data/metro-release.json`: the nine Texas pages are re-pinned.
 - `draft-artifacts/`: the city and metro drafts are regenerated from the new `index.html`.
 
-## Open owner decisions (not changed)
+## Owner decisions, applied the same day
 
-1. The topic-page cards call the service "AI-assisted", while the comparison pages sell one dedicated advisor in contrast to AI agents. Keep the word only if it's accurate.
-2. `blog-roi-car-buying-service.html` uses a $495 fee, but the plans are $395 and $695. Its "$4,000 net" doesn't match its own figures either: $2,100 + $1,300 + $800 − $495 = $3,705.
-3. The lemon-law statements conflict. `blog-private-party-vs-dealership.html` says the law covers some used dealer purchases; `blog-texas-car-buying-laws.html` says it covers no used vehicles.
-4. Some older posts promise more than the plans cover:
-   - rip-offs: "verify title chains across state lines"
-   - title-transfer: "handles the entire post-purchase process"
-   - spot-delivery: "never face a callback"
-5. The `austin.html` hero says "here for Texas buyers", while the footer and the rest of the site say nationwide.
+1. **AI wording:** every mention of an AI-assisted service or an agent that describes Drive Right is gone. The five topic-page cards are now "Car-Buying Service Plans". Mentions of CarEdge's own AI Buying Agent stay on the comparison pages, because they're competitor facts.
+2. **Legacy $195 AI Agent plan:** removed entirely.
+   - `payment-success-consultant.html` and `ai-car-buying-agent.html` are deleted, and both URLs 301 to `/schedule.html`.
+   - The plan's refund terms and fee credit are gone from `policy.html`.
+   - Its retired-offer lines are gone from `llms.txt` and `pricing.md`.
+   - `script.js` still recognises the old receipt path, so its content hash, and the pins of every page, stay unchanged.
+3. **ROI post:**
+   - It now uses the $395 fee.
+   - The math reads about $4,200 of example savings, roughly $3,800 after the fee.
+   - The "Average savings" labels now read "Example".
+   - The unattributed "$495 fee paid for itself" quote is deleted, since its figure can't be changed without rewriting the quote.
+4. **Lemon law:** both posts now follow the [TxDMV Lemon Law page](https://www.txdmv.gov/motorists/consumer-protection/lemon-law), checked 2026-10-23. Only new vehicles qualify for a refund or replacement. A used car still under the manufacturer's original warranty may get repair help.
+5. **Scope:** posts no longer claim services outside the plans:
+   - title transfers or registration, title-chain checks, history reports and arranged inspections
+   - arranging financing, lender networks, or a promised rate improvement
+   - delivery, apart from Pro's shipping coordination
+   - a "team" or weekly deal volume
+
+   The matching blog buttons now say what the plans do. The archived Tesla page's search steps are now a buyer's checklist.
+6. **Austin hero:** stays as it is.

@@ -155,6 +155,11 @@
       "statusCode": 301
     },
     {
+      "source": "/payment-success-consultant.html",
+      "destination": "/schedule.html",
+      "statusCode": 301
+    },
+    {
       "source": "/uuyh",
       "destination": "/",
       "permanent": true

@@ -143,7 +143,7 @@ For new sales, keep the final payable total at full service `39500 usd` and conc
 
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
-- Historical AI receipts remain supported at `https://www.driverightcarbuying.com/payment-success-consultant.html?session_id={CHECKOUT_SESSION_ID}`; do not reactivate new AI sales.
+- The historical AI receipt page was removed on 2026-10-23; `/payment-success-consultant.html` now 301s to `/schedule.html`. Deactivate any AI Payment Link that is still live, and do not reactivate AI sales.
 - Full service: `https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
 - Concierge: `https://www.driverightcarbuying.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 

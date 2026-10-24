@@ -110,7 +110,7 @@ test('the real payment verifier reports an OpenAI purchase only for consented pa
 });
 
 test('every payment page moves the session ID out of the URL before GTM loads', async () => {
-  assert.deepEqual(pages, ['payment-success-concierge.html', 'payment-success-consultant.html', 'payment-success-fullservice.html', 'payment-success.html']);
+  assert.deepEqual(pages, ['payment-success-concierge.html', 'payment-success-fullservice.html', 'payment-success.html']);
   for (const page of pages) {
     const html = await read(page);
     const head = html.slice(html.indexOf('<head>'), html.indexOf('</head>'));

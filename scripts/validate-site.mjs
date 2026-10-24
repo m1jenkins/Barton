@@ -22,7 +22,6 @@ const teslaFsdPark = 'tesla-fsd-for-sale.html';
 const confirmationPages = [
   'success.html',
   'payment-success.html',
-  'payment-success-consultant.html',
   'payment-success-fullservice.html',
   'payment-success-concierge.html',
 ];

@@ -208,7 +208,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
   assert.match(await read('llms.txt'), /\$395 Drive Right \(one model\) and \$695 Drive Right Pro \(up to three models\)/);
-  assert.match(await read('llms.txt'), /AI Agent Buying Service is retired for new sales/);
+  assert.doesNotMatch(await read('llms.txt'), /AI Agent Buying Service/);
 });
 
 test('city and editorial indexing stays consistent with owner-approved public copy', async () => {

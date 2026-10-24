@@ -35,4 +35,4 @@ Service fees do not include the vehicle price, taxes, registration, inspection, 
 
 For the authoritative current checkout scope and terms, see https://www.driverightcarbuying.com/schedule.html and https://www.driverightcarbuying.com/how-it-works.html.
 
-The standalone AI Agent offer is retired for new sales. Historical paid engagements remain supported. This local candidate requires coordinated Stripe activation; see docs/seo-execution/release-candidate.md.
+This local candidate requires coordinated Stripe activation; see docs/seo-execution/release-candidate.md.
