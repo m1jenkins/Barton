@@ -210,7 +210,7 @@ const HALLOWEEN_SALE_ENDS = Date.UTC(2026, 10, 1, 5);
 function showHalloweenBanner() {
   if (Date.now() >= HALLOWEEN_SALE_ENDS || typeof document.createElement !== 'function'
     || window.location.pathname.startsWith('/payment-success')) return;
-  const message = 'Halloween sale: 25% off Full Service or Ultimate Concierge with code SPOOKY25 at checkout. Ends October 31.';
+  const message = 'Halloween sale: 25% off Drive Right or Drive Right Pro with code SPOOKY25 at checkout. Ends October 31.';
   const style = document.createElement('style');
   style.textContent = `
 .halloween-banner{position:relative;z-index:41;display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:#14090f linear-gradient(90deg,#14090f,#2a0f1d 50%,#14090f);color:#ffb15c;font:600 14px/1.2 var(--sans,system-ui,sans-serif);border-bottom:1px solid #ff7a1a}
@@ -235,7 +235,7 @@ function showHalloweenBanner() {
   const items = [
     ['🎃', 'Halloween sale: <b>25% off</b> any plan'],
     ['🦇', 'Use code <span class="halloween-banner__code">SPOOKY25</span> at checkout'],
-    ['👻', 'Full Service or Ultimate Concierge'],
+    ['👻', 'Drive Right or Drive Right Pro'],
     ['🕸️', 'Ends October 31']
   ].map(([icon, text]) => `<span class="halloween-banner__item"><span>${icon}</span><span>${text}</span></span>`).join('');
   const banner = document.createElement('div');

@@ -1,12 +1,12 @@
 import { questions, stepsFor, restoreState, nextQuestion, progress, isComplete, answerQuestion, skipQuestion, formValues, questionForControl, firstName } from './intake.js?v=59712ce4fac7';
 
-// Full Service and Ultimate Concierge payment pages. The form stays the default until
+// Drive Right and Drive Right Pro payment pages. The form stays the default until
 // this module runs, so a buyer whose browser can't load it still has a working intake.
 // Answers go into #onboarding-form and its own submit handler (script.js) sends them.
 const $ = selector => document.querySelector(selector);
 const chat = $('#intake-view'), form = $('#onboarding-form'), formSection = $('#onboarding');
 const tier = document.body.dataset.purchaseTier;
-const plans = { full_service: 'Full Service', concierge: 'Ultimate Concierge' };
+const plans = { full_service: 'Drive Right', concierge: 'Drive Right Pro' };
 
 if (chat && form && formSection && plans[tier]) {
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);

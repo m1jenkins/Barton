@@ -1,6 +1,6 @@
 export const plans = Object.freeze({
-  full_service: { name: 'Full Service', fee: 395 },
-  concierge: { name: 'Ultimate Concierge', fee: 695 },
+  full_service: { name: 'Drive Right', fee: 395 },
+  concierge: { name: 'Drive Right Pro', fee: 695 },
 });
 
 export const CHECKOUT_KEY = 'drive_right_buying_checkout_v1';
@@ -39,7 +39,7 @@ export function createCheckout({ store, request, createId, attribution, track = 
   let pending;
   const persist = () => store.write(state);
   async function run(tier) {
-    if (!Object.hasOwn(plans, tier)) throw new Error('Please choose Full Service or Ultimate Concierge.');
+    if (!Object.hasOwn(plans, tier)) throw new Error('Please choose Drive Right or Drive Right Pro.');
     let checkout = state.checkouts.find(item => !item.stale && item.tier === tier && !item.leadId);
     if (!checkout) {
       checkout = { tier, leadId: null, key: createId(), payload: { tier, source_page: sourcePage, attribution } };

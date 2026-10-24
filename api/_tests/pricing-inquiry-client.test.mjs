@@ -19,7 +19,7 @@ function inquiry(request, track, web3forms = async () => { throw new Error('Offl
   const close = { addEventListener(event, fn) { this.click = fn; } };
   const dialog = { querySelector: () => close, addEventListener: (event, fn) => { dialogListeners[event] = fn; },
     showModal() { this.open = true; }, close() { this.open = false; dialogListeners.close(); } };
-  const opener = { dataset: { openInquiry: 'Ultimate Concierge' }, addEventListener(event, fn) { this.click = fn; }, focus() { this.focused = true; } };
+  const opener = { dataset: { openInquiry: 'Drive Right Pro' }, addEventListener(event, fn) { this.click = fn; }, focus() { this.focused = true; } };
   const client = {
     attribution: { first_touch: { utm_source: 'chatgpt' } }, createId: () => crypto.randomUUID(),
     track: track || ((event, data) => events.push({ event, data })),
@@ -39,7 +39,7 @@ test('pricing inquiry opens with the chosen service and restores focus on close'
   const f = inquiry(() => ({ lead_id: leadId }));
   f.opener.click();
   assert.equal(f.dialog.open, true);
-  assert.equal(f.interest.value, 'Ultimate Concierge');
+  assert.equal(f.interest.value, 'Drive Right Pro');
   f.close.click();
   assert.equal(f.dialog.open, false);
   assert.equal(f.opener.focused, true);
@@ -116,7 +116,7 @@ test('pricing inquiry persists search and contact details and reports only the d
   assert.equal(payload.name, '');
   assert.equal(payload.email, f.fields.email);
   assert.equal(payload.vehicle, f.fields.vehicle);
-  assert.match(payload.message, /Ultimate Concierge/);
+  assert.match(payload.message, /Drive Right Pro/);
   assert.match(payload.message, /Vehicle budget: \$35,000/);
   assert.match(payload.message, /Buying timeline: Within a month/);
   assert.equal(payload.attribution.first_touch.utm_source, 'chatgpt');

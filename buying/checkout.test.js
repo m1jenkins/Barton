@@ -55,7 +55,7 @@ test('a stale offer needs another click with a new key and keeps the old attempt
 test('retired consultation and non-HTTPS links never open', async () => {
   let called = false;
   const retired = createCheckout({ store: memoryStore(), request: () => { called = true; }, createId: () => crypto.randomUUID(), attribution: {} });
-  await assert.rejects(retired.start('consultation'), /Full Service or Ultimate Concierge/);
+  await assert.rejects(retired.start('consultation'), /Drive Right or Drive Right Pro/);
   assert.equal(called, false);
   const insecure = createCheckout({ store: memoryStore(), request: async () => ({ ok: true, url: 'http://buy.stripe.com/x' }), createId: () => crypto.randomUUID(), attribution: {} });
   await assert.rejects(insecure.start('full_service'), /could not be confirmed/);

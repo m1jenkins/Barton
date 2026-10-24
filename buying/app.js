@@ -1,4 +1,4 @@
-import { plans, createCheckout, createStore } from './checkout.js?v=585d841060e1';
+import { plans, createCheckout, createStore } from './checkout.js?v=ff70ad16f513';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);

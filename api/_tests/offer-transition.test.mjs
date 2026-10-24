@@ -35,7 +35,7 @@ function checkoutDb(prior,{race=false}={}) {
  };
  sql.begin=fn=>fn(sql);sql.json=v=>v;return {sql,calls};
 }
-test('new Full Service creates a $395 snapshot; retired checkout never touches database',async t=>{
+test('new Drive Right plan creates a $395 snapshot; retired checkout never touches database',async t=>{
  env(t);const db=checkoutDb();const handler=checkoutHandler({getDatabase:()=>db.sql,notify:()=>{}});
  const res=await call(handler);assert.equal(res.statusCode,201);assert.match(res.body.url,/client_reference_id=/);
  assert.equal(db.calls.find(c=>c.query.includes('INSERT')).values[5],39500);

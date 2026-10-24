@@ -26,9 +26,11 @@ test('comparison pages are indexable guides with matching dates, byline and appr
     assert.equal(article.dateModified, shown, `${name} visible date matches Article.dateModified`);
     assert.match(document.visibleText, new RegExp(`checked[^.]*${new Date(`${shown}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}`, 'i'), `${name} states when competitor facts were checked`);
 
-    // Drive Right facts reuse approved claim rows word for word (SEO-PRICE-2026-09-27, COMPENSATION-COPY-2026-10-05, REFUND-LINE-2026-10-05).
+    // Drive Right facts reuse approved claim rows word for word (SEO-PRICE-2026-09-27, PLAN-NAMES-2026-10-23, COMPENSATION-COPY-2026-10-05, REFUND-LINE-2026-10-05).
     assert.match(document.visibleText, /\$395/, name);
     assert.match(document.visibleText, /\$695/, name);
+    assert.match(document.visibleText, /Drive Right Pro/, name);
+    assert.doesNotMatch(document.visibleText, /Ultimate Concierge|auctions, forums|forums, private sellers/, name);
     assert.match(document.visibleText, /Dealers and lenders pay us nothing\./, name);
     assert.match(document.visibleText, /Full refund if you cancel before negotiations begin\./, name);
     assert.match(document.visibleText, /not affiliated with/i, `${name} non-affiliation notice`);
@@ -62,7 +64,7 @@ test('the hub and both alternatives pages link to each other and are discoverabl
   for (const name of pages) {
     const links = htmlDocument(await read(name)).links;
     for (const other of pages.filter(page => page !== name)) assert.ok(links.includes(`/${other}`), `${name} links /${other}`);
-    assert.ok(links.includes('/schedule.html#full-service'), `${name} links the Full Service plan`);
+    assert.ok(links.includes('/schedule.html#full-service'), `${name} links the Drive Right plan`);
   }
   const resources = htmlDocument(await read('blog.html')).links;
   for (const name of pages) assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);

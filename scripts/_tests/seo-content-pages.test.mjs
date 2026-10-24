@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
-import { htmlDocument } from '../metro-release.mjs';
+import { csvRows, htmlDocument } from '../metro-release.mjs';
 
 const root = new URL('../../', import.meta.url);
 const read = file => readFile(new URL(file, root), 'utf8');
@@ -22,7 +22,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.equal(homepage.h1.length, 1);
   assert.match(hero, /Let us deal with the dealer\./);
   assert.match(hero, /negotiate for a price below MSRP/);
-  assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Full Service|Ultimate Concierge/i);
+  assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Drive Right Pro|Full Service|Ultimate Concierge/i);
   // The hero goes straight to checkout with one paid button, plus an inquiry button that needs no payment and the trust lines.
   const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/ul>\s*<\/div>/)?.[1] ?? '';
   assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service']);
@@ -35,8 +35,8 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.match(homepage.visibleText, /\$395/);
   assert.match(homepage.visibleText, /\$695/);
   assert.doesNotMatch(homepageHtml, /\$295|\$895/);
-  assert.match(homepage.visibleText, /Full Service/);
-  assert.match(homepage.visibleText, /Ultimate Concierge/);
+  assert.match(homepage.visibleText, /Drive Right Pro/);
+  assert.doesNotMatch(homepage.visibleText, /Full Service|Ultimate Concierge/);
 
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html']) {
     const head = (await read(file)).match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? '';
@@ -45,8 +45,8 @@ test('service-intent pages publish current prices without retired or unapproved 
       ['Open Graph description', /<meta property="og:description"\s+content="([^"]+)"/i],
     ]) {
       const description = head.match(pattern)?.[1] ?? '';
-      assert.match(description, /\$395/, `${file} ${label} should include Full Service pricing`);
-      assert.match(description, /\$695/, `${file} ${label} should include Ultimate Concierge pricing`);
+      assert.match(description, /\$395/, `${file} ${label} should include Drive Right plan pricing`);
+      assert.match(description, /\$695/, `${file} ${label} should include Drive Right Pro pricing`);
     }
   }
 });
@@ -130,7 +130,7 @@ test('marketing nav lists three sections, and the schedule header offers one che
     assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
     if (file === 'schedule.html') {
       const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
-      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Full Service · $395' }], 'one compact header checkout; the price span hides on phones');
+      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Drive Right · $395' }], 'one compact header checkout; the price span hides on phones');
       assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
     } else {
       assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
@@ -207,7 +207,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.match(homepage.visibleText, /Mon–Fri, 9 a\.m\.–5 p\.m\. Central/);
   assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
-  assert.match(await read('llms.txt'), /\$395 Full Service and \$695 Ultimate Concierge/);
+  assert.match(await read('llms.txt'), /\$395 Drive Right \(one model\) and \$695 Drive Right Pro \(up to three models\)/);
   assert.match(await read('llms.txt'), /AI Agent Buying Service is retired for new sales/);
 });
 
@@ -293,4 +293,38 @@ test('unreleased legacy blog HTML stays noindex while the three released guides 
   for (const file of legalBlogs) {
     assert.match(docs, new RegExp(file.replaceAll('.', '\\.')));
   }
+});
+
+test('live pages use the Drive Right and Drive Right Pro plan names and scopes of 2026-10-23', async () => {
+  const live = (await readdir(root)).filter(file => file.endsWith('.html'));
+  const files = [...live, 'pricing.md', 'llms.txt', 'script.js', 'buying/checkout.js', 'buying/intake-chat.js'];
+  // Competitors' own "Full Service" and "Concierge" tiers stay; only Drive Right's old names and old Pro scope are retired.
+  const retired = /Ultimate Concierge|Wider search|auctions, forums|forums, private sellers|Get Full Service|Full Service (?:is|at|·|\(\$)|(?:[Ii]ntroductory|[Ff]ounding)[^.]{0,40}\$695/;
+  for (const file of files) assert.doesNotMatch(await read(file), retired, file);
+
+  for (const file of ['schedule.html', 'index.html', 'how-it-works.html', 'car-buying-service.html']) {
+    const text = htmlDocument(await read(file)).visibleText;
+    assert.match(text, /Drive Right Pro/, file);
+    assert.match(text, /up to three models/, file);
+    assert.match(text, /upgrade to Drive Right Pro later by paying the \$300 difference/, file);
+  }
+  assert.match(await read('policy.html'), /upgrade to Drive Right Pro later by paying the \$300 difference/);
+  assert.match(await read('pricing.md'), /upgrade to Drive Right Pro later by paying the \$300 difference/);
+});
+
+test('claim rows record the 2026-10-23 plan names, scopes and upgrade term, and the banner matches its row', async () => {
+  const claims = new Map(csvRows(await read('data/claims.csv')).map(row => [row.claim_id, row]));
+  for (const id of ['PLAN-NAMES-2026-10-23', 'DRIVE-RIGHT-SCOPE-2026-10-23', 'PRO-SCOPE-2026-10-23', 'PLAN-UPGRADE-2026-10-23']) {
+    const row = claims.get(id);
+    assert.equal(row?.status, 'approved', id);
+    assert.ok(row.reviewer && row.last_reviewed && row.expires_on && row.approved_copy, `${id} is complete`);
+  }
+  for (const id of ['CONCIERGE-SCOPE-2026-10-05', 'CONCIERGE-SHIPPING-2026-10-23']) assert.equal(claims.get(id)?.status, 'retired', id);
+  assert.equal(claims.get('SEO-PRICE-2026-09-27').status, 'approved');
+  assert.equal(claims.get('ADS-GOOGLE-2026-10').status, 'pending_owner_confirmation', 'ad copy waits for Mason');
+
+  const promo = claims.get('PROMO-HALLOWEEN-2026-10-23');
+  assert.equal(promo.claim_text, 'Halloween sale: 25% off Drive Right or Drive Right Pro with code SPOOKY25 at checkout. Ends October 31.');
+  assert.ok((await read('script.js')).includes(`const message = '${promo.claim_text}';`), 'banner text is the approved row');
+  assert.match(claims.get('PLAN-UPGRADE-2026-10-23').claim_text, /upgrade to Drive Right Pro later by paying the \$300 difference/);
 });

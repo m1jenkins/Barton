@@ -1,26 +1,32 @@
 {
   "schemaVersion": "1.0.0",
   "recordStatus": "local_offer_candidate_activation_pending",
-  "lastObservedAt": "2026-09-27",
+  "lastObservedAt": "2026-10-23",
   "currency": "USD",
   "sourceOfTruth": {
     "url": "https://www.driverightcarbuying.com/schedule.html",
     "file": "schedule.html",
-    "note": "Current published service copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
+    "note": "Plan names and scopes follow the owner decision of 2026-10-23 (PLAN-NAMES-2026-10-23, DRIVE-RIGHT-SCOPE-2026-10-23, PRO-SCOPE-2026-10-23, PLAN-UPGRADE-2026-10-23 in data/claims.csv; docs/seo/2026-10-23-plan-rename.md). Other published copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
   },
   "services": [
     {
       "id": "https://www.driverightcarbuying.com/#service-full",
-      "name": "Full Service",
+      "name": "Drive Right",
       "price": 395,
       "priceType": "flat_fee",
+      "bestFor": "Buyers who know the car they want",
       "features": [
-        "New used and certified pre-owned search",
+        "One model, with any trims, colors and packages within that model",
+        "New, used and certified pre-owned dealer inventory",
         "Price negotiation and fee review",
-        "Dedicated advisor",
-        "Documented vehicle recommendations",
+        "One dedicated advisor, start to finish",
+        "Written recommendations: what we found and what we would do",
         "Expected start time confirmed after payment and intake verification"
       ],
+      "excludes": [
+        "Switching to a different model"
+      ],
+      "upgrade": "Upgrade to Drive Right Pro later by paying the $300 difference",
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
       "serviceLevelReview": "owner_approved_current_website_copy_2026_10_01",
@@ -28,16 +34,17 @@
     },
     {
       "id": "https://www.driverightcarbuying.com/#service-concierge",
-      "name": "Ultimate Concierge",
+      "name": "Drive Right Pro",
       "price": 695,
       "priceType": "flat_fee",
+      "bestFor": "Buyers torn between a few cars",
       "features": [
-        "Everything in Full Service",
-        "Auction forum and niche-market sourcing",
-        "Priority access",
-        "Specialized luxury and exotic vehicle research",
-        "Expanded transaction coordination",
-        "Delivery coordination where available"
+        "Everything in Drive Right",
+        "Offers on up to three models priced side by side (a model is a make and model; trims, colors and packages within a model do not count extra)",
+        "Dealers for each model played against each other's written offers",
+        "Out-of-state dealers, with help coordinating shipping when the out-of-state dealer is open to it",
+        "First in line",
+        "Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker"
       ],
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",

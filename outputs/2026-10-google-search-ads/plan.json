@@ -6,10 +6,10 @@
     "approved_plan": "docs/google-ads-launch-plan-2026-09-27.md",
     "copy_claim": "ADS-GOOGLE-2026-10 (data/claims.csv); nothing here may go live until that row is approved",
     "source_of_truth": "This file. Regenerate editor-import/ with: node outputs/2026-10-google-search-ads/build-editor-csv.mjs",
-    "copy_version": "v3 (2026-09-27): sells to the pain (hours at the dealer, scrolling listings, haggling) with time, sanity and a better deal; price kept as a one-line qualifier; replaces v2"
+    "copy_version": "v4 (2026-10-23): v3 with the plan rename (Full Service -> Drive Right, Ultimate Concierge -> Drive Right Pro), the Pro scope of 2026-10-23 (up to three models, out-of-state dealers) in place of auctions, forums and niche sources, and \"Start Your Buying Brief\" replaced (AGENTS.md bans \"brief\" in public copy); replaces v3"
   },
   "facts": {
-    "offer": "Full Service: $395 USD one-time service fee. Ultimate Concierge: $695 USD one-time service fee.",
+    "offer": "Drive Right: $395 USD one-time service fee, one model. Drive Right Pro: $695 USD one-time service fee, up to three models. Drive Right clients can upgrade to Pro for the $300 difference.",
     "verified_facts": [
       "car buying and negotiation service",
       "Austin city base; service area United States; remote support",
@@ -18,7 +18,8 @@
       "offer comparison and seller communication (contacting participating dealers)",
       "dedicated advisor",
       "documented vehicle recommendations",
-      "Concierge: auctions, forums and niche sources; priority communication and coordination; delivery coordination where available",
+      "Drive Right (the $395 plan): one model, any trims, colors and packages within it; new, used and CPO dealer inventory",
+      "Drive Right Pro: offers on up to three models priced side by side; each model's dealers played against each other's written offers; out-of-state dealers with help coordinating shipping when the dealer is open to it; first in line; our pick of the deal on out-the-door price, resale and running costs (\"best\" stays out of ads)",
       "buyer makes every purchase decision",
       "saves buyers time: the advisor does the searching, dealer contact and negotiating (owner statement, 2026-09-27)",
       "negotiates for a better price and tells the buyer when a deal looks bad (an aim, not a promised outcome; CLM-014 bounded language)"
@@ -589,8 +590,8 @@
         "sitelinks": [
           {
             "text": "Compare Plans and Pricing",
-            "d1": "Full Service is $395 one time",
-            "d2": "Ultimate Concierge is $695",
+            "d1": "Drive Right plan: $395 one time",
+            "d2": "Drive Right Pro: $695 one time",
             "url": "https://www.driverightcarbuying.com/schedule.html"
           },
           {
@@ -612,7 +613,7 @@
             "url": "https://www.driverightcarbuying.com/about.html"
           },
           {
-            "text": "Start Your Buying Brief",
+            "text": "Start Your Car Search",
             "d1": "Describe the car you want",
             "d2": "Then we get to work",
             "url": "https://www.driverightcarbuying.com/"
@@ -626,8 +627,8 @@
           "Fee Check Before You Sign",
           "You Make Every Decision",
           "One-Time Service Fee",
-          "Full Service $395",
-          "Ultimate Concierge $695",
+          "Drive Right Plan $395",
+          "Drive Right Pro $695",
           "Remote Support Nationwide"
         ],
         "snippets": [
@@ -933,7 +934,7 @@
           "rsas": [
             {
               "final_url": "https://www.driverightcarbuying.com/schedule.html",
-              "path1": "concierge",
+              "path1": "compare",
               "path2": "pricing",
               "headlines": [
                 {
@@ -945,7 +946,7 @@
                   "pin": "HEADLINE_1"
                 },
                 {
-                  "text": "Can't Find the Car You Want?",
+                  "text": "Torn Between a Few Cars?",
                   "pin": "HEADLINE_2"
                 },
                 {
@@ -965,11 +966,11 @@
                   "pin": null
                 },
                 {
-                  "text": "We Search Beyond the Lot",
+                  "text": "Offers on Up to 3 Models",
                   "pin": null
                 },
                 {
-                  "text": "Auctions and Niche Sources",
+                  "text": "Out-of-State Dealers Too",
                   "pin": null
                 },
                 {
@@ -993,17 +994,17 @@
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "Drive Right Pro: $695",
                   "pin": null
                 }
               ],
               "descriptions": [
                 {
-                  "text": "Can't find the car you want? We search past the dealer lot, auctions and forums included.",
+                  "text": "Torn between a few cars? We get dealer offers on up to three models, side by side.",
                   "pin": null
                 },
                 {
-                  "text": "Too busy to shop around? Ultimate Concierge does the searching and the haggling for $695.",
+                  "text": "Too busy to shop around? Drive Right Pro does the searching and the haggling for $695.",
                   "pin": null
                 },
                 {
@@ -1231,8 +1232,8 @@
         "sitelinks": [
           {
             "text": "Compare Plans and Pricing",
-            "d1": "Full Service is $395 one time",
-            "d2": "Ultimate Concierge is $695",
+            "d1": "Drive Right plan: $395 one time",
+            "d2": "Drive Right Pro: $695 one time",
             "url": "https://www.driverightcarbuying.com/schedule.html"
           },
           {
@@ -1254,7 +1255,7 @@
             "url": "https://www.driverightcarbuying.com/about.html"
           },
           {
-            "text": "Start Your Buying Brief",
+            "text": "Start Your Car Search",
             "d1": "Describe the car you want",
             "d2": "Then we get to work",
             "url": "https://www.driverightcarbuying.com/"
@@ -1353,11 +1354,11 @@
                   "pin": null
                 },
                 {
-                  "text": "Full Service: $395 One Time",
+                  "text": "Drive Right: $395 One Time",
                   "pin": null
                 },
                 {
-                  "text": "Ultimate Concierge: $695",
+                  "text": "Drive Right Pro: $695",
                   "pin": null
                 },
                 {
@@ -1373,7 +1374,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Start Your Buying Brief",
+                  "text": "Start Your Car Search",
                   "pin": null
                 }
               ],
@@ -1383,7 +1384,7 @@
                   "pin": null
                 },
                 {
-                  "text": "Full Service is $395 and Ultimate Concierge is $695, one time. Vehicle costs are separate.",
+                  "text": "Drive Right is $395 and Drive Right Pro is $695, one time. Vehicle costs are separate.",
                   "pin": null
                 },
                 {

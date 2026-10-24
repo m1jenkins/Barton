@@ -27,7 +27,7 @@ test('new cars skip model years and mileage, cash skips pre-approval, and no tra
   for (const key of ['model_years', 'max_mileage', 'financing_status', 'trade_vehicle', 'delivery_address']) assert.ok(!keys.includes(key), key);
 });
 
-test('only Ultimate Concierge asks where the car should be delivered', () => {
+test('only Drive Right Pro asks where the car should be delivered', () => {
   assert.ok(stepsFor({}, 'concierge').some(question => question.key === 'delivery_address'));
   assert.ok(!stepsFor({}, 'full_service').some(question => question.key === 'delivery_address'));
 });
@@ -101,7 +101,7 @@ test('form values use the form’s own option values and fill typed fields with 
   assert.equal(values.trade_mileage, '70000');
   assert.equal(values.vehicle_type, 'coupe');
   assert.equal(values.budget, 'Up to $30,000 out the door');
-  assert.equal(values.delivery_address, '', 'Full Service never sends a delivery answer');
+  assert.equal(values.delivery_address, '', 'the Drive Right plan never sends a delivery answer');
 });
 
 test('changing an answer clears values the new answer no longer asks for', () => {
