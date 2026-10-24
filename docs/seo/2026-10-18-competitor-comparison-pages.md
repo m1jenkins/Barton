@@ -14,6 +14,13 @@ The session user asked for an SEO win that captures "search traffic of people lo
 
 No standalone "[competitor] review" or "Drive Right vs X" pages. Add one only if Search Console shows impressions for that exact query.
 
+## Update 2026-10-23: used-car push
+
+- New page `/used-car-buying-service.html` (title "Used Car Buying Service: We Find and Negotiate It | Drive Right") targets used-car buying service and used-car broker searches. Its only outside fact is Delivrd's used-car pause and $1,000 fee (`CMP-UC-01`, rechecked 2026-10-23). It joins the comparison-page test set.
+- `/delivrd-alternatives.html` is retitled "Delivrd Alternatives for Used Cars and a Lower Fee" and leads with the pause and the $605/$305 fee gap; the pause and price were rechecked 2026-10-23.
+- Both pages show the two plan cards near the top. Their buttons are plain `/schedule.html#…` links, which `script.js` already turns into direct checkout; do not add `data-plan`, or one click starts two checkouts.
+- Only Delivrd is described as new-only. Authority Auto's services page lists pre-owned packages, and CarEdge, Car Pal and Automatch list used cars.
+
 ## Why these pages
 
 Search observations on 2026-10-18 came from a search tool, not Google rank data, and could not see Reddit or keyword volumes:

@@ -7,7 +7,7 @@ const root = new URL('../../', import.meta.url);
 const read = name => readFile(new URL(name, root), 'utf8');
 const origin = 'https://www.driverightcarbuying.com';
 const hub = 'compare-car-buying-services.html';
-const pages = [hub, 'caredge-alternatives.html', 'delivrd-alternatives.html'];
+const pages = [hub, 'caredge-alternatives.html', 'delivrd-alternatives.html', 'used-car-buying-service.html'];
 
 test('comparison pages are indexable guides with matching dates, byline and approved Drive Right claims', async () => {
   const sitemap = await read('sitemap.xml');

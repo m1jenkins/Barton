@@ -32,4 +32,6 @@
 .dr .guide-body .compare-note { margin:0 0 28px; font-size:13px; color:var(--muted); }
 .dr .guide-body .faq-list summary { font-weight:600; }
 .dr .guide-body .faq-list p { margin:0; }
+.dr .guide-plans { max-width:840px; margin:8px 0 18px; }
+.dr .guide-plans .plan-description { min-height:0; }
 @media(max-width:760px) { .dr .guide-page { padding-block:24px 40px; } .dr .guide-body { font-size:16px; } .dr .guide-body .highlight-box { padding:16px 18px; } .dr .guide-body .compare-table :is(thead th:first-child,tbody th) { width:132px; } }
