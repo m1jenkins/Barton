@@ -66,10 +66,10 @@ If a Performance Max campaign is built, use these 12 themes:
 | car negotiation service | 100–1K | 105 impr, 3 clicks (best non-brand query) |
 | car negotiator | 100–1K | 49 impr, 1 click |
 | car buying agent | 100–1K | 39 + "car buyers agent" 17 |
-| car buying advocate | not run | "car buyers advocate" 64 + "car buying advocate" 33 |
+| car buying advocate | 10–100 | "car buyers advocate" 64 + "car buying advocate" 33 |
 | car buying consultant | 100–1K | 17 |
 | hire someone to negotiate car price | 10–100 | 4 at position 2.5 |
-| professional car negotiator | not run | 17 + "car buying negotiation service" 20 |
+| professional car negotiator | 10–100 | 17 + "car buying negotiation service" 20 |
 | car buying service cost | 10–100 | fee questions ("auto broker fees", "car broker fees", "how much do car brokers charge") ≈ 22 |
 | car buying concierge | 100–1K | 0 (site doesn't rank; ads can fill the gap) |
 | car finder service | 100–1K, +900% 3-month | 8 + "car finding service" 12 |
@@ -87,7 +87,8 @@ Rejected, and why:
 ## Changes to the Search plan
 
 - **Removed [help buying a car]** from the Car Buying Advisor ad group in `outputs/2026-10-google-search-ads/plan.json` (logged in `change-log.md`).
-- **Candidates, not added:** "car buying advocate", "professional car negotiator" and "vehicle negotiator" (removed on 2026-09-27 for no Keyword Planner data; Search Console now shows 22 impressions). Run them through Keyword Planner before adding them to `plan.json`.
+- **Added "car buying advocate"** (phrase, Car Buying Advisor) and **"professional car negotiator"** (phrase, Car Negotiation) after a Keyword Planner check on October 23: both 10–100 US searches a month (`outputs/2026-10-google-search-ads/keyword-planner/historical-metrics-2026-10-23.csv`). Keyword Planner folds "car buyers advocate" into "car buying advocate".
+- **Not added:** "vehicle negotiator". Keyword Planner still shows no data, even though Search Console shows 22 impressions.
 
 ## Repeating this pull
 

@@ -817,6 +817,10 @@
             {
               "text": "car buying negotiator",
               "match_type": "PHRASE"
+            },
+            {
+              "text": "professional car negotiator",
+              "match_type": "PHRASE"
             }
           ],
           "rsas": [
@@ -1044,6 +1048,10 @@
             },
             {
               "text": "personal car shopper",
+              "match_type": "PHRASE"
+            },
+            {
+              "text": "car buying advocate",
               "match_type": "PHRASE"
             }
           ],

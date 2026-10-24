@@ -8,6 +8,7 @@
 | `editor-import/01…10-*.csv` | Google Ads Editor import files generated from `plan.json`. Import them in number order. |
 | `keyword-planner/keywords.csv` | Keyword Planner upload ("Get search volume and forecasts"): each keyword text once, generated from `plan.json`. Steps are in `docs/google-ads-setup.md` §5. |
 | `keyword-planner/historical-metrics-2026-09-27.csv` | Keyword Planner results for every keyword: volume ranges, competition and top-of-page bid ranges. Method and caveats are in `keyword-planner/README.md`. |
+| `keyword-planner/historical-metrics-2026-10-23.csv` | Keyword Planner results for the October 23 candidates (car buying advocate, professional car negotiator, vehicle negotiator). |
 | `../../docs/seo/2026-10-23-search-console-queries-and-ad-themes.md` | Latest Search Console query evidence for ad terms: the 12 search themes to use, rejected terms with reasons, and candidate keywords. Read before changing keywords, themes or negatives. |
 | `build-editor-csv.mjs` | Rebuilds `editor-import/` and `keyword-planner/` from `plan.json`. `--check` fails if any CSV is stale. |
 | `ad-copy-approval.md` | Gate G4: every string a searcher can see (ad text, assets, display paths, final URLs, call asset), where it is used, what it claims and its evidence, plus the sign-off steps. Approved through `ADS-GOOGLE-2026-10` in `data/claims.csv`. |
