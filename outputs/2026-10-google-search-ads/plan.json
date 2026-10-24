@@ -1045,10 +1045,6 @@
             {
               "text": "personal car shopper",
               "match_type": "PHRASE"
-            },
-            {
-              "text": "help buying a car",
-              "match_type": "EXACT"
             }
           ],
           "rsas": [
