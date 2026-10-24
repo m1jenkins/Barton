@@ -21,6 +21,14 @@ Tier IDs, anchors, `payment-success-*.html` URLs, Stripe Payment Link URLs and V
 
 **Removed everywhere live.** Auctions, forums and private sellers are no longer part of any plan. Example cross-shops use real rivals only: BMW X5 vs Mercedes GLE, BMW X3 vs Mercedes GLC, RAV4 Hybrid vs CR-V Hybrid. $695 is not called an introductory or founding price.
 
+## Owner confirmations (2026-10-23)
+
+Mason approved all changes in chat ("Push + approve all changes"), including three points the decision left open:
+
+- The Drive Right plan does not include out-of-state dealers; the comparison tables say so.
+- Switching to a different model is not included on the Drive Right plan (pricing FAQ, `policy.html`).
+- There is no upgrade Payment Link; Mason collects the $300 difference his own way for now.
+
 ## Copy rules
 
 - Where the plan name equals the brand, write "the Drive Right plan" or "Drive Right ($395)", never "Drive Right's Drive Right plan".
@@ -33,7 +41,7 @@ Tier IDs, anchors, `payment-success-*.html` URLs, Stripe Payment Link URLs and V
 - Added, approved: `PLAN-NAMES-2026-10-23`, `DRIVE-RIGHT-SCOPE-2026-10-23`, `PRO-SCOPE-2026-10-23`, `PLAN-UPGRADE-2026-10-23`.
 - Retired: `CONCIERGE-SCOPE-2026-10-05`, `CONCIERGE-SHIPPING-2026-10-23`.
 - Updated: `PROMO-HALLOWEEN-2026-10-23` (banner names the new plans; SPOOKY25 and the Oct 31 end are unchanged), `COMPARISON-PAGES-2026-10-18` (plan name and reused rows), `SEO-PRICE-2026-09-27` (note only; still the current price row).
-- `ADS-GOOGLE-2026-10` redrafted as v4, still `pending_owner_confirmation`: v3 sheet plus `outputs/2026-10-google-search-ads/ad-copy-approval-v4.md` (19 changed strings). `plan.json` and the Editor CSVs are rebuilt. Nothing is uploaded.
+- `ADS-GOOGLE-2026-10` redrafted as v4: v3 sheet plus `outputs/2026-10-google-search-ads/ad-copy-approval-v4.md` (19 changed strings). `plan.json` and the Editor CSVs are rebuilt. Mason approved v4 on 2026-10-23 (both sheet hashes recorded in `approved_copy`, expires 2026-12-21). Approval is gate G4 only: nothing is uploaded, and the campaigns stay paused until the other launch gates pass.
 
 ## Not changed
 
