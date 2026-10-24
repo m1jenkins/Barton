@@ -46,6 +46,7 @@ Notes:
 - “Salespeople negotiate every day. Now you have a negotiator too.” is also a Google Ads description (docs/google-ads-launch-plan-2026-09-27.md). It shipped trimmed; restore it to legwork card 2 if message match with that ad matters more.
 - The Concierge shipping line stays on the Concierge plan card and in the legwork drawing’s screen-reader description.
 - Removed text: about 95 words of paragraph copy. Added text: about 25 words in the caption and closing band, plus the drawing’s labels.
+- 2026-10-23: savings point 3 is now “One deal worth signing.”, the savings lead and legwork 1 were reworded. See copy-cleanup-2026-10-23.md.
 
 ## Implementation
 
