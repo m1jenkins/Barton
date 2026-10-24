@@ -43,9 +43,9 @@ Mason approved all changes in chat ("Push + approve all changes"), including thr
 - Updated: `PROMO-HALLOWEEN-2026-10-23` (banner names the new plans; SPOOKY25 and the Oct 31 end are unchanged), `COMPARISON-PAGES-2026-10-18` (plan name and reused rows), `SEO-PRICE-2026-09-27` (note only; still the current price row).
 - `ADS-GOOGLE-2026-10` redrafted as v4: v3 sheet plus `outputs/2026-10-google-search-ads/ad-copy-approval-v4.md` (19 changed strings). `plan.json` and the Editor CSVs are rebuilt. Mason approved v4 on 2026-10-23 (both sheet hashes recorded in `approved_copy`, expires 2026-12-21). Approval is gate G4 only: nothing is uploaded, and the campaigns stay paused until the other launch gates pass.
 
-## Not changed
+## Generated and archived copies
 
-Dated records (`docs/` history, earlier cutover packets, `outputs/` evidence including the v3 approval sheet) and `draft-artifacts/`. The generated city and metro drafts in `draft-artifacts/` still show the old names, so `npm test` reports three stale-draft failures until they are regenerated with `npm run draft:cities` and `npm run draft:metros`.
+The city and metro drafts in `draft-artifacts/` were regenerated from the new homepage and `data/services.json` (`npm run draft:cities`, `npm run draft:metros`), and the three archived guide previews in `draft-artifacts/guides/` got the same plan-name fix as the live guides. With that, `npm test` and every CI check pass. Mason later cleared every folder for edits, so dated records may be corrected where they would mislead; the v3 and v4 ad sheets stay byte-for-byte because their hashes are the signed approval.
 
 ## Stripe
 
