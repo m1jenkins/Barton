@@ -483,3 +483,19 @@ html:has(> body.dr) { scroll-padding-top:96px; }
  .dr .closing-cta { padding:28px 24px; margin-bottom:48px; }.dr .closing-cta .primary-button { width:100%; }
 }
 @media(max-width:374px) { .dr .site-header nav { gap:10px; }.dr .nav-link { font-size:13px; }.dr .header-cta { padding-inline:10px; font-size:12px; }.dr .header-phone { font-size:13px; }.dr .hero-plans :is(.primary-button,.outline-button) { gap:10px; padding-inline:12px; font-size:15px; } }
+.dr .plan-card:has([data-plan="concierge"]) { --pro-accent:#A8D5C2; --pro-soft:rgba(255,255,255,.7); background:var(--ink); color:#fff; border-color:var(--ink); box-shadow:0 24px 48px -28px rgba(17,17,17,.55); }
+.dr .plan-card:has([data-plan="concierge"]) :is(.plan-for,.plan-assurance) { color:var(--pro-accent); }
+.dr .plan-card:has([data-plan="concierge"]) li::before { color:var(--pro-accent); }
+.dr .plan-card:has([data-plan="concierge"]) :is(.plan-description,.plan-price span) { color:var(--pro-soft); }
+.dr .plan-card:has([data-plan="concierge"]) ul { border-top-color:rgba(255,255,255,.16); }
+@property --pro-angle { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@keyframes pro-border { 0% { --pro-angle:0deg; opacity:0; } 15% { opacity:1; } 75% { opacity:1; } 100% { --pro-angle:540deg; opacity:0; } }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button { position:relative; background:#fff; color:var(--ink); border-color:#fff; transition:box-shadow .3s ease, border-color .3s ease; }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button::before { content:''; position:absolute; inset:-3px; padding:3px; border-radius:inherit; pointer-events:none; background:conic-gradient(from var(--pro-angle), #A8D5C2, #7FB3FF, #C9A7FF, #FF9EC4, #FFC38A, #FFE58A, #A8D5C2); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button [data-icon] { transition:transform .3s ease; }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) { background:#fff; color:var(--ink); border-color:var(--pro-accent); box-shadow:0 0 0 2px var(--pro-accent); transition-duration:.5s; transition-delay:.9s; }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible)::before { animation:pro-border 1.3s cubic-bezier(.3,.6,.3,1) forwards; }
+.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) [data-icon] { transform:translateX(4px); }
+@media (prefers-reduced-motion:reduce) { .dr .plan-card:has([data-plan="concierge"]) .outline-button, .dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) { transition:box-shadow .2s ease, border-color .2s ease; } .dr .plan-card:has([data-plan="concierge"]) .outline-button::before { display:none; } .dr .plan-card:has([data-plan="concierge"]) .outline-button [data-icon] { transition:none; } }
+.dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button { background:transparent; color:#fff; border-color:rgba(255,255,255,.28); }
+.dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button:hover { background:rgba(255,255,255,.08); border-color:#fff; }
