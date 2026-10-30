@@ -150,6 +150,15 @@ test('marketing nav lists three sections, and the schedule header offers one che
       assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started<\/a>/);
       continue;
     }
+    if (file === 'about.html') {
+      // About uses the homepage's header (2026-10-30), with Pricing and Get started leading to the plans page.
+      const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
+      const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/schedule.html', '/about.html']);
+      assert.doesNotMatch(nav, /car-buying-service\.html/);
+      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/);
+      continue;
+    }
     const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
     const nav = header.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);

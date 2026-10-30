@@ -101,9 +101,13 @@
 
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=6b8e8485d4e1">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="stylesheet" href="/buying/daisy.css?v=3d555457a022">
-    <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
+    <meta name="theme-color" content="#1A4B8C">
+    <link rel="preload" href="/assets/buying/fonts/inter-tight-black-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/buying/daisy.css?v=455528fb64c9">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=05de9df18bc5">
     <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=731136977974">
     <script defer src="accessibility.js"></script>
 
     <!-- Google tag (gtag.js) -->
@@ -114,75 +118,136 @@
     </script>
     <link rel="stylesheet" href="/logo-motion.css?v=0886355fa510">
     <script type="module" src="/logo-motion.js?v=8709679d6328"></script>
+    <noscript><style>.dr.wz .wz-nav { display:flex !important; flex-wrap:wrap; } .dr.wz .wz-menu-button { display:none !important; } .dr.wz .wz-header-row { flex-wrap:wrap; height:auto; padding-block:12px; }</style></noscript>
 </head>
 
-<body class="dr" data-buying-page="about">
+<body class="dr wz" data-buying-page="about">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header class="site-header page-width">
-  <a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a>
-  <nav aria-label="Main navigation">
-    <a class="nav-link" href="/how-it-works.html">How it works</a>
-    <a class="nav-link" href="/schedule.html">Pricing</a>
-    <a class="nav-link" href="/about.html" aria-current="page">About</a>
-  </nav>
-  <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
-</header><main id="main-content" tabindex="-1">
-  <section class="page-width">
-    <div class="page-intro">
-      <h1>Car buying and negotiation.<br>From Austin.</h1>
-      <p>Steer Me Right is a car buying and negotiation service in Austin that works with buyers anywhere in the U.S. We research the cars, compare the dealers’ written offers and negotiate with them by phone and email. <a href="/car-buying-service.html">See what the service covers</a> or <a href="/schedule.html">compare the $395 Steer Me Right plan and $695 Steer Me Right Pro</a>.</p>
+<header class="site-header wz-header">
+  <div class="wz-wrap wz-header-row">
+    <a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a>
+    <nav class="wz-nav" aria-label="Main navigation">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/schedule.html">Pricing</a>
+      <a href="/about.html" aria-current="page">About</a>
+    </nav>
+    <div class="wz-header-actions">
+      <button type="button" class="wz-link-button" data-open-inquiry data-cta-location="header">Talk to Mason</button>
+      <a class="wz-btn wz-btn--forest wz-btn--sm" href="/schedule.html" data-cta-location="header">Get started</a>
+      <button type="button" class="wz-menu-button" aria-expanded="false" aria-controls="wz-menu" data-menu-toggle><span class="wz-sr">Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="wz-menu" id="wz-menu" hidden>
+    <a href="/how-it-works.html">How it works</a>
+    <a href="/schedule.html">Pricing</a>
+    <a href="/about.html" aria-current="page">About Mason</a>
+    <a href="/blog.html">Guides</a>
+    <button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="menu">Talk to Mason first</button>
+  </div>
+</header>
+<main id="main-content" tabindex="-1">
+
+  <section class="wz-hero wz-hero--page" aria-labelledby="about-title">
+    <div class="wz-wrap wz-hero-inner">
+      <h1 id="about-title" class="wz-display wz-display--xl">Car buying and negotiation.<br>From Austin.</h1>
+      <p class="wz-hero-lead">Steer Me Right is a car buying and negotiation service in Austin that works with buyers anywhere in the U.S. We research the cars, compare the dealers’ written offers and negotiate with them by phone and email. <a href="/car-buying-service.html">See what the service covers</a> or <a href="/schedule.html">compare the $395 Steer Me Right plan and $695 Steer Me Right Pro</a>.</p>
     </div>
   </section>
-  <section class="page-width content-section story" aria-labelledby="founder-title">
-    <div class="story-heading"><picture class="story-portrait"><source type="image/avif" srcset="/assets/buying/mason-headshot-480.avif 480w, /assets/buying/mason-headshot-800.avif 800w, /assets/buying/mason-headshot-1200.avif 1200w" sizes="(max-width: 1000px) 240px, 320px"><source type="image/webp" srcset="/assets/buying/mason-headshot-480.webp 480w, /assets/buying/mason-headshot-800.webp 800w, /assets/buying/mason-headshot-1200.webp 1200w" sizes="(max-width: 1000px) 240px, 320px"><img src="/assets/buying/mason-headshot-1200.jpg" alt="Mason, founder of Steer Me Right" width="1200" height="1600" loading="lazy" decoding="async"></picture><h2 id="founder-title">Hi, I'm Mason.</h2><p>Founder &amp; Lead Advisor</p></div>
-    <div class="prose">
-      <p>I’m a car enthusiast. I’ve researched, bought, owned and sold new, used, certified pre-owned and enthusiast cars.</p>
-      <p>Friends, family and coworkers started asking me to handle their deals. Eventually that became Steer Me Right.</p>
-      <p>Buying a car means picking the model, chasing dealers, comparing fees, sorting out financing and a trade-in, and reading the paperwork. Most people do it every few years. The salesperson does it every day.</p>
-      <p>I take that work off your plate. Your plan sets how much of it I handle, and every decision about the purchase stays with you.</p>
-      <p>Maybe you’re stuck between a Toyota Sienna and a Honda Odyssey. Or you already know the car and just want someone to get the price down.</p>
-    </div>
-  </section>
-  <section class="page-width content-section" id="photo-gallery" aria-labelledby="rides-title">
-    <h2 id="rides-title">Some of the rides along the way.</h2>
-    <p>A few favorites from over the years.</p>
-    <div class="ride-gallery">
-      <picture style="--ratio:1.333"><source type="image/avif" srcset="/assets/external/optimized/about-two-mazda-miatas-640.avif 640w, /assets/external/optimized/about-two-mazda-miatas-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-two-mazda-miatas-640.webp 640w, /assets/external/optimized/about-two-mazda-miatas-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-two-mazda-miatas-original.jpg" alt="Two Mazda MX-5 Miatas parked side by side" width="1440" height="1080" loading="lazy" decoding="async"></picture>
-      <picture style="--ratio:1.089"><source type="image/avif" srcset="/assets/external/optimized/about-blue-ford-bronco-640.avif 640w, /assets/external/optimized/about-blue-ford-bronco-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-blue-ford-bronco-640.webp 640w, /assets/external/optimized/about-blue-ford-bronco-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-blue-ford-bronco-original.jpg" alt="Blue Ford Bronco parked outdoors" width="1440" height="1322" loading="lazy" decoding="async"></picture>
-      <picture style="--ratio:1.333"><source type="image/avif" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.avif 640w, /assets/external/optimized/about-gray-porsche-cayman-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.webp 640w, /assets/external/optimized/about-gray-porsche-cayman-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-gray-porsche-cayman-original.jpg" alt="Gray Porsche Cayman parked outdoors" width="1440" height="1080" loading="lazy" decoding="async"></picture>
-      <picture style="--ratio:0.751"><source type="image/avif" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.avif 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.webp 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-ford-maverick-petrified-forest-original.jpg" alt="Ford Maverick at Petrified Forest National Park" width="1174" height="1564" loading="lazy" decoding="async"></picture>
-    </div>
-  </section>
-  <section class="page-width content-section" aria-labelledby="values-title">
-    <h2 id="values-title">How we work.</h2>
-    <ul class="card-grid" role="list">
-      <li class="info-card"><h3>Prices and fees in writing</h3><p>We get every quote in writing and show you our fee before you pay. Dealers pay us nothing.</p></li>
-      <li class="info-card"><h3>Offers compared</h3><p>We line up the listings and offers against the market and point out anything that doesn’t add up.</p></li>
-      <li class="info-card"><h3>Dealer calls handled</h3><p>We do the research and the dealer calls your plan covers. You decide whether to buy.</p></li>
-    </ul>
-  </section>
-  <section class="page-width" aria-labelledby="plans-title">
-    <div class="closing-cta">
-      <div>
-        <h2 id="plans-title">See the two plans.</h2>
-        <p>Save thousands, and don’t waste another weekend at the dealer.</p>
-        <p>hello@steermeright.com · Based in Austin, Texas<br>WhatsApp · <a href="https://signal.me/#eu/3Qt3tskYypWeG5ZsT9nigsOMLvf4CP4vXeK-FSj1GANJiJPJOipMdL6HtICsxm3g" rel="noopener noreferrer" target="_blank">Signal</a></p>
+
+  <section class="wz-section" aria-labelledby="founder-title">
+    <div class="wz-wrap wz-split">
+      <figure class="wz-split-photo">
+        <picture><source type="image/avif" srcset="/assets/buying/mason-headshot-480.avif 480w, /assets/buying/mason-headshot-800.avif 800w, /assets/buying/mason-headshot-1200.avif 1200w" sizes="(max-width: 900px) calc(100vw - 32px), 480px"><source type="image/webp" srcset="/assets/buying/mason-headshot-480.webp 480w, /assets/buying/mason-headshot-800.webp 800w, /assets/buying/mason-headshot-1200.webp 1200w" sizes="(max-width: 900px) calc(100vw - 32px), 480px"><img src="/assets/buying/mason-headshot-1200.jpg" alt="Mason, founder of Steer Me Right" width="1200" height="1600" decoding="async"></picture>
+        <figcaption class="wz-float-pill wz-float-pill--low"><span class="wz-float-pill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg></span><span><strong>Mason</strong><small>Founder &amp; Lead Advisor</small></span></figcaption>
+      </figure>
+      <div class="wz-split-copy wz-split-copy--center">
+        <h2 id="founder-title" class="wz-display wz-display--md">Hi, I'm Mason.</h2>
+        <div class="wz-story">
+          <p>I’m a car enthusiast. I’ve researched, bought, owned and sold new, used, certified pre-owned and enthusiast cars.</p>
+          <p>Friends, family and coworkers started asking me to handle their deals. Eventually that became Steer Me Right.</p>
+          <p>Buying a car means picking the model, chasing dealers, comparing fees, sorting out financing and a trade-in, and reading the paperwork. Most people do it every few years. The salesperson does it every day.</p>
+          <p>I take that work off your plate. Your plan sets how much of it I handle, and every decision about the purchase stays with you.</p>
+          <p>Maybe you’re stuck between a Toyota Sienna and a Honda Odyssey. Or you already know the car and just want someone to get the price down.</p>
+        </div>
       </div>
-      <a href="/schedule.html" class="primary-button" id="about-cta-primary">See plans &amp; pricing</a>
+    </div>
+  </section>
+
+  <section class="wz-section wz-section--tint" aria-labelledby="values-title">
+    <div class="wz-wrap">
+      <h2 id="values-title" class="wz-display wz-display--md wz-display--left">How we work.</h2>
+      <ul class="wz-features" role="list">
+        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg></span><h3>Prices and fees in writing</h3><p>We get every quote in writing and show you our fee before you pay. Dealers pay us nothing.</p></li>
+        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 10 11l4 4 6-7M14 8h6v6"/></svg></span><h3>Offers compared</h3><p>We line up the listings and offers against the market and point out anything that doesn’t add up.</p></li>
+        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><h3>Dealer calls handled</h3><p>We do the research and the dealer calls your plan covers. You decide whether to buy.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wz-section" id="photo-gallery" aria-labelledby="rides-title">
+    <div class="wz-wrap">
+      <h2 id="rides-title" class="wz-display wz-display--md">Some of the rides along the way.</h2>
+      <p class="wz-lead wz-lead--left">A few favorites from over the years.</p>
+      <div class="ride-gallery">
+        <picture style="--ratio:1.333"><source type="image/avif" srcset="/assets/external/optimized/about-two-mazda-miatas-640.avif 640w, /assets/external/optimized/about-two-mazda-miatas-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-two-mazda-miatas-640.webp 640w, /assets/external/optimized/about-two-mazda-miatas-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-two-mazda-miatas-original.jpg" alt="Two Mazda MX-5 Miatas parked side by side" width="1440" height="1080" loading="lazy" decoding="async"></picture>
+        <picture style="--ratio:1.089"><source type="image/avif" srcset="/assets/external/optimized/about-blue-ford-bronco-640.avif 640w, /assets/external/optimized/about-blue-ford-bronco-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-blue-ford-bronco-640.webp 640w, /assets/external/optimized/about-blue-ford-bronco-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-blue-ford-bronco-original.jpg" alt="Blue Ford Bronco parked outdoors" width="1440" height="1322" loading="lazy" decoding="async"></picture>
+        <picture style="--ratio:1.333"><source type="image/avif" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.avif 640w, /assets/external/optimized/about-gray-porsche-cayman-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-gray-porsche-cayman-640.webp 640w, /assets/external/optimized/about-gray-porsche-cayman-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-gray-porsche-cayman-original.jpg" alt="Gray Porsche Cayman parked outdoors" width="1440" height="1080" loading="lazy" decoding="async"></picture>
+        <picture style="--ratio:0.751"><source type="image/avif" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.avif 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.avif 960w" sizes="(max-width: 760px) 90vw, 30vw"><source type="image/webp" srcset="/assets/external/optimized/about-ford-maverick-petrified-forest-640.webp 640w, /assets/external/optimized/about-ford-maverick-petrified-forest-960.webp 960w" sizes="(max-width: 760px) 90vw, 30vw"><img src="/assets/external/source/about-ford-maverick-petrified-forest-original.jpg" alt="Ford Maverick at Petrified Forest National Park" width="1174" height="1564" loading="lazy" decoding="async"></picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="wz-band" aria-labelledby="plans-title">
+    <picture class="wz-band-bg"><source type="image/avif" srcset="/assets/external/optimized/about-two-mazda-miatas-960.avif 960w, /assets/external/optimized/about-two-mazda-miatas-1440.avif 1440w" sizes="100vw"><img src="/assets/external/optimized/about-two-mazda-miatas-1440.webp" srcset="/assets/external/optimized/about-two-mazda-miatas-960.webp 960w, /assets/external/optimized/about-two-mazda-miatas-1440.webp 1440w" sizes="100vw" alt="" width="1440" height="1080" loading="lazy" decoding="async"></picture>
+    <div class="wz-wrap">
+      <div class="wz-band-card">
+        <h2 id="plans-title" class="wz-display wz-display--xl">See the two plans.</h2>
+        <p class="wz-lead">Save thousands, and don’t waste another weekend at the dealer.</p>
+        <div class="wz-actions wz-actions--center"><a href="/schedule.html" class="wz-btn wz-btn--forest" id="about-cta-primary">See plans &amp; pricing</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="closing">Talk to Mason first</button></div>
+        <p class="wz-fine">hello@steermeright.com · Based in Austin, Texas<br>WhatsApp · <a href="https://signal.me/#eu/3Qt3tskYypWeG5ZsT9nigsOMLvf4CP4vXeK-FSj1GANJiJPJOipMdL6HtICsxm3g" rel="noopener noreferrer" target="_blank">Signal</a></p>
+      </div>
     </div>
   </section>
 </main>
-<footer class="site-footer page-width" id="footer">
-  <div class="footer-top"><div><a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
-    <nav aria-label="Company"><a href="/car-buying-service.html">Car buying service</a><a href="/blog.html">Resources</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@steermeright.com">hello@steermeright.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
+<footer class="site-footer wz-footer" id="footer">
+  <div class="wz-wrap">
+    <div class="wz-footer-cols">
+      <nav aria-label="Plans"><h2>Plans</h2><a href="/schedule.html">Steer Me Right</a><a href="/schedule.html">Steer Me Right Pro</a><a href="/how-it-works.html">How it works</a></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><a href="/blog.html">Guides</a><a href="/compare-car-quotes.html">Car quote worksheet</a><a href="/car-buying-service.html">Car buying service</a></nav>
+      <nav aria-label="Company"><h2>Company</h2><a href="/about.html">About</a><a href="/policy.html">Policy</a></nav>
+      <div id="contact"><h2>Help</h2><span id="call-text-info"></span><a href="mailto:hello@steermeright.com">hello@steermeright.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
+    </div>
+    <div class="wz-footer-brand"><a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a></div>
+    <div class="wz-footer-legal"><p id="cities">Car research and negotiation. Based in Austin. Here for buyers nationwide.</p><p>© 2026 Steer Me Right</p><span id="saved-indicator" role="status"></span></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Steer Me Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
+<dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+  <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
+  <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
+  <form id="car-search-inquiry-form">
+    <input type="hidden" name="service_interest" value="Not sure yet">
+    <div class="inquiry-fields">
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-vehicle">What car are you looking for?<input id="inquiry-vehicle" name="vehicle" type="text" maxlength="300" placeholder="Make, model or the kind of car you have in mind" required autofocus></label>
+      <label class="inquiry-field" for="inquiry-budget"><span>Approximate vehicle budget <span class="optional">Optional</span></span><input id="inquiry-budget" name="budget" type="text" maxlength="80" placeholder="For example, $35,000–$45,000"></label>
+      <label class="inquiry-field" for="inquiry-timeline"><span>Buying timeline <span class="optional">Optional</span></span><select id="inquiry-timeline" name="timeline"><option value="">Choose a timeline</option><option>Within 2 weeks</option><option>Within a month</option><option>1–3 months</option><option>Still exploring</option></select></label>
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-details"><span>Questions or anything else Mason should know <span class="optional">Optional</span></span><textarea id="inquiry-details" name="details" rows="4" maxlength="2000" placeholder="Ask about the service, or add trim, color, trade-in or delivery details"></textarea></label>
+      <label class="inquiry-field" for="inquiry-email">Email<input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="inquiry-field" for="inquiry-phone"><span>Phone <span class="optional">Optional</span></span><input id="inquiry-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
+      <label class="inquiry-field" for="inquiry-name"><span>Name <span class="optional">Optional</span></span><input id="inquiry-name" name="name" type="text" autocomplete="name" maxlength="120"></label>
+    </div>
+    <div class="form-honeypot" aria-hidden="true"><label for="inquiry-website">Leave this field empty<input id="inquiry-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <button class="primary-button" type="submit">Send my car search inquiry</button>
+    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+    <a class="outline-button inquiry-email" data-email-inquiry href="mailto:hello@steermeright.com" hidden>Email Mason these details</a>
+    <p class="small-note">See our <a href="/policy.html#privacy-policy">privacy policy</a>.</p>
+  </form>
+</dialog><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript>
 <script src="/script.js?v=2e08861e8d34"></script>
 <script type="module" src="/buying/app.js?v=44b1a48f8182"></script>
+<script type="module" src="/buying/inquiry.js?v=8a64dd121d0a"></script>
+<script type="module" src="/buying/home-wise.js?v=090f741aa3f1"></script>
 </body>
 </html>

@@ -24,5 +24,12 @@ All AI agents editing files in this codebase must strictly adhere to the followi
   - **Elegant Status Indicators**: To convey status (e.g., success or alert), insert a tiny, static, solid colored dot next to neutral text inside the badge rather than coloring the entire badge container or text (e.g., a simple `#10b981` green dot next to clean text).
   - **No Striking Contrast Fills**: Keep badges light and clean, letting the typography do the work.
 
+## 4. One Type System on Every Page
+- **Headers** (each page's `h1`, and the homepage's section titles): Inter Tight Black (900), uppercase, tight leading. Current pages get it from the `h1` rule and `--display` in `buying/daisy.css`; legacy pages from `legacy-refresh.css`. Page CSS may change an `h1`'s size or margin, never its family, weight or case.
+- **Subheaders** (`h2`, `h3`, card and FAQ titles): Inter SemiBold (600).
+- **Body**: Inter Regular (400). Use SemiBold (600) for emphasis, buttons and labels.
+- **Barlow** is for the logo wordmark only (`logo-motion.css`).
+- Only the 400, 600 and Inter Tight 900 files are served, so do not use other weights (500, 650, 700 and 800 silently render as 400 or 600) or add a new font family.
+
 ---
 *Failure to follow these rules results in a cheap, template-like user interface. Elevate the design by keeping it clean, minimal, and premium.*

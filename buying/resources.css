@@ -3,7 +3,6 @@
 .dr .guide-breadcrumb { color:var(--muted); font-size:13px; margin-bottom:28px; }
 .dr .guide-breadcrumb a,.dr .guide-body a,.dr .guide-heading a { color:var(--green); text-decoration:underline; text-underline-offset:3px; }
 .dr .guide-heading { max-width:840px; padding-bottom:32px; border-bottom:1px solid var(--line); }
-.dr .guide-heading h1 { font-size:clamp(34px,4.5vw,60px); line-height:1.08; letter-spacing:-.04em; }
 .dr .guide-heading .prose-meta { margin-top:20px; font-size:14px; color:var(--muted); }
 .dr .guide-body { max-width:840px; font-size:17px; line-height:1.75; }
 .dr .guide-body h2 { margin:46px 0 18px; font-size:clamp(25px,3vw,34px); line-height:1.2; letter-spacing:-.025em; scroll-margin-top:30px; }

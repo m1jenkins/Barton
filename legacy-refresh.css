@@ -18,6 +18,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/assets/buying/fonts/inter-tight-black-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
 body.legacy-refresh {
   --primary: #111111;
   --primary-hover: #1b4d3e;
@@ -41,6 +50,7 @@ body.legacy-refresh {
   --border-hover: #c8cbc6;
   --sans: "Steer Me Right Inter", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   --serif: var(--sans);
+  --display: "Inter Tight", "Steer Me Right Inter", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   --radius: 12px;
   --radius-sm: 6px;
   --radius-lg: 16px;
@@ -57,6 +67,10 @@ body.legacy-refresh {
 }
 .legacy-refresh :is(a, button) { touch-action: manipulation; }
 .legacy-refresh :is(h1, h2, h3, p, li) { overflow-wrap: break-word; }
+/* Same type roles as the current pages: headers in Inter Tight Black caps, subheaders Inter SemiBold. */
+.legacy-refresh h1 { font: 900 clamp(40px, 4.6vw, 64px)/.92 var(--display); letter-spacing: -.012em; text-transform: uppercase; }
+.legacy-refresh :is(h2, h3, h4) { font-family: var(--sans); font-weight: 600; }
+.legacy-refresh :is(button, input, select, textarea) { font-family: inherit; }
 
 /* The copied legacy nav keeps its existing menu behavior, with the current hierarchy. */
 .legacy-refresh .nav,
@@ -161,8 +175,9 @@ body.legacy-refresh {
 .legacy-refresh .article-title {
   margin: 0;
   color: var(--text-dark);
-  font: 600 clamp(40px, 5.3vw, 72px)/1.04 var(--sans);
-  letter-spacing: -.035em;
+  font: 900 clamp(40px, 4.6vw, 64px)/.92 var(--display);
+  letter-spacing: -.012em;
+  text-transform: uppercase;
 }
 .legacy-refresh .article-meta { justify-content: flex-start; margin-top: 24px; color: var(--text-muted); font-size: 13px; }
 .legacy-refresh .article-content { padding: 58px 24px 96px; background: #fff; }
@@ -225,18 +240,18 @@ body.legacy-refresh {
 .legacy-refresh .hero .hero__headline {
   margin-bottom: 24px;
   color: var(--text-dark);
-  font: 600 clamp(46px, 5.5vw, 76px)/1.04 var(--sans);
-  letter-spacing: -.035em;
+  font: 900 clamp(40px, 4.6vw, 64px)/.92 var(--display);
+  letter-spacing: -.012em;
+  text-transform: uppercase;
   text-shadow: none;
 }
 .legacy-refresh .hero .hero__headline span { color: var(--text-dark); font-weight: inherit; text-shadow: none; }
 .legacy-refresh.seo-location-page .hero .hero__headline span {
   margin-top: 12px;
   color: var(--accent);
-  font-size: .58em;
-  font-weight: 500;
-  line-height: 1.25;
+  font: 600 .5em/1.25 var(--sans);
   letter-spacing: -.025em;
+  text-transform: none;
 }
 .legacy-refresh .hero .hero__subtext {
   max-width: 670px;
@@ -284,6 +299,7 @@ body.legacy-refresh {
   font-weight: 600;
   letter-spacing: -.025em;
 }
+.legacy-refresh h1.contact__headline { font-family: var(--display); font-weight: 900; letter-spacing: -.012em; }
 .legacy-refresh .blog-card__category { color: var(--accent); }
 .legacy-refresh .blog-card__link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .legacy-refresh .faq__item { border-color: var(--border); }
@@ -446,14 +462,12 @@ body.legacy-refresh {
   .legacy-refresh .footer__inner { width: calc(100% - 40px); }
   .legacy-refresh .breadcrumb { padding-top: 20px; }
   .legacy-refresh .article-header { padding: 46px 20px 50px; }
-  .legacy-refresh .article-title { font-size: clamp(36px, 8vw, 54px); }
   .legacy-refresh .article-content { padding: 42px 20px 72px; }
   .legacy-refresh .article-content__inner { font-size: 16px; }
   .legacy-refresh .article-content__inner h2 { margin-top: 42px; font-size: 29px; }
   .legacy-refresh .article-content__inner h3 { font-size: 23px; }
   .legacy-refresh .hero { padding-bottom: 56px; }
   .legacy-refresh .hero__content { padding-top: 42px; }
-  .legacy-refresh .hero .hero__headline { font-size: clamp(40px, 8vw, 58px); }
   .legacy-refresh .hero .hero__subtext { font-size: 16px; }
   .legacy-refresh .footer { padding-top: 48px; }
   .legacy-refresh :is(.why-promo, .transform, .difference, .call-text-cta, .faq) { padding: 56px 20px; }
@@ -462,9 +476,7 @@ body.legacy-refresh {
   .legacy-refresh .transform__row { padding: 18px 0; }
 }
 @media (max-width: 520px) {
-  .legacy-refresh .article-title { font-size: 38px; }
   .legacy-refresh .article-meta { flex-wrap: wrap; gap: 8px; }
-  .legacy-refresh .hero .hero__headline { font-size: 42px; }
   .legacy-refresh .footer__grid { grid-template-columns: 1fr 1fr; gap: 20px; }
   .legacy-refresh .footer__wordmark { font-size: 30px; }
   .legacy-refresh .sticky-cta__text { display: none; }

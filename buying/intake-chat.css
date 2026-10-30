@@ -12,7 +12,7 @@
 .dr[data-view="conversation"] .paid-chat .messages { min-height:200px; max-height:min(50dvh,560px); }
 /* While chatting, a shorter welcome keeps the first question and the answer box in view. */
 .dr[data-view="conversation"] .paid-intro { padding:20px 0 4px; }
-.dr[data-view="conversation"] .paid-intro h1 { font-size:60px; }
+
 .dr[data-view="conversation"] .paid-intro>p:last-of-type { margin:14px auto 24px; }
 .dr .paid-chat .message.user.is-editing .bubble { outline:2px solid var(--green); outline-offset:2px; }
 .dr .paid-chat .chat-ready { display:flex; flex-direction:column; align-items:flex-start; gap:4px; padding:8px 0 12px; }

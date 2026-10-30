@@ -1,11 +1,10 @@
-/* Homepage, Wise-style layout. Scoped to body.dr.wz so it outranks the shared .dr rules
+/* Homepage and About page, Wise-style layout. Scoped to body.dr.wz so it outranks the shared .dr rules
    in drive-right.css without editing that file (its hash is pinned on other pages). */
-@font-face { font-family:'Inter Tight'; src:url('../assets/buying/fonts/inter-tight-black-latin.woff2') format('woff2'); font-weight:900; font-style:normal; font-display:swap; unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF; }
 
 .dr.wz {
   --wz-sign:#1A4B8C; --wz-sign-hover:#143D73; --wz-on-sign:#fff; --wz-navy:#0E1B2E; --wz-ink:#0E1B2E; --wz-body:#465061;
   --wz-tint:#EDF0F4; --wz-chip:rgba(14,27,46,.07); --wz-chip-hover:rgba(14,27,46,.12); --wz-sky:#E3ECF8; --wz-line:rgba(14,27,46,.12);
-  --wz-display:'Inter Tight','Inter',system-ui,sans-serif; --wz-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wz-display:var(--display); --wz-sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --wz-gutter:clamp(16px,6.95vw,100px);
   background:#fff; color:var(--wz-body); font:400 18px/26px var(--wz-sans); letter-spacing:-.006em;
 }
@@ -21,8 +20,7 @@
 .dr.wz .wz-display { margin:0; font-family:var(--wz-display); font-weight:900; text-transform:uppercase; color:var(--wz-ink); letter-spacing:-.012em; text-wrap:balance; }
 .dr.wz .wz-display--xl { font-size:clamp(44px,6.19vw,89px); line-height:.85; }
 .dr.wz .wz-display--md { font-size:clamp(40px,4.06vw,58.5px); line-height:.85; }
-.dr.wz .wz-heading { margin:0; font:600 clamp(34px,3.16vw,45.5px)/1.25 var(--wz-sans); letter-spacing:-.03em; color:var(--wz-ink); }
-.dr.wz .wz-heading--left { margin-bottom:24px; }
+.dr.wz .wz-display--left { margin-bottom:24px; }
 .dr.wz .wz-lead { max-width:640px; margin:16px auto 24px; font-size:20px; line-height:28px; color:var(--wz-ink); }
 .dr.wz .wz-lead--left { margin-inline:0; }
 .dr.wz .wz-center { text-align:center; }
@@ -50,7 +48,7 @@
 .dr.wz .site-header .wordmark { font:600 26px/1 var(--wz-sans); letter-spacing:-.04em; color:var(--wz-on-sign); text-decoration:none; height:auto; }
 .dr.wz .wz-nav { display:flex; gap:4px; }
 .dr.wz .wz-nav a { padding:8px 12px; border-radius:9999px; color:var(--wz-on-sign); font-size:16px; font-weight:600; text-decoration:none; }
-.dr.wz .wz-nav a:hover { background:rgba(255,255,255,.14); }
+.dr.wz .wz-nav a:hover, .dr.wz .wz-nav a[aria-current="page"] { background:rgba(255,255,255,.14); }
 .dr.wz .wz-header-actions { display:flex; align-items:center; gap:8px; margin-left:auto; }
 .dr.wz .wz-link-button { padding:8px 12px; border:0; border-radius:9999px; background:none; color:var(--wz-on-sign); font:600 16px/24px var(--wz-sans); cursor:pointer; }
 .dr.wz .wz-link-button:hover { background:rgba(255,255,255,.14); }
@@ -71,11 +69,16 @@
 .dr.wz .wz-hero h1 { color:var(--wz-on-sign); max-width:1100px; }
 .dr.wz .wz-hero-lead { max-width:560px; margin:20px auto 32px; font-size:20px; line-height:28px; font-weight:600; letter-spacing:-.01em; color:var(--wz-on-sign); }
 
+/* Inner-page hero (About): headline and lead only, with underlined links on the blue. */
+.dr.wz .wz-hero--page { padding:72px 0 80px; }
+.dr.wz .wz-hero--page .wz-hero-lead { max-width:680px; margin-bottom:0; }
+.dr.wz .wz-hero-lead a { text-decoration:underline; text-underline-offset:3px; }
+
 /* Google reviews (replaced the dealer quote checker, 2026-10-30): a one-line rating above
    the headline and loose white cards under the buttons. Four fit across on wide screens;
    below that the row swipes sideways and runs to the screen edges so the next card peeks in. */
 .dr.wz .wz-hero-rating { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 8px; margin-bottom:24px; font-size:15px; line-height:22px; font-weight:600; color:var(--wz-on-sign); }
-.dr.wz .wz-hero-rating strong { font-weight:700; }
+.dr.wz .wz-hero-rating strong { font-weight:600; }
 .dr.wz .wz-google-badge { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:#fff; }
 .dr.wz .wz-google-badge .wz-google-g { width:15px; height:15px; }
 .dr.wz .wz-stars { color:#E9A100; font-size:16px; line-height:1; letter-spacing:2px; }
@@ -106,6 +109,11 @@
 .dr.wz .wz-features { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px 56px; margin:0; padding:0; list-style:none; }
 .dr.wz .wz-features h3 { margin:16px 0 8px; font:600 20px/28px var(--wz-sans); color:var(--wz-ink); letter-spacing:-.01em; }
 .dr.wz .wz-features p { font-size:16px; line-height:24px; }
+.dr.wz .wz-display--left + .wz-features { margin-top:40px; }
+
+/* About photo gallery: justified row from drive-right.css, with the homepage's rounder corners. */
+.dr.wz .ride-gallery { gap:16px; margin-top:32px; }
+.dr.wz .ride-gallery img { border-radius:24px; }
 .dr.wz .wz-icon { display:grid; place-items:center; width:56px; height:56px; border-radius:50%; background:var(--wz-chip); color:var(--wz-navy); }
 
 .dr.wz .wz-float-pill { position:absolute; left:6%; bottom:14%; display:flex; align-items:center; gap:14px; padding:10px 28px 10px 10px; border-radius:9999px; background:#fff; color:var(--wz-ink); box-shadow:inset -14px 0 0 var(--wz-sign); }
@@ -176,6 +184,9 @@
 .dr.wz .wz-split-photo img { display:block; width:100%; height:100%; object-fit:cover; }
 .dr.wz .wz-split-copy { padding-top:0; }
 .dr.wz .wz-split-copy--center { align-self:center; }
+.dr.wz .wz-story { display:grid; gap:16px; margin-top:24px; font-size:18px; line-height:28px; }
+.dr.wz .wz-split-photo picture { display:block; height:100%; }
+.dr.wz .wz-split-photo img { object-position:50% 30%; }
 .dr.wz .wz-list { margin:8px 0 32px; padding:0; list-style:none; }
 .dr.wz .wz-list li { display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--wz-line); }
 .dr.wz .wz-list li:last-child { border-bottom:0; }
@@ -210,6 +221,7 @@
 .dr.wz .wz-band .wz-wrap { position:relative; }
 .dr.wz .wz-band-card { display:flex; flex-direction:column; align-items:center; gap:32px; padding:120px 40px 72px; border-radius:40px; background:#fff; text-align:center; }
 .dr.wz .wz-band-card h2 { max-width:820px; }
+.dr.wz .wz-band-card > :is(.wz-lead, .wz-fine) { margin:-12px auto 0; }
 
 /* Resource links (Wise's "works nearly everywhere") */
 .dr.wz .wz-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
@@ -271,6 +283,11 @@
   .dr.wz .site-header .wordmark { font-size:22px; }
   .dr.wz .wz-link-button { display:none; }
   .dr.wz .wz-hero { padding:40px 0 64px; }
+  .dr.wz .wz-hero--page { padding:48px 0 56px; }
+  .dr.wz .wz-story { font-size:17px; line-height:27px; }
+  .dr.wz .ride-gallery { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .dr.wz .ride-gallery picture { aspect-ratio:1; }
+  .dr.wz .ride-gallery img { border-radius:16px; }
   .dr.wz .wz-hero-lead { font-size:18px; line-height:26px; margin:16px auto 24px; }
   .dr.wz .wz-hero .wz-actions { width:100%; }
   .dr.wz .wz-hero .wz-actions .wz-btn { width:100%; }
