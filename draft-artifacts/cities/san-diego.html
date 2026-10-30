@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=296a9e7359f5">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=4b53c33e5a76">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -220,38 +220,35 @@
 
   <section class="wz-hero" id="get-started" aria-labelledby="hero-title">
     <div class="wz-wrap wz-hero-inner">
+      <p class="wz-hero-rating"><span class="wz-google-badge"><img class="wz-google-g" src="/assets/buying/google-g.svg" alt="" width="15" height="15" decoding="async"></span><strong>5.0</strong><span class="wz-stars" aria-hidden="true">★★★★★</span><span>on Google Review</span></p>
       <h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer in San Diego.</h1>
       <p class="wz-hero-lead">We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands. Say whether a San Diego commute or room for beach gear should be in the search details.</p>
       <div class="wz-actions wz-actions--center"><a class="wz-btn wz-btn--forest" href="#plans" data-cta-location="hero">See plans from $395</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="hero">Talk to Mason first</button></div>
 
       <div class="wz-greviews" aria-labelledby="greviews-title">
-        <div class="wz-greviews-head">
-          <h2 id="greviews-title">5-star Google reviews</h2>
-          <p class="wz-greviews-score"><span class="wz-stars" aria-hidden="true">★★★★★</span><strong>5.0</strong> on Google from 4 reviews</p>
-        </div>
-        <ul class="wz-greviews-list" role="list">
+        <h2 id="greviews-title" class="wz-sr">5-star Google reviews</h2>
+        <ul class="wz-greviews-list" role="list" tabindex="0" aria-labelledby="greviews-title">
           <li><figure>
-            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <div class="wz-greviews-top"><span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><img class="wz-google-g" src="/assets/buying/google-g.svg" alt="Google review" width="18" height="18" decoding="async"></div>
             <blockquote><p>“Mason did great, made the whole process so much easier than walking in a dealership. Found what I wanted and got new car in less than 2 weeks. Will definitely use them again. Very much worth it.”</p></blockquote>
-            <figcaption><b>N. R.</b> · Google review</figcaption>
+            <figcaption><b>N. R.</b></figcaption>
           </figure></li>
           <li><figure>
-            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <div class="wz-greviews-top"><span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><img class="wz-google-g" src="/assets/buying/google-g.svg" alt="Google review" width="18" height="18" decoding="async"></div>
             <blockquote><p>“Gives great advice and is very knowledgeable on what your options are. Can’t recommend Mason enough.”</p></blockquote>
-            <figcaption><b>Pablo P.</b> · Google review</figcaption>
+            <figcaption><b>Pablo P.</b></figcaption>
           </figure></li>
           <li><figure>
-            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <div class="wz-greviews-top"><span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><img class="wz-google-g" src="/assets/buying/google-g.svg" alt="Google review" width="18" height="18" decoding="async"></div>
             <blockquote><p>“Helpful and easy to talk to. Gave solid advice and a great car recommendation that I ended up going with. So happy with my new car! Highly recommend!”</p></blockquote>
-            <figcaption><b>Elizabeth W.</b> · Google review</figcaption>
+            <figcaption><b>Elizabeth W.</b></figcaption>
           </figure></li>
           <li><figure>
-            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <div class="wz-greviews-top"><span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><img class="wz-google-g" src="/assets/buying/google-g.svg" alt="Google review" width="18" height="18" decoding="async"></div>
             <blockquote><p>“Very helpful and informative on picking the right car for me”</p></blockquote>
-            <figcaption><b>Erin M.</b> · Google review</figcaption>
+            <figcaption><b>Erin M.</b></figcaption>
           </figure></li>
         </ul>
-        <p class="wz-greviews-foot"><a class="wz-text-link" href="https://share.google/FqdAYavhmPBvlnasE" target="_blank" rel="noopener">Read them on Google</a><span>Posted under our former name, Drive Right Car Buying.</span></p>
       </div>
     </div>
   </section>

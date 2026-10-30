@@ -27,7 +27,11 @@ test('service-intent pages publish current prices without retired or unapproved 
   // The hero shows the Google reviews instead of a checkout button (the quote checker was retired on 2026-10-30).
   assert.deepEqual([...heroSection.matchAll(/data-plan="([^"]+)"/g)], []);
   assert.match(heroSection, /5-star Google reviews/);
-  assert.match(heroSection, /Posted under our former name, Drive Right Car Buying\./);
+  // A Google rating line above the headline, then a swipeable row of cards, each with a Google "G".
+  // The former-name note and profile link were removed on 2026-10-30.
+  assert.match(heroSection, /class="wz-hero-rating"[\s\S]*?<strong>5\.0<\/strong>[\s\S]*?on Google Review</);
+  assert.equal([...heroSection.matchAll(/class="wz-greviews-top"[^\n]*class="wz-google-g"/g)].length, 4);
+  assert.doesNotMatch(heroSection, /former name|share\.google/);
   assert.doesNotMatch(heroSection, /data-quote-tool/);
   assert.match(homepageHtml, /Dealers pay us nothing\./);
   assert.match(homepageHtml, /Full refund if you cancel before negotiations begin\./);

@@ -61,7 +61,7 @@
 .dr.wz .wz-menu .wz-btn { margin-top:16px; background:#fff; color:var(--wz-sign); }
 .dr.wz .wz-header .wz-btn--forest, .dr.wz .wz-hero .wz-btn--forest { background:#fff; color:var(--wz-sign); }
 .dr.wz .wz-header .wz-btn--forest:hover, .dr.wz .wz-hero .wz-btn--forest:hover, .dr.wz .wz-menu .wz-btn:hover { background:var(--wz-sky); }
-.dr.wz :is(.wz-header, .wz-menu, .wz-hero) :is(a, button):not(.wz-greviews *):focus-visible { outline-color:#fff; }
+.dr.wz :is(.wz-header, .wz-menu, .wz-hero) :is(a, button):focus-visible { outline-color:#fff; }
 .dr.wz .wz-hero .wz-btn--outline { color:var(--wz-on-sign); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85); }
 .dr.wz .wz-hero .wz-btn--outline:hover { background:rgba(255,255,255,.14); }
 
@@ -71,20 +71,27 @@
 .dr.wz .wz-hero h1 { color:var(--wz-on-sign); max-width:1100px; }
 .dr.wz .wz-hero-lead { max-width:560px; margin:20px auto 32px; font-size:20px; line-height:28px; font-weight:600; letter-spacing:-.01em; color:var(--wz-on-sign); }
 
-/* Google reviews card (replaced the dealer quote checker, 2026-10-30) */
-.dr.wz .wz-greviews { width:100%; max-width:960px; margin-top:40px; padding:32px; border-radius:32px; background:#fff; color:var(--wz-ink); text-align:left; box-sizing:border-box; }
-.dr.wz .wz-greviews-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; }
-.dr.wz .wz-greviews-head h2 { font:600 26px/1.2 var(--wz-sans); letter-spacing:-.03em; color:var(--wz-ink); }
-.dr.wz .wz-greviews-score { display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; font-size:16px; line-height:24px; color:var(--wz-body); }
-.dr.wz .wz-greviews-score strong { font:900 32px/1 var(--wz-display); color:var(--wz-ink); }
-.dr.wz .wz-stars { color:#E9A100; font-size:20px; line-height:1; letter-spacing:2px; }
-.dr.wz .wz-greviews-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:24px 0 0; padding:0; list-style:none; }
-.dr.wz .wz-greviews-list figure { display:flex; flex-direction:column; gap:12px; height:100%; margin:0; padding:20px; border-radius:20px; background:var(--wz-tint); box-sizing:border-box; }
+/* Google reviews (replaced the dealer quote checker, 2026-10-30): a one-line rating above
+   the headline and loose white cards under the buttons. Four fit across on wide screens;
+   below that the row swipes sideways and runs to the screen edges so the next card peeks in. */
+.dr.wz .wz-hero-rating { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 8px; margin-bottom:24px; font-size:15px; line-height:22px; font-weight:600; color:var(--wz-on-sign); }
+.dr.wz .wz-hero-rating strong { font-weight:700; }
+.dr.wz .wz-google-badge { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:#fff; }
+.dr.wz .wz-google-badge .wz-google-g { width:15px; height:15px; }
+.dr.wz .wz-stars { color:#E9A100; font-size:16px; line-height:1; letter-spacing:2px; }
+.dr.wz .wz-hero-rating .wz-stars { color:#FFC83D; letter-spacing:1px; }
+.dr.wz .wz-greviews { width:100%; max-width:1240px; margin-top:48px; }
+.dr.wz .wz-greviews-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:0; padding:0; list-style:none; text-align:left; }
+.dr.wz .wz-greviews-list:focus-visible { outline:3px solid #fff; outline-offset:4px; border-radius:20px; }
+/* A light glass finish on near-solid white, so the cards stand off the dark blue: a bright rim
+   and top edge, a gentle fade from bright white to near-white, and a deeper shadow for lift. */
+.dr.wz .wz-greviews-list figure { display:flex; flex-direction:column; gap:14px; height:100%; margin:0; padding:22px; border:1px solid #fff; border-radius:20px; background:linear-gradient(160deg, #fff 35%, rgba(255,255,255,.95)); -webkit-backdrop-filter:blur(14px) saturate(150%); backdrop-filter:blur(14px) saturate(150%); box-shadow:inset 0 1px 0 #fff, 0 0 0 1px rgba(255,255,255,.18), 0 18px 40px -16px rgba(4,12,30,.6), 0 2px 6px rgba(4,12,30,.12); box-sizing:border-box; }
+.dr.wz .wz-greviews-top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.dr.wz .wz-google-g { display:block; width:18px; height:18px; }
 .dr.wz .wz-greviews-list blockquote { margin:0; }
-.dr.wz .wz-greviews-list blockquote p { font-size:17px; line-height:25px; color:var(--wz-ink); }
+.dr.wz .wz-greviews-list blockquote p { font-size:16px; line-height:24px; color:var(--wz-ink); }
 .dr.wz .wz-greviews-list figcaption { margin-top:auto; font-size:14px; line-height:21px; color:var(--wz-body); }
 .dr.wz .wz-greviews-list figcaption b { font-weight:600; color:var(--wz-ink); }
-.dr.wz .wz-greviews-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 24px; margin-top:20px; font-size:14px; line-height:21px; color:var(--wz-body); }
 
 /* Photo strip that straddles the hero edge (Wise's flag row) */
 .dr.wz .wz-strip { position:relative; height:88px; margin-top:-44px; }
@@ -237,6 +244,10 @@
   .dr.wz .wz-review-track { overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:4px; }
   .dr.wz .wz-review { scroll-snap-align:start; }
   .dr.wz .wz-menu-button { display:grid; }
+  .dr.wz .wz-greviews { width:auto; align-self:stretch; margin-inline:calc(-1 * var(--wz-gutter)); }
+  .dr.wz .wz-greviews-list { display:flex; gap:12px; padding:0 var(--wz-gutter) 4px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:var(--wz-gutter); overscroll-behavior-x:contain; scrollbar-width:none; }
+  .dr.wz .wz-greviews-list::-webkit-scrollbar { display:none; }
+  .dr.wz .wz-greviews-list > li { flex:0 0 min(320px, 80%); scroll-snap-align:start; }
 }
 @media (max-width:900px) {
   .dr.wz .wz-features { grid-template-columns:1fr; gap:24px; }
@@ -258,8 +269,8 @@
   .dr.wz .wz-hero-lead { font-size:18px; line-height:26px; margin:16px auto 24px; }
   .dr.wz .wz-hero .wz-actions { width:100%; }
   .dr.wz .wz-hero .wz-actions .wz-btn { width:100%; }
-  .dr.wz .wz-greviews { margin-top:24px; padding:20px 16px; border-radius:24px; }
-  .dr.wz .wz-greviews-list { grid-template-columns:1fr; gap:12px; }
+  .dr.wz .wz-hero-rating { margin-bottom:20px; font-size:14px; }
+  .dr.wz .wz-greviews { margin-top:32px; }
   .dr.wz .wz-strip img { width:56px; height:56px; }
   .dr.wz .wz-strip-pill { width:120px; height:56px; }
   .dr.wz .wz-strip-pill span { width:46px; height:46px; }
