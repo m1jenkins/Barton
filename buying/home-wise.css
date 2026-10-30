@@ -95,10 +95,8 @@
 
 /* Photo strip that straddles the hero edge (Wise's flag row) */
 .dr.wz .wz-strip { position:relative; height:88px; margin-top:-44px; }
-.dr.wz .wz-strip-row { display:flex; justify-content:center; align-items:center; gap:12px; overflow:hidden; padding-inline:16px; }
+.dr.wz .wz-strip-row { display:flex; justify-content:center; align-items:center; gap:12px; overflow:hidden; padding:6px 16px; }
 .dr.wz .wz-strip img { width:76px; height:76px; flex:none; border-radius:50%; object-fit:cover; box-shadow:0 0 0 4px #fff; }
-.dr.wz .wz-strip-pill { display:flex; align-items:center; width:180px; height:76px; flex:none; padding:0 6px; border-radius:9999px; background:var(--wz-sky); box-shadow:0 0 0 4px #fff; box-sizing:border-box; }
-.dr.wz .wz-strip-pill span { display:grid; place-items:center; width:64px; height:64px; margin-left:auto; border-radius:50%; background:var(--wz-navy); color:#fff; }
 
 /* Sections */
 .dr.wz .wz-section { padding:56px 0; }
@@ -272,9 +270,7 @@
   .dr.wz .wz-hero-rating { margin-bottom:20px; font-size:14px; }
   .dr.wz .wz-greviews { margin-top:32px; }
   .dr.wz .wz-strip img { width:56px; height:56px; }
-  .dr.wz .wz-strip-pill { width:120px; height:56px; }
-  .dr.wz .wz-strip-pill span { width:46px; height:46px; }
-  .dr.wz .wz-strip { height:64px; margin-top:-32px; }
+  .dr.wz .wz-strip { height:68px; margin-top:-34px; }
   .dr.wz .wz-section { padding:48px 0; }
   .dr.wz .wz-section--tight { padding-top:32px; }
   .dr.wz .wz-lead { font-size:17px; line-height:26px; }
