@@ -227,8 +227,8 @@
 .dr.wz .wz-footer-legal { display:grid; gap:8px; font-size:14px; line-height:21px; color:var(--wz-ink); }
 
 /* Mobile sticky buttons */
-.dr.wz .wz-sticky { position:fixed; left:12px; right:12px; bottom:12px; z-index:30; display:none; grid-template-columns:1fr 1fr; gap:8px; padding:8px; border-radius:9999px; background:#fff; box-shadow:0 10px 30px -10px rgba(0,0,0,.35); opacity:0; transform:translateY(16px); transition:opacity .2s ease, transform .2s ease; }
-.dr.wz .wz-sticky .wz-btn { min-height:44px; padding:8px 12px; font-size:15px; }
+.dr.wz .wz-sticky { position:fixed; left:12px; right:12px; bottom:12px; z-index:30; display:none; grid-template-columns:auto auto; gap:8px; padding:8px; border-radius:9999px; background:#fff; box-shadow:0 10px 30px -10px rgba(0,0,0,.35); opacity:0; transform:translateY(16px); transition:opacity .2s ease, transform .2s ease; }
+.dr.wz .wz-sticky .wz-btn { display:block; min-height:44px; padding:10px 12px; font-size:15px; text-align:center; white-space:nowrap; }
 .dr.wz .wz-sticky.is-visible { opacity:1; transform:none; }
 
 @media (max-width:1100px) {
@@ -299,3 +299,4 @@
   .dr.wz .wz-header-actions { gap:4px; }
   .dr.wz .wz-header-actions .wz-btn--sm { padding:8px 14px; font-size:14px; }
 }
+@media (max-width:374px) { .dr.wz .wz-sticky-price { display:none; } }

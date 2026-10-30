@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=fdb1ae42ed96">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=f78164eb1dad">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -447,7 +447,7 @@
     <div class="wz-footer-brand"><a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a></div>
     <div class="wz-footer-legal"><p id="cities">Car research and negotiation. Based in Austin. Here for Charlotte.</p><p>© 2026 Steer Me Right</p><span id="saved-indicator" role="status"></span></div>
   </div>
-</footer><div class="home-sticky-cta wz-sticky" data-sticky-cta inert><a href="/schedule.html" data-plan="full_service" data-cta-location="sticky" class="wz-btn wz-btn--forest">Steer Me Right · $395</a><button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+</footer><div class="home-sticky-cta wz-sticky" data-sticky-cta inert><a href="/schedule.html" data-plan="full_service" data-cta-location="sticky" class="wz-btn wz-btn--forest">Steer Me Right<span class="wz-sticky-price"> · $395</span></a><button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
   <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
   <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
   <form id="car-search-inquiry-form">
