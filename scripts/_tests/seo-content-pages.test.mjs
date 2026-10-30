@@ -50,10 +50,20 @@ test('service-intent pages publish current prices without retired or unapproved 
       ['meta description', /<meta name="description"\s+content="([^"]+)"/i],
       ['Open Graph description', /<meta property="og:description"\s+content="([^"]+)"/i],
     ]) {
+      // The homepage link preview leaves pricing out (owner request, 2026-10-30); search snippets keep it.
+      if (file === 'index.html' && label === 'Open Graph description') continue;
       const description = head.match(pattern)?.[1] ?? '';
       assert.match(description, /\$395/, `${file} ${label} should include Steer Me Right plan pricing`);
       assert.match(description, /\$695/, `${file} ${label} should include Steer Me Right Pro pricing`);
     }
+  }
+
+  // Homepage link previews show the hero card and no pricing.
+  const homeHead = homepageHtml.match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? '';
+  for (const tag of ['property="og:title"', 'property="og:description"', 'name="twitter:title"', 'name="twitter:description"']) {
+    const content = homeHead.match(new RegExp(`<meta ${tag}\\s+content="([^"]+)"`, 'i'))?.[1] ?? '';
+    assert.ok(content, `index.html is missing ${tag}`);
+    assert.doesNotMatch(content, /\$\d/, `index.html ${tag} should not include pricing`);
   }
 });
 

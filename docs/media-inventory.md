@@ -124,8 +124,11 @@ All files are in `assets/buying/` and named `client-michael-r-c5-corvette-<width
 | Social JPEG | `assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg` | 1200×630 | 306,287 | Broad Open Graph/Twitter compatibility |
 | Social WebP | `assets/external/social/drive-right-two-mazda-miatas-1200x630.webp` | 1200×630 | 129,102 | Modern derivative |
 | Social AVIF | `assets/external/social/drive-right-two-mazda-miatas-1200x630.avif` | 1200×630 | 145,030 | Modern derivative |
+| Link-preview card PNG | `assets/external/social/let-us-deal-with-the-dealer-1200x630.png` | 1200×630 | 32,148 | Open Graph and Twitter image on every live page since 2026-10-30 |
 
 The social replacement is a mechanical centered crop from 1440×1080 to 1440×756, followed by a resize to 1200×630. No objects, text, branding, or generated pixels were added.
+
+The link-preview card (2026-10-30) is a 1200×630 render of the homepage hero: an enlarged rating line (Google G, 5.0 and five stars, no label so it reads in small previews) and LET US DEAL WITH THE DEALER. in Inter Tight Black on the `#1A4B8C` header blue, made with headless Edge from local HTML. The Miata photo stays as the JSON-LD `image` on articles and comparison pages.
 
 ### Header mascot (Mariner Blue NA Miata)
 
