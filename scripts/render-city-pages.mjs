@@ -39,7 +39,7 @@ function pageMetadata(homepage, { slug, title, description, city }) {
     if (schema['@graph']) {
       for (const node of schema['@graph']) {
         if (node['@type'] === 'Organization') {
-          node.description = 'Drive Right is based in Austin and provides remote vehicle research, offer comparison, and seller communication.';
+          node.description = 'Steer Me Right is based in Austin and provides remote vehicle research, offer comparison, and seller communication.';
           node.areaServed = { '@type': 'Country', name: 'United States' };
           node.contactPoint.areaServed = 'US';
         } else if (node['@type'] === 'Service') node.areaServed = area;
@@ -58,7 +58,7 @@ function pageMetadata(homepage, { slug, title, description, city }) {
 export function renderCity(city, homepage) {
   const name = escape(city.name);
   const description = homepage.match(/<meta name="description" content="([^"]+)">/)[1].replace('buyers nationwide', `buyers in ${city.name}`);
-  let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
+  let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Steer Me Right`, description, city });
   for (const [from, to] of [
     ['<h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer.</h1>', `<h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer in ${name}.</h1>`],
     ['We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands.', `We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands. ${escape(city.localSentence)}`],
@@ -69,9 +69,9 @@ export function renderCity(city, homepage) {
 }
 
 function renderHub(data, homepage) {
-  let html = pageMetadata(homepage, { slug: 'service-areas.html', title: 'Car Buying Service by City | Drive Right', description: 'Find your Drive Right city page for remote vehicle research, offer comparison, and car buying support from our Austin-based team.' });
+  let html = pageMetadata(homepage, { slug: 'service-areas.html', title: 'Car Buying Service by City | Steer Me Right', description: 'Find your Steer Me Right city page for remote vehicle research, offer comparison, and car buying support from our Austin-based team.' });
   html = html.replace('data-buying-page="home"', 'data-buying-page="cities"');
-  html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
+  html = html.replace(/<main id="main-content" tabindex="-1">[\s\S]*?<\/main>/, `<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Steer Me Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages">${data.cities.map(city => `<a class="outline-button" href="/${city.slug}">${escape(city.name)} <span data-icon="arrow"></span></a>`).join('\n')}</nav></section></main>`);
   // The hub has no hero, so nothing opens the homepage's inquiry dialog.
   html = html.replace(/<dialog id="car-search-inquiry"[\s\S]*?<\/dialog>/, '');
   return replaceRequired(html, 'Based in Austin. Here for buyers nationwide.', 'Based in Austin. Here for you.');
@@ -86,7 +86,7 @@ export async function renderCityPages({ root = projectRoot, output = cityDraftRo
   for (const [slug, html] of pages) {
     const doc = htmlDocument(html);
     if (!doc.noindex || doc.canonical[0] !== `${origin}/${slug}`) throw new Error(`${slug}: invalid metadata`);
-    if (/Drive Right Auto Sales|not a vehicle dealer|not-a-dealer/i.test(html)) throw new Error(`${slug}: dealer-name disclaimer must not appear`);
+    if (/Steer Me Right Auto Sales|not a vehicle dealer|not-a-dealer/i.test(html)) throw new Error(`${slug}: dealer-name disclaimer must not appear`);
   }
   if (!check) await mkdir(output, { recursive: true });
   for (const [file, html] of pages) {

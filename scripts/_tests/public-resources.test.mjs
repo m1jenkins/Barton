@@ -13,7 +13,7 @@ test('released guides preserve their URLs, source links, examples, byline and or
     const html = await read(name), document = htmlDocument(html);
     assert.equal(document.noindex, false);
     assert.equal(document.h1.length, 1);
-    assert.deepEqual(document.canonical, [`https://www.driverightcarbuying.com/${name}`]);
+    assert.deepEqual(document.canonical, [`https://www.steermeright.com/${name}`]);
     assert.match(html, /<body class="dr" data-buying-page="guide">/);
     assert.ok(document.links.some(url => /consumer\.ftc\.gov|consumerfinance\.gov|nhtsa\.gov/.test(url)));
     assert.ok(document.links.includes('/compare-car-quotes.html'));

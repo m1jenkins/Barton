@@ -311,3 +311,9 @@
   .dr.wz .wz-stack { left:12px; bottom:12px; }
 }
 @media (prefers-reduced-motion:reduce) { .dr.wz .wz-sticky { transition:none; } }
+.dr.wz .wz-header-actions .wz-btn { white-space:nowrap; }
+@media (max-width:420px) {
+  .dr.wz .site-header .wordmark { font-size:20px; }
+  .dr.wz .wz-header-actions { gap:4px; }
+  .dr.wz .wz-header-actions .wz-btn--sm { padding:8px 14px; font-size:14px; }
+}

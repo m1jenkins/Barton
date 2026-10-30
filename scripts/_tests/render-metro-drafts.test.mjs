@@ -19,9 +19,9 @@ const withdrawnCopy = [
   'Check TxDOT’s I-35 Central closure map',
 ];
 const exactQuotes = {
-  M04: 'I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.',
-  M05: 'Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.',
-  'TX-AUS': "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time.",
+  M04: 'I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Steer Me Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.',
+  M05: 'Steer Me Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.',
+  'TX-AUS': "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Steer Me Right took away the anxiety and saved me probably a dozen or two hours of my time.",
 };
 const draftFiles = ['dallas-fort-worth.html', 'houston.html', 'austin.html', 'service-areas.html'];
 

@@ -1,12 +1,12 @@
 import { questions, stepsFor, restoreState, nextQuestion, progress, isComplete, answerQuestion, skipQuestion, formValues, questionForControl, firstName } from './intake.js?v=59712ce4fac7';
 
-// Drive Right and Drive Right Pro payment pages. The form stays the default until
+// Steer Me Right and Steer Me Right Pro payment pages. The form stays the default until
 // this module runs, so a buyer whose browser can't load it still has a working intake.
 // Answers go into #onboarding-form and its own submit handler (script.js) sends them.
 const $ = selector => document.querySelector(selector);
 const chat = $('#intake-view'), form = $('#onboarding-form'), formSection = $('#onboarding');
 const tier = document.body.dataset.purchaseTier;
-const plans = { full_service: 'Drive Right', concierge: 'Drive Right Pro' };
+const plans = { full_service: 'Steer Me Right', concierge: 'Steer Me Right Pro' };
 
 if (chat && form && formSection && plans[tier]) {
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
@@ -146,11 +146,11 @@ if (chat && form && formSection && plans[tier]) {
       ? (editing ? `Sure. ${question.question}` : question.question)
       : `${name ? `Thanks, ${name}. ` : ''}That’s everything we need to start your search. Check your answers, then send them to your advisor.`;
     const reply = replyPending
-      ? '<div class="typing-bubble"><span class="sr-only">Drive Right is typing.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
+      ? '<div class="typing-bubble"><span class="sr-only">Steer Me Right is typing.</span><span class="mx-drive" aria-hidden="true"><span class="mx-body"></span><span class="mx-wheel r"></span><span class="mx-wheel f"></span></span></div>'
       : `<p class="assistant-reply">${escape(text)}</p>${question?.hint ? `<p class="assistant-hint">${escape(question.hint)}</p>` : ''}`;
     // The head-on Miata (logo-motion.css) flips its headlights up as each reply arrives.
     const avatar = `<span class="mx-avatar${replyPending ? '' : question ? ' is-hello' : ' is-done'}" aria-hidden="true"></span>`;
-    const markup = `<span class="message-label assistant-name">${avatar}Drive Right</span>${reply}`;
+    const markup = `<span class="message-label assistant-name">${avatar}Steer Me Right</span>${reply}`;
     if (response.innerHTML !== markup) response.innerHTML = markup;
 
     const choices = question && !replyPending ? question.choices || [] : [];

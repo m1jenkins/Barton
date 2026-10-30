@@ -51,7 +51,7 @@
           "value": "austincarbuyingservice.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/",
+      "destination": "https://www.steermeright.com/",
       "permanent": true
     },
     {
@@ -62,7 +62,7 @@
           "value": "www.austincarbuyingservice.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/",
+      "destination": "https://www.steermeright.com/",
       "permanent": true
     },
     {
@@ -73,7 +73,7 @@
           "value": "driverightcarbuying.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/",
+      "destination": "https://www.steermeright.com/",
       "permanent": true
     },
     {
@@ -84,7 +84,7 @@
           "value": "austincarbuyingservice.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/:path*",
+      "destination": "https://www.steermeright.com/:path*",
       "permanent": true
     },
     {
@@ -95,7 +95,7 @@
           "value": "www.austincarbuyingservice.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/:path*",
+      "destination": "https://www.steermeright.com/:path*",
       "permanent": true
     },
     {
@@ -106,7 +106,29 @@
           "value": "driverightcarbuying.com"
         }
       ],
-      "destination": "https://www.driverightcarbuying.com/:path*",
+      "destination": "https://www.steermeright.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.driverightcarbuying.com"
+        }
+      ],
+      "destination": "https://www.steermeright.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!api/|\\.well-known/).+)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.driverightcarbuying.com"
+        }
+      ],
+      "destination": "https://www.steermeright.com/:path",
       "permanent": true
     },
     {

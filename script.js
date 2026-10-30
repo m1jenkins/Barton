@@ -1,6 +1,6 @@
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
-import("./openai-ads.js?v=c0c8500c3744").catch(() => {});
-import("./web-analytics.js?v=3b29c3eb6e1f").catch(() => {});
+import("./openai-ads.js?v=cc4832ef4638").catch(() => {});
+import("./web-analytics.js?v=c56186de1a69").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
 window.addEventListener('DOMContentLoaded', () => {
   window.driveRightClient = { requestJson, track, createId, emailMason, attribution: attributionData };
@@ -53,7 +53,7 @@ function trackVerifiedPurchase(result) {
     track('purchase_verified', properties);
     // Verification can finish before the optional tracker imports. Reaching the same
     // adapter after import closes that race; its purchase ID suppresses duplicates.
-    import('./openai-ads.js?v=c0c8500c3744').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
+    import('./openai-ads.js?v=cc4832ef4638').then(({ openAIAds: ads }) => ads.track('purchase_verified', properties)).catch(() => {});
   } catch {}
 }
 // Stripe's return URL carries the Checkout Session ID, which also unlocks the one-time intake.
@@ -156,7 +156,7 @@ async function emailMason({ subject, name, email, phone, message, source_page },
       body: JSON.stringify({
         access_key: WEB3FORMS_ACCESS_KEY,
         subject,
-        from_name: 'Drive Right website',
+        from_name: 'Steer Me Right website',
         name: name || 'Not given',
         email,
         replyto: email,
@@ -210,7 +210,7 @@ const HALLOWEEN_SALE_ENDS = Date.UTC(2026, 10, 1, 5);
 function showHalloweenBanner() {
   if (Date.now() >= HALLOWEEN_SALE_ENDS || typeof document.createElement !== 'function'
     || window.location.pathname.startsWith('/payment-success')) return;
-  const message = 'Halloween sale: 25% off Drive Right or Drive Right Pro with code SPOOKY25 at checkout. Ends October 31.';
+  const message = 'Halloween sale: 25% off Steer Me Right or Steer Me Right Pro with code SPOOKY25 at checkout. Ends October 31.';
   const style = document.createElement('style');
   style.textContent = `
 .halloween-banner{position:relative;z-index:41;display:flex;align-items:center;gap:12px;padding:0 12px 0 0;background:#14090f linear-gradient(90deg,#14090f,#2a0f1d 50%,#14090f);color:#ffb15c;font:600 14px/1.2 var(--sans,system-ui,sans-serif);border-bottom:1px solid #ff7a1a}
@@ -235,7 +235,7 @@ function showHalloweenBanner() {
   const items = [
     ['🎃', 'Halloween sale: <b>25% off</b> any plan'],
     ['🦇', 'Use code <span class="halloween-banner__code">SPOOKY25</span> at checkout'],
-    ['👻', 'Drive Right or Drive Right Pro'],
+    ['👻', 'Steer Me Right or Steer Me Right Pro'],
     ['🕸️', 'Ends October 31']
   ].map(([icon, text]) => `<span class="halloween-banner__item"><span>${icon}</span><span>${text}</span></span>`).join('');
   const banner = document.createElement('div');

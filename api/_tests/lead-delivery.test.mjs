@@ -27,7 +27,7 @@ function leadDatabase({ prior = false, failure = 'claim' } = {}) {
 }
 
 async function submit(sql) {
-  const req = { method: 'POST', headers: { origin: 'https://www.driverightcarbuying.com', 'content-type': 'application/json', 'idempotency-key': 'lead:test-0001' }, body: payload };
+  const req = { method: 'POST', headers: { origin: 'https://www.steermeright.com', 'content-type': 'application/json', 'idempotency-key': 'lead:test-0001' }, body: payload };
   const res = { setHeader() {}, end(value) { this.body = JSON.parse(value); } };
   await withApiErrors(leadHandler({ getDatabase: () => sql, verifyToken: async () => false, notify() {} }))(req, res);
   return res;
@@ -36,7 +36,7 @@ async function submit(sql) {
 for (const prior of [false, true]) {
   for (const failure of ['claim', 'acknowledge']) {
     test(`${prior ? 'a retried' : 'a newly committed'} lead still succeeds when forwarding cannot ${failure}`, async t => {
-      const environment = { APP_ORIGIN: 'https://www.driverightcarbuying.com', ALLOWED_ORIGINS: '', LEAD_FORWARD_URL: 'https://notifications.example.test/leads' };
+      const environment = { APP_ORIGIN: 'https://www.steermeright.com', ALLOWED_ORIGINS: '', LEAD_FORWARD_URL: 'https://notifications.example.test/leads' };
       const previous = Object.fromEntries(Object.keys(environment).map(key => [key, process.env[key]]));
       Object.assign(process.env, environment);
       t.after(() => { for (const [key, value] of Object.entries(previous)) value === undefined ? delete process.env[key] : process.env[key] = value; });

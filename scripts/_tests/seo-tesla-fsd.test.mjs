@@ -6,7 +6,7 @@ import { csvRows, htmlDocument } from '../metro-release.mjs';
 const root = new URL('../../', import.meta.url);
 const read = (file) => readFile(new URL(file, root), 'utf8');
 const pageFile = 'tesla-fsd-for-sale.html';
-const canonical = 'https://www.driverightcarbuying.com/tesla-fsd-for-sale.html';
+const canonical = 'https://www.steermeright.com/tesla-fsd-for-sale.html';
 const cities = [
   'arlington.html',
   'dallas.html',

@@ -8,7 +8,7 @@ import { validateMetroRelease } from './metro-release.mjs';
 import { validateAssets } from './check-assets.mjs';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const primaryOrigin = 'https://www.driverightcarbuying.com';
+const primaryOrigin = 'https://www.steermeright.com';
 
 const containedPosts = [
   'blog-texas-title-transfer.html',
@@ -611,7 +611,7 @@ for (const document of parsedJsonLd) {
     }
 
     if (types.includes('Review') || types.includes('AggregateRating')) {
-      fail(document.file, 'Self-serving Review or AggregateRating markup is not approved.', document.index, html, 'Keep permitted testimonials visible, but do not mark up reviews of Drive Right on Drive Right pages.');
+      fail(document.file, 'Self-serving Review or AggregateRating markup is not approved.', document.index, html, 'Keep permitted testimonials visible, but do not mark up reviews of Steer Me Right on Steer Me Right pages.');
     }
 
     if (types.includes('Service')) {
@@ -804,7 +804,7 @@ for (const file of htmlFiles) {
     fail(file, 'Public contact email must be hello@driverightcarbuying.com.', html.toLowerCase().indexOf('mason@driverightcarbuying.com'), html, 'Keep schema, footer, and policy on the hello@ address until an owner decision records a different public inbox.');
   }
 
-  const dealerName = html.match(/Drive Right Auto Sales|not a vehicle dealer|not-a-dealer/i);
+  const dealerName = html.match(/Steer Me Right Auto Sales|not a vehicle dealer|not-a-dealer/i);
   if (dealerName) {
     fail(file, `Dealer-name disclaimer must not appear in published HTML: ${JSON.stringify(dealerName[0])}.`, dealerName.index, html, 'Remove the disclaimer and any #not-a-dealer links.');
   }

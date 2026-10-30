@@ -13,7 +13,7 @@ function contactPage({ measurementFails = false, conflictAlways = false, forward
   const status = { textContent: '', dataset: {} };
   const form = { querySelector: selector => selector === '[type="submit"]' ? submit : status,
     addEventListener(event, fn) { this[event] = fn; }, reset() { this.resetCount = (this.resetCount || 0) + 1; } };
-  const location = new URL('https://www.driverightcarbuying.com/austin.html');
+  const location = new URL('https://www.steermeright.com/austin.html');
   const window = { location, crypto, addEventListener() {}, setTimeout, clearTimeout,
     sessionStorage: { getItem: key => storage.get(key), setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key) },
     dataLayer: { push(event) { if (measurementFails) throw new Error('Analytics blocked'); events.push(event); } } };

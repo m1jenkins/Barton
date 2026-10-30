@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parse } from 'parse5';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const origin = 'https://www.driverightcarbuying.com';
+const origin = 'https://www.steermeright.com';
 const resourceRels = new Set(['stylesheet', 'icon', 'apple-touch-icon', 'preload', 'modulepreload', 'prefetch']);
 
 function deploymentRule(pattern) {

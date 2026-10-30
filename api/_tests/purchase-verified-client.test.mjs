@@ -19,7 +19,7 @@ function paymentPage(responses, { session = storage(), tier = 'full_service' } =
   const content = { hidden: true };
   const body = { dataset: { purchaseTier: tier } };
   const window = {
-    location: new URL(`https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id=${sessionId}`),
+    location: new URL(`https://www.steermeright.com/payment-success-fullservice.html?session_id=${sessionId}`),
     localStorage: storage(), sessionStorage: session, crypto, dataLayer: [], addEventListener() {}, setTimeout, clearTimeout
   };
   const document = {

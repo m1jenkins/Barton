@@ -33,7 +33,7 @@ test('all 20 city pages preserve the entire homepage layout, assets, navigation 
     assert.deepEqual([...html.matchAll(/<link rel="stylesheet"[^>]+>/g)].map(match => match[0]), homeStyles);
     assert.equal(doc.noindex, true);
     assert.equal(doc.h1[0], `Let us deal with the dealer in ${city.name}.`);
-    assert.deepEqual(doc.canonical, [`https://www.driverightcarbuying.com/${city.slug}`]);
+    assert.deepEqual(doc.canonical, [`https://www.steermeright.com/${city.slug}`]);
     assert.ok(hub.links.includes(`/${city.slug}`));
     assert.ok(doc.visibleText.includes(city.localSentence));
     assert.doesNotMatch(html, /city-pages\.(css|js)|city-review-note|local-guide|city-worksheet/);
@@ -46,7 +46,7 @@ test('all 20 city pages preserve the entire homepage layout, assets, navigation 
     assert.deepEqual(nodes.filter(n => n['@type'] === 'Service').map(n => Number(n.offers.price)).sort((a,b) => a-b), [395, 695]);
     for (const node of nodes.filter(n => n['@type'] === 'Service')) {
       assert.equal(node.areaServed.name, city.name);
-      assert.equal(node.provider['@id'], 'https://www.driverightcarbuying.com/#organization');
+      assert.equal(node.provider['@id'], 'https://www.steermeright.com/#organization');
     }
     assert.ok(!nodes.some(n => ['LocalBusiness', 'AutoDealer', 'Review', 'AggregateRating'].includes(n['@type']) || n.address || n.geo));
     assert.equal(html, await readFile(path.join(projectRoot, 'draft-artifacts/cities', city.slug), 'utf8'));

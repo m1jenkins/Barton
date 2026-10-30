@@ -54,6 +54,6 @@ Allow: /
 Disallow: /uuyh
 
 # Content map for language-model crawlers (not a Google ranking signal)
-# https://www.driverightcarbuying.com/llms.txt
+# https://www.steermeright.com/llms.txt
 
-Sitemap: https://www.driverightcarbuying.com/sitemap.xml
+Sitemap: https://www.steermeright.com/sitemap.xml

@@ -12,7 +12,7 @@ function client(fetch) {
   const timers = new Map();
   let nextTimer = 0;
   const window = {
-    location: new URL('https://www.driverightcarbuying.com/'),
+    location: new URL('https://www.steermeright.com/'),
     navigator: {}, crypto, addEventListener() {}, dataLayer: [],
     setTimeout(callback) { timers.set(++nextTimer, callback); return nextTimer; },
     clearTimeout(id) { timers.delete(id); }

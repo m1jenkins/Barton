@@ -4,14 +4,14 @@
   "lastObservedAt": "2026-10-23",
   "currency": "USD",
   "sourceOfTruth": {
-    "url": "https://www.driverightcarbuying.com/schedule.html",
+    "url": "https://www.steermeright.com/schedule.html",
     "file": "schedule.html",
     "note": "Plan names and scopes follow the owner decision of 2026-10-23 (PLAN-NAMES-2026-10-23, DRIVE-RIGHT-SCOPE-2026-10-23, PRO-SCOPE-2026-10-23, PLAN-UPGRADE-2026-10-23 in data/claims.csv; docs/seo/2026-10-23-plan-rename.md). Other published copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
   },
   "services": [
     {
-      "id": "https://www.driverightcarbuying.com/#service-full",
-      "name": "Drive Right",
+      "id": "https://www.steermeright.com/#service-full",
+      "name": "Steer Me Right",
       "price": 395,
       "priceType": "flat_fee",
       "bestFor": "Buyers who know the car they want",
@@ -26,20 +26,20 @@
       "excludes": [
         "Switching to a different model"
       ],
-      "upgrade": "Upgrade to Drive Right Pro later by paying the $300 difference",
+      "upgrade": "Upgrade to Steer Me Right Pro later by paying the $300 difference",
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
       "serviceLevelReview": "owner_approved_current_website_copy_2026_10_01",
       "checkoutStatus": "new_395_link_required_before_activation"
     },
     {
-      "id": "https://www.driverightcarbuying.com/#service-concierge",
-      "name": "Drive Right Pro",
+      "id": "https://www.steermeright.com/#service-concierge",
+      "name": "Steer Me Right Pro",
       "price": 695,
       "priceType": "flat_fee",
       "bestFor": "Buyers torn between a few cars",
       "features": [
-        "Everything in Drive Right",
+        "Everything in Steer Me Right",
         "Offers on up to three models priced side by side (a model is a make and model; trims, colors and packages within a model do not count extra)",
         "Dealers for each model played against each other's written offers",
         "Out-of-state dealers, with help coordinating shipping when the out-of-state dealer is open to it",
@@ -95,7 +95,7 @@
   },
   "retiredServices": [
     {
-      "id": "https://www.driverightcarbuying.com/#service-consultation",
+      "id": "https://www.steermeright.com/#service-consultation",
       "name": "AI Agent Buying Service",
       "price": 195,
       "priceType": "flat_fee",

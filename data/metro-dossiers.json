@@ -18,7 +18,7 @@
         "Vehicle price in writing",
         "Seller charges and conditions",
         "Vehicle shipping charge paid by buyer",
-        "Drive Right service fee for chosen plan",
+        "Steer Me Right service fee for chosen plan",
         "Questions to settle before choosing"
       ]
     },
@@ -26,7 +26,7 @@
       "status": "business_owner_attested_for_private_draft_use",
       "review": {
         "name": "David L.",
-        "exact_quote": "I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Drive Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.",
+        "exact_quote": "I know literally nothing about cars, but I do know one of my friends got suckered into a lemon of a car recently and I wanted to avoid the same mistake. Steer Me Right was amazing, I had my needs heard and I LOVE my new Mazda CX-30 Turbo. I never would have considered this car in the first place, let alone the financing and incentives they found for me. 11/10 stars.",
         "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
         "repo_anchor": "index.html:647",
         "historical_city_label": "Dallas, TX",
@@ -91,7 +91,7 @@
         "Vehicle price in writing",
         "Seller charges and conditions",
         "Vehicle shipping charge paid by buyer",
-        "Drive Right service fee for chosen plan",
+        "Steer Me Right service fee for chosen plan",
         "Questions to settle before choosing"
       ]
     },
@@ -99,7 +99,7 @@
       "status": "business_owner_attested_for_private_draft_use",
       "review": {
         "name": "Michael R.",
-        "exact_quote": "Drive Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.",
+        "exact_quote": "Steer Me Right found me a new Tahoe under MSRP and negotiated away the dealer add-ons.",
         "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
         "repo_anchor": "index.html:615",
         "historical_city_label": "Houston, TX",
@@ -164,7 +164,7 @@
         "Vehicle price in writing",
         "Seller charges and conditions",
         "Vehicle shipping charge paid by buyer",
-        "Drive Right service fee for chosen plan",
+        "Steer Me Right service fee for chosen plan",
         "Questions to settle before choosing"
       ]
     },
@@ -172,7 +172,7 @@
       "status": "business_owner_attested_for_private_draft_use",
       "review": {
         "name": "Sarah K.",
-        "exact_quote": "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Drive Right took away the anxiety and saved me probably a dozen or two hours of my time.",
+        "exact_quote": "I used to bring my dad with to the dealer to help me, but now that he lives 1200 miles away, I didn't have him to lean on anymore. Steer Me Right took away the anxiety and saved me probably a dozen or two hours of my time.",
         "source_commit": "5ef774f6b0449c167c175d0781554fbc0a803b3d",
         "repo_anchor": "index.html:631",
         "historical_city_label": "Austin, TX",

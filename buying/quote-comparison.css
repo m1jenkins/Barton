@@ -1,4 +1,4 @@
-/* Worksheet controls use the shared Drive Right palette and type. */
+/* Worksheet controls use the shared Steer Me Right palette and type. */
 .dr .worksheet-page [hidden] { display: none !important; }
 .dr .worksheet-page h1, .dr .worksheet-page h2, .dr .worksheet-page h3, .dr .worksheet-page legend { color: var(--ink); }
 .dr .worksheet-page h1 { margin: 10px 0 18px; font-size: clamp(36px, 5vw, 60px); line-height: 1.08; letter-spacing: -.055em; max-width: 790px; }

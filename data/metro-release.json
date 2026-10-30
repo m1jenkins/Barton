@@ -21,8 +21,8 @@
       "researchPrompt": "How would buyer location, seller location, pickup, and any broker terminology change the service?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -52,11 +52,11 @@
       "jurisdictions": [
         "CA"
       ],
-      "researchPrompt": "What may Drive Right offer under California rules, and how would sourcing and delivery work across the metro?",
+      "researchPrompt": "What may Steer Me Right offer under California rules, and how would sourcing and delivery work across the metro?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -90,8 +90,8 @@
       "researchPrompt": "Which buyer/seller combinations cross a state line, and what transaction steps differ?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -124,8 +124,8 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -159,8 +159,8 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -191,11 +191,11 @@
       "jurisdictions": [
         "GA"
       ],
-      "researchPrompt": "What seller outreach radius and buyer paperwork decisions can Drive Right actually support?",
+      "researchPrompt": "What seller outreach radius and buyer paperwork decisions can Steer Me Right actually support?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -231,8 +231,8 @@
       "researchPrompt": "Which parts of this four-jurisdiction metro are genuinely served, and how do cross-border purchases work?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -265,8 +265,8 @@
       "researchPrompt": "Which vehicle-history and inspection questions are locally useful, and how far can sourcing extend?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -302,8 +302,8 @@
       "researchPrompt": "How will service scope, pickup, title, and registration be explained across jurisdictions?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -336,8 +336,8 @@
       "researchPrompt": "Which inspection and inventory questions appear in local buyer searches and first-party inquiries?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -371,8 +371,8 @@
       "researchPrompt": "How are Massachusetts/New Hampshire buyer and seller cases handled and disclosed?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -405,8 +405,8 @@
       "researchPrompt": "What distinct sourcing, travel, and delivery value separates this market from Los Angeles?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -439,8 +439,8 @@
       "researchPrompt": "What local inventory and transaction evidence can support a page distinct from other California markets?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -473,8 +473,8 @@
       "researchPrompt": "Which vehicle-selection and inspection questions recur in actual local searches or inquiries?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -504,11 +504,11 @@
       "jurisdictions": [
         "WA"
       ],
-      "researchPrompt": "What purchase-cost, seller communication, and pickup information can Drive Right verify?",
+      "researchPrompt": "What purchase-cost, seller communication, and pickup information can Steer Me Right verify?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -542,8 +542,8 @@
       "researchPrompt": "Which cross-state and used-vehicle inspection decisions need a locally reviewed explanation?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -576,8 +576,8 @@
       "researchPrompt": "What vehicle-history, inspection, and seller/pickup concerns differ from Miami and Orlando?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -610,8 +610,8 @@
       "researchPrompt": "What local buyer questions and sourcing radius distinguish San Diego from the other California pages?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -644,8 +644,8 @@
       "researchPrompt": "Which registration, total-cost, inspection, and travel questions have evidence and search demand?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -678,8 +678,8 @@
       "researchPrompt": "What makes Orlando's buyer workflow distinct from Tampa and Miami?",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -712,8 +712,8 @@
       "researchPrompt": "Document distinct local buyer needs for remote car finding and purchase support without assuming local market facts.",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -747,8 +747,8 @@
       "researchPrompt": "Separate Texas backlog market",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -781,8 +781,8 @@
       "researchPrompt": "Separate Texas backlog market",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -815,8 +815,8 @@
       "researchPrompt": "Distinct intent or consolidation pending baseline",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -849,8 +849,8 @@
       "researchPrompt": "Distinct intent or consolidation pending baseline",
       "availabilityRef": "OWNER-2026-09-16",
       "tierIds": [
-        "https://www.driverightcarbuying.com/#service-full",
-        "https://www.driverightcarbuying.com/#service-concierge"
+        "https://www.steermeright.com/#service-full",
+        "https://www.steermeright.com/#service-concierge"
       ],
       "confirmedBuyerZips": null,
       "serviceBoundary": null,
@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes). Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Re-pinned on 2026-10-06 for the mobile header and consent fit (drive-right.css hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the footer ad-measurement opt-out (script.js hash). Re-pinned on 2026-10-18 for the footer link to the car buying service comparison (compare-car-buying-services.html). Re-pinned on 2026-10-23 for the price cut to $195 Full Service and $345 Ultimate Concierge (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the inquiry questions box and the shared lead email (inquiry.js, inquiry.css and script.js hashes). Re-pinned on 2026-10-23 for the owner-requested revert to $395 and $695 (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the Halloween sale banner (script.js hash). Re-pinned on 2026-10-23 for the Remotion legwork videos (drive-right.css hash). Re-pinned on 2026-10-23 for the plan rename to Drive Right and Drive Right Pro (copy and script.js hash). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes). Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Re-pinned on 2026-10-06 for the mobile header and consent fit (drive-right.css hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the footer ad-measurement opt-out (script.js hash). Re-pinned on 2026-10-18 for the footer link to the car buying service comparison (compare-car-buying-services.html). Re-pinned on 2026-10-23 for the price cut to $195 Full Service and $345 Ultimate Concierge (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the inquiry questions box and the shared lead email (inquiry.js, inquiry.css and script.js hashes). Re-pinned on 2026-10-23 for the owner-requested revert to $395 and $695 (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the Halloween sale banner (script.js hash). Re-pinned on 2026-10-23 for the Remotion legwork videos (drive-right.css hash). Re-pinned on 2026-10-23 for the plan rename to Steer Me Right and Steer Me Right Pro (copy and script.js hash). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
       "indexablePublication": true,
-      "sha256": "f2d8c69e609e3e5f05a8f9b6af957635acebd6fb4821924c662764edfff1a722",
+      "sha256": "5e4119afe5d7fd502d2b812e052347134e591a5b2de44a6291395f9cc1e41199",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -890,7 +890,7 @@
       "slug": "houston.html",
       "marketId": "M05",
       "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "d4d794cbf2f9a99683b15559f3aba5ae9d76a8ff4ef43aff1b0039918cd0badb",
+      "sha256": "58ea5d2f88afdf7e48f49974498bac79a7a8a0871db0faf866a5bbfe0b902917",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -912,7 +912,7 @@
       "slug": "dallas.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "6eaaf626d94750587acc3feabc509c38b843a99e559df24ee94d78338f4b4958",
+      "sha256": "9a74710fe201261990a2d13df70b7b1f05ce07f6b45f274eb87e3d82ac2dd43f",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -922,7 +922,7 @@
       "slug": "fort-worth.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "9e9c8be9f61b2a04082e0ac77c7a44102ee5126b3133d85befe76bdde32a20cf",
+      "sha256": "8c8b2e651249af2264f7bcb13f2f567a48c3d4de280f5fa2aa62d551aad2fe2c",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -932,7 +932,7 @@
       "slug": "arlington.html",
       "marketId": "M04",
       "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "4937d5225a44b0ba1a7f8a38ba5231ae09ac6e29176bd06d75ccab47e509074c",
+      "sha256": "838fd921293c881cbffcd8d851b91d8ca553107579e6ba8b084c538ae2caecd3",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -942,7 +942,7 @@
       "slug": "san-antonio.html",
       "marketId": "TX-SAT",
       "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "69af46679e565e8a4997ac4a6a36b85bcc6525a8a362432d3103e7f17ca96702",
+      "sha256": "598dc374727414d217c00228b97c69dcabf2c22a4cc9f549391dc5ae48e1452e",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -952,7 +952,7 @@
       "slug": "el-paso.html",
       "marketId": "TX-ELP",
       "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "2087d67d53376a90346ed55225de15b7a31aaf1d974accb8a93264c57f96781b",
+      "sha256": "73d3de770dcd7b903f66780892bdb26e9d3e2f29ab93085503187518ea340d27",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -962,7 +962,7 @@
       "slug": "new-braunfels.html",
       "marketId": "TX-NBF",
       "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "66de9471bb6b5c8fd0dd01ea43b1f9082d4b8ba2ca8138e961281a695d7404ca",
+      "sha256": "4992cb1d4544ec97f01cb15f2922a6f19f02729fd3a19c5607063ac06c3614f1",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -972,7 +972,7 @@
       "slug": "san-marcos.html",
       "marketId": "TX-SMA",
       "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite).",
-      "sha256": "9ea4968babc3f34456646cec6e6807f79aa471aa3ecba3c15fa8e3b87d92497e",
+      "sha256": "452028f76b50b5b8184d0506f707fa14104226cfd25ea3c39707ff97f5a6a275",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,

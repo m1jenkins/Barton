@@ -4,7 +4,7 @@ import { initializePrivacyChoices, measurementOptedOut } from './privacy-choices
 // This static site does not substitute server environment variables into JS.
 export const OPENAI_ADS_PIXEL_ID = '4FeqFBVzJFUMdu8S8gatam';
 
-const productionHosts = new Set(['www.driverightcarbuying.com', 'driverightcarbuying.com']);
+const productionHosts = new Set(['www.steermeright.com', 'steermeright.com', 'www.driverightcarbuying.com', 'driverightcarbuying.com']);
 
 export function createOpenAIAds(w, d, pixelId = OPENAI_ADS_PIXEL_ID) {
   let initialized = false;

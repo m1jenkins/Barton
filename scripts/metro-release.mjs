@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { parse } from 'parse5';
 
-export const origin = 'https://www.driverightcarbuying.com';
+export const origin = 'https://www.steermeright.com';
 export const sha256 = value => createHash('sha256').update(value).digest('hex');
 export function csvRows(text) {
   const rows = []; let row = [], cell = '', quoted = false;

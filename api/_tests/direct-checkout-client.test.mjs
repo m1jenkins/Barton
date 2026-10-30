@@ -8,7 +8,7 @@ function page(href, path = '/car-buying-service.html', failOnce = false, gtm) {
   const attrs = new Map([['href', href]]), handlers = {}, events = {}, calls = [], redirects = [], order = [];
   const link = {dataset:{},innerHTML:'Choose this plan',textContent:'Choose this plan',getAttribute:k=>attrs.get(k),setAttribute:(k,v)=>attrs.set(k,v),removeAttribute:k=>attrs.delete(k),addEventListener:(k,fn)=>handlers[k]=fn};
   const storage = () => { const data = new Map(); return {getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)}; };
-  const location = new URL(path, 'https://www.driverightcarbuying.com'); location.assign=url=>{order.push('redirect');redirects.push(url);};
+  const location = new URL(path, 'https://www.steermeright.com'); location.assign=url=>{order.push('redirect');redirects.push(url);};
   const dataLayer = [];
   dataLayer.push = item => {order.push(`push:${item.event}`);Array.prototype.push.call(dataLayer,item);if(gtm==='callback'&&item.eventCallback)setImmediate(()=>{order.push('callback');item.eventCallback('GTM-W577B3D4');});return dataLayer.length;};
   const window = {location,localStorage:storage(),sessionStorage:storage(),crypto,dataLayer,...(gtm?{google_tag_manager:{'GTM-W577B3D4':{}}}:{}),setTimeout,clearTimeout,alert(){},addEventListener:(k,fn)=>events[k]=fn};

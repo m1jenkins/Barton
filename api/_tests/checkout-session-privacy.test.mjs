@@ -10,7 +10,7 @@ import { createOpenAIAds } from '../../openai-ads.js';
 const root = new URL('../../', import.meta.url);
 const read = file => readFile(new URL(file, root), 'utf8');
 const source = await read('script.js');
-const origin = 'https://www.driverightcarbuying.com';
+const origin = 'https://www.steermeright.com';
 const sessionId = 'cs_test_a1B2c3D4e5F6g7H8';
 const purchaseId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 const verified = { ok: true, verified: true, tier: 'full_service', purchase_id: purchaseId, value: 295, currency: 'USD' };

@@ -18,4 +18,4 @@ createServer(async (req, res) => {
     if (!type) throw new Error('Private file');
     res.writeHead(200, {'Content-Type':type,'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow'}).end(await readFile(file));
   } catch { res.writeHead(404).end('Not found'); }
-}).listen(port, '127.0.0.1', () => console.log(`Drive Right preview: http://127.0.0.1:${port}`));
+}).listen(port, '127.0.0.1', () => console.log(`Steer Me Right preview: http://127.0.0.1:${port}`));

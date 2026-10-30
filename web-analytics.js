@@ -7,7 +7,7 @@ const publicPaths = new Set(['/', '/index.html', '/about.html', '/how-it-works.h
   '/austin.html', '/texas-local-market-intelligence.html',
   '/blog-buy-new-car-below-msrp.html', '/blog-dealership-addons-complete-guide.html',
   '/blog-used-car-inspection-checklist.html']);
-const hosts = new Set(['www.driverightcarbuying.com', 'driverightcarbuying.com']);
+const hosts = new Set(['www.steermeright.com', 'steermeright.com', 'www.driverightcarbuying.com', 'driverightcarbuying.com']);
 
 export function createWebAnalytics(w, d) {
   let consent = false, loaded = false;

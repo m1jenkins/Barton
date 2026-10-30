@@ -12,37 +12,50 @@ const requiredRedirects = [
     name: 'legacy apex domain root',
     source: '/',
     host: 'austincarbuyingservice.com',
-    destination: 'https://www.driverightcarbuying.com/',
+    destination: 'https://www.steermeright.com/',
   },
   {
     name: 'legacy www domain root',
     source: '/',
     host: 'www.austincarbuyingservice.com',
-    destination: 'https://www.driverightcarbuying.com/',
+    destination: 'https://www.steermeright.com/',
   },
   {
     name: 'canonical apex domain root',
     source: '/',
     host: 'driverightcarbuying.com',
-    destination: 'https://www.driverightcarbuying.com/',
+    destination: 'https://www.steermeright.com/',
   },
   {
     name: 'legacy apex domain',
     source: '/:path*',
     host: 'austincarbuyingservice.com',
-    destination: 'https://www.driverightcarbuying.com/:path*',
+    destination: 'https://www.steermeright.com/:path*',
   },
   {
     name: 'legacy www domain',
     source: '/:path*',
     host: 'www.austincarbuyingservice.com',
-    destination: 'https://www.driverightcarbuying.com/:path*',
+    destination: 'https://www.steermeright.com/:path*',
   },
   {
     name: 'canonical apex domain',
     source: '/:path*',
     host: 'driverightcarbuying.com',
-    destination: 'https://www.driverightcarbuying.com/:path*',
+    destination: 'https://www.steermeright.com/:path*',
+  },
+  {
+    name: 'old www domain root',
+    source: '/',
+    host: 'www.driverightcarbuying.com',
+    destination: 'https://www.steermeright.com/',
+  },
+  {
+    // /api/ stays on the old host: Stripe webhooks don't follow redirects.
+    name: 'old www domain, except the API',
+    source: '/:path((?!api/|\\.well-known/).+)',
+    host: 'www.driverightcarbuying.com',
+    destination: 'https://www.steermeright.com/:path',
   },
   { name: 'index.html', source: '/index.html', destination: '/' },
   { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html', status: 301 },
@@ -63,7 +76,7 @@ const requiredRedirects = [
 
 function usageError(message) {
   console.error(`Configuration error: ${message}`);
-  console.error('Usage: BASE_URL=https://www.driverightcarbuying.com LEGACY_BASE_URL=https://www.austincarbuyingservice.com node scripts/check-redirects.mjs');
+  console.error('Usage: BASE_URL=https://www.steermeright.com LEGACY_BASE_URL=https://www.austincarbuyingservice.com node scripts/check-redirects.mjs');
   console.error('       node scripts/check-redirects.mjs --config-only');
   process.exit(2);
 }

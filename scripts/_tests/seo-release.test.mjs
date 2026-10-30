@@ -7,7 +7,7 @@ import { SERVICE_TIERS, NEW_CHECKOUT_TIERS } from '../../api/_lib/config.js';
 import { plans } from '../../buying/checkout.js';
 const root=new URL('../../',import.meta.url);
 const read=file=>readFile(new URL(file,root),'utf8');
-const origin='https://www.driverightcarbuying.com';
+const origin='https://www.steermeright.com';
 const fileFor=href=>new URL(href,origin).pathname==='/'?'index.html':new URL(href,origin).pathname.slice(1);
 
 test('active server, browser, registry, visible cards and schema agree on the two authorized offers',async()=>{

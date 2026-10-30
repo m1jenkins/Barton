@@ -92,7 +92,7 @@ test('under Global Privacy Control the choice is already off and cannot be turne
 
 test('an opted-out browser loads neither the OpenAI Pixel nor Vercel analytics', () => {
   const scripts = [];
-  const w = { location: new URL('https://www.driverightcarbuying.com/blog.html'), navigator: {}, sessionStorage: { getItem() {}, setItem() {} } };
+  const w = { location: new URL('https://www.steermeright.com/blog.html'), navigator: {}, sessionStorage: { getItem() {}, setItem() {} } };
   const d = { cookie: 'dr_ad_measurement=off', referrer: '', body: { dataset: {} }, createElement: () => ({}), head: { appendChild: script => scripts.push(script) } };
   const ads = createOpenAIAds(w, d, 'test-pixel');
   ads.setConsent({ measurement: true });
