@@ -116,7 +116,7 @@
 
 /* Fee comparison (Wise's transparent pricing widget) */
 .dr.wz #fees .wz-wrap > .wz-btn { margin-bottom:40px; }
-.dr.wz .wz-compare { max-width:908px; margin:0 auto; padding:24px 24px 8px; border-radius:24px; background:#fff; text-align:left; }
+.dr.wz .wz-compare { max-width:908px; margin:0 auto; padding:24px; border-radius:24px; background:#fff; text-align:left; }
 .dr.wz .wz-compare-head { display:flex; justify-content:space-between; gap:16px; margin-bottom:14px; font-size:14px; line-height:21px; color:var(--wz-body); }
 .dr.wz .wz-bars { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
 .dr.wz .wz-bar { position:relative; display:flex; align-items:center; gap:12px; width:max(var(--w),400px); max-width:100%; min-height:64px; padding:8px 24px 8px 8px; border-radius:9999px; background:var(--wz-tint); box-sizing:border-box; }
@@ -128,7 +128,6 @@
 .dr.wz .wz-bar--us .wz-bar-name, .dr.wz .wz-bar--us .wz-bar-name small { color:var(--wz-on-sign); }
 .dr.wz .wz-bar strong { margin-left:auto; padding-left:12px; font:900 22px/1 var(--wz-display); color:var(--wz-ink); white-space:nowrap; }
 .dr.wz .wz-bar--us strong { font-size:28px; color:var(--wz-on-sign); }
-.dr.wz .wz-compare-more { display:block; margin-top:8px; padding:14px; border-top:1px solid var(--wz-line); text-align:center; font-size:14px; font-weight:600; color:var(--wz-navy); text-decoration:underline; text-underline-offset:3px; }
 
 /* Plans (Wise's "Make your money do more" cards) */
 .dr.wz #plans .wz-center > .wz-btn { margin-bottom:48px; }
@@ -269,7 +268,7 @@
   .dr.wz .wz-section--tight { padding-top:32px; }
   .dr.wz .wz-lead { font-size:17px; line-height:26px; }
   .dr.wz .wz-float-pill { left:12px; right:12px; bottom:12px; }
-  .dr.wz .wz-compare { padding:16px 12px 4px; }
+  .dr.wz .wz-compare { padding:16px 12px; }
   .dr.wz .wz-compare-head span:last-child { display:none; }
   .dr.wz .wz-bar { width:100%; min-height:60px; padding-right:16px; }
   .dr.wz .wz-bar-logo { width:36px; height:36px; font-size:13px; }

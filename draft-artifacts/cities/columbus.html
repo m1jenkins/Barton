@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=1d9d0823a498">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=90cc964fc645">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -198,7 +198,6 @@
     <nav class="wz-nav" aria-label="Main navigation">
       <a href="/how-it-works.html">How it works</a>
       <a href="#plans">Pricing</a>
-      <a href="/compare-car-buying-services.html">Compare</a>
       <a href="/about.html">About</a>
     </nav>
     <div class="wz-header-actions">
@@ -210,7 +209,6 @@
   <div class="wz-menu" id="wz-menu" hidden>
     <a href="/how-it-works.html">How it works</a>
     <a href="#plans" data-menu-close>Pricing</a>
-    <a href="/compare-car-buying-services.html">Compare services</a>
     <a href="/about.html">About Mason</a>
     <a href="/blog.html">Guides</a>
     <button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="menu">Talk to Mason first</button>
@@ -284,13 +282,12 @@
         <div class="wz-compare-head"><span>Fee for a person to find and negotiate one car</span><span>Published prices</span></div>
         <ol class="wz-bars" role="list">
           <li class="wz-bar wz-bar--us" style="--w:33%"><span class="wz-bar-logo wz-bar-logo--us" aria-hidden="true">SM</span><span class="wz-bar-name">Steer Me Right<small>Full refund before negotiations begin</small></span><strong>$395</strong></li>
-          <li class="wz-bar" style="--w:42%"><span class="wz-bar-logo" aria-hidden="true">A</span><span class="wz-bar-name">Car-buying consultant<small>Premium plan</small></span><strong>$499</strong></li>
-          <li class="wz-bar" style="--w:84%"><span class="wz-bar-logo" aria-hidden="true">B</span><span class="wz-bar-name">Concierge services<small>Two services, $999 and $1,000</small></span><strong>$1,000</strong></li>
-          <li class="wz-bar" style="--w:100%"><span class="wz-bar-logo" aria-hidden="true">C</span><span class="wz-bar-name">Full-service car buyer<small>Cars and SUVs</small></span><strong>$1,195</strong></li>
+          <li class="wz-bar" style="--w:84%"><span class="wz-bar-logo" aria-hidden="true">A</span><span class="wz-bar-name">Competitor A<small>Flat, per car</small></span><strong>$999</strong></li>
+          <li class="wz-bar" style="--w:84%"><span class="wz-bar-logo" aria-hidden="true">B</span><span class="wz-bar-name">Competitor B<small>Per deal, new cars only for now</small></span><strong>$1,000</strong></li>
+          <li class="wz-bar" style="--w:100%"><span class="wz-bar-logo" aria-hidden="true">C</span><span class="wz-bar-name">Competitor C<small>Cars and SUVs</small></span><strong>$1,195</strong></li>
         </ol>
-        <a class="wz-compare-more" href="/compare-car-buying-services.html">See the full comparison</a>
       </div>
-      <p class="wz-fine">Each company’s own published price, checked October 18, 2026. <a href="/compare-car-buying-services.html">How we compared</a></p>
+      <p class="wz-fine">Each company’s own published price, checked October 18, 2026.</p>
     </div>
   </section>
 
@@ -405,7 +402,7 @@
       <h2 id="links-title" class="wz-heading wz-heading--left">Here for buyers in Columbus</h2>
       <div class="wz-tabs" role="tablist" aria-label="Resources">
         <button type="button" role="tab" id="tab-guides" aria-selected="true" aria-controls="panel-guides" data-tab>Buying guides</button>
-        <button type="button" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" data-tab tabindex="-1">Compare services</button>
+        <button type="button" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" data-tab tabindex="-1">Car buying services</button>
       </div>
       <ul class="wz-link-grid" role="tabpanel" id="panel-guides" aria-labelledby="tab-guides">
         <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17 10 11l4 4 6-7"/></svg></span><a href="/blog-buy-new-car-below-msrp.html">Buying below MSRP</a></li>
@@ -417,9 +414,6 @@
         <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span><a href="/how-it-works.html">How the service works</a></li>
       </ul>
       <ul class="wz-link-grid" role="tabpanel" id="panel-compare" aria-labelledby="tab-compare" hidden>
-        <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span><a href="/compare-car-buying-services.html">Car buying services compared</a></li>
-        <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span><a href="/caredge-alternatives.html">CarEdge alternatives</a></li>
-        <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span><a href="/delivrd-alternatives.html">Delivrd alternatives</a></li>
         <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 14l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 9l2 5v4H3z"/></svg></span><a href="/used-car-buying-service.html">Used car buying service</a></li>
         <li><span class="wz-link-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg></span><a href="/car-buying-service.html">What a car buying service does</a></li>
       </ul>
@@ -432,8 +426,7 @@
       <div class="wz-notes">
         <p>Service fees don’t include the vehicle price, taxes, registration, inspection, financing, insurance or delivery costs.</p>
         <p>Inventory, seller participation, timing, financing and purchase outcomes vary. You review the vehicle, the deal terms and the final paperwork, and you make every purchase decision. We can’t guarantee a specific discount or car.</p>
-        <p>Competitor fees are each company’s own published price for its lowest person-led negotiation plan, checked October 18, 2026. Sources and details are on our <a href="/compare-car-buying-services.html">comparison page</a>.</p>
-        <p>The quote checker above runs in your browser. Your numbers go to Mason only if you press “Send Mason my quote” and submit the form.</p>
+        <p>Competitor fees are each company’s own published price for its lowest person-led negotiation plan, checked October 18, 2026.</p>
       </div>
     </div>
   </section>
@@ -442,7 +435,7 @@
   <div class="wz-wrap">
     <div class="wz-footer-cols">
       <nav aria-label="Plans"><h2>Plans</h2><a href="/schedule.html">Steer Me Right</a><a href="/schedule.html">Steer Me Right Pro</a><a href="/how-it-works.html">How it works</a></nav>
-      <nav aria-label="Resources"><h2>Resources</h2><a href="/blog.html">Guides</a><a href="/compare-car-quotes.html">Car quote worksheet</a><a href="/compare-car-buying-services.html">Compare services</a><a href="/car-buying-service.html">Car buying service</a></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><a href="/blog.html">Guides</a><a href="/compare-car-quotes.html">Car quote worksheet</a><a href="/car-buying-service.html">Car buying service</a></nav>
       <nav aria-label="Company"><h2>Company</h2><a href="/about.html">About</a><a href="/policy.html">Policy</a></nav>
       <div id="contact"><h2>Help</h2><span id="call-text-info"></span><a href="mailto:hello@steermeright.com">hello@steermeright.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
     </div>

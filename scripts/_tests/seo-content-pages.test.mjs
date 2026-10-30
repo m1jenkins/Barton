@@ -130,10 +130,12 @@ test('marketing nav lists three sections, and the schedule header offers one che
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
     if (file === 'index.html') {
-      // The homepage uses the Wise-style header: the same three sections plus Compare, with Pricing as an on-page anchor.
+      // The homepage uses the Wise-style header: the same three sections, with Pricing as an on-page anchor.
+      // It does not link to the competitor comparison pages (2026-10-30); other pages still do.
       const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
       const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
-      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '#plans', '/compare-car-buying-services.html', '/about.html']);
+      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '#plans', '/about.html']);
+      assert.doesNotMatch(html, /href="\/(compare-car-buying-services|caredge-alternatives|delivrd-alternatives)\.html"/);
       assert.doesNotMatch(nav, /car-buying-service\.html/);
       assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started<\/a>/);
       continue;
