@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=8f3b87b9388b">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=296a9e7359f5">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -222,7 +222,7 @@
     <div class="wz-wrap wz-hero-inner">
       <h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer in New York City.</h1>
       <p class="wz-hero-lead">We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands. Name your borough, parking setup, and any trips beyond the city in the search details.</p>
-      <a class="wz-btn wz-btn--forest" href="#plans" data-cta-location="hero">See plans from $395</a>
+      <div class="wz-actions wz-actions--center"><a class="wz-btn wz-btn--forest" href="#plans" data-cta-location="hero">See plans from $395</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="hero">Talk to Mason first</button></div>
 
       <div class="wz-greviews" aria-labelledby="greviews-title">
         <div class="wz-greviews-head">
