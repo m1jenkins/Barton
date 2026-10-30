@@ -144,6 +144,7 @@
 .dr.wz .wz-plan .wz-btn { margin-top:auto; }
 .dr.wz .wz-plan--feature { background:var(--wz-sign); color:rgba(255,255,255,.82); }
 .dr.wz .wz-plan--feature .wz-icon { background:rgba(255,255,255,.14); color:#fff; }
+.dr.wz .wz-plan .wz-icon--photo { width:72px; height:72px; overflow:hidden; background:#fff; }
 .dr.wz .wz-plan--feature h3, .dr.wz .wz-plan--feature .wz-plan-price, .dr.wz .wz-plan--feature .wz-plan-list li { color:#fff; }
 .dr.wz .wz-plan--feature .wz-plan-price span { color:rgba(255,255,255,.82); }
 .dr.wz .wz-plan--feature .wz-plan-list { border-top-color:rgba(255,255,255,.22); }

@@ -146,6 +146,15 @@ Generated pixel art, supplied by the owner on 2026-10-01 as a reference pack: 16
 
 Headlight frames run left to right: down, half raised, up, up and lit, left wink, right wink. Each frame is the down/off drawing with only the changed headlight regions swapped in from the pack's state, so the body never shifts between frames.
 
+### Plan card steering wheels
+
+Product photos supplied by the owner on 2026-10-30 for the homepage plan cards: a Toyota wheel (cream background already replaced with white by the owner) for Steer Me Right and a Porsche wheel for Steer Me Right Pro. Both show the maker's badge on the hub. The original photographer, site and license were not recorded. Sources are kept as `assets/external/source/plan-steering-wheel-toyota-original.png` (500×500, 179,129 bytes) and `plan-steering-wheel-porsche-original.png` (850×850, 353,127 bytes). Each was square-cropped around the wheel with `sharp` (Toyota left 11, top 10, 480×480; Porsche left 50, top 60, 750×750), resized to 192×192 and encoded with `cwebp` quality 82 with metadata removed. No retouching.
+
+| Asset | Local file | Pixels | Bytes | Used by |
+|---|---|---:|---:|---|
+| Toyota wheel | `assets/external/optimized/plan-steering-wheel-toyota-192.webp` | 192×192 | 5,472 | Steer Me Right plan card |
+| Porsche wheel | `assets/external/optimized/plan-steering-wheel-porsche-192.webp` | 192×192 | 5,714 | Steer Me Right Pro plan card |
+
 ## Integration notes
 
 - Use the JPEG social replacement for `og:image`, `twitter:image`, and schema unless target-platform compatibility is explicitly verified for WebP or AVIF.
