@@ -37,7 +37,7 @@ if (dialog && form) {
     if (submit.disabled) return;
     const client = window.driveRightClient;
     if (!client) {
-      status.textContent = 'Please try again, or email Mason at hello@driverightcarbuying.com.';
+      status.textContent = 'Please try again, or email Mason at hello@steermeright.com.';
       status.className = 'form-status form-status--error';
       return;
     }
@@ -85,7 +85,7 @@ if (dialog && form) {
       const emailed = result.forwarding_configured === true || (!saved.honeypot && await client.emailMason?.({ ...saved, subject: `New car search inquiry: ${saved.vehicle}` }, result.lead_id));
       if (!emailed) {
         const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n${saved.phone ? `Phone: ${saved.phone}\n` : ''}\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
-        emailDraft = `mailto:hello@driverightcarbuying.com?subject=${encodeURIComponent('My car search inquiry')}&body=${encodeURIComponent(body)}`;
+        emailDraft = `mailto:hello@steermeright.com?subject=${encodeURIComponent('My car search inquiry')}&body=${encodeURIComponent(body)}`;
         emailHandoff.hidden = false;
       }
       pendingKey = '';
@@ -93,12 +93,12 @@ if (dialog && form) {
       form.reset();
       status.className = 'form-status form-status--success';
       status.textContent = emailed
-        ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or email hello@driverightcarbuying.com.'
-        : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or email hello@driverightcarbuying.com.';
+        ? 'Thanks. Your car search inquiry is saved. Mason replies within one business day, or email hello@steermeright.com.'
+        : 'Your car search inquiry is saved. To get in touch, email Mason these details with the button below, or email hello@steermeright.com.';
       status.focus();
     } catch {
       status.className = 'form-status form-status--error';
-      status.textContent = 'Your inquiry could not be sent. Please try again, or email Mason at hello@driverightcarbuying.com.';
+      status.textContent = 'Your inquiry could not be sent. Please try again, or email Mason at hello@steermeright.com.';
     } finally {
       submit.disabled = false;
       submit.removeAttribute('aria-busy');

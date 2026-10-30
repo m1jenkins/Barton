@@ -79,7 +79,7 @@ test('blocked analytics and unconfigured forwarding still show a saved contact r
   await page.send();
   assert.match(page.status.textContent, /message was saved/);
   assert.doesNotMatch(page.status.textContent, /follow up shortly/);
-  assert.match(page.status.textContent, /hello@driverightcarbuying.com|512/);
+  assert.match(page.status.textContent, /hello@steermeright.com|512/);
   assert.equal(page.submit.disabled, false);
   assert.equal(page.form.resetCount, 1);
 });
@@ -107,7 +107,7 @@ test('a Web3Forms failure still shows the saved message with direct contact opti
   await page.send();
   await page.send();
   assert.equal(page.emails.length, 1);
-  assert.match(page.status.textContent, /hello@driverightcarbuying.com/);
+  assert.match(page.status.textContent, /hello@steermeright.com/);
   assert.equal(page.submit.disabled, false);
 });
 

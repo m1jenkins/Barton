@@ -12,7 +12,7 @@ function inquiry(request, track, web3forms = async () => { throw new Error('Offl
   const submit = { disabled: false, textContent: 'Send my car search inquiry', setAttribute() {}, removeAttribute() {} };
   const status = { textContent: '', focus() { this.focused = true; } };
   const interest = { value: 'Not sure yet' };
-  const emailHandoff = { hidden: true, href: 'mailto:hello@driverightcarbuying.com', addEventListener(event, fn) { this.click = fn; } };
+  const emailHandoff = { hidden: true, href: 'mailto:hello@steermeright.com', addEventListener(event, fn) { this.click = fn; } };
   const navigations = [];
   const form = { elements: { namedItem: () => interest }, querySelector: selector => selector === '[type="submit"]' ? submit : selector === '[data-email-inquiry]' ? emailHandoff : status,
     addEventListener: (event, fn) => { listeners[event] = fn; }, reset() { this.wasReset = true; } };
@@ -50,11 +50,11 @@ test('without a notification connection the saved inquiry offers an explicit ema
   await f.send();
   assert.equal(f.emailHandoff.hidden, false);
   assert.match(f.status.textContent, /email Mason these details/);
-  assert.equal(f.emailHandoff.href, 'mailto:hello@driverightcarbuying.com');
+  assert.equal(f.emailHandoff.href, 'mailto:hello@steermeright.com');
   assert.equal(f.navigations.length, 0, 'submission itself does not open or send an email');
   f.emailHandoff.click({ preventDefault() {} });
   const draft = new URL(f.navigations[0]);
-  assert.equal(draft.pathname, 'hello@driverightcarbuying.com');
+  assert.equal(draft.pathname, 'hello@steermeright.com');
   assert.match(draft.searchParams.get('body'), /Used Mazda CX-5/);
   assert.match(draft.searchParams.get('body'), /buyer@example.com/);
   assert.equal(f.events.length, 1, 'email handoff is not another conversion');

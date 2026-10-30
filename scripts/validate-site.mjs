@@ -801,7 +801,7 @@ for (const file of htmlFiles) {
   const claimSurfaces = [html, text];
 
   if (/mason@driverightcarbuying\.com/i.test(html)) {
-    fail(file, 'Public contact email must be hello@driverightcarbuying.com.', html.toLowerCase().indexOf('mason@driverightcarbuying.com'), html, 'Keep schema, footer, and policy on the hello@ address until an owner decision records a different public inbox.');
+    fail(file, 'Public contact email must be hello@steermeright.com.', html.toLowerCase().indexOf('mason@driverightcarbuying.com'), html, 'Keep schema, footer, and policy on the hello@ address until an owner decision records a different public inbox.');
   }
 
   const dealerName = html.match(/Steer Me Right Auto Sales|not a vehicle dealer|not-a-dealer/i);

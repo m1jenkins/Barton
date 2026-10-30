@@ -220,7 +220,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   for (const city of cities) assert.ok(served.includes(city), city);
 
   assert.match(homepage.visibleText, /Mon–Fri, 9 a\.m\.–5 p\.m\. Central/);
-  assert.match(await read('policy.html'), /mailto:hello@driverightcarbuying\.com/);
+  assert.match(await read('policy.html'), /mailto:hello@steermeright\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
   assert.match(await read('llms.txt'), /\$395 Steer Me Right \(one model\) and \$695 Steer Me Right Pro \(up to three models\)/);
   assert.doesNotMatch(await read('llms.txt'), /AI Agent Buying Service/);
