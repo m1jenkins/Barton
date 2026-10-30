@@ -122,7 +122,8 @@
 .dr.wz .wz-bar { position:relative; display:flex; align-items:center; gap:12px; width:max(var(--w),400px); max-width:100%; min-height:64px; padding:8px 24px 8px 8px; border-radius:9999px; background:var(--wz-tint); box-sizing:border-box; }
 .dr.wz .wz-bar--us { background:var(--wz-sign); }
 .dr.wz .wz-bar-logo { display:grid; place-items:center; width:44px; height:44px; flex:none; border-radius:50%; background:#fff; color:var(--wz-ink); font:900 16px/1 var(--wz-display); box-shadow:inset 0 0 0 1px var(--wz-line); }
-.dr.wz .wz-bar-logo--us { background:var(--wz-navy); color:#fff; box-shadow:none; }
+.dr.wz .wz-bar-logo--us { background:#fff; box-shadow:none; }
+.dr.wz .wz-bar-miata { width:31px; height:20px; background:url(/assets/mascot/front.webp) 0 0/600% 100% no-repeat; }
 .dr.wz .wz-bar-name { display:flex; flex-direction:column; min-width:0; white-space:nowrap; font-size:16px; line-height:22px; font-weight:600; color:var(--wz-ink); }
 .dr.wz .wz-bar-name small { font-size:13px; line-height:18px; font-weight:400; color:var(--wz-body); }
 .dr.wz .wz-bar--us .wz-bar-name, .dr.wz .wz-bar--us .wz-bar-name small { color:var(--wz-on-sign); }
@@ -275,6 +276,7 @@
   .dr.wz .wz-compare-head span:last-child { display:none; }
   .dr.wz .wz-bar { width:100%; min-height:60px; padding-right:16px; }
   .dr.wz .wz-bar-logo { width:36px; height:36px; font-size:13px; }
+  .dr.wz .wz-bar-miata { width:26px; height:17px; }
   .dr.wz .wz-bar-name { font-size:15px; white-space:normal; }
   .dr.wz .wz-bar strong { font-size:19px; }
   .dr.wz .wz-bar--us strong { font-size:22px; }

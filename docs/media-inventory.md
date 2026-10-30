@@ -139,7 +139,7 @@ Generated pixel art, supplied by the owner on 2026-10-01 as a reference pack: 16
 | Side view | `assets/mascot/side.webp` | 170×66 | 6,206 | Header drive-by, chat typing bubble |
 | Wheel | `assets/mascot/wheel.webp` | 27×27 | 870 | Spinning wheel layer |
 | Three-quarter strip, 6 headlight frames | `assets/mascot/q.webp` | 990×84 | 36,804 | Parked header car |
-| Head-on strip, 6 headlight frames | `assets/mascot/front.webp` | 552×60 | 17,486 | Chat avatar |
+| Head-on strip, 6 headlight frames | `assets/mascot/front.webp` | 552×60 | 17,486 | Chat avatar, homepage fee bar (first frame) |
 | Side view, large | `assets/mascot/side-lg.webp` | 319×124 | 15,334 | Payment-success celebration |
 | Wheel, large | `assets/mascot/wheel-lg.webp` | 50×50 | 1,886 | Payment-success celebration |
 | Three-quarter strip, large | `assets/mascot/q-lg.webp` | 1854×157 | 91,146 | Payment-success celebration |

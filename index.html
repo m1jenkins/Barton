@@ -250,7 +250,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=f16c33c0ddea">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=ff6b12765ec9">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -349,7 +349,7 @@
       <div class="wz-compare">
         <div class="wz-compare-head"><span>Fee for a person to find and negotiate one car</span><span>Published prices</span></div>
         <ol class="wz-bars" role="list">
-          <li class="wz-bar wz-bar--us" style="--w:33%"><span class="wz-bar-logo wz-bar-logo--us" aria-hidden="true">SM</span><span class="wz-bar-name">Steer Me Right<small>New, used, cars &amp; trucks</small></span><strong>$395</strong></li>
+          <li class="wz-bar wz-bar--us" style="--w:33%"><span class="wz-bar-logo wz-bar-logo--us" aria-hidden="true"><span class="wz-bar-miata"></span></span><span class="wz-bar-name">Steer Me Right<small>New, used, cars &amp; trucks</small></span><strong>$395</strong></li>
           <li class="wz-bar" style="--w:84%"><span class="wz-bar-logo" aria-hidden="true">A</span><span class="wz-bar-name">Competitor A<small>Flat, per car, new cars only</small></span><strong>$999</strong></li>
           <li class="wz-bar" style="--w:84%"><span class="wz-bar-logo" aria-hidden="true">B</span><span class="wz-bar-name">Competitor B<small>Per deal, new cars only</small></span><strong>$1,000</strong></li>
           <li class="wz-bar" style="--w:100%"><span class="wz-bar-logo" aria-hidden="true">C</span><span class="wz-bar-name">Competitor C<small>Cars and SUVs</small></span><strong>$1,195</strong></li>
