@@ -4,7 +4,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const folders = ['api', 'buying', 'scripts', 'draft-artifacts/quote-comparison', 'outputs/2026-10-google-search-ads'];
+const folders = ['api', 'buying', 'scripts', 'draft-artifacts/quote-comparison'];
 
 export async function javascriptFiles(directory, mode = 'all') {
   const files = [];

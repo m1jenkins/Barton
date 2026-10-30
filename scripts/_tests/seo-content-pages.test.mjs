@@ -338,7 +338,6 @@ test('claim rows record the 2026-10-23 plan names, scopes and upgrade term, and 
   }
   for (const id of ['CONCIERGE-SCOPE-2026-10-05', 'CONCIERGE-SHIPPING-2026-10-23']) assert.equal(claims.get(id)?.status, 'retired', id);
   assert.equal(claims.get('SEO-PRICE-2026-09-27').status, 'approved');
-  assert.equal(claims.get('ADS-GOOGLE-2026-10').status, 'approved', 'Mason signed ad copy v4 on 2026-10-23');
 
   const promo = claims.get('PROMO-HALLOWEEN-2026-10-23');
   assert.equal(promo.claim_text, 'Halloween sale: 25% off Steer Me Right or Steer Me Right Pro with code SPOOKY25 at checkout. Ends October 31.');

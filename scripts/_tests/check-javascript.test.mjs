@@ -9,7 +9,7 @@ test('syntax checks discover new API helpers and report broken browser modules',
   const root = await mkdtemp(join(tmpdir(), 'barton-syntax-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   await writeFile(join(root, 'package.json'), '{"type":"module"}');
-  for (const folder of ['api/_lib', 'buying', 'scripts', 'draft-artifacts/quote-comparison', 'outputs/2026-10-google-search-ads']) await mkdir(join(root, folder), { recursive: true });
+  for (const folder of ['api/_lib', 'buying', 'scripts', 'draft-artifacts/quote-comparison']) await mkdir(join(root, folder), { recursive: true });
   await writeFile(join(root, 'api/_lib/new-helper.js'), 'export const configured = true;');
   await writeFile(join(root, 'script.js'), 'const page = window.location;');
   await writeFile(join(root, 'buying/new-module.js'), 'export const broken = ;');

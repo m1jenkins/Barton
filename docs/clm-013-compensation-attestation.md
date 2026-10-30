@@ -45,9 +45,6 @@ Record here only where the signed copy is kept and the date. Don't commit it.
    - `pricing.md` or `llms.txt` if they mention it.
    
    Re-run the site checks.
-3. **Ads approval:** add the ad lines to `outputs/2026-10-google-search-ads/plan.json` (from its `pending_assets` block) and get their exact copy approved on the `ADS-GOOGLE-2026-10` sheet.
-4. **Ads change:** apply it as one logged creative change in `change-log.md`.
-5. **Landing page:** the Car Negotiation ad group can then move to `/how-it-works.html`, as a separate logged change.
 
 ## 5. Keeping it true
 

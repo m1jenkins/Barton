@@ -274,7 +274,7 @@ Still visible, all first party or on the buyer's device:
 - Vercel request logs and the `/api/purchase-status?session_id=…` requests.
 - The page's navigation-timing entry, which page scripts could read; neither tag sent it.
 
-Account-side steps, not applied (see `docs/google-ads-setup.md` §3):
+Account-side steps, not applied:
 
 - **Clarity:** exclude it from `/payment-success*` with a GTM trigger exception. The project's served config unmasks `body`, so Clarity records page text as displayed. In the test it masked typed values and placeholders. The Full Service and Ultimate Concierge chat intake (October 5, 2026) shows each answer, contact details included, as page text, so the chat panel carries `data-clarity-mask="true"`. The exclusion is still the complete fix.
 - **Google tag:** keep the sanitized `page_location` as defense in depth. It doesn't cover GTM's own page view or Clarity, so the page code is the fix.
