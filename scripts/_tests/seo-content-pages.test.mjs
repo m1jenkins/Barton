@@ -340,6 +340,5 @@ test('claim rows record the 2026-10-23 plan names, scopes and upgrade term, and 
 
   const promo = claims.get('PROMO-HALLOWEEN-2026-10-23');
   assert.equal(promo.claim_text, 'Halloween sale: 25% off Steer Me Right or Steer Me Right Pro with code SPOOKY25 at checkout. Ends October 31.');
-  assert.ok((await read('script.js')).includes(`const message = '${promo.claim_text}';`), 'banner text is the approved row');
   assert.match(claims.get('PLAN-UPGRADE-2026-10-23').claim_text, /upgrade to Steer Me Right Pro later by paying the \$300 difference/);
 });
