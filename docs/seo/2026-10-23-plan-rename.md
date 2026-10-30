@@ -75,3 +75,17 @@ Done 2026-10-23 at 20:29 CT, right after the site push (`d664811`, live on produ
 | `prod_UHctPBgsLqlPea` ($695) | Ultimate Concierge | Drive Right Pro | Replaced with the text above |
 
 Checked afterwards by opening both live Payment Links (not paid): the hosted checkout shows "Drive Right" at $395.00 and "Drive Right Pro" at $695.00 with the new descriptions. Each link's stored line-item `description` still reads the old name (Stripe snapshots it when the link is made); it is not what buyers see. The price nicknames ("Full Service - $395", "Ultimate Concierge - $695") are dashboard-only and were left as they are.
+
+### Steer Me Right rename (2026-10-30)
+
+Done 2026-10-30 at about 18:35 CT on Mason's request ("update the stripe with the new name of the business"), after the site rename in `79dcd4b`. Prices, descriptions, Payment Links and env vars untouched.
+
+| Where | Old | New | How |
+| --- | --- | --- | --- |
+| `prod_UGAAjsCtQNRd28` ($395) | Drive Right | Steer Me Right | Stripe API |
+| `prod_UHctPBgsLqlPea` ($695) | Drive Right Pro | Steer Me Right Pro | Stripe API |
+| Public details → Business name (DBA) | Drive Right Car Buying | Steer Me Right | Dashboard; Business information now shows the same name |
+
+Checked afterwards by opening both live Payment Links (not paid): the page header reads "Steer Me Right" and the line items read "Steer Me Right" at $395.00 and "Steer Me Right Pro" at $695.00.
+
+Still on the old name, left for a decision: statement descriptor `DRIVERIGHT` (what buyers see on card statements), support email `support@driverightcarbuying.com`, business website and terms URL on `driverightcarbuying.com` (they 301 to the new domain), both links' success redirects on `www.driverightcarbuying.com` (also 301, query string kept), the $695 link's `inactive_message` (only shown if the link is turned off), and the Stripe account's dashboard display name.
