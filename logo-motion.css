@@ -3,11 +3,13 @@
    rule still sets the size and the text color. */
 @font-face{font-family:'Barlow';src:url('/assets/buying/fonts/barlow-semibold-latin.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF}
 .wordmark-type{font-family:'Barlow',system-ui,sans-serif;font-weight:600;letter-spacing:-.04em;white-space:nowrap}
-.wordmark-t{display:inline-block;width:.5em;height:.76em;vertical-align:-.06em;overflow:visible}
+/* :root lifts the drawn t over page-wide icon rules, such as the homepage's .dr.wz svg (a 24px box, round caps
+   and a thin outline), which otherwise shrink it and push it away from the h. */
+:root .wordmark-type .wordmark-t{display:inline-block;width:.5em;height:.76em;vertical-align:-.06em;overflow:visible;stroke:none;stroke-linecap:butt;stroke-linejoin:miter}
 .wordmark-arrow{stroke:var(--wordmark-arrow,#0060E8)}
 .wordmark-arrow-head{fill:var(--wordmark-arrow,#0060E8)}
-/* The homepage header is a blue sign; a lighter blue keeps the arrow visible on it. */
-.wz .site-header{--wordmark-arrow:#7DB2FF}
+/* The homepage header is a blue sign, where a blue arrow blurs into the background; the whole wordmark goes white there. */
+.wz .site-header{--wordmark-arrow:currentColor}
 
 /* Header mascot: a Mariner Blue Miata parked beside the wordmark, driven by logo-motion.js.
    Sizes are multiples of --mx-h, the side-view height. The wordmark reserves the car's width here, so the
