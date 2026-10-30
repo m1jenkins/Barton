@@ -18,18 +18,19 @@ test('service-intent pages publish current prices without retired or unapproved 
 
   const homepageHtml = await read('index.html');
   const homepage = htmlDocument(homepageHtml);
-  const hero = homepageHtml.match(/<div class="hero-intro" id="hero">([\s\S]*?)<\/div>/)?.[1] ?? '';
+  const heroSection = homepageHtml.match(/<section class="wz-hero"[\s\S]*?<\/section>/)?.[0] ?? '';
+  const hero = heroSection.match(/<h1[\s\S]*?<\/h1>\s*<p class="wz-hero-lead">[\s\S]*?<\/p>/)?.[0] ?? '';
   assert.equal(homepage.h1.length, 1);
   assert.match(hero, /Let us deal with the dealer\./);
   assert.match(hero, /negotiate for a price below MSRP/);
   assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Drive Right Pro|Full Service|Ultimate Concierge/i);
-  // The hero goes straight to checkout with one paid button, plus an inquiry button that needs no payment and the trust lines.
-  const checkout = homepageHtml.match(/<div class="hero-checkout">([\s\S]*?)<\/ul>\s*<\/div>/)?.[1] ?? '';
-  assert.deepEqual([...checkout.matchAll(/data-plan="([^"]+)"/g)].map(([, tier]) => tier), ['full_service']);
-  assert.match(checkout, /<button[^>]*class="outline-button"[^>]*data-open-inquiry/);
-  assert.match(checkout, /Full refund if you cancel before negotiations begin\./);
-  assert.match(checkout, /Dealers pay us nothing\./);
-  assert.match(checkout, /Mason replies within one business day\./);
+  // The hero leads with the free quote check: no checkout button, two inquiry buttons, and the no-payment line.
+  assert.deepEqual([...heroSection.matchAll(/data-plan="([^"]+)"/g)], []);
+  assert.equal([...heroSection.matchAll(/<button[^>]*data-open-inquiry/g)].length, 2);
+  assert.match(heroSection, /No payment needed to ask\./);
+  assert.match(heroSection, /Dealers pay us nothing\./);
+  assert.match(homepageHtml, /Full refund if you cancel before negotiations begin\./);
+  assert.match(homepageHtml, /replies within one business day\./);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
@@ -123,6 +124,15 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
 test('marketing nav lists three sections, and the schedule header offers one checkout', async () => {
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
+    if (file === 'index.html') {
+      // The homepage uses the Wise-style header: the same three sections plus Compare, with Pricing as an on-page anchor.
+      const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
+      const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '#plans', '/compare-car-buying-services.html', '/about.html']);
+      assert.doesNotMatch(nav, /car-buying-service\.html/);
+      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started<\/a>/);
+      continue;
+    }
     const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
     const nav = header.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
@@ -218,7 +228,7 @@ test('city and editorial indexing stays consistent with owner-approved public co
     const document = htmlDocument(html);
     assert.equal(document.noindex, true, city.slug);
     assert.doesNotMatch(document.visibleText, /buyers buyers/i, city.slug);
-    assert.match(document.visibleText, new RegExp(`We help ${city.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} car buyers`, 'i'), city.slug);
+    assert.match(document.visibleText, new RegExp(`Here for buyers in ${city.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i'), city.slug);
   }
 
   const austin = await read('austin.html');

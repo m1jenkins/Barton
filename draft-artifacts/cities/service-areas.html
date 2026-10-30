@@ -164,8 +164,9 @@
 }
     </script>
 
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#9FE870">
     <link rel="icon" href="/favicon.png?v=6b8e8485d4e1" type="image/png">
+    <link rel="preload" href="/assets/buying/fonts/inter-tight-black-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/buying/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/buying/fonts/inter-semibold-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/buying/daisy.css?v=3d555457a022">
@@ -173,24 +174,41 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home.css?v=75860eb5258c">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=12dd2e466d1b">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
     </script>
     <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
     <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
+    <noscript><style>.dr.wz .wz-nav { display:flex !important; flex-wrap:wrap; } .dr.wz .wz-menu-button { display:none !important; } .dr.wz .wz-header-row { flex-wrap:wrap; height:auto; padding-block:12px; }</style></noscript>
 </head>
-<body class="dr" data-view="home" data-buying-page="cities"><a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header page-width">
-  <a class="wordmark" href="/" aria-label="Drive Right home">Drive Right</a>
-  <nav aria-label="Main navigation">
-    <a class="nav-link" href="/how-it-works.html">How it works</a>
-    <a class="nav-link" href="/schedule.html">Pricing</a>
-    <a class="nav-link" href="/about.html">About</a>
-  </nav>
-  <a class="header-cta" href="/schedule.html" data-cta-location="header">Get started</a>
-</header><main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages"><a class="outline-button" href="/new-york.html">New York City <span data-icon="arrow"></span></a>
+<body class="dr wz" data-view="home" data-buying-page="cities"><a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header wz-header">
+  <div class="wz-wrap wz-header-row">
+    <a class="wordmark" href="/" aria-label="Drive Right home">Drive Right</a>
+    <nav class="wz-nav" aria-label="Main navigation">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="#plans">Pricing</a>
+      <a href="/compare-car-buying-services.html">Compare</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <div class="wz-header-actions">
+      <button type="button" class="wz-link-button" data-open-inquiry data-cta-location="header">Talk to Mason</button>
+      <a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started</a>
+      <button type="button" class="wz-menu-button" aria-expanded="false" aria-controls="wz-menu" data-menu-toggle><span class="wz-sr">Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="wz-menu" id="wz-menu" hidden>
+    <a href="/how-it-works.html">How it works</a>
+    <a href="#plans" data-menu-close>Pricing</a>
+    <a href="/compare-car-buying-services.html">Compare services</a>
+    <a href="/about.html">About Mason</a>
+    <a href="/blog.html">Guides</a>
+    <button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="menu">Talk to Mason first</button>
+  </div>
+</header>
+<main id="main-content" tabindex="-1"><section class="section-space page-width"><div class="hero-intro"><h1>Find your city.<br><em>Remote service from Austin.</em></h1><p>The same Drive Right service, with your city in mind.</p></div><nav class="plan-grid" aria-label="City pages"><a class="outline-button" href="/new-york.html">New York City <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/los-angeles.html">Los Angeles <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/chicago.html">Chicago <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/houston.html">Houston <span data-icon="arrow"></span></a>
@@ -209,15 +227,21 @@
 <a class="outline-button" href="/san-francisco.html">San Francisco <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/seattle.html">Seattle <span data-icon="arrow"></span></a>
 <a class="outline-button" href="/denver.html">Denver <span data-icon="arrow"></span></a>
-<a class="outline-button" href="/nashville.html">Nashville <span data-icon="arrow"></span></a></nav></section></main><footer class="site-footer page-width" id="footer">
-  <div class="footer-top"><div><a class="wordmark" href="/">Drive Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for you.</p></div>
-    <nav aria-label="Company"><a href="/car-buying-service.html">Car buying service</a><a href="/blog.html">Resources</a><a href="/policy.html">Policy</a></nav>
-    <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
+<a class="outline-button" href="/nashville.html">Nashville <span data-icon="arrow"></span></a></nav></section></main>
+<footer class="site-footer wz-footer" id="footer">
+  <div class="wz-wrap">
+    <div class="wz-footer-cols">
+      <nav aria-label="Plans"><h2>Plans</h2><a href="/schedule.html">Drive Right</a><a href="/schedule.html">Drive Right Pro</a><a href="/how-it-works.html">How it works</a></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><a href="/blog.html">Guides</a><a href="/compare-car-quotes.html">Car quote worksheet</a><a href="/compare-car-buying-services.html">Compare services</a><a href="/car-buying-service.html">Car buying service</a></nav>
+      <nav aria-label="Company"><h2>Company</h2><a href="/about.html">About</a><a href="/policy.html">Policy</a></nav>
+      <div id="contact"><h2>Help</h2><span id="call-text-info"></span><a href="mailto:hello@driverightcarbuying.com">hello@driverightcarbuying.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
+    </div>
+    <div class="wz-footer-brand"><a class="wordmark" href="/">Drive Right</a></div>
+    <div class="wz-footer-legal"><p id="cities">Car research and negotiation. Based in Austin. Here for you.</p><p>© 2026 Drive Right</p><span id="saved-indicator" role="status"></span></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Drive Right</span><span id="saved-indicator" role="status"></span></div>
-</footer><div class="home-sticky-cta" data-sticky-cta inert><a href="/schedule.html" data-plan="full_service" data-cta-location="sticky" class="primary-button">Drive Right · $395</a><button type="button" class="outline-button" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript><script src="/script.js?v=30afdcbb2a00"></script>
+</footer><div class="home-sticky-cta wz-sticky" data-sticky-cta inert><a href="/schedule.html" data-plan="full_service" data-cta-location="sticky" class="wz-btn wz-btn--forest">Drive Right · $395</a><button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript><script src="/script.js?v=30afdcbb2a00"></script>
 <script type="module" src="/buying/app.js?v=d4df81da62a1"></script>
 <script type="module" src="/buying/inquiry.js?v=3551f7729f21"></script>
-<script type="module" src="/buying/home.js?v=16a9184c3546"></script>
+<script type="module" src="/buying/home-wise.js?v=67037f61c72b"></script>
 </body>
 </html>

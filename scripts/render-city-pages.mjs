@@ -60,10 +60,9 @@ export function renderCity(city, homepage) {
   const description = homepage.match(/<meta name="description" content="([^"]+)">/)[1].replace('buyers nationwide', `buyers in ${city.name}`);
   let html = pageMetadata(homepage, { slug: city.slug, title: `${city.name} Car Buying Service | Drive Right`, description, city });
   for (const [from, to] of [
-    ['<h1 id="hero-title">Let us deal with the dealer.</h1>', `<h1 id="hero-title">Let us deal with the dealer in ${name}.</h1>`],
+    ['<h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer.</h1>', `<h1 id="hero-title" class="wz-display wz-display--xl">Let us deal with the dealer in ${name}.</h1>`],
     ['We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands.', `We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands. ${escape(city.localSentence)}`],
-    ['We help car buyers nationwide', `We help ${name} car buyers`],
-    ['We’re based in Austin and serve buyers nationwide through remote support.', `We’re based in Austin and help buyers in ${name} remotely.`],
+    ['Here for buyers nationwide</h2>', `Here for buyers in ${name}</h2>`],
     ['Based in Austin. Here for buyers nationwide.', `Based in Austin. Here for ${name}.`],
   ]) html = replaceRequired(html, from, to);
   return html;

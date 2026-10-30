@@ -360,7 +360,7 @@ for (const file of htmlFiles) {
     if (!/<main\b(?=[^>]*\bid\s*=\s*["']main-content["'])(?=[^>]*\btabindex\s*=\s*["']-1["'])[^>]*>/i.test(html)) {
       fail(file, 'Indexable page has no #main-content target.', 0, html, 'Give the main element id="main-content" and tabindex="-1".');
     }
-    if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html) && !/<header class="site-header page-width">[\s\S]*?<nav aria-label="Main navigation">[\s\S]*?<a[^>]+href="\/how-it-works.html"/i.test(html)) {
+    if (!/<noscript>[\s\S]*?\.nav__links[\s\S]*?\.nav__hamburger[\s\S]*?<\/noscript>/i.test(html) && !/<noscript>[\s\S]*?\.wz-nav[\s\S]*?\.wz-menu-button[\s\S]*?<\/noscript>/i.test(html) && !/<header class="site-header page-width">[\s\S]*?<nav aria-label="Main navigation">[\s\S]*?<a[^>]+href="\/how-it-works.html"/i.test(html)) {
       fail(file, 'Indexable page has no usable no-JavaScript mobile navigation override.', 0, html, 'Expose ordinary navigation links and hide the inert hamburger inside a noscript style.');
     }
     if (!/<link\b[^>]*\brel\s*=\s*["']icon["'][^>]*\bhref\s*=\s*["']\/favicon\.png(?:\?v=[0-9a-f]{12})?["'][^>]*>/i.test(html)

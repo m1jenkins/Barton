@@ -37,7 +37,7 @@ test('all 20 city pages preserve the entire homepage layout, assets, navigation 
     assert.ok(hub.links.includes(`/${city.slug}`));
     assert.ok(doc.visibleText.includes(city.localSentence));
     assert.doesNotMatch(html, /city-pages\.(css|js)|city-review-note|local-guide|city-worksheet/);
-    for (const section of ['legwork-section', 'pricing-preview']) {
+    for (const section of ['wz-section wz-section--tint" id="fees"', 'wz-section" id="plans"']) {
       const pattern = new RegExp(`<section class="${section}[^]*?<\\/section>`);
       assert.equal(html.match(pattern)[0], homepage.match(pattern)[0], `${city.name}: ${section} differs`);
     }
