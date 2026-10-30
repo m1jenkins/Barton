@@ -144,8 +144,8 @@ For new sales, keep the final payable total at full service `39500 usd` and conc
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
 - The historical AI receipt page was removed on 2026-10-23; `/payment-success-consultant.html` now 301s to `/schedule.html`. Deactivate any AI Payment Link that is still live, and do not reactivate AI sales.
-- Full service: `https://www.driverightcarbuying.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
-- Concierge: `https://www.driverightcarbuying.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
+- Full service (Steer Me Right, $395): `https://www.steermeright.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
+- Concierge (Steer Me Right Pro, $695): `https://www.steermeright.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 
 Keep these query-string URLs. The payment pages move `session_id` out of the address before GTM loads (see [Checkout Session ID privacy](#september-27-2026-checkout-session-id-privacy)), so no Stripe change is needed. The pages also accept `#session_id={CHECKOUT_SESSION_ID}`, but Stripe documents the token only in query strings, and Clarity records fragments anyway.
 
