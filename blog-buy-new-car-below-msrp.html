@@ -54,8 +54,8 @@
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
     </script>
-    <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
-    <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
+    <link rel="stylesheet" href="/logo-motion.css?v=3fe19289deb8">
+    <script type="module" src="/logo-motion.js?v=8709679d6328"></script>
     <link rel="stylesheet" href="/buying/resources.css?v=9dd1676ca7f5">
 </head>
 <body class="dr" data-buying-page="guide">
@@ -64,7 +64,7 @@
     <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-W577B3D4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 <header class="site-header page-width">
-  <a class="wordmark" href="/" aria-label="Steer Me Right home">Steer Me Right</a>
+  <a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a>
   <nav aria-label="Main navigation">
     <a class="nav-link" href="/how-it-works.html">How it works</a>
     <a class="nav-link" href="/schedule.html">Pricing</a>
@@ -107,7 +107,7 @@
 </article>
 </main>
 <footer class="site-footer page-width" id="footer">
-  <div class="footer-top"><div><a class="wordmark" href="/">Steer Me Right</a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
+  <div class="footer-top"><div><a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a><p id="cities">Car research and negotiation.<br>Based in Austin. Here for buyers nationwide.</p></div>
     <nav aria-label="Company"><a href="/car-buying-service.html">Car buying service</a><a href="/blog.html">Resources</a><a href="/policy.html">Policy</a></nav>
     <div id="contact"><span id="call-text-info"></span><a href="mailto:hello@steermeright.com">hello@steermeright.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
   </div>

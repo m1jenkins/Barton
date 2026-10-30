@@ -147,8 +147,8 @@
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
     </script>
-    <link rel="stylesheet" href="/logo-motion.css?v=49576d5488da">
-    <script type="module" src="/logo-motion.js?v=e9cde4f959d5"></script>
+    <link rel="stylesheet" href="/logo-motion.css?v=3fe19289deb8">
+    <script type="module" src="/logo-motion.js?v=8709679d6328"></script>
 </head>
 
 <body class="legacy-refresh">
@@ -164,7 +164,7 @@
 
         <div class="nav__inner">
 
-            <a href="/" class="nav__wordmark" aria-label="Steer Me Right home">Steer Me Right</a>
+            <a href="/" class="nav__wordmark" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a>
 
             <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span></button>
 
@@ -313,7 +313,7 @@
 
         <div class="footer__inner">
 
-            <a class="footer__wordmark" href="/" aria-label="Steer Me Right home">Steer Me Right</a>
+            <a class="footer__wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a>
 
             <div class="footer__grid">
 

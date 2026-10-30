@@ -94,7 +94,7 @@ async function setUpHeader(wordmark) {
   clearTimeout(window.driveRightLogoFallback);
   const text = document.createElement('span'), spot = document.createElement('span'), line = document.createElement('span');
   text.className = 'mx-text'; spot.className = 'mx-spot'; line.className = 'mx-line';
-  text.textContent = wordmark.textContent.trim();
+  text.append(...wordmark.childNodes); // keep the drawn arrow t, not just the text
   line.append(text, spot);
   wordmark.replaceChildren(line);
   const car = new Car(spot);

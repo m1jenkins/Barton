@@ -1,3 +1,14 @@
+/* Logo: lowercase Barlow "steer me righ" plus a drawn t whose crossbar is an arrow in the Miata's blue.
+   Every page loads this file, so it brings its own Barlow and sets the arrow color; each page's wordmark
+   rule still sets the size and the text color. */
+@font-face{font-family:'Barlow';src:url('/assets/buying/fonts/barlow-semibold-latin.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF}
+.wordmark-type{font-family:'Barlow',system-ui,sans-serif;font-weight:600;letter-spacing:-.04em;white-space:nowrap}
+.wordmark-t{display:inline-block;width:.5em;height:.76em;vertical-align:-.06em;overflow:visible}
+.wordmark-arrow{stroke:var(--wordmark-arrow,#0060E8)}
+.wordmark-arrow-head{fill:var(--wordmark-arrow,#0060E8)}
+/* The homepage header is a blue sign; a lighter blue keeps the arrow visible on it. */
+.wz .site-header{--wordmark-arrow:#7DB2FF}
+
 /* Header mascot: a Mariner Blue Miata parked beside the wordmark, driven by logo-motion.js.
    Sizes are multiples of --mx-h, the side-view height. The wordmark reserves the car's width here, so the
    space exists at first paint: adding the car never shifts the header or covers the nav. */

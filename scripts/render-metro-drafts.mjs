@@ -14,7 +14,7 @@ function layout({ title, description, slug, marketId = 'hub', body }) {
 </head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="draft-notice">Local editorial draft · September 16, 2026 · factual and qualified review pending</div>
-<header class="site-header page-width"><a class="wordmark" href="/service-areas.html" aria-label="Steer Me Right draft service areas">Steer Me Right</a><nav aria-label="Main navigation"><a href="/service-areas.html">Areas</a><a href="/how-it-works.html">How it works</a><a href="/schedule.html">Plans</a></nav></header>
+<header class="site-header page-width"><a class="wordmark" href="/service-areas.html" aria-label="Steer Me Right draft service areas"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a><nav aria-label="Main navigation"><a href="/service-areas.html">Areas</a><a href="/how-it-works.html">How it works</a><a href="/schedule.html">Plans</a></nav></header>
 <main id="main-content" tabindex="-1" class="page-width">${body}</main>
 <footer class="page-width site-footer"><p>Steer Me Right · Based in Austin, Texas<br>hello@steermeright.com</p><p>Local review copy. No form sends, checkout or tracking.<br><a href="/policy.html">Policy reference</a></p></footer>
 </body></html>\n`;
