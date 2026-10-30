@@ -24,11 +24,12 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.match(hero, /Let us deal with the dealer\./);
   assert.match(hero, /negotiate for a price below MSRP/);
   assert.doesNotMatch(hero, /\$395|\$695|you remain in control|Steer Me Right Pro|Full Service|Ultimate Concierge/i);
-  // The hero leads with the free quote check: no checkout button, two inquiry buttons, and the no-payment line.
+  // The hero shows the Google reviews instead of a checkout button (the quote checker was retired on 2026-10-30).
   assert.deepEqual([...heroSection.matchAll(/data-plan="([^"]+)"/g)], []);
-  assert.equal([...heroSection.matchAll(/<button[^>]*data-open-inquiry/g)].length, 2);
-  assert.match(heroSection, /No payment needed to ask\./);
-  assert.match(heroSection, /Dealers pay us nothing\./);
+  assert.match(heroSection, /5-star Google reviews/);
+  assert.match(heroSection, /Posted under our former name, Drive Right Car Buying\./);
+  assert.doesNotMatch(heroSection, /data-quote-tool/);
+  assert.match(homepageHtml, /Dealers pay us nothing\./);
   assert.match(homepageHtml, /Full refund if you cancel before negotiations begin\./);
   assert.match(homepageHtml, /replies within one business day\./);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);

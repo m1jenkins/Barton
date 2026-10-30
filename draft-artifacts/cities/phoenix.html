@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=3b760d9d7465">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=8f3b87b9388b">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -224,43 +224,35 @@
       <p class="wz-hero-lead">We find the car, work the dealers by phone and email, and negotiate for a price below MSRP without the add-ons and junk fees. You keep your evenings and save thousands. For drives around Phoenix and weekends beyond the Valley, note the comfort, space, and parking you need.</p>
       <a class="wz-btn wz-btn--forest" href="#plans" data-cta-location="hero">See plans from $395</a>
 
-      <form class="wz-calc" data-quote-tool aria-labelledby="calc-title" novalidate>
-        <h2 id="calc-title" class="wz-sr">Check a dealer quote</h2>
-        <div class="wz-calc-top"><span class="wz-chip wz-chip--soft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg><span class="wz-chip-rule"></span>Have a dealer quote? Check it here</span></div>
-
-        <label class="wz-calc-label" for="quote-otd">Dealer’s out-the-door price</label>
-        <div class="wz-calc-row">
-          <label class="wz-sr" for="quote-condition">New or used</label><span class="wz-chip wz-chip--select"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 9l2 5v4h-2.5M5.5 18H3v-4m2.5 4a2 2 0 1 0 4 0 2 2 0 1 0-4 0Zm9 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0ZM9.5 18h5M3 14h18"/></svg><select id="quote-condition" name="condition"><option>New</option><option>Used</option><option>CPO</option></select></span>
-          <span class="wz-calc-amount"><span aria-hidden="true">$</span><input id="quote-otd" name="otd" inputmode="numeric" autocomplete="off" placeholder="48,950" data-money></span>
+      <div class="wz-greviews" aria-labelledby="greviews-title">
+        <div class="wz-greviews-head">
+          <h2 id="greviews-title">5-star Google reviews</h2>
+          <p class="wz-greviews-score"><span class="wz-stars" aria-hidden="true">★★★★★</span><strong>5.0</strong> on Google from 4 reviews</p>
         </div>
-
-        <p class="wz-calc-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16"/></svg><span>Torn between a few models? <a href="#pro">Steer Me Right Pro prices up to three</a></span></p>
-
-        <div class="wz-calc-label-row"><label class="wz-calc-label" for="quote-addons">Add-ons and dealer fees in that price</label><button type="button" class="wz-calc-itemize" aria-expanded="false" aria-controls="quote-items" data-itemize>Itemize</button></div>
-        <div class="wz-calc-row">
-          <span class="wz-chip wz-chip--static"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>Add-ons</span>
-          <span class="wz-calc-amount wz-calc-amount--muted"><span aria-hidden="true">$</span><input id="quote-addons" name="addons" inputmode="numeric" autocomplete="off" placeholder="2,340" data-money></span>
-        </div>
-        <fieldset class="wz-calc-items" id="quote-items" hidden>
-          <legend class="wz-sr">Common add-ons</legend>
-          <div class="wz-calc-item"><label for="item-market">Market adjustment</label><span>$<input id="item-market" name="item_market" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-          <div class="wz-calc-item"><label for="item-paint">Paint and fabric protection</label><span>$<input id="item-paint" name="item_paint" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-          <div class="wz-calc-item"><label for="item-nitrogen">Nitrogen-filled tires</label><span>$<input id="item-nitrogen" name="item_nitrogen" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-          <div class="wz-calc-item"><label for="item-etch">VIN etching</label><span>$<input id="item-etch" name="item_etch" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-          <div class="wz-calc-item"><label for="item-prep">Dealer prep fee</label><span>$<input id="item-prep" name="item_prep" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-          <div class="wz-calc-item"><label for="item-other">Window tint or theft package</label><span>$<input id="item-other" name="item_other" inputmode="numeric" autocomplete="off" placeholder="0" data-money data-item></span></div>
-        </fieldset>
-
-        <ul class="wz-calc-facts" role="list">
-          <li><span class="wz-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg></span><span><small>Who negotiates</small>Mason, by phone and email</span></li>
-          <li><span class="wz-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg></span><span><small>Our fee</small>Flat. Dealers pay us nothing.</span><a href="#plans" class="wz-calc-fee">$395 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></li>
+        <ul class="wz-greviews-list" role="list">
+          <li><figure>
+            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote><p>“Mason did great, made the whole process so much easier than walking in a dealership. Found what I wanted and got new car in less than 2 weeks. Will definitely use them again. Very much worth it.”</p></blockquote>
+            <figcaption><b>N. R.</b> · Google review</figcaption>
+          </figure></li>
+          <li><figure>
+            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote><p>“Gives great advice and is very knowledgeable on what your options are. Can’t recommend Mason enough.”</p></blockquote>
+            <figcaption><b>Pablo P.</b> · Google review</figcaption>
+          </figure></li>
+          <li><figure>
+            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote><p>“Helpful and easy to talk to. Gave solid advice and a great car recommendation that I ended up going with. So happy with my new car! Highly recommend!”</p></blockquote>
+            <figcaption><b>Elizabeth W.</b> · Google review</figcaption>
+          </figure></li>
+          <li><figure>
+            <span class="wz-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+            <blockquote><p>“Very helpful and informative on picking the right car for me”</p></blockquote>
+            <figcaption><b>Erin M.</b> · Google review</figcaption>
+          </figure></li>
         </ul>
-        <p class="wz-calc-result" aria-live="polite"><span>Out the door without the add-ons</span><strong data-quote-result>—</strong></p>
-
-        <button type="button" class="wz-btn wz-btn--lime wz-btn--block" data-open-inquiry="Quote check" data-quote-send data-cta-location="hero-quote">Send Mason my quote</button>
-        <button type="button" class="wz-calc-alt" data-open-inquiry data-cta-location="hero-noquote">No quote yet? Tell Mason the car</button>
-        <p class="wz-calc-fine">No payment needed to ask. This tool only does the math. Nothing is sent until you press send.</p>
-      </form>
+        <p class="wz-greviews-foot"><a class="wz-text-link" href="https://share.google/FqdAYavhmPBvlnasE" target="_blank" rel="noopener">Read them on Google</a><span>Posted under our former name, Drive Right Car Buying.</span></p>
+      </div>
     </div>
   </section>
 
@@ -491,6 +483,6 @@
 </dialog><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript><script src="/script.js?v=e7e9e98c5825"></script>
 <script type="module" src="/buying/app.js?v=5909c33d88d5"></script>
 <script type="module" src="/buying/inquiry.js?v=3551f7729f21"></script>
-<script type="module" src="/buying/home-wise.js?v=67037f61c72b"></script>
+<script type="module" src="/buying/home-wise.js?v=090f741aa3f1"></script>
 </body>
 </html>
