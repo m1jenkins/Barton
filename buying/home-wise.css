@@ -182,8 +182,7 @@
 .dr.wz .wz-reviews-copy p { margin-top:18px; font-size:20px; line-height:28px; color:var(--wz-ink); }
 .dr.wz .wz-review-track { display:flex; gap:24px; }
 .dr.wz .wz-review { display:flex; flex-direction:column; width:336px; min-height:420px; margin:0; padding:24px; flex:none; border-radius:24px; background:var(--wz-navy); color:#fff; box-sizing:border-box; }
-.dr.wz .wz-review-avatar { width:56px; height:56px; border-radius:50%; object-fit:cover; }
-.dr.wz .wz-review blockquote { margin:24px 0 16px; }
+.dr.wz .wz-review blockquote { margin:0 0 16px; }
 .dr.wz .wz-review blockquote p { font:600 20px/28px var(--wz-sans); letter-spacing:.005em; }
 .dr.wz .wz-review figcaption { font-size:14px; line-height:21px; }
 .dr.wz .wz-review .wz-btn { align-self:flex-start; margin-top:auto; }
