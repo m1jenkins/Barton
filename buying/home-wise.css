@@ -131,28 +131,31 @@
 
 /* Plans (Wise's "Make your money do more" cards) */
 .dr.wz #plans .wz-center > .wz-btn { margin-bottom:48px; }
-.dr.wz .wz-plan-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
-.dr.wz .wz-plan { display:flex; flex-direction:column; align-items:center; padding:32px 32px 32px; border-radius:24px; background:var(--wz-tint); text-align:center; }
-.dr.wz .wz-plan h3 { margin:28px 0 12px; font:600 clamp(20px,1.71vw,24.6px)/32px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
-.dr.wz .wz-plan p { font-size:16px; line-height:24px; }
-.dr.wz .wz-plan .wz-plan-meta { display:inline-flex; align-items:center; gap:8px; margin:16px 0 28px; color:var(--wz-navy); font-weight:600; }
+.dr.wz .wz-plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.dr.wz .wz-plan { display:flex; flex-direction:column; align-items:flex-start; padding:40px; border-radius:28px; background:var(--wz-tint); color:var(--wz-body); }
+.dr.wz .wz-plan .wz-icon { background:#fff; }
+.dr.wz .wz-plan h3 { margin-top:24px; font:600 clamp(20px,1.71vw,24.6px)/32px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
+.dr.wz .wz-plan-fit { margin-top:4px; font-size:16px; line-height:24px; }
+.dr.wz .wz-plan-price { display:flex; align-items:baseline; gap:10px; margin:24px 0; font:900 clamp(48px,4.4vw,64px)/1 var(--wz-display); letter-spacing:-.02em; color:var(--wz-ink); }
+.dr.wz .wz-plan-price span { font:600 16px/24px var(--wz-sans); letter-spacing:0; color:var(--wz-body); }
+.dr.wz .wz-plan-list { display:grid; gap:12px; align-self:stretch; margin:0 0 36px; padding:24px 0 0; border-top:1px solid var(--wz-line); list-style:none; }
+.dr.wz .wz-plan-list li { display:grid; grid-template-columns:20px 1fr; gap:12px; font-size:16px; line-height:24px; color:var(--wz-ink); }
+.dr.wz .wz-plan-list svg { width:20px; height:20px; margin-top:2px; stroke-width:2.2; color:var(--wz-sign); }
 .dr.wz .wz-plan .wz-btn { margin-top:auto; }
-.dr.wz .wz-dot { width:8px; height:8px; border-radius:50%; background:var(--wz-sign); }
-.dr.wz .wz-plan-art { display:grid; place-items:center; width:100%; height:176px; }
-.dr.wz .wz-mock-chat { width:min(100%,250px); display:grid; gap:8px; text-align:left; }
-.dr.wz .wz-mock-chat p { margin:0; padding:10px 14px; border-radius:16px; font-size:13px; line-height:18px; }
-.dr.wz .wz-mock-chat-me { justify-self:end; max-width:88%; background:var(--wz-navy); color:#fff; border-bottom-right-radius:4px; }
-.dr.wz .wz-mock-chat-them { display:flex; align-items:center; gap:8px; background:#fff; color:var(--wz-ink); font-weight:600; border-bottom-left-radius:4px; }
-.dr.wz .wz-mock-chat-them img { width:28px; height:28px; border-radius:50%; }
-.dr.wz .wz-mock-card { position:relative; display:flex; flex-direction:column; justify-content:space-between; width:236px; height:148px; padding:18px 20px; border-radius:18px; background:var(--wz-sign); color:var(--wz-on-sign); text-align:left; box-sizing:border-box; transform:rotate(-4deg); box-shadow:0 18px 30px -18px rgba(14,27,46,.5); }
-.dr.wz .wz-mock-card-brand { font:600 15px/1 var(--wz-sans); letter-spacing:-.03em; }
-.dr.wz .wz-mock-card-price { font:900 44px/1 var(--wz-display); }
-.dr.wz .wz-mock-card-sub { font-size:12px; font-weight:600; }
-.dr.wz .wz-mock-offers { display:grid; gap:8px; width:min(100%,230px); }
-.dr.wz .wz-mock-offers span { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-radius:14px; background:#fff; font-size:13px; color:var(--wz-body); }
-.dr.wz .wz-mock-offers b { color:var(--wz-ink); }
-.dr.wz .wz-mock-offers span:last-child { background:var(--wz-navy); color:#fff; }
-.dr.wz .wz-mock-offers span:last-child b { color:#fff; }
+.dr.wz .wz-plan--feature { background:var(--wz-sign); color:rgba(255,255,255,.82); }
+.dr.wz .wz-plan--feature .wz-icon { background:rgba(255,255,255,.14); color:#fff; }
+.dr.wz .wz-plan--feature h3, .dr.wz .wz-plan--feature .wz-plan-price, .dr.wz .wz-plan--feature .wz-plan-list li { color:#fff; }
+.dr.wz .wz-plan--feature .wz-plan-price span { color:rgba(255,255,255,.82); }
+.dr.wz .wz-plan--feature .wz-plan-list { border-top-color:rgba(255,255,255,.22); }
+.dr.wz .wz-plan--feature .wz-plan-list svg { color:var(--wz-sky); }
+.dr.wz .wz-plan--feature .wz-btn--forest { background:#fff; color:var(--wz-sign); }
+.dr.wz .wz-plan--feature .wz-btn--forest:hover { background:var(--wz-sky); }
+.dr.wz .wz-plan-band { display:flex; align-items:center; gap:20px; margin-top:24px; padding:24px 32px; border:1px solid var(--wz-line); border-radius:24px; }
+.dr.wz .wz-plan-band img { width:56px; height:56px; border-radius:50%; flex:none; }
+.dr.wz .wz-plan-band-text { flex:1; min-width:0; }
+.dr.wz .wz-plan-band h3 { font:600 20px/28px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
+.dr.wz .wz-plan-band p { margin-top:4px; font-size:16px; line-height:24px; }
+.dr.wz .wz-plan-band .wz-btn { flex:none; }
 
 /* Split rows (Wise's "Safe at every step" and "Built for business too") */
 .dr.wz .wz-split { display:grid; grid-template-columns:minmax(0,480px) minmax(0,555px); justify-content:space-between; align-items:start; gap:48px; }
@@ -245,7 +248,6 @@
   .dr.wz .wz-features li { display:grid; grid-template-columns:56px 1fr; column-gap:16px; }
   .dr.wz .wz-features .wz-icon { grid-row:1 / 3; }
   .dr.wz .wz-features h3 { margin:4px 0 4px; }
-  .dr.wz .wz-plan-grid { grid-template-columns:1fr; }
   .dr.wz .wz-split { grid-template-columns:1fr; }
   .dr.wz .wz-split-photo { aspect-ratio:4/5; }
   .dr.wz #pro .wz-split-photo { order:2; }
@@ -275,8 +277,12 @@
   .dr.wz .wz-bar-name { font-size:15px; white-space:normal; }
   .dr.wz .wz-bar strong { font-size:19px; }
   .dr.wz .wz-bar--us strong { font-size:22px; }
+  .dr.wz .wz-plan-grid { grid-template-columns:1fr; }
   .dr.wz .wz-plan { padding:28px 20px; }
   .dr.wz .wz-plan .wz-btn { width:100%; }
+  .dr.wz .wz-plan-band { flex-wrap:wrap; align-items:flex-start; padding:24px 20px; }
+  .dr.wz .wz-plan-band .wz-plan-band-text { flex-basis:calc(100% - 76px); }
+  .dr.wz .wz-plan-band .wz-btn { width:100%; }
   .dr.wz .wz-review { width:min(300px,82vw); min-height:380px; }
   .dr.wz .wz-band { padding:24px 0; }
   .dr.wz .wz-band-card { padding:56px 20px 32px; border-radius:28px; gap:24px; }

@@ -250,7 +250,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=8c795c88d7af">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=90cc964fc645">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=fdb1ae42ed96">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -367,33 +367,38 @@
         <a href="/schedule.html" class="wz-btn wz-btn--lime">See what’s included</a>
       </div>
       <div class="wz-plan-grid">
-        <article class="wz-plan">
-          <div class="wz-plan-art" aria-hidden="true">
-            <div class="wz-mock-chat"><p class="wz-mock-chat-me">Looking for a RAV4 Hybrid XLE. The dealer quote has $2,300 of add-ons. Is that normal?</p><p class="wz-mock-chat-them"><img src="/assets/buying/mason-avatar-96.webp" alt="" width="28" height="28">Mason replies within one business day</p></div>
-          </div>
-          <h3>Talk to Mason</h3>
-          <p>Tell us the car or send a dealer quote. No payment needed to ask.</p>
-          <p class="wz-plan-meta"><span class="wz-dot" aria-hidden="true"></span>Free</p>
-          <button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="plans">Talk to Mason first</button>
-        </article>
-        <article class="wz-plan">
-          <div class="wz-plan-art" aria-hidden="true">
-            <div class="wz-mock-card"><span class="wz-mock-card-brand">Steer Me Right</span><span class="wz-mock-card-price">$395</span><span class="wz-mock-card-sub">One model · one-time fee</span></div>
-          </div>
+        <article class="wz-plan wz-plan--feature">
+          <span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 9l2 5v4h-2.5M5.5 18H3v-4m2.5 4a2 2 0 1 0 4 0 2 2 0 1 0-4 0Zm9 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0ZM9.5 18h5M3 14h18"/></svg></span>
           <h3>Steer Me Right</h3>
-          <p>Best if you know the car you want. One model, with any trims, colors and packages. We negotiate the price and check the fees.</p>
-          <p class="wz-plan-meta"><span class="wz-dot" aria-hidden="true"></span>$395 one-time</p>
+          <p class="wz-plan-fit">Best if you know the car you want.</p>
+          <p class="wz-plan-price">$395 <span>one-time</span></p>
+          <ul class="wz-plan-list" role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>One model, with any trims, colors and packages</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We contact dozens of dealers that have it in stock</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We negotiate the price and fees</li>
+          </ul>
           <a href="/schedule.html" class="wz-btn wz-btn--forest" data-plan="full_service" data-cta-location="plans">Get Steer Me Right</a>
         </article>
         <article class="wz-plan" id="pro-card">
-          <div class="wz-plan-art" aria-hidden="true">
-            <div class="wz-mock-offers"><span><b>Model 1</b>Written offer</span><span><b>Model 2</b>Written offer</span><span><b>Model 3</b>Written offer</span></div>
-          </div>
+          <span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h14M17 12l4 4-4 4M21 16H7"/></svg></span>
           <h3>Steer Me Right Pro</h3>
-          <p>Best if you’re torn between a few cars. Offers on up to three models, priced side by side, and our pick of the best deal.</p>
-          <p class="wz-plan-meta"><span class="wz-dot" aria-hidden="true"></span>$695 one-time</p>
+          <p class="wz-plan-fit">Best if you’re torn between a few cars.</p>
+          <p class="wz-plan-price">$695 <span>one-time</span></p>
+          <ul class="wz-plan-list" role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We present offers on up to three models</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We handle the paperwork remotely where we can, so you just pick up your car</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shipping help in some cases</li>
+          </ul>
           <a href="/schedule.html" class="wz-btn wz-btn--outline" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a>
         </article>
+      </div>
+      <div class="wz-plan-band">
+        <img src="/assets/buying/mason-avatar-96.webp" alt="" width="56" height="56">
+        <div class="wz-plan-band-text">
+          <h3>Not sure which plan you need?</h3>
+          <p>Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and Mason replies within one business day.</p>
+        </div>
+        <button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="plans">Talk to Mason first</button>
       </div>
       <p class="wz-fine wz-center">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
     </div>
