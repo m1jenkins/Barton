@@ -110,6 +110,7 @@
 .dr.wz .wz-features h3 { margin:16px 0 8px; font:600 20px/28px var(--wz-sans); color:var(--wz-ink); letter-spacing:-.01em; }
 .dr.wz .wz-features p { font-size:16px; line-height:24px; }
 .dr.wz .wz-display--left + .wz-features { margin-top:40px; }
+.dr.wz .wz-icon.wz-step-num { background:var(--wz-sign); color:#fff; font:900 26px/1 var(--wz-display); }
 
 /* About photo gallery: justified row from drive-right.css, with the homepage's rounder corners. */
 .dr.wz .ride-gallery { gap:16px; margin-top:32px; }

@@ -182,7 +182,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=05de9df18bc5">
     <link rel="stylesheet" href="/buying/inquiry.css?v=bffb9213f293">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=731136977974">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=c697dfff1470">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -263,13 +263,14 @@
     </div>
   </div>
 
-  <section class="wz-section wz-section--tight" aria-label="Why Steer Me Right">
+  <section class="wz-section wz-section--tight" aria-labelledby="how-title">
     <div class="wz-wrap">
-      <ul class="wz-features" role="list">
-        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg></span><h3>One advisor, start to finish</h3><p>Mason works your deal from the first dealer email to the signed paperwork, and replies within one business day.</p></li>
-        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg></span><h3>Full refund before negotiations</h3><p>Full refund if you cancel before negotiations begin. <a href="/policy.html#refund-policy">Refund policy</a></p></li>
-        <li><span class="wz-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0Zm7 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0ZM3 12h7m4 0h7m-9 2v7"/></svg></span><h3>New, used and CPO</h3><p>Any trim, color and package of the model you want, from dealers across the country.</p></li>
-      </ul>
+      <h2 id="how-title" class="wz-display wz-display--md wz-display--left">How it works</h2>
+      <ol class="wz-features" role="list">
+        <li><span class="wz-icon wz-step-num">1</span><h3>Tell us the car you want</h3><p>Let us know what you’re looking for, and we search listings across the internet for the exact spec you want.</p></li>
+        <li><span class="wz-icon wz-step-num">2</span><h3>We work the dealers</h3><p>We reach out to dozens of dealerships by email and phone and negotiate the price for you.</p></li>
+        <li><span class="wz-icon wz-step-num">3</span><h3>Choose and drive it home</h3><p>We bring you what we think are your best options. With Pro, we handle the paperwork remotely where we can, so you just show up and pick up your car, and we can help arrange shipping if needed.</p></li>
+      </ol>
     </div>
   </section>
 
