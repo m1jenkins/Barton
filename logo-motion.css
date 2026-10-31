@@ -10,6 +10,12 @@
 .wordmark-arrow-head{fill:var(--wordmark-arrow,#0060E8)}
 /* The homepage header is a blue sign, where a blue arrow blurs into the background; the whole wordmark goes white there. */
 .wz .site-header{--wordmark-arrow:currentColor}
+/* Turn signal: a small amber arrow inside the t's arrow, added to the header wordmark by logo-motion.js.
+   It blinks three times at about 85 flashes a minute after the intro and on hover, then goes dark. */
+.wordmark-signal{fill:#FF9F1A;opacity:0}
+.wordmark-signal.is-on{animation:wordmark-signal .7s linear 3}
+@keyframes wordmark-signal{0%{opacity:0}5%,48%{opacity:1}60%,to{opacity:0}}
+@media(prefers-reduced-motion:reduce){.wordmark-signal{display:none}}
 
 /* Header mascot: a Mariner Blue Miata parked beside the wordmark, driven by logo-motion.js.
    Sizes are multiples of --mx-h, the side-view height. The wordmark reserves the car's width here, so the

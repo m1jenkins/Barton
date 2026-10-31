@@ -1,7 +1,8 @@
 // Header mascot: the Mariner Blue Miata beside the wordmark (styles in logo-motion.css, art in assets/mascot/).
 // On the first page of a visit it drives in and reveals the wordmark, then parks facing you. Its pop-up
-// headlights are its only expression: a hello after parking, a wink or flash on hover, a few random idle
+// headlights are its main expression: a hello after parking, a wink or flash on hover, a few random idle
 // moments, lights on while the homepage search box has focus, and a celebration after a verified payment.
+// The t's arrow also holds a small amber turn signal that blinks after the intro and on hover.
 // Nothing loops on a timer, and reduced motion gets a still, parked car.
 const html = document.documentElement;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -90,6 +91,19 @@ class Car {
   }
 }
 
+// Draws the turn signal inside the t's arrow and returns a function that blinks it three times.
+function addSignal(t) {
+  if (!t) return () => {};
+  t.insertAdjacentHTML('beforeend', '<path class="wordmark-signal" d="M22 22H34V17.5L43.5 24L34 30.5V26H22Z"/>');
+  const light = t.lastElementChild;
+  return () => {
+    if (reduced.matches) return;
+    light.classList.remove('is-on');
+    light.getBoundingClientRect(); // restart the animation
+    light.classList.add('is-on');
+  };
+}
+
 async function setUpHeader(wordmark) {
   clearTimeout(window.driveRightLogoFallback);
   const text = document.createElement('span'), spot = document.createElement('span'), line = document.createElement('span');
@@ -98,6 +112,7 @@ async function setUpHeader(wordmark) {
   line.append(text, spot);
   wordmark.replaceChildren(line);
   const car = new Car(spot);
+  const signal = addSignal(text.querySelector('.wordmark-t'));
   let busy = false, hovering = false, holding = false;
 
   // A page opened in a background tab skips the intro without using it up, so the first page actually seen gets it.
@@ -111,6 +126,7 @@ async function setUpHeader(wordmark) {
     await car.faceForward();
     await sleep(160);
     busy = false;
+    signal();
     await car.express('hello');
     if (holding) car.express('hunt'); // the search box got focus during the intro
   }
@@ -132,6 +148,7 @@ async function setUpHeader(wordmark) {
   const greet = () => {
     if (busy || holding || reduced.matches || performance.now() - lastHover < 700) return;
     lastHover = performance.now();
+    signal();
     car.express(++hovers % 2 ? 'wink' : 'flash');
   };
   wordmark.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') { hovering = true; greet(); } });
