@@ -34,7 +34,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.doesNotMatch(heroSection, /former name|share\.google/);
   assert.doesNotMatch(heroSection, /data-quote-tool/);
   assert.match(homepageHtml, /Dealers pay us nothing\./);
-  assert.match(homepageHtml, /replies within one business day\./);
+  assert.match(homepageHtml, /(?:replies|reply) within one business day\./);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
