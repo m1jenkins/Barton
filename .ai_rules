@@ -31,5 +31,11 @@ All AI agents editing files in this codebase must strictly adhere to the followi
 - **Barlow** is for the logo wordmark only (`logo-motion.css`).
 - Only the 400, 600 and Inter Tight 900 files are served, so do not use other weights (500, 650, 700 and 800 silently render as 400 or 600) or add a new font family.
 
+## 5. One Theme on Every Page: the Homepage's
+- **Palette**: navy `#0E1B2E` (text, primary buttons), sign blue `#1A4B8C` (header, title bands, accents, focus), tint `#EDF0F4` (cards, footer), sky `#E3ECF8` (accents on blue), line `#DDE2E9`, body text `#465061`. Current pages read them from the tokens in `buying/daisy.css` and `buying/drive-right.css`; legacy pages from `legacy-refresh.css`. Do not reintroduce the old green, warm greys or `#111`.
+- **Chrome**: blue header with white links and a white pill button; each page title sits on a full-width blue band; tinted footer. Page CSS restyles the existing header and footer markup, so legacy pages keep their links.
+- **Buttons** are pills: navy filled, navy outline, or white on blue. **Cards** are tinted and borderless with 24–28px corners.
+- **Form fields** share one style: white, 1px `#C3CBD6` border, 12px corners, 52px tall, sign-blue border plus a soft ring on focus, SemiBold labels, a drawn chevron on selects. Reuse it for any new field.
+
 ---
 *Failure to follow these rules results in a cheap, template-like user interface. Elevate the design by keeping it clean, minimal, and premium.*

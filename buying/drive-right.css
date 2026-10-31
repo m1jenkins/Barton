@@ -1,6 +1,6 @@
-/* Daisy's established visual system, extended only on the redesigned pages. */
-.dr { --muted:#5C5C5A; --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
-.dr[data-buying-page="home"] { --paper:#FFFFFF; --ink:#111111; --green:#1B4D3E; --muted:#5C5C5A; --line:#E6E6E4; --sage:#F2F2F0; background:var(--paper); color:var(--ink); }
+/* Daisy's established visual system, extended only on the redesigned pages, in the homepage's navy and sign-blue palette. */
+.dr { --muted:#465061; --paper:#FFFFFF; --ink:#0E1B2E; --green:#1A4B8C; --line:#DDE2E9; --sage:#EDF0F4; --sign:#1A4B8C; --sky:#E3ECF8; --field:#C3CBD6; --field-hover:#8E9AAB; --focus-ring:rgba(26,75,140,.22); background:var(--paper); color:var(--ink); }
+.dr[data-buying-page="home"] { --muted:#465061; --paper:#FFFFFF; --ink:#0E1B2E; --green:#1A4B8C; --line:#DDE2E9; --sage:#EDF0F4; --sign:#1A4B8C; --sky:#E3ECF8; --field:#C3CBD6; --field-hover:#8E9AAB; --focus-ring:rgba(26,75,140,.22); background:var(--paper); color:var(--ink); }
 .dr ::selection { background:var(--green); color:var(--paper); }
 .dr :is(input,textarea) { caret-color:var(--green); }
 .dr .page-width { max-width:1440px; }
@@ -34,7 +34,7 @@
 .dr .savings-section .info-card p { font-size:15px; }
 .dr .hero-photo { margin-top:34px; }
 .dr .hero-photo figcaption { font:14px/1.5 var(--sans); color:var(--green); }
-.dr input::placeholder,.dr textarea::placeholder { color:#6A6964; }
+.dr input::placeholder,.dr textarea::placeholder { color:#6B7585; }
 .dr :is(input,select,textarea):focus-visible { outline:2px solid var(--green); outline-offset:3px; }
 .dr .composer :is(input,textarea):focus-visible { outline:0; }
 .dr .composer textarea { border:0; outline:0; background:transparent; color:var(--ink); min-width:0; width:100%; padding:8px 0; font-size:21px; line-height:28px; letter-spacing:-.4px; resize:none; max-height:160px; }
@@ -290,13 +290,13 @@
  .dr[data-view="conversation"] .message p { font-size:16px; line-height:1.45; }
  .dr[data-view="conversation"] .message p.assistant-hint { display:block; margin-top:8px; color:var(--muted); font-size:12px; line-height:1.45; }
  .dr[data-view="conversation"] .message.user .bubble { padding:10px 14px; border-radius:20px 20px 6px 20px; }
- .dr[data-view="conversation"] .composer-area { flex:none; width:100%; margin:0; padding:8px 16px calc(10px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); background:var(--white); box-shadow:0 -8px 22px #1A1A1808; }
+ .dr[data-view="conversation"] .composer-area { flex:none; width:100%; margin:0; padding:8px 16px calc(10px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); background:var(--white); box-shadow:0 -8px 22px #0E1B2E08; }
  .dr[data-view="conversation"] .answer-actions:not([hidden]) { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
  .dr[data-view="conversation"] .choices { flex:1 1 auto; min-width:0; flex-wrap:nowrap; overflow-x:auto; margin:0; padding:1px 0; scrollbar-width:none; }
  .dr[data-view="conversation"] .choice-button { flex:none; min-height:36px; padding:7px 12px; white-space:nowrap; font-size:12px; }
  .dr[data-view="conversation"] .skip-detail { flex:none; min-height:36px; margin:0; padding:4px 0; white-space:nowrap; font-size:12px; }
  .dr[data-view="conversation"] .composer,.dr[data-view="conversation"] .composer.is-multiline { min-height:52px; padding:4px 5px 4px 16px; gap:8px; align-items:center; border-radius:26px; box-shadow:none; }
- .dr[data-view="conversation"] .composer:focus-within { transform:none; outline:none; border-color:var(--green); box-shadow:0 0 0 2px #C8CBC4; }
+ .dr[data-view="conversation"] .composer:focus-within { transform:none; outline:none; border-color:var(--green); box-shadow:0 0 0 2px #C3CBD6; }
  .dr[data-view="conversation"] .composer textarea { flex:1 1 auto; min-width:0; max-height:104px; padding:7px 0; font-size:16px; line-height:22px; letter-spacing:0; }
  .dr[data-view="conversation"] .send-button { width:42px; height:42px; }
  .dr[data-view="conversation"] .send-button svg { width:20px; height:20px; }
@@ -345,7 +345,7 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr button.header-cta { border:0; cursor:pointer; }
 @media(max-width:900px) { .dr .site-header { gap:20px; } .dr .site-header nav { gap:18px; } }
 /* Consent: a slim bottom bar instead of a card over the hero. Copy and choices are unchanged. */
-.dr #drive-right-ad-privacy { left:0; right:0; bottom:0; width:auto; max-height:min(70dvh,480px); padding:12px max(64px,calc((100% - 1440px) / 2)); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 32px; align-items:center; border:0; border-top:1px solid var(--line); border-radius:0; background:var(--paper); color:var(--muted); box-shadow:0 -10px 30px #1A1A1810; font:13px/1.5 var(--sans); }
+.dr #drive-right-ad-privacy { left:0; right:0; bottom:0; width:auto; max-height:min(70dvh,480px); padding:12px max(64px,calc((100% - 1440px) / 2)); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 32px; align-items:center; border:0; border-top:1px solid var(--line); border-radius:0; background:var(--paper); color:var(--muted); box-shadow:0 -10px 30px #0E1B2E10; font:13px/1.5 var(--sans); }
 .dr #drive-right-ad-privacy .ad-privacy-copy { grid-column:1; margin:0; }
 .dr #drive-right-ad-privacy .ad-privacy-copy h2 { display:inline; margin:0 6px 0 0; font:600 13px/1.5 var(--sans); letter-spacing:0; color:var(--ink); }
 .dr #drive-right-ad-privacy .ad-privacy-copy h2+p { display:inline; margin:0; }
@@ -496,3 +496,98 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 @media (prefers-reduced-motion:reduce) { .dr .plan-card:has([data-plan="concierge"]) .outline-button, .dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) { transition:box-shadow .2s ease, border-color .2s ease; } .dr .plan-card:has([data-plan="concierge"]) .outline-button::before { display:none; } .dr .plan-card:has([data-plan="concierge"]) .outline-button [data-icon] { transition:none; } }
 .dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button { background:transparent; color:#fff; border-color:rgba(255,255,255,.28); }
 .dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button:hover { background:rgba(255,255,255,.08); border-color:#fff; }
+/* Homepage theme on every redesigned page (2026-10-30): the blue sign header, a blue band
+   behind each page's title, navy pill buttons, tinted cards, a tinted footer and one form
+   field style. Colors come from the tokens above; the homepage's own layout is home-wise.css. */
+.dr .site-header { --wordmark-arrow:currentColor; background:var(--sign); border-bottom:0; animation:none; color:#fff; }
+.dr .site-header .wordmark { color:#fff; }
+.dr .site-header nav { gap:4px; }
+.dr .site-header .nav-link { min-height:40px; padding:8px 12px; border-radius:9999px; color:#fff; font:600 16px/1.4 var(--sans); }
+.dr .site-header .nav-link::after { display:none; }
+.dr .site-header .nav-link:hover,.dr .site-header .nav-link[aria-current="page"] { background:rgba(255,255,255,.14); }
+.dr .site-header .header-phone { color:#fff; }
+.dr .header-cta { background:#fff; color:var(--sign); font:600 15px/1.2 var(--sans); }
+.dr .header-cta:hover { background:var(--sky); }
+.dr .site-header :is(a,button):focus-visible { outline-color:#fff; }
+/* Page titles sit on the same blue as the header, edge to edge. */
+.dr :is(.page-intro,.paid-intro,.hero-intro,.guide-breadcrumb,.guide-heading) { background:var(--sign); box-shadow:0 0 0 100vmax var(--sign); clip-path:inset(0 -100vmax); color:#fff; }
+.dr .page-intro { padding:64px 0 72px; }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.guide-heading) h1 { color:#fff; }
+.dr .page-intro p,.dr .paid-intro>p:last-of-type { color:#fff; font-weight:600; font-size:18px; line-height:1.5; }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.guide-breadcrumb,.guide-heading) a:not(.primary-button,.outline-button) { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+.dr :is(.page-intro .page-kicker,.paid-plan) { color:var(--sky); }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.hero-checkout,.houston-hero-actions) .primary-button { background:#fff; border-color:#fff; color:var(--sign); }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.hero-checkout,.houston-hero-actions) .primary-button:hover { background:var(--sky); border-color:var(--sky); }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.hero-checkout,.houston-hero-actions) .outline-button { border-color:rgba(255,255,255,.85); color:#fff; background:transparent; }
+.dr :is(.page-intro,.paid-intro,.hero-intro,.hero-checkout,.houston-hero-actions) .outline-button:hover { background:rgba(255,255,255,.14); }
+.dr :is(.page-intro,.paid-intro,.guide-breadcrumb,.guide-heading,.site-header) a:focus-visible { outline-color:#fff; }
+.dr .paid-intro { max-width:none; padding:48px 0 56px; margin-bottom:40px; }
+.dr .hero-intro { padding-bottom:56px; }
+/* City pages keep their buttons in a sibling block; the band continues behind it. */
+.dr .hero-intro:has(+ :is(.hero-checkout,.houston-hero-actions)) { padding-bottom:0; }
+.dr .hero-intro + :is(.hero-checkout,.houston-hero-actions) { margin-top:0; padding:28px 0 56px; background:var(--sign); box-shadow:0 0 0 100vmax var(--sign); clip-path:inset(0 -100vmax); color:#fff; }
+.dr :is(.hero-checkout,.houston-hero-actions) :is(.hero-trust,.text-link) { color:#fff; }
+.dr .hero-checkout .hero-trust li::before { color:var(--sky); }
+.dr .hero-intro :is(p,.hero-trust,.houston-breadcrumb,.text-link) { color:#fff; }
+.dr .hero-intro > p:not(.small-note) { font-weight:600; }
+.dr .hero-intro .hero-trust li::before { color:var(--sky); }
+.dr :is(.paid-intro,.page-intro,.hero-intro) h1 em { color:var(--sky); }
+/* Buttons: pills, navy first, blue on hover. */
+.dr :is(.primary-button,.outline-button,.ps-form__submit) { border-radius:9999px; font-weight:600; }
+.dr .primary-button { background:var(--ink); border-color:var(--ink); color:#fff; }
+.dr .primary-button:hover { background:var(--sign); border-color:var(--sign); box-shadow:none; }
+.dr .outline-button { border-color:var(--ink); color:var(--ink); }
+.dr .outline-button:hover { background:var(--sage); }
+.dr .text-link { color:var(--ink); font-weight:600; }
+.dr .icon-button:hover { background:var(--sage); }
+/* Cards: tinted, borderless, rounder; plan cards follow the homepage plans. */
+.dr :is(.info-card,.review-card) { border:0; border-radius:24px; background:var(--sage); padding:28px; }
+.dr .info-card:has(a):hover { border-color:transparent; background:var(--sky); }
+.dr :is(.process-preview,.callout,.pricing-proof,.compact-brief,.chosen-plan) { border:0; border-radius:24px; }
+.dr .closing-cta { border-radius:28px; }
+.dr .plan-card { border:0; border-radius:28px; background:var(--sage); padding:40px 32px; }
+.dr .pricing-preview .plan-card { background:var(--paper); }
+.dr .plan-card[data-featured] { background:var(--sign); color:#fff; }
+.dr .plan-card[data-featured] :is(.plan-description,.plan-price span) { color:rgba(255,255,255,.82); }
+.dr .plan-card[data-featured] :is(.plan-for,.plan-assurance),.dr .plan-card[data-featured] li::before { color:var(--sky); }
+.dr .plan-card[data-featured] ul { border-top-color:rgba(255,255,255,.22); }
+.dr .plan-card[data-featured] :is(.primary-button,.outline-button) { background:#fff; border-color:#fff; color:var(--sign); }
+.dr .plan-card[data-featured] :is(.primary-button,.outline-button):hover { background:var(--sky); border-color:var(--sky); }
+.dr .plan-card[data-featured] .plan-inquiry-button { background:transparent; border-color:rgba(255,255,255,.4); color:#fff; }
+.dr .plan-card[data-featured] .plan-inquiry-button:hover { background:rgba(255,255,255,.12); border-color:#fff; }
+.dr .plan-card:has([data-plan="concierge"]) { --pro-accent:#C9D4E3; background:linear-gradient(150deg,#2A3B55 0%,#0E1B2E 48%,#070F1A 100%); border:0; }
+.dr .plan-inquiry-button { border-radius:9999px; font-weight:600; }
+/* Footer: the homepage's tinted band. */
+.dr .site-footer { margin-top:56px; padding:56px 0 32px; border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage); clip-path:inset(0 -100vmax); color:var(--ink); }
+.dr .footer-top .wordmark { color:var(--ink); }
+.dr .footer-bottom { border-top-color:var(--line); color:var(--ink); }
+/* Form fields: one style for the inquiry, checkout, intake and edit forms. */
+.dr :is(.ps-form__input,.ps-form__select,.ps-form__textarea,.inquiry-field :is(input,select,textarea),#plan-contact-form input,.edit-field :is(input,textarea)) { min-height:52px; padding:12px 16px; border:1px solid var(--field); border-radius:12px; background-color:#fff; color:var(--ink); font:16px/1.5 var(--sans); transition:border-color .15s,box-shadow .15s; }
+.dr :is(.ps-form__input,.ps-form__select,.ps-form__textarea,.inquiry-field :is(input,select,textarea),#plan-contact-form input,.edit-field :is(input,textarea)):hover { border-color:var(--field-hover); }
+.dr :is(.ps-form__input,.ps-form__select,.ps-form__textarea,.inquiry-field :is(input,select,textarea),#plan-contact-form input,.edit-field :is(input,textarea)):focus { outline:0; border-color:var(--sign); box-shadow:0 0 0 3px var(--focus-ring); }
+.dr :is(.ps-form__select,.inquiry-field select,#onboarding-form select) { appearance:none; padding-right:44px; background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E1B2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center/18px; }
+.dr :is(.ps-form__label,.inquiry-field,.edit-field>label,#plan-contact-form>label) { font-weight:600; font-size:14px; color:var(--ink); }
+.dr :is(.ps-form__hint,.inquiry-field .optional) { font-weight:400; }
+.dr input::placeholder,.dr textarea::placeholder { color:#6B7585; }
+.dr :is(input[type="checkbox"],input[type="radio"]) { accent-color:var(--sign); }
+.dr .ps-form__submit { background:var(--ink); font-weight:600; }
+.dr .ps-form__submit:hover { background:var(--sign); }
+/* Paid intake: the chat and the form sit on tinted cards like the homepage's plan cards. */
+.dr :is(.ps-onboarding,.paid-chat) { border:0; border-radius:28px; background:var(--sage); }
+.dr .paid-chat .message.user .bubble { background:#fff; }
+.dr .composer { border-color:var(--field); }
+.dr .composer:focus-within { outline:0; border-color:var(--sign); box-shadow:0 0 0 3px var(--focus-ring); }
+.dr .send-button:hover { background:var(--sign); }
+.dr dialog { border:0; border-radius:28px; }
+.dr dialog::backdrop { background:rgba(14,27,46,.45); }
+@media(max-width:760px) {
+ .dr .site-header nav { gap:2px; min-width:0; overflow-x:auto; scrollbar-width:none; }
+ .dr .site-header nav::-webkit-scrollbar { display:none; }
+ .dr .header-cta { padding:8px 12px; font-size:13px; }
+ .dr .site-header .nav-link { min-height:40px; padding:6px 5px; font-size:13px; }
+ .dr .page-intro { padding:40px 0 48px; }
+ .dr .page-intro p,.dr .paid-intro>p:last-of-type { font-size:17px; }
+ .dr .plan-card { padding:28px 20px; }
+ .dr :is(.ps-onboarding,.paid-chat) { border-radius:24px; }
+}
+@media(max-width:374px) { .dr .site-header .nav-link { padding-inline:3px; font-size:12px; } }

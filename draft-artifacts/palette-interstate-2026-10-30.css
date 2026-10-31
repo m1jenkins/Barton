@@ -1,0 +1,44 @@
+/* Interstate palette mock for the Wise homepage (buying/home-wise.css), 2026-10-30.
+   Colors only: layout, type and components stay as shipped. Wise pairs lime surfaces with
+   forest text and forest surfaces with lime text; here lime becomes shield blue with white
+   text, forest becomes night navy, and red is kept for the warning figure.
+   Not linked from any page; inject it into a local preview to compare. */
+html body.dr.wz {
+  --wz-lime:#1A4B8C; --wz-lime-hover:#143D73; --wz-forest:#0E1B2E; --wz-ink:#0E1B2E; --wz-body:#465061;
+  --wz-tint:#EDF0F4; --wz-chip:rgba(14,27,46,.07); --wz-chip-hover:rgba(14,27,46,.12); --wz-mint:#E3ECF8; --wz-line:rgba(14,27,46,.12);
+}
+
+/* Navy surfaces used lime text; on navy that is now white. */
+html body.dr.wz .wz-btn--forest,
+html body.dr.wz .wz-menu .wz-btn,
+html body.dr.wz .wz-strip-pill span,
+html body.dr.wz .wz-float-pill-icon,
+html body.dr.wz .wz-bar-logo--us,
+html body.dr.wz .wz-mock-offers span:last-child,
+html body.dr.wz .wz-review { color:#fff; }
+html body.dr.wz .wz-btn--forest:hover { background:#1E2F4A; }
+
+/* Blue surfaces used forest text; on blue that is now white. */
+html body.dr.wz .wz-btn--lime,
+html body.dr.wz .wz-hero, html body.dr.wz .wz-hero h1, html body.dr.wz .wz-hero-lead,
+html body.dr.wz .site-header .wordmark, html body.dr.wz .wz-nav a, html body.dr.wz .wz-link-button, html body.dr.wz .wz-menu-button, html body.dr.wz .wz-menu a,
+html body.dr.wz .wz-bar--us, html body.dr.wz .wz-bar--us .wz-bar-name small, html body.dr.wz .wz-bar--us strong,
+html body.dr.wz .wz-mock-card,
+html body.dr.wz .wz-tabs button[aria-selected="true"],
+html body.dr.wz .wz-more span,
+html body.dr.wz .wz-stack span:last-child i { color:#fff; }
+html body.dr.wz :is(.wz-nav a, .wz-link-button):hover { background:rgba(255,255,255,.14); }
+html body.dr.wz .wz-menu a { border-bottom-color:rgba(255,255,255,.22); }
+
+/* On the blue header and hero, the dark button flips to a white sign plate. */
+html body.dr.wz :is(.wz-header, .wz-hero, .wz-menu) .wz-btn--forest { background:#fff; color:#1A4B8C; }
+html body.dr.wz :is(.wz-header, .wz-hero, .wz-menu) .wz-btn--forest:hover { background:#E3ECF8; }
+html body.dr.wz :is(.wz-header, .wz-hero) :is(a, button):focus-visible { outline-color:#fff; }
+html body.dr.wz .wz-hero .wz-chip { background:rgba(14,27,46,.07); }
+
+/* Calculator and small accents. */
+html body.dr.wz .wz-calc-amount input::placeholder { color:rgba(14,27,46,.28); }
+html body.dr.wz .wz-calc-amount--muted { color:#B3202E; }
+html body.dr.wz .wz-dot { background:#1A4B8C; }
+html body.dr.wz .wz-strip-pill { background:#E3ECF8; }
+html body.dr.wz .wz-tabs button { box-shadow:inset 0 0 0 1px rgba(14,27,46,.45); }

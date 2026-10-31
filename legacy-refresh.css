@@ -1,6 +1,6 @@
 /* Visual bridge for pages that still use styles.css.
-   Keep their editorial content and page-specific components; match the live site's
-   Inter wordmark, ink/white surfaces, quiet green accents, and reading rhythm. */
+   Keep their editorial content and page-specific components; match the homepage's
+   blue sign header, navy and sign-blue palette, tinted surfaces and reading rhythm. */
 @font-face {
   font-family: "Steer Me Right Inter";
   src: url("/assets/buying/fonts/inter-latin.woff2") format("woff2");
@@ -28,26 +28,31 @@
 }
 
 body.legacy-refresh {
-  --primary: #111111;
-  --primary-hover: #1b4d3e;
-  --primary-light: #f2f2f0;
-  --primary-subtle: #f2f2f0;
-  --accent: #1b4d3e;
-  --accent-light: #f2f2f0;
-  --success: #1b4d3e;
-  --success-light: #f2f2f0;
-  --success-border: #e6e6e4;
+  --primary: #0E1B2E;
+  --primary-hover: #1A4B8C;
+  --primary-light: #EDF0F4;
+  --primary-subtle: #EDF0F4;
+  --accent: #1A4B8C;
+  --accent-light: #EDF0F4;
+  --success: #1A4B8C;
+  --success-light: #EDF0F4;
+  --success-border: #DDE2E9;
   --bg-page: #ffffff;
   --bg-white: #ffffff;
-  --bg-warm: #f2f2f0;
-  --bg-cream: #f2f2f0;
-  --bg-dark: #111111;
-  --text-dark: #111111;
-  --text-body: #353633;
-  --text-muted: #5c5c5a;
-  --text-light: #5c5c5a;
-  --border: #e6e6e4;
-  --border-hover: #c8cbc6;
+  --bg-warm: #EDF0F4;
+  --bg-cream: #EDF0F4;
+  --bg-dark: #0E1B2E;
+  --text-dark: #0E1B2E;
+  --text-body: #465061;
+  --text-muted: #465061;
+  --text-light: #465061;
+  --border: #DDE2E9;
+  --border-hover: #B5C0CD;
+  --sign: #1A4B8C;
+  --sky: #E3ECF8;
+  --field: #C3CBD6;
+  --field-hover: #8E9AAB;
+  --focus-ring: rgba(26,75,140,.22);
   --sans: "Steer Me Right Inter", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   --serif: var(--sans);
   --display: "Inter Tight", "Steer Me Right Inter", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -281,7 +286,7 @@ body.legacy-refresh {
   transform: none;
 }
 .legacy-refresh .btn--primary:hover,
-.legacy-refresh .btn--outline:hover { border-color: var(--accent); background: var(--accent); color: #fff; box-shadow: 0 6px 18px #1a1a1814; transform: none; }
+.legacy-refresh .btn--outline:hover { border-color: var(--accent); background: var(--accent); color: #fff; box-shadow: none; transform: none; }
 .legacy-refresh .btn--outline { border-color: var(--accent); background: #fff; color: var(--accent); }
 .legacy-refresh .btn--outline:hover { background: var(--bg-warm); color: var(--accent); }
 .legacy-refresh .btn__icon { flex: 0 0 auto; }
@@ -318,7 +323,7 @@ body.legacy-refresh {
 .legacy-refresh .contact__form .btn--primary,
 .legacy-refresh .contact__form .btn--outline { width: 100%; }
 .legacy-refresh .contact__fee-note { border-color: var(--border); border-radius: 6px; background: #fff; color: var(--text-dark); }
-.legacy-refresh .sticky-cta { border-color: var(--border); background: #fff; box-shadow: 0 -4px 20px #1111110a; }
+.legacy-refresh .sticky-cta { border-color: var(--border); background: #fff; box-shadow: 0 -4px 20px #0E1B2E0d; }
 .legacy-refresh .sticky-cta__text { color: var(--text-dark); }
 
 /* The city-page modules use the same quiet surfaces and hierarchy as the main site. */
@@ -486,3 +491,79 @@ body.legacy-refresh {
 @media (prefers-reduced-motion: reduce) {
   .legacy-refresh :is(a, button) { transition-duration: .01ms; }
 }
+
+/* Homepage theme (2026-10-30): the blue sign header, a blue band behind each page title,
+   navy pill buttons, tinted cards and footer, and the same form fields as the current pages. */
+.legacy-refresh .nav,
+.legacy-refresh .nav.scrolled { position: sticky; top: 0; z-index: 40; background: var(--sign); border-bottom: 0; --wordmark-arrow: currentColor; }
+.legacy-refresh .nav__wordmark,
+.legacy-refresh .nav:not(.scrolled) .nav__wordmark { color: #fff; }
+.legacy-refresh .nav__links { gap: 4px; }
+.legacy-refresh .nav__links a:not(.nav__cta),
+.legacy-refresh .nav:not(.scrolled) .nav__links a:not(.nav__cta) { min-height: 40px; padding: 8px 12px; border-radius: 9999px; color: #fff; font-weight: 600; }
+.legacy-refresh .nav__links a:hover:not(.nav__cta) { color: #fff; background: rgba(255,255,255,.14); }
+.legacy-refresh .nav__cta,
+.legacy-refresh .nav__links .nav__cta { border-color: #fff; background: #fff; color: var(--sign) !important; font-weight: 600; }
+.legacy-refresh .nav__cta:hover,
+.legacy-refresh .nav__links .nav__cta:hover { border-color: var(--sky); background: var(--sky); }
+.legacy-refresh .nav .nav__hamburger span { background: #fff; }
+.legacy-refresh .nav :is(a, button):focus-visible { outline-color: #fff; }
+.legacy-refresh .mobile-menu { background: var(--sign); }
+.legacy-refresh .mobile-menu__close,
+.legacy-refresh .mobile-menu__links a,
+.legacy-refresh .mobile-menu__links a:hover { color: #fff; }
+.legacy-refresh .mobile-menu :is(a, button):focus-visible { outline-color: #fff; }
+.legacy-refresh .breadcrumb,
+.legacy-refresh .hero .breadcrumb,
+.legacy-refresh.seo-content-page > .breadcrumb { background: var(--sign); }
+.legacy-refresh .breadcrumb ol,
+.legacy-refresh .breadcrumb li + li::before,
+.legacy-refresh .breadcrumb a,
+.legacy-refresh .breadcrumb li[aria-current="page"],
+.legacy-refresh .breadcrumb a:hover { color: rgba(255,255,255,.88); }
+.legacy-refresh .breadcrumb a { text-decoration: underline; text-underline-offset: 3px; }
+.legacy-refresh .article-header { border-bottom: 0; background: var(--sign); color: #fff; }
+.legacy-refresh .article-header .section-label { color: var(--sky); }
+.legacy-refresh .article-header .article-title { color: #fff; }
+.legacy-refresh .article-header :is(.article-meta, .article-meta a) { color: rgba(255,255,255,.88); }
+.legacy-refresh .hero { background: var(--sign); }
+.legacy-refresh .hero .hero__headline,
+.legacy-refresh .hero .hero__headline span { color: #fff; }
+.legacy-refresh.seo-location-page .hero .hero__headline span { color: var(--sky); }
+.legacy-refresh .hero .hero__subtext { color: #fff; font-weight: 600; }
+.legacy-refresh .hero .hero__consult-link { color: #fff; }
+.legacy-refresh .hero .btn--primary { border-color: #fff; background: #fff; color: var(--sign); }
+.legacy-refresh .hero .btn--primary:hover { border-color: var(--sky); background: var(--sky); color: var(--sign); }
+.legacy-refresh .hero .btn--outline { border-color: rgba(255,255,255,.85); background: transparent; color: #fff; }
+.legacy-refresh .hero .btn--outline:hover { background: rgba(255,255,255,.14); color: #fff; }
+.legacy-refresh :is(.article-header, .hero) a:focus-visible { outline-color: #fff; }
+.legacy-refresh .btn--primary,
+.legacy-refresh .btn--outline { border-radius: 9999px; font-weight: 600; }
+.legacy-refresh .btn--outline { border-color: var(--text-dark); color: var(--text-dark); }
+.legacy-refresh .btn--outline:hover { border-color: var(--text-dark); background: var(--bg-warm); color: var(--text-dark); }
+.legacy-refresh :is(.blog-card, .difference__card, .case-study-card, .selection__card) { border-radius: 24px; }
+.legacy-refresh :is(.faq__item, .why-promo__col, .contact__fee-note) { border-radius: 16px; }
+.legacy-refresh .article-content__inner .highlight-box { border: 0; border-radius: 16px; }
+.legacy-refresh :is(.contact__input, .contact__textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+  min-height: 52px;
+  padding: 12px 16px;
+  border: 1px solid var(--field);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text-dark);
+  font: 16px/1.5 var(--sans);
+  transition: border-color .15s, box-shadow .15s;
+}
+.legacy-refresh :is(.contact__input, .contact__textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):hover { border-color: var(--field-hover); }
+.legacy-refresh :is(.contact__input, .contact__textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):focus { outline: 0; border-color: var(--sign); box-shadow: 0 0 0 3px var(--focus-ring); }
+.legacy-refresh :is(.contact__input, .contact__textarea)::placeholder { color: #6B7585; }
+.legacy-refresh :is(input[type="checkbox"], input[type="radio"]) { accent-color: var(--sign); }
+.legacy-refresh .footer { border-top: 0; background: var(--bg-warm); }
+.legacy-refresh .footer__heading { font: 600 18px/26px var(--sans); letter-spacing: 0; text-transform: none; }
+.legacy-refresh .footer__links a,
+.legacy-refresh .footer__contact,
+.legacy-refresh .footer__contact a,
+.legacy-refresh .footer__copy { color: var(--text-dark); }
+.legacy-refresh .success-hero { margin-top: 0; background: var(--sign); }
+.legacy-refresh .success-hero .btn--outline { border-color: #fff; background: #fff; color: var(--sign); }
+.legacy-refresh .success-hero .btn--outline:hover { border-color: var(--sky); background: var(--sky); color: var(--sign); }
