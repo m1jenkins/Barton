@@ -19,6 +19,8 @@ test('active server, browser, registry, visible cards and schema agree on the tw
   const html=await read(file),doc=htmlDocument(html);
   // The homepage shows the two paid plan cards, with a free "Talk to Mason" band under them.
   if(file==='index.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.deepEqual([...html.matchAll(/class="wz-plan-grid">[\s\S]*?<\/div>\s*<p class="wz-fine/g)].flatMap(([grid])=>[...grid.matchAll(/data-plan="([^"]+)"/g)].map(m=>m[1])),['full_service','concierge']);}
+  // Pricing uses the homepage's plan cards (2026-10-31), each with its own checkout.
+  else if(file==='schedule.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
   else assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
   assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
   assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);

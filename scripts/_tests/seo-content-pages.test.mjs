@@ -149,6 +149,18 @@ test('marketing nav lists three sections, and the schedule header offers one che
       assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started<\/a>/);
       continue;
     }
+    if (file === 'schedule.html') {
+      // Pricing uses the homepage's header (2026-10-31), with one compact checkout; the price hides on phones,
+      // and the button gives way to the sticky buttons on small phones.
+      const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
+      const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
+      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/schedule.html', '/about.html']);
+      assert.doesNotMatch(nav, /car-buying-service\.html/);
+      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
+      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Steer Me Right · $395' }], 'one compact header checkout');
+      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
+      continue;
+    }
     if (file === 'about.html') {
       // About uses the homepage's header (2026-10-30), with Pricing and Get started leading to the plans page.
       const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
@@ -163,13 +175,7 @@ test('marketing nav lists three sections, and the schedule header offers one che
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
     assert.deepEqual(links, ['/how-it-works.html', '/schedule.html', '/about.html'], `${file} header nav lists the three sections`);
     assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
-    if (file === 'schedule.html') {
-      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
-      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Steer Me Right · $395' }], 'one compact header checkout; the price span hides on phones');
-      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
-    } else {
-      assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
-    }
+    assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
   }
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html']) {
     assert.match(await read(file), /href="\/car-buying-service\.html"/, `${file} still links the explainer`);

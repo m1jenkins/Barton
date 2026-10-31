@@ -34,7 +34,7 @@ tabs.forEach((tab, index) => {
 // plan cards, the closing band and the footer, where a button is already on screen.
 const bar = document.querySelector('[data-sticky-cta]');
 if (bar && 'IntersectionObserver' in window) {
-  const watched = ['.wz-hero', '#plans .wz-plan-grid', '.wz-band', '.wz-footer'].map(selector => document.querySelector(selector)).filter(Boolean);
+  const watched = ['.wz-hero', '#plans .wz-plan-grid', '#pricing .wz-plan-grid', '.wz-band', '.wz-footer'].map(selector => document.querySelector(selector)).filter(Boolean);
   const visible = new Set();
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));

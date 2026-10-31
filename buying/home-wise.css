@@ -25,7 +25,7 @@
 .dr.wz .wz-lead--left { margin-inline:0; }
 .dr.wz .wz-center { text-align:center; }
 .dr.wz .wz-fine { margin-top:20px; font-size:14px; line-height:21px; color:var(--wz-body); }
-.dr.wz .wz-fine a, .dr.wz .wz-features a, .dr.wz .wz-notes a { color:var(--wz-navy); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+.dr.wz .wz-fine a, .dr.wz .wz-features a, .dr.wz .wz-notes a, .dr.wz .wz-lead a, .dr.wz .wz-plan-notes a, .dr.wz .wz-faq a { color:var(--wz-navy); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
 
 /* Buttons */
 .dr.wz .wz-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:12px 24px; border:0; border-radius:9999px; font:600 16px/24px var(--wz-sans); letter-spacing:-.011em; text-decoration:none; cursor:pointer; transition:background-color .15s ease, box-shadow .15s ease; box-sizing:border-box; }
@@ -144,7 +144,7 @@
 .dr.wz .wz-plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
 .dr.wz .wz-plan { display:flex; flex-direction:column; align-items:flex-start; padding:40px; border-radius:28px; background:var(--wz-tint); color:var(--wz-body); }
 .dr.wz .wz-plan .wz-icon { background:#fff; }
-.dr.wz .wz-plan h3 { margin-top:24px; font:600 clamp(20px,1.71vw,24.6px)/32px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
+.dr.wz .wz-plan :is(h2,h3) { margin-top:24px; font:600 clamp(20px,1.71vw,24.6px)/32px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
 .dr.wz .wz-plan-fit { margin-top:4px; font-size:16px; line-height:24px; }
 .dr.wz .wz-plan-price { display:flex; align-items:baseline; gap:10px; margin:24px 0; font:900 clamp(48px,4.4vw,64px)/1 var(--wz-display); letter-spacing:-.02em; color:var(--wz-ink); }
 .dr.wz .wz-plan-price span { font:600 16px/24px var(--wz-sans); letter-spacing:0; color:var(--wz-body); }
@@ -155,7 +155,7 @@
 .dr.wz .wz-plan--feature { background:var(--wz-sign); color:rgba(255,255,255,.82); }
 .dr.wz .wz-plan--feature .wz-icon { background:rgba(255,255,255,.14); color:#fff; }
 .dr.wz .wz-plan .wz-icon--photo { width:72px; height:72px; overflow:hidden; background:#fff; }
-.dr.wz .wz-plan--feature h3, .dr.wz .wz-plan--feature .wz-plan-price, .dr.wz .wz-plan--feature .wz-plan-list li { color:#fff; }
+.dr.wz .wz-plan--feature :is(h2,h3), .dr.wz .wz-plan--feature .wz-plan-price, .dr.wz .wz-plan--feature .wz-plan-list li { color:#fff; }
 .dr.wz .wz-plan--feature .wz-plan-price span { color:rgba(255,255,255,.82); }
 .dr.wz .wz-plan--feature .wz-plan-list { border-top-color:rgba(255,255,255,.22); }
 .dr.wz .wz-plan--feature .wz-plan-list svg { color:var(--wz-sky); }
@@ -165,7 +165,7 @@
 .dr.wz .wz-plan--pro { position:relative; isolation:isolate; overflow:hidden; background:linear-gradient(150deg,#2A3B55 0%,#0E1B2E 48%,#070F1A 100%); color:rgba(255,255,255,.74); box-shadow:inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(255,255,255,.08); }
 .dr.wz .wz-plan--pro::before { content:""; position:absolute; inset:-20% -60%; z-index:-1; background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.1) 47%,rgba(255,255,255,.03) 53%,transparent 60%); transform:translateX(-12%); transition:transform 1.4s cubic-bezier(.2,.7,.2,1); pointer-events:none; }
 .dr.wz .wz-plan--pro:hover::before { transform:translateX(22%); }
-.dr.wz .wz-plan--pro h3, .dr.wz .wz-plan--pro .wz-plan-price, .dr.wz .wz-plan--pro .wz-plan-list li { color:#fff; }
+.dr.wz .wz-plan--pro :is(h2,h3), .dr.wz .wz-plan--pro .wz-plan-price, .dr.wz .wz-plan--pro .wz-plan-list li { color:#fff; }
 .dr.wz .wz-plan--pro .wz-plan-price span { color:rgba(255,255,255,.74); }
 .dr.wz .wz-plan--pro .wz-plan-list { border-top-color:rgba(255,255,255,.16); }
 .dr.wz .wz-plan--pro .wz-plan-list svg { color:#C9D4E3; }
@@ -177,6 +177,34 @@
 .dr.wz .wz-plan-band h3 { font:600 20px/28px var(--wz-sans); letter-spacing:-.015em; color:var(--wz-ink); }
 .dr.wz .wz-plan-band p { margin-top:4px; font-size:16px; line-height:24px; }
 .dr.wz .wz-plan-band .wz-btn { flex:none; }
+
+/* Pricing page: the plan cards carry a description, refund line and a second button. */
+.dr.wz .wz-hero-kicker { margin-bottom:20px; font-size:16px; line-height:24px; font-weight:600; color:var(--wz-sky); }
+.dr.wz .wz-plan-desc { margin-top:12px; font-size:16px; line-height:24px; }
+.dr.wz .wz-plan-desc + .wz-plan-price { margin-bottom:12px; }
+.dr.wz .wz-plan-assurance { margin-bottom:24px; font-size:15px; line-height:22px; font-weight:600; }
+.dr.wz .wz-plan--feature .wz-plan-assurance { color:var(--wz-sky); }
+.dr.wz .wz-plan--pro .wz-plan-assurance { color:#C9D4E3; }
+.dr.wz .wz-plan-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:auto; }
+.dr.wz .wz-plan-actions .wz-btn { margin-top:0; }
+.dr.wz .wz-plan--feature .wz-btn--outline { color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85); }
+.dr.wz .wz-plan--feature .wz-btn--outline:hover { background:rgba(255,255,255,.14); }
+.dr.wz .wz-plan--pro .wz-btn--forest { background:#fff; color:var(--wz-navy); }
+.dr.wz .wz-plan--pro .wz-btn--forest:hover { background:var(--wz-sky); }
+.dr.wz .wz-plan-notes { display:grid; gap:8px; max-width:780px; margin:32px auto 0; font-size:14px; line-height:21px; text-align:center; }
+.dr.wz .wz-lead + .wz-features { margin-top:40px; }
+.dr.wz .wz-features--four { grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; }
+.dr.wz .wz-story strong { color:var(--wz-ink); font-weight:600; }
+.dr.wz .wz-actions--story { margin-top:32px; }
+.dr.wz .wz-faq { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:56px; align-items:start; }
+.dr.wz .wz-faq-list { border-top:1px solid var(--wz-line); }
+.dr.wz .wz-faq details { border-bottom:1px solid var(--wz-line); }
+.dr.wz .wz-faq summary { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:20px 0; font:600 18px/26px var(--wz-sans); color:var(--wz-ink); cursor:pointer; list-style:none; }
+.dr.wz .wz-faq summary::-webkit-details-marker { display:none; }
+.dr.wz .wz-faq summary::after { content:""; flex:none; width:9px; height:9px; margin-right:6px; border-right:2px solid var(--wz-sign); border-bottom:2px solid var(--wz-sign); transform:translateY(-3px) rotate(45deg); }
+.dr.wz .wz-faq details[open] summary::after { transform:translateY(2px) rotate(-135deg); }
+.dr.wz .wz-faq details p { max-width:62ch; padding-bottom:24px; font-size:16px; line-height:24px; }
+.dr.wz .wz-inline-button { padding:0; border:0; background:none; color:var(--wz-navy); font:inherit; font-weight:600; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
 
 /* Split rows (Wise's "Safe at every step" and "Built for business too") */
 .dr.wz .wz-split { display:grid; grid-template-columns:minmax(0,480px) minmax(0,555px); justify-content:space-between; align-items:start; gap:48px; }
@@ -268,8 +296,12 @@
   .dr.wz .wz-greviews-list::-webkit-scrollbar { display:none; }
   .dr.wz .wz-greviews-list > li { flex:0 0 min(320px, 80%); scroll-snap-align:start; }
 }
+@media (max-width:1100px) {
+  .dr.wz .wz-features--four { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
 @media (max-width:900px) {
   .dr.wz .wz-features { grid-template-columns:1fr; gap:24px; }
+  .dr.wz .wz-faq { grid-template-columns:1fr; gap:32px; }
   .dr.wz .wz-features li { display:grid; grid-template-columns:56px 1fr; column-gap:16px; }
   .dr.wz .wz-features .wz-icon { grid-row:1 / 3; }
   .dr.wz .wz-features h3 { margin:4px 0 4px; }
@@ -283,6 +315,7 @@
   .dr.wz .wz-header-row { height:64px; gap:12px; }
   .dr.wz .site-header .wordmark { font-size:22px; }
   .dr.wz .wz-link-button { display:none; }
+  .dr.wz .wz-header-price { display:none; }
   .dr.wz .wz-hero { padding:40px 0 64px; }
   .dr.wz .wz-hero--page { padding:48px 0 56px; }
   .dr.wz .wz-story { font-size:17px; line-height:27px; }
@@ -311,6 +344,9 @@
   .dr.wz .wz-plan-grid { grid-template-columns:1fr; }
   .dr.wz .wz-plan { padding:28px 20px; }
   .dr.wz .wz-plan .wz-btn { width:100%; }
+  .dr.wz .wz-faq summary { padding:18px 0; font-size:17px; line-height:24px; }
+  .dr.wz .wz-plan-desc + .wz-plan-price { flex-direction:column; align-items:flex-start; gap:8px; }
+  .dr.wz .wz-plan-actions .wz-btn { padding-inline:16px; font-size:15px; }
   .dr.wz .wz-plan-band { flex-wrap:wrap; align-items:flex-start; padding:24px 20px; }
   .dr.wz .wz-plan-band .wz-plan-band-text { flex-basis:calc(100% - 76px); }
   .dr.wz .wz-plan-band .wz-btn { width:100%; }
@@ -331,3 +367,5 @@
   .dr.wz .wz-header-actions .wz-btn--sm { padding:8px 14px; font-size:14px; }
 }
 @media (max-width:374px) { .dr.wz .wz-sticky-price { display:none; } }
+/* Pricing page: the header checkout makes the row too wide on small phones, where the sticky buttons take over. */
+@media (max-width:440px) { .dr.wz .wz-header-checkout { display:none; } }
