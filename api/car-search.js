@@ -1,13 +1,12 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { database } from './_lib/db.js';
 import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
-import { dispatchDealJobsSafely } from './_lib/deal-jobs.js';
 import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } from './_lib/http.js';
 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
-// GET ?intake=<id> returns the search details; POST saves the shortlist and
-// emails it to Mason; POST with "action": "handoff" marks the deal's first
-// emails handed off and returns the deal for the script to post to Grokbot.
+// GET ?intake=<id> returns the search details; POST saves the shortlist; POST
+// with "action": "handoff" marks the deal's first emails handed off and returns
+// the deal for the script to post to Grokbot.
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -18,7 +17,7 @@ const HANDOFF_ERRORS = Object.freeze({
   no_dealer_emails: [409, 'This shortlist has no dealer email left to hand off.']
 });
 
-export function carSearchHandler({ environment = process.env, getDatabase = database, dispatch = dispatchDealJobsSafely } = {}) {
+export function carSearchHandler({ environment = process.env, getDatabase = database } = {}) {
   return withApiErrors(async (req, res) => {
     if (!['GET', 'POST'].includes(req.method)) throw new HttpError(405, 'method_not_allowed', 'Use GET, POST');
     const token = carSearchToken(environment);
@@ -64,12 +63,10 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       return sendJson(res, 409, { ok: false, error: 'emails_already_sent',
         message: 'This search\'s dealer emails have already gone out or been handed to Grokbot, so its shortlist can no longer be replaced.' });
     }
-    const email = await dispatch({ sql, environment, dealId: saved.dealId });
     return sendJson(res, 200, {
       ok: true,
       cars: shortlist.listings.length,
-      dealer_emails: saved.drafts.map(draft => ({ dealer: draft.dealer_name, to: draft.to_email })),
-      email_to_mason: email.sent ? 'sent' : 'queued'
+      dealer_emails: saved.drafts.map(draft => ({ dealer: draft.dealer_name, to: draft.to_email }))
     });
   });
 }

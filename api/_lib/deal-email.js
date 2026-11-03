@@ -2,11 +2,11 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { centralTime, escapeHtml, oneLine } from './intake-email.js';
 
-// Mason gets one email per submitted car search, with its cars and first
-// emails. The first emails go to dealers through Grokbot (POST /api/car-search
-// with "action": "handoff"). Drafts from before that still open from their
-// /api/dealer-email links, where he edits and sends them from Zoho. A link is
-// the draft ID plus an HMAC of it, so no link secret is stored in the database.
+// First emails go to dealers through Grokbot (POST /api/car-search with
+// "action": "handoff"). Drafts from shortlist emails sent before that still
+// open from their /api/dealer-email links, where Mason edits and sends them
+// from Zoho. A link is the draft ID plus an HMAC of it, so no link secret is
+// stored in the database. This file and that page go once those deals finish.
 const LINK_DAYS = 30;
 const EMAIL_PATTERN = /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+$/;
 
@@ -44,88 +44,6 @@ const dollars = cents => cents == null ? '' : new Intl.NumberFormat('en-US', {
 }).format(cents / 100);
 const miles = value => value == null ? '' : `${new Intl.NumberFormat('en-US').format(value)} mi`;
 export const carFor = fields => oneLine(fields?.preferred_makes || fields?.vehicle_type || 'car search');
-const plural = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`;
-
-const lotDays = value => value == null ? '' : `${value} ${value === 1 ? 'day' : 'days'} on lot`;
-const headline = listing => [dollars(listing.price_cents), miles(listing.mileage), lotDays(listing.days_on_lot)].filter(Boolean).join(' · ');
-
-// Market value, target and walk-away are Mason's negotiating numbers.
-function pricing(listing) {
-  const line = [
-    listing.market_price_cents != null && `market ${dollars(listing.market_price_cents)}`,
-    listing.target_price_cents != null && `target ${dollars(listing.target_price_cents)}`,
-    listing.walk_away_cents != null && `walk away at ${dollars(listing.walk_away_cents)}`
-  ].filter(Boolean).join(' · ');
-  return line && line[0].toUpperCase() + line.slice(1);
-}
-
-function listingLines(listing) {
-  return [
-    `${listing.rank}. ${[listing.title, headline(listing)].filter(Boolean).join(' · ')}`,
-    pricing(listing) && `   ${pricing(listing)}`,
-    `   ${[listing.dealer_name, listing.dealer_location, listing.dealer_email, listing.dealer_phone].filter(Boolean).join(' · ')}`,
-    listing.vin && `   VIN ${listing.vin}`,
-    listing.why && `   ${oneLine(listing.why)}`,
-    `   ${listing.listing_url}`
-  ].filter(Boolean).join('\n');
-}
-
-const shell = (intro, body) => `<!doctype html><html><body style="margin:0;padding:24px;background:#f5f6f8;font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1d232c">`
-  + `<div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:24px">`
-  + `<p style="margin:0 0 16px;white-space:pre-wrap">${escapeHtml(intro)}</p>${body}</div></body></html>`;
-const heading = title => `<h2 style="margin:24px 0 8px;font-size:16px">${escapeHtml(title)}</h2>`;
-// `deal` carries the buyer's name and search fields.
-export function renderShortlistEmail({ deal, listings, drafts }) {
-  const car = carFor(deal.fields);
-  const subject = oneLine(`Car search ready: ${car} · ${deal.name} · ${plural(listings.length, 'car')}, `
-    + `${plural(drafts.length, 'dealer email')}`).slice(0, 200);
-  const intro = `${deal.name}'s car search is saved. Nothing has gone to a dealer yet. When you say "send them" in Claude Code,`
-    + ' the first emails below go to Grokbot, which shows you each one to approve before it sends.'
-    + ' Market, target and walk-away prices are for you only.'
-    + (deal.search_summary ? `\n\n${deal.search_summary}` : '');
-
-  const text = [
-    intro,
-    `\nCARS (${listings.length})`,
-    ...listings.map(listingLines),
-    `\nEMAILS TO DEALERS (${drafts.length})`,
-    ...drafts.map(draft => [
-      `To ${draft.dealer_name} <${draft.to_email}>, about car ${draft.listing_ranks.join(', ')}`,
-      `Subject: ${draft.subject}`,
-      draft.body
-    ].join('\n')),
-    `Intake ID: ${deal.onboarding_id}`
-  ].join('\n\n') + '\n';
-
-  const cars = listings.map(listing => `<div style="padding:12px 0;border-top:1px solid #e4e7ec">`
-    + `<div style="font-weight:600">${escapeHtml(`${listing.rank}. ${listing.title}`)}</div>`
-    + `<div>${escapeHtml([headline(listing), listing.vin && `VIN ${listing.vin}`].filter(Boolean).join(' · '))}</div>`
-    + (pricing(listing) ? `<div style="font-weight:600">${escapeHtml(pricing(listing))}</div>` : '')
-    + `<div style="color:#5b6472">${escapeHtml([listing.dealer_name, listing.dealer_location, listing.dealer_email, listing.dealer_phone].filter(Boolean).join(' · '))}</div>`
-    + (listing.why ? `<div style="margin-top:4px">${escapeHtml(listing.why)}</div>` : '')
-    + `<a href="${escapeHtml(listing.listing_url)}" style="color:#1f3a5f">Open listing</a></div>`).join('');
-  const emails = drafts.map(draft => `<div style="padding:12px 0;border-top:1px solid #e4e7ec">`
-    + `<div style="font-weight:600">${escapeHtml(`To ${draft.dealer_name}`)} <span style="font-weight:400;color:#5b6472">${escapeHtml(`${draft.to_email} · car ${draft.listing_ranks.join(', ')}`)}</span></div>`
-    + `<div style="margin:4px 0">${escapeHtml(draft.subject)}</div>`
-    + `<div style="white-space:pre-wrap;color:#465061;background:#f5f6f8;border-radius:6px;padding:10px">${escapeHtml(draft.body)}</div>`
-    + `</div>`).join('');
-  const html = shell(intro, heading(`Cars (${listings.length})`) + (cars || '<p>None found.</p>')
-    + heading(`Emails to dealers (${drafts.length})`) + (emails || '<p>No dealer emails were drafted.</p>')
-    + `<p style="margin-top:24px;color:#5b6472">Intake ID: ${escapeHtml(deal.onboarding_id)}</p>`);
-  return { subject, text, html };
-}
-
-// Builds Mason's shortlist email for one deal.
-export async function composeShortlistEmail(sql, dealId) {
-  const [deal] = await sql`
-    SELECT d.id, d.onboarding_id, d.search_summary, o.name, o.fields
-    FROM deals AS d JOIN onboarding_submissions AS o ON o.id = d.onboarding_id
-    WHERE d.id = ${dealId}
-  `;
-  const listings = await sql`SELECT * FROM deal_listings WHERE deal_id = ${dealId} ORDER BY rank`;
-  const drafts = await sql`SELECT * FROM dealer_email_drafts WHERE deal_id = ${dealId} ORDER BY created_at, id`;
-  return renderShortlistEmail({ deal, listings, drafts: drafts.map(draft => ({ ...draft, listing_ranks: draft.listing_ranks || [] })) });
-}
 
 export function parseDraftEdits(form) {
   const to = oneLine(form.to);

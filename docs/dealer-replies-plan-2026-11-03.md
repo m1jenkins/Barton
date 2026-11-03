@@ -1,12 +1,12 @@
 # Dealer replies: Grokbot negotiates (November 3, 2026)
 
-Status: the handoff is built (November 3) but not deployed. Migration 006 has to be applied to Neon first. The decisions below are Mason's, from the November 3 planning session.
+Status: the handoff is live (November 3), and migrations 006 and 007 are on Neon. Grokbot also reads and writes Neon directly (step 11 of the setup doc). The decisions below are Mason's, from the November 3 planning session.
 
 After `/car-search` drafts the first emails, dealers answer. Today Mason reads and answers every reply himself. With this change, work splits into three parts:
 
 - **Claude** runs `/car-search` as today: it finds and prices the cars, sets each car's target price, and drafts the first emails. It then hands the whole deal to Grokbot.
 - **Grokbot** handles everything after that, from a Gmail inbox used only for dealers. It sends the first emails, answers replies, negotiates the best out-the-door price it can on each car, and checks the buyer's order. It runs on its own always-on computer.
-- **Mason** taps to approve emails in Grokbot. He picks the deal once the dealers stop moving, and he gives the dealer the buyer's name when the buyer is ready.
+- **Mason** taps to approve emails in Grokbot. He picks the deal once the dealers stop moving, and he tells Grokbot when the buyer is ready to go on the buyer's order.
 
 Zoho (`mason@steermeright.com`) stays for clients and intake emails, and Grokbot never touches it.
 
@@ -20,7 +20,7 @@ Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot
 | Mailboxes | Dealer email moves to a new Gmail inbox that only dealers write to. Grokbot connects to it with Google sign-in. Zoho is for clients only, and Mason handles it himself. |
 | How fast Grokbot sees a reply | The inbox check ran every 15 minutes on November 3. Step 10 of the setup doc asks for every 5 minutes if Grokbot's schedules allow it. One run works through every new email, so a busy hour can add several minutes. |
 | Approval | Grokbot's default is that nothing sends without Mason's tap on a card. At first, every email works that way. After a week or two of clean drafts, the simple replies (asking for missing lines, keeping it on email, close-outs) send without a tap. Every email with a price in it keeps the tap, matching the planning answer that counter-offers wait for Mason. |
-| What Grokbot never gets | The buyer's name, email, phone and delivery address, and the trade-in's VIN or plate. Grokbot asks Mason for the name when the buyer's order needs it. |
+| Buyer data | Grokbot reads all of Neon, buyer details included. Mason's call on November 3, once Grokbot was connected to Neon: it should be a capable helper across the business. Dealer emails still never carry the buyer's phone, email or address, and the buyer's name goes only on the agreed dealer's buyer's order once Mason says the buyer is ready. |
 | Dealers who go quiet | Left alone. No follow-ups, and Grokbot gets no follow-up routine. |
 | Leverage | A counter-offer may cite another dealer's real out-the-door quote by number, never by dealer name. |
 | First emails | Mason says "send them" at the end of `/car-search`. Claude hands the deal to Grokbot, and Grokbot shows the first emails as cards. |
@@ -33,7 +33,7 @@ Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot
 
 ## The risk Mason accepted
 
-Grokbot holds each car's target and the buyer's budget, and by its own account its Auto-review check isn't a strict filter. Mason's tap on every email with a price in it is the guard. Mason chose on November 3 to skip the test deal, so the first live deal is the test. Every email in it stays on a card.
+Grokbot holds each car's target, the buyer's budget and, through Neon, every buyer's contact details. By its own account its Auto-review check isn't a strict filter. Mason's tap on every email with a price in it is the guard. Mason chose on November 3 to skip the test deal, so the first live deal is the test. Every email in it stays on a card.
 
 ## Several deals at once
 
@@ -54,7 +54,7 @@ Settled on November 3 from Grokbot's answers. Step 10 of the setup doc is the pr
 ### First emails
 
 1. `/car-search` runs as today: search, price, rank, draft, and submit to `/api/car-search`.
-2. The submit no longer creates **Review and send** links. Mason still gets the shortlist email at Zoho, without the links.
+2. The submit no longer creates **Review and send** links, and it emails Mason nothing: he reviews the shortlist in Claude Code.
 3. When Mason says "send them", the skill runs `node scripts/car-search.mjs handoff <intake ID>`.
 4. The server builds the handoff, marks the deal's drafts handed off (which locks the shortlist, as a sent email does today) and returns it. The script posts it to Grokbot's "New deal" webhook.
 5. Grokbot opens the deal, labels it, and shows each first email as a card. When Mason approves one, Grokbot sends it from the dealer inbox.
@@ -62,7 +62,7 @@ Settled on November 3 from Grokbot's answers. Step 10 of the setup doc is the pr
 The handoff carries the following:
 
 - the deal ID and label;
-- the buyer's city and search details, without the buyer's name and without the fields `loadSearch` already withholds (delivery address, trade-in VIN or plate, consultation questions);
+- the buyer's city and search details, without the buyer's name or the fields `loadSearch` withholds (delivery address, trade-in VIN or plate, consultation questions). Grokbot reads those from Neon when it needs them;
 - the search summary;
 - every shortlisted car, with its dealer, asking price, market value, target, miles, days on lot and notes;
 - every first email.
@@ -109,29 +109,30 @@ Grokbot asks the agreed dealer for the buyer's order and checks it line by line 
 - `/api/car-search`:
   - `POST` stops creating **Review and send** links.
   - `POST` with `{ "intake_id", "action": "handoff" }` builds the handoff from an allowlist of fields, marks the drafts handed off, and returns it. Calling it again returns the same handoff, so a failed webhook post can be retried.
-- The shortlist email (`api/_lib/deal-email.js`) drops its links and says the first emails are waiting in Grokbot.
+- The shortlist email to Mason is gone (`api/_lib/deal-jobs.js` and its cron worker), and `/car-search` no longer sets a walk-away price.
 - `scripts/car-search.mjs handoff <intake ID>` posts the handoff to the webhook, reading `DEALER_BOT_URL` and `DEALER_BOT_KEY` from `.env.local`.
   - The post sends `Authorization: Bearer <DEALER_BOT_KEY>` and `Content-Type: application/json`, which is Grokbot's format as of November 3.
   - A 200 only means Grokbot started a run. The cards and any problems show up in Grokbot's chat, so the script says to look there.
   - Tested on November 3 with a hand-built test deal: the post returned 200, the card showed up, and the email arrived after Mason tapped Send.
 - Tests:
-  - The handoff never contains the buyer's name, the walk-away price or the withheld fields. `/car-search` still sets a walk-away for Mason's own shortlist email, and the handoff leaves it out.
+  - The handoff carries no buyer details. Grokbot reads them from Neon.
   - The handoff locks the shortlist.
   - The submit returns no links.
 - `.claude/skills/car-search/SKILL.md`: step 7 shows the table and drafts, then hands off when Mason says "send them".
 - `.claude/skills/car-negotiation/` is no longer part of the flow. Mason decides whether to keep it for a second opinion on a hard quote or delete it. Another session wrote it, and it isn't committed yet.
 - `/api/dealer-email` keeps working for deals whose first emails went out through Zoho. Remove it once those deals finish.
+- `db/007_deal_events.sql`: `deal_events`, where Grokbot logs each deal's first emails, quotes, counters and outcome (setup doc, step 11).
 
 ## Left out to keep it simple
 
-- **A record on the site.** What dealers said and offered lives in the Gmail inbox and Grokbot's deal log, which Grokbot can export as a CSV. The site keeps the shortlist. If outcomes are needed on the site later, Grokbot can post each email to a write-only endpoint.
+- **The emails themselves on the site.** They stay in the Gmail inbox and Grokbot's deal log. Because Grokbot can write to Neon, it logs each quote, counter and outcome in `deal_events` instead of posting to an endpoint.
 - **Market refreshes during a negotiation.** Grokbot has no MarketCheck access, so it works from the handoff's prices. A deal that drags on past about two weeks, or stalls, goes to Mason, who can re-price it with Claude.
 
 ## Setup outside the repository
 
 All of Grokbot's own setup is in [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md). The rest:
 
-- **Neon:** apply migration 006 to `barton-checkout-db` before deploying the code that writes it.
+- **Neon:** migrations 006 and 007 have to be on `barton-checkout-db` before the code and Grokbot use them. Both were applied November 3.
 - **Mason's `.env.local`:** add `DEALER_BOT_URL` and `DEALER_BOT_KEY`, copied from Grokbot's "New deal" routine panel. Never paste them into a chat.
 
 ## Limits

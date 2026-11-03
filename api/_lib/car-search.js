@@ -127,7 +127,6 @@ export function parseShortlist(input) {
       price_cents: cents(whole(listing.price, `${path}.price`, problems, 1_000_000)),
       market_price_cents: cents(whole(listing.market_price, `${path}.market_price`, problems, 1_000_000)),
       target_price_cents: cents(whole(listing.target_price, `${path}.target_price`, problems, 1_000_000)),
-      walk_away_cents: cents(whole(listing.walk_away_price, `${path}.walk_away_price`, problems, 1_000_000)),
       mileage: whole(listing.mileage, `${path}.mileage`, problems, 1_000_000),
       days_on_lot: whole(listing.days_on_lot, `${path}.days_on_lot`, problems, 3650),
       vin: vin ? vin.toUpperCase() : null,
@@ -177,10 +176,10 @@ export async function saveShortlist(sql, onboardingId, shortlist) {
     await tx`DELETE FROM deal_listings WHERE deal_id = ${deal.id}`;
     for (const listing of shortlist.listings) {
       await tx`
-        INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents, walk_away_cents,
+        INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents,
           mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why)
         VALUES (${randomUUID()}, ${deal.id}, ${listing.rank}, ${listing.title}, ${listing.price_cents}, ${listing.market_price_cents},
-          ${listing.target_price_cents}, ${listing.walk_away_cents}, ${listing.mileage}, ${listing.days_on_lot}, ${listing.vin},
+          ${listing.target_price_cents}, ${listing.mileage}, ${listing.days_on_lot}, ${listing.vin},
           ${listing.listing_url}, ${listing.dealer_name}, ${listing.dealer_location}, ${listing.dealer_email},
           ${listing.dealer_phone}, ${listing.why})
       `;
@@ -197,11 +196,6 @@ export async function saveShortlist(sql, onboardingId, shortlist) {
     await tx`
       UPDATE deals SET search_summary = ${shortlist.summary}, shortlisted_at = now(), updated_at = now() WHERE id = ${deal.id}
     `;
-    await tx`
-      INSERT INTO deal_jobs (deal_id, kind) VALUES (${deal.id}, 'email_shortlist')
-      ON CONFLICT (deal_id, kind) DO UPDATE
-      SET status = 'pending', attempts = 0, created_at = now(), last_attempt_at = NULL, done_at = NULL, last_error = NULL
-    `;
     return { dealId: deal.id, locked: false, drafts };
   });
 }
@@ -210,10 +204,10 @@ const dollars = cents => cents == null ? null : Math.round(cents / 100);
 
 // Hands a shortlisted deal to Grokbot, which sends each first email from the
 // dealer inbox once Mason approves it there and then negotiates
-// (docs/dealer-replies-plan-2026-11-03.md). The handoff is built from an
-// allowlist: never the buyer's name or contact details, the fields loadSearch
-// withholds, the plan or the walk-away price. Calling it again returns the same
-// handoff, so a failed post to Grokbot can be retried.
+// (docs/dealer-replies-plan-2026-11-03.md). The handoff carries what Grokbot
+// needs to open the deal. Grokbot reads the rest, the buyer's details included,
+// straight from Neon by intake_id. Calling it again returns the same handoff, so
+// a failed post to Grokbot can be retried.
 export async function handOffDeal(sql, onboardingId) {
   const search = await loadSearch(sql, onboardingId);
   if (!search) return { error: 'intake_not_found' };

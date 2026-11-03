@@ -6,12 +6,10 @@ import { join } from 'node:path';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
 import { carSearchToken, parseShortlist, ShortlistError } from '../_lib/car-search.js';
-import { dealJobSettings, dispatchDealJobs } from '../_lib/deal-jobs.js';
 import { dealLinkSettings, draftToken, verifyDraftToken } from '../_lib/deal-email.js';
 import { renderIntakeEmail } from '../_lib/intake-email.js';
 import { carSearchHandler } from '../car-search.js';
 import { dealerEmailHandler } from '../dealer-email.js';
-import { outboxHandler } from '../outbox-dispatch.js';
 import { carSearchRequest, localEnv } from '../../scripts/car-search.mjs';
 
 const token = 'car-search-token-for-tests-only-0123456789';
@@ -20,7 +18,8 @@ const environment = {
   INTAKE_SMTP_USER: 'mason@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real'
 };
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
-  '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql']
+  '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
+  '007_deal_events.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -41,7 +40,7 @@ const shortlist = {
   summary: 'Searched 350 miles around Tuscaloosa. Two Limiteds under market.',
   listings: [
     { rank: 1, title: '2025 Subaru Ascent Limited, Crimson Red / Slate Black', price: 35884, market_price: 37346,
-      target_price: 34500, walk_away_price: 35500, mileage: 15203, days_on_lot: 121, vin: '4s4wmauD7p3412345',
+      target_price: 34500, mileage: 15203, days_on_lot: 121, vin: '4s4wmauD7p3412345',
       listing_url: 'https://dealer-one.example/ascent', dealer_name: 'Dealer One', dealer_location: 'Johnson City, TN (about 370 mi)',
       dealer_email: 'sales@dealer-one.example', why: 'Price already cut once.' },
     { rank: 2, title: '2024 Subaru Ascent Touring', price: 34433, listing_url: 'https://dealer-two.example/a',
@@ -62,20 +61,20 @@ function response() {
 }
 const json = res => JSON.parse(res.body);
 
-test('the car search endpoint and emails stay off until their secrets are set', () => {
+test('the car search endpoint and dealer email links stay off until their secrets are set', () => {
   assert.equal(carSearchToken({}), null);
   assert.throws(() => carSearchToken({ CAR_SEARCH_TOKEN: 'short' }), ConfigError);
   assert.equal(carSearchToken(environment), token);
-  assert.ok(dealJobSettings({ ...environment, DEAL_LINK_SECRET: '' }), 'the shortlist email carries no links to sign');
-  assert.equal(dealJobSettings({ ...environment, INTAKE_SMTP_USER: '', INTAKE_SMTP_PASSWORD: '' }), null, 'it needs SMTP');
-  assert.ok(dealJobSettings(environment));
+  assert.equal(dealLinkSettings({}), null);
   assert.throws(() => dealLinkSettings({ DEAL_LINK_SECRET: 'short' }), ConfigError);
 });
 
 test('a shortlist is normalized to cents, and every problem in a bad one is reported at once', () => {
   const parsed = parseShortlist(shortlist);
   assert.deepEqual([parsed.listings[0].price_cents, parsed.listings[0].market_price_cents, parsed.listings[0].target_price_cents,
-    parsed.listings[0].walk_away_cents, parsed.listings[0].days_on_lot], [3588400, 3734600, 3450000, 3550000, 121]);
+    parsed.listings[0].days_on_lot], [3588400, 3734600, 3450000, 121]);
+  const older = parseShortlist({ ...shortlist, listings: [{ ...shortlist.listings[0], walk_away_price: 35500 }] });
+  assert.ok(!('walk_away_cents' in older.listings[0]), 'a saved search from before walk-away prices were dropped still submits');
   assert.equal(parsed.listings[0].vin, '4S4WMAUD7P3412345');
   assert.equal(parsed.listings[1].market_price_cents, null);
   assert.equal(parseShortlist({ summary: 'Nothing under budget nearby.', listings: [], dealer_emails: [] }).listings.length, 0);
@@ -114,7 +113,7 @@ test('the intake email carries the command that starts its car search', () => {
   assert.ok(html.includes(`/car-search ${onboardingId}`));
 });
 
-test('a car search goes from intake to a shortlist email to a dealer email Mason sends', async t => {
+test('a car search goes from intake to a shortlist, and its first emails go out from Zoho or to Grokbot', async t => {
   t.mock.method(console, 'error', () => {});
   const pg = await PGlite.create();
   t.after(() => pg.close());
@@ -138,7 +137,7 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
 
   const mail = [];
   const createTransport = () => ({ async sendMail(message) { mail.push(message); }, close() {} });
-  const api = carSearchHandler({ environment, getDatabase: () => sql, dispatch: opts => dispatchDealJobs({ ...opts, createTransport }) });
+  const api = carSearchHandler({ environment, getDatabase: () => sql });
   const get = async (intake, authorization = `Bearer ${token}`) => {
     const res = response();
     await api({ method: 'GET', url: `/api/car-search?intake=${intake}`, headers: { host: 'www.steermeright.com', authorization } }, res);
@@ -175,34 +174,23 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.equal((await pg.query('SELECT count(*)::int AS n FROM deals')).rows[0].n, 0);
   });
 
-  await t.test('a valid shortlist is saved and emailed to Mason, with no send links', async () => {
+  await t.test('a valid shortlist is saved, and nothing is emailed', async () => {
     const res = await post({ intake_id: id, shortlist });
     assert.equal(res.statusCode, 200);
     const body = json(res);
     drafts = (await pg.query('SELECT * FROM dealer_email_drafts ORDER BY created_at')).rows;
-    assert.deepEqual(body, { ok: true, cars: 2, email_to_mason: 'sent',
-      dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
+    assert.deepEqual(body, { ok: true, cars: 2, dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
     assert.deepEqual(drafts.map(row => [row.listing_ranks, row.status]), [[[1], 'pending']]);
 
-    assert.equal(mail.length, 1);
-    assert.equal(mail[0].to, 'mason@steermeright.com');
-    assert.equal(mail[0].subject, 'Car search ready: Subaru Ascent · Pat Buyer · 2 cars, 1 dealer email');
-    for (const expected of ['Two Limiteds under market.', `Intake ID: ${id}`, 'go to Grokbot',
-      '1. 2025 Subaru Ascent Limited, Crimson Red / Slate Black · $35,884 · 15,203 mi · 121 days on lot',
-      '   Market $37,346 · target $34,500 · walk away at $35,500']) {
-      assert.ok(mail[0].text.includes(expected), expected);
-    }
-    assert.ok(!(mail[0].text + mail[0].html).includes('/api/dealer-email'), 'no send links');
-    assert.ok(!/\bbrief\b/i.test(mail[0].text + mail[0].html));
+    assert.equal(mail.length, 0);
     assert.equal(json(await get(id)).shortlist.cars, 2);
   });
 
-  await t.test('submitting again replaces the shortlist and emails Mason again', async () => {
+  await t.test('submitting again replaces the shortlist', async () => {
     const res = await post({ intake_id: id, shortlist: { ...shortlist, listings: shortlist.listings.slice(0, 1) } });
     assert.equal(res.statusCode, 200);
     assert.equal(json(res).cars, 1);
     assert.equal((await pg.query('SELECT count(*)::int AS n FROM deal_listings')).rows[0].n, 1);
-    assert.equal(mail.length, 2);
     drafts = (await pg.query('SELECT * FROM dealer_email_drafts')).rows;
     assert.equal(drafts.length, 1);
   });
@@ -217,7 +205,7 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.equal(view.headers['x-robots-tag'], 'noindex, nofollow');
     assert.ok(view.body.includes('2025 Subaru Ascent Limited availability'));
     assert.ok(view.body.includes('name="action" value="send"'));
-    assert.equal(mail.length, 2, 'opening the link sends nothing');
+    assert.equal(mail.length, 0, 'opening the link sends nothing');
 
     const missing = response();
     await page({ method: 'GET', url: '/api/dealer-email?token=bad', headers: { host: 'www.steermeright.com' } }, missing);
@@ -236,9 +224,9 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     await page(request(), sent);
     assert.equal(sent.statusCode, 303);
     assert.match(sent.headers.location, /&done=sent$/);
-    assert.equal(mail.length, 3);
-    assert.deepEqual([mail[2].to, mail[2].subject, mail[2].text], ['internet@dealer-one.example', 'Ascent Limited: out-the-door price?', 'Hello,\n\nEdited by Mason.\n']);
-    assert.deepEqual(mail[2].from, { name: 'Steer Me Right', address: 'mason@steermeright.com' });
+    assert.equal(mail.length, 1);
+    assert.deepEqual([mail[0].to, mail[0].subject, mail[0].text], ['internet@dealer-one.example', 'Ascent Limited: out-the-door price?', 'Hello,\n\nEdited by Mason.\n']);
+    assert.deepEqual(mail[0].from, { name: 'Steer Me Right', address: 'mason@steermeright.com' });
     assert.equal((await pg.query('SELECT status FROM dealer_email_drafts WHERE id = $1', [drafts[0].id])).rows[0].status, 'sent');
 
     const twice = response();
@@ -246,7 +234,7 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.equal(twice.statusCode, 409);
     assert.ok(twice.body.includes('This email was already sent'));
     assert.ok(!twice.body.includes('value="send"'), 'a sent draft has no send button');
-    assert.equal(mail.length, 3, 'a second press sends nothing');
+    assert.equal(mail.length, 1, 'a second press sends nothing');
   });
 
   await t.test('once a dealer email has gone out, the shortlist cannot be replaced or handed to Grokbot', async () => {
@@ -258,7 +246,7 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.deepEqual([handoff.statusCode, json(handoff).error], [409, 'started_in_zoho']);
   });
 
-  await t.test('a handoff gives Grokbot the deal without the buyer\'s details or the walk-away price', async () => {
+  await t.test('a handoff gives Grokbot the deal, and the buyer\'s details stay in Neon', async () => {
     const other = await addIntake();
     assert.equal((await post({ intake_id: other, action: 'handoff' })).statusCode, 409, 'no shortlist yet');
     assert.equal((await post({ intake_id: other, action: 'send' })).statusCode, 400);
@@ -283,7 +271,7 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
       dealers: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example', ranks: [1],
         subject: '2025 Subaru Ascent Limited availability', body: 'Hello,\n\nIs the Ascent still available?\n\nMason' }]
     });
-    for (const hidden of ['Pat Buyer', 'pat@example.test', '205-555-0100', '12 Private Lane', 'ABC1234', '35500', 'Steer Me Right']) {
+    for (const hidden of ['Pat Buyer', 'pat@example.test', '205-555-0100', '12 Private Lane', 'ABC1234', 'Steer Me Right']) {
       assert.ok(!res.body.includes(hidden), hidden);
     }
 
@@ -301,6 +289,19 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
       headers: { host: 'www.steermeright.com' } }, view);
     assert.ok(view.body.includes('Handed to Grokbot'));
     assert.ok(!view.body.includes('value="send"'), 'an old link cannot send a handed-off email from Zoho');
+  });
+
+  await t.test('Grokbot logs each deal\'s quotes in deal_events, once per Gmail message', async () => {
+    const other = (await pg.query('SELECT onboarding_id FROM deals ORDER BY created_at DESC LIMIT 1')).rows[0].onboarding_id;
+    const log = (kind, message, otd) => pg.query(`INSERT INTO deal_events (onboarding_id, kind, dealer_name, vin, otd_cents, itemized, source_message_id)
+      VALUES ($1, $2, 'Dealer One', '4S4WMAUD7P3412345', $3, $4, $5) ON CONFLICT DO NOTHING RETURNING id`,
+    [other, kind, otd, JSON.stringify({ sale_price_cents: 3588400, doc_fee_cents: 22500 }), message]);
+    assert.equal((await log('quote', 'gmail-1', 3870900)).rows.length, 1);
+    assert.equal((await log('quote', 'gmail-1', 3870900)).rows.length, 0, 'a rerun logs the same email once');
+    assert.equal((await log('counter', 'gmail-2', 3720000)).rows.length, 1);
+    await assert.rejects(log('offer', 'gmail-3', 1), /deal_events_kind_valid/);
+    await assert.rejects(log('quote', 'gmail-4', -1), /deal_events_otd_valid/);
+    await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind) VALUES ($1, 'note')`, [crypto.randomUUID()]), /foreign key/);
   });
 });
 
@@ -357,12 +358,4 @@ test('handoff posts the server\'s handoff to Grokbot\'s webhook with its key', a
 
   await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment: { ...environment, DEALER_BOT_URL: 'http://bot.example' },
     fetchImpl: fetchFor(null) }), /https/);
-});
-
-test('the daily cron retries shortlist emails beside the other outboxes', async () => {
-  const secret = 'test-secret-for-bounded-cron-authentication';
-  const request = { method: 'GET', headers: { authorization: `Bearer ${secret}` } };
-  const res = { headers: {}, setHeader() {}, end(value) { this.body = JSON.parse(value); } };
-  await outboxHandler({ environment: { CRON_SECRET: secret }, getDatabase() { throw Error('must not connect'); } })(request, res);
-  assert.equal(res.body.workers.deals.configured, false);
 });

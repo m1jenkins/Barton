@@ -3,7 +3,6 @@ import { database } from './_lib/db.js';
 import { leadDestination } from './_lib/lead-forward-outbox.js';
 import { analyticsDestination } from './_lib/analytics-outbox.js';
 import { intakeEmailSettings } from './_lib/intake-email.js';
-import { dealJobSettings, runDealWorker } from './_lib/deal-jobs.js';
 import { runLeadWorker, runAnalyticsWorker, runIntakeEmailWorker } from './_lib/outbox-workers.js';
 import { header, sendJson } from './_lib/http.js';
 
@@ -12,7 +11,7 @@ const digest = value => createHash('sha256').update(value).digest();
 
 export function outboxHandler({ environment = process.env, getDatabase = database,
   leadWorker = runLeadWorker, analyticsWorker = runAnalyticsWorker,
-  intakeEmailWorker = runIntakeEmailWorker, dealWorker = runDealWorker, logger = console } = {}) {
+  intakeEmailWorker = runIntakeEmailWorker, logger = console } = {}) {
   return async (req, res) => {
     if (req.method !== 'GET') return sendJson(res, 405, { ok: false, error: 'method_not_allowed' }, { Allow: 'GET' });
     const secret = environment.CRON_SECRET;
@@ -22,7 +21,7 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
 
     let sql;
     const jobs = [['leads', leadDestination, leadWorker], ['analytics', analyticsDestination, analyticsWorker],
-      ['intake_email', intakeEmailSettings, intakeEmailWorker], ['deals', dealJobSettings, dealWorker]];
+      ['intake_email', intakeEmailSettings, intakeEmailWorker]];
     const results = await Promise.all(jobs.map(async ([name, destination, worker]) => {
       try {
         if (!destination(environment)) return [name, { configured: false, claimed: 0, sent: 0, failed: 0, exhausted: null }];
