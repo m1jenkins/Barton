@@ -22,6 +22,8 @@ outputs
 docs
 data
 scripts
+# Shortlists saved locally by the /car-search skill.
+.car-searches
 AGENTS.md
 CLAUDE.md
 

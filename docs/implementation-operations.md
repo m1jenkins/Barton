@@ -118,6 +118,35 @@ Delivery is SMTP through the steermeright.com Zoho mailbox (`api/_lib/intake-ema
 
 Failures store only the SMTP error code (`Intake email failed (EAUTH)`), never the message or credentials, and log `[intake_email_failed]`. Check delivery with `SELECT status, attempts, last_error, sent_at FROM intake_email_outbox ORDER BY created_at DESC;`. Apply migration 004 before deploying code that writes the table.
 
+## Car search — November 2, 2026
+
+Mason runs each car search himself in Claude Code on his Max plan. A search is not started automatically: Anthropic's terms for subscription plans cover ordinary use of Claude Code, not automated runs triggered by customer orders.
+
+How a search runs:
+
+1. The paid intake email now ends its summary with a ready-to-copy command, `/car-search <intake ID>`.
+2. In Claude Code, opened on this repository, Mason runs that command. The skill (`.claude/skills/car-search/SKILL.md`) loads the search details with `node scripts/car-search.mjs get <intake ID>` (`GET /api/car-search`). It then searches the MarketCheck connector, checks each strong candidate's VIN, history and market value, and sets a target and walk-away price for each car. It also drafts one first email per dealer, using the dealer email MarketCheck lists or one published on the dealer's site.
+3. The skill shows Mason the ranked table, then saves `.car-searches/<intake ID>.json` (git-ignored) and runs `node scripts/car-search.mjs submit …` (`POST /api/car-search`). The server checks the shortlist, reports every problem at once if any, and saves `deals`, `deal_listings` and `dealer_email_drafts`. In the same transaction it queues the `email_shortlist` job in `deal_jobs`, and it sends that email right after commit. The response, and Mason's email, give one **Review and send** link per draft. Submitting again replaces the shortlist until one of its dealer emails has gone out.
+4. `GET /api/dealer-email?token=…` shows one draft with editable To, Subject and Message fields. Only the page's same-origin POST sends or discards it. Opening the link never sends anything, so mail scanners that follow links are harmless. Dealer emails go out through the same Zoho mailbox as intake emails, so replies land in Mason's inbox. Each link is the draft ID plus an HMAC under `DEAL_LINK_SECRET`, and links expire after 30 days.
+
+Market value, target and walk-away prices go to Mason's email and the database only, never into a dealer email. The daily `/api/outbox-dispatch` cron (`workers.deals`) retries any shortlist email that failed.
+
+Setup, in order:
+
+1. Apply `db/005_deal_search.sql` to Neon before deploying. Paid intakes do not touch the new tables, so the intake flow does not depend on it, but `/api/car-search` does.
+2. Generate two random values, for example with `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`. Set them in Vercel production as `CAR_SEARCH_TOKEN` and `DEAL_LINK_SECRET`, then redeploy.
+3. On Mason's computer, create `.env.local` in the repository root (git-ignored) with the line `CAR_SEARCH_TOKEN=<the same token>`.
+4. Keep the MarketCheck connector connected on claude.ai, so Claude Code sessions can use it.
+
+| Variable | Purpose |
+| --- | --- |
+| `CAR_SEARCH_TOKEN` | Bearer token for `/api/car-search`, 32+ characters, in Vercel and in Mason's `.env.local`. Unset in Vercel means the endpoint returns 503. |
+| `DEAL_LINK_SECRET` | 32+ random characters that sign the dealer email links. Required to submit a shortlist. Changing it breaks links already sent. |
+| `CAR_SEARCH_URL` | Local only and optional: the deployment `scripts/car-search.mjs` talks to, default `https://www.steermeright.com`. |
+| `DEALER_EMAIL_FROM_NAME` | Optional sender name on dealer emails, default `Steer Me Right`. |
+
+Check a deal with `SELECT d.onboarding_id, d.shortlisted_at, j.status, j.attempts, j.last_error FROM deals d LEFT JOIN deal_jobs j ON j.deal_id = d.id ORDER BY d.created_at DESC;`, and its dealer emails with `SELECT dealer_name, to_email, status, sent_at, last_error FROM dealer_email_drafts ORDER BY created_at DESC;`. Failures store only an error code (`Shortlist email failed (EAUTH)`, `Dealer email failed (EAUTH)`) and log `[deal_job_failed]` or `[dealer_email_failed]`.
+
 ## Required environment
 
 | Variable | Requirement |

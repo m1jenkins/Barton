@@ -7,7 +7,7 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [content-approval-2026-10-01.md](content-approval-2026-10-01.md): owner approval of all current website content; replaces older pending-review instructions for public copy.
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
-- [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook and onboarding (the API contract).
+- [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook, onboarding (the API contract), the paid intake email and the `/car-search` workflow.
 - [resource-release-2026-10-04.md](resource-release-2026-10-04.md): owner-directed release of three source-checked guides and the local quote worksheet.
 - [repository-audit-2026-10-04.md](repository-audit-2026-10-04.md): repository audit, lead/form reliability fixes, expanded checks, verification and prioritized follow-up work.
 - [checkout-streamline-2026-10-05.md](checkout-streamline-2026-10-05.md): the October 4–6 checkout/lead/webhook outage and the plan-first checkout that replaced the chat intake.

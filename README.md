@@ -16,7 +16,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `accessibility.css/js`, `openai-ads.js`, `privacy-choices.js` | Small shared helpers loaded by pages. `privacy-choices.js` adds the footer ad-measurement opt-out. |
 | `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the payment-success celebration. |
 | `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals); `assets/mascot/` holds the mascot sprites, built by `scripts/build-mascot-sprites.mjs` from `assets/mascot/reference/` (not deployed). |
-| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
+| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, `car-search` (used by the `/car-search` skill), the `dealer-email` send page, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
+| `.claude/skills/car-search/` | The `/car-search` Claude Code skill Mason runs for each paid intake. Not deployed. See "Car search" in [docs/implementation-operations.md](docs/implementation-operations.md). |
 | `db/` | PostgreSQL migrations, applied in number order. |
 | `vercel.json` | Redirects and security headers. Check with `node scripts/check-redirects.mjs --config-only`. |
 | `sitemap.xml`, `robots.txt`, `llms.txt`, `pricing.md` | Public files for search engines and AI assistants. Keep prices in `pricing.md`, `llms.txt` and `schedule.html` in sync. |

@@ -14,7 +14,7 @@ const PLAN_NAMES = Object.freeze({
 });
 
 // Chat intake labels first (buying/intake.js), then the older form's fields.
-const SEARCH_FIELDS = Object.freeze([
+export const SEARCH_FIELDS = Object.freeze([
   ['preferred_makes', 'Car'],
   ['vehicle_type', 'Vehicle type'],
   ['condition', 'New or used'],
@@ -66,13 +66,13 @@ export function intakeEmailSettings(environment = process.env) {
   };
 }
 
-const escapeHtml = value => String(value).replace(/[&<>"']/g, character => (
+export const escapeHtml = value => String(value).replace(/[&<>"']/g, character => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]
 ));
-const oneLine = value => String(value ?? '').replace(/\s+/g, ' ').trim();
-const display = value => Array.isArray(value) ? value.join(', ') : String(value ?? '').trim();
+export const oneLine = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+export const display = value => Array.isArray(value) ? value.join(', ') : String(value ?? '').trim();
 
-function centralTime(value) {
+export function centralTime(value) {
   if (!value) return '';
   return new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric',
@@ -144,8 +144,11 @@ export function renderIntakeEmail(row) {
   const subject = oneLine(`Paid intake: ${row.name} · ${car} · ${plan}`).slice(0, 200);
   const summary = `${row.name} paid ${paid} and filled out the intake. Reply to this email to answer the buyer directly.`;
 
+  // The /car-search skill (.claude/skills/car-search) takes the intake ID.
+  const start = `/car-search ${row.onboarding_id}`;
   const text = [
     summary,
+    `\nStart the car search in Claude Code (Barton folder):\n${start}`,
     ...sections.map(([title, rows]) => [`\n${title.toUpperCase()}`, ...rows.map(([label, value]) => `${label}: ${value}`)].join('\n'))
   ].join('\n') + '\n';
 
@@ -163,6 +166,8 @@ export function renderIntakeEmail(row) {
   const html = `<!doctype html><html><body style="margin:0;padding:24px;background:#f5f6f8;font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1d232c">`
     + `<div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:24px">`
     + `<p style="margin:0 0 16px">${escapeHtml(summary)}</p><div style="margin-bottom:8px">${actions}</div>`
+    + `<p style="margin:16px 0 4px;color:#5b6472">Start the car search in Claude Code (Barton folder):</p>`
+    + `<p style="margin:0;padding:10px 12px;background:#f5f6f8;border-radius:6px;font:14px/1.4 Consolas,Menlo,monospace">${escapeHtml(start)}</p>`
     + sections.map(([title, rows]) => `<h2 style="margin:24px 0 8px;font-size:16px">${escapeHtml(title)}</h2>${table(rows)}`).join('')
     + `</div></body></html>`;
 

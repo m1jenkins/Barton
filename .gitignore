@@ -7,3 +7,4 @@ node_modules/
 .lavish/
 npm-debug.log*
 .dr-*
+.car-searches/
