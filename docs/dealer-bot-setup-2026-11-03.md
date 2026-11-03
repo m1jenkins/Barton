@@ -252,7 +252,7 @@ To let quotes cross deals for new cars, replace item 5 with: "You may use an ite
 
 ### 11. Give Grokbot its rules for Neon
 
-Mason connected Grokbot to the site's Neon database, `barton-checkout-db`, on November 3, as the database owner. He chose to let it read buyer data so it can help across the business. This prompt tells it where things are and limits what it writes. Migration `db/007_deal_events.sql` has to be on Neon first; it was applied November 3.
+Mason connected Grokbot to the site's Neon database, `barton-checkout-db`, on November 3, as the database owner. He chose to let it read buyer data so it can help across the business. This prompt tells it where things are and limits what it writes. Migrations `db/007_deal_events.sql` and `db/008_deal_events_per_car.sql` have to be on Neon first; both were applied November 3.
 
 ```text
 You're connected to my Neon database, barton-checkout-db, as its owner. Update dealer-rules.md and dealer-playbook.md to match what follows, update the "Dealer summary" routine as item 6 says, then tell me what you changed.
@@ -266,7 +266,9 @@ You're connected to my Neon database, barton-checkout-db, as its owner. Update d
 - kind is one of: first_email_sent, quote (each price a dealer gives), counter (each counter you send), agreed, dropped (the reason in note), note (each "Note for <deal ID>" I give you), closed, reopened.
 - onboarding_id is the deal's intake_id. Set dealer_name and vin when the event is about one car.
 - otd_cents is the out-the-door price in cents (dollars times 100). itemized is a JSON object of the quote's lines, also in cents, for example {"sale_price_cents": 3395000, "doc_fee_cents": 22500, "tax_cents": 215900, "title_registration_cents": 15000}. Leave out lines the dealer didn't give.
-- source_message_id is the Gmail message ID the event came from, or the ID of the email you sent. Always insert with ON CONFLICT DO NOTHING, so a rerun never logs the same email twice.
+- Log one row per car. When one email quotes two cars, or one counter answers two, each car gets its own row with its own vin.
+- source_message_id is the Gmail message ID the event came from, or the ID of the email you sent. Always insert with ON CONFLICT DO NOTHING, so a rerun never logs the same email twice for the same car.
+- Events from chat (note, closed, reopened) have no Gmail ID, so the table can't catch a repeat. Check the deal's rows before adding one.
 - Example: INSERT INTO deal_events (onboarding_id, kind, dealer_name, vin, otd_cents, itemized, note, source_message_id) VALUES ('<intake_id>', 'quote', 'Wallace Imports', '<VIN>', 3870900, '{"sale_price_cents": 3588400, "doc_fee_cents": 22500}', 'first quote, tint still on', '<Gmail message ID>') ON CONFLICT DO NOTHING;
 4. THE BUYER'S NAME. When I say "Buyer is ready on <deal ID>", read the name from onboarding_submissions and put it on the agreed dealer's buyer's order. This replaces "Buyer's name for <deal ID> is ...".
 5. DEALER EMAILS DON'T CHANGE. They never carry the buyer's phone, email or address, and never the name until I say the buyer is ready. The Auto-review rules stay as they are.

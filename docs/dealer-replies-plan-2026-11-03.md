@@ -1,6 +1,6 @@
 # Dealer replies: Grokbot negotiates (November 3, 2026)
 
-Status: the handoff is live (November 3), and migrations 006 and 007 are on Neon. Grokbot also reads and writes Neon directly (step 11 of the setup doc). The decisions below are Mason's, from the November 3 planning session.
+Status: the handoff is live (November 3), and migrations 006 to 008 are on Neon. Grokbot also reads and writes Neon directly (step 11 of the setup doc). The decisions below are Mason's, from the November 3 planning session.
 
 After `/car-search` drafts the first emails, dealers answer. Today Mason reads and answers every reply himself. With this change, work splits into three parts:
 
@@ -121,7 +121,7 @@ Grokbot asks the agreed dealer for the buyer's order and checks it line by line 
 - `.claude/skills/car-search/SKILL.md`: step 7 shows the table and drafts, then hands off when Mason says "send them".
 - `.claude/skills/car-negotiation/` is no longer part of the flow. Mason decides whether to keep it for a second opinion on a hard quote or delete it. Another session wrote it, and it isn't committed yet.
 - `/api/dealer-email` keeps working for deals whose first emails went out through Zoho. Remove it once those deals finish.
-- `db/007_deal_events.sql`: `deal_events`, where Grokbot logs each deal's first emails, quotes, counters and outcome (setup doc, step 11).
+- `db/007_deal_events.sql` and `db/008_deal_events_per_car.sql`: `deal_events`, where Grokbot logs each deal's first emails, quotes, counters and outcome (setup doc, step 11).
 
 ## Left out to keep it simple
 
@@ -132,7 +132,7 @@ Grokbot asks the agreed dealer for the buyer's order and checks it line by line 
 
 All of Grokbot's own setup is in [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md). The rest:
 
-- **Neon:** migrations 006 and 007 have to be on `barton-checkout-db` before the code and Grokbot use them. Both were applied November 3.
+- **Neon:** migrations 006 to 008 have to be on `barton-checkout-db` before the code and Grokbot use them. All three were applied November 3.
 - **Mason's `.env.local`:** add `DEALER_BOT_URL` and `DEALER_BOT_KEY`, copied from Grokbot's "New deal" routine panel. Never paste them into a chat.
 
 ## Limits

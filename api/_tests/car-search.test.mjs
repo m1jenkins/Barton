@@ -19,7 +19,7 @@ const environment = {
 };
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql']
+  '007_deal_events.sql', '008_deal_events_per_car.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -291,13 +291,16 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     assert.ok(!view.body.includes('value="send"'), 'an old link cannot send a handed-off email from Zoho');
   });
 
-  await t.test('Grokbot logs each deal\'s quotes in deal_events, once per Gmail message', async () => {
+  await t.test('Grokbot logs each deal\'s quotes in deal_events, once per car per Gmail message', async () => {
     const other = (await pg.query('SELECT onboarding_id FROM deals ORDER BY created_at DESC LIMIT 1')).rows[0].onboarding_id;
-    const log = (kind, message, otd) => pg.query(`INSERT INTO deal_events (onboarding_id, kind, dealer_name, vin, otd_cents, itemized, source_message_id)
-      VALUES ($1, $2, 'Dealer One', '4S4WMAUD7P3412345', $3, $4, $5) ON CONFLICT DO NOTHING RETURNING id`,
-    [other, kind, otd, JSON.stringify({ sale_price_cents: 3588400, doc_fee_cents: 22500 }), message]);
+    const log = (kind, message, otd, vin = '4S4WMAUD7P3412345') => pg.query(`INSERT INTO deal_events (onboarding_id, kind, dealer_name, vin, otd_cents, itemized, source_message_id)
+      VALUES ($1, $2, 'Dealer One', $6, $3, $4, $5) ON CONFLICT DO NOTHING RETURNING id`,
+    [other, kind, otd, JSON.stringify({ sale_price_cents: 3588400, doc_fee_cents: 22500 }), message, vin]);
     assert.equal((await log('quote', 'gmail-1', 3870900)).rows.length, 1);
     assert.equal((await log('quote', 'gmail-1', 3870900)).rows.length, 0, 'a rerun logs the same email once');
+    assert.equal((await log('quote', 'gmail-1', 3790000, '4S4WMAUD7P3499999')).rows.length, 1, 'one email can quote two cars');
+    assert.equal((await log('quote', 'gmail-5', 3790000, null)).rows.length, 1);
+    assert.equal((await log('quote', 'gmail-5', 3790000, null)).rows.length, 0, 'a car without a VIN is logged once too');
     assert.equal((await log('counter', 'gmail-2', 3720000)).rows.length, 1);
     await assert.rejects(log('offer', 'gmail-3', 1), /deal_events_kind_valid/);
     await assert.rejects(log('quote', 'gmail-4', -1), /deal_events_otd_valid/);
