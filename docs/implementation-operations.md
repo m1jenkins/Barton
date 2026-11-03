@@ -102,6 +102,22 @@ The session must already have a webhook-verified paid purchase and its tier must
 
 The server persists only allowlisted form fields and drops unknown keys. The allowlist covers the current contact, vehicle, budget, trade-in, preference, consultation-question, and concierge-delivery fields, plus the five the chat intake adds (`model_years`, `financing_status`, `trade_vehicle`, `search_radius`, `needs`); tier and session identity always come from the top-level verified contract. The same transaction creates one `onboarding_complete` outbox event keyed by Checkout Session ID, so browser refreshes cannot duplicate it.
 
+## Paid intake email — November 2, 2026
+
+The paid intake used to reach Postgres only, so Mason never saw it unless he queried the database (the first live buyer's intake sat unseen on November 1). `db/004_intake_email_outbox.sql` adds `intake_email_outbox`, one row per `onboarding_submissions` row, and backfills every intake saved before it. `POST /api/onboarding` inserts the row in the same transaction as the intake, then sends it right after commit. The daily `/api/outbox-dispatch` cron retries anything unsent (`workers.intake_email`), and `npm run intake:dispatch` runs one batch by hand.
+
+Delivery is SMTP through the steermeright.com Zoho mailbox (`api/_lib/intake-email.js`, nodemailer). Each email goes to `INTAKE_EMAIL_TO` (default `mason@steermeright.com`) from `INTAKE_SMTP_USER`, with the buyer as Reply-To. The subject is `Paid intake: <name> · <car> · <plan>`. The body has Text/Call/Email/Open in Stripe buttons, every answered question, the plan, amount and Central-time paid and intake times, the Stripe payment link, checkout session, attribution and any earlier inquiry. A plain-text part carries the same content.
+
+| Variable | Purpose |
+| --- | --- |
+| `INTAKE_SMTP_USER` | Zoho mailbox that sends, e.g. `mason@steermeright.com`. Required with the password; neither set means intakes stay queued and the cron reports `configured:false`. |
+| `INTAKE_SMTP_PASSWORD` | Zoho app-specific password for that mailbox (Zoho Accounts → Security → App Passwords). Store as a sensitive production variable. |
+| `INTAKE_EMAIL_TO` | Optional recipient, default `mason@steermeright.com`. |
+| `INTAKE_SMTP_HOST` / `INTAKE_SMTP_PORT` | Optional, default `smtppro.zoho.com` / `465` (Zoho organization accounts, US data center). |
+| `INTAKE_OUTBOX_MAX_ATTEMPTS` / `INTAKE_OUTBOX_RETRY_SECONDS` | Optional, default 8 attempts with exponential backoff from 60 seconds. |
+
+Failures store only the SMTP error code (`Intake email failed (EAUTH)`), never the message or credentials, and log `[intake_email_failed]`. Check delivery with `SELECT status, attempts, last_error, sent_at FROM intake_email_outbox ORDER BY created_at DESC;`. Apply migration 004 before deploying code that writes the table.
+
 ## Required environment
 
 | Variable | Requirement |

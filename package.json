@@ -22,10 +22,12 @@
     "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check",
     "analytics:dispatch": "node scripts/dispatch-analytics.mjs",
     "leads:dispatch": "node scripts/dispatch-leads.mjs",
+    "intake:dispatch": "node scripts/dispatch-intake-emails.mjs",
     "preview:worksheet": "node scripts/preview-worksheet.mjs",
     "preview:guides": "node scripts/preview-guides.mjs"
   },
   "dependencies": {
+    "nodemailer": "10.1.7",
     "postgres": "3.4.9",
     "stripe": "22.5.0"
   },
