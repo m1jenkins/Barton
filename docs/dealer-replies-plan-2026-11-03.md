@@ -8,7 +8,7 @@ After `/car-search` drafts the first emails, dealers answer. Today Mason reads a
 - **Grokbot** handles everything after that, from a Gmail inbox used only for dealers. It sends the first emails, answers replies, negotiates the best out-the-door price it can on each car, and checks the buyer's order. It runs on its own always-on computer.
 - **Mason** taps to approve emails in Grokbot. He picks the deal once the dealers stop moving, and he tells Grokbot when the buyer is ready to go on the buyer's order.
 
-Zoho (`mason@steermeright.com`) stays for clients and intake emails, and Grokbot never touches it.
+Zoho (`mason@steermeright.com`) stays for clients and intake emails. Grokbot doesn't use it for dealer email. Later on November 3, Mason chose to have Grokbot answer website inquiries from Zoho too, if Grokbot can connect to it: see [client-inquiries-setup-2026-11-03.md](client-inquiries-setup-2026-11-03.md).
 
 Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md).
 
@@ -17,14 +17,14 @@ Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot
 | Question | Decision |
 | --- | --- |
 | Who negotiates | Grokbot, with each car's asking price, market value and target. Mason's call on November 3: sending every price reply back to Claude was too many steps. |
-| Mailboxes | Dealer email moves to a new Gmail inbox that only dealers write to. Grokbot connects to it with Google sign-in. Zoho is for clients only, and Mason handles it himself. |
+| Mailboxes | Dealer email moves to a new Gmail inbox that only dealers write to. Grokbot connects to it with Google sign-in. Zoho is for clients only, and Mason handles it himself. Changed later on November 3: Grokbot answers website inquiries from Zoho, after Mason's tap (client inquiries setup doc). |
 | How fast Grokbot sees a reply | The inbox check ran every 15 minutes on November 3. Step 10 of the setup doc asks for every 5 minutes if Grokbot's schedules allow it. One run works through every new email, so a busy hour can add several minutes. |
 | Approval | Grokbot's default is that nothing sends without Mason's tap on a card. At first, every email works that way. After a week or two of clean drafts, the simple replies (asking for missing lines, keeping it on email, close-outs) send without a tap. Every email with a price in it keeps the tap, matching the planning answer that counter-offers wait for Mason. |
 | Buyer data | Grokbot reads all of Neon, buyer details included. Mason's call on November 3, once Grokbot was connected to Neon: it should be a capable helper across the business. Dealer emails still never carry the buyer's phone, email or address, and the buyer's name goes only on the agreed dealer's buyer's order once Mason says the buyer is ready. |
 | Dealers who go quiet | Left alone. No follow-ups, and Grokbot gets no follow-up routine. |
 | Leverage | A counter-offer may cite another dealer's real out-the-door quote by number, never by dealer name. |
 | First emails | Mason says "send them" at the end of `/car-search`. Claude hands the deal to Grokbot, and Grokbot shows the first emails as cards. |
-| The buyer | Grokbot never writes to the buyer. Mason handles buyers. |
+| The buyer | Grokbot never writes to the buyer. Mason handles buyers. Website inquiries from people who haven't paid are the one exception (client inquiries setup doc). |
 | Where it stops | After the paperwork. When a price is agreed, Grokbot gets the buyer's order and checks it line by line. When the buyer picks a car, Mason tells Grokbot, and Grokbot closes out the deal's other dealers. |
 | When dealers stop moving | Grokbot tells Mason each dealer's best out-the-door price, and he picks. Mason dropped walk-away prices and their rules on November 3: the job is the best deal on the car. |
 | Calls and texts | Mason tells Grokbot in chat, for example "Note for 3f2a9c1b: Wallace offered $31,200 OTD by phone". |
