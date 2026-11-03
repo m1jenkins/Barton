@@ -153,7 +153,7 @@ const ONBOARDING_FIELDS = Object.freeze({
   preferred_makes: 500,
   year_min: 12,
   max_mileage: 20,
-  budget: 80,
+  budget: 300,
   budget_other: 120,
   payment_method: 80,
   trade_in: 80,

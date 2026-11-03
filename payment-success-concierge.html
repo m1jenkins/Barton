@@ -105,7 +105,7 @@
                             <legend class="ps-form__legend">The Car You Want</legend>
                             <div class="ps-form__group">
                                 <label class="ps-form__label" for="ob-makes">What Car Are You Looking For? *</label>
-                                <input class="ps-form__input" type="text" id="ob-makes" name="preferred_makes" required placeholder="A make and model, or the kind of car you need">
+                                <input class="ps-form__input" type="text" id="ob-makes" name="preferred_makes" maxlength="500" required placeholder="A make and model, or the kind of car you need">
                             </div>
                             <div class="ps-form__row ps-form__row--two">
                                 <div class="ps-form__group">
@@ -131,7 +131,7 @@
                             </div>
                             <div class="ps-form__group">
                                 <p class="small-note budget-context">Include taxes, fees, and delivery in this amount.</p><label class="ps-form__label" for="ob-budget">All-in Budget *</label>
-                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
+                                <input class="ps-form__input" type="text" id="ob-budget" name="budget" maxlength="300" required placeholder="e.g. $42,000 out-the-door, $650/month max, flexible for the right car">
                             </div>
                         </fieldset>
 
@@ -140,21 +140,21 @@
                             <div class="ps-form__row ps-form__row--two">
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-name">Full Name *</label>
-                                    <input class="ps-form__input" type="text" id="ob-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+                                    <input class="ps-form__input" type="text" id="ob-name" name="name" maxlength="120" required autocomplete="name" placeholder="Jane Smith">
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-email">Email *</label>
-                                    <input class="ps-form__input" type="email" id="ob-email" name="email" required autocomplete="email" placeholder="jane@example.com">
+                                    <input class="ps-form__input" type="email" id="ob-email" name="email" maxlength="254" required autocomplete="email" placeholder="jane@example.com">
                                 </div>
                             </div>
                             <div class="ps-form__row ps-form__row--two">
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-phone">Phone *</label>
-                                    <input class="ps-form__input" type="tel" id="ob-phone" name="phone" required autocomplete="tel" placeholder="(512) 555-1234">
+                                    <input class="ps-form__input" type="tel" id="ob-phone" name="phone" maxlength="40" required autocomplete="tel" placeholder="(512) 555-1234">
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-city">City / Area *</label>
-                                    <input class="ps-form__input" type="text" id="ob-city" name="city" required autocomplete="address-level2" placeholder="Austin, TX">
+                                    <input class="ps-form__input" type="text" id="ob-city" name="city" maxlength="160" required autocomplete="address-level2" placeholder="Austin, TX">
                                 </div>
                             </div>
                             <div class="ps-form__group">
@@ -252,23 +252,23 @@
                                         <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="fuel-efficient"> High Fuel Efficiency</label>
                                         <label class="ps-form__checkbox-label"><input type="checkbox" name="features" value="other" id="features-other-check"> Other</label>
                                     </div>
-                                    <input class="ps-form__input" type="text" id="features-other-text" name="features_other" placeholder="Please describe…" style="display:none; margin-top:8px;">
+                                    <input class="ps-form__input" type="text" id="features-other-text" name="features_other" maxlength="500" placeholder="Please describe…" style="display:none; margin-top:8px;">
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-colors">Color Preferences <span class="ps-form__hint">(optional)</span></label>
-                                    <input class="ps-form__input" type="text" id="ob-colors" name="colors" placeholder="e.g. White, Black, Silver, or 'No preference'">
+                                    <input class="ps-form__input" type="text" id="ob-colors" name="colors" maxlength="300" placeholder="e.g. White, Black, Silver, or 'No preference'">
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-dealbreakers">Deal-Breakers <span class="ps-form__hint">(optional)</span></label>
-                                    <textarea class="ps-form__textarea" id="ob-dealbreakers" name="dealbreakers" rows="3" placeholder="Anything you absolutely don't want, certain brands, features, colors, prior accidents, etc."></textarea>
+                                    <textarea class="ps-form__textarea" id="ob-dealbreakers" name="dealbreakers" maxlength="2000" rows="3" placeholder="Anything you absolutely don't want, certain brands, features, colors, prior accidents, etc."></textarea>
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-delivery-address">Delivery or Pickup Location <span class="ps-form__hint">(if delivery coordination is available for your purchase)</span></label>
-                                    <textarea class="ps-form__textarea" id="ob-delivery-address" name="delivery_address" rows="2" placeholder="Address or city, plus any delivery or pickup notes"></textarea>
+                                    <textarea class="ps-form__textarea" id="ob-delivery-address" name="delivery_address" maxlength="1000" rows="2" placeholder="Address or city, plus any delivery or pickup notes"></textarea>
                                 </div>
                                 <div class="ps-form__group">
                                     <label class="ps-form__label" for="ob-notes">Additional Notes <span class="ps-form__hint">(optional)</span></label>
-                                    <textarea class="ps-form__textarea" id="ob-notes" name="notes" rows="3" placeholder="Anything else we should know, special requests, accessibility needs, delivery preferences, etc."></textarea>
+                                    <textarea class="ps-form__textarea" id="ob-notes" name="notes" maxlength="3000" rows="3" placeholder="Anything else we should know, special requests, accessibility needs, delivery preferences, etc."></textarea>
                                 </div>
                             </fieldset>
                         </details>
@@ -298,6 +298,6 @@
   <div class="footer-bottom"><span>© 2026 Steer Me Right</span><span id="saved-indicator" role="status"></span></div>
 </footer><script src="/script.js?v=2e08861e8d34"></script>
 <script type="module" src="/buying/app.js?v=44b1a48f8182"></script>
-<script type="module" src="/buying/intake-chat.js?v=608830bb266b"></script>
+<script type="module" src="/buying/intake-chat.js?v=d0a922615655"></script>
 </body>
 </html>

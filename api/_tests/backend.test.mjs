@@ -169,6 +169,29 @@ test('onboarding accepts fields only for a supported paid tier contract', () => 
   assert.equal(Object.hasOwn(result.fields, 'ignored_field'), false);
 });
 
+test('every intake form text field stops at the length the server accepts', async () => {
+  // A buyer's 114-character budget passed the form and failed the server, so her paid intake never saved.
+  const base = { name: 'Ada Buyer', email: 'ada@example.com', phone: '512-555-0100', city: 'Austin, TX' };
+  for (const page of ['payment-success.html', 'payment-success-concierge.html', 'payment-success-fullservice.html']) {
+    const html = await readFile(new URL(`../../${page}`, import.meta.url), 'utf8');
+    const form = html.match(/<form[^>]*id="onboarding-form"[\s\S]*?<\/form>/)[0];
+    const fields = [...form.matchAll(/<(?:input|textarea)\b[^>]*>/g)]
+      .map(([tag]) => tag)
+      .filter((tag) => /\bname="/.test(tag) && !/type="(?:hidden|checkbox|radio|number)"/.test(tag));
+    assert.ok(fields.length > 0, page);
+    for (const tag of fields) {
+      const name = tag.match(/\bname="([a-z_]+)"/)[1];
+      const max = Number(tag.match(/\bmaxlength="(\d+)"/)?.[1]);
+      assert.ok(max > 0, `${page} ${name} needs a maxlength`);
+      const value = name === 'email' ? `${'a'.repeat(max - 12)}@example.com` : 'x'.repeat(max);
+      const result = validateOnboardingPayload({ session_id: 'cs_test_1234567890', tier: 'full_service', fields: { ...base, [name]: value } });
+      assert.equal((result[name] ?? result.fields[name]).length, max, `${page} ${name}`);
+    }
+  }
+  const budget = "30k down + financing - hoping to stay around (even better if it's under) 1k per month < flexible for the right car";
+  assert.equal(validateOnboardingPayload({ session_id: 'cs_test_1234567890', tier: 'full_service', fields: { ...base, budget } }).fields.budget, budget);
+});
+
 test('only a paid one-time Checkout Session is a purchase event', () => {
   const base = {
     type: 'checkout.session.completed',
