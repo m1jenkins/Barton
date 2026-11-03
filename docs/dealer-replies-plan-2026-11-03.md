@@ -8,7 +8,7 @@ After `/car-search` drafts the first emails, dealers answer. Today Mason reads a
 - **Grokbot** handles everything after that, from a Gmail inbox used only for dealers. It sends the first emails, answers replies, negotiates the best out-the-door price it can on each car, and checks the buyer's order. It runs on its own always-on computer.
 - **Mason** taps to approve emails in Grokbot. He picks the deal once the dealers stop moving, and he tells Grokbot when the buyer is ready to go on the buyer's order.
 
-Zoho (`mason@steermeright.com`) stays for clients and intake emails. Grokbot doesn't use it for dealer email. Later on November 3, Mason chose to have Grokbot answer website inquiries from Zoho too, if Grokbot can connect to it: see [client-inquiries-setup-2026-11-03.md](client-inquiries-setup-2026-11-03.md).
+Zoho (`mason@steermeright.com`) stays for clients and intake emails. Grokbot doesn't use it for dealer email. Later on November 3, Mason chose to have a separate Grokbot assistant, Client Outreach, answer website inquiries as `mason@steermeright.com`, through a Gmail relay that sends via Zoho: see [client-inquiries-setup-2026-11-03.md](client-inquiries-setup-2026-11-03.md).
 
 Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md).
 
@@ -17,7 +17,7 @@ Grokbot's setup steps, its rules and its negotiation playbook are in [dealer-bot
 | Question | Decision |
 | --- | --- |
 | Who negotiates | Grokbot, with each car's asking price, market value and target. Mason's call on November 3: sending every price reply back to Claude was too many steps. |
-| Mailboxes | Dealer email moves to a new Gmail inbox that only dealers write to. Grokbot connects to it with Google sign-in. Zoho is for clients only, and Mason handles it himself. Changed later on November 3: Grokbot answers website inquiries from Zoho, after Mason's tap (client inquiries setup doc). |
+| Mailboxes | Dealer email moves to a new Gmail inbox that only dealers write to. Grokbot connects to it with Google sign-in. Zoho is for clients only, and Mason handles it himself. Changed later on November 3: Grokbot's Client Outreach assistant answers website inquiries as `mason@steermeright.com`, after Mason's tap (client inquiries setup doc). |
 | How fast Grokbot sees a reply | The inbox check ran every 15 minutes on November 3. Step 10 of the setup doc asks for every 5 minutes if Grokbot's schedules allow it. One run works through every new email, so a busy hour can add several minutes. |
 | Approval | Grokbot's default is that nothing sends without Mason's tap on a card. At first, every email works that way. After a week or two of clean drafts, the simple replies (asking for missing lines, keeping it on email, close-outs) send without a tap. Every email with a price in it keeps the tap, matching the planning answer that counter-offers wait for Mason. |
 | Buyer data | Grokbot reads all of Neon, buyer details included. Mason's call on November 3, once Grokbot was connected to Neon: it should be a capable helper across the business. Dealer emails still never carry the buyer's phone, email or address, and the buyer's name goes only on the agreed dealer's buyer's order once Mason says the buyer is ready. |
