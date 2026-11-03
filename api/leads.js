@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { database } from './_lib/db.js';
 import { leadDestination, dispatchLeadForwardSafely } from './_lib/lead-forward-outbox.js';
+import { leadEmailQueued, dispatchLeadEmailsSafely } from './_lib/lead-email.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { verifyTurnstile } from './_lib/turnstile.js';
 import { idempotencyKey, payloadHash, validateLeadPayload } from './_lib/validation.js';
@@ -38,13 +39,14 @@ export function leadHandler({ getDatabase = database, verifyToken = verifyTurnst
     if (prior) {
       if (!matchesLeadRequest(prior, hash)) throw new HttpError(409, 'idempotency_conflict', 'Idempotency-Key was already used');
       const destination = leadDestination();
-      await dispatchLeadForwardSafely({ sql, leadId: prior.id });
+      await Promise.all([dispatchLeadForwardSafely({ sql, leadId: prior.id }), dispatchLeadEmailsSafely({ sql, leadId: prior.id })]);
       return sendJson(res, 200, { ok: true, lead_id: prior.id, forwarding_configured: Boolean(destination) });
     }
 
     const turnstileVerified = await verifyToken(lead.turnstile_token);
     const leadId = randomUUID();
     const destination = leadDestination();
+    const notifyByEmail = leadEmailQueued();
     const persisted = await sql.begin(async (tx) => {
       const inserted = await tx`
         INSERT INTO leads (
@@ -70,10 +72,20 @@ export function leadHandler({ getDatabase = database, verifyToken = verifyTurnst
           ON CONFLICT (lead_id) DO NOTHING
         `;
       }
+      if (notifyByEmail) {
+        await tx`
+          INSERT INTO lead_email_outbox (lead_id) VALUES (${record.id})
+          ON CONFLICT (lead_id) DO NOTHING
+        `;
+      }
       return { record, created: inserted.length === 1 };
     });
 
-    await dispatchLeadForwardSafely({ sql, leadId: persisted.record.id });
+    // Both notifications run after commit and swallow their own failures.
+    await Promise.all([
+      dispatchLeadForwardSafely({ sql, leadId: persisted.record.id }),
+      dispatchLeadEmailsSafely({ sql, leadId: persisted.record.id })
+    ]);
     if (persisted.created) {
       notify({
         eventType: 'lead_created',
