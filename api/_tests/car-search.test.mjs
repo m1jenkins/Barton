@@ -20,7 +20,7 @@ const environment = {
   INTAKE_SMTP_USER: 'mason@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real'
 };
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
-  '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql']
+  '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -49,7 +49,7 @@ const shortlist = {
   ],
   dealer_emails: [
     { dealer_name: 'Dealer One', to: 'sales@dealer-one.example', listing_ranks: [1],
-      subject: '2025 Subaru Ascent Limited availability', body: 'Hello,\n\nIs the Ascent still available?\n\nMason\nSteer Me Right' }
+      subject: '2025 Subaru Ascent Limited availability', body: 'Hello,\n\nIs the Ascent still available?\n\nMason' }
   ]
 };
 
@@ -66,8 +66,8 @@ test('the car search endpoint and emails stay off until their secrets are set', 
   assert.equal(carSearchToken({}), null);
   assert.throws(() => carSearchToken({ CAR_SEARCH_TOKEN: 'short' }), ConfigError);
   assert.equal(carSearchToken(environment), token);
-  assert.equal(dealJobSettings({ ...environment, DEAL_LINK_SECRET: '' }), null, 'the shortlist email needs link signing');
-  assert.equal(dealJobSettings({ ...environment, INTAKE_SMTP_USER: '', INTAKE_SMTP_PASSWORD: '' }), null, 'and SMTP');
+  assert.ok(dealJobSettings({ ...environment, DEAL_LINK_SECRET: '' }), 'the shortlist email carries no links to sign');
+  assert.equal(dealJobSettings({ ...environment, INTAKE_SMTP_USER: '', INTAKE_SMTP_PASSWORD: '' }), null, 'it needs SMTP');
   assert.ok(dealJobSettings(environment));
   assert.throws(() => dealLinkSettings({ DEAL_LINK_SECRET: 'short' }), ConfigError);
 });
@@ -120,17 +120,21 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
   t.after(() => pg.close());
   const sql = tagged(pg);
   for (const migration of migrations) await pg.exec(migration);
-  const id = crypto.randomUUID(), attempt = crypto.randomUUID(), purchase = crypto.randomUUID(), session = `cs_live_${id}`;
-  await pg.query(`INSERT INTO checkout_attempts (id, client_reference_id, idempotency_key, request_hash, tier_id, expected_amount, status)
-    VALUES ($1, $1, $2, $3, 'full_service', 39500, 'paid')`, [attempt, attempt, 'a'.repeat(64)]);
-  await pg.query(`INSERT INTO stripe_events (event_id, event_type, checkout_session_id, livemode, stripe_created_at)
-    VALUES ($1, 'checkout.session.completed', $2, true, now())`, [session, session]);
-  await pg.query(`INSERT INTO purchases (id, checkout_session_id, checkout_attempt_id, client_reference_id, stripe_event_id,
-    stripe_payment_intent_id, tier_id, amount_total, currency, payment_status, livemode, paid_at)
-    VALUES ($1, $2, $3, $4, $5, 'pi_123', 'full_service', 39500, 'usd', 'paid', true, now())`, [purchase, session, attempt, attempt, session]);
-  await pg.query(`INSERT INTO onboarding_submissions (id, checkout_session_id, purchase_id, idempotency_key, request_hash, tier_id, name, email, phone, city, fields)
-    VALUES ($1, $2, $3, $6, $4, 'full_service', 'Pat Buyer', 'pat@example.test', '205-555-0100', 'Tuscaloosa, AL', $5)`,
-  [id, session, purchase, 'b'.repeat(64), JSON.stringify(fields), id]);
+  const addIntake = async () => {
+    const intake = crypto.randomUUID(), attempt = crypto.randomUUID(), purchase = crypto.randomUUID(), session = `cs_live_${intake}`;
+    await pg.query(`INSERT INTO checkout_attempts (id, client_reference_id, idempotency_key, request_hash, tier_id, expected_amount, status)
+      VALUES ($1, $1, $2, $3, 'full_service', 39500, 'paid')`, [attempt, attempt, 'a'.repeat(64)]);
+    await pg.query(`INSERT INTO stripe_events (event_id, event_type, checkout_session_id, livemode, stripe_created_at)
+      VALUES ($1, 'checkout.session.completed', $2, true, now())`, [session, session]);
+    await pg.query(`INSERT INTO purchases (id, checkout_session_id, checkout_attempt_id, client_reference_id, stripe_event_id,
+      stripe_payment_intent_id, tier_id, amount_total, currency, payment_status, livemode, paid_at)
+      VALUES ($1, $2, $3, $4, $5, 'pi_123', 'full_service', 39500, 'usd', 'paid', true, now())`, [purchase, session, attempt, attempt, session]);
+    await pg.query(`INSERT INTO onboarding_submissions (id, checkout_session_id, purchase_id, idempotency_key, request_hash, tier_id, name, email, phone, city, fields)
+      VALUES ($1, $2, $3, $6, $4, 'full_service', 'Pat Buyer', 'pat@example.test', '205-555-0100', 'Tuscaloosa, AL', $5)`,
+    [intake, session, purchase, 'b'.repeat(64), JSON.stringify(fields), intake]);
+    return intake;
+  };
+  const id = await addIntake();
 
   const mail = [];
   const createTransport = () => ({ async sendMail(message) { mail.push(message); }, close() {} });
@@ -171,24 +175,24 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.equal((await pg.query('SELECT count(*)::int AS n FROM deals')).rows[0].n, 0);
   });
 
-  await t.test('a valid shortlist is saved and Mason gets the send links', async () => {
+  await t.test('a valid shortlist is saved and emailed to Mason, with no send links', async () => {
     const res = await post({ intake_id: id, shortlist });
     assert.equal(res.statusCode, 200);
     const body = json(res);
     drafts = (await pg.query('SELECT * FROM dealer_email_drafts ORDER BY created_at')).rows;
-    const link = `https://www.steermeright.com/api/dealer-email?token=${encodeURIComponent(draftToken(dealLinkSettings(environment), drafts[0].id))}`;
     assert.deepEqual(body, { ok: true, cars: 2, email_to_mason: 'sent',
-      dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example', review_and_send: link }] });
+      dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
     assert.deepEqual(drafts.map(row => [row.listing_ranks, row.status]), [[[1], 'pending']]);
 
     assert.equal(mail.length, 1);
     assert.equal(mail[0].to, 'mason@steermeright.com');
-    assert.equal(mail[0].subject, 'Car search ready: Subaru Ascent · Pat Buyer · 2 cars, 1 email to approve');
-    for (const expected of [link, 'Two Limiteds under market.', `Intake ID: ${id}`,
+    assert.equal(mail[0].subject, 'Car search ready: Subaru Ascent · Pat Buyer · 2 cars, 1 dealer email');
+    for (const expected of ['Two Limiteds under market.', `Intake ID: ${id}`, 'go to Grokbot',
       '1. 2025 Subaru Ascent Limited, Crimson Red / Slate Black · $35,884 · 15,203 mi · 121 days on lot',
       '   Market $37,346 · target $34,500 · walk away at $35,500']) {
       assert.ok(mail[0].text.includes(expected), expected);
     }
+    assert.ok(!(mail[0].text + mail[0].html).includes('/api/dealer-email'), 'no send links');
     assert.ok(!/\bbrief\b/i.test(mail[0].text + mail[0].html));
     assert.equal(json(await get(id)).shortlist.cars, 2);
   });
@@ -245,11 +249,58 @@ test('a car search goes from intake to a shortlist email to a dealer email Mason
     assert.equal(mail.length, 3, 'a second press sends nothing');
   });
 
-  await t.test('once a dealer email has gone out, the shortlist cannot be replaced', async () => {
+  await t.test('once a dealer email has gone out, the shortlist cannot be replaced or handed to Grokbot', async () => {
     const res = await post({ intake_id: id, shortlist });
     assert.equal(res.statusCode, 409);
     assert.equal(json(res).error, 'emails_already_sent');
     assert.equal((await pg.query('SELECT count(*)::int AS n FROM deal_listings')).rows[0].n, 1);
+    const handoff = await post({ intake_id: id, action: 'handoff' });
+    assert.deepEqual([handoff.statusCode, json(handoff).error], [409, 'started_in_zoho']);
+  });
+
+  await t.test('a handoff gives Grokbot the deal without the buyer\'s details or the walk-away price', async () => {
+    const other = await addIntake();
+    assert.equal((await post({ intake_id: other, action: 'handoff' })).statusCode, 409, 'no shortlist yet');
+    assert.equal((await post({ intake_id: other, action: 'send' })).statusCode, 400);
+    assert.equal((await post({ intake_id: other, shortlist })).statusCode, 200);
+
+    const res = await post({ intake_id: other, action: 'handoff' });
+    assert.equal(res.statusCode, 200);
+    const ref = other.slice(0, 8);
+    assert.deepEqual(json(res).handoff, {
+      type: 'new_deal', intake_id: other, deal: ref, label: `Deals/${ref} · Subaru Ascent`,
+      search: { lives_in: 'Tuscaloosa, AL', details: { Car: 'Subaru Ascent', 'Model years': '2024 or newer',
+        'All-in budget': 'Up to $38,000', 'How far': '100 miles', Features: 'AWD, Moonroof' } },
+      summary: shortlist.summary,
+      cars: [
+        { rank: 1, title: '2025 Subaru Ascent Limited, Crimson Red / Slate Black', vin: '4S4WMAUD7P3412345',
+          listing_url: 'https://dealer-one.example/ascent', dealer: 'Dealer One', dealer_location: 'Johnson City, TN (about 370 mi)',
+          dealer_phone: null, asking: 35884, market: 37346, target: 34500, mileage: 15203, days_on_lot: 121, why: 'Price already cut once.' },
+        { rank: 2, title: '2024 Subaru Ascent Touring', vin: null, listing_url: 'https://dealer-two.example/a', dealer: 'Dealer Two',
+          dealer_location: null, dealer_phone: '229-555-0199', asking: 34433, market: null, target: null, mileage: null,
+          days_on_lot: null, why: '' }
+      ],
+      dealers: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example', ranks: [1],
+        subject: '2025 Subaru Ascent Limited availability', body: 'Hello,\n\nIs the Ascent still available?\n\nMason' }]
+    });
+    for (const hidden of ['Pat Buyer', 'pat@example.test', '205-555-0100', '12 Private Lane', 'ABC1234', '35500', 'Steer Me Right']) {
+      assert.ok(!res.body.includes(hidden), hidden);
+    }
+
+    const again = await post({ intake_id: other, action: 'handoff' });
+    assert.deepEqual(json(again), json(res), 'a retry returns the same handoff');
+    const [draft] = (await pg.query(`SELECT d.* FROM dealer_email_drafts AS d JOIN deals ON deals.id = d.deal_id
+      WHERE deals.onboarding_id = $1`, [other])).rows;
+    assert.equal(draft.status, 'handed_off');
+    const replaced = await post({ intake_id: other, shortlist });
+    assert.deepEqual([replaced.statusCode, json(replaced).error], [409, 'emails_already_sent']);
+
+    const page = dealerEmailHandler({ environment, getDatabase: () => sql, createTransport });
+    const view = response();
+    await page({ method: 'GET', url: `/api/dealer-email?token=${encodeURIComponent(draftToken(dealLinkSettings(environment), draft.id))}`,
+      headers: { host: 'www.steermeright.com' } }, view);
+    assert.ok(view.body.includes('Handed to Grokbot'));
+    assert.ok(!view.body.includes('value="send"'), 'an old link cannot send a handed-off email from Zoho');
   });
 });
 
@@ -276,6 +327,36 @@ test('the helper script calls the API with the token from .env.local', async t =
 
   await assert.rejects(carSearchRequest(['get', 'abc'], { environment: {}, fetchImpl }), /CAR_SEARCH_TOKEN is not set/);
   await assert.rejects(carSearchRequest(['submit', 'abc'], { environment, fetchImpl }), /Usage/);
+  await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment, fetchImpl }), /DEALER_BOT_URL and DEALER_BOT_KEY are not set/);
+  assert.equal(calls.length, 2, 'a handoff without the webhook settings never reaches the server');
+});
+
+test('handoff posts the server\'s handoff to Grokbot\'s webhook with its key', async () => {
+  const environment = { CAR_SEARCH_TOKEN: token, DEALER_BOT_URL: 'https://bot.example/hooks/new-deal', DEALER_BOT_KEY: 'bot-key-123' };
+  const handoff = { type: 'new_deal', deal: 'abcd1234', dealers: [{ dealer: 'Dealer One' }] };
+  const calls = [];
+  const fetchFor = webhook => async (url, init = {}) => {
+    calls.push({ url, init });
+    return url.startsWith('https://www.steermeright.com') ? { status: 200, json: async () => ({ ok: true, handoff }) } : webhook;
+  };
+
+  const sent = await carSearchRequest(['handoff', 'abc'], { environment,
+    fetchImpl: fetchFor({ ok: true, status: 200, text: async () => '{"success":true,"runUuid":"run-1"}' }) });
+  assert.deepEqual(JSON.parse(calls[0].init.body), { intake_id: 'abc', action: 'handoff' });
+  assert.equal(calls[1].url, 'https://bot.example/hooks/new-deal');
+  assert.deepEqual(calls[1].init.headers, { Authorization: 'Bearer bot-key-123', 'Content-Type': 'application/json' });
+  assert.deepEqual(JSON.parse(calls[1].init.body), handoff);
+  assert.equal(sent.status, 200);
+  assert.deepEqual([sent.body.ok, sent.body.deal, sent.body.dealer_emails, sent.body.grokbot], [true, 'abcd1234', 1, { success: true, runUuid: 'run-1' }]);
+
+  const refused = await carSearchRequest(['handoff', 'abc'], { environment,
+    fetchImpl: fetchFor({ ok: false, status: 401, text: async () => '{"message":"Invalid API key bot-key-123"}' }) });
+  assert.equal(refused.status, 502);
+  assert.equal(refused.body.ok, false);
+  assert.ok(!JSON.stringify(refused.body).includes('bot-key-123'), 'the key is never printed');
+
+  await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment: { ...environment, DEALER_BOT_URL: 'http://bot.example' },
+    fetchImpl: fetchFor(null) }), /https/);
 });
 
 test('the daily cron retries shortlist emails beside the other outboxes', async () => {

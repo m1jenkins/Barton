@@ -1,11 +1,10 @@
 import { database } from './db.js';
 import { intakeEmailSettings, smtpTransport } from './intake-email.js';
-import { composeShortlistEmail, dealLinkSettings } from './deal-email.js';
+import { composeShortlistEmail } from './deal-email.js';
 
 // deal_jobs is an outbox like intake_email_outbox: the shortlist email to Mason
 // is queued in the same transaction as the shortlist, sent right after commit,
-// and retried by the daily cron. It stays queued until SMTP and link signing
-// are both configured.
+// and retried by the daily cron. It stays queued until SMTP is configured.
 const MAX_ATTEMPTS = 8;
 const RETRY_SECONDS = 60;
 const LEASE_SECONDS = 180;
@@ -13,8 +12,7 @@ const BATCH_SIZE = 10;
 
 export function dealJobSettings(environment = process.env) {
   const smtp = intakeEmailSettings(environment);
-  const links = dealLinkSettings(environment);
-  return smtp && links ? { smtp, links } : null;
+  return smtp ? { smtp } : null;
 }
 
 async function claimDealJobs(sql, dealId) {
@@ -59,7 +57,7 @@ export async function dispatchDealJobs({ sql, environment = process.env, dealId 
     // One SMTP connection, one message at a time: Zoho throttles parallel sends.
     for (const job of jobs) {
       try {
-        const { subject, text, html } = await composeShortlistEmail(client, job.deal_id, settings.links);
+        const { subject, text, html } = await composeShortlistEmail(client, job.deal_id);
         await transport.sendMail({
           from: { name: 'Steer Me Right car search', address: settings.smtp.user },
           to: settings.smtp.to, subject, text, html,

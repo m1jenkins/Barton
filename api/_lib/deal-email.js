@@ -2,9 +2,11 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { centralTime, escapeHtml, oneLine } from './intake-email.js';
 
-// Mason gets one email per submitted car search. Each dealer email draft in it
-// links to /api/dealer-email, where he edits and sends it. A link is the draft
-// ID plus an HMAC of it, so no link secret is stored in the database.
+// Mason gets one email per submitted car search, with its cars and first
+// emails. The first emails go to dealers through Grokbot (POST /api/car-search
+// with "action": "handoff"). Drafts from before that still open from their
+// /api/dealer-email links, where he edits and sends them from Zoho. A link is
+// the draft ID plus an HMAC of it, so no link secret is stored in the database.
 const LINK_DAYS = 30;
 const EMAIL_PATTERN = /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+$/;
 
@@ -25,9 +27,6 @@ export function dealLinkSettings(environment = process.env) {
 const signature = (secret, draftId) => createHmac('sha256', secret).update(`dealer-email:${draftId}`).digest('base64url');
 
 export const draftToken = (settings, draftId) => `${draftId}.${signature(settings.secret, draftId)}`;
-
-export const draftLink = (settings, draftId) =>
-  `${settings.origin}/api/dealer-email?token=${encodeURIComponent(draftToken(settings, draftId))}`;
 
 // Returns the draft ID a link was made for, or null for anything else.
 export function verifyDraftToken(settings, token) {
@@ -75,14 +74,13 @@ const shell = (intro, body) => `<!doctype html><html><body style="margin:0;paddi
   + `<div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:24px">`
   + `<p style="margin:0 0 16px;white-space:pre-wrap">${escapeHtml(intro)}</p>${body}</div></body></html>`;
 const heading = title => `<h2 style="margin:24px 0 8px;font-size:16px">${escapeHtml(title)}</h2>`;
-const button = (href, label) => `<a href="${escapeHtml(href)}" style="display:inline-block;margin:8px 8px 0 0;padding:8px 14px;border-radius:6px;background:#1f3a5f;color:#ffffff;text-decoration:none;font-weight:600">${escapeHtml(label)}</a>`;
-
-// `deal` carries the buyer's name and search fields; links are already built.
+// `deal` carries the buyer's name and search fields.
 export function renderShortlistEmail({ deal, listings, drafts }) {
   const car = carFor(deal.fields);
   const subject = oneLine(`Car search ready: ${car} · ${deal.name} · ${plural(listings.length, 'car')}, `
-    + `${plural(drafts.length, 'email')} to approve`).slice(0, 200);
-  const intro = `${deal.name}'s car search is saved. Nothing has gone to a dealer yet: open each email below to edit and send it.`
+    + `${plural(drafts.length, 'dealer email')}`).slice(0, 200);
+  const intro = `${deal.name}'s car search is saved. Nothing has gone to a dealer yet. When you say "send them" in Claude Code,`
+    + ' the first emails below go to Grokbot, which shows you each one to approve before it sends.'
     + ' Market, target and walk-away prices are for you only.'
     + (deal.search_summary ? `\n\n${deal.search_summary}` : '');
 
@@ -94,8 +92,7 @@ export function renderShortlistEmail({ deal, listings, drafts }) {
     ...drafts.map(draft => [
       `To ${draft.dealer_name} <${draft.to_email}>, about car ${draft.listing_ranks.join(', ')}`,
       `Subject: ${draft.subject}`,
-      draft.body,
-      `Review and send: ${draft.link}`
+      draft.body
     ].join('\n')),
     `Intake ID: ${deal.onboarding_id}`
   ].join('\n\n') + '\n';
@@ -111,7 +108,7 @@ export function renderShortlistEmail({ deal, listings, drafts }) {
     + `<div style="font-weight:600">${escapeHtml(`To ${draft.dealer_name}`)} <span style="font-weight:400;color:#5b6472">${escapeHtml(`${draft.to_email} · car ${draft.listing_ranks.join(', ')}`)}</span></div>`
     + `<div style="margin:4px 0">${escapeHtml(draft.subject)}</div>`
     + `<div style="white-space:pre-wrap;color:#465061;background:#f5f6f8;border-radius:6px;padding:10px">${escapeHtml(draft.body)}</div>`
-    + `${button(draft.link, 'Review and send')}</div>`).join('');
+    + `</div>`).join('');
   const html = shell(intro, heading(`Cars (${listings.length})`) + (cars || '<p>None found.</p>')
     + heading(`Emails to dealers (${drafts.length})`) + (emails || '<p>No dealer emails were drafted.</p>')
     + `<p style="margin-top:24px;color:#5b6472">Intake ID: ${escapeHtml(deal.onboarding_id)}</p>`);
@@ -119,7 +116,7 @@ export function renderShortlistEmail({ deal, listings, drafts }) {
 }
 
 // Builds Mason's shortlist email for one deal.
-export async function composeShortlistEmail(sql, dealId, links) {
+export async function composeShortlistEmail(sql, dealId) {
   const [deal] = await sql`
     SELECT d.id, d.onboarding_id, d.search_summary, o.name, o.fields
     FROM deals AS d JOIN onboarding_submissions AS o ON o.id = d.onboarding_id
@@ -127,8 +124,7 @@ export async function composeShortlistEmail(sql, dealId, links) {
   `;
   const listings = await sql`SELECT * FROM deal_listings WHERE deal_id = ${dealId} ORDER BY rank`;
   const drafts = await sql`SELECT * FROM dealer_email_drafts WHERE deal_id = ${dealId} ORDER BY created_at, id`;
-  const linked = drafts.map(draft => ({ ...draft, listing_ranks: draft.listing_ranks || [], link: draftLink(links, draft.id) }));
-  return renderShortlistEmail({ deal, listings, drafts: linked });
+  return renderShortlistEmail({ deal, listings, drafts: drafts.map(draft => ({ ...draft, listing_ranks: draft.listing_ranks || [] })) });
 }
 
 export function parseDraftEdits(form) {
@@ -221,6 +217,7 @@ export function renderDraftPage({ draft, listings, car, token, notice, error }) 
     sent: `Sent to ${draft.to_email} on ${centralTime(draft.sent_at)}.`,
     discarded: `Discarded on ${centralTime(draft.decided_at)}. Nothing was sent.`,
     sending: `Sending started on ${centralTime(draft.decided_at)} and never finished. Check the Sent folder before you send it again.`,
+    handed_off: `Handed to Grokbot on ${centralTime(draft.decided_at)}. It sends this email from the dealer inbox once you approve it there.`,
     failed: draft.last_error ? `${draft.last_error}. Nothing was sent.` : ''
   }[draft.status] || '';
   const messages = [

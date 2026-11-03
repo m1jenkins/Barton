@@ -7,7 +7,9 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [content-approval-2026-10-01.md](content-approval-2026-10-01.md): owner approval of all current website content; replaces older pending-review instructions for public copy.
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
-- [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook, onboarding (the API contract), the paid intake email and the `/car-search` workflow.
+- [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook, onboarding (the API contract), the paid intake email and the `/car-search` and `/car-negotiation` workflow.
+- [dealer-replies-plan-2026-11-03.md](dealer-replies-plan-2026-11-03.md): plan (not built) for handing each car search to Grokbot, which negotiates with dealers from a dealer-only Gmail inbox: owner decisions, the handoff, repository changes and build order.
+- [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md): Grokbot setup steps in order, its rules and negotiation playbook to paste in, how it runs several deals at once, and an optional test deal.
 - [resource-release-2026-10-04.md](resource-release-2026-10-04.md): owner-directed release of three source-checked guides and the local quote worksheet.
 - [repository-audit-2026-10-04.md](repository-audit-2026-10-04.md): repository audit, lead/form reliability fixes, expanded checks, verification and prioritized follow-up work.
 - [checkout-streamline-2026-10-05.md](checkout-streamline-2026-10-05.md): the October 4–6 checkout/lead/webhook outage and the plan-first checkout that replaced the chat intake.

@@ -161,13 +161,15 @@ export function parseShortlist(input) {
 }
 
 // Opens the intake's deal if needed and replaces its shortlist. Once any dealer
-// email has gone out the shortlist is locked, so sent emails keep their cars.
+// email has gone out or been handed to Grokbot the shortlist is locked, so
+// those emails keep their cars.
 export async function saveShortlist(sql, onboardingId, shortlist) {
   return sql.begin(async tx => {
     await tx`INSERT INTO deals (id, onboarding_id) VALUES (${randomUUID()}, ${onboardingId}) ON CONFLICT (onboarding_id) DO NOTHING`;
     const [deal] = await tx`SELECT id FROM deals WHERE onboarding_id = ${onboardingId} FOR UPDATE`;
     const [sent] = await tx`
-      SELECT count(*)::integer AS count FROM dealer_email_drafts WHERE deal_id = ${deal.id} AND status IN ('sending', 'sent')
+      SELECT count(*)::integer AS count FROM dealer_email_drafts
+      WHERE deal_id = ${deal.id} AND status IN ('sending', 'sent', 'handed_off')
     `;
     if (sent.count > 0) return { dealId: deal.id, locked: true };
 
@@ -201,5 +203,61 @@ export async function saveShortlist(sql, onboardingId, shortlist) {
       SET status = 'pending', attempts = 0, created_at = now(), last_attempt_at = NULL, done_at = NULL, last_error = NULL
     `;
     return { dealId: deal.id, locked: false, drafts };
+  });
+}
+
+const dollars = cents => cents == null ? null : Math.round(cents / 100);
+
+// Hands a shortlisted deal to Grokbot, which sends each first email from the
+// dealer inbox once Mason approves it there and then negotiates
+// (docs/dealer-replies-plan-2026-11-03.md). The handoff is built from an
+// allowlist: never the buyer's name or contact details, the fields loadSearch
+// withholds, the plan or the walk-away price. Calling it again returns the same
+// handoff, so a failed post to Grokbot can be retried.
+export async function handOffDeal(sql, onboardingId) {
+  const search = await loadSearch(sql, onboardingId);
+  if (!search) return { error: 'intake_not_found' };
+  if (!search.shortlist) return { error: 'no_shortlist' };
+  return sql.begin(async tx => {
+    const [deal] = await tx`SELECT id, search_summary FROM deals WHERE onboarding_id = ${onboardingId} FOR UPDATE`;
+    const [zoho] = await tx`
+      SELECT count(*)::integer AS count FROM dealer_email_drafts WHERE deal_id = ${deal.id} AND status IN ('sending', 'sent')
+    `;
+    if (zoho.count > 0) return { error: 'started_in_zoho' };
+    await tx`
+      UPDATE dealer_email_drafts SET status = 'handed_off', decided_at = now()
+      WHERE deal_id = ${deal.id} AND status IN ('pending', 'failed')
+    `;
+    const drafts = await tx`
+      SELECT dealer_name, to_email, listing_ranks, subject, body FROM dealer_email_drafts
+      WHERE deal_id = ${deal.id} AND status = 'handed_off' ORDER BY created_at, id
+    `;
+    if (drafts.length === 0) return { error: 'no_dealer_emails' };
+    const listings = await tx`
+      SELECT rank, title, vin, listing_url, dealer_name, dealer_location, dealer_phone, price_cents, market_price_cents,
+        target_price_cents, mileage, days_on_lot, why
+      FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank
+    `;
+    const ref = search.intake_id.slice(0, 8);
+    const car = oneLine(search.search.Car || search.search['Vehicle type'] || 'car search').replaceAll('/', '-').slice(0, 60);
+    return {
+      handoff: {
+        type: 'new_deal',
+        intake_id: search.intake_id,
+        deal: ref,
+        label: `Deals/${ref} · ${car}`,
+        search: { lives_in: search.lives_in, details: search.search },
+        summary: deal.search_summary || '',
+        cars: listings.map(listing => ({
+          rank: listing.rank, title: listing.title, vin: listing.vin, listing_url: listing.listing_url,
+          dealer: listing.dealer_name, dealer_location: listing.dealer_location, dealer_phone: listing.dealer_phone,
+          asking: dollars(listing.price_cents), market: dollars(listing.market_price_cents), target: dollars(listing.target_price_cents),
+          mileage: listing.mileage, days_on_lot: listing.days_on_lot, why: listing.why
+        })),
+        dealers: drafts.map(draft => ({
+          dealer: draft.dealer_name, to: draft.to_email, ranks: draft.listing_ranks || [], subject: draft.subject, body: draft.body
+        }))
+      }
+    };
   });
 }
