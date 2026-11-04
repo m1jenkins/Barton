@@ -12,7 +12,7 @@ This inventory records technical provenance from the current site; it does not e
 |---|---|---|---:|---|---:|---|
 | `https://i.imgur.com/SLxIl6Y.jpg` | Hero background; aerial car dealership | `assets/external/source/hero-aerial-car-dealership-original.jpg` | 2816×1536 | `image/jpeg` | 754,007 | Downloaded |
 | `https://i.imgur.com/luaJenu.jpg` | Cities background; Austin skyline | `assets/external/source/cities-austin-skyline-original.jpg` | 1183×887 | `image/jpeg` | 337,888 | Downloaded |
-| `https://i.imgur.com/i4diUoq.png` | Drive Right logo and favicon | `assets/external/source/drive-right-logo-original.png` | 216×243 | `image/png` | 55,472 | Downloaded |
+| `https://i.imgur.com/i4diUoq.png` | Drive Right shield logo and favicon (retired) | Removed from the repo 2026-11-04; the Miata favicon and wordmark replace it | 216×243 | `image/png` | 55,472 | Removed |
 | `https://i.imgur.com/TZye85R.jpg` | Michael R. testimonial profile | `assets/external/source/testimonial-michael-r-original.png` | 267×243 | `image/png` | 132,501 | Downloaded; source URL extension was misleading |
 | `https://i.imgur.com/3MYjQFf.jpg` | Sarah K. testimonial profile | `assets/external/source/testimonial-sarah-k-original.png` | 698×757 | `image/png` | 815,746 | Downloaded; source URL extension was misleading |
 | `https://i.imgur.com/2Oagiam.jpg` | David L. testimonial profile | `assets/external/source/testimonial-david-l-original.png` | 544×586 | `image/png` | 312,011 | Downloaded; source URL extension was misleading |
@@ -114,13 +114,12 @@ Client photo the owner supplied on 2026-10-05 as Michael R. (claim `TESTIMONIAL-
 
 All files are in `assets/buying/` and named `client-michael-r-c5-corvette-<width>.<format>`.
 
-### Logo and social image
+### Social image
+
+The retired Drive Right shield logo files were removed on 2026-11-04.
 
 | Asset | Local file | Pixels | Bytes | Notes |
 |---|---|---:|---:|---|
-| Logo PNG | `assets/external/optimized/drive-right-logo-64.png` | 64×72 | 8,280 | Small favicon/UI candidate |
-| Logo PNG | `assets/external/optimized/drive-right-logo-180.png` | 180×202 | 46,667 | Larger icon candidate |
-| Logo WebP | `assets/external/optimized/drive-right-logo-216.webp` | 216×243 | 38,464 | Lossless conversion |
 | Social JPEG | `assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg` | 1200×630 | 306,287 | Broad Open Graph/Twitter compatibility |
 | Social WebP | `assets/external/social/drive-right-two-mazda-miatas-1200x630.webp` | 1200×630 | 129,102 | Modern derivative |
 | Social AVIF | `assets/external/social/drive-right-two-mazda-miatas-1200x630.avif` | 1200×630 | 145,030 | Modern derivative |
