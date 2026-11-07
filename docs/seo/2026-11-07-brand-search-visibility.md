@@ -48,6 +48,12 @@ Not changed: page titles, H1s and approved copy. The titles already end in "| St
 
 Accounts and settings are Mason's. Each step says how to verify it.
 
+**Done on November 7, 2026 (signed in as the Search Console owner):**
+- Steps 1, 2 and 4. The Domain property `sc-domain:steermeright.com` is verified by the Vercel DNS TXT record `google-site-verification=y3_tgDIf…` (record `rec_377a9ce0b942082acfd3c4db`). **Don't delete it, or the property loses verification.** The sitemap was submitted: Success, 17 pages.
+- URL Inspection: `/`, `/car-buying-service.html` and `/schedule.html` are already indexed on the new domain. `/about.html` was "Discovered – currently not indexed". Indexing was requested for `/` (it changed) and `/about.html`.
+- IndexNow accepted all 17 sitemap URLs (HTTP 202).
+- Step 3 (Change of Address) is filled in on the old property, with steermeright.com selected, but **Validate & update was not clicked**. It waits on Mason's go-ahead.
+
 | # | Do this | Where | Verify |
 |---|---|---|---|
 | 1 | Add a **Domain property** `steermeright.com` and verify it with the DNS TXT record (DNS is on Vercel) | Search Console → Add property | The property opens with no "verification" banner |
@@ -58,7 +64,7 @@ Accounts and settings are Mason's. Each step says how to verify it.
 | 6 | Once one public listing remains, add its Maps URL to `organization.sameAs` in `data/entities.json` and to both pages' `Organization.sameAs` | Repo | `npm run check:buying` passes |
 | 7 | Add `https://www.steermeright.com` to the YouTube channel's links and description, and rename the handle away from `@MasonsCarRadio` if a Steer Me Right handle is free | YouTube Studio → Customization | The channel About page lists the site |
 | 8 | Import the new property into **Bing Webmaster Tools** (it can import from Search Console), submit the sitemap, then run `npm run indexnow` | bing.com/webmasters | Bing `site:steermeright.com` returns the site |
-| 9 | Point the old apex `driverightcarbuying.com` straight at `https://www.steermeright.com` in the Vercel domain settings, skipping the www hop | Vercel → Project → Domains | `curl -sI https://driverightcarbuying.com/` returns 308 to `www.steermeright.com` |
+| 9 | Point the old apex `driverightcarbuying.com` straight at `https://www.steermeright.com` in the Vercel domain settings, skipping the www hop. The apex is proxied by Cloudflare, and the 301 to www comes from Vercel (`x-vercel-id` on the response) | Vercel → Project → Domains | `curl -sI https://driverightcarbuying.com/` returns 308 to `www.steermeright.com` |
 | 10 | Update every profile that still says Drive Right or links the old domain: Stripe receipts (done Oct 30), email signatures, Facebook, Instagram, LinkedIn, Yelp, BBB, Apple Business Connect, Bing Places | Each service | A Google search for `"driverightcarbuying.com"` returns only redirects and old pages |
 
 ## Earning the bare phrase (months, not days)
