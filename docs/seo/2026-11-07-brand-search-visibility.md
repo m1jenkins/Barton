@@ -55,7 +55,7 @@ Accounts and settings are Mason's. Each step says how to verify it.
 - Step 3, with Mason's approval: Change of Address was submitted from `https://www.driverightcarbuying.com/` to `steermeright.com`. Validation passed (homepage 301, both sites verified, all five sample pages redirect), and the old property shows "This site is currently moving", started November 7, 2026. **Keep the old domain and its redirects for at least 180 days, and preferably a year.**
 - Step 7, with Mason's approval: the YouTube channel now has a "Steer Me Right" link to `https://www.steermeright.com/`, and its description ends with a line pointing to the site. YouTube link titles are limited to about 30 characters.
 - Step 9, with Mason's approval: the Vercel domain `driverightcarbuying.com` now redirects (301) straight to `www.steermeright.com`, keeping paths and query strings. The Stripe webhook on `www.driverightcarbuying.com/api/` is unaffected. `austincarbuyingservice.com` still has the same two-hop setup (a Vercel domain redirect to `www.driverightcarbuying.com`) and takes the same fix.
-- Not done: step 5 (Maps listing). Mason didn't approve these edits. Step 8 (Bing) needs Mason to sign in to Bing Webmaster Tools.
+- Owner decisions on November 7, 2026: leave the Maps listing as it is (step 5) for now, skip Bing Webmaster Tools (step 8) for now (IndexNow still pings Bing), and leave the two-hop `austincarbuyingservice.com` redirect. Revisit these before reopening the brand-search work.
 
 | # | Do this | Where | Verify |
 |---|---|---|---|
