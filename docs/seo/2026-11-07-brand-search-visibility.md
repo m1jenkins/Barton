@@ -52,7 +52,10 @@ Accounts and settings are Mason's. Each step says how to verify it.
 - Steps 1, 2 and 4. The Domain property `sc-domain:steermeright.com` is verified by the Vercel DNS TXT record `google-site-verification=y3_tgDIf…` (record `rec_377a9ce0b942082acfd3c4db`). **Don't delete it, or the property loses verification.** The sitemap was submitted: Success, 17 pages.
 - URL Inspection: `/`, `/car-buying-service.html` and `/schedule.html` are already indexed on the new domain. `/about.html` was "Discovered – currently not indexed". Indexing was requested for `/` (it changed) and `/about.html`.
 - IndexNow accepted all 17 sitemap URLs (HTTP 202).
-- Step 3 (Change of Address) is filled in on the old property, with steermeright.com selected, but **Validate & update was not clicked**. It waits on Mason's go-ahead.
+- Step 3, with Mason's approval: Change of Address was submitted from `https://www.driverightcarbuying.com/` to `steermeright.com`. Validation passed (homepage 301, both sites verified, all five sample pages redirect), and the old property shows "This site is currently moving", started November 7, 2026. **Keep the old domain and its redirects for at least 180 days, and preferably a year.**
+- Step 7, with Mason's approval: the YouTube channel now has a "Steer Me Right" link to `https://www.steermeright.com/`, and its description ends with a line pointing to the site. YouTube link titles are limited to about 30 characters.
+- Step 9, with Mason's approval: the Vercel domain `driverightcarbuying.com` now redirects (301) straight to `www.steermeright.com`, keeping paths and query strings. The Stripe webhook on `www.driverightcarbuying.com/api/` is unaffected. `austincarbuyingservice.com` still has the same two-hop setup (a Vercel domain redirect to `www.driverightcarbuying.com`) and takes the same fix.
+- Not done: step 5 (Maps listing). Mason didn't approve these edits. Step 8 (Bing) needs Mason to sign in to Bing Webmaster Tools.
 
 | # | Do this | Where | Verify |
 |---|---|---|---|
