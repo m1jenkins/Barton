@@ -74,10 +74,19 @@
         "timeZone": "America/Chicago"
       }
     ],
-    "sameAs": [],
-    "sameAsStatus": "pending_owner_confirmation",
-    "sameAsTodo": "TODO: add the public Google Business Profile / Maps URL to sameAs after Google verification publishes a URL. Do not invent a CID or placeholder Maps URL.",
-    "areaServedEvidence": "data/services.json#availabilityConfirmation"
+    "sameAs": [
+      "https://www.youtube.com/channel/UCjshNKt5SKJyIc5Kb1xT-Cg"
+    ],
+    "sameAsStatus": "approved",
+    "sameAsTodo": "Add the Google Business Profile URL after the duplicate Maps listings are resolved (see docs/seo/2026-11-07-brand-search-visibility.md). Do not invent a CID or placeholder Maps URL.",
+    "areaServedEvidence": "data/services.json#availabilityConfirmation",
+    "alternateName": [
+      "Steer Me Right Car Buying Service",
+      "Steer Me Right Car Buying",
+      "Drive Right Car Buying"
+    ],
+    "alternateNameNote": "Drive Right Car Buying is the former name (renamed 2026-10-30). Keeping it as an alternate name ties old reviews, links and mentions to the new name.",
+    "sameAsEvidence": "YouTube channel UCjshNKt5SKJyIc5Kb1xT-Cg (@MasonsCarRadio) is titled 'Steer Me Right Car Buying' and describes callers calling Mason; checked 2026-11-07."
   },
   "businessLocations": [],
   "googleBusinessProfile": {
@@ -87,7 +96,23 @@
     "publicUrl": null,
     "publicUrlStatus": "pending_verification",
     "addressVisibility": "hidden_for_verification_not_for_schema",
-    "note": "Owner confirmed a live SAB on 2026-09-21/22. Google verification is still processing. Do not render streetAddress, geo, LocalBusiness, or sameAs until a public URL exists."
+    "note": "Owner confirmed a live SAB on 2026-09-21/22. On 2026-11-07 Maps showed two Steer Me Right listings (see observedListings). Resolve the duplicate and the hours before adding a GBP URL to sameAs. Do not render streetAddress, geo or LocalBusiness.",
+    "observedListings2026-11-07": [
+      {
+        "name": "Steer Me Right",
+        "maps": "https://maps.google.com/?cid=14692427625443379224",
+        "reviews": "5.0 (4)",
+        "hours": "Open 24 hours (site says Mon-Fri 9-5)",
+        "address": "hidden (service area)"
+      },
+      {
+        "name": "Steer Me Right / AM LLC",
+        "maps": "https://maps.google.com/?cid=4449030103840805460",
+        "reviews": "none",
+        "hours": "Mon-Fri from 9",
+        "address": "public street address shown"
+      }
+    ]
   },
   "serviceAreas": [
     {

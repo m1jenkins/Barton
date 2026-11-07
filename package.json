@@ -25,7 +25,8 @@
     "intake:dispatch": "node scripts/dispatch-intake-emails.mjs",
     "lead-emails:dispatch": "node scripts/dispatch-lead-emails.mjs",
     "preview:worksheet": "node scripts/preview-worksheet.mjs",
-    "preview:guides": "node scripts/preview-guides.mjs"
+    "preview:guides": "node scripts/preview-guides.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "nodemailer": "10.1.7",

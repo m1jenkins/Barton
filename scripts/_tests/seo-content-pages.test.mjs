@@ -222,9 +222,10 @@ test('homepage Organization schema records owner-confirmed hours and service are
 
   assert.equal(entities.googleBusinessProfile.status, 'owner_confirmed_live');
   assert.equal(entities.googleBusinessProfile.publicUrl, null);
-  assert.equal(entities.organization.sameAsStatus, 'pending_owner_confirmation');
-  assert.deepEqual(entities.organization.sameAs, []);
-  assert.match(entities.organization.sameAsTodo, /TODO: add the public Google Business Profile/);
+  assert.equal(entities.organization.sameAsStatus, 'approved');
+  // The Google Business Profile URL stays out until its listing is resolved; owned profiles may be listed.
+  assert.ok(entities.organization.sameAs.every(url => !/google\.[a-z.]+\/maps|maps\.google|g\.page|goo\.gl/i.test(url)));
+  assert.match(entities.organization.sameAsTodo, /Google Business Profile URL/);
   assert.equal(entities.businessBase.city, 'Austin');
   assert.equal(entities.businessBase.publicStorefrontConfirmed, false);
   assert.ok(entities.serviceAreas.every(area => area.localBusinessEntity === false));
@@ -236,7 +237,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.equal(hours[0].opens, '09:00');
   assert.equal(hours[0].closes, '17:00');
   assert.equal(hours[0].timeZone, 'America/Chicago');
-  assert.equal(organization.sameAs, undefined);
+  assert.deepEqual(organization.sameAs, entities.organization.sameAs);
   assert.equal(organization.streetAddress, undefined);
   assert.equal(organization.address, undefined);
   assert.equal(organization.geo, undefined);
