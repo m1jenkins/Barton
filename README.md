@@ -32,7 +32,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 
 `.vercelignore` lists everything that stays out of the deployment.
 
-The three released guides and the three service comparison pages (`compare-car-buying-services.html`, `caredge-alternatives.html`, `delivrd-alternatives.html`) use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
+The three released guides and the eight service comparison pages (`compare-car-buying-services.html`, `caredge-alternatives.html`, `delivrd-alternatives.html`, `used-car-buying-service.html`, `is-caredge-concierge-worth-it.html`, `delivrd-review.html`, `car-negotiation-service.html`, `car-buying-service-cost.html`) use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
 
 ## Two page styles
 

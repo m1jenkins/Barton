@@ -7,7 +7,9 @@ const root = new URL('../../', import.meta.url);
 const read = name => readFile(new URL(name, root), 'utf8');
 const origin = 'https://www.steermeright.com';
 const hub = 'compare-car-buying-services.html';
-const pages = [hub, 'caredge-alternatives.html', 'delivrd-alternatives.html', 'used-car-buying-service.html'];
+const competitorPages = [hub, 'caredge-alternatives.html', 'delivrd-alternatives.html', 'used-car-buying-service.html', 'is-caredge-concierge-worth-it.html', 'delivrd-review.html'];
+const servicePages = ['car-negotiation-service.html', 'car-buying-service-cost.html'];
+const pages = [...competitorPages, ...servicePages];
 
 test('comparison pages are indexable guides with matching dates, byline and approved Steer Me Right claims', async () => {
   const sitemap = await read('sitemap.xml');
@@ -60,10 +62,11 @@ test('every outside source is registered with a dated primary-source check, and 
   }
 });
 
-test('the hub and both alternatives pages link to each other and are discoverable from Resources and the explainer', async () => {
+test('the competitor pages link to each other, every page links the hub, and all are discoverable from Resources and the explainer', async () => {
   for (const name of pages) {
     const links = htmlDocument(await read(name)).links;
-    for (const other of pages.filter(page => page !== name)) assert.ok(links.includes(`/${other}`), `${name} links /${other}`);
+    const required = competitorPages.includes(name) ? competitorPages : [hub];
+    for (const other of required.filter(page => page !== name)) assert.ok(links.includes(`/${other}`), `${name} links /${other}`);
     assert.ok(links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
   }
   const resources = htmlDocument(await read('blog.html')).links;
