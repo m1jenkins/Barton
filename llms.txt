@@ -2,7 +2,7 @@
 
 > Austin-based car buying and negotiation service supporting buyers nationwide. The Steer Me Right plan is $395 USD one time for one model; Steer Me Right Pro is $695 USD one time for up to three models. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-10-23
+Updated: 2026-11-10
 
 Steer Me Right was called Drive Right Car Buying (driverightcarbuying.com) until October 30, 2026. Steer Me Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@steermeright.com.
 
@@ -32,5 +32,5 @@ Sitemap: https://www.steermeright.com/sitemap.xml
 ## Comparisons
 - [Car buying services compared](https://www.steermeright.com/compare-car-buying-services.html): Published fees, who negotiates, new or used coverage, refund terms and who pays each service for Steer Me Right, CarEdge, Delivrd, Car Pal, Automatch Consulting, Authority Auto, Costco Auto Program and Consumer Reports Build & Buy. Competitor facts checked 2026-10-18 on each company's own pages.
 - [CarEdge alternatives](https://www.steermeright.com/caredge-alternatives.html): CarEdge's Concierge ($999 per car search) and AI Buying Agent compared with Steer Me Right and other services, including how CarEdge says it makes money.
-- [Delivrd alternatives](https://www.steermeright.com/delivrd-alternatives.html): Delivrd's $1,000 Insta-Pay Deal Negotiation, its refund and change rules and its used-car pause, compared with Steer Me Right and other services.
-- [Used car buying service](https://www.steermeright.com/used-car-buying-service.html): Steer Me Right searches and negotiates used and CPO cars for $395 or $695; Delivrd's used-car pause (checked 2026-10-23).
+- [Delivrd alternatives](https://www.steermeright.com/delivrd-alternatives.html): Delivrd's $1,000 Insta-Pay Deal Negotiation, its refund and change rules and its new-cars-only scope, compared with Steer Me Right and other services.
+- [Used car buying service](https://www.steermeright.com/used-car-buying-service.html): Steer Me Right searches and negotiates used and CPO cars for $395 or $695; Delivrd negotiates new cars only (checked 2026-11-10).
