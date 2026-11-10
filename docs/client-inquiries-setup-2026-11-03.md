@@ -30,13 +30,13 @@ Grokbot has no Zoho connector, so a Gmail account works as a relay:
 
 - **The relay:** an older Gmail account with a good sending reputation, connected to Client Outreach through Grokbot's Gmail connector. Old promos were cleared out of it, and filters send mail from Reddit and AgentMail straight to the trash.
 - **Sending:** the relay's Gmail "Send mail as" sends as `mason@steermeright.com` through Zoho's SMTP server (`smtp.zoho.com`, port 465, SSL). The Zoho app password is in Grokbot's vault. Gmail's web settings still show that address as unverified, so it isn't the default sender, and every email has to set From to `mason@steermeright.com` itself. A reply that doesn't would go out from the relay's own address.
-- **Receiving:** Zoho forwards all mail for `mason@steermeright.com` to the relay and keeps a copy, so customer replies land where Client Outreach can read them. Everything else sent to that address lands there too, paid intake emails included, which is why the rules limit it to inquiry threads.
+- **Receiving:** Zoho used to forward all mail for `mason@steermeright.com` to the relay, so customer replies landed where Client Outreach could read them. Mason turned that forwarding off on November 10, 2026: from November 6, Gmail rate-limited the forwarded mail as unsolicited (`4.7.28`), and Zoho sent a "Mail Forward Failure" notice each day. Customer replies now stay in Zoho, and Client Outreach doesn't see them. To turn it back on, use Zoho Mail → Settings → Mail accounts → Forwards.
 - **What the relay can't see:** emails Mason sends from Zoho directly. Those are only in Zoho's Sent folder.
 
 ### Optional: finish verifying the send-as address
 
 1. In the relay's Gmail, open Settings → See all settings → Accounts and Import → "Send mail as", and click "verify" next to `mason@steermeright.com`.
-2. Gmail emails a confirmation to `mason@steermeright.com`, and Zoho forwards it into the relay. Click its link or enter its code.
+2. Gmail emails a confirmation to `mason@steermeright.com`. It lands only in Zoho while forwarding is off. Click its link or enter its code.
 3. Click "make default" for `mason@steermeright.com`, and under "When replying to a message" choose "Reply from the same address the message was sent to".
 
 If verification keeps failing, edit the send-as entry to use `smtppro.zoho.com` instead of `smtp.zoho.com`. That's the server the site's own intake email uses for this mailbox (`api/_lib/intake-email.js`). Even once it's the default, keep the explicit From rule and its Auto-review check.
