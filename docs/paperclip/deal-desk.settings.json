@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__GMAIL__send_message",
+      "mcp__GMAIL__reply",
+      "mcp__GMAIL__forward",
+      "mcp__GMAIL__trash_message",
+      "mcp__GMAIL__trash_thread",
+      "mcp__GMAIL__delete_label",
+      "mcp__GMAIL__mark_message_spam",
+      "mcp__GMAIL__mark_thread_spam",
+      "mcp__ZOHO__ZohoMail_send_mail",
+      "mcp__ZOHO__ZohoMail_reply_to_mail",
+      "mcp__ZOHO__ZohoMail_forward_mail",
+      "Bash(git push:*)",
+      "Bash(npm run indexnow:*)",
+      "Bash(node scripts/car-search.mjs submit:*)",
+      "Bash(node scripts/car-search.mjs handoff:*)"
+    ]
+  }
+}

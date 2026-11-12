@@ -19,6 +19,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, `car-search` (used by the `/car-search` skill), the `dealer-email` send page, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
 | `.claude/skills/car-search/` | The `/car-search` Claude Code skill Mason runs for each paid intake. Not deployed. See "Car search" in [docs/implementation-operations.md](docs/implementation-operations.md). |
 | `.claude/skills/car-negotiation/` | The `/car-negotiation` skill Mason runs on each dealer reply after a car search: it judges the quote and drafts his next email. Not deployed. Same doc section. |
+| `.claude/skills/dealer-reply/` | Drafts Mason's next dealer email in his own voice, learned from his sent dealer mail. Paperclip's Deal Desk agent uses it ([docs/paperclip/](docs/paperclip/)), and Mason can run it on a pasted thread. Not deployed. |
 | `db/` | PostgreSQL migrations, applied in number order. |
 | `vercel.json` | Redirects and security headers. Check with `node scripts/check-redirects.mjs --config-only`. |
 | `sitemap.xml`, `robots.txt`, `llms.txt`, `pricing.md` | Public files for search engines and AI assistants. Keep prices in `pricing.md`, `llms.txt` and `schedule.html` in sync. |

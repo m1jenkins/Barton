@@ -8,6 +8,8 @@ Nothing in `docs/` is deployed. Many files here are dated decision records or ev
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
 - [implementation-operations.md](implementation-operations.md): leads, checkout, Stripe webhook, onboarding (the API contract), the paid intake email and the `/car-search` and `/car-negotiation` workflow.
+- [paperclip-operating-plan-2026-11-11.md](paperclip-operating-plan-2026-11-11.md): how Paperclip agents run deal work on Mason's Mac (Deal Desk drafts dealer replies as Gmail drafts, Mason sends), the company structure, approval gates and rollout. Deal Desk's instructions and Claude Code settings are in [paperclip/](paperclip/).
+- The three Grokbot docs below are historical: Grokbot was retired by November 11, 2026.
 - [dealer-replies-plan-2026-11-03.md](dealer-replies-plan-2026-11-03.md): plan (not built) for handing each car search to Grokbot, which negotiates with dealers from a dealer-only Gmail inbox: owner decisions, the handoff, repository changes and build order.
 - [dealer-bot-setup-2026-11-03.md](dealer-bot-setup-2026-11-03.md): Grokbot setup steps in order, its rules and negotiation playbook to paste in, how it runs several deals at once, and an optional test deal.
 - [client-inquiries-setup-2026-11-03.md](client-inquiries-setup-2026-11-03.md): Grokbot's Client Outreach assistant: the Gmail relay that sends as `mason@steermeright.com`, the `New lead <id>` notice email the site sends it for each new inquiry, its rules, and replies after Mason's tap.

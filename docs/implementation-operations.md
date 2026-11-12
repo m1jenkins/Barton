@@ -124,7 +124,7 @@ Failures store only the SMTP error code (`Intake email failed (EAUTH)`), never t
 
 ## Car search — November 2, 2026
 
-Mason runs each car search himself in Claude Code on his Max plan. A search is not started automatically: Anthropic's terms for subscription plans cover ordinary use of Claude Code, not automated runs triggered by customer orders.
+Mason runs each car search himself in Claude Code on his Max plan. On November 11, 2026 he chose to let agents run on that subscription too, so a later phase may start searches from Paperclip ([paperclip-operating-plan-2026-11-11.md](paperclip-operating-plan-2026-11-11.md)).
 
 How a search runs:
 
