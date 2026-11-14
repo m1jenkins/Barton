@@ -55,3 +55,21 @@ test('failed or exhausted deliveries surface as a failed cron run', async () => 
   assert.equal(res.statusCode, 503);
   assert.deepEqual(logs[0], ['[outbox_attention_required]', { worker: 'leads', failed: 1, exhausted: 3 }]);
 });
+
+test('cron runs the customer email worker only once it is turned on', async () => {
+  const smtp = { INTAKE_SMTP_USER: 'hello@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real' };
+  let calls = 0;
+  const customerEmailWorker = async () => { calls++; return { configured: true, claimed: 1, sent: 1, failed: 0, skipped: 0, scheduled: 0, exhausted: 0, exitCode: 0 }; };
+  const quiet = { intakeEmailWorker: async () => ({ configured: true, claimed: 0, sent: 0, failed: 0, exhausted: 0, exitCode: 0 }) };
+
+  const off = response();
+  await outboxHandler({ environment: { CRON_SECRET: secret, ...smtp }, getDatabase: () => ({}), customerEmailWorker, ...quiet })(request(), off);
+  assert.equal(off.body.workers.customer_email.configured, false);
+  assert.equal(calls, 0);
+
+  const on = response();
+  await outboxHandler({ environment: { CRON_SECRET: secret, ...smtp, CUSTOMER_EMAIL_ENABLED: '1' }, getDatabase: () => ({}), customerEmailWorker, ...quiet })(request(), on);
+  assert.equal(on.statusCode, 200);
+  assert.equal(on.body.workers.customer_email.sent, 1);
+  assert.equal(calls, 1);
+});

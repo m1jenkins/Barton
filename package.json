@@ -24,6 +24,10 @@
     "leads:dispatch": "node scripts/dispatch-leads.mjs",
     "intake:dispatch": "node scripts/dispatch-intake-emails.mjs",
     "lead-emails:dispatch": "node scripts/dispatch-lead-emails.mjs",
+    "customer-emails:preview": "node scripts/customer-emails.mjs preview",
+    "customer-emails:test": "node scripts/customer-emails.mjs test",
+    "customer-emails:dispatch": "node scripts/customer-emails.mjs dispatch",
+    "customer-emails:cancel": "node scripts/customer-emails.mjs cancel",
     "preview:worksheet": "node scripts/preview-worksheet.mjs",
     "preview:guides": "node scripts/preview-guides.mjs",
     "indexnow": "node scripts/indexnow.mjs"

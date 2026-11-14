@@ -122,6 +122,41 @@ Delivery is SMTP through the steermeright.com Zoho mailbox (`api/_lib/intake-ema
 
 Failures store only the SMTP error code (`Intake email failed (EAUTH)`), never the message or credentials, and log `[intake_email_failed]`. Check delivery with `SELECT status, attempts, last_error, sent_at FROM intake_email_outbox ORDER BY created_at DESC;`. Apply migration 004 before deploying code that writes the table.
 
+## Customer email — November 14, 2026
+
+Until now no email reached a buyer automatically. Mason decided on November 13, 2026 that fixed lifecycle emails go out on their own. Each one is a template personalized with the buyer's own answers. Deal-specific updates (prices, dealers) are still sent by hand.
+
+| Template | Queued | Sent |
+| --- | --- | --- |
+| `welcome` | By `POST /api/onboarding`, in the intake transaction | Right after commit |
+| `what_to_expect` | With `welcome` | 12 hours later, so at the next morning's cron run |
+| `deal_done` | By the cron, once the deal's latest `closed`/`reopened` event in `deal_events` is `closed` (within the last 14 days) | At that cron run |
+| `review_ask` | With `deal_done`, but only if `GOOGLE_REVIEW_URL` is set | 4 days after the deal closed |
+
+How it works:
+- **Queue.** The queue is `customer_email_outbox` (`db/011_customer_email_outbox.sql`). It holds one row per buyer per template, so an email can never go out twice. The worker is `api/_lib/customer-email.js`, and it runs in the daily `/api/outbox-dispatch` cron as `workers.customer_email`. Retries, backoff and the lease work as they do for the intake email.
+- **Who gets the deal emails.** Only buyers who have a `welcome` row get `deal_done` or `review_ask`. Buyers from before launch therefore get nothing.
+- **Reopened deals.** A reopened deal cancels any deal emails not yet sent. If the deal closes again later, they are not re-queued; send that one by hand.
+- **Sender.** Mail goes through the intake email's Zoho SMTP settings (`INTAKE_SMTP_*`), from "Mason at Steer Me Right" `<INTAKE_SMTP_USER>`, with Reply-To `CUSTOMER_EMAIL_REPLY_TO` (default `mason@steermeright.com`).
+- **Plans.** Only the $395 and Pro plans get these emails. The retired consultation plan gets none.
+- **Templates.** They live in `api/_lib/customer-emails/` and share the shell in `api/_lib/email-layout.js` (site palette and fonts, table layout, HTML and plain text built from one content list). They read only the whitelisted answers in `buyerFromRow`. Contact details, the delivery address, trade-in plates and free-text notes never appear.
+
+| Variable | Purpose |
+| --- | --- |
+| `CUSTOMER_EMAIL_ENABLED` | `1` turns the emails on. While unset, nothing is queued or sent, and turning it on later doesn't send old welcomes. |
+| `GOOGLE_REVIEW_URL` | The https "write a review" link from the Google Business Profile. Leave it unset until the duplicate Maps listing in `data/entities.json` is resolved. While unset, no review email is queued, and a queued one is cancelled at send time. |
+| `CUSTOMER_EMAIL_REPLY_TO` | Optional. Default `mason@steermeright.com`. |
+
+Commands:
+- `npm run customer-emails:preview` renders every email for four sample buyers into the git-ignored `.email-previews/`. Open it in the browser pane with the `email-previews` entry in `.claude/launch.json`. Change copy or layout in the template files, re-run the preview, and get Mason's OK before deploying.
+- `npm run customer-emails:test -- all` (or one template name) sends sample renders to `INTAKE_EMAIL_TO` only. It needs `INTAKE_SMTP_*` in `.env.local`.
+- `npm run customer-emails:dispatch` sends one batch by hand.
+- `npm run customer-emails:cancel -- <intake ID>` stops every email not yet sent to that buyer, and also blocks deal emails from being queued for them later.
+
+Check the queue with `SELECT template, status, send_after, sent_at, last_error FROM customer_email_outbox ORDER BY created_at DESC;`. A failure stores only the SMTP error code (`Customer email failed (EAUTH)`) and logs `[customer_email_failed]`.
+
+Apply migration 011 to Neon before deploying the code that writes the table. `POST /api/onboarding` writes it only when `CUSTOMER_EMAIL_ENABLED` is set, but the cron reads it as soon as the flag is on.
+
 ## Car search — November 2, 2026
 
 Mason runs each car search himself in Claude Code on his Max plan. On November 11, 2026 he chose to let agents run on that subscription too, so a later phase may start searches from Paperclip ([paperclip-operating-plan-2026-11-11.md](paperclip-operating-plan-2026-11-11.md)).

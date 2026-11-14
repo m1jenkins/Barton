@@ -4,6 +4,7 @@ import { analyticsDestination, dispatchAnalyticsOutbox } from './analytics-outbo
 import { dispatchLeadForwardOutbox, leadDestination, leadDeliverySettings } from './lead-forward-outbox.js';
 import { dispatchIntakeEmails, intakeEmailSettings } from './intake-email.js';
 import { dispatchLeadEmails, leadEmailSettings } from './lead-email.js';
+import { customerEmailSettings, dispatchCustomerEmails, scheduleClosedDeals } from './customer-email.js';
 
 export async function runLeadWorker({ sql, environment = process.env } = {}) {
   if (!leadDestination(environment)) return { configured: false, exhausted: null, exitCode: 1 };
@@ -74,6 +75,26 @@ export async function runLeadEmailWorker({ sql, environment = process.env, creat
     `;
     const exhausted = Number(row.exhausted);
     return { ...result, exhausted, exitCode: result.failed || exhausted ? 1 : 0 };
+  } finally {
+    if (!sql) await client.end({ timeout: 5 });
+  }
+}
+
+export async function runCustomerEmailWorker({ sql, environment = process.env, createTransport } = {}) {
+  const settings = customerEmailSettings(environment);
+  if (!settings) return { configured: false, exhausted: null, exitCode: 1 };
+  const client = sql || database();
+  try {
+    const scheduled = await scheduleClosedDeals(client, settings);
+    const result = await dispatchCustomerEmails({ sql: client, environment, createTransport });
+    const [row] = await client`
+      SELECT count(*)::integer AS exhausted FROM customer_email_outbox
+      WHERE status NOT IN ('sent', 'cancelled') AND attempts >= ${settings.maxAttempts}
+        AND (status <> 'processing' OR last_attempt_at IS NULL
+             OR last_attempt_at <= now() - ${settings.leaseSeconds} * interval '1 second')
+    `;
+    const exhausted = Number(row.exhausted);
+    return { ...result, scheduled: scheduled.queued, exhausted, exitCode: result.failed || exhausted ? 1 : 0 };
   } finally {
     if (!sql) await client.end({ timeout: 5 });
   }

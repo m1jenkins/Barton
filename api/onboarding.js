@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
 import { analyticsProperties, pageContext } from './_lib/analytics.js';
 import { database } from './_lib/db.js';
+import { dispatchCustomerEmailsSafely, enqueueIntakeEmails } from './_lib/customer-email.js';
 import { dispatchIntakeEmailsSafely } from './_lib/intake-email.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { idempotencyKey, payloadHash, validateOnboardingPayload } from './_lib/validation.js';
@@ -80,6 +81,7 @@ async function handle(req, res) {
         ON CONFLICT (event_name, dedupe_key) DO NOTHING
       `;
       await tx`INSERT INTO intake_email_outbox (onboarding_id) VALUES (${inserted[0].id})`;
+      await enqueueIntakeEmails(tx, { onboardingId: inserted[0].id, tierId: onboarding.tier });
       return { id: inserted[0].id, created: true };
     }
     const [idempotentRace] = await tx`
@@ -92,6 +94,7 @@ async function handle(req, res) {
   });
 
   if (persisted.created) await dispatchIntakeEmailsSafely({ onboardingId: persisted.id });
+  if (persisted.created) await dispatchCustomerEmailsSafely({ onboardingId: persisted.id });
   await dispatchAnalyticsOutboxSafely();
   return sendJson(res, persisted.created ? 201 : 200, { ok: true, onboarding_id: persisted.id });
 }
