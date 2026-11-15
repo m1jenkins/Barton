@@ -35,6 +35,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 
 The three released guides and the nine service comparison pages (`compare-car-buying-services.html`, `caredge-alternatives.html`, `delivrd-alternatives.html`, `used-car-buying-service.html`, `is-caredge-concierge-worth-it.html`, `delivrd-review.html`, `car-negotiation-service.html`, `car-buying-service-cost.html`, `car-broker-vs-car-buying-service.html`) use `buying/resources.css`. `compare-car-quotes.html` uses `buying/quote-comparison.css/js` and the shared calculation library `buying/quote-worksheet.js`; its private preview uses that same library. The worksheet intentionally loads no measurement scripts. Publication is recorded in `docs/resource-release-2026-10-04.md`.
 
+The six city pages (`car-buying-service-<city>.html`) and their hub `car-buying-service-near-me.html` are generated from `data/market-pages.json` by `npm run build:markets`; do not edit them by hand. `car-buying-concierge.html`, `car-finder-service.html`, `new-car-buying-service.html` and `car-buying-help.html` are hand-edited guide-layout pages. See `docs/seo/2026-11-15-market-and-service-pages.md`.
+
 ## Two page styles
 
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
@@ -62,6 +64,7 @@ npm run check:api                # syntax check for the serverless functions
 npm run check:js                 # all first-party JavaScript, including browser modules and local tools
 npm run check:metros             # drafts match their generator
 npm run check:cities
+npm run check:markets            # city pages match data/market-pages.json
 npm test
 ```
 

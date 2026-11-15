@@ -2,7 +2,7 @@
 
 > Austin-based car buying and negotiation service supporting buyers nationwide. The Steer Me Right plan is $395 USD one time for one model; Steer Me Right Pro is $695 USD one time for up to three models. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-11-10
+Updated: 2026-11-15
 
 Steer Me Right was called Drive Right Car Buying (driverightcarbuying.com) until October 30, 2026. Steer Me Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@steermeright.com.
 
@@ -39,3 +39,19 @@ Sitemap: https://www.steermeright.com/sitemap.xml
 - [Car broker vs. car buying service](https://www.steermeright.com/car-broker-vs-car-buying-service.html): How dealer-paid car brokers (auto brokers), dealer-paid buying programs and buyer-paid car buying services differ on who pays, which dealers they use and who negotiates; Steer Me Right is a buyer-paid service, not a broker (checked 2026-11-15).
 - [Is CarEdge Concierge worth it?](https://www.steermeright.com/is-caredge-concierge-worth-it.html): CarEdge Concierge's $999 per-car fee, scope, refund rule and dealer-side revenue, compared with Steer Me Right at $395 and $695 (checked 2026-11-10).
 - [Delivrd review](https://www.steermeright.com/delivrd-review.html): Delivrd's $1,000 Insta-Pay fee, new-cars-only scope, refund and change rules, from its own pages (checked 2026-11-10).
+
+## Service pages
+- [Car Buying Concierge](https://www.steermeright.com/car-buying-concierge.html): What a car buying concierge does, what it doesn’t, and what it costs.
+- [Car Finder Service](https://www.steermeright.com/car-finder-service.html): We locate the exact spec in dealer inventory, then negotiate it.
+- [New Car Buying Service](https://www.steermeright.com/new-car-buying-service.html): Written out-the-door offers on a new car, with markups and add-ons questioned.
+- [Car Buying Help](https://www.steermeright.com/car-buying-help.html): Free tools, a free question, or hand the dealers to us.
+
+## Cities
+Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.
+- [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and six cities with local numbers.
+- [Car Buying Service in New York](https://www.steermeright.com/car-buying-service-new-york.html): About 185,000 new cars listed across three states, and which plan covers which dealers.
+- [Car Buying Service in Los Angeles](https://www.steermeright.com/car-buying-service-los-angeles.html): About 650 franchised dealerships within 50 miles of downtown, all asked in writing.
+- [Car Buying Service in Chicago](https://www.steermeright.com/car-buying-service-chicago.html): City, collar suburbs and northwest Indiana: who gets asked on each plan.
+- [Car Buying Service in Miami](https://www.steermeright.com/car-buying-service-miami.html): Miami-Dade and Broward dealers, and why the whole state is in play.
+- [Car Buying Service in Atlanta](https://www.steermeright.com/car-buying-service-atlanta.html): More used cars listed than new, and how we price a used one.
+- [Car Buying Service in Washington, DC](https://www.steermeright.com/car-buying-service-washington-dc.html): Maryland, Virginia and the District: the state line decides the plan.

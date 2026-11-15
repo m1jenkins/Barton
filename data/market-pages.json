@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "decision": "docs/seo/2026-11-15-market-and-service-pages.md",
+  "published": "2026-11-15",
+  "updated": "2026-11-15",
+  "inventory": {
+    "source": "API connector to dealership listings (the inventory data used for client car searches)",
+    "pulledOn": "2026-11-15",
+    "radiusMiles": 50,
+    "note": "Active dealer listings within the radius of the listed ZIP. new = car_type new, used = car_type used. medianNew and medianUsed are median asking prices. franchiseDealers is the connector's dealership directory count (dealer_type franchise, mc_category Dealer); null where the directory call failed on the pull date."
+  },
+  "hub": {
+    "slug": "car-buying-service-near-me.html",
+    "title": "Car Buying Service Near Me: Cities We Serve | Steer Me Right",
+    "description": "Looking for a car buying service near you? Steer Me Right works with dealers in every state by phone and email for a flat $395 or $695. See your city.",
+    "h1": "Car buying service near you: we work with the dealers in your area"
+  },
+  "markets": [
+    {
+      "slug": "car-buying-service-new-york.html",
+      "name": "New York",
+      "area": "New York-area",
+      "center": "Midtown Manhattan",
+      "zip": "10001",
+      "new": 185346,
+      "used": 121589,
+      "medianNew": 49313,
+      "medianUsed": 24888,
+      "franchiseDealers": null,
+      "topMakes": ["Honda", "Toyota", "Ford"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of Midtown Manhattan listed about 185,000 new cars and 122,000 used ones. That was the most of the six metros we checked. Honda, Toyota and Ford had the most new cars on the lot, and the median asking price was about $49,300 new and $24,900 used.",
+        "That circle takes in three states. Northern New Jersey, Long Island, Westchester and southwestern Connecticut all fall inside it. A dealer in New Jersey has no reason to care what a dealer in Queens quoted you unless someone puts the two numbers side by side, and that is the job. Visiting five of those stores yourself would eat a couple of Saturdays. We ask all of them for a written out-the-door price in the same week."
+      ],
+      "plan": "Which state you live in matters when you pick a plan. The Steer Me Right plan ($395) does not include out-of-state dealers, so it covers the ones in your own state. If you live in New Jersey and want New York and Connecticut dealers competing too, that is Steer Me Right Pro ($695).",
+      "faq": [
+        ["Do you have an office in New York?", "No. We’re based in Austin, Texas, and we work with New York-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you get offers from New Jersey and Connecticut dealers as well as New York ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-los-angeles.html",
+      "name": "Los Angeles",
+      "area": "Los Angeles-area",
+      "center": "downtown Los Angeles",
+      "zip": "90012",
+      "new": 149735,
+      "used": 99215,
+      "medianNew": 48393,
+      "medianUsed": 24198,
+      "franchiseDealers": 646,
+      "topMakes": ["Toyota", "Honda", "Ford"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of downtown Los Angeles listed about 150,000 new cars and 99,000 used ones, spread across roughly 650 franchised dealerships. About one new car in six was a Toyota; Honda and Ford came next. The median asking price was about $48,400 new and $24,200 used.",
+        "Fifty miles from downtown reaches Orange County, the San Fernando Valley and the western Inland Empire. On a map those dealers are neighbors. In traffic, a store in Ontario and a store in Torrance might as well be in different cities, which is why most people only ever get a price from the two or three dealers closest to home. We don’t have to drive anywhere. For a common car like a RAV4, dozens of stores in that circle hold the same thing, and each one gets asked for a written out-the-door price."
+      ],
+      "plan": "All of those dealers are in California, so every one of them is in play on the Steer Me Right plan ($395). Dealers in Arizona or Nevada are out of state, and out-of-state dealers are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Los Angeles?", "No. We’re based in Austin, Texas, and we work with Los Angeles-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Will you contact dealers in Orange County and the Inland Empire too?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area. They are all California dealers, so both plans cover them."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-chicago.html",
+      "name": "Chicago",
+      "area": "Chicago-area",
+      "center": "the Loop",
+      "zip": "60601",
+      "new": 99454,
+      "used": 89208,
+      "medianNew": 46281,
+      "medianUsed": 23967,
+      "franchiseDealers": 589,
+      "topMakes": ["Ford", "Chevrolet", "Toyota"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of the Loop listed about 99,000 new cars and 89,000 used ones, across roughly 590 franchised dealerships. Ford and Chevrolet had the most new cars listed, then Toyota. The median asking price was about $46,300 new, the lowest of the six metros we checked, and $24,000 used.",
+        "The circle covers the city, the collar suburbs and northwest Indiana. That is a lot of stores selling the same trucks and SUVs, and most buyers only hear from the nearest one or two. We ask the whole set for written out-the-door prices and put the answers next to each other, fees included. A low sticker with a padded fee column isn’t the low offer."
+      ],
+      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. An Illinois buyer who wants Indiana or Wisconsin dealers in the mix, or an Indiana buyer who wants the Illinois stores, should pick Steer Me Right Pro ($695).",
+      "faq": [
+        ["Do you have an office in Chicago?", "No. We’re based in Austin, Texas, and we work with Chicago-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you include dealers in northwest Indiana?", "Yes. For an Illinois buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Indiana, they are covered on either plan."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-miami.html",
+      "name": "Miami",
+      "area": "South Florida",
+      "center": "downtown Miami",
+      "zip": "33130",
+      "new": 86293,
+      "used": 59964,
+      "medianNew": 46396,
+      "medianUsed": 24163,
+      "franchiseDealers": 286,
+      "topMakes": ["Hyundai", "Toyota", "Honda"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of downtown Miami listed about 86,000 new cars and 60,000 used ones, across roughly 290 franchised dealerships. Miami was the only one of the six metros we checked where Hyundai had the most new cars listed, ahead of Toyota and Honda. The median asking price was about $46,400 new and $24,200 used.",
+        "Half of that circle is ocean and Everglades. The dealers sit in a strip along the coast, through Miami-Dade and Broward and up toward Boca Raton, so there are fewer stores than in Los Angeles or Chicago and they are easier to cover completely. We ask each one that has your car for a written out-the-door price and go through the fee lines before you see a contract."
+      ],
+      "plan": "Everything in that strip is a Florida dealer, and so is the rest of the state. On the Steer Me Right plan ($395) a Miami buyer isn’t limited to South Florida: if you’d drive to West Palm Beach or Naples for the right number, tell us and those dealers get asked too. Dealers outside Florida are part of Steer Me Right Pro ($695).",
+      "faq": [
+        ["Do you have an office in Miami?", "No. We’re based in Austin, Texas, and we work with South Florida dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Do you cover Fort Lauderdale and the rest of Broward County?", "Yes. Broward dealers are inside the same 50-mile circle and are Florida dealers, so both plans cover them."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-atlanta.html",
+      "name": "Atlanta",
+      "area": "Atlanta-area",
+      "center": "downtown Atlanta",
+      "zip": "30303",
+      "new": 69061,
+      "used": 79940,
+      "medianNew": 48996,
+      "medianUsed": 24016,
+      "franchiseDealers": 337,
+      "topMakes": ["Ford", "Chevrolet", "Toyota"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of downtown Atlanta listed about 69,000 new cars and 80,000 used ones, across roughly 340 franchised dealerships. Atlanta was the only one of the six metros we checked with more used cars listed than new. Ford had the most new cars on the lot, then Chevrolet and Toyota. The median asking price was about $49,000 new and $24,000 used.",
+        "The dealers run from the city out past the Perimeter to suburbs like Marietta, Alpharetta and McDonough. If you’re shopping used, that deep used inventory helps: there are usually several comparable cars to price yours against, and we negotiate a used car against comparable sales, not against the number on the windshield. Our <a href=\"/used-car-buying-service.html\">used car buying service</a> page covers what we do on a used search and what to check before you sign."
+      ],
+      "plan": "Every dealer in that circle is a Georgia dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Alabama, Tennessee or the Carolinas are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Atlanta?", "No. We’re based in Austin, Texas, and we work with Atlanta-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Do you negotiate used cars in Atlanta?", "Yes. Used and CPO cars from dealers are part of both plans, at the same flat fee as a new car."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-washington-dc.html",
+      "name": "Washington, DC",
+      "area": "Washington-area",
+      "center": "downtown Washington",
+      "zip": "20001",
+      "new": 82849,
+      "used": 70813,
+      "medianNew": 48361,
+      "medianUsed": 23624,
+      "franchiseDealers": null,
+      "topMakes": ["Ford", "Toyota", "Honda"],
+      "market": [
+        "On November 15, 2026, dealers within 50 miles of downtown Washington listed about 83,000 new cars and 71,000 used ones. Ford, Toyota and Honda had the most new cars on the lot. The median asking price was about $48,400 new and $23,600 used.",
+        "Fifty miles from downtown covers Northern Virginia, the Maryland suburbs and Baltimore. Very few of those dealers are in the District itself; nearly all of them are in Maryland or Virginia. So a Washington-area search almost always crosses a state line, and a Virginia store and a Maryland store selling the same car rarely see each other’s quotes unless we show them."
+      ],
+      "plan": "That makes the plan choice matter more here than in most places. The Steer Me Right plan ($395) does not include out-of-state dealers. A Virginia buyer gets Virginia dealers on it and a Maryland buyer gets Maryland dealers; to have both sides of the Potomac competing, pick Steer Me Right Pro ($695). If you live in the District, ask us before you pay. It’s free to ask, and nearly every dealer near you is across a state line.",
+      "faq": [
+        ["Do you have an office in Washington?", "No. We’re based in Austin, Texas, and we work with Washington-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you get offers from both Maryland and Virginia dealers?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."]
+      ]
+    }
+  ]
+}
