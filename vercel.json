@@ -185,6 +185,16 @@
       "source": "/uuyh",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/:page(about|austin|blog-buy-new-car-below-msrp|blog-dealership-addons-complete-guide|blog-used-car-inspection-checklist|blog|car-broker-vs-car-buying-service|car-buying-service-cost|car-buying-service|car-negotiation-service|caredge-alternatives|compare-car-buying-services|compare-car-quotes|delivrd-alternatives|delivrd-review|how-it-works|is-caredge-concierge-worth-it|policy|schedule|texas-local-market-intelligence|used-car-buying-service)",
+      "destination": "/:page.html",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/schedule.html",
+      "permanent": true
     }
   ],
   "crons": [

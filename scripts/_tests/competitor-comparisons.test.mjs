@@ -8,7 +8,7 @@ const read = name => readFile(new URL(name, root), 'utf8');
 const origin = 'https://www.steermeright.com';
 const hub = 'compare-car-buying-services.html';
 const competitorPages = [hub, 'caredge-alternatives.html', 'delivrd-alternatives.html', 'used-car-buying-service.html', 'is-caredge-concierge-worth-it.html', 'delivrd-review.html'];
-const servicePages = ['car-negotiation-service.html', 'car-buying-service-cost.html'];
+const servicePages = ['car-negotiation-service.html', 'car-buying-service-cost.html', 'car-broker-vs-car-buying-service.html'];
 const pages = [...competitorPages, ...servicePages];
 
 test('comparison pages are indexable guides with matching dates, byline and approved Steer Me Right claims', async () => {
