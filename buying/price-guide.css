@@ -370,10 +370,10 @@
   .dr .vp-deal__tile { padding:12px 14px 13px; border-radius:16px; }
   .dr .vp-deal__tile strong { font-size:26px; }
   .dr .vp-math__terms { flex-direction:column; gap:4px; }
-  .dr .vp-math__terms > p { flex-direction:row; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 16px; padding:13px 16px; border-radius:18px; }
-  .dr .vp-math__terms strong { margin-top:0; font-size:22px; }
-  .dr .vp-math__total strong { font-size:28px; }
-  .dr .vp-math__total em { flex-basis:100%; }
+  .dr .vp-math__terms > p { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:2px 16px; padding:14px 18px; border-radius:18px; }
+  .dr .vp-math__terms strong { grid-column:2; grid-row:1; margin-top:0; font-size:24px; text-align:right; }
+  .dr .vp-math__total strong { grid-row:1 / span 2; font-size:28px; }
+  .dr .vp-math__total em { grid-column:1; }
   .dr .vp-math__op { align-self:center; font-size:20px; }
   .dr .vp-charts { grid-template-columns:1fr; }
   .dr .vp-ic-offers li { padding-right:16px; }
