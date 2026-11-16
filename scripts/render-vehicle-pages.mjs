@@ -96,13 +96,60 @@ ${rows.map(row => `<li${row.saved === best ? ' class="vp-cash__best"' : ''}><p c
 </div>`;
 }
 
+// "What to pay": one glass card per trim group with its fair and strong deal as big figures, in dollars off a named trim
+// (owner, November 16, 2026, after a percent-axis ruler proved hard to read twice). A discount reads "2–3% under",
+// "4% under", "4% or more", "MSRP" or "Any discount".
+const discountRange = text => {
+  if (text === 'MSRP') return [0, 0];
+  if (text === 'Any discount') return [0, null];
+  const found = text.match(/^(\d+(?:\.\d+)?)(?:–(\d+(?:\.\d+)?))?% (under|or more)$/);
+  if (!found) throw new Error(`Unreadable discount "${text}"`);
+  const from = Number(found[1]);
+  return [from, found[3] === 'or more' ? null : Number(found[2] ?? found[1])];
+};
+const roundTo50 = value => Math.round(value / 50) * 50;
+function dealTile(kind, label, text, price) {
+  const [from, to] = discountRange(text);
+  let figure, unit, off;
+  if (text === 'MSRP') [figure, unit, off] = ['MSRP', 'no markup', 'Pay the sticker price'];
+  else if (text === 'Any discount') [figure, unit, off] = ['Any', 'discount', 'Anything under sticker'];
+  else {
+    figure = to === null ? `${from}%+` : from === to ? `${from}%` : `${from}–${to}%`;
+    unit = 'under MSRP';
+    off = to === null ? `${dollars(roundTo50(price * from / 100))} or more off` : from === to ? `About ${dollars(roundTo50(price * from / 100))} off` : `About ${dollars(roundTo50(price * from / 100))}–${dollars(roundTo50(price * to / 100))} off`;
+  }
+  return `<div class="vp-deal__tile vp-deal__tile--${kind}"><dt>${label}</dt><dd><strong>${figure}</strong><span>${unit}</span><em>${off}</em></dd></div>`;
+}
+function dealCards(pay, trims) {
+  return `<h3 class="vp-deals__title">${pay.tableTitle}</h3>
+<ul class="vp-deals" role="list">
+${pay.rows.map(row => {
+    const price = trims.find(trim => trim.name === row.example).prices[0];
+    return `<li class="vp-deal">
+<div class="vp-deal__name"><h4>${row.trims}</h4>${row.why ? `<p>${row.why}</p>` : ''}${[row.fair, row.strong].some(text => !['MSRP', 'Any discount'].includes(text)) ? `<p class="vp-deal__basis">Dollars are for a ${dollars(price)} ${row.example}.</p>` : ''}</div>
+<dl class="vp-deal__tiles">${dealTile('fair', 'Fair deal', row.fair, price)}${dealTile('strong', 'Strong deal', row.strong, price)}</dl>
+</li>`;
+  }).join('\n')}
+</ul>`;
+}
+const priceMath = walk => `<div class="vp-math">
+<h3>${walk.title}</h3>
+<div class="vp-math__terms">
+<p><span>${walk.stickerLabel}</span><strong>${dollars(walk.sticker)}</strong></p>
+${walk.steps.map(step => `<span class="vp-math__op" aria-hidden="true">−</span>
+<p><span>${step.label}</span><strong><span class="sr-only">minus </span>${dollars(step.amount)}</strong></p>`).join('\n')}
+<span class="vp-math__op" aria-hidden="true">=</span>
+<p class="vp-math__total"><span>${walk.totalLabel}</span><strong>${dollars(walk.total)}</strong><em>${dollars(walk.sticker - walk.total)} under sticker</em></p>
+</div>
+</div>`;
+
 function vehiclePage(vehicle, updated) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
   const ask = `<a href="/schedule.html">Ask us</a>`;
   const topPrice = Math.max(...vehicle.trims.rows.map(trim => trim.prices[0]));
   const walk = vehicle.pay.walk;
-  const tabs = [['overview', 'Overview'], ['reviews', 'Review scores'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['pay', 'What to pay'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
+  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   const body = `<article class="vp">
 <header class="vp-head vp-width">
 <p class="vp-crumb"><a href="/blog.html">Resources</a> / ${name} price</p>
@@ -138,7 +185,18 @@ ${vehicle.glance.map(tile => `<li><a href="#${tile.section}"><span class="vp-gla
 </div>
 </section>
 
-<section id="reviews" class="vp-section vp-section--band">
+<section id="pay" class="vp-section vp-section--band">
+<h2>What to pay: how far under MSRP</h2>
+${paragraphs(vehicle.pay.intro)}
+<div class="vp-pay-glass">
+${dealCards(vehicle.pay, vehicle.trims.rows)}
+${priceMath(walk)}
+</div>
+<p class="vp-note">${vehicle.pay.note}</p>
+${paragraphs(vehicle.pay.after)}
+</section>
+
+<section id="reviews" class="vp-section">
 <h2>What the reviewers say</h2>
 ${vehicle.scores.intro ? `<p>${vehicle.scores.intro}</p>\n` : ''}<ul class="vp-scorecard" role="list">
 ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${card.source}</a><p class="vp-scorecard__score">${card.display}<span> out of ${card.scale}</span></p>${meter(card.value, card.scale)}<p class="vp-scorecard__detail">${card.detail}</p></li>`).join('\n')}
@@ -148,7 +206,7 @@ ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${c
 
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
-<section id="trims" class="vp-section vp-section--band">
+<section id="trims" class="vp-section">
 <h2>${vehicle.modelYear} ${name} trims and MSRP</h2>
 ${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<table class="vp-trims">
 <caption class="sr-only">${vehicle.modelYear} ${name} starting MSRP by trim, checked ${checked}</caption>
@@ -164,36 +222,9 @@ ${table('trim-caption', `${vehicle.modelYear} ${name} trims with starting MSRP, 
 </details>
 </section>
 
-<section id="pick" class="vp-section">
+<section id="pick" class="vp-section vp-section--band">
 <h2>The trim we’d buy</h2>
 ${paragraphs(vehicle.pick)}
-</section>
-
-<section id="pay" class="vp-section vp-section--band">
-<h2>What to pay: how far under MSRP</h2>
-${paragraphs(vehicle.pay.intro)}
-<div class="vp-ledgers">
-<div class="vp-sticker">
-<h3 id="discount-caption">${vehicle.pay.tableTitle}</h3>
-<table aria-labelledby="discount-caption">
-<thead><tr><th scope="col">Trim</th><th scope="col">Fair deal</th><th scope="col">Strong deal</th></tr></thead>
-<tbody>
-${vehicle.pay.rows.map(row => `<tr><th scope="row">${row.trims}</th><td>${row.fair}</td><td>${row.strong}</td></tr>`).join('\n')}
-</tbody>
-</table>
-</div>
-<div class="vp-sticker">
-<h3>${walk.title}</h3>
-<p class="vp-sticker__split" aria-hidden="true"><span style="--w:${percent(walk.total, walk.sticker)}"></span>${walk.steps.map(step => `<span style="--w:${percent(step.amount, walk.sticker)}"></span>`).join('')}</p>
-<dl>
-<div><dt>${walk.stickerLabel}</dt><dd>${dollars(walk.sticker)}</dd></div>
-${walk.steps.map(step => `<div class="vp-sticker__cut"><dt>${step.label}</dt><dd>−${dollars(step.amount)}</dd></div>`).join('\n')}
-<div class="vp-sticker__total"><dt>${walk.totalLabel}</dt><dd>${dollars(walk.total)}</dd></div>
-</dl>
-</div>
-</div>
-<p class="vp-note">${vehicle.pay.note}</p>
-${paragraphs(vehicle.pay.after)}
 </section>
 
 <section id="plans" class="vp-section vp-plans">

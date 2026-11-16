@@ -143,24 +143,28 @@
         "rows": [
           {
             "trims": "XL, STX",
+            "example": "XL",
             "fair": "2–3% under",
             "strong": "6–8% under",
             "why": "Thin margins. Invoice is only about 4.5% below MSRP on these trims."
           },
           {
             "trims": "XLT, Lariat",
+            "example": "XLT",
             "fair": "5–7% under",
             "strong": "10% or more",
             "why": "The most trucks on lots and the most dealers competing for the sale."
           },
           {
             "trims": "Tremor, King Ranch, Platinum",
+            "example": "Tremor",
             "fair": "3–6% under",
             "strong": "8–10% under",
             "why": "Fewer on each lot, so it depends on how long that truck has sat."
           },
           {
             "trims": "Raptor",
+            "example": "Raptor",
             "fair": "MSRP",
             "strong": "Any discount",
             "why": "Sells at about sticker. Buyers report Raptor R markups of $5,000 and up."
@@ -963,18 +967,21 @@
         "rows": [
           {
             "trims": "LE, SE, XLE Premium",
+            "example": "XLE Premium",
             "fair": "1–2% under",
             "strong": "3–4% under",
             "why": "TrueCar averages 0.9–1.6% under. Dealer invoice sits about 6% under MSRP."
           },
           {
             "trims": "Woodland, XSE, Limited",
+            "example": "Woodland",
             "fair": "MSRP",
             "strong": "2% under",
             "why": "TrueCar’s averages sit at sticker or just above it."
           },
           {
             "trims": "Plug-in hybrid",
+            "example": "SE Plug-in",
             "fair": "2–3% under",
             "strong": "4% or more",
             "why": "Edmunds’ suggested prices run about 3% under. TrueCar shows no plug-in figure yet."
