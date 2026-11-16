@@ -84,6 +84,14 @@
 /* Review sections: a navy rule, a heading, then the content on the open page. */
 .dr .vp-section { margin-top:44px; padding-top:32px; border-top:1px solid var(--ink); scroll-margin-top:calc(var(--head) + var(--tabs) + 8px); }
 .dr .vp-section--first { margin-top:30px; padding-top:0; border-top:0; scroll-margin-top:calc(var(--head) + var(--tabs) + 28px); }
+/* Every other section sits on a full-width tint band, square-edged, so a new section reads at a glance (owner, November 16,
+   2026, after Kelley Blue Book's model pages). The band replaces the navy rule on the section and on the white one after it.
+   The sticky price panel is positioned, so it paints over the band. */
+.dr .vp-section--band { padding-block:40px 44px; border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage); clip-path:inset(0 -100vmax); }
+.dr .vp-section--band + .vp-section, .dr .vp-section--band + .vp-sources { border-top:0; padding-top:0; }
+.dr .vp-section--band .vp-sticker { background:var(--paper); }
+.dr .vp-section--band .vp-cash__bar { background:#C3CBD6; }
+.dr .vp-body .vp-section--band .vp-cash h3 { border-bottom-color:var(--line); }
 .dr .vp-section > h2 { margin-bottom:14px; font-size:clamp(23px,2.3vw,29px); line-height:1.2; letter-spacing:-.02em; }
 .dr .vp-body h3 { margin:0 0 14px; font-size:17px; line-height:1.3; }
 .dr .vp-section > p { max-width:74ch; margin:14px 0 0; }

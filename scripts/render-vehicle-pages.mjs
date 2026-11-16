@@ -139,7 +139,7 @@ ${vehicle.glance.map(tile => `<li><a href="#${tile.section}"><span class="vp-gla
 </div>
 </section>
 
-<section id="reviews" class="vp-section">
+<section id="reviews" class="vp-section vp-section--band">
 <h2>What the reviewers say</h2>
 ${vehicle.scores.intro ? `<p>${vehicle.scores.intro}</p>\n` : ''}<ul class="vp-scorecard" role="list">
 ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${card.source}</a><p class="vp-scorecard__score">${card.display}<span> out of ${card.scale}</span></p>${meter(card.value, card.scale)}<p class="vp-scorecard__detail">${card.detail}</p></li>`).join('\n')}
@@ -163,7 +163,7 @@ ${columns(vehicle.safety.recalls)}
 
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
-<section id="trims" class="vp-section">
+<section id="trims" class="vp-section vp-section--band">
 <h2>${vehicle.modelYear} ${name} trims and MSRP</h2>
 ${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<table class="vp-trims">
 <caption class="sr-only">${vehicle.modelYear} ${name} starting MSRP by trim, checked ${checked}</caption>
@@ -185,7 +185,7 @@ ${table('trim-caption', `${vehicle.modelYear} ${name} trims with starting MSRP, 
 ${paragraphs(vehicle.pick)}
 </section>
 
-<section id="pay" class="vp-section">
+<section id="pay" class="vp-section vp-section--band">
 <h2>What to pay: how far under MSRP</h2>
 ${paragraphs(vehicle.pay.intro)}
 <div class="vp-ledgers">
@@ -220,7 +220,7 @@ ${planCards.map(card => planCard(card, `vehicle-${vehicle.slug.replace(/-price\.
 <p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>
 
-<section id="incentives" class="vp-section">
+<section id="incentives" class="vp-section vp-section--band">
 <h2>${name} incentives right now</h2>
 ${paragraphs(vehicle.incentives.intro)}
 <ul class="vp-ic-offers" role="list">
@@ -252,7 +252,7 @@ ${table('condition-caption', `Buying a ${name} new, certified pre-owned or used`
 </details>
 </section>
 
-<section id="rivals" class="vp-section">
+<section id="rivals" class="vp-section vp-section--band">
 <h2>Rivals worth pricing against it</h2>
 ${paragraphs(vehicle.rivals)}
 </section>
@@ -265,7 +265,7 @@ ${vehicle.watch.map(item => `<li>${item}</li>`).join('\n')}
 <p>Compare dealers on the whole price in writing. The free <a href="/compare-car-quotes.html">quote comparison worksheet</a> lines offers up side by side, and the <a href="/blog-dealership-addons-complete-guide.html">dealership add-ons guide</a> covers what to ask about each extra.</p>
 </section>
 
-<section id="faq" class="vp-section">
+<section id="faq" class="vp-section vp-section--band">
 <h2>Common questions</h2>
 ${faq([
     ...vehicle.faq,
