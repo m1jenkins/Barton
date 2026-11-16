@@ -70,7 +70,7 @@ Better: Third place is a surprise for the Alder. It's louder at highway speed th
 
 Weak: The Ridgeback rides smoothly and its cabin is impressively quiet at speed.
 
-Better: We haven't road-tested the Ridgeback for this page. Car and Driver measured 66 decibels at 70 mph, which is quiet for a truck, and Consumer Reports rates its ride above the Silverado's.
+Better: Car and Driver measured 66 decibels at 70 mph, which is quiet for a truck, and Consumer Reports rates its ride above the Silverado's.
 
 ## Pros and cons
 

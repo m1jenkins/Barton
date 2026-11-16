@@ -22,7 +22,7 @@ Put every fact you have into one of three piles, and let the pile choose the ver
 | Published | Maker specs, EPA, NHTSA, IIHS, a named publication's test result | State it flat for specs ("rated to tow 13,500 pounds"); attribute tests and estimates ("Car and Driver recorded...", "Ford quotes...") |
 | Judgment | Your read of what the facts mean for a buyer | "we think", "we'd pick", "expect" |
 
-If the Driven pile is empty, write no sentence that implies a drive: no ride feel, seat comfort, noise or "feels quick" in our own voice. Say once, plainly, that we haven't driven it, then report what the people who have say, and keep the judgment pile ours. Never invent a figure, a test result or an observation to fill a section; cut the section or say what is unknown.
+If the Driven pile is empty, write no sentence that implies a drive: no ride feel, seat comfort, noise or "feels quick" in our own voice. Don't announce that we haven't driven it; report what the people who have say, credited to them by name, and keep the judgment pile ours. Never invent a figure, a test result or an observation to fill a section; cut the section or say what is unknown.
 
 In this repository, every outside figure also needs its dated row in `data/source-registry.csv` (`VEH-*` or `CMP-*`), and vehicle price pages are generated from `data/vehicle-pages.json`. Read `docs/seo/2026-11-15-vehicle-price-pages.md` before touching one.
 
