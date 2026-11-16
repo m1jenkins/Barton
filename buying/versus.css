@@ -1,0 +1,207 @@
+/* Car-versus-car pages (scripts/render-vehicle-pages.mjs, data/comparison-pages.json), on top of buying/price-guide.css.
+   Same review layout: white page, hairline rules, square corners. Charts are plain HTML and CSS with every value printed
+   beside its mark, and two series colors, one per car, checked with the dataviz palette validator (light surface, CVD and
+   contrast pass): --car-a for the first car, --car-b for the second. A legend names both whenever both appear.
+   Every class is vs-*. */
+.dr .vs { --car-a:#2A5DA8; --car-b:#C8553D; }
+
+/* Legend: a swatch and the car's name. */
+.dr .vs-legend { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:16px; font-size:13px; line-height:1.3; font-weight:600; color:var(--muted); }
+.dr .vs-legend li { display:flex; align-items:center; gap:8px; }
+.dr .vs-key { display:inline-block; flex:none; width:12px; height:12px; border-radius:3px; background:var(--car-a); }
+.dr .vs-key--b { background:var(--car-b); }
+
+/* Score strip under the photos: both cars' figures, each after its key. */
+.dr .vs-strip-pair { display:flex; align-items:center; gap:7px; font-size:22px; white-space:nowrap; }
+.dr .vs-strip-pair .vs-key + * { margin-left:0; }
+.dr .vs-strip-pair .vs-key:not(:first-child) { margin-left:6px; }
+
+/* Two photos side by side, one per car. */
+.dr .vs-photos { display:grid; grid-template-columns:1fr 1fr; gap:4px; box-shadow:0 28px 48px -28px rgba(14,27,46,.5); }
+.dr .vs-photos figure { position:relative; aspect-ratio:1.45; overflow:hidden; background:var(--sage); }
+.dr .vs-photos picture, .dr .vs-photos img { display:block; width:100%; height:100%; object-fit:cover; }
+.dr .vs-photos figcaption { position:absolute; inset:auto 0 0; display:flex; align-items:center; gap:8px; padding:40px 14px 12px; background:linear-gradient(rgba(14,27,46,0),rgba(14,27,46,.8)); color:#fff; font-size:13px; line-height:1.3; }
+.dr .vs-photos figcaption strong { font-size:16px; }
+.dr .vs-photos .vs-key { box-shadow:0 0 0 2px #fff; }
+
+/* Price panel, two columns: a label row, then each car's figure under its name. */
+.dr .vs-glance__cars { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:14px 0 10px; border-bottom:1px solid rgba(14,27,46,.09); font-size:13px; font-weight:600; }
+.dr .vs-glance__cars span { display:flex; align-items:center; gap:7px; }
+.dr .vs-glance li { padding:11px 0 12px; border-bottom:1px solid rgba(14,27,46,.09); }
+.dr .vs-glance a { display:block; }
+.dr .vs-glance a:hover .vs-glance__label { color:var(--sign); text-decoration:underline; text-underline-offset:3px; }
+.dr .vs-glance__label { display:block; font-size:13px; line-height:1.4; font-weight:600; color:var(--muted); }
+.dr .vs-glance__pair { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:2px; font-size:19px; line-height:1.25; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.dr .vs-glance__pair small { display:block; font-size:12.5px; font-weight:400; letter-spacing:0; color:var(--muted); }
+.dr .vs-glance__win { position:relative; }
+.dr .vs-glance__win::after { content:""; position:absolute; top:9px; margin-left:6px; width:7px; height:7px; border-radius:50%; background:currentColor; }
+
+/* Scoreboard: one row per category, both cars' figures, and which one has the edge. */
+.dr .vs-board { width:100%; margin-top:22px; border-collapse:collapse; font-size:15px; line-height:1.35; font-variant-numeric:tabular-nums; }
+.dr .vs-board :is(th,td) { padding:13px 16px 13px 0; text-align:left; vertical-align:middle; border-bottom:1px solid var(--line); }
+.dr .vs-board :is(th,td):last-child { padding-right:0; }
+.dr .vs-board thead th { padding-top:0; padding-bottom:10px; border-bottom-color:var(--ink); font-size:13px; font-weight:600; color:var(--muted); white-space:nowrap; }
+.dr .vs-board thead th span { display:inline-flex; align-items:center; gap:7px; }
+.dr .vs-board tbody th { font-weight:600; }
+.dr .vs-board tbody th a { color:inherit; text-decoration:none; }
+.dr .vs-board tbody th a:hover { color:var(--sign); text-decoration:underline; text-underline-offset:3px; }
+.dr .vs-board td.vs-win { font-weight:600; }
+.dr .vs-edge { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; white-space:nowrap; }
+.dr .vs-edge--tie { font-weight:400; color:var(--muted); }
+.dr .vs-tally { display:grid; grid-template-columns:1fr 1fr; margin-top:18px; border-block:1px solid var(--line); }
+.dr .vs-tally p { display:flex; align-items:baseline; gap:10px; padding:16px 0; }
+.dr .vs-tally p + p { padding-left:24px; border-left:1px solid var(--line); }
+.dr .vs-tally strong { font-size:44px; line-height:1; font-weight:600; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.dr .vs-tally span { font-size:14px; line-height:1.35; color:var(--muted); }
+.dr .vs-tally .vs-key { align-self:center; }
+
+/* Paired bars: a label, then one bar per car scaled to the larger value in the chart, value at the end of each bar. */
+.dr .vs-chart { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+.dr .vs-chart > h3 { margin-bottom:4px; }
+.dr .vs-chart__note { margin-top:2px; font-size:13px; line-height:1.45; color:var(--muted); }
+.dr .vs-chart__source { margin-top:12px; font-size:12px; line-height:1.45; color:var(--muted); }
+.dr .vs-pairs { margin-top:12px; }
+.dr .vs-pairs > li { display:grid; grid-template-columns:minmax(120px,190px) minmax(0,1fr); gap:6px 16px; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); }
+.dr .vs-pairs > li:last-child { border-bottom:0; }
+.dr .vs-pairs__label { font-size:14px; line-height:1.3; font-weight:600; }
+.dr .vs-pairs__label small { display:block; margin-top:2px; font-size:12.5px; font-weight:400; color:var(--muted); }
+.dr .vs-pairs__bars { display:grid; gap:4px; }
+.dr .vs-bar { display:flex; align-items:center; gap:10px; min-height:18px; font-size:14px; line-height:1; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.dr .vs-bar > i { flex:none; width:calc(var(--w) * .82); min-width:3px; height:14px; border-radius:0 4px 4px 0; background:var(--car-a); }
+.dr .vs-bar--b > i { background:var(--car-b); }
+.dr .vs-bar--none { font-weight:400; color:var(--muted); }
+.dr .vs-bar__who { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+/* Paired columns for a count per model year. Bars are scaled to the tallest in the chart. */
+.dr .vs-cols { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); align-items:end; gap:6px; margin-top:18px; }
+.dr .vs-cols > li { display:flex; flex-direction:column; min-width:0; }
+.dr .vs-cols__pair { display:flex; align-items:flex-end; justify-content:center; gap:3px; height:176px; }
+.dr .vs-cols__bar { display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:min(26px,42%); height:100%; }
+.dr .vs-cols__bar i { display:block; width:100%; height:calc(var(--h) * 1%); min-height:2px; border-radius:4px 4px 0 0; background:var(--car-a); }
+.dr .vs-cols__bar--b i { background:var(--car-b); }
+.dr .vs-cols__bar b { margin-bottom:4px; font-size:11.5px; line-height:1; font-weight:600; font-variant-numeric:tabular-nums; }
+.dr .vs-cols__label { padding-top:8px; border-top:1px solid var(--ink); font-size:13px; line-height:1.3; text-align:center; color:var(--muted); font-variant-numeric:tabular-nums; }
+
+/* Trim ladder: each car's trims on one shared price axis. A tick per trim; the labels sit in the table below it. */
+.dr .vs-ladder { margin-top:16px; }
+.dr .vs-ladder__lane { display:grid; grid-template-columns:96px minmax(0,1fr); gap:14px; align-items:center; padding:12px 0; border-bottom:1px solid var(--line); }
+.dr .vs-ladder__name { display:flex; align-items:center; gap:7px; font-size:14px; font-weight:600; }
+.dr .vs-ladder__track { position:relative; height:30px; }
+.dr .vs-ladder__track::before { content:""; position:absolute; top:50%; left:var(--from); width:calc(var(--to) - var(--from)); height:4px; margin-top:-2px; border-radius:2px; background:color-mix(in srgb,var(--car-a) 28%,#fff); }
+.dr .vs-ladder__lane--b .vs-ladder__track::before { background:color-mix(in srgb,var(--car-b) 28%,#fff); }
+.dr .vs-ladder__track i { position:absolute; top:50%; left:var(--x); width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:var(--car-a); box-shadow:0 0 0 2px #fff; }
+.dr .vs-ladder__lane--b .vs-ladder__track i { background:var(--car-b); }
+.dr .vs-ladder__track i.vs-pick { width:18px; height:18px; margin:-9px 0 0 -9px; box-shadow:0 0 0 2px #fff, 0 0 0 3.5px var(--ink); }
+.dr .vs-ladder__axis { position:relative; height:22px; margin-left:110px; border-top:1px solid var(--ink); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.dr .vs-ladder__axis span { position:absolute; top:5px; left:var(--x); transform:translateX(-50%); white-space:nowrap; }
+.dr .vs-ladder__key { margin-top:10px; font-size:13px; color:var(--muted); }
+.dr .vs-ladder__key i { display:inline-block; width:14px; height:14px; margin-right:6px; border-radius:50%; background:#fff; box-shadow:inset 0 0 0 2px var(--ink); vertical-align:-2px; }
+
+/* Head to head: one bar split between the cars by share of recommendations. */
+.dr .vs-split { margin-top:20px; }
+.dr .vs-split__bar { display:flex; gap:2px; height:44px; }
+.dr .vs-split__bar span { display:flex; align-items:center; width:var(--w); padding:0 14px; background:var(--car-a); color:#fff; font-size:18px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.dr .vs-split__bar span:first-child { border-radius:6px 0 0 6px; }
+.dr .vs-split__bar span:last-child { justify-content:flex-end; border-radius:0 6px 6px 0; background:var(--car-b); }
+.dr .vs-split__labels { display:flex; justify-content:space-between; margin-top:8px; font-size:13px; font-weight:600; }
+.dr .vs-split__labels span { display:flex; align-items:center; gap:7px; }
+
+/* Sentiment index: the headline number per car on a 0–100 scale with 50 marked as neutral. */
+.dr .vs-index { display:grid; grid-template-columns:1fr 1fr; margin-top:22px; border-block:1px solid var(--line); }
+.dr .vs-index > div { padding:22px 24px 22px 0; }
+.dr .vs-index > div + div { padding:22px 0 22px 24px; border-left:1px solid var(--line); }
+.dr .vs-index__car { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; }
+.dr .vs-index__score { margin-top:10px; font-size:72px; line-height:.9; font-weight:600; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
+.dr .vs-index__score small { font-size:16px; font-weight:400; letter-spacing:0; color:var(--muted); }
+.dr .vs-index__scale { position:relative; height:10px; margin-top:16px; border-radius:5px; background:var(--line); }
+.dr .vs-index__scale i { position:absolute; inset:0 auto 0 0; width:var(--w); border-radius:5px; background:var(--car-a); }
+.dr .vs-index > div + div .vs-index__scale i { background:var(--car-b); }
+.dr .vs-index__scale::after { content:""; position:absolute; top:-4px; bottom:-4px; left:50%; width:2px; background:var(--ink); }
+.dr .vs-index__ends { display:flex; justify-content:space-between; margin-top:6px; font-size:12px; color:var(--muted); }
+.dr .vs-index__detail { margin-top:12px; font-size:14px; line-height:1.45; color:var(--muted); }
+
+/* Diverging bars: net sentiment per topic, from −100 (all negative) to +100 (all positive), both cars on one row. */
+.dr .vs-diverge { margin-top:12px; }
+.dr .vs-diverge__axis, .dr .vs-diverge > li { display:grid; grid-template-columns:minmax(110px,170px) minmax(0,1fr); gap:6px 16px; align-items:center; }
+.dr .vs-diverge > li { padding:9px 0; border-bottom:1px solid var(--line); }
+.dr .vs-diverge__label { font-size:14px; line-height:1.3; font-weight:600; }
+.dr .vs-diverge__label small { display:block; margin-top:2px; font-size:12px; font-weight:400; color:var(--muted); }
+.dr .vs-diverge__bars { display:grid; gap:4px; }
+.dr .vs-net { position:relative; height:16px; }
+.dr .vs-net::before { content:""; position:absolute; top:-5px; bottom:-5px; left:50%; width:1px; background:var(--ink); }
+.dr .vs-net i { position:absolute; top:1px; height:14px; background:var(--car-a); }
+.dr .vs-net--b i { background:var(--car-b); }
+.dr .vs-net--pos i { left:50%; width:calc(var(--w) / 2); border-radius:0 4px 4px 0; }
+.dr .vs-net--neg i { right:50%; width:calc(var(--w) / 2); border-radius:4px 0 0 4px; }
+.dr .vs-net b { position:absolute; top:0; font-size:12.5px; line-height:16px; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.dr .vs-net--pos b { left:calc(50% + var(--w) / 2 + 6px); }
+.dr .vs-net--neg b { right:calc(50% + var(--w) / 2 + 6px); }
+.dr .vs-net--none b { left:calc(50% + 6px); font-weight:400; color:var(--muted); }
+.dr .vs-diverge__axis { padding-top:6px; font-size:12px; color:var(--muted); }
+.dr .vs-diverge__axis span:last-child { display:flex; justify-content:space-between; }
+
+/* Themes: what people praise and what they complain about, per car, as ruled lists. */
+.dr .vs-themes { display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:24px; border-top:1px solid var(--ink); }
+.dr .vs-themes section { padding-top:16px; }
+.dr .vs-body .vs-themes h3, .dr .vs-themes h3 { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-size:16px; }
+.dr .vs-themes h4 { margin:14px 0 4px; font-size:13px; font-weight:600; color:var(--muted); }
+.dr .vs-themes li { position:relative; padding:7px 0 7px 22px; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.45; }
+.dr .vs-themes li::before { content:"+"; position:absolute; left:2px; top:6px; font-weight:600; color:var(--sign); }
+.dr .vs-themes .vs-themes__neg li::before { content:"−"; color:var(--error); }
+
+/* Reliability signals: each signal says which car it favors; the count sits on top. */
+.dr .vs-signals li { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) 120px; gap:14px; align-items:center; padding:13px 0; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.4; font-variant-numeric:tabular-nums; }
+.dr .vs-signals li:first-child { padding-top:0; border-bottom-color:var(--ink); font-size:13px; font-weight:600; color:var(--muted); }
+.dr .vs-signals li > span:first-child { font-weight:600; }
+.dr .vs-signals li > span:first-child small { display:block; margin-top:2px; font-size:12.5px; font-weight:400; color:var(--muted); }
+.dr .vs-signals li:first-child > span:first-child { font-weight:600; }
+.dr .vs-signals { margin-top:18px; }
+
+/* Known problems: ruled two-column list, the car named by its key. */
+.dr .vs-issues { display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:18px; border-top:1px solid var(--line); }
+.dr .vs-issues li { padding:14px 0 16px; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.5; }
+.dr .vs-issues strong { display:flex; align-items:center; gap:8px; margin-bottom:4px; font-size:15px; }
+
+/* Method: the index's numbers in a ruled grid. */
+.dr .vs-method { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:22px; border-block:1px solid var(--line); }
+.dr .vs-method li { padding:16px 18px 16px 0; }
+.dr .vs-method li + li { padding-left:18px; border-left:1px solid var(--line); }
+.dr .vs-method strong { display:block; font-size:28px; line-height:1.1; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.dr .vs-method span { display:block; margin-top:4px; font-size:13px; line-height:1.4; color:var(--muted); }
+
+@media (max-width:760px) {
+  .dr .vs-photos figure { aspect-ratio:1.1; }
+  .dr .vs-photos figcaption { padding:28px 10px 9px; font-size:12px; }
+  .dr .vs-photos figcaption strong { font-size:14px; }
+  .dr .vs-strip-pair { font-size:19px; }
+  .dr .vs-board { font-size:14px; }
+  .dr .vs-board :is(th,td) { padding:11px 10px 11px 0; }
+  .dr .vs-board .vs-edge span { display:none; }
+  .dr .vs-tally strong { font-size:34px; }
+  .dr .vs-tally p + p { padding-left:14px; }
+  .dr .vs-pairs > li, .dr .vs-diverge > li, .dr .vs-diverge__axis { grid-template-columns:1fr; }
+  .dr .vs-diverge__axis span:first-child { display:none; }
+  .dr .vs-cols__pair { height:140px; }
+  .dr .vs-cols__bar b { font-size:10px; }
+  .dr .vs-cols__label { font-size:11px; }
+  .dr .vs-ladder__lane { grid-template-columns:1fr; gap:6px; }
+  .dr .vs-ladder__axis { margin-left:0; }
+  .dr .vs-index { grid-template-columns:1fr; }
+  .dr .vs-index > div + div { padding-left:0; border-left:0; border-top:1px solid var(--line); }
+  .dr .vs-index__score { font-size:58px; }
+  .dr .vs-themes, .dr .vs-issues { grid-template-columns:1fr; }
+  .dr .vs-signals li { grid-template-columns:1fr 1fr; }
+  .dr .vs-signals li > span:first-child { grid-column:1 / -1; }
+  .dr .vs-signals li:first-child { display:none; }
+  .dr .vs-method { grid-template-columns:1fr 1fr; }
+  .dr .vs-method li:nth-child(3) { padding-left:0; border-left:0; border-top:1px solid var(--line); }
+  .dr .vs-method li:nth-child(4) { border-top:1px solid var(--line); }
+}
+
+/* Picks by venue: the neutral subreddits first and largest, then each car's own subreddit. */
+.dr .vs-split + .vs-split { margin-top:18px; }
+.dr .vs-split__title { margin-bottom:6px; font-size:14px; line-height:1.35; font-weight:600; }
+.dr .vs-split__title small { margin-left:6px; font-size:12.5px; font-weight:400; color:var(--muted); }
+.dr .vs-split:not(.vs-split--lead) .vs-split__bar { height:30px; }
+.dr .vs-split:not(.vs-split--lead) .vs-split__bar span { font-size:14px; }
+.dr .vs-split__bar span[style="--w:0%"] { display:none; }

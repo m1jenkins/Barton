@@ -1,0 +1,1257 @@
+{
+  "updated": "2026-11-16",
+  "comparisons": [
+    {
+      "slug": "toyota-rav4-vs-honda-cr-v.html",
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Toyota RAV4 vs Honda CR-V (2026): Price, MPG, Reliability | Steer Me Right",
+      "description": "The 2026 Toyota RAV4 and Honda CR-V compared in charts: price by trim, how far under sticker each sells, EPA mpg, space, NHTSA complaints and recalls, resale, safety, and our Reddit Sentiment Index.",
+      "h1": "Toyota RAV4 vs Honda CR-V",
+      "crumb": "RAV4 vs CR-V",
+      "cars": [
+        {
+          "slug": "toyota-rav4-price.html",
+          "short": "RAV4",
+          "name": "Toyota RAV4"
+        },
+        {
+          "slug": "honda-cr-v-price.html",
+          "short": "CR-V",
+          "name": "Honda CR-V"
+        }
+      ],
+      "strip": [
+        {
+          "label": "Edmunds",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>8.1 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>7.4</span>"
+        },
+        {
+          "label": "U.S. News",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>8.3 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>9.0</span>"
+        },
+        {
+          "label": "EPA mpg, hybrid",
+          "section": "mpg",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>43 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>40</span>"
+        },
+        {
+          "label": "Complaints per 100k",
+          "section": "reliability",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>40 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>122</span>"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>48 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>58</span>"
+        }
+      ],
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "section": "price",
+          "a": "$31,900<small>hybrid</small>",
+          "b": "$30,920<small>gas · $35,630 hybrid</small>"
+        },
+        {
+          "label": "Realistic discount",
+          "section": "price",
+          "a": "1–2%<small>under MSRP</small>",
+          "b": "2–5%<small>under MSRP</small>"
+        },
+        {
+          "label": "Best EPA mpg",
+          "section": "mpg",
+          "a": "43<small>combined, FWD</small>",
+          "b": "40<small>combined, FWD hybrid</small>"
+        },
+        {
+          "label": "Owner complaints",
+          "section": "reliability",
+          "a": "40<small>per 100k sold, 2023–25</small>",
+          "b": "122<small>per 100k sold, 2023–25</small>"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "48<small>out of 100</small>",
+          "b": "58<small>out of 100</small>"
+        }
+      ],
+      "summary": "We’d buy the RAV4, unless a quiet ride and a roomy back seat matter more to you than fuel economy. Hybrid against hybrid, the 2026 RAV4 gets 43 mpg against 40, owners filed a third as many complaints with NHTSA per car sold on the last three model years, and the trims we’d buy are $470 apart. The CR-V wins where you sit: in 419 Reddit threads comparing the two, people praise its ride, quiet cabin and rear seat, and in neutral subreddits 57% of those who picked one said buy the CR-V. It’s also easier to buy: dealers had 43 days of CR-Vs against 24 of RAV4s, and buyers pay 2–5% under sticker against 1–2%. Prices were checked on November 16, 2026.",
+      "choose": {
+        "a": [
+          "You want the best fuel economy without plugging in: 43 mpg combined with front drive, 42 with AWD.",
+          "Long-term reliability is your first concern. Its complaint rate to NHTSA is a third of the CR-V’s, and Reddit trusts it more.",
+          "You tow or want power: up to 3,500 lb and 226 to 324 hp.",
+          "You want a spare tire, a 360-degree camera or ventilated seats, the features Reddit says it misses on the CR-V."
+        ],
+        "b": [
+          "Ride comfort and a quiet cabin matter more to you than a few mpg.",
+          "You carry adults or car seats in back: 41 inches of rear legroom, and owners like how wide the rear doors open.",
+          "You want room to negotiate: 2–5% under sticker, and dealers have stock.",
+          "You’d buy used: a 2022 or 2023 CR-V asks about $1,600 to $1,950 less than the same-year RAV4."
+        ]
+      },
+      "board": [
+        {
+          "label": "Starting price, hybrid",
+          "section": "price",
+          "a": "$31,900",
+          "b": "$35,630",
+          "win": "a"
+        },
+        {
+          "label": "Room to negotiate",
+          "section": "price",
+          "a": "1–2% under",
+          "b": "2–5% under",
+          "win": "b"
+        },
+        {
+          "label": "EPA mpg, hybrid FWD",
+          "section": "mpg",
+          "a": "43",
+          "b": "40",
+          "win": "a"
+        },
+        {
+          "label": "Horsepower",
+          "section": "space",
+          "a": "226–324",
+          "b": "190–204",
+          "win": "a"
+        },
+        {
+          "label": "Towing",
+          "section": "space",
+          "a": "3,500 lb",
+          "b": "1,500 lb",
+          "win": "a"
+        },
+        {
+          "label": "Cargo behind rear seats",
+          "section": "space",
+          "a": "37.8 cu ft",
+          "b": "36.3–39.3 cu ft",
+          "win": null
+        },
+        {
+          "label": "Complaints per 100k sold",
+          "section": "reliability",
+          "a": "40",
+          "b": "122",
+          "win": "a"
+        },
+        {
+          "label": "Repair cost, 200k-mile odds",
+          "section": "reliability",
+          "a": "$429 · 33%",
+          "b": "$407 · 41%",
+          "win": "b"
+        },
+        {
+          "label": "Value lost in 3 years",
+          "section": "resale",
+          "a": "13.8%",
+          "b": "13.7–15.9%",
+          "win": null
+        },
+        {
+          "label": "IIHS rear-seat protection",
+          "section": "safety",
+          "a": "Acceptable",
+          "b": "Poor",
+          "win": "a"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "48",
+          "b": "58",
+          "win": "b"
+        }
+      ],
+      "boardNote": "A count of categories, not a score: each one counts the same, and which matter is up to you. Starting price compares hybrids, since every RAV4 is one; the gas CR-V starts at $30,920.",
+      "price": {
+        "intro": [
+          "The CR-V starts lower, because Honda still sells a gas version. Hybrid against hybrid, the RAV4 is $3,730 cheaper to start ($31,900 against $35,630), and the two trims we’d buy are only $470 apart. The bigger difference is what dealers take off: RAV4s sell close to sticker, CR-Vs don’t."
+        ],
+        "picks": {
+          "a": "XLE Premium",
+          "b": "Sport Hybrid"
+        },
+        "ladder": {
+          "title": "Every 2026 trim on one price scale",
+          "note": "Starting MSRP before the destination charge. Each dot is a trim; the ringed dot is the one we’d buy.",
+          "label": "RAV4 trims run from $31,900 to $48,500; CR-V trims from $30,920 to $42,550.",
+          "min": 30000,
+          "max": 50000,
+          "step": 5000,
+          "source": "Toyota and Honda, checked November 15 and 16, 2026"
+        },
+        "charts": [
+          {
+            "title": "How far under MSRP to aim",
+            "note": "Our estimate of a fair and a strong deal on the trims we’d buy, and TrueCar’s November average for mainstream trims. Percent under MSRP; more is better for you.",
+            "max": 5,
+            "rows": [
+              {
+                "label": "Fair deal",
+                "sub": "XLE Premium · Sport Hybrid",
+                "a": 1.5,
+                "aText": "1–2%",
+                "b": 2.5,
+                "bText": "2–3%"
+              },
+              {
+                "label": "Strong deal",
+                "sub": "XLE Premium · Sport Hybrid",
+                "a": 3.5,
+                "aText": "3–4%",
+                "b": 4.5,
+                "bText": "4–5%"
+              },
+              {
+                "label": "TrueCar average paid",
+                "sub": "Mainstream trims",
+                "a": 1.25,
+                "aText": "0.9–1.6%",
+                "b": 1.7,
+                "bText": "1.6–1.8% hybrid · 2.9% gas"
+              }
+            ],
+            "source": "Our estimate, not a promise, from TrueCar, iSeeCars, Edmunds and CarWhere; details in each car’s price guide"
+          },
+          {
+            "title": "Days of supply on dealer lots",
+            "note": "How long dealers’ stock would last at the current selling rate. Fewer days, less room to negotiate.",
+            "rows": [
+              {
+                "label": "End of October 2026",
+                "sub": "Industry average: 87 days",
+                "a": 24,
+                "aText": "24 days",
+                "b": 43,
+                "bText": "43 days"
+              }
+            ],
+            "source": "Cox Automotive, October 2026"
+          }
+        ],
+        "after": [
+          "Worked through: a 2026 RAV4 XLE Premium at 1–2% under its $36,100 sticker is about $35,400 to $35,550 before destination, fees and tax. A 2026 CR-V Sport Hybrid at 2–3% under its $35,630 sticker is about $34,550 to $34,900. Toyota offers 4.99% financing on the RAV4 and no cash; Honda’s rates start at 3.49%, but only on the 2027 CR-V. The current offers are in each car’s price guide."
+        ]
+      },
+      "mpg": {
+        "intro": [
+          "Every RAV4 is a hybrid now, so it beats every CR-V on fuel economy. The CR-V Hybrid comes close with front drive; the gas CR-V costs about $600 a year more to fuel, by EPA’s numbers."
+        ],
+        "charts": [
+          {
+            "title": "EPA combined mpg",
+            "note": "Higher is better. The RAV4 plug-in hybrid is left out: EPA had not rated it on November 16, 2026.",
+            "max": 45,
+            "rows": [
+              {
+                "label": "Hybrid, front drive",
+                "a": 43,
+                "aText": "43 mpg",
+                "b": 40,
+                "bText": "40 mpg"
+              },
+              {
+                "label": "Hybrid, all-wheel drive",
+                "sub": "RAV4 LE, SE · CR-V Sport, Sport-L, Sport Touring",
+                "a": 42,
+                "aText": "42 mpg",
+                "b": 37,
+                "bText": "37 mpg"
+              },
+              {
+                "label": "Off-road trim",
+                "sub": "RAV4 Woodland · CR-V TrailSport",
+                "a": 38,
+                "aText": "38 mpg",
+                "b": 35,
+                "bText": "35 mpg"
+              },
+              {
+                "label": "Gas, front drive",
+                "sub": "CR-V LX, EX, EX-L",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 30,
+                "bText": "30 mpg"
+              },
+              {
+                "label": "Gas, all-wheel drive",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 29,
+                "bText": "29 mpg"
+              }
+            ],
+            "source": "EPA, FuelEconomy.gov, 2026 model year"
+          },
+          {
+            "title": "EPA annual fuel cost",
+            "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+            "rows": [
+              {
+                "label": "Hybrid, front drive",
+                "a": 1400,
+                "aText": "$1,400",
+                "b": 1500,
+                "bText": "$1,500"
+              },
+              {
+                "label": "Hybrid, all-wheel drive",
+                "sub": "RAV4 LE, SE · CR-V Sport",
+                "a": 1450,
+                "aText": "$1,450",
+                "b": 1600,
+                "bText": "$1,600"
+              },
+              {
+                "label": "Gas, front drive",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 2000,
+                "bText": "$2,000"
+              }
+            ],
+            "source": "EPA, FuelEconomy.gov, 2026 model year"
+          },
+          {
+            "title": "Miles on a tank",
+            "note": "EPA combined mpg times the tank: 14.5 gallons in the RAV4, 14.0 in the CR-V.",
+            "rows": [
+              {
+                "label": "Hybrid, front drive",
+                "a": 624,
+                "aText": "624 miles",
+                "b": 560,
+                "bText": "560 miles"
+              },
+              {
+                "label": "Hybrid, all-wheel drive",
+                "a": 609,
+                "aText": "609 miles",
+                "b": 518,
+                "bText": "518 miles"
+              }
+            ],
+            "source": "Our arithmetic from EPA ratings and Toyota and Honda specifications"
+          }
+        ],
+        "after": [
+          "All-wheel drive costs the CR-V Hybrid more: it drops from 40 to 37 mpg, against 43 to 42 in a RAV4 LE or SE (41 in the XLE Premium and up). The gas CR-V EX-L costs $230 less than a Sport Hybrid and uses about $500 more fuel a year, so we’d take the hybrid."
+        ]
+      },
+      "space": {
+        "intro": [
+          "The CR-V is the roomier car: 3.8 inches longer, with 41 inches of rear legroom and more cargo space in the gas version. The RAV4 has more power, tows more and has bigger screens: a 10.5-inch touchscreen as standard and 12.9 inches on upper trims, against 9 inches in every CR-V."
+        ],
+        "charts": [
+          {
+            "title": "Cargo space behind the rear seats",
+            "note": "Cubic feet. The CR-V Hybrid’s battery takes 3 cubic feet from the gas car’s floor.",
+            "rows": [
+              {
+                "label": "Hybrid",
+                "a": 37.8,
+                "aText": "37.8 cu ft",
+                "b": 36.3,
+                "bText": "36.3 cu ft"
+              },
+              {
+                "label": "Gas",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 39.3,
+                "bText": "39.3 cu ft"
+              },
+              {
+                "label": "Plug-in hybrid",
+                "a": 33.6,
+                "aText": "33.6 cu ft",
+                "b": null,
+                "bText": "No plug-in CR-V"
+              }
+            ],
+            "source": "Toyota and Honda specifications, 2026"
+          },
+          {
+            "title": "Horsepower",
+            "rows": [
+              {
+                "label": "Hybrid, front drive",
+                "a": 226,
+                "aText": "226 hp",
+                "b": 204,
+                "bText": "204 hp"
+              },
+              {
+                "label": "Hybrid, all-wheel drive",
+                "a": 236,
+                "aText": "236 hp",
+                "b": 204,
+                "bText": "204 hp"
+              },
+              {
+                "label": "Gas",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 190,
+                "bText": "190 hp"
+              },
+              {
+                "label": "Plug-in hybrid",
+                "a": 324,
+                "aText": "324 hp",
+                "b": null,
+                "bText": "No plug-in CR-V"
+              }
+            ],
+            "source": "Toyota and Honda specifications, 2026"
+          },
+          {
+            "title": "Most it can tow",
+            "note": "Pounds, best case. Only some RAV4 AWD trims are rated for 3,500 lb; the rest tow 1,750 lb.",
+            "rows": [
+              {
+                "label": "Hybrid",
+                "a": 3500,
+                "aText": "3,500 lb",
+                "b": 1000,
+                "bText": "1,000 lb"
+              },
+              {
+                "label": "Gas",
+                "a": null,
+                "aText": "No gas RAV4",
+                "b": 1500,
+                "bText": "1,500 lb"
+              }
+            ],
+            "source": "Toyota and Honda specifications, 2026"
+          }
+        ],
+        "after": []
+      },
+      "reliability": {
+        "intro": [
+          "Nobody can measure how reliable a 2026 will be yet, so we lined up every signal we could check. They split: the RAV4 draws far fewer owner complaints and recalls, and its brand scores better with J.D. Power; the CR-V costs a little less to repair and more of them reach 200,000 miles. Consumer Reports expects both to beat the average new car."
+        ],
+        "signals": [
+          {
+            "label": "Consumer Reports predicted reliability",
+            "note": "2026 model",
+            "a": "86/100",
+            "b": "Better than average",
+            "win": null
+          },
+          {
+            "label": "Owner complaints to NHTSA",
+            "note": "Per 100,000 sold, 2023–2025 model years",
+            "a": "40",
+            "b": "122",
+            "win": "a"
+          },
+          {
+            "label": "Recalls",
+            "note": "2023–2026 model years",
+            "a": "13",
+            "b": "20",
+            "win": "a"
+          },
+          {
+            "label": "J.D. Power dependability, brand",
+            "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+            "a": "185 Toyota",
+            "b": "211 Honda",
+            "win": "a"
+          },
+          {
+            "label": "RepairPal reliability rating",
+            "note": "Out of 5",
+            "a": "4.0",
+            "b": "4.5",
+            "win": "b"
+          },
+          {
+            "label": "Average yearly repair cost",
+            "note": "RepairPal",
+            "a": "$429",
+            "b": "$407",
+            "win": "b"
+          },
+          {
+            "label": "Chance of reaching 200,000 miles",
+            "note": "iSeeCars",
+            "a": "33.1%",
+            "b": "40.9%",
+            "win": "b"
+          }
+        ],
+        "charts": [
+          {
+            "type": "cols",
+            "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
+            "note": "Lower is better. Newer model years have had less time on the road, so their counts are still growing.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 203,
+                "b": 289
+              },
+              {
+                "label": "2020",
+                "a": 152,
+                "b": 136
+              },
+              {
+                "label": "2021",
+                "a": 125,
+                "b": 125
+              },
+              {
+                "label": "2022",
+                "a": 45,
+                "b": 149
+              },
+              {
+                "label": "2023",
+                "a": 55,
+                "b": 176
+              },
+              {
+                "label": "2024",
+                "a": 44,
+                "b": 121
+              },
+              {
+                "label": "2025",
+                "a": 21,
+                "b": 75
+              }
+            ],
+            "source": "NHTSA owner complaints, read through NHTSA’s public API on November 16, 2026, divided by U.S. sales in the same calendar year (Toyota and Honda sales releases). Includes hybrid and plug-in versions. Model year and calendar year don’t line up exactly, so read these as rates, not exact shares."
+          },
+          {
+            "title": "What owners complain about, 2023–2025 model years",
+            "note": "Complaints to NHTSA per 100,000 sold, by the part named in the complaint. One complaint can name more than one part.",
+            "rows": [
+              {
+                "label": "Steering",
+                "a": 4.4,
+                "aText": "4.4",
+                "b": 52.8,
+                "bText": "52.8"
+              },
+              {
+                "label": "Automatic emergency braking",
+                "sub": "NHTSA’s “forward collision avoidance”",
+                "a": 3.6,
+                "aText": "3.6",
+                "b": 12.6,
+                "bText": "12.6"
+              },
+              {
+                "label": "Electrical",
+                "a": 10.9,
+                "aText": "10.9",
+                "b": 8.4,
+                "bText": "8.4"
+              },
+              {
+                "label": "Wipers and visibility",
+                "a": 2.2,
+                "aText": "2.2",
+                "b": 10.5,
+                "bText": "10.5"
+              },
+              {
+                "label": "Brakes",
+                "a": 3.8,
+                "aText": "3.8",
+                "b": 8.5,
+                "bText": "8.5"
+              },
+              {
+                "label": "Engine",
+                "a": 5.9,
+                "aText": "5.9",
+                "b": 8.4,
+                "bText": "8.4"
+              },
+              {
+                "label": "Fuel and hybrid system",
+                "a": 1.7,
+                "aText": "1.7",
+                "b": 8.2,
+                "bText": "8.2"
+              },
+              {
+                "label": "Lane keeping",
+                "a": 1.5,
+                "aText": "1.5",
+                "b": 7.5,
+                "bText": "7.5"
+              }
+            ],
+            "source": "NHTSA owner complaints, read through NHTSA’s public API on November 16, 2026, divided by U.S. sales in the same calendar year (Toyota and Honda sales releases)"
+          },
+          {
+            "type": "cols",
+            "title": "Recalls by model year",
+            "note": "Includes hybrid and plug-in versions. A recall count says nothing about how many cars each one covers.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 8,
+                "b": 8
+              },
+              {
+                "label": "2020",
+                "a": 6,
+                "b": 9
+              },
+              {
+                "label": "2021",
+                "a": 5,
+                "b": 5
+              },
+              {
+                "label": "2022",
+                "a": 3,
+                "b": 6
+              },
+              {
+                "label": "2023",
+                "a": 3,
+                "b": 8
+              },
+              {
+                "label": "2024",
+                "a": 4,
+                "b": 5
+              },
+              {
+                "label": "2025",
+                "a": 4,
+                "b": 5
+              },
+              {
+                "label": "2026",
+                "a": 2,
+                "b": 2
+              }
+            ],
+            "source": "NHTSA recalls, read November 15 and 16, 2026"
+          }
+        ],
+        "issues": [
+          {
+            "car": "b",
+            "title": "Sticky steering, 2023–2025 CR-V",
+            "text": "The biggest single part of the CR-V’s complaint lead. NHTSA investigated (EA23003) and Honda recalled about 1.7 million cars, these CR-Vs among them, for a steering gear fix (recall 24V-744). On a used one, ask for proof the recall was done."
+          },
+          {
+            "car": "b",
+            "title": "Sudden automatic braking, 2017–2022 CR-V",
+            "text": "NHTSA’s investigation EA24002 into braking with nothing in the way, opened in April 2024, was still open on November 16, 2026."
+          },
+          {
+            "car": "b",
+            "title": "Oil dilution, 2017–2018 CR-V",
+            "text": "Fuel could mix into the 1.5-liter turbo’s oil in cold weather. Honda extended the warranty and updated the software; it isn’t a recall."
+          },
+          {
+            "car": "a",
+            "title": "Hybrid cable corrosion, 2019–2022 RAV4 Hybrid AWD",
+            "text": "Toyota’s support program 22TE09 covers corroded high-voltage cables, which can cause a no-start, for 8 years or 100,000 miles. Not a recall, so a used-car VIN check won’t flag it."
+          },
+          {
+            "car": "a",
+            "title": "Plug-in power loss, 2026 RAV4 Plug-in Hybrid",
+            "text": "Recall 26V-659: a software fault can cut power at higher speeds. Toyota is fixing it with a free update from late November 2026."
+          },
+          {
+            "car": "a",
+            "title": "A first-year redesign",
+            "text": "The 2026 RAV4 is all new, and first model years tend to collect more early fixes. It has 53 complaints so far against the CR-V’s 192, but it has been on sale for less time."
+          }
+        ],
+        "after": [
+          "<strong>Our read:</strong> we expect both to be reliable cars, and we’d pick neither on reliability alone. The RAV4’s record over the last three model years is cleaner by a wide margin, and most of the CR-V’s gap is one problem that has a recall fix. The CR-V’s longer life in iSeeCars’ data and lower repair bills count in its favor if you keep cars past 150,000 miles."
+        ],
+        "note": "Complaints are unverified reports owners file with NHTSA; a higher rate is a signal to look closer, not proof of a defect. Consumer Reports’ 86 for the RAV4 is quoted by Autoblog; Consumer Reports gives no public number for the CR-V. J.D. Power’s study covers each brand, not these models. Check any used car’s open recalls by VIN on <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA’s site</a>."
+      },
+      "reddit": {
+        "dataFile": "data/reddit-sentiment/toyota-rav4-vs-honda-cr-v.json",
+        "intro": [
+          "We read 8,874 comments in 419 Reddit threads where people weighed these two cars against each other, from January 2025 to November 2026, and coded every opinion about either car and every time someone told the poster which one to buy. Each car’s own subreddit backs its own car, so the index counts three venues equally: r/rav4, r/crv, and the neutral subreddits, mostly r/whatcarshouldIbuy."
+        ],
+        "indexDetail": {
+          "a": "Praised for reliability and fuel economy. Marked down for dealer markups and waits, road noise, a stiff ride and a cheap-feeling interior.",
+          "b": "Praised for its ride, quiet cabin, rear seat and easy dealers. Marked down for reliability worries and the features it lacks."
+        },
+        "split": {
+          "title": "Which one Reddit tells people to buy",
+          "note": "Comments that told the poster to buy one of the two, one pick per person per thread. Read the neutral subreddits first: each car’s own subreddit mostly picks its own car.",
+          "rows": [
+            {
+              "venue": "neutral",
+              "label": "Neutral subreddits"
+            },
+            {
+              "venue": "a",
+              "label": "In r/rav4"
+            },
+            {
+              "venue": "b",
+              "label": "In r/crv"
+            }
+          ],
+          "source": "Our coding of public Reddit comments, January 2025 to November 16, 2026"
+        },
+        "minimum": 30,
+        "topics": {
+          "title": "Net opinion by topic",
+          "note": "From −100 (every opinion negative) to +100 (every opinion positive), with r/rav4, r/crv and the neutral subreddits weighted equally. Sorted by how often the topic comes up.",
+          "source": "Our coding of public Reddit comments, January 2025 to November 16, 2026"
+        },
+        "themes": {
+          "a": {
+            "praise": [
+              "Reliability and the proven hybrid system",
+              "Fuel economy",
+              "A spare tire",
+              "Resale value",
+              "360-degree camera and ventilated seats on upper trims",
+              "Towing, ground clearance and the plug-in"
+            ],
+            "gripes": [
+              "Dealer markups, waitlists and no discounts",
+              "Road and engine noise",
+              "A cheap-feeling, dated interior",
+              "A cramped rear seat and low headroom",
+              "A stiffer, harsher ride",
+              "Costs more than a comparable CR-V"
+            ]
+          },
+          "b": {
+            "praise": [
+              "A quiet, smooth, comfortable ride",
+              "Rear-seat room, and rear doors that open wide",
+              "A nicer interior with physical knobs",
+              "Easy to find and to negotiate",
+              "Better steering and driving feel",
+              "Good hybrid mileage in town"
+            ],
+            "gripes": [
+              "Owner reports of fuel injector and head gasket trouble, and 1.5-liter turbo oil-dilution worries",
+              "No spare tire on the hybrid",
+              "Missing features: 360-degree camera, ventilated seats",
+              "Lane-keeping drift and a poor backup camera",
+              "Hybrid engine noise when it works hard",
+              "Turbo and CVT durability worries on the gas car"
+            ]
+          }
+        },
+        "after": [
+          "Two things stand out. Reddit trusts the RAV4’s reliability far more than the CR-V’s, partly over owner reports of fuel injector and head gasket trouble on recent CR-Vs, and NHTSA’s complaint data points the same way. And people who drove both mostly preferred sitting in the CR-V: ride, noise, rear-seat space and dealers are where the RAV4 loses. Test-drive both on roads you know before you decide."
+        ],
+        "method": {
+          "stats": [
+            {
+              "value": "8,874",
+              "label": "comments read"
+            },
+            {
+              "value": "419",
+              "label": "threads comparing the two"
+            },
+            {
+              "value": "7,444",
+              "label": "opinions coded"
+            },
+            {
+              "value": "1,405",
+              "label": "picks between the two"
+            }
+          ],
+          "text": [
+            "Reddit blocks automated reads, so threads and comments came from the Arctic Shift archive, a public copy of Reddit. A thread counts when its post names both cars: every such post in r/crv since January 2025 and r/rav4 since May 2025 (when the new RAV4 was shown), plus title searches in r/whatcarshouldIbuy and a few other subreddits. The archive timed out on some months of those searches, so they are missing.",
+            "Every comment of 15 characters or more was read and coded by AI coders working to a fixed rubric: which car it tells the poster to buy, and each opinion as a car, one of ten topics, and positive, negative or mixed. A person’s first pick in a thread counts and later ones don’t. We spot-checked the coding by hand.",
+            "The index is 50 plus 50 times (positive minus negative) divided by all opinions about the car, with each venue scaled to the same weight. 50 means praise and complaints balance. It reflects what people say in threads comparing the two, which draw shoppers who are undecided and owners with something to say. It is not a survey of owners, and we keep only Reddit’s comment ids and our codes, not the comments or usernames."
+          ]
+        }
+      },
+      "resale": {
+        "intro": [
+          "Both hold their value far better than the average car, and it’s close. Kelley Blue Book gave the CR-V its 2026 best resale value award among compact SUVs; iSeeCars puts the gas CR-V and the RAV4 Hybrid level after three years."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "note": "Lower is better.",
+            "max": 25,
+            "rows": [
+              {
+                "label": "Hybrid",
+                "a": 13.8,
+                "aText": "13.8%",
+                "b": 15.9,
+                "bText": "15.9%"
+              },
+              {
+                "label": "Gas",
+                "a": null,
+                "aText": "No gas RAV4 in this data",
+                "b": 13.7,
+                "bText": "13.7%"
+              },
+              {
+                "label": "Average vehicle",
+                "sub": "For scale",
+                "a": 24.8,
+                "aText": "24.8%",
+                "b": 24.8,
+                "bText": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Median asking price, used, by model year",
+            "note": "Every version, at dealers and private sellers.",
+            "rows": [
+              {
+                "label": "2022",
+                "a": 28275,
+                "aText": "$28,275",
+                "b": 26329,
+                "bText": "$26,329"
+              },
+              {
+                "label": "2023",
+                "a": 30875,
+                "aText": "$30,875",
+                "b": 29229,
+                "bText": "$29,229"
+              },
+              {
+                "label": "2024",
+                "a": 31925,
+                "aText": "$31,925",
+                "b": 31519,
+                "bText": "$31,519"
+              },
+              {
+                "label": "2025",
+                "a": 32299,
+                "aText": "$32,299",
+                "b": 33066,
+                "bText": "$33,066"
+              }
+            ],
+            "source": "CarWhere, November 14, 2026"
+          }
+        ],
+        "after": [
+          "Used, a 2022 or 2023 CR-V asks about $1,600 to $1,950 less than the same-year RAV4. A nearly new RAV4 asks almost what a new LE costs, so we’d buy the RAV4 new. A used 2023 or 2024 CR-V is the better used buy, once you’ve checked that the steering recall was done."
+        ]
+      },
+      "safety": {
+        "intro": [
+          "Neither is a 2026 IIHS Top Safety Pick. Both do well in the front and side crash tests; the difference is the back seat. In IIHS’s updated moderate overlap test the RAV4 rates Acceptable and the CR-V Poor, because the rear passenger’s belt rode up toward the neck. NHTSA has crash-tested the CR-V, 5 stars overall, but not yet the new RAV4."
+        ],
+        "rows": [
+          {
+            "label": "IIHS small overlap front",
+            "a": "Good",
+            "b": "Good",
+            "win": null
+          },
+          {
+            "label": "IIHS moderate overlap front (updated)",
+            "a": "Acceptable",
+            "b": "Poor",
+            "win": "a"
+          },
+          {
+            "label": "IIHS side (updated)",
+            "a": "Good",
+            "b": "Good",
+            "win": null
+          },
+          {
+            "label": "NHTSA overall",
+            "a": "Not yet tested",
+            "b": "5 stars",
+            "win": null
+          }
+        ],
+        "charts": [],
+        "note": "Ratings from <a href=\"https://www.iihs.org/ratings/vehicle/toyota/rav4-4-door-suv/2026\" rel=\"noopener\">IIHS (RAV4)</a>, <a href=\"https://www.iihs.org/ratings/vehicle/honda/cr-v-4-door-suv/2026\" rel=\"noopener\">IIHS (CR-V)</a> and <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 15 and 16, 2026. Each car’s price guide has its full safety report card."
+      },
+      "plansIntro": "Cross-shopping is the easiest way to get a better price on either one: a Honda dealer who knows you have a written RAV4 offer has a reason to move. Steer Me Right Pro gets written out-the-door offers on both, from dealers that have them in stock, and negotiates each.",
+      "faq": [
+        [
+          "Which is more reliable, the RAV4 or the CR-V?",
+          "On the evidence we can check, the RAV4. Owners of 2023 to 2025 models filed 40 complaints with NHTSA per 100,000 sold, against 122 for the CR-V, much of it the CR-V’s steering problem (fixed by recall 24V-744), and the RAV4 had fewer recalls. The CR-V costs a little less to repair and more of them reach 200,000 miles in iSeeCars’ data. Consumer Reports expects both 2026s to beat the average new car."
+        ],
+        [
+          "Is the RAV4 Hybrid or the CR-V Hybrid better on gas?",
+          "The RAV4 Hybrid: 43 mpg combined against 40 with front drive, and 42 against 37 with AWD. EPA puts the difference at $100 to $150 a year in fuel."
+        ],
+        [
+          "Which is cheaper, the RAV4 or the CR-V?",
+          "The CR-V starts lower ($30,920 for the gas LX), but hybrid against hybrid the RAV4 starts $3,730 lower. The trims we’d buy, a RAV4 XLE Premium and a CR-V Sport Hybrid, are $470 apart, and the CR-V usually sells further under sticker, so they end up within about $1,000 of each other."
+        ],
+        [
+          "Which is bigger inside?",
+          "The CR-V. It’s 3.8 inches longer, has 41 inches of rear legroom, and the gas version has the most cargo space (39.3 cubic feet). The RAV4 Hybrid has slightly more cargo room than the CR-V Hybrid, 37.8 against 36.3 cubic feet."
+        ],
+        [
+          "What does Reddit think of the RAV4 vs the CR-V?",
+          "In neutral subreddits, 57% of people who picked one told the poster to buy the CR-V. Our Reddit Sentiment Index scores the CR-V 58 and the RAV4 48 out of 100, where 50 means praise and complaints balance. Reddit praises the RAV4’s reliability and mileage and the CR-V’s ride, quiet and space."
+        ],
+        [
+          "Should I wait for the next CR-V?",
+          "Honda says an all-new, hybrid-only CR-V arrives in 2027 as a 2028 model. If you want the CR-V now, a 2026 or 2027 is a mature design with its steering recall behind it. The RAV4 was redesigned for 2026."
+        ]
+      ],
+      "related": "<a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
+      "sources": [
+        {
+          "id": "VEH-RVC-01",
+          "url": "https://www.toyota.com/rav4/",
+          "title": "Toyota: 2026 RAV4",
+          "note": "trims and starting MSRP"
+        },
+        {
+          "id": "VEH-RVC-02",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb056d5c-2026-honda-cr-v-pricing-and-epa-ratings-3",
+          "title": "Honda: 2026 CR-V pricing and EPA ratings",
+          "note": "trims, starting MSRP and fuel economy"
+        },
+        {
+          "id": "VEH-RVC-03",
+          "url": "https://www.toyota.com/rav4/2026/features/",
+          "title": "Toyota: 2026 RAV4 features and specifications",
+          "note": "cargo volume, ground clearance, towing, fuel tank"
+        },
+        {
+          "id": "VEH-RVC-04",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-2ecca7d29f72bf212c56033cca000993-2026-honda-cr-v-specifications-features-updated",
+          "title": "Honda: 2026 CR-V specifications and features",
+          "note": "cargo volume, legroom, ground clearance, towing, fuel tank, power"
+        },
+        {
+          "id": "VEH-RVC-05",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_RAV4.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota RAV4",
+          "note": "EPA mpg and annual fuel cost (EPA vehicle records 50285 and 50135)"
+        },
+        {
+          "id": "VEH-RVC-06",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_CR-V.shtml",
+          "title": "FuelEconomy.gov: 2026 Honda CR-V",
+          "note": "EPA mpg and annual fuel cost (EPA vehicle records 49352, 49487, 49353 and 49488)"
+        },
+        {
+          "id": "VEH-RVC-07",
+          "url": "https://www.truecar.com/overview/toyota/rav4/2026",
+          "title": "TrueCar: 2026 Toyota RAV4",
+          "note": "average price paid against MSRP"
+        },
+        {
+          "id": "VEH-RVC-08",
+          "url": "https://www.truecar.com/overview/honda/cr-v/2026/",
+          "title": "TrueCar: 2026 Honda CR-V",
+          "note": "average price paid against MSRP"
+        },
+        {
+          "id": "VEH-RVC-09",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-RVC-10",
+          "url": "https://www.carwhere.com/what-people-paid/honda/cr-v/2026",
+          "title": "CarWhere: what people paid for a 2026 Honda CR-V",
+          "note": "buyer-reported prices"
+        },
+        {
+          "id": "VEH-RVC-11",
+          "url": "https://www.nhtsa.gov/recalls",
+          "title": "NHTSA: recalls and complaints",
+          "note": "recall counts and owner complaints by model year, read through NHTSA’s public API on November 16, 2026"
+        },
+        {
+          "id": "VEH-RVC-12",
+          "url": "https://static.nhtsa.gov/odi/inv/2023/INCLA-EA23003-11060.pdf",
+          "title": "NHTSA: engineering analysis EA23003, closing resume",
+          "note": "Honda steering investigation and recall 24V-744"
+        },
+        {
+          "id": "VEH-RVC-13",
+          "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24002",
+          "title": "NHTSA: investigation EA24002",
+          "note": "Honda automatic emergency braking investigation"
+        },
+        {
+          "id": "VEH-RVC-14",
+          "url": "https://www.carcomplaints.com/Toyota/RAV4_Hybrid/2019/tsb/tsb-22te09.shtml",
+          "title": "CarComplaints: Toyota support program 22TE09",
+          "note": "RAV4 Hybrid cable corrosion, 2019 to 2022"
+        },
+        {
+          "id": "VEH-RVC-15",
+          "url": "https://www.carcomplaints.com/news/2019/honda-civic-cr-v-oil-dilution-warranties-extended.shtml",
+          "title": "CarComplaints: Honda oil dilution warranties extended",
+          "note": "2017 and 2018 CR-V turbo oil dilution"
+        },
+        {
+          "id": "VEH-RVC-16",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2025-us-sales-results-302652746.html",
+          "title": "Toyota: 2025 U.S. sales",
+          "note": "RAV4 sales, 2024 and 2025"
+        },
+        {
+          "id": "VEH-RVC-17",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2023-us-sales-results-302025453.html",
+          "title": "Toyota: 2023 U.S. sales",
+          "note": "RAV4 sales, 2022 and 2023"
+        },
+        {
+          "id": "VEH-RVC-18",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-us-december-year-end-2021-sales-301453684.html",
+          "title": "Toyota: 2021 U.S. sales",
+          "note": "RAV4 sales, 2020 and 2021"
+        },
+        {
+          "id": "VEH-RVC-19",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-december-2019-year-end-sales-300980867.html",
+          "title": "Toyota: 2019 U.S. sales",
+          "note": "RAV4 sales, 2019"
+        },
+        {
+          "id": "VEH-RVC-20",
+          "url": "https://hondanews.com/en-US/releases/digital-factbook-north-america-sales",
+          "title": "Honda: Digital FactBook, North America sales",
+          "note": "CR-V sales by year"
+        },
+        {
+          "id": "VEH-RVC-21",
+          "url": "https://www.motor1.com/news/787773/jd-power-vehicle-dependability-study/",
+          "title": "Motor1: J.D. Power 2026 Vehicle Dependability Study",
+          "note": "problems per 100 vehicles by brand"
+        },
+        {
+          "id": "VEH-RVC-22",
+          "url": "https://repairpal.com/cars/compare/toyota-rav4-vs-honda-cr-v",
+          "title": "RepairPal: RAV4 vs CR-V",
+          "note": "reliability rating and average annual repair cost"
+        },
+        {
+          "id": "VEH-RVC-23",
+          "url": "https://www.iseecars.com/car/toyota-rav4/reliability",
+          "title": "iSeeCars: Toyota RAV4 reliability",
+          "note": "chance of reaching 200,000 miles"
+        },
+        {
+          "id": "VEH-RVC-24",
+          "url": "https://www.iseecars.com/car/honda-cr-v/reliability",
+          "title": "iSeeCars: Honda CR-V reliability",
+          "note": "chance of reaching 200,000 miles"
+        },
+        {
+          "id": "VEH-RVC-25",
+          "url": "https://www.consumerreports.org/cars/toyota/rav4/2026/reliability",
+          "title": "Consumer Reports: 2026 Toyota RAV4 reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-RVC-26",
+          "url": "https://www.consumerreports.org/cars/honda/cr-v/2026/reliability/",
+          "title": "Consumer Reports: 2026 Honda CR-V reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-RVC-27",
+          "url": "https://www.aol.com/lifestyle/2026-toyota-rav4-vs-2026-000000161.html",
+          "title": "Autoblog (via AOL): 2026 Toyota RAV4 vs 2026 Honda CR-V",
+          "note": "the RAV4’s Consumer Reports predicted reliability score"
+        },
+        {
+          "id": "VEH-RVC-28",
+          "url": "https://www.iseecars.com/car/toyota-rav4/resale-value",
+          "title": "iSeeCars: Toyota RAV4 resale value",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-RVC-29",
+          "url": "https://www.iseecars.com/car/honda-cr-v/resale-value",
+          "title": "iSeeCars: Honda CR-V resale value",
+          "note": "depreciation, gas"
+        },
+        {
+          "id": "VEH-RVC-30",
+          "url": "https://www.iseecars.com/car/honda-cr-v-hybrid/resale-value",
+          "title": "iSeeCars: Honda CR-V Hybrid resale value",
+          "note": "depreciation, hybrid"
+        },
+        {
+          "id": "VEH-RVC-31",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/rav4",
+          "title": "CarWhere: used Toyota RAV4 prices",
+          "note": "median asking price by model year"
+        },
+        {
+          "id": "VEH-RVC-32",
+          "url": "https://www.carwhere.com/used-car-prices/honda/cr-v",
+          "title": "CarWhere: used Honda CR-V prices",
+          "note": "median asking price by model year"
+        },
+        {
+          "id": "VEH-RVC-33",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "note": "compact SUV award"
+        },
+        {
+          "id": "VEH-RVC-34",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/rav4-4-door-suv/2026",
+          "title": "IIHS: 2026 Toyota RAV4",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-RVC-35",
+          "url": "https://www.iihs.org/ratings/vehicle/honda/cr-v-4-door-suv/2026",
+          "title": "IIHS: 2026 Honda CR-V",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-RVC-36",
+          "url": "https://www.nhtsa.gov/ratings",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-RVC-37",
+          "url": "https://www.edmunds.com/toyota/rav4/",
+          "title": "Edmunds: 2026 Toyota RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-38",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/",
+          "title": "Edmunds: 2026 Honda CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-39",
+          "url": "https://arctic-shift.photon-reddit.com/",
+          "title": "Arctic Shift: Reddit archive",
+          "note": "public Reddit posts and comments behind the Reddit Sentiment Index"
+        },
+        {
+          "id": "VEH-RVC-40",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/hybrid/",
+          "title": "Edmunds: 2026 Honda CR-V Hybrid",
+          "note": "hybrid review score"
+        },
+        {
+          "id": "VEH-RVC-41",
+          "url": "https://www.kbb.com/toyota/rav4/2026/",
+          "title": "Kelley Blue Book: 2026 Toyota RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-42",
+          "url": "https://www.kbb.com/honda/cr-v/2026/",
+          "title": "Kelley Blue Book: 2026 Honda CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-43",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/rav4",
+          "title": "U.S. News: 2026 Toyota RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-44",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v/2026",
+          "title": "U.S. News: 2026 Honda CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-45",
+          "url": "https://www.jdpower.com/cars/2026/toyota/rav4",
+          "title": "J.D. Power: 2026 Toyota RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-46",
+          "url": "https://www.jdpower.com/cars/2026/honda/cr-v",
+          "title": "J.D. Power: 2026 Honda CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RVC-47",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-b26ae02ff5dca50cb32a1f4783161ef6-all-new-honda-cr-v-to-go-100-hybrid-next-year-americas-best-selling-suv-to-debut-new-platform-powertrain-and-design",
+          "title": "Honda: all-new CR-V to go 100% hybrid",
+          "note": "the next-generation CR-V"
+        }
+      ],
+      "reviews": {
+        "title": "What the reviewers say",
+        "note": "Each publisher’s own score, drawn to its own scale. They are not Steer Me Right ratings, and we have not averaged them.",
+        "max": 100,
+        "rows": [
+          {
+            "label": "<a href=\"https://www.edmunds.com/toyota/rav4/\" rel=\"noopener\">Edmunds</a>",
+            "sub": "Out of 10. The CR-V Hybrid scores 7.7",
+            "a": 81,
+            "aText": "8.1",
+            "b": 74,
+            "bText": "7.4"
+          },
+          {
+            "label": "<a href=\"https://www.kbb.com/honda/cr-v/2026/\" rel=\"noopener\">Kelley Blue Book</a>",
+            "sub": "Out of 5",
+            "a": 90,
+            "aText": "4.5",
+            "b": 96,
+            "bText": "4.8"
+          },
+          {
+            "label": "<a href=\"https://cars.usnews.com/cars-trucks/honda/cr-v/2026\" rel=\"noopener\">U.S. News</a>",
+            "sub": "Out of 10",
+            "a": 83,
+            "aText": "8.3",
+            "b": 90,
+            "bText": "9.0"
+          },
+          {
+            "label": "<a href=\"https://www.jdpower.com/cars/2026/toyota/rav4\" rel=\"noopener\">J.D. Power</a>",
+            "sub": "Out of 100",
+            "a": 85,
+            "aText": "85",
+            "b": 82,
+            "bText": "82"
+          }
+        ],
+        "source": "Scores for the 2026 RAV4 hybrid and 2026 gas CR-V, as published on November 15 and 16, 2026. Each car’s price guide links every publisher’s page for both cars."
+      }
+    }
+  ]
+}

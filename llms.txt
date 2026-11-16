@@ -55,6 +55,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 - [Toyota Tacoma Price](https://www.steermeright.com/toyota-tacoma-price.html): MSRP by trim for the 2026 and 2027 gas and i-FORCE MAX hybrid, how far under sticker dealers sell it, Toyota’s current offers, and new versus used versus CPO (checked 2026-11-16).
 - [Toyota Corolla Price](https://www.steermeright.com/toyota-corolla-price.html): MSRP by trim for the 2026 and 2027 sedan, Hybrid and Hatchback, how far under sticker dealers sell it, Toyota’s current offers, new versus used versus CPO, and the GR Corolla’s prices and what to pay (checked 2026-11-16).
 - [Used Tesla Model Y Price](https://www.steermeright.com/tesla-model-y-price.html): Dealer asking prices for a used Model Y by model year 2020 to 2025, how far under asking to aim, the year to buy, what Tesla’s warranties cover for a used buyer, and when new from Tesla makes more sense (checked 2026-11-16).
+- [Toyota RAV4 vs Honda CR-V](https://www.steermeright.com/toyota-rav4-vs-honda-cr-v.html): The 2026 RAV4 and CR-V compared in charts: price by trim and how far under sticker each sells, EPA mpg, space and towing, NHTSA owner complaints and recalls per 100,000 sold, resale, crash tests, and a Reddit Sentiment Index built from public comparison threads (checked 2026-11-16).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

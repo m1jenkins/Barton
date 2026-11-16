@@ -7,6 +7,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { shell } from './render-market-pages.mjs';
+import { summarize, topics as sentimentTopics } from './reddit-sentiment.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://www.steermeright.com';
@@ -375,14 +376,301 @@ ${credits(vehicle.photo, vehicle.spotlight ? [...vehicle.gallery, vehicle.spotli
   return { slug: vehicle.slug, title: vehicle.title, description: vehicle.description, h1: vehicle.h1, crumbs: [['Resources', `${origin}/blog.html`], [text.crumb, `${origin}/${vehicle.slug}`]], body };
 }
 
+// ---- Car-versus-car pages (data/comparison-pages.json), e.g. toyota-rav4-vs-honda-cr-v.html ----
+// Each car's trims, photo and review scores come from its own entry in data/vehicle-pages.json (`cars[].slug`), so a
+// price change there reaches the comparison on the next build. Everything else is in the comparison's own data.
+// Charts use two colors, one per car (--car-a, --car-b in buying/versus.css), and always print the value beside the mark.
+const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" aria-hidden="true"></span>`;
+const legend = cars => `<ul class="vs-legend" role="list">${cars.map(car => `<li>${key(car.side)}${car.short}</li>`).join('')}</ul>`;
+const pct = (value, max) => `${Math.round((value / max) * 1000) / 10}%`;
+// Paired bars. A null value prints "Not published" in place of a bar.
+function pairChart(chart, cars) {
+  const max = chart.max ?? Math.max(...chart.rows.flatMap(row => [row.a, row.b]).filter(value => typeof value === 'number'));
+  const bar = (row, car) => {
+    const value = row[car.side], text = row[`${car.side}Text`] ?? value;
+    if (value === null || value === undefined) return `<span class="vs-bar vs-bar--none"><span class="vs-bar__who">${car.short}: </span>${text ?? 'Not published'}</span>`;
+    return `<span class="vs-bar vs-bar--${car.side}"><span class="vs-bar__who">${car.short}: </span><i style="--w:${pct(value, max)}" aria-hidden="true"></i>${text}</span>`;
+  };
+  return `<section class="vs-chart">
+<h3>${chart.title}</h3>
+${chart.note ? `<p class="vs-chart__note">${chart.note}</p>\n` : ''}${legend(cars)}
+<ul class="vs-pairs" role="list">
+${chart.rows.map(row => `<li><span class="vs-pairs__label">${row.label}${row.sub ? `<small>${row.sub}</small>` : ''}</span><span class="vs-pairs__bars">${cars.map(car => bar(row, car)).join('')}</span></li>`).join('\n')}
+</ul>
+<p class="vs-chart__source">${chart.source}</p>
+</section>`;
+}
+// Paired columns, one pair per model year.
+function pairColumns(chart, cars) {
+  const max = Math.max(...chart.rows.flatMap(row => [row.a, row.b]));
+  return `<section class="vs-chart">
+<h3>${chart.title}</h3>
+${chart.note ? `<p class="vs-chart__note">${chart.note}</p>\n` : ''}${legend(cars)}
+<ol class="vs-cols" role="list">
+${chart.rows.map(row => `<li><span class="vs-cols__pair">${cars.map(car => `<span class="vs-cols__bar${car.side === 'b' ? ' vs-cols__bar--b' : ''}"><b><span class="sr-only">${car.short} </span>${row[`${car.side}Text`] ?? row[car.side]}</b><i style="--h:${Math.round((row[car.side] / max) * 1000) / 10}" aria-hidden="true"></i></span>`).join('')}</span><span class="vs-cols__label">${row.label}</span></li>`).join('\n')}
+</ol>
+<p class="vs-chart__source">${chart.source}</p>
+</section>`;
+}
+// Both cars' trims on one price axis, from each car's starting MSRP in data/vehicle-pages.json. The picked trim is ringed.
+function trimLadder(ladder, cars) {
+  const at = price => `${Math.round(((price - ladder.min) / (ladder.max - ladder.min)) * 1000) / 10}%`;
+  const lane = car => {
+    const prices = car.vehicle.trims.rows.map(trim => trim.prices[0]);
+    return `<div class="vs-ladder__lane${car.side === 'b' ? ' vs-ladder__lane--b' : ''}"><span class="vs-ladder__name">${key(car.side)}${car.short}</span><span class="vs-ladder__track" style="--from:${at(Math.min(...prices))};--to:${at(Math.max(...prices))}">${car.vehicle.trims.rows.map(trim => `<i${trim.name === car.pick ? ' class="vs-pick"' : ''} style="--x:${at(trim.prices[0])}" title="${trim.name}, ${dollars(trim.prices[0])}"></i>`).join('')}</span></div>`;
+  };
+  const ticks = [];
+  for (let value = ladder.min; value <= ladder.max; value += ladder.step) ticks.push(value);
+  return `<section class="vs-chart">
+<h3>${ladder.title}</h3>
+<p class="vs-chart__note">${ladder.note}</p>
+<div class="vs-ladder" role="img" aria-label="${ladder.label}">
+${cars.map(lane).join('\n')}
+<div class="vs-ladder__axis" aria-hidden="true">${ticks.map(value => `<span style="--x:${at(value)}">$${value / 1000}k</span>`).join('')}</div>
+</div>
+<p class="vs-ladder__key"><i aria-hidden="true"></i>The trim we’d buy</p>
+<details class="vp-more"><summary>Every trim and price</summary>
+${table('ladder-caption', ladder.caption, ['Trim', 'Car', 'Starting MSRP'], cars.flatMap(car => car.vehicle.trims.rows.map(trim => [`${trim.name}<span>${trim.short}</span>`, car.short, `<strong>${dollars(trim.prices[0])}</strong>`])).sort((x, y) => Number(x[2].replace(/\D/g, '')) - Number(y[2].replace(/\D/g, ''))))}
+</details>
+<p class="vs-chart__source">${ladder.source}</p>
+</section>`;
+}
+// Net sentiment per topic, from −100 (all negative) to +100 (all positive), as worked out by scripts/reddit-sentiment.mjs.
+// A car with fewer than `minimum` mentions on a topic shows its count instead of a bar.
+function divergeChart(chart, cars, rows, minimum) {
+  const net = (figure, car) => {
+    if (figure.mentions < minimum || figure.net === null) return `<span class="vs-net vs-net--${car.side} vs-net--none"><span class="sr-only">${car.short}: </span><b>${figure.mentions} mentions, too few to score</b></span>`;
+    const value = figure.net;
+    return `<span class="vs-net vs-net--${car.side} vs-net--${value >= 0 ? 'pos' : 'neg'}" style="--w:${Math.abs(value)}%"><span class="sr-only">${car.short}: </span><i aria-hidden="true"></i><b>${value > 0 ? '+' : value < 0 ? '−' : ''}${Math.abs(value)}<span class="sr-only"> net, from ${figure.mentions} mentions</span></b></span>`;
+  };
+  return `<section class="vs-chart">
+<h3>${chart.title}</h3>
+<p class="vs-chart__note">${chart.note}</p>
+${legend(cars)}
+<ul class="vs-diverge" role="list">
+${rows.map(row => `<li><span class="vs-diverge__label">${row.label}<small>${cars.map(car => `${car.short} ${row[car.side].mentions}`).join(' · ')} mentions</small></span><span class="vs-diverge__bars">${cars.map(car => net(row[car.side], car)).join('')}</span></li>`).join('\n')}
+<li class="vs-diverge__axis" aria-hidden="true"><span></span><span><span>All negative</span><span>Even</span><span>All positive</span></span></li>
+</ul>
+<p class="vs-chart__source">${chart.source}</p>
+</section>`;
+}
+// Who each venue tells people to buy: one split bar per venue (the cars' own subreddits and the neutral ones).
+function splitBars(split, cars, venues) {
+  const bar = row => {
+    const picks = venues[row.venue].recommend, all = picks.a + picks.b;
+    const share = side => Math.round((picks[side] / all) * 100);
+    return `<div class="vs-split${row.venue === 'neutral' ? ' vs-split--lead' : ''}"><p class="vs-split__title">${row.label} <small>${all.toLocaleString('en-US')} picks in ${venues[row.venue].threads} threads</small></p>
+<div class="vs-split__bar" role="img" aria-label="${row.label}: ${cars.map(car => `${car.short} ${share(car.side)}%`).join(', ')}">${cars.map(car => `<span style="--w:${share(car.side)}%">${share(car.side)}%</span>`).join('')}</div>
+<p class="vs-split__labels" aria-hidden="true">${cars.map(car => `<span>${key(car.side)}${car.short} · ${picks[car.side]}</span>`).join('')}</p></div>`;
+  };
+  return `<section class="vs-chart">
+<h3>${split.title}</h3>
+<p class="vs-chart__note">${split.note}</p>
+${split.rows.map(bar).join('\n')}
+<p class="vs-chart__source">${split.source}</p>
+</section>`;
+}
+
+function comparisonPage(cmp, vehicles, updated, sentiment) {
+  const checked = longDate(cmp.checkedOn);
+  const cars = cmp.cars.map((car, index) => ({ ...car, side: index ? 'b' : 'a', vehicle: vehicles.find(vehicle => vehicle.slug === car.slug) }));
+  for (const car of cars) if (!car.vehicle) throw new Error(`${cmp.slug}: no vehicle ${car.slug}`);
+  const [a, b] = cars;
+  const by = side => cars.find(car => car.side === side);
+  const edge = win => win ? `<span class="vs-edge">${key(win)}<span>${by(win).short}</span></span>` : '<span class="vs-edge vs-edge--tie">Even</span>';
+  const wins = side => cmp.board.filter(row => row.win === side).length;
+  const r = cmp.reddit;
+  const topicRows = Object.entries(sentiment.topics).map(([topic, figures]) => ({ label: sentimentTopics[topic], ...figures })).sort((x, y) => (y.a.mentions + y.b.mentions) - (x.a.mentions + x.b.mentions));
+  const tabs = [['overview', 'Overview'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['reddit', 'Reddit Sentiment Index'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
+  const charts = list => list.map(chart => chart.type === 'cols' ? pairColumns(chart, cars) : pairChart(chart, cars)).join('\n');
+  const body = `<article class="vp vs">
+<header class="vp-head vp-width">
+<p class="vp-crumb"><a href="/blog.html">Resources</a> / ${cmp.crumb}</p>
+<h1>${cmp.h1}</h1>
+<p class="vp-byline">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p>
+</header>
+<nav class="vp-tabs" aria-label="Article contents"><ul class="vp-width" role="list">${tabs.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join('')}</ul></nav>
+
+<div class="vp-stage">
+<div class="vp-layout vp-width">
+<div class="vp-hero">
+<div class="vs-photos">
+${cars.map(car => `<figure>${picture(car.vehicle.photo, [640, 960, 1600], '(max-width: 760px) 94vw, (max-width: 1000px) 47vw, 340px', true)}<figcaption>${key(car.side)}<strong>${car.name}</strong></figcaption></figure>`).join('\n')}
+</div>
+<ul class="vp-strip" role="list">
+${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.label}</span><span class="vp-strip__score">${item.value}</span></a></li>`).join('\n')}
+</ul>
+</div>
+
+<aside class="vp-rail">
+<p class="vs-glance__cars">${cars.map(car => `<span>${key(car.side)}${car.short}</span>`).join('')}</p>
+<ul class="vs-glance" role="list" aria-label="${a.short} and ${b.short} at a glance">
+${cmp.glance.map(row => `<li><a href="#${row.section}"><span class="vs-glance__label">${row.label}</span><span class="vs-glance__pair">${cars.map(car => `<span><span class="sr-only">${car.short}: </span>${row[car.side]}</span>`).join('')}</span></a></li>`).join('\n')}
+</ul>
+<a class="vp-button" href="#plans">Have us price both</a>
+<p class="vp-rail__fine">Dealers and lenders pay us nothing.</p>
+</aside>
+
+<div class="vp-body">
+<section id="overview" class="vp-section vp-section--first">
+<p class="vp-lead">${cmp.summary}</p>
+<div class="vp-verdict vs-verdict">
+${cars.map(car => `<section><h2>${key(car.side)} Buy the ${car.short} if…</h2><ul role="list">${cmp.choose[car.side].map(item => `<li>${item}</li>`).join('')}</ul></section>`).join('\n')}
+</div>
+<h3 class="vs-board__title" style="margin-top:34px">Head to head</h3>
+<div class="vp-scroll" role="region" aria-labelledby="board-caption" tabindex="0">
+<table class="vs-board">
+<caption id="board-caption" class="sr-only">${a.name} and ${b.name} compared by category, checked ${checked}</caption>
+<thead><tr><th scope="col">Category</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}<th scope="col">Edge</th></tr></thead>
+<tbody>
+${cmp.board.map(row => `<tr><th scope="row"><a href="#${row.section}">${row.label}</a></th>${cars.map(car => `<td${row.win === car.side ? ' class="vs-win"' : ''}>${row[car.side]}</td>`).join('')}<td>${edge(row.win)}</td></tr>`).join('\n')}
+</tbody>
+</table>
+</div>
+<div class="vs-tally">${cars.map(car => `<p>${key(car.side)}<strong>${wins(car.side)}</strong><span>categories to the ${car.short}</span></p>`).join('')}</div>
+<p class="vp-note">${cmp.boardNote}</p>
+<div id="reviews">${pairChart(cmp.reviews, cars)}</div>
+</section>
+
+<section id="price" class="vp-section vp-section--band">
+<h2>Price, and how far under sticker each sells</h2>
+${paragraphs(cmp.price.intro)}
+${trimLadder({ ...cmp.price.ladder, caption: `${a.name} and ${b.name} trims by starting MSRP, checked ${checked}` }, cars.map(car => ({ ...car, pick: cmp.price.picks[car.side] })))}
+${charts(cmp.price.charts)}
+${paragraphs(cmp.price.after)}
+</section>
+
+<section id="mpg" class="vp-section">
+<h2>Fuel economy and running costs</h2>
+${paragraphs(cmp.mpg.intro)}
+${charts(cmp.mpg.charts)}
+${paragraphs(cmp.mpg.after)}
+</section>
+
+<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Still torn? We’ll price both.</strong>Steer Me Right Pro gets written offers on up to three models from dealers that have them in stock, negotiates them, and gives you our pick.</p><p class="vp-cta__fine">$695 one-time. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">See the plans</a></aside>
+
+<section id="space" class="vp-section">
+<h2>Space, power and towing</h2>
+${paragraphs(cmp.space.intro)}
+${charts(cmp.space.charts)}
+${paragraphs(cmp.space.after)}
+</section>
+
+<section id="reliability" class="vp-section vp-section--band">
+<h2>Expected reliability</h2>
+${paragraphs(cmp.reliability.intro)}
+<h3 style="margin-top:24px">Reliability signals</h3>
+<ul class="vs-signals" role="list">
+<li><span>Signal</span>${cars.map(car => `<span>${key(car.side)} ${car.short}</span>`).join('')}<span>Favors</span></li>
+${cmp.reliability.signals.map(row => `<li><span>${row.label}${row.note ? `<small>${row.note}</small>` : ''}</span>${cars.map(car => `<span><span class="sr-only">${car.short}: </span>${row[car.side]}</span>`).join('')}${edge(row.win)}</li>`).join('\n')}
+</ul>
+<div class="vs-tally">${cars.map(car => `<p>${key(car.side)}<strong>${cmp.reliability.signals.filter(row => row.win === car.side).length}</strong><span>of ${cmp.reliability.signals.length} signals favor the ${car.short}</span></p>`).join('')}</div>
+${charts(cmp.reliability.charts)}
+<h3 style="margin-top:28px">Known problems worth checking</h3>
+<ul class="vs-issues" role="list">
+${cmp.reliability.issues.map(issue => `<li><strong>${key(issue.car)}${issue.title}</strong>${issue.text}</li>`).join('\n')}
+</ul>
+${paragraphs(cmp.reliability.after)}
+<p class="vp-note">${cmp.reliability.note}</p>
+</section>
+
+<section id="reddit" class="vp-section">
+<h2>Reddit Sentiment Index</h2>
+${paragraphs(r.intro)}
+<div class="vs-index">
+${cars.map(car => `<div><p class="vs-index__car">${key(car.side)}${car.name}</p><p class="vs-index__score">${sentiment.index[car.side]}<small> / 100</small></p><div class="vs-index__scale" aria-hidden="true"><i style="--w:${sentiment.index[car.side]}%"></i></div><p class="vs-index__ends" aria-hidden="true"><span>All negative</span><span>50 = even</span><span>All positive</span></p><p class="vs-index__detail">${r.indexDetail[car.side]}</p></div>`).join('\n')}
+</div>
+${splitBars(r.split, cars, sentiment.venues)}
+${divergeChart(r.topics, cars, topicRows, r.minimum)}
+<div class="vs-themes">
+${cars.map(car => `<section><h3>${key(car.side)}What Reddit says about the ${car.short}</h3><h4>Praised most for</h4><ul role="list">${r.themes[car.side].praise.map(item => `<li>${item}</li>`).join('')}</ul><h4>Criticized most for</h4><ul class="vs-themes__neg" role="list">${r.themes[car.side].gripes.map(item => `<li>${item}</li>`).join('')}</ul></section>`).join('\n')}
+</div>
+${paragraphs(r.after)}
+<details class="vp-more"><summary>How we built the index</summary>
+<ul class="vs-method" role="list">
+${r.method.stats.map(stat => `<li><strong>${stat.value}</strong><span>${stat.label}</span></li>`).join('\n')}
+</ul>
+${paragraphs(r.method.text)}
+</details>
+</section>
+
+<section id="resale" class="vp-section vp-section--band">
+<h2>Resale value and buying used</h2>
+${paragraphs(cmp.resale.intro)}
+${charts(cmp.resale.charts)}
+${paragraphs(cmp.resale.after)}
+</section>
+
+<section id="safety" class="vp-section">
+<h2>Safety</h2>
+${paragraphs(cmp.safety.intro)}
+<div class="vp-scroll" role="region" aria-labelledby="safety-caption" tabindex="0">
+<table class="vs-board">
+<caption id="safety-caption" class="sr-only">${a.name} and ${b.name} crash-test results, checked ${checked}</caption>
+<thead><tr><th scope="col">Test</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}<th scope="col">Edge</th></tr></thead>
+<tbody>
+${cmp.safety.rows.map(row => `<tr><th scope="row">${row.label}</th>${cars.map(car => `<td${row.win === car.side ? ' class="vs-win"' : ''}>${row[car.side]}</td>`).join('')}<td>${edge(row.win)}</td></tr>`).join('\n')}
+</tbody>
+</table>
+</div>
+${charts(cmp.safety.charts)}
+<p class="vp-note">${cmp.safety.note}</p>
+</section>
+
+<section id="plans" class="vp-section vp-plans">
+<h2>Let us price both for you</h2>
+<p>${cmp.plansIntro}</p>
+<div class="vp-plans__grid">
+${planCards.map(card => planCard(card, `comparison-${cmp.slug.replace(/\.html$/, '')}`)).join('\n')}
+</div>
+<p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
+</section>
+
+<section id="faq" class="vp-section vp-section--band">
+<h2>Common questions</h2>
+${faq([
+    ...cmp.faq,
+    [`Can you get me prices on both the ${a.short} and the ${b.short}?`, `Yes. Steer Me Right Pro is $695 and covers up to three models: we find each in dealer stock, get written out-the-door offers, negotiate for a price below MSRP and give you our pick. Steer Me Right is $395 for one model. We can’t promise a specific discount: the market for a given car sets what a dealer will do.`],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
+  ])}
+</section>
+
+<section class="vp-sources" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Prices, incentives and market figures were checked on ${checked} and change often, so confirm them with the dealer before you sign. The discount ranges are our estimate from the sources below, not a promise. The Reddit Sentiment Index is our own reading of public comments, not a survey of owners. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p>
+<details class="vp-more"><summary>All ${cmp.sources.length} sources</summary>
+<ul>
+${cmp.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source.title}</a>${source.note ? `: ${source.note}` : ''}</li>`).join('\n')}
+</ul>
+</details>
+<p>Related: ${cars.map(car => `<a href="/${car.slug}">${car.short} price guide</a>`).join(', ')}, ${cmp.related}.</p>
+<details class="vp-credits"><summary>Photo credits</summary>
+<ul>${cars.map(car => credit(car.name, car.vehicle.photo)).join('')}</ul>
+</details></section>
+</div>
+</div>
+</div>
+</article>`;
+  return { slug: cmp.slug, title: cmp.title, description: cmp.description, h1: cmp.h1, crumbs: [['Resources', `${origin}/blog.html`], [cmp.crumb, `${origin}/${cmp.slug}`]], body };
+}
+
+const versusSheet = 'buying/versus.css';
+const sheetLink = (file, css) => `<link rel="stylesheet" href="/${file}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
+
 export async function renderVehiclePages() {
-  const [chrome, data, css] = await Promise.all([read(chromePage), read('data/vehicle-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet))]);
-  const link = `<link rel="stylesheet" href="/${stylesheet}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
-  return data.vehicles.map(vehicle => {
+  const [chrome, data, comparisons, css, versusCss] = await Promise.all([read(chromePage), read('data/vehicle-pages.json').then(JSON.parse), read('data/comparison-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet)), readFile(path.join(root, versusSheet))]);
+  const link = sheetLink(stylesheet, css);
+  const pages = data.vehicles.map(vehicle => {
     const page = vehiclePage(vehicle, data.updated);
     const html = shell(chrome, { ...page, published: vehicle.published, updated: data.updated }, page.body);
     return { slug: page.slug, html: html.replace('</head>', `    ${link}\n</head>`) };
   });
+  for (const cmp of comparisons.comparisons) {
+    const sentiment = summarize(JSON.parse(await read(cmp.reddit.dataFile)));
+    const page = comparisonPage(cmp, data.vehicles, comparisons.updated, sentiment);
+    const html = shell(chrome, { ...page, published: cmp.published, updated: comparisons.updated }, page.body);
+    pages.push({ slug: page.slug, html: html.replace('</head>', `    ${link}\n    ${sheetLink(versusSheet, versusCss)}\n</head>`) });
+  }
+  return pages;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
