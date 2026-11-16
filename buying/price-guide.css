@@ -215,11 +215,10 @@
 
 /* What to pay (owner, November 16, 2026): moved up under the overview, in Liquid Glass like the price panel. One glass card
    per trim group: the group and why on the left, then a frosted "Fair deal" tile and a sign-blue "Strong deal" tile, each a
-   big percent with the dollars off a named trim. Soft blue light sits behind the cards so the glass has something to
-   frost. The worked example below is the sum itself, sticker − discount = price, in the same glass. The owner turned
+   big percent with the dollars off a named trim. No glow behind the cards: the owner
+   found it read as a white haze (November 16, 2026). The worked example below is the sum itself, sticker − discount = price, in the same glass. The owner turned
    down a percent-axis ruler here twice (November 15 and 16); do not bring one back. */
-.dr .vp-pay-glass { --glass:linear-gradient(160deg,rgba(255,255,255,.86),rgba(232,239,250,.7)); --glass-edge:inset 0 0 0 1px rgba(255,255,255,.8), inset 0 1px 0 #fff, 0 0 0 1px rgba(14,27,46,.06), 0 16px 40px -16px rgba(14,27,46,.24), 0 2px 6px rgba(14,27,46,.05); --blue-glass:linear-gradient(155deg,rgba(43,98,173,.96),rgba(26,75,140,.94) 45%,rgba(14,27,46,.94)); position:relative; isolation:isolate; margin-top:24px; }
-.dr .vp-pay-glass::before { content:""; position:absolute; z-index:-1; inset:-30px -10px; background:radial-gradient(38% 46% at 12% 22%,rgba(79,143,230,.34),transparent 70%), radial-gradient(34% 40% at 88% 58%,rgba(26,75,140,.26),transparent 70%), radial-gradient(30% 34% at 40% 96%,rgba(150,190,240,.4),transparent 70%); filter:blur(8px); pointer-events:none; }
+.dr .vp-pay-glass { --glass:linear-gradient(160deg,rgba(255,255,255,.86),rgba(232,239,250,.7)); --glass-edge:inset 0 0 0 1px rgba(255,255,255,.8), inset 0 1px 0 #fff, 0 0 0 1px rgba(14,27,46,.06), 0 16px 40px -16px rgba(14,27,46,.24), 0 2px 6px rgba(14,27,46,.05); --blue-glass:linear-gradient(155deg,rgba(43,98,173,.96),rgba(26,75,140,.94) 45%,rgba(14,27,46,.94)); margin-top:24px; }
 .dr .vp-body .vp-deals__title { margin-bottom:12px; }
 .dr .vp-deals { display:grid; gap:14px; }
 .dr .vp-deal { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:20px; align-items:center; padding:18px; border-radius:26px; background:var(--glass); -webkit-backdrop-filter:blur(24px) saturate(180%); backdrop-filter:blur(24px) saturate(180%); box-shadow:var(--glass-edge); }
