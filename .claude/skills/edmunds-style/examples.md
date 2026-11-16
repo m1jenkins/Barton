@@ -86,6 +86,12 @@ Weak: Now is a great time to buy, with many attractive offers available at deale
 
 Better: Alders are selling in about 6 days, against a market average near 34, so dealers have little reason to move. Buyers are paying roughly $600 under sticker. The LE and XLE Premium have the most room, at about 2.9% off (our estimate, November 2026).
 
+## Labelling an estimate
+
+Weak: These are estimates from published data, not a promise, and every figure here was checked on November 15, 2026.
+
+Better: The discount ranges come from TrueCar's November averages, so your dealer may land a point or two either side.
+
 ## Comparison close
 
 Weak: In conclusion, both trucks have their strengths and weaknesses, and the right choice comes down to personal preference.

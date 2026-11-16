@@ -56,10 +56,11 @@ In this repository, every outside figure also needs its dated row in `data/sourc
 - Section headings can be the shopper's question ("How does it drive?", "Is it a good value?") with the answer in the first sentence under it.
 - Light humor belongs in a bylined drive piece, one line at most. Spec, price and safety sections stay straight.
 - No throat-clearing intros, no closing paragraph that restates the piece. End on the recommendation or the next step (test-drive it, price it, compare the rival).
+- No "X, not Y" disclaimers ("estimates, not a promise", "a guide, not a guarantee") and no caveat tacked onto the end of a paragraph. Edmunds labels a figure by its source inside the sentence ("Toyota-estimated", "TrueCar's November averages put..."), and gives a caveat as a concrete consequence where it applies ("expect less room on a Raptor").
 
 Numbers and units, as Edmunds prints them: 0 to 60 mph in 5.8 seconds; 13,500 pounds; 37.8 cubic feet; 24 mpg combined (28 city/33 highway); a 12-inch touchscreen; 2.5-liter four-cylinder; 226 horsepower on first use, then hp; lb-ft; three years/36,000 miles; $46,683 as tested; "starts at $41,395 including destination". Give the trim and drivetrain a figure belongs to. Round nothing a source printed exactly.
 
-Steer Me Right house rules still apply on our pages: say "car search" or "search details", never "brief"; never call Steer Me Right a broker; estimates are labelled as estimates.
+Steer Me Right house rules still apply on our pages: say "car search" or "search details", never "brief"; never call Steer Me Right a broker; estimates are labelled as estimates. Label them with a source and date in the sentence ("our estimate from TrueCar's November averages"). Where a page must also say "not a promise" (vehicle price pages, enforced by a test), it says so once, in the sources note, and nowhere in the lead or the tiles.
 
 ## 4. What gets covered, in order of weight
 
