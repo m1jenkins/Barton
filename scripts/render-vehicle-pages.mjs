@@ -497,12 +497,11 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
   const cell = (row, side) => row.win === side ? `<td class="vs-win">${row[side]}<span class="sr-only"> (edge)</span></td>` : `<td>${row[side]}</td>`;
   const r = cmp.reddit;
   const topicRows = Object.entries(sentiment.topics).map(([topic, figures]) => ({ label: sentimentTopics[topic], ...figures })).sort((x, y) => (y.a.mentions + y.b.mentions) - (x.a.mentions + x.b.mentions));
-  // Reddit's pick for the hero strip: which car the neutral subreddits tell people to buy, and how many topics it wins.
+  // Reddit's pick for the hero strip: which car the neutral subreddits tell people to buy.
   const picks = sentiment.venues.neutral.recommend;
   const pick = picks.a === picks.b ? null : picks.a > picks.b ? 'a' : 'b';
-  const topicsWon = side => Object.values(sentiment.topics).filter(t => side === 'a' ? t.a.net > t.b.net : t.b.net > t.a.net).length;
   const redditPick = pick
-    ? `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${key(pick)}${by(pick).short}</span><small>Recommended more often</small><small>Better on ${topicsWon(pick)} of ${Object.keys(sentiment.topics).length} topics</small></span>`
+    ? `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${key(pick)}${by(pick).short}</span><small>Recommended more often<br> across ${Object.keys(sentiment.topics).length} topics</small></span>`
     : '<span class="vs-strip-pick"><span class="vs-strip-pick__car">Even</span></span>';
   const tabs = [['overview', 'Overview'], ['reddit', 'Reddit Sentiment Index'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
   const charts = list => list.map(chart => chart.type === 'cols' ? pairColumns(chart, cars) : pairChart(chart, cars)).join('\n');
