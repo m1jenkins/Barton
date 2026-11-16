@@ -73,8 +73,7 @@ ${vehicle.glance.map(tile => `<div><dt>${tile.label}</dt><dd><span class="price-
 </div>
 
 <h2 id="reviews">What the reviewers say</h2>
-<p>${vehicle.scores.intro}</p>
-<ul class="price-scores" role="list">
+${vehicle.scores.intro ? `<p>${vehicle.scores.intro}</p>\n` : ''}<ul class="price-scores" role="list">
 ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${card.source}</a><p class="price-scores__value">${card.display}<span> out of ${card.scale}</span></p><span class="price-meter" aria-hidden="true"><span style="--w:${percent(card.value, card.scale)}"></span></span><p class="price-scores__detail">${card.detail}</p></li>`).join('\n')}
 </ul>
 <p class="compare-note">${vehicle.scores.note}</p>
