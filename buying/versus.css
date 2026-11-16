@@ -194,6 +194,7 @@
 .dr .vs .vs-photos__model { height:15px; }
 .dr .vs .vs-glance__make { height:15px; }
 .dr .vs img.vp-strip__logo { display:inline-block; height:15px; margin-right:6px; vertical-align:-3px; }
+.dr .vs img.vp-strip__logo--large { height:20px; margin-right:7px; vertical-align:-5px; }
 .dr .vs img.vp-strip__wordmark { height:17px; margin-right:0; vertical-align:-4px; }
 .dr .vs .vs-pairs__logo { height:20px; }
 .dr .vs .vs-pairs__label a:has(.vs-pairs__logo) { display:inline-block; }

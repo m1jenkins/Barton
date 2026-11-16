@@ -385,7 +385,7 @@ const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" ari
 const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
-  reddit: [343, 96, 'Reddit'], 'reddit-icon': [72, 72, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
+  reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
 };
 const logo = (name, { alt = logoFiles[name][2], cls = '', eager = false } = {}) => `<img class="vs-logo${cls ? ` ${cls}` : ''}" src="/assets/logos/${name}.webp" alt="${alt}" width="${logoFiles[name][0]}" height="${logoFiles[name][1]}" decoding="async"${eager ? '' : ' loading="lazy"'}>`;
@@ -514,7 +514,7 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
 ${cars.map(car => `<figure>${picture(car.vehicle.photo, [640, 960, 1600], '(max-width: 760px) 94vw, (max-width: 1000px) 47vw, 340px', true)}<figcaption>${key(car.side)}${car.logos ? `<strong class="vs-photos__brand">${logo(`${car.logos.make}-white`, { alt: '', cls: 'vs-photos__make', eager: true })}${logo(`${car.logos.model}-white`, { alt: car.name, cls: 'vs-photos__model', eager: true })}</strong>` : `<strong>${car.name}</strong>`}</figcaption></figure>`).join('\n')}
 </div>
 <ul class="vp-strip" role="list">
-${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.wordmark ? logo(item.logo, { alt: item.label, cls: 'vp-strip__logo vp-strip__wordmark', eager: true }) : `${item.logo ? logo(item.logo, { alt: '', cls: 'vp-strip__logo', eager: true }) : ''}${item.label}`}</span><span class="vp-strip__score">${item.value}</span></a></li>`).join('\n')}
+${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.wordmark ? logo(item.logo, { alt: item.label, cls: 'vp-strip__logo vp-strip__wordmark', eager: true }) : `${item.logo ? logo(item.logo, { alt: '', cls: `vp-strip__logo${item.logoSize === 'large' ? ' vp-strip__logo--large' : ''}`, eager: true }) : ''}${item.label}`}</span><span class="vp-strip__score">${item.value}</span></a></li>`).join('\n')}
 </ul>
 </div>
 
