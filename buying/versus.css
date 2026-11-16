@@ -160,7 +160,6 @@
   .dr .vs-strip-pair { font-size:19px; }
   .dr .vs-board { font-size:14px; }
   .dr .vs-board :is(th,td) { padding:11px 10px 11px 0; }
-  .dr .vs-board .vs-edge span { display:none; }
   .dr .vs-targets tbody td strong { font-size:16px; white-space:nowrap; }
   .dr .vs-targets tbody td span, .dr .vs-targets .vs-targets__paid :is(th,td) { font-size:12px; }
   .dr .vs-targets tbody th { width:22%; font-size:13px; }

@@ -494,7 +494,7 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
   const [a, b] = cars;
   const by = side => cars.find(car => car.side === side);
   const edge = win => win ? `<span class="vs-edge">${key(win)}<span>${by(win).short}</span></span>` : '<span class="vs-edge vs-edge--tie">Even</span>';
-  const wins = side => cmp.board.filter(row => row.win === side).length;
+  const cell = (row, side) => row.win === side ? `<td class="vs-win">${row[side]}<span class="sr-only"> (edge)</span></td>` : `<td>${row[side]}</td>`;
   const r = cmp.reddit;
   const topicRows = Object.entries(sentiment.topics).map(([topic, figures]) => ({ label: sentimentTopics[topic], ...figures })).sort((x, y) => (y.a.mentions + y.b.mentions) - (x.a.mentions + x.b.mentions));
   const tabs = [['overview', 'Overview'], ['reddit', 'Reddit Sentiment Index'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
@@ -537,13 +537,12 @@ ${cars.map(car => `<section><h2>${key(car.side)} Buy the ${car.short} if…</h2>
 <div class="vp-scroll" role="region" aria-labelledby="board-caption" tabindex="0">
 <table class="vs-board">
 <caption id="board-caption" class="sr-only">${a.name} and ${b.name} compared by category, checked ${checked}</caption>
-<thead><tr><th scope="col">Category</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}<th scope="col">Edge</th></tr></thead>
+<thead><tr><th scope="col">Category</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}</tr></thead>
 <tbody>
-${cmp.board.map(row => `<tr><th scope="row"><a href="#${row.section}">${row.label}</a></th>${cars.map(car => `<td${row.win === car.side ? ' class="vs-win"' : ''}>${row[car.side]}</td>`).join('')}<td>${edge(row.win)}</td></tr>`).join('\n')}
+${cmp.board.map(row => `<tr><th scope="row"><a href="#${row.section}">${row.label}</a></th>${cars.map(car => cell(row, car.side)).join('')}</tr>`).join('\n')}
 </tbody>
 </table>
 </div>
-<div class="vs-tally">${cars.map(car => `<p>${key(car.side)}<strong>${wins(car.side)}</strong><span>categories to the ${car.short}</span></p>`).join('')}</div>
 <div id="reviews">${pairChart(cmp.reviews, cars)}</div>
 </section>
 
@@ -617,9 +616,9 @@ ${paragraphs(cmp.safety.intro)}
 <div class="vp-scroll" role="region" aria-labelledby="safety-caption" tabindex="0">
 <table class="vs-board">
 <caption id="safety-caption" class="sr-only">${a.name} and ${b.name} crash-test results, checked ${checked}</caption>
-<thead><tr><th scope="col">Test</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}<th scope="col">Edge</th></tr></thead>
+<thead><tr><th scope="col">Test</th>${cars.map(car => `<th scope="col"><span>${key(car.side)}${car.short}</span></th>`).join('')}</tr></thead>
 <tbody>
-${cmp.safety.rows.map(row => `<tr><th scope="row">${row.label}</th>${cars.map(car => `<td${row.win === car.side ? ' class="vs-win"' : ''}>${row[car.side]}</td>`).join('')}<td>${edge(row.win)}</td></tr>`).join('\n')}
+${cmp.safety.rows.map(row => `<tr><th scope="row">${row.label}</th>${cars.map(car => cell(row, car.side)).join('')}</tr>`).join('\n')}
 </tbody>
 </table>
 </div>
