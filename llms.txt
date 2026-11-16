@@ -50,7 +50,11 @@ Sitemap: https://www.steermeright.com/sitemap.xml
 MSRP, incentives and discount estimates are dated on each page and change often.
 - [Ford F-150 Price](https://www.steermeright.com/ford-f-150-price.html): MSRP by trim for 2026 and 2027, how far under sticker to aim, Ford’s current offers, and new versus used versus CPO (checked 2026-11-15).
 - [Toyota RAV4 Price](https://www.steermeright.com/toyota-rav4-price.html): MSRP by trim for the 2026 and 2027 hybrid and plug-in hybrid, how close to sticker dealers sell it, Toyota’s current offers, and new versus used versus CPO (checked 2026-11-15).
+- [Honda CR-V Price](https://www.steermeright.com/honda-cr-v-price.html): MSRP by trim for the 2026 and 2027 gas and hybrid, how far under sticker dealers sell it, Honda’s current offers, and new versus used versus CPO (checked 2026-11-16).
+- [GMC Sierra 1500 Price](https://www.steermeright.com/gmc-sierra-1500-price.html): MSRP by trim for the outgoing 2026 and the all-new 2027, how far under sticker dealers sell the 2026, GMC’s current offers, and new versus used versus CPO (checked 2026-11-16).
+- [Toyota Tacoma Price](https://www.steermeright.com/toyota-tacoma-price.html): MSRP by trim for the 2026 and 2027 gas and i-FORCE MAX hybrid, how far under sticker dealers sell it, Toyota’s current offers, and new versus used versus CPO (checked 2026-11-16).
 - [Toyota Corolla Price](https://www.steermeright.com/toyota-corolla-price.html): MSRP by trim for the 2026 and 2027 sedan, Hybrid and Hatchback, how far under sticker dealers sell it, Toyota’s current offers, new versus used versus CPO, and the GR Corolla’s prices and what to pay (checked 2026-11-16).
+- [Used Tesla Model Y Price](https://www.steermeright.com/tesla-model-y-price.html): Dealer asking prices for a used Model Y by model year 2020 to 2025, how far under asking to aim, the year to buy, what Tesla’s warranties cover for a used buyer, and when new from Tesla makes more sense (checked 2026-11-16).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

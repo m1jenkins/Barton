@@ -18,6 +18,7 @@ const dollars = value => `$${value.toLocaleString('en-US')}`;
 const paragraphs = list => list.map(text => `<p>${text}</p>`).join('\n');
 const faq = entries => `<div class="vp-faq">\n${entries.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('\n')}\n</div>`;
 
+// A later-year price cell may be text ("Dropped" for a trim that does not carry over); an empty one renders "Ask us".
 // A ruled table inside a scroll region. `head` and each row are arrays of cell HTML; the first cell of a row is its header.
 function table(id, caption, head, rows) {
   return `<div class="vp-scroll" role="region" aria-labelledby="${id}" tabindex="0">
@@ -108,14 +109,14 @@ const discountRange = text => {
   return [from, found[3] === 'or more' ? null : Number(found[2] ?? found[1])];
 };
 const roundTo50 = value => Math.round(value / 50) * 50;
-function dealTile(kind, label, text, price) {
+function dealTile(kind, label, text, price, base = 'MSRP') {
   const [from, to] = discountRange(text);
   let figure, unit, off;
   if (text === 'MSRP') [figure, unit, off] = ['MSRP', 'no markup', 'Pay the sticker price'];
   else if (text === 'Any discount') [figure, unit, off] = ['Any', 'discount', 'Anything under sticker'];
   else {
     figure = to === null ? `${from}%+` : from === to ? `${from}%` : `${from}–${to}%`;
-    unit = 'under MSRP';
+    unit = `under ${base}`;
     off = to === null ? `${dollars(roundTo50(price * from / 100))} or more off` : from === to ? `About ${dollars(roundTo50(price * from / 100))} off` : `About ${dollars(roundTo50(price * from / 100))}–${dollars(roundTo50(price * to / 100))} off`;
   }
   return `<div class="vp-deal__tile vp-deal__tile--${kind}"><dt>${label}</dt><dd><strong>${figure}</strong><span>${unit}</span><em>${off}</em></dd></div>`;
@@ -127,7 +128,7 @@ ${pay.rows.map(row => {
     const price = trims.find(trim => trim.name === row.example).prices[0];
     return `<li class="vp-deal">
 <div class="vp-deal__name"><h4>${row.trims}</h4>${row.why ? `<p>${row.why}</p>` : ''}${[row.fair, row.strong].some(text => !['MSRP', 'Any discount'].includes(text)) ? `<p class="vp-deal__basis">Dollars are for a ${dollars(price)} ${row.example}.</p>` : ''}</div>
-<dl class="vp-deal__tiles">${dealTile('fair', 'Fair deal', row.fair, price)}${dealTile('strong', 'Strong deal', row.strong, price)}</dl>
+<dl class="vp-deal__tiles">${dealTile('fair', 'Fair deal', row.fair, price, pay.base)}${dealTile('strong', 'Strong deal', row.strong, price, pay.base)}</dl>
 </li>`;
   }).join('\n')}
 </ul>`;
@@ -139,7 +140,7 @@ const priceMath = walk => `<div class="vp-math">
 ${walk.steps.map(step => `<span class="vp-math__op" aria-hidden="true">−</span>
 <p><span>${step.label}</span><strong><span class="sr-only">minus </span>${dollars(step.amount)}</strong></p>`).join('\n')}
 <span class="vp-math__op" aria-hidden="true">=</span>
-<p class="vp-math__total"><span>${walk.totalLabel}</span><strong>${dollars(walk.total)}</strong><em>${dollars(walk.sticker - walk.total)} under sticker</em></p>
+<p class="vp-math__total"><span>${walk.totalLabel}</span><strong>${dollars(walk.total)}</strong><em>${dollars(walk.sticker - walk.total)} ${walk.under ?? 'under sticker'}</em></p>
 </div>
 </div>`;
 
@@ -180,11 +181,35 @@ function vehiclePage(vehicle, updated) {
   const ask = `<a href="/schedule.html">Ask us</a>`;
   const topPrice = Math.max(...vehicle.trims.rows.map(trim => trim.prices[0]));
   const walk = vehicle.pay.walk;
-  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
+  // Headings and fixed lines. A page about used cars (the Tesla Model Y, which Tesla sells new only direct) overrides them in `labels`.
+  const text = {
+    crumb: `${name} price`,
+    payHeading: 'What to pay: how far under MSRP',
+    trimsTab: 'Trims and MSRP',
+    trimsHeading: `${vehicle.modelYear} ${name} trims and MSRP`,
+    trimsCaption: `${vehicle.modelYear} ${name} starting MSRP by trim, checked ${checked}`,
+    trimsColumn: 'Trim',
+    trimsMore: 'Engines and what each trim adds',
+    trimsMoreCaption: `${vehicle.modelYear} ${name} trims with starting MSRP, checked ${checked}`,
+    engineColumn: 'Engines',
+    pickHeading: 'The trim we’d buy',
+    incentivesTab: 'Incentives',
+    incentivesHeading: `${name} incentives right now`,
+    incentivesMore: 'Every offer, with dates and regions',
+    incentivesCaption: `Manufacturer offers on the ${name}, checked ${checked}`,
+    incentivesColumns: ['Offer', 'What it is', 'Applies to', 'Ends'],
+    conditionTab: 'New, used or CPO',
+    conditionHeading: 'New, used or CPO?',
+    conditionCaption: `Buying a ${name} new, certified pre-owned or used`,
+    negotiate: `Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do.`,
+    related: '<a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>',
+    ...vehicle.labels,
+  };
+  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   if (vehicle.spotlight) tabs.splice(tabs.findIndex(([id]) => id === 'pick') + 1, 0, [vehicle.spotlight.id, vehicle.spotlight.tab]);
   const body = `<article class="vp">
 <header class="vp-head vp-width">
-<p class="vp-crumb"><a href="/blog.html">Resources</a> / ${name} price</p>
+<p class="vp-crumb"><a href="/blog.html">Resources</a> / ${text.crumb}</p>
 <h1>${vehicle.h1}</h1>
 <p class="vp-byline">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p>
 </header>
@@ -218,7 +243,7 @@ ${vehicle.glance.map(tile => `<li><a href="#${tile.section}"><span class="vp-gla
 </section>
 
 <section id="pay" class="vp-section vp-section--band">
-<h2>What to pay: how far under MSRP</h2>
+<h2>${text.payHeading}</h2>
 ${paragraphs(vehicle.pay.intro)}
 <div class="vp-pay-glass">
 ${dealCards(vehicle.pay, vehicle.trims.rows)}
@@ -239,23 +264,23 @@ ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${c
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
 <section id="trims" class="vp-section">
-<h2>${vehicle.modelYear} ${name} trims and MSRP</h2>
+<h2>${text.trimsHeading}</h2>
 ${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<table class="vp-trims">
-<caption class="sr-only">${vehicle.modelYear} ${name} starting MSRP by trim, checked ${checked}</caption>
-<thead><tr><th scope="col">Trim</th>${vehicle.trims.columns.map(column => `<th scope="col">${column}</th>`).join('')}</tr></thead>
+<caption class="sr-only">${text.trimsCaption}</caption>
+<thead><tr><th scope="col">${text.trimsColumn}</th>${vehicle.trims.columns.map(column => `<th scope="col">${column}</th>`).join('')}</tr></thead>
 <tbody>
-${vehicle.trims.rows.map(trim => `<tr><th scope="row">${trim.name}${trim.pick ? ' <span class="vp-tag">Our pick</span>' : ''}<span>${trim.short}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], topPrice)}</td>${trim.prices.slice(1).map(price => `<td>${price ? dollars(price) : ask}</td>`).join('')}</tr>`).join('\n')}
+${vehicle.trims.rows.map(trim => `<tr><th scope="row">${trim.name}${trim.pick ? ' <span class="vp-tag">Our pick</span>' : ''}<span>${trim.short}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], topPrice)}</td>${trim.prices.slice(1).map(price => `<td>${typeof price === 'string' ? price : price ? dollars(price) : ask}</td>`).join('')}</tr>`).join('\n')}
 </tbody>
 </table>
 ${paragraphs(vehicle.trims.after)}
-<details class="vp-more"><summary>Engines and what each trim adds</summary>
-${table('trim-caption', `${vehicle.modelYear} ${name} trims with starting MSRP, checked ${checked}`, ['Trim', ...vehicle.trims.columns, 'Engines'],
-    vehicle.trims.rows.map(trim => [`${trim.name}<span>${trim.gets}</span>`, ...trim.prices.map(price => price ? `<strong>${dollars(price)}</strong>` : ask), trim.engine || ask]))}
+<details class="vp-more"><summary>${text.trimsMore}</summary>
+${table('trim-caption', text.trimsMoreCaption, [text.trimsColumn, ...vehicle.trims.columns, text.engineColumn],
+    vehicle.trims.rows.map(trim => [`${trim.name}<span>${trim.gets}</span>`, ...trim.prices.map(price => typeof price === 'string' ? price : price ? `<strong>${dollars(price)}</strong>` : ask), trim.engine || ask]))}
 </details>
 </section>
 
 <section id="pick" class="vp-section vp-section--band">
-<h2>The trim we’d buy</h2>
+<h2>${text.pickHeading}</h2>
 ${paragraphs(vehicle.pick)}
 </section>
 ${vehicle.spotlight ? `\n${spotlight(vehicle.spotlight, checked)}\n` : ''}
@@ -268,24 +293,23 @@ ${planCards.map(card => planCard(card, `vehicle-${vehicle.slug.replace(/-price\.
 </section>
 
 <section id="incentives" class="vp-section vp-section--band">
-<h2>${name} incentives right now</h2>
+<h2>${text.incentivesHeading}</h2>
 ${paragraphs(vehicle.incentives.intro)}
 <ul class="vp-ic-offers" role="list">
 ${vehicle.incentives.cards.map(card => `<li><p class="vp-ic-offers__label">${card.label}</p><p class="vp-ic-offers__big">${card.figure} <span>${card.word}</span></p><p class="vp-ic-offers__text">${card.text}</p></li>`).join('\n')}
 </ul>
 <p class="vp-note">${vehicle.incentives.note}</p>
-${cashOrRate(vehicle.incentives.choice)}
-<div class="vp-ic-addons${vehicle.incentives.addons.length === 1 ? ' vp-ic-addons--one' : ''}">
+${vehicle.incentives.choice ? cashOrRate(vehicle.incentives.choice) : ''}
+${vehicle.incentives.addons.length ? `<div class="vp-ic-addons${vehicle.incentives.addons.length === 1 ? ' vp-ic-addons--one' : ''}">
 ${vehicle.incentives.addons.map(card => `<article><h3>${card.title}</h3><p>${card.text}</p><p class="vp-ic-addons__foot"><span><strong>${card.figure}</strong> ${card.unit}<span>${card.detail}</span></span><a href="${card.href}">${card.link}</a></p></article>`).join('\n')}
-</div>
-<details class="vp-more"><summary>Every offer, with dates and regions</summary>
-${table('incentive-caption', `Manufacturer offers on the ${name}, checked ${checked}`, ['Offer', 'What it is', 'Applies to', 'Ends'],
+</div>\n` : ''}<details class="vp-more"><summary>${text.incentivesMore}</summary>
+${table('incentive-caption', text.incentivesCaption, text.incentivesColumns,
     vehicle.incentives.rows.map(row => [row.offer, row.detail, row.applies, row.ends || ask]))}
 </details>
 </section>
 
 <section id="new-used" class="vp-section">
-<h2>New, used or CPO?</h2>
+<h2>${text.conditionHeading}</h2>
 ${paragraphs(vehicle.condition.intro)}
 <div class="vp-charts">
 ${vehicle.condition.charts.map(chart => `<section><h3>${chart.title}</h3>
@@ -294,7 +318,7 @@ ${bars(chart.bars)}
 </div>
 ${paragraphs(vehicle.condition.after)}
 <details class="vp-more"><summary>Which route fits you, and what to check</summary>
-${table('condition-caption', `Buying a ${name} new, certified pre-owned or used`, ['Route', 'Best when', 'What to check'],
+${table('condition-caption', text.conditionCaption, ['Route', 'Best when', 'What to check'],
     vehicle.condition.rows.map(row => [row.route, row.when, row.check]))}
 </details>
 </section>
@@ -316,7 +340,7 @@ ${vehicle.watch.map(item => `<li>${item}</li>`).join('\n')}
 <h2>Common questions</h2>
 ${faq([
     ...vehicle.faq,
-    [`Can you negotiate a ${name} for me?`, `Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do.`],
+    [`Can you negotiate a ${text.negotiateName ?? name} for me?`, text.negotiate],
     ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
@@ -342,13 +366,13 @@ ${columns(vehicle.safety.recalls)}
 ${vehicle.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source.title}</a>${source.note ? `: ${source.note}` : ''}</li>`).join('\n')}
 </ul>
 </details>
-<p>Related: <a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>.</p>
+<p>Related: ${text.related}.</p>
 ${credits(vehicle.photo, vehicle.spotlight ? [...vehicle.gallery, vehicle.spotlight.photo] : vehicle.gallery)}</section>
 </div>
 </div>
 </div>
 </article>`;
-  return { slug: vehicle.slug, title: vehicle.title, description: vehicle.description, h1: vehicle.h1, crumbs: [['Resources', `${origin}/blog.html`], [`${name} price`, `${origin}/${vehicle.slug}`]], body };
+  return { slug: vehicle.slug, title: vehicle.title, description: vehicle.description, h1: vehicle.h1, crumbs: [['Resources', `${origin}/blog.html`], [text.crumb, `${origin}/${vehicle.slug}`]], body };
 }
 
 export async function renderVehiclePages() {

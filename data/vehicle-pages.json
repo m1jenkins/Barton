@@ -1691,6 +1691,2651 @@
       ]
     },
     {
+      "slug": "honda-cr-v-price.html",
+      "name": "Honda CR-V",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Honda CR-V Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Honda CR-V costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell it, Honda’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Honda CR-V price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$30,920 <small>to $42,550</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "2–5% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Honda incentives",
+          "value": "3.49% <small>APR, 2027 only</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "Sport Hybrid",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, either year",
+          "section": "new-used"
+        }
+      ],
+      "summary": "Honda says the CR-V is America’s best-selling SUV this year, and it’s one of the easier small SUVs to buy below sticker. A 2026 starts at $30,920 with the gas engine and $35,630 as a hybrid, and the 2027 now on Honda’s site is the same car for $400 to $600 more. Dealers had 43 days of CR-Vs in stock at the end of October, against 24 for the RAV4, and verified buyers on CarWhere paid a median 5.7% under MSRP. Price a 2026 Sport Hybrid, aim for 2–5% under, and check Honda’s financing on a 2027 before you sign. Prices and offers were checked on November 16, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "LX",
+            "short": "Base gas",
+            "gets": "9-inch touchscreen with wireless CarPlay and Android Auto, wireless charger, adaptive cruise and lane keeping",
+            "prices": [
+              30920,
+              31520
+            ],
+            "engine": "1.5L turbo, 190 hp, FWD or AWD"
+          },
+          {
+            "name": "EX",
+            "short": "Gas, well equipped",
+            "gets": "Blind-spot monitoring, heated front seats, power moonroof, 18-inch alloys, remote start",
+            "prices": [
+              33150,
+              33550
+            ],
+            "engine": "1.5L turbo, 190 hp, FWD or AWD"
+          },
+          {
+            "name": "EX-L",
+            "short": "Gas with leather",
+            "gets": "Leather, power tailgate, 10.2-inch digital gauges, parking sensors that brake for you",
+            "prices": [
+              35400,
+              35800
+            ],
+            "engine": "1.5L turbo, 190 hp, FWD or AWD"
+          },
+          {
+            "name": "Sport Hybrid",
+            "short": "The value pick",
+            "gets": "The EX’s equipment with the hybrid, 40 mpg combined, black 18-inch wheels. Cloth seats",
+            "prices": [
+              35630,
+              36030
+            ],
+            "engine": "2.0L hybrid, 204 hp, FWD or AWD",
+            "pick": true
+          },
+          {
+            "name": "Sport-L Hybrid",
+            "short": "Hybrid with leather",
+            "gets": "Leather, power tailgate, 10.2-inch digital gauges, parking sensors that brake for you",
+            "prices": [
+              38725,
+              39125
+            ],
+            "engine": "2.0L hybrid, 204 hp, FWD or AWD"
+          },
+          {
+            "name": "TrailSport Hybrid",
+            "short": "Rugged look",
+            "gets": "All-terrain tires, heated steering wheel, power tailgate, orange trim",
+            "prices": [
+              38800,
+              39200
+            ],
+            "engine": "2.0L hybrid, 204 hp, AWD only"
+          },
+          {
+            "name": "Sport Touring Hybrid",
+            "short": "Top trim",
+            "gets": "19-inch wheels, 12-speaker Bose audio, Google built-in, hands-free tailgate",
+            "prices": [
+              42550,
+              42950
+            ],
+            "engine": "2.0L hybrid, 204 hp, AWD only"
+          }
+        ],
+        "after": [
+          "For 2027, the LX goes up $600, every other trim $400, and the destination charge from $1,450 to $1,550. Nothing else changes. AWD adds $1,500 on every trim that offers front drive. Honda says an all-new, hybrid-only CR-V arrives in 2027 as a 2028 model."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 Sport Hybrid, with AWD if you see snow.</strong> At $35,630 it costs $230 more than a gas EX-L and has everything the EX does, including heated front seats, a power moonroof and blind-spot monitoring. In place of the 190-hp turbo it has the 204-hp hybrid, with 247 lb-ft of torque against 179, and it’s rated 40 mpg combined against 30. AWD adds $1,500 and drops it to 37 mpg.",
+        "Want leather and a power tailgate? The Sport-L Hybrid adds both, plus parking sensors that brake for you, for $3,095 more, and it’s Edmunds’ pick among the hybrids. Skip the TrailSport unless you want its all-terrain tires: it’s AWD only and rated 35 mpg. If you’d rather have gas, Edmunds picks the EX-L, but the Sport Hybrid costs almost the same."
+      ],
+      "pay": {
+        "intro": [
+          "CR-Vs aren’t scarce. Cox Automotive counted 43 days of supply at the end of October, against 24 for the RAV4 and 87 for the industry, and 2027s were already 43.6% of Honda’s stock. TrueCar’s November averages put the 2026 at 1.6% to 4.9% under sticker by trim, Edmunds’ suggested prices near Austin run 4.8% to 6.4% under, and CarWhere’s verified buyers paid a median 5.7% under."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "LX, EX, EX-L",
+            "example": "EX-L",
+            "fair": "3–4% under",
+            "strong": "5–6% under",
+            "why": "TrueCar averages about 2.9% under. Dealer invoice sits 4–5% under MSRP."
+          },
+          {
+            "trims": "Sport and TrailSport Hybrid",
+            "example": "Sport Hybrid",
+            "fair": "2–3% under",
+            "strong": "4–5% under",
+            "why": "The hybrids sell closest to sticker: TrueCar averages 1.6–1.8% under."
+          },
+          {
+            "trims": "Sport-L and Sport Touring Hybrid",
+            "example": "Sport-L Hybrid",
+            "fair": "4–5% under",
+            "strong": "6% or more",
+            "why": "TrueCar averages 3.6–4.9% under. Edmunds suggests 5.7–6.4%."
+          }
+        ],
+        "note": "Checked November 16, 2026, on the 2026. A 2027 may sell a point closer to sticker.",
+        "after": [
+          "Not sure what a specific CR-V should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Sport Hybrid",
+          "sticker": 37080,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 3%",
+              "amount": 1110
+            }
+          ],
+          "total": 35970,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every finance and lease offer is on the 2027 and ends January 4, 2027. None of the four regions we checked had an offer on a leftover 2026, and Honda lists no cash back on either year."
+        ],
+        "rows": [
+          {
+            "offer": "3.49% or 3.99% APR for 24 to 36 months",
+            "detail": "Through Honda Financial Services. 3.49% in Chicago and Dallas, 3.99% in Los Angeles and New York.",
+            "applies": "2027 CR-V and CR-V Hybrid",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "4.49% or 4.99% APR for 37 to 60 months",
+            "detail": "Same regional split. 5.49% or 5.99% for 61 to 72 months.",
+            "applies": "2027 CR-V and CR-V Hybrid",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "LX lease",
+            "detail": "$299 a month for 39 months with $3,999 due in Chicago, Los Angeles and New York; $309 in Dallas. AWD needs $4,699 due.",
+            "applies": "2027 LX",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Sport Hybrid lease",
+            "detail": "$319 a month for 39 months with $3,999 due in Chicago, Los Angeles and New York; $329 in Dallas.",
+            "applies": "2027 Sport Hybrid",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Owner loyalty",
+            "detail": "$500 for owners of a 2012 or newer Honda who lease or finance through Honda Financial Services",
+            "applies": "2027 CR-V and CR-V Hybrid",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Conquest",
+            "detail": "$750 for owners of a 2012 or newer Hyundai, Subaru or Toyota. Doesn’t combine with loyalty.",
+            "applies": "2027, in AZ, CA, CO, FL, LA, OR, PA, TX and WA",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Military and graduate",
+            "detail": "$500 each when you lease or finance through Honda Financial Services",
+            "applies": "2026 and 2027 CR-V and CR-V Hybrid",
+            "ends": "March 31, 2027"
+          },
+          {
+            "offer": "First payment in 90 days",
+            "detail": "When you finance through Honda Financial Services. Interest still builds in the meantime.",
+            "applies": "2026 and 2027 CR-V and CR-V Hybrid",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "2026 CR-V",
+            "detail": "No finance, lease or cash offers",
+            "applies": "Leftover 2026s",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://automobiles.honda.com/tools/current-offers\" rel=\"noopener\">Honda’s offers pages</a> on November 16, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Honda Financial Services credit approval, and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "3.49%",
+            "word": "APR",
+            "text": "For 36 months on a 2027 in Chicago and Dallas; 3.99% in Los Angeles and New York. Ends January 4."
+          },
+          {
+            "label": "Lease",
+            "figure": "$299",
+            "word": "a month",
+            "text": "2027 LX, 39 months, $3,999 due at signing. $309 in Dallas. Ends January 4."
+          },
+          {
+            "label": "Hybrid lease",
+            "figure": "$319",
+            "word": "a month",
+            "text": "2027 Sport Hybrid, 39 months, $3,999 due at signing. $329 in Dallas. Ends January 4."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$0",
+            "word": "cash back",
+            "text": "Honda lists no customer cash on the CR-V in any of the four regions we checked."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Honda takes $500 off a 2026 or 2027 CR-V you finance or lease through Honda Financial Services. One offer per car.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends March 31, 2027",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          },
+          {
+            "title": "Own a Honda, or a rival?",
+            "text": "Honda owners get $500 toward a 2027. Owners of a Hyundai, Subaru or Toyota get $750 in nine states. You can’t have both.",
+            "figure": "$750",
+            "unit": "at most",
+            "detail": "Ends January 4, 2027; 2012 or newer cars",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Honda’s 4.49%",
+          "title": "4.49% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $37,000 CR-V over 60 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign. Honda’s rate is 4.99% in some regions, and only on a 2027.",
+          "price": 37000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "4.49% APR",
+              "detail": "Honda Financial Services",
+              "rate": 4.49,
+              "cash": 0
+            },
+            {
+              "name": "4.49% APR",
+              "detail": "+ $500 loyalty, military or graduate offer",
+              "rate": 4.49,
+              "cash": 500
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and price both model years.</strong> A leftover 2026 is the same car for $400 to $600 less, but Honda’s low rates are only on the 2027. A used CR-V barely costs less than a new one, and used-loan rates average 11.19%."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "You find one at 5% or more under MSRP, or you’re paying cash or bringing your own loan.",
+            "check": "That it’s a 2026, which Honda’s rates and leases don’t cover, and that the price beats a 2027 on Honda’s rate in total."
+          },
+          {
+            "route": "New 2027",
+            "when": "You’ll finance through Honda at 3.49% to 4.99%, or you want the widest choice of trims and colors.",
+            "check": "The $400 to $600 price rise and the $1,550 destination charge."
+          },
+          {
+            "route": "Wait for the 2028",
+            "when": "You want the all-new, hybrid-only CR-V Honda promises for 2027.",
+            "check": "Honda hasn’t given a price or an on-sale date."
+          },
+          {
+            "route": "CPO (HondaTrue Certified)",
+            "when": "You want a 2023 to 2025 with a warranty, and you’re paying cash.",
+            "check": "HondaTrue Certified covers 2021 and newer cars under 80,000 miles: the powertrain to 7 years/100,000 miles from first sale, everything else 2 years past the new-car warranty. The hybrid battery is covered 8 years/100,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $27,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2023 to 2025, that steering recall 24V744 is done."
+          }
+        ],
+        "after": [
+          "If you buy used, make 2023 the floor. That year began the current CR-V, and NHTSA still has an open investigation into 2017 to 2022 CR-Vs that brake hard on their own, with 1,294 owner complaints. The 2017 and 2018 turbo engines could also dilute their oil with fuel, and Honda’s extended warranty on that has run out."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "CR-V",
+                "value": 13.7,
+                "display": "13.7%"
+              },
+              {
+                "label": "CR-V Hybrid",
+                "value": 15.9,
+                "display": "15.9%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Honda offer",
+                "value": 4.49,
+                "display": "4.49%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Honda, 60 months; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 26329,
+                "display": "$26,329"
+              },
+              {
+                "label": "2023",
+                "value": 29229,
+                "display": "$29,229"
+              },
+              {
+                "label": "2024",
+                "value": 31519,
+                "display": "$31,519"
+              },
+              {
+                "label": "2025",
+                "value": 33066,
+                "display": "$33,066"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> Honda dealers put add-ons on 35.1% of the quotes CarWhere studied, averaging $1,159. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look the same on the lot. Honda’s rates and leases apply only to the 2027, and the 2026 should cost less.",
+        "<strong>The Honda Financial Services requirement.</strong> The low rates and every $500 or $750 offer need Honda’s own financing. Compare the total cost with your bank’s rate.",
+        "<strong>“No payments for 90 days.”</strong> Interest still builds during those 90 days, so it isn’t a discount.",
+        "<strong>Fees.</strong> CarEdge puts the national median for dealer fees at $498. Compare out-the-door prices, not monthly payments.",
+        "<strong>Recalls on a used one.</strong> On a 2023 to 2025 CR-V, ask for proof that steering recall 24V744 is done."
+      ],
+      "faq": [
+        [
+          "Is the Honda CR-V a good SUV?",
+          "Most reviewers think so. U.S. News scores the 2026 a 9.0 out of 10 and Kelley Blue Book 4.8 out of 5. Edmunds is cooler, at 7.4 (7.7 for the hybrid), and faults the slow gas engine and short list of driver aids. J.D. Power owners give it 82 out of 100. A three-year-old CR-V has lost 13.7% of its value by iSeeCars’ figures, against 24.8% for the average vehicle, and Kelley Blue Book named it the 2026 best resale value compact SUV."
+        ],
+        [
+          "How much under MSRP can you get a Honda CR-V?",
+          "On a 2026 LX, EX or EX-L, 3–4% under MSRP is a fair deal and 5–6% a strong one. The Sport and TrailSport hybrids sell closer to sticker, at 2–3%, and the Sport-L and Sport Touring have the most room, at 4–5% or more. Those ranges are our read of TrueCar’s and Edmunds’ November figures and CarWhere’s buyer reports, so a given dealer may land a point either side."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 CR-V?",
+          "Price both. Honda changed only the price for 2027: $600 more on the LX, $400 on the rest, and $100 more for destination. A leftover 2026 should cost less, but Honda’s 3.49% to 4.99% financing and its leases are only on the 2027, so compare the total cost of each."
+        ],
+        [
+          "Should I wait for the 2028 CR-V?",
+          "Only if you want the new one. Honda says an all-new, hybrid-only CR-V arrives in 2027, but it hasn’t given a price or a date. The current CR-V is a known car that dealers are discounting now."
+        ],
+        [
+          "What is the destination charge on a CR-V?",
+          "$1,450 on the 2026 and $1,550 on the 2027. Honda’s advertised starting prices leave it out, and premium paint adds $455."
+        ],
+        [
+          "Does Honda offer cash back on the CR-V?",
+          "No. In Chicago, Dallas, Los Angeles and New York on November 16, 2026, Honda offered financing from 3.49%, leases from $299 a month and $500 for current Honda owners, all on the 2027, but no customer cash. Military members and recent graduates get $500 off a 2026 or 2027 when they finance or lease through Honda."
+        ],
+        [
+          "Is the CR-V Hybrid worth it?",
+          "For most buyers, yes. The Sport Hybrid costs $230 more than a gas EX-L, makes 204 hp against 190, and is rated 40 mpg combined against 30 with front-wheel drive. You give up the EX-L’s leather and power tailgate. It loses value a little faster: 15.9% in three years against 13.7% for the gas CR-V."
+        ],
+        [
+          "Is a used CR-V a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2025 is $33,066, more than TrueCar’s $31,517 average paid for a new 2026 LX. Used loans averaged 11.19% in the second quarter of 2026. A HondaTrue Certified 2023 to 2025 is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-CRV-01",
+          "title": "Honda: 2026 CR-V pricing and EPA ratings",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb056d5c-2026-honda-cr-v-pricing-and-epa-ratings-3",
+          "scope": "2026 CR-V trims, starting MSRP excluding destination, the $1,450 destination charge, AWD prices and EPA ratings (January 6, 2026 release)",
+          "note": "2026 trims, prices and destination charge"
+        },
+        {
+          "id": "VEH-CRV-02",
+          "title": "Honda: 2026 CR-V specifications and features",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-2ecca7d29f72bf212c56033cca000993-2026-honda-cr-v-specifications-features-updated",
+          "scope": "2026 CR-V engines, horsepower and torque, and equipment by trim",
+          "note": "engines and equipment by trim"
+        },
+        {
+          "id": "VEH-CRV-03",
+          "title": "Honda: 2027 CR-V pricing and EPA ratings",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-5acd4d89f745189a21ef2396a500175b-2027-honda-cr-v-pricing-and-epa-ratings",
+          "scope": "2027 CR-V starting MSRP by trim and the $1,550 destination charge (September 9, 2026 release)",
+          "note": "2027 prices by trim"
+        },
+        {
+          "id": "VEH-CRV-04",
+          "title": "Honda: all-new CR-V to go 100% hybrid",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-b26ae02ff5dca50cb32a1f4783161ef6-all-new-honda-cr-v-to-go-100-hybrid-next-year-americas-best-selling-suv-to-debut-new-platform-powertrain-and-design",
+          "scope": "Next-generation hybrid-only CR-V arriving in 2027 as a 2028 model, and Honda’s CR-V sales claim (November 12, 2026)",
+          "note": "the next-generation CR-V"
+        },
+        {
+          "id": "VEH-CRV-05",
+          "title": "Honda: current offers",
+          "url": "https://automobiles.honda.com/tools/current-offers",
+          "scope": "Honda finance, lease, loyalty, conquest, military, graduate and payment-deferral offers on the 2026 and 2027 CR-V and CR-V Hybrid at ZIPs 60601, 75201, 90012 and 10001, and the premium paint charge",
+          "note": "finance, lease and owner offers, read in four regions"
+        },
+        {
+          "id": "VEH-CRV-06",
+          "title": "FuelEconomy.gov: 2026 Honda CR-V",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_CR-V.shtml",
+          "scope": "EPA fuel economy by 2026 CR-V version",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-CRV-07",
+          "title": "TrueCar: 2026 Honda CR-V",
+          "url": "https://www.truecar.com/overview/honda/cr-v/2026/",
+          "scope": "Market average price paid by 2026 CR-V trim against TSRP, November 2026",
+          "note": "average price paid by trim"
+        },
+        {
+          "id": "VEH-CRV-08",
+          "title": "Edmunds: 2026 Honda CR-V MSRP and invoice",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/msrp/",
+          "scope": "Edmunds suggested price by 2026 CR-V trim near Austin, Texas, from sales through November 2, 2026",
+          "note": "suggested prices by trim"
+        },
+        {
+          "id": "VEH-CRV-09",
+          "title": "iSeeCars: 2026 Honda CR-V price",
+          "url": "https://www.iseecars.com/car/2026-honda-cr__v-price",
+          "scope": "Dealer invoice against MSRP by 2026 CR-V gas trim",
+          "note": "dealer invoice against MSRP, gas"
+        },
+        {
+          "id": "VEH-CRV-10",
+          "title": "iSeeCars: 2026 Honda CR-V Hybrid price",
+          "url": "https://www.iseecars.com/car/2026-honda-cr__v_hybrid-price",
+          "scope": "Dealer invoice against MSRP by 2026 CR-V Hybrid trim",
+          "note": "dealer invoice against MSRP, hybrid"
+        },
+        {
+          "id": "VEH-CRV-11",
+          "title": "CarWhere: what people paid for a 2026 Honda CR-V",
+          "url": "https://www.carwhere.com/what-people-paid/honda/cr-v/2026",
+          "scope": "Median price paid against MSRP by 48 verified 2026 CR-V buyers, updated November 14, 2026",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-CRV-12",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Honda, the CR-V and the RAV4 at the end of October 2026, and the 2027 share of Honda inventory",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-CRV-13",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of Honda quotes with dealer add-ons and their average price, through June 12, 2026",
+          "note": "add-ons on Honda quotes"
+        },
+        {
+          "id": "VEH-CRV-14",
+          "title": "CarEdge: state of dealer fees",
+          "url": "https://caredge.com/reports/state-of-dealer-fees",
+          "scope": "National median of total dealer fees on buyer-submitted quotes, July 2025 to November 2026",
+          "note": "dealer fees on quotes"
+        },
+        {
+          "id": "VEH-CRV-15",
+          "title": "iSeeCars: Honda CR-V resale value",
+          "url": "https://www.iseecars.com/car/honda-cr-v/resale-value",
+          "scope": "CR-V depreciation at three and five years against the all-vehicle average",
+          "note": "depreciation, gas"
+        },
+        {
+          "id": "VEH-CRV-16",
+          "title": "iSeeCars: Honda CR-V Hybrid resale value",
+          "url": "https://www.iseecars.com/car/honda-cr-v-hybrid/resale-value",
+          "scope": "CR-V Hybrid depreciation at three and five years",
+          "note": "depreciation, hybrid"
+        },
+        {
+          "id": "VEH-CRV-17",
+          "title": "CarWhere: used Honda CR-V prices",
+          "url": "https://www.carwhere.com/used-car-prices/honda/cr-v",
+          "scope": "Median asking price of used CR-Vs by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-CRV-18",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-CRV-19",
+          "title": "Honda: HondaTrue Certified benefits",
+          "url": "https://www.hondacertified.com/certified-preowned-benefits",
+          "scope": "HondaTrue Certified eligibility and warranty terms, and the hybrid battery warranty",
+          "note": "certified used and hybrid battery warranty"
+        },
+        {
+          "id": "VEH-CRV-20",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash-test ratings and rollover risk for the 2026 CR-V and CR-V Hybrid, FWD and AWD, from the NHTSA ratings API",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-CRV-21",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "CR-V and CR-V Hybrid recall campaigns by model year 2019 to 2026, including 24V744",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-CRV-22",
+          "title": "IIHS: 2026 Honda CR-V",
+          "url": "https://www.iihs.org/ratings/vehicle/honda/cr-v-4-door-suv/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 CR-V",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-CRV-23",
+          "title": "IIHS: 2026 Top Safety Picks",
+          "url": "https://www.iihs.org/ratings/top-safety-picks/2026",
+          "scope": "The CR-V’s absence from the 2026 Top Safety Pick and Top Safety Pick+ lists",
+          "note": "award list"
+        },
+        {
+          "id": "VEH-CRV-24",
+          "title": "Consumer Reports: 2026 Honda CR-V reliability",
+          "url": "https://www.consumerreports.org/cars/honda/cr-v/2026/reliability/",
+          "scope": "Consumer Reports predicted reliability for the 2026 CR-V",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-CRV-25",
+          "title": "Consumer Reports: 2026 Honda CR-V Hybrid reliability",
+          "url": "https://www.consumerreports.org/cars/honda/cr-v-hybrid/2026/reliability/",
+          "scope": "Consumer Reports predicted reliability for the 2026 CR-V Hybrid",
+          "note": "predicted reliability, hybrid"
+        },
+        {
+          "id": "VEH-CRV-26",
+          "title": "Edmunds: 2026 Honda CR-V",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/",
+          "scope": "Edmunds rating, owner rating, editors’ trim pick and tested acceleration for the 2026 CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CRV-27",
+          "title": "Edmunds: 2026 Honda CR-V Hybrid",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/hybrid/",
+          "scope": "Edmunds rating and recommended trim for the 2026 CR-V Hybrid",
+          "note": "hybrid review score"
+        },
+        {
+          "id": "VEH-CRV-28",
+          "title": "Edmunds: best small SUVs",
+          "url": "https://www.edmunds.com/suv/small/",
+          "scope": "Edmunds small SUV rankings, including the CR-V, CR-V Hybrid and Kia Sportage Hybrid",
+          "note": "class rankings"
+        },
+        {
+          "id": "VEH-CRV-29",
+          "title": "Kelley Blue Book: 2026 Honda CR-V",
+          "url": "https://www.kbb.com/honda/cr-v/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CRV-30",
+          "title": "U.S. News: 2026 Honda CR-V",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v/2026",
+          "scope": "U.S. News overall score, pros and cons, and Best Compact SUV for the Money finalist for the 2026 CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CRV-31",
+          "title": "J.D. Power: 2026 Honda CR-V",
+          "url": "https://www.jdpower.com/cars/2026/honda/cr-v",
+          "scope": "J.D. Power consumer rating, category scores, compact SUV listing and owner likes and dislikes for the 2026 CR-V",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CRV-32",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Honda CR-V as KBB 2026 best resale value compact SUV",
+          "note": "resale award"
+        },
+        {
+          "id": "VEH-CRV-33",
+          "title": "NHTSA: investigation EA24002",
+          "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24002",
+          "scope": "Open NHTSA investigation into unexpected automatic emergency braking on 2017 to 2022 CR-Vs, with complaint, crash and injury counts",
+          "note": "automatic braking investigation"
+        },
+        {
+          "id": "VEH-CRV-34",
+          "title": "CarComplaints: Honda oil dilution warranties extended",
+          "url": "https://www.carcomplaints.com/news/2019/honda-civic-cr-v-oil-dilution-warranties-extended.shtml",
+          "scope": "Oil dilution on 2017 and 2018 CR-V 1.5-liter turbo engines and Honda’s six-year warranty extension",
+          "note": "turbo oil dilution"
+        },
+        {
+          "id": "VEH-CRV-35",
+          "title": "Toyota: 2026 RAV4",
+          "url": "https://www.toyota.com/rav4/",
+          "scope": "2026 RAV4 hybrid starting MSRP",
+          "note": "RAV4 price"
+        },
+        {
+          "id": "VEH-CRV-36",
+          "title": "Kia: 2026 Sportage Hybrid pricing",
+          "url": "https://kiaoldnewsroom.newsmarket.com/news/kia-america-announces-2026-sportage-hev-pricing/s/e2b877ba-53dc-44ad-98ad-b7482af70764",
+          "scope": "2026 Kia Sportage Hybrid starting price and destination charge",
+          "note": "Sportage Hybrid price"
+        },
+        {
+          "id": "VEH-CRV-37",
+          "title": "Hyundai: Tucson Hybrid",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson-hybrid",
+          "scope": "2026 Hyundai Tucson Hybrid starting MSRP",
+          "note": "Tucson Hybrid price"
+        },
+        {
+          "id": "VEH-CRV-38",
+          "title": "Subaru: 2026 pricing update",
+          "url": "https://media.subaru.com/pressrelease/2421/1/subaru-focuses-consumer-affordability-excellent-value-updated-pricing",
+          "scope": "2026 Subaru Forester Hybrid starting price",
+          "note": "Forester Hybrid price"
+        },
+        {
+          "id": "VEH-CRV-39",
+          "title": "Mazda: CX-50 Hybrid",
+          "url": "https://www.mazdausa.com/vehicles/cx-50-hybrid",
+          "scope": "2026 Mazda CX-50 Hybrid starting price",
+          "note": "CX-50 Hybrid price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-honda-cr-v-hybrid-sport",
+        "width": 1920,
+        "height": 1369,
+        "alt": "Black 2025 Honda CR-V Sport Hybrid, front three-quarter view",
+        "caption": "A CR-V Sport Hybrid, the trim we’d buy.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Honda_CR-V_Hybrid_Sport.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "40 mpg combined as a front-drive hybrid",
+        "Five stars overall from NHTSA, every version",
+        "Loses value about half as fast as average",
+        "Buyers report a median 5.7% under MSRP"
+      ],
+      "cons": [
+        "Rated Poor by IIHS for rear-seat crash protection",
+        "Slow gas engine: about 9 seconds to 60 mph",
+        "Screens and driver aids trail rivals’",
+        "Honda’s low rates skip the 2026"
+      ],
+      "rivals": [
+        "Get a quote on the Toyota RAV4 too. It’s hybrid-only now and starts at $31,900, but dealers sell most trims within about 2% of sticker (see our <a href=\"/toyota-rav4-price.html\">RAV4 price guide</a>). The Kia Sportage Hybrid starts at $30,290 plus $1,395, and Edmunds rates it 8.6, the top score among its small SUVs. The Hyundai Tucson Hybrid starts at $31,300, the Subaru Forester Hybrid at $34,730 and the Mazda CX-50 Hybrid at $34,750, each before destination. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/honda/cr-v/2026/",
+            "value": 7.4,
+            "scale": 10,
+            "display": "7.4",
+            "detail": "The hybrid scores 7.7"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/honda/cr-v/2026/",
+            "value": 4.8,
+            "scale": 5,
+            "display": "4.8",
+            "detail": "Owners give it 3.6 out of 5 (29 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/honda/cr-v/2026",
+            "value": 9,
+            "scale": 10,
+            "display": "9.0",
+            "detail": "Finalist, Best Compact SUV for the Money"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/honda/cr-v",
+            "value": 82,
+            "scale": 100,
+            "display": "82",
+            "detail": "Listed 3rd among compact SUVs"
+          }
+        ],
+        "note": "Scores for the 2026 gas CR-V as published on November 16, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 CR-V and CR-V Hybrid",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 5, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "15.5% rollover risk"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 8
+          },
+          {
+            "label": "2020",
+            "value": 9
+          },
+          {
+            "label": "2021",
+            "value": 5
+          },
+          {
+            "label": "2022",
+            "value": 6
+          },
+          {
+            "label": "2023",
+            "value": 8
+          },
+          {
+            "label": "2024",
+            "value": 5
+          },
+          {
+            "label": "2025",
+            "value": 5
+          },
+          {
+            "label": "2026",
+            "value": 2
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 CR-V and CR-V Hybrid to be <a href=\"https://www.consumerreports.org/cars/honda/cr-v/2026/reliability/\" rel=\"noopener\">more reliable than the average new car</a>.",
+        "note": "Crash ratings and recall counts from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 16, 2026; every 2026 version, gas or hybrid, FWD or AWD, rates the same. Recall counts include the CR-V Hybrid, and both 2026 recalls are for the hybrid’s tire repair kit. <a href=\"https://www.iihs.org/ratings/vehicle/honda/cr-v-4-door-suv/2026\" rel=\"noopener\">IIHS</a> rates the CR-V Good in its small overlap and side tests but Poor in its updated moderate overlap test, because the rear passenger’s belt rode up toward the neck, so it isn’t a 2026 Top Safety Pick. Check any used CR-V’s open recalls on <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA’s site</a> by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-honda-cr-v-ex-rear",
+          "width": 1920,
+          "height": 1258,
+          "alt": "Black 2024 Honda CR-V EX, rear three-quarter view in an orchard",
+          "caption": "EX, rear",
+          "author": "Mr.choppers",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Honda_CR-V_EX_4WD_in_Crystal_Black_Pearl,_rear_right.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "file": "vehicle-honda-cr-v-hybrid-sport-touring",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Black 2025 Honda CR-V Sport Touring Hybrid in a white studio",
+          "caption": "Sport Touring Hybrid",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Honda_CR-V_Hybrid_Sport_Touring.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "file": "vehicle-honda-cr-v-ex-l-interior",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Honda CR-V EX-L dashboard with a center touchscreen and black leather seats",
+          "caption": "EX-L cabin",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Honda_CR-V_EX-L_AWD_(2024)_(53625033461).jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+          "file": "vehicle-honda-cr-v-ex-l",
+          "width": 1920,
+          "height": 1067,
+          "alt": "Gray 2023 Honda CR-V EX-L, front three-quarter view",
+          "caption": "EX-L",
+          "author": "MercurySable99",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Honda_CR-V_EX-L_AWD,_front_right.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ]
+    },
+    {
+      "slug": "gmc-sierra-1500-price.html",
+      "name": "GMC Sierra 1500",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "GMC Sierra 1500 Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a GMC Sierra 1500 costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell the outgoing 2026, GMC’s current offers, and whether to buy new, used or CPO.",
+      "h1": "GMC Sierra 1500 price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$38,600 <small>to $84,400</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "5–7% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "GMC incentives",
+          "value": "$8,250 <small>cash, diesel only</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 SLT",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The 2026 Sierra 1500 is the outgoing truck, and that’s the best reason to buy one now. GMC is already selling an all-new 2027, GMC dealers had 110 days of stock at the end of October against 87 for the industry, and TrueCar’s averages put the SLT and Denali about 7.5% under sticker. You get a roomy, well-finished crew cab and a choice of four engines, including a diesel rated 24 mpg combined. You give up some ride comfort (reviewers rate the Ram 1500’s better), and crash results that trail the class: IIHS rates the crew cab Marginal in its small overlap front test. Price a 2026 SLT crew cab with the 5.3L V8, aim for 5–7% under MSRP, and look at the diesel if you tow, since it’s the only engine GMC puts cash on this month. Prices and offers were checked on November 16, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "Pro",
+            "short": "Work truck",
+            "gets": "Cloth or vinyl work-truck cabin, 12 bed tie-downs, GMC Pro Safety; a blacked-out Graphite Edition is available",
+            "prices": [
+              38600,
+              39300
+            ],
+            "engine": "2.7L TurboMax turbo four; 5.3L V8 available"
+          },
+          {
+            "name": "SLE",
+            "short": "Value step up",
+            "gets": "13.4-inch touchscreen with Google built-in, 12.3-inch digital gauges, heated seats and steering wheel",
+            "prices": [
+              49000,
+              "Dropped"
+            ],
+            "engine": "2.7L TurboMax; 3.0L Duramax diesel available"
+          },
+          {
+            "name": "Elevation",
+            "short": "Sporty look",
+            "gets": "Body-color trim with a gloss-black grille, 20-inch black wheels, LED fog lights, dual-zone climate",
+            "prices": [
+              50800,
+              50200
+            ],
+            "engine": "2.7L TurboMax; 5.3L V8 and diesel available"
+          },
+          {
+            "name": "SLT",
+            "short": "The value pick",
+            "gets": "Crew cab only: leather, 10-way power front seats, chrome grille and bumpers",
+            "prices": [
+              55400,
+              "Dropped"
+            ],
+            "engine": "5.3L V8 with a 10-speed automatic; diesel available",
+            "pick": true
+          },
+          {
+            "name": "Denali",
+            "short": "Luxury",
+            "gets": "Open-pore wood and perforated leather, 12-way power seats; Super Cruise and a carbon-fiber bed available",
+            "prices": [
+              66100,
+              70900
+            ],
+            "engine": "5.3L V8; 6.2L V8 and diesel available"
+          },
+          {
+            "name": "AT4",
+            "short": "Off-road",
+            "gets": "2-inch lift, Rancho shocks, two-speed transfer case, skid plates, heated and ventilated leather",
+            "prices": [
+              68300,
+              70700
+            ],
+            "engine": "3.0L Duramax diesel; 6.2L V8 available"
+          },
+          {
+            "name": "AT4X",
+            "short": "Serious off-road",
+            "gets": "Front and rear locking differentials, Multimatic DSSV dampers, steel front bumper, massage seats",
+            "prices": [
+              79900,
+              82700
+            ],
+            "engine": "3.0L Duramax diesel or 6.2L V8"
+          },
+          {
+            "name": "Denali Ultimate",
+            "short": "Top luxury",
+            "gets": "Super Cruise with three years of OnStar, 22-inch wheels, massage seats, 12-speaker Bose audio",
+            "prices": [
+              84400,
+              85100
+            ],
+            "engine": "6.2L V8; diesel available"
+          }
+        ],
+        "after": [
+          "For 2027 the Sierra is all new: 5.7-liter and 6.6-liter V8s replace the 5.3L and 6.2L, every engine gets a 10-speed automatic, the cabin is redesigned, and the SLE and SLT are dropped. The Pro goes up $700 and the Denali $4,800. Destination is $2,795 on both years."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 SLT crew cab with the 5.3L V8, with 4WD if you need it.</strong> At $55,400 it starts $4,600 above an Elevation, but the Elevation starts as a double cab with the 2.7-liter turbo four. The SLT comes as a crew cab with the V8, a 10-speed automatic, leather and 10-way power front seats. It’s also gone for 2027, along with the SLE, and TrueCar’s averages show SLTs selling about 7.5% under MSRP, with the Denali the deepest discount of any trim.",
+        "If you tow often or drive long highway miles, get the 3.0-liter Duramax diesel. It’s rated 24 mpg combined with 4WD against 16 for the 5.3L, and it’s the only engine GMC puts money on this month: $8,250 cash, or 0% for 60 months plus $2,000. Skip the 6.2L V8 for now. NHTSA has an open investigation into failures of GM’s 6.2-liter that covers 2021 to 2026 trucks, including ones already fixed under a 2025 recall. The Denali is the step up for a nicer cabin; the AT4X is for serious off-roading and costs $24,500 more than an SLT."
+      ],
+      "pay": {
+        "intro": [
+          "The 2026 is the outgoing truck, and dealers have plenty. Cox Automotive counted 110 days of supply for GMC at the end of October, against 87 for the industry. TrueCar’s market averages put the Pro about 2% under MSRP, the SLE and Elevation about 4% under, and the SLT and Denali about 7.5% under. Dealer invoice sits about 6% under MSRP on every trim but the Pro, by iSeeCars’ figures, and GMC’s diesel cash comes on top."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "Pro",
+            "example": "Pro",
+            "fair": "2–3% under",
+            "strong": "5% or more",
+            "why": "TrueCar’s average is 2.1% under. Invoice sits about 4% under MSRP."
+          },
+          {
+            "trims": "SLE, Elevation, SLT",
+            "example": "Elevation",
+            "fair": "5–7% under",
+            "strong": "8–10% under",
+            "why": "TrueCar averages 4–7.5% under, and buyers reported about 11% on SLTs and Elevations to CarWhere. The SLE and SLT end with the 2026."
+          },
+          {
+            "trims": "Denali, AT4, AT4X, Denali Ultimate",
+            "example": "Denali",
+            "fair": "5–7% under",
+            "strong": "8% or more",
+            "why": "TrueCar averages 5.4–7.5% under. Denali Ultimate stock is tighter, so expect the low end there."
+          }
+        ],
+        "note": "Checked November 16, 2026. These are dealer discounts before any GMC cash; TrueCar doesn’t say whether its averages include rebates.",
+        "after": [
+          "Not sure what a specific Sierra should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Elevation crew cab 4WD",
+          "sticker": 61290,
+          "stickerLabel": "Sticker with the 5.3L V8",
+          "steps": [
+            {
+              "label": "Dealer discount, 7%",
+              "amount": 4290
+            }
+          ],
+          "total": 57000,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "GMC’s cash this month is all on the 3.0L Duramax diesel. Gas 2026 trucks get lease deals only, and the 2027 has a single lease offer, in Chicago. Everything ends November 30."
+        ],
+        "rows": [
+          {
+            "offer": "$8,250 cash",
+            "detail": "$6,250 purchase allowance plus $2,000 bonus cash. Not with GMC financing or a lease.",
+            "applies": "2026 Sierra 1500 with the 3.0L Duramax",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "0% APR for 60 months",
+            "detail": "Through GM Financial, plus a $2,000 purchase allowance and 92 days to the first payment",
+            "applies": "2026 Sierra 1500 with the 3.0L Duramax",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Denali diesel price cut",
+            "detail": "$11,300 off an $80,719 example, 14% under MSRP: $6,755 GMC cash plus a $4,545 dealer price reduction. Not with a lease.",
+            "applies": "2026 Denali with the 3.0L Duramax, at participating dealers",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Elevation V8 lease",
+            "detail": "$349 a month for 24 months with $5,649 due at signing ($4,899 if you lease a 2021 or newer GM now); 20,000 miles in all",
+            "applies": "2026 Elevation crew cab 4WD with the 5.3L V8, all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Elevation TurboMax lease",
+            "detail": "$299 a month for 24 months with $6,969 due in Chicago and Los Angeles; $359 with $5,659 due in New York. None in Dallas.",
+            "applies": "2026 Elevation crew cab 4WD with the 2.7L TurboMax",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Elevation double cab lease",
+            "detail": "$399 a month for 24 months with $3,979 due at signing",
+            "applies": "2026 Elevation double cab 4WD, New York",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 Elevation lease",
+            "detail": "$349 a month for 24 months with $7,509 due at signing",
+            "applies": "2027 Elevation crew cab 4WD with the 5.7L V8, Chicago only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military and first responder programs",
+            "detail": "Combine with most current offers. GM doesn’t publish the amount for the Sierra.",
+            "applies": "2025 to 2027 Sierra; eligibility verified through ID.me",
+            "ends": "January 4, 2027"
+          }
+        ],
+        "note": "From <a href=\"https://www.gmc.com/current-offers\" rel=\"noopener\">GMC’s offers page</a> on November 16, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, the finance offers need GM Financial credit approval, and “ends” is the delivery date.",
+        "cards": [
+          {
+            "label": "Diesel cash",
+            "figure": "$8,250",
+            "word": "cash",
+            "text": "$6,250 plus $2,000 bonus cash on a 2026 with the 3.0L Duramax. Ends November 30."
+          },
+          {
+            "label": "Diesel financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For 60 months on a 2026 diesel, plus $2,000 and 92 days to the first payment. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$349",
+            "word": "a month",
+            "text": "2026 Elevation crew cab 4WD with the 5.3L V8, 24 months, $5,649 due at signing. Ends November 30."
+          },
+          {
+            "label": "Denali diesel",
+            "figure": "14%",
+            "word": "under MSRP",
+            "text": "$11,300 off a 2026 Denali diesel at participating dealers. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military or a first responder?",
+            "text": "GM’s military and first-responder programs cover the 2025 to 2027 Sierra and combine with most current offers. GM doesn’t publish the Sierra amount, so get it in writing.",
+            "figure": "Jan 4",
+            "unit": "2027 end date",
+            "detail": "Eligibility verified through ID.me",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "GMC’s diesel offers",
+          "title": "On a diesel, 0% plus $2,000 costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $65,000 Sierra diesel over 60 months. The cash and the 0% don’t combine. Even at the 4.41% that borrowers with top credit averaged, the 0% deal comes out ahead.",
+          "price": 65000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "+ $2,000 purchase allowance",
+              "rate": 0,
+              "cash": 2000
+            },
+            {
+              "name": "$8,250 cash",
+              "detail": "financed at the 6.35% average",
+              "rate": 6.35,
+              "cash": 8250
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> Sierras lose value faster than the average pickup, which makes a used one tempting, but a 2026 sells 5–7% under sticker this month and used loans average 11.19% against 6.35% for new."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. The runout discounts and GMC’s diesel offers are on the 2026, and the SLE and SLT exist only as 2026s.",
+            "check": "That the truck is a 2026, which engine it has, and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want the new 5.7L or 6.6L V8, the redesigned cabin, or the 5.7L’s 13,500-pound tow rating.",
+            "check": "The price rise ($4,800 on the Denali) and that GMC lists only one 2027 offer, a lease in Chicago."
+          },
+          {
+            "route": "CPO (GM CarBravo)",
+            "when": "You want a 2023 to 2025 truck with some cover, and you’re paying cash.",
+            "check": "CarBravo’s certified warranty is 12 months/12,000 miles bumper to bumper, starting after any factory cover left. GMC’s powertrain warranty runs 5 years/60,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $40,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 6.2L V8, proof that recall 25V274’s engine inspection was done."
+          }
+        ],
+        "after": [
+          "If you buy used, make 2023 the floor. The 2019 and 2020 Sierras carry 10 and 12 recalls, 2021 to 2024 trucks with the 6.2L V8 were recalled in 2025 for crankshaft and connecting-rod defects that can wreck the engine, and owners are <a href=\"https://www.carcomplaints.com/news/2026/gm-lifter-lawsuit-update.shtml\" rel=\"noopener\">suing GM over lifter failures</a> on its V8s."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Sierra 1500",
+                "value": 27.8,
+                "display": "27.8%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              },
+              {
+                "label": "Full-size pickups",
+                "value": 23.7,
+                "display": "23.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "GMC diesel offer",
+                "value": 0,
+                "display": "0%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "GMC; Experian, Q2 2026"
+          },
+          {
+            "title": "Average asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 39967,
+                "display": "$39,967"
+              },
+              {
+                "label": "2023",
+                "value": 43228,
+                "display": "$43,228"
+              },
+              {
+                "label": "2024",
+                "value": 46008,
+                "display": "$46,008"
+              },
+              {
+                "label": "2025",
+                "value": 46907,
+                "display": "$46,907"
+              }
+            ],
+            "source": "CarGurus, November 16"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Which engine.</strong> GMC’s cash and 0% apply only to the 3.0L Duramax. Make sure a quote names the engine before you compare it with an ad.",
+        "<strong>Cash or 0%.</strong> On the diesel you get one or the other. Work out the total cost of each with your bank’s rate before you choose.",
+        "<strong>Dealer add-ons.</strong> GMC dealers put add-ons on 36.4% of the quotes CarWhere studied, averaging $1,441. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>Fees.</strong> Documentation fees run from about $85 in California to $999 in Florida, by CarEdge’s count. Compare out-the-door prices.",
+        "<strong>The 6.2L V8.</strong> On a 2021 to 2024 truck, ask for proof that recall 25V274’s inspection was done. NHTSA’s open investigation also covers 2025 and 2026 engines.",
+        "<strong>The transfer case recall.</strong> A few 2026 4WD trucks are under recall 26V289 and shouldn’t be driven until fixed. Have the dealer check the VIN before delivery."
+      ],
+      "faq": [
+        [
+          "Is the GMC Sierra 1500 a good truck?",
+          "Reviewers split on it. U.S. News scores the 2026 a 9.0 out of 10, tied for third of six full-size pickups, and Kelley Blue Book gives it 4.3 out of 5. Edmunds is cooler, at 6.7 and fifth of large trucks, faulting the ride and fuel economy. Consumer Reports expects it to be less reliable than the average new car, and iSeeCars finds it loses 27.8% of its value in three years, against 23.7% for full-size pickups."
+        ],
+        [
+          "How much under MSRP can you get a GMC Sierra 1500?",
+          "On a 2026 SLE, Elevation or SLT, 5–7% under MSRP is a fair deal and 8–10% a strong one. Denali, AT4 and AT4X trucks sit at 5–7%, and the Pro has less room, about 2–3%. Those ranges are our read of TrueCar’s market averages and iSeeCars’ invoice figures, and GMC’s diesel cash comes on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Sierra 1500?",
+          "The 2026, unless you want the new truck. It costs less (the Denali starts $4,800 lower), the SLE and SLT exist only as 2026s, and GMC’s cash and 0% offers are on the 2026 diesel. The 2027 brings 5.7L and 6.6L V8s, a 10-speed automatic on every engine and a redesigned cabin, but GMC lists just one lease offer on it so far."
+        ],
+        [
+          "What is the destination charge on a Sierra 1500?",
+          "$2,795 on the 2026 and the 2027. GMC’s advertised starting prices leave it out."
+        ],
+        [
+          "Does GMC offer cash back on the Sierra 1500?",
+          "Only on the diesel. On November 16, 2026, GMC offered $8,250 ($6,250 plus $2,000 bonus cash) on a 2026 Sierra 1500 with the 3.0L Duramax, or 0% for 60 months plus $2,000, in Chicago, Dallas, Los Angeles and New York. Gas 2026 trucks got lease deals only. The offers end November 30."
+        ],
+        [
+          "Is the Sierra’s 6.2L V8 reliable?",
+          "It has a record. GM recalled nearly 600,000 2021 to 2024 trucks and SUVs with the 6.2L in 2025 for crankshaft and connecting-rod defects that can cause engine failure, and NHTSA has since opened a wider investigation covering 2021 to 2026 engines, including ones already fixed. Until that closes, we’d take the 5.3L V8 or the diesel."
+        ],
+        [
+          "Is the Sierra 1500 the same truck as the Silverado?",
+          "They’re closely related and offer the same four engines. The Sierra costs more (the 2026 Pro starts at $38,600, against $37,200 for a Silverado WT) and is finished a step higher inside. With the two this close, price both and let the better deal decide."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-SIERRA-01",
+          "title": "GMC: 2026 Sierra 1500",
+          "url": "https://www.gmc.com/trucks/previous-year/sierra/1500",
+          "scope": "2026 Sierra 1500 trims, starting MSRP excluding destination, engines and equipment",
+          "note": "2026 trims, starting prices and engines"
+        },
+        {
+          "id": "VEH-SIERRA-02",
+          "title": "GMC: 2027 Sierra 1500",
+          "url": "https://www.gmc.com/trucks/sierra/1500",
+          "scope": "2027 Sierra 1500 trims, starting MSRP excluding destination, engines and tow rating",
+          "note": "2027 trims, starting prices and engines"
+        },
+        {
+          "id": "VEH-SIERRA-03",
+          "title": "GMC: 2027 Sierra 1500 announcement",
+          "url": "https://news.gmc.com/newsroom.detail.html/Pages/news/us/en/2026/jun/0625-gmc-sierra-1500.html",
+          "scope": "2027 Sierra 1500 redesign, new 5.7L and 6.6L V8s and the 10-speed automatic on every engine",
+          "note": "what changes for 2027"
+        },
+        {
+          "id": "VEH-SIERRA-04",
+          "title": "GMC: destination freight charges",
+          "url": "https://www.gmc.com/destination-freight-charges",
+          "scope": "Destination charge on the 2026 and 2027 Sierra 1500",
+          "note": "destination charge"
+        },
+        {
+          "id": "VEH-SIERRA-05",
+          "title": "GMC: current offers",
+          "url": "https://www.gmc.com/current-offers",
+          "scope": "GMC cash, finance and lease offers on the 2026 and 2027 Sierra 1500 at ZIPs 60601, 75201, 90012 and 10001",
+          "note": "cash, finance and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-SIERRA-06",
+          "title": "GM Military Appreciation: eligible vehicles",
+          "url": "https://www.gmmilitaryappreciation.com/vehicles",
+          "scope": "GM military discount eligibility, eligible Sierra model years, stacking rules and end date",
+          "note": "military program"
+        },
+        {
+          "id": "VEH-SIERRA-07",
+          "title": "GM First Responder Appreciation: eligible vehicles",
+          "url": "https://www.gmfirstresponderappreciation.com/vehicles",
+          "scope": "GM first responder discount eligibility, eligible Sierra model years and end date",
+          "note": "first responder program"
+        },
+        {
+          "id": "VEH-SIERRA-08",
+          "title": "TrueCar: GMC Sierra 1500",
+          "url": "https://www.truecar.com/overview/gmc/sierra-1500/",
+          "scope": "Starting MSRP and starting market average by 2026 Sierra 1500 trim, November 2026",
+          "note": "market average against MSRP by trim"
+        },
+        {
+          "id": "VEH-SIERRA-09",
+          "title": "iSeeCars: 2026 GMC Sierra 1500 price",
+          "url": "https://www.iseecars.com/car/2026-gmc-sierra_1500-price",
+          "scope": "Dealer invoice against MSRP by 2026 Sierra 1500 style",
+          "note": "dealer invoice against MSRP"
+        },
+        {
+          "id": "VEH-SIERRA-10",
+          "title": "Edmunds: GMC Sierra 1500",
+          "url": "https://www.edmunds.com/gmc/sierra-1500/",
+          "scope": "Edmunds rating, large-truck rank, owner rating and review faults for the 2026 Sierra 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SIERRA-11",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, GMC and the Silverado 1500 at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-SIERRA-12",
+          "title": "CarWhere: 2026 GMC Sierra 1500 prices paid",
+          "url": "https://www.carwhere.com/dealer-invoice-price/gmc/sierra-1500/2026",
+          "scope": "Buyer-verified prices paid against MSRP by 2026 Sierra 1500 trim, as of June 2026",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-SIERRA-13",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of GMC quotes with dealer add-ons and their average price, June 2026",
+          "note": "add-ons on GMC quotes"
+        },
+        {
+          "id": "VEH-SIERRA-14",
+          "title": "CarEdge: dealer doc fees by state",
+          "url": "https://caredge.com/guides/car-dealer-doc-fee-by-state",
+          "scope": "Dealer documentation fees by state, January 2026",
+          "note": "documentation fees"
+        },
+        {
+          "id": "VEH-SIERRA-15",
+          "title": "iSeeCars: GMC Sierra 1500 resale value",
+          "url": "https://www.iseecars.com/car/gmc-sierra-1500/resale-value",
+          "scope": "Sierra 1500 depreciation at three years against full-size pickups and all vehicles",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-SIERRA-16",
+          "title": "CarGurus: GMC Sierra 1500 price trends",
+          "url": "https://www.cargurus.com/research/price-trends/GMC-Sierra-1500-d116",
+          "scope": "Average used Sierra 1500 asking price by model year, November 16, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-SIERRA-17",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-SIERRA-18",
+          "title": "CarBravo: warranties",
+          "url": "https://www.carbravo.com/ownership/warranties",
+          "scope": "GM CarBravo certified pre-owned warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-SIERRA-19",
+          "title": "GMC: warranty",
+          "url": "https://www.gmc.com/warranty-protection",
+          "scope": "GMC bumper-to-bumper and powertrain warranty terms",
+          "note": "new-vehicle warranty"
+        },
+        {
+          "id": "VEH-SIERRA-20",
+          "title": "FuelEconomy.gov: 2026 GMC Sierra",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_GMC_Sierra.shtml",
+          "scope": "EPA fuel economy by 2026 Sierra 1500 engine and drive",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-SIERRA-21",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash-test ratings and rollover risk for the 2026 Sierra 1500 by cab and drive, from the NHTSA ratings API",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-SIERRA-22",
+          "title": "IIHS: 2026 GMC Sierra 1500 crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/gmc/sierra-1500-crew-cab-pickup/2026",
+          "scope": "IIHS small overlap, updated side, pedestrian crash prevention and LATCH ratings for the 2026 Sierra 1500 crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-SIERRA-23",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Sierra 1500 recall campaigns by model year 2019 to 2026, including 25V274 and 26V289",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-SIERRA-24",
+          "title": "Motor1: NHTSA expands its GM 6.2L V8 investigation",
+          "url": "https://www.motor1.com/news/805731/nhtsa-gm-l87-v8-investigation-expands/",
+          "scope": "NHTSA engineering analysis EA26005 into 2021 to 2026 GM 6.2L L87 engines, including recall-remedied engines",
+          "note": "6.2L V8 investigation"
+        },
+        {
+          "id": "VEH-SIERRA-25",
+          "title": "GM Authority: NHTSA 6.2L investigation deadline extension",
+          "url": "https://gmauthority.com/blog/2026/11/nhtsa-l87-engine-investigation-gm-gets-deadline-extension/",
+          "scope": "Status of NHTSA’s L87 engine investigation in November 2026, with no new recall announced",
+          "note": "6.2L V8 investigation status"
+        },
+        {
+          "id": "VEH-SIERRA-26",
+          "title": "Consumer Reports: 2026 GMC Sierra 1500 reliability",
+          "url": "https://www.consumerreports.org/cars/gmc/sierra-1500/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Sierra 1500",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-SIERRA-27",
+          "title": "Kelley Blue Book: 2026 GMC Sierra 1500",
+          "url": "https://www.kbb.com/gmc/sierra-1500/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 Sierra 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SIERRA-28",
+          "title": "U.S. News: GMC Sierra 1500",
+          "url": "https://cars.usnews.com/cars-trucks/gmc/sierra-1500",
+          "scope": "U.S. News overall score and full-size pickup rank for the 2026 Sierra 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SIERRA-29",
+          "title": "J.D. Power: 2026 GMC Sierra 1500",
+          "url": "https://www.jdpower.com/cars/2026/gmc/sierra-1500",
+          "scope": "J.D. Power consumer rating and large light-duty pickup ranking for the 2026 Sierra 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SIERRA-30",
+          "title": "CarComplaints: GM lifter lawsuit update",
+          "url": "https://www.carcomplaints.com/news/2026/gm-lifter-lawsuit-update.shtml",
+          "scope": "Status of the Harrison v. GM lifter class action covering Sierra V8s, February 2026",
+          "note": "V8 lifter lawsuit"
+        },
+        {
+          "id": "VEH-SIERRA-31",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Toyota Tundra as KBB 2026 best resale value full-size pickup",
+          "note": "Tundra resale award"
+        },
+        {
+          "id": "VEH-SIERRA-32",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "scope": "2026 Silverado 1500 WT starting MSRP excluding destination",
+          "note": "Silverado price"
+        },
+        {
+          "id": "VEH-SIERRA-33",
+          "title": "Ford: 2026 F-150",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "scope": "2026 F-150 XL starting MSRP excluding destination",
+          "note": "F-150 price"
+        },
+        {
+          "id": "VEH-SIERRA-34",
+          "title": "Ram: Ram 1500",
+          "url": "https://www.ramtrucks.com/ram-1500.html",
+          "scope": "2026 Ram 1500 Tradesman starting MSRP excluding destination",
+          "note": "Ram 1500 price"
+        },
+        {
+          "id": "VEH-SIERRA-35",
+          "title": "Toyota: 2026 Tundra",
+          "url": "https://www.toyota.com/tundra/2026/",
+          "scope": "2026 Tundra SR starting MSRP excluding delivery",
+          "note": "Tundra price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-gmc-sierra-1500-elevation",
+        "width": 1920,
+        "height": 1189,
+        "alt": "White GMC Sierra 1500 Elevation crew cab with black wheels, front three-quarter view",
+        "caption": "A Sierra Elevation crew cab (a 2024; the 2026 looks the same).",
+        "author": "Mr.choppers",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_GMC_Sierra_Elevation_Crew_Cab_in_Summit_White,_front_left.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "note": "plate frame blurred"
+      },
+      "pros": [
+        "Diesel rated 24 mpg combined with 4WD",
+        "Roomy, well-finished crew cab",
+        "U.S. News scores it 9.0 of 10",
+        "Deep runout discounts on the 2026"
+      ],
+      "cons": [
+        "IIHS: Marginal in the small overlap test",
+        "Loses value faster than the average pickup",
+        "Firmer ride than the Ram 1500, reviewers say",
+        "Consumer Reports expects below-average reliability"
+      ],
+      "rivals": [
+        "Get a quote on the Chevrolet Silverado 1500 too. It shares the Sierra’s engines, starts at $37,200, and had 99 days of supply at the end of October. The Ford F-150 (from $39,585) ranks first with Edmunds and U.S. News, reviewers say the Ram 1500 (from $42,025) rides more smoothly, and Kelley Blue Book named the Toyota Tundra (from $41,260) its 2026 best resale value full-size pickup. Those prices leave out destination. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/gmc/sierra-1500/",
+            "value": 6.7,
+            "scale": 10,
+            "display": "6.7",
+            "detail": "Ranked 5th of large trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/gmc/sierra-1500/2026/",
+            "value": 4.3,
+            "scale": 5,
+            "display": "4.3",
+            "detail": "Owners give it 4.0 out of 5 (101 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/gmc/sierra-1500",
+            "value": 9,
+            "scale": 10,
+            "display": "9.0",
+            "detail": "Tied 3rd of 6 full-size pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/gmc/sierra-1500",
+            "value": 80,
+            "scale": 100,
+            "display": "80",
+            "detail": "5th among large light-duty pickups"
+          }
+        ],
+        "note": "Scores for the 2026 Sierra 1500 as published on November 16, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Sierra 1500 crew cab 4WD",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 5, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "19.8% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Marginal",
+            "note": "Passenger side"
+          },
+          {
+            "label": "IIHS side, updated test",
+            "grade": "Acceptable"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 10
+          },
+          {
+            "label": "2020",
+            "value": 12
+          },
+          {
+            "label": "2021",
+            "value": 7
+          },
+          {
+            "label": "2022",
+            "value": 6
+          },
+          {
+            "label": "2023",
+            "value": 3
+          },
+          {
+            "label": "2024",
+            "value": 1
+          },
+          {
+            "label": "2025",
+            "value": 0
+          },
+          {
+            "label": "2026",
+            "value": 2
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to be <a href=\"https://www.consumerreports.org/cars/gmc/sierra-1500/2026/reliability\" rel=\"noopener\">less reliable than the average new car</a>, judging from 2023 to 2025 trucks.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 16, 2026: regular and double cabs, and the crew cab with 2WD, score 5 stars overall. <a href=\"https://www.iihs.org/ratings/vehicle/gmc/sierra-1500-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a> also rates pedestrian crash prevention Acceptable and the LATCH child-seat anchors Marginal, and hasn’t rated the headlights. Recall counts are GM campaigns from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a>; 2025’s only listing, another company’s wheelchair conversion, is left out. Check any used Sierra’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-gmc-sierra-1500-rear",
+          "width": 1920,
+          "height": 1115,
+          "alt": "White GMC Sierra 1500 Elevation crew cab, rear three-quarter view",
+          "caption": "Elevation, rear",
+          "author": "Mr.choppers",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_GMC_Sierra_Elevation_Crew_Cab_in_Summit_White,_rear_left.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-gmc-sierra-1500-denali",
+          "width": 1920,
+          "height": 1536,
+          "alt": "White GMC Sierra 1500 Denali crew cab with a chrome grille, seen from above",
+          "caption": "Denali",
+          "author": "OWS Photography",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:GMC_Sierra_1500_Denali_(GMTT1XX)_Washington_DC_Metro_Area,_USA.jpg",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-gmc-sierra-1500-interior",
+          "width": 1920,
+          "height": 1080,
+          "alt": "GMC Sierra 1500 Elevation dashboard with a large center touchscreen and digital gauges",
+          "caption": "Elevation cabin",
+          "author": "deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_GMC_Sierra_facelift_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-gmc-sierra-1500-at4x",
+          "width": 1920,
+          "height": 1113,
+          "alt": "Red GMC Sierra AT4X crew cab with off-road tires at an auto show",
+          "caption": "AT4X",
+          "author": "Bull-Doser",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_GMC_Sierra_AT4X_au_SIAM_2025.jpg",
+          "license": "Public domain",
+          "note": "cropped"
+        }
+      ]
+    },
+    {
+      "slug": "toyota-tacoma-price.html",
+      "name": "Toyota Tacoma",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Toyota Tacoma Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Toyota Tacoma costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell it, Toyota’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Toyota Tacoma price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$32,545 <small>to $64,750</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "5–6% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Toyota incentives",
+          "value": "3.99% <small>APR, no cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 TRD Sport",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Tacoma is the midsize pickup that holds its value best: Kelley Blue Book named it the best-resale midsize pickup of 2026, and iSeeCars puts its five-year depreciation at 19.5% against 30.2% for the class. It isn’t the roomiest or quietest truck you can buy. Edmunds ranks it third of seven midsize trucks, and both Edmunds and U.S. News fault the tight back seat. It does sell under sticker, though: CarWhere’s 31 verified 2026 buyers paid a median 7.9% under MSRP, and TrueCar’s averages put the SR5 and TRD Sport 5–6% under. Price a 2026 TRD Sport, aim for 5–6% under MSRP, and take Toyota’s 3.99% financing if your bank can’t beat it. Prices and offers were checked on November 16, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "SR",
+            "short": "Work truck",
+            "gets": "8-inch touchscreen, LED headlights, Toyota Safety Sense 3.0, XtraCab or Double Cab",
+            "prices": [
+              32545,
+              32725
+            ],
+            "engine": "2.4L turbo four, 228 hp"
+          },
+          {
+            "name": "SR5",
+            "short": "Most popular",
+            "gets": "17-inch alloy wheels, the 278-hp engine, coil-spring rear suspension on the Double Cab",
+            "prices": [
+              36635,
+              36815
+            ],
+            "engine": "2.4L turbo four, 278 hp"
+          },
+          {
+            "name": "TRD PreRunner",
+            "short": "Lifted two-wheel drive",
+            "gets": "Lifted front suspension, all-terrain tires, locking rear differential; XtraCab with a 6-foot bed only",
+            "prices": [
+              39135,
+              39315
+            ],
+            "engine": "2.4L turbo four, 278 hp, rear-wheel drive"
+          },
+          {
+            "name": "TRD Sport",
+            "short": "The value pick",
+            "gets": "Sport-tuned suspension, 18-inch TRD wheels, Double Cab, manual available on the 4x4",
+            "prices": [
+              40415,
+              40935
+            ],
+            "engine": "2.4L turbo four, 278 hp; 4x4 adds $3,200 with the automatic",
+            "pick": true
+          },
+          {
+            "name": "TRD Off-Road",
+            "short": "Trail-ready",
+            "gets": "Bilstein shocks with remote reservoirs, locking rear differential, Crawl Control, 4x4",
+            "prices": [
+              42815,
+              43335
+            ],
+            "engine": "2.4L turbo four, 278 hp, 4x4; manual or automatic"
+          },
+          {
+            "name": "Limited",
+            "short": "Luxury",
+            "gets": "14-inch touchscreen, heated and ventilated seats, moonroof, adaptive suspension",
+            "prices": [
+              53570,
+              53750
+            ],
+            "engine": "2.4L turbo four, 278 hp, 4x4"
+          },
+          {
+            "name": "TRD Sport i-FORCE MAX",
+            "short": "Hybrid sport",
+            "gets": "TRD Sport equipment with the hybrid and a 2,400-watt power outlet",
+            "prices": [
+              47335,
+              47855
+            ],
+            "engine": "2.4L turbo hybrid, 326 hp, 4x4"
+          },
+          {
+            "name": "TRD Off-Road i-FORCE MAX",
+            "short": "Hybrid off-roader",
+            "gets": "TRD Off-Road equipment with the hybrid and a 2,400-watt power outlet",
+            "prices": [
+              47635,
+              48155
+            ],
+            "engine": "2.4L turbo hybrid, 326 hp, 4x4"
+          },
+          {
+            "name": "Limited i-FORCE MAX",
+            "short": "Hybrid luxury",
+            "gets": "Limited equipment with the hybrid and a 2,400-watt power outlet",
+            "prices": [
+              56895,
+              57075
+            ],
+            "engine": "2.4L turbo hybrid, 326 hp, 4x4"
+          },
+          {
+            "name": "Trailhunter",
+            "short": "Overlander",
+            "gets": "Old Man Emu shocks, high-mounted air intake, ARB steel rear bumper, rock rails",
+            "prices": [
+              63750,
+              63930
+            ],
+            "engine": "2.4L turbo hybrid, 326 hp, 4x4"
+          },
+          {
+            "name": "TRD Pro",
+            "short": "Desert runner",
+            "gets": "FOX internal-bypass shocks, IsoDynamic front seats, 33-inch tires",
+            "prices": [
+              64750,
+              64930
+            ],
+            "engine": "2.4L turbo hybrid, 326 hp, 4x4"
+          }
+        ],
+        "after": [
+          "Prices leave out the $1,745 destination charge. For 2027, every trim goes up $180 except the TRD Sport and TRD Off-Road, which go up $520. Toyota lists the same 11 trims for 2027."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 TRD Sport Double Cab, with 4x4 if you leave pavement.</strong> At $40,415 it adds a sport-tuned suspension and 18-inch TRD wheels to the SR5’s 278-hp engine, and Edmunds found it rides more smoothly than the TRD Off-Road. Edmunds calls it the pick of the lineup too, and TrueCar’s averages show it selling 5.7% under sticker, more than any other trim. 4x4 adds $3,200 with the automatic, and the 6-speed manual on the 4x4 costs $800 less than that.",
+        "If you’ll use trails, a TRD Off-Road costs only $300 more than a TRD Sport 4x4 automatic ($43,915 against $43,615) and adds Bilstein shocks with remote reservoirs, a locking rear differential and Crawl Control (a low-speed cruise control for rough ground). Skip the i-FORCE MAX hybrid unless you want its torque or its 2,400-watt outlet: it adds $3,720 to a TRD Sport 4x4, is rated 23 mpg combined against 21, and doesn’t raise the Tacoma’s 6,500-pound maximum towing. The Trailhunter and TRD Pro start above $63,000 and get none of Toyota’s current offers."
+      ],
+      "pay": {
+        "intro": [
+          "Tacomas sell quickly but not at sticker. Edmunds says new ones are selling in about 18 days against 34 for the average new vehicle, and Toyota had 39 days of supply at the end of October against 87 for the industry. Buyers still get real money off: CarWhere’s 31 verified 2026 buyers paid a median 7.9% under MSRP, Edmunds’ suggested prices, based on Texas sales, run 6–7% under, and TrueCar’s averages put the SR5, PreRunner and TRD Sport 5–6% under. The base SR and the TRD Pro have the least room."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "SR",
+            "example": "SR",
+            "fair": "2–3% under",
+            "strong": "5% or more",
+            "why": "TrueCar averages 2.7% under, and Edmunds says the SR has the least room of any trim."
+          },
+          {
+            "trims": "SR5, TRD PreRunner, TRD Sport, TRD Off-Road",
+            "example": "TRD Sport",
+            "fair": "5–6% under",
+            "strong": "7–8% under",
+            "why": "TrueCar averages 5.2–5.7% under on the SR5, PreRunner and TRD Sport. Dealer invoice sits about 7% under MSRP."
+          },
+          {
+            "trims": "Limited and i-FORCE MAX hybrids",
+            "example": "TRD Off-Road i-FORCE MAX",
+            "fair": "3–4% under",
+            "strong": "6% or more",
+            "why": "TrueCar averages 2.5–4.4% under. Edmunds’ Texas prices run about 7% under."
+          },
+          {
+            "trims": "Trailhunter, TRD Pro",
+            "example": "TRD Pro",
+            "fair": "1–2% under",
+            "strong": "5% or more",
+            "why": "TrueCar’s TRD Pro average sits at sticker and the Trailhunter’s 2% under."
+          }
+        ],
+        "note": "Checked November 16, 2026.",
+        "after": [
+          "Not sure what a specific Tacoma should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 TRD Sport",
+          "sticker": 42160,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 5.5%",
+              "amount": 2320
+            }
+          ],
+          "total": 39840,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Toyota has no cash back on any Tacoma. The deals are financing and leases on the 2026, and they end November 30. The 2027 gets 4.99% financing in Southern California and the New York area only."
+        ],
+        "rows": [
+          {
+            "offer": "3.99% APR for up to 48 months",
+            "detail": "Through Toyota Financial Services, for buyers with top credit",
+            "applies": "2026 TRD Sport, TRD Off-Road and Limited i-FORCE MAX, in all four regions we checked",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2.99% to 3.99% APR for up to 48 months",
+            "detail": "2.99% in Chicago; 3.99% in Dallas and Los Angeles. In New York, only the Limited gets a rate (2.99%).",
+            "applies": "2026 gas Tacomas except the SR5",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "SR5 finance cash",
+            "detail": "$500 off with a Toyota Financial Services loan, plus 3.99% for up to 48 months",
+            "applies": "2026 SR5 in Chicago, Dallas and Los Angeles; not in New York",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "SR5 lease",
+            "detail": "$299 a month for 39 months with $3,999 due in Chicago (4x4) and Dallas (4x2); $279 in Los Angeles (4x2); $379 with $379 due in New York (4x4)",
+            "applies": "2026 SR5 Double Cab",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Hybrid lease",
+            "detail": "39 months with $3,999 due: $419 a month for a TRD Sport in Chicago, $439 in Los Angeles; $459 for a TRD Off-Road in Dallas, $399 in New York",
+            "applies": "2026 Tacoma i-FORCE MAX",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 financing",
+            "detail": "4.99% for up to 48 months",
+            "applies": "2027 Tacoma, gas and hybrid, in Southern California and Greater New York only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military rebate",
+            "detail": "$500 when you finance or lease through Toyota Financial Services",
+            "applies": "2025 to 2027 Tacoma and Tacoma i-FORCE MAX. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "College rebate",
+            "detail": "$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services",
+            "applies": "2025 to 2027 Tacoma and Tacoma i-FORCE MAX. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Trailhunter and TRD Pro",
+            "detail": "No financing or lease offers",
+            "applies": "2026 and 2027 Trailhunter and TRD Pro",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.toyota.com/deals-incentives/tacoma/\" rel=\"noopener\">Toyota’s offers pages</a> on November 16, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Toyota Financial Services credit approval, and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "3.99%",
+            "word": "APR",
+            "text": "For up to 48 months on 2026 hybrids in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$299",
+            "word": "a month",
+            "text": "2026 SR5 Double Cab in Chicago and Dallas, 39 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "SR5 finance cash",
+            "figure": "$500",
+            "word": "off",
+            "text": "On a 2026 SR5 financed with Toyota in Chicago, Dallas and Los Angeles. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$0",
+            "word": "cash back",
+            "text": "Toyota lists no customer cash on the Tacoma in any of the four regions we checked."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Toyota takes $500 off a 2025 to 2027 Tacoma you finance or lease through Toyota Financial Services. The two rebates don’t combine, and Toyota’s own pages disagree on whether they stack with the special rates, so ask the dealer.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends November 30; not in AL, FL, GA, HI, NC or SC",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Toyota’s 3.99%",
+          "title": "3.99% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $42,000 Tacoma over 48 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 42000,
+          "months": 48,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "3.99% APR",
+              "detail": "2026 Tacoma, Toyota Financial Services",
+              "rate": 3.99,
+              "cash": 0
+            },
+            {
+              "name": "4.99% APR",
+              "detail": "2027 Tacoma, Southern California and New York area",
+              "rate": 4.99,
+              "cash": 0
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> Used Tacomas hold their value so well that a used 2024 asks a median $38,119, more than TrueCar’s starting average paid for a new SR5 ($36,274), and used-loan rates average 11.19% against Toyota’s 3.99% on a new one."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Toyota’s financing, leases and the SR5 cash apply to the 2026, and it costs $180 to $520 less than a 2027.",
+            "check": "That the truck is a 2026 and not a 2027, and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "The 2026 you want is gone, or you want a 2027-only color.",
+            "check": "The $180 to $520 price rise, and that its 4.99% runs only in Southern California and the New York area."
+          },
+          {
+            "route": "CPO (Toyota Certified Gold)",
+            "when": "You want a 2024 or 2025 with a warranty, and you’re paying cash.",
+            "check": "That it’s Gold Certified, not Silver. Gold adds a 12-month/12,000-mile comprehensive warranty and 7-year/100,000-mile powertrain coverage; Silver gives 12 months of powertrain cover only. An i-FORCE MAX hybrid battery stays covered for 10 years/150,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $33,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2022 or 2023, that the rear axle recall is done."
+          }
+        ],
+        "after": [
+          "If you buy a 2024 or 2025, get the recall work in writing. The first two years of this generation were recalled for rear brake hoses, shock-absorber reservoirs and the dashboard warning display, and <a href=\"https://m.carcomplaints.com/news/2024/toyota-tacoma-transmission-problems-t-sb-0076-24.shtml\" rel=\"noopener\">Toyota replaced some 2024 automatic transmissions</a> under a service bulletin. On a 2022 or 2023, the rear axle shafts were recalled because they could separate."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in five years",
+            "bars": [
+              {
+                "label": "Tacoma",
+                "value": 19.5,
+                "display": "19.5%"
+              },
+              {
+                "label": "Midsize pickups",
+                "value": 30.2,
+                "display": "30.2%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 41.7,
+                "display": "41.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Toyota offer",
+                "value": 3.99,
+                "display": "3.99%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Toyota; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 31746,
+                "display": "$31,746"
+              },
+              {
+                "label": "2022",
+                "value": 32755,
+                "display": "$32,755"
+              },
+              {
+                "label": "2023",
+                "value": 35774,
+                "display": "$35,774"
+              },
+              {
+                "label": "2024",
+                "value": 38119,
+                "display": "$38,119"
+              },
+              {
+                "label": "2025",
+                "value": 38635,
+                "display": "$38,635"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Add-ons.</strong> In Florida, Georgia, Alabama and the Carolinas, Toyota’s regional distributor fits its own packages before the truck reaches the dealer; one 2026 buyer reported $2,857 of them plus $1,599 from the dealer. Refuse or negotiate anything you didn’t ask for.",
+        "<strong>Dealer stickers above Toyota’s.</strong> Some dealers print their own price over Toyota’s: one buyer saw $2,838 added to a TRD Off-Road. Negotiate down from Toyota’s window sticker.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. In Chicago and Dallas, only the 2026 has offers.",
+        "<strong>The Toyota Financial Services requirement.</strong> The 3.99%, the leases and the $500 rebates need Toyota’s own financing. Compare the total cost with your bank’s rate.",
+        "<strong>Fees.</strong> Documentation fees in owner reports ran from $225 to $899, and one Florida dealer’s quotes carried $1,402 in fees in CarEdge’s data. Compare out-the-door prices.",
+        "<strong>Open recalls.</strong> On a 2024 or 2025, ask the dealer to show that every recall is done before you take delivery."
+      ],
+      "faq": [
+        [
+          "Is the Toyota Tacoma a good truck?",
+          "Most reviewers think so. Kelley Blue Book rates the 2026 a 4.8 out of 5 and first among midsize trucks, U.S. News gives it 8.8 and second of seven, and J.D. Power’s owner score of 84 ranks it first among midsize pickups. Edmunds is cooler, at 6.8 and third of seven, and faults the cramped back seat and engine noise under hard acceleration. A Tacoma loses 19.5% of its value in five years by iSeeCars’ figures, against 30.2% for midsize pickups."
+        ],
+        [
+          "How much under MSRP can you get a Toyota Tacoma?",
+          "On a 2026 SR5, TRD PreRunner, TRD Sport or TRD Off-Road, 5–6% under MSRP is a fair deal and 7–8% is a strong one. The base SR and the hybrids have less room, around 2–4%, and the TRD Pro sells near sticker. Those ranges are our read of TrueCar’s averages, Edmunds’ suggested prices and CarWhere’s verified buyers, so a given dealer may land a point either side, and Toyota has no cash back to add on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Tacoma?",
+          "The 2026, for most buyers. It costs $180 to $520 less, and nearly all of Toyota’s offers are on the 2026: 3.99% financing, the SR5’s $500 finance cash and the leases. The 2027 gets 4.99% in Southern California and the New York area only. Toyota lists the same 11 trims for both years."
+        ],
+        [
+          "What is the destination charge on a Tacoma?",
+          "$1,745 on the 2026. Toyota’s advertised starting prices leave it out, so a $32,545 SR is $34,290 on the window sticker."
+        ],
+        [
+          "Does Toyota offer cash back on the Tacoma?",
+          "No. In Chicago, Dallas, Los Angeles and New York on November 16, 2026, Toyota offered financing from 2.99% and lease deals, but no customer cash. The only money off is $500 on a 2026 SR5 financed through Toyota in three of those regions, and a $500 military or college rebate when you finance or lease through Toyota Financial Services."
+        ],
+        [
+          "Is the Tacoma i-FORCE MAX hybrid worth it?",
+          "Only if you want its power or its 2,400-watt outlet. It makes 326 hp and 465 lb-ft against 278 hp and 317 lb-ft, but it costs $3,720 more on a TRD Sport 4x4 and is rated 23 mpg combined against 21. Edmunds timed a hybrid TRD Pro at 7.4 seconds to 60 mph against 7.6 for a gas TRD Sport."
+        ],
+        [
+          "Is a used Tacoma a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2024 is $38,119 and for a 2025 $38,635, while TrueCar’s average paid for a new 2026 SR5 starts at $36,274. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 3.99% on a new one. A Gold Certified 2024 or 2025 with its recalls done is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-TACOMA-01",
+          "title": "Toyota: 2026 Tacoma",
+          "url": "https://www.toyota.com/vehicles/tacoma/2026",
+          "scope": "2026 Tacoma trims, starting MSRP excluding destination, engines, suspension equipment and EPA city/highway ratings",
+          "note": "2026 trims, starting prices and equipment"
+        },
+        {
+          "id": "VEH-TACOMA-02",
+          "title": "Toyota: 2027 Tacoma",
+          "url": "https://www.toyota.com/vehicles/tacoma/2027",
+          "scope": "2027 Tacoma trims and starting MSRP excluding destination",
+          "note": "2027 starting prices"
+        },
+        {
+          "id": "VEH-TACOMA-03",
+          "title": "Toyota: 2026 Tacoma announcement",
+          "url": "https://pressroom.toyota.com/the-2026-toyota-tacoma-adventure-awaits/",
+          "scope": "2026 Tacoma power and torque, maximum towing and payload, equipment by trim and which trims offer i-FORCE MAX",
+          "note": "power, towing and equipment"
+        },
+        {
+          "id": "VEH-TACOMA-04",
+          "title": "Toyota: Tacoma deals and incentives",
+          "url": "https://www.toyota.com/deals-incentives/tacoma/",
+          "scope": "Toyota finance and lease offers on the 2026 and 2027 Tacoma and Tacoma i-FORCE MAX at ZIPs 60601, 75201, 90012 and 10001, military and college rebate terms, and the $1,745 destination charge",
+          "note": "finance, lease and rebate offers, read in four regions"
+        },
+        {
+          "id": "VEH-TACOMA-05",
+          "title": "iSeeCars: 2026 Toyota Tacoma price",
+          "url": "https://www.iseecars.com/car/2026-toyota-tacoma-price",
+          "scope": "MSRP and dealer invoice by 2026 Tacoma configuration, including 4x4, manual and i-FORCE MAX prices",
+          "note": "prices by configuration and dealer invoice"
+        },
+        {
+          "id": "VEH-TACOMA-06",
+          "title": "TrueCar: 2026 Toyota Tacoma",
+          "url": "https://www.truecar.com/overview/toyota/tacoma/2026/",
+          "scope": "Starting TSRP and starting market average price by 2026 Tacoma trim, and the most popular trim",
+          "note": "average price paid by trim"
+        },
+        {
+          "id": "VEH-TACOMA-07",
+          "title": "Edmunds: 2026 Toyota Tacoma",
+          "url": "https://www.edmunds.com/toyota/tacoma/2026/",
+          "scope": "Edmunds rating, midsize truck rank, owner rating, editors’ trim pick, Texas suggested price by trim, days to sell, inventory, test acceleration and fuel economy for the 2026 Tacoma",
+          "note": "review score, suggested prices and test results"
+        },
+        {
+          "id": "VEH-TACOMA-08",
+          "title": "CarWhere: 2026 Toyota Tacoma",
+          "url": "https://www.carwhere.com/cars/toyota/tacoma/2026",
+          "scope": "Median price paid against MSRP by 31 verified 2026 Tacoma buyers",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-TACOMA-09",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry and for Toyota at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-TACOMA-10",
+          "title": "TacomaWorld: What did you pay for your 2026 Tacoma?",
+          "url": "https://www.tacomaworld.com/threads/what-did-you-pay-for-your-2026-tacoma.869129/",
+          "scope": "Owner-reported 2026 Tacoma prices, distributor and dealer add-ons, dealer markups and documentation fees",
+          "note": "owner-reported prices, add-ons and fees"
+        },
+        {
+          "id": "VEH-TACOMA-11",
+          "title": "CarEdge: Sarasota Toyota dealer quotes",
+          "url": "https://caredge.com/dealer/sarasota-toyota--fl-sarasota",
+          "scope": "Dealer fees and add-ons on 2026 Tacoma quotes at one Florida Toyota dealer",
+          "note": "fees and add-ons on dealer quotes"
+        },
+        {
+          "id": "VEH-TACOMA-12",
+          "title": "iSeeCars: Toyota Tacoma resale value",
+          "url": "https://www.iseecars.com/car/toyota-tacoma/resale-value",
+          "scope": "Tacoma five-year depreciation against the midsize pickup and all-vehicle averages",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-TACOMA-13",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Toyota Tacoma as KBB 2026 best resale value midsize pickup truck",
+          "note": "resale award"
+        },
+        {
+          "id": "VEH-TACOMA-14",
+          "title": "CarWhere: used Toyota Tacoma prices",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/tacoma",
+          "scope": "Median asking price of used Tacomas by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-TACOMA-15",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-TACOMA-16",
+          "title": "Toyota Certified: warranty",
+          "url": "https://www.toyotacertified.com/warranty",
+          "scope": "Toyota Certified Used Vehicles Gold and Silver warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-TACOMA-17",
+          "title": "Toyota: warranty",
+          "url": "https://www.toyota.com/owners/warranty-owners-manuals/",
+          "scope": "Toyota new-vehicle, hybrid component and hybrid battery warranty terms",
+          "note": "new-vehicle and hybrid warranty"
+        },
+        {
+          "id": "VEH-TACOMA-18",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Tacoma and Tacoma Hybrid recall campaigns by model year 2019 to 2026, including 24V152, 25V058, 25V595 and 26V514",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-TACOMA-19",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 Tacoma crew cab, and the untested extended cab, from the NHTSA ratings API",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-TACOMA-20",
+          "title": "IIHS: 2026 Toyota Tacoma crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/tacoma-crew-cab-pickup/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 Tacoma crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-TACOMA-21",
+          "title": "Consumer Reports: 2026 Toyota Tacoma reliability",
+          "url": "https://www.consumerreports.org/cars/toyota/tacoma/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Tacoma",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-TACOMA-22",
+          "title": "FuelEconomy.gov: 2026 Toyota Tacoma",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Tacoma.shtml",
+          "scope": "EPA fuel economy by 2026 Tacoma version",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-TACOMA-23",
+          "title": "Kelley Blue Book: 2026 Toyota Tacoma",
+          "url": "https://www.kbb.com/toyota/tacoma/2026/",
+          "scope": "KBB expert rating, consumer rating and midsize truck rank for the 2026 Tacoma",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TACOMA-24",
+          "title": "U.S. News: 2026 Toyota Tacoma",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/tacoma",
+          "scope": "U.S. News overall score, midsize pickup rank, award, pros and cons for the 2026 Tacoma",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TACOMA-25",
+          "title": "J.D. Power: 2026 Toyota Tacoma",
+          "url": "https://www.jdpower.com/cars/2026/toyota/tacoma",
+          "scope": "J.D. Power consumer rating, category scores and midsize pickup ranking for the 2026 Tacoma",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TACOMA-26",
+          "title": "CarComplaints: Tacoma transmission bulletin T-SB-0076-24",
+          "url": "https://m.carcomplaints.com/news/2024/toyota-tacoma-transmission-problems-t-sb-0076-24.shtml",
+          "scope": "Toyota service bulletin replacing transmissions and torque converters on certain 2024 Tacomas",
+          "note": "2024 transmission replacements"
+        },
+        {
+          "id": "VEH-TACOMA-27",
+          "title": "Ford: new trucks",
+          "url": "https://www.ford.com/new-trucks/",
+          "scope": "2026 Ford Ranger starting MSRP",
+          "note": "Ranger price"
+        },
+        {
+          "id": "VEH-TACOMA-28",
+          "title": "PickupTruckTalk: Chevrolet Colorado pricing",
+          "url": "https://pickuptrucktalk.com/2026/10/2027-chevrolet-colorado-pricing/",
+          "scope": "2026 Chevrolet Colorado WT starting price and destination charge",
+          "note": "Colorado price"
+        },
+        {
+          "id": "VEH-TACOMA-29",
+          "title": "Nissan: 2026 Frontier pricing",
+          "url": "https://usa.nissannews.com/en-US/releases/2026-nissan-frontier-pricing-starts-at-32150",
+          "scope": "2026 Nissan Frontier starting MSRP and destination charge",
+          "note": "Frontier price"
+        },
+        {
+          "id": "VEH-TACOMA-30",
+          "title": "Honda: 2026 Ridgeline pricing",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb053927-2026-honda-ridgeline-pricing-epa-ratings-2",
+          "scope": "2026 Honda Ridgeline starting MSRP and destination charge",
+          "note": "Ridgeline price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-toyota-tacoma-trd-off-road",
+        "width": 1920,
+        "height": 1210,
+        "alt": "Silver 2025 Toyota Tacoma TRD Off-Road i-FORCE MAX Double Cab, front three-quarter view",
+        "caption": "A Tacoma TRD Off-Road i-FORCE MAX.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Toyota_Tacoma_TRD_Off-Road_HV.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Best resale value among midsize pickups",
+        "Most mid trims sell 5–6% under sticker",
+        "Owners score it 84 of 100 with J.D. Power",
+        "Off-road hardware from $42,815"
+      ],
+      "cons": [
+        "Tight back seat and a noisy engine",
+        "Hybrid adds $3,720 for 2 mpg",
+        "Marginal IIHS grade for rear-seat safety",
+        "No cash back from Toyota this month"
+      ],
+      "rivals": [
+        "Get a quote on the Chevrolet Colorado too: it tows up to 7,700 pounds against the Tacoma’s 6,500, and the work-truck version starts at $34,495 including destination. Ford lists the Ranger from $33,350 before destination, the Nissan Frontier starts at $33,845 including destination, and the Honda Ridgeline, which Edmunds says rides more smoothly, at $42,290 including destination. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/toyota/tacoma/2026/",
+            "value": 6.8,
+            "scale": 10,
+            "display": "6.8",
+            "detail": "Ranked 3rd of 7 midsize trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/toyota/tacoma/2026/",
+            "value": 4.8,
+            "scale": 5,
+            "display": "4.8",
+            "detail": "Owners give it 3.8 out of 5 (15 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/toyota/tacoma",
+            "value": 8.8,
+            "scale": 10,
+            "display": "8.8",
+            "detail": "Ranked 2nd of 7 midsize pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/toyota/tacoma",
+            "value": 84,
+            "scale": 100,
+            "display": "84",
+            "detail": "Ranked 1st among midsize pickups"
+          }
+        ],
+        "note": "Scores for the 2026 Tacoma as published on November 16, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Tacoma Double Cab",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 3,
+            "note": "Driver 3, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "18.5% rollover risk, 4x4"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Marginal",
+            "note": "Rear-seat passenger"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Acceptable",
+            "note": "Every trim"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 4
+          },
+          {
+            "label": "2020",
+            "value": 1
+          },
+          {
+            "label": "2021",
+            "value": 0
+          },
+          {
+            "label": "2022",
+            "value": 3
+          },
+          {
+            "label": "2023",
+            "value": 4
+          },
+          {
+            "label": "2024",
+            "value": 5
+          },
+          {
+            "label": "2025",
+            "value": 5
+          },
+          {
+            "label": "2026",
+            "value": 0
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to be <a href=\"https://www.consumerreports.org/cars/toyota/tacoma/2026/reliability\" rel=\"noopener\">more reliable than the average new car</a>, judging from the 2024 and 2025.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/toyota/tacoma-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 16, 2026. NHTSA has not crash-tested the XtraCab. IIHS rates crash prevention, pedestrian detection and seat belt reminders Good. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> are for the Tacoma; most i-FORCE MAX recalls are the same campaigns. Check any used Tacoma’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-toyota-tacoma-trd-sport-rear",
+          "width": 1920,
+          "height": 1062,
+          "alt": "Orange 2024 Toyota Tacoma TRD Sport Double Cab, rear three-quarter view",
+          "caption": "TRD Sport, rear",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Toyota_Tacoma_TRD_Sport_rear_view.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-tacoma-interior",
+          "width": 1920,
+          "height": 1081,
+          "alt": "Toyota Tacoma TRD Sport dashboard with a large center touchscreen and blue trim",
+          "caption": "TRD Sport cabin",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Toyota_Tacoma_TRD_Sport_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-toyota-tacoma-trd-pro",
+          "width": 1920,
+          "height": 1210,
+          "alt": "Orange Toyota Tacoma TRD Pro i-FORCE MAX Double Cab, front three-quarter view",
+          "caption": "TRD Pro",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Toyota_Tacoma_TRD_Pro_HV.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-tacoma-limited",
+          "width": 1920,
+          "height": 1210,
+          "alt": "Silver Toyota Tacoma Limited Double Cab with chrome grille in a photo studio",
+          "caption": "Limited",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Toyota_Tacoma_Limited.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        }
+      ]
+    },
+    {
       "slug": "toyota-corolla-price.html",
       "name": "Toyota Corolla",
       "modelYear": 2026,
@@ -2897,6 +5542,872 @@
           "A used one barely saves money. CarWhere’s median 2024 asks $36,997 at about 22,500 miles, $3,500 under a new base manual that comes with a full warranty. Owners of 2023 and 2024 manuals filed NHTSA complaints about clutches wearing out early, and Car and Driver says the 2026 clutch is better suited to hard use, so have any used manual’s clutch checked. Toyota warns that track driving can cause damage its warranty won’t cover."
         ]
       }
+    },
+    {
+      "slug": "tesla-model-y-price.html",
+      "name": "Tesla Model Y",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Used Tesla Model Y Price: What to Pay at a Dealer | Steer Me Right",
+      "description": "What a used Tesla Model Y costs in November 2026: dealer asking prices by model year from 2020 to 2025, how far under asking to aim, the year we’d buy, what warranty is left, and when a new one from Tesla makes more sense.",
+      "h1": "Used Tesla Model Y price: what to pay at a dealer, by model year",
+      "labels": {
+        "crumb": "Used Tesla Model Y price",
+        "payHeading": "What to pay: how far under the asking price",
+        "trimsTab": "Prices by year",
+        "trimsHeading": "Used Model Y prices by model year",
+        "trimsCaption": "Average dealer asking price of a used Tesla Model Y by model year, September 2026",
+        "trimsColumn": "Model year",
+        "trimsMore": "EPA range and what changed each year",
+        "trimsMoreCaption": "Used Tesla Model Y by model year: average asking price, what changed and EPA range",
+        "engineColumn": "EPA range",
+        "pickHeading": "The used Model Y we’d buy",
+        "incentivesTab": "New from Tesla",
+        "incentivesHeading": "What a new Model Y costs, and what Tesla covers",
+        "incentivesMore": "Tesla’s prices, offers and warranties in full",
+        "incentivesCaption": "New Tesla Model Y prices, Tesla offers and warranties, checked November 16, 2026",
+        "incentivesColumns": [
+          "Item",
+          "What it is",
+          "Applies to",
+          "Until"
+        ],
+        "conditionTab": "Dealer, Tesla or new",
+        "conditionHeading": "Used from a dealer, used from Tesla, or new?",
+        "conditionCaption": "Buying a Tesla Model Y used from a dealer, used from Tesla or new",
+        "negotiateName": "used Tesla Model Y",
+        "negotiate": "Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three, and covers used and CPO dealer inventory. We find the Model Y in dealer stock, get written out-the-door offers and negotiate the price and fees. We can’t promise a specific discount: the market for a given car sets what a dealer will do.",
+        "related": "<a href=\"/used-car-buying-service.html\">used car buying service</a>, <a href=\"/blog-used-ev-pros-cons-risks.html\">the risks and rewards of buying a used EV</a> and <a href=\"/blog-used-car-inspection-checklist.html\">used-car inspection checklist</a>"
+      },
+      "glance": [
+        {
+          "label": "Used asking price",
+          "value": "$26,400 <small>to $39,700</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "1–2% <small>under asking</small>",
+          "section": "pay"
+        },
+        {
+          "label": "New from Tesla",
+          "value": "$39,990 <small>before fees</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Year we’d buy",
+          "value": "2024 Long Range",
+          "section": "pick"
+        },
+        {
+          "label": "Best route",
+          "value": "Used, 2023 or 2024",
+          "section": "new-used"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-tesla-model-y-long-range",
+        "width": 5354,
+        "height": 2661,
+        "alt": "White 2024 Tesla Model Y Long Range, front three-quarter view",
+        "caption": "A 2024 Model Y Long Range, the year we’d buy and the last of the original design.",
+        "author": "BuickRiviera99",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Model_Y_Long_Range,_front_left,_08-21-2026.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "gallery": [
+        {
+          "file": "vehicle-tesla-model-y-rear",
+          "width": 3652,
+          "height": 2037,
+          "alt": "White 2023 Tesla Model Y Long Range AWD, rear three-quarter view",
+          "caption": "2023 Long Range, rear",
+          "author": "Elise240SX",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Tesla_Model_Y_Long_Range_All-Wheel_Drive_in_Pearl_White_Multi-Coat,_rear_right,_2024-09-25.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-y-interior",
+          "width": 4370,
+          "height": 2913,
+          "alt": "Dashboard of the redesigned Tesla Model Y with its center touchscreen and white seats",
+          "caption": "Redesigned cabin",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_2025_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-y-2025",
+          "width": 5966,
+          "height": 2623,
+          "alt": "White redesigned Tesla Model Y with a full-width front light bar",
+          "caption": "The redesign",
+          "author": "LuvsMG481",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Tesla_Model_Y_RWD_front.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-y-performance",
+          "width": 5006,
+          "height": 3068,
+          "alt": "White first-generation Tesla Model Y Performance on dark 21-inch wheels",
+          "caption": "Performance",
+          "author": "Alexander-93",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_Model_Y_IMG_9499_(cropped).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "summary": "A used Model Y is one of the easier EVs to buy at a dealer, as long as you pick the year with care. A 2023 averaged $33,200 in dealer listings in September, against $41,630 for the cheapest new Model Y with fees, and whatever is left of its 8-year battery warranty passes to you whoever sells it. The catch is how fast they sell: 16 days at the median, so dealers rarely need to cut much, and Tesla’s own used warranty covers only cars Tesla sells. Shop a 2024 Long Range, aim for 1–2% under asking, and make sure every recall is closed. Prices were checked on November 16, 2026.",
+      "pros": [
+        "A 2023 lists for about $8,400 less than a new one with fees",
+        "Battery warranty transfers from any seller",
+        "310 to 330 miles of EPA range on a Long Range AWD",
+        "Five-star NHTSA rating, IIHS Top Safety Pick+"
+      ],
+      "cons": [
+        "Sells in 16 days, so there’s little room to haggle",
+        "No Tesla used warranty unless Tesla sells it",
+        "20 to 24 recalls each on 2020–2022 cars",
+        "Most cars built before mid-2023 have Hardware 3"
+      ],
+      "pay": {
+        "base": "asking",
+        "intro": [
+          "Used Model Ys don’t sit. Recurrent puts the median at 16 days from listing to sale between June and September, and Cox Automotive counted 35 days’ supply of used EVs in September against 46 for gas cars. Asking prices on 2024 and 2025 cars slipped 2.5–3.3% over the summer, while 2020s rose 2.9% as buyers chased the cheapest ones. Nobody publishes what used Model Ys sell for against their asking price, so the ranges below are our estimate from those figures."
+        ],
+        "tableTitle": "Discount off the dealer’s asking price",
+        "rows": [
+          {
+            "trims": "2023, 2024 and 2025",
+            "example": "2024 Model Y",
+            "fair": "1–2% under",
+            "strong": "3–4% under",
+            "why": "Asking prices on 2024 and 2025 cars fell 2.5–3.3% from June to September."
+          },
+          {
+            "trims": "2020, 2021 and 2022",
+            "example": "2022 Model Y",
+            "fair": "1% under",
+            "strong": "2–3% under",
+            "why": "The cheapest Model Ys are in demand: 2020 prices rose 2.9% over the same months."
+          }
+        ],
+        "note": "Asking prices are Recurrent’s September averages. Checked November 16, 2026.",
+        "after": [
+          "Not sure what a specific Model Y should cost? Send us the listing and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2023 Model Y",
+          "sticker": 33200,
+          "stickerLabel": "Average 2023 asking price",
+          "steps": [
+            {
+              "label": "Dealer discount, 2%",
+              "amount": 664
+            }
+          ],
+          "total": 32536,
+          "totalLabel": "Your price before tax and fees",
+          "under": "under asking"
+        }
+      },
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/tesla/model-y/",
+            "value": 8.2,
+            "scale": 10,
+            "display": "8.2",
+            "detail": "Tied 2nd of 16 small electric SUVs"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/tesla/model-y/2025/",
+            "value": 4.1,
+            "scale": 5,
+            "display": "4.1",
+            "detail": "For the 2025; owners give the 2026 a 4.2"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/tesla/model-y",
+            "value": 8.6,
+            "scale": 10,
+            "display": "8.6",
+            "detail": "Predicted reliability 78 out of 100"
+          }
+        ],
+        "note": "Edmunds and U.S. News score the 2026 Model Y; Kelley Blue Book’s expert score is for the 2025, since it hasn’t scored the 2026. As published on November 16, 2026. They are not Steer Me Right ratings, and we have not averaged them.",
+        "intro": "Owners like theirs: the Model Y placed second among premium EVs in J.D. Power’s 2026 EV ownership study, behind the Model 3."
+      },
+      "trims": {
+        "columns": [
+          "Average asking price"
+        ],
+        "rows": [
+          {
+            "name": "2020 Model Y",
+            "short": "Launch year, most recalls",
+            "gets": "Long Range AWD and Performance only. 24 recall campaigns, the most of any year.",
+            "prices": [
+              26400
+            ],
+            "engine": "Long Range AWD 316 miles; Performance 315 (291 on 21-inch wheels)"
+          },
+          {
+            "name": "2021 Model Y",
+            "short": "Door handle investigation",
+            "gets": "A short-lived Standard Range RWD early in the year. NHTSA is investigating 2021 door handles that stop working when the 12-volt battery runs low.",
+            "prices": [
+              27500
+            ],
+            "engine": "Long Range AWD 326 miles; Performance 303; Standard Range 244"
+          },
+          {
+            "name": "2022 Model Y",
+            "short": "Lithium 12-volt battery",
+            "gets": "A lithium-ion 12-volt battery phased in early in the year, and a Texas-built AWD with a 279-mile range.",
+            "prices": [
+              30400
+            ],
+            "engine": "Long Range AWD 330 miles; AWD 279; Performance 303"
+          },
+          {
+            "name": "2023 Model Y",
+            "short": "Hardware 4 from mid-year",
+            "gets": "Hardware 4 phased in from about May 2023. The RWD returned in October at $43,990 new.",
+            "prices": [
+              33200
+            ],
+            "engine": "Long Range AWD 330 miles; AWD 279; Performance 303"
+          },
+          {
+            "name": "2024 Model Y",
+            "short": "The year we’d buy",
+            "gets": "Built after the mid-2023 switch to Hardware 4. A new Long Range RWD, and 5 recall campaigns against 17 for the 2023.",
+            "prices": [
+              36500
+            ],
+            "engine": "Long Range RWD 320 miles; Long Range AWD 310; RWD 260; Performance 279",
+            "pick": true
+          },
+          {
+            "name": "2025 Model Y",
+            "short": "Last of the first body",
+            "gets": "The same car as the 2024. 3 recall campaigns so far.",
+            "prices": [
+              39700
+            ],
+            "engine": "Long Range RWD 337 miles; Long Range AWD 311; Performance 277"
+          }
+        ],
+        "after": [
+          "Each 10,000 miles takes about $1,000 off a Model Y of the same year, Recurrent finds, so adjust for mileage before comparing two listings. The redesigned 2026, with its light-bar nose and quieter cabin, is still scarce used, and Tesla sells it new from $39,990 before fees."
+        ]
+      },
+      "pick": [
+        "<strong>A 2024 Long Range, with AWD if you see snow.</strong> At an average asking price of $36,500 in September, it costs about $3,300 more than a 2023 and gets you three things: Hardware 4, since 2024s were built after the mid-2023 switch (the 2023s are a mix), five recall campaigns against 17 for the 2023, and battery and drive-unit cover that runs into 2032 or to 120,000 miles. The Long Range RWD is EPA-rated at 320 miles against 310 for the AWD.",
+        "On a tighter budget, a 2022 or 2023 Long Range AWD at $30,000 to $33,000 is the next step down; check the Autopilot computer and that the suspension, seat and steering recalls are closed. We’d skip a 2020 or 2021 unless the price allows for it: they carry the most recalls, their battery cover ends in 2028 or 2029, and the 2021 is the year NHTSA’s door handle investigation covers. The Performance gives up about 25 miles of EPA range to a Long Range of the same year."
+      ],
+      "incentives": {
+        "intro": [
+          "Tesla sells new Model Ys only through its own website and stores, at a set price, so there’s no dealer discount to chase on a new one. Here is what a new one costs, and what Tesla’s warranties mean for a used one."
+        ],
+        "cards": [
+          {
+            "label": "New Model Y",
+            "figure": "$39,990",
+            "word": "RWD",
+            "text": "Plus $1,640 in destination and order fees. Premium RWD $45,990, Premium AWD $49,990."
+          },
+          {
+            "label": "Tesla financing",
+            "figure": "2.49%",
+            "word": "APR",
+            "text": "Up to 72 months with 5% down on a new Model Y. The Performance gets 3.99%, and the Model Y L is left out."
+          },
+          {
+            "label": "Tesla used warranty",
+            "figure": "1 year",
+            "word": "/10,000 miles",
+            "text": "Only on used cars Tesla sells. A Model Y from another dealer doesn’t get it."
+          },
+          {
+            "label": "Used EV tax credit",
+            "figure": "$0",
+            "word": "credit",
+            "text": "The $4,000 credit ended for cars bought after September 30, 2025."
+          }
+        ],
+        "note": "New prices from Tesla’s configurator as <a href=\"https://electrek.co/2026/11/13/tesla-kills-41990-model-y-awd-configurator/\" rel=\"noopener\">reported by Electrek</a> on November 13, 2026, and offers from Tesla’s Current Offers page as <a href=\"https://teslanorth.com/2026/10/23/tesla-model-y-apr-increase-us\" rel=\"noopener\">reported by TeslaNorth</a> on October 23, 2026. Tesla changes prices without notice, and financing needs credit approval.",
+        "addons": [],
+        "choice": {
+          "eyebrow": "Bring your own loan",
+          "title": "Top credit is worth about {gap} on a used Model Y",
+          "text": "Each bar is how much less you pay in total than at the 11.19% average used-car rate, on a $33,000 Model Y over 60 months. Get preapproved by your bank or credit union before the dealer runs your credit.",
+          "price": 33000,
+          "months": 60,
+          "baseRate": 11.19,
+          "options": [
+            {
+              "name": "6.29% APR",
+              "detail": "average used rate, top credit",
+              "rate": 6.29,
+              "cash": 0
+            },
+            {
+              "name": "8.81% APR",
+              "detail": "average used rate, prime credit",
+              "rate": 8.81,
+              "cash": 0
+            },
+            {
+              "name": "11.19% APR",
+              "detail": "average used-car loan",
+              "rate": 11.19,
+              "cash": 0
+            }
+          ]
+        },
+        "rows": [
+          {
+            "offer": "New Model Y prices",
+            "detail": "RWD $39,990; Premium RWD $45,990; Premium AWD $49,990; Performance $57,990; Model Y L Premium (six seats) $61,990",
+            "applies": "New cars ordered from Tesla, before fees",
+            "ends": "Tesla changes prices without notice"
+          },
+          {
+            "offer": "Destination and order fees",
+            "detail": "$1,390 destination plus a $250 order fee that isn’t refunded",
+            "applies": "Every new Model Y",
+            "ends": "Ongoing"
+          },
+          {
+            "offer": "2.49% APR",
+            "detail": "Up to 72 months with at least 5% down, through Tesla",
+            "applies": "New RWD, Premium RWD and Premium AWD ordered from October 22, 2026; the Performance gets 3.99% and the Model Y L is excluded",
+            "ends": "Not stated"
+          },
+          {
+            "offer": "Free Supercharging",
+            "detail": "2,000 miles when you trade in a gas or hybrid car",
+            "applies": "New Model Y",
+            "ends": "Not stated"
+          },
+          {
+            "offer": "$500 recognition discount",
+            "detail": "For military members, first responders, healthcare workers, teachers and students",
+            "applies": "New Model Y",
+            "ends": "Not stated"
+          },
+          {
+            "offer": "Tesla used warranty",
+            "detail": "1 year or 10,000 miles, starting when the 4-year/50,000-mile basic warranty ends",
+            "applies": "Only used cars sold and delivered by Tesla. Not cars from an auction, wholesaler or another dealer.",
+            "ends": "Ongoing"
+          },
+          {
+            "offer": "Battery and drive unit warranty",
+            "detail": "8 years or 120,000 miles on Long Range and Performance, 8 years or 100,000 miles on Standard and Standard Range, with at least 70% of capacity kept",
+            "applies": "Every Model Y, and it transfers to later owners at no cost",
+            "ends": "Counted from first delivery"
+          },
+          {
+            "offer": "Federal used EV credit",
+            "detail": "Up to $4,000 on a used EV",
+            "applies": "Ended for vehicles bought after September 30, 2025",
+            "ends": "Ended"
+          }
+        ]
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy used, a 2023 or 2024, from whichever seller has the right car at the right price.</strong> A Model Y has taken its steepest drop by year three (44.1% by iSeeCars’ count, against 24.8% for the average car), so the second owner gets the bargain. Your credit decides how much of it you keep."
+        ],
+        "rows": [
+          {
+            "route": "Used from a dealer",
+            "when": "You want to negotiate, or the car with the right year, range and miles is at a franchise or independent dealer.",
+            "check": "Open recalls by VIN, the Autopilot computer (Hardware 3 or 4), and that any FSD in the listing shows on the car’s screen. Tesla’s used warranty won’t apply."
+          },
+          {
+            "route": "Used from Tesla",
+            "when": "You want Tesla’s 1-year/10,000-mile used warranty on top of the battery cover.",
+            "check": "Tesla’s price is set. Compare it with dealer listings of the same year and miles."
+          },
+          {
+            "route": "New from Tesla",
+            "when": "Your budget reaches $41,630 with fees, you want the redesigned car, and your credit gets you Tesla’s 2.49%.",
+            "check": "That the 2.49% applies to the version you order. The Performance is 3.99% and the Model Y L isn’t included."
+          }
+        ],
+        "after": [
+          "Battery wear worries buyers more than the figures suggest. <a href=\"https://insideevs.com/news/807052/tesla-high-mileage-battery-health/\" rel=\"noopener\">Aviloo’s tests</a> put the median Model Y battery at 90% of its health at about 93,000 miles, and Tesla says Long Range packs lose about 15% after 200,000 miles. Battery and drive-unit cover passes to you from any seller: 8 years or 120,000 miles on a Long Range or Performance, as long as capacity stays above 70%."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Model Y",
+                "value": 44.1,
+                "display": "44.1%"
+              },
+              {
+                "label": "Average SUV",
+                "value": 26.4,
+                "display": "26.4%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Tesla, new",
+                "value": 2.49,
+                "display": "2.49%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used, top credit",
+                "value": 6.29,
+                "display": "6.29%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Tesla; Experian, Q2 2026"
+          },
+          {
+            "title": "A used 2023 at a dealer",
+            "bars": [
+              {
+                "label": "Model Y Long Range",
+                "value": 33500,
+                "display": "$33,500"
+              },
+              {
+                "label": "Model 3 Long Range",
+                "value": 30100,
+                "display": "$30,100"
+              },
+              {
+                "label": "Mach-E Premium",
+                "value": 29300,
+                "display": "$29,300"
+              },
+              {
+                "label": "Ioniq 5 SEL",
+                "value": 25800,
+                "display": "$25,800"
+              },
+              {
+                "label": "EV6 Wind",
+                "value": 24500,
+                "display": "$24,500"
+              },
+              {
+                "label": "ID.4 Pro S",
+                "value": 20700,
+                "display": "$20,700"
+              }
+            ],
+            "source": "Kelley Blue Book Fair Purchase Price, November 16"
+          }
+        ]
+      },
+      "rivals": [
+        "Price a used Hyundai Ioniq 5 before you settle. Edmunds ranks the 2026 a step ahead of the Model Y (8.3 to 8.2), KBB’s experts give the 2023 a 4.7 against the Model Y’s 4.1, and a 2023 SEL’s Fair Purchase Price is $25,800 against $33,500 for a 2023 Model Y Long Range. The Ford Mustang Mach-E ($29,300 for a 2023 Premium) and Kia EV6 ($24,500 for a 2023 Wind) cost less too, and a Volkswagen ID.4 is the cheapest of the group. If you don’t need the Model Y’s hatch and height, a 2023 Model 3 Long Range runs about $3,400 less. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "watch": [
+        "<strong>Open recalls.</strong> Run the VIN at <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a>. The headlight recall on 2020–2023 cars (26V507) has no fix yet, and the suspension, seat belt, seat and steering wheel recalls on 2020–2023 cars need a service visit, not a software update.",
+        "<strong>The front suspension.</strong> NHTSA opened an investigation in July 2026 into front lateral links failing on 2021–2023 Model Ys, many with no warning. Have an independent shop look at the front suspension before you buy.",
+        "<strong>Hardware 3 or 4.</strong> Most cars built before mid-2023 have Hardware 3, which Tesla says can’t run unsupervised FSD. Look under Settings, Software, Additional Vehicle Information for the Autopilot computer.",
+        "<strong>FSD in the listing.</strong> Tesla now sells FSD only as a subscription, and says FSD bought outright stays with the car. If a listing charges extra for it, check that it shows on the car’s screen before you pay.",
+        "<strong>The “warranty” on the window.</strong> A dealer’s warranty on a used Model Y is its own or a third party’s. Tesla’s used warranty covers only cars Tesla sells. Ask for the first delivery date to see how much battery cover is left.",
+        "<strong>Door handles on a 2021.</strong> NHTSA is investigating 2021 Model Ys whose outside handles stop working when the 12-volt battery runs low. Ask when the 12-volt battery was last replaced, and learn where the manual door releases are.",
+        "<strong>Add-ons and fees.</strong> Used-car dealers add paint protection, etching and service contracts. Compare out-the-door prices, and refuse what you didn’t ask for."
+      ],
+      "faq": [
+        [
+          "How much is a used Tesla Model Y?",
+          "Dealers listed them at an average of $26,400 for a 2020 up to $39,700 for a 2025 in September 2026, by Recurrent’s count. Each 10,000 miles takes about $1,000 off a car of the same year. A new Model Y starts at $39,990 before $1,640 in fees."
+        ],
+        [
+          "How much under asking can you get a used Model Y?",
+          "On a 2023 to 2025, 1–2% under asking is a fair deal and 3–4% a strong one; on a 2020 to 2022, about 1% is fair and 2–3% strong. Those ranges are our estimate: used Model Ys sell in about 16 days, so dealers rarely need to cut much, and Tesla doesn’t negotiate on its own used cars."
+        ],
+        [
+          "What is the best year for a used Model Y?",
+          "The 2024, in our view. It was built after the switch to Hardware 4, has five recall campaigns against 17 to 24 for the 2020 to 2023, and battery cover that runs into 2032. A 2023 built after mid-year is the next best, at about $3,300 less."
+        ],
+        [
+          "Does the Tesla battery warranty transfer to a used buyer?",
+          "Yes, at no cost, whoever sells you the car. It runs 8 years or 120,000 miles on a Long Range or Performance and 8 years or 100,000 miles on a Standard or Standard Range, counted from first delivery, and covers capacity that falls below 70%."
+        ],
+        [
+          "Does a used Model Y from a dealer come with Tesla’s warranty?",
+          "Not Tesla’s used warranty. Its 1-year/10,000-mile cover applies only to used cars Tesla sells and delivers itself. The remainder of the original 4-year/50,000-mile basic warranty and the battery warranty do carry over."
+        ],
+        [
+          "Does Full Self-Driving transfer with a used Model Y?",
+          "Tesla says FSD bought outright stays with the car, and it now sells FSD only as a subscription, which doesn’t carry over. Check that FSD shows on the car’s own screen before you pay extra for it, and check for Hardware 4: Tesla says Hardware 3 cars can’t run unsupervised FSD."
+        ],
+        [
+          "Is a used Model Y reliable?",
+          "Mixed. U.S. News predicts 78 out of 100 for the 2026. Owners of three-year-old Teslas reported 226 problems per 100 vehicles in J.D. Power’s 2026 dependability study, against an industry average of 204, and Germany’s TÜV failed 17.3% of two- to three-year-old Model Ys at inspection, mostly for suspension parts, brake discs and lights."
+        ]
+      ],
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2025 Model Y AWD",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 5,
+            "note": "7.9% rollover risk"
+          }
+        ],
+        "recallsTitle": "Recall campaigns by model year",
+        "recalls": [
+          {
+            "label": "2020",
+            "value": 24
+          },
+          {
+            "label": "2021",
+            "value": 23
+          },
+          {
+            "label": "2022",
+            "value": 20
+          },
+          {
+            "label": "2023",
+            "value": 17
+          },
+          {
+            "label": "2024",
+            "value": 5
+          },
+          {
+            "label": "2025",
+            "value": 3
+          },
+          {
+            "label": "2026",
+            "value": 8
+          }
+        ],
+        "reliability": "Owners of three-year-old Teslas reported <a href=\"https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710\" rel=\"noopener\">226 problems per 100 vehicles</a> in J.D. Power’s 2026 dependability study, against 204 for the industry, and Germany’s TÜV <a href=\"https://electrek.co/2025/12/03/tesla-model-y-named-worst-car-for-reliability-germany-major-tuv-report/\" rel=\"noopener\">failed 17.3% of two- to three-year-old Model Ys</a>, last of any car.",
+        "note": "Crash ratings and recall counts from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 16, 2026. The 2020 and the redesigned 2026 also score five stars overall, and IIHS named the <a href=\"https://www.iihs.org/ratings/vehicle/tesla/model-y/2025\" rel=\"noopener\">2025</a> and <a href=\"https://www.iihs.org/ratings/vehicle/tesla/model-y/2026\" rel=\"noopener\">2026</a> a Top Safety Pick+. Most of the recalls on 2020–2023 cars were fixed by software update. Check any used Model Y’s open recalls by VIN before you buy."
+      },
+      "sources": [
+        {
+          "id": "VEH-MODELY-01",
+          "title": "Recurrent: should I sell or trade in my Tesla?",
+          "url": "https://www.recurrentauto.com/research/sell-or-trade-in-tesla",
+          "scope": "Average used Model Y dealer asking price by model year 2020 to 2025 (September 2026), price changes June to September and January to September 2026, the mileage adjustment and median days to sell",
+          "note": "asking prices by model year, days to sell"
+        },
+        {
+          "id": "VEH-MODELY-02",
+          "title": "iSeeCars: Tesla Model Y resale value",
+          "url": "https://www.iseecars.com/car/tesla-model-y/resale-value",
+          "scope": "Model Y depreciation at three years against all vehicles and all SUVs",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-MODELY-03",
+          "title": "Cox Automotive: EV Market Monitor, September 2026",
+          "url": "https://www.coxautoinc.com/insights/ev-market-monitor-september-2026/",
+          "scope": "Used EV days of supply against gas vehicles and average used Tesla listing price, September 2026",
+          "note": "used EV supply"
+        },
+        {
+          "id": "VEH-MODELY-04",
+          "title": "Electrek: Tesla drops the $41,990 Model Y AWD",
+          "url": "https://electrek.co/2026/11/13/tesla-kills-41990-model-y-awd-configurator/",
+          "scope": "New Model Y prices by version from Tesla’s US configurator, November 13, 2026",
+          "note": "new Model Y prices"
+        },
+        {
+          "id": "VEH-MODELY-05",
+          "title": "The Weekly Driver: 2026 Model Y pricing",
+          "url": "https://theweeklydriver.com/2026/07/tesla-model-y-2026-pricing-every-trim/",
+          "scope": "Model Y destination charge and order fee from Tesla’s configurator",
+          "note": "destination and order fees"
+        },
+        {
+          "id": "VEH-MODELY-06",
+          "title": "TeslaNorth: Model Y APR rises to 2.49%",
+          "url": "https://teslanorth.com/2026/10/23/tesla-model-y-apr-increase-us",
+          "scope": "Tesla’s US financing, trade-in Supercharging and $500 recognition offers on the Model Y from Tesla’s Current Offers page, October 23, 2026",
+          "note": "Tesla’s financing and offers"
+        },
+        {
+          "id": "VEH-MODELY-07",
+          "title": "Tesla: Pre-Owned Vehicle Limited Warranty",
+          "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/tesla-used-vehicle-limited-warranty-en-us.pdf",
+          "scope": "Tesla used warranty coverage, start, eligibility (only cars sold and delivered by Tesla) and transfer, effective 2026-05-07",
+          "note": "used warranty terms"
+        },
+        {
+          "id": "VEH-MODELY-08",
+          "title": "Tesla: New Vehicle Limited Warranty",
+          "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/tesla-new-vehicle-limited-warranty-en-us.pdf",
+          "scope": "Tesla basic and battery and drive unit warranty terms by Model Y version, the 70% retention threshold and transfer to later owners, effective 2026-09-01",
+          "note": "battery and drive unit warranty"
+        },
+        {
+          "id": "VEH-MODELY-09",
+          "title": "IRS: used clean vehicle credit",
+          "url": "https://www.irs.gov/credits-deductions/used-clean-vehicle-credit",
+          "scope": "End of the previously-owned clean vehicle credit for vehicles acquired after September 30, 2025",
+          "note": "used EV credit end date"
+        },
+        {
+          "id": "VEH-MODELY-10",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and used rates by credit tier, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-MODELY-11",
+          "title": "Engadget: Tesla FSD goes subscription-only",
+          "url": "https://www.engadget.com/transportation/evs/teslas-full-self-driving-is-switching-to-a-subscription-only-service-120053137.html",
+          "scope": "Tesla ending outright FSD purchases after February 14, 2026",
+          "note": "FSD subscription only"
+        },
+        {
+          "id": "VEH-MODELY-12",
+          "title": "Drive Tesla Canada: Tesla clarifies FSD ownership",
+          "url": "https://driveteslacanada.ca/news/tesla-clarifies-fsd-ownership-rules-as-february-14-deadline-for-purchases-approaches/",
+          "scope": "Tesla’s statement that purchased FSD stays with the car",
+          "note": "purchased FSD stays with the car"
+        },
+        {
+          "id": "VEH-MODELY-13",
+          "title": "Not a Tesla App: how to check for Hardware 4",
+          "url": "https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3",
+          "scope": "Where to find the Autopilot computer in the car’s menus and the mid-2023 Model Y switch to Hardware 4",
+          "note": "Hardware 3 or 4 check"
+        },
+        {
+          "id": "VEH-MODELY-14",
+          "title": "Electrek: FSD v14 Lite for Hardware 3",
+          "url": "https://electrek.co/2026/06/29/tesla-fsd-v14-lite-hw3-rollout/",
+          "scope": "Tesla’s statement that Hardware 3 cars cannot run unsupervised FSD, and the v14 Lite rollout",
+          "note": "Hardware 3 limits"
+        },
+        {
+          "id": "VEH-MODELY-15",
+          "title": "InsideEVs: Tesla battery health at high mileage",
+          "url": "https://insideevs.com/news/807052/tesla-high-mileage-battery-health/",
+          "scope": "Aviloo median Model Y battery health at 150,000 km",
+          "note": "battery health at mileage"
+        },
+        {
+          "id": "VEH-MODELY-16",
+          "title": "InsideEVs: Model 3 and Y batteries after 200,000 miles",
+          "url": "https://insideevs.com/news/723734/tesla-model3y-battery-capacity-degradation-200000miles/",
+          "scope": "Tesla impact report figure for Model 3 and Model Y battery capacity loss after 200,000 miles",
+          "note": "Tesla’s battery figure"
+        },
+        {
+          "id": "VEH-MODELY-17",
+          "title": "FuelEconomy.gov: Tesla Model Y",
+          "url": "https://www.fueleconomy.gov/feg/PowerSearch.do?action=noform&path=1&year1=2020&year2=2026&make=Tesla&baseModel=Model%20Y",
+          "scope": "EPA range by Model Y version, 2020 to 2026",
+          "note": "EPA range"
+        },
+        {
+          "id": "VEH-MODELY-18",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Model Y recall campaigns by model year 2020 to 2026 from the NHTSA recalls API, including 20V709, 21V912, 22V895, 23V385, 25V092, 26V507 and 26V558",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-MODELY-19",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2020, 2025 and 2026 Model Y",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-MODELY-20",
+          "title": "IIHS: 2025 Tesla Model Y",
+          "url": "https://www.iihs.org/ratings/vehicle/tesla/model-y/2025",
+          "scope": "IIHS test ratings and 2025 Top Safety Pick+ for the 2025 Model Y, and the model years each rating covers",
+          "note": "crash-test ratings, 2025"
+        },
+        {
+          "id": "VEH-MODELY-21",
+          "title": "IIHS: 2026 Tesla Model Y",
+          "url": "https://www.iihs.org/ratings/vehicle/tesla/model-y/2026",
+          "scope": "IIHS test ratings and 2026 Top Safety Pick+ for the redesigned 2026 Model Y",
+          "note": "crash-test ratings, 2026"
+        },
+        {
+          "id": "VEH-MODELY-22",
+          "title": "Insurance Journal: NHTSA probes Model Y door handles",
+          "url": "https://amp.insurancejournal.com/news/national/2025/09/16/839299.htm",
+          "scope": "NHTSA preliminary evaluation PE25010 into 2021 Model Y door handles that fail on low 12-volt power",
+          "note": "door handle investigation"
+        },
+        {
+          "id": "VEH-MODELY-23",
+          "title": "Insurance Journal: NHTSA probes Tesla suspension links",
+          "url": "https://www.insurancejournal.com/news/national/2026/07/31/879848.htm",
+          "scope": "NHTSA preliminary evaluation of front lateral link failures on 2021 to 2023 Model Y, July 31, 2026",
+          "note": "suspension investigation"
+        },
+        {
+          "id": "VEH-MODELY-24",
+          "title": "Cars.com: J.D. Power 2026 dependability study",
+          "url": "https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710",
+          "scope": "Tesla problems per 100 vehicles against the industry average in J.D. Power’s 2026 Vehicle Dependability Study",
+          "note": "J.D. Power dependability"
+        },
+        {
+          "id": "VEH-MODELY-25",
+          "title": "Electrek: Model Y last in the TÜV report",
+          "url": "https://electrek.co/2025/12/03/tesla-model-y-named-worst-car-for-reliability-germany-major-tuv-report/",
+          "scope": "TÜV Report 2026 failure rate for two- to three-year-old Model Ys in Germany and the problem areas",
+          "note": "German inspection failures"
+        },
+        {
+          "id": "VEH-MODELY-26",
+          "title": "Edmunds: Tesla Model Y",
+          "url": "https://www.edmunds.com/tesla/model-y/",
+          "scope": "Edmunds rating and small electric SUV rank for the 2026 Model Y and the Ioniq 5",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-MODELY-27",
+          "title": "Kelley Blue Book: 2025 Tesla Model Y",
+          "url": "https://www.kbb.com/tesla/model-y/2025/",
+          "scope": "KBB expert rating for the 2025 Model Y",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-MODELY-28",
+          "title": "U.S. News: Tesla Model Y",
+          "url": "https://cars.usnews.com/cars-trucks/tesla/model-y",
+          "scope": "U.S. News overall score and predicted reliability for the 2026 Model Y",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-MODELY-29",
+          "title": "TeslaNorth: J.D. Power 2026 EV ownership study",
+          "url": "https://teslanorth.com/2026/02/19/tesla-model-3-and-model-y-dominate-2026-j-d-power-ev-satisfaction-study",
+          "scope": "Model Y score and premium-segment rank in J.D. Power’s 2026 EVX Ownership Study",
+          "note": "owner satisfaction"
+        },
+        {
+          "id": "VEH-MODELY-30",
+          "title": "Kelley Blue Book: 2023 Tesla Model Y",
+          "url": "https://www.kbb.com/tesla/model-y/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 Model Y by trim, November 2026",
+          "note": "used 2023 value"
+        },
+        {
+          "id": "VEH-MODELY-31",
+          "title": "Kelley Blue Book: 2023 Tesla Model 3",
+          "url": "https://www.kbb.com/tesla/model-3/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 Model 3 Long Range, November 2026",
+          "note": "Model 3 used value"
+        },
+        {
+          "id": "VEH-MODELY-32",
+          "title": "Kelley Blue Book: 2023 Hyundai Ioniq 5",
+          "url": "https://www.kbb.com/hyundai/ioniq-5/2023/",
+          "scope": "KBB Fair Purchase Price and expert rating for a 2023 Ioniq 5 SEL, November 2026",
+          "note": "Ioniq 5 used value"
+        },
+        {
+          "id": "VEH-MODELY-33",
+          "title": "Kelley Blue Book: 2023 Ford Mustang Mach-E",
+          "url": "https://www.kbb.com/ford/mustang-mach-e/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 Mustang Mach-E Premium, November 2026",
+          "note": "Mach-E used value"
+        },
+        {
+          "id": "VEH-MODELY-34",
+          "title": "Kelley Blue Book: 2023 Kia EV6",
+          "url": "https://www.kbb.com/kia/ev6/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 EV6 Wind, November 2026",
+          "note": "EV6 used value"
+        },
+        {
+          "id": "VEH-MODELY-35",
+          "title": "Kelley Blue Book: 2023 Volkswagen ID.4",
+          "url": "https://www.kbb.com/volkswagen/id4/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 ID.4 Pro S, November 2026",
+          "note": "ID.4 used value"
+        },
+        {
+          "id": "VEH-MODELY-36",
+          "title": "Electrek: Tesla launches the new Model Y",
+          "url": "https://electrek.co/2025/01/23/tesla-launches-new-model-y-in-north-america-and-europe/",
+          "scope": "Changes on the redesigned Model Y (suspension, noise reduction, rear screen, ventilated seats)",
+          "note": "what the redesign changed"
+        },
+        {
+          "id": "VEH-MODELY-37",
+          "title": "InsideEVs: Model Y starts shipping with Hardware 4",
+          "url": "https://insideevs.com/news/669301/tesla-model-y-hardware-4-ships/",
+          "scope": "Model Y switch to Hardware 4 from about May 2023",
+          "note": "Hardware 4 timing"
+        },
+        {
+          "id": "VEH-MODELY-38",
+          "title": "InsideEVs: Model Y RWD returns at $43,990",
+          "url": "https://insideevs.com/news/689619/tesla-modely-rwd-version-43990usd/",
+          "scope": "US return of the Model Y RWD in October 2023 and its price",
+          "note": "RWD return"
+        },
+        {
+          "id": "VEH-MODELY-39",
+          "title": "InsideEVs: lithium-ion 12-volt battery in US Model 3 and Y",
+          "url": "https://insideevs.com/news/557722/amd-12v-liion-model3y-us/",
+          "scope": "Switch to a lithium-ion 12-volt battery in US-built cars in early 2022",
+          "note": "12-volt battery change"
+        }
+      ]
     }
   ]
 }

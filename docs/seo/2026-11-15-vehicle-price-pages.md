@@ -74,6 +74,41 @@ Mason asked for "the exact same page as the Ford F-150 but for the 2026/27 Toyot
 
 Open items for Mason, as for the F-150: the pick (2026 XLE Premium, AWD if you see snow), "skip the plug-in unless you can charge at home", "buy new, as a 2026" and the 2023 floor for used were written from the research. The discount ranges lean on TrueCar's November averages, Edmunds' Texas-based suggested prices and a small CarWhere sample (55 buyers); there is no TrueCar figure for the plug-in. Offers all end November 30, 2026.
 
+## Honda CR-V (added November 16, 2026)
+
+Mason asked for "the same page as the Ford 150 and Toyota RAV4 for the Honda CR-V". `honda-cr-v-price.html` uses the same template and data shape. Differences from the RAV4:
+
+- **Safety uses NHTSA stars.** NHTSA rates every 2026 version 5 stars overall. IIHS rates the updated moderate overlap test Poor (rear passenger), so the CR-V is not a 2026 Top Safety Pick; the page says so in the safety note and the cons.
+- **Two model years, one car.** Honda's 2027 is the 2026 with a price rise ($600 on the LX, $400 on the rest, destination $1,450 to $1,550). Honda's finance and lease offers are on the 2027 only, and no region we checked had offers on a leftover 2026, so the take is "buy new, and price both model years". The 2026 Sport Touring went from $42,250 to $42,550 in Honda's January 6, 2026 price update; some outlets still quote the old figure. Honda says an all-new, hybrid-only CR-V arrives in 2027 as a 2028 model; update the page when it is priced.
+- **What to pay** is for the 2026, with three groups: gas trims, the Sport and TrailSport hybrids (closest to sticker), and the Sport-L and Sport Touring (most room).
+- **Photos.** No TrailSport photo exists on Wikimedia Commons, so the gallery shows a Sport Touring instead. The main photo is cropped to drop another brand's truck. All metadata was stripped, because the rear photo's file carried the car's VIN.
+
+Open items for Mason: the pick (2026 Sport Hybrid, AWD if you see snow), "price both model years" and the 2023 floor for used were written from the research. The discount ranges lean on TrueCar's November averages (about 40 sales a month), Edmunds' Austin-based suggested prices and CarWhere's 48 verified buyers. Offers end January 4, 2027, except the military and graduate offers (March 31, 2027). Honda's site blocks scripted reads, so the offers were read in a browser at four ZIPs.
+
+## GMC Sierra 1500 (added November 16, 2026)
+
+Mason asked to "start a product page for the GMC Sierra". `gmc-sierra-1500-price.html` covers the Sierra 1500 (not the HD or the Sierra EV) in the same template and data shape. Differences:
+
+- **The 2026 is a runout.** GMC already sells an all-new 2027 (5.7L and 6.6L V8s, a 10-speed on every engine, no SLE or SLT), and gmc.com moved the 2026 to `/trucks/previous-year/sierra/1500`. The trims table shows "Dropped" in the 2027 column for the SLE and SLT: the renderer now prints a text price cell as text, and an empty one is still "Ask us".
+- **GMC's cash is diesel-only.** $8,250, or 0% for 60 months plus $2,000, on the 3.0L Duramax; gas 2026s get lease deals. Edmunds' November tips describe a $6,250 rebate without naming the engine; gmc.com ties it to the diesel, so the page follows gmc.com.
+- **Safety mixes NHTSA stars and IIHS grades.** The headline is the crew cab 4WD (4 stars overall; other cabs score 5). IIHS rates the crew cab Marginal in the small overlap front test (a 2019 Silverado test carried forward) and Acceptable in the updated side test; those two rows sit under the stars. The 2025 recall count leaves out the one NHTSA listing, a third-party wheelchair conversion.
+- **6.2L V8.** Recall 25V274 (2021 to 2024 L87 engines) and NHTSA's open investigation EA26005 (2021 to 2026, including remedied engines) are why the page says to skip the 6.2L. Update the pick, the FAQ answer and the watch item when NHTSA closes the investigation or GM files a new recall.
+- **Photos.** Elevation front and rear and the Denali had dealers' plate frames; the frames are blurred. The AT4X is cropped to drop another brand's auto-show sign. Metadata was stripped, because the Elevation file carried the truck's VIN.
+
+Open items for Mason: the pick (2026 SLT crew cab, 5.3L V8; the diesel if you tow), "skip the 6.2L", "buy new, as a 2026" and the 2023 floor for used were written from the research. The discount ranges lean on TrueCar's starting market averages per trim (base configurations, destination included), iSeeCars invoice figures and a small CarWhere sample (32 deals, as of June). Not confirmed on a primary page: the military and first-responder dollar amounts (GM doesn't publish them for the Sierra), Ram's and Toyota's destination charges (so the rivals line quotes prices without destination), and the Denali Ultimate's standard engine (GMC's overview says 6.2L, its configurator lists the diesel first). Offers end November 30, 2026.
+
+## Toyota Tacoma (added November 16, 2026)
+
+Mason asked to "create product page for Toyota Tacoma". `toyota-tacoma-price.html` uses the same template and data shape. Differences:
+
+- **Both model years are on toyota.com.** The 2027 Tacoma is already listed ($32,725 SR); every 2027 trim is $180 above the 2026 except the TRD Sport and TRD Off-Road (+$520). Both price lists were read on toyota.com in a browser. The 4x4, manual and i-FORCE MAX step-ups come from iSeeCars' configuration list, which matched toyota.com's base prices to the dollar.
+- **It sells under sticker, unlike the RAV4.** What to pay has four groups: the SR (least room), the SR5 to TRD Off-Road (5–6% fair), the Limited and hybrids, and the Trailhunter and TRD Pro (TrueCar shows the TRD Pro at sticker). TrueCar's figures are starting market averages against starting TSRP per trim (base configurations, destination included), read in the browser; the TRD Off-Road's 2% looks low against Edmunds (7%) and owner reports (9–12%), so it stays in the 5–6% group.
+- **Offers differ a lot by region and year.** The SR5 gets its own rates and $500 finance cash, New York gives gas 2026s no rate except the Limited, and only Southern California and Greater New York have 2027 offers. The TRD Pro and Trailhunter get nothing. Toyota's pages disagree on whether the $500 military and college rebates stack with the special rates (the feed says no, Greater New York's bullets say yes), so the cash-or-rate chart leaves the rebates out and the add-on tells buyers to ask.
+- **Safety mixes NHTSA stars and IIHS grades,** as on the Sierra: the 2026 Double Cab is 4 stars overall (3 frontal); NHTSA has not tested the XtraCab. IIHS rates the updated moderate overlap Marginal (rear passenger), so the 2026 is not a Top Safety Pick. Recall counts are for model "TACOMA"; the "TACOMA HYBRID" listing (2024: 4, 2025: 2) is mostly the same campaigns.
+- **Photos.** All five are from Wikimedia Commons (three CC0 from one photographer, two CC BY-SA). The originals were rate-limited, so Commons' 3840px renders were used. The TRD Sport rear is cropped to drop a shopping-centre sign. Sharp strips metadata on export.
+
+Open items for Mason: the pick (2026 TRD Sport, 4x4 if you leave pavement; TRD Off-Road if you use trails), "skip the hybrid unless you want the torque or the outlet" and "buy new, as a 2026" were written from the research. The discount ranges lean on TrueCar's starting averages, Edmunds' Texas suggested prices, CarWhere's 31 verified 2026 buyers and owner forum reports. Not confirmed on a primary page: per-version towing (only the 6,500-pound maximum is Toyota's), the Colorado's price (PickupTruckTalk, not GM) and the Ranger's destination charge. Cox's October report gives no Tacoma days-of-supply figure (it is likely in Cox's downloadable data file, not fetched), so the page uses Toyota's brand figure and Edmunds' 18 days to sell. Offers end November 30, 2026.
+
 ## Toyota Corolla and GR Corolla (added November 16, 2026)
 
 Mason asked for a Toyota Corolla product page with "a section on the GR COROLLA". `toyota-corolla-price.html` uses the same template, covering the sedan, Hybrid and Hatchback, and the GR Corolla gets its own section after "The trim we'd buy":
@@ -86,6 +121,19 @@ Mason asked for a Toyota Corolla product page with "a section on the GR COROLLA"
 - **Photos.** Six from Wikimedia Commons (five CC0, the LE CC BY-SA), including a second GR Corolla shot for its section, all cropped and resized to 1920 wide. The main photo is a 2024 Hybrid SE, captioned as looking the same as the 2026.
 
 Open items for Mason: the pick (2026 Hybrid LE; XLE for heated seats; skip the Hybrid SE), "buy new, as a 2026", the skip-the-2020 line for used, and the GR take ("buy the base car with the manual") were written from the research. GR Corolla incentives were read only for the Gulf States region; Edmunds says there is no national cash. Offers end November 30, 2026.
+
+## Tesla Model Y, used (added November 16, 2026)
+
+Mason asked for a Tesla Model Y page "tailored towards the used options at dealers". Tesla sells new Model Ys only direct, at a set price, so there is no dealer discount on a new one. `tesla-model-y-price.html` keeps the template but is about buying used:
+
+- **`labels` overrides the template's wording.** Any heading or fixed line the renderer prints (pay heading, trims heading, table column and captions, pick heading, the incentives and condition sections' headings and tab names, the "Can you negotiate" answer, the related links, the breadcrumb) can be replaced per vehicle; the defaults are the new-car wording, so other pages are unchanged. `pay.base` sets the word after "under" in the deal tiles ("asking" here), and `pay.walk.under` the line under the worked total. `incentives.choice` and `incentives.addons` may be left out or empty.
+- **The "trims" table is model years.** Each row is a model year (2020 to 2025) with Recurrent's September 2026 average dealer asking price, what changed and the EPA range by version. The redesigned 2026 is left out because it is still scarce used and Recurrent gives no figure; the note under the table says Tesla sells it new from $39,990.
+- **No published sale-to-asking figure exists** for used Model Ys, so the discount ranges (1–2% fair, 3–4% strong on 2023 to 2025; 1% and 2–3% on 2020 to 2022) are our estimate from Recurrent's 16-day median time to sell and its June-to-September price moves. Say so if they are changed.
+- **The incentives section compares new from Tesla.** Tesla's site and its Current Offers page refuse automated reads, so new prices come from Electrek's November 13, 2026 read of the configurator, fees from The Weekly Driver, and the 2.49% APR from TeslaNorth (October 23, 2026). The warranty terms come from Tesla's own PDFs: the 1-year/10,000-mile used warranty applies only to cars Tesla sells, and the battery warranty transfers from any seller. The cash-or-0% block compares used loan rates by credit tier instead.
+- **Figures read only through search snippets** (the sites blocked automated reads): the Edmunds 8.2 and rank, the U.S. News 8.6 and 78 reliability, and the Hardware 4 date (about May 2023, with no official cutoff; the "2024s have Hardware 4" line is inferred from build dates). Check these in a browser before pushing.
+- **Photos.** Five from Wikimedia Commons, all CC BY-SA 4.0, uncropped. Commons had no usable first-generation dashboard photo, so the interior shot is the redesigned cabin, captioned as such; the redesign photo is an Australian-market car with its plates removed by the photographer.
+
+Open items for Mason: the pick (2024 Long Range, AWD if you see snow), "buy used, a 2023 or 2024", "skip a 2020 or 2021 unless the price allows for it" and the discount estimates were written from the research. Tesla's prices and APR change without notice; recheck them at the monthly refresh, along with recall 26V507 (headlights, no fix yet) and NHTSA's door handle and suspension investigations.
 
 ## Maintenance
 
