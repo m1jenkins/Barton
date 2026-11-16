@@ -1228,6 +1228,1308 @@
           }
         ]
       }
+    },
+    {
+      "slug": "honda-civic-vs-toyota-corolla.html",
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Honda Civic vs Toyota Corolla (2026): Price, MPG, Reliability | Steer Me Right",
+      "description": "The 2026 Honda Civic and Toyota Corolla compared in charts: price by trim, how far under sticker each sells, EPA mpg, space, NHTSA complaints and recalls, resale, safety, and our Reddit Sentiment Index.",
+      "h1": "Honda Civic vs Toyota Corolla",
+      "crumb": "Civic vs Corolla",
+      "cars": [
+        {
+          "slug": "honda-civic-price.html",
+          "short": "Civic",
+          "name": "Honda Civic",
+          "logos": {
+            "make": "honda"
+          }
+        },
+        {
+          "slug": "toyota-corolla-price.html",
+          "short": "Corolla",
+          "name": "Toyota Corolla",
+          "logos": {
+            "make": "toyota",
+            "model": "corolla"
+          }
+        }
+      ],
+      "strip": [
+        {
+          "label": "Edmunds",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">Civic </span>6.9 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Corolla </span>6.0</span>",
+          "logo": "edmunds-icon"
+        },
+        {
+          "label": "U.S. News",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">Civic </span>9.4 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Corolla </span>8.6</span>",
+          "logo": "us-news",
+          "wordmark": true
+        },
+        {
+          "label": "Reddit’s pick",
+          "section": "reddit",
+          "logo": "reddit-snoo",
+          "logoSize": "large"
+        }
+      ],
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "section": "price",
+          "a": "$24,695<small>gas · $29,395 hybrid</small>",
+          "b": "$23,125<small>gas · $24,975 hybrid</small>"
+        },
+        {
+          "label": "Realistic discount",
+          "section": "price",
+          "a": "1–5%<small>under MSRP</small>",
+          "b": "3–6%<small>under MSRP</small>"
+        },
+        {
+          "label": "Best EPA mpg",
+          "section": "mpg",
+          "a": "49<small>combined, hybrid sedan</small>",
+          "b": "50<small>combined, Hybrid LE</small>"
+        },
+        {
+          "label": "Owner complaints",
+          "section": "reliability",
+          "a": "87<small>per 100k sold, 2023–25</small>",
+          "b": "28<small>per 100k sold, 2023–25</small>"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "64<small>out of 100</small>",
+          "b": "67<small>out of 100</small>"
+        }
+      ],
+      "summary": "We’d buy the Civic, unless price matters most. Hybrid against hybrid, the Civic has 200 horsepower against 138, 2.6 more inches of rear legroom and a bigger trunk for the same fuel bill, and every reviewer we checked scores it higher. The Corolla Hybrid LE starts $4,420 lower, sells further under sticker, offers all-wheel drive, and draws a third as many owner complaints to NHTSA per car sold, most of the Civic’s gap being one steering fault with a recall fix. Reddit can’t split them: in neutral subreddits, 282 picks went to the Civic and 281 to the Corolla. Prices were checked on November 16, 2026.",
+      "choose": {
+        "a": [
+          "You want the better car to drive: the hybrid has 200 hp against 138, and Edmunds, KBB, U.S. News and J.D. Power all score the Civic higher.",
+          "You carry people or luggage: 37.4 inches of rear legroom against 34.8, and a 14.8 cubic-foot trunk against 13.1 (24.5 in the hatchback).",
+          "You keep cars a long time: 40% of Civics reach 200,000 miles in iSeeCars’ data against 26% of Corollas.",
+          "You want the better back seat in a crash: IIHS rates the Civic sedan Acceptable for rear passengers and the Corolla Marginal."
+        ],
+        "b": [
+          "Price comes first: the Hybrid LE starts at $24,975, $4,420 under the cheapest Civic Hybrid, and Corollas sell 3–6% under sticker.",
+          "You want the fewest problems: 28 owner complaints to NHTSA per 100,000 sold for 2023–2025 against the Civic’s 87, and Toyota beats Honda in J.D. Power’s dependability study.",
+          "You need all-wheel drive: the Corolla Hybrid offers it for $1,400 and still gets 48 mpg. No Civic has it.",
+          "You’d buy used: a 2024 or 2025 Corolla asks about $3,500 to $4,000 less than the same-year Civic."
+        ]
+      },
+      "board": [
+        {
+          "label": "Starting price, hybrid",
+          "section": "price",
+          "a": "$29,395",
+          "b": "$24,975",
+          "win": "b"
+        },
+        {
+          "label": "Starting price, gas",
+          "section": "price",
+          "a": "$24,695",
+          "b": "$23,125",
+          "win": "b"
+        },
+        {
+          "label": "EPA mpg, hybrid",
+          "section": "mpg",
+          "a": "49",
+          "b": "50",
+          "win": null
+        },
+        {
+          "label": "Horsepower, hybrid",
+          "section": "space",
+          "a": "200",
+          "b": "138",
+          "win": "a"
+        },
+        {
+          "label": "Rear legroom, sedan",
+          "section": "space",
+          "a": "37.4 in",
+          "b": "34.8 in",
+          "win": "a"
+        },
+        {
+          "label": "Trunk, sedan",
+          "section": "space",
+          "a": "14.8 cu ft",
+          "b": "13.1 cu ft",
+          "win": "a"
+        },
+        {
+          "label": "Complaints per 100k sold",
+          "section": "reliability",
+          "a": "87",
+          "b": "28",
+          "win": "b"
+        },
+        {
+          "label": "Chance of reaching 200k miles",
+          "section": "reliability",
+          "a": "40%",
+          "b": "26%",
+          "win": "a"
+        },
+        {
+          "label": "Value lost in 3 years, gas",
+          "section": "resale",
+          "a": "7.0%",
+          "b": "9.3%",
+          "win": "a"
+        },
+        {
+          "label": "IIHS rear-seat protection",
+          "section": "safety",
+          "a": "Acceptable",
+          "b": "Marginal",
+          "win": "a"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "64",
+          "b": "67",
+          "win": "b"
+        }
+      ],
+      "price": {
+        "intro": [
+          "The Corolla is cheaper either way: $1,570 less gas against gas and $4,420 less hybrid against hybrid. The trims we’d buy are the cheapest hybrid of each, so that gap holds, and the Corolla also sells further under sticker. TrueCar puts gas Corollas 6–7% under; Edmunds’ Texas prices put a Civic Sport Hybrid only about 1% under."
+        ],
+        "picks": {
+          "a": "Sport Hybrid",
+          "b": "Hybrid LE"
+        },
+        "trims": {
+          "title": "Every 2026 trim by starting price",
+          "note": "Starting MSRP before the destination charge, cheapest first. The Civic Si is included; the Type R and GR Corolla are in each car’s price guide."
+        },
+        "targets": {
+          "title": "What to pay for the trims we’d buy",
+          "note": "Before destination, fees and tax. Our estimate of a fair and a strong deal; a strong deal takes more dealers and more back-and-forth.",
+          "rows": [
+            {
+              "label": "Fair deal",
+              "a": [
+                1,
+                2
+              ],
+              "b": [
+                3,
+                4
+              ]
+            },
+            {
+              "label": "Strong deal",
+              "a": [
+                3,
+                4
+              ],
+              "b": [
+                5,
+                6
+              ]
+            }
+          ],
+          "paid": {
+            "label": "What 2026 buyers paid",
+            "a": "A median 4.5% under MSRP across all trims (68 buyers)",
+            "b": "A median 4.6% under (52 buyers); 6–7% on a gas LE or SE"
+          }
+        },
+        "charts": [],
+        "after": [
+          "Dealers have more Corollas than most Toyotas, 36 days of supply at the end of October against the industry’s 87; Cox doesn’t list the Civic on its own. Honda offers 3.99% financing on 2026 Civics through November 30, 2026, and Toyota 4.99% on the Corolla. Current offers are in each car’s price guide."
+        ]
+      },
+      "mpg": {
+        "intro": [
+          "On fuel it’s a tie. Hybrid against hybrid, the Corolla gets 50 mpg combined against 49, and EPA puts both at $1,200 a year. The gas cars are as close: 36 for a Civic LX, 35 for a Corolla LE. The Corolla goes further on a tank because its tanks are bigger."
+        ],
+        "charts": [
+          {
+            "title": "EPA combined mpg",
+            "note": "Higher is better.",
+            "max": 55,
+            "rows": [
+              {
+                "label": "Hybrid sedan",
+                "sub": "Civic Sport Hybrid · Corolla Hybrid LE",
+                "a": 49,
+                "aText": "49 mpg",
+                "b": 50,
+                "bText": "50 mpg"
+              },
+              {
+                "label": "Sporty hybrid sedan",
+                "sub": "Civic Sport Touring Hybrid · Corolla Hybrid SE",
+                "a": 49,
+                "aText": "49 mpg",
+                "b": 47,
+                "bText": "47 mpg"
+              },
+              {
+                "label": "Hybrid, all-wheel drive",
+                "sub": "Corolla Hybrid LE",
+                "a": null,
+                "aText": "No AWD Civic",
+                "b": 48,
+                "bText": "48 mpg"
+              },
+              {
+                "label": "Hybrid hatchback",
+                "a": 48,
+                "aText": "48 mpg",
+                "b": null,
+                "bText": "No hybrid hatchback"
+              },
+              {
+                "label": "Gas, base sedan",
+                "sub": "Civic LX · Corolla LE",
+                "a": 36,
+                "aText": "36 mpg",
+                "b": 35,
+                "bText": "35 mpg"
+              },
+              {
+                "label": "Gas, sporty sedan",
+                "sub": "Civic Sport · Corolla SE",
+                "a": 34,
+                "aText": "34 mpg",
+                "b": 34,
+                "bText": "34 mpg"
+              },
+              {
+                "label": "Performance",
+                "sub": "Type R · GR Corolla, manual",
+                "a": 24,
+                "aText": "24 mpg",
+                "b": 24,
+                "bText": "24 mpg"
+              }
+            ]
+          },
+          {
+            "title": "EPA annual fuel cost",
+            "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+            "rows": [
+              {
+                "label": "Hybrid sedan",
+                "a": 1200,
+                "aText": "$1,200",
+                "b": 1200,
+                "bText": "$1,200"
+              },
+              {
+                "label": "Gas, base sedan",
+                "a": 1650,
+                "aText": "$1,650",
+                "b": 1700,
+                "bText": "$1,700"
+              },
+              {
+                "label": "Gas, sporty sedan",
+                "a": 1750,
+                "aText": "$1,750",
+                "b": 1750,
+                "bText": "$1,750"
+              }
+            ]
+          },
+          {
+            "title": "Miles on a tank",
+            "note": "EPA combined mpg times the tank: 10.6 gallons in the Civic Hybrid and 12.4 in the gas Civic, 11.3 and 13.2 in the Corolla.",
+            "rows": [
+              {
+                "label": "Hybrid sedan",
+                "a": 519,
+                "aText": "519 miles",
+                "b": 565,
+                "bText": "565 miles"
+              },
+              {
+                "label": "Gas, base sedan",
+                "a": 446,
+                "aText": "446 miles",
+                "b": 462,
+                "bText": "462 miles"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "The Civic Hybrid’s extra power costs nothing at the pump. A gas Civic Sport is $2,700 cheaper than a Sport Hybrid but uses about $550 more fuel a year by EPA’s numbers, so we’d take the hybrid."
+        ]
+      },
+      "space": {
+        "intro": [
+          "The Civic is the bigger car: 2.3 inches longer as a sedan, with 2.6 more inches of rear legroom and a bigger trunk. Between the hatchbacks the gap is wider, 24.5 cubic feet behind the rear seats against 17.8. The Corolla is stronger as a gas car (169 hp against 150), the Civic much stronger as a hybrid (200 against 138)."
+        ],
+        "charts": [
+          {
+            "title": "Cargo space behind the rear seats",
+            "note": "Cubic feet. The Corolla Hatchback figure is Toyota’s 2027 spec; the car is unchanged.",
+            "rows": [
+              {
+                "label": "Sedan trunk",
+                "a": 14.8,
+                "aText": "14.8 cu ft",
+                "b": 13.1,
+                "bText": "13.1 cu ft"
+              },
+              {
+                "label": "Hatchback",
+                "a": 24.5,
+                "aText": "24.5 cu ft",
+                "b": 17.8,
+                "bText": "17.8 cu ft"
+              }
+            ]
+          },
+          {
+            "title": "Rear legroom",
+            "note": "Inches.",
+            "rows": [
+              {
+                "label": "Sedan",
+                "a": 37.4,
+                "aText": "37.4 in",
+                "b": 34.8,
+                "bText": "34.8 in"
+              },
+              {
+                "label": "Hatchback",
+                "a": 37.4,
+                "aText": "37.4 in",
+                "b": 29.9,
+                "bText": "29.9 in"
+              }
+            ]
+          },
+          {
+            "title": "Horsepower",
+            "rows": [
+              {
+                "label": "Gas",
+                "a": 150,
+                "aText": "150 hp",
+                "b": 169,
+                "bText": "169 hp"
+              },
+              {
+                "label": "Hybrid",
+                "a": 200,
+                "aText": "200 hp",
+                "b": 138,
+                "bText": "138 hp"
+              },
+              {
+                "label": "Performance",
+                "sub": "Type R · GR Corolla",
+                "a": 315,
+                "aText": "315 hp",
+                "b": 300,
+                "bText": "300 hp"
+              }
+            ]
+          }
+        ],
+        "after": []
+      },
+      "reliability": {
+        "intro": [
+          "Nobody can measure a 2026’s reliability yet, so we lined up every signal we could check. The Corolla draws far fewer owner complaints and its brand scores better with J.D. Power. More Civics reach 200,000 miles, repair bills are level, and Consumer Reports expects both gas cars to beat the average new car."
+        ],
+        "signals": [
+          {
+            "label": "Consumer Reports predicted reliability",
+            "note": "2026 model",
+            "a": "Better than average gas · average hybrid",
+            "b": "Better than average",
+            "win": "b"
+          },
+          {
+            "label": "Owner complaints to NHTSA",
+            "note": "Per 100,000 sold, 2023–2025 model years",
+            "a": "87",
+            "b": "28",
+            "win": "b"
+          },
+          {
+            "label": "Recalls",
+            "note": "2023–2026 model years",
+            "a": "10",
+            "b": "9",
+            "win": null
+          },
+          {
+            "label": "J.D. Power dependability, brand",
+            "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+            "a": "211 Honda",
+            "b": "185 Toyota",
+            "win": "b"
+          },
+          {
+            "label": "RepairPal reliability rating",
+            "note": "Out of 5",
+            "a": "4.5",
+            "b": "4.5",
+            "win": null
+          },
+          {
+            "label": "Average yearly repair cost",
+            "note": "RepairPal",
+            "a": "$368",
+            "b": "$362",
+            "win": null
+          },
+          {
+            "label": "Chance of reaching 200,000 miles",
+            "note": "iSeeCars",
+            "a": "40.3%",
+            "b": "25.6%",
+            "win": "a"
+          }
+        ],
+        "charts": [
+          {
+            "type": "cols",
+            "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
+            "note": "Lower is better. The 2022 Civic, the first of this generation, drew 963 complaints, 806 of them about steering, in a year of low sales. Newer model years have had less time on the road.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 142,
+                "b": 68
+              },
+              {
+                "label": "2020",
+                "a": 94,
+                "b": 134
+              },
+              {
+                "label": "2021",
+                "a": 62,
+                "b": 76
+              },
+              {
+                "label": "2022",
+                "a": 719,
+                "b": 48
+              },
+              {
+                "label": "2023",
+                "a": 170,
+                "b": 37
+              },
+              {
+                "label": "2024",
+                "a": 60,
+                "b": 32
+              },
+              {
+                "label": "2025",
+                "a": 45,
+                "b": 17
+              }
+            ]
+          },
+          {
+            "title": "What owners complain about, 2023–2025 model years",
+            "note": "Complaints to NHTSA per 100,000 sold, by the part named in the complaint. One complaint can name more than one part.",
+            "rows": [
+              {
+                "label": "Steering",
+                "a": 55.8,
+                "aText": "55.8",
+                "b": 4.5,
+                "bText": "4.5"
+              },
+              {
+                "label": "Automatic emergency braking",
+                "sub": "NHTSA’s “forward collision avoidance”",
+                "a": 7.8,
+                "aText": "7.8",
+                "b": 3.9,
+                "bText": "3.9"
+              },
+              {
+                "label": "Lane keeping",
+                "a": 6.8,
+                "aText": "6.8",
+                "b": 1.7,
+                "bText": "1.7"
+              },
+              {
+                "label": "Electrical",
+                "a": 5.6,
+                "aText": "5.6",
+                "b": 4.3,
+                "bText": "4.3"
+              },
+              {
+                "label": "Brakes",
+                "a": 5.3,
+                "aText": "5.3",
+                "b": 3.9,
+                "bText": "3.9"
+              },
+              {
+                "label": "Transmission and clutch",
+                "sub": "Most Corolla complaints are GR Corolla clutches",
+                "a": 3.1,
+                "aText": "3.1",
+                "b": 3.9,
+                "bText": "3.9"
+              },
+              {
+                "label": "Engine",
+                "a": 3.4,
+                "aText": "3.4",
+                "b": 3.6,
+                "bText": "3.6"
+              },
+              {
+                "label": "Air bags",
+                "a": 2.1,
+                "aText": "2.1",
+                "b": 2.8,
+                "bText": "2.8"
+              }
+            ]
+          },
+          {
+            "type": "cols",
+            "title": "Recalls by model year",
+            "note": "Includes hybrid, hatchback, Si and Type R versions; recalls for the GR Corolla alone are left out. A recall count says nothing about how many cars each one covers.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 4,
+                "b": 6
+              },
+              {
+                "label": "2020",
+                "a": 5,
+                "b": 6
+              },
+              {
+                "label": "2021",
+                "a": 4,
+                "b": 1
+              },
+              {
+                "label": "2022",
+                "a": 4,
+                "b": 0
+              },
+              {
+                "label": "2023",
+                "a": 4,
+                "b": 4
+              },
+              {
+                "label": "2024",
+                "a": 3,
+                "b": 3
+              },
+              {
+                "label": "2025",
+                "a": 2,
+                "b": 1
+              },
+              {
+                "label": "2026",
+                "a": 1,
+                "b": 1
+              }
+            ]
+          }
+        ],
+        "issues": [
+          {
+            "car": "a",
+            "title": "Sticky steering, 2022–2025 Civic",
+            "text": "Most of the Civic’s complaint lead. NHTSA investigated (EA23003) and Honda recalled about 1.7 million cars, these Civics among them, for a steering gear fix (recall 24V-744). 2022–2024 cars fitted with a replacement steering rack have a second recall, 23V-704. On a used one, ask for proof both were done."
+          },
+          {
+            "car": "a",
+            "title": "Fuel pump, 2025 Civic",
+            "text": "Recall 24V-763 covers the high-pressure fuel pump on 2025 Civics and Civic Hybrids. Check that it was done on a used 2025."
+          },
+          {
+            "car": "a",
+            "title": "Oil dilution, 2016–2018 Civic 1.5T",
+            "text": "Fuel could mix into the turbo engine’s oil in cold weather. Honda extended the warranty and updated the software; it isn’t a recall."
+          },
+          {
+            "car": "b",
+            "title": "Stalling, 2019–2020 Corolla",
+            "text": "Toyota’s software campaign 22TC07 fixes stalling on the 2020, and low-pressure fuel pump recalls (20V-012, 20V-682) cover 2019 and 2020 cars. Check both on a used one."
+          },
+          {
+            "car": "b",
+            "title": "Brake assist in turns, 2023–2025 Corolla Hybrid",
+            "text": "Recall 24V-708: a software fault can switch off brake assist in some turns. Toyota updates the brake computer for free."
+          },
+          {
+            "car": "b",
+            "title": "Cracked steering shaft, 2023–2024 Corolla",
+            "text": "Recall 24V-878 replaces a steering intermediate shaft that can crack, on about 8,000 cars."
+          }
+        ],
+        "after": [
+          "<strong>Our read:</strong> the Corolla is the safer bet, but by less than the headline. Leave out steering and the Civic’s 2023–2025 complaint rate falls from 87 to 31 per 100,000, against the Corolla’s 24, and that steering fault has a recall fix. More Civics reach 200,000 miles, and both cost about the same to keep running."
+        ],
+        "from": {
+          "label": "Sources include",
+          "names": [
+            "nhtsa",
+            "consumer-reports",
+            "jd-power"
+          ]
+        }
+      },
+      "reddit": {
+        "dataFile": "data/reddit-sentiment/honda-civic-vs-toyota-corolla.json",
+        "intro": [
+          "We read 8,741 comments in 427 Reddit threads that weighed these two cars, January 2025 to November 2026. Each car’s own subreddit backs its own car, so r/civic (with r/CivicSi), r/corolla and the neutral subreddits (mostly r/whatcarshouldIbuy) count equally. A score of 50 means praise and complaints balance."
+        ],
+        "indexDetail": {
+          "a": "Praised for how it drives, its roomier cabin, nicer interior and fuel economy. Marked down for reliability worries, its price and dealer markups.",
+          "b": "Praised for reliability, low running costs and hybrid fuel economy. Marked down as slow and boring, with a cheap-feeling interior, a tight back seat and road noise."
+        },
+        "split": {
+          "title": "Which one Reddit tells people to buy",
+          "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddit mostly picks its own car.",
+          "rows": [
+            {
+              "venue": "neutral",
+              "label": "Neutral subreddits"
+            },
+            {
+              "venue": "a",
+              "label": "In r/civic and r/CivicSi"
+            },
+            {
+              "venue": "b",
+              "label": "In r/corolla"
+            }
+          ]
+        },
+        "minimum": 30,
+        "topics": {
+          "title": "Net opinion by topic",
+          "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. Most-discussed topics first."
+        },
+        "themes": {
+          "a": {
+            "praise": [
+              "More fun to drive, and a quick hybrid",
+              "A roomier back seat and trunk",
+              "A nicer interior with more features",
+              "Hybrid fuel economy and resale value"
+            ],
+            "gripes": [
+              "Owner reports of head gasket trouble, and oil dilution on the 1.5 turbo",
+              "Air conditioning failures on 2016–2021 cars",
+              "It costs more than a Corolla",
+              "Dealer markups on the Si and Type R"
+            ]
+          },
+          "b": {
+            "praise": [
+              "Reliability and a long life",
+              "Cheap to buy, insure and run",
+              "Hybrid fuel economy",
+              "A comfortable, easy drive"
+            ],
+            "gripes": [
+              "Slow and boring to drive",
+              "A cheap-feeling, dated interior",
+              "A cramped back seat, especially in the hatchback",
+              "Hybrids hard to find, with dealer markups"
+            ]
+          }
+        },
+        "after": [
+          "Reddit lines up with the data: it trusts the Corolla to last and finds it dull, and likes driving and sitting in the Civic while worrying about its reliability. Test-drive both on roads you know before you decide."
+        ],
+        "from": {
+          "label": "Comments from",
+          "names": [
+            "reddit"
+          ]
+        }
+      },
+      "resale": {
+        "intro": [
+          "Both hold their value better than most cars. The gas Civic holds it best: it lost 7.0% in three years in iSeeCars’ data against 9.3% for the Corolla, and Kelley Blue Book gave it the 2026 best resale value award among compact cars. Hybrid against hybrid the Corolla held up better, though iSeeCars’ Civic Hybrid figure likely leans on the older car."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "note": "Lower is better.",
+            "max": 25,
+            "rows": [
+              {
+                "label": "Gas",
+                "a": 7,
+                "aText": "7.0%",
+                "b": 9.3,
+                "bText": "9.3%"
+              },
+              {
+                "label": "Hybrid",
+                "a": 17.7,
+                "aText": "17.7%",
+                "b": 11.9,
+                "bText": "11.9%"
+              },
+              {
+                "label": "Average compact car",
+                "sub": "For scale",
+                "a": 12.1,
+                "aText": "12.1%",
+                "b": 12.1,
+                "bText": "12.1%"
+              },
+              {
+                "label": "Average vehicle",
+                "sub": "For scale",
+                "a": 24.8,
+                "aText": "24.8%",
+                "b": 24.8,
+                "bText": "24.8%"
+              }
+            ]
+          },
+          {
+            "title": "Median asking price, used, by model year",
+            "note": "Every version, at dealers and private sellers.",
+            "rows": [
+              {
+                "label": "2022",
+                "a": 21990,
+                "aText": "$21,990",
+                "b": 18800,
+                "bText": "$18,800"
+              },
+              {
+                "label": "2023",
+                "a": null,
+                "aText": "Not published",
+                "b": 20403,
+                "bText": "$20,403"
+              },
+              {
+                "label": "2024",
+                "a": 24858,
+                "aText": "$24,858",
+                "b": 20900,
+                "bText": "$20,900"
+              },
+              {
+                "label": "2025",
+                "a": 25575,
+                "aText": "$25,575",
+                "b": 22016,
+                "bText": "$22,016"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "Used, a Corolla asks about $3,200 to $4,000 less than the same-year Civic, partly because the Civics listed have fewer miles. On a 2022 to 2025 Civic, check that steering recall 24V-744 was done."
+        ]
+      },
+      "safety": {
+        "intro": [
+          "Both get 5 stars overall from NHTSA and do well in IIHS’s front and side tests. The difference is the back seat: in IIHS’s updated moderate overlap test the Civic sedan rates Acceptable and the Corolla sedan Marginal, because of how the rear passenger was held. The Civic hatchback rates Good and is a 2026 Top Safety Pick; no Corolla is."
+        ],
+        "rows": [
+          {
+            "label": "IIHS small overlap front",
+            "a": "Good",
+            "b": "Good",
+            "win": null
+          },
+          {
+            "label": "IIHS moderate overlap front (updated)",
+            "a": "Acceptable",
+            "b": "Marginal",
+            "win": "a"
+          },
+          {
+            "label": "IIHS side (updated)",
+            "a": "Good",
+            "b": "Good",
+            "win": null
+          },
+          {
+            "label": "IIHS 2026 Top Safety Pick",
+            "a": "Hatchback",
+            "b": "None",
+            "win": "a"
+          },
+          {
+            "label": "NHTSA overall",
+            "a": "5 stars",
+            "b": "5 stars",
+            "win": null
+          }
+        ],
+        "charts": [],
+        "from": {
+          "label": "Crash tests by",
+          "names": [
+            "iihs-hldi",
+            "nhtsa"
+          ]
+        }
+      },
+      "plansIntro": "Cross-shopping is the easiest way to get a better price on either one: a Toyota dealer who knows you have a written Civic offer has a reason to move. Steer Me Right Pro gets written out-the-door offers on both, from dealers that have them in stock, and negotiates each.",
+      "faq": [
+        [
+          "Which is more reliable, the Civic or the Corolla?",
+          "On the evidence we can check, the Corolla. Owners of 2023 to 2025 models filed 28 complaints with NHTSA per 100,000 sold, against 87 for the Civic, much of it the Civic’s steering problem (fixed by recall 24V-744), and Toyota beats Honda in J.D. Power’s dependability study. The Civic is more likely to reach 200,000 miles in iSeeCars’ data, and repair costs are about the same. Consumer Reports expects both gas cars to beat the average new car."
+        ],
+        [
+          "Is the Civic Hybrid or the Corolla Hybrid better on gas?",
+          "They’re even. The Corolla Hybrid gets 50 mpg combined against the Civic Hybrid’s 49, and EPA puts both at $1,200 a year in fuel. The Civic Hybrid is much quicker, with 200 hp against 138; the Corolla Hybrid offers all-wheel drive."
+        ],
+        [
+          "Which is cheaper, the Civic or the Corolla?",
+          "The Corolla: $23,125 against $24,695 for the gas cars and $24,975 against $29,395 for the hybrids. Corollas also sell a little further under sticker, and a used one asks about $3,200 to $4,000 less than the same-year Civic."
+        ],
+        [
+          "Which is bigger inside?",
+          "The Civic. The sedan is 2.3 inches longer, with 37.4 inches of rear legroom against 34.8 and a 14.8 cubic-foot trunk against 13.1. The Civic hatchback holds 24.5 cubic feet behind the rear seats; the Corolla Hatchback 17.8."
+        ],
+        [
+          "What does Reddit think of the Civic vs the Corolla?",
+          "It’s a dead heat. In neutral subreddits, 282 people told the poster to buy the Civic and 281 the Corolla. Our Reddit Sentiment Index scores the Corolla 67 and the Civic 64 out of 100, where 50 means praise and complaints balance. Reddit praises the Corolla’s reliability and low running costs, and the Civic’s driving, space and interior."
+        ],
+        [
+          "Should I wait for the next Civic or Corolla?",
+          "Neither maker has dated a redesign; reports point to about 2028 for both. The 2027 Civic adds a Sport-L trim and costs $300 more. The 2027 Corolla carries over for $200 more, with ToyotaCare cut to 1 year or 10,000 miles from the 2026’s 2 years or 25,000. The 2026 Civic Si is the last for now."
+        ]
+      ],
+      "related": "<a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
+      "sources": [
+        {
+          "id": "VEH-CVC-01",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d8112b0f-2026-honda-civic-sedan-pricing-and-epa-ratings-september",
+          "title": "Honda: 2026 Civic sedan pricing and EPA ratings",
+          "note": "sedan trims, starting MSRP and fuel economy"
+        },
+        {
+          "id": "VEH-CVC-02",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d81121d6-2026-honda-civic-hatchback-pricing-and-epa-ratings-september",
+          "title": "Honda: 2026 Civic hatchback pricing and EPA ratings",
+          "note": "hatchback trims, starting MSRP and fuel economy"
+        },
+        {
+          "id": "VEH-CVC-03",
+          "url": "https://www.hondainfocenter.com/2026/Civic-Sedan/Feature-Guide/Civic-Sedan-Specifications/",
+          "title": "Honda: 2026 Civic sedan specifications",
+          "note": "power, cargo volume, legroom, length, fuel tank, screens"
+        },
+        {
+          "id": "VEH-CVC-04",
+          "url": "https://www.hondainfocenter.com/2026/Civic-Hatchback/Feature-Guide/Civic-Hatchback-Specifications/",
+          "title": "Honda: 2026 Civic hatchback specifications",
+          "note": "cargo volume, length, fuel tank"
+        },
+        {
+          "id": "VEH-CVC-05",
+          "url": "https://www.hondainfocenter.com/2026/Civic-Type-R/Feature-Guide/Civic-Type-R-Specifications/",
+          "title": "Honda: 2026 Civic Type R specifications",
+          "note": "Type R power and dimensions"
+        },
+        {
+          "id": "VEH-CVC-06",
+          "url": "https://www.toyota.com/corolla/2026/features/",
+          "title": "Toyota: 2026 Corolla features and specifications",
+          "note": "power, cargo volume, legroom, length, fuel tank, screens"
+        },
+        {
+          "id": "VEH-CVC-07",
+          "url": "https://www.toyota.com/corolla/2026/",
+          "title": "Toyota: 2026 Corolla",
+          "note": "trims and starting MSRP"
+        },
+        {
+          "id": "VEH-CVC-08",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_Civic.shtml",
+          "title": "FuelEconomy.gov: 2026 Honda Civic",
+          "note": "EPA mpg and annual fuel cost (EPA vehicle records 49286 to 49289, 49315, 49316 and 50069)"
+        },
+        {
+          "id": "VEH-CVC-09",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Corolla.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota Corolla",
+          "note": "EPA mpg and annual fuel cost (EPA vehicle records 49803 to 49812, 50047 and 50280)"
+        },
+        {
+          "id": "VEH-CVC-10",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-CVC-11",
+          "url": "https://www.carwhere.com/price/honda/civic/2026",
+          "title": "CarWhere: 2026 Honda Civic price",
+          "note": "buyer-reported prices paid against MSRP"
+        },
+        {
+          "id": "VEH-CVC-12",
+          "url": "https://www.carwhere.com/price/toyota/corolla/2026",
+          "title": "CarWhere: 2026 Toyota Corolla price",
+          "note": "buyer-reported prices paid against MSRP"
+        },
+        {
+          "id": "VEH-CVC-13",
+          "url": "https://www.truecar.com/overview/toyota/corolla/2026/",
+          "title": "TrueCar: 2026 Toyota Corolla",
+          "note": "average price paid against MSRP"
+        },
+        {
+          "id": "VEH-CVC-14",
+          "url": "https://www.nhtsa.gov/recalls",
+          "title": "NHTSA: recalls and complaints",
+          "note": "recall counts and owner complaints by model year, read through NHTSA’s public API on November 16, 2026"
+        },
+        {
+          "id": "VEH-CVC-15",
+          "url": "https://static.nhtsa.gov/odi/inv/2023/INCLA-EA23003-11060.pdf",
+          "title": "NHTSA: engineering analysis EA23003, closing resume",
+          "note": "Civic steering investigation and recall 24V-744"
+        },
+        {
+          "id": "VEH-CVC-16",
+          "url": "https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=23V704000",
+          "title": "NHTSA: recall 23V-704",
+          "note": "replacement steering racks on 2022 to 2024 Civics"
+        },
+        {
+          "id": "VEH-CVC-17",
+          "url": "https://www.carcomplaints.com/news/2019/honda-civic-cr-v-oil-dilution-warranties-extended.shtml",
+          "title": "CarComplaints: Honda oil dilution warranties extended",
+          "note": "2016 to 2018 Civic 1.5-liter turbo oil dilution"
+        },
+        {
+          "id": "VEH-CVC-18",
+          "url": "https://static.nhtsa.gov/odi/tsbs/2022/MC-10224140-9999.pdf",
+          "title": "NHTSA: Toyota stall campaign 22TC07",
+          "note": "2020 Corolla stalling software fix"
+        },
+        {
+          "id": "VEH-CVC-19",
+          "url": "https://hondanews.com/en-US/releases/digital-factbook-north-america-sales",
+          "title": "Honda: Digital FactBook, North America sales",
+          "note": "Civic sales by year"
+        },
+        {
+          "id": "VEH-CVC-20",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2025-us-sales-results-302652746.html",
+          "title": "Toyota: 2025 U.S. sales",
+          "note": "Corolla sales, 2024 and 2025"
+        },
+        {
+          "id": "VEH-CVC-21",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2023-us-sales-results-302025453.html",
+          "title": "Toyota: 2023 U.S. sales",
+          "note": "Corolla sales, 2022 and 2023"
+        },
+        {
+          "id": "VEH-CVC-22",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-us-december-year-end-2021-sales-301453684.html",
+          "title": "Toyota: 2021 U.S. sales",
+          "note": "Corolla sales, 2020 and 2021"
+        },
+        {
+          "id": "VEH-CVC-23",
+          "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-december-2019-year-end-sales-300980867.html",
+          "title": "Toyota: 2019 U.S. sales",
+          "note": "Corolla sales, 2019"
+        },
+        {
+          "id": "VEH-CVC-24",
+          "url": "https://www.jdpower.com/business/press-releases/2026-us-vehicle-dependability-study-vds",
+          "title": "J.D. Power: 2026 Vehicle Dependability Study",
+          "note": "compact car segment award"
+        },
+        {
+          "id": "VEH-CVC-25",
+          "url": "https://www.motor1.com/news/787773/jd-power-vehicle-dependability-study/",
+          "title": "Motor1: J.D. Power 2026 Vehicle Dependability Study",
+          "note": "problems per 100 vehicles, Toyota and industry"
+        },
+        {
+          "id": "VEH-CVC-26",
+          "url": "https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710",
+          "title": "Cars.com: J.D. Power 2026 dependability study",
+          "note": "Honda’s problems per 100 vehicles"
+        },
+        {
+          "id": "VEH-CVC-27",
+          "url": "https://repairpal.com/cars/compare/honda-civic-vs-toyota-corolla",
+          "title": "RepairPal: Civic vs Corolla",
+          "note": "reliability rating and average annual repair cost"
+        },
+        {
+          "id": "VEH-CVC-28",
+          "url": "https://www.iseecars.com/car/honda-civic/reliability",
+          "title": "iSeeCars: Honda Civic reliability",
+          "note": "chance of reaching 200,000 miles"
+        },
+        {
+          "id": "VEH-CVC-29",
+          "url": "https://www.iseecars.com/car/toyota-corolla/reliability",
+          "title": "iSeeCars: Toyota Corolla reliability",
+          "note": "chance of reaching 200,000 miles"
+        },
+        {
+          "id": "VEH-CVC-30",
+          "url": "https://www.consumerreports.org/cars/honda/civic/2026/reliability",
+          "title": "Consumer Reports: 2026 Honda Civic reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-CVC-31",
+          "url": "https://www.consumerreports.org/cars/honda/civic-hybrid/2026/reliability",
+          "title": "Consumer Reports: 2026 Honda Civic Hybrid reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-CVC-32",
+          "url": "https://www.consumerreports.org/cars/toyota/corolla/2026/reliability",
+          "title": "Consumer Reports: 2026 Toyota Corolla reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-CVC-33",
+          "url": "https://www.consumerreports.org/cars/toyota/corolla-hybrid/2026/reliability",
+          "title": "Consumer Reports: 2026 Toyota Corolla Hybrid reliability",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-CVC-34",
+          "url": "https://www.iseecars.com/car/honda-civic/resale-value",
+          "title": "iSeeCars: Honda Civic resale value",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-CVC-35",
+          "url": "https://www.iseecars.com/car/honda-civic-hybrid/resale-value",
+          "title": "iSeeCars: Honda Civic Hybrid resale value",
+          "note": "depreciation, hybrid"
+        },
+        {
+          "id": "VEH-CVC-36",
+          "url": "https://www.iseecars.com/car/toyota-corolla/resale-value",
+          "title": "iSeeCars: Toyota Corolla resale value",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-CVC-37",
+          "url": "https://www.iseecars.com/car/toyota-corolla-hybrid/resale-value",
+          "title": "iSeeCars: Toyota Corolla Hybrid resale value",
+          "note": "depreciation, hybrid"
+        },
+        {
+          "id": "VEH-CVC-38",
+          "url": "https://www.carwhere.com/used-car-prices/honda/civic",
+          "title": "CarWhere: used Honda Civic prices",
+          "note": "median asking price by model year"
+        },
+        {
+          "id": "VEH-CVC-39",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/corolla",
+          "title": "CarWhere: used Toyota Corolla prices",
+          "note": "median asking price by model year"
+        },
+        {
+          "id": "VEH-CVC-40",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "note": "compact car award"
+        },
+        {
+          "id": "VEH-CVC-41",
+          "url": "https://www.iihs.org/ratings/vehicle/honda/civic-4-door-sedan/2026",
+          "title": "IIHS: 2026 Honda Civic sedan",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-CVC-42",
+          "url": "https://www.iihs.org/ratings/vehicle/honda/civic-4-door-hatchback/2026",
+          "title": "IIHS: 2026 Honda Civic hatchback",
+          "note": "crash-test ratings and Top Safety Pick"
+        },
+        {
+          "id": "VEH-CVC-43",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/corolla-4-door-sedan/2026",
+          "title": "IIHS: 2026 Toyota Corolla sedan",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-CVC-44",
+          "url": "https://www.iihs.org/ratings/top-safety-picks/2026",
+          "title": "IIHS: 2026 Top Safety Pick awards",
+          "note": "award winners"
+        },
+        {
+          "id": "VEH-CVC-45",
+          "url": "https://www.nhtsa.gov/ratings",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-CVC-46",
+          "url": "https://www.edmunds.com/honda/civic/2026/",
+          "title": "Edmunds: 2026 Honda Civic",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-47",
+          "url": "https://www.edmunds.com/honda/civic/2026/hybrid/",
+          "title": "Edmunds: 2026 Honda Civic Hybrid",
+          "note": "hybrid review score"
+        },
+        {
+          "id": "VEH-CVC-48",
+          "url": "https://www.edmunds.com/toyota/corolla/2026/",
+          "title": "Edmunds: 2026 Toyota Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-49",
+          "url": "https://www.edmunds.com/best/compact-sedan/",
+          "title": "Edmunds: best compact sedans",
+          "note": "class ranking"
+        },
+        {
+          "id": "VEH-CVC-50",
+          "url": "https://www.kbb.com/honda/civic/2026/",
+          "title": "Kelley Blue Book: 2026 Honda Civic",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-51",
+          "url": "https://www.kbb.com/toyota/corolla/2026/",
+          "title": "Kelley Blue Book: 2026 Toyota Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-52",
+          "url": "https://cars.usnews.com/cars-trucks/honda/civic",
+          "title": "U.S. News: 2026 Honda Civic",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-53",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/corolla",
+          "title": "U.S. News: 2026 Toyota Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-54",
+          "url": "https://www.jdpower.com/cars/2026/honda/civic",
+          "title": "J.D. Power: 2026 Honda Civic",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-55",
+          "url": "https://www.jdpower.com/cars/2026/toyota/corolla",
+          "title": "J.D. Power: 2026 Toyota Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-CVC-56",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/2027-honda-civic-advances-americas-best-selling-compact-car-with-new-sport-l-trim-and-available-s-shift-drive-mode",
+          "title": "Honda: 2027 Civic",
+          "note": "2027 changes and the Sport-L trim"
+        },
+        {
+          "id": "VEH-CVC-57",
+          "url": "https://pressroom.toyota.com/built-for-generations-toyota-corolla-celebrates-60-years-with-2027-special-edition/",
+          "title": "Toyota: 2027 Corolla announcement",
+          "note": "2027 changes and ToyotaCare terms"
+        },
+        {
+          "id": "VEH-CVC-58",
+          "url": "https://pressroom.toyota.com/conquer-every-corner-in-the-2026-toyota-gr-corolla/",
+          "title": "Toyota: 2026 GR Corolla announcement",
+          "note": "GR Corolla power and drivetrain"
+        },
+        {
+          "id": "VEH-CVC-59",
+          "url": "https://arctic-shift.photon-reddit.com/",
+          "title": "Arctic Shift: Reddit archive",
+          "note": "public Reddit posts and comments behind the Reddit Sentiment Index"
+        }
+      ],
+      "reviews": {
+        "title": "What the reviewers say",
+        "note": "Each publisher’s own score, drawn to its own scale. They are not Steer Me Right ratings, and we have not averaged them.",
+        "max": 100,
+        "rows": [
+          {
+            "label": "Edmunds",
+            "sub": "Out of 10. The Civic Hybrid scores 7.9",
+            "a": 69,
+            "aText": "6.9",
+            "b": 60,
+            "bText": "6.0",
+            "href": "https://www.edmunds.com/honda/civic/2026/",
+            "logo": "edmunds"
+          },
+          {
+            "label": "Kelley Blue Book",
+            "sub": "Out of 5",
+            "a": 94,
+            "aText": "4.7",
+            "b": 90,
+            "bText": "4.5",
+            "href": "https://www.kbb.com/honda/civic/2026/",
+            "logo": "kbb"
+          },
+          {
+            "label": "U.S. News",
+            "sub": "Out of 10",
+            "a": 94,
+            "aText": "9.4",
+            "b": 86,
+            "bText": "8.6",
+            "href": "https://cars.usnews.com/cars-trucks/honda/civic",
+            "logo": "us-news"
+          },
+          {
+            "label": "J.D. Power",
+            "sub": "Out of 100",
+            "a": 83,
+            "aText": "83",
+            "b": 81,
+            "bText": "81",
+            "href": "https://www.jdpower.com/cars/2026/honda/civic",
+            "logo": "jd-power"
+          }
+        ]
+      }
     }
   ]
 }

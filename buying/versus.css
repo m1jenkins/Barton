@@ -199,6 +199,8 @@
 .dr .vs .vs-photos__brand { display:flex; align-items:center; gap:9px; }
 .dr .vs .vs-photos__make { height:22px; }
 .dr .vs .vs-photos__model { height:15px; }
+/* A model with no wordmark file (logos.model left out) shows its name in type at the wordmark's size. */
+.dr .vs .vs-photos__name { font-size:17px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; line-height:1; }
 .dr .vs .vs-glance__make { height:15px; }
 .dr .vs img.vp-strip__logo { display:inline-block; height:15px; margin-right:6px; vertical-align:-3px; }
 .dr .vs img.vp-strip__logo--large { height:20px; margin-right:7px; vertical-align:-5px; }
@@ -212,7 +214,9 @@
 .dr .vs .vs-from .vs-logo[src*="iihs"] { height:32px; }
 @media (max-width:760px) {
   .dr .vs .vs-photos__make { height:18px; }
-  .dr .vs .vs-photos__model { height:12px; }
+  .dr .vs img.vs-photos__model { flex:0 1 auto; min-width:0; height:auto; max-width:100%; max-height:12px; object-position:left center; }
+  .dr .vs .vs-photos__brand { min-width:0; }
+  .dr .vs .vs-photos__name { font-size:14px; }
   .dr .vs .vs-from .vs-logo { height:20px; }
   .dr .vs .vs-from .vs-logo[src*="iihs"] { height:27px; }
 }

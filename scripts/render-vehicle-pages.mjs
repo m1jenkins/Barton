@@ -384,7 +384,7 @@ const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" ari
 // Brand and source logos in assets/logos: [width, height] in pixels, and the name screen readers hear. CSS sets the shown height.
 const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
-  'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
+  'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
 };
@@ -422,7 +422,7 @@ ${chart.rows.map(row => `<li><span class="vs-cols__pair">${cars.map(car => `<spa
 }
 // Both cars' trims in one table, cheapest first, from each car's starting MSRP in data/vehicle-pages.json. The picked trim is marked.
 function trimTable(prices, cars) {
-  const rows = cars.flatMap(car => car.vehicle.trims.rows.map(trim => ({ car, trim, price: trim.prices[0] }))).sort((x, y) => x.price - y.price);
+  const rows = cars.flatMap(car => car.vehicle.trims.rows.map(trim => ({ car, trim, price: trim.prices[0] })).filter(row => typeof row.price === 'number')).sort((x, y) => x.price - y.price);
   return `<section class="vs-chart">
 <h3>${prices.title}</h3>
 <p class="vs-chart__note">${prices.note}</p>
@@ -499,10 +499,12 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
   const topicRows = Object.entries(sentiment.topics).map(([topic, figures]) => ({ label: sentimentTopics[topic], ...figures })).sort((x, y) => (y.a.mentions + y.b.mentions) - (x.a.mentions + x.b.mentions));
   // Reddit's pick for the hero strip: which car the neutral subreddits tell people to buy.
   const picks = sentiment.venues.neutral.recommend;
-  const pick = picks.a === picks.b ? null : picks.a > picks.b ? 'a' : 'b';
+  // A car is Reddit's pick only with at least 52% of the neutral picks; closer than that reads as even.
+  const share = picks.a / ((picks.a + picks.b) || 1);
+  const pick = share >= 0.52 ? 'a' : share <= 0.48 ? 'b' : null;
   const redditPick = pick
     ? `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${key(pick)}${by(pick).short}</span><small>Recommended more often<br> across ${Object.keys(sentiment.topics).length} topics</small></span>`
-    : '<span class="vs-strip-pick"><span class="vs-strip-pick__car">Even</span></span>';
+    : '<span class="vs-strip-pick"><span class="vs-strip-pick__car">Even</span><small>About half<br> the picks each</small></span>';
   const tabs = [['overview', 'Overview'], ['reddit', 'Reddit Sentiment Index'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
   const charts = list => list.map(chart => chart.type === 'cols' ? pairColumns(chart, cars) : pairChart(chart, cars)).join('\n');
   const body = `<article class="vp vs">
@@ -517,7 +519,7 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
 <div class="vp-layout vp-width">
 <div class="vp-hero">
 <div class="vs-photos">
-${cars.map(car => `<figure>${picture(car.vehicle.photo, [640, 960, 1600], '(max-width: 760px) 94vw, (max-width: 1000px) 47vw, 340px', true)}<figcaption>${key(car.side)}${car.logos ? `<strong class="vs-photos__brand">${logo(`${car.logos.make}-white`, { alt: '', cls: 'vs-photos__make', eager: true })}${logo(`${car.logos.model}-white`, { alt: car.name, cls: 'vs-photos__model', eager: true })}</strong>` : `<strong>${car.name}</strong>`}</figcaption></figure>`).join('\n')}
+${cars.map(car => `<figure>${picture(car.vehicle.photo, [640, 960, 1600], '(max-width: 760px) 94vw, (max-width: 1000px) 47vw, 340px', true)}<figcaption>${key(car.side)}${car.logos ? `<strong class="vs-photos__brand">${logo(`${car.logos.make}-white`, { alt: '', cls: 'vs-photos__make', eager: true })}${car.logos.model ? logo(`${car.logos.model}-white`, { alt: car.name, cls: 'vs-photos__model', eager: true }) : `<span class="vs-photos__name"><span class="sr-only">${car.name.replace(car.short, '')}</span>${car.short}</span>`}</strong>` : `<strong>${car.name}</strong>`}</figcaption></figure>`).join('\n')}
 </div>
 <ul class="vp-strip" role="list">
 ${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.wordmark ? logo(item.logo, { alt: item.label, cls: 'vp-strip__logo vp-strip__wordmark', eager: true }) : `${item.logo ? logo(item.logo, { alt: '', cls: `vp-strip__logo${item.logoSize === 'large' ? ' vp-strip__logo--large' : ''}`, eager: true }) : ''}${item.label}`}</span><span class="vp-strip__score">${item.value ?? redditPick}</span></a></li>`).join('\n')}

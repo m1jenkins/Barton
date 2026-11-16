@@ -37,7 +37,8 @@ const net = counts => total(counts) ? Math.round(100 * (counts.pos - counts.neg)
 
 export function summarize(coded) {
   const subreddit = Object.fromEntries(coded.threads.map(thread => [thread.id, thread.subreddit.toLowerCase()]));
-  const home = Object.fromEntries(Object.entries(coded.home).map(([car, sub]) => [sub.toLowerCase(), car]));
+  // A car's home venue is one subreddit or a list of them (r/civic and r/CivicSi).
+  const home = Object.fromEntries(Object.entries(coded.home).flatMap(([car, subs]) => [subs].flat().map(sub => [sub.toLowerCase(), car])));
   const venueOf = comment => home[subreddit[comment.thread]] ?? 'neutral';
   const per = Object.fromEntries(venues.map(venue => [venue, {
     recommend: { a: 0, b: 0 },
