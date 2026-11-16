@@ -1,0 +1,67 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "preview"
+      ],
+      "port": 4175,
+      "url": "http://127.0.0.1:4175"
+    },
+    {
+      "name": "main-preview",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "DRIVE_RIGHT_PREVIEW_PORT=4176",
+        "node",
+        "/private/tmp/claude-501/-Users-useruser-Documents-GitHub-Barton/5923422f-385d-4a2c-be7f-fbe65d8ed8e3/scratchpad/main-preview/scripts/preview.mjs"
+      ],
+      "port": 4176,
+      "url": "http://127.0.0.1:4176"
+    },
+    {
+      "name": "plans-preview",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "DRIVE_RIGHT_PREVIEW_PORT=4177",
+        "node",
+        "scripts/preview.mjs"
+      ],
+      "port": 4177,
+      "url": "http://127.0.0.1:4177"
+    },
+    {
+      "name": "dashboard-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4178",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        ".car-searches"
+      ],
+      "port": 4178,
+      "url": "http://127.0.0.1:4178"
+    },
+    {
+      "name": "email-previews",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4179",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        ".email-previews"
+      ],
+      "port": 4179,
+      "url": "http://127.0.0.1:4179"
+    }
+  ]
+}

@@ -16,27 +16,27 @@
         {
           "label": "Starting MSRP",
           "value": "$39,585 <small>to $79,005</small>",
-          "note": "2026 trims, before the $2,795 destination charge. 2027s start at $40,155."
+          "section": "trims"
         },
         {
           "label": "Realistic discount",
           "value": "5–7% <small>under MSRP</small>",
-          "note": "On an XLT or Lariat, before Ford’s cash. Less on XL and STX, about none on a Raptor."
+          "section": "pay"
         },
         {
           "label": "Ford incentives",
           "value": "<small>Up to</small> $4,500 <small>cash</small>",
-          "note": "On a 2026 XLT through November 30, or 0% APR for 60 months. Nothing on 2027s yet."
+          "section": "incentives"
         },
         {
           "label": "Trim we’d buy",
           "value": "2026 XLT",
-          "note": "It gets Ford’s biggest cash offer, and it’s the easiest F-150 to resell."
+          "section": "pick"
         },
         {
           "label": "New, used or CPO",
           "value": "New, as a 2026",
-          "note": "The outgoing model year carries the offers, and F-150s hold their value too well for used to save much."
+          "section": "new-used"
         }
       ],
       "summary": "Reviewers rank the F-150 first among full-size pickups, and right now the one to price is a 2026 XLT. Ford has $4,500 cash on it through November 30 in most regions. Published sale prices put the average XLT or Lariat 5–7% under MSRP before that cash, so on a base XLT the two together take roughly $7,300 off a $47,490 sticker. Watch the options, though. A typical XLT SuperCrew 4x4 on a dealer lot stickers in the mid-$50,000s or higher. The new 2027 has no incentives yet. Prices and offers were checked on November 15, 2026, and your dealer may land a point or two either side of that discount.",
@@ -80,7 +80,8 @@
             "engine": "2.7L EcoBoost V6; 5.0L V8, 3.5L EcoBoost and hybrid optional",
             "room": "Good, and Ford’s largest cash offer is on this trim.",
             "roomLabel": "Good",
-            "short": "The volume trim"
+            "short": "The volume trim",
+            "pick": true
           },
           {
             "name": "Lariat",
@@ -161,43 +162,32 @@
             "trims": "XL, STX",
             "fair": "2–3% under",
             "strong": "6–8% under",
-            "why": "Thin margins. Invoice is only about 4.5% below MSRP on these trims.",
-            "fairLow": 2,
-            "fairHigh": 3,
-            "strongAt": 6
+            "why": "Thin margins. Invoice is only about 4.5% below MSRP on these trims."
           },
           {
             "trims": "XLT, Lariat",
             "fair": "5–7% under",
             "strong": "10% or more",
-            "why": "The most trucks on lots and the most dealers competing for the sale.",
-            "fairLow": 5,
-            "fairHigh": 7,
-            "strongAt": 10
+            "why": "The most trucks on lots and the most dealers competing for the sale."
           },
           {
             "trims": "Tremor, King Ranch, Platinum",
             "fair": "3–6% under",
             "strong": "8–10% under",
-            "why": "Fewer on each lot, so it depends on how long that truck has sat.",
-            "fairLow": 3,
-            "fairHigh": 6,
-            "strongAt": 8
+            "why": "Fewer on each lot, so it depends on how long that truck has sat."
           },
           {
             "trims": "Raptor",
             "fair": "MSRP",
             "strong": "Any discount",
-            "why": "Sells at about sticker. Buyers report Raptor R markups of $5,000 and up.",
-            "fairLow": 0,
-            "fairHigh": 0,
-            "strongAt": null
+            "why": "Sells at about sticker. Buyers report Raptor R markups of $5,000 and up."
           }
         ],
         "note": "Dealer discount off MSRP on a 2026 F-150, before Ford’s cash offers. Our estimate from TrueCar’s average sale prices, published dealer invoice figures and buyer-reported deals, checked November 15, 2026. The published averages do not say whether Ford’s cash is already inside them, so count the cash as extra only when the dealer’s written quote shows the discount and the rebate on separate lines.",
         "after": [
           "Not sure what a specific truck should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
         ],
+        "tableTitle": "Dealer discount by trim",
         "walk": {
           "title": "What that looks like on a base 2026 XLT",
           "sticker": 47490,
