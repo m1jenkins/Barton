@@ -514,7 +514,7 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
 ${cars.map(car => `<figure>${picture(car.vehicle.photo, [640, 960, 1600], '(max-width: 760px) 94vw, (max-width: 1000px) 47vw, 340px', true)}<figcaption>${key(car.side)}${car.logos ? `<strong class="vs-photos__brand">${logo(`${car.logos.make}-white`, { alt: '', cls: 'vs-photos__make', eager: true })}${logo(`${car.logos.model}-white`, { alt: car.name, cls: 'vs-photos__model', eager: true })}</strong>` : `<strong>${car.name}</strong>`}</figcaption></figure>`).join('\n')}
 </div>
 <ul class="vp-strip" role="list">
-${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.logo ? logo(item.logo, { alt: '', cls: 'vp-strip__logo', eager: true }) : ''}${item.label}</span><span class="vp-strip__score">${item.value}</span></a></li>`).join('\n')}
+${cmp.strip.map(item => `<li><a href="#${item.section}"><span class="vp-strip__source">${item.wordmark ? logo(item.logo, { alt: item.label, cls: 'vp-strip__logo vp-strip__wordmark', eager: true }) : `${item.logo ? logo(item.logo, { alt: '', cls: 'vp-strip__logo', eager: true }) : ''}${item.label}`}</span><span class="vp-strip__score">${item.value}</span></a></li>`).join('\n')}
 </ul>
 </div>
 
