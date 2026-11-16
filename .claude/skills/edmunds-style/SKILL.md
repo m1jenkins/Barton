@@ -56,6 +56,7 @@ In this repository, every outside figure also needs its dated row in `data/sourc
 - Section headings can be the shopper's question ("How does it drive?", "Is it a good value?") with the answer in the first sentence under it.
 - Light humor belongs in a bylined drive piece, one line at most. Spec, price and safety sections stay straight.
 - No throat-clearing intros, no closing paragraph that restates the piece. End on the recommendation or the next step (test-drive it, price it, compare the rival).
+- A heading over a chart, table or price ladder needs no lead-in sentence explaining what it shows; the data and its note carry it. And don't close a sentence by tagging the facts with a one-word metaphor ("so these are floors", "that's the tell"): say what they mean or cut it.
 - No "X, not Y" disclaimers ("estimates, not a promise", "a guide, not a guarantee") and no caveat tacked onto the end of a paragraph. Edmunds labels a figure by its source inside the sentence ("Toyota-estimated", "TrueCar's November averages put..."), and gives a caveat as a concrete consequence where it applies ("expect less room on a Raptor").
 
 Numbers and units, as Edmunds prints them: 0 to 60 mph in 5.8 seconds; 13,500 pounds; 37.8 cubic feet; 24 mpg combined (28 city/33 highway); a 12-inch touchscreen; 2.5-liter four-cylinder; 226 horsepower on first use, then hp; lb-ft; three years/36,000 miles; $46,683 as tested; "starts at $41,395 including destination". Give the trim and drivetrain a figure belongs to. Round nothing a source printed exactly.

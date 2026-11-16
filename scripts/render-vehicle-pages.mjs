@@ -91,8 +91,7 @@ ${bars(vehicle.safety.recalls, Math.max(...vehicle.safety.recalls.map(row => row
 <p class="compare-note">${vehicle.safety.note}</p>
 
 <h2 id="trims">${vehicle.modelYear} ${name} trims and MSRP</h2>
-${paragraphs(vehicle.trims.intro)}
-<ul class="price-ladder" role="list">
+${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<ul class="price-ladder" role="list">
 ${vehicle.trims.rows.map(trim => `<li><p class="price-ladder__name">${trim.name}<span>${trim.short}</span></p><span class="price-bars__track" aria-hidden="true"><span style="--w:${percent(trim.prices[0], topPrice)}"></span></span><p class="price-ladder__price">${dollars(trim.prices[0])}<span>${vehicle.trims.columns[1].replace(' MSRP', '')}: ${dollars(trim.prices[1])}</span></p><p class="price-ladder__room"><span>Room to negotiate</span>${trim.roomLabel}</p></li>`).join('\n')}
 </ul>
 <p class="compare-note">${vehicle.trims.note}</p>
