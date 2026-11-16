@@ -174,7 +174,7 @@ ${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<table class
 ${vehicle.trims.rows.map(trim => `<tr><th scope="row">${trim.name}${trim.pick ? ' <span class="vp-tag">Our pick</span>' : ''}<span>${trim.short}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], topPrice)}</td>${trim.prices.slice(1).map(price => `<td>${price ? dollars(price) : ask}</td>`).join('')}<td class="vp-trims__room">${room(trim.roomLabel)}</td></tr>`).join('\n')}
 </tbody>
 </table>
-<p class="vp-note">${vehicle.trims.note}</p>
+${vehicle.trims.note ? `<p class="vp-note">${vehicle.trims.note}</p>` : ''}
 ${paragraphs(vehicle.trims.after)}
 <details class="vp-more"><summary>Engines and what each trim adds</summary>
 ${table('trim-caption', `${vehicle.modelYear} ${name} trims with starting MSRP, checked ${checked}`, ['Trim', ...vehicle.trims.columns, 'Engines', 'Room to negotiate'],
