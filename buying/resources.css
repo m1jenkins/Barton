@@ -11,7 +11,7 @@
 .dr .guide-body p { margin:18px 0; }
 .dr .guide-body :is(ol,ul) { padding-left:24px; margin:20px 0; list-style:revert; }
 .dr .guide-body li { margin:8px 0; }
-.dr .guide-body .highlight-box { background:var(--sage); padding:18px 24px; margin:30px 0; border-left:3px solid var(--green); }
+.dr .guide-body .highlight-box { background:var(--sage); padding:22px 26px; margin:30px 0; border-radius:24px; }
 .dr .guide-body .highlight-box p { margin:0; }
 .dr .guide-body blockquote { border-left:2px solid var(--line); padding:12px 24px; margin:24px 0; font-size:19px; }
 .dr .guide-body nav { font-size:14px; line-height:2; padding-bottom:12px; border-bottom:1px solid var(--line); }

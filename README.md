@@ -37,6 +37,8 @@ The three released guides and the nine service comparison pages (`compare-car-bu
 
 The six city pages (`car-buying-service-<city>.html`) and their hub `car-buying-service-near-me.html` are generated from `data/market-pages.json` by `npm run build:markets`; do not edit them by hand. `car-buying-concierge.html`, `car-finder-service.html`, `new-car-buying-service.html` and `car-buying-help.html` are hand-edited guide-layout pages. See `docs/seo/2026-11-15-market-and-service-pages.md`.
 
+The vehicle price pages (`<make>-<model>-price.html`, starting with `ford-f-150-price.html`) are generated from `data/vehicle-pages.json` by `npm run build:vehicles`; do not edit them by hand. They load `buying/price-guide.css` on top of the guide layout. See `docs/seo/2026-11-15-vehicle-price-pages.md`.
+
 ## Two page styles
 
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
@@ -65,6 +67,7 @@ npm run check:js                 # all first-party JavaScript, including browser
 npm run check:metros             # drafts match their generator
 npm run check:cities
 npm run check:markets            # city pages match data/market-pages.json
+npm run check:vehicles           # vehicle price pages match data/vehicle-pages.json
 npm test
 ```
 

@@ -21,6 +21,8 @@
     "preview:cities": "node scripts/preview-cities.mjs",
     "build:markets": "node scripts/render-market-pages.mjs",
     "check:markets": "node scripts/render-market-pages.mjs --check",
+    "build:vehicles": "node scripts/render-vehicle-pages.mjs",
+    "check:vehicles": "node scripts/render-vehicle-pages.mjs --check",
     "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check",
     "analytics:dispatch": "node scripts/dispatch-analytics.mjs",
     "leads:dispatch": "node scripts/dispatch-leads.mjs",

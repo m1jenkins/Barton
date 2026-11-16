@@ -21,5 +21,6 @@ jobs:
       - run: npm run check:metros
       - run: npm run check:cities
       - run: npm run check:markets
+      - run: npm run check:vehicles
       - run: npm test
       - run: git diff --check

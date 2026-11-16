@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 1,
+  "decision": "docs/seo/2026-11-15-vehicle-price-pages.md",
+  "updated": "2026-11-15",
+  "vehicles": [
+    {
+      "slug": "ford-f-150-price.html",
+      "name": "Ford F-150",
+      "modelYear": 2026,
+      "published": "2026-11-15",
+      "checkedOn": "2026-11-15",
+      "title": "Ford F-150 Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Ford F-150 costs in November 2026: MSRP by trim, how far under sticker to aim, Ford’s current incentives, and whether to buy new, used or CPO.",
+      "h1": "Ford F-150 price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$39,585 to $79,005",
+          "note": "2026 trims, before the $2,795 destination charge. 2027s start at $40,155."
+        },
+        {
+          "label": "Realistic discount",
+          "value": "5–7% under MSRP",
+          "note": "On an XLT or Lariat, before Ford’s cash. Less on XL and STX, about none on a Raptor."
+        },
+        {
+          "label": "Ford incentives",
+          "value": "Up to $4,500 cash",
+          "note": "On a 2026 XLT through November 30, or 0% APR for 60 months. Nothing on 2027s yet."
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 XLT",
+          "note": "The biggest incentive, the best-documented discount and the easiest truck to resell."
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "note": "The outgoing model year carries the offers, and F-150s hold their value too well for used to save much."
+        }
+      ],
+      "summary": "Two model years of F-150 are on sale at once, and the 2026 is the one to price. It carries Ford’s year-end offers, and published sale prices put a typical XLT or Lariat about 5–7% under MSRP before those offers. The 2027 has just arrived with new prices and no incentives. On a base 2026 XLT, a 6% discount plus Ford’s $4,500 cash takes roughly $7,300 off a $47,490 sticker. These are estimates from published data, not a promise, and every figure here was checked on November 15, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "intro": [
+          "Eight trims, each in several cab, bed and drive combinations, so these are floors. A typical XLT SuperCrew 4x4 on a lot stickers in the mid-$50,000s to mid-$60,000s."
+        ],
+        "rows": [
+          {
+            "name": "XL",
+            "gets": "Work truck: steel wheels, cloth, vinyl floor, 12-inch screen",
+            "prices": [
+              39585,
+              40155
+            ],
+            "engine": "2.7L EcoBoost V6; 5.0L V8 and 3.5L EcoBoost optional",
+            "room": "Thin. Dealer invoice sits about 4.5% under MSRP.",
+            "roomLabel": "Thin",
+            "short": "Work truck"
+          },
+          {
+            "name": "STX",
+            "gets": "Sportier XL: 18-inch black wheels, sport seats, Lobo package available",
+            "prices": [
+              41855,
+              42675
+            ],
+            "engine": "2.7L EcoBoost V6; 5.0L V8 and PowerBoost hybrid optional",
+            "room": "Thin, about the same as XL.",
+            "roomLabel": "Thin",
+            "short": "Sportier XL"
+          },
+          {
+            "name": "XLT",
+            "gets": "The volume trim: more options open up, including 360 camera, heated seats and BlueCruise",
+            "prices": [
+              44695,
+              46525
+            ],
+            "engine": "2.7L EcoBoost V6; 5.0L V8, 3.5L EcoBoost and hybrid optional",
+            "room": "Good, and Ford’s largest cash offer is on this trim.",
+            "roomLabel": "Good",
+            "short": "The volume trim"
+          },
+          {
+            "name": "Lariat",
+            "gets": "Leather-trimmed heated and cooled seats, B&O audio, 360 camera, trailer backup assist",
+            "prices": [
+              59560,
+              57730
+            ],
+            "engine": "3.5L EcoBoost V6; 5.0L V8 and hybrid optional",
+            "room": "Good. The best-supported discounts are here and on XLT.",
+            "roomLabel": "Good",
+            "short": "Leather and tech"
+          },
+          {
+            "name": "Tremor",
+            "gets": "Off-road hardware: 33-inch all-terrains, locking rear axle, Trail Control",
+            "prices": [
+              64915,
+              59975
+            ],
+            "engine": "3.5L EcoBoost V6; 5.0L V8 optional",
+            "room": "Moderate.",
+            "roomLabel": "Moderate",
+            "short": "Off-road hardware"
+          },
+          {
+            "name": "King Ranch",
+            "gets": "Western-themed luxury: leather buckets, two-tone paint, wood trim",
+            "prices": [
+              65825,
+              66155
+            ],
+            "engine": "3.5L EcoBoost V6; hybrid optional",
+            "room": "Moderate to good on trucks that have sat.",
+            "roomLabel": "Moderate",
+            "short": "Western luxury"
+          },
+          {
+            "name": "Platinum",
+            "gets": "Top luxury trim: rear heated seats, power pedals, 20-inch wheels",
+            "prices": [
+              68800,
+              69130
+            ],
+            "engine": "3.5L EcoBoost V6; hybrid optional",
+            "room": "Moderate.",
+            "roomLabel": "Moderate",
+            "short": "Top luxury"
+          },
+          {
+            "name": "Raptor",
+            "gets": "Desert runner: FOX Live Valve shocks, 450 hp. Raptor R adds a 720 hp supercharged V8",
+            "prices": [
+              79005,
+              75325
+            ],
+            "engine": "3.5L High Output EcoBoost V6",
+            "room": "Little to none. Expect sticker, and markups on the Raptor R.",
+            "roomLabel": "Little to none",
+            "short": "Desert runner"
+          }
+        ],
+        "note": "Starting MSRP from Ford’s website on November 15, 2026, for the least expensive cab and drive combination of each trim. Prices exclude the $2,795 destination charge, taxes and dealer fees. Standard engines are for 2026, as listed by Cars.com; for 2027 a 3.0L EcoBoost replaces the 2.7L and becomes standard on Lariat. We could not confirm a published price for the Lobo package or the Raptor R, so <a href=\"/schedule.html\">ask us</a> before relying on one.",
+        "after": [
+          "For 2027, XL, STX and XLT went up. Lariat, Tremor and Raptor went down, but the cheaper Tremor and Raptor lost equipment to get there, so compare window stickers line by line."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 XLT SuperCrew 4x4.</strong> It has Ford’s biggest public offer, one of the two deepest-discounting trims, and about half of all used F-150s for sale are XLTs, so it is the easiest to sell later.",
+        "Want leather? Step to the Lariat, which discounts about as well. We’d skip the PowerBoost hybrid unless you need its onboard generator: it loses value faster, and Consumer Reports ranked it among its least reliable vehicles in 2022 and 2023."
+      ],
+      "pay": {
+        "intro": [
+          "TrueCar’s November figures show the average 2026 XLT selling 5.6% under MSRP and the average Lariat 6.5% under. Ford dealers are also holding 101 days of inventory against 82 for the industry, and the 2027s have just arrived."
+        ],
+        "rows": [
+          {
+            "trims": "XL, STX",
+            "fair": "2–3% under",
+            "strong": "6–8% under",
+            "why": "Thin margins. Invoice is only about 4.5% below MSRP on these trims.",
+            "fairLow": 2,
+            "fairHigh": 3,
+            "strongAt": 6
+          },
+          {
+            "trims": "XLT, Lariat",
+            "fair": "5–7% under",
+            "strong": "10% or more",
+            "why": "The most trucks on lots and the most dealers competing for the sale.",
+            "fairLow": 5,
+            "fairHigh": 7,
+            "strongAt": 10
+          },
+          {
+            "trims": "Tremor, King Ranch, Platinum",
+            "fair": "3–6% under",
+            "strong": "8–10% under",
+            "why": "Fewer on each lot, so it depends on how long that truck has sat.",
+            "fairLow": 3,
+            "fairHigh": 6,
+            "strongAt": 8
+          },
+          {
+            "trims": "Raptor",
+            "fair": "MSRP",
+            "strong": "Any discount",
+            "why": "Sells at about sticker. Buyers report Raptor R markups of $5,000 and up.",
+            "fairLow": 0,
+            "fairHigh": 0,
+            "strongAt": null
+          }
+        ],
+        "note": "Dealer discount off MSRP on a 2026 F-150, before Ford’s cash offers. Our estimate from TrueCar’s average sale prices, published dealer invoice figures and buyer-reported deals, checked November 15, 2026. The published averages do not say whether Ford’s cash is already inside them, so count the cash as extra only when the dealer’s written quote shows the discount and the rebate on separate lines.",
+        "after": [
+          "Not sure what a specific truck should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a base 2026 XLT",
+          "sticker": 47490,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 6%",
+              "amount": 2850
+            },
+            {
+              "label": "Ford cash back",
+              "amount": 4500
+            }
+          ],
+          "total": 40140,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every public offer is on the 2026. Ford lists none on the 2027. Offers differ by ZIP code; these are what Ford showed in Chicago, Dallas, Los Angeles and New York unless noted."
+        ],
+        "rows": [
+          {
+            "offer": "$4,500 cash back",
+            "detail": "$3,000 customer cash plus $1,500 bonus cash",
+            "applies": "2026 XLT. In the New York area, also STX and Lariat.",
+            "ends": "November 30, 2026 (January 4, 2027 in New York)",
+            "big": "$4,500",
+            "unit": "cash back",
+            "short": "2026 XLT. Ends November 30."
+          },
+          {
+            "offer": "0% APR for 60 months",
+            "detail": "Plus $500 bonus cash, through Ford Credit",
+            "applies": "2026, every trim except Raptor",
+            "ends": "November 16, 2026. Dallas and Los Angeles showed a version through November 30.",
+            "big": "0%",
+            "unit": "APR for 60 months",
+            "short": "Plus $500. Every 2026 trim but Raptor. Ends November 16 in most regions."
+          },
+          {
+            "offer": "1.9% APR for 60 months",
+            "detail": "Plus $1,500 bonus cash, through Ford Credit",
+            "applies": "2026, every trim except Raptor",
+            "ends": "November 30, 2026",
+            "big": "1.9%",
+            "unit": "APR for 60 months",
+            "short": "Plus $1,500. Every 2026 trim but Raptor. Ends November 30."
+          },
+          {
+            "offer": "STX lease",
+            "detail": "$499 a month for 36 months, $1,498 due at signing",
+            "applies": "2026 STX with Equipment Group 200A",
+            "ends": "November 30, 2026",
+            "big": "$499",
+            "unit": "a month lease",
+            "short": "36 months, $1,498 due at signing. Ends November 30."
+          },
+          {
+            "offer": "Military, first responder and college",
+            "detail": "Ford’s recognition programs. The amount varies by market, and Ford shows it only after you verify eligibility.",
+            "applies": "New 2025, 2026 and 2027 Fords",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "2027 F-150",
+            "detail": "No public offers yet",
+            "applies": "All 2027 trims",
+            "ends": ""
+          }
+        ],
+        "note": "Offers as shown on Ford’s website on November 15, 2026. They change monthly and by region, and “ends” is the date you must take delivery by. Check the offer for your own ZIP on Ford’s site, and have the dealer confirm in writing that it still applies on the day you sign.",
+        "after": [
+          "<strong>Plan on choosing between the big cash and the low rate.</strong> Ford pairs 0% and 1.9% with the smaller bonus cash only. On a $45,000 loan over 60 months, 0% saves about $7,600 in interest against the 6.35% average new-car rate, which beats $4,500 cash. With a large down payment or a low rate from your own bank, the cash usually wins.",
+          "Military, first responder and college offers run through January 4, 2027. Ford shows the amount only after you verify eligibility, so <a href=\"/schedule.html\">ask us</a> if you want it checked."
+        ],
+        "cards": [
+          {
+            "offer": "$4,500 cash back",
+            "detail": "$3,000 customer cash plus $1,500 bonus cash",
+            "applies": "2026 XLT. In the New York area, also STX and Lariat.",
+            "ends": "November 30, 2026 (January 4, 2027 in New York)",
+            "big": "$4,500",
+            "unit": "cash back",
+            "short": "2026 XLT. Ends November 30."
+          },
+          {
+            "offer": "0% APR for 60 months",
+            "detail": "Plus $500 bonus cash, through Ford Credit",
+            "applies": "2026, every trim except Raptor",
+            "ends": "November 16, 2026. Dallas and Los Angeles showed a version through November 30.",
+            "big": "0%",
+            "unit": "APR for 60 months",
+            "short": "Plus $500. Every 2026 trim but Raptor. Ends November 16 in most regions."
+          },
+          {
+            "offer": "1.9% APR for 60 months",
+            "detail": "Plus $1,500 bonus cash, through Ford Credit",
+            "applies": "2026, every trim except Raptor",
+            "ends": "November 30, 2026",
+            "big": "1.9%",
+            "unit": "APR for 60 months",
+            "short": "Plus $1,500. Every 2026 trim but Raptor. Ends November 30."
+          },
+          {
+            "offer": "STX lease",
+            "detail": "$499 a month for 36 months, $1,498 due at signing",
+            "applies": "2026 STX with Equipment Group 200A",
+            "ends": "November 30, 2026",
+            "big": "$499",
+            "unit": "a month lease",
+            "short": "36 months, $1,498 due at signing. Ends November 30."
+          }
+        ]
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> F-150s hold their value too well for a used one to save much, and used loans cost far more."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "You are financing, or you want an XLT or Lariat. Ford’s offers and the dealer discount stack here.",
+            "check": "That the truck is a 2026 and not a 2027, and that the offer applies to that exact trim in your ZIP."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want the 3.0L engine, the restyle, or the lower Lariat, Tremor or Raptor price.",
+            "check": "What the cheaper Tremor and Raptor left out. There are no incentives yet, so the discount has to come from the dealer."
+          },
+          {
+            "route": "CPO (Ford Blue Advantage Gold)",
+            "when": "You are paying cash and want Lariat-level equipment for XLT money. A 2023 or 2024 is the sweet spot.",
+            "check": "That it is Gold Certified, not Blue. Gold adds a 12-month, 12,000-mile comprehensive warranty and 7-year, 100,000-mile powertrain coverage. Blue gives 90 days."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $35,000.",
+            "check": "Open recalls by VIN, and an independent inspection. The 2021 and 2022 trucks have the most recalls of this generation."
+          }
+        ],
+        "after": [
+          "If you buy used, make 2023 the floor. The 2021 and 2022 trucks carry the most recalls of this generation, including broken intake valves on the 2.7L engine and a failing fuel pump. Drive any used one long enough to feel the 10-speed shift cold and warm."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "F-150",
+                "value": 19,
+                "display": "19%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 25,
+                "display": "25%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Experian, Q2 2026"
+          },
+          {
+            "title": "Average asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 35709,
+                "display": "$35,709"
+              },
+              {
+                "label": "2023",
+                "value": 40476,
+                "display": "$40,476"
+              },
+              {
+                "label": "2024",
+                "value": 44549,
+                "display": "$44,549"
+              },
+              {
+                "label": "2025",
+                "value": 47951,
+                "display": "$47,951"
+              }
+            ],
+            "source": "CarGurus"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> Bedliners, tint and theft-recovery devices are the dealer’s products, not Ford’s. Refuse or negotiate them.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. The offers apply only to the 2026.",
+        "<strong>Rebates dressed up as a discount.</strong> Get the selling price first, then each incentive on its own line.",
+        "<strong>The Ford Credit requirement.</strong> Finance elsewhere and the bonus cash tied to 0% or 1.9% goes away.",
+        "<strong>Fees.</strong> Documentation fees differ by hundreds of dollars. Compare out-the-door prices.",
+        "<strong>Raptor R markups.</strong> Owner forums report $5,000 or more over sticker. MSRP is a good result."
+      ],
+      "faq": [
+        [
+          "How much under MSRP can you get a Ford F-150?",
+          "On a 2026 XLT or Lariat, 5–7% under MSRP is a fair deal before Ford’s cash and about 10% is a strong one. XL and STX have less room, around 2–3%. Raptors sell at about sticker. These are our estimates from published sale prices checked on November 15, 2026, not a promise."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 F-150?",
+          "The 2026, for most buyers. It carries Ford’s year-end offers and dealers want it gone now that 2027s are arriving. The 2027 makes sense if you want the new 3.0L engine or the lower starting price on Lariat, Tremor or Raptor."
+        ],
+        [
+          "What is the destination charge on an F-150?",
+          "$2,795 on most 2026 trucks and on the 2027. Ford’s advertised starting prices leave it out, and it is on every window sticker. A few early 2026 trucks show $2,595."
+        ],
+        [
+          "Can I combine 0% financing with the $4,500 cash back?",
+          "Plan on no. Ford’s 0% and 1.9% offers come with $500 or $1,500 in bonus cash, and the full $4,500 appears only as a cash offer. Ask the dealer to price the truck both ways in writing."
+        ],
+        [
+          "Is the F-150 hybrid worth it?",
+          "Only if you will use the onboard generator. It loses value faster than the gas truck by iSeeCars’ figures, and the early hybrids scored poorly for reliability with Consumer Reports. Consumer Reports now predicts about average reliability for the 2026."
+        ],
+        [
+          "Is a used F-150 a better deal than new?",
+          "Not by much right now. F-150s hold their value, used-car loan rates are much higher than new, and the new 2026 has 0% financing or cash back. A Gold Certified 2023 or 2024 is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-F150-01",
+          "title": "Ford: 2026 F-150",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "scope": "2026 F-150 trims, starting MSRP excluding destination, engines and equipment",
+          "note": "2026 trims, starting prices and engines"
+        },
+        {
+          "id": "VEH-F150-02",
+          "title": "Ford: F-150",
+          "url": "https://www.ford.com/trucks/f150/",
+          "scope": "2027 F-150 trims, starting MSRP, destination charge and engine changes",
+          "note": "2027 prices, destination charge and changes"
+        },
+        {
+          "id": "VEH-F150-03",
+          "title": "Ford: 2026 F-150 incentives and offers",
+          "url": "https://www.ford.com/trucks/f150/2026/incentives-and-offers/",
+          "scope": "Ford finance, cash and lease offers on the 2026 F-150 at ZIPs 60601, 75201, 90012 and 10001",
+          "note": "finance, cash and lease offers, read at four ZIP codes"
+        },
+        {
+          "id": "VEH-F150-04",
+          "title": "Ford: military appreciation program",
+          "url": "https://fordrecognizesu.com/military/home/faq",
+          "scope": "Ford military, first responder and college recognition program dates and eligible vehicles",
+          "note": "recognition program dates"
+        },
+        {
+          "id": "VEH-F150-05",
+          "title": "Cars.com: how much is the 2026 Ford F-150?",
+          "url": "https://www.cars.com/articles/how-much-is-the-2026-ford-f-150-521741/",
+          "scope": "Standard engine by 2026 F-150 trim",
+          "note": "standard engine by trim"
+        },
+        {
+          "id": "VEH-F150-06",
+          "title": "TrueCar: 2026 Ford F-150",
+          "url": "https://www.truecar.com/overview/ford/f-150/2026",
+          "scope": "Market average sale price against MSRP by 2026 F-150 trim, November 2026",
+          "note": "average sale price against MSRP by trim"
+        },
+        {
+          "id": "VEH-F150-07",
+          "title": "iSeeCars: 2026 Ford F-150 price",
+          "url": "https://www.iseecars.com/car/2026-ford-f__150-price",
+          "scope": "Dealer invoice against MSRP by 2026 F-150 style",
+          "note": "dealer invoice against MSRP"
+        },
+        {
+          "id": "VEH-F150-08",
+          "title": "Ford Authority: new Ford inventory in September 2026",
+          "url": "https://fordauthority.com/2026/10/new-ford-inventory-levels-swelled-nationwide-in-september-2026/",
+          "scope": "Cox Automotive days of supply for Ford and the industry at the end of September 2026",
+          "note": "Cox Automotive days of supply"
+        },
+        {
+          "id": "VEH-F150-09",
+          "title": "Ford Raptor Forum: Raptor R market",
+          "url": "https://www.fordraptorforum.com/goto/post?id=2206957",
+          "scope": "Buyer-reported Raptor R dealer markups, July 2026",
+          "note": "buyer-reported Raptor R markups"
+        },
+        {
+          "id": "VEH-F150-10",
+          "title": "iSeeCars: Ford F-150 resale value",
+          "url": "https://www.iseecars.com/car/ford-f-150/resale-value",
+          "scope": "F-150 and F-150 hybrid depreciation at three and five years against the all-vehicle average",
+          "note": "depreciation, gas and hybrid"
+        },
+        {
+          "id": "VEH-F150-11",
+          "title": "CarGurus: Ford F-150 price trends",
+          "url": "https://www.cargurus.com/research/price-trends/Ford-F-150-d337",
+          "scope": "Average used F-150 listing price by model year",
+          "note": "average used listing price by model year"
+        },
+        {
+          "id": "VEH-F150-12",
+          "title": "CarWhere: used 2023 Ford F-150 prices",
+          "url": "https://www.carwhere.com/used-car-prices/ford/f-150/2023",
+          "scope": "XLT share of used F-150 listings",
+          "note": "XLT share of used listings"
+        },
+        {
+          "id": "VEH-F150-13",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates, Q2 2026",
+          "note": "average new and used loan rates"
+        },
+        {
+          "id": "VEH-F150-14",
+          "title": "Ford Blue Advantage: certified used",
+          "url": "https://www.ford.com/used/about-certified/ford-blue-advantage/",
+          "scope": "Ford Blue Advantage Gold and Blue Certified warranty terms",
+          "note": "CPO warranty terms"
+        },
+        {
+          "id": "VEH-F150-15",
+          "title": "Ford: New Vehicle Limited Warranty",
+          "url": "https://www.ford.com/support/how-tos/warranty/warranties-and-coverage/what-is-the-ford-new-vehicle-limited-warranty/",
+          "scope": "Ford new-vehicle warranty terms",
+          "note": "new-truck warranty"
+        },
+        {
+          "id": "VEH-F150-16",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "F-150 recall counts by model year 2021 to 2025 and campaigns 24V635 and 25V455",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-F150-17",
+          "title": "Pickup Truck Talk: 2021–2026 F-150 known problems",
+          "url": "https://pickuptrucktalk.com/2026/01/2021-2026-ford-f-150-known-problems-transmission-recalls-engines-failure/",
+          "scope": "Owner-reported 10-speed transmission complaints on 2021 and later F-150s",
+          "note": "owner-reported transmission complaints"
+        },
+        {
+          "id": "VEH-F150-18",
+          "title": "Ford Authority: Consumer Reports on the F-150 hybrid",
+          "url": "https://fordauthority.com/2023/12/ford-f-150-hybrid-powerboost-among-crs-least-reliable-cars/",
+          "scope": "Consumer Reports reliability ranking of the 2021 to 2023 F-150 hybrid",
+          "note": "hybrid reliability history"
+        },
+        {
+          "id": "VEH-F150-19",
+          "title": "Consumer Reports: 2026 Ford F-150 reliability",
+          "url": "https://www.consumerreports.org/cars/ford/f-150/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 F-150 and F-150 hybrid",
+          "note": "predicted reliability for 2026"
+        },
+        {
+          "id": "VEH-F150-20",
+          "title": "CarEdge: Leif Johnson Ford, Austin",
+          "url": "https://caredge.com/dealer/leif-johnson-ford--tx-austin",
+          "scope": "Buyer-submitted F-150 quotes showing dealer add-on prices and fees",
+          "note": "add-on prices and fees on buyer-submitted quotes"
+        },
+        {
+          "id": "VEH-F150-21",
+          "title": "Edmunds: 2026 Ford F-150",
+          "url": "https://www.edmunds.com/ford/f-150/",
+          "scope": "Edmunds expert rating, large-truck rank and owner rating for the 2026 F-150",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-F150-22",
+          "title": "Kelley Blue Book: 2026 Ford F-150",
+          "url": "https://www.kbb.com/ford/f150/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 F-150",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-F150-23",
+          "title": "U.S. News: 2026 Ford F-150",
+          "url": "https://cars.usnews.com/cars-trucks/ford/f-150",
+          "scope": "U.S. News overall score and full-size pickup rank for the 2026 F-150",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-F150-24",
+          "title": "J.D. Power: 2026 Ford F-150",
+          "url": "https://www.jdpower.com/cars/2026/ford/f-150",
+          "scope": "J.D. Power consumer rating and category scores for the 2026 F-150",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-F150-25",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Toyota Tundra as KBB 2026 best resale value full-size pickup",
+          "note": "Tundra resale award"
+        },
+        {
+          "id": "VEH-F150-26",
+          "title": "SlashGear: J.D. Power’s most dependable large light-duty pickup",
+          "url": "https://www.slashgear.com/2118525/jd-power-most-dependable-large-light-duty-pickup-ram-1500",
+          "scope": "Ram 1500 ranked first among large light-duty pickups in the J.D. Power 2026 dependability study",
+          "note": "Ram 1500 dependability ranking"
+        },
+        {
+          "id": "VEH-F150-27",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash-test ratings, rollover risk and recall count for the 2026 F-150 by cab, from the NHTSA ratings API",
+          "note": "crash-test ratings"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-ford-f-150-xlt",
+        "width": 1920,
+        "height": 1293,
+        "alt": "Black Ford F-150 XLT SuperCrew, front three-quarter view",
+        "caption": "A 2025 F-150 XLT SuperCrew, the trim we’d buy. The 2026 has the same body.",
+        "author": "Kevauto",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Ford_F-150_XLT_Super_Crew,_front_NYIAS_2025.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "pros": [
+        "A trim, cab and engine for nearly any job",
+        "Real room to negotiate on XLT and Lariat",
+        "Holds its value better than the average vehicle",
+        "Top overall crash rating"
+      ],
+      "cons": [
+        "Options push a $45,000 XLT past $60,000",
+        "Owner complaints about harsh 10-speed shifts",
+        "Long recall list on 2021 and 2022 trucks",
+        "The hybrid loses value faster"
+      ],
+      "rivals": [
+        "The Chevrolet Silverado 1500, GMC Sierra 1500, Ram 1500 and Toyota Tundra. The Tundra won Kelley Blue Book’s 2026 resale value award for full-size pickups, and the Ram 1500 ranked first among large light-duty pickups in J.D. Power’s 2026 dependability study. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "intro": "We haven’t road-tested the F-150 for this page. These are the publishers that have, each on its own scale.",
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/ford/f-150/",
+            "value": 8.0,
+            "scale": 10,
+            "display": "8.0",
+            "detail": "Ranked 1st of 5 large trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/ford/f150/2026/",
+            "value": 4.7,
+            "scale": 5,
+            "display": "4.7",
+            "detail": "Owners give it 4.2 out of 5"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/ford/f-150",
+            "value": 9.6,
+            "scale": 10,
+            "display": "9.6",
+            "detail": "Ranked 1st of 6 full-size pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/ford/f-150",
+            "value": 83,
+            "scale": 100,
+            "display": "83",
+            "detail": "From verified owner surveys"
+          }
+        ],
+        "note": "Scores for the 2026 F-150 as published on November 15, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 F-150 SuperCrew 4x4",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "19.1% rollover risk"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2021",
+            "value": 29
+          },
+          {
+            "label": "2022",
+            "value": 23
+          },
+          {
+            "label": "2023",
+            "value": 13
+          },
+          {
+            "label": "2024",
+            "value": 11
+          },
+          {
+            "label": "2025",
+            "value": 14
+          },
+          {
+            "label": "2026",
+            "value": 8
+          }
+        ],
+        "reliability": "Consumer Reports predicts <a href=\"https://www.consumerreports.org/cars/ford/f-150/2026/reliability\" rel=\"noopener\">about average reliability</a> for the 2026.",
+        "note": "Crash ratings and recall counts from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 15, 2026. SuperCab and Regular Cab trucks score 4 stars for the driver in the frontal test and 5 overall. Check any used truck’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-ford-f-150-rear",
+          "width": 1500,
+          "height": 1000,
+          "alt": "Silver Ford F-150 XLT 4x4 SuperCrew, rear view showing the bed and tailgate",
+          "caption": "XLT, rear",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_F-150_XLT_rear_view.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-ford-f-150-lariat",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Black Ford F-150 Lariat SuperCrew with chrome grille, front view",
+          "caption": "Lariat",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_F-150_Lariat_front_view.jpg",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "file": "vehicle-ford-f-150-cluster",
+          "width": 1920,
+          "height": 1033,
+          "alt": "Ford F-150 12-inch digital instrument cluster in off-road drive mode",
+          "caption": "12-inch digital cluster",
+          "author": "McChizzle",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Ford_F-150_12-inch_Cluster-Off-Road_drive_mode.jpg",
+          "license": "public domain"
+        },
+        {
+          "file": "vehicle-ford-f-150-raptor",
+          "width": 1920,
+          "height": 1728,
+          "alt": "2026 Ford F-150 Raptor at an auto show, front view",
+          "caption": "2026 Raptor",
+          "author": "Bull-Doser",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Ford_F-150_Raptor_@_2026_Montr%C3%A9al_Auto_Show.jpeg",
+          "license": "public domain"
+        }
+      ]
+    }
+  ]
+}

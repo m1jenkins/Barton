@@ -37,5 +37,9 @@ All AI agents editing files in this codebase must strictly adhere to the followi
 - **Buttons** are pills: navy filled, navy outline, or white on blue. **Cards** are tinted and borderless with 24–28px corners.
 - **Form fields** share one style: white, 1px `#C3CBD6` border, 12px corners, 52px tall, sign-blue border plus a soft ring on focus, SemiBold labels, a drawn chevron on selects. Reuse it for any new field.
 
+## 6. No Accent Rule Down the Side of a Call-Out
+- **Directive**: Do not give call-out or summary boxes a colored line on their left edge. The owner called it an AI giveaway on November 15, 2026.
+- **Instead**: a plain tinted card with 24px corners (`.highlight-box` in `buying/resources.css`), or plain text.
+
 ---
 *Failure to follow these rules results in a cheap, template-like user interface. Elevate the design by keeping it clean, minimal, and premium.*

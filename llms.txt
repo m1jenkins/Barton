@@ -46,6 +46,10 @@ Sitemap: https://www.steermeright.com/sitemap.xml
 - [New Car Buying Service](https://www.steermeright.com/new-car-buying-service.html): Written out-the-door offers on a new car, with markups and add-ons questioned.
 - [Car Buying Help](https://www.steermeright.com/car-buying-help.html): Free tools, a free question, or hand the dealers to us.
 
+## Price guides by model
+MSRP, incentives and discount estimates are dated on each page and change often.
+- [Ford F-150 Price](https://www.steermeright.com/ford-f-150-price.html): MSRP by trim for 2026 and 2027, how far under sticker to aim, Ford’s current offers, and new versus used versus CPO (checked 2026-11-15).
+
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.
 - [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and six cities with local numbers.
