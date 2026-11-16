@@ -197,10 +197,6 @@
 .dr .vp-trims__price { width:36%; white-space:nowrap; }
 .dr .vp-trims__price > span:first-child { display:inline-block; width:66px; font-weight:600; }
 .dr .vp-trims__price .vp-meter { display:inline-block; width:calc(100% - 78px); margin-left:8px; vertical-align:middle; }
-.dr .vp-trims__room { white-space:nowrap; }
-.dr .vp-pips { display:inline-flex; gap:3px; margin-right:10px; vertical-align:1px; }
-.dr .vp-pips i { width:8px; height:8px; background:var(--line); }
-.dr .vp-pips i.on { background:var(--ink); }
 .dr .vp-tag { display:inline-block; margin-left:8px; padding:1px 7px; border:1px solid var(--field,#C3CBD6); border-radius:4px; font-size:11px; line-height:1.5; font-weight:600; white-space:nowrap; vertical-align:2px; }
 .dr .vp-tag::before { content:""; display:inline-block; width:6px; height:6px; margin-right:6px; border-radius:50%; background:var(--sign); vertical-align:1px; }
 
@@ -359,8 +355,7 @@
   .dr .vp-trims tbody th { font-size:15px; }
   .dr .vp-trims__price { width:auto; }
   .dr .vp-trims__price > span:first-child { width:auto; }
-  .dr .vp-trims__price .vp-meter, .dr .vp-pips { display:none; }
-  .dr .vp-trims__room { white-space:normal; }
+  .dr .vp-trims__price .vp-meter { display:none; }
   .dr .vp-tag { display:table; margin:4px 0 2px; }
   .dr .vp-sticker { padding:18px 18px 4px; }
   .dr .vp-sticker table { font-size:14px; }

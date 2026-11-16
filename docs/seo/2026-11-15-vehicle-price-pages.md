@@ -17,7 +17,7 @@ npm run build:vehicles   # after changing the data, the script, price-guide.css,
 npm run check:vehicles   # CI runs this; fails when the files drift
 ```
 
-A price cell, engine, "room to negotiate" or incentive end date left empty in the data renders as an "Ask us" link to the pricing page. Use that instead of guessing.
+A price cell, engine or incentive end date left empty in the data renders as an "Ask us" link to the pricing page. Use that instead of guessing.
 
 ## Page sections
 
@@ -69,7 +69,7 @@ Mason asked for "the exact same page as the Ford F-150 but for the 2026/27 Toyot
 
 - **Safety uses IIHS grades.** NHTSA had not crash-tested the 2026 or 2027 RAV4 on November 15, 2026 (ratings API vehicle IDs 22557 to 22559 and 22738 to 22740 read "Not Rated"). The renderer now takes `safety.outOf` (a count of IIHS ratings at Good, shown as squares) and a `grade` per row in place of `stars`. Switch back to NHTSA stars when NHTSA publishes them.
 - **No cash back.** Toyota lists none on the RAV4, so the cash-or-0% block compares Toyota's 4.99% with Experian's average rate instead.
-- **2027 prices are partly secondary.** Toyota confirmed only the LE ($32,300) and plug-in SE ($42,100); the rest come from Kelley Blue Book's November 6 report because Toyota's pricing PDF refused downloads. Replace them with Toyota's figures once toyota.com shows the 2027. Mason had the note under the trims table removed on November 15, 2026 (too long), so the page says this only through its sources list; `trims.note` is optional.
+- **2027 prices are partly secondary.** Toyota confirmed only the LE ($32,300) and plug-in SE ($42,100); the rest come from Kelley Blue Book's November 6 report because Toyota's pricing PDF refused downloads. Replace them with Toyota's figures once toyota.com shows the 2027. Mason had the notes under both trims tables removed on November 15, 2026 (too long), so the page says this only through its sources list. He also dropped the trims table's "Room to negotiate" column the same day because it repeated the discount table under "What to pay"; discounts by trim live only there.
 - **Photos.** The two XLE Premium photos carried a dealer's plate frames; the frames are blurred and the credits say so.
 
 Open items for Mason, as for the F-150: the pick (2026 XLE Premium, AWD if you see snow), "skip the plug-in unless you can charge at home", "buy new, as a 2026" and the 2023 floor for used were written from the research. The discount ranges lean on TrueCar's November averages, Edmunds' Texas-based suggested prices and a small CarWhere sample (55 buyers); there is no TrueCar figure for the plug-in. Offers all end November 30, 2026.

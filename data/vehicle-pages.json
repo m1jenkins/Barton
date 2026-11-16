@@ -54,8 +54,6 @@
               40155
             ],
             "engine": "2.7L EcoBoost V6; 5.0L V8 and 3.5L EcoBoost optional",
-            "room": "Thin. Dealer invoice sits about 4.5% under MSRP.",
-            "roomLabel": "Thin",
             "short": "Work truck"
           },
           {
@@ -66,8 +64,6 @@
               42675
             ],
             "engine": "2.7L EcoBoost V6; 5.0L V8 and PowerBoost hybrid optional",
-            "room": "Thin, about the same as XL.",
-            "roomLabel": "Thin",
             "short": "Sportier XL"
           },
           {
@@ -78,8 +74,6 @@
               46525
             ],
             "engine": "2.7L EcoBoost V6; 5.0L V8, 3.5L EcoBoost and hybrid optional",
-            "room": "Good, and Ford’s largest cash offer is on this trim.",
-            "roomLabel": "Good",
             "short": "The volume trim",
             "pick": true
           },
@@ -91,8 +85,6 @@
               57730
             ],
             "engine": "3.5L EcoBoost V6; 5.0L V8 and hybrid optional",
-            "room": "Good. The best-supported discounts are here and on XLT.",
-            "roomLabel": "Good",
             "short": "Leather and tech"
           },
           {
@@ -103,8 +95,6 @@
               59975
             ],
             "engine": "3.5L EcoBoost V6; 5.0L V8 optional",
-            "room": "Moderate.",
-            "roomLabel": "Moderate",
             "short": "Off-road hardware"
           },
           {
@@ -115,8 +105,6 @@
               66155
             ],
             "engine": "3.5L EcoBoost V6; hybrid optional",
-            "room": "Moderate to good on trucks that have sat.",
-            "roomLabel": "Moderate",
             "short": "Western luxury"
           },
           {
@@ -127,8 +115,6 @@
               69130
             ],
             "engine": "3.5L EcoBoost V6; hybrid optional",
-            "room": "Moderate.",
-            "roomLabel": "Moderate",
             "short": "Top luxury"
           },
           {
@@ -139,12 +125,9 @@
               75325
             ],
             "engine": "3.5L High Output EcoBoost V6",
-            "room": "Little to none. Expect sticker, and markups on the Raptor R.",
-            "roomLabel": "Little to none",
             "short": "Desert runner"
           }
         ],
-        "note": "Starting MSRP from Ford’s website on November 15, 2026, for the least expensive cab and drive combination of each trim. Prices exclude the $2,795 destination charge, taxes and dealer fees. Standard engines are for 2026, as listed by Cars.com; for 2027 a 3.0L EcoBoost replaces the 2.7L and becomes standard on Lariat. We could not confirm a published price for the Lobo package or the Raptor R, so <a href=\"/schedule.html\">ask us</a> before relying on one.",
         "after": [
           "For 2027, XL, STX and XLT went up. Lariat, Tremor and Raptor went down, but the cheaper Tremor and Raptor lost equipment to get there, so compare window stickers line by line."
         ]
@@ -155,7 +138,7 @@
       ],
       "pay": {
         "intro": [
-          "Ford dealers have more trucks than they want. At the end of September they held 101 days of supply against 82 for the industry, and the 2027s have arrived since, so the 2026s on the lot need to go. TrueCar’s November figures show the average 2026 XLT selling 5.6% under MSRP and the average Lariat 6.5% under."
+          "Ford dealers have more trucks than they want. At the end of September they held 101 days of supply against 82 for the industry, and the 2027s have arrived since, so the 2026s on the lot need to go. TrueCar’s November figures show the average 2026 XLT selling 5.6% under MSRP and the average Lariat 6.5% under. Dealer invoice on an XL sits about 4.5% under MSRP, so expect the least room on the cheapest trucks."
         ],
         "rows": [
           {
@@ -870,9 +853,7 @@
               31900,
               32300
             ],
-            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
-            "room": "Thin. TrueCar’s average sits 1.6% under MSRP.",
-            "roomLabel": "Thin"
+            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD"
           },
           {
             "name": "SE",
@@ -882,9 +863,7 @@
               34700,
               35100
             ],
-            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
-            "room": "Thin, about 1.5% under on TrueCar’s average.",
-            "roomLabel": "Thin"
+            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD"
           },
           {
             "name": "XLE Premium",
@@ -895,8 +874,6 @@
               36500
             ],
             "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
-            "room": "Thin. The most popular trim; TrueCar’s average is 0.9% under.",
-            "roomLabel": "Thin",
             "pick": true
           },
           {
@@ -907,9 +884,7 @@
               39900,
               40655
             ],
-            "engine": "2.5L hybrid, 236 hp, AWD only",
-            "room": "Little to none. Sells at about sticker.",
-            "roomLabel": "Little to none"
+            "engine": "2.5L hybrid, 236 hp, AWD only"
           },
           {
             "name": "XSE",
@@ -919,9 +894,7 @@
               41300,
               41900
             ],
-            "engine": "2.5L hybrid, 236 hp, AWD only",
-            "room": "Little to none. TrueCar’s average is just above sticker.",
-            "roomLabel": "Little to none"
+            "engine": "2.5L hybrid, 236 hp, AWD only"
           },
           {
             "name": "Limited",
@@ -931,9 +904,7 @@
               43300,
               43900
             ],
-            "engine": "2.5L hybrid, 236 hp, AWD only",
-            "room": "Little to none. Sells at about sticker.",
-            "roomLabel": "Little to none"
+            "engine": "2.5L hybrid, 236 hp, AWD only"
           },
           {
             "name": "SE Plug-in",
@@ -943,9 +914,7 @@
               41500,
               42100
             ],
-            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
-            "room": "Moderate. Edmunds suggests about 3% under.",
-            "roomLabel": "Moderate"
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD"
           },
           {
             "name": "Woodland Plug-in",
@@ -955,9 +924,7 @@
               45300,
               46055
             ],
-            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
-            "room": "Moderate.",
-            "roomLabel": "Moderate"
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD"
           },
           {
             "name": "XSE Plug-in",
@@ -967,9 +934,7 @@
               47200,
               47800
             ],
-            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
-            "room": "Moderate.",
-            "roomLabel": "Moderate"
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD"
           },
           {
             "name": "GR Sport",
@@ -979,9 +944,7 @@
               48500,
               49100
             ],
-            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
-            "room": "Thin. Toyota leaves it out of its plug-in offers.",
-            "roomLabel": "Thin"
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD"
           }
         ],
         "after": [
