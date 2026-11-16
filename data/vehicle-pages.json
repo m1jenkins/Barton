@@ -31,7 +31,7 @@
         {
           "label": "Trim we’d buy",
           "value": "2026 XLT",
-          "note": "The biggest incentive, the best-documented discount and the easiest truck to resell."
+          "note": "It gets Ford’s biggest cash offer, and it’s the easiest F-150 to resell."
         },
         {
           "label": "New, used or CPO",
@@ -39,7 +39,7 @@
           "note": "The outgoing model year carries the offers, and F-150s hold their value too well for used to save much."
         }
       ],
-      "summary": "Two model years of F-150 are on sale at once, and the 2026 is the one to price. It carries Ford’s year-end offers, and published sale prices put a typical XLT or Lariat about 5–7% under MSRP before those offers. The 2027 has just arrived with new prices and no incentives. On a base 2026 XLT, a 6% discount plus Ford’s $4,500 cash takes roughly $7,300 off a $47,490 sticker. These are estimates from published data, not a promise, and every figure here was checked on November 15, 2026.",
+      "summary": "Reviewers rank the F-150 first among full-size pickups, and right now the one to price is a 2026 XLT. Ford has $4,500 cash on it through November 30 in most regions. Published sale prices put the average XLT or Lariat 5–7% under MSRP before that cash, so on a base XLT the two together take roughly $7,300 off a $47,490 sticker. Watch the options, though. A typical XLT SuperCrew 4x4 on a dealer lot stickers in the mid-$50,000s or higher. The new 2027 has no incentives yet. These are estimates from published data, not a promise, checked on November 15, 2026.",
       "trims": {
         "columns": [
           "2026 MSRP",
@@ -152,12 +152,12 @@
         ]
       },
       "pick": [
-        "<strong>A 2026 XLT SuperCrew 4x4.</strong> It has Ford’s biggest public offer, one of the two deepest-discounting trims, and about half of all used F-150s for sale are XLTs, so it is the easiest to sell later.",
-        "Want leather? Step to the Lariat, which discounts about as well. We’d skip the PowerBoost hybrid unless you need its onboard generator: it loses value faster, and Consumer Reports ranked it among its least reliable vehicles in 2022 and 2023."
+        "<strong>A 2026 XLT SuperCrew 4x4.</strong> At MSRP it costs $2,840 more than an STX, but in most regions Ford’s $4,500 cash applies to the XLT alone, so it can come out cheaper. It also opens up the options most buyers want, such as a 360-degree camera, heated seats and BlueCruise (hands-free driving on mapped highways). And about half of all used F-150s for sale are XLTs, which makes it the easiest one to sell later.",
+        "If you want leather, cooled seats and the 360 camera as standard, the Lariat discounts about as well, though it starts $14,865 higher. We’d skip the PowerBoost hybrid unless you’ll use its onboard generator (outlets in the bed that run tools and appliances). It loses value faster than the gas truck, and Consumer Reports ranked it among its least reliable vehicles in 2022 and 2023."
       ],
       "pay": {
         "intro": [
-          "TrueCar’s November figures show the average 2026 XLT selling 5.6% under MSRP and the average Lariat 6.5% under. Ford dealers are also holding 101 days of inventory against 82 for the industry, and the 2027s have just arrived."
+          "Ford dealers have more trucks than they want. At the end of September they held 101 days of supply against 82 for the industry, and the 2027s have arrived since, so the 2026s on the lot need to go. TrueCar’s November figures show the average 2026 XLT selling 5.6% under MSRP and the average Lariat 6.5% under."
         ],
         "rows": [
           {
@@ -319,7 +319,7 @@
       },
       "condition": {
         "intro": [
-          "<strong>Our take: buy new, and buy the 2026.</strong> F-150s hold their value too well for a used one to save much, and used loans cost far more."
+          "<strong>Our take: buy new, and buy the 2026.</strong> F-150s hold their value too well for a used one to save much, and used-loan rates run nearly 5 points higher than new."
         ],
         "rows": [
           {
@@ -417,6 +417,10 @@
       ],
       "faq": [
         [
+          "Is the Ford F-150 a good truck?",
+          "The reviewers think so. Edmunds rates the 2026 an 8.0 out of 10 and first of five large trucks, and U.S. News ranks it first of six full-size pickups. We haven’t road-tested it for this page. The weak spots are owner complaints about harsh shifts from the 10-speed automatic and a long recall list on 2021 and 2022 trucks."
+        ],
+        [
           "How much under MSRP can you get a Ford F-150?",
           "On a 2026 XLT or Lariat, 5–7% under MSRP is a fair deal before Ford’s cash and about 10% is a strong one. XL and STX have less room, around 2–3%. Raptors sell at about sticker. These are our estimates from published sale prices checked on November 15, 2026, not a promise."
         ],
@@ -438,7 +442,7 @@
         ],
         [
           "Is a used F-150 a better deal than new?",
-          "Not by much right now. F-150s hold their value, used-car loan rates are much higher than new, and the new 2026 has 0% financing or cash back. A Gold Certified 2023 or 2024 is the used route we’d take."
+          "Not by much right now. A three-year-old F-150 has lost about 19% of its value, against 25% for the average vehicle, and used loans averaged 11.19% in the second quarter of 2026 against 6.35% for new. The new 2026 also has 0% financing or cash back. A Gold Certified 2023 or 2024 is the used route we’d take."
         ]
       ],
       "sources": [
@@ -644,19 +648,18 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       },
       "pros": [
-        "A trim, cab and engine for nearly any job",
-        "Real room to negotiate on XLT and Lariat",
-        "Holds its value better than the average vehicle",
-        "Top overall crash rating"
+        "XLT and Lariat sell 5–7% under sticker",
+        "Loses less value than the average vehicle",
+        "Eight trims, from work truck to Raptor",
+        "Five-star overall NHTSA crash rating"
       ],
       "cons": [
         "Options push a $45,000 XLT past $60,000",
-        "Owner complaints about harsh 10-speed shifts",
-        "Long recall list on 2021 and 2022 trucks",
-        "The hybrid loses value faster"
+        "Owners report harsh shifts from the 10-speed",
+        "29 recalls on 2021 trucks, 23 on 2022"
       ],
       "rivals": [
-        "The Chevrolet Silverado 1500, GMC Sierra 1500, Ram 1500 and Toyota Tundra. The Tundra won Kelley Blue Book’s 2026 resale value award for full-size pickups, and the Ram 1500 ranked first among large light-duty pickups in J.D. Power’s 2026 dependability study. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+        "Get quotes on the Ram 1500 and Toyota Tundra if long-term ownership matters more to you than the F-150’s range of trims. The Ram ranked first among large light-duty pickups in J.D. Power’s 2026 dependability study, and the Tundra won Kelley Blue Book’s 2026 resale value award for full-size pickups. The Chevrolet Silverado 1500 and GMC Sierra 1500 are the other two in the class. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
       ],
       "scores": {
         "intro": "We haven’t road-tested the F-150 for this page. These are the publishers that have, each on its own scale.",
