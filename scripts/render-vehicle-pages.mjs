@@ -31,15 +31,17 @@ ${rows.map(([first, ...rest]) => `<tr><th scope="row">${first}</th>${rest.map(ce
 </div>`;
 }
 
-// Photos are licensed (Wikimedia Commons). Each one is credited by name in the line under the gallery.
-const credit = (label, image) => `<span>${label}: <a href="${image.sourceUrl}" rel="noopener">${image.author}</a>, ${image.licenseUrl ? `<a href="${image.licenseUrl}" rel="noopener">${image.license}</a>` : image.license}${image.note ? `, ${image.note}` : ''}</span>`;
+// Photos are licensed (Wikimedia Commons). Each one is credited by name in the folded "Photo credits" line at the foot of the page.
+const credit = (label, image) => `<li>${label}: <a href="${image.sourceUrl}" rel="noopener">${image.author}</a>, ${image.licenseUrl ? `<a href="${image.licenseUrl}" rel="noopener">${image.license}</a>` : image.license}${image.note ? `, ${image.note}` : ''}</li>`;
 const picture = (image, widths, sizes, priority) => `<picture>${['avif', 'webp'].map(type => `<source type="image/${type}" srcset="${widths.map(width => `/assets/external/optimized/${image.file}-${width}.${type} ${width}w`).join(', ')}" sizes="${sizes}">`).join('')}<img src="/assets/external/source/${image.file}-original.jpg" alt="${image.alt}" width="${image.width}" height="${image.height}" decoding="async"${priority ? ' fetchpriority="high"' : ' loading="lazy"'}></picture>`;
 // One large photo with the smaller ones stacked beside it.
 const gallery = (main, rest) => `<div class="vp-gallery">
 <figure class="vp-gallery__main">${picture(main, [640, 960, 1600], '(max-width: 1000px) 94vw, 680px', true)}<figcaption>${main.caption}</figcaption></figure>
 ${rest.map(item => `<figure>${picture(item, [480, 960], '(max-width: 1000px) 24vw, 180px', false)}<figcaption>${item.caption}</figcaption></figure>`).join('\n')}
-</div>
-<p class="vp-credits">Photos. ${[credit('Main', main), ...rest.map(item => credit(item.caption, item))].join(' · ')}</p>`;
+</div>`;
+const credits = (main, rest) => `<details class="vp-credits"><summary>Photo credits</summary>
+<ul>${[credit('Main photo', main), ...rest.map(item => credit(item.caption, item))].join('')}</ul>
+</details>`;
 
 const percent = (value, max) => `${Math.round((value / max) * 1000) / 10}%`;
 const stars = count => `<span class="vp-stars" role="img" aria-label="${count} out of 5 stars" style="--n:${count}"></span>`;
@@ -281,7 +283,8 @@ ${faq([
 ${vehicle.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source.title}</a>${source.note ? `: ${source.note}` : ''}</li>`).join('\n')}
 </ul>
 </details>
-<p>Related: <a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>.</p></section>
+<p>Related: <a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>.</p>
+${credits(vehicle.photo, vehicle.gallery)}</section>
 </div>
 </div>
 </div>
