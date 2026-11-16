@@ -44,9 +44,8 @@
           "wordmark": true
         },
         {
-          "label": "Reddit Sentiment Index",
+          "label": "Reddit’s pick",
           "section": "reddit",
-          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>48 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>58</span>",
           "logo": "reddit-snoo",
           "logoSize": "large"
         }

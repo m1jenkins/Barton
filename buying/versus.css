@@ -15,6 +15,9 @@
 .dr .vs-strip-pair { display:flex; align-items:center; gap:7px; font-size:22px; white-space:nowrap; }
 .dr .vs-strip-pair .vs-key + * { margin-left:0; }
 .dr .vs-strip-pair .vs-key:not(:first-child) { margin-left:6px; }
+.dr .vs-strip-pick { display:flex; flex-direction:column; gap:5px; }
+.dr .vs-strip-pick__car { display:flex; align-items:center; gap:7px; font-size:22px; white-space:nowrap; }
+.dr .vs-strip-pick small { font-size:13px; font-weight:400; letter-spacing:0; line-height:1.3; color:var(--muted); }
 
 /* Two photos side by side, one per car. */
 .dr .vs-photos { display:grid; grid-template-columns:1fr 1fr; gap:4px; box-shadow:0 28px 48px -28px rgba(14,27,46,.5); }
@@ -158,6 +161,8 @@
   .dr .vs-photos figcaption { padding:28px 10px 9px; font-size:12px; }
   .dr .vs-photos figcaption strong { font-size:14px; }
   .dr .vs-strip-pair { font-size:19px; }
+  .dr .vs-strip-pick { align-items:flex-end; text-align:right; }
+  .dr .vs-strip-pick__car { font-size:19px; }
   .dr .vs-board { font-size:14px; }
   .dr .vs-board :is(th,td) { padding:11px 10px 11px 0; }
   .dr .vs-targets tbody td strong { font-size:16px; white-space:nowrap; }
@@ -221,4 +226,5 @@
 /* Hero strip: three scores (two reviews and the Reddit index), one row on desktop. */
 @media (min-width:761px) {
   .dr .vs .vp-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .dr .vs .vp-strip a { justify-content:flex-start; }
 }
