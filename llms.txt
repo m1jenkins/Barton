@@ -49,6 +49,7 @@ Sitemap: https://www.steermeright.com/sitemap.xml
 ## Price guides by model
 MSRP, incentives and discount estimates are dated on each page and change often.
 - [Ford F-150 Price](https://www.steermeright.com/ford-f-150-price.html): MSRP by trim for 2026 and 2027, how far under sticker to aim, Ford’s current offers, and new versus used versus CPO (checked 2026-11-15).
+- [Toyota RAV4 Price](https://www.steermeright.com/toyota-rav4-price.html): MSRP by trim for the 2026 and 2027 hybrid and plug-in hybrid, how close to sticker dealers sell it, Toyota’s current offers, and new versus used versus CPO (checked 2026-11-15).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

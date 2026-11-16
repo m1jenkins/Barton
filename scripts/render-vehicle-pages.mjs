@@ -43,6 +43,11 @@ ${rest.map(item => `<figure>${picture(item, [480, 960], '(max-width: 1000px) 24v
 
 const percent = (value, max) => `${Math.round((value / max) * 1000) / 10}%`;
 const stars = count => `<span class="vp-stars" role="img" aria-label="${count} out of 5 stars" style="--n:${count}"></span>`;
+// IIHS grades a test Good, Acceptable, Marginal or Poor; the chip shows the letter and the word sits beside it.
+const grade = word => `<span class="vp-grade vp-grade--${word.toLowerCase()}" aria-hidden="true">${word[0]}</span><span class="vp-grade__word">${word}</span>`;
+// A safety rating is NHTSA stars (overall out of 5) or, before NHTSA has tested a car, a count of IIHS tests rated Good.
+const safetyScore = safety => safety.outOf ? `${safety.overall}<small>/${safety.outOf}</small>` : '';
+const safetyMark = safety => safety.outOf ? `<span class="vp-tally" role="img" aria-label="${safety.overall} of ${safety.outOf} rated Good">${Array.from({ length: safety.outOf }, (_, i) => `<i${i < safety.overall ? ' class="on"' : ''}></i>`).join('')}</span>` : stars(safety.overall);
 const meter = (value, max) => `<span class="vp-meter" aria-hidden="true"><span style="--w:${percent(value, max)}"></span></span>`;
 // Horizontal bars: label, a bar scaled to the largest value, and the value printed beside it.
 const bars = rows => { const max = Math.max(...rows.map(row => row.value)); return `<ul class="vp-bars" role="list">
@@ -75,6 +80,23 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
 <a class="vp-plan__button" href="${card.href}" data-cta-location="${location}">Get ${card.name}</a>
 </article>`;
 
+// Cash or 0%: how much less each Ford deal costs than full price at the average new-car rate, from the loan inputs in the data.
+// Copied from Aave's "Unmatched savings rates" card (Mobbin): text on the left, one pill bar per option with its figure at the end.
+const totalPaid = (amount, apr, months) => { if (!apr) return amount; const r = apr / 1200; return (amount * r / (1 - (1 + r) ** -months)) * months; };
+const round50 = value => Math.round(value / 50) * 50;
+function cashOrRate(choice) {
+  const base = totalPaid(choice.price, choice.baseRate, choice.months);
+  const rows = choice.options.map(option => ({ ...option, saved: round50(base - totalPaid(choice.price - option.cash, option.rate, choice.months)) }));
+  const best = Math.max(...rows.map(row => row.saved));
+  const gap = dollars(Math.round((rows[0].saved - rows[rows.length - 1].saved) / 100) * 100);
+  return `<div class="vp-cash">
+<div class="vp-cash__copy"><p class="vp-cash__eyebrow">${choice.eyebrow}</p><h3>${choice.title.replace('{gap}', gap)}</h3><p>${choice.text}</p></div>
+<ul class="vp-cash__bars" role="list">
+${rows.map(row => `<li${row.saved === best ? ' class="vp-cash__best"' : ''}><p class="vp-cash__label"><strong>${row.name}</strong> ${row.detail}</p><p class="vp-cash__row"><span class="vp-cash__bar" aria-hidden="true" style="--w:${percent(row.saved, best)}"></span><span class="vp-cash__value">${dollars(row.saved)}<small> less</small></span></p></li>`).join('\n')}
+</ul>
+</div>`;
+}
+
 function vehiclePage(vehicle, updated) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
@@ -96,7 +118,7 @@ function vehiclePage(vehicle, updated) {
 ${gallery(vehicle.photo, vehicle.gallery)}
 <ul class="vp-strip" role="list">
 ${vehicle.scores.cards.map(card => `<li><a href="#reviews"><span class="vp-strip__source">${card.source}</span><span class="vp-strip__score">${card.display}<small>/${card.scale}</small></span></a></li>`).join('\n')}
-<li><a href="#safety"><span class="vp-strip__source">${vehicle.safety.label}</span>${stars(vehicle.safety.overall)}</a></li>
+<li><a href="#safety"><span class="vp-strip__source">${vehicle.safety.label}</span>${vehicle.safety.outOf ? `<span class="vp-strip__score">${safetyScore(vehicle.safety)}</span>` : stars(vehicle.safety.overall)}</a></li>
 </ul>
 </div>
 
@@ -128,9 +150,9 @@ ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${c
 <section id="safety" class="vp-section">
 <h2>Safety report card</h2>
 <div class="vp-safety">
-<div class="vp-safety__overall"><p class="vp-safety__score">${vehicle.safety.overall}<span> out of 5</span></p>${stars(vehicle.safety.overall)}<p>${vehicle.safety.label}</p><p class="vp-safety__vehicle">${vehicle.safety.vehicle}</p></div>
+<div class="vp-safety__overall"><p class="vp-safety__score">${vehicle.safety.overall}<span> ${vehicle.safety.outOf ? `of ${vehicle.safety.outOf}` : 'out of 5'}</span></p>${safetyMark(vehicle.safety)}<p>${vehicle.safety.label}</p><p class="vp-safety__vehicle">${vehicle.safety.vehicle}</p></div>
 <dl class="vp-safety__tests">
-${vehicle.safety.rows.map(row => `<div><dt>${row.label}</dt><dd>${stars(row.stars)}${row.note ? `<span>${row.note}</span>` : ''}</dd></div>`).join('\n')}
+${vehicle.safety.rows.map(row => `<div><dt>${row.label}</dt><dd>${row.grade ? `<span class="vp-grade__pair">${grade(row.grade)}</span>` : stars(row.stars)}${row.note ? `<span>${row.note}</span>` : ''}</dd></div>`).join('\n')}
 </dl>
 </div>
 <div class="vp-recalls"><h3>${vehicle.safety.recallsTitle}</h3>
@@ -139,7 +161,7 @@ ${columns(vehicle.safety.recalls)}
 <p class="vp-note">${vehicle.safety.note}</p>
 </section>
 
-<aside class="vp-cta" aria-label="Steer Me Right plans"><p><strong>Rather not do this yourself?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Your advisor searches, works the dealers by phone and email, negotiates and checks the fees. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p><a class="vp-cta__button" href="#plans">See the plans</a></aside>
+<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
 <section id="trims" class="vp-section">
 <h2>${vehicle.modelYear} ${name} trims and MSRP</h2>
@@ -147,7 +169,7 @@ ${vehicle.trims.intro ? `${paragraphs(vehicle.trims.intro)}\n` : ''}<table class
 <caption class="sr-only">${vehicle.modelYear} ${name} starting MSRP by trim, checked ${checked}</caption>
 <thead><tr><th scope="col">Trim</th>${vehicle.trims.columns.map(column => `<th scope="col">${column}</th>`).join('')}<th scope="col">Room to negotiate</th></tr></thead>
 <tbody>
-${vehicle.trims.rows.map(trim => `<tr><th scope="row">${trim.name}${trim.pick ? ' <span class="vp-tag">Our pick</span>' : ''}<span>${trim.short}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], topPrice)}</td><td>${dollars(trim.prices[1])}</td><td class="vp-trims__room">${room(trim.roomLabel)}</td></tr>`).join('\n')}
+${vehicle.trims.rows.map(trim => `<tr><th scope="row">${trim.name}${trim.pick ? ' <span class="vp-tag">Our pick</span>' : ''}<span>${trim.short}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], topPrice)}</td>${trim.prices.slice(1).map(price => `<td>${price ? dollars(price) : ask}</td>`).join('')}<td class="vp-trims__room">${room(trim.roomLabel)}</td></tr>`).join('\n')}
 </tbody>
 </table>
 <p class="vp-note">${vehicle.trims.note}</p>
@@ -201,11 +223,14 @@ ${planCards.map(card => planCard(card, `vehicle-${vehicle.slug.replace(/-price\.
 <section id="incentives" class="vp-section">
 <h2>${name} incentives right now</h2>
 ${paragraphs(vehicle.incentives.intro)}
-<ul class="vp-offers" role="list">
-${vehicle.incentives.cards.map(card => `<li><p class="vp-offers__big">${card.big}<span>${card.unit}</span></p><p>${card.short}</p></li>`).join('\n')}
+<ul class="vp-ic-offers" role="list">
+${vehicle.incentives.cards.map(card => `<li><p class="vp-ic-offers__label">${card.label}</p><p class="vp-ic-offers__big">${card.figure} <span>${card.word}</span></p><p class="vp-ic-offers__text">${card.text}</p></li>`).join('\n')}
 </ul>
 <p class="vp-note">${vehicle.incentives.note}</p>
-${paragraphs(vehicle.incentives.after)}
+${cashOrRate(vehicle.incentives.choice)}
+<div class="vp-ic-addons${vehicle.incentives.addons.length === 1 ? ' vp-ic-addons--one' : ''}">
+${vehicle.incentives.addons.map(card => `<article><h3>${card.title}</h3><p>${card.text}</p><p class="vp-ic-addons__foot"><span><strong>${card.figure}</strong> ${card.unit}<span>${card.detail}</span></span><a href="${card.href}">${card.link}</a></p></article>`).join('\n')}
+</div>
 <details class="vp-more"><summary>Every offer, with dates and regions</summary>
 ${table('incentive-caption', `Manufacturer offers on the ${name}, checked ${checked}`, ['Offer', 'What it is', 'Applies to', 'Ends'],
     vehicle.incentives.rows.map(row => [row.offer, row.detail, row.applies, row.ends || ask]))}

@@ -34,6 +34,7 @@ Mason asked on November 15, 2026 for the page to follow the Edmunds model page, 
 - The plan cards are the homepage's (`index.html`, `#plans`): the blue card, the dark Pro card, the steering-wheel photos, three lines each, pill buttons. Mason called the flat version "a wall of text" and asked for the homepage design. The copy is the homepage's word for word, held in `planCards` in the render script, so change both together. The buttons stay plain `/schedule.html` links with no `data-plan`.
 - The dark "Rather not do this yourself?" call-out sits after the safety section, with a "See the plans" button. Mason asked for the service to be sold higher up the page; do not move it back to the end.
 - The discount by trim is a ledger table in the same bordered box as the worked price example, the two side by side. Mason found the earlier range chart (bars on a percent axis) confusing; do not bring it back.
+- The incentives section is ruled like the rest of the review: the four offers on a two-by-two grid (label, figure in ink with its unit in sign blue, one line), the dated note with the link to Ford's offers page, then the cash-or-0% comparison and the military/college note with a figure row and "Ask us". The cash-or-0% block is a copy of Aave's "Unmatched savings rates" card from Mobbin (Mason asked for it on November 15, 2026): copy on the left, a pill bar per deal on the right with the amount at its end, the best deal in sign blue and the rest in gray. Keep "save" out of this block: `scripts/validate-site.mjs` blocks "$5,000" or "$7,000" near it as a client-savings claim, and these figures move every month. The render script works out each amount from `incentives.choice` (price, months, the average rate and each offer's rate and cash): total paid at the average rate with no offer, minus total paid on that deal, rounded to $50. Mason tried a copy of Intercom's offer and add-on cards (cream fill, yellow highlight) on November 15, 2026 and dropped it the same day for not matching the page; do not bring back the fill, the highlight or the boxed cards.
 - Every class is `vp-*` in `buying/price-guide.css`. Do not reuse `.guide-*`, `.highlight-box` or `.price-*` here.
 
 Every chart is plain HTML and CSS drawn by the generator from numbers in the data file: one hue (sign blue), each value printed beside its mark, no script. The full tables (engines by trim, every offer with dates, which route fits) and the source list sit in collapsed `<details>` so the text stays on the page for search engines without sitting in the reader's way. Keep prose to a sentence or two per section; put a number in a chart or the panel before putting it in a paragraph. A trim row with `"pick": true` gets the "Our pick" tag.
@@ -61,9 +62,20 @@ The section order follows Edmunds; the words, numbers and photo are ours or lice
 4. **Figures read through a page summary, not line by line**: the add-on examples (CarEdge dealer page) and the Raptor R markup reports (Ford Raptor Forum). The page states them loosely for that reason. Open both before tightening the wording.
 5. **Listings connector quota.** Every call returned "Monthly API quota exhausted" on November 15, with a reset around December 1. No connector data is on this page, and a paid car search before the reset will hit the same error.
 
+## Toyota RAV4 (added November 15, 2026)
+
+Mason asked for "the exact same page as the Ford F-150 but for the 2026/27 Toyota RAV4". `toyota-rav4-price.html` uses the same template and data shape, with these differences:
+
+- **Safety uses IIHS grades.** NHTSA had not crash-tested the 2026 or 2027 RAV4 on November 15, 2026 (ratings API vehicle IDs 22557 to 22559 and 22738 to 22740 read "Not Rated"). The renderer now takes `safety.outOf` (a count of IIHS ratings at Good, shown as squares) and a `grade` per row in place of `stars`. Switch back to NHTSA stars when NHTSA publishes them.
+- **No cash back.** Toyota lists none on the RAV4, so the cash-or-0% block compares Toyota's 4.99% with Experian's average rate instead.
+- **2027 prices are partly secondary.** Toyota confirmed only the LE ($32,300) and plug-in SE ($42,100); the rest come from Kelley Blue Book's November 6 report because Toyota's pricing PDF refused downloads. Replace them with Toyota's figures once toyota.com shows the 2027.
+- **Photos.** The two XLE Premium photos carried a dealer's plate frames; the frames are blurred and the credits say so.
+
+Open items for Mason, as for the F-150: the pick (2026 XLE Premium, AWD if you see snow), "skip the plug-in unless you can charge at home", "buy new, as a 2026" and the 2023 floor for used were written from the research. The discount ranges lean on TrueCar's November averages, Edmunds' Texas-based suggested prices and a small CarWhere sample (55 buyers); there is no TrueCar figure for the plug-in. Offers all end November 30, 2026.
+
 ## Maintenance
 
-- **Monthly**: incentives table, the incentives tile, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.
+- **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.
 - **At model-year changeover**: the trims table columns, `modelYear`, the short answer and the 2026-versus-2027 question.
 - The claim row expires 2026-12-15.
 

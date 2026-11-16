@@ -183,7 +183,7 @@
             "why": "Sells at about sticker. Buyers report Raptor R markups of $5,000 and up."
           }
         ],
-        "note": "Dealer discount off MSRP on a 2026 F-150, before Ford’s cash offers. Our estimate from TrueCar’s average sale prices, published dealer invoice figures and buyer-reported deals, checked November 15, 2026. The published averages do not say whether Ford’s cash is already inside them, so count the cash as extra only when the dealer’s written quote shows the discount and the rebate on separate lines.",
+        "note": "Checked November 15, 2026.",
         "after": [
           "Not sure what a specific truck should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
         ],
@@ -208,7 +208,7 @@
       },
       "incentives": {
         "intro": [
-          "Every public offer is on the 2026. Ford lists none on the 2027. Offers differ by ZIP code; these are what Ford showed in Chicago, Dallas, Los Angeles and New York unless noted."
+          "Every offer is on the 2026. Ford lists none on the 2027 yet."
         ],
         "rows": [
           {
@@ -260,49 +260,88 @@
             "ends": ""
           }
         ],
-        "note": "Offers as shown on Ford’s website on November 15, 2026. They change monthly and by region, and “ends” is the date you must take delivery by. Check the offer for your own ZIP on Ford’s site, and have the dealer confirm in writing that it still applies on the day you sign.",
-        "after": [
-          "<strong>Plan on choosing between the big cash and the low rate.</strong> Ford pairs 0% and 1.9% with the smaller bonus cash only. On a $45,000 loan over 60 months, 0% saves about $7,600 in interest against the 6.35% average new-car rate, which beats $4,500 cash. With a large down payment or a low rate from your own bank, the cash usually wins.",
-          "Military, first responder and college offers run through January 4, 2027. Ford shows the amount only after you verify eligibility, so <a href=\"/schedule.html\">ask us</a> if you want it checked."
-        ],
+        "note": "From <a href=\"https://www.ford.com/trucks/f150/2026/incentives-and-offers/\" rel=\"noopener\">Ford’s site</a> on November 15, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by ZIP, and “ends” is the date you must take delivery by.",
         "cards": [
           {
             "offer": "$4,500 cash back",
             "detail": "$3,000 customer cash plus $1,500 bonus cash",
             "applies": "2026 XLT. In the New York area, also STX and Lariat.",
             "ends": "November 30, 2026 (January 4, 2027 in New York)",
-            "big": "$4,500",
-            "unit": "cash back",
-            "short": "2026 XLT. Ends November 30."
+            "label": "Cash back",
+            "figure": "$4,500",
+            "word": "cash back",
+            "text": "On the 2026 XLT. Ends November 30."
           },
           {
             "offer": "0% APR for 60 months",
             "detail": "Plus $500 bonus cash, through Ford Credit",
             "applies": "2026, every trim except Raptor",
             "ends": "November 16, 2026. Dallas and Los Angeles showed a version through November 30.",
-            "big": "0%",
-            "unit": "APR for 60 months",
-            "short": "Plus $500. Every 2026 trim but Raptor. Ends November 16 in most regions."
+            "label": "Financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For 60 months, plus $500 bonus cash. Every 2026 but Raptor. Ends November 16 in most regions."
           },
           {
             "offer": "1.9% APR for 60 months",
             "detail": "Plus $1,500 bonus cash, through Ford Credit",
             "applies": "2026, every trim except Raptor",
             "ends": "November 30, 2026",
-            "big": "1.9%",
-            "unit": "APR for 60 months",
-            "short": "Plus $1,500. Every 2026 trim but Raptor. Ends November 30."
+            "label": "Financing",
+            "figure": "1.9%",
+            "word": "APR",
+            "text": "For 60 months, plus $1,500 bonus cash. Every 2026 but Raptor. Ends November 30."
           },
           {
             "offer": "STX lease",
             "detail": "$499 a month for 36 months, $1,498 due at signing",
             "applies": "2026 STX with Equipment Group 200A",
             "ends": "November 30, 2026",
-            "big": "$499",
-            "unit": "a month lease",
-            "short": "36 months, $1,498 due at signing. Ends November 30."
+            "label": "Lease",
+            "figure": "$499",
+            "word": "a month",
+            "text": "2026 STX for 36 months, $1,498 due at signing. Ends November 30."
           }
-        ]
+        ],
+        "addons": [
+          {
+            "title": "Military, first responder or college?",
+            "text": "Ford’s recognition offers cover new 2025, 2026 and 2027 Fords. Ford shows the amount only after you verify eligibility.",
+            "figure": "Jan 4",
+            "unit": "2027 end date",
+            "detail": "Amount varies by market",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Cash or 0%",
+          "title": "0% beats the cash by about {gap}",
+          "text": "Ford won’t combine 0% with the $4,500, so you pick one. Each bar is how much less you pay than full price at the 6.35% average rate, on a $45,000 truck over 60 months.",
+          "price": 45000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "+ $500 bonus cash",
+              "rate": 0,
+              "cash": 500
+            },
+            {
+              "name": "1.9% APR",
+              "detail": "+ $1,500 bonus cash",
+              "rate": 1.9,
+              "cash": 1500
+            },
+            {
+              "name": "$4,500 cash",
+              "detail": "at 6.35%",
+              "rate": 6.35,
+              "cash": 4500
+            }
+          ]
+        }
       },
       "condition": {
         "intro": [
@@ -409,7 +448,7 @@
         ],
         [
           "How much under MSRP can you get a Ford F-150?",
-          "On a 2026 XLT or Lariat, 5–7% under MSRP is a fair deal before Ford’s cash and about 10% is a strong one. XL and STX have less room, around 2–3%. Raptors sell at about sticker. Those ranges are our read of TrueCar’s November sale prices, so a given dealer may land a point or two either side."
+          "On a 2026 XLT or Lariat, 5–7% under MSRP is a fair deal before Ford’s cash and about 10% is a strong one. XL and STX have less room, around 2–3%. Raptors sell at about sticker. Those ranges are our read of TrueCar’s November sale prices, so a given dealer may land a point or two either side. The averages may already include Ford’s cash, so count the cash as extra only when the quote shows it on its own line."
         ],
         [
           "Should I buy a 2026 or a 2027 F-150?",
@@ -653,7 +692,7 @@
           {
             "source": "Edmunds",
             "url": "https://www.edmunds.com/ford/f-150/",
-            "value": 8.0,
+            "value": 8,
             "scale": 10,
             "display": "8.0",
             "detail": "Ranked 1st of 5 large trucks"
@@ -777,6 +816,908 @@
           "author": "Bull-Doser",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Ford_F-150_Raptor_@_2026_Montr%C3%A9al_Auto_Show.jpeg",
           "license": "public domain"
+        }
+      ]
+    },
+    {
+      "slug": "toyota-rav4-price.html",
+      "name": "Toyota RAV4",
+      "modelYear": 2026,
+      "published": "2026-11-15",
+      "checkedOn": "2026-11-15",
+      "title": "Toyota RAV4 Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Toyota RAV4 costs in November 2026: MSRP by trim for 2026 and 2027, how close to sticker dealers sell it, Toyota’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Toyota RAV4 price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$31,900 <small>to $48,500</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "1–2% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Toyota incentives",
+          "value": "4.99% <small>APR, no cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 XLE Premium",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The RAV4 is hybrid-only now, and it’s still one of the easiest small SUVs to recommend: 43 mpg combined with front-wheel drive, an owner score of 85 out of 100 from J.D. Power, and a three-year depreciation rate about half the average vehicle’s. The catch is the price. Dealers had 24 days of RAV4s in stock at the end of October against 87 for the industry, Toyota offers no cash back, and TrueCar’s November averages put most trims within 2% of sticker. Price a 2026 XLE Premium, aim for 1–2% under MSRP, and take Toyota’s 4.99% financing if your bank can’t beat it. Prices and offers were checked on November 15, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "LE",
+            "short": "Base hybrid",
+            "gets": "12.3-inch digital gauges, 10.5-inch touchscreen with wireless CarPlay and Android Auto, Toyota Safety Sense 4.0",
+            "prices": [
+              31900,
+              32300
+            ],
+            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
+            "room": "Thin. TrueCar’s average sits 1.6% under MSRP.",
+            "roomLabel": "Thin"
+          },
+          {
+            "name": "SE",
+            "short": "Sporty look",
+            "gets": "18-inch black alloys, black fender trim, blue interior stitching",
+            "prices": [
+              34700,
+              35100
+            ],
+            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
+            "room": "Thin, about 1.5% under on TrueCar’s average.",
+            "roomLabel": "Thin"
+          },
+          {
+            "name": "XLE Premium",
+            "short": "The value pick",
+            "gets": "Power liftgate, SofTex heated front seats, parking sensors that brake for you",
+            "prices": [
+              36100,
+              36500
+            ],
+            "engine": "2.5L hybrid, 226 hp FWD or 236 hp AWD",
+            "room": "Thin. The most popular trim; TrueCar’s average is 0.9% under.",
+            "roomLabel": "Thin",
+            "pick": true
+          },
+          {
+            "name": "Woodland",
+            "short": "Rugged look",
+            "gets": "All-terrain tires, raised roof rails with cross bars, Rigid LED fog lights",
+            "prices": [
+              39900,
+              40655
+            ],
+            "engine": "2.5L hybrid, 236 hp, AWD only",
+            "room": "Little to none. Sells at about sticker.",
+            "roomLabel": "Little to none"
+          },
+          {
+            "name": "XSE",
+            "short": "Sporty top trim",
+            "gets": "20-inch black wheels, heated and ventilated seats, 12.9-inch touchscreen",
+            "prices": [
+              41300,
+              41900
+            ],
+            "engine": "2.5L hybrid, 236 hp, AWD only",
+            "room": "Little to none. TrueCar’s average is just above sticker.",
+            "roomLabel": "Little to none"
+          },
+          {
+            "name": "Limited",
+            "short": "Luxury top trim",
+            "gets": "Panoramic glass roof, nine-speaker JBL audio, dual wireless phone chargers",
+            "prices": [
+              43300,
+              43900
+            ],
+            "engine": "2.5L hybrid, 236 hp, AWD only",
+            "room": "Little to none. Sells at about sticker.",
+            "roomLabel": "Little to none"
+          },
+          {
+            "name": "SE Plug-in",
+            "short": "Entry plug-in",
+            "gets": "The plug-in hybrid, with an EPA-rated 54 miles of electric range",
+            "prices": [
+              41500,
+              42100
+            ],
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
+            "room": "Moderate. Edmunds suggests about 3% under.",
+            "roomLabel": "Moderate"
+          },
+          {
+            "name": "Woodland Plug-in",
+            "short": "Rugged plug-in",
+            "gets": "Woodland equipment on the plug-in, plus DC fast charging",
+            "prices": [
+              45300,
+              46055
+            ],
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
+            "room": "Moderate.",
+            "roomLabel": "Moderate"
+          },
+          {
+            "name": "XSE Plug-in",
+            "short": "Sporty plug-in",
+            "gets": "XSE equipment on the plug-in, plus DC fast charging",
+            "prices": [
+              47200,
+              47800
+            ],
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
+            "room": "Moderate.",
+            "roomLabel": "Moderate"
+          },
+          {
+            "name": "GR Sport",
+            "short": "Performance plug-in",
+            "gets": "Plug-in only: GR-tuned suspension and steering, 20-inch wheels, rear spoiler",
+            "prices": [
+              48500,
+              49100
+            ],
+            "engine": "2.5L plug-in hybrid, 324 hp, AWD",
+            "room": "Thin. Toyota leaves it out of its plug-in offers.",
+            "roomLabel": "Thin"
+          }
+        ],
+        "note": "Starting MSRP from Toyota’s website on November 15, 2026, with front-wheel drive where it’s offered (AWD adds $1,400 on LE, SE and XLE Premium). Prices exclude the $1,595 destination charge, taxes and dealer fees. Toyota has confirmed two 2027 prices, the LE at $32,300 and the plug-in SE at $42,100; the other 2027 figures come from Kelley Blue Book’s November 6 report, so <a href=\"/schedule.html\">ask us</a> before relying on one.",
+        "after": [
+          "For 2027, every trim goes up $400 to $755, and AWD goes from $1,400 to $1,600. Every 2027 plug-in gets DC fast charging, an 11-kW onboard charger and a NACS (Tesla-style) charging port, and the Woodland gets retuned suspension with 9.1 inches of ground clearance."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 XLE Premium, with AWD if you see snow.</strong> At $36,100 it costs $1,400 more than an SE and adds the things you notice every day: a power liftgate, SofTex (synthetic leather) heated front seats, and front and rear parking sensors that brake the car if you’re about to back into something. Edmunds calls it the pick of the lineup too, and TrueCar lists it as the most popular trim. AWD adds $1,400 and costs 2 mpg (41 combined against 43).",
+        "Skip the Woodland unless you want its all-terrain tires: it starts $3,800 above a front-drive XLE Premium and is rated 38 mpg combined. The plug-in hybrid makes sense only if you can charge at home. An SE plug-in costs $5,400 more than an AWD hybrid SE, the federal tax credit is gone, and Toyota recalled the 2026 plug-ins for a loss of power at highway speed (a software fix). If you do want one, its 54-mile EPA electric range covers most commutes, and the 2027 brings DC fast charging to every plug-in trim."
+      ],
+      "pay": {
+        "intro": [
+          "RAV4s are scarce. Cox Automotive counted 24 days of supply at the end of October, against 39 for Toyota as a whole and 87 for the industry. TrueCar’s November averages show the LE and SE selling about 1.5% under MSRP, the XLE Premium about 1% under, and the Woodland and XSE a little over sticker. Edmunds’ suggested prices, based on Texas sales, run 2–3.4% under."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "LE, SE, XLE Premium",
+            "fair": "1–2% under",
+            "strong": "3–4% under",
+            "why": "TrueCar averages 0.9–1.6% under. Dealer invoice sits about 6% under MSRP."
+          },
+          {
+            "trims": "Woodland, XSE, Limited",
+            "fair": "MSRP",
+            "strong": "2% under",
+            "why": "TrueCar’s averages sit at sticker or just above it."
+          },
+          {
+            "trims": "Plug-in hybrid",
+            "fair": "2–3% under",
+            "strong": "4% or more",
+            "why": "Edmunds’ suggested prices run about 3% under. TrueCar shows no plug-in figure yet."
+          }
+        ],
+        "note": "Checked November 15, 2026.",
+        "after": [
+          "Not sure what a specific RAV4 should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 XLE Premium",
+          "sticker": 37695,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 1.5%",
+              "amount": 565
+            }
+          ],
+          "total": 37130,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every offer is on the 2026 and ends November 30. Toyota lists none on the 2027 yet, and no cash back on any RAV4."
+        ],
+        "rows": [
+          {
+            "offer": "4.99% APR for 48 months",
+            "detail": "Through Toyota Financial Services",
+            "applies": "Every 2026 hybrid trim, and every plug-in but the GR Sport",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Longer terms in Southern California",
+            "detail": "5.99% for 60 months or 6.99% for 72. The plug-in gets 6.99% for 72 months only.",
+            "applies": "2026 RAV4 and Plug-in Hybrid, California",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "LE lease",
+            "detail": "$299 a month for 39 months with $3,999 due in Dallas; $309 in Chicago; $279 in Los Angeles; $379 with $379 due in New York",
+            "applies": "2026 LE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Plug-in SE lease",
+            "detail": "$429 a month for 39 months in New York, $439 in Chicago, $449 in Los Angeles, each with $3,999 due. None in Dallas.",
+            "applies": "2026 RAV4 Plug-in Hybrid SE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military rebate",
+            "detail": "$500 when you finance or lease through Toyota Financial Services",
+            "applies": "2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "College rebate",
+            "detail": "$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services",
+            "applies": "2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 RAV4",
+            "detail": "No public offers yet",
+            "applies": "All 2027 trims",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.toyota.com/deals-incentives/\" rel=\"noopener\">Toyota’s offers pages</a> on November 15, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Toyota Financial Services credit approval, and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "4.99%",
+            "word": "APR",
+            "text": "For 48 months on every 2026 but the GR Sport. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$299",
+            "word": "a month",
+            "text": "2026 LE in Dallas, 39 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "Plug-in lease",
+            "figure": "$429",
+            "word": "a month",
+            "text": "2026 plug-in SE in New York, 39 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$0",
+            "word": "cash back",
+            "text": "Toyota lists no cash on the RAV4 in any of the four regions we checked."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Toyota takes $500 off a 2026 RAV4 you finance or lease through Toyota Financial Services. The two rebates don’t combine.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends November 30; not in AL, FL, GA, HI, NC or SC",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Toyota’s 4.99%",
+          "title": "4.99% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $37,000 RAV4 over 48 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 37000,
+          "months": 48,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "4.99% APR",
+              "detail": "Toyota Financial Services",
+              "rate": 4.99,
+              "cash": 0
+            },
+            {
+              "name": "4.99% APR",
+              "detail": "+ $500 military or college rebate",
+              "rate": 4.99,
+              "cash": 500
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used RAV4 Hybrid barely costs less, and used-loan rates average 11.19% against Toyota’s 4.99% on a new one."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Toyota’s 4.99% and the $500 rebates apply only to the 2026.",
+            "check": "That the SUV is a 2026 and not a 2027, and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want a plug-in with DC fast charging, or the Woodland’s retuned suspension.",
+            "check": "The $400 to $755 price rise, and that there are no offers yet."
+          },
+          {
+            "route": "CPO (Toyota Certified Gold)",
+            "when": "You want a 2023 to 2025 hybrid with a warranty, and you’re paying cash.",
+            "check": "That it’s Gold Certified, not Silver. Gold adds a 12-month/12,000-mile comprehensive warranty and 7-year/100,000-mile powertrain coverage; Silver gives 12 months of powertrain cover only. The hybrid battery stays covered for 10 years/150,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $28,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2019 to 2022 AWD hybrid, the high-voltage cables under the floor."
+          }
+        ],
+        "after": [
+          "If you buy used, make 2023 the floor. The 2019 to 2021 RAV4s carry the most recalls of the last generation, <a href=\"https://www.carcomplaints.com/Toyota/RAV4_Hybrid/2019/tsb/tsb-22te09.shtml\" rel=\"noopener\">AWD hybrids from 2019 to 2022 can corrode their high-voltage cables</a>, and some hybrids’ <a href=\"https://www.carcomplaints.com/news/2021/toyota-rav4-hybrid-fuel-tank-settlement-allegedly-useless-for-owners.shtml\" rel=\"noopener\">fuel tanks won’t fill to the rated 14.5 gallons</a> (a settlement extended that coverage to 15 years/150,000 miles)."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "RAV4 Hybrid",
+                "value": 13.8,
+                "display": "13.8%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Toyota offer",
+                "value": 4.99,
+                "display": "4.99%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Toyota; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 28275,
+                "display": "$28,275"
+              },
+              {
+                "label": "2023",
+                "value": 30875,
+                "display": "$30,875"
+              },
+              {
+                "label": "2024",
+                "value": 31925,
+                "display": "$31,925"
+              },
+              {
+                "label": "2025",
+                "value": 32299,
+                "display": "$32,299"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> Toyota dealers put add-ons on 37.7% of the quotes CarWhere studied, averaging $1,637. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>Markups.</strong> Some dealers added $1,104 to $4,700 over sticker when the 2026 launched. Supply is still tight, so walk away from a markup and ask the next dealer.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. The offers apply only to the 2026.",
+        "<strong>The Toyota Financial Services requirement.</strong> The 4.99% and the $500 rebates need Toyota’s own financing. Compare the total cost with your bank’s rate.",
+        "<strong>Fees.</strong> Documentation fees on RAV4 quotes ran from $180 in Iowa to $1,094 in Florida in CarEdge’s study. Compare out-the-door prices.",
+        "<strong>The plug-in recall.</strong> Ask the dealer to show that recall 26V659’s software update is done before you take delivery."
+      ],
+      "faq": [
+        [
+          "Is the Toyota RAV4 a good SUV?",
+          "Most reviewers think so. Edmunds rates the 2026 an 8.1 out of 10 and third of 12 small hybrid SUVs, and J.D. Power’s owner score of 85 ties it for first among compact SUVs. U.S. News is cooler, at 8.3 and 14th of 19 hybrid SUVs, and calls the drive listless. A three-year-old RAV4 Hybrid has lost 13.8% of its value by iSeeCars’ figures, against 24.8% for the average vehicle."
+        ],
+        [
+          "How much under MSRP can you get a Toyota RAV4?",
+          "On a 2026 LE, SE or XLE Premium, 1–2% under MSRP is a fair deal and 3–4% is a strong one. The Woodland, XSE and Limited sell at about sticker. Plug-ins have a little more room, around 2–3%. Those ranges are our read of TrueCar’s November averages and Edmunds’ suggested prices, so a given dealer may land a point either side, and Toyota has no cash back to add on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 RAV4?",
+          "The 2026, for most buyers. It costs $400 to $755 less, and Toyota’s 4.99% financing and the $500 military and college rebates apply only to the 2026. Wait for the 2027 if you want a plug-in with DC fast charging or the Woodland’s retuned suspension. 2027 hybrids reach dealers late in 2026 and plug-ins early in 2027."
+        ],
+        [
+          "What is the destination charge on a RAV4?",
+          "$1,595 on the 2026 and the 2027, hybrid or plug-in. Toyota’s advertised starting prices leave it out, and Toyota says it may differ in AL, AR, FL, GA, LA, MS, NC, OK, SC and TX."
+        ],
+        [
+          "Does Toyota offer cash back on the RAV4?",
+          "No. In Chicago, Dallas, Los Angeles and New York on November 15, 2026, Toyota offered 4.99% financing for 48 months and lease deals, but no customer cash. The only money off is a $500 military or college rebate when you finance or lease through Toyota Financial Services."
+        ],
+        [
+          "Is the RAV4 plug-in hybrid worth it?",
+          "Only if you can charge at home and most of your trips are short. The SE is EPA-rated for 54 miles on electricity, and Edmunds got 58 in its testing. But it costs $5,400 more than an AWD hybrid SE, and the federal tax credit doesn’t apply to cars bought after September 30, 2025."
+        ],
+        [
+          "Is a used RAV4 a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2025 is $32,299, and TrueCar’s average paid for a new 2026 LE is $32,951. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 4.99% on a new one. A Gold Certified 2023 to 2025 hybrid is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-RAV4-01",
+          "title": "Toyota: 2026 RAV4",
+          "url": "https://www.toyota.com/rav4/",
+          "scope": "2026 RAV4 hybrid trims, starting MSRP excluding destination, equipment and power",
+          "note": "2026 hybrid trims, starting prices and equipment"
+        },
+        {
+          "id": "VEH-RAV4-02",
+          "title": "Toyota: 2026 RAV4 Plug-in Hybrid",
+          "url": "https://www.toyota.com/rav4pluginhybrid/",
+          "scope": "2026 RAV4 Plug-in Hybrid trims, starting MSRP, power and EPA electric range on the SE",
+          "note": "plug-in trims, prices and electric range"
+        },
+        {
+          "id": "VEH-RAV4-03",
+          "title": "Toyota: 2027 RAV4 announcement",
+          "url": "https://pressroom.toyota.com/2027-toyota-rav4-builds-on-a-fully-electrified-formula-with-new-woodland-capability-and-expanded-charging-convenience/",
+          "scope": "2027 RAV4 starting MSRP for the LE and plug-in SE, horsepower, charging and Woodland changes, ToyotaCare terms",
+          "note": "2027 starting prices and changes"
+        },
+        {
+          "id": "VEH-RAV4-04",
+          "title": "Kelley Blue Book: 2027 RAV4 price increase",
+          "url": "https://www.kbb.com/car-news/2027-toyota-rav4-gets-small-tweaks-modest-price-bump/",
+          "scope": "2027 RAV4 price by trim including the $1,595 destination charge, and 2026 AWD prices",
+          "note": "2027 prices by trim"
+        },
+        {
+          "id": "VEH-RAV4-05",
+          "title": "Toyota: deals and incentives",
+          "url": "https://www.toyota.com/deals-incentives/",
+          "scope": "Toyota finance and lease offers on the 2026 RAV4 and RAV4 Plug-in Hybrid in the Midwest, Gulf States, Southern California and Greater New York regions (ZIPs 60601, 75201, 90012, 10001), and the destination charge",
+          "note": "finance and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-RAV4-06",
+          "title": "Toyota: military rebate",
+          "url": "https://www.toyota.com/midwest/deals-incentives/multiple_vehicle_acc6c1d5-40f9-42fe-b014-9092757601a2/",
+          "scope": "Toyota $500 military rebate terms, eligible models and dates",
+          "note": "military rebate"
+        },
+        {
+          "id": "VEH-RAV4-07",
+          "title": "Toyota: college rebate",
+          "url": "https://www.toyota.com/midwest/deals-incentives/multiple_vehicle_dcc5c899-c28a-41d5-bcc5-e114fe4cdbf6/",
+          "scope": "Toyota $500 college rebate terms, eligible models and dates",
+          "note": "college rebate"
+        },
+        {
+          "id": "VEH-RAV4-08",
+          "title": "TrueCar: 2026 Toyota RAV4",
+          "url": "https://www.truecar.com/overview/toyota/rav4/2026",
+          "scope": "Average total price paid by 2026 RAV4 trim against TSRP, November 2026",
+          "note": "average price paid by trim"
+        },
+        {
+          "id": "VEH-RAV4-09",
+          "title": "Edmunds: 2026 Toyota RAV4",
+          "url": "https://www.edmunds.com/toyota/rav4/",
+          "scope": "Edmunds rating, small hybrid SUV rank, owner rating, editors’ trim pick and suggested price by trim for the 2026 RAV4",
+          "note": "review score and suggested prices"
+        },
+        {
+          "id": "VEH-RAV4-10",
+          "title": "Edmunds: 2026 Toyota RAV4 Plug-in Hybrid",
+          "url": "https://www.edmunds.com/toyota/rav4-plug-in-hybrid/",
+          "scope": "Edmunds suggested price by trim and tested electric range for the 2026 RAV4 Plug-in Hybrid",
+          "note": "plug-in suggested prices and tested range"
+        },
+        {
+          "id": "VEH-RAV4-11",
+          "title": "iSeeCars: 2026 Toyota RAV4 price",
+          "url": "https://www.iseecars.com/car/2026-toyota-rav4-price",
+          "scope": "Dealer invoice against MSRP and AWD prices by 2026 RAV4 trim",
+          "note": "dealer invoice against MSRP"
+        },
+        {
+          "id": "VEH-RAV4-12",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Toyota and the RAV4 at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-RAV4-13",
+          "title": "CarWhere: 2026 Toyota RAV4",
+          "url": "https://www.carwhere.com/cars/toyota/rav4/2026",
+          "scope": "Median price paid against MSRP by verified 2026 RAV4 buyers",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-RAV4-14",
+          "title": "Carscoops: Toyota dealers add markups to the new RAV4",
+          "url": "https://www.carscoops.com/2026/01/greedy-toyota-dealers-adding-huge-markups-to-new-rav4/",
+          "scope": "Dealer markups on 2026 RAV4 listings, January 2026",
+          "note": "early-2026 dealer markups"
+        },
+        {
+          "id": "VEH-RAV4-15",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of Toyota quotes with dealer add-ons and their average price, June 2026",
+          "note": "add-ons on Toyota quotes"
+        },
+        {
+          "id": "VEH-RAV4-16",
+          "title": "CarEdge: 2026 RAV4 Hybrid dealer quotes",
+          "url": "https://caredge.com/experiments/rav4-hybrid-2026",
+          "scope": "Dealer quotes on the 2026 RAV4 Hybrid XSE showing add-ons and documentation fees, February 2026",
+          "note": "add-ons and doc fees on dealer quotes"
+        },
+        {
+          "id": "VEH-RAV4-17",
+          "title": "iSeeCars: Toyota RAV4 resale value",
+          "url": "https://www.iseecars.com/car/toyota-rav4/resale-value",
+          "scope": "RAV4 Hybrid depreciation at three and five years against the all-vehicle average",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-RAV4-18",
+          "title": "CarWhere: used Toyota RAV4 prices",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/rav4",
+          "scope": "Median asking price of used RAV4s by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-RAV4-19",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-RAV4-20",
+          "title": "Toyota Certified: warranty",
+          "url": "https://www.toyotacertified.com/warranty",
+          "scope": "Toyota Certified Used Vehicles Gold and Silver warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-RAV4-21",
+          "title": "Toyota: warranty",
+          "url": "https://www.toyota.com/owners/warranty-owners-manuals/",
+          "scope": "Toyota new-vehicle, hybrid component and hybrid battery warranty terms",
+          "note": "new-vehicle and hybrid warranty"
+        },
+        {
+          "id": "VEH-RAV4-22",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "RAV4, RAV4 Hybrid, RAV4 Prime and RAV4 Plug-in Hybrid recall campaigns by model year 2019 to 2026, including 26V659",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-RAV4-23",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash-test status of the 2026 and 2027 RAV4 Hybrid and Plug-in Hybrid, from the NHTSA ratings API",
+          "note": "crash-test status"
+        },
+        {
+          "id": "VEH-RAV4-24",
+          "title": "IIHS: 2026 Toyota RAV4",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/rav4-4-door-suv/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 RAV4",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-RAV4-25",
+          "title": "Consumer Reports: 2026 Toyota RAV4 reliability",
+          "url": "https://www.consumerreports.org/cars/toyota/rav4/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 RAV4",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-RAV4-26",
+          "title": "FuelEconomy.gov: 2026 Toyota RAV4",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_RAV4.shtml",
+          "scope": "EPA fuel economy by 2026 RAV4 hybrid version",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-RAV4-27",
+          "title": "Kelley Blue Book: 2026 Toyota RAV4",
+          "url": "https://www.kbb.com/toyota/rav4/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RAV4-28",
+          "title": "U.S. News: 2026 Toyota RAV4",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/rav4",
+          "scope": "U.S. News overall score, hybrid SUV rank, pros and cons for the 2026 RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RAV4-29",
+          "title": "J.D. Power: 2026 Toyota RAV4",
+          "url": "https://www.jdpower.com/cars/2026/toyota/rav4",
+          "scope": "J.D. Power consumer rating, category scores and compact SUV ranking for the 2026 RAV4",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RAV4-30",
+          "title": "IRS: clean vehicle credit",
+          "url": "https://www.irs.gov/credits-deductions/credits-for-new-clean-vehicles-purchased-in-2023-or-after",
+          "scope": "End of the new clean vehicle credit for vehicles acquired after September 30, 2025",
+          "note": "federal tax credit end date"
+        },
+        {
+          "id": "VEH-RAV4-31",
+          "title": "CarComplaints: RAV4 Hybrid fuel tank settlement",
+          "url": "https://www.carcomplaints.com/news/2021/toyota-rav4-hybrid-fuel-tank-settlement-allegedly-useless-for-owners.shtml",
+          "scope": "RAV4 Hybrid fuel tank fill complaints and the settlement’s 15-year/150,000-mile coverage",
+          "note": "hybrid fuel tank settlement"
+        },
+        {
+          "id": "VEH-RAV4-32",
+          "title": "CarComplaints: Toyota support program 22TE09",
+          "url": "https://www.carcomplaints.com/Toyota/RAV4_Hybrid/2019/tsb/tsb-22te09.shtml",
+          "scope": "High-voltage cable corrosion on 2019 to 2022 RAV4 Hybrid AWD models",
+          "note": "hybrid cable corrosion"
+        },
+        {
+          "id": "VEH-RAV4-33",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Honda CR-V as KBB 2026 best resale value compact SUV",
+          "note": "CR-V resale award"
+        },
+        {
+          "id": "VEH-RAV4-34",
+          "title": "Cars.com: 2026 Honda CR-V Hybrid trims",
+          "url": "https://www.cars.com/research/honda-cr_v_hybrid-2026/trims",
+          "scope": "2026 Honda CR-V Hybrid starting price by trim",
+          "note": "CR-V Hybrid price"
+        },
+        {
+          "id": "VEH-RAV4-35",
+          "title": "Cars.com: 2026 Hyundai Tucson Hybrid price",
+          "url": "https://cars.com/articles/2026-hyundai-tucson-hybrid-drops-price-standard-awd-525467/",
+          "scope": "2026 Hyundai Tucson Hybrid starting price including destination",
+          "note": "Tucson Hybrid price"
+        },
+        {
+          "id": "VEH-RAV4-36",
+          "title": "Mazda: CX-50 Hybrid",
+          "url": "https://www.mazdausa.com/vehicles/cx-50-hybrid",
+          "scope": "2026 Mazda CX-50 Hybrid starting price and destination charge",
+          "note": "CX-50 Hybrid price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-toyota-rav4-xle-premium",
+        "width": 1920,
+        "height": 1215,
+        "alt": "White 2026 Toyota RAV4 XLE Premium with a black roof, front three-quarter view",
+        "caption": "A 2026 RAV4 XLE Premium, the trim we’d buy.",
+        "author": "Elise240SX",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Toyota_Rav4_XLE_Premium_in_Wind_Chill_Pearl,_front_right,_2026-10-27.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "note": "plate frame blurred"
+      },
+      "pros": [
+        "43 mpg combined with front-wheel drive",
+        "Owners score it 85 of 100 with J.D. Power",
+        "Loses value about half as fast as average",
+        "Rated Good in 7 of 8 IIHS ratings"
+      ],
+      "cons": [
+        "Most trims sell within 2% of sticker",
+        "No cash back from Toyota this month",
+        "Reviewers fault its ride and seat comfort",
+        "2026 plug-ins recalled for power loss"
+      ],
+      "rivals": [
+        "Get a quote on the Honda CR-V Hybrid too. Kelley Blue Book named the CR-V its 2026 best resale value compact SUV, and the hybrid starts at $35,630 (Sport, front drive). The Hyundai Tucson Hybrid starts at $34,050 including destination, and the Mazda CX-50 Hybrid at $34,750 plus $1,595. Edmunds says rivals give passengers more room and ride more smoothly than the RAV4. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/toyota/rav4/",
+            "value": 8.1,
+            "scale": 10,
+            "display": "8.1",
+            "detail": "Ranked 3rd of 12 small hybrid SUVs"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/toyota/rav4/2026/",
+            "value": 4.5,
+            "scale": 5,
+            "display": "4.5",
+            "detail": "Owners give it 2.8 out of 5 (10 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/toyota/rav4",
+            "value": 8.3,
+            "scale": 10,
+            "display": "8.3",
+            "detail": "Ranked 14th of 19 hybrid SUVs"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/toyota/rav4",
+            "value": 85,
+            "scale": 100,
+            "display": "85",
+            "detail": "Tied 1st among compact SUVs"
+          }
+        ],
+        "note": "Scores for the 2026 RAV4 hybrid as published on November 15, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 7,
+        "outOf": 8,
+        "label": "Rated Good by IIHS",
+        "vehicle": "2026 RAV4 Hybrid",
+        "rows": [
+          {
+            "label": "Small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "Moderate overlap front",
+            "grade": "Acceptable",
+            "note": "Rear-seat belt fit"
+          },
+          {
+            "label": "Side",
+            "grade": "Good"
+          },
+          {
+            "label": "Headlights",
+            "grade": "Good",
+            "note": "Every trim"
+          },
+          {
+            "label": "Crash prevention, vehicles",
+            "grade": "Good"
+          },
+          {
+            "label": "Crash prevention, pedestrians",
+            "grade": "Good"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 8
+          },
+          {
+            "label": "2020",
+            "value": 6
+          },
+          {
+            "label": "2021",
+            "value": 5
+          },
+          {
+            "label": "2022",
+            "value": 3
+          },
+          {
+            "label": "2023",
+            "value": 3
+          },
+          {
+            "label": "2024",
+            "value": 4
+          },
+          {
+            "label": "2025",
+            "value": 4
+          },
+          {
+            "label": "2026",
+            "value": 2
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to be <a href=\"https://www.consumerreports.org/cars/toyota/rav4/2026/reliability\" rel=\"noopener\">more reliable than the average new car</a>, judging from the last RAV4 and Toyota’s record.",
+        "note": "Ratings from <a href=\"https://www.iihs.org/ratings/vehicle/toyota/rav4-4-door-suv/2026\" rel=\"noopener\">IIHS</a>, read November 15, 2026; seat belt reminders and LATCH child-seat anchors also rate Good. <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> had not crash-tested the 2026. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> include the RAV4 Hybrid, Prime and Plug-in Hybrid. Check any used RAV4’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-toyota-rav4-rear",
+          "width": 1920,
+          "height": 1218,
+          "alt": "White 2026 Toyota RAV4 XLE Premium, rear three-quarter view",
+          "caption": "XLE Premium, rear",
+          "author": "Elise240SX",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Toyota_Rav4_XLE_Premium_in_Wind_Chill_Pearl,_rear_right,_2026-10-27.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-toyota-rav4-woodland",
+          "width": 1920,
+          "height": 1269,
+          "alt": "Gray 2026 Toyota RAV4 Woodland hybrid at an auto show",
+          "caption": "Woodland",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyota_RAV4_Woodland_Hybrid_AWD_(2026)_(55212825797).jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "file": "vehicle-toyota-rav4-interior",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Toyota RAV4 Limited hybrid dashboard with a large center touchscreen and digital gauges",
+          "caption": "Limited cabin",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyota_RAV4_Core_AXAN64_2.5_Limited_HEV_E-Four_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-toyota-rav4-gr-sport",
+          "width": 1920,
+          "height": 1014,
+          "alt": "White Toyota RAV4 GR Sport plug-in hybrid prototype at an auto show",
+          "caption": "GR Sport plug-in (prototype)",
+          "author": "TTTNIS",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Toyota_RAV4_PHEV_GR_Sport_Prototype.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ]
     }
