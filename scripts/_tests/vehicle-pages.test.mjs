@@ -47,7 +47,7 @@ test('every outside link on a vehicle price page is a registered, dated source',
   for (const vehicle of data.vehicles) {
     const document = htmlDocument(await read(vehicle.slug));
     const outside = [...new Set(document.links.filter(href => /^https?:/.test(href) && new URL(href).origin !== origin))];
-    assert.deepEqual(outside.toSorted(), [...new Set([...vehicle.sources.map(source => source.url), ...[vehicle.photo, ...vehicle.gallery].flatMap(image => [image.sourceUrl, image.licenseUrl])].filter(Boolean))].toSorted(), `${vehicle.slug} outside links`);
+    assert.deepEqual(outside.toSorted(), [...new Set([...vehicle.sources.map(source => source.url), ...[vehicle.photo, ...vehicle.gallery, vehicle.spotlight?.photo].filter(Boolean).flatMap(image => [image.sourceUrl, image.licenseUrl])].filter(Boolean))].toSorted(), `${vehicle.slug} outside links`);
     for (const source of vehicle.sources) {
       const row = registry.find(entry => entry.source_id === source.id);
       assert.equal(row?.source_url, source.url, `${source.id} is in data/source-registry.csv`);

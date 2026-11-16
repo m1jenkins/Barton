@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "decision": "docs/seo/2026-11-15-vehicle-price-pages.md",
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "vehicles": [
     {
       "slug": "ford-f-150-price.html",
@@ -1689,6 +1689,1214 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
         }
       ]
+    },
+    {
+      "slug": "toyota-corolla-price.html",
+      "name": "Toyota Corolla",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Toyota Corolla Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Toyota Corolla costs in November 2026: MSRP by trim for the 2026 and 2027 sedan, Hybrid and Hatchback, how far under sticker dealers sell it, Toyota’s current offers, and the GR Corolla.",
+      "h1": "Toyota Corolla price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$23,125 <small>to $29,340</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "3–6% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Toyota incentives",
+          "value": "4.99% <small>APR, no cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 Hybrid LE",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Corolla is the sensible small car most people expect: rated 50 mpg combined as a Hybrid LE, five stars overall from NHTSA, and it loses value slowly (9.3% in three years by iSeeCars’ count, against 24.8% for the average vehicle). It isn’t quick or roomy, though. Edmunds rates it 6.0 out of 10 and ninth of 10 compact sedans, faulting its 8.8-second run to 60 mph, highway noise and a 13.1-cubic-foot trunk. Unlike most Toyotas, it’s negotiable: TrueCar’s November averages put a gas LE about 7% under its sticker. Price a 2026 Hybrid LE, aim for 3–4% under MSRP, and take Toyota’s 4.99% financing if your bank can’t beat it. Prices and offers were checked on November 16, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "LE",
+            "short": "Base sedan",
+            "gets": "8-inch touchscreen with wireless CarPlay and Android Auto, blind-spot monitor, 7-inch digital gauges, 16-inch steel wheels",
+            "prices": [
+              23125,
+              23325
+            ],
+            "engine": "2.0L four-cylinder, 169 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "SE",
+            "short": "Sporty sedan",
+            "gets": "18-inch alloy wheels, sport seats, multi-link rear suspension, Sport and Eco drive modes",
+            "prices": [
+              25565,
+              25765
+            ],
+            "engine": "2.0L four-cylinder, 169 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "XSE",
+            "short": "Top gas sedan",
+            "gets": "10.5-inch touchscreen, 12.3-inch digital gauges, SofTex heated front seats, moonroof, paddle shifters",
+            "prices": [
+              28840,
+              29040
+            ],
+            "engine": "2.0L four-cylinder, 169 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "Hybrid LE",
+            "short": "The value pick",
+            "gets": "LE equipment with the 50-mpg hybrid; AWD adds $1,400",
+            "prices": [
+              24975,
+              25175
+            ],
+            "engine": "1.8L hybrid, 138 hp, front-wheel or all-wheel drive",
+            "pick": true
+          },
+          {
+            "name": "Hybrid SE",
+            "short": "Sporty hybrid",
+            "gets": "SE wheels, seats and drive modes on the hybrid; AWD adds $1,400",
+            "prices": [
+              27415,
+              27615
+            ],
+            "engine": "1.8L hybrid, 138 hp, front-wheel or all-wheel drive"
+          },
+          {
+            "name": "Hybrid XLE",
+            "short": "Top hybrid",
+            "gets": "Moonroof, SofTex heated front seats, 10.5-inch touchscreen, 12.3-inch gauges; front-wheel drive only",
+            "prices": [
+              29340,
+              29540
+            ],
+            "engine": "1.8L hybrid, 138 hp, front-wheel drive"
+          },
+          {
+            "name": "Hatchback SE",
+            "short": "Base hatchback",
+            "gets": "16-inch alloy wheels, paddle shifters, wireless phone charger, blind-spot monitor",
+            "prices": [
+              24580,
+              24780
+            ],
+            "engine": "2.0L four-cylinder, 169 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "Hatchback XSE",
+            "short": "Top hatchback",
+            "gets": "18-inch wheels, SofTex heated front seats, JBL audio, dual-zone climate control, LED fog lights",
+            "prices": [
+              27575,
+              27875
+            ],
+            "engine": "2.0L four-cylinder, 169 hp, CVT, front-wheel drive"
+          }
+        ],
+        "after": [
+          "The 2027s cost $200 more ($300 on the Hatchback XSE) with the same engines, and the 2027 Hatchback XSE gets the 10.5-inch screen and 12.3-inch gauges as standard. Toyota’s $1,295 destination charge is extra on every trim. The 2026 Hatchback FX Edition ($26,980 on Toyota’s November price list, 1,600 built) adds a rear wing, white 18-inch wheels and suede-trimmed heated seats, and a 60th Anniversary Hybrid SE (2,500 built) arrives in early 2027 with its price still to come."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 Hybrid LE.</strong> At $24,975 it costs $1,850 more than a gas LE with the same equipment, and it’s rated 50 mpg combined against 35. Over 12,000 miles a year, that’s about 100 fewer gallons of gas. You keep the wireless CarPlay, blind-spot monitor and 7-inch digital gauges that every 2026 Corolla gets. AWD adds $1,400 and costs 2 mpg (48 combined), which only makes sense if you see snow.",
+        "Step up to the Hybrid XLE ($29,340) if you want heated SofTex seats, a moonroof and the 10.5-inch screen. Skip the Hybrid SE: its 18-inch wheels drop it to 47 mpg combined for $2,440 more than the LE. If you need a hatch, the Hatchback SE ($24,580) is gas-only and rated 35 mpg combined."
+      ],
+      "pay": {
+        "intro": [
+          "Corollas are easier to discount than most Toyotas. Cox Automotive counted 36 days of supply at the end of October, tight next to the industry’s 87 but loose for a Toyota, whose RAV4s sat at 24. TrueCar’s November averages put the gas LE about 7% under its sticker with destination, the SE and Hybrid LE about 5–6%, and the XSE, Hybrid SE, Hybrid XLE and Hatchback about 2–3%. CarWhere’s 52 verified 2026 buyers paid a median 4.6% under MSRP."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "LE, SE",
+            "example": "LE",
+            "fair": "5–6% under",
+            "strong": "7% or more",
+            "why": "TrueCar averages 5.6–7.2% under. Dealer invoice sits about 7.4% under MSRP."
+          },
+          {
+            "trims": "Hybrid LE, SE, XLE",
+            "example": "Hybrid LE",
+            "fair": "3–4% under",
+            "strong": "5% or more",
+            "why": "TrueCar averages 2.9–4.8% under. Invoice sits about 7.4% under MSRP."
+          },
+          {
+            "trims": "XSE, Hatchback",
+            "example": "XSE",
+            "fair": "2–3% under",
+            "strong": "4–5% under",
+            "why": "TrueCar averages 2.0–2.9% under, from 604 Hatchback sales over 20 weeks."
+          }
+        ],
+        "note": "Checked November 16, 2026. TrueCar’s percentages are against MSRP plus destination.",
+        "after": [
+          "Not sure what a specific Corolla should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Hybrid LE",
+          "sticker": 26270,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 3.5%",
+              "amount": 875
+            }
+          ],
+          "total": 25395,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every offer ends November 30. Toyota offers 4.99% financing in all four regions we checked, leases that vary a lot by region, and no cash back on any Corolla."
+        ],
+        "rows": [
+          {
+            "offer": "4.99% APR for 48 months",
+            "detail": "Through Toyota Financial Services",
+            "applies": "2026 and 2027 Corolla, Corolla Hybrid and Corolla Hatchback (2027 only in the Midwest; 2026 only in Southern California)",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Longer terms in Southern California",
+            "detail": "5.99% for 60 months or 6.99% for 72 on the 2026; 6.99% for 72 months on the 2027",
+            "applies": "2026 and 2027 Corolla, Hybrid and Hatchback, California",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2026 LE lease",
+            "detail": "$239 a month for 36 or 39 months with $2,999 due in Los Angeles; $289 a month for 39 months with $289 due in New York",
+            "applies": "2026 Corolla LE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 LE lease",
+            "detail": "$229 a month for 39 months with $3,999 due in Chicago; $289 with $1,999 due in Dallas; $259 with $2,999 due in Los Angeles; $299 with $299 due in New York",
+            "applies": "2027 Corolla LE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Hybrid lease",
+            "detail": "2027 Hybrid LE: $239 a month for 39 months with $3,999 due in New York, $259 in Chicago; 2026 Hybrid SE: $329 a month for 39 months with $2,999 due in Los Angeles",
+            "applies": "2026 Hybrid SE, 2027 Hybrid LE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Hatchback lease",
+            "detail": "2027 SE: $209 a month for 39 months with $3,999 due in New York, $249 in Chicago; 2026 SE: $259 a month with $2,999 due in Los Angeles",
+            "applies": "2026 and 2027 Hatchback SE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military rebate",
+            "detail": "$500 when you finance or lease through Toyota Financial Services",
+            "applies": "2026 and 2027 Corolla, Hybrid and Hatchback. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "College rebate",
+            "detail": "$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services",
+            "applies": "2026 and 2027 Corolla, Hybrid and Hatchback. Not offered in AL, FL, GA, HI, NC or SC.",
+            "ends": "November 30, 2026"
+          }
+        ],
+        "note": "From <a href=\"https://www.toyota.com/deals-incentives/\" rel=\"noopener\">Toyota’s offers pages</a> on November 16, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Toyota Financial Services credit approval, and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "4.99%",
+            "word": "APR",
+            "text": "For 48 months on the Corolla, Hybrid and Hatchback in all four regions. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$229",
+            "word": "a month",
+            "text": "2027 LE in Chicago, 39 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "Low-cash lease",
+            "figure": "$289",
+            "word": "a month",
+            "text": "2026 LE in New York, 39 months, $289 due at signing. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$0",
+            "word": "cash back",
+            "text": "Toyota lists no cash on any Corolla in the four regions we checked."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Toyota takes $500 off a 2026 or 2027 Corolla you finance or lease through Toyota Financial Services. The two rebates don’t combine.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends November 30; not in AL, FL, GA, HI, NC or SC",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Toyota’s 4.99%",
+          "title": "4.99% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $26,000 Corolla over 48 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 26000,
+          "months": 48,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "4.99% APR",
+              "detail": "Toyota Financial Services",
+              "rate": 4.99,
+              "cash": 0
+            },
+            {
+              "name": "4.99% APR",
+              "detail": "+ $500 military or college rebate",
+              "rate": 4.99,
+              "cash": 500
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used Corolla barely costs less than a discounted new one, used-loan rates average 11.19% against Toyota’s 4.99%, and the 2026 keeps two years or 25,000 miles of ToyotaCare maintenance, which the 2027 cuts to one year or 10,000 miles."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. It costs $200 less than the 2027 and keeps two years or 25,000 miles of ToyotaCare.",
+            "check": "That the car is a 2026 and not a 2027, and that Toyota’s offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want the 2027 Hatchback XSE’s 10.5-inch screen and 12.3-inch gauges, or the 60th Anniversary Hybrid.",
+            "check": "The $200 to $300 price rise, and ToyotaCare cut to one year or 10,000 miles."
+          },
+          {
+            "route": "CPO (Toyota Certified Gold)",
+            "when": "You want a 2021 to 2025 with a warranty, and you’re paying cash.",
+            "check": "That it’s Gold Certified, not Silver. Gold adds a 12-month/12,000-mile comprehensive warranty and 7-year/100,000-mile powertrain coverage; Silver gives 12 months of powertrain cover only. A hybrid’s battery stays covered for 10 years/150,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $20,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2019 or 2020, that the fuel pump and the stall software were done (Toyota covers that pump for 15 years)."
+          }
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Corolla",
+                "value": 9.3,
+                "display": "9.3%"
+              },
+              {
+                "label": "Corolla Hybrid",
+                "value": 11.9,
+                "display": "11.9%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Toyota offer",
+                "value": 4.99,
+                "display": "4.99%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Toyota; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 18800,
+                "display": "$18,800"
+              },
+              {
+                "label": "2023",
+                "value": 20403,
+                "display": "$20,403"
+              },
+              {
+                "label": "2024",
+                "value": 20900,
+                "display": "$20,900"
+              },
+              {
+                "label": "2025",
+                "value": 22016,
+                "display": "$22,016"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ],
+        "after": [
+          "If you buy used, skip the 2020. It drew 316 NHTSA owner complaints, more than any Corolla since, and needed a <a href=\"https://static.nhtsa.gov/odi/tsbs/2022/MC-10224140-9999.pdf\" rel=\"noopener\">software fix for stalling at low speed</a> as well as a fuel pump recall. A used 2025 asks a median $22,016 at about 34,000 miles in CarWhere’s November listings, while TrueCar shows buyers paying an average $22,665 for a new 2026 LE, destination included. Check any used Corolla’s open recalls by VIN: the 2023 and 2024 were recalled for a steering shaft that can crack, and the 2023 to 2025 Hybrid for brake assist that can drop out in turns (both free fixes)."
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> Toyota dealers put add-ons on 37.7% of the quotes CarWhere studied, averaging $1,637. That’s a big share of a $25,000 car’s discount. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. The 2027 costs $200 more, and its ToyotaCare covers one year or 10,000 miles against two years or 25,000.",
+        "<strong>The Toyota Financial Services requirement.</strong> The 4.99% and the $500 rebates need Toyota’s own financing. Compare the total cost with your bank’s rate.",
+        "<strong>Destination.</strong> Toyota’s $1,295 charge is the same at every dealer, except in AL, AR, FL, GA, LA, MS, NC, OK, SC and TX, where Toyota says it’s higher. Compare out-the-door prices.",
+        "<strong>The wrong hybrid.</strong> An AWD Hybrid SE is rated 44 mpg combined against 50 for a front-drive Hybrid LE. Check the window sticker if fuel economy is why you’re buying.",
+        "<strong>The headlight recall.</strong> NHTSA recall 26V110000 covers 2026 Corollas with incorrectly aimed headlights. Ask the dealer to show it’s done before you take delivery."
+      ],
+      "faq": [
+        [
+          "Is the Toyota Corolla a good car?",
+          "Reviewers split. U.S. News scores it 8.6 out of 10 and named it a finalist for 2026 Best Compact Car for the Money, and KBB gives it 4.5 out of 5. Edmunds rates it 6.0 and ninth of 10 compact sedans, and Car and Driver (7.5 out of 10) prefers the Civic and Mazda 3. Consumer Reports expects it to be more reliable than the average new car, and a three-year-old Corolla has lost 9.3% of its value by iSeeCars’ figures, against 24.8% for the average vehicle."
+        ],
+        [
+          "How much under MSRP can you get a Toyota Corolla?",
+          "On a 2026 gas LE or SE, 5–6% under MSRP is a fair deal and 7% or more is a strong one. Hybrids sell closer to sticker, so 3–4% is fair, and the XSE and Hatchback about 2–3%. Those ranges are our read of TrueCar’s November averages and CarWhere’s verified buyers (a median 4.6% under), so a given dealer may land a point either side. Toyota has no cash back to add on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Corolla?",
+          "The 2026, for most buyers. It costs $200 less with the same engines, and it keeps two years or 25,000 miles of ToyotaCare maintenance, which Toyota cut to one year or 10,000 miles for the 2027. Wait for the 2027 if you want the Hatchback XSE’s bigger screens or the 60th Anniversary Hybrid (2,500 built, due early 2027)."
+        ],
+        [
+          "Is the Corolla Hybrid worth it?",
+          "For most buyers, yes. A Hybrid LE costs $1,850 more than a gas LE and is rated 50 mpg combined against 35, about 100 fewer gallons a year at 12,000 miles. Edmunds tells shoppers to look at the hybrid first. Toyota covers the hybrid battery for 10 years or 150,000 miles and the other hybrid parts for 8 years or 100,000."
+        ],
+        [
+          "What is the destination charge on a Corolla?",
+          "$1,295 on the 2026 and the 2027, sedan, Hybrid, Hatchback or GR Corolla. It was $1,195 when the 2026 launched. Toyota’s advertised starting prices leave it out, and Toyota says it’s higher in AL, AR, FL, GA, LA, MS, NC, OK, SC and TX."
+        ],
+        [
+          "Does Toyota offer cash back on the Corolla?",
+          "No. In Chicago, Dallas, Los Angeles and New York on November 16, 2026, Toyota offered 4.99% financing for 48 months and lease deals, but no customer cash. The only money off is a $500 military or college rebate when you finance or lease through Toyota Financial Services."
+        ],
+        [
+          "How much is a GR Corolla?",
+          "The 2026 starts at $40,520 with the manual and $42,520 with the automatic; the Premium Plus is $46,565 and $48,565, all before the $1,295 destination charge. Dealers no longer mark it up: Edmunds found it selling about $1,500 under sticker in November. The two-seat GRMN Corolla is $64,360, with 730 built worldwide."
+        ],
+        [
+          "Is a used Corolla a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2025 is $22,016 at about 34,000 miles, and TrueCar’s average paid for a new 2026 LE is $22,665 with destination. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 4.99% on a new one. A Gold Certified 2021 to 2025 is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-COROLLA-01",
+          "title": "Toyota: 2026 Corolla",
+          "url": "https://www.toyota.com/corolla/2026/",
+          "scope": "2026 Corolla and Corolla Hybrid trims, starting MSRP excluding destination, equipment and estimated mpg",
+          "note": "2026 sedan and hybrid trims, prices and equipment"
+        },
+        {
+          "id": "VEH-COROLLA-02",
+          "title": "Toyota: 2026 Corolla announcement",
+          "url": "https://pressroom.toyota.com/bold-and-compact-the-2026-toyota-corolla-offers-impressive-features-and-technology/",
+          "scope": "2026 Corolla engine output, equipment by trim and ToyotaCare terms",
+          "note": "2026 engine, equipment and ToyotaCare"
+        },
+        {
+          "id": "VEH-COROLLA-03",
+          "title": "Toyota: 2026 Corolla Hybrid announcement",
+          "url": "https://pressroom.toyota.com/the-toyota-corolla-hybrid-brings-efficiency-and-style-into-2026/",
+          "scope": "2026 Corolla Hybrid power, all-wheel drive availability and equipment",
+          "note": "hybrid power and AWD"
+        },
+        {
+          "id": "VEH-COROLLA-04",
+          "title": "Toyota: 2026 Corolla Hatchback announcement",
+          "url": "https://pressroom.toyota.com/2026-toyota-corolla-hatchback-elevates-safety-and-style-with-new-standard-features-and-new-fx-edition/",
+          "scope": "2026 Corolla Hatchback equipment and the FX Edition, including its 1,600-unit US run",
+          "note": "hatchback equipment and the FX Edition"
+        },
+        {
+          "id": "VEH-COROLLA-05",
+          "title": "Toyota: 2026 and 2027 full-line pricing, November 5, 2026",
+          "url": "https://toyota-cms-media.s3.amazonaws.com/toyota-pdfs/2026_and_2027_Toyota_Pricing_11052026.pdf",
+          "scope": "Corolla, Corolla Hybrid, Corolla Hatchback and GR Corolla MSRP by model year and trim, AWD prices, and the $1,295 destination charge",
+          "note": "price list with destination and AWD prices"
+        },
+        {
+          "id": "VEH-COROLLA-06",
+          "title": "Toyota: 2027 Corolla announcement",
+          "url": "https://pressroom.toyota.com/built-for-generations-toyota-corolla-celebrates-60-years-with-2027-special-edition/",
+          "scope": "2027 Corolla and Corolla Hybrid MSRP by trim, the 60th Anniversary edition and 2027 ToyotaCare terms",
+          "note": "2027 prices, 60th Anniversary edition and ToyotaCare"
+        },
+        {
+          "id": "VEH-COROLLA-07",
+          "title": "Toyota: 2027 Corolla Hatchback announcement",
+          "url": "https://pressroom.toyota.com/2027-toyota-corolla-hatchback-pairs-upgraded-technology-with-fun-to-drive-spirit/",
+          "scope": "2027 Corolla Hatchback MSRP by trim and equipment changes",
+          "note": "2027 hatchback prices and changes"
+        },
+        {
+          "id": "VEH-COROLLA-08",
+          "title": "Toyota: deals and incentives",
+          "url": "https://www.toyota.com/deals-incentives/",
+          "scope": "Toyota finance and lease offers on the 2026 and 2027 Corolla, Corolla Hybrid and Corolla Hatchback in the Midwest, Gulf States, Southern California and Greater New York regions (ZIPs 60601, 75201, 90012, 10001)",
+          "note": "finance and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-COROLLA-09",
+          "title": "Toyota: military rebate",
+          "url": "https://www.toyota.com/midwest/deals-incentives/multiple_vehicle_acc6c1d5-40f9-42fe-b014-9092757601a2/",
+          "scope": "Toyota $500 military rebate terms, eligible models including the 2026 and 2027 Corolla line, and dates",
+          "note": "military rebate"
+        },
+        {
+          "id": "VEH-COROLLA-10",
+          "title": "Toyota: college rebate",
+          "url": "https://www.toyota.com/midwest/deals-incentives/multiple_vehicle_dcc5c899-c28a-41d5-bcc5-e114fe4cdbf6/",
+          "scope": "Toyota $500 college rebate terms, eligible models including the 2026 and 2027 Corolla line, and dates",
+          "note": "college rebate"
+        },
+        {
+          "id": "VEH-COROLLA-11",
+          "title": "TrueCar: 2026 Toyota Corolla",
+          "url": "https://www.truecar.com/overview/toyota/corolla/2026/",
+          "scope": "Average price paid by 2026 Corolla and Corolla Hybrid trim against TSRP, November 2026",
+          "note": "average price paid by trim"
+        },
+        {
+          "id": "VEH-COROLLA-12",
+          "title": "TrueCar: 2026 Toyota Corolla Hatchback",
+          "url": "https://www.truecar.com/overview/toyota/corolla-hatchback/2026/",
+          "scope": "Average price paid by 2026 Corolla Hatchback trim against TSRP, and the 604-sale sample",
+          "note": "hatchback average price paid"
+        },
+        {
+          "id": "VEH-COROLLA-13",
+          "title": "iSeeCars: 2026 Toyota Corolla price",
+          "url": "https://www.iseecars.com/car/2026-toyota-corolla-price",
+          "scope": "Dealer invoice against MSRP by 2026 Corolla trim",
+          "note": "dealer invoice against MSRP"
+        },
+        {
+          "id": "VEH-COROLLA-14",
+          "title": "iSeeCars: 2026 Toyota Corolla Hybrid price",
+          "url": "https://www.iseecars.com/car/2026-toyota-corolla_hybrid-price",
+          "scope": "Dealer invoice and MSRP by 2026 Corolla Hybrid trim, including AWD",
+          "note": "hybrid invoice and AWD prices"
+        },
+        {
+          "id": "VEH-COROLLA-15",
+          "title": "iSeeCars: 2026 Toyota Corolla Hatchback price",
+          "url": "https://www.iseecars.com/car/2026-toyota-corolla_hatchback-price",
+          "scope": "Current MSRP and dealer invoice by 2026 Corolla Hatchback trim",
+          "note": "hatchback prices and invoice"
+        },
+        {
+          "id": "VEH-COROLLA-16",
+          "title": "CarWhere: 2026 Toyota Corolla price",
+          "url": "https://www.carwhere.com/price/toyota/corolla/2026",
+          "scope": "Median price paid against MSRP by 52 verified 2026 Corolla buyers, December 2025 to July 2026",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-COROLLA-17",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Toyota, the Corolla and the RAV4 at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-COROLLA-18",
+          "title": "Edmunds: 2026 Toyota Corolla",
+          "url": "https://www.edmunds.com/toyota/corolla/2026/",
+          "scope": "Edmunds rating, editors’ trim pick, tested acceleration, trunk volume and suggested prices for the 2026 Corolla",
+          "note": "review score, test results and suggested prices"
+        },
+        {
+          "id": "VEH-COROLLA-19",
+          "title": "Edmunds: 2026 Toyota Corolla Hybrid",
+          "url": "https://www.edmunds.com/toyota/corolla-hybrid/2026/",
+          "scope": "Edmunds rating, editors’ trim pick and tested acceleration for the 2026 Corolla Hybrid",
+          "note": "hybrid review score"
+        },
+        {
+          "id": "VEH-COROLLA-20",
+          "title": "Edmunds: best compact sedans",
+          "url": "https://www.edmunds.com/best/compact-sedan/",
+          "scope": "Edmunds compact sedan ranking, including the Corolla, Corolla Hybrid, Civic Hybrid, Elantra Hybrid and K4",
+          "note": "class ranking"
+        },
+        {
+          "id": "VEH-COROLLA-21",
+          "title": "Kelley Blue Book: 2026 Toyota Corolla",
+          "url": "https://www.kbb.com/toyota/corolla/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-COROLLA-22",
+          "title": "U.S. News: Toyota Corolla",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/corolla",
+          "scope": "U.S. News score, compact car rank and 2026 Best Compact Car for the Money finalist status",
+          "note": "review score and rank"
+        },
+        {
+          "id": "VEH-COROLLA-23",
+          "title": "J.D. Power: 2026 Toyota Corolla",
+          "url": "https://www.jdpower.com/cars/2026/toyota/corolla",
+          "scope": "J.D. Power consumer rating and category scores for the 2026 Corolla, and its best compact car list",
+          "note": "owner scores"
+        },
+        {
+          "id": "VEH-COROLLA-24",
+          "title": "Car and Driver: 2026 Toyota Corolla",
+          "url": "https://www.caranddriver.com/toyota/corolla-2026",
+          "scope": "Car and Driver rating and verdict for the 2026 Corolla",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-COROLLA-25",
+          "title": "IIHS: 2026 Toyota Corolla sedan",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/corolla-4-door-sedan/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 Corolla sedan",
+          "note": "sedan crash-test ratings"
+        },
+        {
+          "id": "VEH-COROLLA-26",
+          "title": "IIHS: 2026 Toyota Corolla hatchback",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/corolla-4-door-hatchback/2026",
+          "scope": "IIHS ratings for the 2026 Corolla Hatchback, including its Acceptable side rating",
+          "note": "hatchback crash-test ratings"
+        },
+        {
+          "id": "VEH-COROLLA-27",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 Corolla and Corolla Hybrid (vehicle IDs 21642 to 21644)",
+          "note": "crash-test stars"
+        },
+        {
+          "id": "VEH-COROLLA-28",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Corolla, Corolla Hybrid, Corolla Hatchback and GR Corolla recall campaigns by model year 2019 to 2026, including 26V110000",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-COROLLA-29",
+          "title": "Consumer Reports: 2026 Toyota Corolla reliability",
+          "url": "https://www.consumerreports.org/cars/toyota/corolla/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Corolla and Corolla Hybrid",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-COROLLA-30",
+          "title": "iSeeCars: Toyota Corolla resale value",
+          "url": "https://www.iseecars.com/car/toyota-corolla/resale-value",
+          "scope": "Corolla depreciation at three and five years against the all-vehicle average",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-COROLLA-31",
+          "title": "iSeeCars: Toyota Corolla Hybrid resale value",
+          "url": "https://www.iseecars.com/car/toyota-corolla-hybrid/resale-value",
+          "scope": "Corolla Hybrid depreciation at three and five years",
+          "note": "hybrid depreciation"
+        },
+        {
+          "id": "VEH-COROLLA-32",
+          "title": "CarWhere: used Toyota Corolla prices",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/corolla",
+          "scope": "Median asking price and mileage of used Corollas by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-COROLLA-33",
+          "title": "NHTSA: owner complaints",
+          "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=toyota&model=corolla&modelYear=2020",
+          "scope": "NHTSA owner complaint counts for the 2020 to 2025 Corolla and the 2023 to 2025 GR Corolla, including GR Corolla clutch complaints",
+          "note": "owner complaint counts"
+        },
+        {
+          "id": "VEH-COROLLA-34",
+          "title": "NHTSA: Toyota fuel pump support program 23TE05",
+          "url": "https://static.nhtsa.gov/odi/tsbs/2023/MC-10235218-9999.pdf",
+          "scope": "Toyota’s 15-year low-pressure fuel pump coverage on 2019 to 2020 Corollas",
+          "note": "fuel pump coverage"
+        },
+        {
+          "id": "VEH-COROLLA-35",
+          "title": "NHTSA: Toyota stall campaign 22TC07",
+          "url": "https://static.nhtsa.gov/odi/tsbs/2022/MC-10224140-9999.pdf",
+          "scope": "Toyota’s engine software campaign for 2020 Corollas that may stall at low speed",
+          "note": "2020 stall campaign"
+        },
+        {
+          "id": "VEH-COROLLA-36",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-COROLLA-37",
+          "title": "Toyota Certified: warranty",
+          "url": "https://www.toyotacertified.com/warranty",
+          "scope": "Toyota Certified Used Vehicles Gold and Silver warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-COROLLA-38",
+          "title": "Toyota: warranty",
+          "url": "https://www.toyota.com/owners/warranty-owners-manuals/",
+          "scope": "Toyota new-vehicle, hybrid component and hybrid battery warranty terms",
+          "note": "new-vehicle and hybrid warranty"
+        },
+        {
+          "id": "VEH-COROLLA-39",
+          "title": "FuelEconomy.gov: 2026 Toyota Corolla",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Corolla.shtml",
+          "scope": "EPA fuel economy by 2026 Corolla, Corolla Hybrid, Corolla Hatchback and GR Corolla version",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-COROLLA-40",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of Toyota quotes with dealer add-ons and their average price, June 2026",
+          "note": "add-ons on Toyota quotes"
+        },
+        {
+          "id": "VEH-COROLLA-41",
+          "title": "Toyota: GR Corolla",
+          "url": "https://www.toyota.com/grcorolla/",
+          "scope": "2026 GR Corolla and GRMN Corolla MSRP by trim and transmission, equipment by trim, curb weight, cargo volume, fuel requirement, destination charge and warranty",
+          "note": "GR Corolla prices and equipment"
+        },
+        {
+          "id": "VEH-COROLLA-42",
+          "title": "Toyota: 2026 GR Corolla announcement",
+          "url": "https://pressroom.toyota.com/conquer-every-corner-in-the-2026-toyota-gr-corolla/",
+          "scope": "2026 GR Corolla power, torque, all-wheel-drive torque split, differentials and track-use warning",
+          "note": "GR Corolla power and drivetrain"
+        },
+        {
+          "id": "VEH-COROLLA-43",
+          "title": "Toyota: 2026 GRMN Corolla announcement",
+          "url": "https://pressroom.toyota.com/2026-toyota-grmn-corolla-built-for-drivers-inspired-by-motorsports/",
+          "scope": "GRMN Corolla price, production run and layout",
+          "note": "GRMN Corolla"
+        },
+        {
+          "id": "VEH-COROLLA-44",
+          "title": "Car and Driver: 2026 GR Corolla Premium Plus test",
+          "url": "https://www.caranddriver.com/reviews/a71536189/2026-toyota-gr-corolla-premium-plus-test/",
+          "scope": "Instrumented test of a 2026 GR Corolla Premium Plus manual, and the revised clutch",
+          "note": "manual test results"
+        },
+        {
+          "id": "VEH-COROLLA-45",
+          "title": "Car and Driver: 2025 GR Corolla automatic test",
+          "url": "https://www.caranddriver.com/reviews/a69739806/2025-toyota-gr-corolla-automatic-test/",
+          "scope": "Instrumented test of a 2025 GR Corolla Premium Plus automatic",
+          "note": "automatic test results"
+        },
+        {
+          "id": "VEH-COROLLA-46",
+          "title": "Car and Driver: 2026 GR Corolla",
+          "url": "https://www.caranddriver.com/toyota/gr-corolla-2026",
+          "scope": "Car and Driver rating and Editors’ Choice status for the 2026 GR Corolla",
+          "note": "GR Corolla review score"
+        },
+        {
+          "id": "VEH-COROLLA-47",
+          "title": "Edmunds: 2026 GR Corolla",
+          "url": "https://www.edmunds.com/toyota/gr-corolla/2026/",
+          "scope": "Edmunds rating, hot hatch rank, trim advice, suggested prices, inventory and incentive notes for the 2026 GR Corolla",
+          "note": "GR Corolla score, prices and stock"
+        },
+        {
+          "id": "VEH-COROLLA-48",
+          "title": "iSeeCars: Toyota GR Corolla price",
+          "url": "https://www.iseecars.com/car/toyota-gr-corolla-price",
+          "scope": "Dealer invoice against MSRP by 2026 GR Corolla trim and transmission",
+          "note": "GR Corolla invoice"
+        },
+        {
+          "id": "VEH-COROLLA-49",
+          "title": "CarWhere: used Toyota GR Corolla prices",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/gr-corolla",
+          "scope": "Median asking price and mileage of used GR Corollas by model year, November 14, 2026",
+          "note": "used GR Corolla prices"
+        },
+        {
+          "id": "VEH-COROLLA-50",
+          "title": "Honda: 2027 Civic Type R pricing",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-1ca8d355442af4d3cb6e2b248601a727-2027-honda-civic-type-r-pricing-and-epa-ratings",
+          "scope": "2027 Honda Civic Type R starting MSRP",
+          "note": "Civic Type R price"
+        },
+        {
+          "id": "VEH-COROLLA-51",
+          "title": "Volkswagen: 2026 Golf R press kit",
+          "url": "https://media.vw.com/press-kits/2026-golf-r-press-kit",
+          "scope": "2026 Volkswagen Golf R starting MSRP",
+          "note": "Golf R price"
+        },
+        {
+          "id": "VEH-COROLLA-52",
+          "title": "Hyundai: Elantra N",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/elantra-n",
+          "scope": "2026 Hyundai Elantra N starting MSRP",
+          "note": "Elantra N price"
+        },
+        {
+          "id": "VEH-COROLLA-53",
+          "title": "Subaru: WRX",
+          "url": "https://www.subaru.com/vehicles/wrx.html",
+          "scope": "2026 Subaru WRX starting MSRP",
+          "note": "WRX price"
+        },
+        {
+          "id": "VEH-COROLLA-54",
+          "title": "Honda: 2026 Civic sedan pricing",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d8112b0f-2026-honda-civic-sedan-pricing-and-epa-ratings-september",
+          "scope": "2026 Honda Civic and Civic Hybrid sedan starting MSRP and EPA ratings",
+          "note": "Civic and Civic Hybrid prices"
+        },
+        {
+          "id": "VEH-COROLLA-55",
+          "title": "Hyundai: Elantra",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/elantra",
+          "scope": "2026 Hyundai Elantra Hybrid Blue starting MSRP and EPA rating",
+          "note": "Elantra Hybrid price and mpg"
+        },
+        {
+          "id": "VEH-COROLLA-56",
+          "title": "Kia: 2026 K4 pricing",
+          "url": "https://www.kiamedia.com/us/en/models/k4/2026/pricing",
+          "scope": "2026 Kia K4 starting MSRP",
+          "note": "K4 price"
+        },
+        {
+          "id": "VEH-COROLLA-57",
+          "title": "Kia: 2026 K4 IIHS Top Safety Pick+",
+          "url": "https://www.kiamedia.com/us/en/media/pressreleases/24457/2026-kia-k4-and-ev9-earn-2026-iihs-top-safety-pickplus-awards",
+          "scope": "2026 Kia K4 IIHS Top Safety Pick+ award",
+          "note": "K4 safety award"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-toyota-corolla-hybrid-se",
+        "width": 1920,
+        "height": 1214,
+        "alt": "White 2024 Toyota Corolla Hybrid SE sedan with black wheels, front three-quarter view",
+        "caption": "A Corolla Hybrid SE. The 2026 looks the same.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Toyota_Corolla_Hybrid_SE.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "50 mpg combined as a Hybrid LE",
+        "Loses 9.3% of its value in three years, against 24.8%",
+        "Gas LE sells about 7% under sticker",
+        "Five stars overall from NHTSA"
+      ],
+      "cons": [
+        "Slow: 8.8 seconds to 60 mph in Edmunds’ test",
+        "Small 13.1-cubic-foot trunk",
+        "IIHS rates rear-seat protection Marginal",
+        "ToyotaCare drops to one year on the 2027"
+      ],
+      "rivals": [
+        "Get a quote on the Honda Civic Hybrid too: Edmunds ranks it first of 10 compact sedans (7.9 out of 10), and it’s rated 49 mpg combined, though it starts at $29,395 (Sport Hybrid). The Hyundai Elantra Hybrid Blue starts at $25,650 and is rated 54 mpg combined, and the gas Kia K4 starts at $22,290 with an IIHS Top Safety Pick+ that the Corolla doesn’t have. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/toyota/corolla/2026/",
+            "value": 6,
+            "scale": 10,
+            "display": "6.0",
+            "detail": "Ranked 9th of 10 compact sedans; the Hybrid 7th"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/toyota/corolla/2026/",
+            "value": 4.5,
+            "scale": 5,
+            "display": "4.5",
+            "detail": "Owners give it 4.0 out of 5 (109 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/toyota/corolla",
+            "value": 8.6,
+            "scale": 10,
+            "display": "8.6",
+            "detail": "Finalist, Best Compact Car for the Money"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/toyota/corolla",
+            "value": 81,
+            "scale": 100,
+            "display": "81",
+            "detail": "Owners rate quality 83, driving 73"
+          }
+        ],
+        "note": "Scores for the 2026 Corolla gas sedan as published on November 16, 2026; Edmunds’ class ranks are from a list that shows the 2027. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Corolla and Corolla Hybrid",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "10.5% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Marginal",
+            "note": "Rear-seat chest and belt fit"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Good",
+            "note": "Every sedan trim"
+          },
+          {
+            "label": "IIHS crash prevention, pedestrians",
+            "grade": "Good"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 6
+          },
+          {
+            "label": "2020",
+            "value": 6
+          },
+          {
+            "label": "2021",
+            "value": 1
+          },
+          {
+            "label": "2022",
+            "value": 0
+          },
+          {
+            "label": "2023",
+            "value": 4
+          },
+          {
+            "label": "2024",
+            "value": 3
+          },
+          {
+            "label": "2025",
+            "value": 1
+          },
+          {
+            "label": "2026",
+            "value": 1
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 Corolla and Corolla Hybrid to be <a href=\"https://www.consumerreports.org/cars/toyota/corolla/2026/reliability\" rel=\"noopener\">more reliable than the average new car</a>, judging from the 2023 to 2025 models.",
+        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2026 Corolla and Corolla Hybrid, front- and all-wheel drive; grades from <a href=\"https://www.iihs.org/ratings/vehicle/toyota/corolla-4-door-sedan/2026\" rel=\"noopener\">IIHS</a> for the 2026 sedan, read November 16, 2026. The IIHS moderate overlap test covers the gas sedan only, IIHS rates the Hatchback’s side protection Acceptable, and neither body style has a Top Safety Pick. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> include the Corolla Hybrid and Hatchback. Check any used Corolla’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-toyota-corolla-le",
+          "width": 1920,
+          "height": 1216,
+          "alt": "White 2025 Toyota Corolla LE sedan with steel wheels in a parking lot",
+          "caption": "LE",
+          "author": "Rachelhoots",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Toyota_Corolla_LE_ice_cap.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-corolla-xse",
+          "width": 1920,
+          "height": 1214,
+          "alt": "Silver 2024 Toyota Corolla XSE sedan, front three-quarter view",
+          "caption": "XSE",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Toyota_Corolla_XSE.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-corolla-hatchback",
+          "width": 1920,
+          "height": 1216,
+          "alt": "Orange 2026 Toyota Corolla Hatchback FX Edition with white wheels and a roof rack at an auto show, rear three-quarter view",
+          "caption": "Hatchback FX",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyota_Corolla_FX_(2026)_(55213727681).jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-corolla-gr-corolla",
+          "width": 1920,
+          "height": 1214,
+          "alt": "Red 2026 Toyota GR Corolla Premium Plus at an auto show, front three-quarter view",
+          "caption": "GR Corolla",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyota_GR_Corolla_Premium_Plus_(2026)_(55213972294).jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        }
+      ],
+      "spotlight": {
+        "id": "gr-corolla",
+        "tab": "GR Corolla",
+        "heading": "GR Corolla: the 300-hp one",
+        "intro": [
+          "The GR Corolla shares the hatchback’s body and little else: a 300-hp turbocharged 1.6-liter three-cylinder, all-wheel drive that can send up to 70% of the power to the rear, and Torsen limited-slip differentials front and rear. Car and Driver gives the 2026 a 9.5 out of 10 and an Editors’ Choice; Edmunds rates it 6.9 and fourth of five hot hatches, marking it down for a plain Corolla cabin, highway noise and the smallest cargo area of its rivals (17.8 cubic feet)."
+        ],
+        "photo": {
+          "file": "vehicle-toyota-corolla-gr-corolla-rear",
+          "width": 1920,
+          "height": 1214,
+          "alt": "Red 2026 Toyota GR Corolla Premium Plus at an auto show, side view from the rear",
+          "caption": "GR Corolla Premium Plus, rear",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyota_GR_Corolla_Premium_Plus_(2026)_(55213882148).jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        "stats": [
+          {
+            "label": "Power",
+            "figure": "300",
+            "word": "hp",
+            "text": "295 lb-ft from a 1.6-liter turbo three-cylinder, with all-wheel drive."
+          },
+          {
+            "label": "0 to 60 mph",
+            "figure": "4.2",
+            "word": "seconds",
+            "text": "Car and Driver’s 2026 Premium Plus manual. Its automatic test car took 5.0."
+          },
+          {
+            "label": "Starting MSRP",
+            "figure": "$40,520",
+            "word": "manual",
+            "text": "The automatic costs $2,000 more on either trim. Destination is $1,295."
+          },
+          {
+            "label": "Fuel economy",
+            "figure": "24",
+            "word": "mpg",
+            "text": "EPA combined with the manual, 22 with the automatic, on premium fuel."
+          }
+        ],
+        "trims": {
+          "caption": "2026 GR Corolla starting MSRP by trim and transmission",
+          "columns": [
+            "2026 MSRP"
+          ],
+          "rows": [
+            {
+              "name": "GR Corolla (manual)",
+              "gets": "Torsen front and rear differentials, 8-inch touchscreen, 12.3-inch gauges",
+              "prices": [
+                40520
+              ]
+            },
+            {
+              "name": "GR Corolla (automatic)",
+              "gets": "8-speed automatic with paddle shifters",
+              "prices": [
+                42520
+              ]
+            },
+            {
+              "name": "Premium Plus (manual)",
+              "gets": "Heated seats and wheel, JBL audio, carbon roof, head-up display, extra radiator",
+              "prices": [
+                46565
+              ]
+            },
+            {
+              "name": "Premium Plus (automatic)",
+              "gets": "The same, with the 8-speed automatic",
+              "prices": [
+                48565
+              ]
+            }
+          ]
+        },
+        "pay": {
+          "intro": [
+            "You no longer pay over sticker for one. Edmunds counted about 1,900 new GR Corollas in stock nationwide in November, selling about $1,500 under sticker, and its Texas price data puts both trims about $2,000 under MSRP with destination. iSeeCars puts dealer invoice about 6% under MSRP."
+          ],
+          "tableTitle": "GR Corolla dealer discount",
+          "rows": [
+            {
+              "trims": "GR Corolla, Premium Plus",
+              "example": "GR Corolla (manual)",
+              "fair": "3–4% under",
+              "strong": "5–6% under",
+              "why": "Edmunds’ Texas prices run about 5% under. There’s no cash back from Toyota."
+            }
+          ]
+        },
+        "charts": [
+          {
+            "title": "Starting MSRP against rivals",
+            "bars": [
+              {
+                "label": "Subaru WRX",
+                "value": 32495,
+                "display": "$32,495"
+              },
+              {
+                "label": "Hyundai Elantra N",
+                "value": 35300,
+                "display": "$35,300"
+              },
+              {
+                "label": "GR Corolla",
+                "value": 40520,
+                "display": "$40,520"
+              },
+              {
+                "label": "Honda Civic Type R",
+                "value": 48695,
+                "display": "$48,695"
+              },
+              {
+                "label": "VW Golf R",
+                "value": 49455,
+                "display": "$49,455"
+              }
+            ],
+            "source": "Subaru, Hyundai, Toyota, Honda, Volkswagen"
+          },
+          {
+            "title": "0 to 60 mph, tested",
+            "bars": [
+              {
+                "label": "Manual, 2026",
+                "value": 4.2,
+                "display": "4.2 sec"
+              },
+              {
+                "label": "Automatic, 2025",
+                "value": 5,
+                "display": "5.0 sec"
+              }
+            ],
+            "source": "Car and Driver, Premium Plus"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2023",
+                "value": 35699,
+                "display": "$35,699"
+              },
+              {
+                "label": "2024",
+                "value": 36997,
+                "display": "$36,997"
+              },
+              {
+                "label": "2025",
+                "value": 40589,
+                "display": "$40,589"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ],
+        "after": [
+          "<strong>Buy the base GR Corolla with the manual.</strong> It’s the cheapest version ($40,520) and the quickest: Car and Driver’s manual car reached 60 mph in 4.2 seconds against 5.0 for its automatic, and the manual is rated 24 mpg combined against 22. Premium Plus adds $6,045 of comfort (heated seats and steering wheel, JBL audio, a head-up display) and an extra radiator; Edmunds suggests it only if you’ll do regular track days. The $64,360 GRMN Corolla is a two-seat, 730-car collector’s edition, so price it separately.",
+          "A used one barely saves money. CarWhere’s median 2024 asks $36,997 at about 22,500 miles, $3,500 under a new base manual that comes with a full warranty. Owners of 2023 and 2024 manuals filed NHTSA complaints about clutches wearing out early, and Car and Driver says the 2026 clutch is better suited to hard use, so have any used manual’s clutch checked. Toyota warns that track driving can cause damage its warranty won’t cover."
+        ]
+      }
     }
   ]
 }

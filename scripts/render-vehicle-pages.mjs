@@ -143,6 +143,37 @@ ${walk.steps.map(step => `<span class="vp-math__op" aria-hidden="true">−</span
 </div>
 </div>`;
 
+// An optional section on one version of the model that buyers shop on its own (the GR Corolla on the Corolla page):
+// its photo, four figures, its trims, what to pay and two comparison charts, all from `vehicle.spotlight`.
+function spotlight(spot, checked) {
+  const top = Math.max(...spot.trims.rows.map(trim => trim.prices[0]));
+  return `<section id="${spot.id}" class="vp-section vp-spotlight">
+<h2>${spot.heading}</h2>
+${paragraphs(spot.intro)}
+<figure class="vp-spotlight__photo">${picture(spot.photo, [640, 960, 1600], '(max-width: 1000px) 94vw, 680px', false)}<figcaption>${spot.photo.caption}</figcaption></figure>
+<ul class="vp-ic-offers" role="list">
+${spot.stats.map(card => `<li><p class="vp-ic-offers__label">${card.label}</p><p class="vp-ic-offers__big">${card.figure} <span>${card.word}</span></p><p class="vp-ic-offers__text">${card.text}</p></li>`).join('\n')}
+</ul>
+<table class="vp-trims">
+<caption class="sr-only">${spot.trims.caption}, checked ${checked}</caption>
+<thead><tr><th scope="col">Trim</th>${spot.trims.columns.map(column => `<th scope="col">${column}</th>`).join('')}</tr></thead>
+<tbody>
+${spot.trims.rows.map(trim => `<tr><th scope="row">${trim.name}<span>${trim.gets}</span></th><td class="vp-trims__price"><span>${dollars(trim.prices[0])}</span>${meter(trim.prices[0], top)}</td></tr>`).join('\n')}
+</tbody>
+</table>
+${paragraphs(spot.pay.intro)}
+<div class="vp-pay-glass">
+${dealCards(spot.pay, spot.trims.rows)}
+</div>
+<div class="vp-charts vp-charts--${spot.charts.length}">
+${spot.charts.map(chart => `<section><h3>${chart.title}</h3>
+${bars(chart.bars)}
+<p class="vp-charts__source">${chart.source}</p></section>`).join('\n')}
+</div>
+${paragraphs(spot.after)}
+</section>`;
+}
+
 function vehiclePage(vehicle, updated) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
@@ -150,6 +181,7 @@ function vehiclePage(vehicle, updated) {
   const topPrice = Math.max(...vehicle.trims.rows.map(trim => trim.prices[0]));
   const walk = vehicle.pay.walk;
   const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
+  if (vehicle.spotlight) tabs.splice(tabs.findIndex(([id]) => id === 'pick') + 1, 0, [vehicle.spotlight.id, vehicle.spotlight.tab]);
   const body = `<article class="vp">
 <header class="vp-head vp-width">
 <p class="vp-crumb"><a href="/blog.html">Resources</a> / ${name} price</p>
@@ -226,7 +258,7 @@ ${table('trim-caption', `${vehicle.modelYear} ${name} trims with starting MSRP, 
 <h2>The trim we’d buy</h2>
 ${paragraphs(vehicle.pick)}
 </section>
-
+${vehicle.spotlight ? `\n${spotlight(vehicle.spotlight, checked)}\n` : ''}
 <section id="plans" class="vp-section vp-plans">
 <h2>Pick how much help you want</h2>
 <div class="vp-plans__grid">
@@ -311,7 +343,7 @@ ${vehicle.sources.map(source => `<li><a href="${source.url}" rel="noopener">${so
 </ul>
 </details>
 <p>Related: <a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>.</p>
-${credits(vehicle.photo, vehicle.gallery)}</section>
+${credits(vehicle.photo, vehicle.spotlight ? [...vehicle.gallery, vehicle.spotlight.photo] : vehicle.gallery)}</section>
 </div>
 </div>
 </div>
