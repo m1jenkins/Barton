@@ -191,6 +191,15 @@ Setup, in order:
 
 Check the deals with `SELECT onboarding_id, shortlisted_at FROM deals ORDER BY created_at DESC;`, their first emails with `SELECT dealer_name, to_email, status, decided_at, sent_at, last_error FROM dealer_email_drafts ORDER BY created_at DESC;`, and one deal's negotiation with `SELECT occurred_at, kind, dealer_name, otd_cents / 100 AS otd, note FROM deal_events WHERE onboarding_id = '<intake ID>' ORDER BY occurred_at;`. A send from `/api/dealer-email` that fails stores only an error code (`Dealer email failed (EAUTH)`) and logs `[dealer_email_failed]`.
 
+### Deal update email — November 4, 2026
+
+`node scripts/deal-update-email.mjs .car-searches/<id>-update.json [--out <dir>]` renders a dashboard-style status email for the buyer and writes `<id>-update-email.html` and `.txt` next to the data file (or into `--out`). It only drafts: nothing is sent, and it reads no database. The first one is the BMW X5 search (`38358c20`).
+
+- The data file is git-ignored buyer data, in cents: `search` (title, down payment, target payment), `assumptions` (tax rate, estimated fees, APR and term for `new` and `used`), `cars[]` and `activity[]`. Build it by hand, or have Claude build it, from `deal_listings`, `deal_events` and the search file. The field list is in the script's header comment, and `scripts/_tests/deal-update-email.test.mjs` has a complete fake example.
+- Each car's estimated payment is computed. The script uses the dealer's out-the-door quote (`quote_otd_cents`) if there is one, otherwise the dealer's price (`quote_sale_cents`) or the asking price, plus tax and estimated fees. It subtracts credits marked `in_quote: false` (credits already inside a quote stay marked `true`) and the down payment, then amortizes. New cars and ex-loaners use the `new` rate and everything else the `used` rate, set per car by `finance`. The chart draws a dealer's price in solid blue and an estimate from the online listing in light blue.
+- Only whitelisted fields are rendered, so target and walk-away prices, staff names and dealer contacts in the data never appear in the output (the tests feed decoys). Activity lines are written for the buyer, so leave out staff names, trade-in details and internal notes there too.
+- The HTML is table-based with inline styles (no script, SVG, flex or grid), forces a light color scheme, and loads Inter from `/assets/buying/fonts/`. Keep it under Gmail's ~102 KB clipping limit: the X5 email with 14 cars is about 83 KB.
+
 ## Required environment
 
 | Variable | Requirement |
