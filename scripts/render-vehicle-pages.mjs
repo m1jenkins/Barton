@@ -61,7 +61,7 @@ function vehiclePage(vehicle, updated) {
 <header class="guide-heading"><h1>${vehicle.h1}</h1><p class="prose-meta">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p></header>
 ${photo(vehicle.photo, vehicle.gallery)}
 <dl class="price-glance" aria-label="${name} at a glance">
-${vehicle.glance.map(tile => `<div><dt>${tile.label}</dt><dd>${tile.value}<span>${tile.note}</span></dd></div>`).join('\n')}
+${vehicle.glance.map(tile => `<div><dt>${tile.label}</dt><dd><span class="price-glance__figure">${tile.value}</span><span class="price-glance__note">${tile.note}</span></dd></div>`).join('\n')}
 </dl>
 <div class="guide-body">
 <p class="price-lead">${vehicle.summary}</p>

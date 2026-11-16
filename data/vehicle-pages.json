@@ -15,17 +15,17 @@
       "glance": [
         {
           "label": "Starting MSRP",
-          "value": "$39,585 to $79,005",
+          "value": "$39,585 <small>to $79,005</small>",
           "note": "2026 trims, before the $2,795 destination charge. 2027s start at $40,155."
         },
         {
           "label": "Realistic discount",
-          "value": "5–7% under MSRP",
+          "value": "5–7% <small>under MSRP</small>",
           "note": "On an XLT or Lariat, before Ford’s cash. Less on XL and STX, about none on a Raptor."
         },
         {
           "label": "Ford incentives",
-          "value": "Up to $4,500 cash",
+          "value": "<small>Up to</small> $4,500 <small>cash</small>",
           "note": "On a 2026 XLT through November 30, or 0% APR for 60 months. Nothing on 2027s yet."
         },
         {
