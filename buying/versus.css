@@ -215,3 +215,8 @@
   .dr .vs .vs-from .vs-logo[src*="jd-power"] { height:13px; }
 }
 .dr .vs .vs-pairs__logo[src*="kbb"] { height:32px; margin-block:-3px; }
+
+/* Hero strip: three scores (two reviews and the Reddit index), one row on desktop. */
+@media (min-width:761px) {
+  .dr .vs .vp-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}

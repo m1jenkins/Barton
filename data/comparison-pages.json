@@ -42,16 +42,6 @@
           "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>8.3 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>9.0</span>"
         },
         {
-          "label": "EPA mpg, hybrid",
-          "section": "mpg",
-          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>43 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>40</span>"
-        },
-        {
-          "label": "Complaints per 100k",
-          "section": "reliability",
-          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>40 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>122</span>"
-        },
-        {
           "label": "Reddit Sentiment Index",
           "section": "reddit",
           "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">RAV4 </span>48 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">CR-V </span>58</span>",
