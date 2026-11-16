@@ -215,3 +215,4 @@
   .dr .vs .vs-from .vs-logo[src*="consumer-reports"] { height:22px; }
   .dr .vs .vs-from .vs-logo[src*="jd-power"] { height:13px; }
 }
+.dr .vs .vs-pairs__logo[src*="kbb"] { height:32px; margin-block:-3px; }

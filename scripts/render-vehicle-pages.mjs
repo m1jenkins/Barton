@@ -386,7 +386,7 @@ const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-icon': [72, 72, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
-  'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
+  kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
 };
 const logo = (name, { alt = logoFiles[name][2], cls = '', eager = false } = {}) => `<img class="vs-logo${cls ? ` ${cls}` : ''}" src="/assets/logos/${name}.webp" alt="${alt}" width="${logoFiles[name][0]}" height="${logoFiles[name][1]}" decoding="async"${eager ? '' : ' loading="lazy"'}>`;
 // A section heading with the logos of the sources its figures come from, e.g. { label: 'Crash tests by', names: ['iihs-hldi', 'nhtsa'] }.

@@ -1205,12 +1205,14 @@
             "logo": "edmunds"
           },
           {
-            "label": "<a href=\"https://www.kbb.com/honda/cr-v/2026/\" rel=\"noopener\">Kelley Blue Book</a>",
+            "label": "Kelley Blue Book",
             "sub": "Out of 5",
             "a": 90,
             "aText": "4.5",
             "b": 96,
-            "bText": "4.8"
+            "bText": "4.8",
+            "href": "https://www.kbb.com/honda/cr-v/2026/",
+            "logo": "kbb"
           },
           {
             "label": "U.S. News",
