@@ -102,7 +102,7 @@ function vehiclePage(vehicle, updated) {
   const ask = `<a href="/schedule.html">Ask us</a>`;
   const topPrice = Math.max(...vehicle.trims.rows.map(trim => trim.prices[0]));
   const walk = vehicle.pay.walk;
-  const tabs = [['overview', 'Overview'], ['reviews', 'Review scores'], ['safety', 'Safety'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['pay', 'What to pay'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions']];
+  const tabs = [['overview', 'Overview'], ['reviews', 'Review scores'], ['trims', 'Trims and MSRP'], ['pick', 'Our pick'], ['pay', 'What to pay'], ['incentives', 'Incentives'], ['new-used', 'New, used or CPO'], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   const body = `<article class="vp">
 <header class="vp-head vp-width">
 <p class="vp-crumb"><a href="/blog.html">Resources</a> / ${name} price</p>
@@ -144,20 +144,6 @@ ${vehicle.scores.intro ? `<p>${vehicle.scores.intro}</p>\n` : ''}<ul class="vp-s
 ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${card.source}</a><p class="vp-scorecard__score">${card.display}<span> out of ${card.scale}</span></p>${meter(card.value, card.scale)}<p class="vp-scorecard__detail">${card.detail}</p></li>`).join('\n')}
 </ul>
 <p class="vp-note">${vehicle.scores.note}</p>
-</section>
-
-<section id="safety" class="vp-section">
-<h2>Safety report card</h2>
-<div class="vp-safety">
-<div class="vp-safety__overall"><p class="vp-safety__score">${vehicle.safety.overall}<span> ${vehicle.safety.outOf ? `of ${vehicle.safety.outOf}` : 'out of 5'}</span></p>${safetyMark(vehicle.safety)}<p>${vehicle.safety.label}</p><p class="vp-safety__vehicle">${vehicle.safety.vehicle}</p></div>
-<dl class="vp-safety__tests">
-${vehicle.safety.rows.map(row => `<div><dt>${row.label}</dt><dd>${row.grade ? `<span class="vp-grade__pair">${grade(row.grade)}</span>` : stars(row.stars)}${row.note ? `<span>${row.note}</span>` : ''}</dd></div>`).join('\n')}
-</dl>
-</div>
-<div class="vp-recalls"><h3>${vehicle.safety.recallsTitle}</h3>
-${columns(vehicle.safety.recalls)}
-<p>${vehicle.safety.reliability}</p></div>
-<p class="vp-note">${vehicle.safety.note}</p>
 </section>
 
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
@@ -271,6 +257,20 @@ ${faq([
     ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
+</section>
+
+<section id="safety" class="vp-section">
+<h2>Safety report card</h2>
+<div class="vp-safety">
+<div class="vp-safety__overall"><p class="vp-safety__score">${vehicle.safety.overall}<span> ${vehicle.safety.outOf ? `of ${vehicle.safety.outOf}` : 'out of 5'}</span></p>${safetyMark(vehicle.safety)}<p>${vehicle.safety.label}</p><p class="vp-safety__vehicle">${vehicle.safety.vehicle}</p></div>
+<dl class="vp-safety__tests">
+${vehicle.safety.rows.map(row => `<div><dt>${row.label}</dt><dd>${row.grade ? `<span class="vp-grade__pair">${grade(row.grade)}</span>` : stars(row.stars)}${row.note ? `<span>${row.note}</span>` : ''}</dd></div>`).join('\n')}
+</dl>
+</div>
+<div class="vp-recalls"><h3>${vehicle.safety.recallsTitle}</h3>
+${columns(vehicle.safety.recalls)}
+<p>${vehicle.safety.reliability}</p></div>
+<p class="vp-note">${vehicle.safety.note}</p>
 </section>
 
 <section class="vp-sources" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Prices, incentives and market figures were checked on ${checked} and change often, so confirm them with the dealer before you sign. The discount ranges are our estimate from the sources below, not a promise. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p>
