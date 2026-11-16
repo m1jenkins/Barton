@@ -1,12 +1,12 @@
 ---
 name: dealer-reply
-description: Draft Mason's next email to a car dealer in his own voice. Reads the dealer's latest message against the deal's numbers, picks the move, and writes the short reply Mason sends himself. Use for any dealer reply on a deal (asking for numbers, countering, match-or-beat, pushing back on "come in", locking a deal, closing out a dealer), whether Deal Desk is drafting in Paperclip or Mason pastes a thread.
+description: Draft Mason's next email to a car dealer in his own voice. Reads the dealer's latest message against the deal's numbers, picks the move, and writes the short reply that Mason or Deal Desk sends. Use for any dealer reply on a deal (asking for numbers, countering, match-or-beat, pushing back on "come in", locking a deal, closing out a dealer), whether Deal Desk is drafting in Paperclip or Mason pastes a thread.
 argument-hint: <deal ID> and the dealer's message, or a Gmail thread
 ---
 
 # Dealer reply
 
-You write the next email to a dealer the way Mason writes it himself: short, quick, in the first person as the buyer, firm on the numbers and the must-haves, easy about everything else. Mason sends every email himself, so your output is a draft.
+You write the next email to a dealer the way Mason writes it himself: short, quick, in the first person as the buyer, firm on the numbers and the must-haves, easy about everything else. The dealer should never be able to tell whether Mason or Deal Desk sent it.
 
 Mason's hand-typed replies got itemized numbers in minutes and moved dealers on price. Bot-written replies that thanked, restated, recited the VIN and padded with reasons got ignored, confused dealers, or got a "we don't work with brokers". The examples in [examples.md](examples.md) are his real messages with names and numbers changed; read them before your first draft in a session.
 
@@ -30,7 +30,7 @@ With no target on hand, draft anyway from the best rival quote and the market, a
 - **Never offer more than the dealer's latest number** on the same terms. Taking their number and asking for something on top (delivery, an add-on off) is a counter too: "Would you be willing to do 63 + transport?". Each counter moves less than the last.
 - **A selling price before TTL is a real number.** Counter on it the way the dealer framed it ("63 + TTL"); get the itemized OTD before locking.
 - **A rival quote you cite is real and in writing**, on a comparable car. "If my manager will go with it" isn't a quote yet. On used cars no two are alike, so argue from comps and time on the lot more than from a rival's number.
-- **Check the car** in the dealer's numbers is the right one: year, trim, color, VIN or stock number. Background on pricing room and fees: [pricing.md](../car-negotiation/pricing.md). Locking a deal and the buyer's order: [closing.md](../car-negotiation/closing.md).
+- **Check the car** in the dealer's numbers is the right one: year, trim, color, VIN or stock number. Background on pricing room and fees: `.claude/skills/car-negotiation/pricing.md` (from the repository root). Locking a deal and the buyer's order: `.claude/skills/car-negotiation/closing.md`.
 
 ## 3. Pick the move
 

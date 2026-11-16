@@ -1,8 +1,8 @@
 # Paperclip operating plan (November 11, 2026)
 
-Status: draft for Mason's review. Nothing has been created in Paperclip yet. Phase 1 starts once Mason signs off.
+Status: Phase 1 under way. Mason approved the plan and the first phase on November 11; Deal Desk is being set up in Paperclip.
 
-This plan sets out how Paperclip, the self-hosted agent app on Mason's Mac, should run Steer Me Right's deal work. The goal is for Mason's time to go only to decisions and to pressing Send. The Camry deal is the pilot. This repository is public, so the plan names no buyers, dealers or deal IDs.
+This plan sets out how Paperclip, the self-hosted agent app on Mason's Mac, should run Steer Me Right's deal work. The goal is for the deals to run on their own, with Mason's time going only to the decisions that commit the buyer. The Camry deal is the pilot. This repository is public, so the plan names no buyers, dealers or deal IDs.
 
 ## Mason's decisions (November 11)
 
@@ -15,6 +15,7 @@ This plan sets out how Paperclip, the self-hosted agent app on Mason's Mac, shou
 | Uptime | The Mac is on all day, so Paperclip routines can run during business hours. |
 | Scope | Deal work first. SEO, site work and marketing come later. |
 | Volume | One to two deals a week now, likely three to four soon. |
+| Autonomy (later on November 11) | Deal Desk sends dealer replies itself. It starts with a day or two of drafts on the Camry deal to check the voice, then switches to sending. Three things still go to Mason: committing to buy (a final deal, signing, a deposit, a credit application, the winning dealer), the buyer's personal details, and changing the car or dropping a must-have. Counters, including ones above the target, are Deal Desk's. |
 | The bottleneck | Dealer email. After dozens of dealers get a first email, replies pile up in the dealer Gmail inbox. Mason doesn't yet trust Claude to answer them alone, because the drafts don't sound like a seasoned negotiator. |
 
 ## How the work runs today
@@ -36,14 +37,14 @@ Two gaps make the most work: no one triages the dealer inbox until Mason asks, a
 | | Paperclip agents | Mason | Duet |
 | --- | --- | --- | --- |
 | Dealer inbox | Check on a schedule, match each email to a deal and dealer, label it, log quotes to `deal_events`, track every dealer's status | | Retire the deal channels once Paperclip covers a deal, so two bots never draft in the same thread |
-| Replies to dealers | Draft in Mason's voice, saved as a **Gmail draft in the dealer's thread** | Read, edit and send the draft from Gmail | |
+| Replies to dealers | Write in Mason's voice and send in the dealer's thread (drafts only during the first day or two) | Gets an email notice for his three calls; reads the daily summary | |
 | Picking the winner | List each dealer's best out-the-door price and ask for a decision | Decide | |
 | Dealer website forms | | | Keeps sending forms through Chrome when Mason asks |
 | Car search | Phase 3: run the `car-search` skill when a paid intake lands, and stop at the shortlist | Review the shortlist | |
 | Buyers and leads | Phase 3: draft lead replies and buyer updates as Zoho drafts | Send | #client-outreach stays until then |
 | Quick questions and one-off help | | Ask | The main Duet chat stays Mason's place to talk things through |
 
-**Paperclip coordinates, Mason sends.** Paperclip agents never send anything to a dealer, buyer or lead. Every outgoing email is a draft that Mason sends himself. That's the only way to make the rule stick. Paperclip can only enforce an approval on a connector action set to "Ask first". An instruction like "ask Mason before emailing" is just text in a prompt, and Claude Code agents run on the Mac with permission prompts off. Instead, each agent's Claude Code settings deny the send tools (see Approval gates), so the agent has no way to send.
+**Deal Desk negotiates; Mason commits.** Deal Desk answers dealers on its own. Paperclip can enforce only one kind of gate, a connector action set to "Ask first"; anything else ("ask Mason before X") is an instruction the agent follows. So the gates are layered: during the draft days, Composio's send path is set to "Ask first" and the agent's mode is `draft`; after that, Mason's three calls rest on Deal Desk's instructions and the `dealer-reply` checks, with the daily summary as the way to catch a slip. Buyer and lead email stays with Mason until Phase 3. The one exception is the fixed, pre-approved lifecycle emails (welcome, what to expect, deal done, review ask), which the site sends on its own (Mason, November 13, 2026; see "Customer email" in `docs/implementation-operations.md`).
 
 ## Company structure
 
@@ -51,7 +52,7 @@ The company is the existing one Mason already claimed. Its goal: *close every pa
 
 | Agent | Phase | Model | Wakes on | Skills | Tools |
 | --- | --- | --- | --- | --- | --- |
-| **Deal Desk** | 1 | Opus 5.5 for the pilot (Sonnet 5.5 if usage runs tight) | "Dealer inbox" routine: every 10 min from 8 am to 7 pm Central, every 30 min from 7 to 9 pm. Also Mason's comments. | `dealer-reply` (new), `car-negotiation`'s `pricing.md` and `closing.md` | Dealer Gmail: read, label, create drafts. Send, reply and forward denied. Neon: read, plus inserts into `deal_events`. MarketCheck for market checks. |
+| **Deal Desk** | 1 | Opus 5.5 for the pilot (Sonnet 5.5 if usage runs tight) | "Dealer inbox" routine: every 10 min from 8 am to 7 pm Central, every 30 min from 7 to 9 pm. Also Mason's comments. | `dealer-reply` (new), `car-negotiation`'s `pricing.md` and `closing.md` | Dealer Gmail: read and draft through Google Workspace (no send tool there); send and label through Composio's Gmail, open to Deal Desk only. Neon: read, plus inserts into `deal_events`. MarketCheck for market checks. |
 | **Chief of Staff** (the CEO slot) | 2 | Sonnet 5.5 | 8 am and 6 pm digest routines, and a check for new paid intakes every 30 min | `paperclip-board` | Neon read. Paperclip tasks and projects. |
 | **Car Search** | 3 | Opus 5.5 | A task from Chief of Staff for each new paid intake | `car-search` | MarketCheck, `scripts/car-search.mjs` (`get` and `submit`). The shortlist waits for Mason. |
 | **Client Desk** | 3 | Sonnet 5.5 | New leads (Neon check), and Mason asking for a buyer update | `lead-reply` (new), the deal update email script | Zoho: read and create drafts, sending denied. Neon read. |
@@ -62,11 +63,11 @@ How the work is laid out in Paperclip:
 - **One project per deal**, named by model and deal ID (the first 8 characters of the intake ID), with no buyer name. Gmail labels follow the same rule. The current Camry label carries the buyer's first name, so rename it to the deal ID.
 - **One task per dealer** within the deal. The task's status mirrors the negotiation:
   - `todo`: waiting on the dealer
-  - `in_review`: a draft is waiting for Mason to send
+  - `in_review`: a draft is waiting for Mason (draft days only)
   - `blocked`: needs a decision from Mason
   - `done`: the dealer agreed or was dropped
 - Each task's comments hold the itemized quotes and Deal Desk's reasoning. Neon `deal_events` stays the permanent record.
-- **Choosing the dealer** is a Paperclip board approval: "Pick a dealer for deal X". It lists every dealer's best out-the-door price beside the target. The approval only records the decision. The emails that act on it are still drafts.
+- **Choosing the dealer** is a Paperclip board approval: "Pick a dealer for deal X". It lists every dealer's best out-the-door price beside the target. Deal Desk acts on Mason's decision: it tells the winner and closes out the others.
 
 Paperclip runs only on loopback, so the site on Vercel can't call it. New intakes and leads are therefore found by checking Neon on a schedule, not by webhook.
 
@@ -74,13 +75,16 @@ Paperclip runs only on loopback, so the site on Vercel can't call it. New intake
 
 | Gate | How it's enforced |
 | --- | --- |
-| Nothing sent to dealers, buyers or leads | **Enforced.** Each agent's Claude Code `permissions.deny` blocks the Gmail and Zoho send, reply and forward tools. Agents can only create drafts. |
+| Dealer email during the draft days | **Enforced.** The Google Workspace connector has no send tool, and Composio's multi-execute (its only route to Gmail send) is set to "Ask first". After the draft days it is set to "Allowed". |
+| Who can reach Composio | **Enforced.** Composio's connection is limited to Deal Desk ("Just agents I pick"), so no other agent can send from the dealer inbox. |
+| Mason's three calls | Instructions: Deal Desk blocks the task, answers the dealer nothing on the point, and emails Mason a notice. |
+| Buyer and lead email | Nothing in Paperclip can reach Zoho until Phase 3. |
 | Neon writes limited to `deal_events` | **Enforced** with a dedicated Neon role, `paperclip_agent`, which can read every table and insert into `deal_events` only. The agents never get the owner role. |
 | Hiring agents, budget overrides | Paperclip board approvals, which are on by default for hires. |
-| Picking the winning dealer, telling a dealer the buyer is ready | Board approval or a blocked task. The real gate is that Mason sends the email. |
+| Picking the winning dealer, telling a dealer the buyer is ready | A "Pick a dealer" board approval; Deal Desk acts once Mason decides. |
 | Pushes to the site | Growth works on a branch, Mason merges, and no agent has push rights. |
 
-Phase 0 checks that deny rules still apply when Paperclip starts Claude Code with permission prompts off.
+Deal Desk's Claude Code settings (`docs/paperclip/deal-desk.settings.json`) also deny `git push`, deploys, IndexNow and the car-search submit and handoff commands.
 
 ## Costs and usage
 
@@ -113,17 +117,18 @@ What happens in Paperclip:
    - Deal Desk matches the email to its task by thread, then by VIN or stock number.
    - It itemizes the quote and logs it to `deal_events`.
    - It compares the quote with the best out-the-door price so far and with the target.
-3. **A draft is ready:**
+3. **The reply:**
    - Deal Desk writes the reply in Mason's voice. Examples: "We have a written number of $X out the door on the same car, can you beat it?", or a friendly reply to keep a come-in request on email.
-   - It saves the reply as a Gmail draft in that thread and moves the task to `in_review`.
    - It adds one comment explaining why.
-4. **Mason sends:** he opens Gmail's Drafts on his phone, edits if needed, and sends.
-   - On the next run, Deal Desk sees the sent reply and moves the task back to `todo`.
-   - It notes any edit Mason made, so the `dealer-reply` skill can learn from it.
+4. **During the draft days:**
+   - Deal Desk saves the reply as a Gmail draft in that thread and moves the task to `in_review`.
+   - Mason opens Gmail's Drafts on his phone, edits if needed, and sends.
+   - On the next run, Deal Desk sees what was sent and moves the task back to `todo`. It notes any edit Mason made, so the `dealer-reply` skill can learn from it.
+   - After that, Deal Desk sends the replies itself.
 5. **A decision comes up:** for example, whether the best price without heated seats beats a higher price with them.
    - Deal Desk opens a "Pick a dealer" approval listing every dealer's best out-the-door price and what each car is missing.
    - Mason decides there, or in chat with the buyer first.
-6. **Closing:** Deal Desk drafts the close-outs to the other dealers and checks the buyer's order line by line against `closing.md`. The buyer's name goes on the buyer's order only after Mason says the buyer is ready.
+6. **Closing:** Deal Desk sends the close-outs to the other dealers and checks the buyer's order line by line against `closing.md`. The buyer's name goes on the buyer's order only after Mason says the buyer is ready.
 
 ## Rollout
 
