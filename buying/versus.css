@@ -6,7 +6,7 @@
 .dr .vs { --car-a:#2A5DA8; --car-b:#C8553D; }
 
 /* Legend: a swatch and the car's name. */
-.dr .vs-legend { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:16px; font-size:13px; line-height:1.3; font-weight:600; color:var(--muted); }
+.dr .vs .vs-legend { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:14px; font-size:13px; line-height:1.3; font-weight:600; color:var(--muted); }
 .dr .vs-legend li { display:flex; align-items:center; gap:8px; }
 .dr .vs-key { display:inline-block; flex:none; width:12px; height:12px; border-radius:3px; background:var(--car-a); }
 .dr .vs-key--b { background:var(--car-b); }
@@ -46,6 +46,12 @@
 .dr .vs-board tbody th a { color:inherit; text-decoration:none; }
 .dr .vs-board tbody th a:hover { color:var(--sign); text-decoration:underline; text-underline-offset:3px; }
 .dr .vs-board td.vs-win { font-weight:600; }
+/* What to pay: dollar targets for the trims we'd buy, big figures with the percent under them. */
+.dr .vs-targets tbody td strong { display:block; font-size:20px; line-height:1.2; font-weight:600; letter-spacing:-.01em; }
+.dr .vs-targets tbody td span { display:block; margin-top:2px; font-size:13px; color:var(--muted); }
+.dr .vs-targets .vs-targets__msrp :is(th,td) { color:var(--muted); }
+.dr .vs-targets .vs-targets__paid :is(th,td) { font-size:13.5px; color:var(--muted); font-weight:400; border-bottom:0; }
+.dr .vs-targets thead small { display:block; margin:3px 0 0 17px; font-size:13px; font-weight:400; }
 .dr .vs-edge { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; white-space:nowrap; }
 .dr .vs-edge--tie { font-weight:400; color:var(--muted); }
 .dr .vs-tally { display:grid; grid-template-columns:1fr 1fr; margin-top:18px; border-block:1px solid var(--line); }
@@ -56,11 +62,11 @@
 .dr .vs-tally .vs-key { align-self:center; }
 
 /* Paired bars: a label, then one bar per car scaled to the larger value in the chart, value at the end of each bar. */
-.dr .vs-chart { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
-.dr .vs-chart > h3 { margin-bottom:4px; }
-.dr .vs-chart__note { margin-top:2px; font-size:13px; line-height:1.45; color:var(--muted); }
-.dr .vs-chart__source { margin-top:12px; font-size:12px; line-height:1.45; color:var(--muted); }
-.dr .vs-pairs { margin-top:12px; }
+.dr .vs-chart { margin-top:36px; padding-top:24px; border-top:1px solid var(--line); }
+.dr .vs-chart > h3 { margin-bottom:6px; }
+.dr .vs :is(.vs-chart, .vs-themes, .vs-issues, .vs-index) + p { margin-top:28px; }
+.dr .vs-chart__note { margin-top:0; font-size:13px; line-height:1.45; color:var(--muted); }
+.dr .vs .vs-pairs { margin-top:16px; }
 .dr .vs-pairs > li { display:grid; grid-template-columns:minmax(120px,190px) minmax(0,1fr); gap:6px 16px; align-items:center; padding:10px 0; border-bottom:1px solid var(--line); }
 .dr .vs-pairs > li:last-child { border-bottom:0; }
 .dr .vs-pairs__label { font-size:14px; line-height:1.3; font-weight:600; }
@@ -73,7 +79,7 @@
 .dr .vs-bar__who { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
 
 /* Paired columns for a count per model year. Bars are scaled to the tallest in the chart. */
-.dr .vs-cols { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); align-items:end; gap:6px; margin-top:18px; }
+.dr .vs .vs-cols { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); align-items:end; gap:6px; margin-top:20px; }
 .dr .vs-cols > li { display:flex; flex-direction:column; min-width:0; }
 .dr .vs-cols__pair { display:flex; align-items:flex-end; justify-content:center; gap:3px; height:176px; }
 .dr .vs-cols__bar { display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:min(26px,42%); height:100%; }
@@ -81,21 +87,6 @@
 .dr .vs-cols__bar--b i { background:var(--car-b); }
 .dr .vs-cols__bar b { margin-bottom:4px; font-size:11.5px; line-height:1; font-weight:600; font-variant-numeric:tabular-nums; }
 .dr .vs-cols__label { padding-top:8px; border-top:1px solid var(--ink); font-size:13px; line-height:1.3; text-align:center; color:var(--muted); font-variant-numeric:tabular-nums; }
-
-/* Trim ladder: each car's trims on one shared price axis. A tick per trim; the labels sit in the table below it. */
-.dr .vs-ladder { margin-top:16px; }
-.dr .vs-ladder__lane { display:grid; grid-template-columns:96px minmax(0,1fr); gap:14px; align-items:center; padding:12px 0; border-bottom:1px solid var(--line); }
-.dr .vs-ladder__name { display:flex; align-items:center; gap:7px; font-size:14px; font-weight:600; }
-.dr .vs-ladder__track { position:relative; height:30px; }
-.dr .vs-ladder__track::before { content:""; position:absolute; top:50%; left:var(--from); width:calc(var(--to) - var(--from)); height:4px; margin-top:-2px; border-radius:2px; background:color-mix(in srgb,var(--car-a) 28%,#fff); }
-.dr .vs-ladder__lane--b .vs-ladder__track::before { background:color-mix(in srgb,var(--car-b) 28%,#fff); }
-.dr .vs-ladder__track i { position:absolute; top:50%; left:var(--x); width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:var(--car-a); box-shadow:0 0 0 2px #fff; }
-.dr .vs-ladder__lane--b .vs-ladder__track i { background:var(--car-b); }
-.dr .vs-ladder__track i.vs-pick { width:18px; height:18px; margin:-9px 0 0 -9px; box-shadow:0 0 0 2px #fff, 0 0 0 3.5px var(--ink); }
-.dr .vs-ladder__axis { position:relative; height:22px; margin-left:110px; border-top:1px solid var(--ink); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
-.dr .vs-ladder__axis span { position:absolute; top:5px; left:var(--x); transform:translateX(-50%); white-space:nowrap; }
-.dr .vs-ladder__key { margin-top:10px; font-size:13px; color:var(--muted); }
-.dr .vs-ladder__key i { display:inline-block; width:14px; height:14px; margin-right:6px; border-radius:50%; background:#fff; box-shadow:inset 0 0 0 2px var(--ink); vertical-align:-2px; }
 
 /* Head to head: one bar split between the cars by share of recommendations. */
 .dr .vs-split { margin-top:20px; }
@@ -121,7 +112,7 @@
 .dr .vs-index__detail { margin-top:12px; font-size:14px; line-height:1.45; color:var(--muted); }
 
 /* Diverging bars: net sentiment per topic, from −100 (all negative) to +100 (all positive), both cars on one row. */
-.dr .vs-diverge { margin-top:12px; }
+.dr .vs .vs-diverge { margin-top:16px; }
 .dr .vs-diverge__axis, .dr .vs-diverge > li { display:grid; grid-template-columns:minmax(110px,170px) minmax(0,1fr); gap:6px 16px; align-items:center; }
 .dr .vs-diverge > li { padding:9px 0; border-bottom:1px solid var(--line); }
 .dr .vs-diverge__label { font-size:14px; line-height:1.3; font-weight:600; }
@@ -155,19 +146,12 @@
 .dr .vs-signals li > span:first-child { font-weight:600; }
 .dr .vs-signals li > span:first-child small { display:block; margin-top:2px; font-size:12.5px; font-weight:400; color:var(--muted); }
 .dr .vs-signals li:first-child > span:first-child { font-weight:600; }
-.dr .vs-signals { margin-top:18px; }
+.dr .vs .vs-signals { margin-top:18px; }
 
 /* Known problems: ruled two-column list, the car named by its key. */
-.dr .vs-issues { display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:18px; border-top:1px solid var(--line); }
+.dr .vs .vs-issues { display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:18px; border-top:1px solid var(--line); }
 .dr .vs-issues li { padding:14px 0 16px; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.5; }
 .dr .vs-issues strong { display:flex; align-items:center; gap:8px; margin-bottom:4px; font-size:15px; }
-
-/* Method: the index's numbers in a ruled grid. */
-.dr .vs-method { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:22px; border-block:1px solid var(--line); }
-.dr .vs-method li { padding:16px 18px 16px 0; }
-.dr .vs-method li + li { padding-left:18px; border-left:1px solid var(--line); }
-.dr .vs-method strong { display:block; font-size:28px; line-height:1.1; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
-.dr .vs-method span { display:block; margin-top:4px; font-size:13px; line-height:1.4; color:var(--muted); }
 
 @media (max-width:760px) {
   .dr .vs-photos figure { aspect-ratio:1.1; }
@@ -177,6 +161,9 @@
   .dr .vs-board { font-size:14px; }
   .dr .vs-board :is(th,td) { padding:11px 10px 11px 0; }
   .dr .vs-board .vs-edge span { display:none; }
+  .dr .vs-targets tbody td strong { font-size:16px; white-space:nowrap; }
+  .dr .vs-targets tbody td span, .dr .vs-targets .vs-targets__paid :is(th,td) { font-size:12px; }
+  .dr .vs-targets tbody th { width:22%; font-size:13px; }
   .dr .vs-tally strong { font-size:34px; }
   .dr .vs-tally p + p { padding-left:14px; }
   .dr .vs-pairs > li, .dr .vs-diverge > li, .dr .vs-diverge__axis { grid-template-columns:1fr; }
@@ -184,18 +171,13 @@
   .dr .vs-cols__pair { height:140px; }
   .dr .vs-cols__bar b { font-size:10px; }
   .dr .vs-cols__label { font-size:11px; }
-  .dr .vs-ladder__lane { grid-template-columns:1fr; gap:6px; }
-  .dr .vs-ladder__axis { margin-left:0; }
   .dr .vs-index { grid-template-columns:1fr; }
   .dr .vs-index > div + div { padding-left:0; border-left:0; border-top:1px solid var(--line); }
   .dr .vs-index__score { font-size:58px; }
-  .dr .vs-themes, .dr .vs-issues { grid-template-columns:1fr; }
+  .dr .vs-themes, .dr .vs .vs-issues { grid-template-columns:1fr; }
   .dr .vs-signals li { grid-template-columns:1fr 1fr; }
   .dr .vs-signals li > span:first-child { grid-column:1 / -1; }
   .dr .vs-signals li:first-child { display:none; }
-  .dr .vs-method { grid-template-columns:1fr 1fr; }
-  .dr .vs-method li:nth-child(3) { padding-left:0; border-left:0; border-top:1px solid var(--line); }
-  .dr .vs-method li:nth-child(4) { border-top:1px solid var(--line); }
 }
 
 /* Picks by venue: the neutral subreddits first and largest, then each car's own subreddit. */
@@ -205,3 +187,31 @@
 .dr .vs-split:not(.vs-split--lead) .vs-split__bar { height:30px; }
 .dr .vs-split:not(.vs-split--lead) .vs-split__bar span { font-size:14px; }
 .dr .vs-split__bar span[style="--w:0%"] { display:none; }
+
+/* Logos. Each is sized by height; width follows the file. The .vs prefix outweighs ".vs-photos img", which fills the photo. */
+.dr .vs img.vs-logo { display:block; flex:none; width:auto; max-width:none; object-fit:contain; }
+.dr .vs .vs-photos__brand { display:flex; align-items:center; gap:9px; }
+.dr .vs .vs-photos__make { height:22px; }
+.dr .vs .vs-photos__model { height:15px; }
+.dr .vs .vs-glance__make { height:15px; }
+.dr .vs img.vp-strip__logo { display:inline-block; height:15px; margin-right:6px; vertical-align:-3px; }
+.dr .vs .vs-pairs__logo { height:20px; }
+.dr .vs .vs-pairs__label a:has(.vs-pairs__logo) { display:inline-block; }
+.dr .vs-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 24px; margin-bottom:14px; }
+.dr .vs-head h2 { margin:0; font-size:clamp(23px,2.3vw,29px); line-height:1.2; letter-spacing:-.02em; }
+.dr .vs .vs-from { display:flex; align-items:center; gap:14px; margin:0; font-size:12px; color:var(--muted); }
+.dr .vs .vs-from .vs-logo { height:24px; }
+.dr .vs .vs-from .vs-logo[src*="iihs"] { height:32px; }
+@media (max-width:760px) {
+  .dr .vs .vs-photos__make { height:18px; }
+  .dr .vs .vs-photos__model { height:12px; }
+  .dr .vs .vs-from .vs-logo { height:20px; }
+  .dr .vs .vs-from .vs-logo[src*="iihs"] { height:27px; }
+}
+.dr .vs .vs-pairs__logo[src*="jd-power"] { height:14px; }
+.dr .vs .vs-from .vs-logo[src*="consumer-reports"] { height:26px; }
+.dr .vs .vs-from .vs-logo[src*="jd-power"] { height:15px; }
+@media (max-width:760px) {
+  .dr .vs .vs-from .vs-logo[src*="consumer-reports"] { height:22px; }
+  .dr .vs .vs-from .vs-logo[src*="jd-power"] { height:13px; }
+}
