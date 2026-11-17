@@ -677,8 +677,10 @@ export async function renderVehiclePages() {
   const [chrome, data, comparisons, css, versusCss] = await Promise.all([read(chromePage), read('data/vehicle-pages.json').then(JSON.parse), read('data/comparison-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet)), readFile(path.join(root, versusSheet))]);
   const link = sheetLink(stylesheet, css);
   const pages = data.vehicles.map(vehicle => {
-    const page = vehiclePage(vehicle, data.updated);
-    const html = shell(chrome, { ...page, published: vehicle.published, updated: data.updated }, page.body);
+    // A page checked after the file-wide date carries its own date.
+    const updated = vehicle.checkedOn > data.updated ? vehicle.checkedOn : data.updated;
+    const page = vehiclePage(vehicle, updated);
+    const html = shell(chrome, { ...page, published: vehicle.published, updated }, page.body);
     return { slug: page.slug, html: html.replace('</head>', `    ${link}\n</head>`) };
   });
   for (const cmp of comparisons.comparisons) {
