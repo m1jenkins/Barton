@@ -3452,6 +3452,882 @@
       ]
     },
     {
+      "slug": "chevrolet-silverado-1500-price.html",
+      "name": "Chevrolet Silverado 1500",
+      "modelYear": 2026,
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Chevrolet Silverado 1500 Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Chevrolet Silverado 1500 costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell the outgoing 2026, Chevrolet’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Chevrolet Silverado 1500 price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$37,200 <small>to $71,800</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "5–7% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Chevrolet incentives",
+          "value": "$6,000 <small>cash, 5.3L V8 only</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 LT",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The 2026 Silverado 1500 is the outgoing truck, and Chevrolet is paying you to take one. Dealers had 99 days of Silverados at the end of October against 87 for the industry, and Chevrolet has $6,000 cash on V8 models or 0% for 60 months, both for delivery by November 30. You get a full-size crew cab from $37,200, four engines including a diesel rated up to 25 mpg combined, and up to 13,300 pounds of towing. You give up ride and cabin polish (Edmunds scores the 2026 an average 6.1 out of 10), crash results that trail the class (IIHS rates the crew cab Poor in its updated moderate overlap test), and Consumer Reports expects below-average reliability. The all-new 2027 is a clearly better truck by Edmunds’ score (7.7, second of five large trucks), but it costs $900 to $8,500 more on most trims and Chevrolet lists no offers on it yet. Price a 2026 LT crew cab with the 5.3L V8, aim for 5–7% under MSRP on top of the $6,000, and take the 0% instead if you finance. Prices and offers were checked on November 16, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "WT",
+            "short": "Work truck",
+            "gets": "Regular, double or crew cab with 12 bed tie-downs and Chevy Safety Assist; Adaptive Cruise Control available",
+            "prices": [
+              37200,
+              38600
+            ],
+            "engine": "2.7L TurboMax turbo four; 5.3L V8 available on double and crew cab"
+          },
+          {
+            "name": "Custom",
+            "short": "Value step up",
+            "gets": "20-inch silver wheels, 10-way power driver seat, 40/20/40 front bench, Trailering Package, remote start",
+            "prices": [
+              42700,
+              43600
+            ],
+            "engine": "2.7L TurboMax"
+          },
+          {
+            "name": "LT",
+            "short": "The value pick",
+            "gets": "13.4-inch touchscreen, 12.3-inch digital gauges, LED headlamps; bucket seats and a Safety Package with HD Surround Vision available",
+            "prices": [
+              48200,
+              47900
+            ],
+            "engine": "2.7L TurboMax; 5.3L V8 and 3.0L Duramax diesel available",
+            "pick": true
+          },
+          {
+            "name": "RST",
+            "short": "Sporty look",
+            "gets": "Body-color grille bar, bumpers and door handles, 20-inch black wheels available; RST Select, Redline and Rally editions",
+            "prices": [
+              51300,
+              "Dropped"
+            ],
+            "engine": "2.7L TurboMax; 5.3L V8 and diesel available; 6.2L V8 on crew cab 4WD"
+          },
+          {
+            "name": "Custom Trail Boss",
+            "short": "Entry off-road",
+            "gets": "2-inch lift, Z71 package, two-speed transfer case, skid plates, 18-inch black wheels on mud-terrain tires",
+            "prices": [
+              53200,
+              54400
+            ],
+            "engine": "2.7L TurboMax; 5.3L V8 and diesel available"
+          },
+          {
+            "name": "LTZ",
+            "short": "Premium",
+            "gets": "Perforated leather front seats, 20-inch wheels, eight cameras with up to 14 views",
+            "prices": [
+              58000,
+              "Dropped"
+            ],
+            "engine": "5.3L V8; 6.2L V8 (4WD) and diesel available"
+          },
+          {
+            "name": "LT Trail Boss",
+            "short": "Off-road",
+            "gets": "2-inch lift, Z71 package, locking rear differential, 20-inch black wheels, 13.4-inch touchscreen",
+            "prices": [
+              60000,
+              61200
+            ],
+            "engine": "2.7L TurboMax; 5.3L V8, 6.2L V8 and diesel available"
+          },
+          {
+            "name": "High Country",
+            "short": "Luxury",
+            "gets": "Perforated leather with exclusive stitching, open-pore wood; Super Cruise available, including while towing",
+            "prices": [
+              63200,
+              71700
+            ],
+            "engine": "5.3L V8; 6.2L V8 (4WD) and diesel available"
+          },
+          {
+            "name": "ZR2",
+            "short": "Serious off-road",
+            "gets": "2-inch lift, Multimatic DSSV dampers, front and rear locking differentials, 33-inch tires, head-up display",
+            "prices": [
+              71800,
+              77200
+            ],
+            "engine": "3.0L Duramax diesel; 6.2L V8 available"
+          }
+        ],
+        "after": [
+          "For 2027 the Silverado is all new: 5.7-liter and 6.6-liter V8s replace the 5.3L and 6.2L, every engine gets a 10-speed automatic, and a 16.3-inch screen is standard. The RST and LTZ are dropped, the LT becomes the “Silverado” (Z71 on every 4WD) and the LT Trail Boss becomes the Trail Boss. The High Country rises $8,500 and the ZR2 $5,400. Destination is $2,795 on both years. Chevrolet lists up to 13,300 pounds of towing on the 2026 and 13,700 on the 2027 with the 5.7L."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 LT crew cab with the 5.3L V8, with 4WD if you need it.</strong> At $48,200 it starts $3,100 below an RST, and it has the 13.4-inch touchscreen and 12.3-inch digital gauges. The 5.3L is the engine Chevrolet puts $6,000 on this month; an LT with the TurboMax four gets $2,250. TrueCar’s averages show LTs selling about 5% under MSRP, so there’s room to ask for more, and the RST’s black-wheel look is the one to haggle on, since those average nearly 7% under.",
+        "If you tow often or drive long highway miles, get the 3.0-liter Duramax diesel. It’s rated up to 25 mpg combined (23 to 24 with 4WD) against 17 for the 5.3L, and a 2026 can tow up to 13,300 pounds. Chevrolet puts no cash on it this month, so expect to pay more for it. Skip the 6.2L V8 for now. NHTSA has an open investigation into failures of GM’s 6.2-liter that covers 2021 to 2026 trucks, including ones already fixed under a 2025 recall. The High Country is the step up for a nicer cabin; the ZR2 is for serious off-roading and costs $23,600 more than an LT."
+      ],
+      "pay": {
+        "intro": [
+          "The 2026 is the outgoing truck, and dealers have plenty. Cox Automotive counted 99 days of supply for the Silverado 1500 at the end of October, against 87 for the industry. TrueCar’s market averages put the WT and Custom about 1.7% under MSRP, the LT, Custom Trail Boss, LTZ and LT Trail Boss 5–6% under, and the RST and High Country 6.8% and 7.5% under. Dealer invoice sits about 6% under MSRP on most trims (about 4% on the WT), by iSeeCars’ figures, and Chevrolet’s cash comes on top."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "WT, Custom",
+            "example": "Custom",
+            "fair": "2–3% under",
+            "strong": "5% or more",
+            "why": "TrueCar’s average is 1.7% under on both. Invoice sits about 4–5% under MSRP."
+          },
+          {
+            "trims": "LT, RST, Custom Trail Boss, LTZ, LT Trail Boss",
+            "example": "LT",
+            "fair": "5–7% under",
+            "strong": "8–10% under",
+            "why": "TrueCar averages 5.2–6.8% under, and the few buyers CarWhere verified in June reported 8–13% on these trims (one to four deals each)."
+          },
+          {
+            "trims": "High Country, ZR2",
+            "example": "High Country",
+            "fair": "5–7% under",
+            "strong": "8% or more",
+            "why": "TrueCar averages 7.5% under on the High Country and 5.8% on the ZR2. CarWhere’s buyers paid 5–6% under on a handful of trucks."
+          }
+        ],
+        "note": "Checked November 16, 2026. These are dealer discounts before any Chevrolet cash; TrueCar doesn’t say whether its averages include rebates.",
+        "after": [
+          "Not sure what a specific Silverado should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 LT crew cab 4WD",
+          "sticker": 56795,
+          "stickerLabel": "Sticker with destination, no options",
+          "steps": [
+            {
+              "label": "Dealer discount, 6%",
+              "amount": 3400
+            }
+          ],
+          "total": 53395,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Chevrolet’s cash this month is on the V8. A 2026 Silverado 1500 with the 5.3L gets $6,000 and an LT with the TurboMax gets $2,250, or you can take 0% for 60 months instead. The cash can’t be combined with Chevrolet’s special financing or a lease. Leases vary by region, and we found no 2027 Silverado 1500 offer in the four regions we read. Everything ends with delivery by November 30."
+        ],
+        "rows": [
+          {
+            "offer": "$6,000 cash",
+            "detail": "$4,250 Customer Cash plus $1,750 Bonus Cash. Not with Chevrolet’s special financing or a lease.",
+            "applies": "2026 Silverado 1500 with the 5.3L V8",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "$2,250 cash",
+            "detail": "$1,500 Customer Cash plus $750 Bonus Cash. Not with special financing or a lease.",
+            "applies": "2026 Silverado 1500 LT with the TurboMax",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "0% APR for 60 months",
+            "detail": "Through GM Financial, $16.67 a month per $1,000 financed. Chevrolet’s model page adds no monthly payments until February 15. Some buyers won’t qualify.",
+            "applies": "2026 Silverado 1500",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "LT lease",
+            "detail": "$289 a month for 24 months with $6,699 due at signing, or $249 with $10,738 due ($3,609 if you lease a 2021 or newer Chevrolet now); 20,000 miles in all",
+            "applies": "2026 LT crew cab 4WD with the TurboMax, Dallas, Los Angeles and New York",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "LT lease, 36 months",
+            "detail": "$319 a month for 36 months with $6,749 due at signing ($5,249 for current lessees); 30,000 miles in all",
+            "applies": "2026 LT crew cab 4WD with the TurboMax, Los Angeles only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Custom lease",
+            "detail": "$479 a month for 36 months with $3,719 due at signing; 30,000 miles in all",
+            "applies": "2026 Custom crew cab 4WD with the TurboMax, Chicago only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Costco member cash",
+            "detail": "$1,250 for Executive members, or $1,000 for Gold Star and Business members, toward a purchase or lease",
+            "applies": "2026 Silverado 1500, Costco members",
+            "ends": ""
+          },
+          {
+            "offer": "First responder program",
+            "detail": "$1,000 total cash allowance on most models. Chevrolet doesn’t list the Silverado separately.",
+            "applies": "First responders; eligibility verified by Chevrolet",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.chevrolet.com/current-offers\" rel=\"noopener\">Chevrolet’s offers page</a> on November 16, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, the finance offers need GM Financial credit approval, and “ends” is the delivery date.",
+        "cards": [
+          {
+            "label": "V8 cash",
+            "figure": "$6,000",
+            "word": "cash",
+            "text": "$4,250 plus $1,750 bonus cash on a 2026 with the 5.3L V8. Ends November 30."
+          },
+          {
+            "label": "Financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For 60 months on a 2026, instead of the cash. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$289",
+            "word": "a month",
+            "text": "2026 LT crew cab 4WD, 24 months, $6,699 due at signing. Dallas, Los Angeles and New York. Ends November 30."
+          },
+          {
+            "label": "TurboMax cash",
+            "figure": "$2,250",
+            "word": "cash",
+            "text": "$1,500 plus $750 bonus cash on a 2026 LT with the TurboMax. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "First responder or Costco member?",
+            "text": "Chevrolet lists $1,000 for first responders on most models and $1,000 to $1,250 for Costco members on the 2026 Silverado 1500. Ask your dealer which ones combine with the current cash.",
+            "figure": "$1,000",
+            "unit": "first responder cash",
+            "detail": "Chevrolet shows no end date",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Chevrolet’s V8 offers",
+          "title": "On a Silverado, 0% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $55,000 Silverado over 60 months. The cash and the 0% don’t combine. At the average rate the 0% deal wins by about $2,300; at the 4.41% that borrowers with top credit averaged, the $6,000 cash comes out about $300 ahead.",
+          "price": 55000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "60 months",
+              "rate": 0,
+              "cash": 0
+            },
+            {
+              "name": "$6,000 cash",
+              "detail": "financed at the 6.35% average",
+              "rate": 6.35,
+              "cash": 6000
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new. The 2026 for the price, the 2027 if you want the better truck.</strong> Silverados lose value faster than the average pickup, which makes a used one tempting, but a 2026 sells 5–7% under sticker this month with $6,000 cash or 0% on top, and used loans average 11.19% against 6.35% for new."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. The runout discounts and Chevrolet’s cash and 0% are on the 2026, and the RST and LTZ exist only as 2026s.",
+            "check": "That the truck is a 2026, which engine it has (the $6,000 needs the 5.3L), and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want the new 5.7L or 6.6L V8, the 16.3-inch screen and the redesigned cabin, or the 13,700-pound tow rating. Edmunds scores it 7.7 against 6.1 for the 2026.",
+            "check": "The price rise ($8,500 on the High Country, $900 to $1,400 on the Custom and WT), and that Chevrolet lists no 2027 offers yet."
+          },
+          {
+            "route": "CPO (GM CarBravo)",
+            "when": "You want a 2023 to 2025 truck with some cover, and you’re paying cash.",
+            "check": "CarBravo’s certified warranty is 12 months/12,000 miles bumper to bumper on trucks under 10 model years and 100,000 miles. Chevrolet’s powertrain warranty runs 5 years/60,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $37,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 6.2L V8, proof that recall 25V274’s engine inspection was done."
+          }
+        ],
+        "after": [
+          "If you buy used, make 2023 the floor. The 2019 and 2020 Silverados carry 10 and 12 recalls, 2021 to 2024 trucks with the 6.2L V8 were recalled in 2025 for crankshaft and connecting-rod defects that can wreck the engine, and owners are <a href=\"https://www.carcomplaints.com/news/2026/gm-lifter-lawsuit-update.shtml\" rel=\"noopener\">suing GM over lifter failures</a> on its V8s."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Silverado 1500",
+                "value": 30.4,
+                "display": "30.4%"
+              },
+              {
+                "label": "All cars",
+                "value": 24.8,
+                "display": "24.8%"
+              },
+              {
+                "label": "Full-size pickups",
+                "value": 23.7,
+                "display": "23.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Chevrolet 0% offer",
+                "value": 0,
+                "display": "0%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Chevrolet; Experian, Q2 2026"
+          },
+          {
+            "title": "Average asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 33305,
+                "display": "$33,305"
+              },
+              {
+                "label": "2023",
+                "value": 36981,
+                "display": "$36,981"
+              },
+              {
+                "label": "2024",
+                "value": 40015,
+                "display": "$40,015"
+              },
+              {
+                "label": "2025",
+                "value": 42227,
+                "display": "$42,227"
+              }
+            ],
+            "source": "CarGurus, November 16"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Which engine.</strong> Chevrolet’s $6,000 applies only to the 5.3L V8 and the $2,250 only to an LT with the TurboMax. Make sure a quote names the engine before you compare it with an ad.",
+        "<strong>Cash or 0%.</strong> You get one or the other. Work out the total cost of each with your bank’s rate before you choose.",
+        "<strong>Dealer add-ons.</strong> Chevrolet dealers put add-ons on 32.4% of the quotes CarWhere studied, averaging $1,443. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>Fees.</strong> Documentation fees run from about $85 in California to $999 in Florida, by CarEdge’s count. Compare out-the-door prices.",
+        "<strong>The 6.2L V8.</strong> On a 2021 to 2024 truck, ask for proof that recall 25V274’s inspection was done. NHTSA’s open investigation also covers 2025 and 2026 engines.",
+        "<strong>The transfer case recall.</strong> A few 2026 4WD trucks are under recall 26V289, and GM tells owners not to drive them until fixed. Have the dealer check the VIN before delivery."
+      ],
+      "faq": [
+        [
+          "Is the Chevrolet Silverado 1500 a good truck?",
+          "Reviewers are lukewarm on the 2026 and warmer on the 2027. U.S. News scores the 2026 an 8.8 out of 10, fifth of six full-size pickups, Kelley Blue Book gives it 4.3 out of 5, and J.D. Power gives it 82 out of 100, tied for third among large light-duty pickups. Edmunds is cooler on the 2026, at 6.1, but rates the redesigned 2027 a 7.7 and second of five large trucks. Consumer Reports expects the 2026 to be less reliable than the average new car, and iSeeCars finds it loses 30.4% of its value in three years, against 23.7% for full-size pickups."
+        ],
+        [
+          "How much under MSRP can you get a Chevrolet Silverado 1500?",
+          "On a 2026 LT, RST, Custom Trail Boss, LTZ or LT Trail Boss, 5–7% under MSRP is a fair deal and 8–10% a strong one. High Country and ZR2 trucks sit at 5–7%, and the WT and Custom have less room, about 2–3%. Those ranges are our read of TrueCar’s market averages and iSeeCars’ invoice figures, and Chevrolet’s cash comes on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Silverado 1500?",
+          "The 2026 if price matters most. It costs less (the High Country starts $8,500 lower), the RST and LTZ exist only as 2026s, and Chevrolet’s cash and 0% offers are on the 2026. The 2027 brings 5.7L and 6.6L V8s, a 10-speed automatic on every engine and a redesigned cabin, and Edmunds scores it 7.7 against 6.1 for the 2026, but we found no Chevrolet offer on it yet."
+        ],
+        [
+          "What is the destination charge on a Silverado 1500?",
+          "$2,795 on the 2026 and the 2027. Chevrolet’s advertised starting prices leave it out."
+        ],
+        [
+          "Does Chevrolet offer cash back on the Silverado 1500?",
+          "Yes, on the V8. On November 16, 2026, Chevrolet offered $6,000 ($4,250 plus $1,750 bonus cash) on a 2026 Silverado 1500 with the 5.3L V8 and $2,250 on an LT with the TurboMax, or 0% for 60 months, in Chicago, Dallas, Los Angeles and New York. The cash can’t be combined with special financing or a lease, and all of it ends with delivery by November 30."
+        ],
+        [
+          "Is the Silverado’s 6.2L V8 reliable?",
+          "It has a record. GM recalled nearly 600,000 2021 to 2024 trucks and SUVs with the 6.2L in 2025 for crankshaft and connecting-rod defects that can cause engine failure, and NHTSA has since opened a wider investigation covering 2021 to 2026 engines, including ones already fixed. Until that closes, we’d take the 5.3L V8 or the diesel."
+        ],
+        [
+          "How much can a Silverado 1500 tow?",
+          "Chevrolet lists up to 13,300 pounds on the 2026 and up to 13,700 on the 2027 with the new 5.7L V8. The 2026 diesel is the one it advertises for the 13,300 figure; what a specific truck can tow depends on its engine, cab, axle ratio and hitch, so check the trailering rating on the truck’s own label."
+        ],
+        [
+          "Is the Silverado 1500 the same truck as the Sierra?",
+          "They’re closely related and offer the same four engines. The Silverado costs less (the 2026 WT starts at $37,200, against $38,600 for a Sierra Pro) and is finished a step lower inside. Chevrolet puts its November cash on the V8, so price both and let the better deal decide."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-SILVERADO-01",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "scope": "2026 Silverado 1500 trims, starting MSRP excluding destination, engines, towing and equipment",
+          "note": "2026 trims, starting prices and engines"
+        },
+        {
+          "id": "VEH-SILVERADO-02",
+          "title": "Chevrolet: 2027 Silverado 1500",
+          "url": "https://www.chevrolet.com/trucks/silverado/1500",
+          "scope": "2027 Silverado 1500 trims, starting MSRP excluding destination, engines, towing and equipment",
+          "note": "2027 trims, starting prices and tow rating"
+        },
+        {
+          "id": "VEH-SILVERADO-03",
+          "title": "Kelley Blue Book: GM releases pricing for its next-gen full-size trucks",
+          "url": "https://www.kbb.com/car-news/gm-releases-pricing-for-its-next-gen-full-size-trucks/",
+          "scope": "2027 Silverado 1500 redesign, new 5.7L and 6.6L V8s and engine outputs",
+          "note": "what changes for 2027"
+        },
+        {
+          "id": "VEH-SILVERADO-04",
+          "title": "Chevrolet: destination freight charges",
+          "url": "https://www.chevrolet.com/destination-freight-charges",
+          "scope": "Destination charge on the 2026 and 2027 Silverado 1500",
+          "note": "destination charge"
+        },
+        {
+          "id": "VEH-SILVERADO-05",
+          "title": "Chevrolet: current offers",
+          "url": "https://www.chevrolet.com/current-offers",
+          "scope": "Chevrolet cash, finance and lease offers on the 2026 and 2027 Silverado 1500 at ZIPs 60601, 75201, 90012 and 10001, with delivery deadlines",
+          "note": "cash, finance and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-SILVERADO-06",
+          "title": "Chevrolet: special offers",
+          "url": "https://www.chevrolet.com/special-offers",
+          "scope": "Chevrolet First Responder Program cash allowance",
+          "note": "first responder program"
+        },
+        {
+          "id": "VEH-SILVERADO-07",
+          "title": "TrueCar: Chevrolet Silverado 1500",
+          "url": "https://www.truecar.com/overview/chevrolet/silverado-1500/",
+          "scope": "Starting MSRP and starting market average by 2026 Silverado 1500 trim, November 2026, destination included",
+          "note": "market average against MSRP by trim"
+        },
+        {
+          "id": "VEH-SILVERADO-08",
+          "title": "iSeeCars: 2026 Chevrolet Silverado 1500 price",
+          "url": "https://www.iseecars.com/car/2026-chevrolet-silverado_1500-price",
+          "scope": "Dealer invoice against MSRP by 2026 Silverado 1500 style",
+          "note": "dealer invoice against MSRP"
+        },
+        {
+          "id": "VEH-SILVERADO-09",
+          "title": "Edmunds: Chevrolet Silverado 1500",
+          "url": "https://www.edmunds.com/chevrolet/silverado-1500/",
+          "scope": "Edmunds rating, large-truck rank, owner rating, warranty and review notes for the 2027 Silverado 1500",
+          "note": "2027 review score"
+        },
+        {
+          "id": "VEH-SILVERADO-10",
+          "title": "Edmunds: 2026 Chevrolet Silverado 1500",
+          "url": "https://www.edmunds.com/chevrolet/silverado-1500/2026/",
+          "scope": "Edmunds rating, owner rating and review faults for the 2026 Silverado 1500",
+          "note": "2026 review score"
+        },
+        {
+          "id": "VEH-SILVERADO-11",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Chevrolet, GMC, the Silverado 1500 and the F-150 at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-SILVERADO-12",
+          "title": "CarWhere: 2026 Chevrolet Silverado 1500 prices paid",
+          "url": "https://www.carwhere.com/dealer-invoice-price/chevrolet/silverado-1500/2026",
+          "scope": "Buyer-verified prices paid against MSRP by 2026 Silverado 1500 trim, as of June 2026",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-SILVERADO-13",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of Chevrolet quotes with dealer add-ons and their average price, 2026",
+          "note": "add-ons on Chevrolet quotes"
+        },
+        {
+          "id": "VEH-SILVERADO-14",
+          "title": "CarEdge: dealer doc fees by state",
+          "url": "https://caredge.com/guides/car-dealer-doc-fee-by-state",
+          "scope": "Dealer documentation fees by state, January 2026",
+          "note": "documentation fees"
+        },
+        {
+          "id": "VEH-SILVERADO-15",
+          "title": "iSeeCars: Chevrolet Silverado 1500 resale value",
+          "url": "https://www.iseecars.com/car/chevrolet-silverado-1500/resale-value",
+          "scope": "Silverado 1500 depreciation at three years against full-size pickups and all cars",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-SILVERADO-16",
+          "title": "CarGurus: Chevrolet Silverado 1500 price trends",
+          "url": "https://www.cargurus.com/research/price-trends/Chevrolet-Silverado-1500-d630",
+          "scope": "Average used Silverado 1500 asking price by model year, November 16, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-SILVERADO-17",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-SILVERADO-18",
+          "title": "CarBravo: warranties",
+          "url": "https://www.carbravo.com/ownership/warranties",
+          "scope": "GM CarBravo certified pre-owned warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-SILVERADO-19",
+          "title": "FuelEconomy.gov: 2026 Chevrolet Silverado",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Chevrolet_Silverado.shtml",
+          "scope": "EPA fuel economy by 2026 Silverado 1500 engine and drive",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-SILVERADO-20",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash-test ratings and rollover risk for the 2026 Silverado 1500 by cab and drive, from the NHTSA ratings API",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-SILVERADO-21",
+          "title": "IIHS: 2026 Chevrolet Silverado 1500 crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/chevrolet/silverado-1500-crew-cab-pickup/2026",
+          "scope": "IIHS small overlap, updated moderate overlap, updated side, headlight, pedestrian crash prevention and LATCH ratings for the 2026 Silverado 1500 crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-SILVERADO-22",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Silverado 1500 recall campaigns by model year 2019 to 2026, including 25V274 and 26V289",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-SILVERADO-23",
+          "title": "Motor1: NHTSA expands its GM 6.2L V8 investigation",
+          "url": "https://www.motor1.com/news/805731/nhtsa-gm-l87-v8-investigation-expands/",
+          "scope": "NHTSA engineering analysis EA26005 into 2021 to 2026 GM 6.2L L87 engines, including recall-remedied engines",
+          "note": "6.2L V8 investigation"
+        },
+        {
+          "id": "VEH-SILVERADO-24",
+          "title": "GM Authority: NHTSA 6.2L investigation deadline extension",
+          "url": "https://gmauthority.com/blog/2026/11/nhtsa-l87-engine-investigation-gm-gets-deadline-extension/",
+          "scope": "Status of NHTSA’s L87 engine investigation in November 2026, with no new recall announced",
+          "note": "6.2L V8 investigation status"
+        },
+        {
+          "id": "VEH-SILVERADO-25",
+          "title": "Consumer Reports: 2026 Chevrolet Silverado 1500 reliability",
+          "url": "https://www.consumerreports.org/cars/chevrolet/silverado-1500/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Silverado 1500",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-SILVERADO-26",
+          "title": "Kelley Blue Book: 2026 Chevrolet Silverado 1500",
+          "url": "https://www.kbb.com/chevrolet/silverado-1500/2026/",
+          "scope": "KBB expert rating and consumer rating for the 2026 Silverado 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SILVERADO-27",
+          "title": "U.S. News: Chevrolet Silverado 1500",
+          "url": "https://cars.usnews.com/cars-trucks/chevrolet/silverado-1500",
+          "scope": "U.S. News overall score and full-size pickup rank for the 2026 Silverado 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SILVERADO-28",
+          "title": "J.D. Power: 2026 Chevrolet Silverado 1500",
+          "url": "https://www.jdpower.com/cars/2026/chevrolet/silverado-1500",
+          "scope": "J.D. Power consumer rating and large light-duty pickup ranking for the 2026 Silverado 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-SILVERADO-29",
+          "title": "CarComplaints: GM lifter lawsuit update",
+          "url": "https://www.carcomplaints.com/news/2026/gm-lifter-lawsuit-update.shtml",
+          "scope": "Status of the Harrison v. GM lifter class action covering Silverado and Sierra V8s, February 2026",
+          "note": "V8 lifter lawsuit"
+        },
+        {
+          "id": "VEH-SILVERADO-30",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Toyota Tundra as KBB 2026 best resale value full-size pickup",
+          "note": "Tundra resale award"
+        },
+        {
+          "id": "VEH-SILVERADO-31",
+          "title": "GMC: 2026 Sierra 1500",
+          "url": "https://www.gmc.com/trucks/previous-year/sierra/1500",
+          "scope": "2026 Sierra 1500 Pro starting MSRP excluding destination",
+          "note": "Sierra price"
+        },
+        {
+          "id": "VEH-SILVERADO-32",
+          "title": "Ford: 2026 F-150",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "scope": "2026 F-150 XL starting MSRP excluding destination",
+          "note": "F-150 price"
+        },
+        {
+          "id": "VEH-SILVERADO-33",
+          "title": "Ram: Ram 1500",
+          "url": "https://www.ramtrucks.com/ram-1500.html",
+          "scope": "2026 Ram 1500 Tradesman starting MSRP excluding destination",
+          "note": "Ram 1500 price"
+        },
+        {
+          "id": "VEH-SILVERADO-34",
+          "title": "Toyota: 2026 Tundra",
+          "url": "https://www.toyota.com/tundra/2026/",
+          "scope": "2026 Tundra SR starting MSRP excluding delivery",
+          "note": "Tundra price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-chevrolet-silverado-1500-lt",
+        "width": 1920,
+        "height": 1200,
+        "alt": "Black Chevrolet Silverado 1500 LT crew cab with a Z71 badge, front three-quarter view",
+        "caption": "A Silverado LT crew cab (a 2023; the 2026 looks the same).",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:23_Chevrolet_Silverado_1500_LT.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "From $37,200, near the bottom of the class",
+        "Up to 13,300 pounds of towing",
+        "Diesel rated up to 25 mpg combined",
+        "$6,000 cash on V8 trucks through November 30"
+      ],
+      "cons": [
+        "IIHS: Poor in the updated moderate overlap test",
+        "Consumer Reports expects below-average reliability",
+        "Rougher ride than the Ford and Ram, Edmunds says",
+        "Loses 30.4% of its value in three years"
+      ],
+      "rivals": [
+        "Get a quote on the GMC Sierra 1500 too. It shares the Silverado’s engines, starts at $38,600, and had 110 days of supply at the end of October. The Ford F-150 (from $39,585) ranks first among full-size pickups at U.S. News, reviewers say the Ram 1500 (from $42,025) rides more smoothly, and Kelley Blue Book named the Toyota Tundra (from $41,260) its 2026 best resale value full-size pickup. Those prices leave out destination. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/chevrolet/silverado-1500/2026/",
+            "value": 6.1,
+            "scale": 10,
+            "display": "6.1",
+            "detail": "2026: Average. The 2027 scores 7.7, 2nd of 5 large trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/chevrolet/silverado-1500/2026/",
+            "value": 4.3,
+            "scale": 5,
+            "display": "4.3",
+            "detail": "Owners give it 3.9 out of 5 (179 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/chevrolet/silverado-1500",
+            "value": 8.8,
+            "scale": 10,
+            "display": "8.8",
+            "detail": "5th of 6 full-size pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/chevrolet/silverado-1500",
+            "value": 82,
+            "scale": 100,
+            "display": "82",
+            "detail": "Tied 3rd among large light-duty pickups"
+          }
+        ],
+        "note": "Scores for the 2026 Silverado 1500 as published on November 16, 2026, except Edmunds’ 2027 score, which is noted. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Silverado 1500 crew cab 4WD",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 5, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "19.8% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Marginal",
+            "note": "Passenger side"
+          },
+          {
+            "label": "IIHS moderate overlap front, updated test",
+            "grade": "Poor"
+          },
+          {
+            "label": "IIHS side, updated test",
+            "grade": "Acceptable"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 10
+          },
+          {
+            "label": "2020",
+            "value": 12
+          },
+          {
+            "label": "2021",
+            "value": 8
+          },
+          {
+            "label": "2022",
+            "value": 6
+          },
+          {
+            "label": "2023",
+            "value": 3
+          },
+          {
+            "label": "2024",
+            "value": 1
+          },
+          {
+            "label": "2025",
+            "value": 0
+          },
+          {
+            "label": "2026",
+            "value": 3
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to be <a href=\"https://www.consumerreports.org/cars/chevrolet/silverado-1500/2026/reliability\" rel=\"noopener\">less reliable than the average new car</a>, judging from 2023 to 2025 trucks.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 16, 2026: regular and double cabs, and the crew cab with 2WD, score 5 stars overall. <a href=\"https://www.iihs.org/ratings/vehicle/chevrolet/silverado-1500-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a> carries its small overlap and side results forward from 2019 and 2023 test trucks, rates the headlights Poor, pedestrian crash prevention Acceptable and the LATCH child-seat anchors Marginal. Recall counts are GM campaigns from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a>; 2024’s other listing, a third-party hitch bracket, is left out. Check any used Silverado’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-chevrolet-silverado-1500-rear",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Blue Chevrolet Silverado 1500 LTZ crew cab, rear three-quarter view",
+          "caption": "LTZ, rear",
+          "author": "deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_Chevrolet_Silverado_LTZ_rear_view.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-chevrolet-silverado-1500-high-country",
+          "width": 1920,
+          "height": 1100,
+          "alt": "Gray Chevrolet Silverado 1500 High Country crew cab with a chrome grille and running boards, front three-quarter view",
+          "caption": "High Country",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:23_Chevrolet_Silverado_1500_High_Country.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-chevrolet-silverado-1500-interior",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Chevrolet Silverado 1500 LTZ dashboard with a large center touchscreen and digital gauges",
+          "caption": "LTZ cabin",
+          "author": "deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_Chevrolet_Silverado_facelift_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-chevrolet-silverado-1500-zr2",
+          "width": 1720,
+          "height": 960,
+          "alt": "Blue Chevrolet Silverado ZR2 crew cab with red tow hooks and off-road tires",
+          "caption": "ZR2",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:23_Chevrolet_Silverado_1500_ZR2.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        }
+      ]
+    },
+    {
       "slug": "toyota-tacoma-price.html",
       "name": "Toyota Tacoma",
       "modelYear": 2026,

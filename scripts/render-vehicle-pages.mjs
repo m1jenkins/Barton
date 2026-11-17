@@ -384,6 +384,7 @@ const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" ari
 // Brand and source logos in assets/logos: [width, height] in pixels, and the name screen readers hear. CSS sets the shown height.
 const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
+  ford: [267, 96, 'Ford'], 'ford-white': [267, 96, 'Ford'], chevrolet: [301, 96, 'Chevrolet'], 'chevrolet-white': [301, 96, 'Chevrolet'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
@@ -504,7 +505,7 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
   const pick = share >= 0.52 ? 'a' : share <= 0.48 ? 'b' : null;
   const redditPick = pick
     ? `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${key(pick)}${by(pick).short}</span><small>Recommended more often<br> across ${Object.keys(sentiment.topics).length} topics</small></span>`
-    : '<span class="vs-strip-pick"><span class="vs-strip-pick__car">Even</span><small>About half<br> the picks each</small></span>';
+    : `<span class="vs-strip-pick"><span class="vs-strip-pick__car">Toss-up</span><small>${a.short} ${picks.a.toLocaleString('en-US')} picks,<br> ${b.short} ${picks.b.toLocaleString('en-US')}</small></span>`;
   const tabs = [['overview', 'Overview'], ['reddit', 'Reddit Sentiment Index'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
   const charts = list => list.map(chart => chart.type === 'cols' ? pairColumns(chart, cars) : pairChart(chart, cars)).join('\n');
   const body = `<article class="vp vs">

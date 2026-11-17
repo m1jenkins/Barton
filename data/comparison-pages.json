@@ -2530,6 +2530,1374 @@
           }
         ]
       }
+    },
+    {
+      "slug": "ford-f-150-vs-chevrolet-silverado-1500.html",
+      "published": "2026-11-16",
+      "checkedOn": "2026-11-16",
+      "title": "Ford F-150 vs Chevy Silverado 1500 (2026): Price, MPG, Towing | Steer Me Right",
+      "description": "The 2026 Ford F-150 and Chevrolet Silverado 1500 compared in charts: price by trim, how far under sticker each sells, EPA mpg and range, towing, NHTSA complaints and recalls, resale, crash tests, and our Reddit Sentiment Index.",
+      "h1": "Ford F-150 vs Chevrolet Silverado 1500",
+      "crumb": "F-150 vs Silverado",
+      "cars": [
+        {
+          "slug": "ford-f-150-price.html",
+          "short": "F-150",
+          "name": "Ford F-150",
+          "logos": {
+            "make": "ford"
+          }
+        },
+        {
+          "slug": "chevrolet-silverado-1500-price.html",
+          "short": "Silverado",
+          "name": "Chevrolet Silverado 1500",
+          "logos": {
+            "make": "chevrolet"
+          }
+        }
+      ],
+      "strip": [
+        {
+          "label": "Edmunds",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">F-150 </span>8.0 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Silverado </span>6.1</span>",
+          "logo": "edmunds-icon"
+        },
+        {
+          "label": "U.S. News",
+          "section": "reviews",
+          "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">F-150 </span>9.6 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Silverado </span>8.8</span>",
+          "logo": "us-news",
+          "wordmark": true
+        },
+        {
+          "label": "Reddit’s pick",
+          "section": "reddit",
+          "logo": "reddit-snoo",
+          "logoSize": "large"
+        }
+      ],
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "section": "price",
+          "a": "$39,585<small>XL · $44,695 XLT</small>",
+          "b": "$37,200<small>WT · $48,200 LT</small>"
+        },
+        {
+          "label": "Realistic discount",
+          "section": "price",
+          "a": "5–7%<small>under MSRP, XLT</small>",
+          "b": "5–7%<small>under MSRP, LT</small>"
+        },
+        {
+          "label": "Best EPA mpg, 4x4",
+          "section": "mpg",
+          "a": "23<small>combined, hybrid</small>",
+          "b": "23<small>combined, diesel</small>"
+        },
+        {
+          "label": "Max towing",
+          "section": "space",
+          "a": "13,500<small>lb, 3.5L EcoBoost</small>",
+          "b": "13,300<small>lb</small>"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "69<small>out of 100</small>",
+          "b": "47<small>out of 100</small>"
+        }
+      ],
+      "summary": "We’d buy the F-150, unless you want a diesel or the biggest discount this month. The F-150 scores higher with every reviewer we checked, does better in NHTSA’s and IIHS’s crash tests, offers a 23-mpg hybrid with a built-in generator, goes about 250 miles further on a tank, and has lost less value. The 2026 Silverado has the diesel, $6,000 cash on V8 trucks, and better long-term signals from J.D. Power and iSeeCars, but its 6.2L V8 is under federal investigation and an all-new 2027 is about to replace it. Reddit leans Ford: in neutral subreddits, 56 people told the poster to buy the F-150 and 11 the Silverado. Prices were checked on November 16, 2026.",
+      "choose": {
+        "a": [
+          "You want the better truck by the reviews: Edmunds 8.0 against 6.1, U.S. News 9.6 against 8.8, and the F-150 is first in both.",
+          "You want the hybrid: 23 mpg combined as a 4x4, $2,600 a year in fuel by EPA’s numbers, and up to 7.2 kW of onboard power for tools or a campsite.",
+          "You drive long distances: a 36-gallon tank against 24 gallons gives a 4x4 V8 about 680 miles by EPA combined mpg, against about 410.",
+          "You care about crash tests: 5 stars overall from NHTSA against 4 for the Silverado crew cab 4x4, and Good against Marginal in IIHS’s small overlap test."
+        ],
+        "b": [
+          "You tow far or drive a lot of highway: the 3.0L Duramax diesel gets 23–25 mpg and makes 495 lb-ft. Ford sells no diesel F-150.",
+          "You want the bigger deal on a 2026: Chevrolet has $6,000 cash on 5.3L V8 trucks or 0% for 60 months through November 30, and dealers hold 99 days of stock.",
+          "You keep trucks past 200,000 miles: 32.8% of Silverados get there in iSeeCars’ data against 25.0% of F-150s, and Chevrolet beats Ford in J.D. Power’s dependability study.",
+          "You’d buy used: a 2023 to 2025 Silverado asks about $2,500 to $3,500 less than the same-year F-150."
+        ]
+      },
+      "board": [
+        {
+          "label": "Starting price, volume trim",
+          "section": "price",
+          "a": "$44,695 XLT",
+          "b": "$48,200 LT",
+          "win": "a"
+        },
+        {
+          "label": "Cash back this month",
+          "section": "price",
+          "a": "$4,500",
+          "b": "$6,000",
+          "win": "b"
+        },
+        {
+          "label": "Best EPA mpg, 4x4",
+          "section": "mpg",
+          "a": "23 hybrid",
+          "b": "23 diesel",
+          "win": null
+        },
+        {
+          "label": "V8 EPA mpg, 4x4",
+          "section": "mpg",
+          "a": "19",
+          "b": "17",
+          "win": "a"
+        },
+        {
+          "label": "Fuel tank",
+          "section": "mpg",
+          "a": "36 gal",
+          "b": "24 gal",
+          "win": "a"
+        },
+        {
+          "label": "Max towing",
+          "section": "space",
+          "a": "13,500 lb",
+          "b": "13,300 lb",
+          "win": null
+        },
+        {
+          "label": "Max payload",
+          "section": "space",
+          "a": "2,440 lb",
+          "b": "2,260 lb",
+          "win": "a"
+        },
+        {
+          "label": "Complaints per 100k sold",
+          "section": "reliability",
+          "a": "About 64",
+          "b": "78",
+          "win": "a"
+        },
+        {
+          "label": "Chance of reaching 200k miles",
+          "section": "reliability",
+          "a": "25.0%",
+          "b": "32.8%",
+          "win": "b"
+        },
+        {
+          "label": "Value lost in 3 years",
+          "section": "resale",
+          "a": "18.9%",
+          "b": "30.4%",
+          "win": "a"
+        },
+        {
+          "label": "NHTSA overall, crew cab 4x4",
+          "section": "safety",
+          "a": "5 stars",
+          "b": "4 stars",
+          "win": "a"
+        },
+        {
+          "label": "Reddit Sentiment Index",
+          "section": "reddit",
+          "a": "69",
+          "b": "47",
+          "win": "a"
+        }
+      ],
+      "reviews": {
+        "title": "What the reviewers say",
+        "note": "Each publisher’s own score for the 2026, drawn to its own scale. They are not Steer Me Right ratings, and we have not averaged them.",
+        "max": 100,
+        "rows": [
+          {
+            "label": "Edmunds",
+            "sub": "Out of 10. The all-new 2027 Silverado scores 7.7",
+            "a": 80,
+            "aText": "8.0",
+            "b": 61,
+            "bText": "6.1",
+            "href": "https://www.edmunds.com/chevrolet/silverado-1500/2026/",
+            "logo": "edmunds"
+          },
+          {
+            "label": "Kelley Blue Book",
+            "sub": "Out of 5",
+            "a": 94,
+            "aText": "4.7",
+            "b": 86,
+            "bText": "4.3",
+            "href": "https://www.kbb.com/chevrolet/silverado-1500/2026/",
+            "logo": "kbb"
+          },
+          {
+            "label": "U.S. News",
+            "sub": "Out of 10. 1st and 5th of 6 full-size pickups",
+            "a": 96,
+            "aText": "9.6",
+            "b": 88,
+            "bText": "8.8",
+            "href": "https://cars.usnews.com/cars-trucks/chevrolet/silverado-1500",
+            "logo": "us-news"
+          },
+          {
+            "label": "J.D. Power",
+            "sub": "Out of 100",
+            "a": 83,
+            "aText": "83",
+            "b": 82,
+            "bText": "82",
+            "href": "https://www.jdpower.com/cars/2026/chevrolet/silverado-1500",
+            "logo": "jd-power"
+          }
+        ]
+      },
+      "price": {
+        "intro": [
+          "The F-150 starts higher, $39,585 for an XL against $37,200 for a Silverado WT, but the trims most people buy flip that: an XLT is $44,695 and a Silverado LT $48,200. Both sell 5–7% under sticker on those trims. Chevrolet has the bigger offer this month, $6,000 cash on a 2026 with the 5.3L V8 against Ford’s $4,500 on the XLT, and Silverado buyers report bigger discounts."
+        ],
+        "picks": {
+          "a": "XLT",
+          "b": "LT"
+        },
+        "trims": {
+          "title": "Every 2026 trim by starting price",
+          "note": "Starting MSRP before the $2,795 destination charge both brands add, cheapest first. Engine and cab choices add thousands to either."
+        },
+        "targets": {
+          "title": "What to pay for the trims we’d buy",
+          "note": "Before destination, fees and tax, and before Ford’s or Chevrolet’s cash. Our estimate of a fair and a strong deal; a strong deal takes more dealers and more back-and-forth.",
+          "rows": [
+            {
+              "label": "Fair deal",
+              "a": [
+                5,
+                7
+              ],
+              "b": [
+                5,
+                7
+              ]
+            },
+            {
+              "label": "Strong deal",
+              "a": [
+                8,
+                10
+              ],
+              "b": [
+                8,
+                10
+              ]
+            }
+          ],
+          "paid": {
+            "label": "What 2026 buyers paid",
+            "a": "TrueCar: an XLT 5.6% under, a Lariat 6.5%. CarWhere: a median 4.4% under (17 buyers)",
+            "b": "TrueCar: 5.2–6.8% under on mid trims. CarWhere: a median 8% under (23 buyers)"
+          }
+        },
+        "charts": [
+          {
+            "title": "Days of supply at dealers",
+            "note": "Cox Automotive, end of October 2026. More days on the lot usually means more room to negotiate.",
+            "rows": [
+              {
+                "label": "This truck",
+                "a": 93,
+                "aText": "93 days",
+                "b": 99,
+                "bText": "99 days"
+              },
+              {
+                "label": "Industry average",
+                "sub": "For scale",
+                "a": 87,
+                "aText": "87 days",
+                "b": 87,
+                "bText": "87 days"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "Chevrolet’s $6,000 needs the 5.3L V8, and it can’t be combined with the 0% offer. Ford’s $4,500 is on the 2026 XLT, and its 0% offer ended November 16 in most regions; 1.9% plus $1,500 runs to November 30. Current offers are in each truck’s price guide."
+        ]
+      },
+      "mpg": {
+        "intro": [
+          "The F-150 wins on fuel unless you buy the diesel. Its PowerBoost hybrid gets 23 mpg combined as a 4x4 and costs $2,600 a year by EPA’s estimate, the least of any version of either truck. The Silverado’s diesel also gets 23 mpg as a 4x4, but EPA prices diesel higher, so it costs $4,000. V8 against V8, the F-150 5.0L gets 19 mpg and the Silverado 5.3L 17."
+        ],
+        "charts": [
+          {
+            "title": "EPA combined mpg, 4x4",
+            "note": "Higher is better. 2026 models.",
+            "max": 25,
+            "rows": [
+              {
+                "label": "Most efficient version",
+                "sub": "F-150 PowerBoost hybrid · Silverado 3.0L diesel",
+                "a": 23,
+                "aText": "23 mpg",
+                "b": 23,
+                "bText": "23 mpg"
+              },
+              {
+                "label": "Base engine",
+                "sub": "2.7L EcoBoost V6 · 2.7L TurboMax",
+                "a": 20,
+                "aText": "20 mpg",
+                "b": 19,
+                "bText": "19 mpg"
+              },
+              {
+                "label": "V8",
+                "sub": "5.0L · 5.3L",
+                "a": 19,
+                "aText": "19 mpg",
+                "b": 17,
+                "bText": "17 mpg"
+              },
+              {
+                "label": "Most powerful regular engine",
+                "sub": "3.5L EcoBoost · 6.2L V8 (premium fuel)",
+                "a": 19,
+                "aText": "19 mpg",
+                "b": 17,
+                "bText": "17 mpg"
+              },
+              {
+                "label": "Off-road version",
+                "sub": "Raptor · ZR2",
+                "a": 16,
+                "aText": "16 mpg",
+                "b": 15,
+                "bText": "15 mpg"
+              }
+            ]
+          },
+          {
+            "title": "EPA annual fuel cost, 4x4",
+            "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+            "rows": [
+              {
+                "label": "Most efficient version",
+                "sub": "Hybrid · diesel",
+                "a": 2600,
+                "aText": "$2,600",
+                "b": 4000,
+                "bText": "$4,000"
+              },
+              {
+                "label": "Base engine",
+                "a": 3000,
+                "aText": "$3,000",
+                "b": 3150,
+                "bText": "$3,150"
+              },
+              {
+                "label": "V8",
+                "a": 3150,
+                "aText": "$3,150",
+                "b": 3550,
+                "bText": "$3,550"
+              },
+              {
+                "label": "Most powerful regular engine",
+                "sub": "The 6.2L takes premium",
+                "a": 3150,
+                "aText": "$3,150",
+                "b": 4400,
+                "bText": "$4,400"
+              }
+            ]
+          },
+          {
+            "title": "Miles on a tank, 4x4",
+            "note": "EPA combined mpg times the tank: 36 gallons in most F-150s (30.6 in the hybrid), 24 in the Silverado crew cab.",
+            "rows": [
+              {
+                "label": "Most efficient version",
+                "sub": "Hybrid · diesel",
+                "a": 704,
+                "aText": "704 miles",
+                "b": 552,
+                "bText": "552 miles"
+              },
+              {
+                "label": "Base engine",
+                "a": 720,
+                "aText": "720 miles",
+                "b": 456,
+                "bText": "456 miles"
+              },
+              {
+                "label": "V8",
+                "a": 684,
+                "aText": "684 miles",
+                "b": 408,
+                "bText": "408 miles"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "There’s no hybrid Silverado and no diesel F-150. If you tow heavy on the highway, the diesel’s 495 lb-ft and 25 mpg as a 4x2 are the reason to buy the Chevy; for mixed driving and job sites, the hybrid and its generator are the reason to buy the Ford."
+        ]
+      },
+      "space": {
+        "intro": [
+          "On paper they’re close. The F-150 tows 13,500 pounds at most against 13,300 and carries up to 2,440 pounds against 2,260, and its crew cab has 43.6 inches of rear legroom against 43.4. The F-150’s engines make more power except at the bottom, where the Silverado’s TurboMax four-cylinder makes more torque than Ford’s 2.7L V6."
+        ],
+        "charts": [
+          {
+            "title": "Most each can tow and carry",
+            "note": "Pounds, when properly equipped. No truck gets both maximums at once. The all-new 2027 Silverado is rated to tow 13,700 pounds.",
+            "rows": [
+              {
+                "label": "Max towing",
+                "a": 13500,
+                "aText": "13,500 lb",
+                "b": 13300,
+                "bText": "13,300 lb"
+              },
+              {
+                "label": "Max payload",
+                "a": 2440,
+                "aText": "2,440 lb",
+                "b": 2260,
+                "bText": "2,260 lb"
+              }
+            ]
+          },
+          {
+            "title": "Horsepower",
+            "rows": [
+              {
+                "label": "Base engine",
+                "sub": "2.7L EcoBoost V6 · 2.7L TurboMax",
+                "a": 325,
+                "aText": "325 hp",
+                "b": 310,
+                "bText": "310 hp"
+              },
+              {
+                "label": "V8",
+                "sub": "5.0L · 5.3L",
+                "a": 400,
+                "aText": "400 hp",
+                "b": 355,
+                "bText": "355 hp"
+              },
+              {
+                "label": "Top regular engine",
+                "sub": "PowerBoost hybrid · 6.2L V8",
+                "a": 430,
+                "aText": "430 hp",
+                "b": 420,
+                "bText": "420 hp"
+              }
+            ]
+          },
+          {
+            "title": "Torque",
+            "note": "Pound-feet.",
+            "rows": [
+              {
+                "label": "Base engine",
+                "a": 400,
+                "aText": "400 lb-ft",
+                "b": 430,
+                "bText": "430 lb-ft"
+              },
+              {
+                "label": "V8",
+                "a": 410,
+                "aText": "410 lb-ft",
+                "b": 383,
+                "bText": "383 lb-ft"
+              },
+              {
+                "label": "Most torque",
+                "sub": "PowerBoost hybrid · 3.0L diesel",
+                "a": 570,
+                "aText": "570 lb-ft",
+                "b": 495,
+                "bText": "495 lb-ft"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "Both crew cabs are roomy enough for adults in the back. The F-150 hybrid comes with Pro Power Onboard, a built-in generator of up to 7.2 kW, which is also available on the King Ranch and Platinum."
+        ]
+      },
+      "reliability": {
+        "intro": [
+          "Nobody can measure a 2026’s reliability yet, so we lined up every signal we could check. They split. The F-150 draws fewer owner complaints per truck sold and Consumer Reports rates it higher. The Silverado has far fewer recalls, Chevrolet beats Ford in J.D. Power’s dependability study, and more Silverados reach 200,000 miles. The Silverado’s complaints are mostly about engines."
+        ],
+        "signals": [
+          {
+            "label": "Consumer Reports predicted reliability",
+            "note": "2026 model",
+            "a": "About average",
+            "b": "Worse than average",
+            "win": "a"
+          },
+          {
+            "label": "Owner complaints to NHTSA",
+            "note": "Per 100,000 sold, 2023–2025 model years. F-150 estimated; see the chart note",
+            "a": "About 64",
+            "b": "78",
+            "win": "a"
+          },
+          {
+            "label": "Recalls",
+            "note": "2023–2026 model years",
+            "a": "48",
+            "b": "8",
+            "win": "b"
+          },
+          {
+            "label": "J.D. Power dependability, brand",
+            "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+            "a": "228 Ford",
+            "b": "178 Chevrolet",
+            "win": "b"
+          },
+          {
+            "label": "RepairPal reliability rating",
+            "note": "Out of 5",
+            "a": "3.5",
+            "b": "3.5",
+            "win": null
+          },
+          {
+            "label": "Average yearly repair cost",
+            "note": "RepairPal",
+            "a": "$788",
+            "b": "$714",
+            "win": "b"
+          },
+          {
+            "label": "Chance of reaching 200,000 miles",
+            "note": "iSeeCars",
+            "a": "25.0%",
+            "b": "32.8%",
+            "win": "b"
+          }
+        ],
+        "charts": [
+          {
+            "type": "cols",
+            "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
+            "note": "Lower is better. Ford reports only F-Series sales, which include the Super Duty, so we estimate F-150 sales as 59% of them, its share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150 rates would be 41% lower. Newer model years have had less time on the road.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 194,
+                "b": 253
+              },
+              {
+                "label": "2020",
+                "a": 122,
+                "b": 173
+              },
+              {
+                "label": "2021",
+                "a": 311,
+                "b": 227
+              },
+              {
+                "label": "2022",
+                "a": 214,
+                "b": 206
+              },
+              {
+                "label": "2023",
+                "a": 117,
+                "b": 113
+              },
+              {
+                "label": "2024",
+                "a": 53,
+                "b": 91
+              },
+              {
+                "label": "2025",
+                "a": 27,
+                "b": 32
+              }
+            ]
+          },
+          {
+            "title": "What owners complain about, 2023–2025 model years",
+            "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part.",
+            "rows": [
+              {
+                "label": "Engine",
+                "sub": "Including engine cooling",
+                "a": 5.6,
+                "aText": "5.6",
+                "b": 39,
+                "bText": "39.0"
+              },
+              {
+                "label": "Power train",
+                "sub": "Transmission, axles, driveline",
+                "a": 21.7,
+                "aText": "21.7",
+                "b": 21.3,
+                "bText": "21.3"
+              },
+              {
+                "label": "Electrical",
+                "a": 15,
+                "aText": "15.0",
+                "b": 12.4,
+                "bText": "12.4"
+              },
+              {
+                "label": "Brakes",
+                "a": 7.4,
+                "aText": "7.4",
+                "b": 3.8,
+                "bText": "3.8"
+              },
+              {
+                "label": "Exterior lighting",
+                "a": 6.4,
+                "aText": "6.4",
+                "b": 1.3,
+                "bText": "1.3"
+              },
+              {
+                "label": "Automatic emergency braking",
+                "sub": "NHTSA’s “forward collision avoidance”",
+                "a": 6,
+                "aText": "6.0",
+                "b": 4.4,
+                "bText": "4.4"
+              },
+              {
+                "label": "Fuel and propulsion",
+                "a": 2.5,
+                "aText": "2.5",
+                "b": 5.9,
+                "bText": "5.9"
+              }
+            ]
+          },
+          {
+            "type": "cols",
+            "title": "Recalls by model year",
+            "note": "F-150 includes the hybrid, not the Lightning. A recall count says nothing about how many trucks each one covers: the Silverado’s 6.2L recall alone covers 597,571 GM vehicles.",
+            "rows": [
+              {
+                "label": "2019",
+                "a": 9,
+                "b": 10
+              },
+              {
+                "label": "2020",
+                "a": 11,
+                "b": 12
+              },
+              {
+                "label": "2021",
+                "a": 29,
+                "b": 8
+              },
+              {
+                "label": "2022",
+                "a": 23,
+                "b": 6
+              },
+              {
+                "label": "2023",
+                "a": 13,
+                "b": 3
+              },
+              {
+                "label": "2024",
+                "a": 11,
+                "b": 2
+              },
+              {
+                "label": "2025",
+                "a": 16,
+                "b": 0
+              },
+              {
+                "label": "2026",
+                "a": 8,
+                "b": 3
+              }
+            ]
+          }
+        ],
+        "issues": [
+          {
+            "car": "b",
+            "title": "6.2L V8 engine failures, 2021–2026 Silverado",
+            "text": "Recall 25V-274 covers connecting rod and crankshaft defects on 2021–2024 trucks. NHTSA then opened engineering analysis EA26005 in August 2026 into engines failing after that fix, covering about a million GM vehicles. We’d skip the 6.2L until it closes."
+          },
+          {
+            "car": "b",
+            "title": "Lifter failures, 5.3L V8",
+            "text": "About 400 Silverado owner complaints to NHTSA on 2019–2025 trucks mention failed lifters, often tied to the cylinder-deactivation system. There is no recall; ask for service records on a used one."
+          },
+          {
+            "car": "b",
+            "title": "Transfer case, 2026 Silverado 4WD",
+            "text": "Recall 26V-289 covers 66 GM trucks and SUVs with four-wheel drive whose wheels can lock up. Check the VIN before you take delivery."
+          },
+          {
+            "car": "a",
+            "title": "Rear axle hub bolt, 2021–2025 F-150",
+            "text": "Recalls 23V-896 and 25V-512: on trucks with the Trailer Tow Max Duty package and the 9.75-inch axle, the rear hub can fail, cutting drive power or letting the truck roll away in park without the parking brake. On a used one, ask for proof the fix was done."
+          },
+          {
+            "car": "a",
+            "title": "Engine recalls, 2021–2025 F-150",
+            "text": "Intake valves on the 2.7L and 3.0L (24V-635), a cup plug that leaks oil on the 3.5L (24V-851, 25V-198) and connecting rods on some 2025s (25V-344). Check each on a used truck."
+          },
+          {
+            "car": "a",
+            "title": "10-speed shifting, 2019–2025 F-150",
+            "text": "Harsh or erratic shifts are a common owner complaint on the F-150’s 10-speed automatic, and on the Silverado’s too. Neither has a recall for it; drive a used one cold and in traffic before you buy."
+          }
+        ],
+        "after": [
+          "<strong>Our read:</strong> neither truck is clearly the safer bet. Ford recalls far more F-150s, but most recalls are fixed for free and the F-150 draws fewer complaints per truck. The Silverado’s weak spot is specific: the 6.2L V8. Buy a Silverado with the 2.7L, the 5.3L or the diesel and most of its complaint gap goes away."
+        ],
+        "from": {
+          "label": "Sources include",
+          "names": [
+            "nhtsa",
+            "consumer-reports",
+            "jd-power"
+          ]
+        }
+      },
+      "reddit": {
+        "dataFile": "data/reddit-sentiment/ford-f-150-vs-chevrolet-silverado-1500.json",
+        "intro": [
+          "We read 2,886 comments in 112 Reddit threads that weighed these two trucks, January 2025 to November 2026. Each truck’s own subreddit backs its own truck, so r/f150, r/Silverado and the neutral subreddits (mostly r/whatcarshouldIbuy and r/trucks) count equally. A score of 50 means praise and complaints balance. The neutral subreddits are a small sample here, 307 comments in 34 threads."
+        ],
+        "indexDetail": {
+          "a": "Praised for its engines and towing, especially the 2.7 and 3.5 EcoBoost and the 5.0 V8, plus its interior, space and fuel economy. Marked down for the 10-speed transmission, cam phasers and its price.",
+          "b": "Praised for its price and ride comfort, and for the 2.7 TurboMax and diesel. Marked down hard for reliability, above all lifter failures on the V8s and transmission trouble, and for a plainer interior."
+        },
+        "split": {
+          "title": "Which one Reddit tells people to buy",
+          "note": "One pick per person per thread. Read the neutral subreddits first: each truck’s own subreddit mostly picks its own truck.",
+          "rows": [
+            {
+              "venue": "neutral",
+              "label": "Neutral subreddits"
+            },
+            {
+              "venue": "a",
+              "label": "In r/f150"
+            },
+            {
+              "venue": "b",
+              "label": "In r/Silverado"
+            }
+          ]
+        },
+        "minimum": 30,
+        "topics": {
+          "title": "Net opinion by topic",
+          "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. Towing counts under power and driving. Most-discussed topics first."
+        },
+        "themes": {
+          "a": {
+            "praise": [
+              "Strong engines and towing, especially the EcoBoost V6s and the 5.0 V8",
+              "A nicer interior, a flat rear floor and features like the door keypad and onboard generator",
+              "Fuel economy from the 2.7 EcoBoost and the hybrid",
+              "An aluminum body that doesn’t rust, and strong resale"
+            ],
+            "gripes": [
+              "The 10-speed transmission on 2018–2022 trucks",
+              "Cam phasers on the 3.5 and oil use on some 5.0s",
+              "It costs more than a comparable Silverado",
+              "A firmer, bouncier ride when the bed is empty"
+            ]
+          },
+          "b": {
+            "praise": [
+              "Lower prices and bigger discounts for the same trim",
+              "A smooth, comfortable ride",
+              "The 2.7 TurboMax’s low-end torque and the diesel’s mileage",
+              "Simple controls and the Multi-Flex tailgate"
+            ],
+            "gripes": [
+              "Owner reports of lifter failures on the 5.3 and 6.2 V8s",
+              "Transmission failures and harsh shifts",
+              "A plain, plasticky interior on lower trims",
+              "A four-cylinder base engine in a full-size truck"
+            ]
+          }
+        },
+        "after": [
+          "Reddit lines up with the data on the engines: it trusts Ford’s engines more and worries about GM’s V8 lifters, and it likes the Silverado’s price and ride. Test-drive both with a load in the bed if you can."
+        ],
+        "from": {
+          "label": "Comments from",
+          "names": [
+            "reddit"
+          ]
+        }
+      },
+      "resale": {
+        "intro": [
+          "The F-150 holds its value much better: it lost 18.9% in three years in iSeeCars’ data, against 30.4% for the Silverado, which is worse than the average full-size pickup. That gap is the flip side of the Silverado’s bigger discounts, and it makes a used Silverado the cheaper buy."
+        ],
+        "charts": [
+          {
+            "title": "Value lost",
+            "note": "Lower is better.",
+            "max": 45,
+            "rows": [
+              {
+                "label": "In 3 years",
+                "a": 18.9,
+                "aText": "18.9%",
+                "b": 30.4,
+                "bText": "30.4%"
+              },
+              {
+                "label": "In 5 years",
+                "a": 38.6,
+                "aText": "38.6%",
+                "b": 41.7,
+                "bText": "41.7%"
+              },
+              {
+                "label": "Average full-size pickup, 3 years",
+                "sub": "For scale",
+                "a": 23.7,
+                "aText": "23.7%",
+                "b": 23.7,
+                "bText": "23.7%"
+              },
+              {
+                "label": "Average vehicle, 3 years",
+                "sub": "For scale",
+                "a": 24.8,
+                "aText": "24.8%",
+                "b": 24.8,
+                "bText": "24.8%"
+              }
+            ]
+          },
+          {
+            "title": "Median asking price, used, by model year",
+            "note": "Dealer listings, every cab, trim and engine, November 14, 2026.",
+            "rows": [
+              {
+                "label": "2022",
+                "a": 34980,
+                "aText": "$34,980",
+                "b": 34215,
+                "bText": "$34,215"
+              },
+              {
+                "label": "2023",
+                "a": 39482,
+                "aText": "$39,482",
+                "b": 36963,
+                "bText": "$36,963"
+              },
+              {
+                "label": "2024",
+                "a": 42756,
+                "aText": "$42,756",
+                "b": 39215,
+                "bText": "$39,215"
+              },
+              {
+                "label": "2025",
+                "a": 44211,
+                "aText": "$44,211",
+                "b": 41317,
+                "bText": "$41,317"
+              }
+            ]
+          }
+        ],
+        "after": [
+          "Used, a 2023 to 2025 Silverado asks about $2,500 to $3,500 less than the same-year F-150. If you buy a used Silverado with the 6.2L, check that recall 25V-274 was done, and know that NHTSA is still investigating engines that failed after it."
+        ]
+      },
+      "safety": {
+        "intro": [
+          "The F-150 does better. NHTSA gives the F-150 crew cab 4x4 5 stars overall and the Silverado 4 (the 2WD Silverado crew cab gets 5). IIHS rates the F-150 Good in its small overlap and side tests, where the Silverado gets Marginal and Acceptable, and the Silverado’s headlights Poor. Both rate Poor for the rear passenger in IIHS’s updated moderate overlap test, and neither is a 2026 Top Safety Pick."
+        ],
+        "rows": [
+          {
+            "label": "NHTSA overall, crew cab 4x4",
+            "a": "5 stars",
+            "b": "4 stars",
+            "win": "a"
+          },
+          {
+            "label": "NHTSA frontal crash",
+            "a": "5 stars",
+            "b": "4 stars",
+            "win": "a"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "a": "Good",
+            "b": "Marginal",
+            "win": "a"
+          },
+          {
+            "label": "IIHS moderate overlap front (updated)",
+            "a": "Poor",
+            "b": "Poor",
+            "win": null
+          },
+          {
+            "label": "IIHS side (updated)",
+            "a": "Good",
+            "b": "Acceptable",
+            "win": "a"
+          },
+          {
+            "label": "IIHS headlights",
+            "a": "Good or Acceptable",
+            "b": "Poor",
+            "win": "a"
+          },
+          {
+            "label": "IIHS 2026 Top Safety Pick",
+            "a": "None",
+            "b": "None",
+            "win": null
+          }
+        ],
+        "charts": [],
+        "from": {
+          "label": "Crash tests by",
+          "names": [
+            "iihs-hldi",
+            "nhtsa"
+          ]
+        }
+      },
+      "plansIntro": "Cross-shopping is the easiest way to get a better price on either one: a Ford dealer who knows you have a written Silverado offer has a reason to move. Steer Me Right Pro gets written out-the-door offers on both, from dealers that have them in stock, and negotiates each.",
+      "faq": [
+        [
+          "Which is more reliable, the F-150 or the Silverado?",
+          "It depends on the signal. Owners filed fewer complaints with NHTSA per truck sold on the 2023 to 2025 F-150 (about 64 per 100,000 against 78), and Consumer Reports expects the 2026 F-150 to be about average and the Silverado worse. But the F-150 has had far more recalls, Chevrolet beats Ford in J.D. Power’s dependability study, and more Silverados reach 200,000 miles in iSeeCars’ data. Most Silverado engine complaints involve the 6.2L V8, which is under an NHTSA investigation."
+        ],
+        [
+          "Which gets better gas mileage?",
+          "The F-150. Its PowerBoost hybrid gets 23 mpg combined as a 4x4 and the 5.0L V8 gets 19, against 17 for the Silverado’s 5.3L. The Silverado’s 3.0L diesel matches the hybrid at 23 mpg as a 4x4 (25 as a 4x2), but EPA puts its fuel cost at $4,000 a year against $2,600 for the hybrid. The F-150’s 36-gallon tank also goes much further than the Silverado’s 24."
+        ],
+        [
+          "Which tows more, the F-150 or the Silverado 1500?",
+          "The F-150, barely: up to 13,500 pounds with the 3.5L EcoBoost and the Max Trailer Tow package, against 13,300 for the 2026 Silverado. The all-new 2027 Silverado is rated at 13,700 with its new 5.7L V8. Payload is 2,440 pounds against 2,260."
+        ],
+        [
+          "Which is cheaper?",
+          "It depends on the trim. The cheapest Silverado, a WT at $37,200, undercuts the F-150 XL at $39,585, but the XLT is $44,695 against $48,200 for a Silverado LT. This month Chevrolet offers $6,000 cash on 2026 trucks with the 5.3L V8, and Ford $4,500 on the 2026 XLT. Used, a Silverado asks about $2,500 to $3,500 less than the same-year F-150."
+        ],
+        [
+          "What does Reddit think of the F-150 vs the Silverado?",
+          "It leans F-150. In neutral subreddits, 56 people told the poster to buy the F-150 and 11 the Silverado, though that is a small sample. Our Reddit Sentiment Index scores the F-150 69 and the Silverado 47 out of 100, where 50 means praise and complaints balance. Reddit praises the F-150’s engines and interior and the Silverado’s price and ride; its biggest complaint about the Silverado is V8 lifter failures."
+        ],
+        [
+          "Should I wait for the 2027 Silverado?",
+          "If you want a Silverado and can wait, it’s worth a look. The 2027 is all-new, with 5.7L and 6.6L V8s in place of the 5.3L and 6.2L, a 10-speed on every engine and a 16.3-inch screen, and Edmunds scores it 7.7 against 6.1 for the 2026. It also costs more on most trims, and the 2026’s $6,000 cash or 0% won’t be on it at first. The 2027 F-150 is a lighter update with a new 3.0L engine."
+        ]
+      ],
+      "related": "<a href=\"/gmc-sierra-1500-price.html\">GMC Sierra 1500 price guide</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
+      "sources": [
+        {
+          "id": "VEH-F1S-01",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "title": "Ford: 2026 F-150",
+          "note": "trims and starting MSRP"
+        },
+        {
+          "id": "VEH-F1S-02",
+          "url": "https://www.ford.com/trucks/f150/2026/incentives-and-offers/",
+          "title": "Ford: 2026 F-150 incentives and offers",
+          "note": "cash and finance offers, read at four ZIP codes"
+        },
+        {
+          "id": "VEH-F1S-03",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "note": "trims and starting MSRP"
+        },
+        {
+          "id": "VEH-F1S-04",
+          "url": "https://www.chevrolet.com/trucks/silverado/1500",
+          "title": "Chevrolet: 2027 Silverado 1500",
+          "note": "2027 trims and starting MSRP"
+        },
+        {
+          "id": "VEH-F1S-05",
+          "url": "https://www.chevrolet.com/current-offers",
+          "title": "Chevrolet: current offers",
+          "note": "cash, finance and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-F1S-06",
+          "url": "https://www.fueleconomy.gov/ws/rest/vehicle/menu/model?year=2026&make=Ford",
+          "title": "FuelEconomy.gov web service: 2026 Ford F-150 and 2026 Chevrolet Silverado vehicle records",
+          "note": "EPA combined mpg and annual fuel cost by engine, read through EPA's public web service (vehicle records 50092-50103, 50447 for F-150; 49357-49394 for Silverado) on November 16, 2026. fueleconomy.gov/feg/bymodel pages for these trucks returned 404."
+        },
+        {
+          "id": "VEH-F1S-07",
+          "url": "https://www.fromtheroad.ford.com/content/dam/fordmediasite/us/en/library/2026/specs/2026_Ford_F150_Specs.pdf",
+          "title": "Ford: 2026 F-150 technical specifications (V1.1, March 31, 2026)",
+          "note": "horsepower, torque, max towing and payload by engine, fuel tank, ground clearance, rear legroom, bed volume. Read from the PDF's text layer."
+        },
+        {
+          "id": "VEH-F1S-08",
+          "url": "https://www.kbb.com/chevrolet/silverado-1500/2026/specs",
+          "title": "Kelley Blue Book: 2026 Chevrolet Silverado 1500 specs",
+          "note": "engine power, tow and payload by trim, fuel tank (24 gal; 28 gal regular cab), ground clearance. Secondary source; GM's own spec pages returned 403."
+        },
+        {
+          "id": "VEH-F1S-09",
+          "url": "https://www.kbb.com/chevrolet/silverado-1500-crew-cab/2026/specs/",
+          "title": "Kelley Blue Book: 2026 Silverado 1500 crew cab specs",
+          "note": "crew cab trim table: tow, payload, wheelbase, mpg, 6.5 ft and 5.75 ft beds"
+        },
+        {
+          "id": "VEH-F1S-10",
+          "url": "https://www.iseecars.com/car/2026-chevrolet-silverado_1500-specs",
+          "title": "iSeeCars: 2026 Chevrolet Silverado 1500 specs",
+          "note": "range across 38 trims: max towing 13,300 lb, max payload 2,260 lb"
+        },
+        {
+          "id": "VEH-F1S-11",
+          "url": "https://gmauthority.com/blog/2026/10/2027-chevy-silverado-1500-vs-2026-silverado-1500-interior-dimensions-compared/",
+          "title": "GM Authority: 2027 vs 2026 Silverado 1500 interior dimensions",
+          "note": "2026 crew cab rear legroom 43.4 in; 2027 42.8 to 42.9 in (October 11, 2026)"
+        },
+        {
+          "id": "VEH-F1S-12",
+          "url": "https://www.kbb.com/car-news/chevrolet-reveals-the-2027-silverado-1500/",
+          "title": "Kelley Blue Book: Chevrolet reveals the 2027 Silverado 1500",
+          "note": "June 16, 2026 reveal: new 5.7L and 6.6L V8s replace the 5.3L and 6.2L; 2.7L Turbo and 3.0L Duramax carry over; 16.3-inch screen; sales expected at the end of 2026"
+        },
+        {
+          "id": "VEH-F1S-13",
+          "url": "https://www.edmunds.com/chevrolet/silverado-1500/2027/",
+          "title": "Edmunds: 2027 Chevrolet Silverado 1500",
+          "note": "7.7 out of 10, rank #2 of 5 large trucks; 5.7L V8 tows 13,700 lb, max payload 2,340 lb; no 2027s for sale in Edmunds' network on November 16, 2026. Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-14",
+          "url": "https://www.edmunds.com/truck/large/",
+          "title": "Edmunds: best large trucks of 2026 and 2027",
+          "note": "2026 F-150 8.0 (1st), 2027 Silverado 7.7 (2nd), 2027 Ram 1500 7.5, 2026 Tundra 7.0, 2026 Sierra 6.7. Read in the browser November 16, 2026."
+        },
+        {
+          "id": "VEH-F1S-15",
+          "url": "https://www.edmunds.com/chevrolet/silverado-1500/2026/",
+          "title": "Edmunds: 2026 Chevrolet Silverado 1500",
+          "note": "Edmunds rating 6.1 out of 10 (Average); owner rating 4.3 of 5 (31 reviews); Edmunds suggests $40,545 on a Work Truck (Texas sales through November 2). Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-16",
+          "url": "https://www.kbb.com/chevrolet/silverado-1500/2026/",
+          "title": "Kelley Blue Book: 2026 Chevrolet Silverado 1500",
+          "note": "expert rating 4.3 out of 5, consumer rating 3.9 (179 reviews), #3 in best full-size trucks"
+        },
+        {
+          "id": "VEH-F1S-17",
+          "url": "https://www.kbb.com/ford/f150/2026/",
+          "title": "Kelley Blue Book: 2026 Ford F-150",
+          "note": "expert rating 4.7, consumer 4.2 (60 reviews), #1 in best full-size trucks"
+        },
+        {
+          "id": "VEH-F1S-18",
+          "url": "https://cars.usnews.com/cars-trucks/chevrolet/silverado-1500",
+          "title": "U.S. News: 2026 Chevrolet Silverado 1500",
+          "note": "8.8 out of 10, #5 of 6 full-size pickups; predicted reliability 86 out of 100; towing 8,700 to 13,300 lb against the F-150's 13,500. Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-19",
+          "url": "https://www.jdpower.com/cars/2026/chevrolet/silverado-1500",
+          "title": "J.D. Power: 2026 Chevrolet Silverado 1500",
+          "note": "score 82 (F-150 83), quality and reliability 84; large light-duty pickup list: Cybertruck 89, F-150 83, Silverado 82, Tundra 82; 2026 IQS: F-150 first, Silverado second. Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-20",
+          "url": "https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710",
+          "title": "Cars.com: J.D. Power 2026 dependability study",
+          "note": "brand problems per 100: Chevrolet 178, Toyota 185, Honda 211, Ram 216, Ford 228, GMC 229; industry 204. Secondary page; J.D. Power's press release returned 403."
+        },
+        {
+          "id": "VEH-F1S-21",
+          "url": "https://pickuptrucktalk.com/2026/02/most-reliable-2026-truck-is-ram-1500-chevy-silverado-next-toyota-misses-out-jd-power-study/",
+          "title": "Pickup Truck Talk: most reliable 2026 truck (J.D. Power)",
+          "note": "2026 dependability ranking of large pickups: Ram 1500 first, Silverado 1500 second, Sierra and F-150 tied third. Secondary."
+        },
+        {
+          "id": "VEH-F1S-22",
+          "url": "https://www.jdpower.com/cars/ratings/dependability/2026",
+          "title": "J.D. Power: 2026 dependability awards and ratings",
+          "note": "large light-duty pickup award went to the Ram 1500"
+        },
+        {
+          "id": "VEH-F1S-23",
+          "url": "https://www.consumerreports.org/cars/chevrolet/silverado-1500/2026/reliability/",
+          "title": "Consumer Reports: 2026 Silverado 1500 reliability",
+          "note": "predicted less reliable than the average new car (2023 to 2025 models); 3 recalls. Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-24",
+          "url": "https://www.consumerreports.org/cars/ford/f-150/2026/reliability",
+          "title": "Consumer Reports: 2026 F-150 reliability",
+          "note": "predicted about average reliability (2023 to 2025 models); 9 recalls. Read in the browser."
+        },
+        {
+          "id": "VEH-F1S-25",
+          "url": "https://repairpal.com/reliability/ford/f-150",
+          "title": "RepairPal: Ford F-150 reliability",
+          "note": "3.5 out of 5, 7th of 17 full-size trucks, $788 a year, 0.28 unscheduled visits, 15% severe"
+        },
+        {
+          "id": "VEH-F1S-26",
+          "url": "https://repairpal.com/reliability/chevrolet/silverado-1500",
+          "title": "RepairPal: Chevrolet Silverado 1500 reliability",
+          "note": "3.5 out of 5, 5th of 17 full-size trucks, $714 a year, 0.23 visits, 16% severe"
+        },
+        {
+          "id": "VEH-F1S-27",
+          "url": "https://www.iseecars.com/car/ford-f-150",
+          "title": "iSeeCars: Ford F-150",
+          "note": "25% chance of reaching 200,000 miles; average lifespan 163,092 miles; reliability 8.6 of 10"
+        },
+        {
+          "id": "VEH-F1S-28",
+          "url": "https://www.iseecars.com/car/chevrolet-silverado-1500",
+          "title": "iSeeCars: Chevrolet Silverado 1500",
+          "note": "32.8% chance of reaching 200,000 miles; average lifespan 173,328 miles; reliability 8.7 of 10"
+        },
+        {
+          "id": "VEH-F1S-29",
+          "url": "https://www.iseecars.com/longest-lasting-cars-study",
+          "title": "iSeeCars: longest-lasting cars study (September 15, 2026)",
+          "note": "now measured at 250,000 miles; neither 1500 listed; truck average 11.1%, vehicle average 5.4%"
+        },
+        {
+          "id": "VEH-F1S-30",
+          "url": "https://www.iseecars.com/car/ford-f-150/resale-value",
+          "title": "iSeeCars: Ford F-150 resale value",
+          "note": "value lost 18.9% in 3 years, 38.6% in 5; full-size pickup average 23.7% and 37%; all vehicles 24.8% and 41.7%"
+        },
+        {
+          "id": "VEH-F1S-31",
+          "url": "https://www.iseecars.com/car/chevrolet-silverado-1500/resale-value",
+          "title": "iSeeCars: Chevrolet Silverado 1500 resale value",
+          "note": "value lost 30.4% in 3 years, 41.7% in 5"
+        },
+        {
+          "id": "VEH-F1S-32",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "title": "Kelley Blue Book: 2026 best resale value awards",
+          "note": "full-size pickup winner Toyota Tundra; neither the F-150 nor the Silverado"
+        },
+        {
+          "id": "VEH-F1S-33",
+          "url": "https://www.carwhere.com/used-car-prices/ford/f-150/2024",
+          "title": "CarWhere: used Ford F-150 prices (2022 to 2025 pages)",
+          "note": "median asking price by model year, snapshot November 14, 2026"
+        },
+        {
+          "id": "VEH-F1S-34",
+          "url": "https://www.carwhere.com/used-car-prices/chevrolet/silverado-1500/2024",
+          "title": "CarWhere: used Chevrolet Silverado 1500 prices (2022 to 2025 pages)",
+          "note": "median asking price by model year, snapshot November 14, 2026"
+        },
+        {
+          "id": "VEH-F1S-35",
+          "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=FORD&model=F-150%20(SUPER%20CREW)%20GAS&modelYear=2025",
+          "title": "NHTSA: owner complaints API (F-150 and Silverado 1500, model years 2019 to 2025)",
+          "note": "read November 16, 2026; deduplicated by ODI number. F-150 complaints sit under 'F-150 (SUPER CREW) GAS' style names from 2023, 'F-150 SUPER CREW' style names for 2019 to 2022, and 'F-150 SUPER CREW HEV'; the plain 'F-150' name returns only a fraction."
+        },
+        {
+          "id": "VEH-F1S-36",
+          "url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=FORD&model=F-150&modelYear=2022",
+          "title": "NHTSA: recalls API (F-150 and Silverado 1500, model years 2019 to 2026)",
+          "note": "recall campaigns per model year, deduplicated by campaign number; read November 16, 2026"
+        },
+        {
+          "id": "VEH-F1S-37",
+          "url": "https://api.nhtsa.gov/SafetyRatings/VehicleId/21411",
+          "title": "NHTSA: 5-Star Safety Ratings, 2026 F-150 SuperCrew 4x4",
+          "note": "5 stars overall, frontal and side; rollover 4 stars (19.1%)"
+        },
+        {
+          "id": "VEH-F1S-38",
+          "url": "https://api.nhtsa.gov/SafetyRatings/VehicleId/21857",
+          "title": "NHTSA: 5-Star Safety Ratings, 2026 Silverado 1500 crew cab 4x4",
+          "note": "4 stars overall, 4 frontal (driver 5, passenger 4), 5 side, rollover 4 (19.8%); the 2WD crew cab scores 5 overall"
+        },
+        {
+          "id": "VEH-F1S-39",
+          "url": "https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=25V274000",
+          "title": "NHTSA: recall 25V-274",
+          "note": "6.2L V8 connecting rod and crankshaft defects, 2021 to 2024 Silverado 1500 and GM SUVs, 597,571 vehicles"
+        },
+        {
+          "id": "VEH-F1S-40",
+          "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-EA26005-17015.pdf",
+          "title": "NHTSA: EA26005 opening resume",
+          "note": "opened August 20, 2026; engine failure after the 25V-274 remedy; 2021 to 2026 GM models with the L87 6.2L; 997,743 vehicles; 690 ODI and 6,953 manufacturer incidents. Read in the browser's PDF viewer."
+        },
+        {
+          "id": "VEH-F1S-41",
+          "url": "https://www.iihs.org/ratings/vehicle/ford/f-150-crew-cab-pickup/2026",
+          "title": "IIHS: 2026 Ford F-150 crew cab",
+          "note": "small overlap Good, moderate overlap (updated) Poor, side (updated) Good, headlights Good/Acceptable by trim, pedestrian AEB Good, LATCH Marginal"
+        },
+        {
+          "id": "VEH-F1S-42",
+          "url": "https://www.iihs.org/ratings/vehicle/chevrolet/silverado-1500-crew-cab-pickup/2026",
+          "title": "IIHS: 2026 Chevrolet Silverado 1500 crew cab",
+          "note": "small overlap Marginal, moderate overlap (updated) Poor, side (updated) Acceptable, headlights Poor, pedestrian AEB Acceptable, LATCH Marginal"
+        },
+        {
+          "id": "VEH-F1S-43",
+          "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-2025-full-year-us-sales-results",
+          "title": "Ford: 2025 full-year U.S. sales",
+          "note": "F-Series 828,832 (+8.3%); F-150 Hybrid 84,934; Ford does not report F-150 alone"
+        },
+        {
+          "id": "VEH-F1S-44",
+          "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-2026-third-quarter-sales-results",
+          "title": "Ford: 2026 third-quarter sales",
+          "note": "F-Series 561,508 through September, more than 140,000 ahead of the Silverado; Super Duty production 110,275 and F-Series production 266,777 in the quarter"
+        },
+        {
+          "id": "VEH-F1S-45",
+          "url": "https://fordauthority.com/2026/10/ford-motor-company-sales-numbers-figures-results-third-quarter-2026-q3/",
+          "title": "Ford Authority: Ford sales, Q3 2026",
+          "note": "F-Series Q3 203,718 (+3.03%), year to date 557,038 excluding the Lightning (4,470)"
+        },
+        {
+          "id": "VEH-F1S-46",
+          "url": "https://www.goodcarbadcar.net/ford-f150-f-series-sales-2025-2026-august/",
+          "title": "Good Car Bad Car: F-Series sales 2005 to 2026",
+          "note": "annual F-Series U.S. sales 2019 to 2025; states Ford does not publish an F-150-only figure"
+        },
+        {
+          "id": "VEH-F1S-47",
+          "url": "https://gmauthority.com/blog/gm/chevrolet/silverado/chevrolet-silverado-sales-numbers/",
+          "title": "GM Authority: Silverado U.S. sales by year",
+          "note": "total Silverado (LD, HD and MD, no EV) 2019 to 2025"
+        },
+        {
+          "id": "VEH-F1S-48",
+          "url": "https://gmauthority.com/blog/2026/10/full-size-gm-truck-sales-numbers-figures-results-third-quarter-2026-q3/",
+          "title": "GM Authority: GM full-size truck sales, Q3 2026",
+          "note": "Silverado LD 100,221 in Q3 and 279,614 through September (+6.5%); Silverado total 417,386"
+        },
+        {
+          "id": "VEH-F1S-49",
+          "url": "https://gmauthority.com/blog/2026/03/chevrolet-silverado-sales-numbers-figures-results-fourth-quarter-2025-q4/",
+          "title": "GM Authority: Silverado sales, Q4 2025",
+          "note": "2025: LD 362,909, HD 206,184, MD 8,341, total 577,434"
+        },
+        {
+          "id": "VEH-F1S-50",
+          "url": "https://www.best-selling-cars.com/usa/2023-full-year-usa-gm-chevrolet-gmc-cadillac-buick-car-sales-by-model",
+          "title": "Best-Selling-Cars: 2023 GM sales by model",
+          "note": "Silverado LD 354,775 (2023) and 324,603 (2022)"
+        },
+        {
+          "id": "VEH-F1S-51",
+          "url": "https://www.best-selling-cars.com/usa/2021-full-year-usa-gm-sales-chevrolet-buick-cadillac-gmc/",
+          "title": "Best-Selling-Cars: 2021 GM sales by model",
+          "note": "Silverado LD 380,715 (2021) and 436,281 (2020)"
+        },
+        {
+          "id": "VEH-F1S-52",
+          "url": "https://www.best-selling-cars.com/usa/2019-full-year-usa-gm-general-motors-sales/",
+          "title": "Best-Selling-Cars: 2019 GM sales",
+          "note": "Silverado LD about 438,686 (2019); read through a search summary only"
+        },
+        {
+          "id": "VEH-F1S-53",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "note": "days of supply: F-150 93, Silverado 1500 99, industry 87"
+        },
+        {
+          "id": "VEH-F1S-54",
+          "url": "https://www.truecar.com/overview/chevrolet/silverado-1500/",
+          "title": "TrueCar: 2026 Chevrolet Silverado 1500",
+          "note": "base WT average price paid $39,330 on a $39,995 MSRP, 1.7% under (912 transactions, 20 weeks). Read in the browser; the F-150 page returned 403."
+        },
+        {
+          "id": "VEH-F1S-55",
+          "url": "https://www.carwhere.com/price/chevrolet/silverado/2026",
+          "title": "CarWhere: 2026 Chevrolet Silverado price",
+          "note": "verified buyers paid a median 8% under MSRP (23 deals, December 2025 to May 2026)"
+        },
+        {
+          "id": "VEH-F1S-56",
+          "url": "https://www.carwhere.com/price/ford/f-150/2026",
+          "title": "CarWhere: 2026 Ford F-150 price",
+          "note": "verified buyers paid a median 4.4% under MSRP (17 purchases), snapshot November 8, 2026"
+        },
+        {
+          "id": "VEH-F1S-57",
+          "url": "https://www.ford.com/trucks/f150/features/pro-power-onboard/",
+          "title": "Ford: F-150 Pro Power Onboard",
+          "note": "up to 7.2 kW; standard on the hybrid; available on King Ranch and Platinum"
+        },
+        {
+          "id": "VEH-F1S-58",
+          "url": "https://www.truecar.com/overview/ford/f-150/2026",
+          "title": "TrueCar: 2026 Ford F-150",
+          "note": "average price paid against MSRP by trim, from the F-150 price guide"
+        },
+        {
+          "id": "VEH-F1S-59",
+          "url": "https://www.edmunds.com/ford/f-150/",
+          "title": "Edmunds: Ford F-150",
+          "note": "Edmunds rating 8.0, 1st of 5 large trucks"
+        },
+        {
+          "id": "VEH-F1S-60",
+          "url": "https://cars.usnews.com/cars-trucks/ford/f-150",
+          "title": "U.S. News: Ford F-150",
+          "note": "9.6 out of 10, 1st of 6 full-size pickups"
+        },
+        {
+          "id": "VEH-F1S-61",
+          "url": "https://www.jdpower.com/cars/2026/ford/f-150",
+          "title": "J.D. Power: 2026 Ford F-150",
+          "note": "score 83"
+        },
+        {
+          "id": "VEH-F1S-62",
+          "url": "https://arctic-shift.photon-reddit.com/",
+          "title": "Arctic Shift: Reddit archive",
+          "note": "public Reddit posts and comments behind the Reddit Sentiment Index"
+        }
+      ]
     }
   ]
 }
