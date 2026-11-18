@@ -323,6 +323,23 @@ Reddit section: per-car file data/reddit-sentiment/cars/hyundai-elantra.json (se
 
 Open items for Mason (6): the pick (SEL Sport Premium; Hybrid Blue for mpg); "buy new, as a 2026 (or wait for the redesign)" with CPO and used advice (2023 or newer); the four discount groups (Hybrid Limited and N Line thin); the N take ("buy the manual"); whether to mention the next-generation Elantra at all (KBB report only); the SEL Sport Premium's equipment (the page says no more than Hyundai's trim card). Also check: Edmunds Texas prices may include Hyundai cash; N dual-clutch and TCR prices are iSeeCars'; the Hybrid's $500 trim wording. Offers end November 30, 2026 (graduate rebate December 31).
 
+## Subaru Forester (added November 18, 2026)
+
+`subaru-forester-price.html` covers the Forester and Forester Hybrid in the Camry's template with no spotlight section. Differences:
+
+- **Two model years, and the lineup changes.** The 2026 prices are from Subaru's February 10 update, the 2027 from its September 17 release, both read in full. The 2027 drops the gas Sport, Sport Onyx Edition and Touring (the table says "Dropped") and adds a Wilderness Hybrid. That trim has no 2026 price, so it is left out of the trims table (the renderer needs a number there) and named in the note under it. Edmunds, KBB and U.S. News still print pre-February prices.
+- **Offers** come from Subaru's own `/services/specialoffers/models` feed, read in the browser for retailers near 60601, 75201, 90012 and 10001. The retailer nearest 90012 returned nothing, so seven more nearby were checked; all matched. Same offers in every region, 2026 only. The military $500 and certified rate come from subaru.com pages with no end date. Subaru's military page says it combines with other incentives, which the chart relies on. A Consumer Reports cash-back banner is not in Subaru's feed, so it is not on the page.
+- **Sale price.** Edmunds' Texas prices (browser) 6.8–7.4% under; iSeeCars invoice 6.1–6.9%; KBB about 5.9% on the Base; CarWhere has five deals (the page says it is small). Edmunds mentions a 2.99%/72 promo Subaru's feed lacks, so the page follows Subaru. TrueCar returned 403; Cox has no Forester figure. The 4–7% figure and pay groups are our estimate.
+- **Safety.** NHTSA: 5 stars, 4 rollover; the Wilderness has frontal and side only. IIHS says its small overlap and side grades come from Subaru-run tests on a 2025 car and exclude the 2025 Wilderness. Recall zeros for 2020 and 2021 are what the API returned.
+- **mpg** is from the fueleconomy.gov web service; the page gives it only where EPA's group names the trim.
+- **Rivals:** RAV4 and CR-V figures are from our own pages, not re-read.
+- **Read through summaries or reused:** iSeeCars' three-year depreciation (WebFetch summary; looks low for the gas Forester) and Experian's Q2 2026 rates (Camry page).
+- **Photos.** Five Wikimedia Commons images: HJUdall (CC0), Mr.choppers (CC BY-SA 4.0, two), Charles from Port Chester (CC0 and CC BY 2.0). Cropped; a dealer's plate frame, bystanders and another brand's sign blurred. The dashboard is a 2025 Sport with a show car's prototype card in frame. Barton's `node_modules/sharp/lib` is empty; `sharp/dist/index.mjs` worked.
+
+Reddit section: per-car file data/reddit-sentiment/cars/subaru-forester.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 Premium Hybrid; Wilderness if you tow), "buy new, as a 2026", the used advice (2023 or 2024; skip 2019 and 2020) and the discount groups were written from the research and lean on Edmunds Texas. Check: Consumer Reports is paywalled; Edmunds 5.7 against U.S. News 8.6 and J.D. Power 84 (the page says so); CPO age and mileage limits are not on subaru.com; the 2027 EPA page was not opened; Touring and Limited equipment is partly inferred. Offers end November 30, 2026.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.
