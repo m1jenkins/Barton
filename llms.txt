@@ -66,7 +66,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.
-- [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and thirteen cities with local numbers.
+- [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and seventeen cities with local numbers.
 - [Car Buying Service in New York](https://www.steermeright.com/car-buying-service-new-york.html): About 185,000 new cars listed across three states, and which plan covers which dealers.
 - [Car Buying Service in Los Angeles](https://www.steermeright.com/car-buying-service-los-angeles.html): About 650 franchised dealerships within 50 miles of downtown, all asked in writing.
 - [Car Buying Service in Chicago](https://www.steermeright.com/car-buying-service-chicago.html): City, collar suburbs and northwest Indiana: who gets asked on each plan.
@@ -80,3 +80,7 @@ Steer Me Right has one office, in Austin, Texas, and no office in the cities bel
 - [Car Buying Service in Houston](https://www.steermeright.com/car-buying-service-houston.html): Heat wear on used cars, the air conditioning in slow traffic and big trucks in small garages.
 - [Car Buying Service in San Francisco](https://www.steermeright.com/car-buying-service-san-francisco.html): Bridge tolls between you and the dealer, home charging and steep streets around the Bay Area.
 - [Car Buying Service in Detroit](https://www.steermeright.com/car-buying-service-detroit.html): Road salt and winter tires, the Ohio line, and which plan covers which dealers.
+- [Car Buying Service in Seattle](https://www.steermeright.com/car-buying-service-seattle.html): Tolls and ferries between you and the dealer, home charging, and why every dealer in the circle is a Washington dealer.
+- [Car Buying Service in Denver](https://www.steermeright.com/car-buying-service-denver.html): Hail on used cars, tires for the I-70 traction law and E-470 tolls, with every dealer in the circle in Colorado.
+- [Car Buying Service in Minneapolis–St. Paul](https://www.steermeright.com/car-buying-service-minneapolis-st-paul.html): Road salt and tire tread on used cars, the express lanes, and the Wisconsin line along the St. Croix.
+- [Car Buying Service in Tampa](https://www.steermeright.com/car-buying-service-tampa.html): Sun wear and the air conditioning on used cars, and the tolls between dealers on either side of the bay.

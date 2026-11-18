@@ -937,6 +937,279 @@
         ["Can you find out what tires a car has?", "Yes. We can ask the dealer what tires are on the car and for a photo of the sidewall, and a certified winter tire shows a mountain-and-snowflake symbol. Tell us whether you want winter tires, and we put the answer next to each dealer’s price."],
         ["Can you include dealers in Ohio?", "Yes. For a Michigan buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Ohio, they are covered on either plan."]
       ]
+    },
+    {
+      "slug": "car-buying-service-seattle.html",
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "name": "Seattle",
+      "area": "Seattle-area",
+      "center": "downtown Seattle",
+      "zip": "98101",
+      "figures": {
+        "caption": "Public market figure for the Seattle area, with its source and date",
+        "rows": [
+          ["New-car dealer locations, Seattle-Tacoma-Bellevue metro area, 2023", "254", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-SEA-01"]
+        ],
+        "note": "This figure comes from the public source named in the table, on the date shown. It counts store locations in the Census metro area, which has a different boundary from the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 254 new-car dealer locations across the Seattle metro area in 2023. That area is King, Pierce and Snohomish counties. We found no public price, inventory or registration figure for metro Seattle that we could cite, so the Census count is the only market figure on this page.",
+        "Puget Sound and Lake Washington split the Seattle market, and dealers in Everett, Bellevue, Kent and Tacoma sit a long drive apart. Most shoppers call the few stores nearest home and never hear from the rest. We ask every dealer that has your car for a written out-the-door price, however far apart they are, and put the answers side by side, fees included. Tell us the model you want and where you’d start your drive."
+      ],
+      "photo": {
+        "file": "market-seattle-interstate-5",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Southbound traffic on Interstate 5 crosses the Ship Canal Bridge toward the downtown Seattle skyline, with the express lanes running alongside on a lower deck.",
+        "caption": "Interstate 5 southbound on the Ship Canal Bridge, seen from NE 45th Street, with downtown Seattle ahead.",
+        "author": "SounderBruce",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:I-5_southbound_traffic_from_NE_45th_Street_in_Seattle.jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "map": {
+        "lat": 47.6097,
+        "lon": -122.3331,
+        "title": "Map of the 50-mile circle around downtown Seattle",
+        "description": "A 50-mile circle centered on downtown Seattle covers Puget Sound and the cities around it, from Marysville and Everett in the north to Tacoma and Puyallup in the south, and from Bremerton and Bainbridge Island in the west to Issaquah and Monroe in the east. Every part of it is in Washington.",
+        "caption": "No state line crosses this circle. Every dealer from Everett to Tacoma is a Washington dealer, so the Steer Me Right plan covers all of them. The blue inside it is Puget Sound and Lake Washington.",
+        "centerLabel": "Seattle",
+        "centerAnchor": "below",
+        "regions": [
+          { "name": "WASHINGTON", "lat": 47.35, "lon": -120.9 },
+          { "name": "Puget Sound", "lat": 47.86, "lon": -122.45, "water": true }
+        ],
+        "places": [
+          { "name": "Marysville", "lat": 48.080214, "lon": -122.154312 },
+          { "name": "Everett", "lat": 47.965413, "lon": -122.189895 },
+          { "name": "Monroe", "lat": 47.859793, "lon": -121.984006 },
+          { "name": "Edmonds", "lat": 47.813604, "lon": -122.35333, "anchor": "end" },
+          { "name": "Bremerton", "lat": 47.539877, "lon": -122.717048, "anchor": "end" },
+          { "name": "Bainbridge Island", "lat": 47.642487, "lon": -122.507764, "anchor": "end" },
+          { "name": "Redmond", "lat": 47.677924, "lon": -122.115336 },
+          { "name": "Bellevue", "lat": 47.597837, "lon": -122.15648 },
+          { "name": "Issaquah", "lat": 47.544488, "lon": -122.049085, "minor": true },
+          { "name": "Kent", "lat": 47.38797, "lon": -122.212727, "minor": true },
+          { "name": "Auburn", "lat": 47.303773, "lon": -122.21 },
+          { "name": "Gig Harbor", "lat": 47.338378, "lon": -122.600753, "anchor": "end" },
+          { "name": "Tacoma", "lat": 47.252199, "lon": -122.459832, "anchor": "end" },
+          { "name": "Puyallup", "lat": 47.179046, "lon": -122.291523 }
+        ]
+      },
+      "local": [
+        ["Count the tolls on the way to the dealer", "The SR 520 bridge, the SR 99 tunnel and the Tacoma Narrows Bridge all charge tolls. Without a Good To Go! pass, WSDOT photographs your plate and mails a bill at a higher rate than the pass rate. At the Tacoma Narrows Bridge you can also stop at a toll booth. A dealer across one of those crossings can cost more to reach than its price suggests. Tell us which crossings you’d use, and we weigh dealers by how far you would drive."],
+        ["Ask about the ferry if you live across the water", "If you live on Bainbridge Island, on Vashon or on the Kitsap side, a dealer in Seattle means a ferry ride home in the car you just bought. Washington State Ferries runs routes from Seattle to Bainbridge Island and to Bremerton, and from Fauntleroy to Vashon and Southworth. WSDOT’s Best Times to Travel tool shows the busiest and least busy times to take a vehicle on a ferry. Tell us where you live, and we ask the dealers you could reach on your own schedule."],
+        ["Check where you will charge at home", "Find out where an electric car will plug in before you shop for one. Seattle City Light says a faster home charger can use the same type of outlet that powers a laundry dryer or an electric oven. The US Department of Energy says an electrician can tell you whether your home has enough electrical capacity. Tell us if you want an electric car or a plug-in hybrid and whether you can charge at home, and we search the powertrain that fits."]
+      ],
+      "plan": "Every dealer in that circle is a Washington dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Oregon, Idaho or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Seattle?", "No. We’re based in Austin, Texas, and we work with Seattle-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Will you contact dealers on both sides of Puget Sound?", "Yes. Tell us where you live and which crossings you’d drive, and we ask dealers on both shores, from Everett to Tacoma and across the water on the Kitsap side. They are all Washington dealers, so both plans cover them."],
+        ["Do I need a Good To Go! pass to drive to a dealer?", "No. Without a pass, WSDOT photographs your plate and mails a bill at a higher rate than the pass rate, and the Tacoma Narrows Bridge also has toll booths. Tell us which crossings are on your route, and we weigh dealers by how far you’d drive."],
+        ["Can I take a ferry to pick up a car?", "Yes. WSDOT’s Best Times to Travel tool shows the busiest and least busy times to take a vehicle on a ferry. Tell us where you’d start, and we ask the dealers on the shore you can reach."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-denver.html",
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "name": "Denver",
+      "area": "Denver-area",
+      "center": "downtown Denver",
+      "zip": "80202",
+      "figures": {
+        "caption": "Public market figure for the Denver area, with its source and date",
+        "rows": [
+          ["New-car dealer locations, Denver-Aurora-Centennial metro area, 2023", "153", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-DEN-01"]
+        ],
+        "note": "This figure comes from the public source named in the table, on the date shown. It counts store locations in the Census metro area, which has a different boundary from the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 153 new-car dealer locations across the Denver metro area in 2023. That area is ten counties: Adams, Arapahoe, Broomfield, Clear Creek, Denver, Douglas, Elbert, Gilpin, Jefferson and Park. We found no public price, inventory or registration figure for metro Denver that we could cite, so the Census count is the only market figure on this page.",
+        "Most Denver buyers hear from the two or three dealers nearest home. A store in Longmont and a store in Castle Rock sit at opposite ends of the Front Range, and few shoppers visit both. We ask every dealer that has your car for a written out-the-door price, however far apart they are, and put the answers side by side, fees included. Tell us the model and how far you’d drive for a better number."
+      ],
+      "map": {
+        "lat": 39.7392,
+        "lon": -104.9903,
+        "title": "Map of the 50-mile circle around downtown Denver",
+        "description": "A 50-mile circle centered on downtown Denver covers the Denver metro area, from Longmont and Boulder in the north to Castle Rock in the south, and from the foothills at Black Hawk and Evergreen to Brighton and Aurora on the plains. Every part of it is in Colorado.",
+        "caption": "No state line crosses this circle. Every dealer from Longmont to Castle Rock is a Colorado dealer, so the Steer Me Right plan covers all of them.",
+        "centerLabel": "Downtown Denver",
+        "regions": [
+          { "name": "COLORADO", "lat": 39.15, "lon": -104 }
+        ],
+        "places": [
+          { "name": "Longmont", "lat": 40.1682, "lon": -105.1005, "anchor": "end" },
+          { "name": "Boulder", "lat": 40.0244, "lon": -105.2513, "anchor": "end" },
+          { "name": "Fort Lupton", "lat": 40.0828, "lon": -104.8033 },
+          { "name": "Broomfield", "lat": 39.9536, "lon": -105.0508, "anchor": "end", "minor": true },
+          { "name": "Brighton", "lat": 39.9657, "lon": -104.7942 },
+          { "name": "Black Hawk", "lat": 39.8016, "lon": -105.4935, "anchor": "end" },
+          { "name": "Golden", "lat": 39.7425, "lon": -105.2106, "anchor": "end" },
+          { "name": "Aurora", "lat": 39.7095, "lon": -104.7205, "anchor": "middle", "dy": 18 },
+          { "name": "Evergreen", "lat": 39.6356, "lon": -105.3381, "anchor": "end" },
+          { "name": "Littleton", "lat": 39.5904, "lon": -105.0201, "anchor": "end", "minor": true },
+          { "name": "Parker", "lat": 39.5059, "lon": -104.7758 },
+          { "name": "Castle Rock", "lat": 39.3762, "lon": -104.8529, "anchor": "middle", "dy": 18 }
+        ]
+      },
+      "local": [
+        ["Ask whether a used car has been through a hailstorm", "The National Weather Service says Colorado has always been known for hail storms, and it lists a summer of severe hail over the Denver metro area among the state’s top weather events of the decade. A car that sat outside through one can carry dents across the roof and hood. Dents show in reflections, so ask for daylight photos of the roof, hood and trunk lid taken from a low angle. On a used search we can ask the dealer for those photos and for a written answer on hail repair. Have a mechanic you choose look for filler and mismatched paint before you sign."],
+        ["Check the tires before you drive I-70 into the mountains", "If you’ll drive I-70 into the mountains, the tires decide whether the car meets Colorado’s traction law. CDOT says the law covers I-70 between Morrison and Dotsero from fall through spring. While it is in effect, a passenger car needs tires with the required tread depth that are rated all-weather or winter, marked with a mountain-snowflake, M+S or M/S, or it must carry chains or another approved traction device. CDOT also highly recommends all-wheel or four-wheel drive in the mountains, but a worn all-wheel-drive car can still fall short of the law. Tell us whether the mountains are in your plans, and we ask each dealer what tires are on the car and for a photo of the tread and sidewall."],
+        ["Plan for E-470 on the way to a dealer", "E-470 collects its tolls without cash. Without an ExpressToll account, cameras read your plates and a statement is mailed to the vehicle’s owner, at higher rates than ExpressToll customers pay. A dealer you reach on E-470 comes with that bill. Tell us how far you’d drive and whether you’d rather skip toll roads, and we ask the dealers inside that window."]
+      ],
+      "plan": "Every dealer in that circle is a Colorado dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Wyoming or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Denver?", "No. We’re based in Austin, Texas, and we work with Denver-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you tell if a used car has hail damage?", "Only from photos and the dealer’s written answer. We can ask for pictures of the roof, hood and trunk lid and for a written answer on hail repair, and send them to you. Photos miss dents, so have a mechanic you choose look the car over before you sign."],
+        ["Do I need all-wheel drive for I-70 in the mountains?", "CDOT highly recommends it, and its traction law turns on the tires. While the law is in effect, a passenger car needs tires with the required tread that are rated all-weather or winter, or chains or another approved traction device. Tell us what you plan to drive, and we ask the dealer what tires are on the car and for a photo of the tread."],
+        ["Will I pay a toll driving to a dealer on E-470?", "Yes, if your route uses it. E-470 takes no cash, and without an ExpressToll account the toll is billed by plate at a higher rate. Tell us how far you’d drive and whether you’d rather avoid toll roads, and we weigh dealers by that drive."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-minneapolis-st-paul.html",
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "name": "Minneapolis–St. Paul",
+      "area": "Twin Cities",
+      "center": "the Midway, between the two downtowns",
+      "zip": "55104",
+      "figures": {
+        "caption": "Public market figure for the Twin Cities area, with its source and date",
+        "rows": [
+          ["New-car dealer locations, Minneapolis-St. Paul-Bloomington metro area, 2023", "216", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-MSP-01"]
+        ],
+        "note": "This figure comes from the public source named in the table, on the date shown. It counts store locations in the Census metro area, which has a different boundary from the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 216 new-car dealer locations across the Minneapolis-St. Paul-Bloomington metro area in 2023. That area is fifteen counties, thirteen in Minnesota and two in Wisconsin (Pierce and St. Croix). We found no public price, inventory or registration figure for the Twin Cities that we could cite, so the Census count is the only market figure on this page.",
+        "The Twin Cities are two downtowns with suburbs in every direction, and the St. Croix River puts Hudson and River Falls in another state. A store in Blaine and a store in Burnsville rarely see each other’s quotes. We ask every dealer that has your car for a written out-the-door price and put the answers side by side, fees included. Tell us the model you want and how far you’d drive for a better number."
+      ],
+      "photo": {
+        "file": "market-minneapolis-st-paul-interstate-94",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Light traffic on an eight-lane stretch of Interstate 94 in St. Paul passes under a sign bridge with green exit signs for Marion Street, Kellogg Boulevard and Dale Street.",
+        "caption": "Interstate 94 at Dale Street in St. Paul, seen from the Victoria Street bridge.",
+        "author": "Tony Webster",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Interstate_94_at_Dale_Street_Traffic_-_St._Paul,_Minnesota_(41748688120).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "map": {
+        "lat": 44.9658,
+        "lon": -93.1775,
+        "title": "Map of the 50-mile circle around the Midway",
+        "description": "A 50-mile circle centered on the Midway, between downtown Minneapolis and downtown St. Paul, covers both cities and their suburbs in Minnesota, from Elk River and Cambridge in the north to Northfield in the south. Across the St. Croix River it takes in Hudson, River Falls, New Richmond and Prescott in Wisconsin. The dashed line is the Minnesota-Wisconsin state line.",
+        "caption": "Fifty miles from the Midway reaches across the Twin Cities and into western Wisconsin. The dashed line is the Wisconsin line, which follows the St. Croix River down to Prescott and then the Mississippi. A dealer across it is out of state for a Minnesota buyer, and out-of-state dealers are part of Steer Me Right Pro.",
+        "centerLabel": "Midway",
+        "centerAnchor": "below",
+        "regions": [
+          { "name": "MINNESOTA", "lat": 44.18, "lon": -93.6 },
+          { "name": "WISCONSIN", "lat": 45.45, "lon": -91.95 }
+        ],
+        "places": [
+          { "name": "Cambridge", "lat": 45.561, "lon": -93.228 },
+          { "name": "Forest Lake", "lat": 45.251, "lon": -92.967 },
+          { "name": "Blaine", "lat": 45.171, "lon": -93.206 },
+          { "name": "Elk River", "lat": 45.332, "lon": -93.567, "anchor": "end" },
+          { "name": "Buffalo", "lat": 45.18, "lon": -93.864, "anchor": "end" },
+          { "name": "Minneapolis", "lat": 44.963, "lon": -93.268, "anchor": "end", "minor": true },
+          { "name": "St. Paul", "lat": 44.949, "lon": -93.104, "minor": true },
+          { "name": "Chaska", "lat": 44.816, "lon": -93.61, "anchor": "end", "minor": true },
+          { "name": "Lakeville", "lat": 44.676, "lon": -93.252 },
+          { "name": "Northfield", "lat": 44.456, "lon": -93.17 },
+          { "name": "Stillwater", "lat": 45.059, "lon": -92.83, "minor": true },
+          { "name": "Hudson", "lat": 44.964, "lon": -92.73 },
+          { "name": "River Falls", "lat": 44.861, "lon": -92.626 },
+          { "name": "New Richmond", "lat": 45.125, "lon": -92.548 },
+          { "name": "Prescott", "lat": 44.753, "lon": -92.789 }
+        ]
+      },
+      "local": [
+        ["Look under a used car for road-salt rust", "The Minnesota Pollution Control Agency lists vehicles among the things road salt damages. On a car that has spent its winters in the Twin Cities, look for rust on the brake lines, the exhaust and the rocker panels under the doors. On a used search we can ask the dealer for photos of the underside. Before you sign, have a mechanic you choose put the car on a lift."],
+        ["Ask for a photo of the tread", "AAA’s Minneapolis club says tread depth is critical to traction and suggests a quarter test: put the quarter in the groove with Washington’s head down, and if you can see the top of his head, it’s time for new tires. A used car on worn tires means a tire bill right after you buy it. Tell us which cars you’re weighing, and we ask each dealer for a photo of each tire’s tread with a quarter in the groove."],
+        ["Plan the drive around the express lanes", "Driving alone at rush hour without an E-ZPass account, you stay in the general lanes, so a dealer that looks close on the map can be a slow trip. MnDOT runs E-ZPass express lanes on I-394, I-35W and I-35E. Carpools, buses and motorcycles use them free at peak hours, and solo drivers pay a fee from an E-ZPass account. Tell us where you start and when you’d drive, and we weigh dealers by how far you would go."]
+      ],
+      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Minnesota buyer who wants Wisconsin dealers around Hudson and River Falls in the mix, or a Wisconsin buyer who wants the Twin Cities stores, should pick Steer Me Right Pro ($695).",
+      "faq": [
+        ["Do you have an office in Minneapolis–St. Paul?", "No. We’re based in Austin, Texas, and we work with Twin Cities dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you include dealers in Wisconsin?", "Yes. For a Minnesota buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Wisconsin, they are covered on either plan, and the Minnesota dealers are the out-of-state ones."],
+        ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent its winters outside."],
+        ["Can you find out how worn a used car’s tires are?", "From photos. We can ask the dealer for a picture of each tire’s tread with a quarter in the groove and send them to you. Have a mechanic you choose check the tires before you sign."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-tampa.html",
+      "published": "2026-11-18",
+      "updated": "2026-11-18",
+      "name": "Tampa",
+      "area": "Tampa Bay",
+      "center": "downtown Tampa",
+      "zip": "33602",
+      "figures": {
+        "caption": "Public market figure for the Tampa area, with its source and date",
+        "rows": [
+          ["New-car dealer locations, Tampa-St. Petersburg-Clearwater metro area, 2023", "186", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-TPA-01"]
+        ],
+        "note": "This figure comes from the public source named in the table, on the date shown. It counts store locations in the Census metro area, which has a different boundary from the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 186 new-car dealer locations across the Tampa metro area in 2023. That area is Hillsborough, Pinellas, Pasco and Hernando counties. We found no public price, inventory or registration figure for metro Tampa that we could cite, so the Census count is the only market figure on this page.",
+        "Tampa Bay splits this market. A dealer in Tampa and a dealer in St. Petersburg sit close on the map with the bay between them, and most shoppers only call the stores on their own side. We ask every dealer that has your car for a written out-the-door price, on either side of the bay, and put the answers side by side, fees included. Tell us the model you want and how far you’d drive for a better number."
+      ],
+      "photo": {
+        "file": "market-tampa-sunshine-skyway-bridge",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Traffic climbs the Sunshine Skyway Bridge toward its tall yellow cable-stayed towers above the blue water of Tampa Bay.",
+        "caption": "The Sunshine Skyway Bridge over Tampa Bay, seen from the Skyway fishing pier.",
+        "author": "Joseph Gage",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bob_Graham_Sunshine_Skyway_Bridge_(53457506015).jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "map": {
+        "lat": 27.9506,
+        "lon": -82.4572,
+        "title": "Map of the 50-mile circle around downtown Tampa",
+        "description": "A 50-mile circle centered on downtown Tampa covers Tampa and St. Petersburg, Brooksville and Spring Hill to the north, Zephyrhills, Plant City and Lakeland to the east, and Bradenton to the south. Tampa Bay and the edge of the Gulf are on the west side. Every part of it is in Florida.",
+        "caption": "No state line crosses this circle. Every dealer from Spring Hill to Bradenton is a Florida dealer, so the Steer Me Right plan covers all of them. The blue on the west side is Tampa Bay and the Gulf.",
+        "centerLabel": "Tampa",
+        "regions": [
+          { "name": "FLORIDA", "lat": 28.8, "lon": -82.3 },
+          { "name": "Tampa Bay", "lat": 27.67, "lon": -82.55, "water": true },
+          { "name": "Gulf", "lat": 27.95, "lon": -83.4, "water": true }
+        ],
+        "places": [
+          { "name": "Brooksville", "lat": 28.5166, "lon": -82.4047 },
+          { "name": "Spring Hill", "lat": 28.4792, "lon": -82.5297, "anchor": "end", "minor": true },
+          { "name": "Dade City", "lat": 28.3526, "lon": -82.1942, "minor": true },
+          { "name": "Zephyrhills", "lat": 28.2407, "lon": -82.179 },
+          { "name": "Wesley Chapel", "lat": 28.2052, "lon": -82.3171, "anchor": "end", "minor": true },
+          { "name": "New Port Richey", "lat": 28.2466, "lon": -82.7175, "anchor": "end" },
+          { "name": "Clearwater", "lat": 27.9794, "lon": -82.7713, "anchor": "end" },
+          { "name": "Largo", "lat": 27.9087, "lon": -82.7742, "anchor": "end", "minor": true },
+          { "name": "St. Petersburg", "lat": 27.7627, "lon": -82.6441, "anchor": "end" },
+          { "name": "Brandon", "lat": 27.936, "lon": -82.2993, "minor": true },
+          { "name": "Lakeland", "lat": 28.0555, "lon": -81.9548 },
+          { "name": "Sun City Center", "lat": 27.7144, "lon": -82.3558 },
+          { "name": "Bradenton", "lat": 27.4898, "lon": -82.5768 }
+        ]
+      },
+      "local": [
+        ["Look at what the sun did to a used car", "AAA says the sun can fade, split or crack a dashboard and steering wheel, and fade paint, especially darker colors. On a used car, look for a cracked dash top and a faded roof and hood. AAA also says heat and air conditioning use can make a battery drain faster, so ask how old the battery is. On a used search we can ask the dealer for photos of those spots and of the battery label. Have a mechanic you choose look the car over before you sign."],
+        ["Run the air conditioning for the whole test drive", "AAA says that if the inside of a car isn’t cool, the air conditioning’s refrigerant charge may be low or the system may not be working. Run the air conditioning at full blast through the whole drive, and watch how fast the cabin cools. If it stays warm, get a repair estimate before you talk price on the car. Tell us if you want an afternoon drive, and we ask the dealer for one."],
+        ["Expect tolls on the way to a dealer across the bay", "The Selmon Expressway and the Sunshine Skyway Bridge both charge tolls, and the Florida Department of Transportation has made the Skyway cashless. The Tampa Hillsborough Expressway Authority says SunPass users pay lower toll rates than cash or toll-by-plate users. Tell us which side of the bay you’d drive to, and we weigh the dealers by how far you’d go."]
+      ],
+      "plan": "Every dealer in that circle is a Florida dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Georgia or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Tampa?", "No. We’re based in Austin, Texas, and we work with Tampa Bay dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Will you contact dealers on both sides of Tampa Bay?", "Yes. Tell us how far you’d go to pick up the car and which side of the bay you’d rather drive to, and we ask dealers across that area, from Tampa and Brandon to St. Petersburg and Bradenton. They are all Florida dealers, so both plans cover them."],
+        ["Will I pay tolls to pick up the car?", "Possibly, if the route crosses the Selmon Expressway or the Sunshine Skyway Bridge. The Skyway takes no cash, and SunPass users pay lower tolls than toll-by-plate users. Tell us where you’d start, and we weigh dealers by how far you’d drive."],
+        ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the paint and the battery label, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."]
+      ]
     }
   ]
 }

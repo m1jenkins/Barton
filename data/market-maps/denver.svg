@@ -1,0 +1,14 @@
+<svg class="market-map__svg" viewBox="0 0 640 520" role="img" aria-labelledby="market-map-title market-map-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="market-map-title">Map of the 50-mile circle around downtown Denver</title>
+<desc id="market-map-desc">A 50-mile circle centered on downtown Denver covers the Denver metro area, from Longmont and Boulder in the north to Castle Rock in the south, and from the foothills at Black Hawk and Evergreen to Brighton and Aurora on the plains. Every part of it is in Colorado.</desc>
+<rect width="640" height="520" fill="#E3ECF8"/>
+<path d="M-4 524L-4 -4L644 -4L644 524Z" fill="#FFFFFF" stroke="#C3CBD6" stroke-width="1" fill-rule="evenodd"/>
+<path d="" fill="none" stroke="#465061" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+<circle cx="320" cy="260" r="190" fill="#1A4B8C" fill-opacity=".07" stroke="#1A4B8C" stroke-width="2"/>
+<text x="519.8" y="414.6" text-anchor="middle" class="mm-region">COLORADO</text>
+<circle cx="297.8" cy="147.4" r="3" fill="#0E1B2E"/><text x="290.8" y="151.4" text-anchor="end" class="mm-place">Longmont</text><circle cx="267.3" cy="185.2" r="3" fill="#0E1B2E"/><text x="260.3" y="189.2" text-anchor="end" class="mm-place">Boulder</text><circle cx="357.7" cy="169.8" r="3" fill="#0E1B2E"/><text x="364.7" y="173.8" text-anchor="start" class="mm-place">Fort Lupton</text><circle cx="307.8" cy="203.7" r="3" fill="#0E1B2E"/><text x="300.8" y="207.7" text-anchor="end" class="mm-place mm-minor">Broomfield</text><circle cx="359.6" cy="200.6" r="3" fill="#0E1B2E"/><text x="366.6" y="204.6" text-anchor="start" class="mm-place">Brighton</text><circle cx="218.5" cy="243.6" r="3" fill="#0E1B2E"/><text x="211.5" y="247.6" text-anchor="end" class="mm-place">Black Hawk</text><circle cx="275.6" cy="259.1" r="3" fill="#0E1B2E"/><text x="268.6" y="263.1" text-anchor="end" class="mm-place">Golden</text><circle cx="374.4" cy="267.8" r="3" fill="#0E1B2E"/><text x="374.4" y="285.8" text-anchor="middle" class="mm-place">Aurora</text><circle cx="249.8" cy="287.2" r="3" fill="#0E1B2E"/><text x="242.8" y="291.2" text-anchor="end" class="mm-place">Evergreen</text><circle cx="314" cy="299" r="3" fill="#0E1B2E"/><text x="307" y="303" text-anchor="end" class="mm-place mm-minor">Littleton</text><circle cx="363.3" cy="321.2" r="3" fill="#0E1B2E"/><text x="370.3" y="325.2" text-anchor="start" class="mm-place">Parker</text><circle cx="347.7" cy="355.2" r="3" fill="#0E1B2E"/><text x="347.7" y="373.2" text-anchor="middle" class="mm-place">Castle Rock</text>
+<circle cx="320" cy="260" r="6" fill="#1A4B8C" stroke="#fff" stroke-width="2"/>
+<text x="330" y="252" class="mm-center">Downtown Denver</text>
+<g transform="translate(20 496)"><rect x="-8" y="-12" width="111" height="36" rx="6" fill="#fff" fill-opacity=".9"/><path d="M0 0H95M0 -5V0M95 -5V0" stroke="#0E1B2E" stroke-width="1.5" fill="none"/><text x="0" y="16" class="mm-scale">25 miles</text></g>
+
+</svg>
