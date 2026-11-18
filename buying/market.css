@@ -1,4 +1,4 @@
-/* City pages (car-buying-service-<city>.html) that carry a photo, the dealer-circle map or a local section.
+/* City pages (car-buying-service-<city>.html) that carry a photo, the dealer-circle map, a local section or a public-figures table.
    Linked by scripts/render-market-pages.mjs with a content hash; run npm run build:markets after editing. */
 .dr .market-photo, .dr .market-map { margin:0 0 28px; }
 .dr .market-map { margin-top:28px; }
@@ -11,6 +11,21 @@
 .dr .market-map .mm-region { font-size:11px; font-weight:600; letter-spacing:.16em; fill:var(--muted); stroke:none; }
 .dr .market-map .mm-water { font-size:13px; font-weight:400; fill:var(--sign); stroke:none; }
 .dr .market-map .mm-scale { font-size:11px; fill:var(--muted); stroke:none; }
+/* Public-figures tables (Philadelphia, Boston, Phoenix): wide label column, narrow value column. */
+.dr .guide-body .compare-table.market-figures :is(thead th:first-child, tbody th) { width:46%; }
+.dr .guide-body .compare-table.market-figures :is(thead th:nth-child(2), td:nth-child(2)) { width:11%; white-space:nowrap; }
+/* On a phone the same table stacks: label, then value, then source, one block per figure. */
+@media (max-width:700px) {
+  .dr .guide-body .compare-table.market-figures { display:block; min-width:0; }
+  .dr .guide-body .compare-table.market-figures thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+  .dr .guide-body .compare-table.market-figures :is(tbody, tr) { display:block; }
+  .dr .guide-body .compare-table.market-figures tbody tr { padding:14px 0; border-bottom:1px solid var(--line); }
+  .dr .guide-body .compare-table.market-figures tbody tr:last-child { border-bottom:0; }
+  .dr .guide-body .compare-table.market-figures :is(thead th:first-child, tbody th), .dr .guide-body .compare-table.market-figures :is(thead th:nth-child(2), td:nth-child(2)) { width:auto; }
+  .dr .guide-body .compare-table.market-figures tbody tr th, .dr .guide-body .compare-table.market-figures tbody tr td { display:block; position:static; width:auto; padding:0 16px; border:0; box-shadow:none; background:none; white-space:normal; }
+  .dr .guide-body .compare-table.market-figures tbody tr td:nth-child(2) { margin:4px 0; font-size:22px; font-weight:600; color:var(--ink); }
+  .dr .guide-body .compare-table.market-figures tbody tr td:nth-child(3) { font-size:13px; color:var(--muted); }
+}
 .dr .market-credits { margin-top:18px; font-size:13px; line-height:1.6; color:var(--muted); }
 .dr .market-credits > summary { display:inline; cursor:pointer; text-decoration:underline; text-underline-offset:3px; list-style:none; }
 .dr .market-credits > summary::-webkit-details-marker { display:none; }

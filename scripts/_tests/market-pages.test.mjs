@@ -53,8 +53,18 @@ test('each city page says where the office is, dates its listing figures and lin
   for (const market of data.markets) {
     const document = htmlDocument(await read(market.slug));
     assert.match(document.visibleText, new RegExp(`has no office in ${market.name}`), market.slug);
-    assert.match(document.visibleText, new RegExp(`API connector to dealership listings[^.]*pulled ${pulled}`), `${market.slug} dates its figures`);
-    assert.ok(document.visibleText.includes(market.new.toLocaleString('en-US')), `${market.slug} shows its own listing count`);
+    if (market.figures) {
+      // A city without listing counts shows public figures instead, each beside its named source and date.
+      assert.doesNotMatch(document.visibleText, /API connector to dealership listings/, `${market.slug} must not claim connector data`);
+      assert.match(document.visibleText, /public sources named in the table/, `${market.slug} says its figures come from public sources`);
+      for (const [label, value, source] of market.figures.rows) {
+        assert.ok(document.visibleText.includes(label) && document.visibleText.includes(value) && document.visibleText.includes(source), `${market.slug} shows "${label}" with its source`);
+        assert.match(source, /\b20\d\d\b/, `${market.slug} dates the source of "${label}"`);
+      }
+    } else {
+      assert.match(document.visibleText, new RegExp(`API connector to dealership listings[^.]*pulled ${pulled}`), `${market.slug} dates its figures`);
+      assert.ok(document.visibleText.includes(market.new.toLocaleString('en-US')), `${market.slug} shows its own listing count`);
+    }
     for (const other of [hub, ...marketPages].filter(slug => slug !== market.slug)) assert.ok(document.links.includes(`/${other}`), `${market.slug} links /${other}`);
     assert.ok(hubDocument.links.includes(`/${market.slug}`), `hub links /${market.slug}`);
     // Service-area pages must not claim a local presence in schema.
@@ -82,5 +92,27 @@ test('a city photo is credited and served at every size, and a city map is drawn
       assert.ok((await read(market.slug)).includes(svg), `${market.slug} inlines its map; run node scripts/build-market-maps.mjs then npm run build:markets`);
       for (const place of market.map.places) assert.ok(svg.includes(`>${place.name}</text>`), `${market.slug} map labels ${place.name}`);
     }
+  }
+});
+
+test('every figure on a public-figures city page has a dated row in the source registry', async () => {
+  const registry = csvRows(await read('data/source-registry.csv'));
+  for (const market of data.markets.filter(market => market.figures)) {
+    for (const [label, , , id] of market.figures.rows) {
+      const row = registry.find(entry => entry.source_id === id);
+      assert.ok(row, `${market.slug}: "${label}" needs registry row ${id}`);
+      assert.equal(row.article_url, `${origin}/${market.slug}`, id);
+      assert.match(row.effective_date, /\b20\d\d/, `${id} is dated`);
+      assert.match(row.next_review, /^\d{4}-\d{2}-\d{2}$/, `${id} has a review date`);
+      assert.ok(/^MKT-/.test(id), `${id} uses the MKT prefix`);
+    }
+  }
+});
+
+test('the hub lists listing-count cities in its table and links every other city in prose', async () => {
+  const document = htmlDocument(await read(hub));
+  for (const market of data.markets) {
+    assert.ok(document.links.includes(`/${market.slug}`), `hub links /${market.slug}`);
+    assert.equal(document.visibleText.includes(`${market.new?.toLocaleString('en-US')}`), Boolean(market.new), `${market.slug} counts appear in the hub table only when it has them`);
   }
 });

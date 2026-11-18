@@ -13,6 +13,8 @@ const chromePage = 'car-negotiation-service.html';
 const read = file => readFile(path.join(root, file), 'utf8');
 const escapeHtml = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
 const longDate = iso => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const numberWords = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const joinNames = names => names.length < 3 ? names.join(' and ') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
 const count = value => value.toLocaleString('en-US');
 const dollars = value => `$${count(value)}`;
 
@@ -80,6 +82,36 @@ const stylesheet = 'buying/market.css';
 const faq = entries => `<div class="faq-list">\n${entries.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('\n')}\n</div>`;
 const heading = (h1, updated) => `<header class="guide-heading"><h1>${h1}</h1><p class="prose-meta">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p></header>`;
 
+// The figures block under "The <city> car market right now". Cities with listing counts show the dealer-listing table from the
+// connector pull. A city with only public figures (`figures` in the data) shows each figure beside its named source and date instead.
+function marketFigures(data, market, pulled) {
+  if (market.figures) {
+    const rows = market.figures.rows.map(([label, value, source]) => `<tr><th scope="row">${label}</th><td>${value}</td><td>${source}</td></tr>`).join('\n');
+    return `<div class="compare-scroll" role="region" aria-labelledby="market-data-caption" tabindex="0">
+<table class="compare-table market-figures">
+<caption id="market-data-caption" class="sr-only">${market.figures.caption}</caption>
+<thead><tr><th scope="col">Figure</th><th scope="col">${market.name}</th><th scope="col">Source and date</th></tr></thead>
+<tbody>
+${rows}
+</tbody>
+</table>
+</div>
+<p class="compare-note">${market.figures.note}</p>`;
+  }
+  return `<div class="compare-scroll" role="region" aria-labelledby="market-data-caption" tabindex="0">
+<table class="compare-table">
+<caption id="market-data-caption" class="sr-only">Dealer listings within ${data.inventory.radiusMiles} miles of ${market.center} (ZIP ${market.zip}) on ${pulled}</caption>
+<thead><tr><th scope="col">Within ${data.inventory.radiusMiles} miles of ${market.center}</th><th scope="col">New cars</th><th scope="col">Used cars</th></tr></thead>
+<tbody>
+<tr><th scope="row">Dealer listings</th><td>${count(market.new)}</td><td>${count(market.used)}</td></tr>
+<tr><th scope="row">Median asking price</th><td>${dollars(market.medianNew)}</td><td>${dollars(market.medianUsed)}</td></tr>
+<tr><th scope="row">Most-listed makes</th><td>${market.topMakes.join(', ')}</td><td>Not pulled</td></tr>${market.franchiseDealers ? `\n<tr><th scope="row">Franchised dealerships</th><td colspan="2">${count(market.franchiseDealers)}</td></tr>` : ''}
+</tbody>
+</table>
+</div>
+<p class="compare-note">Dealer listings within ${data.inventory.radiusMiles} miles of ZIP ${market.zip}, from our API connector to dealership listings, the same data we use for client searches, pulled ${pulled}. Asking prices are what dealers advertise, not what cars sell for. Listings change daily, and a listed car may already be sold.</p>`;
+}
+
 function marketPage(data, market) {
   const pulled = longDate(data.inventory.pulledOn);
   const updated = market.updated || data.updated;
@@ -99,18 +131,7 @@ ${plans(`market-${market.slug.replace(/^car-buying-service-|\.html$/g, '')}`)}
 
 <h2 id="market">The ${market.name} car market right now</h2>
 <p>${market.market[0]}</p>
-<div class="compare-scroll" role="region" aria-labelledby="market-data-caption" tabindex="0">
-<table class="compare-table">
-<caption id="market-data-caption" class="sr-only">Dealer listings within ${data.inventory.radiusMiles} miles of ${market.center} (ZIP ${market.zip}) on ${pulled}</caption>
-<thead><tr><th scope="col">Within ${data.inventory.radiusMiles} miles of ${market.center}</th><th scope="col">New cars</th><th scope="col">Used cars</th></tr></thead>
-<tbody>
-<tr><th scope="row">Dealer listings</th><td>${count(market.new)}</td><td>${count(market.used)}</td></tr>
-<tr><th scope="row">Median asking price</th><td>${dollars(market.medianNew)}</td><td>${dollars(market.medianUsed)}</td></tr>
-<tr><th scope="row">Most-listed makes</th><td>${market.topMakes.join(', ')}</td><td>Not pulled</td></tr>${market.franchiseDealers ? `\n<tr><th scope="row">Franchised dealerships</th><td colspan="2">${count(market.franchiseDealers)}</td></tr>` : ''}
-</tbody>
-</table>
-</div>
-<p class="compare-note">Dealer listings within ${data.inventory.radiusMiles} miles of ZIP ${market.zip}, from our API connector to dealership listings, the same data we use for client searches, pulled ${pulled}. Asking prices are what dealers advertise, not what cars sell for. Listings change daily, and a listed car may already be sold.</p>
+${marketFigures(data, market, pulled)}
 <p>${market.market[1]}</p>
 ${market.mapSvg ? `<figure class="market-map">\n${market.mapSvg}<figcaption>${market.map.caption}</figcaption></figure>\n` : ''}${market.local ? `\n<h2 id="local">Buying a car around ${market.name}</h2>\n${market.local.map(([title, text]) => `<h3>${title}</h3>\n<p>${text}</p>`).join('\n')}\n` : ''}
 <h2 id="plan">Which plan fits a ${market.name} buyer</h2>
@@ -139,7 +160,7 @@ ${faq([
 
 <div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
 
-<section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no office in ${market.name}. The listing figures were pulled on ${pulled} and will be refreshed when this page is updated. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Other cities: ${others} · <a href="/${data.hub.slug}">all cities</a>. Related: <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/car-buying-service-cost.html">what a car buying service costs</a>.</p>${market.photo || market.mapSvg ? credits(market) : ''}</section>
+<section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no office in ${market.name}. ${market.figures ? 'The market figures come from the public sources named in the table and will be refreshed when this page is updated.' : `The listing figures were pulled on ${pulled} and will be refreshed when this page is updated.`} If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Other cities: ${others} · <a href="/${data.hub.slug}">all cities</a>. Related: <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/car-buying-service-cost.html">what a car buying service costs</a>.</p>${market.photo || market.mapSvg ? credits(market) : ''}</section>
 </div>
 </article>`;
   return {
@@ -149,6 +170,7 @@ ${faq([
     h1,
     crumbs: [['Car buying service near you', `${origin}/${data.hub.slug}`], [market.name, `${origin}/${market.slug}`]],
     image: market.photo ? `${origin}/assets/external/source/${market.photo.file}-original.jpg` : undefined,
+    published: market.published,
     updated,
     extras: Boolean(market.photo || market.mapSvg || market.local),
     body,
@@ -157,7 +179,8 @@ ${faq([
 
 function hubPage(data) {
   const pulled = longDate(data.inventory.pulledOn);
-  const rows = data.markets.map(market => `<tr><th scope="row"><a href="/${market.slug}">${market.name}</a></th><td>${count(market.new)}</td><td>${count(market.used)}</td><td>${dollars(market.medianNew)}</td><td>${dollars(market.medianUsed)}</td></tr>`).join('\n');
+  const listed = data.markets.filter(market => !market.figures), publicOnly = data.markets.filter(market => market.figures);
+  const rows = listed.map(market => `<tr><th scope="row"><a href="/${market.slug}">${market.name}</a></th><td>${count(market.new)}</td><td>${count(market.used)}</td><td>${dollars(market.medianNew)}</td><td>${dollars(market.medianUsed)}</td></tr>`).join('\n');
   const body = `<article class="guide-page page-width">
 <p class="guide-breadcrumb"><a href="/car-buying-service.html">Car buying service</a> / Cities</p>
 ${heading(data.hub.h1, data.updated)}
@@ -175,7 +198,7 @@ ${plans('market-hub')}
 <p>So the useful question is not “is there a car buying service in my city?” It is “will this one contact the dealers around me, and who pays it?” We contact dealers that have your car in stock wherever you live. You pay us a flat fee, and nobody else pays us anything.</p>
 
 <h2 id="cities">Cities where we’ve published local numbers</h2>
-<p>For these six metros we pulled how many cars dealers had listed and what they were asking, so you can see the size of the market we’d be working for you. Each page also explains which plan fits if dealers near you sit across a state line.</p>
+<p>For these ${numberWords[listed.length]} metros we pulled how many cars dealers had listed and what they were asking, so you can see the size of the market we’d be working for you. Each page also explains which plan fits if dealers near you sit across a state line.</p>
 <div class="compare-scroll" role="region" aria-labelledby="hub-data-caption" tabindex="0">
 <table class="compare-table">
 <caption id="hub-data-caption" class="sr-only">Dealer listings within ${data.inventory.radiusMiles} miles of each city center on ${pulled}</caption>
@@ -186,7 +209,7 @@ ${rows}
 </table>
 </div>
 <p class="compare-note">Dealer listings within ${data.inventory.radiusMiles} miles of each city center, from our API connector to dealership listings, the same data we use for client searches, pulled ${pulled}. Asking prices are what dealers advertise, not what cars sell for. Listings change daily, and a listed car may already be sold.</p>
-<p>In Texas, where we’re based, see <a href="/austin.html">car buying in Austin</a> and the <a href="/texas-local-market-intelligence.html">Texas local markets</a> page.</p>
+${publicOnly.length ? `<p>${joinNames(publicOnly.map(market => `<a href="/${market.slug}">${market.name}</a>`))} have no listing numbers here. For those ${numberWords[publicOnly.length]}, each page shows figures that public sources have published, with the source and date beside each one.</p>\n` : ''}<p>In Texas, where we’re based, see <a href="/austin.html">car buying in Austin</a> and the <a href="/texas-local-market-intelligence.html">Texas local markets</a> page.</p>
 
 <h2 id="other">If your city isn’t listed</h2>
 <p>The list above is only where we’ve published numbers so far. The service is the same everywhere in the United States, at the same fee. One rule changes with where you live: the Steer Me Right plan ($395) does not include out-of-state dealers, and Steer Me Right Pro ($695) does. If the nearest big dealer cluster is across a state line from you, Pro is usually the plan to look at.</p>
@@ -215,7 +238,7 @@ export async function renderMarketPages() {
   const link = `<link rel="stylesheet" href="/${stylesheet}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
   return [hubPage(data), ...data.markets.map(market => marketPage(data, market))]
     .map(page => {
-      const html = shell(chrome, { ...page, published: data.published, updated: page.updated || data.updated }, page.body);
+      const html = shell(chrome, { ...page, published: page.published || data.published, updated: page.updated || data.updated }, page.body);
       return { slug: page.slug, html: page.extras ? html.replace('</head>', `    ${link}\n</head>`) : html };
     });
 }

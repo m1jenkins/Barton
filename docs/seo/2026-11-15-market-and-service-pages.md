@@ -4,7 +4,7 @@ Read this before editing a `car-buying-service-<city>.html` page, `car-buying-se
 
 ## Decision
 
-Mason asked on November 15, 2026 for more pages "capturing searches for people seeking car buying assistance", including "in specific markets. So someone searching for car buying assistance in Los Angeles or Miami", and said "Come up with a plan and execute on it." Eleven pages were built in that session. Pushing to `main` is the publication step.
+Mason asked on November 15, 2026 for more pages "capturing searches for people seeking car buying assistance", including "in specific markets. So someone searching for car buying assistance in Los Angeles or Miami", and said "Come up with a plan and execute on it." Eleven pages were built in that session; three more cities followed on November 17, 2026 (see "Philadelphia, Boston and Phoenix"). Pushing to `main` is the publication step.
 
 | URL | Owns | Why |
 | --- | --- | --- |
@@ -53,7 +53,26 @@ Mason said on November 17, 2026 that the six city pages were "pretty much the sa
 
 The styles are in `buying/market.css`, linked with a content hash only on pages that use these fields. All six cities now have a photo, a map, a local section and extra FAQ entries (New York, Los Angeles, Miami, Atlanta and Washington on November 17, 2026, after the Chicago pilot). Their photos are Wikimedia Commons CC BY, CC BY-SA or CC0 files, credited per page. Maps with no state line in view omit the "State line" key. Still to do: the extra listing figures (top models, days on the lot, hybrid and EV share), which wait on open items 1 and 2.
 
-## Rules for all eleven pages
+## Philadelphia, Boston and Phoenix (November 17, 2026)
+
+Mason said on November 17, 2026 to build these three now, overriding the impressions and connector-quota gate under "Next cities", and not to call the listings connector. He was told that no public source publishes metro-level listing counts, median asking prices, top makes or franchised dealer counts for them, and chose "Census counts + S&P". So these three entries in `data/market-pages.json` carry a `figures` block (rows of `[label, value, source and date, registry id]`, a table caption and a note) in place of `new`, `used`, `medianNew`, `medianUsed`, `topMakes` and `franchiseDealers`. Each page shows its figures beside the named source and date, with no outside link, and says the figures come from public sources. They also carry their own `published` date.
+
+| City | Figures | Sources |
+| --- | --- | --- |
+| Philadelphia | 381 new-car dealer locations; 7th for new-vehicle registrations, $651 average monthly payment, 69 days' supply (January to June 2025) | `MKT-PHL-01` to `04` |
+| Boston | 336 new-car dealer locations; 8th, $636, 78 days' supply | `MKT-BOS-01` to `04` |
+| Phoenix | 218 new-car dealer locations; nothing else public was found | `MKT-PHX-01` |
+
+- **Dealer locations** are NAICS 44111 (new car dealers) establishments from the Census Bureau's County Business Patterns 2023 county file (`cbp23co.zip`, dated June 26, 2025), summed over the counties of the 2023 metro delineation (`list1_2023.xlsx`: CBSA 37980, 14460 and 38060). The county breakdown is in each registry row. The 2024 file was not out on November 17, 2026; recheck it at the next refresh. The Census API needs a key, so the file is the source.
+- **Rank, payment and supply** come from S&P Global Mobility's October 2, 2025 blog post "Mapping the market" (published on Mobility Global's site), for designated market areas (Philadelphia; Boston-Manchester), January to June 2025. Phoenix is outside its top ten. These are a DMA, not the Census metro area, and the page says so.
+- A city-by-city comparison of these figures with the six listing-count cities is not valid: different boundaries, different measures. The hub's table lists only the six listing-count cities and names the three others in a sentence.
+- CarEdge publishes city-level new listing counts (Phoenix: 10,320 on October 27, 2026). They were not used: CarEdge is a competitor on our comparison pages, the radius is undefined, and its republishing terms were not checked.
+- Renderer changes: `scripts/render-market-pages.mjs` takes `figures` (a `marketFigures` helper), a per-city `published` date and a dated-sources line, and the hub counts and names the cities from the data. `buying/market.css` sizes the figures table and stacks it (label, value, source) at 700px and below. `scripts/build-market-maps.mjs` now draws a state that surrounds the whole map (Phoenix had no outline point inside the frame). The six existing pages changed only in their "Other cities" list; their maps and tables are byte-identical. `scripts/_tests/market-pages.test.mjs` checks each figure, its source text and its `MKT-*` registry row for `figures` cities.
+- Photos: Philadelphia, the Benjamin Franklin Parkway (Meihe Chen, CC BY-SA 4.0); Boston, Storrow Drive below Beacon Hill (King of Hearts, CC BY-SA 4.0); Phoenix, Interstate 10 at Loop 202 and State Route 51 (Alan Stark, CC BY-SA 2.0). Cropped to 1920x1080 with sharp (JPEG quality 82; WebP 78; AVIF 52).
+- The Philadelphia circle takes in a corner of Maryland (Cecil County) as well as Pennsylvania, New Jersey and Delaware; the Delaware River is the Pennsylvania and New Jersey line and is drawn as coast, not dashed, so the map caption says so.
+- Claim row: `MARKET-PAGES-2026-11-17`.
+
+## Rules for all fourteen pages
 
 - Steer Me Right statements reuse the approved rows word for word: `PLAN-NAMES-2026-10-23`, `DRIVE-RIGHT-SCOPE-2026-10-23`, `PRO-SCOPE-2026-10-23`, `COMPENSATION-COPY-2026-10-05`, `REFUND-LINE-2026-10-05`, `REPLY-WINDOW-2026-10-05`, `TIMELINE-2026-10-05`, `MSRP-DISCOUNT-2026-09-28`, the homepage's "Not sure which plan you need?" line and its "paperwork remotely where we can" line (`HOMEPAGE-PLAN-CARDS-2026-10-30`).
 - No outside links, except a city photo's credit (its Wikimedia Commons file and licence; the test allows exactly those two). The one competitor statement ("Most services where a person negotiates for you charge $999 or more") points to `compare-car-buying-services.html`, where the sources are registered. If that line stops being true there, change it here too.
@@ -69,11 +88,11 @@ The styles are in `buying/market.css`, linked with a content hash only on pages 
 
 ## Next cities
 
-Philadelphia, Phoenix, Boston, the San Francisco Bay Area, Seattle and Denver were planned and dropped when the quota error appeared. Add them only after (a) the quota question is settled and (b) the first six show impressions in Search Console. Each needs its own figures and its own two paragraphs; do not publish a city with borrowed numbers or none.
+Philadelphia, Boston and Phoenix were built on November 17, 2026 (above). The San Francisco Bay Area, Seattle and Denver were planned and dropped when the quota error appeared. Add them only after (a) the quota question is settled and (b) the first six show impressions in Search Console, or Mason says to build them as he did for the three above. Each needs its own figures and its own two paragraphs; do not publish a city with borrowed numbers or none.
 
 ## Maintenance
 
-- Refresh the figures at least quarterly (claim row expires 2027-02-15): update `data/market-pages.json` (`inventory.pulledOn`, `updated`, each market's numbers and any sentence that quotes them), rebuild, and update the seven sitemap `lastmod` dates.
+- Refresh the figures at least quarterly (claim rows expire 2027-02-15): update `data/market-pages.json` (`inventory.pulledOn`, `updated`, each market's numbers and any sentence that quotes them; for the three public-figure cities, the `figures` rows and their `MKT-*` registry rows), rebuild, and update the sitemap `lastmod` dates.
 - The calls used: `search_active_cars` with `zip`, `radius=50`, `car_type=new|used`, `rows=0`, `stats=price` (and `facets=make|0|3` for new); `search_dealerships` with `zip`, `radius=50`, `dealer_type=franchise`, `mc_category=Dealer`, `rows=1`. Do not facet on `dealer_id`; the response is enormous.
 
 ## Measurement
@@ -84,4 +103,4 @@ Philadelphia, Phoenix, Boston, the San Francisco Bay Area, Seattle and Denver we
 
 ## Records
 
-`sitemap.xml`, `llms.txt`, `blog.html` (two new sections, `ItemList` positions 18 to 28), `car-buying-service.html` (links), `data/content-inventory.csv` (11 rows), `docs/seo-execution/query-map.csv` (14 rows), `data/claims.csv` (`MARKET-PAGES-2026-11-15`), `scripts/_tests/market-pages.test.mjs`, `package.json` and `.github/workflows/checks.yml` (`check:markets`).
+`sitemap.xml`, `llms.txt`, `blog.html` (two new sections, `ItemList` positions 18 to 31 for the cities), `car-buying-service.html` (links), `data/content-inventory.csv` (11 rows), `docs/seo-execution/query-map.csv` (14 rows), `data/claims.csv` (`MARKET-PAGES-2026-11-15`, `MARKET-PAGES-2026-11-17`), `data/source-registry.csv` (`MKT-*`), `scripts/_tests/market-pages.test.mjs`, `package.json` and `.github/workflows/checks.yml` (`check:markets`).

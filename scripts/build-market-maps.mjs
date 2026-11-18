@@ -78,6 +78,16 @@ function clip(ring, [minX, minY, maxX, maxY]) {
   return output;
 }
 
+// Ray-casting point-in-ring test.
+function contains(ring, [px, py]) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i], [xj, yj] = ring[j];
+    if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+
 const round = value => Math.round(value * 10) / 10;
 
 function drawMap(market, states) {
@@ -94,7 +104,8 @@ function drawMap(market, states) {
   for (const { name, rings } of states) {
     for (const ring of rings) {
       const projected = ring.map(project);
-      if (!projected.some(([x, y]) => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3])) continue;
+      // A state that surrounds the whole view (Phoenix) has no outline point inside it, so test the view's center too.
+      if (!projected.some(([x, y]) => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3]) && !contains(projected, [WIDTH / 2, HEIGHT / 2])) continue;
       // Record raw-coordinate edges so shared state lines can be found before clipping.
       for (let i = 1; i < ring.length; i++) {
         const a = ring[i - 1].join(','), b = ring[i].join(',');
