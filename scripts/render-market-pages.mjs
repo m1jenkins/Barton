@@ -1,8 +1,9 @@
 // Builds the public city pages and their hub from data/market-pages.json.
 // The page chrome (head assets, header, footer) is copied from car-negotiation-service.html,
-// so asset hashes follow that page. Run `npm run build:markets` after changing the data,
+// so asset hashes follow that page. Run `npm run build:markets` after changing the data, buying/market.css,
 // this script, or the chrome page; `npm run check:markets` fails when the files drift.
 import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -16,7 +17,7 @@ const count = value => value.toLocaleString('en-US');
 const dollars = value => `$${count(value)}`;
 
 // Wraps a page body in the shared chrome. `crumbs` is [[name, url], ...] after Home.
-export function shell(chrome, { slug, title, description, h1, published, updated, crumbs }, body) {
+export function shell(chrome, { slug, title, description, h1, published, updated, crumbs, image }, body) {
   const url = `${origin}/${slug}`;
   const start = chrome.indexOf('<main id="main-content" tabindex="-1">');
   const end = chrome.indexOf('</main>');
@@ -36,7 +37,7 @@ export function shell(chrome, { slug, title, description, h1, published, updated
         publisher: { '@id': `${origin}/#organization` },
         datePublished: published,
         dateModified: updated,
-        image: `${origin}/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg`,
+        image: image || `${origin}/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg`,
       },
       {
         '@type': 'BreadcrumbList',
@@ -68,24 +69,33 @@ export const plans = location => `<section class="plan-grid guide-plans" aria-la
 </section>
 <p class="plan-policy">A model means a make and model, like a BMW X5. Trims, colors and packages within a model don’t count extra. On the Steer Me Right plan, you can upgrade to Steer Me Right Pro later by paying the $300 difference.</p>`;
 
+// City photos are licensed (Wikimedia Commons) and credited in the folded list under "Sources and updates".
+const picture = (image, sizes) => `<picture>${['avif', 'webp'].map(type => `<source type="image/${type}" srcset="${[640, 960, 1600].map(width => `/assets/external/optimized/${image.file}-${width}.${type} ${width}w`).join(', ')}" sizes="${sizes}">`).join('')}<img src="/assets/external/source/${image.file}-original.jpg" alt="${image.alt}" width="${image.width}" height="${image.height}" decoding="async" fetchpriority="high"></picture>`;
+const credits = market => `<details class="market-credits"><summary>Photo and map credits</summary><ul>${market.photo ? `<li>Photo: <a href="${market.photo.sourceUrl}" rel="noopener">${market.photo.author}</a>, <a href="${market.photo.licenseUrl}" rel="noopener">${market.photo.license}</a></li>` : ''}${market.mapSvg ? '<li>Map: drawn by Steer Me Right from US Census Bureau state boundaries (public domain).</li>' : ''}</ul></details>`;
+// Optional per-city sections: a photo, the dealer-circle map (data/market-maps/<id>.svg, from scripts/build-market-maps.mjs)
+// and a "buying a car around <city>" section. A city without them renders as before.
+const marketId = market => market.slug.replace(/^car-buying-service-|\.html$/g, '');
+const stylesheet = 'buying/market.css';
+
 const faq = entries => `<div class="faq-list">\n${entries.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('\n')}\n</div>`;
 const heading = (h1, updated) => `<header class="guide-heading"><h1>${h1}</h1><p class="prose-meta">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p></header>`;
 
 function marketPage(data, market) {
   const pulled = longDate(data.inventory.pulledOn);
+  const updated = market.updated || data.updated;
   const h1 = `Car buying service in ${market.name}: written offers from ${market.area} dealers, negotiated for you`;
   const others = data.markets.filter(other => other !== market).map(other => `<a href="/${other.slug}">${other.name}</a>`).join(' · ');
   const body = `<article class="guide-page page-width">
 <p class="guide-breadcrumb"><a href="/car-buying-service.html">Car buying service</a> / <a href="/${data.hub.slug}">Cities</a> / ${market.name}</p>
-${heading(h1, data.updated)}
+${heading(h1, updated)}
 <div class="guide-body">
-<div class="highlight-box"><p><strong>Short answer:</strong> Steer Me Right is a flat-fee car buying service for ${market.area} buyers. We’re based in Austin and do the work by phone and email: we find the car, get written out-the-door offers from dealers around ${market.name} and negotiate the price and fees. It costs <strong>$395</strong> for one model or <strong>$695</strong> for up to three. Dealers and lenders pay us nothing.</p></div>
+${market.photo ? `<figure class="market-photo">${picture(market.photo, '(max-width: 900px) 94vw, 840px')}<figcaption>${market.photo.caption}</figcaption></figure>\n` : ''}<div class="highlight-box"><p><strong>Short answer:</strong> Steer Me Right is a flat-fee car buying service for ${market.area} buyers. We’re based in Austin and do the work by phone and email: we find the car, get written out-the-door offers from dealers around ${market.name} and negotiate the price and fees. It costs <strong>$395</strong> for one model or <strong>$695</strong> for up to three. Dealers and lenders pay us nothing.</p></div>
 </div>
 
 ${plans(`market-${market.slug.replace(/^car-buying-service-|\.html$/g, '')}`)}
 
 <div class="guide-body">
-<nav aria-label="Article contents"><p><a href="#market">The market right now</a> · <a href="#plan">Which plan fits</a> · <a href="#how">How it works</a> · <a href="#you">What stays with you</a> · <a href="#faq">Questions</a></p></nav>
+<nav aria-label="Article contents"><p><a href="#market">The market right now</a> · ${market.local ? `<a href="#local">Buying around ${market.name}</a> · ` : ''}<a href="#plan">Which plan fits</a> · <a href="#how">How it works</a> · <a href="#you">What stays with you</a> · <a href="#faq">Questions</a></p></nav>
 
 <h2 id="market">The ${market.name} car market right now</h2>
 <p>${market.market[0]}</p>
@@ -102,7 +112,7 @@ ${plans(`market-${market.slug.replace(/^car-buying-service-|\.html$/g, '')}`)}
 </div>
 <p class="compare-note">Dealer listings within ${data.inventory.radiusMiles} miles of ZIP ${market.zip}, from our API connector to dealership listings, the same data we use for client searches, pulled ${pulled}. Asking prices are what dealers advertise, not what cars sell for. Listings change daily, and a listed car may already be sold.</p>
 <p>${market.market[1]}</p>
-
+${market.mapSvg ? `<figure class="market-map">\n${market.mapSvg}<figcaption>${market.map.caption}</figcaption></figure>\n` : ''}${market.local ? `\n<h2 id="local">Buying a car around ${market.name}</h2>\n${market.local.map(([title, text]) => `<h3>${title}</h3>\n<p>${text}</p>`).join('\n')}\n` : ''}
 <h2 id="plan">Which plan fits a ${market.name} buyer</h2>
 <p>${market.plan}</p>
 <p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/schedule.html">pricing page</a>.</p>
@@ -129,7 +139,7 @@ ${faq([
 
 <div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
 
-<section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no office in ${market.name}. The listing figures were pulled on ${pulled} and will be refreshed when this page is updated. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Other cities: ${others} · <a href="/${data.hub.slug}">all cities</a>. Related: <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/car-buying-service-cost.html">what a car buying service costs</a>.</p></section>
+<section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no office in ${market.name}. The listing figures were pulled on ${pulled} and will be refreshed when this page is updated. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Other cities: ${others} · <a href="/${data.hub.slug}">all cities</a>. Related: <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/car-buying-service-cost.html">what a car buying service costs</a>.</p>${market.photo || market.mapSvg ? credits(market) : ''}</section>
 </div>
 </article>`;
   return {
@@ -138,6 +148,9 @@ ${faq([
     description: `Car buying help in ${market.name}: we get written offers from ${market.area} dealers and negotiate price and fees for a flat $395 or $695. Dealers pay us nothing.`,
     h1,
     crumbs: [['Car buying service near you', `${origin}/${data.hub.slug}`], [market.name, `${origin}/${market.slug}`]],
+    image: market.photo ? `${origin}/assets/external/source/${market.photo.file}-original.jpg` : undefined,
+    updated,
+    extras: Boolean(market.photo || market.mapSvg || market.local),
     body,
   };
 }
@@ -197,9 +210,14 @@ ${faq([
 }
 
 export async function renderMarketPages() {
-  const [chrome, data] = await Promise.all([read(chromePage), read('data/market-pages.json').then(JSON.parse)]);
+  const [chrome, data, css] = await Promise.all([read(chromePage), read('data/market-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet))]);
+  for (const market of data.markets) if (market.map) market.mapSvg = await read(`data/market-maps/${marketId(market)}.svg`);
+  const link = `<link rel="stylesheet" href="/${stylesheet}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
   return [hubPage(data), ...data.markets.map(market => marketPage(data, market))]
-    .map(page => ({ slug: page.slug, html: shell(chrome, { ...page, published: data.published, updated: data.updated }, page.body) }));
+    .map(page => {
+      const html = shell(chrome, { ...page, published: data.published, updated: page.updated || data.updated }, page.body);
+      return { slug: page.slug, html: page.extras ? html.replace('</head>', `    ${link}\n</head>`) : html };
+    });
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

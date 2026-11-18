@@ -1,0 +1,27 @@
+/* City pages (car-buying-service-<city>.html) that carry a photo, the dealer-circle map or a local section.
+   Linked by scripts/render-market-pages.mjs with a content hash; run npm run build:markets after editing. */
+.dr .market-photo, .dr .market-map { margin:0 0 28px; }
+.dr .market-map { margin-top:28px; }
+.dr .market-photo img, .dr .market-map__svg { display:block; width:100%; height:auto; border-radius:24px; }
+.dr .market-photo figcaption, .dr .market-map figcaption { margin-top:10px; font-size:13px; line-height:1.5; color:var(--muted); }
+.dr .market-map__svg { background:var(--sky); }
+.dr .market-map text { font-family:var(--sans); fill:var(--ink); paint-order:stroke; stroke:#fff; stroke-width:3px; stroke-linejoin:round; }
+.dr .market-map .mm-place { font-size:12px; font-weight:400; }
+.dr .market-map .mm-center { font-size:14px; font-weight:600; }
+.dr .market-map .mm-region { font-size:11px; font-weight:600; letter-spacing:.16em; fill:var(--muted); stroke:none; }
+.dr .market-map .mm-water { font-size:13px; font-weight:400; fill:var(--sign); stroke:none; }
+.dr .market-map .mm-scale { font-size:11px; fill:var(--muted); stroke:none; }
+.dr .market-credits { margin-top:18px; font-size:13px; line-height:1.6; color:var(--muted); }
+.dr .market-credits > summary { display:inline; cursor:pointer; text-decoration:underline; text-underline-offset:3px; list-style:none; }
+.dr .market-credits > summary::-webkit-details-marker { display:none; }
+.dr .market-credits ul { margin:8px 0 0; padding-left:18px; }
+/* On a phone the 640-unit map shrinks to about half size, so its labels grow to stay readable. */
+@media (max-width:560px) {
+  .dr .market-photo img, .dr .market-map__svg { border-radius:18px; }
+  .dr .market-map .mm-place { font-size:17px; }
+  .dr .market-map .mm-minor { display:none; }
+  .dr .market-map .mm-center { font-size:19px; }
+  .dr .market-map .mm-region { font-size:15px; }
+  .dr .market-map .mm-water { font-size:18px; }
+  .dr .market-map .mm-scale { font-size:16px; }
+}

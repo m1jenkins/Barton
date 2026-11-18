@@ -62,6 +62,7 @@
     },
     {
       "slug": "car-buying-service-chicago.html",
+      "updated": "2026-11-17",
       "name": "Chicago",
       "area": "Chicago-area",
       "center": "the Loop",
@@ -74,12 +75,60 @@
       "topMakes": ["Ford", "Chevrolet", "Toyota"],
       "market": [
         "On November 15, 2026, dealers within 50 miles of the Loop listed about 99,000 new cars and 89,000 used ones, across roughly 590 franchised dealerships. Ford and Chevrolet had the most new cars listed, then Toyota. The median asking price was about $46,300 new, the lowest of the six metros we checked, and $24,000 used.",
-        "The circle covers the city, the collar suburbs and northwest Indiana. That is a lot of stores selling the same trucks and SUVs, and most buyers only hear from the nearest one or two. We ask the whole set for written out-the-door prices and put the answers next to each other, fees included. A low sticker with a padded fee column isn’t the low offer."
+        "The circle covers the city, the collar suburbs and northwest Indiana, and it clips the edge of Wisconsin around Kenosha and of Michigan around New Buffalo. That is a lot of stores selling the same trucks and SUVs, and most buyers only hear from the nearest one or two. We ask the whole set for written out-the-door prices and put the answers next to each other, fees included. A low sticker with a padded fee column isn’t the low offer."
+      ],
+      "photo": {
+        "file": "market-chicago-lake-shore-drive",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Aerial view of Lake Shore Drive running north past the Field Museum toward the Chicago skyline, with Lake Michigan on the right",
+        "caption": "Lake Shore Drive, looking north from near Soldier Field toward the Loop.",
+        "author": "Sea Cow",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Shore_Drive_N.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "map": {
+        "lat": 41.8837,
+        "lon": -87.6278,
+        "title": "Map of the 50-mile circle around the Loop",
+        "description": "A 50-mile circle centered on the Loop covers Chicago and its suburbs in Illinois, northwest Indiana from Gary to Valparaiso and Michigan City, Kenosha in Wisconsin and New Buffalo in Michigan. Dashed lines mark the state lines; Lake Michigan fills the east side of the circle.",
+        "caption": "Fifty miles from the Loop reaches into four states. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "centerLabel": "The Loop",
+        "regions": [
+          { "name": "ILLINOIS", "lat": 41.03, "lon": -88.45 },
+          { "name": "INDIANA", "lat": 41.03, "lon": -86.85 },
+          { "name": "WISCONSIN", "lat": 42.72, "lon": -88.25 },
+          { "name": "MICHIGAN", "lat": 41.97, "lon": -86.3 },
+          { "name": "Lake Michigan", "lat": 42.25, "lon": -86.98, "water": true }
+        ],
+        "places": [
+          { "name": "Evanston", "lat": 42.045, "lon": -87.688 },
+          { "name": "Waukegan", "lat": 42.363, "lon": -87.845 },
+          { "name": "Kenosha", "lat": 42.585, "lon": -87.821 },
+          { "name": "Schaumburg", "lat": 42.033, "lon": -88.083, "anchor": "end" },
+          { "name": "Naperville", "lat": 41.786, "lon": -88.147 },
+          { "name": "Aurora", "lat": 41.76, "lon": -88.32, "anchor": "end" },
+          { "name": "Joliet", "lat": 41.525, "lon": -88.082 },
+          { "name": "Orland Park", "lat": 41.63, "lon": -87.854, "minor": true },
+          { "name": "Gary", "lat": 41.593, "lon": -87.346 },
+          { "name": "Merrillville", "lat": 41.483, "lon": -87.333, "anchor": "middle", "dy": 18 },
+          { "name": "Valparaiso", "lat": 41.473, "lon": -87.061 },
+          { "name": "Michigan City", "lat": 41.708, "lon": -86.895, "anchor": "end" },
+          { "name": "New Buffalo", "lat": 41.794, "lon": -86.744 }
+        ]
+      },
+      "local": [
+        ["Look under a used car before you look at its price", "Illinois and Indiana salt their roads every winter, and the salt works on a car from below. Brake lines, the exhaust and the rocker panels under the doors go first, often on a car whose paint still looks clean. On a used search we can ask the dealer for photos of the underside. Before you sign, have a mechanic you choose put the car on a lift."],
+        ["You may not need all-wheel drive", "We think front-wheel drive on a set of winter tires gets most city drivers through a Chicago winter, and it usually costs less than the all-wheel-drive version of the same car. All-wheel drive helps a car pull away on snow. It does little for stopping or turning, which is where winter tires earn their keep. If your street is the last one plowed, the extra traction may be worth paying for. If you’d take either, tell us: that brings more cars into the search and more offers to price against each other."],
+        ["Count the trip to pick it up", "You pick up the car at the dealer, so if you live in the city and don’t own a car yet, the trip out is part of the cost. A store in Schaumburg or Merrillville might beat a city dealer by a few hundred dollars and still take most of an afternoon to reach. Tell us how far you’d go, and we ask the dealers you would actually get to."]
       ],
       "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. An Illinois buyer who wants Indiana or Wisconsin dealers in the mix, or an Indiana buyer who wants the Illinois stores, should pick Steer Me Right Pro ($695).",
       "faq": [
         ["Do you have an office in Chicago?", "No. We’re based in Austin, Texas, and we work with Chicago-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you include dealers in northwest Indiana?", "Yes. For an Illinois buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Indiana, they are covered on either plan."]
+        ["Can you include dealers in northwest Indiana?", "Yes. For an Illinois buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Indiana, they are covered on either plan."],
+        ["Do you check used cars for rust?", "From photos. We can ask the dealer for pictures of the underside and tell you what we see in them. Photos miss things, so before you sign, have a mechanic you choose put the car on a lift. On a car that has spent a few Chicago winters outside, that hour is worth it."],
+        ["I live in the city and don’t have a car. How do I pick it up?", "At the dealer, like every buyer. Say so when you start, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."]
       ]
     },
     {

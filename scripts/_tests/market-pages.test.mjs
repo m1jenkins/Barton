@@ -37,7 +37,10 @@ test('city and service pages are indexable guides with approved Steer Me Right c
     assert.match(document.visibleText, /Full refund if you cancel before negotiations begin\./, name);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, name);
     // Competitor facts live on the comparison pages, where each outside link has a dated source row.
-    assert.deepEqual(document.links.filter(href => /^https?:/.test(href) && new URL(href).origin !== origin), [], `${name} outside links`);
+    // The only outside links allowed are a city photo's credit: its Wikimedia Commons file and licence.
+    const photo = data.markets.find(market => market.slug === name)?.photo;
+    const credit = photo ? [photo.sourceUrl, photo.licenseUrl] : [];
+    assert.deepEqual(document.links.filter(href => /^https?:/.test(href) && new URL(href).origin !== origin).toSorted(), credit.toSorted(), `${name} outside links`);
     assert.ok(document.links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
     assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${name}`)?.lifecycle_status, 'indexable_owner_publication', name);
@@ -63,4 +66,21 @@ test('city pages stay off the URLs reserved by the metro release contract', asyn
   const registry = JSON.parse(await read('data/metro-release.json'));
   const reserved = new Set([...registry.markets.map(market => market.slug), registry.hub.slug]);
   for (const name of [hub, ...marketPages]) assert.equal(reserved.has(name), false, name);
+});
+
+test('a city photo is credited and served at every size, and a city map is drawn from its committed SVG', async () => {
+  const { access } = await import('node:fs/promises');
+  for (const market of data.markets) {
+    const document = htmlDocument(await read(market.slug));
+    if (market.photo) {
+      for (const width of [640, 960, 1600]) for (const type of ['avif', 'webp']) await access(new URL(`assets/external/optimized/${market.photo.file}-${width}.${type}`, root));
+      await access(new URL(`assets/external/source/${market.photo.file}-original.jpg`, root));
+      assert.match(document.visibleText, new RegExp(`Photo: ${market.photo.author}\\s*,\\s*${market.photo.license.replaceAll('.', '\\.')}`), `${market.slug} credits its photo`);
+    }
+    if (market.map) {
+      const svg = await read(`data/market-maps/${market.slug.replace(/^car-buying-service-|\.html$/g, '')}.svg`);
+      assert.ok((await read(market.slug)).includes(svg), `${market.slug} inlines its map; run node scripts/build-market-maps.mjs then npm run build:markets`);
+      for (const place of market.map.places) assert.ok(svg.includes(`>${place.name}</text>`), `${market.slug} map labels ${place.name}`);
+    }
+  }
 });

@@ -41,10 +41,22 @@ A change to `logo-motion.css/js`, `script.js` or `buying/app.js` hashes means up
 
 The four service pages are ordinary hand-edited files in the same guide layout (`buying/resources.css`).
 
+## City-specific sections (November 17, 2026)
+
+Mason said on November 17, 2026 that the six city pages were "pretty much the same" with "nothing unique about these pages to this specific market", and asked for free-to-use photos and a local blurb. Chicago is the pilot. Each part is an optional field on a `markets[]` entry, so a city without them renders as before:
+
+- **`photo`**: one photo under the title, from Wikimedia Commons (CC BY, CC BY-SA, CC0 or public domain), handled like the vehicle pages' photos: original in `assets/external/source/market-<city>-<name>-original.jpg` (1920 wide, metadata stripped), AVIF and WebP at 640, 960 and 1600 in `assets/external/optimized/`, credited in the folded "Photo and map credits" list. Prefer a road people there know over a plain skyline, and crop or skip dealer signs. It also becomes the page's `Article.image`.
+- **`map`**: the 50-mile dealer circle with state lines, drawn by `scripts/build-market-maps.mjs` from the Census `cb_2024_us_state_500k` file (public domain; the script's header says how to get it) into `data/market-maps/<city>.svg`, which the page inlines. State lines are edges two states share; the coast is drawn plain. `minor` places drop their label on phones. After adding a city's `map`, run the map script, then `npm run build:markets`, and check the map at phone width.
+- **`local`**: a "Buying a car around <city>" section of two to four `[heading, paragraph]` pairs about what is really different there (Chicago: road salt and used-car rust, all-wheel drive, getting to the dealer without a car). Same limits as the rest of the page: no tax, registration or emissions advice, no invented local customers, and no inspection claim (we can ask a dealer for photos; the buyer arranges the inspection).
+- **More `faq` entries** about the same local issues, so the three shared questions aren't most of the list.
+- **`updated`**: a city's own date when only its page changed; update its sitemap `lastmod` too.
+
+The styles are in `buying/market.css`, linked with a content hash only on pages that use these fields. Still to do: the other five cities, and the extra listing figures (top models, days on the lot, hybrid and EV share), which wait on open items 1 and 2.
+
 ## Rules for all eleven pages
 
 - Steer Me Right statements reuse the approved rows word for word: `PLAN-NAMES-2026-10-23`, `DRIVE-RIGHT-SCOPE-2026-10-23`, `PRO-SCOPE-2026-10-23`, `COMPENSATION-COPY-2026-10-05`, `REFUND-LINE-2026-10-05`, `REPLY-WINDOW-2026-10-05`, `TIMELINE-2026-10-05`, `MSRP-DISCOUNT-2026-09-28`, the homepage's "Not sure which plan you need?" line and its "paperwork remotely where we can" line (`HOMEPAGE-PLAN-CARDS-2026-10-30`).
-- No outside links. The one competitor statement ("Most services where a person negotiates for you charge $999 or more") points to `compare-car-buying-services.html`, where the sources are registered. If that line stops being true there, change it here too.
+- No outside links, except a city photo's credit (its Wikimedia Commons file and licence; the test allows exactly those two). The one competitor statement ("Most services where a person negotiates for you charge $999 or more") points to `compare-car-buying-services.html`, where the sources are registered. If that line stops being true there, change it here too.
 - No leasing, trade-in or financing-help claim. `car-buying-help.html` says plainly that Steer Me Right is not a lender and offers no financial assistance, because some "car buying assistance" searches are about money.
 - City claim row: `MARKET-PAGES-2026-11-15` in `data/claims.csv`.
 
