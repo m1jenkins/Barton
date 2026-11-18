@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { csvRows, htmlDocument } from '../metro-release.mjs';
 import { renderVehiclePages } from '../render-vehicle-pages.mjs';
 
@@ -115,5 +115,69 @@ test('Reddit Sentiment Index data holds codes only: no comment text and no usern
     assert.ok(summary.venues.neutral.comments > 0, `${cmp.slug} has comments from neutral subreddits`);
     const html = await read(cmp.slug);
     for (const side of ['a', 'b']) assert.match(html, new RegExp(`vs-index__score">${summary.index[side]}<`), `${cmp.slug} shows the computed index`);
+  }
+});
+
+// Per-car Reddit files (data/reddit-sentiment/cars/<key>.json) feed the Reddit section of each price guide and can be
+// paired into a comparison by scripts/reddit-sentiment-pair.mjs. They hold Reddit ids and codes, never comment text or
+// usernames; theme notes are the coders' paraphrases.
+const carFiles = async () => Promise.all((await readdir(new URL('data/reddit-sentiment/cars/', root))).filter(file => file.endsWith('.json')).map(async file => [file, JSON.parse(await read(`data/reddit-sentiment/cars/${file}`))]));
+
+test('per-car Reddit files hold ids and codes only, and every vehicle key is well formed and named', async () => {
+  const { keyPattern, topics } = await import('../reddit-sentiment.mjs');
+  const models = JSON.parse(await read('data/reddit-sentiment/models.json'));
+  for (const key of Object.keys(models)) assert.match(key, keyPattern, `models.json key ${key}`);
+  const known = key => keyPattern.test(key) && Boolean(models[key]);
+  const fields = ['car', 'collected', 'comments', 'duplicatePicksDropped', 'gaps', 'home', 'keepThreadPicksDropped', 'keepThreads', 'rules', 'source', 'subreddits', 'themes', 'threads', 'threadsFrom', 'threadsTo', 'uncoded'];
+  for (const [file, coded] of await carFiles()) {
+    assert.deepEqual(Object.keys(coded).sort(), fields, `${file} fields`);
+    assert.equal(file, `${coded.car.key}.json`, file);
+    assert.equal(models[coded.car.key], coded.car.name, `${file} car name matches models.json`);
+    const threads = new Set();
+    for (const thread of coded.threads) {
+      assert.deepEqual(Object.keys(thread).sort(), ['created', 'id', 'names', 'subreddit'], `${file} ${thread.id}`);
+      assert.match(thread.id, /^[a-z0-9]+$/, `${file} thread id`);
+      assert.ok(thread.names.includes(coded.car.key), `${file} ${thread.id} names the car`);
+      for (const key of thread.names) assert.ok(known(key), `${file} ${thread.id}: unknown key ${key}`);
+      threads.add(thread.id);
+    }
+    const ids = new Set();
+    for (const comment of coded.comments) {
+      assert.deepEqual(Object.keys(comment).sort(), ['id', 'm', 'rec', 'thread'], `${file} ${comment.id} carries only its id, thread and codes`);
+      assert.match(comment.id, /^[a-z0-9]+$/, `${file} comment id`);
+      assert.ok(!ids.has(comment.id), `${file} ${comment.id} is listed once`);
+      ids.add(comment.id);
+      assert.ok(threads.has(comment.thread), `${file} ${comment.id} belongs to a listed thread`);
+      assert.ok(comment.rec === null || known(comment.rec), `${file} ${comment.id}: unknown pick ${comment.rec}`);
+      for (const [key, topic, polarity] of comment.m) {
+        assert.ok(known(key), `${file} ${comment.id}: unknown key ${key}`);
+        assert.ok(topics[topic], `${file} ${comment.id}: topic ${topic}`);
+        assert.ok(['pos', 'neg', 'mixed'].includes(polarity), `${file} ${comment.id}: polarity ${polarity}`);
+      }
+    }
+    for (const [topic, sides] of Object.entries(coded.themes)) {
+      assert.ok(topics[topic], `${file} theme topic ${topic}`);
+      assert.deepEqual(Object.keys(sides).sort(), ['neg', 'pos'], `${file} ${topic}`);
+      for (const note of [...sides.pos, ...sides.neg]) assert.doesNotMatch(note, /["“”]|\bu\/|https?:/, `${file} ${topic}: theme notes are paraphrases, never quotes, usernames or links`);
+    }
+  }
+});
+
+test('price guides show the Reddit figures computed from their car file', async () => {
+  const { summarizeCar } = await import('../reddit-sentiment.mjs');
+  const { carSentimentFile } = await import('../render-vehicle-pages.mjs');
+  const files = new Map(await carFiles());
+  for (const vehicle of data.vehicles) {
+    const file = carSentimentFile(vehicle).split('/').at(-1);
+    if (!files.has(file)) continue;
+    const summary = summarizeCar(files.get(file)), html = await read(vehicle.slug);
+    assert.match(html, new RegExp(`vp-rd-big">${summary.index}<`), `${vehicle.slug} shows the computed index`);
+    if (summary.picks.all >= 20) assert.match(html, new RegExp(`vp-rd-big">${summary.picks.share}%<`), `${vehicle.slug} shows the computed pick share`);
+    for (const figure of Object.values(summary.topics)) {
+      if (figure.mentions < 15) continue;
+      const shown = `${figure.net > 0 ? '+' : figure.net < 0 ? '−' : ''}${Math.abs(figure.net)}<span class="sr-only"> net, from ${figure.mentions} mentions`;
+      assert.ok(html.includes(shown), `${vehicle.slug} shows a topic net of ${figure.net} from ${figure.mentions} mentions`);
+    }
+    for (const item of summary.crossShopped) assert.match(html, new RegExp(`${item.threads} threads?</span>`), `${vehicle.slug} cross-shopped count`);
   }
 });

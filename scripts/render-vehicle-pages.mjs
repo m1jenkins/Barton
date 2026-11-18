@@ -4,10 +4,11 @@
 // buying/price-guide.css or the chrome page; `npm run check:vehicles` fails when the files drift.
 import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { shell } from './render-market-pages.mjs';
-import { summarize, topics as sentimentTopics } from './reddit-sentiment.mjs';
+import { summarize, summarizeCar, topics as sentimentTopics } from './reddit-sentiment.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://www.steermeright.com';
@@ -176,7 +177,72 @@ ${paragraphs(spot.after)}
 </section>`;
 }
 
-function vehiclePage(vehicle, updated) {
+// ---- Reddit section of a price guide, from the car's own coded file (data/reddit-sentiment/cars/<key>.json) ----
+// Every figure is worked out at build time by summarizeCar(), so the page cannot drift from the data. Model names come
+// from data/reddit-sentiment/models.json. A cross-shopped model links to our comparison when there is one, else to its
+// price guide. Praise and complaints are the coders' paraphrased notes for the topics with the most positive and the
+// most negative opinions; the page quotes no comments.
+const monthYear = iso => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const redditMinimum = 15;
+function redditSection(vehicle, coded, sentiment, { models, vehicles, comparisons }) {
+  const name = vehicle.name, short = vehicle.reddit?.short ?? name.split(' ').slice(1).join(' ');
+  const count = value => value.toLocaleString('en-US');
+  const homeSubs = [coded.home].flat().map(sub => `r/${sub}`);
+  const homeText = homeSubs.length > 1 ? `${homeSubs.slice(0, -1).join(', ')} and ${homeSubs.at(-1)}` : homeSubs[0];
+  const modelName = key => { if (!models[key]) throw new Error(`data/reddit-sentiment/models.json has no name for ${key}`); return models[key]; };
+  const guide = key => vehicles.find(entry => entry.slug === `${key}-price.html`);
+  const versus = key => comparisons.find(cmp => cmp.cars.map(car => car.slug).toSorted().join() === [vehicle.slug, `${key}-price.html`].toSorted().join());
+  const rows = Object.entries(sentiment.topics).filter(([, figure]) => figure.mentions).sort((x, y) => y[1].mentions - x[1].mentions);
+  const netBar = figure => {
+    if (figure.mentions < redditMinimum || figure.net === null) return `<span class="vp-rd-bar vp-rd-bar--none"><b>Too few to score</b></span>`;
+    const value = figure.net;
+    return `<span class="vp-rd-bar vp-rd-bar--${value >= 0 ? 'pos' : 'neg'}" style="--w:${Math.abs(value)}%"><i aria-hidden="true"></i><b>${value > 0 ? '+' : value < 0 ? '−' : ''}${Math.abs(value)}<span class="sr-only"> net, from ${figure.mentions} mentions</span></b></span>`;
+  };
+  // The topics with the most praise and the most complaints, each with the coders' leading note for it.
+  const themeList = side => Object.entries(sentiment.topics)
+    .filter(([topic, figure]) => figure[side] >= 5 && coded.themes?.[topic]?.[side]?.length)
+    .sort((x, y) => y[1][side] - x[1][side]).slice(0, 4)
+    .map(([topic]) => `<li><b>${sentimentTopics[topic]}.</b> ${coded.themes[topic][side][0]}</li>`).join('');
+  const picks = sentiment.picks;
+  const rival = Object.entries(picks.by).filter(([key]) => key !== sentiment.car).sort((x, y) => y[1] - x[1])[0];
+  const enoughPicks = picks.all >= 20;
+  const cross = sentiment.crossShopped;
+  const crossTop = Math.max(...cross.map(item => item.threads), 1);
+  const crossItem = item => {
+    const cmp = versus(item.key), other = guide(item.key);
+    const label = cmp ? `<a href="/${cmp.slug}">${modelName(item.key)}</a><small>Our head-to-head</small>` : other ? `<a href="/${other.slug}">${modelName(item.key)}</a><small>Price guide</small>` : modelName(item.key);
+    return `<li><span>${label}</span>${meter(item.threads, crossTop)}<span class="vp-rd-cross__value">${item.threads} thread${item.threads === 1 ? '' : 's'}</span></li>`;
+  };
+  const praise = themeList('pos'), gripes = themeList('neg');
+  return `<section id="reddit" class="vp-section">
+<h2>What Reddit says about the ${short}</h2>
+<p>We read ${count(sentiment.comments)} comments in ${count(sentiment.threads)} Reddit threads about the ${short}, posted from ${monthYear(coded.threadsFrom)} to ${monthYear(coded.threadsTo)}, and noted each opinion they give and which car they tell the poster to buy. Owners in a car’s own subreddit and shoppers elsewhere see it differently, so ${homeText} and the rest of Reddit count equally. A score of 50 means praise and complaints balance.</p>
+<div class="vp-rd-top">
+<div><p class="vp-rd-label">Reddit Sentiment Index</p><p class="vp-rd-big">${sentiment.index}<small> / 100</small></p><div class="vp-rd-scale" aria-hidden="true"><i style="--w:${sentiment.index}%"></i></div><p class="vp-rd-ends" aria-hidden="true"><span>All negative</span><span>50 = even</span><span>All positive</span></p><p class="vp-rd-detail">${homeText} alone: ${sentiment.venues.home.index ?? 'too few to score'}. The rest of Reddit: ${sentiment.venues.neutral.index ?? 'too few to score'}. From ${count(sentiment.opinions)} opinions about the ${short}.</p></div>
+<div><p class="vp-rd-label">Picked when it was an option</p>${enoughPicks ? `<p class="vp-rd-big">${picks.share}%</p><div class="vp-rd-scale vp-rd-scale--plain" aria-hidden="true"><i style="--w:${picks.share}%"></i></div><p class="vp-rd-detail">${count(picks.car)} of ${count(picks.all)} picks in ${count(picks.threads)} threads outside ${homeText} that weighed the ${short} against another model.${rival ? ` Next most picked: the ${modelName(rival[0])}, with ${count(rival[1])}.` : ''}</p>` : `<p class="vp-rd-big">${count(picks.all)}<small> picks</small></p><p class="vp-rd-detail">Too few picks outside ${homeText} to give a share: ${count(picks.car)} of ${count(picks.all)} went to the ${short}.</p>`}</div>
+</div>
+<section class="vp-rd-topics">
+<h3>Net opinion by topic</h3>
+<p>Positive minus negative opinions about the ${short}, as a share of all its opinions on that topic, from −100 to +100. Topics with fewer than ${redditMinimum} mentions aren’t scored.</p>
+<ul class="vp-rd-net" role="list">
+${rows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${sentimentTopics[topic]}<small>${count(figure.mentions)} mentions</small></span>${netBar(figure)}</li>`).join('\n')}
+<li class="vp-rd-net__axis" aria-hidden="true"><span></span><span><span>All negative</span><span>Even</span><span>All positive</span></span></li>
+</ul>
+</section>
+${praise || gripes ? `<div class="vp-rd-themes">
+<section><h3>What people praise</h3><ul role="list">${praise}</ul></section>
+<section><h3>What owners and shoppers complain about</h3><ul class="vp-rd-themes__neg" role="list">${gripes}</ul></section>
+</div>\n` : ''}${cross.length ? `<section class="vp-rd-cross">
+<h3>Cross-shopped with</h3>
+<p>Models named alongside the ${short} in threads outside ${homeText}, by number of threads (${count(sentiment.neutralThreads)} in all).</p>
+<ol role="list">
+${cross.map(crossItem).join('\n')}
+</ol>
+</section>\n` : ''}<p class="vp-note">Our own reading of public Reddit comments from the Arctic Shift archive, collected ${longDate(coded.collected)}: comments of 15 characters or more, coded by AI to a fixed rubric and checked by a second coder on a sample. One pick per person per thread. It isn’t a survey, and complaints are what owners report, not confirmed defects.</p>
+</section>`;
+}
+
+function vehiclePage(vehicle, updated, reddit) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
   const ask = `<a href="/schedule.html">Ask us</a>`;
@@ -206,7 +272,7 @@ function vehiclePage(vehicle, updated) {
     related: '<a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>',
     ...vehicle.labels,
   };
-  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
+  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ...(reddit ? [['reddit', 'Reddit']] : []), ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   if (vehicle.spotlight) tabs.splice(tabs.findIndex(([id]) => id === 'pick') + 1, 0, [vehicle.spotlight.id, vehicle.spotlight.tab]);
   const body = `<article class="vp">
 <header class="vp-head vp-width">
@@ -261,7 +327,7 @@ ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${c
 </ul>
 <p class="vp-note">${vehicle.scores.note}</p>
 </section>
-
+${reddit ? `\n${reddit}\n` : ''}
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
 <section id="trims" class="vp-section">
@@ -670,16 +736,22 @@ ${cmp.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source
   return { slug: cmp.slug, title: cmp.title, description: cmp.description, h1: cmp.h1, crumbs: [['Resources', `${origin}/blog.html`], [cmp.crumb, `${origin}/${cmp.slug}`]], body };
 }
 
+// A price guide's coded Reddit file: data/reddit-sentiment/cars/<slug stem>.json (toyota-camry-price.html → toyota-camry).
+export const carSentimentFile = vehicle => `data/reddit-sentiment/cars/${vehicle.slug.replace(/-price\.html$/, '')}.json`;
 const versusSheet = 'buying/versus.css';
 const sheetLink = (file, css) => `<link rel="stylesheet" href="/${file}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
 
 export async function renderVehiclePages() {
   const [chrome, data, comparisons, css, versusCss] = await Promise.all([read(chromePage), read('data/vehicle-pages.json').then(JSON.parse), read('data/comparison-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet)), readFile(path.join(root, versusSheet))]);
   const link = sheetLink(stylesheet, css);
+  const models = JSON.parse(await read('data/reddit-sentiment/models.json'));
   const pages = data.vehicles.map(vehicle => {
     // A page checked after the file-wide date carries its own date.
     const updated = vehicle.checkedOn > data.updated ? vehicle.checkedOn : data.updated;
-    const page = vehiclePage(vehicle, updated);
+    const carFile = path.join(root, carSentimentFile(vehicle));
+    const coded = existsSync(carFile) ? JSON.parse(readFileSync(carFile, 'utf8')) : null;
+    const reddit = coded && redditSection(vehicle, coded, summarizeCar(coded), { models, vehicles: data.vehicles, comparisons: comparisons.comparisons });
+    const page = vehiclePage(vehicle, updated, reddit);
     const html = shell(chrome, { ...page, published: vehicle.published, updated }, page.body);
     return { slug: page.slug, html: html.replace('</head>', `    ${link}\n</head>`) };
   });
