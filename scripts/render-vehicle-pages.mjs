@@ -451,6 +451,7 @@ const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" ari
 const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
   ford: [267, 96, 'Ford'], 'ford-white': [267, 96, 'Ford'], chevrolet: [301, 96, 'Chevrolet'], 'chevrolet-white': [301, 96, 'Chevrolet'],
+  gmc: [343, 96, 'GMC'], 'gmc-white': [343, 96, 'GMC'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], 'camry-white': [442, 64, 'Camry'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
@@ -568,10 +569,12 @@ function comparisonPage(cmp, vehicles, updated, sentiment) {
   const picks = sentiment.venues.neutral.recommend;
   // A car is Reddit's pick only with at least 52% of the neutral picks; closer than that reads as even.
   const share = picks.a / ((picks.a + picks.b) || 1);
-  const pick = share >= 0.52 ? 'a' : share <= 0.48 ? 'b' : null;
+  // `r.minimumPicks` (optional): with fewer neutral picks than this, the strip says so instead of naming a car.
+  const tooFew = r.minimumPicks && picks.a + picks.b < r.minimumPicks;
+  const pick = tooFew ? null : share >= 0.52 ? 'a' : share <= 0.48 ? 'b' : null;
   const redditPick = pick
     ? `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${key(pick)}${by(pick).short}</span><small>Recommended more often<br> across ${Object.keys(sentiment.topics).length} topics</small></span>`
-    : `<span class="vs-strip-pick"><span class="vs-strip-pick__car">Toss-up</span><small>${a.short} ${picks.a.toLocaleString('en-US')} picks,<br> ${b.short} ${picks.b.toLocaleString('en-US')}</small></span>`;
+    : `<span class="vs-strip-pick"><span class="vs-strip-pick__car">${tooFew ? 'Too few to call' : 'Toss-up'}</span><small>${a.short} ${picks.a.toLocaleString('en-US')} picks,<br> ${b.short} ${picks.b.toLocaleString('en-US')}</small></span>`;
   const tabs = [['overview', 'Overview'], ['reddit', 'Reddit Sentiment Index'], ['price', 'Price'], ['mpg', 'Fuel economy'], ['space', 'Space and power'], ['reliability', 'Reliability'], ['resale', 'Resale and used'], ['safety', 'Safety'], ['faq', 'Questions']];
   const charts = list => list.map(chart => chart.type === 'cols' ? pairColumns(chart, cars) : pairChart(chart, cars)).join('\n');
   const body = `<article class="vp vs">
