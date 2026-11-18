@@ -3980,10 +3980,10 @@
           "b": "60<small>out of 100</small>"
         }
       ],
-      "summary": "We’d buy the Camry, unless you want the roomier car. Every Camry is a hybrid: the LE starts at $29,600, $4,195 under the cheapest Accord Hybrid, is rated 51 mpg combined against the Accord’s best 48, and offers all-wheel drive, which no Accord does. It also sells further under sticker, draws about a quarter as many owner complaints to NHTSA per car sold, and is an IIHS Top Safety Pick+ where the Accord is a Top Safety Pick. The Accord answers with 2.8 more inches of rear legroom, a bigger trunk, a quicker hybrid in Edmunds’ testing and the best resale value of the pair. Reddit leans Camry: in neutral subreddits, 214 picks went to the Camry and 139 to the Accord. Prices were checked on November 17, 2026.",
+      "summary": "We’d buy the Camry, unless you want the roomier car. Every Camry is a hybrid: the LE starts at $29,600, $4,195 under the cheapest Accord Hybrid, is rated 51 mpg combined against the Accord’s best 48, and offers all-wheel drive, which no Accord does. It also sells further under sticker, draws about a quarter as many owner complaints to NHTSA per car sold, and is an IIHS Top Safety Pick+ where the Accord is a Top Safety Pick. The Accord answers with 2.8 more inches of rear legroom, a bigger trunk, a quicker hybrid in Edmunds’ testing, and a gas version that lost 15.5% of its value in three years in iSeeCars’ data against the Camry’s 22%. Reddit leans Camry: in neutral subreddits, 214 picks went to the Camry and 139 to the Accord. Prices were checked on November 17, 2026.",
       "choose": {
         "a": [
-          "You want the most car for the money: the LE starts at $29,600 with a 51-mpg hybrid, $4,195 under the cheapest Accord Hybrid, and Camrys sell about 4–7% under sticker.",
+          "Price comes first: the LE starts at $29,600 with a 51-mpg hybrid, $4,195 under the cheapest Accord Hybrid, and Camrys sell about 4–7% under sticker.",
           "You need all-wheel drive: it’s $1,525 on every Camry trim, and an AWD XLE is still rated 46 mpg combined. No Accord offers it.",
           "You want the fewest problems: 33 owner complaints to NHTSA per 100,000 sold for 2023–2025 against the Accord’s 118, and J.D. Power named the Camry the most dependable midsize car of 2026.",
           "You want the higher crash-test award: IIHS names the Camry a Top Safety Pick+ and the Accord a Top Safety Pick."
@@ -4276,7 +4276,7 @@
           }
         ],
         "after": [
-          "Against the gas Accord, the hybrid pays. A Camry LE costs $1,205 more than an Accord LX and, by EPA’s numbers, about $700 a year less to fuel."
+          "A Camry LE costs $1,205 more than a gas Accord LX but, by EPA’s numbers, about $700 a year less to fuel, so the difference comes back in under two years."
         ]
       },
       "space": {
@@ -4598,7 +4598,7 @@
           }
         ],
         "after": [
-          "<strong>Our read:</strong> the Camry is the safer bet. Its complaint rate is lower in every model year we checked, and the Accord’s lead in the part chart covers steering, electrical and braking alike, not one fault. Both brands’ cars commonly pass 200,000 miles, and repair costs are level."
+          "<strong>Our read:</strong> the Camry is the safer bet. Its complaint rate is lower in every model year we checked, and the Accord’s extra complaints are spread across steering, electrical and braking. Running costs are close: about three in ten of each reach 200,000 miles in iSeeCars’ data, and RepairPal puts average yearly repairs $12 apart."
         ],
         "from": {
           "label": "Sources include",
@@ -4660,8 +4660,7 @@
             "praise": [
               "More fun to drive, with a strong hybrid",
               "A nicer, better-finished interior",
-              "Comfortable seats and a roomy back seat and trunk",
-              "A smooth hybrid system without a CVT’s drone"
+              "Comfortable seats and a roomy back seat and trunk"
             ],
             "gripes": [
               "Owner reports of head gasket and oil dilution trouble on the 1.5 turbo",
@@ -4765,7 +4764,7 @@
       },
       "safety": {
         "intro": [
-          "Both get 5 stars overall from NHTSA and Good grades in all three IIHS crash tests. The Camry earns IIHS’s higher award, a 2026 Top Safety Pick+, thanks to its Good pedestrian crash prevention; the Accord’s is Acceptable, so it’s a Top Safety Pick. The Accord has the better headlights, Good on every trim against Acceptable, and NHTSA gives its driver 5 stars in the frontal test against the Camry’s 4."
+          "Both get 5 stars overall from NHTSA and Good grades in all three IIHS crash tests. The Camry earns IIHS’s higher award, a 2026 Top Safety Pick+, and its pedestrian crash prevention rates Good against the Accord’s Acceptable; the Accord is a Top Safety Pick. The Accord has the better headlights, Good on every trim against Acceptable, and NHTSA gives its driver 5 stars in the frontal test against the Camry’s 4."
         ],
         "rows": [
           {
