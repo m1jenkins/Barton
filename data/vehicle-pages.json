@@ -10054,6 +10054,857 @@
           "note": "cropped"
         }
       ]
+    },
+    {
+      "slug": "toyota-tundra-price.html",
+      "name": "Toyota Tundra",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Toyota Tundra Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Toyota Tundra costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell it, Toyota’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Toyota Tundra price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$41,260 <small>to $80,800</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "5–7% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Toyota incentives",
+          "value": "1.99% <small>APR or $1,000 cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 Limited",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Tundra is the full-size pickup for buyers who want a smooth twin-turbo V6, a roomy cab and strong resale, and who don’t need the biggest tow rating. Kelley Blue Book named it the 2026 best-resale full-size pickup, and iSeeCars puts its five-year depreciation at 19.7% against 37.0% for the class. It isn’t the strongest tower or hauler (Toyota lists up to 12,000 pounds and 1,850 pounds of payload), and Edmunds ranks it fourth of five large trucks and measured 15.2 mpg on its test route. It does sell under sticker: TrueCar’s trim averages run 3–7% under, Edmunds’ Texas suggested prices 7–10% under, and CarWhere’s 27 verified buyers paid a median 7.5% under MSRP. Price a 2026 Limited, aim for 5–7% under MSRP, and take Toyota’s 1.99% to 2.99% financing if your bank can’t beat it. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "SR",
+            "short": "Work truck",
+            "gets": "Aluminum-reinforced composite bed, 18-inch steel wheels, Toyota Safety Sense; the 2027 adds a 14-inch touchscreen",
+            "prices": [
+              41260,
+              42890
+            ],
+            "engine": "3.4L twin-turbo V6, 358 hp"
+          },
+          {
+            "name": "SR5",
+            "short": "Most inventory",
+            "gets": "18-inch alloy wheels, tow hitch with an integrated trailer brake controller, selectable Tow/Haul mode",
+            "prices": [
+              46510,
+              47150
+            ],
+            "engine": "3.4L twin-turbo V6, 389 hp"
+          },
+          {
+            "name": "Limited",
+            "short": "The step-up pick",
+            "gets": "14-inch touchscreen, 20-inch alloy wheels, leather 8-way power front seats, heated and ventilated seats",
+            "prices": [
+              54860,
+              55790
+            ],
+            "engine": "3.4L twin-turbo V6, 389 hp",
+            "pick": true
+          },
+          {
+            "name": "Platinum",
+            "short": "Luxury",
+            "gets": "Power panoramic roof, 10-way power leather seats, surround-view camera, dark 20-inch wheels",
+            "prices": [
+              63695,
+              65350
+            ],
+            "engine": "3.4L twin-turbo V6, 389 hp"
+          },
+          {
+            "name": "1794 Edition",
+            "short": "Wood and saddle leather",
+            "gets": "Saddle Tan interior with walnut-look trim, chrome grille, machined 20-inch wheels",
+            "prices": [
+              64380,
+              66005
+            ],
+            "engine": "3.4L twin-turbo V6, 389 hp"
+          },
+          {
+            "name": "Limited i-FORCE MAX",
+            "short": "Hybrid step-up",
+            "gets": "Limited equipment with the 437-hp hybrid; the cheapest way into the hybrid",
+            "prices": [
+              58560,
+              63090
+            ],
+            "engine": "3.4L twin-turbo hybrid V6, 437 hp, 583 lb-ft, rear- or four-wheel drive"
+          },
+          {
+            "name": "Platinum i-FORCE MAX",
+            "short": "Hybrid luxury",
+            "gets": "Platinum equipment with the hybrid, 4x4",
+            "prices": [
+              70605,
+              72650
+            ],
+            "engine": "3.4L twin-turbo hybrid V6, 437 hp, 583 lb-ft, 4x4"
+          },
+          {
+            "name": "1794 Edition i-FORCE MAX",
+            "short": "Hybrid, wood and leather",
+            "gets": "1794 Edition equipment with the hybrid, 4x4",
+            "prices": [
+              71305,
+              73320
+            ],
+            "engine": "3.4L twin-turbo hybrid V6, 437 hp, 583 lb-ft, 4x4"
+          },
+          {
+            "name": "TRD Pro",
+            "short": "Off-roader",
+            "gets": "FOX shocks, 1.1-inch front lift, 18-inch BBS wheels with all-terrain tires, LED light bar grille; hybrid and 4x4 only",
+            "prices": [
+              72565,
+              75400
+            ],
+            "engine": "3.4L twin-turbo hybrid V6, 437 hp, 583 lb-ft, 4x4"
+          },
+          {
+            "name": "Capstone",
+            "short": "Flagship",
+            "gets": "22-inch wheels, 14-inch touchscreen with a 12-speaker JBL system, semi-aniline leather 10-way seats; hybrid and 4x4 only",
+            "prices": [
+              80800,
+              82925
+            ],
+            "engine": "3.4L twin-turbo hybrid V6, 437 hp, 583 lb-ft, 4x4"
+          }
+        ],
+        "after": [
+          "Prices leave out the $2,195 destination charge. 4x4 adds $3,000 on every gas trim we checked (iSeeCars’ list), and the i-FORCE MAX adds $3,700 to a Limited. The Platinum, 1794 Edition, TRD Pro and Capstone hybrids start as 4x4s. For 2027 every trim goes up $640 to $2,835, except the i-FORCE MAX Limited: its $63,090 is $4,530 over the 2026 starting price, and Toyota’s page doesn’t say which drive that price is for. Toyota lists the same 10 trims for 2027 and a Trailhunter package it hasn’t priced."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 Limited CrewMax, with 4x4 if you tow or leave pavement.</strong> At $54,860 it adds a 14-inch touchscreen, 20-inch wheels and heated and ventilated leather seats to the SR5, and Edmunds’ editors pick it for the lineup too. It’s also the cheapest way into the hybrid, and TrueCar’s averages show it selling 6.4% under sticker, more than any other gas trim. 4x4 adds $3,000. The SR5 is $8,350 less, has the same V6, the tow hitch and the trailer brake controller, and has the most stock (Edmunds), so it’s the one to price if the leather and the big screen don’t matter to you.",
+        "Skip the i-FORCE MAX hybrid unless you want its torque (583 lb-ft against 479). It adds $3,700 to a Limited and is rated 20 mpg combined against 19 in 4x4 (22 against 20 in 2WD), and Edmunds calls the setup more about power than efficiency. Toyota’s 1.99% reaches the hybrids in all four regions we checked but the gas Limited only in Dallas, which narrows the gap if you finance. The TRD Pro starts at $72,565, sells near sticker and gets none of Toyota’s cash or rate offers."
+      ],
+      "pay": {
+        "intro": [
+          "Tundras sell quickly but not at sticker. Edmunds counts about 28,600 new ones nationwide, selling in about 30 days against 34 for the average new vehicle, and Toyota had 39 days of supply at the end of October against 87 for the industry. Buyers still get real money off: CarWhere’s 27 verified 2026 buyers paid a median 7.5% under MSRP, Edmunds’ suggested prices, based on Texas sales, run 7–10% under, and TrueCar’s trim averages run 3–7% under. Dealer invoice is about 7.5% under MSRP before destination. The TRD Pro has the least room."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "SR, SR5, Limited, Platinum, 1794 Edition and their i-FORCE MAX versions",
+            "example": "Limited",
+            "fair": "5–7% under",
+            "strong": "8–9% under",
+            "why": "TrueCar averages 5.1–6.9% under across these trims. Edmunds’ Texas prices run 9–10% under on the gas trims."
+          },
+          {
+            "trims": "Capstone",
+            "example": "Capstone",
+            "fair": "6–7% under",
+            "strong": "9% or more",
+            "why": "TrueCar averages 7.1% under, and Edmunds’ Texas price is 9.2% under."
+          },
+          {
+            "trims": "TRD Pro",
+            "example": "TRD Pro",
+            "fair": "3–4% under",
+            "strong": "6% or more",
+            "why": "TrueCar averages 3.4% under; Edmunds’ Texas price is 6.6% under."
+          }
+        ],
+        "note": "Checked November 18, 2026, on the 2026. TrueCar’s and Edmunds’ prices include destination; CarWhere’s 7.5% is against MSRP.",
+        "after": [
+          "Not sure what a specific Tundra should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Limited",
+          "sticker": 57055,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 6%",
+              "amount": 3400
+            }
+          ],
+          "total": 53655,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Toyota’s deals on the 2026 Tundra are financing, leases and $1,000 customer cash, and they all end November 30. The 1.99% rate reaches the i-FORCE MAX trims (not the TRD Pro) in all four regions we checked and the gas trims in Dallas; other gas trims get 2.99% in the other regions. The cash and the rate don’t combine. The 2027 gets 3.99% in Southern California and the New York area only."
+        ],
+        "rows": [
+          {
+            "offer": "1.99% APR for up to 72 months",
+            "detail": "Through Toyota Financial Services, for buyers with top credit; includes ToyotaCare. Los Angeles also lists 1.99% for 48 and 60 months.",
+            "applies": "2026 i-FORCE MAX trims except the TRD Pro in Chicago, Dallas, Los Angeles and New York; every 2026 gas trim in Dallas; the gas SR5 in Chicago",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2.99% APR for up to 72 months",
+            "detail": "Chicago, Los Angeles (also 48 and 60 months) and New York; the toyota.com cards exclude some trims in each region",
+            "applies": "2026 gas Tundras without the 1.99%, such as the SR, Limited, Platinum and 1794 Edition in Chicago; not the TRD Pro",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "$1,000 customer cash",
+            "detail": "From Toyota, not tied to financing, and not combinable with the APR or lease offers",
+            "applies": "2026 gas and i-FORCE MAX trims in all four regions we checked, except the TRD Pro",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "SR5 lease",
+            "detail": "39 months with $3,999 due: $409 a month in Chicago, $399 in New York. Dallas: $399 with $4,999 due. Los Angeles: $439 for 36 or 39 months.",
+            "applies": "2026 Tundra SR5 (Dallas quotes the 2WD CrewMax)",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Limited i-FORCE MAX lease",
+            "detail": "39 months with $3,999 due: $559 a month in Chicago, $539 in New York, $599 in Los Angeles ($619 for 36 months). None listed in Dallas.",
+            "applies": "2026 Limited i-FORCE MAX",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 financing and cash",
+            "detail": "3.99% APR for up to 72 months or $1,000 customer cash; the TRD Pro is excluded on the i-FORCE MAX page",
+            "applies": "2027 Tundra and i-FORCE MAX in Southern California and Greater New York only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military rebate",
+            "detail": "$500 for qualified U.S. military personnel",
+            "applies": "Multiple Toyota series, listed on the Tundra page",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "College rebate",
+            "detail": "$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services",
+            "applies": "Multiple Toyota series, listed on the Tundra page",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "TRD Pro",
+            "detail": "Excluded from the finance and cash offers on Toyota’s i-FORCE MAX page; no TRD Pro lease appeared",
+            "applies": "2026 TRD Pro",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.toyota.com/deals-incentives/tundra/\" rel=\"noopener\">Toyota’s offers pages</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Toyota Financial Services credit approval where they are rates or leases, and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "1.99%",
+            "word": "APR",
+            "text": "For up to 72 months on 2026 i-FORCE MAX trims (not the TRD Pro) in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$1,000",
+            "word": "cash back",
+            "text": "On most 2026 trims instead of the rate, in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "SR5 lease",
+            "figure": "$409",
+            "word": "a month",
+            "text": "2026 SR5 in Chicago, 39 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "Hybrid lease",
+            "figure": "$559",
+            "word": "a month",
+            "text": "2026 Limited i-FORCE MAX in Chicago, 39 months, $3,999 due at signing. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Toyota lists a $500 military rebate and a $500 college rebate on the Tundra page. The college one needs Toyota Financial Services financing or a lease, and the toyota.com pages don’t say whether either stacks with the special rates, so ask the dealer.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends November 30",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Toyota’s 1.99%",
+          "title": "1.99% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $57,000 Tundra over 72 months. The cash and the rate don’t combine, and the rate wins by a wide margin: even a buyer who finances after the $1,000 cash at the 4.41% that borrowers with top credit averaged comes out about $3,350 behind the 1.99%. Get your bank’s rate before you sign.",
+          "price": 57000,
+          "months": 72,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "1.99% APR",
+              "detail": "2026 i-FORCE MAX, Toyota Financial Services",
+              "rate": 1.99,
+              "cash": 0
+            },
+            {
+              "name": "2.99% APR",
+              "detail": "2026 gas Tundra, Toyota Financial Services",
+              "rate": 2.99,
+              "cash": 0
+            },
+            {
+              "name": "$1,000 cash",
+              "detail": "financed at the 6.35% average",
+              "rate": 6.35,
+              "cash": 1000
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used 2024 asks a median $44,714, only about $1,200 under what TrueCar says buyers pay for a new SR5 ($45,885). The 2022 to 2024 trucks carry NHTSA engine recalls, and used-loan rates average 11.19% against Toyota’s 1.99% on a new hybrid."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Toyota’s financing, the $1,000 cash and the leases apply to the 2026, it costs $640 to $4,530 less than a 2027, and its ToyotaCare covers two years or 25,000 miles.",
+            "check": "That the truck is a 2026 and not a 2027, and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "The 2026 you want is gone, or you want the 14-inch touchscreen and built-in dash camera Toyota makes standard for 2027.",
+            "check": "The price rise, that its 3.99% and $1,000 cash run only in Southern California and the New York area, and that ToyotaCare drops to one year or 10,000 miles."
+          },
+          {
+            "route": "CPO (Toyota Certified Gold)",
+            "when": "You want a 2024 or 2025 with a warranty, and you’re paying cash.",
+            "check": "That it’s Gold Certified (7 years or 100,000 miles of powertrain cover from purchase), not Silver (12 months or 12,000 miles), and that every engine recall is done. A hybrid battery stays covered for 10 years or 150,000 miles from first sale."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $40,000; a 2022 asks a median $39,079.",
+            "check": "Open recalls by VIN, above all the engine campaigns on 2022 to 2024 trucks, and an independent inspection."
+          }
+        ],
+        "after": [
+          "If you buy a 2022, 2023 or 2024 Tundra, get the engine recall work in writing. Toyota has recalled certain 2022 to 2024 trucks with the 3.4-liter V35A engine because manufacturing debris can damage the main bearings and stall the engine; the fix is a main-bearing inspection and, where needed, a new engine, free of charge. Engine is the most-cited component in NHTSA’s owner complaints for those years (166 of 436 on the 2022, 174 of 424 on the 2023, 158 of 365 on the 2024)."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in five years",
+            "bars": [
+              {
+                "label": "Tundra",
+                "value": 19.7,
+                "display": "19.7%"
+              },
+              {
+                "label": "Full-size pickups",
+                "value": 37,
+                "display": "37.0%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 41.7,
+                "display": "41.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Toyota offer",
+                "value": 1.99,
+                "display": "1.99%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Toyota; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 37934,
+                "display": "$37,934"
+              },
+              {
+                "label": "2022",
+                "value": 39079,
+                "display": "$39,079"
+              },
+              {
+                "label": "2023",
+                "value": 42423,
+                "display": "$42,423"
+              },
+              {
+                "label": "2024",
+                "value": 44714,
+                "display": "$44,714"
+              },
+              {
+                "label": "2025",
+                "value": 50489,
+                "display": "$50,489"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Engine recalls on 2022 to 2024 trucks.</strong> Three NHTSA campaigns (24V381, 25V767 and 26V320) cover the V35A engine’s main bearings. Ask the dealer to show that each applicable one is done before you take delivery.",
+        "<strong>The Toyota Financial Services requirement.</strong> The rates and leases need Toyota’s own financing, and the $1,000 cash doesn’t combine with them. Compare the total cost with your bank’s rate.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. In Chicago and Dallas only the 2026 has offers.",
+        "<strong>Fuel economy.</strong> Edmunds measured 15.2 mpg on its test route against the EPA’s 19 for a 4WD Tundra. Budget for the real figure if you tow or drive in town.",
+        "<strong>Towing and payload.</strong> Toyota’s top figures are 12,000 pounds and 1,850 pounds, and Edmunds says buyers who tow or haul near the limit should look at the F-150 and Silverado. Check the rating for your exact cab, bed and engine on the door sticker.",
+        "<strong>Add-ons and fees.</strong> Ask for an itemized out-the-door price and refuse anything you didn’t ask for. Destination is $2,195 on top of every MSRP on this page."
+      ],
+      "faq": [
+        [
+          "Is the Toyota Tundra a good truck?",
+          "Reviewers mostly say yes, with caveats. U.S. News gives the 2026 a 9.0 and third of six full-size pickups, J.D. Power’s owner score is 82 (quality and reliability 82, resale 90), and Kelley Blue Book’s expert rating is 4.1 out of 5. Edmunds is cooler at 7.0, fourth of five large trucks, and faults its fuel economy, its thick front pillars and mid-pack towing. A Tundra loses 19.7% of its value in five years by iSeeCars’ figures, against 37.0% for full-size pickups."
+        ],
+        [
+          "How much under MSRP can you get a Toyota Tundra?",
+          "On a 2026 SR through 1794 Edition, 5–7% under MSRP is a fair deal and 8–9% a strong one. The Capstone has a little more room, and the TRD Pro sells near sticker, around 3–4%. Those ranges are our read of TrueCar’s averages, Edmunds’ suggested prices and CarWhere’s verified buyers, so a given dealer may land a point either side. Toyota’s $1,000 cash comes on top of the discount, but not with its low rates."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Tundra?",
+          "The 2026, for most buyers. It costs $640 to $4,530 less, nearly all of Toyota’s offers are on it, and its ToyotaCare runs two years against one on the 2027. The 2027 adds a standard 14-inch touchscreen and a built-in dash camera, and it gets 3.99% and $1,000 cash in Southern California and the New York area only."
+        ],
+        [
+          "What is the destination charge on a Tundra?",
+          "$2,195. Toyota’s advertised starting prices leave it out, so a $41,260 SR is $43,455 on the window sticker."
+        ],
+        [
+          "Does Toyota offer cash back on the Tundra?",
+          "Yes: $1,000 customer cash on 2026 gas and i-FORCE MAX trims, except the TRD Pro, in all four regions we checked on November 18, 2026. It doesn’t combine with Toyota’s 1.99% or 2.99% financing or its leases, and a $500 military rebate and a $500 college rebate are listed separately."
+        ],
+        [
+          "Is the Tundra i-FORCE MAX hybrid worth it?",
+          "Only if you want its power. It makes 437 hp and 583 lb-ft against 389 hp and 479 lb-ft, but it adds $3,700 to a Limited and is rated 20 mpg combined against 19 in 4x4. Toyota’s best financing rate (1.99%) reaches it in all four regions we checked, which helps the monthly cost. Edmunds describes the hybrid as more about power than fuel economy."
+        ],
+        [
+          "Is a used Tundra a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2024 is $44,714 and for a 2025 $50,489, while TrueCar’s average paid for a new 2026 SR5 is $45,885. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 1.99% on a new hybrid. A 2022 to 2024 truck needs its engine recalls checked; a Gold Certified 2024 or 2025 with them done is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-TUNDRA-01",
+          "title": "Toyota: 2026 Tundra",
+          "url": "https://www.toyota.com/tundra/2026/",
+          "scope": "2026 Tundra trims, starting MSRP excluding destination, engines and horsepower, EPA city/highway ratings, maximum towing and payload",
+          "note": "2026 trims, starting prices and equipment"
+        },
+        {
+          "id": "VEH-TUNDRA-02",
+          "title": "Toyota: 2027 Tundra",
+          "url": "https://www.toyota.com/tundra/2027/",
+          "scope": "2027 Tundra trims, starting MSRP excluding destination and EPA city/highway ratings",
+          "note": "2027 starting prices"
+        },
+        {
+          "id": "VEH-TUNDRA-03",
+          "title": "Toyota: new 2027 Tundra announcement",
+          "url": "https://pressroom.toyota.com/new-2027-toyota-tundra-brings-rugged-updated-styling-advanced-technology-and-new-trailhunter-package/",
+          "scope": "2027 Tundra changes (standard 14-inch screen, dash camera, Toyota Safety Sense 4.0, Trailhunter package), warranty, hybrid component and battery coverage, and 2027 ToyotaCare terms",
+          "note": "2027 changes, warranty and ToyotaCare"
+        },
+        {
+          "id": "VEH-TUNDRA-04",
+          "title": "Toyota: Tundra deals and incentives",
+          "url": "https://www.toyota.com/deals-incentives/tundra/",
+          "scope": "Toyota finance, lease and customer cash offers on the 2026 and 2027 Tundra and Tundra i-FORCE MAX (also toyota.com/deals-incentives/tundrahybrid/) at ZIPs 60601, 75201, 90012 and 10001, military and college rebate terms, and the $2,195 destination charge",
+          "note": "finance, lease and cash offers, read in four regions"
+        },
+        {
+          "id": "VEH-TUNDRA-05",
+          "title": "iSeeCars: 2026 Toyota Tundra price",
+          "url": "https://www.iseecars.com/car/2026-toyota-tundra-price",
+          "scope": "MSRP and dealer invoice by 2026 Tundra configuration (4x2, 4x4, short and long bed, i-FORCE MAX), and invoice against MSRP",
+          "note": "prices by configuration and dealer invoice"
+        },
+        {
+          "id": "VEH-TUNDRA-06",
+          "title": "TrueCar: 2026 Toyota Tundra",
+          "url": "https://www.truecar.com/overview/toyota/tundra/2026/",
+          "scope": "Starting TSRP (destination included) and starting market average price by 2026 Tundra trim, and the number of transactions behind the base trim average",
+          "note": "average price paid by trim"
+        },
+        {
+          "id": "VEH-TUNDRA-07",
+          "title": "Edmunds: 2026 Toyota Tundra",
+          "url": "https://www.edmunds.com/toyota/tundra/2026/",
+          "scope": "Edmunds rating, large-truck rank, owner rating, editors’ trim pick, Texas suggested price by trim, days to sell, inventory, test acceleration and fuel economy, pros and cons and November buying tips for the 2026 Tundra",
+          "note": "review score, suggested prices and test results"
+        },
+        {
+          "id": "VEH-TUNDRA-08",
+          "title": "CarWhere: 2026 Toyota Tundra",
+          "url": "https://www.carwhere.com/cars/toyota/tundra/2026",
+          "scope": "Median price paid against MSRP by 27 verified 2026 Tundra buyers",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-TUNDRA-09",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Toyota, the F-150 and the Silverado 1500 at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-TUNDRA-10",
+          "title": "iSeeCars: Toyota Tundra resale value",
+          "url": "https://www.iseecars.com/car/toyota-tundra/resale-value",
+          "scope": "Tundra five-year depreciation against the full-size pickup and all-vehicle averages",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-TUNDRA-11",
+          "title": "Kelley Blue Book: 2026 Best Resale Value Awards",
+          "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+          "scope": "Toyota Tundra as KBB 2026 best resale value full-size pickup truck",
+          "note": "resale award"
+        },
+        {
+          "id": "VEH-TUNDRA-12",
+          "title": "CarWhere: used Toyota Tundra prices",
+          "url": "https://www.carwhere.com/used-car-prices/toyota/tundra",
+          "scope": "Median asking price of used Tundras by model year 2019 to 2025, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-TUNDRA-13",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-TUNDRA-14",
+          "title": "Toyota Certified: warranty",
+          "url": "https://www.toyotacertified.com/warranty",
+          "scope": "Toyota Certified Used Vehicles Gold and Silver powertrain terms and hybrid battery coverage",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-TUNDRA-15",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Tundra and Tundra Hybrid recall campaigns and owner complaints by model year 2019 to 2026, including V35A engine campaigns 24V381, 25V767 and 26V320",
+          "note": "recall and complaint counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-TUNDRA-16",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 Tundra CrewMax (vehicle IDs 21668 and 21669) and the untested Double Cab, from the NHTSA ratings API",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-TUNDRA-17",
+          "title": "IIHS: 2026 Toyota Tundra crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/toyota/tundra-crew-cab-pickup/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 Tundra crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-TUNDRA-18",
+          "title": "Consumer Reports: 2026 Toyota Tundra reliability",
+          "url": "https://www.consumerreports.org/cars/toyota/tundra/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Tundra",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-TUNDRA-19",
+          "title": "FuelEconomy.gov: 2026 Toyota Tundra",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Tundra.shtml",
+          "scope": "EPA fuel economy by 2026 Tundra version (gas and hybrid, 2WD and 4WD)",
+          "note": "EPA fuel economy"
+        },
+        {
+          "id": "VEH-TUNDRA-20",
+          "title": "Kelley Blue Book: 2026 Toyota Tundra",
+          "url": "https://www.kbb.com/toyota/tundra/2026/",
+          "scope": "KBB expert rating, consumer rating and review count for the 2026 Tundra",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TUNDRA-21",
+          "title": "U.S. News: 2026 Toyota Tundra",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/tundra",
+          "scope": "U.S. News overall score, full-size pickup rank, owner review count, pros and cons for the 2026 Tundra",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TUNDRA-22",
+          "title": "J.D. Power: 2026 Toyota Tundra",
+          "url": "https://www.jdpower.com/cars/2026/toyota/tundra",
+          "scope": "J.D. Power consumer rating, category scores and large light-duty pickup ranking for the 2026 Tundra",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-TUNDRA-23",
+          "title": "Ford: 2026 F-150",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "scope": "2026 F-150 XL starting MSRP excluding destination (carried over from the Silverado price page, not re-read)",
+          "note": "F-150 price"
+        },
+        {
+          "id": "VEH-TUNDRA-24",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "scope": "2026 Silverado 1500 WT starting MSRP excluding destination (carried over from the Silverado price page, not re-read)",
+          "note": "Silverado price"
+        },
+        {
+          "id": "VEH-TUNDRA-25",
+          "title": "GMC: 2026 Sierra 1500",
+          "url": "https://www.gmc.com/trucks/previous-year/sierra/1500",
+          "scope": "2026 Sierra 1500 Pro starting MSRP excluding destination (carried over from the Sierra price page, not re-read)",
+          "note": "Sierra price"
+        },
+        {
+          "id": "VEH-TUNDRA-26",
+          "title": "Ram: 2026 Ram 1500",
+          "url": "https://www.ramtrucks.com/ram-1500.html",
+          "scope": "2026 Ram 1500 Tradesman starting MSRP excluding destination (carried over from the Silverado price page, not re-read)",
+          "note": "Ram price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-toyota-tundra-capstone",
+        "width": 1920,
+        "height": 1210,
+        "alt": "White 2023 Toyota Tundra Capstone i-FORCE MAX CrewMax, front three-quarter view in a studio",
+        "caption": "A Tundra Capstone i-FORCE MAX.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:23_Toyota_Tundra_Capstone_HV.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Best resale of any full-size pickup, by KBB’s 2026 award",
+        "Most trims sell 5–7% under sticker",
+        "1.99% financing on the i-FORCE MAX trims",
+        "Smooth V6: 0 to 60 mph in 6.6 seconds at Edmunds"
+      ],
+      "cons": [
+        "Edmunds measured 15.2 mpg on its test route",
+        "Lower tow and payload ratings than the F-150 and Silverado",
+        "Engine recalls on 2022 to 2024 trucks",
+        "TRD Pro sells near sticker, with no Toyota cash or rate"
+      ],
+      "rivals": [
+        "Get a quote on the Ford F-150 and Chevrolet Silverado 1500 too. Edmunds says serious towers and builders should look at them first, and Cox counted 93 days of supply on the F-150 and 99 on the Silverado at the end of October against 39 for Toyota as a whole (Cox gave no Tundra figure). The F-150 starts at $39,585, the Silverado at $37,200, the GMC Sierra 1500 at $38,600 and the Ram 1500, which Edmunds says rides more smoothly, at $42,025; the Tundra starts at $41,260. Those prices leave out destination. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/toyota/tundra/2026/",
+            "value": 7,
+            "scale": 10,
+            "display": "7.0",
+            "detail": "Ranked 4th of 5 large trucks; Limited is its editors’ pick"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/toyota/tundra/2026/",
+            "value": 4.1,
+            "scale": 5,
+            "display": "4.1",
+            "detail": "Owners give it 3.4 out of 5 (68 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/toyota/tundra",
+            "value": 9,
+            "scale": 10,
+            "display": "9.0",
+            "detail": "Ranked 3rd of 6 full-size pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/toyota/tundra",
+            "value": 82,
+            "scale": 100,
+            "display": "82",
+            "detail": "Ties the Silverado for 3rd in its large light-duty pickup list"
+          }
+        ],
+        "note": "Scores for the 2026 Tundra as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Tundra CrewMax",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5,
+            "note": "Driver 5, passenger 5"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "18.5% rollover risk, 4x4"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Good",
+            "note": "Driver’s leg and foot measure marginal"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good",
+            "note": "Updated test"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Acceptable",
+            "note": "Good on Platinum and up"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 10
+          },
+          {
+            "label": "2020",
+            "value": 5
+          },
+          {
+            "label": "2021",
+            "value": 3
+          },
+          {
+            "label": "2022",
+            "value": 13
+          },
+          {
+            "label": "2023",
+            "value": 13
+          },
+          {
+            "label": "2024",
+            "value": 10
+          },
+          {
+            "label": "2025",
+            "value": 5
+          },
+          {
+            "label": "2026",
+            "value": 2
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to have <a href=\"https://www.consumerreports.org/cars/toyota/tundra/2026/reliability\" rel=\"noopener\">about average reliability</a> for a new car, judging from the 2023 to 2025 models.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/toyota/tundra-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. NHTSA has not crash-tested the Double Cab. IIHS rates the headlights Good on the Platinum, 1794 Edition, TRD Pro, Capstone and Limiteds with the Premium package, and Acceptable on the SR, SR5 and other Limiteds; pedestrian front crash prevention and LATCH ease of use are Acceptable, and seat belt reminders Good. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> combine its Tundra and Tundra Hybrid listings by campaign and include distributor label campaigns; most of the 2022 to 2024 engine campaigns are the V35A ones above. Check any used Tundra’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-toyota-tundra-1794-edition",
+          "width": 1920,
+          "height": 1210,
+          "alt": "Brown 2023 Toyota Tundra 1794 Edition CrewMax with a TRD grille, front three-quarter view in a studio",
+          "caption": "1794 Edition",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:23_Toyota_Tundra_1794_Edition.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-toyota-tundra-sr5-rear",
+          "width": 1920,
+          "height": 1217,
+          "alt": "White 2022 Toyota Tundra SR5 CrewMax 4x4, rear three-quarter view",
+          "caption": "SR5, rear",
+          "author": "Kevauto",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_Toyota_Tundra_CrewMax_SR5,_rear_6.7.22.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-toyota-tundra-interior",
+          "width": 1380,
+          "height": 790,
+          "alt": "Toyota Tundra 1794 Edition dashboard with a large center touchscreen, brown leather and wood trim",
+          "caption": "1794 Edition cabin",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Toyota_Tundra_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped, screen blurred"
+        },
+        {
+          "file": "vehicle-toyota-tundra-1794-side",
+          "width": 1920,
+          "height": 1057,
+          "alt": "Silver 2022 Toyota Tundra 1794 Edition CrewMax with the TRD Off-Road package, rear left three-quarter view",
+          "caption": "1794 Edition, rear",
+          "author": "Mr.choppers",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_Toyota_Tundra_1794_Edition_TRD_Crew_Cab_4X4_in_Celestial_Silver,_rear_left.jpg",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "note": "plate blurred"
+        }
+      ]
     }
   ]
 }
