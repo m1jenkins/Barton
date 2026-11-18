@@ -385,7 +385,7 @@ const key = side => `<span class="vs-key${side === 'b' ? ' vs-key--b' : ''}" ari
 const logoFiles = {
   toyota: [151, 96, 'Toyota'], 'toyota-white': [151, 96, 'Toyota'], honda: [119, 96, 'Honda'], 'honda-white': [119, 96, 'Honda'],
   ford: [267, 96, 'Ford'], 'ford-white': [267, 96, 'Ford'], chevrolet: [301, 96, 'Chevrolet'], 'chevrolet-white': [301, 96, 'Chevrolet'],
-  'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
+  'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], 'camry-white': [442, 64, 'Camry'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
 };
@@ -588,7 +588,7 @@ ${paragraphs(cmp.mpg.after)}
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Still torn? We’ll price both.</strong>Steer Me Right Pro gets written offers on up to three models from dealers that have them in stock, negotiates them, and gives you our pick.</p><p class="vp-cta__fine">$695 one-time. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">See the plans</a></aside>
 
 <section id="space" class="vp-section">
-<h2>Space, power and towing</h2>
+<h2>${cmp.space.title ?? 'Space, power and towing'}</h2>
 ${paragraphs(cmp.space.intro)}
 ${charts(cmp.space.charts)}
 ${paragraphs(cmp.space.after)}
@@ -685,8 +685,9 @@ export async function renderVehiclePages() {
   });
   for (const cmp of comparisons.comparisons) {
     const sentiment = summarize(JSON.parse(await read(cmp.reddit.dataFile)));
-    const page = comparisonPage(cmp, data.vehicles, comparisons.updated, sentiment);
-    const html = shell(chrome, { ...page, published: cmp.published, updated: comparisons.updated }, page.body);
+    const cmpUpdated = cmp.checkedOn > comparisons.updated ? cmp.checkedOn : comparisons.updated;
+    const page = comparisonPage(cmp, data.vehicles, cmpUpdated, sentiment);
+    const html = shell(chrome, { ...page, published: cmp.published, updated: cmpUpdated }, page.body);
     pages.push({ slug: page.slug, html: html.replace('</head>', `    ${link}\n    ${sheetLink(versusSheet, versusCss)}\n</head>`) });
   }
   return pages;
