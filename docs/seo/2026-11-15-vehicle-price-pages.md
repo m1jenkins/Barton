@@ -392,6 +392,24 @@ Reddit section: per-car file data/reddit-sentiment/cars/ford-ranger.json (see Pe
 
 Open items for Mason: the pick (2026 XLT, 4x4 off pavement, 2.3L), "skip the 2.7L V6", "buy new, as a 2026" and the used advice (Gold Certified 2024 or 2025, recalls done) were written from the research. Discount ranges lean on Edmunds' $1,362, iSeeCars invoice and 14 buyers, with no TrueCar; check against real deals. Not read: the 2.7L V6 price option, the Los Angeles 2.9% end date, military, first responder and college amounts, TrueCar. Check: the XLT price, Cars.com 2027 prices and the 3.0L V6, whether cash combines with 4.9%, the Raptor show-car caption. Offers end November 30, 2026.
 
+## Tesla Model 3, used (added November 18, 2026)
+
+Decision: the Model 3 guide follows the Model Y's used-car shape. Tesla sells new Model 3s only direct at a set price, so there is no new-car dealer discount to tabulate; the used market is where a dealer negotiation happens. `tesla-model-3-price.html` copies the Model Y entry field for field (`labels`, `pay.base` "asking", empty `incentives.addons`, `incentives.choice` on used loan rates by credit tier). Differences:
+
+- **The "trims" table is model years 2019 to 2025,** from Recurrent's September 2026 dealer asking prices. EPA range is from fueleconomy.gov's web service; recall counts are unique NHTSA campaigns. The 2026 is left out (scarce used, no Recurrent figure).
+- **No sale-to-asking figure exists,** and Recurrent gives no days-to-sell for the Model 3 (16 days is the Model Y figure; the page says so). The ranges are our estimate from the price drift, the 2025's fall and Cox's used-EV supply.
+- **New prices are secondary.** Tesla's site refuses scripted reads. Edmunds (browser, lists a 2027 Model 3) and Cars.com agree; KBB's Standard is $1,640 higher, matching destination plus order fee. Search snippets gave other Performance prices; the page uses Edmunds' and Cars.com's.
+- **Financing** (2.49% Premium, 1.99% Performance) is from TeslaNorth's October 23 report on Tesla's offers page. It does not say whether the Standard qualifies; the page says so. Trade-in Supercharging and $500 offers were left out as not Model 3 offers.
+- **Warranties** were read from Tesla's two PDFs through the Mac PDFKit text layer.
+- **Safety.** NHTSA lists nothing for 2024 or 2025. The IIHS page showed an award label but the criteria page was not opened, so the page makes no award claim.
+- **Reviews** are as published November 18 and never averaged; Edmunds and U.S. News were read in the browser. J.D. Power EVX comes through TeslaNorth and the dependability figure through Electrek, not Power's own page. Consumer Reports and J.D. Power's page were not read.
+- **Used values:** KBB fair purchase prices (2023); iSeeCars depreciation (undated); Experian Q2 2026 rates (re-read).
+- **Photos.** Five Wikimedia Commons images, all CC BY-SA 4.0: Chanokchon (three), Ethan Llamas (cabin), Elise240SX (2019). Cropped to remove a person and visitors; a plate and a background crowd blurred. The first three cars are on show-floor stands abroad; two file titles disagree with the model year, but the cars are the redesign.
+
+Reddit section: per-car file data/reddit-sentiment/cars/tesla-model-3.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2023 Long Range AWD; 2024 Long Range RWD for Hardware 4 and the quieter cabin; skip 2019 and 2020), "buy used, a 2023", the summary, pros and cons and the two discount groups were written from the research. Check the Standard's $36,990 and fees on tesla.com. Not confirmed: whether the 2.49% applies to the Standard, the IIHS award, a Consumer Reports verdict. Edmunds lists a 2027 Model 3; the page says so in one line and `modelYear` stays 2026. Recheck prices, APR and recall 26V507's remedy monthly.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

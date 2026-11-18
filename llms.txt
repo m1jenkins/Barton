@@ -71,6 +71,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 - [Chevrolet Colorado Price](https://www.steermeright.com/chevrolet-colorado-price.html): MSRP by trim for the 2026 and 2027 Colorado, how far under sticker dealers sell it, Chevrolet’s current offers, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 - [Hyundai Tucson Price](https://www.steermeright.com/hyundai-tucson-price.html): MSRP by trim for the 2026 Tucson, Tucson Hybrid and Plug-in Hybrid, how far under sticker dealers sell it, Hyundai’s current offers by region, new versus used versus CPO, the all-new 2027 Tucson due in early 2027, and the trim we’d buy (checked 2026-11-18).
 - [Ford Ranger Price](https://www.steermeright.com/ford-ranger-price.html): MSRP by trim for the 2026 Ranger from the XL to the Raptor, how far under sticker dealers sell it, Ford’s current cash and financing offers by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
+- [Used Tesla Model 3 Price](https://www.steermeright.com/tesla-model-3-price.html): Dealer asking prices for a used Model 3 by model year 2019 to 2025, how far under asking to aim, the year to buy, what Tesla’s warranties cover for a used buyer, and when new from Tesla makes more sense (checked 2026-11-18).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

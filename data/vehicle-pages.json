@@ -16873,6 +16873,788 @@
           "note": "cropped, face blurred"
         }
       ]
+    },
+    {
+      "slug": "tesla-model-3-price.html",
+      "name": "Tesla Model 3",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Used Tesla Model 3 Price: What to Pay at a Dealer | Steer Me Right",
+      "description": "What a used Tesla Model 3 costs in November 2026: dealer asking prices by model year from 2019 to 2025, how far under asking to aim, the year we’d buy, what warranty is left, and when a new one from Tesla makes more sense.",
+      "h1": "Used Tesla Model 3 price: what to pay at a dealer, by model year",
+      "labels": {
+        "crumb": "Used Tesla Model 3 price",
+        "payHeading": "What to pay: how far under the asking price",
+        "trimsTab": "Prices by year",
+        "trimsHeading": "Used Model 3 prices by model year",
+        "trimsCaption": "Average dealer asking price of a used Tesla Model 3 by model year, September 2026",
+        "trimsColumn": "Model year",
+        "trimsMore": "EPA range and what changed each year",
+        "trimsMoreCaption": "Used Tesla Model 3 by model year: average asking price, what changed and EPA range",
+        "engineColumn": "EPA range",
+        "pickHeading": "The used Model 3 we’d buy",
+        "incentivesTab": "New from Tesla",
+        "incentivesHeading": "What a new Model 3 costs, and what Tesla covers",
+        "incentivesMore": "Tesla’s prices, offers and warranties in full",
+        "incentivesCaption": "New Tesla Model 3 prices, Tesla offers and warranties, checked November 18, 2026",
+        "incentivesColumns": [
+          "Item",
+          "What it is",
+          "Applies to",
+          "Until"
+        ],
+        "conditionTab": "Dealer, Tesla or new",
+        "conditionHeading": "Used from a dealer, used from Tesla, or new?",
+        "conditionCaption": "Buying a Tesla Model Y used from a dealer, used from Tesla or new",
+        "negotiateName": "used Tesla Model 3",
+        "negotiate": "Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three, and covers used and CPO dealer inventory. We find the Model 3 in dealer stock, get written out-the-door offers and negotiate the price and fees. We can’t promise a specific discount: the market for a given car sets what a dealer will do.",
+        "related": "<a href=\"/used-car-buying-service.html\">used car buying service</a>, <a href=\"/blog-used-ev-pros-cons-risks.html\">the risks and rewards of buying a used EV</a> and <a href=\"/blog-used-car-inspection-checklist.html\">used-car inspection checklist</a>"
+      },
+      "glance": [
+        {
+          "label": "Used asking price",
+          "value": "$21,100 <small>to $38,200</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "1–3% <small>under asking</small>",
+          "section": "pay"
+        },
+        {
+          "label": "New from Tesla",
+          "value": "$36,990 <small>before fees</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Year we’d buy",
+          "value": "2023 Long Range AWD",
+          "section": "pick"
+        },
+        {
+          "label": "Best route",
+          "value": "Used, a 2023",
+          "section": "new-used"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-tesla-model-3-performance",
+        "width": 1651,
+        "height": 1080,
+        "alt": "White 2024 Tesla Model 3 Performance, front three-quarter view",
+        "caption": "A 2024 Model 3 Performance. The 2024 redesign is the one with the slim headlights and the full-width taillight.",
+        "author": "Chanokchon",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Model_3_Highland_Performance_AWD.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "gallery": [
+        {
+          "file": "vehicle-tesla-model-3-rear",
+          "width": 1920,
+          "height": 983,
+          "alt": "White 2024 Tesla Model 3 Performance, rear three-quarter view with a spoiler and light bar",
+          "caption": "2024 Performance, rear",
+          "author": "Chanokchon",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Tesla_Model_3_Highland_Performance_AWD_(Rear).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-3-long-range",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Red 2024 Tesla Model 3 Long Range AWD, front three-quarter view",
+          "caption": "Long Range AWD",
+          "author": "Chanokchon",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Tesla_Model_3_Highland_Long_Range_AWD.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-3-interior",
+          "width": 1920,
+          "height": 1440,
+          "alt": "Dashboard of the redesigned Tesla Model 3 with its center touchscreen and white seats",
+          "caption": "Redesigned cabin",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_Model_3_RWD_Facelift_-_interior_view.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-tesla-model-3-2019",
+          "width": 1920,
+          "height": 1035,
+          "alt": "Red 2019 Tesla Model 3 Long Range Dual Motor, front three-quarter view",
+          "caption": "2019, the original body",
+          "author": "Elise240SX",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019_Tesla_Model_3_Long_Range_Dual_Motor_in_Red_Multi-Coat,_front_left,_2021-05-30.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ],
+      "summary": "A used Model 3 is the cheapest way into a Tesla, and the 2023 is where the money is. A 2023 averaged $27,800 in dealer listings in September, against $37,300 for a 2024 and $38,630 for the cheapest new Model 3 with fees. The 2024 is the redesign, with a quieter cabin and Hardware 4; the 2023 is the last of the original body, with the longest EPA range of any version before 2024 (358 miles on the Long Range AWD). Shop a 2023 Long Range AWD, aim for about 1–3% under asking, and check every open recall by VIN. Prices were checked on November 18, 2026.",
+      "pros": [
+        "A 2023 lists for about $10,800 less than a new Standard with fees",
+        "358 miles of EPA range on a 2023 Long Range AWD",
+        "Battery and drive-unit warranty transfers from any seller",
+        "Five-star NHTSA ratings on the 2019, 2022, 2023 and 2026 AWD"
+      ],
+      "cons": [
+        "18 to 22 recall campaigns each on 2019–2022 cars",
+        "Hardware 3 on every 2017–2023 car",
+        "No Apple CarPlay or Android Auto, Edmunds says",
+        "Tesla’s used warranty covers only cars Tesla sells"
+      ],
+      "pay": {
+        "base": "asking",
+        "intro": [
+          "Nobody publishes what used Model 3s sell for against their asking price, and Recurrent gives no days-to-sell figure for the Model 3 (it reports 16 days for the Model Y). What it does show: Model 3 asking prices eased 1.9% from June to September 2026, the 2025 fell 3.2% and the 2021 was flat, while prices overall are up 9.8% since January. Cox Automotive counted 35 days’ supply of used EVs in September against 46 for gas cars. The ranges below are our estimate from those figures."
+        ],
+        "tableTitle": "Discount off the dealer’s asking price",
+        "rows": [
+          {
+            "trims": "2024 and 2025",
+            "example": "2024 Model 3",
+            "fair": "1–2% under",
+            "strong": "3–4% under",
+            "why": "The 2025’s asking prices fell 3.2% from June to September, so sellers are moving."
+          },
+          {
+            "trims": "2019 to 2023",
+            "example": "2022 Model 3",
+            "fair": "1% under",
+            "strong": "2–3% under",
+            "why": "Cheaper cars hold their asking price: the 2021 was flat over the same months."
+          }
+        ],
+        "note": "Asking prices are Recurrent’s September averages. Our estimate, dated November 18, 2026.",
+        "after": [
+          "Not sure what a specific Model 3 should cost? Send us the listing and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2023 Model 3",
+          "sticker": 27800,
+          "stickerLabel": "Average 2023 asking price",
+          "steps": [
+            {
+              "label": "Dealer discount, 2%",
+              "amount": 556
+            }
+          ],
+          "total": 27244,
+          "totalLabel": "Your price before tax and fees",
+          "under": "under asking"
+        }
+      },
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/tesla/model-3/",
+            "value": 8.4,
+            "scale": 10,
+            "display": "8.4",
+            "detail": "“Excellent”; owners give it 3.6 of 5 from 33 reviews"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/tesla/model-3/2026/",
+            "value": 4.7,
+            "scale": 5,
+            "display": "4.7",
+            "detail": "For the 2026; the 2023 gets a 4.2"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/tesla/model-3",
+            "value": 9.3,
+            "scale": 10,
+            "display": "9.3",
+            "detail": "2nd of 16 luxury electric cars; predicted reliability 82 out of 100"
+          }
+        ],
+        "note": "Edmunds scores the 2027 Model 3, U.S. News and Kelley Blue Book the 2026. As published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them.",
+        "intro": "Owners like theirs: the Model 3 scored 804 out of 1,000 in J.D. Power’s 2026 EV ownership study and ranked first among premium EVs, ahead of the Model Y."
+      },
+      "trims": {
+        "columns": [
+          "Average asking price"
+        ],
+        "rows": [
+          {
+            "name": "2019 Model 3",
+            "short": "Launch-era car",
+            "gets": "Standard Range Plus, Mid Range and Long Range versions. 22 recall campaigns, tied with the 2021 for the most.",
+            "prices": [
+              21100
+            ],
+            "engine": "Long Range 310 miles; Mid Range 264; Standard Range Plus 240"
+          },
+          {
+            "name": "2020 Model 3",
+            "short": "Longer range arrives",
+            "gets": "A Long Range RWD at 330 miles. 21 recall campaigns.",
+            "prices": [
+              23300
+            ],
+            "engine": "Long Range RWD 330 miles; Long Range AWD 322; Standard Range Plus 250"
+          },
+          {
+            "name": "2021 Model 3",
+            "short": "Longer range on the AWD",
+            "gets": "Long Range AWD climbs to 353 miles. 22 recall campaigns, tied with the 2019 for the most.",
+            "prices": [
+              24400
+            ],
+            "engine": "Long Range AWD 353 miles; Performance 315; Standard Range Plus RWD 263"
+          },
+          {
+            "name": "2022 Model 3",
+            "short": "Hardware 3, lower asking price",
+            "gets": "Long Range AWD at 358 miles, the most of any original-body year. 18 recall campaigns.",
+            "prices": [
+              26600
+            ],
+            "engine": "Long Range AWD 358 miles; Performance 315; RWD 272"
+          },
+          {
+            "name": "2023 Model 3",
+            "short": "The year we’d buy",
+            "gets": "The last original body, with the same 358 miles on the Long Range AWD and 12 recall campaigns, against 18 for the 2022.",
+            "prices": [
+              27800
+            ],
+            "engine": "Long Range AWD 358 miles; Performance 315; RWD 272",
+            "pick": true
+          },
+          {
+            "name": "2024 Model 3",
+            "short": "The redesign, with Hardware 4",
+            "gets": "Tesla’s redesign: a quieter cabin (wrap-around acoustic glass) and ventilated front seats, on Hardware 4. A new Long Range RWD at 363 miles. 5 recall campaigns.",
+            "prices": [
+              37300
+            ],
+            "engine": "Long Range RWD 363 miles; Long Range AWD 342; Performance 303; RWD 272"
+          },
+          {
+            "name": "2025 Model 3",
+            "short": "The same car as the 2024",
+            "gets": "The redesign again, with 3 recall campaigns so far.",
+            "prices": [
+              38200
+            ],
+            "engine": "Long Range RWD 363 miles; Long Range AWD 346; Performance 298"
+          }
+        ],
+        "after": [
+          "Each 10,000 miles takes about $1,000 off a Model 3 of the same year, Recurrent finds, so adjust for mileage before comparing two listings. The 2026 is scarce used. Tesla sells it new from $36,990 before fees, and Edmunds already lists a 2027 with a 16-inch screen (15.4 inches before)."
+        ]
+      },
+      "pick": [
+        "<strong>A 2023 Long Range AWD.</strong> At an average asking price of $27,800 in September, a 2023 costs about $9,500 less than a 2024, and Kelley Blue Book puts the Long Range AWD’s fair price at $30,100. It has the longest EPA range of any original-body Model 3 (358 miles, against 342 for a 2024 Long Range AWD) and is quick: Edmunds timed the equivalent Long Range AWD at 4.2 seconds to 60 mph. You give up Hardware 3 (every 2017–2023 car has it, and the 2024 got Hardware 4), a quieter cabin and ventilated seats, and you take on 12 recall campaigns against the 2024’s 5.",
+        "If you’d rather have the newer car, a 2024 Long Range RWD is rated at 363 miles and costs about $9,500 more. We’d skip a 2019 or 2020 unless the price allows for it: they carry 21 to 22 recall campaigns each, and their battery cover ends in 2027 or 2028. The Performance gives up about 43 miles of EPA range to a Long Range AWD of the same year (315 against 358 on a 2023)."
+      ],
+      "incentives": {
+        "intro": [
+          "Tesla sells new Model 3s only through its own website and stores, at a set price, so there’s no dealer discount to chase on a new one. Here is what a new one costs, and what Tesla’s warranties mean for a used one."
+        ],
+        "cards": [
+          {
+            "label": "New Model 3",
+            "figure": "$36,990",
+            "word": "Standard",
+            "text": "Kelley Blue Book prices it at $38,630 with destination and the order fee. Premium RWD $42,490, Premium AWD $47,490, Performance $54,990."
+          },
+          {
+            "label": "Tesla financing",
+            "figure": "2.49%",
+            "word": "APR",
+            "text": "On a new Premium RWD or Premium AWD. The Performance gets 1.99%. The report we read doesn’t list the Standard."
+          },
+          {
+            "label": "Tesla used warranty",
+            "figure": "1 year",
+            "word": "/10,000 miles",
+            "text": "Only on used cars Tesla sells. A Model 3 from another dealer doesn’t get it."
+          },
+          {
+            "label": "Used EV tax credit",
+            "figure": "$0",
+            "word": "credit",
+            "text": "The $4,000 credit ended for cars acquired after September 30, 2025."
+          }
+        ],
+        "note": "New prices from Edmunds, Cars.com and Kelley Blue Book, read November 18, 2026 (Tesla’s own site refuses automated reads). Financing from Tesla’s Current Offers page as <a href=\"https://teslanorth.com/2026/10/23/tesla-model-y-apr-increase-us\" rel=\"noopener\">reported by TeslaNorth</a> on October 23, 2026. Tesla changes prices without notice, and financing needs credit approval.",
+        "addons": [],
+        "choice": {
+          "eyebrow": "Bring your own loan",
+          "title": "Top credit is worth about {gap} on a used Model 3",
+          "text": "Each bar is how much less you pay in total than at the 11.19% average used-car rate, on a $28,000 Model 3 over 60 months. Get preapproved by your bank or credit union before the dealer runs your credit.",
+          "price": 28000,
+          "months": 60,
+          "baseRate": 11.19,
+          "options": [
+            {
+              "name": "6.29% APR",
+              "detail": "average used rate, top credit",
+              "rate": 6.29,
+              "cash": 0
+            },
+            {
+              "name": "8.81% APR",
+              "detail": "average used rate, prime credit",
+              "rate": 8.81,
+              "cash": 0
+            },
+            {
+              "name": "11.19% APR",
+              "detail": "average used-car loan",
+              "rate": 11.19,
+              "cash": 0
+            }
+          ]
+        },
+        "rows": [
+          {
+            "offer": "New Model 3 prices",
+            "detail": "Standard $36,990; Premium RWD $42,490; Premium AWD $47,490; Performance $54,990",
+            "applies": "New cars ordered from Tesla, before fees",
+            "ends": "Tesla changes prices without notice"
+          },
+          {
+            "offer": "Fees on a new Model 3",
+            "detail": "Kelley Blue Book’s $38,630 for the Standard is $1,640 above its $36,990 price, destination plus the order fee",
+            "applies": "New Model 3",
+            "ends": "Ongoing"
+          },
+          {
+            "offer": "2.49% APR",
+            "detail": "On orders placed on or after September 28, 2026. Term and down payment for the Model 3 weren’t stated in the report.",
+            "applies": "New Premium RWD and Premium AWD; the Performance gets 1.99%",
+            "ends": "Not stated"
+          },
+          {
+            "offer": "Tesla used warranty",
+            "detail": "1 year or 10,000 miles, starting when the 4-year/50,000-mile basic warranty ends",
+            "applies": "Only used cars sold and delivered by Tesla. Not cars from an auction, wholesaler or another dealer.",
+            "ends": "Ongoing"
+          },
+          {
+            "offer": "Battery and drive unit warranty",
+            "detail": "8 years or 120,000 miles on Long Range and Performance, 8 years or 100,000 miles on Standard and Standard Range Plus, with at least 70% of capacity kept",
+            "applies": "Every Model 3, and it transfers to later owners at no cost",
+            "ends": "Counted from first delivery"
+          },
+          {
+            "offer": "Federal used EV credit",
+            "detail": "Up to $4,000 on a used EV",
+            "applies": "Not available for vehicles acquired after September 30, 2025",
+            "ends": "Ended"
+          }
+        ]
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy used, a 2023 Long Range AWD, from whichever seller has the right car at the right price.</strong> A Model 3 loses 43.2% of its value in three years by iSeeCars’ count, against 24.8% for the average car, so the second owner takes the savings. Your credit decides how much of it you keep."
+        ],
+        "rows": [
+          {
+            "route": "Used from a dealer",
+            "when": "You want to negotiate, or the car with the right year, range and miles is at a franchise or independent dealer.",
+            "check": "Open recalls by VIN, the Autopilot computer (Hardware 3 or 4), and that any FSD in the listing shows on the car’s screen. Tesla’s used warranty won’t apply."
+          },
+          {
+            "route": "Used from Tesla",
+            "when": "You want Tesla’s 1-year/10,000-mile used warranty on top of the battery cover.",
+            "check": "Tesla’s price is set. Compare it with dealer listings of the same year and miles."
+          },
+          {
+            "route": "New from Tesla",
+            "when": "You want the current car and a full warranty: a new Standard is $38,630 with fees, about $1,330 above a 2024’s average asking price and $430 above a 2025’s.",
+            "check": "That the 2.49% applies to the version you order. The report we read doesn’t list the Standard."
+          }
+        ],
+        "after": [
+          "Battery and drive-unit cover passes to you from any seller: 8 years or 120,000 miles on a Long Range or Performance, 8 years or 100,000 miles on a Standard or Standard Range Plus, counted from first delivery and as long as capacity stays above 70%."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Model 3",
+                "value": 43.2,
+                "display": "43.2%"
+              },
+              {
+                "label": "Luxury electric compact",
+                "value": 42.7,
+                "display": "42.7%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              },
+              {
+                "label": "Average sedan",
+                "value": 24.3,
+                "display": "24.3%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used, top credit",
+                "value": 6.29,
+                "display": "6.29%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Experian, Q2 2026"
+          },
+          {
+            "title": "A used 2023 at a dealer",
+            "bars": [
+              {
+                "label": "Model Y Long Range",
+                "value": 33500,
+                "display": "$33,500"
+              },
+              {
+                "label": "Model 3 Performance",
+                "value": 32200,
+                "display": "$32,200"
+              },
+              {
+                "label": "Model 3 Long Range",
+                "value": 30100,
+                "display": "$30,100"
+              },
+              {
+                "label": "Ioniq 6 Limited",
+                "value": 27800,
+                "display": "$27,800"
+              },
+              {
+                "label": "Model 3 Standard",
+                "value": 26700,
+                "display": "$26,700"
+              },
+              {
+                "label": "Ioniq 6 SEL",
+                "value": 24100,
+                "display": "$24,100"
+              }
+            ],
+            "source": "Kelley Blue Book Fair Purchase Price, November 18"
+          }
+        ]
+      },
+      "rivals": [
+        "Price a used Hyundai Ioniq 6 before you settle. Kelley Blue Book’s experts give the 2023 a 4.6 against 4.2 for the 2023 Model 3, and its Fair Purchase Price runs $24,100 for an SEL to $27,800 for a Limited, against $26,700 for a 2023 Model 3 Standard and $30,100 for a Long Range. If you need the Model Y’s hatch and height, a 2023 Model Y Long Range is $33,500, about $3,400 more than the Model 3 Long Range. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "watch": [
+        "<strong>Open recalls.</strong> Run the VIN at <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a>. Tesla will replace the headlights on 2017–2023 cars (26V507, low beams too bright), but the repair isn’t available yet and owners get another notice when it is. 2021–2023 cars have a rearview-camera delay recall (26V283) fixed by software update, and 2025 cars a battery-pack contactor recall (25V690) that needs a service visit.",
+        "<strong>Hardware 3 or 4.</strong> Every 2017–2023 Model 3 has Hardware 3, and the redesigned 2024 has Hardware 4. Tesla says Hardware 3 can’t run unsupervised FSD. Look under Settings, Software, Additional Vehicle Information for the Autopilot computer.",
+        "<strong>FSD in the listing.</strong> Tesla now sells FSD only as a subscription, and says FSD bought outright stays with the car. If a listing charges extra for it, check that it shows on the car’s screen before you pay.",
+        "<strong>The “warranty” on the window.</strong> A dealer’s warranty on a used Model 3 is its own or a third party’s. Tesla’s used warranty covers only cars Tesla sells. Ask for the first delivery date to see how much battery cover is left.",
+        "<strong>Suspension, brakes and lights.</strong> Germany’s TÜV failed 13.1% of two- to three-year-old Model 3s at inspection, against about 6.5% for that age group, and Tesla’s problem areas were suspension parts, rusted brake discs and lights. Have an independent shop look the car over before you buy.",
+        "<strong>Add-ons and fees.</strong> Used-car dealers add paint protection, etching and service contracts. Compare out-the-door prices, and refuse what you didn’t ask for."
+      ],
+      "faq": [
+        [
+          "How much is a used Tesla Model 3?",
+          "Dealers listed them at an average of $21,100 for a 2019 up to $38,200 for a 2025 in September 2026, by Recurrent’s count. Each 10,000 miles takes about $1,000 off a car of the same year. A new Model 3 starts at $36,990 before fees."
+        ],
+        [
+          "How much under asking can you get a used Model 3?",
+          "On a 2024 or 2025, 1–2% under asking is a fair deal and 3–4% a strong one; on a 2019 to 2023, about 1% is fair and 2–3% strong. Those ranges are our estimate, since nobody publishes sale prices for used Model 3s, and Tesla doesn’t negotiate on its own used cars."
+        ],
+        [
+          "What is the best year for a used Model 3?",
+          "The 2023 Long Range AWD, in our view: about $9,500 below the average 2024 asking price, with 358 miles of EPA range. Buy a 2024 or later if you want Hardware 4, the quieter cabin and ventilated front seats."
+        ],
+        [
+          "Does the Tesla battery warranty transfer to a used buyer?",
+          "Yes, at no cost, whoever sells you the car. It runs 8 years or 120,000 miles on a Long Range or Performance and 8 years or 100,000 miles on a Standard or Standard Range Plus, counted from first delivery, and covers capacity that falls below 70%."
+        ],
+        [
+          "Does a used Model 3 from a dealer come with Tesla’s warranty?",
+          "Not Tesla’s used warranty. Its 1-year/10,000-mile cover applies only to used cars Tesla sells and delivers itself. The remainder of the original 4-year/50,000-mile basic warranty and the battery warranty do carry over."
+        ],
+        [
+          "Does Full Self-Driving transfer with a used Model 3?",
+          "Tesla says FSD bought outright stays with the car, and it now sells FSD only as a subscription, which doesn’t carry over. Check that FSD shows on the car’s own screen before you pay extra for it, and check for Hardware 4: Tesla says Hardware 3 cars can’t run unsupervised FSD."
+        ],
+        [
+          "Is a used Model 3 reliable?",
+          "Mixed. U.S. News predicts 82 out of 100 for the 2026. Owners of three-year-old Teslas reported 226 problems per 100 vehicles in J.D. Power’s 2026 dependability study, against an industry average of 204, and Germany’s TÜV failed 13.1% of two- to three-year-old Model 3s at inspection."
+        ]
+      ],
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Model 3 AWD",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 5,
+            "note": "6.8% rollover risk"
+          }
+        ],
+        "recallsTitle": "Recall campaigns by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 22
+          },
+          {
+            "label": "2020",
+            "value": 21
+          },
+          {
+            "label": "2021",
+            "value": 22
+          },
+          {
+            "label": "2022",
+            "value": 18
+          },
+          {
+            "label": "2023",
+            "value": 12
+          },
+          {
+            "label": "2024",
+            "value": 5
+          },
+          {
+            "label": "2025",
+            "value": 3
+          },
+          {
+            "label": "2026",
+            "value": 1
+          }
+        ],
+        "reliability": "Owners of three-year-old Teslas reported <a href=\"https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710\" rel=\"noopener\">226 problems per 100 vehicles</a> in J.D. Power’s 2026 dependability study, against 204 for the industry, and Germany’s <a href=\"https://electrek.co/2025/12/03/tesla-model-y-named-worst-car-for-reliability-germany-major-tuv-report/\" rel=\"noopener\">TÜV failed 13.1% of two- to three-year-old Model 3s</a>, third from last in its group.",
+        "note": "Crash ratings and recall counts from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a>, read November 18, 2026. The 2019, 2022 and 2023 AWD also score five stars overall; NHTSA lists no rating for the 2024 or 2025. <a href=\"https://www.iihs.org/ratings/vehicle/tesla/model-3-4-door-sedan/2025\" rel=\"noopener\">IIHS</a> rates the 2025 Good in the small overlap and side tests and Acceptable in the updated moderate overlap, with Acceptable headlights. Most recalls on 2019–2023 cars were fixed by software update. Check any used Model 3’s open recalls by VIN before you buy."
+      },
+      "sources": [
+        {
+          "id": "VEH-MODEL3-01",
+          "title": "Recurrent: should I sell or trade in my Tesla?",
+          "url": "https://www.recurrentauto.com/research/sell-or-trade-in-tesla",
+          "scope": "Average used Model 3 dealer asking price by model year 2019 to 2025 (September 2026), price changes June to September and January to September 2026, and the mileage adjustment",
+          "note": "asking prices by model year"
+        },
+        {
+          "id": "VEH-MODEL3-02",
+          "title": "iSeeCars: Tesla Model 3 resale value",
+          "url": "https://www.iseecars.com/car/tesla-model-3/resale-value",
+          "scope": "Model 3 depreciation at three years against luxury electric compact cars, all sedans and all vehicles",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-MODEL3-03",
+          "title": "Cox Automotive: EV Market Monitor, September 2026",
+          "url": "https://www.coxautoinc.com/insights/ev-market-monitor-september-2026/",
+          "scope": "Used EV days of supply against gas vehicles, September 2026",
+          "note": "used EV supply"
+        },
+        {
+          "id": "VEH-MODEL3-04",
+          "title": "Edmunds: Tesla Model 3",
+          "url": "https://www.edmunds.com/tesla/model-3/",
+          "scope": "Edmunds rating, owner rating, 2027 Model 3 trims and MSRP, test-track 0 to 60 times, EPA range and what is new for 2027",
+          "note": "review score and new prices"
+        },
+        {
+          "id": "VEH-MODEL3-05",
+          "title": "Cars.com: 2026 Tesla Model 3 specs",
+          "url": "https://www.cars.com/research/tesla-model_3-2026/specs/",
+          "scope": "2026 Model 3 trims and MSRP (RWD, Premium RWD, Premium AWD, Performance AWD)",
+          "note": "new prices"
+        },
+        {
+          "id": "VEH-MODEL3-06",
+          "title": "Kelley Blue Book: 2026 Tesla Model 3",
+          "url": "https://www.kbb.com/tesla/model-3/2026/",
+          "scope": "KBB expert rating and the Standard trim’s price with destination and order fee",
+          "note": "review score and fees"
+        },
+        {
+          "id": "VEH-MODEL3-07",
+          "title": "TeslaNorth: Model Y APR rises to 2.49%",
+          "url": "https://teslanorth.com/2026/10/23/tesla-model-y-apr-increase-us",
+          "scope": "Tesla’s US financing rates for the Model 3 (2.49% Premium RWD and AWD, 1.99% Performance) from Tesla’s Current Offers page, October 23, 2026",
+          "note": "Tesla’s financing"
+        },
+        {
+          "id": "VEH-MODEL3-08",
+          "title": "Tesla: Pre-Owned Vehicle Limited Warranty",
+          "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/tesla-used-vehicle-limited-warranty-en-us.pdf",
+          "scope": "Tesla used warranty coverage, start and eligibility (only cars sold and delivered by Tesla), effective 2026-05-07",
+          "note": "used warranty terms"
+        },
+        {
+          "id": "VEH-MODEL3-09",
+          "title": "Tesla: New Vehicle Limited Warranty",
+          "url": "https://digitalassets.tesla.com/tesla-contents/image/upload/tesla-new-vehicle-limited-warranty-en-us.pdf",
+          "scope": "Tesla basic warranty and Model 3 battery and drive unit warranty by version, the 70% retention threshold and transfer to later owners, effective 2026-09-01",
+          "note": "battery and drive unit warranty"
+        },
+        {
+          "id": "VEH-MODEL3-10",
+          "title": "IRS: used clean vehicle credit",
+          "url": "https://www.irs.gov/credits-deductions/used-clean-vehicle-credit",
+          "scope": "End of the previously-owned clean vehicle credit for vehicles acquired after September 30, 2025",
+          "note": "used EV credit end date"
+        },
+        {
+          "id": "VEH-MODEL3-11",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and used rates by credit tier, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-MODEL3-12",
+          "title": "Not a Tesla App: how to check for Hardware 4",
+          "url": "https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3",
+          "scope": "Hardware 3 on 2017 to 2023 Model 3s, Hardware 4 on the updated 2024, and where to find the Autopilot computer in the car’s menus",
+          "note": "Hardware 3 or 4 check"
+        },
+        {
+          "id": "VEH-MODEL3-13",
+          "title": "Engadget: Tesla FSD goes subscription-only",
+          "url": "https://www.engadget.com/transportation/evs/teslas-full-self-driving-is-switching-to-a-subscription-only-service-120053137.html",
+          "scope": "Tesla ending outright FSD purchases after February 14, 2026",
+          "note": "FSD subscription only"
+        },
+        {
+          "id": "VEH-MODEL3-14",
+          "title": "Drive Tesla Canada: Tesla clarifies FSD ownership",
+          "url": "https://driveteslacanada.ca/news/tesla-clarifies-fsd-ownership-rules-as-february-14-deadline-for-purchases-approaches/",
+          "scope": "Tesla’s statement that purchased FSD stays with the car",
+          "note": "purchased FSD stays with the car"
+        },
+        {
+          "id": "VEH-MODEL3-15",
+          "title": "Electrek: FSD v14 Lite for Hardware 3",
+          "url": "https://electrek.co/2026/06/29/tesla-fsd-v14-lite-hw3-rollout/",
+          "scope": "Tesla’s statement that Hardware 3 cars cannot run unsupervised FSD",
+          "note": "Hardware 3 limits"
+        },
+        {
+          "id": "VEH-MODEL3-16",
+          "title": "FuelEconomy.gov: Tesla Model 3",
+          "url": "https://www.fueleconomy.gov/feg/PowerSearch.do?action=noform&path=1&year1=2018&year2=2026&make=Tesla&baseModel=Model%203",
+          "scope": "EPA range by Model 3 version, 2018 to 2026, read through the site’s public web service",
+          "note": "EPA range"
+        },
+        {
+          "id": "VEH-MODEL3-17",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Model 3 recall campaigns by model year 2019 to 2026 from the NHTSA recalls API, including 24V935, 25V690, 26V283 and 26V507 and their remedies",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-MODEL3-18",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2019, 2022, 2023 and 2026 Model 3 AWD; no rating listed for 2024 or 2025",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-MODEL3-19",
+          "title": "IIHS: 2025 Tesla Model 3",
+          "url": "https://www.iihs.org/ratings/vehicle/tesla/model-3-4-door-sedan/2025",
+          "scope": "IIHS crash test and headlight ratings for the 2025 Model 3 and the model years each rating covers",
+          "note": "crash-test ratings, 2025"
+        },
+        {
+          "id": "VEH-MODEL3-20",
+          "title": "Cars.com: J.D. Power 2026 dependability study",
+          "url": "https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710",
+          "scope": "Tesla problems per 100 vehicles against the industry average in J.D. Power’s 2026 Vehicle Dependability Study",
+          "note": "J.D. Power dependability"
+        },
+        {
+          "id": "VEH-MODEL3-21",
+          "title": "Electrek: Model Y last in the TÜV report",
+          "url": "https://electrek.co/2025/12/03/tesla-model-y-named-worst-car-for-reliability-germany-major-tuv-report/",
+          "scope": "TÜV Report 2026 failure rate for two- to three-year-old Model 3s in Germany and Tesla’s problem areas",
+          "note": "German inspection failures"
+        },
+        {
+          "id": "VEH-MODEL3-22",
+          "title": "U.S. News: Tesla Model 3",
+          "url": "https://cars.usnews.com/cars-trucks/tesla/model-3",
+          "scope": "U.S. News overall score, luxury electric car rank and predicted reliability for the 2026 Model 3",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-MODEL3-23",
+          "title": "TeslaNorth: J.D. Power 2026 EV ownership study",
+          "url": "https://teslanorth.com/2026/02/19/tesla-model-3-and-model-y-dominate-2026-j-d-power-ev-satisfaction-study",
+          "scope": "Model 3 score and premium-segment rank in J.D. Power’s 2026 EVX Ownership Study",
+          "note": "owner satisfaction"
+        },
+        {
+          "id": "VEH-MODEL3-24",
+          "title": "Kelley Blue Book: 2023 Tesla Model 3",
+          "url": "https://www.kbb.com/tesla/model-3/2023/",
+          "scope": "KBB Fair Purchase Price by trim and expert rating for a 2023 Model 3, November 2026",
+          "note": "used 2023 value"
+        },
+        {
+          "id": "VEH-MODEL3-25",
+          "title": "Kelley Blue Book: 2023 Tesla Model Y",
+          "url": "https://www.kbb.com/tesla/model-y/2023/",
+          "scope": "KBB Fair Purchase Price for a 2023 Model Y Long Range, November 2026",
+          "note": "Model Y used value"
+        },
+        {
+          "id": "VEH-MODEL3-26",
+          "title": "Kelley Blue Book: 2023 Hyundai Ioniq 6",
+          "url": "https://www.kbb.com/hyundai/ioniq-6/2023/",
+          "scope": "KBB Fair Purchase Price by trim and expert rating for a 2023 Ioniq 6, November 2026",
+          "note": "Ioniq 6 used value"
+        },
+        {
+          "id": "VEH-MODEL3-27",
+          "title": "Electrek: Tesla launches the upgraded Model 3",
+          "url": "https://electrek.co/2024/01/09/tesla-launches-model-3-highland-refresh-north-america/",
+          "scope": "US launch of the redesigned Model 3 (January 9, 2024): acoustic glass, ventilated seats, trims offered",
+          "note": "what the redesign changed"
+        }
+      ]
     }
   ]
 }
