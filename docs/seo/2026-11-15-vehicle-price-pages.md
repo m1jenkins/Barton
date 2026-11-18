@@ -288,6 +288,24 @@ Reddit section: per-car file data/reddit-sentiment/cars/mazda-cx-5.json (see Per
 
 Open items for Mason: the pick (2026 2.5 S Preferred; Select if price comes first), "buy new, as a 2026", the used floor (about $24,000), the verdict and pros and cons were written from the research. Discount ranges lean on Edmunds Texas, KBB and 18 CarWhere buyers, with no TrueCar; check against real deals. Not verified: 2026 trim equipment, whether Top Safety Pick+ covers every trim, Consumer Reports, J.D. Power's missing rating, trim limits on the 0%/36 offers. Offers end November 30; monthly refresh needed.
 
+## Ram 1500 (added November 18, 2026)
+
+`ram-1500-price.html` covers the Ram 1500 (not the 2500, HD or 1500 REV) in the Tacoma and Camry template with no spotlight section. Differences:
+
+- **Prices and model year.** Both years were read on ramtrucks.com (built-in browser): model-compare pages give base price and $2,795 destination; iSeeCars matched. Ram's "Starting at" tiles add a pre-selected option, so the table uses base price. The compare page showed the Texas-named Lone Star, so the Big Horn's prices come from Ram's incentives page and iSeeCars. The 2027 Rumble Bee and TRX SRT are named in the table note. `modelYear` is 2026 because the sale-price sources and most offers are for it, though Edmunds counts more 2027s in stock.
+- **Offers** were read from Ram's own `hostd/api/incentives/offers` feed, since the ZIP picker would not change in the browser, then checked against the Dallas page. 2027 offers were read only at 60601. Ram's disclosures say the 0% can't combine with other incentives and the cash can't combine with a standalone APR; the cash-or-0% block says so. MarketCheck was not used.
+- **Sale price; the sources disagree.** Edmunds' Texas prices run 17–20% under on most trims, higher because they sit on top of Ram's cash and employee pricing. KBB's fair prices are 5.1–10.0% under. CarWhere: 59 buyers, median 9.1% under (WebFetch summary, no dates). iSeeCars invoice 3.8–6.8% under. Cox has no Ram 1500 figure. TrueCar returned 403. Four pay groups.
+- **Safety.** NHTSA: Crew Cab 4 stars, Quad Cab 5, RHO not rated. IIHS (browser): updated moderate overlap Poor, no award. Recall counts come from NHTSA's "1500" listing, so they include a few Ram 1500 Classic campaigns.
+- **Reviews** read in the browser. Consumer Reports is paywalled and shows no public verdict, so none is quoted.
+- **Warranty and CPO.** The 10-year/100,000-mile powertrain warranty is a promotional offer. Ram's CPO page gives no age or mileage limit.
+- **Used and resale.** CarWhere medians came through a WebFetch summary. iSeeCars' F-150 page returned 404, so the F-150 is not in the resale chart.
+- **Carried over, not re-read:** rival prices (from our guides) and Experian's Q2 2026 rates. Tow ratings and Ram's engine table are from KBB's 2027 page.
+- **Photos.** Five Wikimedia Commons images: HJUdall (CC0, three), Elise240SX (CC BY-SA 4.0), Deathpallie325 (CC BY-SA 4.0; a 2022 dashboard, captioned). Cropped to drop a store sign, a neighbouring Jeep with a dealer plate, and a showroom with people. A front photo with a dealer's name was not used. Licences from Commons metadata; metadata stripped.
+
+Reddit section: per-car file data/reddit-sentiment/cars/ram-1500.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 Laramie Crew Cab; Big Horn 4x4 to spend less; skip the V8 and Limited and above), "buy new, as a 2026", the used advice (CPO 2023–2025; check 26V495 and 22V904 on 2019–2022) and the four discount groups were written from the research; ranges are wide because employee pricing and cash move the price, so check against real deals. Not confirmed: 2027 offers outside 60601; Rumble Bee price; TrueCar; Consumer Reports; V8 availability and price by trim; CarWhere sample dates; the Texas-only label on the 0% offer. The `modelYear` choice against larger 2027 stock is a judgment call. Offers end November 30, 2026.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

@@ -11660,6 +11660,899 @@
           "note": "resized"
         }
       ]
+    },
+    {
+      "slug": "ram-1500-price.html",
+      "name": "Ram 1500",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Ram 1500 Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Ram 1500 costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell it, Ram’s employee pricing and cash, and whether to buy new, used or CPO.",
+      "h1": "Ram 1500 price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$42,025 <small>to $88,800</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "8–10% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Ram incentives",
+          "value": "Up to $6,750 <small>cash, plus employee pricing</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 Laramie",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Ram 1500 is the full-size pickup to buy for ride and cabin rather than towing numbers, and November is a good month to buy one. Edmunds scores it 7.5 out of 10 and says it rides more comfortably than any rival, thanks to rear coil springs. The catches are towing (up to 11,610 pounds, against 13,500 for the F-150 at Kelley Blue Book) and reliability, which Edmunds scored 3 out of 10 after its long-term test truck’s electronic problems. Dealers are well stocked: Cox counted 148 days of supply for Ram against 87 for the industry, and Ram is offering employee pricing to everyone plus up to $6,750 of cash on a 2026 through November 30. Aim 8–10% under MSRP on most trims (our estimate), take the Laramie’s turbo six over the V8, and price Ram’s 0% financing against its cash. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "Tradesman",
+            "short": "Work truck",
+            "gets": "8.4-inch touchscreen, 18-inch steel wheels, LED headlamps, adaptive cruise control; Quad Cab 4x2 with the 6-foot-4 bed",
+            "prices": [
+              42025,
+              42575
+            ],
+            "engine": "3.6L V6 with eTorque, 305 hp"
+          },
+          {
+            "name": "Express",
+            "short": "Value",
+            "gets": "20-inch aluminum wheels, body-color bumpers, fog lamps; Quad Cab 4x2 with the 6-foot-4 bed",
+            "prices": [
+              44150,
+              44700
+            ],
+            "engine": "3.6L V6 with eTorque, 305 hp"
+          },
+          {
+            "name": "Big Horn",
+            "short": "Most popular",
+            "gets": "Edmunds’ best-selling trim, called Lone Star in Texas; Quad Cab 4x2 shown, and the Crew Cab 4x4 with the 5-foot-7 bed starts at $53,430 (2026) and $53,980 (2027)",
+            "prices": [
+              47280,
+              47830
+            ],
+            "engine": "3.6L V6 with eTorque, 305 hp"
+          },
+          {
+            "name": "Warlock",
+            "short": "Blacked-out off-roader",
+            "gets": "1-inch lift, skid plates, electronic locking rear axle, 18-inch black wheels with all-terrain tires; Crew Cab 4x4",
+            "prices": [
+              52865,
+              53415
+            ],
+            "engine": "3.6L V6 with eTorque, 305 hp"
+          },
+          {
+            "name": "Laramie",
+            "short": "The pick",
+            "gets": "12-inch Uconnect 5 NAV screen, heated and ventilated leather seats, five drive modes; Crew Cab 4x2",
+            "prices": [
+              61480,
+              61880
+            ],
+            "engine": "3.0L Hurricane twin-turbo six, 420 hp",
+            "pick": true
+          },
+          {
+            "name": "Rebel",
+            "short": "Off-road",
+            "gets": "Bilstein shocks, 33-inch all-terrain tires, 1-inch lift, skid plates, 12-inch screen; Crew Cab 4x4",
+            "prices": [
+              65445,
+              65845
+            ],
+            "engine": "3.0L Hurricane twin-turbo six, 420 hp"
+          },
+          {
+            "name": "RHO",
+            "short": "Hurricane HO off-roader",
+            "gets": "Bilstein Black Hawk e² shocks, 2-inch lift, 35-inch all-terrain tires; Crew Cab 4x4",
+            "prices": [
+              73795,
+              74995
+            ],
+            "engine": "3.0L Hurricane HO, 540 hp"
+          },
+          {
+            "name": "Limited",
+            "short": "Luxury",
+            "gets": "19-speaker Harman Kardon audio, heated and ventilated massaging seats, four-corner air suspension; Crew Cab 4x4",
+            "prices": [
+              76405,
+              76805
+            ],
+            "engine": "3.0L Hurricane HO, 540 hp"
+          },
+          {
+            "name": "Limited Longhorn",
+            "short": "Luxury, western",
+            "gets": "Limited equipment with a Bison Brown interior and wood and filigree trim; Crew Cab 4x4",
+            "prices": [
+              76900,
+              77300
+            ],
+            "engine": "3.0L Hurricane HO, 540 hp"
+          },
+          {
+            "name": "Tungsten",
+            "short": "Top of the range",
+            "gets": "22-inch wheels, 24-way massaging seats, 23-speaker Klipsch audio, RamBox storage, Digital Key; Crew Cab 4x4",
+            "prices": [
+              88800,
+              89200
+            ],
+            "engine": "3.0L Hurricane HO, 540 hp"
+          }
+        ],
+        "after": [
+          "Prices leave out the $2,795 destination charge. Each price is Ram’s starting price for the cab Ram’s compare page lists first. A 5.7L HEMI V8 (395 hp) is optional on many trims. For 2027 every trim above rises $400 to $550 except the RHO, which rises $1,200. The 2027 also adds the Rumble Bee ($61,990 on Ram’s page) and the TRX SRT ($99,995)."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 Laramie Crew Cab, with 4x4 if you see snow.</strong> At $61,480 (4x2) it brings the standard 420-hp turbo six, heated and ventilated leather seats and the 12-inch screen, and Edmunds names it the editors’ pick of the 1500 range. Edmunds clocked a turbo six to 60 mph in 5.2 seconds against 6.9 for the V8, and calls the six quieter and cheaper. A Laramie also gets the broad $5,250 cash offer in Chicago, Dallas and New York ($6,750 in Los Angeles), or 0% financing for 60 months.",
+        "If you want to spend less, a Big Horn Crew Cab 4x4 starts at $53,430 and has the biggest cash on the list, $6,000 (only on the oldest 30% of eligible dealer stock). Skip the V8 and the Limited and Tungsten unless you want the 540-hp engine or the seats. Edmunds timed the 540-hp truck to 60 mph in 4.7 seconds, but a Limited costs about $15,000 more than a Laramie."
+      ],
+      "pay": {
+        "intro": [
+          "Rams don’t sell at sticker. Cox counted 148 days of supply for Ram at the end of October against 87 for the industry, and Edmunds says new 2026 Ram 1500s are taking 126 days to sell against 34 for the average new vehicle. Edmunds’ November tips put the average buyer about $4,400 under MSRP (7–8%), CarWhere’s 59 verified 2026 buyers paid a median 9.1% under, and Kelley Blue Book’s fair purchase prices run 5–10% under. Edmunds’ suggested prices, based on Texas sales through November 2 and including destination, run 17–20% under its MSRP on every trim except the RHO (10.6%), because Ram’s cash and employee pricing are large this month."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "Tradesman, Express, Warlock",
+            "example": "Warlock",
+            "fair": "8–10% under",
+            "strong": "12% or more",
+            "why": "Kelley Blue Book’s fair purchase price is 7–8% under. Ram’s cash is $1,500 to $4,000 on these trims. Dealer invoice sits 4% under."
+          },
+          {
+            "trims": "Big Horn, Lone Star",
+            "example": "Big Horn",
+            "fair": "8–10% under",
+            "strong": "12% or more",
+            "why": "Kelley Blue Book puts the fair price 8–9% under. Ram’s cash is $1,750 to $6,000, the most on any trim for a Crew Cab 4x4."
+          },
+          {
+            "trims": "Laramie, Rebel, Limited, Limited Longhorn, Tungsten",
+            "example": "Laramie",
+            "fair": "7–9% under",
+            "strong": "11% or more",
+            "why": "Kelley Blue Book is 5–10% under and Edmunds says the Tungsten sells 8.3% under. Ram’s cash is $5,250, or $6,750 in Los Angeles. Invoice sits about 6–7% under."
+          },
+          {
+            "trims": "RHO",
+            "example": "RHO",
+            "fair": "5–6% under",
+            "strong": "8% or more",
+            "why": "Ram lists no cash on the RHO. Kelley Blue Book is 6% under and invoice 6.4% under, while Edmunds’ Texas price is 10.6% under."
+          }
+        ],
+        "note": "Discount ranges are our estimate from Edmunds, Kelley Blue Book, CarWhere and iSeeCars’ invoice figures, checked November 18, 2026. They count Ram’s employee pricing and cash, so a trim without that money sits at the low end.",
+        "after": [
+          "Not sure what a specific Ram should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Laramie",
+          "sticker": 64275,
+          "stickerLabel": "Sticker with destination, no options",
+          "steps": [
+            {
+              "label": "Discount from sticker, 8%",
+              "amount": 5140
+            }
+          ],
+          "total": 59135,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Ram offers employee pricing to everyone on 2026 and 2027 trucks, plus bonus cash and 0% financing on the 2026, through November 30. The 2027 gets employee pricing and a 5.9% rate. Ram’s 0% disclosure says it can’t be combined with any other incentive, so it replaces the employee pricing and cash rather than adding to them."
+        ],
+        "rows": [
+          {
+            "offer": "Employee pricing for all",
+            "detail": "Employee price includes a $200 administrative fee. Not compatible with consumer lease incentives or standalone incentive programs.",
+            "applies": "2026 and 2027 Ram 1500, in all four regions we checked. Not shown on the RHO or TRX SRT.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Bonus cash on a 2026, by trim",
+            "detail": "$1,500 on a Tradesman or Express with the long bed; $4,000 on other Tradesman and Express trucks and the Warlock; $5,250 on a Laramie, Rebel, Limited, Limited Longhorn or Tungsten. Los Angeles pays $3,000 to $5,500 on the first group and $6,750 on the second.",
+            "applies": "Chicago, Dallas, New York and Los Angeles; take delivery by November 30",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Big Horn and Lone Star cash",
+            "detail": "$6,000 total on a Crew Cab 4x4 (Chicago, Dallas, New York, Los Angeles), $4,500 or $1,750 on other cabs. The $6,000 applies to the oldest 30% of eligible dealer inventory and can’t be combined with a standalone APR offer.",
+            "applies": "2026 Big Horn and Lone Star",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "0% APR",
+            "detail": "36 months on the Tradesman, Express, Warlock, Rebel, Limited, Limited Longhorn and Tungsten; 60 months on the Big Horn and Laramie. $16.67 a month per $1,000 financed for well-qualified buyers through Stellantis Financial Services.",
+            "applies": "2026 Ram 1500 in Chicago, Dallas and New York; none in Los Angeles",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Texas bonus cash",
+            "detail": "$1,000 more for Texas residents on top of the cash above, including on the RHO",
+            "applies": "2026 Ram 1500 in Dallas",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "New York extras",
+            "detail": "4.9% for 72 months on the Tradesman, Big Horn and Express, and $2,000 for current FCA US LLC lessees who finance through Stellantis Financial Services",
+            "applies": "2026 Ram 1500 in New York",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Big Horn lease",
+            "detail": "42 months, low mileage: $471 a month with $4,499 due in Chicago, $459 with $3,179 due in New York, $409 with $5,479 due in Los Angeles. Los Angeles also lists an Express at $449 and a Laramie at $519.",
+            "applies": "2026 Big Horn Crew Cab 4x4, select dealer stock; no lease shown in Dallas",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2027 financing and lease",
+            "detail": "5.9% APR for 72 months, and a lease of $545 a month for a Tradesman Crew Cab 4x4 or $570 for a Big Horn, 42 months with $4,499 due",
+            "applies": "2027 Ram 1500, read in Chicago only. No cash shown.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "10-year/100,000-mile powertrain warranty",
+            "detail": "Ram’s promotional powertrain coverage, listed as an offer on the 2026",
+            "applies": "2026 Ram 1500",
+            "ends": "November 30, 2026"
+          }
+        ],
+        "note": "From <a href=\"https://www.ramtrucks.com/incentives.ram_1500_dt.html\" rel=\"noopener\">Ram’s offers pages</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York for the 2026 and in Chicago for the 2027. Offers vary by region and trim, and “ends” is the delivery date.",
+        "cards": [
+          {
+            "label": "Cash",
+            "figure": "$5,250",
+            "word": "cash",
+            "text": "On a 2026 Laramie, Rebel, Limited or Tungsten in Chicago, Dallas and New York. Los Angeles pays $6,750. Ends November 30."
+          },
+          {
+            "label": "Financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For 36 or 60 months on a 2026 in Chicago, Dallas and New York, instead of the cash. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$471",
+            "word": "a month",
+            "text": "2026 Big Horn Crew Cab 4x4 in Chicago, 42 months, $4,499 due at signing. Ends November 30."
+          },
+          {
+            "label": "2027 financing",
+            "figure": "5.9%",
+            "word": "APR",
+            "text": "For 72 months on a 2027 in Chicago. Ram lists no 2027 cash. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a first responder?",
+            "text": "Ram takes $500 off select 2026 and 2027 trucks for active, reserve and retired military and veterans within 12 months of discharge, and $500 for law enforcement officers, firefighters and EMTs. Ask your dealer whether it stacks with the cash.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ram shows no end date",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Ram’s 0% or its cash",
+          "title": "0% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $67,000 Laramie over 60 months. Ram’s 0% can’t be combined with its cash or, by its own disclosure, any other offer, so it also gives up employee pricing, which the cash bar keeps but doesn’t count. Borrowers with top credit averaged 4.41%, so get your bank’s rate and price both deals.",
+          "price": 67000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "60 months, Stellantis Financial Services",
+              "rate": 0,
+              "cash": 0
+            },
+            {
+              "name": "$5,250 cash",
+              "detail": "financed at the 6.35% average",
+              "rate": 6.35,
+              "cash": 5250
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A 2026 comes with Ram’s cash or 0%, and Ram’s dealers are carrying the most stock of any brand but Jeep. A used 2024 asks a median $37,898 and a 2025 $40,566, close to what Edmunds’ Texas suggested price puts on a new Big Horn ($42,883), and used loans average 11.19% against Ram’s 0% on a new one."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Employee pricing, bonus cash, 0% financing and the 10-year powertrain warranty offer all apply to the 2026, and it costs $400 to $1,200 less than a 2027.",
+            "check": "That the truck is a 2026, that the cash is for that exact trim and cab in your ZIP, and that you take delivery by November 30."
+          },
+          {
+            "route": "New 2027",
+            "when": "The 2026 you want is gone, or you want a 2027-only version such as the Rumble Bee or TRX SRT.",
+            "check": "The price rise ($400 to $550, $1,200 on the RHO), and that Ram shows only employee pricing and 5.9% financing on it in Chicago, with no cash."
+          },
+          {
+            "route": "CPO (Ram Certified Pre-Owned)",
+            "when": "You want a 2023 to 2025 with a warranty and don’t mind buying through a dealer.",
+            "check": "Ram’s terms are a 125-point inspection, a 3-month/3,000-mile Maximum Care warranty and 7-year/100,000-mile powertrain coverage with a $100 deductible. Ram’s page gives no age or mileage limit, so ask the dealer."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $33,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2019 to 2022 whether the seat belt anchorage recall 26V495 and the tailgate hinge recall 22V904 are done."
+          }
+        ],
+        "after": [
+          "If you buy used, get the recall work in writing. Recall 26V495 (second-row seat belt anchorage) covers 2019 to 2026 trucks, 25V298 (driver’s air bag) covers 2019 to 2024, and 24V653 (anti-lock brake software) covers 2019 and 2021 to 2024. The 2019 trucks drew 1,505 NHTSA complaints and the 2020 to 2022 trucks 645 to 692 each, against 211 for 2023 and 79 for 2024."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in five years",
+            "bars": [
+              {
+                "label": "Tundra",
+                "value": 19.7,
+                "display": "19.7%"
+              },
+              {
+                "label": "Ram 1500",
+                "value": 38.2,
+                "display": "38.2%"
+              },
+              {
+                "label": "Sierra 1500",
+                "value": 39.5,
+                "display": "39.5%"
+              },
+              {
+                "label": "Silverado 1500",
+                "value": 41.7,
+                "display": "41.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Ram offer",
+                "value": 0,
+                "display": "0%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Ram; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 30713,
+                "display": "$30,713"
+              },
+              {
+                "label": "2022",
+                "value": 33233,
+                "display": "$33,233"
+              },
+              {
+                "label": "2023",
+                "value": 36248,
+                "display": "$36,248"
+              },
+              {
+                "label": "2024",
+                "value": 37898,
+                "display": "$37,898"
+              },
+              {
+                "label": "2025",
+                "value": 40566,
+                "display": "$40,566"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Which cash you get.</strong> Ram’s cash differs by trim, cab and bed, and by region. The $6,000 on a Big Horn is limited to the oldest 30% of eligible dealer inventory. Ask which tier the exact truck is in.",
+        "<strong>Delivery by November 30.</strong> Every 2026 offer needs delivery by that date, and the 2026 is the model year with the cash.",
+        "<strong>0% or cash, not both.</strong> Ram’s 0% disclosure says it can’t be combined with other offers. Price the truck both ways and compare the total.",
+        "<strong>Reliability.</strong> Edmunds scored the Ram 3 out of 10 on reliability after its one-year test truck had numerous electronic problems, and J.D. Power’s owners rate quality and reliability 73 of 100, which it calls average. Electrical system is the top NHTSA complaint component on the 2019, 2020 and 2023 to 2026 trucks.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. Most offers are on the 2026, and the 2027 costs more.",
+        "<strong>Recalls.</strong> Ask the dealer to show that every open recall is done, especially 26V495 and the 2026 headlight, air bag and tire pressure recalls (26V421, 26V622, 26V623)."
+      ],
+      "faq": [
+        [
+          "Is the Ram 1500 a good truck?",
+          "Reviewers rate it highly for comfort. Edmunds gives the 2026 a 7.5 out of 10 and says it rides more comfortably than any rival; Kelley Blue Book scores it 4.5 out of 5 from its experts; U.S. News gives it 9.5 and second of six full-size pickups. Edmunds scored its reliability 3 out of 10, J.D. Power’s owner score is 74, and the Ford F-150 scores 83."
+        ],
+        [
+          "How much under MSRP can you get a Ram 1500?",
+          "On most 2026 trims, 8–10% under MSRP is a fair deal and 12% or more is a strong one, and the Laramie to Tungsten group runs 7–9% fair. The RHO has the least room, about 5–6%. Those ranges are our estimate from Edmunds, Kelley Blue Book, CarWhere and iSeeCars’ invoice figures, and a given dealer may land a point either side."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Ram 1500?",
+          "The 2026, for most buyers. It costs $400 to $1,200 less, and Ram’s cash and 0% financing apply to it through November 30. The 2027 gets employee pricing and a 5.9% rate in Chicago. Edmunds counts more 2027 trucks in stock (about 42,400) than 2026s (about 36,300)."
+        ],
+        [
+          "What is the destination charge on a Ram 1500?",
+          "$2,795 on both years. Ram’s advertised starting prices leave it out, so a $42,025 Tradesman is $44,820 on the window sticker."
+        ],
+        [
+          "Does Ram offer cash back on the 1500?",
+          "Yes, on the 2026. In Chicago, Dallas and New York the cash is $1,500 to $5,250 depending on trim, with $6,000 on a Big Horn Crew Cab 4x4. Los Angeles pays up to $6,750. Employee pricing comes with the cash, and 0% financing replaces both. The 2027 shows no cash."
+        ],
+        [
+          "Is the V8 or the turbo six better?",
+          "The six. In Edmunds’ tests the 420-hp six reached 60 mph in 5.2 seconds and the 395-hp V8 in 6.9, and Edmunds calls the six quieter and cheaper. The V8 returns in 2026, and Kelley Blue Book calls it the gem of the line on towing and price. The 540-hp six does it in 4.7 seconds."
+        ],
+        [
+          "Is a used Ram 1500 a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2024 is $37,898 and for a 2025 $40,566, while Edmunds’ Texas suggested price for a new Big Horn is $42,883. Used loans averaged 11.19% in the second quarter of 2026, against Ram’s 0% on a new one. A certified 2023 to 2025 with its recalls done is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-RAM1500-01",
+          "title": "Ram: 2026 Ram 1500",
+          "url": "https://www.ramtrucks.com/ram-1500.html",
+          "scope": "2026 Ram 1500 trims, maximum towing and payload, engines, 10-year/100,000-mile powertrain warranty offer and employee pricing banner",
+          "note": "2026 overview, towing and warranty offer"
+        },
+        {
+          "id": "VEH-RAM1500-02",
+          "title": "Ram: 2027 Ram 1500",
+          "url": "https://www.ramtrucks.com/2027/ram-1500.html",
+          "scope": "2027 Ram 1500 trims, starting MSRP, engine outputs and equipment by trim, including the Rumble Bee and TRX SRT",
+          "note": "2027 trims and prices"
+        },
+        {
+          "id": "VEH-RAM1500-03",
+          "title": "Ram: compare 2026 Ram 1500 models",
+          "url": "https://www.ramtrucks.com/model-compare.ram_1500_dt.2026.html",
+          "scope": "2026 Ram 1500 base price by trim, $2,795 destination charge, towing by trim and engines",
+          "note": "2026 base prices and destination"
+        },
+        {
+          "id": "VEH-RAM1500-04",
+          "title": "Ram: compare 2027 Ram 1500 models",
+          "url": "https://www.ramtrucks.com/model-compare.ram_1500_dt.2027.html",
+          "scope": "2027 Ram 1500 base price by trim and $2,795 destination charge",
+          "note": "2027 base prices and destination"
+        },
+        {
+          "id": "VEH-RAM1500-05",
+          "title": "Ram: Ram 1500 incentives and offers",
+          "url": "https://www.ramtrucks.com/incentives.ram_1500_dt.html",
+          "scope": "Ram employee pricing, bonus cash by trim, 0% and 4.9% financing, leases, Texas cash and their disclosures on the 2026 Ram 1500 at ZIPs 60601, 75201, 90012 and 10001, and the 2027 offers at 60601",
+          "note": "offers read in four regions"
+        },
+        {
+          "id": "VEH-RAM1500-06",
+          "title": "Ram: national incentives",
+          "url": "https://www.ramtrucks.com/incentives/bonus-incentives.html",
+          "scope": "Ram military and first responder $500 bonus cash on select 2026 and 2027 vehicles",
+          "note": "military and first responder offers"
+        },
+        {
+          "id": "VEH-RAM1500-07",
+          "title": "Ram: Certified Pre-Owned",
+          "url": "https://www.ramtrucks.com/certified-pre-owned.html",
+          "scope": "Ram Certified Pre-Owned 125-point inspection, 3-month/3,000-mile Maximum Care warranty, 7-year/100,000-mile powertrain warranty and $100 deductible",
+          "note": "certified used terms"
+        },
+        {
+          "id": "VEH-RAM1500-08",
+          "title": "Edmunds: 2026 Ram 1500",
+          "url": "https://www.edmunds.com/ram/1500/2026/",
+          "scope": "Edmunds rating, owner rating, editors’ pick, MSRP and Texas suggested price by trim, buying tips, test acceleration, mpg and reliability notes for the 2026 Ram 1500",
+          "note": "review score, suggested prices and test results"
+        },
+        {
+          "id": "VEH-RAM1500-09",
+          "title": "Edmunds: 2027 Ram 1500",
+          "url": "https://www.edmunds.com/ram/1500/2027/",
+          "scope": "Edmunds rating, large-truck rank and November buying tips for the 2027 Ram 1500",
+          "note": "2027 score, rank and tips"
+        },
+        {
+          "id": "VEH-RAM1500-10",
+          "title": "Kelley Blue Book: 2026 Ram 1500 Crew Cab",
+          "url": "https://www.kbb.com/ram/1500-crew-cab/2026/",
+          "scope": "KBB expert and consumer ratings, review count, and MSRP against fair purchase price by 2026 trim",
+          "note": "review score and fair purchase prices"
+        },
+        {
+          "id": "VEH-RAM1500-11",
+          "title": "Kelley Blue Book: 2027 Ram 1500 Crew Cab",
+          "url": "https://www.kbb.com/ram/1500-crew-cab/2027/",
+          "scope": "KBB large-truck rank, 2027 fair purchase prices, engine towing table and F-150 and Silverado towing figures",
+          "note": "2027 rank, prices and towing"
+        },
+        {
+          "id": "VEH-RAM1500-12",
+          "title": "U.S. News: 2026 Ram 1500",
+          "url": "https://cars.usnews.com/cars-trucks/ram/1500",
+          "scope": "U.S. News score, full-size pickup rank, owner review count, pros and cons for the 2026 Ram 1500",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RAM1500-13",
+          "title": "J.D. Power: 2026 Ram 1500",
+          "url": "https://www.jdpower.com/cars/2026/ram/1500",
+          "scope": "J.D. Power consumer rating, category scores and the top four large light-duty pickups for 2026",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-RAM1500-14",
+          "title": "iSeeCars: 2026 Ram 1500 price",
+          "url": "https://www.iseecars.com/car/2026-ram-ram_pickup_1500-price",
+          "scope": "Dealer invoice against MSRP by 2026 Ram 1500 configuration, and five-year resale value",
+          "note": "invoice prices and resale value"
+        },
+        {
+          "id": "VEH-RAM1500-15",
+          "title": "iSeeCars: 2027 Ram 1500 price",
+          "url": "https://www.iseecars.com/car/ram-ram-pickup-1500-price",
+          "scope": "Dealer invoice against MSRP by 2027 Ram 1500 configuration, including the Rumble Bee",
+          "note": "2027 invoice prices"
+        },
+        {
+          "id": "VEH-RAM1500-16",
+          "title": "CarWhere: 2026 Ram 1500",
+          "url": "https://www.carwhere.com/cars/ram/1500/2026",
+          "scope": "Median price paid against MSRP by 59 verified 2026 Ram 1500 buyers",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-RAM1500-17",
+          "title": "CarWhere: used Ram 1500 prices",
+          "url": "https://www.carwhere.com/used-car-prices/ram/1500",
+          "scope": "Median asking price of used Ram 1500s by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-RAM1500-18",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry, Ram, Ford and Chevrolet at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-RAM1500-19",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Ram 1500 recall campaigns by model year 2019 to 2026, including 26V495, 25V298, 24V653 and 22V904",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-RAM1500-20",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 and 2027 Ram 1500 crew and quad cabs, from the NHTSA ratings API",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-RAM1500-21",
+          "title": "NHTSA: complaints",
+          "url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+          "scope": "Ram 1500 owner complaint counts and top components by model year 2019 to 2026, from the NHTSA complaints API",
+          "note": "complaint counts"
+        },
+        {
+          "id": "VEH-RAM1500-22",
+          "title": "IIHS: 2026 Ram 1500 crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/ram/1500-crew-cab-pickup/2026",
+          "scope": "IIHS crash test, headlight, crash prevention, seat belt reminder and LATCH ratings for the 2026 Ram 1500 crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-RAM1500-23",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026 (carried over from our earlier price guides, not re-read)",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-RAM1500-24",
+          "title": "iSeeCars: 2026 Chevrolet Silverado 1500 price",
+          "url": "https://www.iseecars.com/car/2026-chevrolet-silverado_1500-price",
+          "scope": "Silverado 1500 five-year resale value",
+          "note": "Silverado resale"
+        },
+        {
+          "id": "VEH-RAM1500-25",
+          "title": "iSeeCars: 2026 GMC Sierra 1500 price",
+          "url": "https://www.iseecars.com/car/2026-gmc-sierra_1500-price",
+          "scope": "Sierra 1500 five-year resale value",
+          "note": "Sierra resale"
+        },
+        {
+          "id": "VEH-RAM1500-26",
+          "title": "iSeeCars: 2026 Toyota Tundra price",
+          "url": "https://www.iseecars.com/car/2026-toyota-tundra-price",
+          "scope": "Tundra five-year resale value",
+          "note": "Tundra resale"
+        },
+        {
+          "id": "VEH-RAM1500-27",
+          "title": "Ford: 2026 F-150",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "scope": "2026 F-150 XL starting MSRP excluding destination (carried over from our F-150 guide, not re-read)",
+          "note": "F-150 price"
+        },
+        {
+          "id": "VEH-RAM1500-28",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "scope": "2026 Silverado 1500 WT starting MSRP excluding destination (carried over from our Silverado guide, not re-read)",
+          "note": "Silverado price"
+        },
+        {
+          "id": "VEH-RAM1500-29",
+          "title": "GMC: 2026 Sierra 1500",
+          "url": "https://www.gmc.com/trucks/previous-year/sierra/1500",
+          "scope": "2026 Sierra 1500 Pro starting MSRP excluding destination (carried over from our Sierra guide, not re-read)",
+          "note": "Sierra price"
+        },
+        {
+          "id": "VEH-RAM1500-30",
+          "title": "Toyota: 2026 Tundra",
+          "url": "https://www.toyota.com/tundra/2026/",
+          "scope": "2026 Tundra SR starting MSRP excluding delivery (carried over from our Sierra guide, not re-read)",
+          "note": "Tundra price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-ram-1500-limited-longhorn",
+        "width": 1600,
+        "height": 1000,
+        "alt": "Black 2026 Ram 1500 Limited Longhorn Crew Cab, front three-quarter view",
+        "caption": "A Ram 1500 Limited Longhorn.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Ram_1500_Limited_Longhorn.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Rides more comfortably than any rival, Edmunds says",
+        "Employee pricing for all, plus up to $6,750 cash",
+        "420-hp turbo six standard from $61,480",
+        "Roomy rear seat that eases car-seat installs"
+      ],
+      "cons": [
+        "Reliability: Edmunds scores it 3 out of 10",
+        "Poor IIHS grade for rear-seat safety",
+        "Tows 11,610 pounds, F-150 13,500",
+        "Slow seller: 148 days of supply"
+      ],
+      "rivals": [
+        "Get a quote on the Ford F-150 too: J.D. Power’s owners rate it 83 against the Ram’s 74, it tows up to 13,500 pounds at Kelley Blue Book, and it starts at $39,585. The Chevrolet Silverado 1500 starts at $37,200 and tows up to 13,700 pounds, the GMC Sierra 1500 at $38,600, and the Toyota Tundra at $41,260 keeps far more of its value: iSeeCars puts five-year resale at 80.3%, against 61.8% for the Ram. Those rival prices leave out destination and come from our other price guides. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/ram/1500/2026/",
+            "value": 7.5,
+            "scale": 10,
+            "display": "7.5",
+            "detail": "Very Good; ranked 3rd of 5 large trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/ram/1500-crew-cab/2026/",
+            "value": 4.5,
+            "scale": 5,
+            "display": "4.5",
+            "detail": "Owners give it 4.3 out of 5 (166 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/ram/1500",
+            "value": 9.5,
+            "scale": 10,
+            "display": "9.5",
+            "detail": "Ranked 2nd of 6 full-size pickups"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/ram/1500",
+            "value": 74,
+            "scale": 100,
+            "display": "74",
+            "detail": "Quality and reliability 73, average; F-150 scores 83"
+          }
+        ],
+        "note": "Scores for the 2026 Ram 1500 as published on November 18, 2026; Edmunds’ rank is from its 2027 page. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Ram 1500 Crew Cab",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 4, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "19.8% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Poor",
+            "note": "Rear-seat passenger"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good",
+            "note": "Updated test"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Acceptable",
+            "note": "Good on Limited, Tungsten and RHO"
+          },
+          {
+            "label": "IIHS front crash prevention",
+            "grade": "Marginal",
+            "note": "Vehicle-to-vehicle, standard system"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 30
+          },
+          {
+            "label": "2020",
+            "value": 14
+          },
+          {
+            "label": "2021",
+            "value": 15
+          },
+          {
+            "label": "2022",
+            "value": 16
+          },
+          {
+            "label": "2023",
+            "value": 11
+          },
+          {
+            "label": "2024",
+            "value": 6
+          },
+          {
+            "label": "2025",
+            "value": 8
+          },
+          {
+            "label": "2026",
+            "value": 9
+          }
+        ],
+        "reliability": "Edmunds’ test team scored the 2026 Ram’s <a href=\"https://www.edmunds.com/ram/1500/2026/\" rel=\"noopener\">reliability 3 out of 10</a> after a one-year test truck’s electronic problems.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/ram/1500-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. NHTSA rates the Quad Cab 5 stars overall and has not rated the RHO. IIHS rates pedestrian crash prevention Good and seat belt reminders and child seat anchors Marginal, and gives no Top Safety Pick. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> are for NHTSA’s “1500” listing, which includes a few Ram 1500 Classic campaigns. NHTSA owner complaints peak at 1,505 for 2019 and 382 for 2025; electrical system is the top component in most years. Check any used Ram’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-ram-1500-limited-rear",
+          "width": 1920,
+          "height": 921,
+          "alt": "White 2026 Ram 1500 Limited Crew Cab, rear three-quarter view",
+          "caption": "Limited, rear",
+          "author": "Elise240SX",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_RAM_1500_Limited_in_Ivory_Tri-Coat_Pearl,_rear_right,_2026-06-14.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-ram-1500-warlock",
+          "width": 1600,
+          "height": 870,
+          "alt": "Gray 2026 Ram 1500 Warlock Crew Cab with all-terrain tires, front three-quarter view",
+          "caption": "Warlock",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Ram_1500_Warlock.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-ram-1500-rebel",
+          "width": 1520,
+          "height": 830,
+          "alt": "Blue 2025 Ram 1500 Rebel Crew Cab with 33-inch all-terrain tires, front three-quarter view",
+          "caption": "Rebel",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Ram_1500_Rebel.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-ram-1500-interior",
+          "width": 1920,
+          "height": 840,
+          "alt": "Ram 1500 Limited dashboard with a large center touchscreen and leather-trimmed console",
+          "caption": "Limited cabin, 2022",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022_Ram_1500_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        }
+      ],
+      "reddit": {
+        "short": "Ram 1500"
+      }
     }
   ]
 }
