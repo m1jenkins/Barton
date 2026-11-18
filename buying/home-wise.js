@@ -1,5 +1,5 @@
-// Homepage behavior for the Wise-style layout: phone menu, resource tabs and the
-// mobile sticky buttons.
+// Homepage behavior for the Wise-style layout: phone menu, Google review carousel,
+// resource tabs and the mobile sticky buttons.
 
 // Phone menu
 const menuButton = document.querySelector('[data-menu-toggle]');
@@ -9,6 +9,28 @@ if (menuButton && menu) {
   menuButton.addEventListener('click', () => setOpen(menu.hidden));
   menu.addEventListener('click', event => { if (event.target.closest('a, button')) setOpen(false); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); menuButton.focus(); } });
+}
+
+// Google review carousel: the arrows scroll one card at a time and grey out at either end.
+const reviewList = document.querySelector('.wz-greviews-list');
+const reviewNav = document.querySelector('[data-greviews-nav]');
+if (reviewList && reviewNav) {
+  const arrows = [...reviewNav.querySelectorAll('[data-greviews-step]')];
+  const update = () => {
+    const max = reviewList.scrollWidth - reviewList.clientWidth;
+    reviewNav.hidden = max <= 1;
+    arrows.forEach(arrow => {
+      arrow.disabled = Number(arrow.dataset.greviewsStep) < 0 ? reviewList.scrollLeft <= 1 : reviewList.scrollLeft >= max - 1;
+    });
+  };
+  arrows.forEach(arrow => arrow.addEventListener('click', () => {
+    const card = reviewList.querySelector('li');
+    const gap = parseFloat(getComputedStyle(reviewList).columnGap) || 0;
+    reviewList.scrollBy({ left: Number(arrow.dataset.greviewsStep) * ((card?.offsetWidth ?? 300) + gap) });
+  }));
+  reviewList.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 }
 
 // Resource tabs

@@ -84,7 +84,20 @@
 .dr.wz .wz-stars { color:#E9A100; font-size:16px; line-height:1; letter-spacing:2px; }
 .dr.wz .wz-hero-rating .wz-stars { color:#FFC83D; letter-spacing:1px; }
 .dr.wz .wz-greviews { width:100%; max-width:1240px; margin-top:48px; }
-.dr.wz .wz-greviews-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:0; padding:0; list-style:none; text-align:left; }
+/* A scrolling row of review cards: four fit on a wide screen, the rest are a scroll or an arrow away. */
+.dr.wz .wz-greviews-list { display:flex; align-items:stretch; gap:16px; margin:0; padding:0 0 4px; list-style:none; text-align:left; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; overscroll-behavior-x:contain; scrollbar-width:none; }
+.dr.wz .wz-greviews-list::-webkit-scrollbar { display:none; }
+.dr.wz .wz-greviews-list > li { flex:0 0 calc((100% - 48px) / 4); scroll-snap-align:start; }
+.dr.wz .wz-greviews-photo { display:block; margin:-8px -8px 0; }
+.dr.wz .wz-greviews-photo img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:14px; }
+.dr.wz .wz-greviews-nav { display:flex; justify-content:center; gap:12px; margin-top:20px; }
+.dr.wz .wz-greviews-nav[hidden] { display:none; }
+.dr.wz .wz-greviews-arrow { display:grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid rgba(255,255,255,.55); border-radius:50%; background:transparent; color:#fff; cursor:pointer; transition:background-color .15s ease, opacity .15s ease; }
+.dr.wz .wz-greviews-arrow:hover { background:rgba(255,255,255,.14); }
+.dr.wz .wz-greviews-arrow:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+.dr.wz .wz-greviews-arrow:disabled { opacity:.35; cursor:default; background:transparent; }
+.dr.wz .wz-greviews-arrow svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+@media (prefers-reduced-motion:reduce) { .dr.wz .wz-greviews-list { scroll-behavior:auto; } }
 .dr.wz .wz-greviews-list:focus-visible { outline:3px solid #fff; outline-offset:4px; border-radius:20px; }
 /* A light glass finish on near-solid white, so the cards stand off the dark blue: a bright rim
    and top edge, a gentle fade from bright white to near-white, and a deeper shadow for lift. */
@@ -292,9 +305,8 @@
   .dr.wz .wz-review { scroll-snap-align:start; }
   .dr.wz .wz-menu-button { display:grid; }
   .dr.wz .wz-greviews { width:auto; align-self:stretch; margin-inline:calc(-1 * var(--wz-gutter)); }
-  .dr.wz .wz-greviews-list { display:flex; gap:12px; padding:0 var(--wz-gutter) 4px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:var(--wz-gutter); overscroll-behavior-x:contain; scrollbar-width:none; }
-  .dr.wz .wz-greviews-list::-webkit-scrollbar { display:none; }
-  .dr.wz .wz-greviews-list > li { flex:0 0 min(320px, 80%); scroll-snap-align:start; }
+  .dr.wz .wz-greviews-list { gap:12px; padding:0 var(--wz-gutter) 4px; scroll-padding-inline:var(--wz-gutter); }
+  .dr.wz .wz-greviews-list > li { flex:0 0 min(320px, 80%); }
 }
 @media (max-width:1100px) {
   .dr.wz .wz-features--four { grid-template-columns:repeat(2,minmax(0,1fr)); }
