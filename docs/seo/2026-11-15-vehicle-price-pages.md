@@ -410,6 +410,26 @@ Reddit section: per-car file data/reddit-sentiment/cars/tesla-model-3.json (see 
 
 Open items for Mason: the pick (2023 Long Range AWD; 2024 Long Range RWD for Hardware 4 and the quieter cabin; skip 2019 and 2020), "buy used, a 2023", the summary, pros and cons and the two discount groups were written from the research. Check the Standard's $36,990 and fees on tesla.com. Not confirmed: whether the 2.49% applies to the Standard, the IIHS award, a Consumer Reports verdict. Edmunds lists a 2027 Model 3; the page says so in one line and `modelYear` stays 2026. Recheck prices, APR and recall 26V507's remedy monthly.
 
+## Kia Sportage (added November 18, 2026)
+
+`kia-sportage-price.html` uses the Camry's template with no spotlight section; it covers the gas, hybrid and plug-in Sportage. Differences:
+
+- **Two model years, three powertrains.** `modelYear` is 2026, as on the CR-V page, since the price-paid data and the 0% offer are for the 2026; the trims table shows both years. kia.com sells only the 2027. Trim rows are named by powertrain ("Hybrid S"). 2026 prices come from Kia's lease fine print and Edmunds and TrueCar listings, less the $1,495 destination. The 2026 Plug-in Prestige ($47,190) is Kia's July 2025 launch price, matched by TrueCar. 2027 prices come from kia.com and trade-site copies of Kia's releases (its newsroom would not load).
+- **Hybrid S:** 2026 was AWD only; the 2027 adds front drive ($32,790 against $31,290).
+- **Offers** were read on kia.com at 60601, 75201, 90012 and 10001, with each "Offer details" pop-up. Finance and cash offers were identical at all four; leases differ by region. Stacking of customer cash with 0% is not stated, so the cash-or-0% block compares rates only. The military program was read at 60601 only. MarketCheck was not used.
+- **Sale price.** Edmunds' Texas prices (browser) 3.2–6.6% under on the 2026 and 3.4–3.7% on the 2027 hybrid; TrueCar 0.8–4.5% (browser; no 2027, 403); CarWhere 13 buyers, median 4.8%; iSeeCars invoice 2.5–3.5% (gas only).
+- **Safety.** NHTSA: 5 stars on the gas and hybrid, plug-in not rated. Recalls dedupe by campaign, complaints by ODI number.
+- **EPA** figures are from fueleconomy.gov. kia.com's plug-in page says 33 mpg combined; the page uses the EPA's 36.
+- **Reviews.** The J.D. Power list omits the Sportage, so no rank is quoted. Kia's own Consumer Reports and rear-legroom claims are left out.
+- **Read through WebFetch summaries:** IIHS, iSeeCars, CarWhere, Cox, KBB, the 2027 releases.
+- **Carried over, not re-read:** RAV4 and CR-V figures (our own pages) and Experian's Q2 2026 rates.
+- **CPO:** eligibility limits and finance offers were not on Kia's page, so the page says to ask.
+- **Photos.** Five Wikimedia Commons images, metadata stripped: HJUdall (CC0, two; cropped, faces blurred), Elise240SX (CC BY-SA 4.0; plate frame blurred), LuvsMG481 (CC BY-SA 4.0; Australian 2025 facelift, plate blurred), Ethan Llamas (CC BY-SA 4.0; Philippine-market interior, cropped). No U.S. 2026 rear or interior photo exists.
+
+Reddit section: per-car file data/reddit-sentiment/cars/kia-sportage.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (Hybrid S, 2027 front drive), "buy new, price both years", the 2023-or-newer CPO line, the used advice, the four discount groups and `modelYear` 2026 were written from the research. Ranges lean on Edmunds Texas; check against real deals. Not read: TrueCar 2027, Edmunds plug-in 2027, Kia's newsroom, CPO eligibility. Confirm the plug-in's 36 mpg before launch. Offers end January 4, 2027.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

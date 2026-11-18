@@ -17655,6 +17655,973 @@
           "note": "what the redesign changed"
         }
       ]
+    },
+    {
+      "slug": "kia-sportage-price.html",
+      "name": "Kia Sportage",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Kia Sportage Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Kia Sportage costs in November 2026: MSRP by trim for the 2026 and 2027 gas, hybrid and plug-in Sportage, how far under sticker dealers sell it, Kia’s current offers, and the trim we’d buy.",
+      "h1": "Kia Sportage price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$28,790 <small>to $47,190</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "3–6% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Kia incentives",
+          "value": "0% <small>APR, 2026 only</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "Hybrid S",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, either year",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Sportage Hybrid is the compact SUV we’d price first. Edmunds scores it 8.6 out of 10 against 7.8 for the gas Sportage, measured 8.0 seconds to 60 mph where the gas car took more than 9.5, and the EPA rates a front-drive 2027 at 41 mpg combined (42 on a 2026) against 28 for gas. It also undercuts Toyota: a 2026 Hybrid LX starts at $30,490, $1,410 under a RAV4 LE. The catches: the gas Sportage is slow and thirsty, and Kia’s rates depend on the model year (0% for 48 months on a 2026, 1.99% on a gas 2027, 0.90% on a hybrid 2027). Kia sells further under sticker than Toyota does on the RAV4: Edmunds’ Texas prices run 5–6% under on a 2026 gas or hybrid Sportage, and CarWhere’s 13 verified 2026 buyers paid a median 4.8% under MSRP. Price a Hybrid S, aim for 3–4% under MSRP on a 2026, and weigh Kia’s 0% on a 2026 against the 2027’s front-drive option before you sign. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "LX",
+            "short": "Entry gas",
+            "gets": "12.3-inch touchscreen with wireless CarPlay and Android Auto, adaptive cruise control (holds a set gap to the car ahead), 17-inch alloys; 28 mpg combined",
+            "prices": [
+              28790,
+              28990
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, front-wheel drive (AWD adds $1,800)"
+          },
+          {
+            "name": "EX",
+            "short": "Edmunds’ gas pick",
+            "gets": "18-inch alloys, power liftgate, power driver’s seat, heated front seats, dual-zone climate control, blind-spot detection; 28 mpg combined",
+            "prices": [
+              30590,
+              30790
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, front-wheel drive (AWD adds $1,800)"
+          },
+          {
+            "name": "SX",
+            "short": "Tech trim",
+            "gets": "Dual 12.3-inch displays with navigation, Harman Kardon audio, driver’s memory seat, Highway Driving Assist; 28 mpg combined",
+            "prices": [
+              34390,
+              34590
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, front-wheel drive (AWD adds $1,800)"
+          },
+          {
+            "name": "X-Line",
+            "short": "AWD standard",
+            "gets": "AWD, 19-inch gloss-black wheels, roof rails, panoramic sunroof (standard on the 2027, a package on the 2026), power liftgate; 26 mpg combined",
+            "prices": [
+              33090,
+              34790
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "SX Prestige",
+            "short": "Loaded gas",
+            "gets": "360-degree camera and blind-spot view monitor, 19-inch wheels, ventilated front seats, power passenger seat, parking sensors; 28 mpg combined",
+            "prices": [
+              36390,
+              36590
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, front-wheel drive (AWD adds $1,800)"
+          },
+          {
+            "name": "X-Pro Prestige",
+            "short": "Off-road look",
+            "gets": "17-inch wheels with all-terrain tires, AWD, heated steering wheel; 24 mpg combined",
+            "prices": [
+              39690,
+              39890
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, 8-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Hybrid LX",
+            "short": "Cheapest hybrid",
+            "gets": "Wireless CarPlay and Android Auto, smart cruise control with stop and go, leather-wrapped wheel; 41 mpg combined (42 on the 2026)",
+            "prices": [
+              30490,
+              30590
+            ],
+            "engine": "1.6L turbo hybrid, 232 hp, 6-speed automatic, front-wheel drive"
+          },
+          {
+            "name": "Hybrid S",
+            "short": "The one to buy",
+            "gets": "Heated front seats, power driver’s seat, blind-spot detection, rear cross-traffic collision avoidance, 18-inch alloys. The 2026 S was AWD only (2027: front drive $31,290, AWD $32,890); 2027 front drive is 41 mpg combined, AWD 35",
+            "prices": [
+              32790,
+              31290
+            ],
+            "engine": "1.6L turbo hybrid, 232 hp, 6-speed automatic, front-wheel drive or AWD",
+            "pick": true
+          },
+          {
+            "name": "Hybrid EX",
+            "short": "Hybrid, more comfort",
+            "gets": "Power liftgate, wireless phone charger, SynTex seats, heated mirrors. The 2026 EX was AWD only (2027: front drive $32,290, AWD $33,890)",
+            "prices": [
+              33790,
+              32290
+            ],
+            "engine": "1.6L turbo hybrid, 232 hp, 6-speed automatic, front-wheel drive or AWD"
+          },
+          {
+            "name": "Hybrid X-Line",
+            "short": "AWD standard",
+            "gets": "19-inch gloss-black wheels, panoramic sunroof, roof rails, parking sensors; 35 mpg combined. The 2027 adds an optional Technology Package",
+            "prices": [
+              35690,
+              35790
+            ],
+            "engine": "1.6L turbo hybrid, 232 hp, 6-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Hybrid SX Prestige",
+            "short": "Most popular hybrid",
+            "gets": "Ventilated and power front seats, Harman Kardon audio, head-up display, 360-degree camera, heated rear seats; 35 mpg combined",
+            "prices": [
+              40590,
+              40690
+            ],
+            "engine": "1.6L turbo hybrid, 232 hp, 6-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Plug-in X-Line",
+            "short": "Plug-in hybrid",
+            "gets": "AWD, panoramic sunroof, power liftgate; 36 mpg combined and 33 miles of EPA electric range",
+            "prices": [
+              40490,
+              40590
+            ],
+            "engine": "1.6L turbo plug-in hybrid, 268 hp, 6-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Plug-in X-Line Prestige",
+            "short": "Top plug-in",
+            "gets": "Ventilated front seats, head-up display, Harman Kardon audio, 360-degree camera, Highway Driving Assist",
+            "prices": [
+              47190,
+              47390
+            ],
+            "engine": "1.6L turbo plug-in hybrid, 268 hp, 6-speed automatic, all-wheel drive"
+          }
+        ],
+        "after": [
+          "AWD adds $1,800 on the gas trims that offer both, and Kia’s $1,495 destination charge is extra on both model years (it was $1,395 at the 2026 launch). Kia raised 2026 prices after launch ($100 on gas, $200 on hybrids), so launch-era figures some sites still print are low. The 2027 costs $200 more on a gas Sportage and $100 more on a hybrid or plug-in; the gas X-Line is $1,700 more because the panoramic sunroof and power liftgate are now standard. The hybrid S and EX come in front drive for the first time in 2027."
+        ]
+      },
+      "pick": [
+        "<strong>A Sportage Hybrid S.</strong> A 2026 S costs $32,790 with AWD standard, and a 2027 starts at $31,290 with front drive (AWD $32,890). That is $700 more than a 2027 Hybrid LX and adds heated front seats, a power driver’s seat, blind-spot detection and 18-inch wheels. It was Edmunds’ pick of the 2026 hybrids. The hybrid costs $1,600 more than a gas LX ($30,590 against $28,990 on a 2027), makes 232 hp against 187, and the EPA puts its fuel cost at $1,450 a year against $2,150. AWD drops a hybrid to 35 mpg combined from 41 or 42, so take front drive on a 2027 S unless you see snow.",
+        "Pick the gas EX ($30,590 as a 2026) if sticker price matters most. It’s Edmunds’ pick of the gas trims, but its 2.5-liter four took more than 9.5 seconds to reach 60 mph in Edmunds’ test and is rated 28 mpg combined. Skip the X-Pro Prestige: it’s rated 24 mpg combined, and Edmunds found its all-terrain tires soften on-road handling. The plug-in (X-Line from $40,490, 33 miles of EPA electric range) costs $7,700 more than a 2026 Hybrid S; consider it only if you can charge at home."
+      ],
+      "pay": {
+        "intro": [
+          "A leftover 2026 Sportage sells further under sticker than a 2027, and Kia sells further under than Toyota does on the RAV4. Edmunds’ Texas suggested prices (sales through November 2) run 4.7–6.6% under sticker with destination on the 2026 gas Sportage and 5.0–6.2% under on the hybrid, but only 3.2–3.9% on the plug-in, while TrueCar’s starting market averages are lower, 0.8–4.5% under. CarWhere’s 13 verified 2026 buyers paid a median 4.8% under MSRP (the middle half 4.3–8.7%). Edmunds counts 113 days to sell a new 2026 gas Sportage and 175 for the hybrid, against 34 for the average new vehicle, and Kia adds $750 customer cash. The 2027 is tighter: Edmunds’ prices on the 2027 hybrid run 3.4–3.7% under, buyers are paying about $700 (gas) to $800 (hybrid) under, and new 2027s turn in 27 and 21 days."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "Gas trims",
+            "example": "EX",
+            "fair": "4–5% under",
+            "strong": "6% or more",
+            "why": "Edmunds’ Texas prices run 4.7–6.6% under, TrueCar averages 1.3–3.2% and dealer invoice sits 2.5–3.5% under MSRP."
+          },
+          {
+            "trims": "Hybrid LX, S, EX and X-Line",
+            "example": "Hybrid S",
+            "fair": "3–4% under",
+            "strong": "5–6% under",
+            "why": "Edmunds’ Texas prices run 5.0–6.2% under and TrueCar averages 0.8–2.2%. Edmunds says the LX is easiest to find and the X-Line tighter."
+          },
+          {
+            "trims": "Hybrid SX Prestige",
+            "example": "Hybrid SX Prestige",
+            "fair": "4–5% under",
+            "strong": "6% or more",
+            "why": "Edmunds calls it the most popular hybrid. TrueCar averages 4.5% under and Edmunds’ Texas price is 5.1% under."
+          },
+          {
+            "trims": "Plug-in hybrid",
+            "example": "Plug-in X-Line",
+            "fair": "2–3% under",
+            "strong": "4% or more",
+            "why": "Edmunds’ Texas prices run 3.2–3.9% under and only 124 new ones were left nationwide. TrueCar averages 1.9–2.4% under."
+          }
+        ],
+        "note": "Checked November 18, 2026, on the 2026; these ranges are our estimate. A 2027 may sell a couple of points closer to sticker. Edmunds’ suggested prices and TrueCar’s averages include destination; CarWhere’s 4.8% is against MSRP. The published figures do not say whether Kia’s cash is inside them.",
+        "after": [
+          "Not sure what a specific Sportage should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Hybrid S",
+          "sticker": 34285,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 4%",
+              "amount": 1350
+            }
+          ],
+          "total": 32935,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Kia’s offers run to January 4, 2027, and the rate depends on the model year: 0% for 48 months on any 2026 Sportage, Sportage Hybrid or Plug-in Hybrid, 1.99% on a 2027 gas or plug-in Sportage and 0.90% on a 2027 Sportage Hybrid. Finance and cash offers matched in all four regions we checked and leases differed. Kia adds $750 customer cash on a 2026 gas or hybrid Sportage and $500 on a 2027 hybrid."
+        ],
+        "rows": [
+          {
+            "offer": "0% APR for 48 months",
+            "detail": "1.49% for 60, 3.49% for 66 (2.49% on the plug-in), 3.99% for 72 (3.49% on the plug-in) and 4.99% for 84 (5.50% on the plug-in). Through Kia Finance America, for well-qualified buyers",
+            "applies": "2026 Sportage, Sportage Hybrid and Plug-in Hybrid, all four regions",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "1.99% APR for 48 months",
+            "detail": "2.99% for 60, 3.99% for 66, 4.99% for 72 and 6.50% for 84",
+            "applies": "2027 Sportage and Sportage Plug-in Hybrid, all four regions",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "0.90% APR for 48 months",
+            "detail": "1.99% for 60, 3.49% for 66, 4.49% for 72 and 6.25% for 84",
+            "applies": "2027 Sportage Hybrid, all four regions",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Customer cash",
+            "detail": "$750 on a 2026 Sportage or Sportage Hybrid and $500 on a 2027 Sportage Hybrid. Not for leases",
+            "applies": "2026 gas and hybrid; 2027 hybrid, all four regions",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Retail Bonus Cash",
+            "detail": "$750 on a 2026 Sportage Hybrid and Plug-in Hybrid, and on specially tagged 2026 gas Sportages. Works with Kia financing or cash offers, not with leases",
+            "applies": "2026 Sportage, Hybrid and Plug-in Hybrid, all four regions",
+            "ends": "January 4, 2027 (deliveries from November 3, 2026)"
+          },
+          {
+            "offer": "2026 gas lease",
+            "detail": "LX FWD $209 a month for 24 months ($4,060 due) or $229 for 36 ($3,946 due) in Los Angeles and New York; $239 and $249 in Chicago and $249 and $259 in Dallas ($3,842 and $3,946 due). AWD adds $20",
+            "applies": "2026 Sportage LX",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "2027 gas lease",
+            "detail": "LX FWD $259 a month in Los Angeles and New York, $279 in Chicago and $289 in Dallas, for 24 or 36 months with $3,999 due. AWD adds $20",
+            "applies": "2027 Sportage LX",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Hybrid leases",
+            "detail": "2026 LX FWD $229 (24 months) or $249 (36) in Los Angeles and New York, $259 and $269 in Chicago, $269 and $279 in Dallas; 2026 S AWD $259 and $279 in Los Angeles and New York. 2027 LX FWD $269 in Los Angeles and New York, $289 in Chicago, $299 in Dallas; 2027 S FWD $279, $299 and $309; 2027 S AWD $299, $319 and $329",
+            "applies": "2026 and 2027 Sportage Hybrid LX and S",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Plug-in leases",
+            "detail": "2026 X-Line AWD $279 for 24 months or $299 for 36 in Los Angeles and New York, $329 and $349 in Chicago and Dallas. 2027 $339 and $349 in Los Angeles and New York, $369 and $379 in Chicago and Dallas",
+            "applies": "2026 and 2027 Sportage Plug-in Hybrid X-Line",
+            "ends": "January 4, 2027"
+          },
+          {
+            "offer": "Military program",
+            "detail": "$500 for active, retired or discharged U.S. military and their spouses, new purchases or leases from November 3, 2026. May combine with certain other offers. Read in Chicago",
+            "applies": "New Sportage, any model year",
+            "ends": "January 4, 2027"
+          }
+        ],
+        "note": "From <a href=\"https://www.kia.com/us/en/offers\" rel=\"noopener\">Kia’s offers pages</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York. Rates need Kia Finance America approval for well-qualified buyers, only a limited number of customers qualify, and “ends” is Kia’s take-delivery date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For 48 months on a 2026 Sportage, Hybrid or Plug-in Hybrid, in all four regions we checked. Ends January 4."
+          },
+          {
+            "label": "Lease",
+            "figure": "$209",
+            "word": "a month",
+            "text": "2026 Sportage LX FWD in Los Angeles and New York, 24 months, $4,060 due at signing. Ends January 4."
+          },
+          {
+            "label": "Customer cash",
+            "figure": "$750",
+            "word": "cash back",
+            "text": "On a 2026 Sportage or Sportage Hybrid; $500 on a 2027 Hybrid. Ends January 4."
+          },
+          {
+            "label": "Hybrid rate",
+            "figure": "0.90%",
+            "word": "APR",
+            "text": "For 48 months on a 2027 Sportage Hybrid; a 2027 gas Sportage is 1.99%. Ends January 4."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military?",
+            "text": "Kia takes $500 off a new Sportage for active, retired or discharged U.S. military and their spouses, and it can combine with certain other offers.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Ends January 4",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          },
+          {
+            "title": "Buying certified?",
+            "text": "A Kia Certified Pre-Owned Sportage passes a 165-point inspection and carries a 10-year/100,000-mile powertrain warranty plus a year or 12,000 miles of Platinum coverage.",
+            "figure": "10-year",
+            "unit": "powertrain",
+            "detail": "Kia CPO terms",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Kia’s 0%",
+          "title": "0% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $32,000 Sportage over 48 months. Kia’s 0% is for a 2026; the 2027 Hybrid’s 0.90% is the closest rate on a newer car. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 32000,
+          "months": 48,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "Kia Finance America, 2026",
+              "rate": 0,
+              "cash": 0
+            },
+            {
+              "name": "0.90% APR",
+              "detail": "Kia Finance America, 2027 Hybrid",
+              "rate": 0.9,
+              "cash": 0
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and price both model years.</strong> A leftover 2026 costs $100 to $200 less than a 2027 on most trims and carries Kia’s 0% for 48 months, while the 2027 adds front-drive hybrid S and EX trims and a 0.90% hybrid rate. A used Sportage barely costs less than a discounted new one: CarWhere’s median used 2025 asks $28,319 at about 21,000 miles, and Edmunds’ Texas price for a new 2026 LX is $28,870 with destination. Used loans average 11.19% against Kia’s 0% on a new 2026."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. It costs $100 to $200 less than the 2027 and carries 0% for 48 months and $750 customer cash.",
+            "check": "That Kia’s rate covers the car you’re buying, that a hybrid S or EX is the AWD you want (the 2026 had no front drive), and that recall 26V046 is done."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want a front-drive hybrid S or EX (new for 2027), or a gas X-Line with the sunroof and liftgate standard.",
+            "check": "The $100 to $200 price rise, and that the 0.90% (hybrid) or 1.99% rate is the one in your quote."
+          },
+          {
+            "route": "CPO (Kia Certified Pre-Owned)",
+            "when": "You want a 2023 or newer Sportage with a warranty.",
+            "check": "That it’s certified, not just used. Kia’s terms are a 10-year/100,000-mile powertrain warranty and 1 year or 12,000 miles of Platinum coverage after a 165-point inspection. Ask for the age and mileage limits in writing."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $24,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2023 that its seven recalls are done."
+          }
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Sportage",
+                "value": 21.4,
+                "display": "21.4%"
+              },
+              {
+                "label": "Compact SUVs",
+                "value": 22.7,
+                "display": "22.7%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Kia 2026 offer",
+                "value": 0,
+                "display": "0%"
+              },
+              {
+                "label": "Kia 2027 hybrid",
+                "value": 0.9,
+                "display": "0.90%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Kia; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 16394,
+                "display": "$16,394"
+              },
+              {
+                "label": "2022",
+                "value": 17315,
+                "display": "$17,315"
+              },
+              {
+                "label": "2023",
+                "value": 23513,
+                "display": "$23,513"
+              },
+              {
+                "label": "2024",
+                "value": 26471,
+                "display": "$26,471"
+              },
+              {
+                "label": "2025",
+                "value": 28319,
+                "display": "$28,319"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ],
+        "after": [
+          "If you buy used, look at a 2024 or 2025 Sportage and be wary of a 2020 or 2023. The 2020 drew 172 NHTSA owner complaints, 81 of them about the engine. The 2023, the first of the current generation, drew 212 complaints and seven recalls, among them twisted curtain airbags, a brake booster diaphragm that can misalign and a roof molding that can detach. The 2024 drew 77 and the 2025 56, though the 2024 has a power-steering circuit-board recall (24V422). Check any used Sportage’s open recalls by VIN."
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> Kia dealers put add-ons on 43.3% of the quotes CarWhere studied, averaging $1,477. On a $30,590 EX that is about a fair discount’s worth. Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>The model year and the rate.</strong> The 0% is for a 2026. A 2027 gas Sportage gets 1.99% and a 2027 hybrid 0.90%. Ask which model year the dealer’s quote assumes.",
+        "<strong>AWD-only hybrids on the 2026.</strong> A 2026 hybrid S, EX, X-Line or SX Prestige is all-wheel drive, rated 35 mpg combined against 42 for the front-drive LX. A 2027 S or EX comes in front drive at 41.",
+        "<strong>Specially tagged cars.</strong> Kia’s $750 Retail Bonus Cash on a gas 2026 Sportage is for specially tagged vehicles only, and it doesn’t work with Kia’s leases. Ask the dealer to show the tag.",
+        "<strong>The instrument panel recall.</strong> Recall 26V046 covers 2026 Sportages, Hybrids and Plug-ins: a software error can make the instrument panel display fail. Kia fixes it over the air or at a dealer, free. Ask the dealer whether the car you want has had it.",
+        "<strong>The Kia Finance requirement.</strong> The 0%, 1.99% and 0.90% rates need Kia Finance America approval for well-qualified buyers, and Kia says only a limited number of customers qualify. Compare the total cost with your bank’s rate.",
+        "<strong>The slow gas engine.</strong> Edmunds’ gas test car took more than 9.5 seconds to reach 60 mph, which it calls seconds behind class leaders. Drive a gas Sportage with passengers aboard, and the hybrid too, before you choose."
+      ],
+      "faq": [
+        [
+          "Is the Kia Sportage a good car?",
+          "Reviewers rank it near the top of its class, with a caveat about the gas engine. U.S. News scores the 2026 gas Sportage 8.9 out of 10, third of 14 compact SUVs, and the Sportage Hybrid 9.3, second of 19 hybrid SUVs. Edmunds rates the gas car 7.8 and the hybrid 8.6, Kelley Blue Book gives the gas car 4.6 out of 5, and J.D. Power owners score it 81 out of 100. Consumer Reports expects the 2026 to be more reliable than the average new car, and iSeeCars counts 21.4% of its value lost in three years against 24.8% for the average vehicle."
+        ],
+        [
+          "How much under MSRP can you get a Kia Sportage?",
+          "On a 2026, 4–5% under MSRP is a fair deal on a gas Sportage and 6% or more a strong one. On a hybrid LX, S, EX or X-Line, 3–4% is fair and 5–6% strong; on a plug-in, 2–3% is fair. Those ranges are our read of Edmunds’ Texas prices (4.7–6.6% under on gas, 5.0–6.2% on hybrids), TrueCar’s lower averages and CarWhere’s 13 verified buyers (a median 4.8% under). A 2027 may sell a couple of points closer to sticker, and Kia’s cash is separate."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Sportage?",
+          "Price both. A 2026 costs $100 to $200 less on most trims, carries 0% for 48 months and $750 customer cash, and sells further under sticker. A 2027 hybrid S or EX comes in front drive, which the 2026 never offered, and its rate is 0.90% for the hybrid and 1.99% for gas."
+        ],
+        [
+          "Is the Sportage Hybrid worth it over the gas Sportage?",
+          "For most buyers, yes. A 2027 hybrid LX costs $1,600 more than a gas LX ($30,590 against $28,990) but is rated 41 mpg combined against 28 and makes 232 hp against 187. The EPA puts its fuel cost at $1,450 a year against $2,150. Edmunds measured 8.0 seconds to 60 mph in the hybrid and more than 9.5 in the gas car, and its cargo area is the same size (39.5 cubic feet behind the rear seats against 39.6)."
+        ],
+        [
+          "Is AWD worth it on a Sportage?",
+          "If you see snow, yes. On the gas Sportage it adds $1,800 and costs 2 mpg (26 combined against 28). On a hybrid it costs more fuel: 35 mpg combined against 41 or 42 for front drive. A 2026 hybrid S, EX, X-Line or SX Prestige is AWD only; a 2027 S or EX can be front drive."
+        ],
+        [
+          "What is the destination charge on a Sportage?",
+          "$1,495 on both the 2026 and the 2027, up from $1,395 at the 2026 launch. Kia’s advertised starting prices leave it out."
+        ],
+        [
+          "Does Kia offer cash back on the Sportage?",
+          "Yes. In Chicago, Dallas, Los Angeles and New York on November 18, 2026, Kia listed $750 customer cash on a 2026 Sportage and Sportage Hybrid and $500 on a 2027 Sportage Hybrid, plus $750 Retail Bonus Cash on a 2026 hybrid or plug-in (and on specially tagged gas cars). All end January 4, 2027."
+        ],
+        [
+          "Is a used Sportage a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2025 is $28,319 at about 21,000 miles, and Edmunds’ Texas price for a new 2026 LX is $28,870 with destination. Used loans averaged 11.19% in the second quarter of 2026, against Kia’s 0% on a new 2026. A Kia Certified Pre-Owned car, with its 10-year/100,000-mile powertrain warranty, is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-SPORTAGE-01",
+          "title": "Kia: 2027 Sportage",
+          "url": "https://www.kia.com/us/en/sportage",
+          "scope": "2027 Sportage gas trims, starting MSRP excluding destination, EPA mpg, standard equipment, 5-star and Top Safety Pick+ claims, 10-year/100,000-mile powertrain warranty and rear legroom claim, read November 18, 2026",
+          "note": "2027 prices, mpg and equipment"
+        },
+        {
+          "id": "VEH-SPORTAGE-02",
+          "title": "Kia: 2027 Sportage Hybrid",
+          "url": "https://www.kia.com/us/en/sportage-hybrid",
+          "scope": "2027 Sportage Hybrid trims, starting MSRP excluding destination, EPA mpg, 232 hp and equipment by trim, read November 18, 2026",
+          "note": "hybrid prices, mpg and equipment"
+        },
+        {
+          "id": "VEH-SPORTAGE-03",
+          "title": "Kia: 2027 Sportage Plug-in Hybrid",
+          "url": "https://www.kia.com/us/en/sportage-plug-in-hybrid",
+          "scope": "2027 Sportage Plug-in Hybrid trims, starting MSRP excluding destination, 268 hp and Kia-estimated electric range, read November 18, 2026",
+          "note": "plug-in prices and equipment"
+        },
+        {
+          "id": "VEH-SPORTAGE-04",
+          "title": "The Auto Channel: Kia announces pricing for 2027 Sportage Hybrid and Plug-in Hybrid (Kia release of July 20, 2026)",
+          "url": "https://www.theautochannel.com/news/2026/07/20/1693929-kia-announces-pricing-for-2027-sportage-hybrid-and-sportage-plug.html",
+          "scope": "2027 Sportage Hybrid and Plug-in Hybrid MSRP by trim and drivetrain, $1,495 destination, new front-drive S and EX hybrids, Technology Package; Kia’s release as reproduced by The Auto Channel",
+          "note": "2027 hybrid and plug-in price table"
+        },
+        {
+          "id": "VEH-SPORTAGE-05",
+          "title": "AutoGuide: Kia announces pricing for 2027 Sportage (Kia release of August 26, 2026)",
+          "url": "https://www.autoguide.com/auto/manufacturers/kia/kia-announces-pricing-for-2027-sportage-44637490",
+          "scope": "2027 gas Sportage MSRP by trim and drivetrain, $1,495 destination, X-Line panoramic sunroof and power liftgate now standard; matches kia.com’s starting prices",
+          "note": "2027 gas price table and X-Line change"
+        },
+        {
+          "id": "VEH-SPORTAGE-06",
+          "title": "Kia: 2026 Sportage HEV pricing (July 30, 2025)",
+          "url": "https://kiaoldnewsroom.newsmarket.com/news/kia-america-announces-2026-sportage-hev-pricing/s/e2b877ba-53dc-44ad-98ad-b7482af70764",
+          "scope": "2026 Sportage Hybrid launch MSRP by trim ($1,395 destination at launch) and 232 hp",
+          "note": "2026 hybrid launch prices"
+        },
+        {
+          "id": "VEH-SPORTAGE-07",
+          "title": "Kia: 2026 Sportage PHEV pricing (July 1, 2025)",
+          "url": "https://kiaoldnewsroom.newsmarket.com/news/kia-america-announces-2026-sportage-phev-pricing/s/aa711374-8d52-4934-9b68-ef02ac49b208",
+          "scope": "2026 Sportage Plug-in Hybrid MSRP by trim at launch and 268 hp",
+          "note": "2026 plug-in prices"
+        },
+        {
+          "id": "VEH-SPORTAGE-08",
+          "title": "Kia: special offers",
+          "url": "https://www.kia.com/us/en/offers",
+          "scope": "Kia finance, lease, customer cash, Retail Bonus Cash and military offers on the 2026 and 2027 Sportage, Sportage Hybrid and Sportage Plug-in Hybrid at ZIPs 60601, 75201, 90012 and 10001, with the offers’ fine print (rates by term, take-delivery dates, 2026 and 2027 lease MSRPs)",
+          "note": "finance, lease and cash offers, read at four ZIPs"
+        },
+        {
+          "id": "VEH-SPORTAGE-09",
+          "title": "Kia: Certified Pre-Owned",
+          "url": "https://www.kia.com/us/en/cpo",
+          "scope": "Kia Certified Pre-Owned inspection (165 points), 10-year/100,000-mile certified powertrain warranty and 1-year/12,000-mile Platinum coverage",
+          "note": "certified used terms"
+        },
+        {
+          "id": "VEH-SPORTAGE-10",
+          "title": "iSeeCars: 2026 Kia Sportage price",
+          "url": "https://www.iseecars.com/car/2026-kia-sportage-price",
+          "scope": "2026 gas Sportage MSRP by trim and drivetrain, dealer invoice and the $1,495 destination charge",
+          "note": "2026 gas prices and dealer invoice"
+        },
+        {
+          "id": "VEH-SPORTAGE-11",
+          "title": "TrueCar: 2026 Kia Sportage",
+          "url": "https://www.truecar.com/overview/kia/sportage/2026/",
+          "scope": "Starting MSRP and TrueCar starting market average by 2026 Sportage, Hybrid and Plug-in trim, read November 18, 2026 (63 transactions in the past 4 weeks for the base trim)",
+          "note": "market averages by trim"
+        },
+        {
+          "id": "VEH-SPORTAGE-12",
+          "title": "Edmunds: 2026 Kia Sportage",
+          "url": "https://www.edmunds.com/kia/sportage/2026/",
+          "scope": "Edmunds rating (7.8), editors’ trim pick, tested acceleration and fuel economy, cargo volume, suggested prices (Texas sales through November 2, 2026), days to turn and November buying tips for the 2026 gas Sportage",
+          "note": "gas review score, test results and suggested prices"
+        },
+        {
+          "id": "VEH-SPORTAGE-13",
+          "title": "Edmunds: 2026 Kia Sportage Hybrid",
+          "url": "https://www.edmunds.com/kia/sportage-hybrid/2026/",
+          "scope": "Edmunds rating (8.6), editors’ trim pick, 8.0-second 0-60 test, cargo volume, suggested prices (Texas sales through November 2, 2026), days to turn and November buying tips for the 2026 Sportage Hybrid",
+          "note": "hybrid review score, test results and suggested prices"
+        },
+        {
+          "id": "VEH-SPORTAGE-14",
+          "title": "Edmunds: 2026 Kia Sportage Plug-in Hybrid",
+          "url": "https://www.edmunds.com/kia/sportage-plug-in-hybrid/",
+          "scope": "Edmunds editors’ trim pick, suggested prices (Texas sales through November 2, 2026), supply and days to turn for the 2026 Sportage Plug-in Hybrid",
+          "note": "plug-in suggested prices and supply"
+        },
+        {
+          "id": "VEH-SPORTAGE-15",
+          "title": "Edmunds: 2027 Kia Sportage Hybrid",
+          "url": "https://www.edmunds.com/kia/sportage-hybrid/2027/",
+          "scope": "2027 Sportage Hybrid MSRP with destination, Edmunds suggested prices (Texas sales through November 2, 2026), supply, days to turn and November buying tips",
+          "note": "2027 hybrid prices and tips"
+        },
+        {
+          "id": "VEH-SPORTAGE-16",
+          "title": "Edmunds: 2027 Kia Sportage",
+          "url": "https://www.edmunds.com/kia/sportage/2027/",
+          "scope": "2027 gas Sportage Edmunds suggested prices (Texas sales through November 2, 2026), supply, days to turn and November buying tips",
+          "note": "2027 gas prices and tips"
+        },
+        {
+          "id": "VEH-SPORTAGE-17",
+          "title": "CarWhere: 2026 Kia Sportage price",
+          "url": "https://www.carwhere.com/price/kia/sportage/2026",
+          "scope": "Median price paid against MSRP by 13 verified 2026 Sportage buyers, March to November 2026, and the middle half of deals",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-SPORTAGE-18",
+          "title": "CarWhere: used Kia Sportage prices",
+          "url": "https://www.carwhere.com/used-car-prices/kia/sportage",
+          "scope": "Median asking price, mileage and listing count of used Sportages by model year 2021 to 2025, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-SPORTAGE-19",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of Kia quotes with dealer add-ons and their average price (134 quotes), and the industry-wide figures, June 2026",
+          "note": "add-ons on Kia quotes"
+        },
+        {
+          "id": "VEH-SPORTAGE-20",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Industry days of supply and the share of Kia’s inventory that is model year 2027, end of October 2026; Toyota, Honda, RAV4 and CR-V days of supply",
+          "note": "days of supply and 2027 share"
+        },
+        {
+          "id": "VEH-SPORTAGE-21",
+          "title": "Kelley Blue Book: 2026 Kia Sportage",
+          "url": "https://www.kbb.com/kia/sportage/2026/",
+          "scope": "KBB expert rating, consumer rating and fair purchase price range for the 2026 Sportage",
+          "note": "review score and fair purchase price"
+        },
+        {
+          "id": "VEH-SPORTAGE-22",
+          "title": "U.S. News: Kia Sportage",
+          "url": "https://cars.usnews.com/cars-trucks/kia/sportage",
+          "scope": "U.S. News score and compact SUV rank for the 2026 gas Sportage",
+          "note": "review score and rank"
+        },
+        {
+          "id": "VEH-SPORTAGE-23",
+          "title": "U.S. News: Kia Sportage Hybrid",
+          "url": "https://cars.usnews.com/cars-trucks/kia/sportage-hybrid",
+          "scope": "U.S. News score and hybrid SUV rank for the Sportage Hybrid",
+          "note": "hybrid review score and rank"
+        },
+        {
+          "id": "VEH-SPORTAGE-24",
+          "title": "J.D. Power: 2026 Kia Sportage",
+          "url": "https://www.jdpower.com/cars/2026/kia/sportage",
+          "scope": "J.D. Power consumer rating and category scores for the 2026 Sportage",
+          "note": "owner scores"
+        },
+        {
+          "id": "VEH-SPORTAGE-25",
+          "title": "Consumer Reports: 2026 Kia Sportage reliability",
+          "url": "https://www.consumerreports.org/cars/kia/sportage/2026/reliability/",
+          "scope": "Consumer Reports predicted reliability for the 2026 Sportage",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-SPORTAGE-26",
+          "title": "iSeeCars: Kia Sportage resale value",
+          "url": "https://www.iseecars.com/car/kia-sportage/resale-value",
+          "scope": "Sportage depreciation at three and five years against compact SUVs and all vehicles",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-SPORTAGE-27",
+          "title": "FuelEconomy.gov: Kia Sportage",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Kia_Sportage.shtml",
+          "scope": "EPA fuel economy, annual fuel cost and plug-in electric range for the 2026 and 2027 Sportage, Hybrid and Plug-in Hybrid (records 49455, 49456, 49503, 49504, 49510, 49767, 50345, 50347, 50532, 50549, 50550, 50706)",
+          "note": "EPA mpg, fuel cost and electric range"
+        },
+        {
+          "id": "VEH-SPORTAGE-28",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 and 2027 Sportage and Sportage Hybrid (vehicle IDs 21186 to 21189, 23009 to 23012); plug-in IDs 21190 and 23013 are not rated",
+          "note": "crash-test stars"
+        },
+        {
+          "id": "VEH-SPORTAGE-29",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Sportage recall campaigns by model year 2019 to 2026, including 22V651, 22V878, 23V298, 23V410, 23V531, 24V025, 24V422, 25V874 and 26V046",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-SPORTAGE-30",
+          "title": "NHTSA: owner complaints",
+          "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=kia&model=sportage&modelYear=2023",
+          "scope": "NHTSA owner complaint counts and components for the 2019 to 2026 Sportage, deduplicated by ODI number",
+          "note": "owner complaint counts"
+        },
+        {
+          "id": "VEH-SPORTAGE-31",
+          "title": "IIHS: 2026 Kia Sportage",
+          "url": "https://www.iihs.org/ratings/vehicle/kia/sportage-4-door-suv/2026",
+          "scope": "IIHS crash test, headlight, front crash prevention, seat belt reminder and LATCH ratings and 2026 Top Safety Pick+ for the 2026 Sportage",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-SPORTAGE-32",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-SPORTAGE-33",
+          "title": "Edmunds: 2026 Toyota RAV4",
+          "url": "https://www.edmunds.com/toyota/rav4/2026/",
+          "scope": "Edmunds tested 0-60 time and cargo volume for the 2026 RAV4, used as a rival yardstick",
+          "note": "RAV4 test result and cargo"
+        },
+        {
+          "id": "VEH-SPORTAGE-34",
+          "title": "Edmunds: 2026 Honda CR-V",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/",
+          "scope": "Edmunds cargo volume and EPA mpg for the 2026 CR-V gas engine, used as a rival yardstick",
+          "note": "CR-V cargo and mpg"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-kia-sportage-sx-prestige",
+        "width": 1920,
+        "height": 940,
+        "alt": "Black 2026 Kia Sportage SX-Prestige SUV with black 19-inch wheels in a studio, front three-quarter view",
+        "caption": "A 2026 Sportage SX-Prestige.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Kia_Sportage_SX-Prestige.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Sportage Hybrid rated 41 mpg combined with front drive",
+        "Five stars overall from NHTSA and a 2026 IIHS Top Safety Pick+",
+        "Sells about 5–6% under sticker on a 2026 (Edmunds, Texas)",
+        "0% APR for 48 months on a 2026"
+      ],
+      "cons": [
+        "Gas engine takes more than 9.5 seconds to reach 60 mph",
+        "Gas Sportage is rated 28 mpg combined, a few mpg behind rivals",
+        "Plug-in starts at $40,490",
+        "Kia’s best rates sit on different model years"
+      ],
+      "rivals": [
+        "Get a quote on the Toyota RAV4 too. It’s hybrid-only and starts at $31,900 for a 2026, $1,410 more than a Sportage Hybrid LX. Edmunds timed a front-drive RAV4 at 7.5 seconds to 60 mph against the Sportage Hybrid’s 8.0, but dealers sell most RAV4 trims within about 2% of sticker (see our <a href=\"/toyota-rav4-price.html\">RAV4 price guide</a>). The Honda CR-V Hybrid starts at $35,630 for a 2026 Sport, $5,140 more than a Sportage Hybrid LX, and its gas engine is rated 30 mpg combined against the Sportage’s 28 (see our <a href=\"/honda-cr-v-price.html\">CR-V price guide</a>). Edmunds measures 39.6 cubic feet behind a gas Sportage’s rear seats, against 37.8 for the RAV4 and 39.3 for the CR-V. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/kia/sportage/2026/",
+            "value": 7.8,
+            "scale": 10,
+            "display": "7.8",
+            "detail": "The hybrid scores 8.6; the gas car needs more than 9.5 seconds to 60 mph"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/kia/sportage/2026/",
+            "value": 4.6,
+            "scale": 5,
+            "display": "4.6",
+            "detail": "Owners give it 3.7 out of 5 (46 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/kia/sportage",
+            "value": 8.9,
+            "scale": 10,
+            "display": "8.9",
+            "detail": "Ranked 3rd of 14 compact SUVs; the hybrid scores 9.3"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/kia/sportage",
+            "value": 81,
+            "scale": 100,
+            "display": "81",
+            "detail": "Owners rate quality 82, resale 85, dealership 73"
+          }
+        ],
+        "note": "Scores for the 2026 Sportage as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Sportage and Sportage Hybrid, front- and all-wheel drive",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5,
+            "note": "Driver 5, passenger 5"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "16.9% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good",
+            "note": "Carried over from the Hyundai Tucson"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Good",
+            "note": "Rear-seat restraints and leg and foot protection Acceptable"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Acceptable",
+            "note": "Good on the SX Prestige and X-Pro Prestige"
+          },
+          {
+            "label": "IIHS crash prevention, pedestrians",
+            "grade": "Good"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 2
+          },
+          {
+            "label": "2020",
+            "value": 2
+          },
+          {
+            "label": "2021",
+            "value": 2
+          },
+          {
+            "label": "2022",
+            "value": 1
+          },
+          {
+            "label": "2023",
+            "value": 7
+          },
+          {
+            "label": "2024",
+            "value": 3
+          },
+          {
+            "label": "2025",
+            "value": 1
+          },
+          {
+            "label": "2026",
+            "value": 1
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 Sportage to be <a href=\"https://www.consumerreports.org/cars/kia/sportage/2026/reliability/\" rel=\"noopener\">more reliable than the average new car</a>, judging from the 2023 to 2025 models.",
+        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2026 Sportage and Sportage Hybrid, front- and all-wheel drive, which rate the same; NHTSA has not rated the plug-in. Grades from <a href=\"https://www.iihs.org/ratings/vehicle/kia/sportage-4-door-suv/2026\" rel=\"noopener\">IIHS</a> for the 2026 Sportage, read November 18, 2026. IIHS names the 2026 Sportage a Top Safety Pick+, an award that applies only to cars built after May 2025. Recall counts combine NHTSA’s <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">Sportage listings</a>, which include the hybrid and plug-in, deduplicated by campaign; the 2026 one is instrument panel recall 26V046. Check any used Sportage’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-kia-sportage-x-pro",
+          "width": 1920,
+          "height": 900,
+          "alt": "White 2026 Kia Sportage X-Pro with black wheels and all-terrain tires on a turntable at an auto show, front three-quarter view",
+          "caption": "X-Pro",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Kia_Sportage_X-Pro.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped; visitors’ faces blurred"
+        },
+        {
+          "file": "vehicle-kia-sportage-x-line",
+          "width": 1920,
+          "height": 1170,
+          "alt": "Green 2026 Kia Sportage X-Line with black wheels parked outside a showroom, front three-quarter view",
+          "caption": "X-Line",
+          "author": "Elise240SX",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026_Kia_Sportage_X-Line_in_Jungle_Green,_front_left,_2026-04-03.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-kia-sportage-rear",
+          "width": 1920,
+          "height": 946,
+          "alt": "White Kia Sportage GT-Line SUV with black wheels parked on a street, rear three-quarter view",
+          "caption": "Rear (Australian-market GT-Line)",
+          "author": "LuvsMG481",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Kia_Sportage_GT-Line_facelift_rear.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plate and dealer frame blurred"
+        },
+        {
+          "file": "vehicle-kia-sportage-interior",
+          "width": 1920,
+          "height": 900,
+          "alt": "Dashboard with two 12.3-inch displays and a rotary gear selector in a Kia Sportage Hybrid on display at an auto show",
+          "caption": "EX Hybrid interior (Philippine-market car)",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kia_Sportage_NQ5_PE_1.6T_EX_HEV_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped to drop visitors seen through the glass"
+        }
+      ]
     }
   ]
 }
