@@ -375,6 +375,23 @@ Reddit section: per-car file data/reddit-sentiment/cars/hyundai-tucson.json (see
 
 Open items for Mason: the pick (2026 Hybrid SEL Convenience; Hybrid SEL front-drive for price; skip Limited, Night and the plug-in unless you charge at home); "buy new, as a 2026" with the redesign due early 2027 (say if buyers should wait); the used advice (2023 or 2024; skip 2019–2021 unless 20V543 was done); the five discount groups; the "up to $3,000" bonus-cash wording. Not read: TrueCar, military and college offers, Plug-in offers at three ZIPs, the 1.9%/72 rate. Read through summaries: iSeeCars, CarWhere, Cox, IIHS. Offers end November 30, 2026.
 
+## Ford Ranger (added November 18, 2026)
+
+`ford-ranger-price.html` covers the Ranger (XL, XLT, Lariat, Raptor; crew cab only) in the Tacoma's template with no spotlight section. Differences:
+
+- **The XLT price disagrees across Ford's own pages.** The overview prints $35,575; Build & Price shows $36,075, as do iSeeCars, Cars.com and U.S. News. The page uses $36,075. Destination ($1,895) is on Ford's build summary; 4x4 (+$3,500) is from Build & Price cards. KBB, Edmunds and Cars.com carry older MSRPs, so Ford appears to have raised prices about $200 recently.
+- **2027 prices are secondary.** Ford has not posted them; the column is Cars.com's list, and the Lariat is $1,230 below the 2026 for no stated reason. The 3.0L V6 replacing the 2.7L is autoevolution's report on Ford's order guide, unconfirmed by Ford; the page says so.
+- **Sale price.** Edmunds' tips (browser): about $1,362 under MSRP plus Ford's $2,000 rebate. Its Texas suggested prices appear to include that cash, so the ranges use the $1,362 figure. iSeeCars invoice 3.0–4.0% under. CarWhere has 14 buyers (2025 and 2026 mixed). Cox has no Ranger figure. TrueCar returned 403 and a bot check; nothing was done to get past it.
+- **Offers** were read on ford.com at ZIPs 60601, 75201, 90012 and 10001 (the ZIP link sets the region). Ford does not say whether the cash combines with the 4.9%, so the chart treats them as alternatives and the text says so. A Consumer Reports cash-back banner matched no Ford page. Edmunds still mentions a 3.9%/48 rate Ford no longer lists.
+- **Safety.** NHTSA lists "RANGER (SUPER CREW)": 4 stars, 3 rollover. IIHS: updated moderate overlap Marginal, child-seat anchors Poor; no award listed.
+- **Recalls** are NHTSA counts for "RANGER", many shared with other Ford models. Watch items (26V343, 26V548, 26V605) come from NHTSA's API summaries. The complaints API returned nothing for 2021 and later, so there are no complaint counts.
+- **Scores.** Edmunds, KBB and U.S. News were read; J.D. Power has not rated the 2026; Consumer Reports' road test is paywalled. U.S. News' rival prices are that page's.
+- **Photos.** Five Wikimedia Commons images, four of 2023–2024 trucks: HJUdall (CC0), Ethan Llamas (CC BY-SA 4.0, two; a Philippines show car, captioned as not U.S.-spec), Kevauto (CC BY-SA 4.0; plates blurred), Charles from Port Chester (CC BY 2.0). Cropped; a face and a crowd blurred. No clean 2026 or U.S. Raptor photo exists. Sharp came from another checkout; metadata stripped.
+
+Reddit section: per-car file data/reddit-sentiment/cars/ford-ranger.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 XLT, 4x4 off pavement, 2.3L), "skip the 2.7L V6", "buy new, as a 2026" and the used advice (Gold Certified 2024 or 2025, recalls done) were written from the research. Discount ranges lean on Edmunds' $1,362, iSeeCars invoice and 14 buyers, with no TrueCar; check against real deals. Not read: the 2.7L V6 price option, the Los Angeles 2.9% end date, military, first responder and college amounts, TrueCar. Check: the XLT price, Cars.com 2027 prices and the 3.0L V6, whether cash combines with 4.9%, the Raptor show-car caption. Offers end November 30, 2026.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

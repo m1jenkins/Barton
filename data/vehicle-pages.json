@@ -16140,6 +16140,739 @@
           "note": "cropped"
         }
       ]
+    },
+    {
+      "slug": "ford-ranger-price.html",
+      "name": "Ford Ranger",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Ford Ranger Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Ford Ranger costs in November 2026: MSRP by trim from the XL to the Raptor, how far under sticker dealers sell it, Ford’s current cash and financing offers, and whether to buy new, used or CPO.",
+      "h1": "Ford Ranger price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$33,550 <small>to $57,270</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "3–4% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Ford incentives",
+          "value": "$2,500 <small>cash, or 4.9% APR</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 XLT",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Ranger is the midsize pickup to price first if ride quality and tech matter to you. Edmunds ranks it first of seven midsize trucks and timed a 4x4 Lariat to 60 mph in 6.7 seconds, a second quicker than a comparable Tacoma. The catch is the sticker: Edmunds says it costs a bit more than the Colorado, and U.S. News ranks it seventh of seven, citing low-speed transmission jitters and cheap cabin materials. Ford is carrying plenty of stock (112 days of supply across the brand in October, against 87 for the industry) and adds $2,000 cash plus $500 Black Friday bonus cash through November 30. Price a 2026 XLT, aim for 3–4% under MSRP before Ford’s cash, and get your bank’s rate before you accept Ford’s 4.9%. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "XL",
+            "short": "Work truck",
+            "gets": "2.3L four-cylinder with a 10-speed automatic, rear-wheel drive; FX4 Off-Road package and Trailer Tow Package available",
+            "prices": [
+              33550,
+              34020
+            ],
+            "engine": "2.3L turbo four, 270 hp; 4x4 adds $3,500"
+          },
+          {
+            "name": "XLT",
+            "short": "The value pick",
+            "gets": "Sport Appearance Package available, power moonroof available, wireless phone charging and rear parking sensors (Edmunds)",
+            "prices": [
+              36075,
+              36340
+            ],
+            "engine": "2.3L turbo four, 270 hp; 2.7L turbo V6, 315 hp, available; 4x4 adds $3,500",
+            "pick": true
+          },
+          {
+            "name": "Lariat",
+            "short": "Luxury",
+            "gets": "Power, heated front seats with driver memory, Zone Lighting, 2.7L V6 available",
+            "prices": [
+              43955,
+              42725
+            ],
+            "engine": "2.3L turbo four, 270 hp; 2.7L turbo V6, 315 hp, available; 4x4 adds $3,500"
+          },
+          {
+            "name": "Raptor",
+            "short": "Off-road V6",
+            "gets": "2.5-inch FOX Live Valve shocks, Watts-link rear suspension, electronic-locking front and rear axles, 4x4 only",
+            "prices": [
+              57270,
+              57210
+            ],
+            "engine": "3.0L twin-turbo V6, 405 hp, 4x4; tows 5,510 pounds"
+          }
+        ],
+        "after": [
+          "Prices leave out the $1,895 destination charge. The 2027 prices are Cars.com’s, because Ford has not posted 2027 prices on ford.com; its Lariat is $1,230 below the 2026’s, and Ford has not said why. A report on Ford’s 2027 order guide says the 2.7L V6 gives way to a 3.0L V6 on the XLT and Lariat, which Ford has not confirmed."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 XLT, 4x4 if you leave pavement, with the standard 2.3L four-cylinder.</strong> At $36,075 it costs $2,525 more than the XL and adds wireless phone charging and rear parking sensors, which Edmunds credits when it names the XLT its Editors’ Pick. The 4x4 adds $3,500. Ford’s lease deals are aimed at the XLT too.",
+        "If you tow, every trim with the Trailer Tow Package is rated at 7,500 pounds, so the V6 buys no extra capacity. Edmunds tested both engines and found the 2.7L V6 only a little quicker (6.2 seconds to 60 mph against 6.7 for the four-cylinder Lariat) and rated at 20 mpg combined against 21 with 4x4, so we’d skip it. The Raptor is a different truck: $57,270, 17 mpg combined and a 5,510-pound tow rating. Ford’s cash does not apply to it, and Edmunds says it sells about $800 under sticker."
+      ],
+      "pay": {
+        "intro": [
+          "Rangers sell under sticker, and Ford’s cash comes on top. Edmunds’ November tips put the average buyer about $1,362 under MSRP before Ford’s $2,000 cash, and a Ranger sells in a median 22 days against 34 for the average new vehicle. Ford is long on trucks, though: Cox counted 112 days of supply for the brand in October against 87 for the industry. CarWhere’s 14 verified buyers paid a median 6.2% under MSRP, in a sample too small to lean on. The Raptor is the exception, with about $800 off and no general cash."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "XL, XLT, Lariat",
+            "example": "XLT",
+            "fair": "3–4% under",
+            "strong": "6–7% under",
+            "why": "Edmunds’ average is about $1,362 under MSRP before cash, and iSeeCars’ dealer invoice sits 3–4% under. CarWhere’s median buyer got 6.2% under."
+          },
+          {
+            "trims": "Raptor",
+            "example": "Raptor",
+            "fair": "1–2% under",
+            "strong": "3–4% under",
+            "why": "Edmunds says buyers get about $800 off and no general customer cash. iSeeCars’ invoice is 4% under MSRP."
+          }
+        ],
+        "note": "Our estimate from Edmunds’ November tips, iSeeCars’ dealer invoice figures and CarWhere’s 14 buyers, checked November 18, 2026. Ford’s cash comes off separately.",
+        "after": [
+          "Not sure what a specific Ranger should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 XLT",
+          "sticker": 37970,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 3.5%",
+              "amount": 1330
+            }
+          ],
+          "total": 36640,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Ford is offering $2,000 cash plus $500 Black Friday bonus cash, or 4.9% financing for 60 months, on the 2026 Ranger. Every offer we read ends November 30, and the Raptor gets almost none of it. There are no 2027 offers yet."
+        ],
+        "rows": [
+          {
+            "offer": "$2,500 cash back",
+            "detail": "$2,000 customer cash plus $500 Black Friday bonus cash. Ford lists the cash and the 4.9% rate as separate offers and its pages do not say whether they combine.",
+            "applies": "2026 Ranger, in all four regions we checked. The bonus cash is not available on the Raptor.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "4.9% APR for 60 months",
+            "detail": "Through Ford Credit, for qualified buyers",
+            "applies": "2026 Ranger, in all four regions. A second version in New York runs to January 4, 2027 and excludes the Raptor.",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2.9% APR for 36 months",
+            "detail": "Plus $500 Black Friday bonus cash, through Ford Credit",
+            "applies": "2026 Ranger, in Los Angeles only",
+            "ends": ""
+          },
+          {
+            "offer": "XLT lease",
+            "detail": "$469 a month for 36 months with $1,468 due at signing; in Chicago an XLT 4x4 is $369 with $4,759 due",
+            "applies": "2026 XLT, in all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "XL lease",
+            "detail": "$289 a month for 36 months with $3,959 due at signing, Crew Cab 4x2",
+            "applies": "2026 XL, in Los Angeles only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Returning Ford lessee lease",
+            "detail": "$349 a month for 36 months with $4,369 due at signing, after $750 lease renewal cash",
+            "applies": "2026 XLT 4WD, in New York only",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military, first responder and college",
+            "detail": "Ford’s recognition programs give cash toward a new Ford. Ford shows the amount only after you verify eligibility.",
+            "applies": "New Fords; see Ford’s program pages",
+            "ends": ""
+          },
+          {
+            "offer": "2027 Ranger",
+            "detail": "No public offers yet",
+            "applies": "All 2027 trims",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.ford.com/trucks/ranger/incentives-and-offers/\" rel=\"noopener\">Ford’s offers page</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by ZIP, need Ford Credit approval for the rates and leases, and “ends” is the date you must take delivery by. Ford’s page showed no end date for the Los Angeles 2.9% rate.",
+        "cards": [
+          {
+            "label": "Cash back",
+            "figure": "$2,500",
+            "word": "cash",
+            "text": "$2,000 customer cash plus $500 Black Friday bonus cash on a 2026 Ranger. Not on the Raptor. Ends November 30."
+          },
+          {
+            "label": "Financing",
+            "figure": "4.9%",
+            "word": "APR",
+            "text": "For 60 months through Ford Credit, in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "XLT lease",
+            "figure": "$469",
+            "word": "a month",
+            "text": "36 months, $1,468 due at signing, in all four regions. Chicago has an XLT 4x4 at $369. Ends November 30."
+          },
+          {
+            "label": "Raptor",
+            "figure": "$0",
+            "word": "cash back",
+            "text": "Edmunds says the Raptor has no general customer cash, and Ford excludes it from the bonus cash."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, student or first responder?",
+            "text": "Ford’s recognition programs give cash toward a new Ford, and Ford shows the amount only after you verify eligibility. Ask the dealer whether it stacks with the November offers.",
+            "figure": "Varies",
+            "unit": "by market",
+            "detail": "Amount shown after verification",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Cash or 4.9%",
+          "title": "Taking the cash costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $38,000 Ranger over 60 months, taking each offer on its own. Borrowers with top credit averaged 4.41%, below Ford’s 4.9%, so get your bank’s rate before you sign.",
+          "price": 38000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "$2,500 cash",
+              "detail": "$2,000 plus $500 bonus, at 6.35%",
+              "rate": 6.35,
+              "cash": 2500
+            },
+            {
+              "name": "4.9% APR",
+              "detail": "60 months, Ford Credit",
+              "rate": 4.9,
+              "cash": 0
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used 2024 asks a median $37,075, about what a new XLT costs before Ford’s $2,500 cash, and used loans average 11.19% against Ford’s 4.9% on a new one."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Ford’s cash, financing and leases apply to the 2026, and it is the truck dealers are stocked with.",
+            "check": "That the offer runs in your region, that the truck is not a Raptor if you expect the bonus cash, and that its recalls are done."
+          },
+          {
+            "route": "New 2027",
+            "when": "You can wait, or you want the 2027’s changes.",
+            "check": "Ford has not posted 2027 prices or offers on ford.com, and the 2027 lineup may swap the 2.7L V6 for a 3.0L V6, per a report on Ford’s order guide."
+          },
+          {
+            "route": "CPO (Ford Blue Advantage Gold)",
+            "when": "You want a 2024 or 2025 with a warranty and you’re paying cash.",
+            "check": "That it is Gold Certified, not Blue. Gold covers trucks up to 6 years old with under 80,000 miles, adds a 172-point inspection, a 12-month/12,000-mile comprehensive warranty and 7-year/100,000-mile powertrain coverage. Blue Certified gives 90 days or 4,000 miles."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $31,000, which buys a 2023 or older.",
+            "check": "Open recalls by VIN, an independent inspection, and that you are comparing like with like: the Ranger was redesigned for 2024, so a 2023 is the previous generation."
+          }
+        ],
+        "after": [
+          "Whichever you buy, ask for the recall paperwork in writing. NHTSA lists 13 recall campaigns on the 2024 and 13 on the 2025, and 8 on the 2026, including two engine recalls that can cause a loss of drive power."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in five years",
+            "bars": [
+              {
+                "label": "Ranger",
+                "value": 31.2,
+                "display": "31.2%"
+              },
+              {
+                "label": "Midsize pickups",
+                "value": 30.2,
+                "display": "30.2%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 41.7,
+                "display": "41.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Ford offer",
+                "value": 4.9,
+                "display": "4.9%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Ford; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 25814,
+                "display": "$25,814"
+              },
+              {
+                "label": "2022",
+                "value": 28488,
+                "display": "$28,488"
+              },
+              {
+                "label": "2023",
+                "value": 30989,
+                "display": "$30,989"
+              },
+              {
+                "label": "2024",
+                "value": 37075,
+                "display": "$37,075"
+              },
+              {
+                "label": "2025",
+                "value": 39089,
+                "display": "$39,089"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Engine recalls.</strong> NHTSA lists two recalls for loss of drive power on 2025 and 2026 Rangers. 26V343 (2025–2026) is fixed with a new engine long block; 26V548 (2026) is an inspection, and Ford’s letter says the remedy is expected in December 2026. Check any truck’s VIN before you sign.",
+        "<strong>Rearview camera recall.</strong> 26V605 covers 2026 Rangers with the 10.1-inch screen, which can lose power and drop the camera image. NHTSA lists the remedy as under development.",
+        "<strong>Dealer-installed extras.</strong> Ford’s own price list shows a hard roll-up tonneau cover at $1,470 and cargo management rails at $600. If a dealer’s quote includes extras you didn’t ask for, ask for them to come off.",
+        "<strong>The Raptor and the offers.</strong> The $500 bonus cash excludes the Raptor, and Edmunds says it carries no general cash. Don’t expect the Ranger deals to apply to it.",
+        "<strong>The model year.</strong> A 2026 and a 2027 can sit on the same lot. Ford’s current offers are for the 2026.",
+        "<strong>Financing terms.</strong> The 4.9% needs Ford Credit approval, and Ford’s pages do not say whether it combines with the cash. Compare the total cost with your bank’s rate."
+      ],
+      "faq": [
+        [
+          "Is the Ford Ranger a good truck?",
+          "Most reviewers rate it well, with one outlier. Edmunds scores the 2026 a 7.1 out of 10 and ranks it first of seven midsize trucks, and Kelley Blue Book gives it a 4.7 out of 5. U.S. News scores it 8.4 and ranks it seventh of seven, and faults low-speed transmission jitters and cheap cabin materials. Consumer Reports expects about average reliability."
+        ],
+        [
+          "How much under MSRP can you get a Ford Ranger?",
+          "On an XL, XLT or Lariat, 3–4% under MSRP is a fair deal and 6–7% a strong one, before Ford’s $2,500 cash. The Raptor has less room, around 1–2%. Those ranges are our read of Edmunds’ tips, iSeeCars’ invoice figures and CarWhere’s 14 verified buyers, so a given dealer may land a point either side."
+        ],
+        [
+          "What is the destination charge on a Ranger?",
+          "$1,895 on the 2026. Ford’s advertised prices leave it out, so a $33,550 XL is $35,445 on the window sticker."
+        ],
+        [
+          "Does Ford offer cash back on the Ranger?",
+          "Yes, until November 30, 2026: $2,000 customer cash plus $500 Black Friday bonus cash on a 2026 Ranger, in Chicago, Dallas, Los Angeles and New York. The bonus cash is not available on the Raptor, and Edmunds says the Raptor has no general cash. Ford’s pages do not say whether the cash combines with its 4.9% financing, so ask the dealer."
+        ],
+        [
+          "Should I buy the 2.7L V6?",
+          "Probably not. Edmunds clocked a V6 Ranger at 6.2 seconds to 60 mph against 6.7 for a four-cylinder Lariat 4x4, found no towing gain, and the EPA rates the V6 at 20 mpg combined against 21 for the 2.3L 4x4. Both engines tow 7,500 pounds with the Trailer Tow Package."
+        ],
+        [
+          "Is the Ranger Raptor worth it?",
+          "Only if you will use it off pavement. It starts at $57,270 against $43,955 for a Lariat, is rated 17 mpg combined, and tows 5,510 pounds against 7,500. It makes 405 hp from a 3.0L twin-turbo V6, and gets none of Ford’s November cash."
+        ],
+        [
+          "Is a used Ranger a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2024 is $37,075 and for a 2025 $39,089, while a new XLT starts at $36,075 before Ford’s $2,500 cash. Used loans averaged 11.19% in the second quarter of 2026, against Ford’s 4.9% on a new one. A Gold Certified 2024 or 2025 with its recalls done is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-RANGER-01",
+          "title": "Ford: 2026 Ranger",
+          "url": "https://www.ford.com/trucks/ranger/",
+          "scope": "2026 Ranger trims, starting MSRP excluding destination, engines, towing and payload by engine",
+          "note": "2026 trims, prices and capability"
+        },
+        {
+          "id": "VEH-RANGER-02",
+          "title": "Ford: Ranger Build & Price",
+          "url": "https://www.ford.com/build-price/ranger/choose-model",
+          "scope": "2026 Ranger 4x2 and 4x4 starting prices by trim, the XLT MSRP of $36,075, the $1,895 destination charge and dealer-installed accessory prices",
+          "note": "4x4 prices, destination and accessories"
+        },
+        {
+          "id": "VEH-RANGER-03",
+          "title": "Ford: 2026 Ranger incentives and offers",
+          "url": "https://www.ford.com/trucks/ranger/incentives-and-offers/",
+          "scope": "Ford cash, finance and lease offers and their delivery deadlines on the 2026 Ranger at ZIPs 60601, 75201, 90012 and 10001",
+          "note": "finance, cash and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-RANGER-04",
+          "title": "iSeeCars: 2026 Ford Ranger price",
+          "url": "https://www.iseecars.com/car/2026-ford-ranger-price",
+          "scope": "MSRP, dealer invoice and destination charge by 2026 Ranger configuration",
+          "note": "prices by configuration and dealer invoice"
+        },
+        {
+          "id": "VEH-RANGER-05",
+          "title": "Cars.com: 2027 Ford Ranger",
+          "url": "https://www.cars.com/research/ford-ranger-2027/",
+          "scope": "2027 Ranger starting prices by trim (Ford has not posted 2027 prices on ford.com)",
+          "note": "2027 starting prices"
+        },
+        {
+          "id": "VEH-RANGER-06",
+          "title": "autoevolution: 2027 Ranger order guide",
+          "url": "https://www.autoevolution.com/news/ford-order-guide-confirms-2027-ranger-drops-27l-ecoboost-v6-detuned-30l-ecoboost-v6-replaces-it-277235.html",
+          "scope": "Report on Ford’s 2027 US order guide: the 3.0L V6 replacing the 2.7L V6 on the XLT and Lariat, October 19, 2026",
+          "note": "2027 engine change"
+        },
+        {
+          "id": "VEH-RANGER-07",
+          "title": "Edmunds: 2026 Ford Ranger",
+          "url": "https://www.edmunds.com/ford/ranger/2026/",
+          "scope": "Edmunds expert rating and rank, tested acceleration, trim pick, suggested prices by trim, November buying tips, days to sell, new-vehicle supply and engine outputs",
+          "note": "rating, test results, suggested prices and tips"
+        },
+        {
+          "id": "VEH-RANGER-08",
+          "title": "CarWhere: Ford Ranger price",
+          "url": "https://www.carwhere.com/price/ford/ranger",
+          "scope": "Verified Ranger buyers’ median discount from MSRP, January to October 2026",
+          "note": "14 verified buyers"
+        },
+        {
+          "id": "VEH-RANGER-09",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for Ford and the industry at the end of October 2026",
+          "note": "Ford and industry days of supply"
+        },
+        {
+          "id": "VEH-RANGER-10",
+          "title": "iSeeCars: Ford Ranger resale value",
+          "url": "https://www.iseecars.com/car/ford-ranger/resale-value",
+          "scope": "Ranger three- and five-year depreciation against the midsize pickup and all-vehicle averages",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-RANGER-11",
+          "title": "CarWhere: used Ford Ranger prices",
+          "url": "https://www.carwhere.com/used-car-prices/ford/ranger",
+          "scope": "Median used Ranger asking price by model year, 2021 to 2025, as of November 14, 2026",
+          "note": "used asking prices"
+        },
+        {
+          "id": "VEH-RANGER-12",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan APR for Q2 2026 and the super prime new-car rate",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-RANGER-13",
+          "title": "Ford Blue Advantage: certified used",
+          "url": "https://www.ford.com/used/about-certified/ford-blue-advantage/",
+          "scope": "Ford Blue Advantage Gold and Blue Certified eligibility, inspection and warranty terms",
+          "note": "Ford certified program"
+        },
+        {
+          "id": "VEH-RANGER-14",
+          "title": "Ford: New Vehicle Limited Warranty",
+          "url": "https://www.ford.com/support/how-tos/warranty/warranties-and-coverage/what-is-the-ford-new-vehicle-limited-warranty/",
+          "scope": "Ford new-vehicle warranty terms",
+          "note": "new-vehicle warranty"
+        },
+        {
+          "id": "VEH-RANGER-15",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Recall campaigns for the Ranger by model year 2019 to 2026, read through NHTSA’s public API on November 18, 2026",
+          "note": "recall counts and campaign summaries"
+        },
+        {
+          "id": "VEH-RANGER-16",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA crash ratings for the 2026 Ranger (Super Crew), 4WD and RWD",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-RANGER-17",
+          "title": "IIHS: 2026 Ford Ranger crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/ford/ranger-crew-cab-pickup/2026",
+          "scope": "IIHS crash, headlight, seat belt reminder and child-seat anchor ratings for the Ranger crew cab",
+          "note": "crash and headlight ratings"
+        },
+        {
+          "id": "VEH-RANGER-18",
+          "title": "Consumer Reports: 2026 Ford Ranger reliability",
+          "url": "https://www.consumerreports.org/cars/ford/ranger/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Ranger and its recall count",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-RANGER-19",
+          "title": "FuelEconomy.gov: 2026 Ford Ranger",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Ford_Ranger.shtml",
+          "scope": "EPA city, highway and combined mpg by 2026 Ranger engine and drive",
+          "note": "EPA ratings"
+        },
+        {
+          "id": "VEH-RANGER-20",
+          "title": "Kelley Blue Book: 2026 Ford Ranger",
+          "url": "https://www.kbb.com/ford/ranger/2026/",
+          "scope": "KBB expert rating, rank among midsize trucks, consumer rating, fair purchase price range and five-year cost to own",
+          "note": "expert and owner ratings"
+        },
+        {
+          "id": "VEH-RANGER-21",
+          "title": "U.S. News: 2026 Ford Ranger",
+          "url": "https://cars.usnews.com/cars-trucks/ford/ranger",
+          "scope": "U.S. News score and rank among midsize pickups, and the starting MSRP of the Colorado, Tacoma and Ridgeline",
+          "note": "score, rank and rivals’ prices"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-ford-ranger-lariat",
+        "width": 1700,
+        "height": 1062,
+        "alt": "Blue 2024 Ford Ranger Lariat SuperCrew, front three-quarter view",
+        "caption": "A Ranger Lariat.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Ford_Ranger_Lariat.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Edmunds ranks it first of seven midsize trucks",
+        "A V6 option the Colorado and Tacoma lack, and a 7,500-pound tow rating",
+        "$2,500 Ford cash or 4.9% financing through November 30",
+        "Most trims sell 3–4% under sticker before cash"
+      ],
+      "cons": [
+        "Costs more than the Colorado at every step",
+        "IIHS rates the updated front test Marginal and child-seat anchors Poor",
+        "Open engine and camera recalls on recent trucks",
+        "Raptor gets no bonus cash and sells near sticker"
+      ],
+      "rivals": [
+        "Get a quote on the Chevrolet Colorado, Toyota Tacoma and Honda Ridgeline too. U.S. News lists starting MSRPs of $32,400 for the Colorado, $32,445 for the Tacoma and $40,795 for the Ridgeline, against $33,550 for the Ranger, and ranks the Ridgeline first of seven midsize pickups, the Tacoma second and the Colorado third. Edmunds says the Ranger rides more smoothly than the Colorado and Tacoma and has more rear legroom than the Tacoma, but costs a bit more than the Colorado. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/ford/ranger/2026/",
+            "value": 7.1,
+            "scale": 10,
+            "display": "7.1",
+            "detail": "Ranked 1st of 7 midsize trucks"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/ford/ranger/2026/",
+            "value": 4.7,
+            "scale": 5,
+            "display": "4.7",
+            "detail": "Owners give it 4.1 out of 5 (7 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/ford/ranger",
+            "value": 8.4,
+            "scale": 10,
+            "display": "8.4",
+            "detail": "Ranked 7th of 7 midsize pickups"
+          }
+        ],
+        "note": "Scores for the 2026 Ranger as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them. J.D. Power showed the 2026 Ranger as not rated."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Ranger Super Crew",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5,
+            "note": "Driver 5, passenger 5"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 3,
+            "note": "22.8% rollover risk, 4x4"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Marginal",
+            "note": "Updated test, built after April 2025"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Acceptable",
+            "note": "Updated test"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Marginal",
+            "note": "XL and XLT; Raptor Acceptable"
+          },
+          {
+            "label": "IIHS child-seat anchors",
+            "grade": "Poor",
+            "note": "Ease of use"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 11
+          },
+          {
+            "label": "2020",
+            "value": 7
+          },
+          {
+            "label": "2021",
+            "value": 6
+          },
+          {
+            "label": "2022",
+            "value": 5
+          },
+          {
+            "label": "2023",
+            "value": 4
+          },
+          {
+            "label": "2024",
+            "value": 13
+          },
+          {
+            "label": "2025",
+            "value": 13
+          },
+          {
+            "label": "2026",
+            "value": 8
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to have <a href=\"https://www.consumerreports.org/cars/ford/ranger/2026/reliability\" rel=\"noopener\">about average reliability for a new car</a>, judging from the 2024 and 2025.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/ford/ranger-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. The Ranger is sold only as a crew cab. IIHS lists no front crash prevention rating and no Top Safety Pick award for it. Recall counts are NHTSA campaigns for the Ranger by model year, and several are shared with other Ford models; the 2019 to 2023 trucks are the previous generation. Check any used Ranger’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-ford-ranger-raptor",
+          "width": 1920,
+          "height": 1320,
+          "alt": "Orange 2023 Ford Ranger Raptor on a show stand, front three-quarter view",
+          "caption": "Raptor (show car, outside the U.S.)",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Ranger_P703_3.0_Raptor_EcoBoost_V6_Code_Orange_01.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "file": "vehicle-ford-ranger-interior",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Ford Ranger Raptor dashboard with a tall center touchscreen and orange trim",
+          "caption": "Raptor cabin",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Ranger_P703_3.0_Raptor_EcoBoost_V6_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "windshield view blurred"
+        },
+        {
+          "file": "vehicle-ford-ranger-xlt-rear",
+          "width": 1920,
+          "height": 1039,
+          "alt": "Gray Ford Ranger XLT, rear three-quarter view",
+          "caption": "XLT, rear",
+          "author": "Kevauto",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Ford_Ranger_XLT,_rear_3.15.25.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plates blurred"
+        },
+        {
+          "file": "vehicle-ford-ranger-lariat-show",
+          "width": 1180,
+          "height": 960,
+          "alt": "Red Ford Ranger Lariat on an auto show floor, front view with the doors open",
+          "caption": "Lariat, front",
+          "author": "Charles from Port Chester, New York",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Ranger_LARIAT_4WD_SuperCrew_(2024)_(53620395647).jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "note": "cropped, face blurred"
+        }
+      ]
     }
   ]
 }
