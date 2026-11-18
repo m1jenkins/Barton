@@ -166,13 +166,14 @@ test('per-car Reddit files hold ids and codes only, and every vehicle key is wel
   }
 });
 
-test('price guides show the Reddit figures computed from their car file', async () => {
+test('every price guide has a Reddit car file and shows the figures computed from it', async () => {
   const { summarizeCar } = await import('../reddit-sentiment.mjs');
   const { carSentimentFile } = await import('../render-vehicle-pages.mjs');
   const files = new Map(await carFiles());
   for (const vehicle of data.vehicles) {
     const file = carSentimentFile(vehicle).split('/').at(-1);
-    if (!files.has(file)) continue;
+    assert.ok(files.has(file), `${vehicle.slug} has its Reddit car file data/reddit-sentiment/cars/${file}`);
+    assert.match(await read(vehicle.slug), /<section id="reddit" class="vp-section">/, `${vehicle.slug} shows its Reddit section`);
     const summary = summarizeCar(files.get(file)), html = await read(vehicle.slug);
     assert.match(html, new RegExp(`vp-rd-big">${summary.index}<`), `${vehicle.slug} shows the computed index`);
     if (summary.picks.all >= 20) assert.match(html, new RegExp(`vp-rd-big">${summary.picks.share}%<`), `${vehicle.slug} shows the computed pick share`);
