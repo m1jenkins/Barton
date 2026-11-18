@@ -268,6 +268,26 @@ Reddit section: per-car file data/reddit-sentiment/cars/toyota-tundra.json (see 
 
 Open items for Mason: the pick (2026 Limited CrewMax), "buy new, as a 2026", the used advice, the verdict and the pros and cons were written from the research. Check discount ranges (Edmunds Texas 9–10% against TrueCar 5–7%; TRD Pro near sticker). Not confirmed on a primary page: per-trim towing and payload, 2027 i-FORCE MAX Limited drive type, 2027 Trailhunter price, the excluded trims, rival prices, whether rebates stack with rates, IIHS/KBB/iSeeCars/CarWhere/Cox figures. Recheck the cash-or-rate chart's $3,350 gap if `incentives.choice` changes. Offers end November 30, 2026.
 
+## Mazda CX-5 (added November 18, 2026)
+
+`mazda-cx-5-price.html` uses the Camry's template with no spotlight section. Differences:
+
+- **New generation for 2026; the 2027 is a carryover.** No outgoing CX-5 is on sale new. The 2026 prices are from Mazda's January 13 release, the 2027 from its October 26 release and mazdausa.com, both read in a browser. `modelYear` is 2026, since it is the stock and carries the 0% rate.
+- **Destination is $1,595** (Mazda, iSeeCars). Edmunds and KBB still print $1,495, so their totals read $100 low; the pay note says so. One engine, all-wheel drive; the page says "not yet" on a hybrid.
+- **Equipment by trim** is from the 2027 release; the 2026 list was not re-read, and the table's `after` note says so.
+- **Sale price.** Edmunds' Texas prices (browser) 3.9–5.3% under; KBB 3.6–5.0%; CarWhere 18 buyers, median 5%; iSeeCars invoice 2.5% (our arithmetic). TrueCar returned 403; Cox has nothing for Mazda.
+- **Offers** were read on mazdausa.com with the ZIP selector at 60601, 75201, 90012 and 10001. The page states no trim limit on the 0%/36 offers, so we don't. MarketCheck was not used.
+- **Reviews.** Edmunds 6.5 and U.S. News 9.3 differ widely; reported as is. KBB has no expert score for the 2026. J.D. Power has not rated it. Consumer Reports returned 403 and is not cited.
+- **Safety.** NHTSA has not rated the 2026. IIHS: 7 of 8 Good, Top Safety Pick+ in the page header. Small overlap grades are IIHS assignments based on Mazda's own tests; the page says so.
+- **Recalls and complaints.** NHTSA returned no recalls for 2020–2026, so the chart is zeros and the page says to check by VIN. Complaints are by component tag.
+- **Used and CPO.** Mazda's CPO page (browser) states no age or mileage limit, so the page says to ask. iSeeCars' resale page is undated and may reflect older generations. Experian's Q2 2026 rates were re-read.
+- **Rivals:** RAV4 and CR-V figures come from our own pages, not re-read.
+- **Photos.** Five Wikimedia Commons images of Japan-market 2026 cars (the one U.S. photo was too small): TTTNIS (CC0, two), Oq10pass (CC0, two), Suzuki-Ham (CC BY-SA 4.0). Resized only; metadata stripped; alt text and caption say Japan-market.
+
+Reddit section: per-car file data/reddit-sentiment/cars/mazda-cx-5.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 2.5 S Preferred; Select if price comes first), "buy new, as a 2026", the used floor (about $24,000), the verdict and pros and cons were written from the research. Discount ranges lean on Edmunds Texas, KBB and 18 CarWhere buyers, with no TrueCar; check against real deals. Not verified: 2026 trim equipment, whether Top Safety Pick+ covers every trim, Consumer Reports, J.D. Power's missing rating, trim limits on the 0%/36 offers. Offers end November 30; monthly refresh needed.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.
