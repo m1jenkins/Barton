@@ -635,6 +635,308 @@
         ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the headlights, the tires and the battery label, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."],
         ["What should I check on a test drive in the heat?", "Run the air conditioning at full blast for the whole drive and see how fast the cabin cools. Watch the temperature gauge in stop-and-go traffic. We can ask a dealer to schedule an afternoon drive, and a mechanic you choose can look the car over before you sign."]
       ]
+    },
+    {
+      "slug": "car-buying-service-dallas-fort-worth.html",
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "name": "Dallas–Fort Worth",
+      "area": "DFW-area",
+      "center": "Arlington",
+      "zip": "76010",
+      "figures": {
+        "caption": "Public market figures for the Dallas–Fort Worth area, with their sources and dates",
+        "rows": [
+          ["New-car dealer locations, Dallas-Fort Worth-Arlington metro area, 2023", "381", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-DFW-01"],
+          ["Rank for new-vehicle registrations, January to June 2025", "3rd", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DFW-02"],
+          ["Average monthly payment, January to June 2025", "$808", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DFW-03"],
+          ["Days’ supply, January to June 2025", "62", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DFW-04"]
+        ],
+        "note": "These figures come from the public sources named in the table, on the dates shown. The Census count covers store locations in the metro area, and S&P Global Mobility measures the Dallas–Fort Worth designated market area, which has a different boundary. Neither matches the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 381 new-car dealer locations across the Dallas-Fort Worth-Arlington metro area in 2023. S&P Global Mobility ranked the Dallas–Fort Worth market third in the country for new-vehicle registrations in the first half of 2025, behind New York and Los Angeles. The average monthly payment was $808. Dallas–Fort Worth and Houston had the highest payments among the ten markets with the most registrations, and S&P ties that to their large numbers of full-size pickups. Its 62 days’ supply was the second-lowest of the ten, after Detroit’s.",
+        "With this many stores, a buyer who visits two or three only ever compares those. We ask every dealer that has your car for a written out-the-door price in the same week and put the answers side by side, fees included. Tell us the model you want and how far across the metroplex you would drive, and we start asking."
+      ],
+      "photo": {
+        "file": "market-dallas-fort-worth-high-five-interchange",
+        "width": 1920,
+        "height": 1080,
+        "alt": "A multi-lane freeway with light traffic runs beneath a tall stack of curving elevated ramps under a blue sky with scattered clouds.",
+        "caption": "The High Five Interchange in Dallas, with its ramps stacked high over the freeway.",
+        "author": "Danazar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:High_Five_Interchange_2007.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "map": {
+        "lat": 32.7357,
+        "lon": -97.1081,
+        "title": "Map of the 50-mile circle around Arlington",
+        "description": "A 50-mile circle centered on Arlington, midway between Dallas and Fort Worth, covers both cities and their suburbs, from Denton, Frisco and McKinney in the north to Cleburne and Waxahachie in the south, and from Weatherford in the west to Rockwall in the east. Every part of it is in Texas. The Red River, the Oklahoma line, touches the top edge of the map.",
+        "caption": "No state line crosses this circle; the Oklahoma line along the Red River only touches the top edge of the map. Every dealer from Denton to Waxahachie is a Texas dealer, so the Steer Me Right plan covers all of them.",
+        "centerLabel": "Arlington",
+        "centerAnchor": "below",
+        "regions": [
+          { "name": "TEXAS", "lat": 32.15, "lon": -97.95 }
+        ],
+        "places": [
+          { "name": "Denton", "lat": 33.215, "lon": -97.133 },
+          { "name": "McKinney", "lat": 33.1976, "lon": -96.6154 },
+          { "name": "Frisco", "lat": 33.1506, "lon": -96.8238, "anchor": "end" },
+          { "name": "Plano", "lat": 33.0137, "lon": -96.6925 },
+          { "name": "Rockwall", "lat": 32.9312, "lon": -96.4597 },
+          { "name": "Dallas", "lat": 32.7763, "lon": -96.7969 },
+          { "name": "Fort Worth", "lat": 32.7532, "lon": -97.3327, "anchor": "end" },
+          { "name": "Weatherford", "lat": 32.759, "lon": -97.7971, "anchor": "end" },
+          { "name": "Cleburne", "lat": 32.3474, "lon": -97.3865, "anchor": "end" },
+          { "name": "Waxahachie", "lat": 32.3945, "lon": -96.8439 },
+          { "name": "Mansfield", "lat": 32.5635, "lon": -97.142, "minor": true },
+          { "name": "Grapevine", "lat": 32.9337, "lon": -97.0789, "anchor": "end", "minor": true },
+          { "name": "Lewisville", "lat": 33.0462, "lon": -96.9942, "minor": true },
+          { "name": "Burleson", "lat": 32.5421, "lon": -97.3208, "anchor": "end", "minor": true }
+        ]
+      },
+      "local": [
+        ["Ask whether the car has been hailed on", "Large hail falls somewhere in the Dallas–Fort Worth area nearly every year, mostly in spring, and it leaves dents in a car’s roof and hood. Ask the dealer to say in writing whether the car has hail damage or has had hail repair. Ask for photos of the roof and hood taken outside in daylight, from a low angle, because dents show in reflections. Then have a mechanic you choose look for mismatched paint and filler. Tell us if you want to avoid hail history altogether, and we ask each dealer for that answer before we ask for a price."],
+        ["Test a used car for summer heat", "North Texas summers are hot enough to wear on a car. Look at the dashboard top for cracks, the headlight lenses for yellowing, the tire sidewalls for cracks and the roof paint for fading. Ask how old the battery is, and ask for an afternoon test drive with the air conditioning at full blast to see how fast the cabin cools. On a used search we can ask the dealer for photos of those spots and of the battery label. Tell us if you want us to ask for an afternoon drive."],
+        ["Count the toll roads between you and the dealer", "Dallas and Fort Worth sit on opposite sides of the metroplex, and the route to a dealer on the far side can run on a toll road. The North Texas Tollway Authority runs the Dallas North Tollway, the President George Bush Turnpike, the Sam Rayburn Tollway and the Chisholm Trail Parkway. Drivers without a TollTag get a ZipCash bill by mail at the higher rate. Tell us which side you live on and whether you have a TollTag, and we weigh each dealer’s price against the drive to reach it."]
+      ],
+      "plan": "Every dealer in that circle is a Texas dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Oklahoma or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Dallas–Fort Worth?", "No. We’re based in Austin, Texas, and we work with DFW-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you tell if a used car has hail damage?", "Only from what the dealer sends us. We can ask for a written answer on hail damage and repair, and for daylight photos of the roof and hood, and pass them to you. Photos miss dents, so have a mechanic you choose look the car over before you sign."],
+        ["What should I check on a test drive in the summer?", "Run the air conditioning at full blast for the whole drive and see how fast the cabin cools. Ask how old the battery is. We can ask a dealer to schedule an afternoon drive, and a mechanic you choose can look the car over before you sign."],
+        ["Can you pick dealers on my side of the metroplex?", "Yes. Tell us where you live, the toll roads you are willing to use and the longest drive you would make, and we ask the dealers inside that window. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-houston.html",
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "name": "Houston",
+      "area": "Houston-area",
+      "center": "downtown Houston",
+      "zip": "77002",
+      "figures": {
+        "caption": "Public market figures for the Houston area, with their sources and dates",
+        "rows": [
+          ["New-car dealer locations, Houston-Pasadena-The Woodlands metro area, 2023", "317", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-HOU-01"],
+          ["Rank for new-vehicle registrations, January to June 2025", "4th", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-HOU-02"],
+          ["Average monthly payment, January to June 2025", "$840", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-HOU-03"],
+          ["Days’ supply, January to June 2025", "63", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-HOU-04"]
+        ],
+        "note": "These figures come from the public sources named in the table, on the dates shown. The Census count covers store locations in the metro area, and S&P Global Mobility measures the Houston designated market area, which has a different boundary. Neither matches the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 317 new-car dealer locations across the Houston-Pasadena-The Woodlands metro area in 2023. S&P Global Mobility ranked the Houston market fourth in the country for new-vehicle registrations in the first half of 2025. Of the ten markets with the most registrations, it had the highest average monthly payment, $840. Its 63 days’ supply was third-lowest of the ten, after Detroit and Dallas–Fort Worth. S&P links the high payments in Houston and Dallas to their large numbers of full-size pickups.",
+        "Houston is a big, spread-out metro, and a buyer who visits the two or three nearest dealers only ever compares those. We ask every dealer that has your car for a written out-the-door price in the same week and put the answers side by side, fees included. Tell us the model you want and the longest drive you’d make, and we start asking."
+      ],
+      "photo": {
+        "file": "market-houston-katy-freeway",
+        "width": 1920,
+        "height": 1080,
+        "alt": "An eight-lane freeway with light traffic curves toward the downtown Houston skyline under a blue sky with large white clouds.",
+        "caption": "Interstate 10, the Katy Freeway, looking west from the McKee Street overpass, with downtown Houston on the left.",
+        "author": "Famartin",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019-07-20_10_18_17_View_west_along_Interstate_10_(Katy_Freeway)_from_the_overpass_for_McKee_Street_in_Houston,_Harris_County,_Texas.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "map": {
+        "lat": 29.7589,
+        "lon": -95.3677,
+        "title": "Map of the 50-mile circle around downtown Houston",
+        "description": "A 50-mile circle centered on downtown Houston covers the city and its suburbs, from Katy and Sugar Land in the west to Baytown and Liberty in the east, and from Conroe and The Woodlands in the north to Pearland, League City and Galveston in the south. Every part of it is in Texas, so there are no state lines on this map. Galveston Bay fills the southeast side.",
+        "caption": "No state line crosses this circle. Every dealer from Katy to Baytown is a Texas dealer, so the Steer Me Right plan covers all of them. The blue on the southeast side is Galveston Bay and the Gulf.",
+        "centerLabel": "Downtown Houston",
+        "regions": [
+          { "name": "TEXAS", "lat": 30.4, "lon": -96.1 },
+          { "name": "Galveston Bay", "lat": 29.58, "lon": -94.88, "water": true }
+        ],
+        "places": [
+          { "name": "Conroe", "lat": 30.3119, "lon": -95.4561 },
+          { "name": "The Woodlands", "lat": 30.1658, "lon": -95.4613, "anchor": "end" },
+          { "name": "Tomball", "lat": 30.0972, "lon": -95.6161, "anchor": "end", "minor": true },
+          { "name": "Waller", "lat": 30.0555, "lon": -95.9261, "anchor": "end" },
+          { "name": "Liberty", "lat": 30.058, "lon": -94.7955 },
+          { "name": "Kingwood", "lat": 30.05, "lon": -95.1844, "minor": true },
+          { "name": "Cypress", "lat": 29.9691, "lon": -95.6972, "anchor": "end", "minor": true },
+          { "name": "Baytown", "lat": 29.7355, "lon": -94.9774 },
+          { "name": "Katy", "lat": 29.7858, "lon": -95.8245, "anchor": "end" },
+          { "name": "Sugar Land", "lat": 29.5994, "lon": -95.6141, "anchor": "end" },
+          { "name": "League City", "lat": 29.5075, "lon": -95.0949, "anchor": "end" },
+          { "name": "Galveston", "lat": 29.3013, "lon": -94.7977, "anchor": "end" },
+          { "name": "Angleton", "lat": 29.1694, "lon": -95.4319 }
+        ]
+      },
+      "local": [
+        ["Look at what the heat did to a used car", "Houston summers run hot, and AAA Texas calls heat and vibration a car battery’s two worst enemies. Ask the dealer how old the battery is, and look for a crusty white or green buildup on its terminals. AAA also says to check the hoses and belts for cracking, so look at the rubber under the hood for splits and shiny, hardened spots. On a used search we can ask the dealer for photos of the battery label and the engine bay. Have a mechanic you choose look the car over before you sign."],
+        ["Test the air conditioning in slow traffic", "AAA says a car’s air conditioning cools better while the car is moving, so a run at highway speed can hide a weak system. Ask the dealer for a test drive that includes time at a stoplight or in slow traffic, run the air conditioning on full the whole way, and see whether the cabin keeps cooling. If the air turns warm when you stop, ask the dealer to have the system checked in writing before you talk price."],
+        ["Plan the drive to the dealer", "A dealer on the far side of Houston can mean a long trip to pick up the car, and the route may run on a toll road. TxDOT says it collects tolls on its Houston-area toll roads electronically, including most of the Grand Parkway (SH 99). Tell us where you’d start and the longest drive you’d make, and we ask the dealers inside that window. Before pickup day, check your route for toll roads and how you’d pay."],
+        ["Measure your garage before you pick a truck", "Full-size pickups are a big part of the Houston market, and S&P Global Mobility links the area’s high monthly payments to them. A crew-cab pickup or a large SUV can be too long or too wide for an older garage or a tight apartment space. Tell us the longest and widest vehicle you can park and where it will live, and we check each model against those limits before we ask any dealer for a price."]
+      ],
+      "plan": "Every dealer in that circle is a Texas dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Louisiana or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in Houston?", "No. We’re based in Austin, Texas, and we work with Houston-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you tell if a used car has heat wear?", "Only from photos. We can ask the dealer for pictures of the battery label, the battery terminals and the hoses and belts under the hood, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."],
+        ["Will you contact dealers across the whole Houston area?", "Yes. Tell us where you’d start and the longest drive you’d make, and we ask dealers across that area. They are all Texas dealers, so both plans cover them. Check your route for toll roads before you go to pick up the car."],
+        ["Can you check whether a big pickup will fit my garage?", "Yes. Tell us the longest and widest vehicle you can park and where it will live, and we compare each model’s published size with those limits before we ask any dealer for a price. Measure the space yourself first, and ask the dealer to confirm the exact size of the truck you’re buying."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-san-francisco.html",
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "name": "San Francisco",
+      "area": "Bay Area",
+      "center": "downtown San Francisco",
+      "zip": "94108",
+      "figures": {
+        "caption": "Public market figures for the Bay Area, with their sources and dates",
+        "rows": [
+          ["New-car dealer locations, San Francisco-Oakland-Fremont metro area, 2023", "229", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-SFO-01"],
+          ["New-car dealer locations, San Jose-Sunnyvale-Santa Clara metro area, 2023", "91", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-SFO-02"],
+          ["Rank for new-vehicle registrations, January to June 2025", "10th", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-SFO-03"],
+          ["Average monthly payment, January to June 2025", "$718", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-SFO-04"],
+          ["Days’ supply, January to June 2025", "74", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-SFO-05"]
+        ],
+        "note": "These figures come from the public sources named in the table, on the dates shown. The Census counts cover store locations in two metro areas, and S&P Global Mobility measures the San Francisco-Oakland-San Jose designated market area, which has a different boundary. None of them matches the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 229 new-car dealer locations in the San Francisco-Oakland-Fremont metro area in 2023, and 91 more in the separate San Jose-Sunnyvale-Santa Clara metro area. S&P Global Mobility ranked the San Francisco-Oakland-San Jose market tenth in the country for new-vehicle registrations in the first half of 2025. Its average monthly payment was $718, one of six above $700 among the ten markets with the most registrations, and its 74 days’ supply tied Chicago’s, behind only Boston. Miami and San Francisco were the only two of the ten where electric-vehicle registrations outnumbered hybrids.",
+        "The Bay Area is split by water, and a dealer on the Peninsula, in the East Bay, in Marin or in the South Bay can sit across a bay from you. Most shoppers call the few stores nearest home and never see the rest. We ask every dealer that has your car for a written out-the-door price in the same week and put the answers side by side, fees included. Tell us the model you want and which side of the bay you live on."
+      ],
+      "photo": {
+        "file": "market-san-francisco-golden-gate-bridge",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Dense lanes of cars and a yellow school bus crawl along the Golden Gate Bridge roadway between its red towers, with brown hills behind.",
+        "caption": "Morning traffic on the Golden Gate Bridge, as seen from the Presidio in San Francisco.",
+        "author": "Frank Schulenburg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morning_traffic_on_the_Golden_Gate_Bridge.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "map": {
+        "lat": 37.788,
+        "lon": -122.4075,
+        "title": "Map of the 50-mile circle around downtown San Francisco",
+        "description": "A 50-mile circle centered on downtown San Francisco covers the Bay Area from Santa Rosa and Petaluma in the north to San Jose in the south, and from the Pacific coast to Livermore and Walnut Creek in the east. San Francisco Bay and San Pablo Bay sit inside it. Every part of it that is land is in California.",
+        "caption": "No state line crosses this circle. Every dealer from Santa Rosa to San Jose is a California dealer, so the Steer Me Right plan covers all of them. The ocean and the two bays are water.",
+        "centerLabel": "San Francisco",
+        "centerAnchor": "end",
+        "regions": [
+          { "name": "CALIFORNIA", "lat": 37.15, "lon": -121.6 },
+          { "name": "Pacific Ocean", "lat": 37.55, "lon": -122.95, "water": true },
+          { "name": "San Francisco Bay", "lat": 37.66, "lon": -122.3, "water": true },
+          { "name": "San Pablo Bay", "lat": 38.03, "lon": -122.37, "water": true }
+        ],
+        "places": [
+          { "name": "Santa Rosa", "lat": 38.4458, "lon": -122.7062, "anchor": "end" },
+          { "name": "Petaluma", "lat": 38.2423, "lon": -122.6288, "anchor": "end", "minor": true },
+          { "name": "Napa", "lat": 38.2979, "lon": -122.3007 },
+          { "name": "Novato", "lat": 38.0851, "lon": -122.5483, "anchor": "end", "minor": true },
+          { "name": "Vallejo", "lat": 38.1069, "lon": -122.2623 },
+          { "name": "San Rafael", "lat": 37.981, "lon": -122.5069, "anchor": "end" },
+          { "name": "Concord", "lat": 37.9722, "lon": -122.0016, "minor": true },
+          { "name": "Walnut Creek", "lat": 37.9027, "lon": -122.0405 },
+          { "name": "Oakland", "lat": 37.8044, "lon": -122.2712 },
+          { "name": "Livermore", "lat": 37.687, "lon": -121.7598 },
+          { "name": "Hayward", "lat": 37.6268, "lon": -122.104, "anchor": "middle", "dy": 18, "minor": true },
+          { "name": "Palo Alto", "lat": 37.4419, "lon": -122.143, "anchor": "end" },
+          { "name": "Fremont", "lat": 37.4945, "lon": -121.9412 },
+          { "name": "San Jose", "lat": 37.296, "lon": -121.8146 }
+        ]
+      },
+      "local": [
+        ["Check which bridge you’ll cross", "The Bay Area’s bridges charge a toll in one direction only. The Bay Bridge, the San Mateo-Hayward Bridge, the Dumbarton Bridge and the Richmond-San Rafael Bridge charge westbound, the Carquinez and Benicia-Martinez bridges charge northbound, the Antioch Bridge charges eastbound, and the Golden Gate Bridge charges southbound into San Francisco. A dealer across the water can put a toll on your trip to pick up the car or on your drive home, depending on which way you cross. Tell us which side of the bay you live on, and we weigh each dealer’s bridge against its price."],
+        ["Tell us where you’ll charge", "Electric vehicle registrations outnumber hybrids in this market, and most electric car owners charge overnight at home, on a standard outlet or a faster dedicated charger. If you own a house, an electrician can tell you whether it has the capacity for a charger. If you rent or live in a building with shared parking, the landlord or building manager decides whether you can charge where you park. Ask before you shop. Tell us whether you can charge at home, and we search electric, plug-in hybrid, hybrid or gas models to match."],
+        ["Tell us how steep your street is", "San Francisco law requires you to turn your wheels toward or against the curb when you park on a steep street, and a driver who doesn’t can be fined. The city’s Public Works office publishes a street grade map you can look your block up on. On a test drive, stop on a slope and check that the parking brake holds the car. Tell us your street and the longest and widest car you can park, and we check your model against those limits before we ask any dealer for a price."]
+      ],
+      "plan": "Every dealer in that circle is a California dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Nevada, Oregon or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "faq": [
+        ["Do you have an office in San Francisco?", "No. We’re based in Austin, Texas, and we work with Bay Area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Will I pay a bridge toll to pick up the car?", "Maybe, depending on the bridge and the way you cross. The state-owned bridges each charge in one direction only, and the Golden Gate Bridge charges southbound. Tell us which side of the bay you live on and which bridges you’d cross, and we ask the dealers you can reach with the fewest crossings."],
+        ["What if I can’t charge an electric car at home?", "Ask your landlord or building manager whether you can charge where you park before you pick a car. If the answer is no, tell us and we search plug-in hybrid, hybrid and gas models instead."],
+        ["Will a car I find fit and park on my San Francisco street?", "Yes, if you give us your limits. Tell us the longest and widest car you can park and whether your street is steep, and we check your model against those limits before we ask any dealer for a price. On a test drive, stop on a slope and check that the parking brake holds the car."]
+      ]
+    },
+    {
+      "slug": "car-buying-service-detroit.html",
+      "published": "2026-11-17",
+      "updated": "2026-11-17",
+      "name": "Detroit",
+      "area": "Detroit-area",
+      "center": "downtown Detroit",
+      "zip": "48226",
+      "figures": {
+        "caption": "Public market figures for the Detroit area, with their sources and dates",
+        "rows": [
+          ["New-car dealer locations, Detroit-Warren-Dearborn metro area, 2023", "263", "US Census Bureau, County Business Patterns 2023, published June 2025", "MKT-DET-01"],
+          ["Rank for new-vehicle registrations, January to June 2025", "9th", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DET-02"],
+          ["Average monthly payment, January to June 2025", "$586", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DET-03"],
+          ["Days’ supply, January to June 2025", "61", "S&P Global Mobility, “Mapping the market”, October 2, 2025", "MKT-DET-04"]
+        ],
+        "note": "These figures come from the public sources named in the table, on the dates shown. The Census count covers store locations in the metro area, and S&P Global Mobility measures the Detroit designated market area, which has a different boundary. Neither matches the 50-mile circle on the map below."
+      },
+      "market": [
+        "The Census Bureau counted 263 new-car dealer locations across the Detroit metro area in 2023, an area of six Michigan counties. S&P Global Mobility ranked the Detroit market ninth in the country for new-vehicle registrations in the first half of 2025, although Detroit is only 14th in population. Its average monthly payment was $586, the only one under $600 among the ten markets with the most registrations, and its days’ supply was 61, the lowest of the ten.",
+        "Detroit is a spread-out market, and dealers on opposite sides of it rarely see each other’s quotes. A shopper who visits one store in Oakland County and one in Wayne County compares only those two. We ask every dealer that has your car for a written out-the-door price in the same week and put the answers side by side, fees included. Tell us the model you want and we start asking."
+      ],
+      "photo": {
+        "file": "market-detroit-interstate-75",
+        "width": 1920,
+        "height": 1080,
+        "alt": "A multi-lane freeway with cars and a box truck passes under a red pedestrian bridge, with the downtown Detroit skyline in the haze ahead.",
+        "caption": "Northbound I-75 under the Waterman Street pedestrian bridge in Southwest Detroit, with the downtown skyline ahead.",
+        "author": "42-BRT",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:I-75_NB_approaching_Gordie_Howe_International_Bridge_at_Waterman_St,_Southwest_Detroit,_against_Detroit_skyline,_evening_before_bridge_opening_(7).jpg",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "map": {
+        "lat": 42.3314,
+        "lon": -83.0458,
+        "foreignLand": ["CAN"],
+        "title": "Map of the 50-mile circle around downtown Detroit",
+        "description": "A 50-mile circle centered on downtown Detroit covers Detroit and its suburbs, Pontiac, Ann Arbor, Brighton and Monroe in Michigan, a thin sliver of Ohio at the southwest edge, and across the Detroit River the Ontario shore around Amherstburg. Lake St. Clair and the west end of Lake Erie are inside it. The dashed line is the Michigan-Ohio state line.",
+        "caption": "Fifty miles from downtown Detroit reaches across Michigan, clips a sliver of Ohio and crosses the Detroit River into Ontario. The dashed line is the Michigan-Ohio state line. The Detroit River is the border with Canada, and Windsor across it is in Ontario. A dealer across the dashed line is out of state for a Michigan buyer, and out-of-state dealers are part of Steer Me Right Pro.",
+        "centerLabel": "Downtown Detroit",
+        "regions": [
+          { "name": "MICHIGAN", "lat": 42.75, "lon": -83.55 },
+          { "name": "OHIO", "lat": 41.58, "lon": -83.85 },
+          { "name": "ONTARIO", "lat": 42.22, "lon": -82.62 },
+          { "name": "Lake St. Clair", "lat": 42.47, "lon": -82.68, "water": true },
+          { "name": "Lake Erie", "lat": 41.85, "lon": -83.05, "water": true }
+        ],
+        "places": [
+          { "name": "Warren", "lat": 42.4929, "lon": -83.025, "anchor": "end", "minor": true },
+          { "name": "Sterling Heights", "lat": 42.5812, "lon": -83.0303 },
+          { "name": "Troy", "lat": 42.5839, "lon": -83.1455, "anchor": "end", "minor": true },
+          { "name": "Pontiac", "lat": 42.6492, "lon": -83.2874, "anchor": "end" },
+          { "name": "Novi", "lat": 42.4785, "lon": -83.4868, "anchor": "end" },
+          { "name": "Livonia", "lat": 42.3972, "lon": -83.3723, "anchor": "end", "minor": true },
+          { "name": "Dearborn", "lat": 42.3131, "lon": -83.2115, "anchor": "end" },
+          { "name": "Ann Arbor", "lat": 42.2761, "lon": -83.7309, "anchor": "end" },
+          { "name": "Ypsilanti", "lat": 42.2444, "lon": -83.6212, "anchor": "middle", "dy": 18, "minor": true },
+          { "name": "Brighton", "lat": 42.5297, "lon": -83.7845, "anchor": "end" },
+          { "name": "Wyandotte", "lat": 42.2107, "lon": -83.1572, "anchor": "end", "minor": true },
+          { "name": "Monroe", "lat": 41.9166, "lon": -83.3843 },
+          { "name": "Amherstburg", "lat": 42.1172, "lon": -83.0442 }
+        ]
+      },
+      "local": [
+        ["Ask where a used car spent its winters", "Michigan’s environment agency says road salt is the most commonly used deicer and that it corrodes vehicles. A car that lived through Michigan winters takes that salt from below. Rust shows first on the brake lines, the exhaust and the rocker panels under the doors. On a used search we can ask the dealer for photos of the underside. Before you sign, have a mechanic you choose put the car on a lift."],
+        ["Check what tires the car wears", "Michigan State Police say all-season tires have limited ice and snow capability, and that winter tires grip better. A certified winter tire carries a mountain-and-snowflake symbol on the sidewall. Tell us if you want winter tires, and we ask each dealer what tires are on the car and for a photo of the sidewall, so you can compare cars on their tires as well as their price."]
+      ],
+      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Michigan buyer who wants Ohio dealers around Toledo in the mix should pick Steer Me Right Pro ($695).",
+      "faq": [
+        ["Do you have an office in Detroit?", "No. We’re based in Austin, Texas, and we work with Detroit-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
+        ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent its winters outside."],
+        ["Can you find out what tires a car has?", "Yes. We can ask the dealer what tires are on the car and for a photo of the sidewall, and a certified winter tire shows a mountain-and-snowflake symbol. Tell us whether you want winter tires, and we put the answer next to each dealer’s price."],
+        ["Can you include dealers in Ohio?", "Yes. For a Michigan buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Ohio, they are covered on either plan."]
+      ]
     }
   ]
 }

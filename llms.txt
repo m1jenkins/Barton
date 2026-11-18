@@ -66,7 +66,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.
-- [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and nine cities with local numbers.
+- [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and thirteen cities with local numbers.
 - [Car Buying Service in New York](https://www.steermeright.com/car-buying-service-new-york.html): About 185,000 new cars listed across three states, and which plan covers which dealers.
 - [Car Buying Service in Los Angeles](https://www.steermeright.com/car-buying-service-los-angeles.html): About 650 franchised dealerships within 50 miles of downtown, all asked in writing.
 - [Car Buying Service in Chicago](https://www.steermeright.com/car-buying-service-chicago.html): City, collar suburbs and northwest Indiana: who gets asked on each plan.
@@ -76,3 +76,7 @@ Steer Me Right has one office, in Austin, Texas, and no office in the cities bel
 - [Car Buying Service in Philadelphia](https://www.steermeright.com/car-buying-service-philadelphia.html): Public dealer and market figures, the river and state lines, and which plan covers which dealers.
 - [Car Buying Service in Boston](https://www.steermeright.com/car-buying-service-boston.html): Three states in one circle, road salt and narrow streets, and which plan covers which dealers.
 - [Car Buying Service in Phoenix](https://www.steermeright.com/car-buying-service-phoenix.html): One state, a wide valley and desert heat: what to check on a used car and who gets asked.
+- [Car Buying Service in Dallas–Fort Worth](https://www.steermeright.com/car-buying-service-dallas-fort-worth.html): Hail, summer heat and toll roads across the metroplex, and why every dealer in the circle is a Texas dealer.
+- [Car Buying Service in Houston](https://www.steermeright.com/car-buying-service-houston.html): Heat wear on used cars, the air conditioning in slow traffic and big trucks in small garages.
+- [Car Buying Service in San Francisco](https://www.steermeright.com/car-buying-service-san-francisco.html): Bridge tolls between you and the dealer, home charging and steep streets around the Bay Area.
+- [Car Buying Service in Detroit](https://www.steermeright.com/car-buying-service-detroit.html): Road salt and winter tires, the Ohio line, and which plan covers which dealers.

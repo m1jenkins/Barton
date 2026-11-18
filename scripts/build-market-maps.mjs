@@ -6,12 +6,18 @@
 //   curl -O https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_state_500k.zip && unzip cb_2024_us_state_500k.zip -d census
 //   node scripts/build-market-maps.mjs census
 // then `npm run build:markets`. The SVGs are committed; this script is not part of CI.
+//
+// A map whose circle crosses a national border (Detroit) lists the neighbor's ISO code in `foreignLand` (e.g. ["CAN"]), and that
+// country is drawn as land from Natural Earth's ne_10m_admin_0_countries_lakes file (public domain). Pass its folder second:
+//   curl -LO https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_0_countries_lakes.zip && unzip ne_10m_admin_0_countries_lakes.zip -d natural-earth
+//   node scripts/build-market-maps.mjs census natural-earth
+// The national border is not dashed: the two files' shorelines don't share edges, so a river border shows as water.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const census = process.argv[2];
+const census = process.argv[2], naturalEarth = process.argv[3];
 if (!census) throw new Error('Pass the folder holding cb_2024_us_state_500k.shp and .dbf');
 
 const MILES_PER_DEGREE_LAT = 69.05;
@@ -90,7 +96,7 @@ function contains(ring, [px, py]) {
 
 const round = value => Math.round(value * 10) / 10;
 
-function drawMap(market, states) {
+function drawMap(market, states, countries) {
   const { lat, lon, places } = market.map;
   const radiusMiles = 50;
   const k = RADIUS_PX / (radiusMiles / MILES_PER_DEGREE_LAT);
@@ -101,13 +107,14 @@ function drawMap(market, states) {
 
   const land = [];
   const edgeOwners = new Map();
-  for (const { name, rings } of states) {
+  const foreign = countries.filter(country => market.map.foreignLand?.includes(country.name));
+  for (const { name, rings, national } of [...states, ...foreign]) {
     for (const ring of rings) {
       const projected = ring.map(project);
       // A state that surrounds the whole view (Phoenix) has no outline point inside it, so test the view's center too.
       if (!projected.some(([x, y]) => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3]) && !contains(projected, [WIDTH / 2, HEIGHT / 2])) continue;
-      // Record raw-coordinate edges so shared state lines can be found before clipping.
-      for (let i = 1; i < ring.length; i++) {
+      // Record raw-coordinate edges so shared state lines can be found before clipping. A neighboring country's edges are left out.
+      for (let i = 1; !national && i < ring.length; i++) {
         const a = ring[i - 1].join(','), b = ring[i].join(',');
         const key = a < b ? `${a}|${b}` : `${b}|${a}`;
         const owners = edgeOwners.get(key) || new Set();
@@ -147,6 +154,12 @@ function drawMap(market, states) {
     return `<text x="${round(x)}" y="${round(y)}" text-anchor="middle" class="${water ? 'mm-water' : 'mm-region'}">${name}</text>`;
   }).join('');
 
+  // The center label sits right of the dot. `centerAnchor: "end"` puts it on the left and `"below"` under the dot, for a city with places just east of center.
+  const centerText = {
+    end: `<text x="${WIDTH / 2 - 10}" y="${HEIGHT / 2 - 8}" text-anchor="end" class="mm-center">${market.map.centerLabel}</text>`,
+    below: `<text x="${WIDTH / 2}" y="${HEIGHT / 2 + 24}" text-anchor="middle" class="mm-center">${market.map.centerLabel}</text>`,
+  }[market.map.centerAnchor] || `<text x="${WIDTH / 2 + 10}" y="${HEIGHT / 2 - 8}" class="mm-center">${market.map.centerLabel}</text>`;
+
   return `<svg class="market-map__svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" role="img" aria-labelledby="market-map-title market-map-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="market-map-title">${market.map.title}</title>
 <desc id="market-map-desc">${market.map.description}</desc>
@@ -157,7 +170,7 @@ function drawMap(market, states) {
 ${regionLabels}
 ${placeMarks}
 <circle cx="${WIDTH / 2}" cy="${HEIGHT / 2}" r="6" fill="${colors.circle}" stroke="#fff" stroke-width="2"/>
-<text x="${WIDTH / 2 + 10}" y="${HEIGHT / 2 - 8}" class="mm-center">${market.map.centerLabel}</text>
+${centerText}
 <g transform="translate(20 ${HEIGHT - 24})"><rect x="-8" y="-12" width="${round(scalePx + 16)}" height="36" rx="6" fill="#fff" fill-opacity=".9"/><path d="M0 0H${round(scalePx)}M0 -5V0M${round(scalePx)} -5V0" stroke="${colors.ink}" stroke-width="1.5" fill="none"/><text x="0" y="16" class="mm-scale">${scaleMiles} miles</text></g>
 ${borderSegments.length ? `<g transform="translate(${WIDTH - 118} ${HEIGHT - 20})"><rect x="-8" y="-16" width="118" height="26" rx="6" fill="#fff" fill-opacity=".9"/><path d="M0 -4H22" stroke="${colors.border}" stroke-width="1.4" stroke-dasharray="5 4"/><text x="30" y="0" class="mm-scale">State line</text></g>` : ''}
 </svg>
@@ -168,11 +181,18 @@ const [shp, dbf] = await Promise.all(['shp', 'dbf'].map(ext => readFile(path.joi
 const rows = readDbf(dbf);
 const states = readShapes(shp).map((rings, i) => ({ name: rows[i].STUSPS, rings }));
 const data = JSON.parse(await readFile(path.join(root, 'data/market-pages.json'), 'utf8'));
+let countries = [];
+if (data.markets.some(market => market.map?.foreignLand)) {
+  if (!naturalEarth) throw new Error('A map lists foreignLand: pass the folder holding ne_10m_admin_0_countries_lakes.shp and .dbf as the second argument');
+  const [neShp, neDbf] = await Promise.all(['shp', 'dbf'].map(ext => readFile(path.join(naturalEarth, `ne_10m_admin_0_countries_lakes.${ext}`))));
+  const neRows = readDbf(neDbf);
+  countries = readShapes(neShp).map((rings, i) => ({ name: neRows[i].ADM0_A3, rings, national: true }));
+}
 await mkdir(path.join(root, 'data/market-maps'), { recursive: true });
 for (const market of data.markets.filter(market => market.map)) {
   const id = market.slug.replace(/^car-buying-service-|\.html$/g, '');
   const file = path.join(root, 'data/market-maps', `${id}.svg`);
-  const svg = drawMap(market, states);
+  const svg = drawMap(market, states, countries);
   await writeFile(file, svg);
   console.log(`wrote data/market-maps/${id}.svg (${(svg.length / 1024).toFixed(1)} KB)`);
 }

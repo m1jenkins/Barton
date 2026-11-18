@@ -271,7 +271,8 @@ test('city and editorial indexing stays consistent with owner-approved public co
   assert.match(await read('sitemap.xml'), /<loc>https:\/\/www\.steermeright\.com\/austin\.html<\/loc>/);
   for (const file of ['arlington.html', 'dallas.html', 'el-paso.html', 'fort-worth.html', 'houston.html', 'new-braunfels.html', 'san-antonio.html', 'san-marcos.html']) {
     assert.equal(htmlDocument(await read(file)).noindex, true, file);
-    assert.doesNotMatch(await read('sitemap.xml'), new RegExp(file.replaceAll('.', '\\.')));
+    // Match the whole path, so car-buying-service-houston.html doesn't count as houston.html.
+    assert.doesNotMatch(await read('sitemap.xml'), new RegExp(`/${file.replaceAll('.', '\\.')}</loc>`), file);
   }
 
   const hub = htmlDocument(await read('blog.html'));

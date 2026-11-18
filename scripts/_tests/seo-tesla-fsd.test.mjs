@@ -109,6 +109,7 @@ test('city pages and topic hubs stay noindex and off the sitemap', async () => {
   assert.match(sitemap, /austin\.html/);
   for (const file of [...cities, ...topicHubs, pageFile]) {
     assert.equal(htmlDocument(await read(file)).noindex, true, file);
-    assert.doesNotMatch(sitemap, new RegExp(file.replaceAll('.', '\\.')));
+    // Match the whole path, so car-buying-service-houston.html doesn't count as houston.html.
+    assert.doesNotMatch(sitemap, new RegExp(`/${file.replaceAll('.', '\\.')}</loc>`), file);
   }
 });
