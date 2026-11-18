@@ -127,6 +127,9 @@ test('per-car Reddit files hold ids and codes only, and every vehicle key is wel
   const { keyPattern, topics } = await import('../reddit-sentiment.mjs');
   const models = JSON.parse(await read('data/reddit-sentiment/models.json'));
   for (const key of Object.keys(models)) assert.match(key, keyPattern, `models.json key ${key}`);
+  // One key per model, or the same car's opinions split across two keys.
+  const names = Object.values(models);
+  assert.deepEqual(names.filter((name, i) => names.indexOf(name) !== i), [], 'each model name appears under one key only');
   const known = key => keyPattern.test(key) && Boolean(models[key]);
   const fields = ['car', 'collected', 'comments', 'duplicatePicksDropped', 'gaps', 'home', 'keepThreadPicksDropped', 'keepThreads', 'rules', 'source', 'subreddits', 'themes', 'threads', 'threadsFrom', 'threadsTo', 'uncoded'];
   for (const [file, coded] of await carFiles()) {
