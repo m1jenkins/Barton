@@ -147,8 +147,8 @@ ${regionLabels}
 ${placeMarks}
 <circle cx="${WIDTH / 2}" cy="${HEIGHT / 2}" r="6" fill="${colors.circle}" stroke="#fff" stroke-width="2"/>
 <text x="${WIDTH / 2 + 10}" y="${HEIGHT / 2 - 8}" class="mm-center">${market.map.centerLabel}</text>
-<g transform="translate(20 ${HEIGHT - 24})"><path d="M0 0H${round(scalePx)}M0 -5V0M${round(scalePx)} -5V0" stroke="${colors.ink}" stroke-width="1.5" fill="none"/><text x="0" y="16" class="mm-scale">${scaleMiles} miles</text></g>
-<g transform="translate(${WIDTH - 118} ${HEIGHT - 20})"><path d="M0 -4H22" stroke="${colors.border}" stroke-width="1.4" stroke-dasharray="5 4"/><text x="30" y="0" class="mm-scale">State line</text></g>
+<g transform="translate(20 ${HEIGHT - 24})"><rect x="-8" y="-12" width="${round(scalePx + 16)}" height="36" rx="6" fill="#fff" fill-opacity=".9"/><path d="M0 0H${round(scalePx)}M0 -5V0M${round(scalePx)} -5V0" stroke="${colors.ink}" stroke-width="1.5" fill="none"/><text x="0" y="16" class="mm-scale">${scaleMiles} miles</text></g>
+${borderSegments.length ? `<g transform="translate(${WIDTH - 118} ${HEIGHT - 20})"><rect x="-8" y="-16" width="118" height="26" rx="6" fill="#fff" fill-opacity=".9"/><path d="M0 -4H22" stroke="${colors.border}" stroke-width="1.4" stroke-dasharray="5 4"/><text x="30" y="0" class="mm-scale">State line</text></g>` : ''}
 </svg>
 `;
 }

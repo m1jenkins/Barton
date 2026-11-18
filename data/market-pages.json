@@ -18,6 +18,7 @@
   "markets": [
     {
       "slug": "car-buying-service-new-york.html",
+      "updated": "2026-11-17",
       "name": "New York",
       "area": "New York-area",
       "center": "Midtown Manhattan",
@@ -32,14 +33,61 @@
         "On November 15, 2026, dealers within 50 miles of Midtown Manhattan listed about 185,000 new cars and 122,000 used ones. That was the most of the six metros we checked. Honda, Toyota and Ford had the most new cars on the lot, and the median asking price was about $49,300 new and $24,900 used.",
         "That circle takes in three states. Northern New Jersey, Long Island, Westchester and southwestern Connecticut all fall inside it. A dealer in New Jersey has no reason to care what a dealer in Queens quoted you unless someone puts the two numbers side by side, and that is the job. Visiting five of those stores yourself would eat a couple of Saturdays. We ask all of them for a written out-the-door price in the same week."
       ],
+      "photo": {
+        "file": "market-new-york-fdr-drive",
+        "width": 1920,
+        "height": 1080,
+        "alt": "The elevated FDR Drive curving along the East River beside Lower Manhattan, with the Brooklyn Bridge at left and the downtown towers behind",
+        "caption": "The FDR Drive on Manhattan’s East River shore, seen from the Manhattan Bridge, with the Brooklyn Bridge at left.",
+        "author": "Axel Tschentscher",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:FDR-Drive_Elevated_Section_from_Manhattan_Bridge_2021-06-25_12-36.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "map": {
+        "lat": 40.7506,
+        "lon": -73.9971,
+        "title": "Map of the 50-mile circle around Midtown Manhattan",
+        "description": "A 50-mile circle centered on Midtown Manhattan covers New York City, Westchester and Long Island, northern and central New Jersey from Paterson to Princeton and Asbury Park, and southwestern Connecticut as far as Stamford. Dashed lines mark the state lines; the Atlantic Ocean and Long Island Sound fill the east and south sides.",
+        "caption": "Fifty miles from Midtown reaches into three states. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "centerLabel": "Midtown Manhattan",
+        "regions": [
+          { "name": "NEW YORK", "lat": 41.5, "lon": -74.15 },
+          { "name": "NEW JERSEY", "lat": 40.0, "lon": -74.65 },
+          { "name": "CONNECTICUT", "lat": 41.45, "lon": -73.0 },
+          { "name": "Atlantic Ocean", "lat": 40.0, "lon": -73.2, "water": true },
+          { "name": "Long Island Sound", "lat": 41.2, "lon": -72.78, "water": true }
+        ],
+        "places": [
+          { "name": "Paterson", "lat": 40.9168, "lon": -74.1718 },
+          { "name": "Morristown", "lat": 40.7968, "lon": -74.4815, "anchor": "end" },
+          { "name": "Newark", "lat": 40.7357, "lon": -74.1724, "anchor": "end" },
+          { "name": "New Brunswick", "lat": 40.4862, "lon": -74.4518, "anchor": "end" },
+          { "name": "Princeton", "lat": 40.3573, "lon": -74.6672, "anchor": "end", "minor": true },
+          { "name": "Asbury Park", "lat": 40.2204, "lon": -74.0121 },
+          { "name": "White Plains", "lat": 41.034, "lon": -73.7629, "anchor": "end" },
+          { "name": "Stamford", "lat": 41.0534, "lon": -73.5387 },
+          { "name": "Hempstead", "lat": 40.7062, "lon": -73.6187, "dy": 16 },
+          { "name": "Huntington", "lat": 40.8682, "lon": -73.4257 },
+          { "name": "Islip", "lat": 40.7298, "lon": -73.2101, "minor": true }
+        ]
+      },
+      "local": [
+        ["Work out how you’ll get to the dealer", "You pick up the car at the dealer, so a buyer without a car needs a route there and a plan to drive home. A store on Long Island, in Westchester or in northern New Jersey can sit close on the map and still take a train, a ride and a bridge or tunnel to reach. Tell us which train line or crossing you’d use, and we ask the dealers you can actually reach."],
+        ["Ask where a used car spent its winters", "New York, New Jersey and Connecticut salt their roads when it snows, and a car parked on the street all winter takes more of it than one kept in a garage. The rust starts underneath, on the brake lines, the exhaust, the subframe and the rocker panels below the doors. Ask the dealer where the car has lived. On a used search we can ask for photos of the underside, and you can have a mechanic you choose put the car on a lift before you sign."],
+        ["Tell us where the car will park", "Many New York buyers park on the street or rent a garage space, and a car’s length and width can rule it out before its price does. Tell us your limits when you start, and we’ll say whether your model fits before we ask any dealer for a price."]
+      ],
       "plan": "Which state you live in matters when you pick a plan. The Steer Me Right plan ($395) does not include out-of-state dealers, so it covers the ones in your own state. If you live in New Jersey and want New York and Connecticut dealers competing too, that is Steer Me Right Pro ($695).",
       "faq": [
         ["Do you have an office in New York?", "No. We’re based in Austin, Texas, and we work with New York-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from New Jersey and Connecticut dealers as well as New York ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."]
+        ["Can you get offers from New Jersey and Connecticut dealers as well as New York ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."],
+        ["I don’t own a car. Can I still use a car buying service?", "Yes. You pick up the car at the dealer like every buyer. Tell us which train line or crossing you’d use and how long a trip you’d make, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."],
+        ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent winters parked on the street."]
       ]
     },
     {
       "slug": "car-buying-service-los-angeles.html",
+      "updated": "2026-11-17",
       "name": "Los Angeles",
       "area": "Los Angeles-area",
       "center": "downtown Los Angeles",
@@ -54,10 +102,51 @@
         "On November 15, 2026, dealers within 50 miles of downtown Los Angeles listed about 150,000 new cars and 99,000 used ones, spread across roughly 650 franchised dealerships. About one new car in six was a Toyota; Honda and Ford came next. The median asking price was about $48,400 new and $24,200 used.",
         "Fifty miles from downtown reaches Orange County, the San Fernando Valley and the western Inland Empire. On a map those dealers are neighbors. In traffic, a store in Ontario and a store in Torrance might as well be in different cities, which is why most people only ever get a price from the two or three dealers closest to home. We don’t have to drive anywhere. For a common car like a RAV4, dozens of stores in that circle hold the same thing, and each one gets asked for a written out-the-door price."
       ],
+      "photo": {
+        "file": "market-los-angeles-san-bernardino-freeway",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Interstate 10 heading west toward the downtown Los Angeles skyline, with overhead signs for US 101 and Interstate 5 and palm trees along the road",
+        "caption": "Interstate 10 heading west into downtown Los Angeles, with the skyline ahead.",
+        "author": "Niranjan Arminius",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LACA_I-10_US101_WB_2_2017.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "map": {
+        "lat": 34.0614,
+        "lon": -118.2385,
+        "title": "Map of the 50-mile circle around downtown Los Angeles",
+        "description": "A 50-mile circle centered on downtown Los Angeles covers the city, the San Fernando Valley, Santa Clarita, the San Gabriel Valley, Orange County and the western Inland Empire as far as Ontario and Corona. Every part of it is in California; the Pacific Ocean fills the southwest side.",
+        "caption": "The whole circle sits inside California, so every dealer on this map is in play on the Steer Me Right plan.",
+        "centerLabel": "Downtown LA",
+        "regions": [
+          { "name": "CALIFORNIA", "lat": 34.9, "lon": -117.6 },
+          { "name": "Pacific Ocean", "lat": 33.75, "lon": -119.4, "water": true }
+        ],
+        "places": [
+          { "name": "Santa Clarita", "lat": 34.3917, "lon": -118.5426 },
+          { "name": "Thousand Oaks", "lat": 34.1706, "lon": -118.8376 },
+          { "name": "Santa Monica", "lat": 34.0195, "lon": -118.4912, "anchor": "end" },
+          { "name": "Pasadena", "lat": 34.1478, "lon": -118.1445, "dy": -6 },
+          { "name": "Ontario", "lat": 34.0633, "lon": -117.6509, "anchor": "middle", "dy": 18 },
+          { "name": "Torrance", "lat": 33.8358, "lon": -118.3406, "anchor": "end" },
+          { "name": "Long Beach", "lat": 33.7701, "lon": -118.1937 },
+          { "name": "Anaheim", "lat": 33.8366, "lon": -117.9143 },
+          { "name": "Irvine", "lat": 33.6846, "lon": -117.8265 },
+          { "name": "Corona", "lat": 33.8753, "lon": -117.5664, "minor": true }
+        ]
+      },
+      "local": [
+        ["Tell us how long you’d drive", "A 50-mile circle on a map says little about the drive. The same trip can take far longer on a weekday afternoon than on a Sunday morning, whether you’re on the 405, the 10, the 5 or the 101. Tell us where you’d start, when you’d go and the longest drive you’d make, and we ask the dealers inside that window."],
+        ["Look at what the sun did to a used car", "Los Angeles sun wears a car from above. Look for a dashboard top that has cracked or gone chalky, clear coat peeling on the roof and hood, headlight lenses turned yellow or cloudy, and dry, cracked rubber trim and tire sidewalls. A car parked outside for years shows more of it than one kept in a garage. On a used search we can ask the dealer for photos of those spots. Have a mechanic you choose look the car over before you sign."]
+      ],
       "plan": "All of those dealers are in California, so every one of them is in play on the Steer Me Right plan ($395). Dealers in Arizona or Nevada are out of state, and out-of-state dealers are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
       "faq": [
         ["Do you have an office in Los Angeles?", "No. We’re based in Austin, Texas, and we work with Los Angeles-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Will you contact dealers in Orange County and the Inland Empire too?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area. They are all California dealers, so both plans cover them."]
+        ["Will you contact dealers in Orange County and the Inland Empire too?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area. They are all California dealers, so both plans cover them."],
+        ["Can you limit the search to dealers within a certain drive time?", "Yes. Tell us where you’d start and the longest drive you’d make, and we ask the dealers inside that window. If a dealer farther out sends a lower written offer, you decide whether it’s worth the trip."],
+        ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the paint, the headlights and the tires, and send them to you. Have a mechanic you choose look the car over before you sign."]
       ]
     },
     {
@@ -133,6 +222,7 @@
     },
     {
       "slug": "car-buying-service-miami.html",
+      "updated": "2026-11-17",
       "name": "Miami",
       "area": "South Florida",
       "center": "downtown Miami",
@@ -147,14 +237,59 @@
         "On November 15, 2026, dealers within 50 miles of downtown Miami listed about 86,000 new cars and 60,000 used ones, across roughly 290 franchised dealerships. Miami was the only one of the six metros we checked where Hyundai had the most new cars listed, ahead of Toyota and Honda. The median asking price was about $46,400 new and $24,200 used.",
         "Half of that circle is ocean and Everglades. The dealers sit in a strip along the coast, through Miami-Dade and Broward and up toward Boca Raton, so there are fewer stores than in Los Angeles or Chicago and they are easier to cover completely. We ask each one that has your car for a written out-the-door price and go through the fee lines before you see a contract."
       ],
+      "photo": {
+        "file": "market-miami-i-95-downtown",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Interstate 95 running toward the downtown Miami towers, with green overhead signs for Miami Avenue, Biscayne Boulevard and Brickell Avenue",
+        "caption": "Interstate 95 near downtown Miami, with the skyline ahead.",
+        "author": "formulanone",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Int95sRoad-MM2-MiamiSkyline_(32454321534).jpg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      },
+      "map": {
+        "lat": 25.769,
+        "lon": -80.2,
+        "title": "Map of the 50-mile circle around downtown Miami",
+        "description": "A 50-mile circle centered on downtown Miami covers the Atlantic coast from Homestead to Boca Raton, through Miami-Dade and Broward counties, with the Everglades to the west and the Atlantic Ocean to the east. Every part of it is in Florida.",
+        "caption": "No state line crosses this circle. Every dealer from Homestead to Boca Raton is a Florida dealer, so the Steer Me Right plan covers all of them.",
+        "centerLabel": "Downtown Miami",
+        "regions": [
+          { "name": "FLORIDA", "lat": 26.0, "lon": -81.2 },
+          { "name": "EVERGLADES", "lat": 25.45, "lon": -81.2 },
+          { "name": "Atlantic Ocean", "lat": 25.62, "lon": -79.8, "water": true }
+        ],
+        "places": [
+          { "name": "Boca Raton", "lat": 26.3683, "lon": -80.1289 },
+          { "name": "Pompano Beach", "lat": 26.2379, "lon": -80.1248 },
+          { "name": "Fort Lauderdale", "lat": 26.1224, "lon": -80.1373 },
+          { "name": "Weston", "lat": 26.1004, "lon": -80.3998, "anchor": "end", "minor": true },
+          { "name": "Hollywood", "lat": 26.0112, "lon": -80.1495 },
+          { "name": "Pembroke Pines", "lat": 26.0078, "lon": -80.2963, "anchor": "end" },
+          { "name": "Miami Gardens", "lat": 25.942, "lon": -80.2456, "minor": true },
+          { "name": "Hialeah", "lat": 25.8576, "lon": -80.2781, "anchor": "end", "dy": -4 },
+          { "name": "Miami Beach", "lat": 25.7907, "lon": -80.13, "dy": 16 },
+          { "name": "Coral Gables", "lat": 25.7215, "lon": -80.2684, "anchor": "end" },
+          { "name": "Doral", "lat": 25.8195, "lon": -80.3553, "anchor": "end", "dy": 10, "minor": true },
+          { "name": "Homestead", "lat": 25.4687, "lon": -80.4776 }
+        ]
+      },
+      "local": [
+        ["Ask whether a used car was in a flood", "Miami sits low, and hurricanes push water into streets and parking garages. A flooded car can look fine on the lot and fail months later, because water gets into the wiring and electronics. Look for a musty smell, silt or a water line under the carpet, rust on the seat bolts and under the dashboard, and moisture inside the headlights. A history report only shows floods that were reported, so on a used search we can ask the dealer to say in writing whether the car has been in one, and to send photos of the trunk floor and the carpet edges. Have a mechanic you choose look the car over before you sign."],
+        ["Look at what sun and salt air did", "South Florida sun cracks dashboards, clouds headlight lenses and dries out tires and rubber seals. Salt air from the coast adds rust on the underside, the exposed bolts and the brake parts, even on a car that never drove on a salted road. Ask for photos of the dashboard, the headlights, the tires and the underside. On the test drive, run the air conditioning at full blast the whole way, and price the repair if it blows warm."]
+      ],
       "plan": "Everything in that strip is a Florida dealer, and so is the rest of the state. On the Steer Me Right plan ($395) a Miami buyer isn’t limited to South Florida: if you’d drive to West Palm Beach or Naples for the right number, tell us and those dealers get asked too. Dealers outside Florida are part of Steer Me Right Pro ($695).",
       "faq": [
         ["Do you have an office in Miami?", "No. We’re based in Austin, Texas, and we work with South Florida dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Do you cover Fort Lauderdale and the rest of Broward County?", "Yes. Broward dealers are inside the same 50-mile circle and are Florida dealers, so both plans cover them."]
+        ["Do you cover Fort Lauderdale and the rest of Broward County?", "Yes. Broward dealers are inside the same 50-mile circle and are Florida dealers, so both plans cover them."],
+        ["How can I tell if a used car in Miami was flooded?", "Check the history report, get the dealer’s answer in writing, then look at the car: a musty smell, silt or a water line under the carpet, rust on the seat bolts, moisture inside the lights. A report only shows floods that were reported. We can ask the dealer for photos and a written answer. Have a mechanic you choose look the car over before you sign."],
+        ["Is a used car from South Florida a bad idea?", "No. A garaged car with service records can be a good buy. Sun and salt-air wear is visible, so ask for photos of the dashboard, the headlights, the tires and the underside, and have a mechanic you choose look at the car before you sign."]
       ]
     },
     {
       "slug": "car-buying-service-atlanta.html",
+      "updated": "2026-11-17",
       "name": "Atlanta",
       "area": "Atlanta-area",
       "center": "downtown Atlanta",
@@ -169,14 +304,58 @@
         "On November 15, 2026, dealers within 50 miles of downtown Atlanta listed about 69,000 new cars and 80,000 used ones, across roughly 340 franchised dealerships. Atlanta was the only one of the six metros we checked with more used cars listed than new. Ford had the most new cars on the lot, then Chevrolet and Toyota. The median asking price was about $49,000 new and $24,000 used.",
         "The dealers run from the city out past the Perimeter to suburbs like Marietta, Alpharetta and McDonough. If you’re shopping used, that deep used inventory helps: there are usually several comparable cars to price yours against, and we negotiate a used car against comparable sales, not against the number on the windshield. Our <a href=\"/used-car-buying-service.html\">used car buying service</a> page covers what we do on a used search and what to check before you sign."
       ],
+      "photo": {
+        "file": "market-atlanta-downtown-connector",
+        "width": 1920,
+        "height": 1080,
+        "alt": "Rush-hour traffic on the Downtown Connector in midtown Atlanta, with the downtown skyline behind the freeway",
+        "caption": "The Downtown Connector through midtown Atlanta, where I-75 and I-85 share one roadway.",
+        "author": "Atlantacitizen",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atlanta_75.85.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "map": {
+        "lat": 33.7525,
+        "lon": -84.3902,
+        "title": "Map of the 50-mile circle around downtown Atlanta",
+        "description": "A 50-mile circle centered on downtown Atlanta covers the city and its suburbs from Kennesaw and Alpharetta in the north to Peachtree City and McDonough in the south, and from Douglasville in the west to Conyers and Covington in the east. Every part of it is in Georgia.",
+        "caption": "No state line crosses this circle. Every dealer from Kennesaw to McDonough is a Georgia dealer, so the Steer Me Right plan covers all of them.",
+        "centerLabel": "Downtown Atlanta",
+        "regions": [
+          { "name": "GEORGIA", "lat": 33.12, "lon": -84.4 },
+          { "name": "ALABAMA", "lat": 33.6, "lon": -85.55 }
+        ],
+        "places": [
+          { "name": "Kennesaw", "lat": 34.0234, "lon": -84.6155, "anchor": "end", "minor": true },
+          { "name": "Marietta", "lat": 33.9526, "lon": -84.5499, "anchor": "end" },
+          { "name": "Alpharetta", "lat": 34.0754, "lon": -84.2941 },
+          { "name": "Cumming", "lat": 34.2073, "lon": -84.1402 },
+          { "name": "Lawrenceville", "lat": 33.9562, "lon": -83.988 },
+          { "name": "Smyrna", "lat": 33.8839, "lon": -84.5144, "anchor": "end", "minor": true },
+          { "name": "Douglasville", "lat": 33.7515, "lon": -84.7477, "anchor": "end" },
+          { "name": "Conyers", "lat": 33.6676, "lon": -84.0177 },
+          { "name": "Covington", "lat": 33.5968, "lon": -83.8603, "minor": true },
+          { "name": "McDonough", "lat": 33.4473, "lon": -84.1469 },
+          { "name": "Peachtree City", "lat": 33.3968, "lon": -84.5958, "anchor": "middle", "dy": 18 },
+          { "name": "Newnan", "lat": 33.3807, "lon": -84.7997, "anchor": "end" }
+        ]
+      },
+      "local": [
+        ["Let the used inventory narrow the search", "Atlanta has more used cars listed than new ones, so you can be picky. Give us the trims you’d take, the most miles you’d accept and the colors you’d skip, and the search can pass over cars that are almost right and wait for one that is. When one dealer won’t move on price, the same car is usually listed at another store. Tell us what you’d pass on and we build the list from there."],
+        ["Find out where a used car came from", "In a market this large, used cars arrive as lease returns, trade-ins and former rental and fleet cars. Ask the dealer which one a car is, get the VIN and run a history report on it. Two cars at the same price can have very different mileage and service records, so line them up on those before you pick one to drive."]
+      ],
       "plan": "Every dealer in that circle is a Georgia dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Alabama, Tennessee or the Carolinas are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
       "faq": [
         ["Do you have an office in Atlanta?", "No. We’re based in Austin, Texas, and we work with Atlanta-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Do you negotiate used cars in Atlanta?", "Yes. Used and CPO cars from dealers are part of both plans, at the same flat fee as a new car."]
+        ["Do you negotiate used cars in Atlanta?", "Yes. Used and CPO cars from dealers are part of both plans, at the same flat fee as a new car."],
+        ["Can you search for an exact trim, color and mileage?", "Yes. Tell us the trims and colors you’d accept and the most miles you’d take. With this many used cars listed, there is room to wait for the right one."],
+        ["Will you compare used cars across different dealers?", "Yes. Each dealer with a fitting car gives a written out-the-door price, and we put the offers side by side with each car’s mileage and trim, so a lower price on a higher-mileage car shows up as exactly that."]
       ]
     },
     {
       "slug": "car-buying-service-washington-dc.html",
+      "updated": "2026-11-17",
       "name": "Washington, DC",
       "area": "Washington-area",
       "center": "downtown Washington",
@@ -191,10 +370,56 @@
         "On November 15, 2026, dealers within 50 miles of downtown Washington listed about 83,000 new cars and 71,000 used ones. Ford, Toyota and Honda had the most new cars on the lot. The median asking price was about $48,400 new and $23,600 used.",
         "Fifty miles from downtown covers Northern Virginia, the Maryland suburbs and Baltimore. Very few of those dealers are in the District itself; nearly all of them are in Maryland or Virginia. So a Washington-area search almost always crosses a state line, and a Virginia store and a Maryland store selling the same car rarely see each other’s quotes unless we show them."
       ],
+      "photo": {
+        "file": "market-washington-dc-memorial-bridge",
+        "width": 1920,
+        "height": 1080,
+        "alt": "The Arlington Memorial Bridge roadway with its eagle-topped stone pylons, looking toward Arlington National Cemetery on the Virginia side",
+        "caption": "Arlington Memorial Bridge, looking from the District toward Arlington National Cemetery in Virginia.",
+        "author": "G. Edward Johnson",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Memorial_Circle_from_Memorial_Bridge_Washington_DC_2026-09-07_09-24-41.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "map": {
+        "lat": 38.9124,
+        "lon": -77.0174,
+        "title": "Map of the 50-mile circle around downtown Washington",
+        "description": "A 50-mile circle centered on downtown Washington covers the District, the Maryland suburbs from Frederick to Annapolis and Baltimore, and Northern Virginia from Leesburg to Fredericksburg. Dashed lines mark the state lines; the Chesapeake Bay fills the east side and a corner of West Virginia reaches in at the northwest.",
+        "caption": "Fifty miles from downtown crosses the Potomac and reaches Baltimore. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "centerLabel": "Downtown Washington",
+        "regions": [
+          { "name": "VIRGINIA", "lat": 38.3, "lon": -77.85 },
+          { "name": "MARYLAND", "lat": 39.5, "lon": -77.0 },
+          { "name": "WEST VIRGINIA", "lat": 39.5, "lon": -78.05 },
+          { "name": "Chesapeake Bay", "lat": 38.7, "lon": -76.55, "water": true }
+        ],
+        "places": [
+          { "name": "Frederick", "lat": 39.4143, "lon": -77.4105, "anchor": "end" },
+          { "name": "Columbia", "lat": 39.2037, "lon": -76.861, "minor": true },
+          { "name": "Baltimore", "lat": 39.2904, "lon": -76.6122 },
+          { "name": "Annapolis", "lat": 38.9784, "lon": -76.4922, "dy": 24, "minor": true },
+          { "name": "Rockville", "lat": 39.084, "lon": -77.1528, "anchor": "end" },
+          { "name": "Bowie", "lat": 39.0068, "lon": -76.7791, "minor": true },
+          { "name": "Leesburg", "lat": 39.1157, "lon": -77.5636, "anchor": "end" },
+          { "name": "Fairfax", "lat": 38.8462, "lon": -77.3064, "anchor": "end" },
+          { "name": "Alexandria", "lat": 38.8048, "lon": -77.0469 },
+          { "name": "Manassas", "lat": 38.7509, "lon": -77.4753, "anchor": "end" },
+          { "name": "Waldorf", "lat": 38.6246, "lon": -76.939 },
+          { "name": "Fredericksburg", "lat": 38.3032, "lon": -77.4605 },
+          { "name": "Warrenton", "lat": 38.7135, "lon": -77.7953, "anchor": "end", "minor": true }
+        ]
+      },
+      "local": [
+        ["Choose Maryland or Virginia before you choose a dealer", "A dealer on each side of the Potomac can be the same distance from your door and a very different trip, depending on the bridge, the Beltway or the Metro line between you. Tell us which side you could reach and how you’d get there. If you live in the District, ask us which plan fits before you pay."],
+        ["Look under a used car that has seen a few winters", "Maryland and Virginia treat roads with salt and brine before and during winter storms, and the damage shows underneath before it shows in the paint. Look at the brake lines, the exhaust and the rocker panels below the doors. Ask the dealer where the car has lived: one that came down from the snowy northern states has had more salt than one that stayed in the Southeast. On a used search we can ask for photos of the underside. Have a mechanic you choose put the car on a lift before you sign."]
+      ],
       "plan": "That makes the plan choice matter more here than in most places. The Steer Me Right plan ($395) does not include out-of-state dealers. A Virginia buyer gets Virginia dealers on it and a Maryland buyer gets Maryland dealers; to have both sides of the Potomac competing, pick Steer Me Right Pro ($695). If you live in the District, ask us before you pay. It’s free to ask, and nearly every dealer near you is across a state line.",
       "faq": [
         ["Do you have an office in Washington?", "No. We’re based in Austin, Texas, and we work with Washington-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from both Maryland and Virginia dealers?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."]
+        ["Can you get offers from both Maryland and Virginia dealers?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."],
+        ["I live in the District. Which plan do I need?", "Ask us before you pay. Nearly every dealer near you is in Maryland or Virginia, and the Steer Me Right plan doesn’t include out-of-state dealers. Tell us which dealers you could reach and we’ll tell you which plan fits. No payment is needed to ask."],
+        ["Does road salt matter for a used car in the Washington area?", "It can, on a car with a few winters behind it. We can ask the dealer for photos of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign."]
       ]
     }
   ]

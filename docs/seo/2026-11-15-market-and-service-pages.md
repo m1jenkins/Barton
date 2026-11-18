@@ -51,7 +51,7 @@ Mason said on November 17, 2026 that the six city pages were "pretty much the sa
 - **More `faq` entries** about the same local issues, so the three shared questions aren't most of the list.
 - **`updated`**: a city's own date when only its page changed; update its sitemap `lastmod` too.
 
-The styles are in `buying/market.css`, linked with a content hash only on pages that use these fields. Still to do: the other five cities, and the extra listing figures (top models, days on the lot, hybrid and EV share), which wait on open items 1 and 2.
+The styles are in `buying/market.css`, linked with a content hash only on pages that use these fields. All six cities now have a photo, a map, a local section and extra FAQ entries (New York, Los Angeles, Miami, Atlanta and Washington on November 17, 2026, after the Chicago pilot). Their photos are Wikimedia Commons CC BY, CC BY-SA or CC0 files, credited per page. Maps with no state line in view omit the "State line" key. Still to do: the extra listing figures (top models, days on the lot, hybrid and EV share), which wait on open items 1 and 2.
 
 ## Rules for all eleven pages
 
