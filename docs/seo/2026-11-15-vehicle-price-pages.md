@@ -340,6 +340,23 @@ Reddit section: per-car file data/reddit-sentiment/cars/subaru-forester.json (se
 
 Open items for Mason: the pick (2026 Premium Hybrid; Wilderness if you tow), "buy new, as a 2026", the used advice (2023 or 2024; skip 2019 and 2020) and the discount groups were written from the research and lean on Edmunds Texas. Check: Consumer Reports is paywalled; Edmunds 5.7 against U.S. News 8.6 and J.D. Power 84 (the page says so); CPO age and mileage limits are not on subaru.com; the 2027 EPA page was not opened; Touring and Limited equipment is partly inferred. Offers end November 30, 2026.
 
+## Chevrolet Colorado (added November 18, 2026)
+
+`chevrolet-colorado-price.html` covers the Colorado, ZR2 included (not the GMC Canyon), in the Tacoma's truck template with no spotlight section. Differences:
+
+- **Prices.** Both model years were read on chevrolet.com in the built-in browser (2026 from the previous-year page). The configurator's "From" prices match each plus $2,095 destination. 4WD step-ups were read by switching the configurator. The ZR2 Bison is not in the configurator, so it is unpriced.
+- **Offers** were read at ZIPs 60601, 75201, 90012 and 10001 by putting the ZIP in the URL. Chevrolet prints no end dates: November 30 comes from GM Authority and Kelley Blue Book. The $2,000 conquest cash comes from GM Authority and Autoevolution, not Chevrolet. Chevrolet does not say whether cash combines with the 4.9% rate, so the page says to ask and the chart shows rates only. MarketCheck was not used.
+- **Sale price.** Edmunds' Texas prices (browser) 7.1–10.0% under (our arithmetic). KBB's fair price $1,695 to $2,895 under. iSeeCars invoice 4.6% under (our arithmetic, before destination). CarWhere has seven buyers, too few to use. Cox has no Colorado figure. TrueCar returned 403 on both URLs, so it is not cited.
+- **Safety.** NHTSA: 2026 crew cab 4 stars; its rollover percentage reads 0.0, so the page gives none; no 2027 ratings. IIHS (applies to 2023–27): updated moderate overlap Marginal; headlights Acceptable or Poor by trim, shown as Poor with a note.
+- **Brake investigation.** NHTSA's EA26006 (loss of brake assist, no recall) lists the 2023–2026 Colorado. It was read through PickupTruckTalk and GM Authority; the NHTSA PDF would not decode. The watch item and used advice rest on it.
+- **Reviews** read in the browser: Edmunds, KBB, U.S. News, J.D. Power, Consumer Reports (reliability below average). The Edmunds 2027 page's trim prices looked stale and were not used.
+- **Rivals.** Ranger from ford.com (destination footnote unread, so the page says "from"); Tacoma depreciation re-read on iSeeCars; Canyon and Ridgeline prices are U.S. News' table, not the makers'.
+- **Photos.** Five Wikimedia Commons images: HJUdall 2026 WT (CC0, cropped) and 2024 trucks for the rest (no clean 2026 ZR2 or Z71 exists): MercurySable99 (CC BY-SA 4.0, three), Deathpallie325 (CC BY-SA 4.0). A bystander, a dealer's plate frame, a showroom person and a billboard blurred. A CC0 auto-show ZR2 was skipped for visitors' faces. Captions say 2024.
+
+Reddit section: per-car file data/reddit-sentiment/cars/chevrolet-colorado.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 LT, 4WD off pavement; Trail Boss for trails; skip the ZR2 unless used hard), "buy new, as a 2026", the used advice (CPO 2023–2025; no used floor) and the three discount groups were written from the research and lean on Edmunds Texas and KBB, with no TrueCar. Not confirmed on a primary page: end dates, conquest cash, EA26006, Ranger destination, Canyon and Ridgeline prices. Read through summaries: iSeeCars, CarWhere, Cox, Experian. The ZR2 Bison and 2027 Desert Boss are not on the page. Offers end November 30, 2026.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

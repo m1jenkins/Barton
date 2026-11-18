@@ -14492,6 +14492,793 @@
           "note": "cropped"
         }
       ]
+    },
+    {
+      "slug": "chevrolet-colorado-price.html",
+      "name": "Chevrolet Colorado",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Chevrolet Colorado Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Chevrolet Colorado costs in November 2026: MSRP by trim for 2026 and 2027, how far under sticker dealers sell it, Chevrolet’s current offers, and whether to buy new, used or CPO.",
+      "h1": "Chevrolet Colorado price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$32,400 <small>to $50,700</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "6–7% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Chevrolet incentives",
+          "value": "4.9% <small>APR, $1,000 cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 LT",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Colorado is the midsize pickup to price if you tow: Chevrolet rates it to pull 7,700 pounds against the Ford Ranger’s 7,500, and Edmunds scored its towing and hauling 10 out of 10. It isn’t the roomiest or the most reliable truck in the class. Edmunds and U.S. News fault the back seat, and Consumer Reports expects it to be less reliable than the average new car. It does sell well under sticker: Edmunds’ Texas suggested prices run 7–10% under, with about 18,900 trucks in stock and 40 days to sell. Price a 2026 LT, aim for 6–7% under MSRP, and take Chevrolet’s 4.9% financing if your bank can’t beat it. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP",
+          "2027 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "WT",
+            "short": "Work truck",
+            "gets": "11.3-inch touchscreen with Google built-in, 11-inch digital gauge display, Chevy Safety Assist, 17-inch wheels",
+            "prices": [
+              32400,
+              33500
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027); 4WD adds $3,300 in 2026 and $3,200 in 2027"
+          },
+          {
+            "name": "Custom",
+            "short": "Black-trim value",
+            "gets": "WT equipment with 18-inch gloss-black wheels and black badges",
+            "prices": [
+              33545,
+              34645
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027); 4WD adds $3,300 in 2026 and $3,200 in 2027"
+          },
+          {
+            "name": "LT",
+            "short": "The value pick",
+            "gets": "EZ Lift and Lower tailgate with built-in storage, remote start, available wireless phone charging",
+            "prices": [
+              36000,
+              36900
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027); 4WD adds $3,300 in 2026 and $3,400 in 2027",
+            "pick": true
+          },
+          {
+            "name": "Trail Boss",
+            "short": "Lifted",
+            "gets": "2-inch factory lift, 18-inch wheels with 32-inch all-terrain tires, four drive modes, two-speed automatic transfer case",
+            "prices": [
+              40500,
+              41600
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027), 4WD only"
+          },
+          {
+            "name": "Z71",
+            "short": "Adventure",
+            "gets": "18-inch wheels with 32-inch all-terrain tires, Jet Black interior with red accents, LED headlamps and fog lamps",
+            "prices": [
+              44600,
+              45800
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027), 4WD only"
+          },
+          {
+            "name": "ZR2",
+            "short": "Off-road flagship",
+            "gets": "3-inch factory lift, Multimatic DSSV dampers, 17-inch wheels with 33-inch mud-terrain tires, five drive modes",
+            "prices": [
+              50700,
+              50800
+            ],
+            "engine": "2.7L turbo four, 310 hp (350 hp in 2027), 4WD only"
+          }
+        ],
+        "after": [
+          "Prices leave out the $2,095 destination charge and are for 2WD on the WT, Custom and LT; the Trail Boss, Z71 and ZR2 come with 4WD only. For 2027, every trim goes up $900 to $1,200 except the ZR2, which goes up $100. Chevrolet also sells a ZR2 Bison; it isn’t priced here."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 LT crew cab, with 4WD if you leave pavement.</strong> At $36,000 for the 2WD (4WD adds $3,300) it adds the EZ Lift and Lower tailgate with built-in storage and remote start to the WT, and Edmunds names it the editors’ pick of the lineup. Chevrolet’s $1,000 customer cash applies to it (the Trail Boss and ZR2 get $500), and Edmunds’ Texas prices show it selling 10.0% under sticker, the deepest of any trim.",
+        "If you’ll use trails, a Trail Boss costs $1,200 more than an LT 4WD ($40,500 against $39,300) and adds a 2-inch lift, 32-inch all-terrain tires and a two-speed automatic transfer case, which Chevrolet lists on the Trail Boss and which U.S. News says some other trims lack. Skip the ZR2 unless you drive rough ground often: it starts at $50,700 and sells the least under sticker. A 2027 LT adds 40 hp for $900 but gets none of Chevrolet’s current offers."
+      ],
+      "pay": {
+        "intro": [
+          "Colorados sell well under sticker, and there are plenty of them. Edmunds counts about 18,900 new trucks nationwide and says they take about 40 days to sell against 34 for the average new vehicle; Cox put Chevrolet’s supply at 94 days against 87 for the industry at the end of October. Edmunds’ suggested prices, based on Texas sales, run 7–10% under sticker with destination, its buyers are paying about 6.7% under, Kelley Blue Book’s fair purchase prices are about 5% under, and iSeeCars puts dealer invoice 4.6% under MSRP. CarWhere has only seven verified 2026 buyers (a median 4.5% under), too few to lean on."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "WT, Custom, LT",
+            "example": "LT",
+            "fair": "6–7% under",
+            "strong": "9–10% under",
+            "why": "Edmunds’ Texas prices run 9.7% under on the WT and 10.0% on the LT, and Kelley Blue Book’s fair price is about 5% under. Edmunds says the WT has the most stock."
+          },
+          {
+            "trims": "Trail Boss, Z71",
+            "example": "Z71",
+            "fair": "6–7% under",
+            "strong": "8–9% under",
+            "why": "Edmunds’ Texas prices run 7.5% under on the Trail Boss and 8.4% on the Z71."
+          },
+          {
+            "trims": "ZR2",
+            "example": "ZR2",
+            "fair": "5–6% under",
+            "strong": "7% or more",
+            "why": "Edmunds’ Texas price is 7.1% under, Kelley Blue Book’s fair price 5.5% under, and Edmunds says ZR2 stock is tighter."
+          }
+        ],
+        "note": "Discount ranges are our estimate, based on Edmunds’, Kelley Blue Book’s and iSeeCars’ figures, checked November 18, 2026.",
+        "after": [
+          "Not sure what a specific Colorado should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 LT 4WD",
+          "sticker": 41395,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 6.5%",
+              "amount": 2690
+            }
+          ],
+          "total": 38705,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Chevrolet’s offers are on the 2026: 4.9% financing, $1,000 customer cash and $1,000 for military members, plus $2,000 more if you own a Toyota Tacoma or one of six other rival models. They run to November 30. The only 2027 offer we found is that $2,000 conquest cash."
+        ],
+        "rows": [
+          {
+            "offer": "4.9% APR for 75 months",
+            "detail": "Through GM Financial, for well-qualified buyers. The same rate is offered for 60 months with no payments for 90 days (GM Authority says not in Pennsylvania).",
+            "applies": "2026 Colorado, all trims, in all four regions we checked",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "$1,000 customer cash",
+            "detail": "$500 on the Trail Boss and ZR2",
+            "applies": "2026 Colorado, all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military cash",
+            "detail": "$1,000 total cash allowance for eligible military members (Chevrolet’s Veterans Day offer)",
+            "applies": "2026 Colorado, all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Conquest cash",
+            "detail": "$2,000 for owners or lessees of a 2012 or newer Ford Bronco or Ranger, Honda Ridgeline, Jeep Gladiator or Wrangler, Nissan Frontier or Toyota Tacoma. You show registration or lease papers; no trade-in needed.",
+            "applies": "2026 and 2027 Colorado",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Lease, Dallas and New York",
+            "detail": "$249 a month for 24 months with $6,521 due at signing ($3,449 for current lessees); 10,000 miles a year",
+            "applies": "2026 Colorado WT 2WD with the Custom package",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Lease, Chicago",
+            "detail": "$369 a month for 24 months with $5,669 due at signing",
+            "applies": "2026 Colorado LT 4WD",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Lease, Los Angeles",
+            "detail": "WT $219 ($4,889 due), LT 2WD $269 ($5,899), LT 4WD $319 ($5,939) and Trail Boss $269 ($5,999), all 24 months; the $249 WT lease also appears",
+            "applies": "2026 Colorado",
+            "ends": "November 30, 2026"
+          }
+        ],
+        "note": "From <a href=\"https://www.chevrolet.com/current-offers\" rel=\"noopener\">Chevrolet’s offers page</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York. Chevrolet’s page prints no end dates; November 30 comes from <a href=\"https://gmauthority.com/blog/2026/11/chevy-colorado-discount-lease-finance-deals-incentives-offers-november-2026/\" rel=\"noopener\">GM Authority</a> and Kelley Blue Book’s listing. Finance and cash were the same in all four regions; leases differed. Offers need GM Financial approval where stated.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "4.9%",
+            "word": "APR",
+            "text": "For 75 months on a 2026 Colorado in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$1,000",
+            "word": "cash",
+            "text": "On a 2026 Colorado; $500 on the Trail Boss and ZR2. Ends November 30."
+          },
+          {
+            "label": "Conquest cash",
+            "figure": "$2,000",
+            "word": "off",
+            "text": "For owners of a Tacoma, Ranger, Ridgeline or four other rival trucks. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$249",
+            "word": "a month",
+            "text": "2026 WT 2WD in Dallas and New York, 24 months, $6,521 due at signing. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military?",
+            "text": "Chevrolet lists $1,000 for eligible military members on the 2026 Colorado. Its page doesn’t say whether that stacks with the $1,000 customer cash or the 4.9% rate, so ask the dealer to quote each way.",
+            "figure": "$1,000",
+            "unit": "military cash",
+            "detail": "Ends November 30",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Chevrolet’s 4.9%",
+          "title": "4.9% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $40,000 Colorado over 60 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign. Chevrolet’s page doesn’t say whether the $1,000 cash combines with the rate.",
+          "price": 40000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "4.9% APR",
+              "detail": "2026 Colorado, GM Financial",
+              "rate": 4.9,
+              "cash": 0
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used 2024 asks a median $36,087, about what a new LT starts at ($36,000), and used-loan rates average 11.19% against Chevrolet’s 4.9% on a new one."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Chevrolet’s financing and cash are on the 2026, and it costs $100 to $1,200 less than a 2027.",
+            "check": "That the truck is a 2026 and not a 2027, and that the offer runs in your region."
+          },
+          {
+            "route": "New 2027",
+            "when": "You want the 350-hp engine or plan to tow near the limit. Chevrolet lists 350 hp and 450 lb-ft against 310 and 430 on the 2026.",
+            "check": "The price rise, and that the only 2027 offer we found is the $2,000 conquest cash."
+          },
+          {
+            "route": "CPO (GM CarBravo)",
+            "when": "You want a 2023 to 2025 truck with some cover, and you’re paying cash.",
+            "check": "CarBravo’s certified warranty is 12 months/12,000 miles bumper to bumper on trucks under 10 model years and 100,000 miles. Chevrolet’s own powertrain warranty runs 5 years/60,000 miles from first sale, by Edmunds’ account."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $34,000: a 2023 asks a median $33,399.",
+            "check": "Open recalls by VIN and an independent inspection. A 2021 or 2022 (median asks $24,830 and $24,995) is the previous generation; the Colorado was redesigned for 2023."
+          }
+        ],
+        "after": [
+          "If you buy a 2023 or 2024, ask for the recall paperwork. Those trucks were recalled for a camera fault that could trigger automatic emergency braking (the truck brakes on its own) by mistake, overtightened front wheel hub bolts and a loose seat belt buckle bolt, and the 2024 for mismatched tires and a fuel pump lock ring that could leak fuel in a crash."
+        ],
+        "charts": [
+          {
+            "title": "Value lost in five years",
+            "bars": [
+              {
+                "label": "Colorado",
+                "value": 36.9,
+                "display": "36.9%"
+              },
+              {
+                "label": "Midsize pickups",
+                "value": 30.2,
+                "display": "30.2%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 41.7,
+                "display": "41.7%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Chevrolet offer",
+                "value": 4.9,
+                "display": "4.9%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Chevrolet; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2021",
+                "value": 24830,
+                "display": "$24,830"
+              },
+              {
+                "label": "2022",
+                "value": 24995,
+                "display": "$24,995"
+              },
+              {
+                "label": "2023",
+                "value": 33399,
+                "display": "$33,399"
+              },
+              {
+                "label": "2024",
+                "value": 36087,
+                "display": "$36,087"
+              },
+              {
+                "label": "2025",
+                "value": 38636,
+                "display": "$38,636"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ]
+      },
+      "watch": [
+        "<strong>Brakes.</strong> NHTSA is running an engineering analysis (EA26006) into loss of brake assist on GM vehicles with the eBoost brake system, and the 2023 to 2026 Colorado is on its list. No recall had been issued as of November 18, 2026. Ask the dealer to check the VIN for open recalls and read the brake complaints on NHTSA before you buy.",
+        "<strong>Cash or rate.</strong> Chevrolet lists the $1,000 cash and the 4.9% rate as separate offers and doesn’t say whether they combine. Ask for a quote each way and compare the total cost.",
+        "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot, and the cash and financing are on the 2026.",
+        "<strong>The back seat.</strong> Edmunds says the rear seats lack comfort and taller riders may lack knee room, and U.S. News calls the back seat tiny and says loading a child seat is a pain. Sit in it with your own seat.",
+        "<strong>Storage and controls.</strong> Edmunds scores storage 3 out of 10 (small door pockets) and says the headlight controls sit in the touchscreen. Try both on the lot.",
+        "<strong>Fees and add-ons.</strong> Dealers add fees and extras to the price you see online. Compare out-the-door prices, and refuse or negotiate anything you didn’t ask for."
+      ],
+      "faq": [
+        [
+          "Is the Chevrolet Colorado a good truck?",
+          "Reviewers rate it well but not at the top. Kelley Blue Book gives it 4.6 out of 5 (third among midsize trucks), U.S. News 8.7 and third of seven, and J.D. Power’s owner score is 83, second behind the Tacoma’s 84. Edmunds is cooler at 6.5, fourth of seven, and faults the rear seat and storage. Consumer Reports expects it to be less reliable than the average new car, and iSeeCars puts its five-year value loss at 36.9% against 30.2% for midsize pickups."
+        ],
+        [
+          "How much under MSRP can you get a Chevrolet Colorado?",
+          "On a 2026 WT, Custom or LT, 6–7% under MSRP is a fair deal and 9–10% a strong one. The Trail Boss and Z71 run 6–7% fair and 8–9% strong, and the ZR2 has less room, around 5–6%. Those ranges are our read of Edmunds’ Texas suggested prices, Kelley Blue Book’s fair purchase prices and iSeeCars’ invoice figures, so a given dealer may land a point either side, and Chevrolet’s cash comes on top."
+        ],
+        [
+          "Should I buy a 2026 or a 2027 Colorado?",
+          "The 2026, for most buyers. It costs $100 to $1,200 less, and Chevrolet’s 4.9% financing and customer cash are on the 2026. The 2027 has a 350-hp engine against 310, which matters if you tow near the 7,700-pound limit. The only 2027 offer we found is the $2,000 conquest cash."
+        ],
+        [
+          "What is the destination charge on a Colorado?",
+          "$2,095 on both model years. Chevrolet’s advertised starting prices leave it out, so a $32,400 WT is $34,495 on the window sticker."
+        ],
+        [
+          "Does Chevrolet offer cash back on the Colorado?",
+          "Yes. On November 18, 2026 it listed $1,000 customer cash on a 2026 (Trail Boss and ZR2 get $500), $1,000 for eligible military members, and $2,000 conquest cash for owners of a 2012 or newer Tacoma, Ranger, Ridgeline, Frontier, Bronco, Gladiator or Wrangler, per GM Authority. All run to November 30. Chevrolet’s page doesn’t say which combine."
+        ],
+        [
+          "Should I buy a Colorado or a Tacoma?",
+          "Buy the Colorado if you tow or want more standard power and a bigger screen: Edmunds says its towing, payload and screen lead the class. Buy the Tacoma if resale matters most. It loses 19.5% of its value in five years against the Colorado’s 36.9% (iSeeCars), owners score it 84 against 83 at J.D. Power, and Edmunds calls it the safe choice in the segment. If you own a Tacoma, Chevrolet’s $2,000 conquest cash lowers the Colorado’s price."
+        ],
+        [
+          "Is a used Colorado a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2024 is $36,087 and for a 2025 $38,636, while a new 2026 LT starts at $36,000 and sells 6–7% under that, with 4.9% financing against 11.19% for the average used loan. A certified 2023 to 2025 with its recalls done is the used route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-COLORADO-01",
+          "title": "Chevrolet: 2026 Colorado",
+          "url": "https://www.chevrolet.com/trucks/previous-year/colorado",
+          "scope": "2026 Colorado trims, starting MSRP excluding destination, 2.7L TurboMax output (310 hp, 430 lb-ft), 7,700-pound maximum towing and standard equipment",
+          "note": "2026 trims, starting prices and equipment"
+        },
+        {
+          "id": "VEH-COLORADO-02",
+          "title": "Chevrolet: 2027 Colorado",
+          "url": "https://www.chevrolet.com/trucks/colorado",
+          "scope": "2027 Colorado trims, starting MSRP excluding destination, 350 hp and 450 lb-ft, maximum towing and standard equipment",
+          "note": "2027 starting prices and output"
+        },
+        {
+          "id": "VEH-COLORADO-03",
+          "title": "Chevrolet: Colorado model selection (configurator)",
+          "url": "https://www.chevrolet.com/shopping/configurator/trucks/2027/colorado/colorado/model",
+          "scope": "2026 and 2027 Colorado prices with destination by trim and drive type (2WD and 4WD), from which the $2,095 destination charge and the 4WD step-ups follow",
+          "note": "prices with destination, 2WD and 4WD"
+        },
+        {
+          "id": "VEH-COLORADO-04",
+          "title": "Chevrolet: current offers",
+          "url": "https://www.chevrolet.com/current-offers",
+          "scope": "Chevrolet finance, cash, military and lease offers on the 2026 Colorado at ZIPs 60601, 75201, 90012 and 10001; the page prints no end dates",
+          "note": "finance, cash and lease offers, read in four regions"
+        },
+        {
+          "id": "VEH-COLORADO-05",
+          "title": "GM Authority: Chevy Colorado deals, November 2026",
+          "url": "https://gmauthority.com/blog/2026/11/chevy-colorado-discount-lease-finance-deals-incentives-offers-november-2026/",
+          "scope": "November 2026 Colorado offers valid through November 30, conquest cash eligibility, 2027 offers and the $2,095 destination charge",
+          "note": "end date, conquest cash and 2027 offers"
+        },
+        {
+          "id": "VEH-COLORADO-06",
+          "title": "Autoevolution: Chevrolet offers up to $2,000 to Toyota owners",
+          "url": "https://www.autoevolution.com/news/chevrolet-is-trying-to-steal-toyota-s-customers-offers-bonuses-of-up-to-2000-278342.html",
+          "scope": "$2,000 conquest cash on a 2026 or 2027 Colorado for Toyota Tacoma owners, through November 30, 2026",
+          "note": "Tacoma conquest cash"
+        },
+        {
+          "id": "VEH-COLORADO-07",
+          "title": "Edmunds: 2026 Chevrolet Colorado",
+          "url": "https://www.edmunds.com/chevrolet/colorado/2026/",
+          "scope": "Edmunds rating, editors’ trim pick, Texas suggested price by trim, buying tips (supply, days to sell, savings), towing, payload, fuel economy, storage and warranty notes for the 2026 Colorado",
+          "note": "review score, suggested prices and test notes"
+        },
+        {
+          "id": "VEH-COLORADO-08",
+          "title": "Edmunds: 2027 Chevrolet Colorado",
+          "url": "https://www.edmunds.com/chevrolet/colorado/2027/",
+          "scope": "Edmunds rating and midsize-truck rank for the 2027 Colorado",
+          "note": "review score and rank"
+        },
+        {
+          "id": "VEH-COLORADO-09",
+          "title": "Kelley Blue Book: 2026 Chevrolet Colorado",
+          "url": "https://www.kbb.com/chevrolet/colorado/2026/",
+          "scope": "KBB expert and consumer ratings, midsize-truck rank, fair purchase price range against MSRP, offer end date",
+          "note": "review score and fair purchase price"
+        },
+        {
+          "id": "VEH-COLORADO-10",
+          "title": "U.S. News: 2026 Chevrolet Colorado",
+          "url": "https://cars.usnews.com/cars-trucks/chevrolet/colorado",
+          "scope": "U.S. News overall score, midsize pickup rank, rival ranking and starting prices, pros and cons",
+          "note": "review score and rivals"
+        },
+        {
+          "id": "VEH-COLORADO-11",
+          "title": "J.D. Power: 2026 Chevrolet Colorado",
+          "url": "https://www.jdpower.com/cars/2026/chevrolet/colorado",
+          "scope": "J.D. Power consumer rating, category scores and midsize pickup ranking",
+          "note": "review score"
+        },
+        {
+          "id": "VEH-COLORADO-12",
+          "title": "Consumer Reports: 2026 Chevrolet Colorado reliability",
+          "url": "https://www.consumerreports.org/cars/chevrolet/colorado/2026/reliability",
+          "scope": "Consumer Reports predicted reliability for the 2026 Colorado and the $2,095 destination charge",
+          "note": "predicted reliability"
+        },
+        {
+          "id": "VEH-COLORADO-13",
+          "title": "iSeeCars: 2026 Chevrolet Colorado price",
+          "url": "https://www.iseecars.com/car/2026-chevrolet-colorado-price",
+          "scope": "MSRP and dealer invoice by 2026 Colorado configuration",
+          "note": "dealer invoice by configuration"
+        },
+        {
+          "id": "VEH-COLORADO-14",
+          "title": "iSeeCars: Chevrolet Colorado resale value",
+          "url": "https://www.iseecars.com/car/chevrolet-colorado/resale-value",
+          "scope": "Colorado five-year depreciation against the midsize pickup and all-vehicle averages",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-COLORADO-15",
+          "title": "iSeeCars: Toyota Tacoma resale value",
+          "url": "https://www.iseecars.com/car/toyota-tacoma/resale-value",
+          "scope": "Tacoma five-year depreciation against the midsize pickup average",
+          "note": "rival depreciation"
+        },
+        {
+          "id": "VEH-COLORADO-16",
+          "title": "CarWhere: 2026 Chevrolet Colorado",
+          "url": "https://www.carwhere.com/cars/chevrolet/colorado/2026",
+          "scope": "Median price paid against MSRP by seven verified 2026 Colorado buyers",
+          "note": "buyer-reported prices paid"
+        },
+        {
+          "id": "VEH-COLORADO-17",
+          "title": "CarWhere: used Chevrolet Colorado prices",
+          "url": "https://www.carwhere.com/used-car-prices/chevrolet/colorado",
+          "scope": "Median asking price of used Colorados by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-COLORADO-18",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Days of supply for the industry and for Chevrolet at the end of October 2026",
+          "note": "days of supply"
+        },
+        {
+          "id": "VEH-COLORADO-19",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-COLORADO-20",
+          "title": "GM CarBravo: warranties",
+          "url": "https://www.carbravo.com/ownership/warranties",
+          "scope": "GM CarBravo certified used vehicle bumper-to-bumper warranty terms",
+          "note": "certified used warranty terms"
+        },
+        {
+          "id": "VEH-COLORADO-21",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Colorado recall campaigns and owner complaint counts by model year 2019 to 2026, from the NHTSA recalls and complaints API",
+          "note": "recall and complaint counts by model year"
+        },
+        {
+          "id": "VEH-COLORADO-22",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA overall, frontal, side and rollover ratings for the 2026 Colorado crew cab, from the NHTSA ratings API",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-COLORADO-23",
+          "title": "IIHS: 2026 Chevrolet Colorado crew cab",
+          "url": "https://www.iihs.org/ratings/vehicle/chevrolet/colorado-crew-cab-pickup/2026",
+          "scope": "IIHS crash test, headlight, crash prevention and seat belt reminder ratings for the 2026 Colorado crew cab",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-COLORADO-24",
+          "title": "PickupTruckTalk: GM brake assist investigation",
+          "url": "https://pickuptrucktalk.com/2026/08/over-1-million-gm-vehicles-under-investigation-brake-assist-failure-colorado-canyon/",
+          "scope": "NHTSA engineering analysis EA26006 into loss of brake assist on GM vehicles with the eBoost system, including the 2023 to 2026 Colorado",
+          "note": "brake investigation"
+        },
+        {
+          "id": "VEH-COLORADO-25",
+          "title": "PickupTruckTalk: 2027 Chevrolet Colorado pricing",
+          "url": "https://pickuptrucktalk.com/2026/10/2027-chevrolet-colorado-pricing/",
+          "scope": "2027 Colorado prices with destination and the 350-hp engine, October 27, 2026",
+          "note": "2027 pricing"
+        },
+        {
+          "id": "VEH-COLORADO-26",
+          "title": "Ford: 2026 Ranger",
+          "url": "https://www.ford.com/trucks/ranger/",
+          "scope": "2026 Ford Ranger XL starting MSRP and maximum towing",
+          "note": "Ranger price and towing"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-chevrolet-colorado-wt",
+        "width": 1920,
+        "height": 1210,
+        "alt": "White 2026 Chevrolet Colorado WT crew cab, front three-quarter view in a studio",
+        "caption": "A Colorado WT.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Chevrolet_Colorado_Work_Truck.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "Rated to tow up to 7,700 pounds",
+        "Most trims sell 6–10% under sticker",
+        "Standard 11.3-inch Google screen",
+        "Owners score it 83 with J.D. Power"
+      ],
+      "cons": [
+        "Tight back seat and small storage",
+        "Consumer Reports expects below-average reliability",
+        "Marginal IIHS grade for rear-seat safety",
+        "Five-year value loss of 36.9%"
+      ],
+      "rivals": [
+        "Get a quote on the Toyota Tacoma too: it holds its value better, losing 19.5% in five years against the Colorado’s 36.9%, and J.D. Power owners score it 84 against 83. Ford lists the Ranger from $33,550 with up to 7,500 pounds of towing, and U.S. News lists the GMC Canyon, the Colorado’s corporate cousin, from $38,900 and the Honda Ridgeline, which Edmunds says has the roomiest back seat, from $40,795. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/chevrolet/colorado/2026/",
+            "value": 6.5,
+            "scale": 10,
+            "display": "6.5",
+            "detail": "Ranked 4th of 7 midsize trucks on its 2027 page"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/chevrolet/colorado/2026/",
+            "value": 4.6,
+            "scale": 5,
+            "display": "4.6",
+            "detail": "Owners give it 4.8 out of 5 (4 reviews); third among midsize trucks"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/chevrolet/colorado",
+            "value": 8.7,
+            "scale": 10,
+            "display": "8.7",
+            "detail": "Ranked 3rd of 7 midsize pickups, tied with the GMC Canyon"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/chevrolet/colorado",
+            "value": 83,
+            "scale": 100,
+            "display": "83",
+            "detail": "Ranked 2nd among midsize pickups"
+          }
+        ],
+        "note": "Scores for the 2026 Colorado as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 4,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Colorado Crew Cab",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 4, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 3,
+            "note": "Same for 2WD and 4WD"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Marginal",
+            "note": "Rear-seat passenger"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good",
+            "note": "Updated test"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Poor",
+            "note": "Acceptable on some trims"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 0
+          },
+          {
+            "label": "2020",
+            "value": 0
+          },
+          {
+            "label": "2021",
+            "value": 1
+          },
+          {
+            "label": "2022",
+            "value": 1
+          },
+          {
+            "label": "2023",
+            "value": 3
+          },
+          {
+            "label": "2024",
+            "value": 3
+          },
+          {
+            "label": "2025",
+            "value": 1
+          },
+          {
+            "label": "2026",
+            "value": 1
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 to be <a href=\"https://www.consumerreports.org/cars/chevrolet/colorado/2026/reliability\" rel=\"noopener\">less reliable than the average new car</a>, judging from the 2023, 2024 and 2025 models.",
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/chevrolet/colorado-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. IIHS rates front crash prevention Poor for vehicle-to-vehicle and Acceptable for pedestrians, and seat belt reminders Good. Its small overlap and side results rest on a 2023 GMC Canyon test and apply to 2023–27 Colorados. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> are for the Colorado; the 2025 and 2026 count is one campaign about a missing owner’s manual, and NHTSA lists none for 2019 or 2020. Check any used Colorado’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-chevrolet-colorado-zr2-front",
+          "width": 1920,
+          "height": 1210,
+          "alt": "Yellow 2024 Chevrolet Colorado ZR2 crew cab, front three-quarter view in a parking lot",
+          "caption": "ZR2, front (2024)",
+          "author": "MercurySable99",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Colorado_ZR2,_front_right,_07-18-2024.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped; bystander blurred"
+        },
+        {
+          "file": "vehicle-chevrolet-colorado-zr2-rear",
+          "width": 1920,
+          "height": 1285,
+          "alt": "Yellow 2024 Chevrolet Colorado ZR2 crew cab, rear three-quarter view",
+          "caption": "ZR2, rear (2024)",
+          "author": "MercurySable99",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Colorado_ZR2,_rear_right,_07-18-2024.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "plate frame blurred"
+        },
+        {
+          "file": "vehicle-chevrolet-colorado-interior",
+          "width": 1920,
+          "height": 1080,
+          "alt": "Chevrolet Colorado ZR2 dashboard with a wide touchscreen and round vents",
+          "caption": "ZR2 cabin (2024)",
+          "author": "Deathpallie325",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Colorado_interior.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "person in the showroom behind blurred"
+        },
+        {
+          "file": "vehicle-chevrolet-colorado-z71",
+          "width": 1920,
+          "height": 1210,
+          "alt": "White 2024 Chevrolet Colorado Z71 crew cab, front three-quarter view",
+          "caption": "Z71 (2024)",
+          "author": "MercurySable99",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Chevrolet_Colorado_Z71,_front_left,_09-28-2024.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped; dealer billboard blurred"
+        }
+      ]
     }
   ]
 }
