@@ -306,6 +306,23 @@ Reddit section: per-car file data/reddit-sentiment/cars/ram-1500.json (see Per-c
 
 Open items for Mason: the pick (2026 Laramie Crew Cab; Big Horn 4x4 to spend less; skip the V8 and Limited and above), "buy new, as a 2026", the used advice (CPO 2023–2025; check 26V495 and 22V904 on 2019–2022) and the four discount groups were written from the research; ranges are wide because employee pricing and cash move the price, so check against real deals. Not confirmed: 2027 offers outside 60601; Rumble Bee price; TrueCar; Consumer Reports; V8 availability and price by trim; CarWhere sample dates; the Texas-only label on the 0% offer. The `modelYear` choice against larger 2027 stock is a judgment call. Offers end November 30, 2026.
 
+## Hyundai Elantra (added November 18, 2026)
+
+`hyundai-elantra-price.html` covers the 2026 Elantra, Hybrid and N in the Civic's template, with the N as the optional spotlight section. Differences:
+
+- **One model year, ten trims.** hyundaiusa.com (built-in browser) shows only the 2026, with prices before destination ($1,295, from iSeeCars and confirmed by Edmunds). The trims table has one "2026 MSRP" column. The N's dual-clutch and TCR prices are from iSeeCars (they match Edmunds); the Hybrid's 139 hp is Edmunds'. KBB and U.S. News still print older prices.
+- **A redesign is coming,** which is why the page says buy a 2026. KBB expects a 2027 car in U.S. showrooms in 2027; Hyundai's site lists only the 2026. A claim of a November 19 unveil came from one outlet that refused a read and is not on the page.
+- **Offers** were read from the page data behind hyundaiusa.com/us/en/offers at ZIPs 60601, 75201, 90012 and 10001, plus the special-programs pages. Only Dallas' fine print ties the $2,000 to Hyundai Motor Finance. The Hybrid's $500 names different trims by region; the page says so. The $2,000 text in two regions names other trims (apparently a template slip), so the page says "gas Elantra". Military $500 and the certified rate show no end date, so the military row says "Ask us". MarketCheck was not used.
+- **Sale price.** Edmunds' Texas prices (sales through November 2; unclear whether Hyundai cash is inside) 5.9–7.4% under. KBB's fair prices are against older MSRPs. iSeeCars invoice 3.0–4.0% under. CarWhere has under five buyers; TrueCar returned 403; Cox has no Hyundai figure. A search-snippet N deal was not used. The Hybrid Limited and N Line pay groups lean on Edmunds' stock comments alone.
+- **Safety.** NHTSA: Elantra and Hybrid 5 stars; the N is not rated. The Top Safety Pick is named on IIHS's awards list, not the vehicle page. Consumer Reports refused the read and is not cited.
+- **Carried over, not re-read:** Experian's Q2 2026 rates and rival prices (Civic and Corolla pages), each with its own VEH-ELANTRA row marked as carried over.
+- **Photos.** Six Wikimedia Commons images, 2024–2025 cars: BuickRiviera99, Kevauto, MercurySable99, Ethan Llamas (all CC BY-SA 4.0), HJUdall (CC0, two). Cropped (dealership, show visitors); a plate and a dealer's plate frame blurred. The interior is an N. Metadata stripped; sharp is at `node_modules/sharp/dist/index.mjs`.
+- **Pick differs from Edmunds:** it recommends the Limited; we pick the SEL Sport Premium (adaptive cruise, heated seats and junction-turning braking for $2,100 less).
+
+Reddit section: per-car file data/reddit-sentiment/cars/hyundai-elantra.json (see Per-car Reddit files).
+
+Open items for Mason (6): the pick (SEL Sport Premium; Hybrid Blue for mpg); "buy new, as a 2026 (or wait for the redesign)" with CPO and used advice (2023 or newer); the four discount groups (Hybrid Limited and N Line thin); the N take ("buy the manual"); whether to mention the next-generation Elantra at all (KBB report only); the SEL Sport Premium's equipment (the page says no more than Hyundai's trim card). Also check: Edmunds Texas prices may include Hyundai cash; N dual-clutch and TCR prices are iSeeCars'; the Hybrid's $500 trim wording. Offers end November 30, 2026 (graduate rebate December 31).
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.

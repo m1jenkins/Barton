@@ -66,6 +66,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 - [Toyota Tundra Price](https://www.steermeright.com/toyota-tundra-price.html): MSRP by trim for the 2026 and 2027 Tundra, how far under sticker dealers sell it, Toyota’s current offers by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 - [Mazda CX-5 Price](https://www.steermeright.com/mazda-cx-5-price.html): MSRP by trim for the new-generation 2026 and 2027 CX-5, how far under sticker dealers sell it, Mazda’s current offers by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 - [Ram 1500 Price](https://www.steermeright.com/ram-1500-price.html): MSRP by trim for the 2026 and 2027 Ram 1500, how far under sticker dealers sell it, Ram’s employee pricing, cash and financing by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
+- [Hyundai Elantra Price](https://www.steermeright.com/hyundai-elantra-price.html): MSRP by trim for the 2026 Elantra, Elantra Hybrid and Elantra N, how far under sticker dealers sell it, Hyundai’s current offers by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

@@ -12553,6 +12553,1123 @@
       "reddit": {
         "short": "Ram 1500"
       }
+    },
+    {
+      "slug": "hyundai-elantra-price.html",
+      "name": "Hyundai Elantra",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Hyundai Elantra Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Hyundai Elantra costs in November 2026: MSRP by trim for the gas, Hybrid and N, how far under sticker dealers sell it, Hyundai’s current offers, and the trim we’d buy.",
+      "h1": "Hyundai Elantra price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$22,825 <small>to $30,000</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "3–6% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Hyundai incentives",
+          "value": "3.49% <small>APR, $2,000 cash</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 SEL Sport Premium",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Elantra is the compact sedan to cross-shop against the Civic and Corolla when price and space matter: it starts $1,870 below a Civic LX before destination, Edmunds calls it one of the most spacious small sedans (rear seat especially), and the Hybrid Blue is rated 54 mpg combined against 50 for a Corolla Hybrid. Hyundai covers the powertrain for 10 years or 100,000 miles, and IIHS names it a 2026 Top Safety Pick. The catches: Edmunds timed the base 147-hp car at 9.4 seconds to 60 mph, slower than average for small sedans, and finds wind noise high; iSeeCars counts 16.6% of its value lost in three years against 12.1% for compact cars. It sells well under sticker, too: Edmunds’ Texas prices run about 6% under with destination, and Hyundai adds $2,000 bonus cash on the gas car until November 30. Hyundai showed the next-generation Elantra in South Korea in June 2026, and the U.S. launch is expected in 2027, so a 2026 is the last of this design. Price a 2026 SEL Sport Premium, aim for 3–4% under MSRP, and take Hyundai’s 3.49% financing if your bank can’t beat it. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "SE",
+            "short": "Entry trim",
+            "gets": "8-inch touchscreen with wireless Apple CarPlay and Android Auto, LED projector headlights, rear USB charging ports, forward collision-avoidance assist, blind-spot warning; 35 mpg combined",
+            "prices": [
+              22825
+            ],
+            "engine": "2.0L four-cylinder, 147 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "SEL Sport",
+            "short": "Most popular",
+            "gets": "Gloss-black 17-inch wheels and rear spoiler, leather-wrapped steering wheel and shift knob, aluminum pedals; 34 mpg combined",
+            "prices": [
+              23950
+            ],
+            "engine": "2.0L four-cylinder, 147 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "SEL Sport Plus",
+            "short": "Sunroof and heated seats",
+            "gets": "SEL Sport plus a power sunroof, leatherette seats, heated front seats and wireless phone charging; 34 mpg combined",
+            "prices": [
+              24450
+            ],
+            "engine": "2.0L four-cylinder, 147 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "SEL Sport Premium",
+            "short": "The one to buy",
+            "gets": "Smart Cruise Control with Stop & Go (adaptive cruise), heated front seats and mirrors, electronic parking brake, forward collision-avoidance with junction-turning detection; 34 mpg combined",
+            "prices": [
+              25275
+            ],
+            "engine": "2.0L four-cylinder, 147 hp, CVT, front-wheel drive",
+            "pick": true
+          },
+          {
+            "name": "Limited",
+            "short": "Edmunds’ pick",
+            "gets": "Bose audio, H-Tex seats, Highway Driving Assist, Bluelink+; 34 mpg combined",
+            "prices": [
+              27375
+            ],
+            "engine": "2.0L four-cylinder, 147 hp, CVT, front-wheel drive"
+          },
+          {
+            "name": "N Line",
+            "short": "Sportier gas car",
+            "gets": "Multi-link rear suspension, 18-inch wheels, N Line sport seats, paddle shifters; 31 mpg combined",
+            "prices": [
+              29600
+            ],
+            "engine": "1.6L turbo four-cylinder, 201 hp, seven-speed dual-clutch automatic, front-wheel drive"
+          },
+          {
+            "name": "Hybrid Blue",
+            "short": "Most efficient",
+            "gets": "Proximity key with push-button start, wireless Apple CarPlay, multi-link rear suspension, LED projector headlights; 54 mpg combined",
+            "prices": [
+              25650
+            ],
+            "engine": "1.6L four-cylinder hybrid, 139 hp combined, six-speed dual-clutch automatic, front-wheel drive"
+          },
+          {
+            "name": "Hybrid SEL Sport Plus",
+            "short": "Hybrid with a sunroof",
+            "gets": "Wireless Apple CarPlay, power sunroof, gloss-black 17-inch wheels, H-Tex leatherette seats; 50 mpg combined",
+            "prices": [
+              27300
+            ],
+            "engine": "1.6L four-cylinder hybrid, 139 hp combined, six-speed dual-clutch automatic, front-wheel drive"
+          },
+          {
+            "name": "Hybrid SEL Sport",
+            "short": "Big screens",
+            "gets": "10.25-inch touchscreen with navigation and 10.25-inch digital gauges, gloss-black 17-inch wheels, rear lip spoiler; 50 mpg combined",
+            "prices": [
+              27625
+            ],
+            "engine": "1.6L four-cylinder hybrid, 139 hp combined, six-speed dual-clutch automatic, front-wheel drive"
+          },
+          {
+            "name": "Hybrid Limited",
+            "short": "Top hybrid",
+            "gets": "Heated and ventilated front seats, memory driver’s seat, Digital Key 2 Touch; 50 mpg combined",
+            "prices": [
+              30000
+            ],
+            "engine": "1.6L four-cylinder hybrid, 139 hp combined, six-speed dual-clutch automatic, front-wheel drive"
+          }
+        ],
+        "after": [
+          "Hyundai’s starting prices leave out the $1,295 destination charge, which iSeeCars and Edmunds’ trim prices confirm. Hyundai lists no 2027 Elantra: the redesigned model was shown in South Korea in June 2026 and is expected in U.S. showrooms in 2027, with U.S. prices not yet announced. The Elantra N has its own prices in the Elantra N section below. Kelley Blue Book still prints the older $23,870 for an SE (its freight figure is $1,245), so some sites show lower sticker prices than Hyundai’s current list."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 SEL Sport Premium.</strong> At $25,275 it costs $1,325 more than an SEL Sport, and Hyundai lists Smart Cruise Control with Stop & Go (adaptive cruise control: it holds a set gap to the car ahead and resumes after a stop), heated front seats and the version of automatic emergency braking that watches for oncoming cars when you turn left, none of which are on the SEL Sport. It’s rated 34 mpg combined, and it’s a gas car, so it qualifies for Hyundai’s $2,000 bonus cash and 3.49% financing this month. Edmunds’ pick is the $27,375 Limited, which adds dual 10.25-inch screens, leatherette seats and Bose audio; step up if you want those.",
+        "Pick the Hybrid Blue ($25,650) if fuel economy decides it: it’s rated 54 mpg combined against 34, about 130 fewer gallons a year at 12,000 miles, for $1,700 more than an SEL Sport. This month Hyundai gives only $500 and 3.9% on the hybrid. Skip the SE unless price is everything, and skip the N Line unless you want the 201-hp turbo: Edmunds finds it quicker and sportier, but it’s very scarce."
+      ],
+      "pay": {
+        "intro": [
+          "Elantras sell under sticker, and Hyundai adds money on top this month. Edmunds’ Texas suggested prices sit about 6% under sticker with destination on every gas trim (7% on the N Line; Edmunds doesn’t say whether they include Hyundai’s cash), its November tips say buyers pay about $800 under MSRP before a $2,000 rebate, and Kelley Blue Book’s national fair prices run 3–4% under (against its older MSRPs). iSeeCars puts dealer invoice 3–4% under MSRP. Edmunds counts about 23,350 new Elantras in stock, selling in a median 39 days against 34 for the average new car; the hybrid takes only 16."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "SE, SEL Sport, SEL Sport Plus, SEL Sport Premium, Limited",
+            "example": "SEL Sport Premium",
+            "fair": "3–4% under",
+            "strong": "5–6% under",
+            "why": "Edmunds’ Texas prices run about 6–7% under; buyers pay about 3% (Edmunds tips). Hyundai’s $2,000 cash is separate."
+          },
+          {
+            "trims": "N Line",
+            "example": "N Line",
+            "fair": "4–5% under",
+            "strong": "6% or more",
+            "why": "Edmunds says it’s very scarce, yet its Texas price is 7% under and its tips say about 4%."
+          },
+          {
+            "trims": "Hybrid Blue, SEL Sport Plus, SEL Sport",
+            "example": "Hybrid Blue",
+            "fair": "3–4% under",
+            "strong": "5% or more",
+            "why": "Edmunds’ Texas Blue price is 6.6% under; its tips say about 3.8%. They sell in a median 16 days."
+          },
+          {
+            "trims": "Hybrid Limited",
+            "example": "Hybrid Limited",
+            "fair": "2–3% under",
+            "strong": "4% or more",
+            "why": "Edmunds says the Limited is the hardest hybrid to find."
+          }
+        ],
+        "note": "Our estimate, checked November 18, 2026, on the 2026. Edmunds’ suggested prices include destination.",
+        "after": [
+          "Not sure what a specific Elantra should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 SEL Sport Premium",
+          "sticker": 26570,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 4%",
+              "amount": 1063
+            }
+          ],
+          "total": 25507,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every offer ends November 30 except the graduate rebate (December 31). Hyundai offers 3.49% financing on the gas Elantra, 3.9% on the Hybrid and 5.49% on the N, all for up to 60 months, with the same rates and bonus cash in all four regions we checked. Leases vary by region, and the gas car’s $2,000 bonus cash is the one to use."
+        ],
+        "rows": [
+          {
+            "offer": "3.49% APR for up to 60 months",
+            "detail": "Through Hyundai Motor Finance",
+            "applies": "2026 Elantra (gas), all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "$2,000 bonus cash",
+            "detail": "Hyundai’s Dallas fine print says the car must be financed through Hyundai Motor Finance; the other three regions don’t say. Not on the Hybrid or N",
+            "applies": "2026 Elantra (gas), all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "3.9% APR for up to 60 months",
+            "detail": "Through Hyundai Motor Finance",
+            "applies": "2026 Elantra Hybrid, all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "$500 bonus cash",
+            "detail": "Hyundai’s fine print names the Blue in Chicago and New York and the SEL Sport in Dallas and Los Angeles, so ask which trims qualify",
+            "applies": "2026 Elantra Hybrid",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "5.49% APR for up to 60 months",
+            "detail": "Through Hyundai Motor Finance. No bonus cash on the N",
+            "applies": "2026 Elantra N, all four regions",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "SE lease",
+            "detail": "$309 a month for 36 months with $0 due and 7,500 miles a year in Chicago; $319 for 36 months with $0 due in Los Angeles, and in Dallas with 10,000 miles a year; $129 for 24 months with $3,999 due in New York",
+            "applies": "2026 Elantra SE",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "SEL Sport lease",
+            "detail": "$239 a month for 36 months with $3,599 due in all four regions; New York adds $1,000 off",
+            "applies": "2026 Elantra SEL Sport",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Hybrid leases",
+            "detail": "Blue $269 and SEL Sport $299 a month for 36 months with $3,599 due in all four regions; New York adds $500 off",
+            "applies": "2026 Elantra Hybrid Blue and SEL Sport",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Elantra N lease",
+            "detail": "$527 a month for 36 months with $3,357 due in Dallas, Los Angeles and New York; $502 with $3,382 due in Chicago",
+            "applies": "2026 Elantra N",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Military bonus",
+            "detail": "$500 toward a purchase or lease, verified through ID.me",
+            "applies": "Any new Hyundai",
+            "ends": ""
+          },
+          {
+            "offer": "College graduate bonus",
+            "detail": "$500 for graduates of the past two years and seniors graduating within six months who finance or lease through Hyundai Motor Finance",
+            "applies": "Any new Hyundai",
+            "ends": "December 31, 2026"
+          },
+          {
+            "offer": "Certified used rate",
+            "detail": "5.99% for up to 60 months",
+            "applies": "Select 2021 to 2026 Hyundai Certified Used Vehicles",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.hyundaiusa.com/us/en/offers\" rel=\"noopener\">Hyundai’s offers page</a> on November 18, 2026, in Chicago, Dallas, Los Angeles and New York. Offers vary by region, need Hyundai Motor Finance credit approval, and “ends” is the contract date. The Chicago lease payment is $11,124 in total payments over 36 months, $309 a month.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "3.49%",
+            "word": "APR",
+            "text": "For up to 60 months on a gas 2026 Elantra, in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Cash back",
+            "figure": "$2,000",
+            "word": "bonus cash",
+            "text": "On the gas Elantra, not the Hybrid or N. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$309",
+            "word": "a month",
+            "text": "2026 SE in Chicago, 36 months, $0 due at signing, 7,500 miles a year. Ends November 30."
+          },
+          {
+            "label": "Hybrid",
+            "figure": "3.9%",
+            "word": "APR",
+            "text": "For up to 60 months on the 2026 Elantra Hybrid, plus $500 bonus cash. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Military, or a recent graduate?",
+            "text": "Hyundai takes $500 off a new Hyundai for military personnel and veterans verified through ID.me, and $500 for recent graduates who finance or lease through Hyundai Motor Finance.",
+            "figure": "$500",
+            "unit": "off",
+            "detail": "Graduate offer ends December 31",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          },
+          {
+            "title": "Buying certified?",
+            "text": "Hyundai offers 5.99% for up to 60 months on select 2021 to 2026 Certified Used Hyundais, against an 11.19% average used-car rate.",
+            "figure": "5.99%",
+            "unit": "APR",
+            "detail": "Ask the dealer for the end date",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Hyundai’s 3.49%",
+          "title": "3.49% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $25,500 Elantra over 60 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 25500,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "3.49% APR",
+              "detail": "Hyundai Motor Finance",
+              "rate": 3.49,
+              "cash": 0
+            },
+            {
+              "name": "3.49% APR",
+              "detail": "+ $500 college graduate rebate",
+              "rate": 3.49,
+              "cash": 500
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> The 2026 is the last of this design, Hyundai is paying $2,000 on the gas car, and a used one barely costs less: CarWhere’s median used 2025 asks $21,235 at about 26,700 miles, while Edmunds’ Texas price for a new 2026 SE is $22,700 with destination. Used loans average 11.19% against Hyundai’s 3.49%."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. It gets the $2,000 bonus cash, 3.49% financing and the 10-year/100,000-mile powertrain warranty.",
+            "check": "That Hyundai’s cash and rate cover the trim you want (the Hybrid and N get less), and that recalls 26V692000 (front struts) and 26V693000 (wheel bearings) are done."
+          },
+          {
+            "route": "Wait for the next-generation Elantra",
+            "when": "You don’t need a car before 2027 and want the new design, a larger screen and the redesigned hybrid.",
+            "check": "That Hyundai hasn’t announced U.S. prices or an on-sale date, and that a new design usually costs more than a closeout."
+          },
+          {
+            "route": "CPO (Hyundai Certified Used)",
+            "when": "You want a 2021 to 2026 with a warranty. Hyundai’s 5.99% helps.",
+            "check": "That it’s Certified Used, not Select Used. Certified adds a 173-point inspection, 5 years/60,000 miles of comprehensive cover and a transferable 10-year/100,000-mile powertrain warranty from first sale; Select Used gives only 90 days or 5,000 miles of powertrain cover."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $17,000.",
+            "check": "Open recalls by VIN, an independent inspection, and the engine on a 2019 or 2020 (the top complaint category on both)."
+          }
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Elantra",
+                "value": 16.6,
+                "display": "16.6%"
+              },
+              {
+                "label": "Compact cars",
+                "value": 12.1,
+                "display": "12.1%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Hyundai offer",
+                "value": 3.49,
+                "display": "3.49%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Hyundai; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2020",
+                "value": 13596,
+                "display": "$13,596"
+              },
+              {
+                "label": "2021",
+                "value": 16790,
+                "display": "$16,790"
+              },
+              {
+                "label": "2023",
+                "value": 19361,
+                "display": "$19,361"
+              },
+              {
+                "label": "2024",
+                "value": 19776,
+                "display": "$19,776"
+              },
+              {
+                "label": "2025",
+                "value": 21235,
+                "display": "$21,235"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ],
+        "after": [
+          "If you buy used, look at a 2023 or newer Elantra. The 2023 drew 118 NHTSA owner complaints, the 2024 58 and the 2025 36, against 253 for the 2019 and 255 for the 2020, where engine problems led the list (135 and 109). The 2021 and 2022 have the most recall campaigns (6 and 7). Check any used Elantra’s open recalls by VIN."
+        ]
+      },
+      "watch": [
+        "<strong>Dealer add-ons.</strong> CarWhere found add-ons on 34.1% of the 5,211 verified quotes it studied, averaging $1,454 (it doesn’t break out Hyundai). Paint protection, nitrogen and etched VINs are the dealer’s products. Refuse or negotiate them.",
+        "<strong>The wheel and strut recalls.</strong> NHTSA recall 26V693000 covers some 2026 Elantras, Elantra Hybrids and Elantra Ns whose lug nuts may loosen so a wheel can detach (Hyundai replaces the hub bearings; owner letters are expected in December). 26V692000 covers loose front strut fasteners on some 2026 Elantras. Ask the dealer to show both are done.",
+        "<strong>Which trims the cash covers.</strong> The $2,000 is for the gas Elantra. The Hybrid gets $500 and the N none. Hyundai’s fine print for the Hybrid’s $500 names different trims in different regions.",
+        "<strong>Hyundai financing.</strong> The college rebate needs Hyundai Motor Finance, and in Dallas so does the $2,000. Compare the total cost with your bank’s rate.",
+        "<strong>Wireless phone connection.</strong> Wireless Apple CarPlay and Android Auto come only with the 8-inch screen; the larger 10.25-inch screen needs a cable, Edmunds found.",
+        "<strong>The next Elantra.</strong> Hyundai has shown a redesigned Elantra for 2027 and hasn’t priced it for the U.S."
+      ],
+      "faq": [
+        [
+          "Is the Hyundai Elantra a good car?",
+          "Most reviewers rate it well for value. U.S. News scores the 2026 a 9.0 out of 10, fourth of eight compact cars, and its Hybrid a 9.2 (third of nine hybrid cars, and a 2026 Best Compact Hybrid Car for the Money). Edmunds rates the gas car 6.8 and the Hybrid 7.6, Kelley Blue Book 4.6 out of 5 and J.D. Power owners 83 out of 100. Edmunds says the base engine is slow and the cabin loud, and its owner reviews average 3.5 out of 5. iSeeCars counts 16.6% of its value lost in three years, against 12.1% for compact cars."
+        ],
+        [
+          "How much under MSRP can you get a Hyundai Elantra?",
+          "On a gas SE through Limited, 3–4% under MSRP is a fair deal and 5–6% a strong one; the N Line and the hybrids differ (see the table). Those ranges are our read of Edmunds’ Texas prices (about 6% under), its November tips, Kelley Blue Book’s fair prices and iSeeCars’ invoice figures, so a given dealer may land a point either side. Hyundai’s $2,000 bonus cash on the gas car comes on top."
+        ],
+        [
+          "Is the Elantra Hybrid worth the extra money?",
+          "If you drive a lot. A Hybrid Blue is $1,700 more than a gas SEL Sport and is rated 54 mpg combined against 34, about 130 fewer gallons a year at 12,000 miles. This month Hyundai gives $500 and 3.9% on the hybrid against $2,000 and 3.49% on the gas car, which narrows the gap in the gas car’s favor. Edmunds says hybrids sell in a median 16 days."
+        ],
+        [
+          "Does the Hyundai Elantra have a redesign coming?",
+          "Yes. Hyundai showed the next-generation Elantra in South Korea in June 2026, and Kelley Blue Book reports it’s expected in U.S. showrooms in 2027. We found no U.S. prices or on-sale date, so a 2026 is the current car."
+        ],
+        [
+          "What is the destination charge on an Elantra?",
+          "$1,295 on the 2026. Hyundai’s advertised starting prices leave it out: the SE’s $22,825 is $24,120 with destination."
+        ],
+        [
+          "Does Hyundai offer cash back on the Elantra?",
+          "Yes on the gas car. On November 18, 2026, Hyundai offered $2,000 bonus cash on the gas Elantra, $500 on the Hybrid and none on the N, through November 30. There’s also $500 for military buyers and for recent graduates."
+        ],
+        [
+          "Is the Elantra N worth buying?",
+          "Edmunds ranks it first of four sport compacts (7.1 out of 10), and U.S. News scores it 9.4, second of six. It starts at $35,300, less than a GR Corolla ($40,520) or Civic Type R ($47,395). See the Elantra N section for how it differs."
+        ],
+        [
+          "Is a used Elantra a better deal than new?",
+          "Rarely this month. CarWhere’s median asking price for a used 2025 is $21,235, and Edmunds’ Texas price for a new 2026 SE is $22,700 with destination, plus $2,000 of Hyundai cash. Used loans averaged 11.19% in the second quarter of 2026, against Hyundai’s 3.49%. A Certified Used 2023 to 2025 is the route we’d take."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-ELANTRA-01",
+          "title": "Hyundai: 2026 Elantra",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/elantra",
+          "scope": "2026 Elantra and Elantra Hybrid trims, starting MSRP excluding destination, equipment and EPA mpg by trim",
+          "note": "2026 prices, equipment and mpg"
+        },
+        {
+          "id": "VEH-ELANTRA-02",
+          "title": "Hyundai: 2026 Elantra N",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/elantra-n",
+          "scope": "2026 Elantra N starting MSRP, power, transmissions, tires and the TCR Edition description",
+          "note": "Elantra N price and equipment"
+        },
+        {
+          "id": "VEH-ELANTRA-03",
+          "title": "Hyundai: deals and offers",
+          "url": "https://www.hyundaiusa.com/us/en/offers",
+          "scope": "Hyundai Motor Finance rates, bonus cash and leases on the 2026 Elantra, Elantra Hybrid and Elantra N, read in four regions (ZIPs 60601, 75201, 90012, 10001) from the page’s own offers data",
+          "note": "finance, cash and lease offers, read at four ZIPs"
+        },
+        {
+          "id": "VEH-ELANTRA-04",
+          "title": "Hyundai: special programs",
+          "url": "https://www.hyundaiusa.com/us/en/special-programs",
+          "scope": "Hyundai Military Program and College Grad Program bonus amounts",
+          "note": "military and graduate bonuses"
+        },
+        {
+          "id": "VEH-ELANTRA-05",
+          "title": "Hyundai: College Grad Program",
+          "url": "https://www.hyundaiusa.com/us/en/special-programs/college-grad",
+          "scope": "College Grad Program terms, including Hyundai Motor Finance financing and the December 31, 2026 contract date",
+          "note": "graduate offer terms"
+        },
+        {
+          "id": "VEH-ELANTRA-06",
+          "title": "Hyundai: Certified Used Vehicles",
+          "url": "https://www.hyundaiusa.com/us/en/certified-used-vehicles",
+          "scope": "Certified Used eligibility (six model years, 80,000 miles), 173-point inspection, warranty terms and the 5.99% certified rate",
+          "note": "certified used terms and rate"
+        },
+        {
+          "id": "VEH-ELANTRA-07",
+          "title": "iSeeCars: 2026 Hyundai Elantra price",
+          "url": "https://www.iseecars.com/car/2026-hyundai-elantra-price",
+          "scope": "Dealer invoice and MSRP by 2026 Elantra trim and the $1,295 destination charge",
+          "note": "dealer invoice and destination"
+        },
+        {
+          "id": "VEH-ELANTRA-08",
+          "title": "iSeeCars: Hyundai Elantra N price",
+          "url": "https://www.iseecars.com/car/hyundai-elantra-n-price",
+          "scope": "2026 Elantra N MSRP and dealer invoice by transmission and TCR Edition, including the dual-clutch and TCR prices",
+          "note": "N dual-clutch and TCR prices, invoice"
+        },
+        {
+          "id": "VEH-ELANTRA-09",
+          "title": "iSeeCars: Hyundai Elantra resale value",
+          "url": "https://www.iseecars.com/car/hyundai-elantra/resale-value",
+          "scope": "Elantra depreciation at three and five years against compact cars and all vehicles (page gives no study date)",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-ELANTRA-10",
+          "title": "Edmunds: 2026 Hyundai Elantra",
+          "url": "https://www.edmunds.com/hyundai/elantra/2026/",
+          "scope": "Edmunds rating and rank, editors’ trim pick, tested 0 to 60 mph, trunk volume, suggested prices (Texas sales through November 2, 2026), days to turn, stock count and November buying tips for the 2026 Elantra",
+          "note": "review score, test results and suggested prices"
+        },
+        {
+          "id": "VEH-ELANTRA-11",
+          "title": "Edmunds: 2026 Hyundai Elantra Hybrid",
+          "url": "https://www.edmunds.com/hyundai/elantra-hybrid/2026/",
+          "scope": "Edmunds rating and rank, tested 0 to 60 mph, hybrid output, suggested price, days to turn and November buying tips for the 2026 Elantra Hybrid",
+          "note": "hybrid score, tests and prices"
+        },
+        {
+          "id": "VEH-ELANTRA-12",
+          "title": "Edmunds: 2026 Hyundai Elantra N",
+          "url": "https://www.edmunds.com/hyundai/elantra-n/2026/",
+          "scope": "Edmunds rating and rank, tested 0 to 60 mph by transmission, cargo, trim prices incl. destination, suggested price, days to turn and November buying tips for the 2026 Elantra N",
+          "note": "N score, tests and prices"
+        },
+        {
+          "id": "VEH-ELANTRA-13",
+          "title": "Kelley Blue Book: 2026 Hyundai Elantra",
+          "url": "https://www.kbb.com/hyundai/elantra/2026/",
+          "scope": "KBB expert rating, consumer rating, class rank and fair purchase prices for the 2026 Elantra (KBB’s MSRP column still shows the older $1,245 freight)",
+          "note": "review score and fair purchase price"
+        },
+        {
+          "id": "VEH-ELANTRA-14",
+          "title": "Kelley Blue Book: 2026 Hyundai Elantra N",
+          "url": "https://www.kbb.com/hyundai/elantra-n/2026/",
+          "scope": "KBB fair purchase price for the 2026 Elantra N and TCR Edition (against KBB’s older MSRP)",
+          "note": "N fair purchase price"
+        },
+        {
+          "id": "VEH-ELANTRA-15",
+          "title": "U.S. News: Hyundai Elantra",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/elantra",
+          "scope": "U.S. News score, compact car rank and predicted reliability for the 2026 Elantra",
+          "note": "review score and rank"
+        },
+        {
+          "id": "VEH-ELANTRA-16",
+          "title": "U.S. News: Hyundai Elantra Hybrid",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/elantra-hybrid",
+          "scope": "U.S. News score, hybrid car rank and 2026 Best Compact Hybrid Car for the Money award for the 2026 Elantra Hybrid",
+          "note": "hybrid score and rank"
+        },
+        {
+          "id": "VEH-ELANTRA-17",
+          "title": "U.S. News: Hyundai Elantra N",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/elantra-n",
+          "scope": "U.S. News score and sport compact rank for the 2026 Elantra N",
+          "note": "N score and rank"
+        },
+        {
+          "id": "VEH-ELANTRA-18",
+          "title": "J.D. Power: 2026 Hyundai Elantra",
+          "url": "https://www.jdpower.com/cars/2026/hyundai/elantra",
+          "scope": "J.D. Power consumer rating, category scores and compact car ranking for the 2026 Elantra",
+          "note": "owner scores"
+        },
+        {
+          "id": "VEH-ELANTRA-19",
+          "title": "FuelEconomy.gov: 2026 Hyundai Elantra",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Hyundai_Elantra.shtml",
+          "scope": "EPA fuel economy for the 2026 Elantra, Elantra Hybrid, Hybrid Blue, N Line and N (manual and automatic)",
+          "note": "EPA mpg by version"
+        },
+        {
+          "id": "VEH-ELANTRA-20",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "NHTSA ratings for the 2026 Elantra (vehicle ID 21149), Elantra Hybrid (21151) and Elantra N (21150, not rated)",
+          "note": "crash-test stars"
+        },
+        {
+          "id": "VEH-ELANTRA-21",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Elantra, Elantra Hybrid and Elantra N recall campaigns by model year 2019 to 2026, including 26V692000, 26V693000, 26V254000 and 26V308000",
+          "note": "recall counts by model year, and a VIN lookup"
+        },
+        {
+          "id": "VEH-ELANTRA-22",
+          "title": "NHTSA: owner complaints",
+          "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=hyundai&model=elantra&modelYear=2022",
+          "scope": "NHTSA owner complaint counts for the 2019 to 2026 Elantra, Elantra Hybrid and Elantra N, deduplicated by ODI number",
+          "note": "owner complaint counts"
+        },
+        {
+          "id": "VEH-ELANTRA-23",
+          "title": "IIHS: 2026 Hyundai Elantra",
+          "url": "https://www.iihs.org/ratings/vehicle/hyundai/elantra-4-door-sedan/2026",
+          "scope": "IIHS crash test, headlight, front crash prevention, seat belt reminder and LATCH ratings for the 2026 Elantra",
+          "note": "crash-test ratings"
+        },
+        {
+          "id": "VEH-ELANTRA-24",
+          "title": "IIHS: 2026 Top Safety Picks",
+          "url": "https://www.iihs.org/ratings/top-safety-picks/2026",
+          "scope": "2026 Top Safety Pick awards for small cars, including the Elantra and the Kia K4",
+          "note": "Top Safety Pick awards"
+        },
+        {
+          "id": "VEH-ELANTRA-25",
+          "title": "CarWhere: used Hyundai Elantra prices",
+          "url": "https://www.carwhere.com/used-car-prices/hyundai/elantra",
+          "scope": "Median asking price and mileage of used Elantras by model year, November 14, 2026",
+          "note": "used asking prices by model year"
+        },
+        {
+          "id": "VEH-ELANTRA-26",
+          "title": "CarWhere: dealer add-on study",
+          "url": "https://www.carwhere.com/research/studies/dealer-add-on-study",
+          "scope": "Share of all verified buyer quotes with dealer add-ons and their average price, June 2026 (Hyundai is not broken out)",
+          "note": "add-ons on quotes, all brands"
+        },
+        {
+          "id": "VEH-ELANTRA-27",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new and used auto loan rates and the super-prime new rate, Q2 2026",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-ELANTRA-28",
+          "title": "Kelley Blue Book: 2027 Elantra unveiled",
+          "url": "https://www.kbb.com/car-news/redesigned-2027-hyundai-elantra-sedan-unveiled/",
+          "scope": "Report of the eighth-generation 2027 Elantra shown in South Korea in June 2026, U.S. arrival expected in 2027, and a planned 2.5-liter turbo Elantra N",
+          "note": "next-generation Elantra"
+        },
+        {
+          "id": "VEH-ELANTRA-29",
+          "title": "Toyota: 2026 Corolla",
+          "url": "https://www.toyota.com/corolla/2026/",
+          "scope": "2026 Corolla Hybrid LE starting MSRP and EPA rating",
+          "note": "Corolla Hybrid price"
+        },
+        {
+          "id": "VEH-ELANTRA-30",
+          "title": "Honda: 2026 Civic sedan pricing, September 2026",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d8112b0f-2026-honda-civic-sedan-pricing-and-epa-ratings-september",
+          "scope": "2026 Civic LX and Sport Hybrid starting MSRP and EPA rating",
+          "note": "Civic LX and Hybrid prices"
+        },
+        {
+          "id": "VEH-ELANTRA-31",
+          "title": "Honda: 2026 Civic Si pricing, September 2026",
+          "url": "https://hondanews.com/en-US/releases/release-bb136e6e7af7ccb6b0336e10d810fe3a-2026-honda-civic-si-pricing-and-epa-ratings-september",
+          "scope": "2026 Civic Si starting MSRP",
+          "note": "Si price"
+        },
+        {
+          "id": "VEH-ELANTRA-32",
+          "title": "Honda: 2026 Civic Type R pricing, September 2026",
+          "url": "https://hondanews.com/en-US/releases/release-bb136e6e7af7ccb6b0336e10d811139a-2026-honda-civic-type-r-pricing-and-epa-ratings-september",
+          "scope": "2026 Civic Type R starting MSRP",
+          "note": "Type R price"
+        },
+        {
+          "id": "VEH-ELANTRA-33",
+          "title": "Toyota: 2026 and 2027 pricing, November 5, 2026",
+          "url": "https://toyota-cms-media.s3.amazonaws.com/toyota-pdfs/2026_and_2027_Toyota_Pricing_11052026.pdf",
+          "scope": "2026 GR Corolla starting MSRP",
+          "note": "GR Corolla price"
+        },
+        {
+          "id": "VEH-ELANTRA-34",
+          "title": "Kia: 2026 K4 pricing",
+          "url": "https://www.kiamedia.com/us/en/models/k4/2026/pricing",
+          "scope": "2026 Kia K4 starting MSRP",
+          "note": "K4 price"
+        },
+        {
+          "id": "VEH-ELANTRA-35",
+          "title": "Subaru: WRX",
+          "url": "https://www.subaru.com/vehicles/wrx.html",
+          "scope": "2026 Subaru WRX starting MSRP",
+          "note": "WRX price"
+        },
+        {
+          "id": "VEH-ELANTRA-36",
+          "title": "Volkswagen: 2026 Golf R press kit",
+          "url": "https://media.vw.com/press-kits/2026-golf-r-press-kit",
+          "scope": "2026 Volkswagen Golf R starting MSRP",
+          "note": "Golf R price"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-hyundai-elantra-sel",
+        "width": 1830,
+        "height": 870,
+        "alt": "Blue 2024 Hyundai Elantra SEL sedan in a parking lot, front three-quarter view",
+        "caption": "An Elantra SEL. The 2026 looks the same.",
+        "author": "BuickRiviera99",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Hyundai_Elantra_SEL,_front_right,_07-25-2026.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "54 mpg combined as a Hybrid Blue; 35 for the gas SE",
+        "10-year/100,000-mile powertrain warranty",
+        "IIHS Top Safety Pick and five stars from NHTSA",
+        "Sells about 6% under sticker, plus $2,000 Hyundai cash on the gas car"
+      ],
+      "cons": [
+        "Base 147-hp engine takes 9.4 seconds to 60 mph, Edmunds found",
+        "Wind noise on the highway",
+        "Loses 16.6% of its value in three years, against 12.1% for compact cars",
+        "Redesigned Elantra expected in 2027"
+      ],
+      "rivals": [
+        "Get a quote on the Toyota Corolla Hybrid too: it starts at $24,975 and is rated 50 mpg combined, $675 less than an Elantra Hybrid Blue ($25,650, 54 mpg) (see our <a href=\"/toyota-corolla-price.html\">Corolla price guide</a>). The Honda Civic Sport Hybrid starts at $29,395 and is rated 49 mpg combined, $3,745 more than a Blue (see our <a href=\"/honda-civic-price.html\">Civic price guide</a>). The Kia K4 is the Elantra’s corporate cousin: it starts at $22,290 and IIHS rates it a Top Safety Pick+, a grade above the Elantra’s Top Safety Pick, and Edmunds says it offers more equipment at the same price. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/hyundai/elantra/2026/",
+            "value": 6.8,
+            "scale": 10,
+            "display": "6.8",
+            "detail": "Limited is its editors’ pick; 9.4 seconds to 60 mph; the Hybrid scores 7.6, second of 10 small sedans"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/hyundai/elantra/2026/",
+            "value": 4.6,
+            "scale": 5,
+            "display": "4.6",
+            "detail": "Owners give it 4.0 out of 5 (72 reviews); #2 in its Best Compact Cars"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/hyundai/elantra",
+            "value": 9,
+            "scale": 10,
+            "display": "9.0",
+            "detail": "Ranked 4th of 8 compact cars; the Hybrid scores 9.2, third of 9 hybrid cars"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/hyundai/elantra",
+            "value": 83,
+            "scale": 100,
+            "display": "83",
+            "detail": "Owners rate quality 87, resale 85, dealership experience 73"
+          }
+        ],
+        "note": "Scores for the 2026 Elantra as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Elantra and Elantra Hybrid (the N is not rated)",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 4,
+            "note": "Driver 5, passenger 4"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 5,
+            "note": "10.1% rollover risk"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Good",
+            "note": "Cars built after October 2024"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Good",
+            "note": "Every trim"
+          },
+          {
+            "label": "IIHS crash prevention, pedestrians",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS seat belt reminders",
+            "grade": "Acceptable"
+          },
+          {
+            "label": "IIHS child seat anchors (LATCH)",
+            "grade": "Acceptable"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 1
+          },
+          {
+            "label": "2020",
+            "value": 3
+          },
+          {
+            "label": "2021",
+            "value": 6
+          },
+          {
+            "label": "2022",
+            "value": 7
+          },
+          {
+            "label": "2023",
+            "value": 3
+          },
+          {
+            "label": "2024",
+            "value": 2
+          },
+          {
+            "label": "2025",
+            "value": 2
+          },
+          {
+            "label": "2026",
+            "value": 4
+          }
+        ],
+        "reliability": "U.S. News lists the 2026 Elantra’s predicted reliability as <a href=\"https://cars.usnews.com/cars-trucks/hyundai/elantra\" rel=\"noopener\">86 out of 100</a> (a J.D. Power score; 81 to 90 is “Great”).",
+        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2026 Elantra and Elantra Hybrid, which rate the same; grades from <a href=\"https://www.iihs.org/ratings/vehicle/hyundai/elantra-4-door-sedan/2026\" rel=\"noopener\">IIHS</a> for the 2026 Elantra, read November 18, 2026. IIHS names the 2026 Elantra a <a href=\"https://www.iihs.org/ratings/top-safety-picks/2026\" rel=\"noopener\">Top Safety Pick</a>. Recall counts combine NHTSA’s <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">Elantra, Elantra Hybrid and Elantra N listings</a>; the 2026 ones are front strut recall 26V692000, wheel bearing recall 26V693000, side-impact sensor recall 26V254000 and hybrid control unit software recall 26V308000. Check any used Elantra’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-hyundai-elantra-se-rear",
+          "width": 1920,
+          "height": 876,
+          "alt": "Red 2024 Hyundai Elantra SE sedan on a city street, rear three-quarter view",
+          "caption": "SE, rear",
+          "author": "Kevauto",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2024_Hyundai_Elantra_SE_(facelift),_rear_2.2.24.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped; plate and dealer frame blurred"
+        },
+        {
+          "file": "vehicle-hyundai-elantra-hybrid-limited",
+          "width": 1560,
+          "height": 700,
+          "alt": "Red 2024 Hyundai Elantra Hybrid Limited sedan, front three-quarter view",
+          "caption": "Hybrid Limited",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Hyundai_Elantra_Hybrid_Limited.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped to drop a dealership"
+        },
+        {
+          "file": "vehicle-hyundai-elantra-n-line",
+          "width": 1920,
+          "height": 940,
+          "alt": "Gray 2024 Hyundai Elantra N Line sedan with black wheels in a parking lot, front three-quarter view",
+          "caption": "N Line",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:24_Hyundai_Elantra_N-Line.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-hyundai-elantra-interior",
+          "width": 1920,
+          "height": 960,
+          "alt": "Dashboard, steering wheel and front seats of a 2024 Hyundai Elantra N with the dual-clutch automatic at an auto show",
+          "caption": "Elantra N interior (automatic)",
+          "author": "Ethan Llamas",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:MIAS_2024_-_2024_Hyundai_Elantra_N_(interior).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped to drop show visitors"
+        }
+      ],
+      "spotlight": {
+        "id": "n",
+        "tab": "Elantra N",
+        "heading": "Elantra N: the 276-hp one",
+        "intro": [
+          "The Elantra N is a different car from the rest of the line: a 276-hp turbocharged 2.0-liter four with 289 lb-ft of torque, a six-speed manual or an eight-speed dual-clutch automatic, and an electronically controlled limited-slip differential driving the front wheels. Edmunds ranks it first of four sport compacts (7.1 out of 10) and U.S. News second of six (9.4), and Edmunds clocked 0 to 60 mph in 5.5 seconds with the automatic and 6.4 with the manual. Its catches are a trunk of 14.2 cubic feet with a chassis brace that partly blocks the pass-through, no adaptive cruise control, and highway wind and road noise Edmunds finds above average."
+        ],
+        "photo": {
+          "file": "vehicle-hyundai-elantra-n",
+          "width": 1920,
+          "height": 1150,
+          "alt": "Light blue 2025 Hyundai Elantra N sedan with black wheels and red trim in a parking lot, front three-quarter view",
+          "caption": "An Elantra N in Performance Blue. The 2026 is unchanged.",
+          "author": "MercurySable99",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Hyundai_Elantra_N,_front_left,_03-29-2026.jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        },
+        "stats": [
+          {
+            "label": "Power",
+            "figure": "276",
+            "word": "hp",
+            "text": "289 lb-ft from a 2.0-liter turbo four, with a six-speed manual or eight-speed dual-clutch."
+          },
+          {
+            "label": "0 to 60 mph",
+            "figure": "5.5",
+            "word": "seconds",
+            "text": "Edmunds’ test of the automatic; its manual took 6.4."
+          },
+          {
+            "label": "Starting MSRP",
+            "figure": "$35,300",
+            "word": "manual",
+            "text": "The dual-clutch costs $1,500 more. Destination is $1,295."
+          },
+          {
+            "label": "Fuel economy",
+            "figure": "24",
+            "word": "mpg",
+            "text": "EPA combined with the manual, 23 with the automatic, on premium fuel."
+          }
+        ],
+        "trims": {
+          "caption": "Elantra N starting MSRP",
+          "columns": [
+            "MSRP"
+          ],
+          "rows": [
+            {
+              "name": "N (manual)",
+              "gets": "276-hp turbo four, six-speed manual, 19-inch wheels with Michelin summer tires, N corner-carving differential, 10.25-inch screen, Bose audio",
+              "prices": [
+                35300
+              ]
+            },
+            {
+              "name": "N (dual-clutch)",
+              "gets": "Same car with the eight-speed wet dual-clutch automatic and paddle shifters",
+              "prices": [
+                36800
+              ]
+            },
+            {
+              "name": "N TCR Edition (manual)",
+              "gets": "Adds a carbon-fiber rear wing, forged 19-inch wheels, four-piston front brakes and Alcantara trim, in Performance Blue only",
+              "prices": [
+                39450
+              ]
+            },
+            {
+              "name": "N TCR Edition (dual-clutch)",
+              "gets": "TCR Edition with the dual-clutch automatic",
+              "prices": [
+                40950
+              ]
+            }
+          ]
+        },
+        "pay": {
+          "intro": [
+            "The N sells slower than the rest of the line and under sticker. Edmunds counts about 2,090 new Ns in stock, taking a median 47 days to sell against 34 for the average new car, and says buyers pay about 3.3% under MSRP with no customer cash. Its Texas suggested price for the base N is $34,132 with destination, 6.7% under the $36,595 sticker, and Kelley Blue Book’s national fair price is $35,200. Hyundai offers 5.49% financing and a $527 lease, with no bonus cash."
+          ],
+          "tableTitle": "Elantra N dealer discount",
+          "rows": [
+            {
+              "trims": "N",
+              "example": "N (manual)",
+              "fair": "3–4% under",
+              "strong": "5–6% under",
+              "why": "Edmunds’ tips say about 3.3% under; its Texas price is 6.7% under. It takes 47 days to sell."
+            }
+          ]
+        },
+        "charts": [
+          {
+            "title": "Starting MSRP against rivals",
+            "bars": [
+              {
+                "label": "Honda Civic Si",
+                "value": 31495,
+                "display": "$31,495"
+              },
+              {
+                "label": "Subaru WRX",
+                "value": 32495,
+                "display": "$32,495"
+              },
+              {
+                "label": "Hyundai Elantra N",
+                "value": 35300,
+                "display": "$35,300"
+              },
+              {
+                "label": "Toyota GR Corolla",
+                "value": 40520,
+                "display": "$40,520"
+              },
+              {
+                "label": "Civic Type R",
+                "value": 47395,
+                "display": "$47,395"
+              },
+              {
+                "label": "VW Golf R",
+                "value": 49455,
+                "display": "$49,455"
+              }
+            ],
+            "source": "Honda, Subaru, Hyundai, Toyota, Volkswagen"
+          },
+          {
+            "title": "Elantra N price, before destination",
+            "bars": [
+              {
+                "label": "Manual",
+                "value": 35300,
+                "display": "$35,300"
+              },
+              {
+                "label": "Dual-clutch",
+                "value": 36800,
+                "display": "$36,800"
+              },
+              {
+                "label": "TCR, manual",
+                "value": 39450,
+                "display": "$39,450"
+              },
+              {
+                "label": "TCR, dual-clutch",
+                "value": 40950,
+                "display": "$40,950"
+              }
+            ],
+            "source": "Hyundai; iSeeCars"
+          }
+        ],
+        "after": [
+          "<strong>Buy the manual unless you can’t use a clutch.</strong> Edmunds finds it more fun and cheaper, and the dual-clutch’s extra $1,500 buys about 0.9 second to 60 mph. The TCR Edition adds about $4,150 and a wing; for the money, the standard N does nearly everything. Hyundai says the summer tires get noisy below 7°C (45°F) and recommends winter tires in the cold. A next-generation N with a 2.5-liter turbo is planned, with no U.S. date or price yet."
+        ]
+      }
     }
   ]
 }
