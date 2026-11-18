@@ -15279,6 +15279,867 @@
           "note": "cropped; dealer billboard blurred"
         }
       ]
+    },
+    {
+      "slug": "hyundai-tucson-price.html",
+      "name": "Hyundai Tucson",
+      "modelYear": 2026,
+      "published": "2026-11-18",
+      "checkedOn": "2026-11-18",
+      "title": "Hyundai Tucson Price: MSRP, Discounts and What to Pay | Steer Me Right",
+      "description": "What a Hyundai Tucson costs in November 2026: MSRP by trim for the 2026 Tucson, Tucson Hybrid and Plug-in Hybrid, how far under sticker dealers sell it, Hyundai’s current offers, and the trim we’d buy.",
+      "h1": "Hyundai Tucson price: what to pay and how far under MSRP to aim",
+      "glance": [
+        {
+          "label": "Starting MSRP",
+          "value": "$29,700 <small>to $48,900</small>",
+          "section": "trims"
+        },
+        {
+          "label": "Realistic discount",
+          "value": "2–6% <small>under MSRP</small>",
+          "section": "pay"
+        },
+        {
+          "label": "Hyundai incentives",
+          "value": "0% <small>APR, 60 months</small>",
+          "section": "incentives"
+        },
+        {
+          "label": "Trim we’d buy",
+          "value": "2026 Hybrid SEL Convenience",
+          "section": "pick"
+        },
+        {
+          "label": "New, used or CPO",
+          "value": "New, as a 2026",
+          "section": "new-used"
+        }
+      ],
+      "summary": "The Tucson is the compact SUV to price if you want the most equipment and the longest warranty for the money, and the hybrid is the one to look at. U.S. News scores it 9.3 out of 10 and ranks it first, tied with the Mazda CX-5, among compact SUVs, and Edmunds says it costs about what a Honda CR-V or Toyota RAV4 does while giving you more features. Even the $29,700 SE has a 12.3-inch touchscreen with wireless Apple CarPlay and Android Auto, and every Tucson carries a 10-year/100,000-mile powertrain warranty. The catches: Edmunds timed the gas engine at 10.2 seconds to 60 mph, one of the slowest crossovers it has tested; the Hybrid’s 38 mpg combined trails the CR-V Hybrid’s 40 and the RAV4’s 43; and it loses value faster than most (iSeeCars: 24.8% in three years for the gas Tucson and 29.2% for the Hybrid, against 22.7% for compact SUVs). It sells well under sticker, too: about 40,800 new Tucsons are in stock, and Edmunds’ Texas prices run 5.7–7.5% under. Hyundai says an all-new Tucson arrives in early 2027, so a 2026 is the last of this generation. Price a 2026 Hybrid SEL Convenience, aim for 3–4% under MSRP, and take Hyundai’s 0% or 2.9% financing if your bank can’t beat it. Prices and offers were checked on November 18, 2026.",
+      "trims": {
+        "columns": [
+          "2026 MSRP"
+        ],
+        "rows": [
+          {
+            "name": "SE",
+            "short": "Base gas",
+            "gets": "12.3-inch touchscreen with wireless CarPlay and Android Auto, adaptive cruise with stop and go, lane following, Safe Exit Warning; 28 mpg combined",
+            "prices": [
+              29700
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "SEL",
+            "short": "Most popular",
+            "gets": "Hands-free power liftgate, dual-zone automatic climate control, 18-inch alloy wheels; 28 mpg combined",
+            "prices": [
+              31050
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "SEL Plus",
+            "short": "Most stock",
+            "gets": "The SEL with 19-inch alloy wheels and H-Tex (leatherette) seats; 28 mpg combined",
+            "prices": [
+              31550
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "XRT",
+            "short": "Off-road look",
+            "gets": "XRT-only 18-inch wheels, black lower bumpers and body cladding; 28 mpg combined",
+            "prices": [
+              33725
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "SEL Premium",
+            "short": "Edmunds’ gas pick",
+            "gets": "12.3-inch digital gauges and a 12.3-inch touchscreen with navigation, H-Tex seats, Highway Driving Assist; 28 mpg combined",
+            "prices": [
+              34050
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "Limited",
+            "short": "Top gas trim",
+            "gets": "Leather, panoramic sunroof, surround-view camera, remote smart parking, blind-spot view monitor; 28 mpg combined",
+            "prices": [
+              39675
+            ],
+            "engine": "2.5L four-cylinder, 187 hp, eight-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "Hybrid SE",
+            "short": "Cheapest hybrid",
+            "gets": "The gas SE’s 12.3-inch screen and wireless phone mirroring with the hybrid; 38 mpg combined",
+            "prices": [
+              31300
+            ],
+            "engine": "1.6L turbo hybrid, 231 hp combined, six-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "Hybrid SEL",
+            "short": "Heated seats",
+            "gets": "18-inch wheels, 8-way power driver’s seat with power lumbar, heated front seats; 38 mpg combined front-drive, 36 with AWD",
+            "prices": [
+              32750
+            ],
+            "engine": "1.6L turbo hybrid, 231 hp combined, six-speed automatic, front- or all-wheel drive"
+          },
+          {
+            "name": "Hybrid SEL Convenience",
+            "short": "The one to buy",
+            "pick": true,
+            "gets": "12.3-inch digital gauges, leatherette seats, ambient lighting, wireless charging; AWD standard, 36 mpg combined",
+            "prices": [
+              35250
+            ],
+            "engine": "1.6L turbo hybrid, 231 hp combined, six-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Hybrid Limited",
+            "short": "Top hybrid",
+            "gets": "Leather, blind-spot view monitor, surround-view camera, remote smart parking; AWD standard, 36 mpg combined",
+            "prices": [
+              42425
+            ],
+            "engine": "1.6L turbo hybrid, 231 hp combined, six-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Hybrid Night",
+            "short": "Blacked out",
+            "gets": "The Limited’s equipment with black exterior trim and black 19-inch wheels; AWD standard, 36 mpg combined",
+            "prices": [
+              42925
+            ],
+            "engine": "1.6L turbo hybrid, 231 hp combined, six-speed automatic, all-wheel drive"
+          },
+          {
+            "name": "Plug-in SEL",
+            "short": "Cheapest plug-in",
+            "gets": "12.3-inch touchscreen, hands-free liftgate, heated front seats; 35 mpg combined and 32 miles of electric range",
+            "prices": [
+              40675
+            ],
+            "engine": "1.6L turbo plug-in hybrid, 268 hp combined, all-wheel drive"
+          },
+          {
+            "name": "Plug-in Limited",
+            "short": "Top plug-in",
+            "gets": "Leather, blind-spot view monitor, surround-view camera, remote smart parking; 35 mpg combined and 32 miles of electric range",
+            "prices": [
+              48900
+            ],
+            "engine": "1.6L turbo plug-in hybrid, 268 hp combined, all-wheel drive"
+          }
+        ],
+        "after": [
+          "Hyundai’s prices leave out the $1,650 destination charge (iSeeCars’ figure; Hyundai’s own fine print shows $44,575 including destination on a Hybrid Night with a $42,925 sticker). All-wheel drive adds $1,500 on the gas Tucson and on the Hybrid SE and SEL; the Hybrid SEL Convenience, Limited and Night and both plug-ins come with it. Hyundai had posted no 2027 prices on November 18, 2026: it lists an all-new Tucson for early 2027. Some review sites still print older figures (U.S. News lists a $29,200 SE); these are hyundaiusa.com’s."
+        ]
+      },
+      "pick": [
+        "<strong>A 2026 Hybrid SEL Convenience.</strong> At $35,250 it costs $2,500 more than a front-drive Hybrid SEL, and the step up buys 12.3-inch digital gauges, leatherette seats, ambient lighting and a wireless charging pad, with all-wheel drive included (a Hybrid SEL with AWD is $34,250, so the real gap is $1,000). It’s rated 36 mpg combined, about 130 fewer gallons a year at 12,000 miles than an AWD gas SEL Premium (26 mpg, and $300 more at $35,550). Edmunds also picks it among the hybrids, calling the hybrid far quicker than the gas engine and about 10 mpg thriftier.",
+        "Pick the Hybrid SEL ($32,750, front-drive) if price comes first: it’s rated 38 mpg combined and keeps heated seats and a power driver’s seat. Skip the Hybrid Limited and Night: they cost $7,175 and $7,675 more than the Convenience, and Edmunds says they sell fastest, so you’ll have less room to negotiate. Skip the plug-in unless you can charge at home: the $40,675 SEL goes about 32 miles on electricity, and Hyundai quotes $1,665 and up to install a home charger."
+      ],
+      "pay": {
+        "intro": [
+          "Tucsons sell under sticker, and there’s plenty to choose from. Edmunds counted about 40,800 new Tucsons nationwide and says they sell in about 25 days, against 34 for the market. Its Texas suggested prices run 5.7–7.5% under sticker with destination (a $29,201 SE against $31,350; a $32,047 Hybrid SEL against $34,400), though its November tips say about $1,200 off MSRP on average, with no general customer rebates. TrueCar’s page shows buyers paying 1.9% less than MSRP across the Tucson line (our read of TrueCar was blocked, so that figure is from a search-result summary), and iSeeCars puts dealer invoice 4.0% under MSRP on the gas SE through SEL Premium, 5.0% on the Limited and 3.4% on every hybrid. CarWhere has too few verified 2026 Tucson purchases to publish a typical discount."
+        ],
+        "tableTitle": "Dealer discount by trim",
+        "rows": [
+          {
+            "trims": "SE, SEL, SEL Plus, XRT, SEL Premium",
+            "example": "SEL Premium",
+            "fair": "3–4% under",
+            "strong": "5–6% under",
+            "why": "Invoice sits 4.0% under MSRP and Edmunds’ Texas prices 5.7–6.9% under. Edmunds says the SEL Plus has the most stock and the XRT is harder to find."
+          },
+          {
+            "trims": "Limited",
+            "example": "Limited",
+            "fair": "4–5% under",
+            "strong": "6% or more",
+            "why": "Edmunds says the Limited has the most room, about $1,500 off, and invoice sits 5.0% under MSRP."
+          },
+          {
+            "trims": "Hybrid SE, Hybrid SEL, Hybrid SEL Convenience",
+            "example": "Hybrid SEL Convenience",
+            "fair": "3–4% under",
+            "strong": "5–6% under",
+            "why": "Invoice sits 3.4% under MSRP; Edmunds’ Texas prices are 6.8–7.5% under on the SE and SEL. Edmunds says the Hybrid SE is tougher to find."
+          },
+          {
+            "trims": "Hybrid Limited, Hybrid Night",
+            "example": "Hybrid Limited",
+            "fair": "2–3% under",
+            "strong": "4–5% under",
+            "why": "Edmunds says these two sell fastest, so expect less room. Invoice sits 3.4% under MSRP."
+          },
+          {
+            "trims": "Plug-in SEL, Plug-in Limited",
+            "example": "Plug-in SEL",
+            "fair": "2–3% under",
+            "strong": "4% or more",
+            "why": "We found no sale-price figure for the plug-in. Hyundai lists up to $4,000 in bonus cash on it."
+          }
+        ],
+        "note": "Our estimate, checked November 18, 2026, on the 2026. Edmunds’ suggested prices include destination and are for Texas; invoice figures are iSeeCars’; the TrueCar figure covers the whole Tucson line.",
+        "after": [
+          "Not sure what a specific Tucson should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href=\"mailto:hello@steermeright.com\">hello@steermeright.com</a> or use “Talk to Mason” on the <a href=\"/schedule.html\">pricing page</a>."
+        ],
+        "walk": {
+          "title": "What that looks like on a 2026 Hybrid SEL Convenience",
+          "sticker": 36900,
+          "stickerLabel": "Sticker with destination",
+          "steps": [
+            {
+              "label": "Dealer discount, 4%",
+              "amount": 1500
+            }
+          ],
+          "total": 35400,
+          "totalLabel": "Your price before tax and fees"
+        }
+      },
+      "incentives": {
+        "intro": [
+          "Every offer ends November 30. Hyundai lists 0% APR for up to 60 months, plus no payments for 90 days, on the gas Tucson and the plug-in, and 2.9% for up to 60 months on the Hybrid, in all four regions we checked. Leases and the New York $750 lease offers differ by region. Edmunds’ tips mention 1.9% for 72 months on some trims, which we did not find on Hyundai’s pages."
+        ],
+        "rows": [
+          {
+            "offer": "0% APR for up to 60 months, plus no payments for 90 days",
+            "detail": "Through Hyundai Motor Finance, for well-qualified buyers",
+            "applies": "2026 Tucson and Tucson Plug-in Hybrid, every trim",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "2.9% APR for up to 60 months",
+            "detail": "Through Hyundai Motor Finance, for well-qualified buyers",
+            "applies": "2026 Tucson Hybrid, every trim",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Bonus cash",
+            "detail": "Up to $3,000 on the gas Tucson, $1,750 on the Hybrid and $4,000 on the Plug-in. On the gas SEL Premium and Limited, Hyundai’s fine print requires financing through Hyundai Motor Finance and applying the cash as a down payment; we did not open the other fine print",
+            "applies": "2026 Tucson, Tucson Hybrid and Plug-in Hybrid",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Gas Tucson leases",
+            "detail": "SEL front-drive $259 a month for 36 months with $3,999 due in Chicago and Los Angeles, $279 in Dallas and $239 in New York (plus $750 off); SE front-drive $329 with nothing due in Chicago, $379 in Dallas, $359 in Los Angeles and $339 in New York (plus $750 off)",
+            "applies": "2026 Tucson SE and SEL",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Hybrid leases",
+            "detail": "SE front-drive $289 a month in Chicago and Los Angeles, $309 in Dallas and $269 in New York; SEL all-wheel drive $329, $349 and $309 in the same cities; all 36 months with $3,999 due",
+            "applies": "2026 Tucson Hybrid SE and SEL",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Plug-in leases",
+            "detail": "SEL $329 a month and Limited $439 for 36 months with $3,999 due in Los Angeles (the only region we read for the plug-in)",
+            "applies": "2026 Tucson Plug-in Hybrid",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "New York lease extras",
+            "detail": "$209 a month for 24 months with $3,999 due on an SE with AWD; $750 off the leases above",
+            "applies": "2026 Tucson, Greater New York",
+            "ends": "November 30, 2026"
+          },
+          {
+            "offer": "Certified used rate",
+            "detail": "5.99% APR for up to 60 months on select 2021–2026 Hyundai Certified Used Vehicles; the page did not show an end date",
+            "applies": "Hyundai Certified Used Vehicles",
+            "ends": ""
+          }
+        ],
+        "note": "From <a href=\"https://www.hyundaiusa.com/us/en/vehicles/tucson\" rel=\"noopener\">Hyundai’s Tucson pages</a> (and the Hybrid and Plug-in Hybrid pages) on November 18, 2026, with the ZIP set to 60601, 75201, 90012 and 10001 (Chicago, Dallas, Los Angeles and New York). Plug-in offers were read at 90012 only. Offers need Hyundai Motor Finance approval and “ends” is the contract date.",
+        "cards": [
+          {
+            "label": "Financing",
+            "figure": "0%",
+            "word": "APR",
+            "text": "For up to 60 months on a 2026 gas or plug-in Tucson, plus no payments for 90 days, in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Hybrid financing",
+            "figure": "2.9%",
+            "word": "APR",
+            "text": "For up to 60 months on a 2026 Tucson Hybrid, in all four regions we checked. Ends November 30."
+          },
+          {
+            "label": "Lease",
+            "figure": "$259",
+            "word": "a month",
+            "text": "2026 SEL front-drive in Chicago, 36 months, $3,999 due at signing. Ends November 30."
+          },
+          {
+            "label": "Bonus cash",
+            "figure": "$3,000",
+            "word": "up to",
+            "text": "On the gas Tucson, with Hyundai Motor Finance, as a down payment. $1,750 on the Hybrid. Ends November 30."
+          }
+        ],
+        "addons": [
+          {
+            "title": "Buying certified?",
+            "text": "Hyundai offers 5.99% for up to 60 months on select 2021–2026 Hyundai Certified Used Vehicles. Certified cars get a 173-point inspection and a 5-year/60,000-mile comprehensive warranty.",
+            "figure": "5.99%",
+            "unit": "APR",
+            "detail": "End date not shown",
+            "href": "/schedule.html",
+            "link": "Ask us"
+          }
+        ],
+        "choice": {
+          "eyebrow": "Hyundai’s 0% and 2.9%",
+          "title": "0% costs about {gap} less than the average loan",
+          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $36,000 Tucson over 60 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "price": 36000,
+          "months": 60,
+          "baseRate": 6.35,
+          "options": [
+            {
+              "name": "0% APR",
+              "detail": "Gas or plug-in, Hyundai Motor Finance",
+              "rate": 0,
+              "cash": 0
+            },
+            {
+              "name": "2.9% APR",
+              "detail": "Hybrid, Hyundai Motor Finance",
+              "rate": 2.9,
+              "cash": 0
+            },
+            {
+              "name": "6.35% APR",
+              "detail": "average new-car loan",
+              "rate": 6.35,
+              "cash": 0
+            }
+          ]
+        }
+      },
+      "condition": {
+        "intro": [
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used Tucson saves you less than it seems: CarWhere’s median asking price for a 2025 is $24,493 at about 31,000 miles, while Edmunds’ Texas suggested price for a new 2026 SE is $29,201 with destination, and Hyundai finances the new one at 0% or 2.9% against an 11.19% average for used loans. The all-new Tucson is due in early 2027 with no U.S. price yet, which is a reason to wait only if you want the redesign."
+        ],
+        "rows": [
+          {
+            "route": "New 2026",
+            "when": "Most buyers. Hyundai’s 0% and 2.9% rates and Edmunds’ prices 6–7% under sticker apply to it, and about 40,800 are in stock.",
+            "check": "That the offer covers the 2026 and the trim you want, and that the car’s open recalls are done (see below)."
+          },
+          {
+            "route": "New 2027 (all-new)",
+            "when": "You want the redesign and can wait until early 2027. Hyundai calls it all-new, with a next-generation hybrid system.",
+            "check": "That price and mpg are published before you commit; Hyundai had posted neither on November 18, 2026."
+          },
+          {
+            "route": "CPO (Hyundai Certified Used Vehicles)",
+            "when": "You want a 2021 to 2025 with a warranty. Hyundai’s 5.99% for up to 60 months applies to select cars.",
+            "check": "That it’s Certified (a 173-point inspection, a 5-year/60,000-mile comprehensive warranty, a 10-year/100,000-mile powertrain and hybrid battery warranty), not the cheaper Select Used program."
+          },
+          {
+            "route": "Used, not certified",
+            "when": "Your budget is under about $22,000.",
+            "check": "Open recalls by VIN, an independent inspection, and on a 2019 to 2021 that recall 20V543 was done."
+          }
+        ],
+        "charts": [
+          {
+            "title": "Value lost in three years",
+            "bars": [
+              {
+                "label": "Tucson",
+                "value": 24.8,
+                "display": "24.8%"
+              },
+              {
+                "label": "Tucson Hybrid",
+                "value": 29.2,
+                "display": "29.2%"
+              },
+              {
+                "label": "Compact SUVs",
+                "value": 22.7,
+                "display": "22.7%"
+              },
+              {
+                "label": "Average vehicle",
+                "value": 24.8,
+                "display": "24.8%"
+              }
+            ],
+            "source": "iSeeCars"
+          },
+          {
+            "title": "Average loan rate",
+            "bars": [
+              {
+                "label": "Hyundai gas offer",
+                "value": 0,
+                "display": "0%"
+              },
+              {
+                "label": "Hyundai Hybrid offer",
+                "value": 2.9,
+                "display": "2.9%"
+              },
+              {
+                "label": "New",
+                "value": 6.35,
+                "display": "6.35%"
+              },
+              {
+                "label": "Used",
+                "value": 11.19,
+                "display": "11.19%"
+              }
+            ],
+            "source": "Hyundai; Experian, Q2 2026"
+          },
+          {
+            "title": "Median asking price, used",
+            "bars": [
+              {
+                "label": "2022",
+                "value": 20309,
+                "display": "$20,309"
+              },
+              {
+                "label": "2023",
+                "value": 22799,
+                "display": "$22,799"
+              },
+              {
+                "label": "2024",
+                "value": 24326,
+                "display": "$24,326"
+              },
+              {
+                "label": "2025",
+                "value": 24493,
+                "display": "$24,493"
+              }
+            ],
+            "source": "CarWhere, November 14"
+          }
+        ],
+        "after": [
+          "If you buy used, look at a 2023 or 2024 Tucson and check the recalls: the 2024 has four (one covers power steering that can lose assist), the 2023 two. Skip the 2019 to 2021 unless recall 20V543 (an ABS control unit that can short and start an engine-compartment fire; the fix is a fuse) was done; those years drew 387, 180 and 85 NHTSA complaints, many of them filed under the engine. The 2022 drew 505. The 2025 drew 455, 220 of them about forward collision avoidance, and it has seven recalls, including 25V549 (connecting rod bolts; Hyundai replaces the engine) and 26V316 (a camera software fix for sudden automatic braking). Check any used Tucson’s open recalls by VIN."
+        ]
+      },
+      "watch": [
+        "<strong>Open recalls on 2025 and 2026 Tucsons.</strong> NHTSA lists six on the 2026: 25V549 (connecting rod bolts that can cause loss of drive power; Hyundai replaces the engine on affected cars), 26V316 (front camera software that can brake the car suddenly), 26V047 and 26V400 (instrument display software), 26V254 (side-impact sensors) and, on the 2026 Hybrid only, 26V692 (front strut fasteners that can cost steering control). Ask for the VIN’s recall status before you sign.",
+        "<strong>The bonus cash needs Hyundai financing.</strong> On the gas SEL Premium and Limited, Hyundai’s fine print says to finance through Hyundai Motor Finance and apply the cash as a down payment. Get your bank’s rate first, then compare the total.",
+        "<strong>The all-new Tucson.</strong> Hyundai says it arrives in early 2027. A 2026 you buy now is the last of this generation, so ask the dealer for the out-the-door price in writing and compare it across two or three stores.",
+        "<strong>All-wheel drive on the hybrid.</strong> The SEL Convenience, Limited and Night come with it and are rated 36 mpg combined; a front-drive Hybrid SE or SEL is rated 38. A Hybrid SEL with AWD costs $1,500 more than front-drive.",
+        "<strong>A slow gas engine.</strong> Edmunds timed an AWD gas Limited at 10.2 seconds to 60 mph and found the eight-speed clunky unless you drive gently. The hybrid’s extra power is the main reason to pay for it.",
+        "<strong>Dealer add-ons and fees.</strong> Dealer-installed extras and documentation fees come on top of the advertised price. Ask for an out-the-door quote and refuse or negotiate any add-on you didn’t pick."
+      ],
+      "faq": [
+        [
+          "Is the Hyundai Tucson a good car?",
+          "Most reviewers rank it at or near the top of its class. U.S. News scores the 2026 a 9.3 out of 10, first in compact SUVs and tied with the Mazda CX-5, Edmunds scores it 7.9 and fourth of 20 small SUVs, and J.D. Power gives it 81. Edmunds’ complaints are a slow gas engine and a screen-only control layout. NHTSA gives it five stars overall."
+        ],
+        [
+          "How much under MSRP can you get a Hyundai Tucson?",
+          "On a gas SE through SEL Premium, 3–4% under MSRP is a fair deal and 5–6% a strong one, in our estimate from Edmunds’ Texas prices and iSeeCars’ invoice figures. A Limited has more room (4–5% fair, 6% or more strong); a Hybrid Limited or Night has less (2–3%, 4–5%). Hyundai’s bonus cash and 0% or 2.9% financing come on top."
+        ],
+        [
+          "Should I buy the gas Tucson or the Hybrid?",
+          "The Hybrid, for most buyers. Edmunds calls the gas engine one of the slowest crossover engines it has tested (10.2 seconds to 60 mph) and says the hybrid is quicker and gets about 10 more mpg. A Hybrid SEL Convenience is rated 36 mpg combined against 26 for an AWD gas SEL Premium and costs $300 less than that AWD SEL Premium ($35,250 against $35,550) and $1,200 more than a front-drive one."
+        ],
+        [
+          "Does Hyundai offer cash back on the Tucson?",
+          "Hyundai lists up to $3,000 in bonus cash on the gas Tucson, $1,750 on the Hybrid and $4,000 on the Plug-in. On the gas SEL Premium and Limited the fine print requires financing through Hyundai Motor Finance and applying the cash as a down payment; Edmunds says there are no general customer rebates. Ends November 30, 2026."
+        ],
+        [
+          "Is a new Hyundai Tucson coming?",
+          "Yes. Hyundai’s site lists an all-new Tucson and Tucson Hybrid for early 2027, with no U.S. price or mpg yet. The 2026 is the last of the current generation, introduced for 2022 and refreshed for 2025."
+        ],
+        [
+          "What is the destination charge on a Tucson?",
+          "$1,650, per iSeeCars’ trim table, which matches Hyundai’s own fine print on a Hybrid Night ($44,575 including destination against a $42,925 sticker). Hyundai’s MSRPs leave it out; Edmunds’ prices include it."
+        ],
+        [
+          "Is AWD worth it on a Tucson?",
+          "If you see snow. It adds $1,500 on the gas Tucson and the Hybrid SE and SEL, and costs about 2 mpg combined (28 to 26 on gas, 38 to 36 on the Hybrid SEL). The Hybrid SEL Convenience, Limited, Night and both plug-ins come with it."
+        ],
+        [
+          "Is a used Tucson a better deal than new?",
+          "Rarely. CarWhere’s median asking price for a used 2025 is $24,493, while Edmunds’ Texas price for a new 2026 SE is $29,201, and Hyundai finances the new one at 0% or 2.9% against 11.19% on average for used loans. A used 2023 or 2024 is the value play; certified ones carry Hyundai’s 5.99% rate."
+        ]
+      ],
+      "sources": [
+        {
+          "id": "VEH-TUCSON-01",
+          "title": "Hyundai: 2026 Tucson",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson",
+          "scope": "2026 Tucson gas trims, starting MSRP excluding destination, mpg, equipment, warranty, awards, and offers read at four ZIP codes",
+          "note": "gas trims, prices, offers"
+        },
+        {
+          "id": "VEH-TUCSON-02",
+          "title": "Hyundai: 2026 Tucson Hybrid",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson-hybrid",
+          "scope": "2026 Tucson Hybrid trims, starting MSRP, mpg, equipment, and offers read at four ZIP codes; fine print on a Night AWD showing MSRP including destination",
+          "note": "hybrid trims, prices, offers"
+        },
+        {
+          "id": "VEH-TUCSON-03",
+          "title": "Hyundai: 2026 Tucson Plug-in Hybrid",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson-plug-in-hybrid",
+          "scope": "2026 Tucson Plug-in Hybrid trims, MSRP, EPA mpg and electric range, home-charger cost, and offers read at 90012",
+          "note": "plug-in trims, prices, offers"
+        },
+        {
+          "id": "VEH-TUCSON-04",
+          "title": "Hyundai: all-new 2027 Tucson",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/2027-tucson",
+          "scope": "Hyundai’s notice of an all-new Tucson and Tucson Hybrid coming early 2027, with no U.S. price",
+          "note": "next generation"
+        },
+        {
+          "id": "VEH-TUCSON-05",
+          "title": "Hyundai: Certified Used Vehicles",
+          "url": "https://www.hyundaiusa.com/us/en/certified-used-vehicles",
+          "scope": "Certified Used Vehicles eligibility, inspection, warranties, roadside terms and the 5.99% APR offer",
+          "note": "CPO terms"
+        },
+        {
+          "id": "VEH-TUCSON-06",
+          "title": "iSeeCars: 2026 Hyundai Tucson price",
+          "url": "https://www.iseecars.com/car/hyundai-tucson-price",
+          "scope": "2026 Tucson trim MSRP, dealer invoice and the $1,650 destination charge",
+          "note": "invoice and destination"
+        },
+        {
+          "id": "VEH-TUCSON-07",
+          "title": "iSeeCars: Hyundai Tucson Hybrid price",
+          "url": "https://www.iseecars.com/car/hyundai-tucson-hybrid-price",
+          "scope": "2026 Tucson Hybrid trim MSRP, dealer invoice and destination charge",
+          "note": "hybrid invoice"
+        },
+        {
+          "id": "VEH-TUCSON-08",
+          "title": "Edmunds: 2026 Hyundai Tucson",
+          "url": "https://www.edmunds.com/hyundai/tucson/",
+          "scope": "Edmunds rating, rank, review, test numbers, suggested prices (Texas, sales through November 2, 2026), November buying tips, owner reviews",
+          "note": "score, suggested prices, tips"
+        },
+        {
+          "id": "VEH-TUCSON-09",
+          "title": "Cox Automotive: October 2026 new-vehicle inventory",
+          "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+          "scope": "Industry, Toyota and Honda days of supply; the report gives no Hyundai figure",
+          "note": "supply context"
+        },
+        {
+          "id": "VEH-TUCSON-10",
+          "title": "iSeeCars: Hyundai Tucson resale value",
+          "url": "https://www.iseecars.com/car/hyundai-tucson/resale-value",
+          "scope": "Three- and five-year depreciation for the Tucson and the compact SUV class",
+          "note": "depreciation"
+        },
+        {
+          "id": "VEH-TUCSON-11",
+          "title": "iSeeCars: Hyundai Tucson Hybrid resale value",
+          "url": "https://www.iseecars.com/car/hyundai-tucson-hybrid/resale-value",
+          "scope": "Three- and five-year depreciation for the Tucson Hybrid",
+          "note": "hybrid depreciation"
+        },
+        {
+          "id": "VEH-TUCSON-12",
+          "title": "CarWhere: used Hyundai Tucson prices",
+          "url": "https://www.carwhere.com/used-car-prices/hyundai/tucson",
+          "scope": "Median used asking prices, mileage and listings by model year, as of November 14, 2026",
+          "note": "used prices"
+        },
+        {
+          "id": "VEH-TUCSON-13",
+          "title": "CarWhere: 2026 Hyundai Tucson price",
+          "url": "https://www.carwhere.com/price/hyundai/tucson",
+          "scope": "Statement that CarWhere has fewer than five verified 2026 Tucson purchases",
+          "note": "no discount sample"
+        },
+        {
+          "id": "VEH-TUCSON-14",
+          "title": "TrueCar: 2026 Hyundai Tucson",
+          "url": "https://www.truecar.com/overview/hyundai/tucson/2026",
+          "scope": "TrueCar’s average paid against MSRP across the Tucson line (1.9%); read only through a search-result summary because TrueCar blocked scripted reads",
+          "note": "average paid, secondary read"
+        },
+        {
+          "id": "VEH-TUCSON-15",
+          "title": "Experian: auto loan rates",
+          "url": "https://www.experian.com/blogs/ask-experian/auto-loan-rates-financing/",
+          "scope": "Average new-car, used-car and super-prime loan rates, Q2 2026 (carried from our Camry and Accord pages, not re-read)",
+          "note": "average loan rates"
+        },
+        {
+          "id": "VEH-TUCSON-16",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "url": "https://www.nhtsa.gov/ratings",
+          "scope": "2026 Tucson front- and all-wheel drive crash and rollover ratings (vehicle IDs 21142 and 21143)",
+          "note": "crash ratings"
+        },
+        {
+          "id": "VEH-TUCSON-17",
+          "title": "NHTSA: recalls",
+          "url": "https://www.nhtsa.gov/recalls",
+          "scope": "Recalls by model year for Tucson and Tucson Hybrid, and owner complaint counts by model year",
+          "note": "recalls and complaints"
+        },
+        {
+          "id": "VEH-TUCSON-18",
+          "title": "IIHS: 2026 Hyundai Tucson",
+          "url": "https://www.iihs.org/ratings/vehicle/hyundai/tucson-4-door-suv/2026",
+          "scope": "IIHS crash test, headlight and crash prevention ratings for the 2026 Tucson",
+          "note": "IIHS grades"
+        },
+        {
+          "id": "VEH-TUCSON-19",
+          "title": "IIHS: 2026 Top Safety Picks",
+          "url": "https://www.iihs.org/ratings/top-safety-picks/2026",
+          "scope": "2026 Top Safety Pick and Top Safety Pick+ list",
+          "note": "Top Safety Pick"
+        },
+        {
+          "id": "VEH-TUCSON-20",
+          "title": "Consumer Reports: 2026 Hyundai Tucson reliability",
+          "url": "https://www.consumerreports.org/cars/hyundai/tucson/2026/reliability/",
+          "scope": "Predicted reliability verdict (the score is paywalled)",
+          "note": "reliability verdict"
+        },
+        {
+          "id": "VEH-TUCSON-21",
+          "title": "Kelley Blue Book: 2026 Hyundai Tucson",
+          "url": "https://www.kbb.com/hyundai/tucson/2026/",
+          "scope": "KBB expert rating, consumer rating and review count, five-year depreciation estimate",
+          "note": "score"
+        },
+        {
+          "id": "VEH-TUCSON-22",
+          "title": "U.S. News: 2026 Hyundai Tucson",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/tucson",
+          "scope": "U.S. News score, rank, awards and rival price ranges",
+          "note": "score and rank"
+        },
+        {
+          "id": "VEH-TUCSON-23",
+          "title": "J.D. Power: 2026 Hyundai Tucson",
+          "url": "https://www.jdpower.com/cars/2026/hyundai/tucson",
+          "scope": "J.D. Power consumer rating and its quality, driving, resale and dealership scores",
+          "note": "score"
+        }
+      ],
+      "photo": {
+        "file": "vehicle-hyundai-tucson-hybrid-limited",
+        "width": 1920,
+        "height": 960,
+        "alt": "Tan 2025 Hyundai Tucson Hybrid Limited SUV with 19-inch wheels in a parking lot, front three-quarter view",
+        "caption": "A Tucson Hybrid Limited. The 2026 looks the same.",
+        "author": "HJUdall",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Hyundai_Tucson_Hybrid_Limited.jpg",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "note": "cropped"
+      },
+      "pros": [
+        "10-year/100,000-mile powertrain warranty",
+        "First of compact SUVs at U.S. News, tied with the CX-5",
+        "Sells about 6–7% under sticker in Edmunds’ Texas prices",
+        "Five stars from NHTSA and a 2026 IIHS Top Safety Pick+"
+      ],
+      "cons": [
+        "Gas engine takes 10.2 seconds to 60 mph (Edmunds)",
+        "Hybrid rated 38 mpg combined, under the RAV4’s 43",
+        "Loses 24.8% in three years, against 22.7% for the class",
+        "Six recalls on the 2026, one replacing engines"
+      ],
+      "rivals": [
+        "Get a quote on the Toyota RAV4 and Honda CR-V too. The RAV4 is hybrid-only, starts at $31,900 against the Tucson Hybrid SE’s $31,300 and is rated 43 mpg combined front-drive, but dealers sell most trims within about 2% of sticker (see our <a href=\"/toyota-rav4-price.html\">RAV4 price guide</a>). The CR-V Hybrid starts at $35,630 (Sport) and is rated 40 mpg combined, and IIHS rates its rear-seat crash protection Poor (see our <a href=\"/honda-cr-v-price.html\">CR-V price guide</a>). U.S. News lists the Kia Sportage at $28,690 to $39,590 and the Mazda CX-5 at $29,990 to $38,990. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+      ],
+      "scores": {
+        "cards": [
+          {
+            "source": "Edmunds",
+            "url": "https://www.edmunds.com/hyundai/tucson/",
+            "value": 7.9,
+            "scale": 10,
+            "display": "7.9",
+            "detail": "Ranked 4th of 20 small SUVs; SEL Premium is its gas pick"
+          },
+          {
+            "source": "Kelley Blue Book",
+            "url": "https://www.kbb.com/hyundai/tucson/2026/",
+            "value": 4.5,
+            "scale": 5,
+            "display": "4.5",
+            "detail": "Owners give it 4.2 out of 5 (105 reviews)"
+          },
+          {
+            "source": "U.S. News",
+            "url": "https://cars.usnews.com/cars-trucks/hyundai/tucson",
+            "value": 9.3,
+            "scale": 10,
+            "display": "9.3",
+            "detail": "Ranked 1st of compact SUVs, tied with the Mazda CX-5"
+          },
+          {
+            "source": "J.D. Power",
+            "url": "https://www.jdpower.com/cars/2026/hyundai/tucson",
+            "value": 81,
+            "scale": 100,
+            "display": "81",
+            "detail": "Owners rate quality 83, resale 84, dealership 73"
+          }
+        ],
+        "note": "Scores for the 2026 Tucson as published on November 18, 2026. They are not Steer Me Right ratings, and we have not averaged them."
+      },
+      "safety": {
+        "overall": 5,
+        "label": "NHTSA overall crash rating",
+        "vehicle": "2026 Tucson, front- and all-wheel drive",
+        "rows": [
+          {
+            "label": "Frontal crash",
+            "stars": 5,
+            "note": "Driver 4, passenger 5"
+          },
+          {
+            "label": "Side crash",
+            "stars": 5
+          },
+          {
+            "label": "Rollover",
+            "stars": 4,
+            "note": "15.9% rollover risk front-drive, 17.4% AWD"
+          },
+          {
+            "label": "IIHS small overlap front",
+            "grade": "Good",
+            "note": "Driver and passenger side"
+          },
+          {
+            "label": "IIHS moderate overlap front",
+            "grade": "Good",
+            "note": "Updated test, cars built after March 2024"
+          },
+          {
+            "label": "IIHS side",
+            "grade": "Good"
+          },
+          {
+            "label": "IIHS headlights",
+            "grade": "Acceptable",
+            "note": "SE, SEL and XRT; Limited is Good"
+          },
+          {
+            "label": "IIHS crash prevention, pedestrians",
+            "grade": "Good"
+          }
+        ],
+        "recallsTitle": "Recalls by model year",
+        "recalls": [
+          {
+            "label": "2019",
+            "value": 1
+          },
+          {
+            "label": "2020",
+            "value": 1
+          },
+          {
+            "label": "2021",
+            "value": 1
+          },
+          {
+            "label": "2022",
+            "value": 3
+          },
+          {
+            "label": "2023",
+            "value": 2
+          },
+          {
+            "label": "2024",
+            "value": 4
+          },
+          {
+            "label": "2025",
+            "value": 7
+          },
+          {
+            "label": "2026",
+            "value": 6
+          }
+        ],
+        "reliability": "Consumer Reports expects the 2026 Tucson to be <a href=\"https://www.consumerreports.org/cars/hyundai/tucson/2026/reliability/\" rel=\"noopener\">more reliable than the average new car</a>, judging from the 2023 to 2025 models.",
+        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2026 Tucson, front- and all-wheel drive (the Hybrid and Plug-in Hybrid are not listed separately); grades from <a href=\"https://www.iihs.org/ratings/vehicle/hyundai/tucson-4-door-suv/2026\" rel=\"noopener\">IIHS</a> for the 2026 Tucson, read November 18, 2026. Hyundai says IIHS named the 2026 Tucson a <a href=\"https://www.iihs.org/ratings/top-safety-picks/2026\" rel=\"noopener\">Top Safety Pick+</a>, and IIHS’s page carries the label. IIHS rates the child-seat anchors Acceptable. Recall counts combine NHTSA’s <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">Tucson and Tucson Hybrid listings</a>, deduplicated by campaign; the 2026 ones are 25V549, 26V047, 26V254, 26V316, 26V400 and, on the Hybrid, 26V692. Check any used Tucson’s open recalls by VIN before you buy."
+      },
+      "gallery": [
+        {
+          "file": "vehicle-hyundai-tucson-limited",
+          "width": 1920,
+          "height": 960,
+          "alt": "Gray 2025 Hyundai Tucson Limited SUV parked outside, front three-quarter view",
+          "caption": "Limited",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Hyundai_Tucson_Limited.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-hyundai-tucson-hybrid-blue",
+          "width": 1920,
+          "height": 960,
+          "alt": "Red 2025 Hyundai Tucson Hybrid Blue SUV in a parking lot, front three-quarter view",
+          "caption": "Hybrid Blue",
+          "author": "HJUdall",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_Hyundai_Tucson_Hybrid_Blue.jpg",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "note": "cropped"
+        },
+        {
+          "file": "vehicle-hyundai-tucson-xrt-rear",
+          "width": 1920,
+          "height": 1251,
+          "alt": "Olive green 2025 Hyundai Tucson XRT SUV on an auto-show stand, rear three-quarter view",
+          "caption": "XRT, rear",
+          "author": "Charles",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2025_Hyundai_Tucson_XRT_(United_States)_rear_view.jpg",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "note": "cropped; visitors blurred"
+        },
+        {
+          "file": "vehicle-hyundai-tucson-interior",
+          "width": 1920,
+          "height": 1152,
+          "alt": "Dashboard, steering wheel and gray front seats of a Hyundai Tucson with a curved display",
+          "caption": "Interior (Korean-market Inspiration trim)",
+          "author": "Damian B Oh",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyundai_Tucson_Inspiration_NX4_PE_Black_Gray_Two-tone_(2).jpg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "note": "cropped"
+        }
+      ]
     }
   ]
 }

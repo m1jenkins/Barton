@@ -69,6 +69,7 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 - [Hyundai Elantra Price](https://www.steermeright.com/hyundai-elantra-price.html): MSRP by trim for the 2026 Elantra, Elantra Hybrid and Elantra N, how far under sticker dealers sell it, Hyundai’s current offers by region, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 - [Subaru Forester Price](https://www.steermeright.com/subaru-forester-price.html): MSRP by trim for the 2026 and 2027 Forester and Forester Hybrid, how far under sticker dealers sell it, Subaru’s current offers, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
 - [Chevrolet Colorado Price](https://www.steermeright.com/chevrolet-colorado-price.html): MSRP by trim for the 2026 and 2027 Colorado, how far under sticker dealers sell it, Chevrolet’s current offers, new versus used versus CPO, and the trim we’d buy (checked 2026-11-18).
+- [Hyundai Tucson Price](https://www.steermeright.com/hyundai-tucson-price.html): MSRP by trim for the 2026 Tucson, Tucson Hybrid and Plug-in Hybrid, how far under sticker dealers sell it, Hyundai’s current offers by region, new versus used versus CPO, the all-new 2027 Tucson due in early 2027, and the trim we’d buy (checked 2026-11-18).
 
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.

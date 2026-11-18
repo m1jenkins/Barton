@@ -357,6 +357,24 @@ Reddit section: per-car file data/reddit-sentiment/cars/chevrolet-colorado.json 
 
 Open items for Mason: the pick (2026 LT, 4WD off pavement; Trail Boss for trails; skip the ZR2 unless used hard), "buy new, as a 2026", the used advice (CPO 2023–2025; no used floor) and the three discount groups were written from the research and lean on Edmunds Texas and KBB, with no TrueCar. Not confirmed on a primary page: end dates, conquest cash, EA26006, Ranger destination, Canyon and Ridgeline prices. Read through summaries: iSeeCars, CarWhere, Cox, Experian. The ZR2 Bison and 2027 Desert Boss are not on the page. Offers end November 30, 2026.
 
+## Hyundai Tucson (added November 18, 2026)
+
+`hyundai-tucson-price.html` covers the 2026 Tucson, Hybrid and Plug-in Hybrid in the Accord's template with no spotlight section. Differences:
+
+- **One model year, thirteen trims.** Hyundai had priced only the 2026. hyundaiusa.com lists an all-new Tucson "coming early 2027" with no U.S. price, so the page calls the 2026 the last of this generation and never guesses at the 2027. Prices were read in the built-in browser and exclude destination. Destination ($1,650) and AWD (+$1,500) are from iSeeCars. The gas pages' lease text says "includes destination" while the price dialog says it excludes freight; the page follows the dialog.
+- **Offers** were read with the ZIP dialog set to 60601, 75201, 90012 and 10001. Only the gas SEL Premium and Limited fine print was opened (Hyundai Motor Finance required). Other trims' fine print and whether cash combines with 0% were not read. Plug-in offers were read at 90012 only. Edmunds' 1.9%/72 rate did not appear on Hyundai's pages and the page says so. The certified rate has no end date ("Ask us"). Military and college offers were not read. MarketCheck was not used.
+- **Sale price.** Edmunds' Texas prices (browser) 5.7–7.5% under. iSeeCars invoice (our calculation from its tables) 3.4–5.0% under. CarWhere has under five buyers. TrueCar returned 403, so the page's 1.9% under figure comes from a web-search summary of TrueCar's page, not the page. Cox has no Hyundai figure. The Plug-in group has no sale data.
+- **Safety.** NHTSA lists no separate Hybrid or Plug-in. IIHS grades came through summaries. The Top Safety Pick+ claim is Hyundai's; IIHS's page showed the label but not the tier.
+- **Reviews** read in the browser: Edmunds, KBB, U.S. News, J.D. Power (no class rank quoted), Consumer Reports (number paywalled). Hyundai Certified terms read in the browser.
+- **Depreciation and used prices.** iSeeCars (WebFetch summaries, undated) and CarWhere (November 14).
+- **Rivals.** RAV4 and CR-V figures carried from our pages; Sportage and CX-5 ranges are U.S. News' listings.
+- **Reused:** Experian's Q2 2026 rates. No Hyundai add-on figure was found, so the watch item gives no percentage.
+- **Photos.** Five Wikimedia Commons images, all 2025 cars: HJUdall (CC0, two, on dealer lots with no dealer name legible), Charles (CC BY 2.0, visitors blurred), Damian B Oh (CC BY-SA 4.0; a Korean-market showroom interior, credited as such). Cropped; metadata stripped. `sharp` was missing from the repo's `node_modules`; re-run `build:vehicles` before checking the pictures.
+
+Reddit section: per-car file data/reddit-sentiment/cars/hyundai-tucson.json (see Per-car Reddit files).
+
+Open items for Mason: the pick (2026 Hybrid SEL Convenience; Hybrid SEL front-drive for price; skip Limited, Night and the plug-in unless you charge at home); "buy new, as a 2026" with the redesign due early 2027 (say if buyers should wait); the used advice (2023 or 2024; skip 2019–2021 unless 20V543 was done); the five discount groups; the "up to $3,000" bonus-cash wording. Not read: TrueCar, military and college offers, Plug-in offers at three ZIPs, the 1.9%/72 rate. Read through summaries: iSeeCars, CarWhere, Cox, IIHS. Offers end November 30, 2026.
+
 ## Maintenance
 
 - **Monthly**: incentives table, the incentives tile, the offer cards (`incentives.cards`), the cash-or-0% inputs (`incentives.choice`) if the cash, rate or average loan rate changed, the worked example if the cash offer changed, `checkedOn`, `updated`, the sitemap `lastmod`, and the `next_review` dates of the `VEH-*` rows. Ford's offers page must be read at more than one ZIP; offers differ by region.
