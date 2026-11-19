@@ -1,0 +1,58 @@
+# Open items: ford-f-150-vs-gmc-sierra-1500.html
+
+Entry: `entry.json` (60 sources, VEH-FVS-01 to VEH-FVS-60). Nothing in the repository was edited.
+
+## 1. Mason's calls (verdict and "Buy the ... if" lists), field `summary` and `choose`
+
+Verdict (`summary`), one pick, the F-150:
+
+> We'd buy the F-150, unless the diesel's mileage or a nicer cabin comes first. It tows and hauls a little more (13,500 pounds and 2,440 against the Sierra's 13,300 and 2,260), carries 36 gallons of fuel to the Sierra's 24, earns 5 NHTSA stars overall as a crew cab 4x4 where the Sierra gets 4, lost 18.9% of its value in three years against 27.8%, and every reviewer we checked scores it higher. Owners also file far fewer complaints with NHTSA: about 65 per 100,000 sold on 2023 to 2025 trucks against 164 for the Sierra, and 532 of the Sierra's 1,040 name the engine. The Sierra has its own case. Its 3.0L Duramax diesel gets 24 mpg combined as a 4WD (the F-150's best, the hybrid, gets 23), GMC is putting $8,250 cash on that engine this month, the Sierra has 6 recalls for 2023 to 2026 models to the F-150's 48, and iSeeCars gives it a 33.3% chance of reaching 200,000 miles against 25.0%. Skip its 6.2L V8 while NHTSA's investigation is open. Reddit leans Ford, 87 neutral picks to 8, but only 95 people picked and Sierra owners often name a trim rather than the truck, so we give it less weight here than on our other pages.
+
+Buy the F-150 if (`choose.a`): you tow or haul near the limit (13,500/2,440 vs 13,300/2,260; 684 vs 384 miles a tank on a gas 4x4); you'll sell it in a few years or crash tests come first (18.9% vs 27.8% lost in 3 years; 5 vs 4 NHTSA stars; IIHS Good vs Marginal/Acceptable); you follow the reviews and owner complaints (Edmunds 8.0 vs 6.7, KBB 4.7 vs 4.3, about 65 vs 164 complaints per 100,000); you're shopping an XLT ($4,500 cash; $51,915 vs $56,900 as crew cab 4x4s).
+
+Buy the Sierra if (`choose.b`): you want the diesel for highway miles or towing (24 mpg combined 4WD, 576 miles a tank, $8,250 cash, but $3,850 a year fuel vs $2,600 for the hybrid); you want fewer recalls and lower running costs on paper (6 vs 48; $727 vs $788; 33.3% vs 25.0% to 200,000 miles); you put the cabin first and shop upper trims (Denali $69,400 vs Platinum $72,600; SLT $58,500 vs Lariat $63,360); you want the deeper discount (TrueCar about 7.5% on SLT/Denali vs 5.6% on XLT).
+
+Judgement inside the verdict: "we give it less weight here" for Reddit; "Skip its 6.2L"; the reliability "Our read" paragraph (`reliability.after`) says the F-150 is the safer bet for a 2026 and recommends the Sierra's 3.0L diesel or 2.7L over the 6.2L and the F-150's gas engines over the hybrid (the last half matches the F-150 vs Tundra page).
+
+## 2. Things that look like instructions but needed a decision
+
+- **`reddit.minimumPicks` is 100, not 30.** The renderer shows "Too few to call" only when neutral picks (95 here) are *below* `minimumPicks` (`picks.a + picks.b < r.minimumPicks`). With 30, the strip would name the F-150 (91.6% of 95 picks). 100 gives the "Too few to call" strip you asked for. If you want 30 anyway, the strip will read "F-150". `reddit.minimum` (topic mentions needed before a net score is shown) is 15, as on the Sierra vs Silverado and Colorado vs Tacoma entries; at 15, the Sierra's noise (5), space (8), dealer (10) and safety (10) topics show counts instead of scores.
+- **Trim picks.** `price.picks`: F-150 `XLT` (same as the Tundra page), Sierra `Elevation`. The Sierra guide's own pick is the SLT ($55,400, dropped for 2027), but it sits $10,705 above an XLT. The Elevation ($50,800 as a double cab) is closer in price, is the example trim in the Sierra guide's 5-7% pay row, and still exists for 2027. The page's trims table will mark the Elevation as the pick, which differs from the Sierra guide. Change `picks.b` to `SLT` if you prefer; the glance tile, board row, `targets` and the discount-chart labels also say Elevation and would need editing.
+- **Strong deal range** is 8-10% for both (F-150 copied from the Tundra entry; the F-150 guide says "10% or more" for the XLT, the Sierra guide says 8-10% for Elevation).
+
+## 3. Guide conflicts to fix
+
+- **Sierra price guide and the Sierra vs Silverado page say there is no grille deflector recall; there is one.** NHTSA recall 25V-060 (received February 6, 2025): 2022 Sierra 1500 with chrome front grille deflectors, 70,768 vehicles, attachments may fracture and the deflector detach. It sits in the 2022 count of 6 already. The new page lists it in `reliability.issues` and the recalls chart note, and says the 2023 and 2024 trucks (198 grille complaints across 2022-2024) have no recall of their own. The Sierra guide and the Sierra vs Silverado `reliability.issues` ("Grille deflector, 2022-2024 Sierra", "There's no recall") need fixing.
+- **Edmunds F-150 score.** 8.0 (1st of 5) is reused from the F-150 guide and the Tundra page (read in a browser Nov 15). Edmunds returned 403 on Nov 18, and search-result text that day showed 7.7 for the 2026 F-150 and the Sierra 4th. If Edmunds rescored, change `strip[0]`, `reviews.rows[0]`, and the verdict/FAQ mention "Edmunds at 8.0 against 6.7" (also appears on the Tundra page).
+- **J.D. Power Sierra score.** 80 (5th) from the guide; a search summary said 81. Not re-readable.
+- **F-150 price conflict** (same as the Tundra page): guide XL $39,585 / XLT $44,695 vs iSeeCars $37,290 / $45,695. The page uses the guide's and says so in `price.after`. I did not repeat the Tundra page's Cars.com STX figure because this research did not read it.
+
+## 4. Figures reused rather than re-read today
+
+From the F-150 vs Tundra page / F-150 guide (read Nov 15): offers ($4,500, 0% ended Nov 16, 1.9% + $1,500), TrueCar 5.6%/6.5%, Consumer Reports "about average", Edmunds 8.0, U.S. News 9.6, J.D. Power 83, F-150 recalls campaign list in `reliability.issues` (including 24V-635 and the 223,472-truck figure for 26V-578, neither re-read; the NHTSA recall row says so), the hybrid-reliability line (CR ranking), the PTT 10-speed line, the KBB resale award.
+From the Sierra guide / Sierra vs Silverado page (Nov 16-18): MSRP and 2027 changes, GMC offers ($8,250 diesel, 0% + $2,000, $349 lease, Denali $11,300 off $80,719), TrueCar by trim, pay ranges, Consumer Reports "below average", Edmunds 6.7, U.S. News 9.0, J.D. Power 80, 25V-274 (597,571), EA26005 resume, 24V-797/26V-083, 26V-289, CarBravo 12-month/12,000-mile. GMC, Ford offers pages, TrueCar, CR, Edmunds, J.D. Power, U.S. News and CarBravo were not re-readable (403/503).
+Both pages' "Realistic discount" (5-7%) is our estimate from the guides' pay rows.
+
+## 5. Weak or inconsistent figures
+
+- **Sierra tow and payload** (`space.charts[0]`, board, glance, summary, FAQ): 13,300 (diesel, 2WD) and 2,260 (2.7L) are Kelley Blue Book's main page; KBB's own spec table says 13,000-13,100 and 1,380-1,930 for crew cab trims; cars.com says 13,100; GM Authority text 13,300/13,100 and payload 1,720-2,240. Only a window sticker settles a truck. The chart note says so. The "V8 towing, crew cab" row (13,000 for an SLT with the 5.3L) and the AT4 diesel rows (13,000 tow, 1,620 payload) come from KBB's spec table by trim, which the research flagged as matched by column order. The F-150 payload 2,440 is the 3.5L 4x2 (2,175 as a 4x4); Ford's 2027 page says 2,430; the Tundra page also prints 2,440 without the drive.
+- **Sierra bed volume, rear headroom, curb weight**: no official GM number found (third-party figures 62.9, 63, 71.7 cu ft disagree), so no bed chart. Sierra front legroom (45 in, cars.com page with internal conflicts) left out; the F-150's 43.9 is not charted either.
+- **Sierra EPA diesel 4WD 24 mpg** comes from the record that lists Sport Mode; no plain 4WD diesel record appeared. 2WD diesel is 25. The glance/board/verdict "24 vs 23" depends on it (the margin is one mpg). Fuel cost rests on EPA's Nov 18 diesel price ($6.13).
+- **Sierra sales** are light-duty "Sierra LD" only; **F-150 sales are an estimate** (59% of F-Series, from one quarter's production share). The 59% method is the same as the Tundra and Silverado pages. The note says the Sierra stays higher unless the F-150 is under 23% of F-Series sales (our arithmetic: 893 complaints / 164 per 100,000 = 544,500 trucks, 23.2% of 2,345,270).
+- **Complaint chart per-year Sierra values** (386, 272, 341, 431, 276, 180, 57) are today's counts and differ by up to 1 from the Sierra vs Silverado chart (NHTSA added complaints). "SIERRA DENALI" listings (37 for 2019-2020) are not counted, as on that page. Component rows are today's numbers; the Sierra engine rate (83.9) differs from the Silverado page's grouping notes.
+- **Discount chart** mixes a CarWhere *median* (F-150, 17 buyers, to Nov) with a CarWhere *average* (Sierra, 32 deals, to June 16); the note says they are not like for like. The Sierra's "about 9%" is rounded because the source gives an average-paid-over-average-MSRP ratio. Treat this row as secondary.
+- **Cox days of supply** are brand level (Ford 112, GMC 110); no Sierra-only figure. These, CarWhere and the used-price medians are dealer-inventory/listing derived. They match what the Tundra page already uses, but drop them if the "no listings figures" rule is read strictly. No MarketCheck data was used.
+- **Reddit:** the `reddit.topics` nets quoted in prose (reliability +16/-25, mpg +44/+62, power +71/+17) come from the summary file. Venue indexes (r/f150 76/35, r/gmcsierra 52/66, neutral 72/51) are in `indexDetail`. The F-150 index here is 69, versus 68 on the Tundra page; it is computed per pair.
+- **IIHS Sierra results** are Silverado tests carried over (2019 small overlap, 2023 side), as the Sierra vs Silverado page notes. The F-150's "Poor" moderate overlap has no Sierra rating, so it is not scored as a loss for the F-150 (`win: null`). NHTSA's "No" for F-150 driver-assist fields was treated as a listing quirk and not used.
+- **Resale after-paragraph** calls the used-price gap "partly trim mix", from the Sierra vs Silverado page's note; not measured here. The 49.8% XLT share is from CarWhere's 2023 listings.
+- **Sourced only by search summaries** (not used on the page): J.D. Power Initial Quality headline, 2027 F-150 engine changes, CarBravo powertrain cover, GMC Pro Safety standard equipment, F-150 standard AEB.
+
+## 6. Reddit, Option A as requested
+
+Neutral venue: 95 picks (F-150 87, Sierra 8), 102 threads, 1,736 comments; r/f150 28 threads, 721 comments, picks 16 to 1; r/gmcsierra 43 threads, 968 comments, picks 8 (F-150) to 7 (Sierra); total 173 threads, 3,425 comments, 127 picks; index F-150 69, Sierra 54. The intro says plainly that Sierra owners write a trim, that the coding counts a model only when named, and gives the blind coder's 69% picks (9 of 13) and 65% stance (28 of 43) over 150 comments, below the 85% floor (all 150 comments agree on picks 97%, not quoted). Themes in `reddit.themes` are paraphrased from the coder notes; gripes begin "Owners report" where they are faults. The "Reddit lines up with the data" sentence in `reddit.after` is our reading of the topic nets.
+
+## 7. Other checks
+
+- Logos: `ford` and `gmc` exist in `assets/logos` (plus `-white`); no model logos.
+- Internal links in `related` all exist at the repo root: ford-f-150-vs-chevrolet-silverado-1500, gmc-sierra-1500-vs-chevrolet-silverado-1500, ford-f-150-vs-toyota-tundra, compare-car-quotes, new-car-buying-service.
+- Needs to be added by whoever wires the page: the `data/source-registry.csv` rows for VEH-FVS-01 to -60, `data/reddit-sentiment/ford-f-150-vs-gmc-sierra-1500.json` is already present.
