@@ -11042,6 +11042,1530 @@
      "note": "public Reddit posts and comments behind the Reddit Sentiment Index, collected 2026-11-18"
     }
    ]
+  },
+  {
+   "slug": "ford-f-150-vs-toyota-tundra.html",
+   "published": "2026-11-18",
+   "checkedOn": "2026-11-18",
+   "title": "Ford F-150 vs Toyota Tundra (2026): Price, Towing, Reliability | Steer Me Right",
+   "description": "The 2026 Ford F-150 and Toyota Tundra compared in charts: price by trim, how far under sticker each sells, EPA mpg, towing and payload, NHTSA complaints and recalls, resale, crash tests, and our Reddit Sentiment Index.",
+   "h1": "Ford F-150 vs Toyota Tundra",
+   "crumb": "F-150 vs Tundra",
+   "cars": [
+    {
+     "slug": "ford-f-150-price.html",
+     "short": "F-150",
+     "name": "Ford F-150",
+     "logos": {
+      "make": "ford"
+     }
+    },
+    {
+     "slug": "toyota-tundra-price.html",
+     "short": "Tundra",
+     "name": "Toyota Tundra",
+     "logos": {
+      "make": "toyota"
+     }
+    }
+   ],
+   "strip": [
+    {
+     "label": "Edmunds",
+     "section": "reviews",
+     "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">F-150 </span>8.0 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Tundra </span>7.0</span>",
+     "logo": "edmunds-icon"
+    },
+    {
+     "label": "U.S. News",
+     "section": "reviews",
+     "value": "<span class=\"vs-strip-pair\"><span class=\"vs-key\" aria-hidden=\"true\"></span><span class=\"sr-only\">F-150 </span>9.6 <span class=\"vs-key vs-key--b\" aria-hidden=\"true\"></span><span class=\"sr-only\">Tundra </span>9.0</span>",
+     "logo": "us-news",
+     "wordmark": true
+    },
+    {
+     "label": "Reddit’s pick",
+     "section": "reddit",
+     "logo": "reddit-snoo",
+     "logoSize": "large"
+    }
+   ],
+   "glance": [
+    {
+     "label": "Starting MSRP",
+     "section": "price",
+     "a": "$39,585<small>XL · $44,695 XLT</small>",
+     "b": "$41,260<small>SR · $46,510 SR5</small>"
+    },
+    {
+     "label": "Realistic discount",
+     "section": "price",
+     "a": "5–7%<small>under MSRP, XLT</small>",
+     "b": "5–7%<small>under MSRP, SR5</small>"
+    },
+    {
+     "label": "Best EPA mpg, 4x4",
+     "section": "mpg",
+     "a": "23<small>combined, hybrid</small>",
+     "b": "20<small>combined, hybrid</small>"
+    },
+    {
+     "label": "Max towing",
+     "section": "space",
+     "a": "13,500<small>lb, 3.5L EcoBoost</small>",
+     "b": "12,000<small>lb, Toyota’s rating</small>"
+    },
+    {
+     "label": "Reddit Sentiment Index",
+     "section": "reddit",
+     "a": "68<small>out of 100</small>",
+     "b": "42<small>out of 100</small>"
+    }
+   ],
+   "summary": "We’d buy the F-150, unless resale value or IIHS crash tests come first. It tows and hauls more (13,500 pounds and 2,440 against the Tundra’s 12,000 and 1,940), its hybrid gets 23 mpg combined as a 4x4 against 20 for the Tundra’s, its crew cab has more rear legroom, and every reviewer we checked scores it higher. The Tundra has the better long-term numbers: it lost 19.7% of its value in five years against 38.6% for the F-150, its crew cab is a 2026 IIHS Top Safety Pick where the F-150 rates Poor in one frontal test, and it has 30 recalls for 2023 to 2026 models to the F-150’s 48. Its catch is the 3.4L twin-turbo V6: three engine recalls on 2022 to 2024 trucks, and 216 owner complaints to NHTSA per 100,000 sold against about 65 for the F-150. Reddit leans Ford: in neutral subreddits, 100 people told the poster to buy the F-150 and 63 the Tundra. Prices were checked on November 18, 2026.",
+   "choose": {
+    "a": [
+     "You tow or haul near the limit: the 3.5L EcoBoost is rated to tow 13,500 pounds and carry 2,440, against 12,000 and up to 1,940 for the Tundra, and KBB lists “Class-leading towing and payload” as its first pro.",
+     "You want lower fuel bills: the PowerBoost hybrid gets 23 mpg combined as a 4x4 and costs $2,600 a year in fuel by EPA’s numbers, against 20 mpg and $3,000 for the i-FORCE MAX, and its bigger tank adds about 60 miles of range.",
+     "You carry people in the back or follow the reviews: a SuperCrew has 43.6 inches of rear legroom against 41.6 in a CrewMax, and the F-150 is first with Edmunds (8.0 against 7.0) and U.S. News (9.6 against 9.0).",
+     "You want the bigger deal this month: Ford has $4,500 cash on a 2026 XLT through November 30 against $1,000 from Toyota, and Ford dealers hold 112 days of supply against Toyota’s 39."
+    ],
+    "b": [
+     "You’ll sell or trade it in a few years: iSeeCars has the Tundra losing 19.7% of its value in five years against 38.6% for the F-150, and KBB gave it the 2026 resale award for full-size pickups.",
+     "You put crash tests first: IIHS names the Tundra crew cab a 2026 Top Safety Pick, and rates the F-150 Poor in its updated moderate overlap front test.",
+     "You keep trucks a long time and buy a 2025 or newer: iSeeCars gives the model a 56.4% chance of reaching 200,000 miles against 25.0% for the F-150, and RepairPal puts yearly repairs at $606 against $788. The 2022 to 2024 trucks carry the engine recalls.",
+     "You shop the upper trims: a crew cab 4x4 Limited is $57,860 against $63,360 for a Lariat, and a Platinum is $66,695 against $72,600 (iSeeCars)."
+    ]
+   },
+   "board": [
+    {
+     "label": "Starting price, volume trim",
+     "section": "price",
+     "a": "$44,695 XLT",
+     "b": "$46,510 SR5",
+     "win": "a"
+    },
+    {
+     "label": "Cash back this month",
+     "section": "price",
+     "a": "$4,500",
+     "b": "$1,000",
+     "win": "a"
+    },
+    {
+     "label": "Best EPA mpg, 4x4",
+     "section": "mpg",
+     "a": "23 hybrid",
+     "b": "20 hybrid",
+     "win": "a"
+    },
+    {
+     "label": "Fuel tank",
+     "section": "mpg",
+     "a": "36 gal",
+     "b": "32.2 gal",
+     "win": "a"
+    },
+    {
+     "label": "Max towing",
+     "section": "space",
+     "a": "13,500 lb",
+     "b": "12,000 lb",
+     "win": "a"
+    },
+    {
+     "label": "Max payload",
+     "section": "space",
+     "a": "2,440 lb",
+     "b": "1,940 lb",
+     "win": "a"
+    },
+    {
+     "label": "Crew cab rear legroom",
+     "section": "space",
+     "a": "43.6 in",
+     "b": "41.6 in",
+     "win": "a"
+    },
+    {
+     "label": "Complaints per 100k sold",
+     "section": "reliability",
+     "a": "About 65",
+     "b": "216",
+     "win": "a"
+    },
+    {
+     "label": "Chance of reaching 200k miles",
+     "section": "reliability",
+     "a": "25.0%",
+     "b": "56.4%",
+     "win": "b"
+    },
+    {
+     "label": "Value lost in 5 years",
+     "section": "resale",
+     "a": "38.6%",
+     "b": "19.7%",
+     "win": "b"
+    },
+    {
+     "label": "NHTSA overall, crew cab 4x4",
+     "section": "safety",
+     "a": "5 stars",
+     "b": "5 stars",
+     "win": null
+    },
+    {
+     "label": "IIHS 2026 Top Safety Pick",
+     "section": "safety",
+     "a": "None",
+     "b": "Yes, crew cab",
+     "win": "b"
+    },
+    {
+     "label": "Reddit Sentiment Index",
+     "section": "reddit",
+     "a": "68",
+     "b": "42",
+     "win": "a"
+    }
+   ],
+   "reviews": {
+    "title": "What the reviewers say",
+    "note": "Each publisher’s own score for the 2026, drawn to its own scale. They are not Steer Me Right ratings, and we have not averaged them.",
+    "max": 100,
+    "rows": [
+     {
+      "label": "Edmunds",
+      "sub": "Out of 10. 1st and 4th of 5 large trucks",
+      "a": 80,
+      "aText": "8.0",
+      "b": 70,
+      "bText": "7.0",
+      "href": "https://www.edmunds.com/toyota/tundra/2026/",
+      "logo": "edmunds"
+     },
+     {
+      "label": "Kelley Blue Book",
+      "sub": "Out of 5. 1st and 5th in its best full-size trucks",
+      "a": 94,
+      "aText": "4.7",
+      "b": 82,
+      "bText": "4.1",
+      "href": "https://www.kbb.com/toyota/tundra/2026/",
+      "logo": "kbb"
+     },
+     {
+      "label": "U.S. News",
+      "sub": "Out of 10. 1st and 3rd of 6 full-size pickups",
+      "a": 96,
+      "aText": "9.6",
+      "b": 90,
+      "bText": "9.0",
+      "href": "https://cars.usnews.com/cars-trucks/toyota/tundra",
+      "logo": "us-news"
+     },
+     {
+      "label": "J.D. Power",
+      "sub": "Out of 100",
+      "a": 83,
+      "aText": "83",
+      "b": 82,
+      "bText": "82",
+      "href": "https://www.jdpower.com/cars/2026/toyota/tundra",
+      "logo": "jd-power"
+     }
+    ]
+   },
+   "price": {
+    "intro": [
+     "The F-150 starts lower, $39,585 for an XL against $41,260 for a Tundra SR, and the volume trims sit close together: an XLT is $44,695 and an SR5 $46,510. Those are starting prices for smaller cabs and two-wheel drive, though. Lined up as crew cab 4x4s with short beds, iSeeCars lists the XLT at $51,915 and the SR5 at $51,510, and the Tundra pulls ahead from there: a Limited is $57,860 against $63,360 for a Lariat, and a Platinum $66,695 against $72,600.",
+     "Both sell 5–7% under sticker on the volume trims, by our estimate. Ford has the bigger offer this month, $4,500 cash on a 2026 XLT against Toyota’s $1,000, but CarWhere’s verified Tundra buyers paid a median 7.5% under MSRP against 4.4% for the F-150 (27 buyers and 17)."
+    ],
+    "picks": {
+     "a": "XLT",
+     "b": "SR5"
+    },
+    "trims": {
+     "title": "Every 2026 trim by starting price",
+     "note": "Starting MSRP before destination ($2,795 on every F-150, $2,195 on every Tundra), cheapest first. Four-wheel drive adds $3,800 to $3,860 to an F-150 and $3,000 to a Tundra, and the i-FORCE MAX hybrid adds $3,700 to a Tundra Limited (iSeeCars)."
+    },
+    "targets": {
+     "title": "What to pay for the trims we’d compare",
+     "note": "Before destination, fees and tax, and before Ford’s or Toyota’s cash. Our estimate of a fair and a strong deal; a strong deal takes more dealers and more back-and-forth.",
+     "rows": [
+      {
+       "label": "Fair deal",
+       "a": [
+        5,
+        7
+       ],
+       "b": [
+        5,
+        7
+       ]
+      },
+      {
+       "label": "Strong deal",
+       "a": [
+        8,
+        10
+       ],
+       "b": [
+        8,
+        9
+       ]
+      }
+     ],
+     "paid": {
+      "label": "What 2026 buyers paid",
+      "a": "TrueCar: an XLT 5.6% under, a Lariat 6.5%. CarWhere: a median 4.4% under (17 buyers)",
+      "b": "TrueCar: 3.4–7.1% under by trim, a Limited 6.4%. CarWhere: a median 7.5% under (27 buyers)"
+     }
+    },
+    "charts": [
+     {
+      "title": "Crew cab 4x4 with a short bed, starting MSRP",
+      "note": "iSeeCars’ configuration lists, before destination: F-150 SuperCrew with a 5.5-foot box, Tundra CrewMax with a short bed. The Raptor and TRD Pro come only as 4x4s, and the TRD Pro only as a hybrid.",
+      "max": 85000,
+      "rows": [
+       {
+        "label": "Volume trim",
+        "sub": "XLT · SR5",
+        "a": 51915,
+        "aText": "$51,915",
+        "b": 51510,
+        "bText": "$51,510"
+       },
+       {
+        "label": "Mid trim",
+        "sub": "Lariat · Limited",
+        "a": 63360,
+        "aText": "$63,360",
+        "b": 57860,
+        "bText": "$57,860"
+       },
+       {
+        "label": "Luxury trim",
+        "sub": "Platinum · Platinum",
+        "a": 72600,
+        "aText": "$72,600",
+        "b": 66695,
+        "bText": "$66,695"
+       },
+       {
+        "label": "Western and wood trim",
+        "sub": "King Ranch · 1794 Edition",
+        "a": 69625,
+        "aText": "$69,625",
+        "b": 67380,
+        "bText": "$67,380"
+       },
+       {
+        "label": "Off-road flagship",
+        "sub": "Raptor · TRD Pro",
+        "a": 79005,
+        "aText": "$79,005",
+        "b": 72565,
+        "bText": "$72,565"
+       }
+      ]
+     },
+     {
+      "title": "How far under MSRP trucks sell",
+      "note": "Higher means a bigger discount. CarWhere: median paid by 17 F-150 and 27 Tundra verified buyers in 2026. iSeeCars: dealer invoice under MSRP, which is 6.5% on an XLT and up and 4.5% on an XL or STX F-150, and 7.5% on every Tundra.",
+      "max": 10,
+      "rows": [
+       {
+        "label": "Median paid, CarWhere",
+        "a": 4.4,
+        "aText": "4.4%",
+        "b": 7.5,
+        "bText": "7.5%"
+       },
+       {
+        "label": "Dealer invoice, iSeeCars",
+        "sub": "F-150 XLT and up · every Tundra",
+        "a": 6.5,
+        "aText": "6.5%",
+        "b": 7.5,
+        "bText": "7.5%"
+       }
+      ]
+     },
+     {
+      "title": "Days of supply at dealers",
+      "note": "Cox Automotive, end of October 2026, for the brands. Cox names the F-150 alone at 93 days and gives no Tundra figure. More days on the lot usually means more room to negotiate.",
+      "rows": [
+       {
+        "label": "Brand",
+        "sub": "Ford · Toyota",
+        "a": 112,
+        "aText": "112 days",
+        "b": 39,
+        "bText": "39 days"
+       },
+       {
+        "label": "Industry average",
+        "sub": "For scale",
+        "a": 87,
+        "aText": "87 days",
+        "b": 87,
+        "bText": "87 days"
+       }
+      ]
+     }
+    ],
+    "after": [
+     "Ford’s $4,500 is on the 2026 XLT (the New York area adds the STX and Lariat) through November 30. Its 0% offer ended November 16 in most regions, and 1.9% plus $1,500 runs to November 30. Toyota’s 1.99% for up to 72 months covers the i-FORCE MAX trims except the TRD Pro in all four regions we checked, gas trims get 2.99% in most, and the $1,000 cash can’t be combined with either. Current offers are in each truck’s price guide.",
+     "Cars.com and iSeeCars list different starting prices for three F-150 trims than Ford’s figures in our F-150 guide: an XL at $37,290, an STX at $44,855 and an XLT at $45,695. The table uses the guide’s figures, so check the sticker for the cab and box you want."
+    ]
+   },
+   "mpg": {
+    "intro": [
+     "The F-150 wins on fuel almost everywhere. Its PowerBoost hybrid gets 23 mpg combined as a 4x4 and costs $2,600 a year in fuel by EPA’s estimate; the Tundra’s i-FORCE MAX gets 20 and costs $3,000. The gas 4x4s are nearer: 19 mpg for the Tundra’s 3.4L and for the F-150’s 3.5L EcoBoost and 5.0L V8, with the 2.7L at 20. The one reversal is off-road, where a Tundra TRD Pro gets 19 and a Raptor 16 (a Tremor gets 18 with the 3.5L). Edmunds measured 15.2 mpg on its Tundra test route against the EPA’s 19."
+    ],
+    "charts": [
+     {
+      "title": "EPA combined mpg, 4x4",
+      "note": "Higher is better. 2026 models.",
+      "max": 25,
+      "rows": [
+       {
+        "label": "Most efficient version",
+        "sub": "F-150 PowerBoost hybrid · Tundra i-FORCE MAX",
+        "a": 23,
+        "aText": "23 mpg",
+        "b": 20,
+        "bText": "20 mpg"
+       },
+       {
+        "label": "Base gas engine",
+        "sub": "2.7L EcoBoost V6 · 3.4L twin-turbo V6",
+        "a": 20,
+        "aText": "20 mpg",
+        "b": 19,
+        "bText": "19 mpg"
+       },
+       {
+        "label": "Most powerful gas engine",
+        "sub": "3.5L EcoBoost V6 · 3.4L twin-turbo V6",
+        "a": 19,
+        "aText": "19 mpg",
+        "b": 19,
+        "bText": "19 mpg"
+       },
+       {
+        "label": "Off-road version",
+        "sub": "Raptor · TRD Pro hybrid",
+        "a": 16,
+        "aText": "16 mpg",
+        "b": 19,
+        "bText": "19 mpg"
+       }
+      ]
+     },
+     {
+      "title": "EPA annual fuel cost, 4x4",
+      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "rows": [
+       {
+        "label": "Most efficient version",
+        "sub": "Hybrid · hybrid",
+        "a": 2600,
+        "aText": "$2,600",
+        "b": 3000,
+        "bText": "$3,000"
+       },
+       {
+        "label": "Base gas engine",
+        "a": 3000,
+        "aText": "$3,000",
+        "b": 3150,
+        "bText": "$3,150"
+       },
+       {
+        "label": "Most powerful gas engine",
+        "a": 3150,
+        "aText": "$3,150",
+        "b": 3150,
+        "bText": "$3,150"
+       },
+       {
+        "label": "Off-road version",
+        "sub": "Raptor · TRD Pro",
+        "a": 3750,
+        "aText": "$3,750",
+        "b": 3150,
+        "bText": "$3,150"
+       }
+      ]
+     },
+     {
+      "title": "Miles on a tank, 4x4",
+      "note": "EPA combined mpg times the tank: 36 gallons in most F-150s (30.6 in the hybrid), 32.2 in every Tundra.",
+      "rows": [
+       {
+        "label": "Most efficient version",
+        "sub": "Hybrid · hybrid",
+        "a": 704,
+        "aText": "704 miles",
+        "b": 644,
+        "bText": "644 miles"
+       },
+       {
+        "label": "Base gas engine",
+        "a": 720,
+        "aText": "720 miles",
+        "b": 612,
+        "bText": "612 miles"
+       },
+       {
+        "label": "Most powerful gas engine",
+        "a": 684,
+        "aText": "684 miles",
+        "b": 612,
+        "bText": "612 miles"
+       }
+      ]
+     }
+    ],
+    "after": [
+     "On Reddit, mileage is where the trucks split furthest: the F-150 nets +64 and the Tundra −90, with owners reporting 20 to 24 mpg unloaded from the 2.7L and 11 to 15 mpg around town from Tundras, many of them older V8s."
+    ]
+   },
+   "space": {
+    "title": "Towing, payload and space",
+    "intro": [
+     "The F-150 tows and hauls more. Its 3.5L EcoBoost is rated to tow 13,500 pounds and carry 2,440, against the Tundra’s 12,000 and 1,940, and a SuperCrew has 43.6 inches of rear legroom against 41.6 in a CrewMax. Kelley Blue Book lists “Class-leading towing and payload” as the F-150’s first pro and “Mid-pack towing/payload capacity” among the Tundra’s cons. The gap narrows with the hybrids, and on power the two are close."
+    ],
+    "charts": [
+     {
+      "title": "Most each can tow and carry",
+      "note": "Pounds, when properly equipped. No truck gets both maximums at once. F-150 figures are Ford’s; the Tundra’s 12,000-pound tow is Toyota’s and its 1,940-pound payload is iSeeCars’, for a 2WD SR or SR5 Double Cab. Our Tundra guide quotes Toyota at 1,850 pounds of payload, which we couldn’t confirm.",
+      "rows": [
+       {
+        "label": "Max towing",
+        "a": 13500,
+        "aText": "13,500 lb",
+        "b": 12000,
+        "bText": "12,000 lb"
+       },
+       {
+        "label": "Max payload",
+        "a": 2440,
+        "aText": "2,440 lb",
+        "b": 1940,
+        "bText": "1,940 lb"
+       },
+       {
+        "label": "Hybrid towing, 2WD",
+        "sub": "PowerBoost · Limited i-FORCE MAX",
+        "a": 12400,
+        "aText": "12,400 lb",
+        "b": 11450,
+        "bText": "11,450 lb"
+       },
+       {
+        "label": "Hybrid payload, 4x4",
+        "sub": "PowerBoost · Limited i-FORCE MAX",
+        "a": 1740,
+        "aText": "1,740 lb",
+        "b": 1665,
+        "bText": "1,665 lb"
+       }
+      ]
+     },
+     {
+      "title": "Horsepower",
+      "note": "Toyota Canada and KBB list the SR at 348 hp; dealer pages and our Tundra guide say 358.",
+      "rows": [
+       {
+        "label": "Base engine",
+        "sub": "2.7L EcoBoost V6 · SR 3.4L twin-turbo V6",
+        "a": 325,
+        "aText": "325 hp",
+        "b": 348,
+        "bText": "348 hp"
+       },
+       {
+        "label": "Main gas engine",
+        "sub": "3.5L EcoBoost V6 · SR5 and up 3.4L V6",
+        "a": 400,
+        "aText": "400 hp",
+        "b": 389,
+        "bText": "389 hp"
+       },
+       {
+        "label": "Hybrid",
+        "sub": "PowerBoost · i-FORCE MAX",
+        "a": 430,
+        "aText": "430 hp",
+        "b": 437,
+        "bText": "437 hp"
+       }
+      ]
+     },
+     {
+      "title": "Torque",
+      "note": "Pound-feet. Toyota Canada and KBB list the SR at 405; dealer pages say 406.",
+      "rows": [
+       {
+        "label": "Base engine",
+        "sub": "2.7L EcoBoost V6 · SR 3.4L twin-turbo V6",
+        "a": 400,
+        "aText": "400 lb-ft",
+        "b": 405,
+        "bText": "405 lb-ft"
+       },
+       {
+        "label": "Main gas engine",
+        "sub": "3.5L EcoBoost V6 · SR5 and up 3.4L V6",
+        "a": 500,
+        "aText": "500 lb-ft",
+        "b": 479,
+        "bText": "479 lb-ft"
+       },
+       {
+        "label": "Hybrid",
+        "sub": "PowerBoost · i-FORCE MAX",
+        "a": 570,
+        "aText": "570 lb-ft",
+        "b": 583,
+        "bText": "583 lb-ft"
+       }
+      ]
+     },
+     {
+      "title": "Cab room",
+      "note": "Inches. Crew cab is the F-150 SuperCrew and Tundra CrewMax; extended cab is the SuperCab and Double Cab.",
+      "rows": [
+       {
+        "label": "Rear legroom, crew cab",
+        "a": 43.6,
+        "aText": "43.6 in",
+        "b": 41.6,
+        "bText": "41.6 in"
+       },
+       {
+        "label": "Front legroom",
+        "a": 43.9,
+        "aText": "43.9 in",
+        "b": 41.2,
+        "bText": "41.2 in"
+       },
+       {
+        "label": "Rear legroom, extended cab",
+        "a": 33.5,
+        "aText": "33.5 in",
+        "b": 33.3,
+        "bText": "33.3 in"
+       }
+      ]
+     }
+    ],
+    "after": [
+     "Look at the exact truck before you trust the headline: KBB lists Tundra 4x4 CrewMax tow ratings from 8,300 pounds on the SR to 11,175 on the TRD Pro, so the 12,000 belongs to a 2WD SR5. The F-150’s 13,500 needs the SuperCrew with the Max Tow/Haul package and the Max Tow axle. The F-150 hybrid comes with Pro Power Onboard, a built-in generator of up to 7.2 kW (also available on the King Ranch and Platinum); Toyota’s 2027 release lists a 2.4 kW inverter on some i-FORCE MAX grades."
+    ]
+   },
+   "reliability": {
+    "intro": [
+     "Nobody can measure a 2026’s reliability yet, so we lined up every signal we could check, and they split. The F-150 draws far fewer owner complaints per truck sold. The Tundra has fewer recalls, a better J.D. Power dependability score for its brand, lower yearly repair costs at RepairPal and a higher chance of reaching 200,000 miles in iSeeCars’ data. NHTSA’s complaints and recalls are the signals specific to these model years; J.D. Power’s figure covers the whole brand, and RepairPal and iSeeCars cover the model across years, with the current Tundra dating from 2022."
+    ],
+    "signals": [
+     {
+      "label": "Consumer Reports predicted reliability",
+      "note": "2026 model",
+      "a": "About average",
+      "b": "About average",
+      "win": null
+     },
+     {
+      "label": "Owner complaints to NHTSA",
+      "note": "Per 100,000 sold, 2023–2025 model years. F-150 estimated; see the chart note",
+      "a": "About 65",
+      "b": "216",
+      "win": "a"
+     },
+     {
+      "label": "Recalls",
+      "note": "2023–2026 model years",
+      "a": "48",
+      "b": "30",
+      "win": "b"
+     },
+     {
+      "label": "J.D. Power dependability, brand",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "a": "228 Ford",
+      "b": "185 Toyota",
+      "win": "b"
+     },
+     {
+      "label": "RepairPal reliability rating",
+      "note": "Out of 5",
+      "a": "3.5",
+      "b": "3.5",
+      "win": null
+     },
+     {
+      "label": "Average yearly repair cost",
+      "note": "RepairPal",
+      "a": "$788",
+      "b": "$606",
+      "win": "b"
+     },
+     {
+      "label": "Chance of reaching 200,000 miles",
+      "note": "iSeeCars",
+      "a": "25.0%",
+      "b": "56.4%",
+      "win": "b"
+     }
+    ],
+    "charts": [
+     {
+      "type": "cols",
+      "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
+      "note": "Lower is better. Ford reports only F-Series sales, which include the Super Duty and Lightning, so we estimate F-150 sales as 59% of them, the method on our F-150 vs Silverado page: the F-150’s share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150’s 2023–2025 rate is 38.1, and the Tundra stays higher unless the F-150 is under 17.6% of F-Series sales. The Tundra was redesigned for 2022, so its 2019–2021 counts are for the older truck. Newer model years have had less time on the road.",
+      "rows": [
+       {
+        "label": "2019",
+        "a": 195,
+        "b": 66
+       },
+       {
+        "label": "2020",
+        "a": 122,
+        "b": 44
+       },
+       {
+        "label": "2021",
+        "a": 311,
+        "b": 29
+       },
+       {
+        "label": "2022",
+        "a": 214,
+        "b": 418
+       },
+       {
+        "label": "2023",
+        "a": 118,
+        "b": 339
+       },
+       {
+        "label": "2024",
+        "a": 53,
+        "b": 229
+       },
+       {
+        "label": "2025",
+        "a": 27,
+        "b": 99
+       }
+      ]
+     },
+     {
+      "title": "What owners complain about, 2023–2025 model years",
+      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part. Lower is better.",
+      "rows": [
+       {
+        "label": "Engine",
+        "sub": "Including engine cooling",
+        "a": 5.6,
+        "aText": "5.6",
+        "b": 105.2,
+        "bText": "105.2"
+       },
+       {
+        "label": "Power train",
+        "sub": "Transmission, axles, driveline",
+        "a": 21.8,
+        "aText": "21.8",
+        "b": 49,
+        "bText": "49.0"
+       },
+       {
+        "label": "Electrical",
+        "a": 15.1,
+        "aText": "15.1",
+        "b": 22,
+        "bText": "22.0"
+       },
+       {
+        "label": "Fuel and propulsion",
+        "a": 2.6,
+        "aText": "2.6",
+        "b": 35.2,
+        "bText": "35.2"
+       },
+       {
+        "label": "Brakes",
+        "a": 7.6,
+        "aText": "7.6",
+        "b": 15.5,
+        "bText": "15.5"
+       },
+       {
+        "label": "Vehicle speed control",
+        "a": 3.4,
+        "aText": "3.4",
+        "b": 19.4,
+        "bText": "19.4"
+       },
+       {
+        "label": "Automatic emergency braking",
+        "sub": "NHTSA’s “forward collision avoidance”",
+        "a": 6.1,
+        "aText": "6.1",
+        "b": 7.6,
+        "bText": "7.6"
+       }
+      ]
+     },
+     {
+      "type": "cols",
+      "title": "Recalls by model year",
+      "note": "F-150 includes the hybrid, not the Lightning; Tundra includes the hybrid. A recall count says nothing about how many trucks each one covers: the Tundra’s three engine campaigns cover 102,092, 126,691 and 43,566 vehicles (some of them Lexus), and one F-150 fuel tank campaign covers up to 223,472 trucks from 2023 to 2027.",
+      "rows": [
+       {
+        "label": "2019",
+        "a": 9,
+        "b": 10
+       },
+       {
+        "label": "2020",
+        "a": 11,
+        "b": 5
+       },
+       {
+        "label": "2021",
+        "a": 29,
+        "b": 3
+       },
+       {
+        "label": "2022",
+        "a": 23,
+        "b": 13
+       },
+       {
+        "label": "2023",
+        "a": 13,
+        "b": 13
+       },
+       {
+        "label": "2024",
+        "a": 11,
+        "b": 10
+       },
+       {
+        "label": "2025",
+        "a": 16,
+        "b": 5
+       },
+       {
+        "label": "2026",
+        "a": 8,
+        "b": 2
+       }
+      ]
+     }
+    ],
+    "issues": [
+     {
+      "car": "b",
+      "title": "3.4L V6 engine failures, 2022–2024 Tundra",
+      "text": "Recalls 24V-381, 25V-767 and 26V-320 cover metal debris from the engine’s main bearings, with an inspection and an engine replacement if needed. 455 of the Tundra’s 935 NHTSA complaints on 2023–2025 trucks name the engine, against 78 of the F-150’s 893. On a used one, ask for proof the recall work was done."
+     },
+     {
+      "car": "b",
+      "title": "Transmission software and tires, 2022–2024 Tundra",
+      "text": "NHTSA lists recall 24V-125, a software fix for neutral movement in the transmission, on 2022–2024 trucks, and 24V-767 for tire sidewalls on 2024 trucks. Check the VIN for open recalls."
+     },
+     {
+      "car": "a",
+      "title": "Rear axle hub and fuel tank, 2021–2027 F-150",
+      "text": "Recalls 23V-896 and 25V-512 cover a rear hub that can fail on trucks with the Trailer Tow Max Duty package and 9.75-inch axle, and 26V-578 covers fuel tank mounting on up to 223,472 trucks from 2023 to 2027. Ask for proof the fix was done."
+     },
+     {
+      "car": "a",
+      "title": "Engine recalls, 2021–2025 F-150",
+      "text": "Intake valves on the 2.7L and 3.0L (24V-635), oil leaking from a cup plug on the 3.5L (24V-851, 25V-198) and connecting rods on some 2025s (25V-344). Check each on a used truck."
+     },
+     {
+      "car": "a",
+      "title": "10-speed shifting, 2019–2025 F-150",
+      "text": "Harsh or erratic shifts are a common owner complaint on the 10-speed automatic. There is no recall for it, so drive a used one cold and in traffic before you buy."
+     },
+     {
+      "car": "a",
+      "title": "Hybrid track record, 2021–2023 F-150",
+      "text": "Consumer Reports ranked the 2021 to 2023 F-150 hybrid among its least reliable vehicles, and owners on Reddit report electrical trouble and extra complexity. Weigh that against its 23 mpg."
+     }
+    ],
+    "after": [
+     "<strong>Our read:</strong> neither truck is the safe bet, and the risks are different. The Tundra’s comes down to one engine, and its recalls cover 2022 to 2024 trucks, so a 2025 or newer sidesteps them (owners report worry that the recalls could widen). The F-150’s is a long recall list and a transmission history with few engine complaints. If reliability comes first, we’d take an F-150 with the 2.7L, 3.5L or 5.0L over the hybrid. In iSeeCars’ September study, 28.2% of Tundras reach 250,000 miles, second among trucks against an 11.1% truck average; it doesn’t list the F-150."
+    ],
+    "from": {
+     "label": "Sources include",
+     "names": [
+      "nhtsa",
+      "consumer-reports",
+      "jd-power"
+     ]
+    }
+   },
+   "reddit": {
+    "dataFile": "data/reddit-sentiment/ford-f-150-vs-toyota-tundra.json",
+    "intro": [
+     "We read 3,639 comments in 197 Reddit threads that weighed these two trucks, from posts between January 2025 and November 2026. They come from r/f150, r/ToyotaTundra and r/tundra, and from r/whatcarshouldIbuy, r/UsedCars, r/carbuying, r/askcarsales, r/cars and r/personalfinance. We sampled threads evenly by month and had an AI code each comment to a ten-topic rubric; comments that name only a trim or engine (Raptor, EcoBoost) rather than the truck are not counted for it. A blind second coder agreed on 86% of picks (18 of the 21 comments either coder picked on) and 88% of stance (37 of 42) over 150 comments.",
+     "Each truck’s own subreddits back its own truck, so r/f150, r/ToyotaTundra with r/tundra, and the neutral subreddits count equally. A score of 50 means praise and complaints balance. The neutral subreddits are the largest sample, 2,017 comments in 133 threads."
+    ],
+    "indexDetail": {
+     "a": "Praised for its engines and towing, its fuel economy, its roomy crew cab and its interior. Marked down for the 10-speed transmission and cam-phaser trouble that owners report, and for resale that trails the Tundra’s.",
+     "b": "Praised for its resale value and for the hybrid’s and V6’s power, with a good word for the older 5.7 V8 trucks. Marked down for engine failures owners report on 2022 and newer trucks, thirsty fuel use, a dated interior and its price."
+    },
+    "split": {
+     "title": "Which one Reddit tells people to buy",
+     "note": "One pick per person per thread. Read the neutral subreddits first: the Tundra subreddits pick the Tundra, and even r/f150 picked it more often, 9 to 5.",
+     "rows": [
+      {
+       "venue": "neutral",
+       "label": "Neutral subreddits"
+      },
+      {
+       "venue": "a",
+       "label": "In r/f150"
+      },
+      {
+       "venue": "b",
+       "label": "In r/ToyotaTundra and r/tundra"
+      }
+     ]
+    },
+    "minimum": 30,
+    "topics": {
+     "title": "Net opinion by topic",
+     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. Towing counts under power and driving. Most-discussed topics first."
+    },
+    "themes": {
+     "a": {
+      "praise": [
+       "Strong, proven engines for towing: the 3.5 EcoBoost, the 5.0 V8 and the 2.7",
+       "Better mileage than the Tundra, especially from the 2.7 EcoBoost",
+       "A roomier crew cab with a flat rear floor, and a nicer, better-equipped interior",
+       "A lower price than a comparable Tundra, new and used"
+      ],
+      "gripes": [
+       "Owners report 10-speed transmission failures, mostly on 2018–2022 trucks",
+       "Owners report 3.5 EcoBoost cam phaser and timing trouble, and oil use on some 5.0s",
+       "Resale that trails the Tundra’s, and steep prices on the top trims",
+       "Owners report turbo and hybrid complexity worries at higher mileage"
+      ]
+     },
+     "b": {
+      "praise": [
+       "Resale value and Toyota’s long-life reputation, mostly for the older 5.7 V8 trucks",
+       "A quick, torquey hybrid and V6 that tow with ease",
+       "Strong off-road trims and capability",
+       "Low promotional rates of 1.9% to 2.9% on new trucks"
+      ],
+      "gripes": [
+       "Owners report engine failures and recall replacements on 2022–2025 twin-turbo V6 trucks",
+       "Owners report poor mileage, 11 to 15 mpg around town in some cases, thirstier than the F-150",
+       "A dated or cheap-feeling interior next to the F-150, with fewer features below the Limited",
+       "Called overpriced for the money, with used trucks priced near new ones"
+      ]
+     }
+    },
+    "after": [
+     "Reliability is the topic Reddit discusses most, and it is nearly level: the F-150 nets +4 and the Tundra −3. Reddit lines up with the data on the Tundra’s engine recalls, its mileage and its resale. The Tundra’s praise for durability is mostly for the previous-generation 5.7 V8, which the 2026 truck is not."
+    ],
+    "from": {
+     "label": "Comments from",
+     "names": [
+      "reddit"
+     ]
+    }
+   },
+   "resale": {
+    "intro": [
+     "The Tundra holds its value far better. It lost 15.9% in three years in iSeeCars’ data against 18.9% for the F-150, and 19.7% in five years against 38.6%, which is 1.6 points worse than the 37.0% full-size pickup average for the F-150 and about half that for the Tundra. Kelley Blue Book gave the Tundra its 2026 resale award for full-size pickups; the F-150 did not win."
+    ],
+    "charts": [
+     {
+      "title": "Value lost",
+      "note": "Lower is better. iSeeCars; the hybrids are the PowerBoost and the i-FORCE MAX.",
+      "max": 50,
+      "rows": [
+       {
+        "label": "In 3 years",
+        "a": 18.9,
+        "aText": "18.9%",
+        "b": 15.9,
+        "bText": "15.9%"
+       },
+       {
+        "label": "In 5 years",
+        "a": 38.6,
+        "aText": "38.6%",
+        "b": 19.7,
+        "bText": "19.7%"
+       },
+       {
+        "label": "Hybrid, in 5 years",
+        "a": 44,
+        "aText": "44.0%",
+        "b": 25.1,
+        "bText": "25.1%"
+       },
+       {
+        "label": "Average full-size pickup, 3 years",
+        "sub": "For scale",
+        "a": 23.7,
+        "aText": "23.7%",
+        "b": 23.7,
+        "bText": "23.7%"
+       },
+       {
+        "label": "Average vehicle, 3 years",
+        "sub": "For scale",
+        "a": 24.8,
+        "aText": "24.8%",
+        "b": 24.8,
+        "bText": "24.8%"
+       }
+      ]
+     },
+     {
+      "title": "Median asking price, used, by model year",
+      "note": "Dealer listings, every cab, trim and engine, November 14, 2026.",
+      "rows": [
+       {
+        "label": "2022",
+        "a": 34980,
+        "aText": "$34,980",
+        "b": 39079,
+        "bText": "$39,079"
+       },
+       {
+        "label": "2023",
+        "a": 39482,
+        "aText": "$39,482",
+        "b": 42423,
+        "bText": "$42,423"
+       },
+       {
+        "label": "2024",
+        "a": 42756,
+        "aText": "$42,756",
+        "b": 44714,
+        "bText": "$44,714"
+       },
+       {
+        "label": "2025",
+        "a": 44211,
+        "aText": "$44,211",
+        "b": 50489,
+        "bText": "$50,489"
+       }
+      ]
+     }
+    ],
+    "after": [
+     "The flip side is the used price. A 2025 Tundra asks a median $50,489 against $44,211 for a 2025 F-150, $6,278 more, and the gap is $1,958 to $4,099 on 2022 to 2024 trucks; Reddit commenters call it a Toyota premium. Certified, Ford Blue Advantage Gold covers trucks under 6 years and 80,000 miles with 7 years/100,000 miles of powertrain coverage, and Toyota Certified Gold has 7 years or 100,000 miles of powertrain coverage from purchase. Toyota covers the i-FORCE MAX hybrid battery for 10 years or 150,000 miles; Ford’s hybrid components carry 8 years/100,000 miles."
+    ]
+   },
+   "safety": {
+    "intro": [
+     "NHTSA scores them the same: 5 stars overall for a crew cab 4x4, and 4 stars for rollover. IIHS splits them. The Tundra crew cab is a 2026 Top Safety Pick, one of only two large pickups to qualify, with Good in all three crash tests. The F-150 gets no award: it rates Good in the small overlap and side tests but Poor in the updated moderate overlap front test, and its child-seat anchors are Marginal for ease of use against the Tundra’s Acceptable. The F-150’s edge is pedestrian front crash prevention, Good against Acceptable."
+    ],
+    "rows": [
+     {
+      "label": "NHTSA overall, crew cab 4x4",
+      "a": "5 stars",
+      "b": "5 stars",
+      "win": null
+     },
+     {
+      "label": "NHTSA frontal crash",
+      "a": "5 stars",
+      "b": "5 stars",
+      "win": null
+     },
+     {
+      "label": "NHTSA rollover, 4x4",
+      "a": "4 stars (19.1%)",
+      "b": "4 stars (18.5%)",
+      "win": null
+     },
+     {
+      "label": "IIHS small overlap front",
+      "a": "Good",
+      "b": "Good",
+      "win": null
+     },
+     {
+      "label": "IIHS moderate overlap front (updated)",
+      "a": "Poor",
+      "b": "Good",
+      "win": "b"
+     },
+     {
+      "label": "IIHS side (updated)",
+      "a": "Good",
+      "b": "Good",
+      "win": null
+     },
+     {
+      "label": "IIHS headlights",
+      "a": "Good on XL to XLT, Acceptable on Lariat and up",
+      "b": "Good on Platinum and up, Acceptable on SR and SR5",
+      "win": null
+     },
+     {
+      "label": "IIHS pedestrian front crash prevention",
+      "a": "Good",
+      "b": "Acceptable",
+      "win": "a"
+     },
+     {
+      "label": "IIHS child-seat anchors (LATCH)",
+      "a": "Marginal",
+      "b": "Acceptable",
+      "win": "b"
+     },
+     {
+      "label": "IIHS 2026 Top Safety Pick",
+      "a": "None",
+      "b": "Yes, crew cab",
+      "win": "b"
+     }
+    ],
+    "charts": [],
+    "from": {
+     "label": "Crash tests by",
+     "names": [
+      "iihs-hldi",
+      "nhtsa"
+     ]
+    }
+   },
+   "plansIntro": "Toyota’s rates and Ford’s cash change what each truck really costs, and the offers differ by region. Steer Me Right Pro gets written out-the-door offers on both from dealers that have them in stock, negotiates each and gives you our pick.",
+   "faq": [
+    [
+     "Which is better, the F-150 or the Tundra?",
+     "The F-150 for most buyers. It tows and hauls more (13,500 and 2,440 pounds against 12,000 and 1,940), its hybrid gets 23 mpg combined as a 4x4 against 20, and every reviewer we checked scores it higher, including Edmunds at 8.0 against 7.0. The Tundra is the better pick if resale value or IIHS crash tests come first: it lost 19.7% of its value in five years against 38.6%, and its crew cab is a 2026 IIHS Top Safety Pick."
+    ],
+    [
+     "Which is more reliable, the F-150 or the Tundra?",
+     "Neither is clearly. Owners filed about 65 NHTSA complaints per 100,000 sold on 2023 to 2025 F-150s against 216 on Tundras, where 455 of 935 name the engine. But the Tundra has fewer recalls (30 against 48 for 2023 to 2026 models), Toyota beats Ford in J.D. Power’s brand dependability study (185 problems per 100 vehicles against 228), and iSeeCars gives the Tundra a 56.4% chance of reaching 200,000 miles against 25.0%. Consumer Reports expects both to be about average."
+    ],
+    [
+     "Which tows more, the F-150 or the Tundra?",
+     "The F-150: up to 13,500 pounds with the 3.5L EcoBoost and the Max Tow/Haul package and Max Tow axle, against Toyota’s 12,000 for the Tundra, a rating iSeeCars lists on a 2WD SR5. Payload is 2,440 pounds against 1,940 (iSeeCars). The hybrids are closer, 12,400 pounds for a 2WD F-150 against 11,450 for a Tundra Limited i-FORCE MAX."
+    ],
+    [
+     "Which is cheaper, the F-150 or the Tundra?",
+     "The F-150 at the bottom, and the Tundra higher up. An XL starts at $39,585 against $41,260 for an SR, and an XLT is $44,695 against $46,510 for an SR5. As crew cab 4x4s the XLT is $51,915 and the SR5 $51,510, a Lariat $63,360 and a Limited $57,860. Ford offers $4,500 cash on a 2026 XLT and Toyota $1,000 or 1.99% on the i-FORCE MAX, all through November 30."
+    ],
+    [
+     "Which holds its value better?",
+     "The Tundra, by a wide margin. iSeeCars has it losing 19.7% of its value in five years against 38.6% for the F-150 and 37.0% for the average full-size pickup. A used 2025 Tundra asks a median $50,489 against $44,211 for a 2025 F-150."
+    ],
+    [
+     "What does Reddit think of the F-150 vs the Tundra?",
+     "It leans F-150. In neutral subreddits, 100 people told the poster to buy the F-150 and 63 the Tundra. Our Reddit Sentiment Index scores the F-150 68 and the Tundra 42 out of 100, where 50 means praise and complaints balance. Reddit praises the F-150’s engines, mileage and cabin and the Tundra’s resale; its biggest complaint about the Tundra is engine failures on 2022 and newer trucks."
+    ]
+   ],
+   "related": "<a href=\"/ford-f-150-vs-chevrolet-silverado-1500.html\">Ford F-150 vs Chevrolet Silverado 1500</a>, <a href=\"/ram-1500-price.html\">Ram 1500 price guide</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
+   "sources": [
+    {
+     "id": "VEH-FVT-01",
+     "url": "https://www.ford.com/trucks/f150/2026/",
+     "title": "Ford: 2026 F-150",
+     "note": "engines, the 13,500-pound tow and 2,440-pound payload on the 3.5L, and tow by engine. Page read November 18, 2026; it shows no prices to a scripted read, so trims and starting MSRP are from the F-150 price guide (checked November 15, 2026)."
+    },
+    {
+     "id": "VEH-FVT-02",
+     "url": "https://www.ford.com/trucks/f150/2026/incentives-and-offers/",
+     "title": "Ford: 2026 F-150 incentives and offers",
+     "note": "cash and finance offers, from the F-150 price guide: read at four ZIP codes on November 15, 2026; not re-read."
+    },
+    {
+     "id": "VEH-FVT-03",
+     "url": "https://www.toyota.com/tundra/2026/",
+     "title": "Toyota: 2026 Tundra",
+     "note": "trims and starting MSRP, from the Tundra price guide (checked November 18, 2026); toyota.com refused our read, so not re-read."
+    },
+    {
+     "id": "VEH-FVT-04",
+     "url": "https://www.toyota.com/deals-incentives/tundra/",
+     "title": "Toyota: Tundra deals and incentives",
+     "note": "finance, lease and cash offers, and the $2,195 destination charge in the offers disclaimer, from the Tundra price guide: read in four regions on November 18, 2026; not re-read."
+    },
+    {
+     "id": "VEH-FVT-05",
+     "url": "https://www.cars.com/articles/how-much-is-the-2026-ford-f-150-521741/",
+     "title": "Cars.com: how much is the 2026 Ford F-150",
+     "note": "F-150 MSRP by trim with and without the $2,795 destination charge, and standard engine by trim. Read November 18, 2026. Its XL, STX and XLT prices differ from the F-150 price guide."
+    },
+    {
+     "id": "VEH-FVT-06",
+     "url": "https://www.iseecars.com/car/2026-ford-f__150-price",
+     "title": "iSeeCars: 2026 Ford F-150 price",
+     "note": "MSRP and dealer invoice by configuration, the crew cab 4x4 prices and the 4x4 step-up. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-07",
+     "url": "https://www.iseecars.com/car/2026-toyota-tundra-price",
+     "title": "iSeeCars: 2026 Toyota Tundra price",
+     "note": "MSRP and dealer invoice by configuration, the crew cab 4x4 prices, and the 4x4 and hybrid step-ups. Read November 18, 2026. It shows a $2,095 destination charge; Toyota’s offers page says $2,195."
+    },
+    {
+     "id": "VEH-FVT-08",
+     "url": "https://www.truecar.com/overview/ford/f-150/2026",
+     "title": "TrueCar: 2026 Ford F-150",
+     "note": "average price paid against MSRP by trim, from the F-150 price guide (November 15, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-09",
+     "url": "https://www.truecar.com/overview/toyota/tundra/2026/",
+     "title": "TrueCar: 2026 Toyota Tundra",
+     "note": "average price paid against MSRP by trim, from the Tundra price guide (November 18, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-10",
+     "url": "https://www.carwhere.com/price/ford/f-150/2026",
+     "title": "CarWhere: 2026 Ford F-150 price",
+     "note": "a median 4.4% under MSRP from 17 verified purchases, snapshot November 8, 2026. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-11",
+     "url": "https://www.carwhere.com/cars/toyota/tundra/2026",
+     "title": "CarWhere: 2026 Toyota Tundra",
+     "note": "a median 7.5% under MSRP from 27 verified buyers, page dated November 14, 2026. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-12",
+     "url": "https://www.coxautoinc.com/insights/october-2026-new-vehicle-inventory/",
+     "title": "Cox Automotive: October 2026 new-vehicle inventory",
+     "note": "days of supply at the end of October: industry 87, Ford 112, Toyota 39, F-150 93. Cox names no Tundra figure. Report dated November 12, 2026; read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-13",
+     "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49424",
+     "title": "U.S. EPA and DOE: fueleconomy.gov web service, 2026 F-150 and Tundra vehicle records",
+     "note": "EPA mpg and annual fuel cost by version, read through the public web service (records 50092-50104 and 50447 for the F-150; 49369-49373 and 49422-49428 for the Tundra) on November 18, 2026. The service has no 2027 records for either truck. Miles on a tank are our arithmetic from EPA combined mpg and each tank."
+    },
+    {
+     "id": "VEH-FVT-14",
+     "url": "https://www.fromtheroad.ford.com/content/dam/fordmediasite/us/en/library/2026/specs/2026_Ford_F150_Specs.pdf",
+     "title": "Ford: 2026 F-150 technical specifications (V1.1, March 31, 2026)",
+     "note": "horsepower, torque, max towing and payload by engine, fuel tank, legroom, warranty. Read from the PDF’s text layer on November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-15",
+     "url": "https://www.ford.com/trucks/f150/features/pro-power-onboard/",
+     "title": "Ford: F-150 Pro Power Onboard",
+     "note": "up to 7.2 kW, standard on the hybrid and available on the King Ranch and Platinum. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-16",
+     "url": "https://pressroom.toyota.com/2026-toyota-tundra-a-bold-new-chapter-in-full-size-pickup-excellence/",
+     "title": "Toyota: 2026 Tundra, a bold new chapter",
+     "note": "389 hp and 479 lb-ft (SR5 and up), 437 hp and 583 lb-ft (i-FORCE MAX), 12,000-pound maximum towing, 32.2-gallon tank, warranty, standard safety equipment. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-17",
+     "url": "https://pressroom.toyota.com/new-2027-toyota-tundra-brings-rugged-updated-styling-advanced-technology-and-new-trailhunter-package/",
+     "title": "Toyota: new 2027 Tundra",
+     "note": "the 2.4 kW inverter on some 2027 i-FORCE MAX grades and the hybrid battery warranty. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-18",
+     "url": "https://media.toyota.ca/en/releases/2025/what-s-new--2026-toyota-tundra.html",
+     "title": "Toyota Canada: what’s new, 2026 Tundra",
+     "note": "the SR’s 348 hp and 405 lb-ft. A Canadian release. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-19",
+     "url": "https://www.kbb.com/toyota/tundra/2026/specs/",
+     "title": "Kelley Blue Book: 2026 Toyota Tundra specs",
+     "note": "horsepower, torque, tow and payload by trim, including the SR’s 348 hp. Columns matched to trims by order, so treat single trims as secondary. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-20",
+     "url": "https://www.kbb.com/toyota/tundra-crewmax/2026/specs",
+     "title": "Kelley Blue Book: 2026 Toyota Tundra CrewMax specs",
+     "note": "4x4 CrewMax tow and payload from SR to 1794. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-21",
+     "url": "https://www.iseecars.com/car/2026-toyota-tundra-specs",
+     "title": "iSeeCars: 2026 Toyota Tundra specs",
+     "note": "tow from 8,300 to 12,000 pounds and payload from 1,485 to 1,940 pounds across 32 configurations, and the 32.2-gallon tank. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-22",
+     "url": "https://cars.com/articles/toyota-tundra-towing-guide-find-your-2026-trucks-max-towing-capacity-522070/",
+     "title": "Cars.com: Toyota Tundra towing guide (February 27, 2026)",
+     "note": "hybrid towing of up to 11,450 pounds on the Limited i-FORCE MAX 2WD CrewMax. Its text and table disagree on which cab carries the 12,000-pound rating. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-23",
+     "url": "https://www.autopadre.com/legroom/toyota-tundra",
+     "title": "AutoPadre: Toyota Tundra legroom",
+     "note": "CrewMax rear legroom 41.6 inches, Double Cab 33.3, front 41.2. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-24",
+     "url": "https://www.beamantoyota.com/helpful-resources/2026-tundra-specifications/",
+     "title": "Beaman Toyota (dealer): 2026 Tundra specifications",
+     "note": "the SR’s 358 hp and 406 lb-ft. A dealer page, internally inconsistent, so weak. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-25",
+     "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=FORD&model=F-150%20(SUPER%20CREW)%20GAS&modelYear=2023",
+     "title": "NHTSA: owner complaints API (F-150 and Tundra, model years 2019 to 2025)",
+     "note": "read November 18, 2026; deduplicated by ODI number. NHTSA files F-150 complaints under cab names (“F-150 SUPER CREW” for 2019 to 2022, “F-150 (SUPER CREW) GAS” from 2023, and the hybrid names), and the plain “F-150” name returns only a fraction, so every name was combined; the Lightning is left out. Tundra combines “TUNDRA” and “TUNDRA HYBRID”."
+    },
+    {
+     "id": "VEH-FVT-26",
+     "url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=FORD&model=F-150&modelYear=2022",
+     "title": "NHTSA: recalls API (F-150 and Tundra, model years 2019 to 2026)",
+     "note": "recall campaigns per model year, deduplicated by campaign number, with the hybrid names added; read November 18, 2026. The F-150 count for 2025 is 16 here; the F-150 price guide shows 14 without the hybrid names."
+    },
+    {
+     "id": "VEH-FVT-27",
+     "url": "https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=25V767000",
+     "title": "NHTSA: recall 25V-767 (Tundra engine main bearing)",
+     "note": "126,691 vehicles, 2022 to 2024 Tundra, Lexus LX and 2024 GX; read November 18, 2026. Campaigns 24V-381 (102,092) and 26V-320 (43,566) and the F-150 campaigns 23V-896, 25V-512 and 26V-578 were read the same way."
+    },
+    {
+     "id": "VEH-FVT-28",
+     "url": "https://api.nhtsa.gov/SafetyRatings/VehicleId/21411",
+     "title": "NHTSA: 5-Star Safety Ratings, 2026 F-150 SuperCrew 4x4",
+     "note": "5 stars overall, frontal and side; rollover 4 stars (19.1%). Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-29",
+     "url": "https://api.nhtsa.gov/SafetyRatings/VehicleId/21669",
+     "title": "NHTSA: 5-Star Safety Ratings, 2026 Tundra CrewMax 4x4",
+     "note": "5 stars overall, frontal and side; rollover 4 stars (18.5%). NHTSA has not rated the Double Cab. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-30",
+     "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-2026-third-quarter-sales-results",
+     "title": "Ford: 2026 third-quarter sales",
+     "note": "F-Series production 266,777 and Super Duty 110,275 in the quarter, the basis for the 59% F-150 share. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-31",
+     "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-2025-full-year-us-sales-results",
+     "title": "Ford: 2025 full-year U.S. sales",
+     "note": "F-Series 828,832 for 2025; Ford does not report the F-150 alone. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-32",
+     "url": "https://www.goodcarbadcar.net/ford-f150-f-series-sales-2025-2026-august/",
+     "title": "Good Car Bad Car: F-Series sales",
+     "note": "annual F-Series U.S. sales for 2019 to 2024. It prints 828,842 for 2025; Ford’s release says 828,832, which we used. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-33",
+     "url": "https://www.goodcarbadcar.net/toyota-tundra-sales-figures/",
+     "title": "Good Car Bad Car: Toyota Tundra sales",
+     "note": "annual Tundra U.S. sales for 2019 to 2025. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-34",
+     "url": "https://www.theautochannel.com/news/2026/01/05/1618015-toyota-motor-north-america-reports-2025-u-s-sales-results.html",
+     "title": "The Auto Channel (Toyota release text): Toyota 2025 U.S. sales",
+     "note": "Tundra 147,610 in 2025 and 159,528 in 2024. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-35",
+     "url": "https://www.consumerreports.org/cars/ford/f-150/2026/reliability",
+     "title": "Consumer Reports: 2026 Ford F-150 reliability",
+     "note": "predicted about average reliability, judging from 2023 to 2025 models, from the F-150 price guide (read November 15, 2026); consumerreports.org refused our read on November 18."
+    },
+    {
+     "id": "VEH-FVT-36",
+     "url": "https://www.consumerreports.org/cars/toyota/tundra/2026/reliability",
+     "title": "Consumer Reports: 2026 Toyota Tundra reliability",
+     "note": "predicted about average reliability, judging from 2023 to 2025 models, from the Tundra price guide (read November 18, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-37",
+     "url": "https://www.cars.com/articles/tech-powertrain-glitches-drive-low-scores-in-j-d-power-dependability-study-521710",
+     "title": "Cars.com: J.D. Power 2026 dependability study",
+     "note": "brand problems per 100 vehicles: Toyota 185, Ford 228, industry 204. A secondary page; J.D. Power’s own pages refused our read. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-38",
+     "url": "https://repairpal.com/reliability/ford/f-150",
+     "title": "RepairPal: Ford F-150 reliability",
+     "note": "3.5 out of 5, 7th of 17 full-size trucks, $788 a year, 0.28 unscheduled visits, 15% severe. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-39",
+     "url": "https://repairpal.com/reliability/toyota/tundra",
+     "title": "RepairPal: Toyota Tundra reliability",
+     "note": "3.5 out of 5, 6th of 17 full-size trucks, $606 a year, 0.31 unscheduled visits, 18% severe. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-40",
+     "url": "https://www.iseecars.com/car/ford-f-150",
+     "title": "iSeeCars: Ford F-150",
+     "note": "25.0% chance of reaching 200,000 miles; average lifespan 163,092 miles. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-41",
+     "url": "https://www.iseecars.com/car/toyota-tundra",
+     "title": "iSeeCars: Toyota Tundra",
+     "note": "56.4% chance of reaching 200,000 miles; average lifespan 210,133 miles. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-42",
+     "url": "https://www.iseecars.com/longest-lasting-cars-study",
+     "title": "iSeeCars: longest-lasting cars study (September 15, 2026)",
+     "note": "measured at 250,000 miles: Tundra 28.2%, 2nd among trucks (truck average 11.1%, all vehicles 5.4%); the F-150 is not listed. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-43",
+     "url": "https://pickuptrucktalk.com/2026/01/2021-2026-ford-f-150-known-problems-transmission-recalls-engines-failure/",
+     "title": "Pickup Truck Talk: 2021 to 2026 F-150 known problems",
+     "note": "owner-reported 10-speed shifting complaints, from the F-150 price guide; not re-read (the page refused our read)."
+    },
+    {
+     "id": "VEH-FVT-44",
+     "url": "https://fordauthority.com/2023/12/ford-f-150-hybrid-powerboost-among-crs-least-reliable-cars/",
+     "title": "Ford Authority: Consumer Reports on the F-150 hybrid",
+     "note": "Consumer Reports’ ranking of the 2021 to 2023 F-150 hybrid among its least reliable vehicles, from the F-150 price guide; not re-read."
+    },
+    {
+     "id": "VEH-FVT-45",
+     "url": "https://www.iseecars.com/car/ford-f-150/resale-value",
+     "title": "iSeeCars: Ford F-150 resale value",
+     "note": "value lost 18.9% in 3 years and 38.6% in 5 (hybrid 27.4% and 44.0%); full-size pickup average 23.7% and 37.0%; all vehicles 24.8% and 41.7%. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-46",
+     "url": "https://www.iseecars.com/car/toyota-tundra/resale-value",
+     "title": "iSeeCars: Toyota Tundra resale value",
+     "note": "value lost 15.9% in 3 years and 19.7% in 5 (hybrid 25.1% in 5). The page prints no date. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-47",
+     "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners",
+     "title": "Kelley Blue Book: 2026 Best Resale Value Award winners (March 19, 2026)",
+     "note": "the Tundra won the full-size pickup award; the F-150 did not. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-48",
+     "url": "https://www.carwhere.com/used-car-prices/ford/f-150",
+     "title": "CarWhere: used Ford F-150 prices",
+     "note": "median asking price by model year, snapshot November 14, 2026 (dealer listings, every cab, trim and engine). Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-49",
+     "url": "https://www.carwhere.com/used-car-prices/toyota/tundra",
+     "title": "CarWhere: used Toyota Tundra prices",
+     "note": "median asking price by model year, snapshot November 14, 2026 (dealer listings, every cab, trim and engine). Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-50",
+     "url": "https://www.ford.com/used/about-certified/ford-blue-advantage/",
+     "title": "Ford: Ford Blue Advantage certified used",
+     "note": "Gold: under 6 years and 80,000 miles, 12-month/12,000-mile comprehensive and 7-year/100,000-mile powertrain coverage. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-51",
+     "url": "https://www.toyotacertified.com/warranty",
+     "title": "Toyota Certified: warranty",
+     "note": "Gold: 7 years or 100,000 miles of powertrain coverage from purchase. From the Tundra price guide (November 18, 2026); the page returned no text on re-read."
+    },
+    {
+     "id": "VEH-FVT-52",
+     "url": "https://www.iihs.org/ratings/vehicle/ford/f-150-crew-cab-pickup/2026",
+     "title": "IIHS: 2026 Ford F-150 crew cab",
+     "note": "small overlap Good, moderate overlap (updated) Poor, side (updated) Good, headlights Good or Acceptable by trim, pedestrian front crash prevention Good, LATCH Marginal; no award. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-53",
+     "url": "https://www.iihs.org/ratings/vehicle/toyota/tundra-crew-cab-pickup/2026",
+     "title": "IIHS: 2026 Toyota Tundra crew cab",
+     "note": "small overlap, moderate overlap (updated) and side (updated) all Good, headlights Good or Acceptable by trim, pedestrian front crash prevention Acceptable, LATCH Acceptable. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-54",
+     "url": "https://www.iihs.org/ratings/top-safety-picks/2026/large-pickups/all/gas",
+     "title": "IIHS: 2026 Top Safety Picks, large pickups",
+     "note": "the Toyota Tundra crew cab is listed as a 2026 Top Safety Pick. Read November 18, 2026. Our Tundra price guide says IIHS names no award; this page follows IIHS."
+    },
+    {
+     "id": "VEH-FVT-55",
+     "url": "https://iihs.org/news/detail/iihs-pushes-improvements-in-crash-avoidance-with-2026-awards",
+     "title": "IIHS: IIHS pushes improvements in crash avoidance with 2026 awards",
+     "note": "“Only two large pickups qualify”: the Tesla Cybertruck (Top Safety Pick+) and the Toyota Tundra crew cab (Top Safety Pick). Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-56",
+     "url": "https://www.edmunds.com/ford/f-150/",
+     "title": "Edmunds: Ford F-150",
+     "note": "8.0 out of 10, 1st of 5 large trucks, from the F-150 price guide (November 15, 2026); Edmunds refused our read on November 18."
+    },
+    {
+     "id": "VEH-FVT-57",
+     "url": "https://www.edmunds.com/toyota/tundra/2026/",
+     "title": "Edmunds: 2026 Toyota Tundra",
+     "note": "7.0 out of 10, 4th of 5 large trucks, Limited as the editors’ pick, 15.2 mpg on its route and 0 to 60 mph in 6.6 seconds, from the Tundra price guide (November 18, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-58",
+     "url": "https://www.kbb.com/ford/f150/2026/",
+     "title": "Kelley Blue Book: 2026 Ford F-150",
+     "note": "expert rating 4.7 out of 5, consumer 4.2 (60 reviews), #1 in best full-size trucks; pro “Class-leading towing and payload”. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-59",
+     "url": "https://www.kbb.com/toyota/tundra/2026/",
+     "title": "Kelley Blue Book: 2026 Toyota Tundra",
+     "note": "expert rating 4.1 out of 5, consumer 3.4 (68 reviews), #5 in best full-size trucks; con “Mid-pack towing/payload capacity”. Read November 18, 2026."
+    },
+    {
+     "id": "VEH-FVT-60",
+     "url": "https://cars.usnews.com/cars-trucks/ford/f-150",
+     "title": "U.S. News: Ford F-150",
+     "note": "9.6 out of 10, 1st of 6 full-size pickups, from the F-150 price guide (November 15, 2026); not re-read (the page returned 503)."
+    },
+    {
+     "id": "VEH-FVT-61",
+     "url": "https://cars.usnews.com/cars-trucks/toyota/tundra",
+     "title": "U.S. News: 2026 Toyota Tundra",
+     "note": "9.0 out of 10, 3rd of 6 full-size pickups, from the Tundra price guide (November 18, 2026); not re-read (the page returned 503)."
+    },
+    {
+     "id": "VEH-FVT-62",
+     "url": "https://www.jdpower.com/cars/2026/ford/f-150",
+     "title": "J.D. Power: 2026 Ford F-150",
+     "note": "score 83 out of 100, from the F-150 price guide (November 15, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-63",
+     "url": "https://www.jdpower.com/cars/2026/toyota/tundra",
+     "title": "J.D. Power: 2026 Toyota Tundra",
+     "note": "score 82 out of 100 (quality and reliability 82, resale 90), from the Tundra price guide (November 18, 2026); not re-read."
+    },
+    {
+     "id": "VEH-FVT-64",
+     "url": "https://arctic-shift.photon-reddit.com/",
+     "title": "Arctic Shift: Reddit archive",
+     "note": "public Reddit posts and comments behind the Reddit Sentiment Index."
+    }
+   ]
   }
  ]
 }
