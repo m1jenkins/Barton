@@ -453,6 +453,7 @@ const logoFiles = {
   ford: [267, 96, 'Ford'], 'ford-white': [267, 96, 'Ford'], chevrolet: [301, 96, 'Chevrolet'], 'chevrolet-white': [301, 96, 'Chevrolet'],
   gmc: [343, 96, 'GMC'], 'gmc-white': [343, 96, 'GMC'],
   subaru: [161, 96, 'Subaru'], 'subaru-white': [161, 96, 'Subaru'],
+  mazda: [396, 96, 'Mazda'], 'mazda-white': [396, 96, 'Mazda'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], 'camry-white': [442, 64, 'Camry'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],
