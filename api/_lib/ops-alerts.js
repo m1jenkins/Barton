@@ -6,7 +6,7 @@ import { agentStatus, loadDashboard, loadRuns, summarizeDeals } from './ops-dash
 // dashboard"): one per needs_mason item, one when an agent goes overdue, and a
 // morning digest. GET /api/outbox-dispatch queues and sends them; the GitHub
 // workflow .github/workflows/ops-alerts.yml calls it every 10 minutes with
-// ?jobs=ops_alerts. Sent through the paid intake's Zoho SMTP login.
+// ?jobs=ops_alerts. Sent through the paid intake's SMTP login (Google Workspace).
 
 const TIME_ZONE = 'America/Chicago';
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;

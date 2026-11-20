@@ -3,7 +3,7 @@ import { database } from './db.js';
 import { intakeEmailSettings, smtpTransport } from './intake-email.js';
 
 // Each new lead sends a short notice to LEAD_NOTIFY_EMAIL (Grokbot's Client
-// Outreach inbox) from the same Zoho mailbox as intake emails, so it passes
+// Outreach inbox) from the same Google Workspace mailbox as intake emails, so it passes
 // SPF/DKIM. The notice only carries the lead ID: the receiver reads the lead
 // itself from Neon, and contact details stay out of the email.
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
@@ -102,7 +102,7 @@ export async function dispatchLeadEmails({ sql, environment = process.env, leadI
   const transport = createTransport(settings);
   try {
     let sent = 0;
-    // One SMTP connection, one message at a time: Zoho throttles parallel sends.
+    // One SMTP connection, one message at a time: Gmail throttles parallel sends.
     for (const row of rows) if (await deliverLeadEmail(client, row, transport, settings)) sent += 1;
     return { configured: true, claimed: rows.length, sent, failed: rows.length - sent };
   } finally {

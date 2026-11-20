@@ -4,7 +4,7 @@ import { intakeEmailSettings, oneLine, smtpTransport } from './intake-email.js';
 import { safeUrl } from './email-layout.js';
 import { EMAIL_TIERS, TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from './customer-emails/index.js';
 
-// Automated emails to the buyer, sent through the same Zoho mailbox as the
+// Automated emails to the buyer, sent through the same Google Workspace mailbox as the
 // intake email (INTAKE_SMTP_*). Off until CUSTOMER_EMAIL_ENABLED=1.
 //   welcome         queued with the intake, sent right after it commits
 //   what_to_expect  queued with the intake, held 12 hours (the next morning's cron)
@@ -171,7 +171,7 @@ export async function dispatchCustomerEmails({ sql, environment = process.env, o
   if (rows.length === 0) return result;
   const transport = createTransport(settings);
   try {
-    // One SMTP connection, one message at a time: Zoho throttles parallel sends.
+    // One SMTP connection, one message at a time: Gmail throttles parallel sends.
     for (const row of rows) result[await deliver(client, row, transport, settings)] += 1;
     return result;
   } finally {

@@ -33,13 +33,13 @@ const row = {
     contact_preference: 'text', notes: '<script>alert(1)</script>', future_field: 'kept' }
 };
 
-test('settings stay off until both SMTP values are set, and default to Mason at Zoho', () => {
+test('settings stay off until both SMTP values are set, and default to Mason at Google Workspace', () => {
   assert.equal(intakeEmailSettings({}), null);
   assert.throws(() => intakeEmailSettings({ INTAKE_SMTP_USER: 'hello@steermeright.com' }), ConfigError);
   assert.throws(() => intakeEmailSettings({ ...environment, INTAKE_EMAIL_TO: 'not an address' }), ConfigError);
   const settings = intakeEmailSettings(environment);
   assert.equal(settings.to, 'mason@steermeright.com');
-  assert.equal(settings.host, 'smtppro.zoho.com');
+  assert.equal(settings.host, 'smtp.gmail.com');
   assert.equal(settings.port, 465);
 });
 

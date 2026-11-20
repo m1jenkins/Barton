@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { ConfigError, integerEnv } from './config.js';
 import { database } from './db.js';
 
-// Paid intakes are emailed to Mason through the steermeright.com Zoho mailbox.
+// Paid intakes are emailed to Mason through the steermeright.com Google Workspace mailbox.
 // The database row stays the source of truth; this queue only tracks delivery.
 const DEFAULT_TO = 'mason@steermeright.com';
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
@@ -57,7 +57,7 @@ export function intakeEmailSettings(environment = process.env) {
   const leaseSeconds = integerEnv('INTAKE_OUTBOX_LEASE_SECONDS', 120, { min: 30, max: 900 }, environment);
   if (leaseSeconds * 1000 <= timeoutMs * 2) throw new ConfigError('INTAKE_OUTBOX_LEASE_SECONDS must exceed twice the SMTP timeout');
   return {
-    host: environment.INTAKE_SMTP_HOST?.trim() || 'smtppro.zoho.com',
+    host: environment.INTAKE_SMTP_HOST?.trim() || 'smtp.gmail.com',
     port: integerEnv('INTAKE_SMTP_PORT', 465, { min: 1, max: 65535 }, environment),
     user, password, to, timeoutMs, leaseSeconds,
     batchSize: integerEnv('INTAKE_OUTBOX_BATCH_SIZE', 10, { min: 1, max: 50 }, environment),
@@ -264,7 +264,7 @@ export async function dispatchIntakeEmails({ sql, environment = process.env, onb
   const transport = createTransport(settings);
   try {
     let sent = 0;
-    // One SMTP connection, one message at a time: Zoho throttles parallel sends.
+    // One SMTP connection, one message at a time: Gmail throttles parallel sends.
     for (const row of rows) if (await deliverIntake(client, row, transport, settings)) sent += 1;
     return { configured: true, claimed: rows.length, sent, failed: rows.length - sent };
   } finally {

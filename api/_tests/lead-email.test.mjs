@@ -25,7 +25,7 @@ function tagged(client) {
   return sql;
 }
 
-test('notices stay off until LEAD_NOTIFY_EMAIL is set, and send from the Zoho intake mailbox', () => {
+test('notices stay off until LEAD_NOTIFY_EMAIL is set, and send from the Google Workspace intake mailbox', () => {
   assert.equal(leadEmailSettings({}), null);
   assert.equal(leadEmailQueued({}), false);
   assert.equal(leadEmailQueued({ LEAD_NOTIFY_EMAIL: '  ' }), false);
@@ -33,7 +33,7 @@ test('notices stay off until LEAD_NOTIFY_EMAIL is set, and send from the Zoho in
   assert.throws(() => leadEmailSettings({ LEAD_NOTIFY_EMAIL: notify }), ConfigError);
   assert.equal(leadEmailQueued({ LEAD_NOTIFY_EMAIL: notify }), true, 'queueing must not depend on SMTP settings, so it can never fail a lead');
   const settings = leadEmailSettings(environment);
-  assert.deepEqual([settings.to, settings.user, settings.host, settings.port], [notify, 'mason@steermeright.com', 'smtppro.zoho.com', 465]);
+  assert.deepEqual([settings.to, settings.user, settings.host, settings.port], [notify, 'mason@steermeright.com', 'smtp.gmail.com', 465]);
 });
 
 test('the notice names the lead by ID and carries no contact details', () => {

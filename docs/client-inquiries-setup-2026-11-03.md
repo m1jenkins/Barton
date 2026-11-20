@@ -17,7 +17,7 @@ This repository is public, so the relay inbox's address, customer names and thei
 Client Outreach can be woken instantly by an email to its own Grokbot inbox, but Neon can't notify it, and checking the table every few minutes is wasteful. So the site emails it a notice for each new lead:
 
 1. `POST /api/leads` saves the inquiry to `leads`. When `LEAD_NOTIFY_EMAIL` is set, the same transaction queues a row in `lead_email_outbox` ([db/009_lead_email_outbox.sql](../db/009_lead_email_outbox.sql)).
-2. Right after the commit, the site sends a notice to `LEAD_NOTIFY_EMAIL` from the Zoho mailbox the paid intake emails use (`INTAKE_SMTP_USER`), so it passes SPF, DKIM and DMARC. The subject is `New lead <id>`, with an `X-Steer-Lead-Id` header. The body has only the source, the page and the time saved, never contact details.
+2. Right after the commit, the site sends a notice to `LEAD_NOTIFY_EMAIL` from the Google Workspace mailbox the paid intake emails use (`INTAKE_SMTP_USER`), so it passes SPF, DKIM and DMARC. The subject is `New lead <id>`, with an `X-Steer-Lead-Id` header. The body has only the source, the page and the time saved, never contact details.
 3. The email wakes Client Outreach, which reads the lead from Neon by that ID.
 
 A send that fails never fails the form. The daily `/api/outbox-dispatch` cron (14:17 UTC) retries it, and `npm run lead-emails:dispatch` sends one batch by hand. An occasional duplicate is possible, and the inquiry's log stops a second draft. Leads saved while `LEAD_NOTIFY_EMAIL` is unset get no notice, and the daily summary in step 5 lists any lead that never reached Client Outreach.
