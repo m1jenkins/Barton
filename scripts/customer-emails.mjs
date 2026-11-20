@@ -16,7 +16,7 @@ import { localEnv } from './car-search.mjs';
 // test, dispatch and cancel read INTAKE_SMTP_*, DATABASE_URL and the rest from the
 // environment or .env.local.
 const USAGE = 'Usage: node scripts/customer-emails.mjs preview | test <template|all> | dispatch | cancel <intake ID>';
-export const SAMPLE_REVIEW_URL = 'https://g.page/r/sample-review-link/review';
+export const SAMPLE_REVIEW_URL = 'https://g.page/r/CRhIsN4U_eXLEBM/review';
 
 // Made-up buyers that cover each plan and the edge cases a template must survive.
 export const SAMPLE_BUYERS = Object.freeze({

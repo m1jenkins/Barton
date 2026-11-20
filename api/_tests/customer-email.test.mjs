@@ -7,6 +7,7 @@ import {
   cancelCustomerEmails, customerEmailSettings, dispatchCustomerEmails, enqueueIntakeEmails, scheduleClosedDeals
 } from '../_lib/customer-email.js';
 import { TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from '../_lib/customer-emails/index.js';
+import { GOOGLE_G } from '../_lib/email-layout.js';
 import { runCustomerEmailWorker } from '../_lib/outbox-workers.js';
 import { SAMPLE_BUYERS, SAMPLE_REVIEW_URL, renderSamples } from '../../scripts/customer-emails.mjs';
 
@@ -38,7 +39,12 @@ test('every template renders for every sample buyer with matching HTML and text'
     assert.ok(subject && preheader && html && text, where);
     assert.ok(subject.length <= 200, where);
     assert.ok(Buffer.byteLength(html) < 60 * 1024, `${where} stays well under Gmail's 102 KB clip`);
-    assert.doesNotMatch(html, /<script|<svg|<img|display:\s*(flex|grid)/i, where);
+    // The only image allowed is the Google G on the review button: a hosted PNG with
+    // empty alt text, so the button still reads right when a mail app blocks images.
+    const images = html.match(/<img\b[^>]*>/gi) || [];
+    assert.ok(images.every(tag => tag.includes(`src="${GOOGLE_G}"`) && tag.includes('alt=""')), where);
+    assert.equal(images.length, template === 'review_ask' ? 1 : 0, where);
+    assert.doesNotMatch(html, /<script|<svg|display:\s*(flex|grid)/i, where);
     assert.match(html, /role="presentation"/, where);
     assert.doesNotMatch(subject + html + text, /\bbrief\b|walk-?away/i, where);
     assert.ok(text.includes('Reply to this email any time'), where);
@@ -276,4 +282,10 @@ test('a new paid intake queues the customer emails in its transaction and sends 
   const transaction = source.slice(source.indexOf('sql.begin'), source.indexOf('await dispatchAnalyticsOutboxSafely'));
   assert.match(transaction, /await enqueueIntakeEmails\(tx, \{ onboardingId: inserted\[0\]\.id, tierId: onboarding\.tier \}\)/);
   assert.match(source, /if \(persisted\.created\) await dispatchCustomerEmailsSafely\(\{ onboardingId: persisted\.id \}\)/);
+});
+
+test('the Google G on the review button is a committed PNG, since email clients drop SVG', async () => {
+  const png = await readFile(new URL('../../assets/email/google-g.png', import.meta.url));
+  assert.deepEqual([...png.subarray(1, 4)].map(byte => String.fromCharCode(byte)).join(''), 'PNG');
+  assert.ok(GOOGLE_G.startsWith('https://www.steermeright.com/assets/email/'));
 });

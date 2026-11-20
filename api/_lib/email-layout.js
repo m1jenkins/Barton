@@ -35,7 +35,10 @@ export const checklist = items => ({ kind: 'checklist', items });
 // Things to avoid: a muted cross instead of a check.
 export const avoidList = items => ({ kind: 'checklist', items, avoid: true });
 export const rows = items => ({ kind: 'rows', items: items.filter(([, value]) => oneLine(value)) });
-export const button = (href, label) => ({ kind: 'button', href: safeUrl(href), label });
+// icon: an absolute https image URL (PNG, since email clients drop SVG). A button
+// with an icon is drawn white with a border, so a full-color logo reads on it.
+export const button = (href, label, { icon } = {}) => ({ kind: 'button', href: safeUrl(href), label, icon: safeUrl(icon) });
+export const GOOGLE_G = `${SITE}/assets/email/google-g.png`;
 export const card = (title, nodes, sub = '') => ({ title, sub, nodes: nodes.filter(Boolean) });
 
 const parts = text => (Array.isArray(text) ? text : [text]).filter(part => part != null && part !== '');
@@ -61,10 +64,17 @@ function nodeHtml(node) {
     case 'rows': return `<div style="margin-top:10px">${table(node.items.map(([label, value]) => `<tr>`
       + `<td class="stack" width="150" valign="top" style="padding:9px 14px 9px 0;font:600 14px/1.5 ${FONT};color:${COLOR.soft};border-top:1px solid ${COLOR.grid}">${e(label)}</td>`
       + `<td class="stack" valign="top" style="padding:9px 0;font:400 15px/1.5 ${FONT};color:${COLOR.navy};border-top:1px solid ${COLOR.grid}">${e(oneLine(value))}</td></tr>`).join(''))}</div>`;
-    case 'button': return node.href ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px"><tr>`
-      + `<td bgcolor="${COLOR.navy}" style="background:${COLOR.navy};border-radius:999px">`
-      + `<a href="${e(node.href)}" style="display:inline-block;padding:14px 26px;font:600 15px/1 ${FONT};color:${COLOR.white};text-decoration:none;border-radius:999px">${e(node.label)}</a>`
-      + `</td></tr></table>` : '';
+    case 'button': if (!node.href) return '';
+      if (node.icon) return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px"><tr>`
+        + `<td bgcolor="${COLOR.white}" style="background:${COLOR.white};border:1px solid ${COLOR.line};border-radius:999px">`
+        + `<a href="${e(node.href)}" style="display:inline-block;padding:12px 24px 12px 18px;font:600 15px/18px ${FONT};color:${COLOR.navy};text-decoration:none;border-radius:999px">`
+        + `<img src="${e(node.icon)}" width="18" height="18" alt="" style="display:inline-block;width:18px;height:18px;border:0;vertical-align:middle;margin:0 10px 0 0">`
+        + `<span style="vertical-align:middle">${e(node.label)}</span></a>`
+        + `</td></tr></table>`;
+      return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px"><tr>`
+        + `<td bgcolor="${COLOR.navy}" style="background:${COLOR.navy};border-radius:999px">`
+        + `<a href="${e(node.href)}" style="display:inline-block;padding:14px 26px;font:600 15px/1 ${FONT};color:${COLOR.white};text-decoration:none;border-radius:999px">${e(node.label)}</a>`
+        + `</td></tr></table>`;
     default: throw new Error(`Unknown email node: ${node.kind}`);
   }
 }

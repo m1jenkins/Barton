@@ -144,7 +144,7 @@ How it works:
 | Variable | Purpose |
 | --- | --- |
 | `CUSTOMER_EMAIL_ENABLED` | `1` turns the emails on. While unset, nothing is queued or sent, and turning it on later doesn't send old welcomes. |
-| `GOOGLE_REVIEW_URL` | The https "write a review" link from the Google Business Profile. Leave it unset until the duplicate Maps listing in `data/entities.json` is resolved. While unset, no review email is queued, and a queued one is cancelled at send time. |
+| `GOOGLE_REVIEW_URL` | The https "write a review" link from the Google Business Profile. Set in production on November 20, 2026 to `https://g.page/r/CRhIsN4U_eXLEBM/review` (Mason). The button shows the Google G from `assets/email/google-g.png`, a PNG because email clients drop SVG. While unset, no review email is queued, and a queued one is cancelled at send time. |
 | `CUSTOMER_EMAIL_REPLY_TO` | Optional. Default `mason@steermeright.com`. |
 
 Commands:

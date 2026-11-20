@@ -1,4 +1,4 @@
-import { HELLO, button, card, paragraph, renderEmail, safeUrl } from '../email-layout.js';
+import { GOOGLE_G, HELLO, button, card, paragraph, renderEmail, safeUrl } from '../email-layout.js';
 
 // Sent four days after the deal-done email. Needs GOOGLE_REVIEW_URL.
 export function render(buyer, { reviewUrl } = {}) {
@@ -13,7 +13,7 @@ export function render(buyer, { reviewUrl } = {}) {
     cards: [
       card('A minute of your time', [
         paragraph('If Steer Me Right made buying your car easier, a short Google review would mean a lot. It’s one of the main ways other buyers find us.'),
-        button(href, 'Leave a Google review'),
+        button(href, 'Leave a Google review', { icon: GOOGLE_G }),
         paragraph('If something didn’t go the way it should have, I’d rather hear it from you first. Just reply to this email.')
       ]),
       card('Know someone dreading their next car?', [
