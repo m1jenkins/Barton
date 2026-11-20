@@ -1,6 +1,6 @@
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
 import("./openai-ads.js?v=cc4832ef4638").catch(() => {});
-import("./web-analytics.js?v=c56186de1a69").catch(() => {});
+import("./web-analytics.js?v=e3386cdaafb5").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
 window.addEventListener('DOMContentLoaded', () => {
   window.driveRightClient = { requestJson, track, createId, emailMason, attribution: attributionData };

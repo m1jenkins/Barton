@@ -40,3 +40,14 @@ test('external referrer paths, query strings and credentials suppress measuremen
     const f = fixture({ referrer }); f.analytics.setConsent(true); assert.equal(f.scripts.length, 1);
   }
 });
+
+test('measured pages are exactly the indexable sitemap pages, minus the quote worksheet', async () => {
+  const { readFileSync, readdirSync } = await import('node:fs');
+  const root = new URL('../../', import.meta.url);
+  const sitemap = new Set([...readFileSync(new URL('sitemap.xml', root), 'utf8').matchAll(/<loc>https:\/\/www\.steermeright\.com([^<]*)<\/loc>/g)].map(m => m[1] || '/'));
+  const measured = (path) => { const f = fixture({ url: `https://www.steermeright.com${path}` }); f.analytics.setConsent(true); return f.scripts.length === 1; };
+  for (const path of sitemap) assert.equal(measured(path), path !== '/compare-car-quotes.html', `${path} in the sitemap`);
+  for (const file of readdirSync(root).filter(name => name.endsWith('.html'))) {
+    if (!sitemap.has(`/${file}`) && file !== 'index.html') assert.equal(measured(`/${file}`), false, `${file} is not in the sitemap`);
+  }
+});
