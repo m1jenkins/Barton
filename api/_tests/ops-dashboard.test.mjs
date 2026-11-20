@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
-import { agentStatus, isAuthorized, opsPassword, summarizeDeal } from '../_lib/ops-dashboard.js';
+import { agentStatus, dollarsToCents, isAuthorized, opsPassword, summarizeDeal } from '../_lib/ops-dashboard.js';
 import { dispatchOpsAlerts, opsAlertSettings } from '../_lib/ops-alerts.js';
 import { outboxHandler } from '../outbox-dispatch.js';
 import { pendingAnswers } from '../../scripts/deal-desk-db.mjs';
@@ -82,6 +82,11 @@ test('the dashboard stays off without a long OPS_PASSWORD and checks the passwor
   assert.ok(!isAuthorized(basic('wrong'), password));
   assert.ok(!isAuthorized(`Bearer ${password}`, password));
   assert.ok(!isAuthorized(undefined, password));
+});
+
+test('typed prices become cents, and nonsense is refused', () => {
+  assert.deepEqual(['$32,300', '32300', ' 32,300.50 ', '900', '$', '1e5', '-30000', '99999999'].map(dollarsToCents),
+    [3230000, 3230000, 3230050, null, null, null, null, null]);
 });
 
 test('a deal\'s stage, best price and quiet days come from its event log alone', () => {
@@ -177,7 +182,38 @@ test('/api/ops asks for a password, renders every deal from Neon, and takes Maso
   await pg.query(`INSERT INTO deal_events (onboarding_id, kind, note, source_message_id) VALUES ($1, 'note', 'Countered', $2)`, [pat.id, `answer:${answers[0].resolved_id}`]);
   assert.equal((await pendingAnswers(sql)).length, 0, 'an acked answer stops being listed');
   const detailAfter = await call(handler, 'GET', { url: `/api/ops?deal=${pat.id}`, headers: { authorization: basic(password) } });
-  assert.ok(detailAfter.body.includes('<strong>Answer:</strong> Hold at $32,500'));
+  assert.ok(detailAfter.body.includes('<span class="tag good">Answered</span> Hold at $32,500'), 'the answer sits under its question');
+  assert.ok(!detailAfter.body.includes('>Resolved</span>'), 'resolved rows fold into their question');
+
+  // The home page opens each open deal from a tile, and the week's activity is one line per deal per day.
+  assert.ok(after.body.includes(`class="tile" href="/api/ops?deal=${pat.id}"`) || after.body.includes(`class="tile stale" href="/api/ops?deal=${pat.id}"`));
+  assert.ok(after.body.includes('<h3 class="day">Today</h3>'));
+  assert.ok(!after.body.split('<h2>Last 7 days')[1].includes('Filled in the e-price form'), 'notes stay on the deal page');
+
+  // Mason updates a deal from its page; each change is one row with actor mason.
+  const post = body => call(handler, 'POST', { headers: { authorization: basic(password), origin: environment.APP_ORIGIN }, body });
+  assert.equal((await call(handler, 'POST', { headers: { authorization: basic(password), origin: 'https://evil.example' }, body: `edit=close&deal=${sam.id}` })).statusCode, 403);
+  assert.equal((await post(`edit=agreed&deal=${pat.id}&dealer=North+Toyota&otd=abc`)).statusCode, 400, 'a price that isn\'t one is refused');
+  assert.equal((await post(`edit=note&deal=${crypto.randomUUID()}&note=hi`)).statusCode, 400, 'an unknown deal is refused');
+  const agreed = await post(`edit=agreed&deal=${pat.id}&dealer=North+Toyota&otd=%2431%2C950&vin=2T3P1RFV5SW000001`);
+  assert.equal(agreed.statusCode, 303);
+  assert.equal(agreed.headers.location, `/api/ops?deal=${pat.id}`);
+  await post(`edit=drop&deal=${pat.id}&dealer=South+Toyota`);
+  await post(`edit=close&deal=${sam.id}&outcome=Bought&note=North+Toyota+at+%2430k`);
+  const mason = (await pg.query(`SELECT onboarding_id, kind, dealer_name, vin, otd_cents, note FROM deal_events WHERE actor = 'mason' AND kind <> 'resolved' ORDER BY id`)).rows;
+  assert.deepEqual(mason.map(row => [row.kind, row.dealer_name, row.vin, row.otd_cents, row.note]), [
+    ['agreed', 'North Toyota', '2T3P1RFV5SW000001', 3195000, null],
+    ['dropped', 'South Toyota', null, null, null],
+    ['closed', null, null, null, 'Bought: North Toyota at $30k']]);
+  const home = await call(handler, 'GET', { headers: { authorization: basic(password) } });
+  const openPart = home.body.split('<h2>Open deals')[1].split('Closed in the last 30 days')[0];
+  assert.ok(openPart.includes('Pat &lt;Buyer&gt;') && !openPart.includes('Sam Quiet'), 'the closed deal leaves the open tiles');
+  assert.ok(home.body.includes('Bought: North Toyota at $30k'), 'closed deals show how they ended');
+  const samPage = await call(handler, 'GET', { url: `/api/ops?deal=${sam.id}`, headers: { authorization: basic(password) } });
+  assert.ok(samPage.body.includes('value="reopen"'), 'a closed deal can be reopened');
+  await post(`edit=reopen&deal=${sam.id}`);
+  const reopened = await call(handler, 'GET', { headers: { authorization: basic(password) } });
+  assert.ok(reopened.body.split('<h2>Open deals')[1].split('<h2>')[0].includes('Sam Quiet'));
 
   await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind) VALUES ($1, 'resolved')`, [pat.id]), /deal_events_resolves_valid/);
   await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind, options) VALUES ($1, 'note', '["x"]')`, [pat.id]), /deal_events_options_valid/);

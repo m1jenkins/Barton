@@ -55,12 +55,13 @@ export async function loadDashboard(sql) {
     sql`SELECT d.id, d.onboarding_id, d.created_at, d.shortlisted_at, o.name, o.city, o.tier_id
       FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id
       WHERE d.created_at > now() - interval '180 days' ORDER BY d.created_at DESC`,
-    sql`SELECT e.onboarding_id, e.kind, e.dealer_name, e.vin, e.otd_cents, e.occurred_at
+    sql`SELECT e.onboarding_id, e.kind, e.dealer_name, e.vin, e.otd_cents, e.note, e.occurred_at
       FROM deal_events e JOIN deals d ON d.onboarding_id = e.onboarding_id
       WHERE d.created_at > now() - interval '180 days' ORDER BY e.occurred_at, e.id`,
-    sql`SELECT e.id, e.onboarding_id, e.kind, e.actor, e.dealer_name, e.otd_cents, e.note, e.answer, e.occurred_at, o.name
+    sql`SELECT e.onboarding_id, e.kind, e.dealer_name, e.otd_cents, e.occurred_at, o.name
       FROM deal_events e JOIN onboarding_submissions o ON o.id = e.onboarding_id
-      ORDER BY e.occurred_at DESC, e.id DESC LIMIT 40`,
+      WHERE e.occurred_at > now() - interval '7 days' AND e.kind <> 'resolved'
+      ORDER BY e.occurred_at DESC, e.id DESC LIMIT 400`,
     sql`SELECT name, vehicle, message, source_page, created_at FROM leads
       WHERE created_at > now() - interval '14 days' ORDER BY created_at DESC LIMIT 30`,
     loadRuns(sql),
@@ -120,19 +121,66 @@ export async function resolveNeed(sql, eventId, answer = null) {
   });
 }
 
+export const OUTCOMES = Object.freeze(['Bought', 'Buyer walked away', 'Refunded', 'Other']);
+export const DEAL_EDITS = Object.freeze(['close', 'reopen', 'agreed', 'drop', 'note']);
+
+// "$32,300", "32300" or "32,300.50" to cents; null if it isn't a sensible car price.
+export function dollarsToCents(text) {
+  const cleaned = String(text ?? '').replace(/[$,\s]/g, '');
+  if (!/^\d{1,7}(\.\d{1,2})?$/.test(cleaned)) return null;
+  const cents = Math.round(Number(cleaned) * 100);
+  return cents >= 100000 && cents <= 100000000 ? cents : null;
+}
+
+// Mason's own update to a deal, from the form on its page. Adds one deal_events
+// row with actor 'mason'; returns an error message instead when the form is incomplete.
+export async function editDeal(sql, onboardingId, form) {
+  const edit = form.edit;
+  if (!DEAL_EDITS.includes(edit)) return { error: 'Unknown change' };
+  const [deal] = await sql`SELECT d.id FROM deals d WHERE d.onboarding_id = ${onboardingId}`;
+  if (!deal) return { error: 'No such deal' };
+  const text = value => String(value ?? '').trim().replace(/\s+/g, ' ');
+  const note = text(form.note).slice(0, 1000) || null;
+  const dealer = text(form.dealer).slice(0, 200) || null;
+  const row = { kind: edit, dealer: null, vin: null, otd: null, note };
+  if (edit === 'close') {
+    const outcome = OUTCOMES.includes(form.outcome) ? form.outcome : 'Other';
+    row.kind = 'closed';
+    row.note = note ? `${outcome}: ${note}` : outcome;
+  } else if (edit === 'reopen') {
+    row.kind = 'reopened';
+  } else if (edit === 'agreed') {
+    row.otd = dollarsToCents(form.otd);
+    if (!dealer || row.otd == null) return { error: 'Price agreed needs the dealer and the out-the-door price' };
+    row.dealer = dealer;
+    const [listing] = form.vin ? await sql`SELECT vin FROM deal_listings WHERE deal_id = ${deal.id} AND vin = ${String(form.vin)}` : [];
+    row.vin = listing?.vin ?? null;
+  } else if (edit === 'drop') {
+    if (!dealer) return { error: 'Pick the dealer to drop' };
+    row.kind = 'dropped';
+    row.dealer = dealer;
+  } else if (edit === 'note' && !note) {
+    return { error: 'The note is empty' };
+  }
+  await sql`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents, note)
+    VALUES (${onboardingId}, ${row.kind}, 'mason', ${row.dealer}, ${row.vin}, ${row.otd}, ${row.note})`;
+  return { ok: true };
+}
+
 const time = value => new Date(value).getTime();
 
 // One deal's state, worked out from its event log alone.
 export function summarizeDeal(deal, events, listings, now = Date.now()) {
   const dealers = new Map();
   let closed = false;
+  let outcome = null;
   let lastActivity = time(deal.shortlisted_at || deal.created_at);
   let lastDealer = null;
   let emailed = false;
   for (const event of events) {
     lastActivity = Math.max(lastActivity, time(event.occurred_at));
-    if (event.kind === 'closed') closed = true;
-    if (event.kind === 'reopened') closed = false;
+    if (event.kind === 'closed') [closed, outcome] = [true, event.note ?? null];
+    if (event.kind === 'reopened') [closed, outcome] = [false, null];
     if (event.kind === 'first_email_sent') emailed = true;
     if (DEALER_KINDS.has(event.kind)) lastDealer = Math.max(lastDealer ?? 0, time(event.occurred_at));
     if (!event.dealer_name) continue;
@@ -159,7 +207,8 @@ export function summarizeDeal(deal, events, listings, now = Date.now()) {
     onboarding_id: deal.onboarding_id, name: deal.name, city: deal.city, tier_id: deal.tier_id,
     car: listing?.title ?? null, cars: listings.length, target_cents: listing?.target_price_cents ?? null,
     best_cents: pick?.quote ?? null, best_dealer: pick?.name ?? null,
-    dealers: dealers.size, quotes: quoted.length, stage, closed,
+    dealers: dealers.size, quotes: quoted.length, stage, closed, outcome,
+    live_dealers: live.map(dealer => dealer.name),
     last_activity: new Date(lastActivity), last_dealer: lastDealer ? new Date(lastDealer) : null,
     quiet_days: quietDays, stale: !closed && stage !== 'shortlisted' && quietDays >= STALE_DAYS
   };
@@ -260,6 +309,38 @@ button.primary{background:var(--accent);border-color:var(--accent);color:var(--c
 form.answer{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
 form.answer input[type=text]{font:inherit;font-size:13px;padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);flex:1 1 180px;min-width:0}
 details summary{cursor:pointer;color:var(--muted);padding:10px 0}
+.nowrap{white-space:nowrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.tile{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text)}
+.tile:hover{text-decoration:none;border-color:var(--accent);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.tile.stale{border-color:var(--warn)}
+.tile-top{display:flex;gap:10px;align-items:center}
+.tile-name{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.tile-name .muted{font-size:13px}
+.tile-car{font-size:14px}
+.tile-price{font-variant-numeric:tabular-nums}
+.tile-foot{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:13px}
+.tile-foot .muted{margin-left:auto}
+.icon{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--chip);color:var(--muted)}
+.icon.s-emailing{background:#e6eefb;color:var(--accent)}
+.icon.s-quoted{background:var(--warn-bg);color:var(--warn)}
+.icon.s-agreed{background:var(--good-bg);color:var(--good)}
+@media (prefers-color-scheme:dark){.icon.s-emailing{background:#1b2a42}}
+h3.day{font-size:12px;font-weight:600;color:var(--muted);margin:0;padding:8px 14px;background:var(--bg);border-top:1px solid var(--line)}
+h3.day:first-child{border-top:0}
+.list.compact li{padding:8px 14px;align-items:center}
+.list.compact li:first-child{border-top:1px solid var(--line)}
+.note{margin:4px 0 0;font-size:14px;color:var(--muted)}
+details.note summary{padding:0;color:var(--muted)}
+details.note p{color:var(--text);white-space:pre-wrap}
+.edit{padding:4px 14px}
+.edit form.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.edit form.row:first-child{border-top:0}
+.edit label{display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600}
+.edit label.grow{flex:1 1 260px}
+.edit input,.edit select{font:inherit;font-size:13px;padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-weight:400;min-width:0}
+.edit label.grow input{flex:1}
+.edit input.money{width:130px}
 @media (max-width:640px){.hide-sm{display:none}th,td{padding:9px 10px}}
 `;
 
@@ -323,23 +404,83 @@ function agentsSection(agents, now) {
 function dealsTable(rows, now) {
   if (!rows.length) return raw('<div class="card"><p class="empty">No deals.</p></div>');
   return safe`<div class="card scroll"><table>
-    <thead><tr><th>Buyer</th><th class="hide-sm">Car</th><th>Stage</th><th class="num">Best OTD</th><th class="num hide-sm">Target</th><th class="num hide-sm">Dealers</th><th class="num">Last activity</th></tr></thead>
+    <thead><tr><th>Buyer</th><th class="hide-sm">Car</th><th>How it ended</th><th class="num">Price</th><th class="num">Closed</th></tr></thead>
     <tbody>${join(rows, deal => safe`<tr>
       <td class="wide">${dealLink(deal.onboarding_id, deal.name)}<br><span class="muted">${deal.city}</span></td>
-      <td class="hide-sm wide">${deal.car ?? '—'}${deal.cars > 1 ? safe` <span class="muted">+${deal.cars - 1}</span>` : ''}</td>
-      <td><span class="tag ${deal.stage === 'agreed' ? 'good' : ''}">${STAGES[deal.stage]}</span></td>
-      <td class="num">${money(deal.best_cents)}${versus(deal.best_cents, deal.target_cents)}${deal.best_dealer ? safe`<br><span class="muted">${deal.best_dealer}</span>` : ''}</td>
-      <td class="num hide-sm">${money(deal.target_cents)}</td>
-      <td class="num hide-sm">${deal.quotes}/${deal.dealers}</td>
+      <td class="hide-sm wide">${deal.car ?? '—'}</td>
+      <td class="wide">${clip(deal.outcome, 90) || '—'}</td>
+      <td class="num">${money(deal.best_cents)}${deal.best_dealer ? safe`<br><span class="muted">${deal.best_dealer}</span>` : ''}</td>
       <td class="num">${when(deal.last_activity, now)}</td></tr>`)}</tbody></table></div>`;
 }
 
-function eventLine(event, now, { showBuyer = true } = {}) {
+const CAR_ICON = raw('<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17v-4l2.2-5A2 2 0 0 1 7 6.8h10a2 2 0 0 1 1.8 1.2L21 13v4"/><path d="M3 13h18M5 17h14"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg>');
+
+// One clickable tile per open deal; the whole tile opens the deal's page.
+function dealTiles(rows, now) {
+  if (!rows.length) return raw('<div class="card"><p class="empty">No open deals.</p></div>');
+  return safe`<div class="tiles">${join(rows, deal => safe`<a class="tile${deal.stale ? ' stale' : ''}" href="/api/ops?deal=${deal.onboarding_id}">
+    <span class="tile-top"><span class="icon s-${deal.stage}">${CAR_ICON}</span>
+      <span class="tile-name"><strong>${deal.name}</strong><span class="muted">${deal.city}</span></span></span>
+    <span class="tile-car">${deal.car ?? 'No car picked yet'}${deal.cars > 1 ? safe` <span class="muted">+${deal.cars - 1}</span>` : ''}</span>
+    <span class="tile-price">${deal.best_cents != null ? safe`<strong>${money(deal.best_cents)}</strong>${versus(deal.best_cents, deal.target_cents)}` : safe`<span class="muted">Target ${money(deal.target_cents)}</span>`}</span>
+    <span class="tile-foot"><span class="tag ${deal.stage === 'agreed' ? 'good' : ''}">${STAGES[deal.stage]}</span>${deal.stale ? safe` <span class="tag warn">Quiet ${deal.quiet_days}d</span>` : ''}
+      <span class="muted">${when(deal.last_activity, now)}</span></span></a>`)}</div>`;
+}
+
+const dayKey = value => new Intl.DateTimeFormat('en-CA', { timeZone: TIME_ZONE }).format(new Date(value));
+function dayLabel(value, now) {
+  const key = dayKey(value);
+  if (key === dayKey(now)) return 'Today';
+  if (key === dayKey(now - 86400000)) return 'Yesterday';
+  return new Intl.DateTimeFormat('en-US', { timeZone: TIME_ZONE, weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(value));
+}
+const plural = (count, label) => (count > 1 ? `${count} × ${label}` : label);
+
+// The last week, one line per deal per day: what kinds of thing happened and
+// the best price seen. Notes stay on the deal's own page.
+export function groupActivity(events, now = Date.now()) {
+  const days = new Map();
+  for (const event of events) {
+    const label = dayLabel(event.occurred_at, now);
+    const deals = days.get(label) ?? new Map();
+    const line = deals.get(event.onboarding_id) ?? { onboarding_id: event.onboarding_id, name: event.name, kinds: new Map(), dealers: new Set(), best: null, last: event.occurred_at };
+    line.kinds.set(event.kind, (line.kinds.get(event.kind) ?? 0) + 1);
+    if (event.dealer_name) line.dealers.add(event.dealer_name);
+    if (['quote', 'agreed'].includes(event.kind) && event.otd_cents != null) line.best = Math.min(line.best ?? Infinity, event.otd_cents);
+    if (time(event.occurred_at) > time(line.last)) line.last = event.occurred_at;
+    deals.set(event.onboarding_id, line);
+    days.set(label, deals);
+  }
+  return [...days].map(([label, deals]) => ({ label, lines: [...deals.values()] }));
+}
+
+const kindTone = kind => (kind === 'needs_mason' ? 'warn' : ['agreed', 'closed'].includes(kind) ? 'good' : '');
+
+function activitySection(events, now) {
+  const days = groupActivity(events, now);
+  if (!days.length) return raw('<div class="card"><p class="empty">Nothing happened in the last 7 days.</p></div>');
+  return safe`<div class="card">${join(days, day => safe`<h3 class="day">${day.label}</h3><ul class="list compact">${join(day.lines, line => {
+    const dealers = [...line.dealers];
+    return safe`<li><div class="main"><strong>${dealLink(line.onboarding_id, line.name)}</strong>
+      ${join([...line.kinds], ([kind, count]) => safe` <span class="tag ${kindTone(kind)}">${plural(count, KIND_LABELS[kind] ?? kind)}</span>`)}
+      ${line.best != null ? safe` · <strong>${money(line.best)}</strong>` : ''}${dealers.length ? safe` <span class="muted hide-sm">· ${clip(dealers.join(', '), 70)}</span>` : ''}</div>
+      <span class="muted nowrap">${when(line.last, now)}</span></li>`;
+  })}</ul>`)}</div>`;
+}
+
+// A note on one line; the rest opens under "more".
+function shortNote(text, max = 140) {
+  if (!text) return '';
+  const flat = text.replace(/\s+/g, ' ').trim();
+  if (flat.length <= max) return safe`<p class="note">${flat}</p>`;
+  return safe`<details class="note"><summary>${clip(flat, max)}</summary><p>${text}</p></details>`;
+}
+
+function eventLine(event, now, { answer = null, form = null } = {}) {
   return safe`<li><div class="main">
-    <span class="tag ${event.kind === 'needs_mason' ? 'warn' : ['agreed', 'closed'].includes(event.kind) ? 'good' : ''}">${KIND_LABELS[event.kind] ?? event.kind}</span>
-    ${showBuyer ? safe` <strong>${dealLink(event.onboarding_id, event.name)}</strong>` : ''}${event.dealer_name ? safe` <span class="muted">· ${event.dealer_name}</span>` : ''}${event.otd_cents != null ? safe` · <strong>${money(event.otd_cents)}</strong>` : ''}
-    ${event.answer ? safe`<p><strong>Answer:</strong> ${clip(event.answer, 280)}</p>` : ''}${event.note ? safe`<p>${clip(event.note, 280)}</p>` : ''}</div>
-    <span class="muted" style="white-space:nowrap">${event.actor ? `${event.actor} · ` : ''}${when(event.occurred_at, now)}</span></li>`;
+    <span class="tag ${kindTone(event.kind)}">${KIND_LABELS[event.kind] ?? event.kind}</span>${event.dealer_name ? safe` <span class="muted">${event.dealer_name}</span>` : ''}${event.otd_cents != null ? safe` · <strong>${money(event.otd_cents)}</strong>` : ''}
+    ${shortNote(event.note)}${answer ? safe`<p class="note"><span class="tag good">Answered</span> ${answer.answer ? clip(answer.answer, 200) : 'Done'}</p>` : ''}${form ?? ''}</div>
+    <span class="muted nowrap">${event.actor ? `${event.actor} · ` : ''}${when(event.occurred_at, now)}</span></li>`;
 }
 
 export function renderDashboard(data, now = Date.now()) {
@@ -359,25 +500,54 @@ export function renderDashboard(data, now = Date.now()) {
   <div class="stat"><b>${recentClosed.length}</b><span class="muted">Closed, last 30 days</span></div>
   <div class="stat"><b>${data.leads.length}</b><span class="muted">Leads, last 14 days</span></div>
 </div>
+<h2>Open deals (${open.length})</h2>
+${dealTiles(open, now)}
+${recentClosed.length ? safe`<details><summary>Closed in the last 30 days (${recentClosed.length})</summary>${dealsTable(recentClosed, now)}</details>` : ''}
 ${needsSection(data, open, now)}
 ${agentsSection(data.agents, now)}
-<h2>Open deals (${open.length})</h2>
-${dealsTable(open, now)}
-${recentClosed.length ? safe`<details><summary>Closed in the last 30 days (${recentClosed.length})</summary>${dealsTable(recentClosed, now)}</details>` : ''}
-<h2>Activity</h2>
-<div class="card">${data.activity.length ? safe`<ul class="list">${join(data.activity, event => eventLine(event, now))}</ul>` : raw('<p class="empty">No activity logged yet.</p>')}</div>
+<h2>Last 7 days</h2>
+${activitySection(data.activity, now)}
 <h2>Website leads, last 14 days (${data.leads.length})</h2>
 <div class="card">${data.leads.length ? safe`<ul class="list">${join(data.leads, lead => safe`<li><div class="main">
   <strong>${lead.name}</strong>${lead.vehicle ? safe` <span class="muted">· ${clip(lead.vehicle, 80)}</span>` : ''}
   ${lead.message ? safe`<p>${clip(lead.message, 220)}</p>` : ''}
-  <p class="muted">${lead.source_page}</p></div><span class="muted" style="white-space:nowrap">${when(lead.created_at, now)}</span></li>`)}</ul>` : raw('<p class="empty">No leads in the last 14 days.</p>')}</div>`;
+  <p class="muted">${lead.source_page}</p></div><span class="muted nowrap">${when(lead.created_at, now)}</span></li>`)}</ul>` : raw('<p class="empty">No leads in the last 14 days.</p>')}</div>`;
   return page('Deals · ops', String(body));
+}
+
+// Mason's controls on a deal's page. Each form adds one deal_events row (editDeal).
+function editPanel(deal, summary, listings) {
+  const hidden = edit => safe`<input type="hidden" name="edit" value="${edit}"><input type="hidden" name="deal" value="${deal.onboarding_id}">`;
+  const dealerNames = [...new Set([...summary.live_dealers, ...listings.map(item => item.dealer_name).filter(Boolean)])];
+  if (summary.closed) {
+    return safe`<div class="card edit"><form method="post" action="/api/ops" class="row">${hidden('reopen')}
+      <span><span class="tag good">Closed</span> ${summary.outcome ?? ''}</span><button type="submit">Reopen deal</button></form></div>`;
+  }
+  return safe`<div class="card edit">
+  <form method="post" action="/api/ops" class="row">${hidden('close')}
+    <label>Close deal <select name="outcome">${join(OUTCOMES, outcome => safe`<option>${outcome}</option>`)}</select></label>
+    <input type="text" name="note" maxlength="300" placeholder="Details (optional)" aria-label="Closing details">
+    <button type="submit" class="primary">Close deal</button></form>
+  <form method="post" action="/api/ops" class="row">${hidden('agreed')}
+    <label>Price agreed <input type="text" name="dealer" list="dealers-${deal.onboarding_id}" maxlength="200" placeholder="Dealer" required></label>
+    <input type="text" name="otd" inputmode="decimal" placeholder="Out-the-door $" aria-label="Out-the-door price" required class="money">
+    ${listings.length ? safe`<select name="vin" aria-label="Car"><option value="">Car (optional)</option>${join(listings.filter(item => item.vin), item => safe`<option value="${item.vin}">${clip(item.title, 40)}</option>`)}</select>` : ''}
+    <button type="submit">Save</button></form>
+  ${summary.live_dealers.length ? safe`<form method="post" action="/api/ops" class="row">${hidden('drop')}
+    <label>Drop dealer <select name="dealer">${join(summary.live_dealers, name => safe`<option>${name}</option>`)}</select></label>
+    <button type="submit">Drop</button></form>` : ''}
+  <form method="post" action="/api/ops" class="row">${hidden('note')}
+    <label class="grow">Note <input type="text" name="note" maxlength="1000" placeholder="Add a note to the log" required></label>
+    <button type="submit">Add</button></form>
+  <datalist id="dealers-${deal.onboarding_id}">${join(dealerNames, name => safe`<option value="${name}">`)}</datalist></div>`;
 }
 
 export function renderDeal(detail, now = Date.now()) {
   const { deal, listings, events, drafts } = detail;
   const summary = summarizeDeal(deal, [...events].reverse(), listings, now);
-  const resolved = new Set(events.filter(event => event.resolves_event_id).map(event => event.resolves_event_id));
+  const answers = new Map(events.filter(event => event.resolves_event_id).map(event => [String(event.resolves_event_id), event]));
+  const shown = events.filter(event => event.kind !== 'resolved');
+  const days = Map.groupBy(shown, event => dayLabel(event.occurred_at, now));
   const body = safe`
 <p><a href="/api/ops">← All deals</a></p>
 <header><h1>${deal.name}</h1><span class="muted">${deal.city} · ${TIERS[deal.tier_id] ?? deal.tier_id} · <code>${deal.onboarding_id}</code></span></header>
@@ -387,6 +557,8 @@ export function renderDeal(detail, now = Date.now()) {
   <div class="stat"><b>${money(summary.target_cents)}</b><span class="muted">Target</span></div>
   <div class="stat"><b>${summary.quotes}/${summary.dealers}</b><span class="muted">Dealers quoting</span></div>
 </div>
+<h2>Update deal</h2>
+${editPanel(deal, summary, listings)}
 ${deal.search_summary ? safe`<h2>Search</h2><div class="card"><p class="empty" style="color:inherit">${deal.search_summary}</p></div>` : ''}
 <h2>Shortlist (${listings.length})</h2>
 ${listings.length ? safe`<div class="card scroll"><table>
@@ -396,14 +568,14 @@ ${listings.length ? safe`<div class="card scroll"><table>
     <td class="wide">${item.dealer_name}${item.dealer_location ? safe`<br><span class="muted">${item.dealer_location}</span>` : ''}</td>
     <td class="num">${money(item.price_cents)}</td><td class="num">${money(item.market_price_cents)}</td><td class="num">${money(item.target_price_cents)}</td>
     <td class="num hide-sm">${money(item.walk_away_cents)}</td><td class="num hide-sm">${item.days_on_lot ?? '—'}</td></tr>`)}</tbody></table></div>` : raw('<div class="card"><p class="empty">No cars on the shortlist.</p></div>')}
-${drafts.length ? safe`<h2>First emails</h2><div class="card"><ul class="list">${join(drafts, draft => safe`<li><div class="main"><strong>${draft.dealer_name}</strong>${draft.last_error ? safe`<p class="muted">${draft.last_error}</p>` : ''}</div>
-  <span class="muted">${draft.status} · ${when(draft.sent_at || draft.created_at, now)}</span></li>`)}</ul></div>` : ''}
-<h2>Log (${events.length})</h2>
-<div class="card">${events.length ? safe`<ul class="list">${join(events, event => {
-    const line = eventLine({ ...event, onboarding_id: deal.onboarding_id, name: deal.name }, now, { showBuyer: false });
-    if (event.kind !== 'needs_mason' || resolved.has(event.id)) return line;
-    return raw(String(line).replace(/<\/div>\s*<span class="muted" style="white-space:nowrap">/, () => `${needForm(event, deal.onboarding_id)}</div><span class="muted" style="white-space:nowrap">`));
-  })}</ul>` : raw('<p class="empty">Nothing logged yet.</p>')}</div>`;
+${drafts.length ? safe`<h2>First emails</h2><div class="card"><ul class="list compact">${join(drafts, draft => safe`<li><div class="main"><strong>${draft.dealer_name}</strong>${draft.last_error ? safe`<p class="muted">${draft.last_error}</p>` : ''}</div>
+  <span class="muted nowrap">${draft.status} · ${when(draft.sent_at || draft.created_at, now)}</span></li>`)}</ul></div>` : ''}
+<h2>Log (${shown.length})</h2>
+<div class="card">${shown.length ? join([...days], ([label, items]) => safe`<h3 class="day">${label}</h3><ul class="list compact">${join(items, event => {
+    const answer = answers.get(String(event.id)) ?? null;
+    const open = event.kind === 'needs_mason' && !answer;
+    return eventLine(event, now, { answer, form: open ? needForm(event, deal.onboarding_id) : null });
+  })}</ul>`) : raw('<p class="empty">Nothing logged yet.</p>')}</div>`;
   return page(`${deal.name} · ops`, String(body));
 }
 

@@ -1,10 +1,11 @@
 import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requestUrl, withApiErrors } from './_lib/http.js';
-import { isAuthorized, loadDashboard, loadDeal, opsPassword, renderDashboard, renderDeal, renderMessage, resolveNeed } from './_lib/ops-dashboard.js';
+import { editDeal, isAuthorized, loadDashboard, loadDeal, opsPassword, renderDashboard, renderDeal, renderMessage, resolveNeed } from './_lib/ops-dashboard.js';
 
 // Mason's private deal dashboard. Open https://www.steermeright.com/api/ops and
 // sign in with any user name and OPS_PASSWORD. GET renders the page from Neon;
-// POST with resolve=<event id> answers a needs_mason item (answer or reply) or marks it done.
+// POST with resolve=<event id> answers a needs_mason item (answer or reply) or marks it done;
+// POST with edit=<close|reopen|agreed|drop|note> and deal=<intake ID> updates a deal.
 export const config = { maxDuration: 20 };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const SECURITY_HEADERS = Object.freeze({
@@ -38,6 +39,13 @@ export function opsHandler({ environment = process.env, getDatabase = database, 
       // from another site must not count. Only this page's own origin may post.
       if (header(req, 'origin') !== requestUrl(req).origin) throw new HttpError(403, 'origin_not_allowed', 'Request origin is not allowed');
       const form = new URLSearchParams((await readRawBody(req, 16384, { allowParsedBody: false })).toString('utf8'));
+      if (form.has('edit')) {
+        const dealId = form.get('deal') || '';
+        if (!UUID.test(dealId)) throw new HttpError(400, 'invalid_deal', 'deal must be an intake ID');
+        const result = await editDeal(sql, dealId.toLowerCase(), Object.fromEntries(form));
+        if (result.error) return send(res, 400, renderMessage('Not saved', `${result.error}. Go back and try again.`));
+        return send(res, 303, null, { Location: `/api/ops?deal=${dealId.toLowerCase()}` });
+      }
       const eventId = Number(form.get('resolve'));
       if (!Number.isSafeInteger(eventId) || eventId <= 0) throw new HttpError(400, 'invalid_event', 'resolve must be an event id');
       // An option button sends answer; Done sends the typed reply, which may be empty.
