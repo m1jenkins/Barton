@@ -8,10 +8,21 @@ import { localEnv } from './car-search.mjs';
 //   node scripts/deal-desk-db.mjs deal <intake ID or its first 8 characters>
 //                                                       one deal's shortlist and its full event log
 //   node scripts/deal-desk-db.mjs log <events.json | ->  add events to deal_events; a rerun adds nothing twice
+//   node scripts/deal-desk-db.mjs ran <actor> [minutes] [note]
+//                                                       record that an agent ran (every run, even with nothing new);
+//                                                       minutes is how often it runs, for the dashboard's overdue check
+//   node scripts/deal-desk-db.mjs answers [actor]       Mason's answers to needs_mason questions not yet acted on
+//   node scripts/deal-desk-db.mjs ack <resolved id> [note]
+//                                                       mark one of those answers acted on, so it stops being listed
 // Connects with DEAL_DESK_DATABASE_URL, the paperclip_agent role from db/010, which can read
 // every table and insert into deal_events only. Amounts are cents, as in deal_events.
-const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | ->';
-export const EVENT_KINDS = ['first_email_sent', 'quote', 'counter', 'agreed', 'dropped', 'note', 'closed', 'reopened'];
+const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | -> | ran <actor> [minutes] [note] | answers [actor] | ack <resolved id> [note]';
+const ACTOR = /^[a-z0-9][a-z0-9 ._-]{0,59}$/i;
+// email_received, form_submitted, needs_mason and resolved come from db/012; the ops
+// dashboard (/api/ops) lists open needs_mason rows under "Needs you" until a
+// resolved row names them in resolves_event_id.
+export const EVENT_KINDS = ['first_email_sent', 'quote', 'counter', 'agreed', 'dropped', 'note', 'closed', 'reopened',
+  'email_received', 'form_submitted', 'needs_mason', 'resolved'];
 
 const text = (value, max) => (value == null || value === '' ? null : String(value).trim().slice(0, max));
 
@@ -27,6 +38,15 @@ export function parseEvent(input) {
   if (event.itemized != null && (typeof event.itemized !== 'object' || Array.isArray(event.itemized))) problems.push('itemized must be an object of line items in cents');
   if (event.occurred_at != null && Number.isNaN(Date.parse(event.occurred_at))) problems.push('occurred_at must be an ISO date');
   if (['quote', 'counter', 'agreed'].includes(event.kind) && event.otd_cents == null && event.itemized == null) problems.push(`a ${event.kind} needs otd_cents or itemized`);
+  if (event.kind === 'needs_mason' && !text(event.note, 4000)) problems.push('a needs_mason needs a note saying what Mason has to do');
+  if (event.kind === 'resolved' && !(Number.isInteger(event.resolves_event_id) && event.resolves_event_id > 0)) problems.push('a resolved needs resolves_event_id, the id of the needs_mason row it closes');
+  if (event.kind !== 'resolved' && event.resolves_event_id != null) problems.push('only a resolved takes resolves_event_id');
+  if (event.options != null && (event.kind !== 'needs_mason' || !Array.isArray(event.options) || event.options.length < 1 || event.options.length > 6
+    || !event.options.every(option => typeof option === 'string' && option.trim() && option.trim().length <= 60))) {
+    problems.push('options is for a needs_mason only: 1 to 6 answers of up to 60 characters each');
+  }
+  if (event.answer != null && (event.kind !== 'resolved' || typeof event.answer !== 'string' || event.answer.length > 1000)) problems.push('answer is for a resolved only, up to 1000 characters');
+  if (event.actor != null && !ACTOR.test(event.actor)) problems.push('actor must be a short name, up to 60 letters, digits, spaces, dots, dashes or underscores');
   if (problems.length) throw new Error(problems.join('; '));
   return {
     onboarding_id: event.intake_id.toLowerCase(),
@@ -37,7 +57,12 @@ export function parseEvent(input) {
     itemized: event.itemized ?? null,
     note: text(event.note, 4000),
     source_message_id: text(event.source_message_id, 255),
-    occurred_at: event.occurred_at ? new Date(event.occurred_at).toISOString() : new Date().toISOString()
+    occurred_at: event.occurred_at ? new Date(event.occurred_at).toISOString() : new Date().toISOString(),
+    actor: text(event.actor, 60),
+    resolves_event_id: event.resolves_event_id ?? null,
+    // A JSON string: postgres.js would send a bare JS array as a Postgres array, not jsonb.
+    options: event.options ? JSON.stringify(event.options.map(option => option.trim())) : null,
+    answer: text(event.answer, 1000)
   };
 }
 
@@ -62,7 +87,7 @@ export async function showDeal(sql, id) {
   const listings = await sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, mileage,
       days_on_lot, dealer_name, dealer_location, dealer_email, dealer_phone, listing_url, why
     FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`;
-  const events = await sql`SELECT occurred_at, kind, dealer_name, vin, otd_cents, itemized, note, source_message_id
+  const events = await sql`SELECT id, occurred_at, kind, actor, dealer_name, vin, otd_cents, itemized, note, options, answer, source_message_id, resolves_event_id
     FROM deal_events WHERE onboarding_id = ${deal.onboarding_id} ORDER BY occurred_at, id`;
   return { intake_id: deal.onboarding_id, summary: deal.search_summary, shortlisted_at: deal.shortlisted_at, listings, events };
 }
@@ -71,22 +96,54 @@ export async function logEvents(sql, inputs) {
   const rows = (Array.isArray(inputs) ? inputs : [inputs]).map(parseEvent);
   let added = 0;
   for (const row of rows) {
-    const result = await sql`INSERT INTO deal_events ${sql(row, 'onboarding_id', 'kind', 'dealer_name', 'vin', 'otd_cents', 'itemized', 'note', 'source_message_id', 'occurred_at')}
+    const result = await sql`INSERT INTO deal_events ${sql(row, 'onboarding_id', 'kind', 'dealer_name', 'vin', 'otd_cents', 'itemized', 'note', 'source_message_id', 'occurred_at', 'actor', 'resolves_event_id', 'options', 'answer')}
       ON CONFLICT DO NOTHING`;
     added += result.count;
   }
   return { added, skipped_as_already_logged: rows.length - added };
 }
 
-async function main([command, argument]) {
+export async function recordRun(sql, actor, minutes, note) {
+  if (!ACTOR.test(actor ?? '')) throw new Error('ran needs the agent\'s short name, such as duet-inbox');
+  const every = minutes == null || minutes === '' ? null : Number(minutes);
+  if (every != null && !(Number.isInteger(every) && every >= 1 && every <= 10080)) throw new Error('minutes must be a whole number from 1 to 10080');
+  const [row] = await sql`INSERT INTO agent_runs (actor, expect_minutes, note) VALUES (${actor}, ${every}, ${text(note, 1000)}) RETURNING id, ran_at`;
+  return row;
+}
+
+// Answers Mason gave on the dashboard (or that an agent logged for him) that no
+// agent has acked yet. An ack is a note whose source_message_id is 'answer:<id>'.
+export async function pendingAnswers(sql, actor = null) {
+  return sql`
+    SELECT r.id AS resolved_id, r.onboarding_id AS intake_id, r.answer, r.occurred_at AS answered_at,
+      q.id AS question_id, q.actor AS asked_by, q.dealer_name, q.note AS question, q.options
+    FROM deal_events r JOIN deal_events q ON q.id = r.resolves_event_id
+    WHERE r.kind = 'resolved' AND r.answer IS NOT NULL
+      AND (${actor}::text IS NULL OR q.actor = ${actor})
+      AND NOT EXISTS (SELECT 1 FROM deal_events a WHERE a.source_message_id = 'answer:' || r.id)
+    ORDER BY r.occurred_at`;
+}
+
+export async function ackAnswer(sql, resolvedId, note) {
+  const id = Number(resolvedId);
+  if (!Number.isSafeInteger(id) || id <= 0) throw new Error('ack needs the resolved_id from answers');
+  const [answer] = await sql`SELECT onboarding_id FROM deal_events WHERE id = ${id} AND kind = 'resolved'`;
+  if (!answer) throw new Error(`No resolved event has id ${id}`);
+  return logEvents(sql, { intake_id: answer.onboarding_id, kind: 'note', note: note || `Acted on Mason's answer ${id}`, source_message_id: `answer:${id}` });
+}
+
+async function main([command, argument, ...rest]) {
   const environment = { ...localEnv(), ...process.env };
   const url = environment.DEAL_DESK_DATABASE_URL?.trim();
   if (!url) throw new Error('DEAL_DESK_DATABASE_URL is not set. It is the paperclip_agent connection string (db/010_paperclip_agent_grants.sql).');
-  if (!['deals', 'deal', 'log'].includes(command) || (command !== 'deals' && !argument)) throw new Error(USAGE);
+  if (!['deals', 'deal', 'log', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
   const sql = postgres(url, { max: 1, idle_timeout: 5, connect_timeout: 10, prepare: false, transform: { undefined: null } });
   try {
     if (command === 'deals') return await listDeals(sql);
     if (command === 'deal') return await showDeal(sql, argument);
+    if (command === 'ran') return await recordRun(sql, argument, /^\d+$/.test(rest[0] ?? '') ? rest.shift() : null, rest.join(' '));
+    if (command === 'answers') return await pendingAnswers(sql, argument ?? null);
+    if (command === 'ack') return await ackAnswer(sql, argument, rest.join(' '));
     const raw = argument === '-' ? await new Response(process.stdin).text() : await readFile(argument, 'utf8');
     return await logEvents(sql, JSON.parse(raw));
   } finally {

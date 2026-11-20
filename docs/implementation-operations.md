@@ -200,6 +200,24 @@ Check the deals with `SELECT onboarding_id, shortlisted_at FROM deals ORDER BY c
 - Only whitelisted fields are rendered, so target and walk-away prices, staff names and dealer contacts in the data never appear in the output (the tests feed decoys). Activity lines are written for the buyer, so leave out staff names, trade-in details and internal notes there too.
 - The HTML is table-based with inline styles (no script, SVG, flex or grid), forces a light color scheme, and loads Inter from `/assets/buying/fonts/`. Keep it under Gmail's ~102 KB clipping limit: the X5 email with 14 cars is about 83 KB.
 
+## Ops dashboard — November 20, 2026
+
+`https://www.steermeright.com/api/ops` is Mason's private overview of every deal. Sign in with any user name and `OPS_PASSWORD`; without that variable the page answers 503. It is rendered on the server from Neon on each load (no script, no analytics, `noindex`, `no-store`) and refreshes every two minutes. `?deal=<intake ID>` opens one deal: its shortlist with target and walk-away prices, first emails and full log. Code: `api/ops.js`, `api/_lib/ops-dashboard.js` and `api/_lib/ops-alerts.js`; tests in `api/_tests/ops-dashboard.test.mjs`.
+
+- **Needs you**, in this order: open `needs_mason` questions, first emails still `pending` or `failed`, paid intakes from the last 60 days with no car search, agents that are overdue, and open deals with nothing logged for two days.
+- **Agents** lists every agent seen in 30 days: when it last ran, how often it said it runs, and when it last logged a deal event. It is overdue once it misses two runs (twice `expect_minutes`, plus five minutes).
+- **Open deals** works out each deal's stage, best out-the-door quote (ignoring dropped dealers) and target from `deal_events` alone. Nothing stores a status, so the agents only ever add rows. Below it are the latest 40 events and the last 14 days of website leads. The page shows no buyer email or phone.
+- The page writes one thing. Answering a question (an option button, a typed reply, or just **Done**) adds a `resolved` row with `actor` `mason`, the `answer` if any, and `resolves_event_id`. Only a form posted from the page's own origin counts.
+
+**How agents feed it.** Claude Duet and Paperclip agents use `scripts/deal-desk-db.mjs` (`DEAL_DESK_DATABASE_URL`):
+- `log <events.json | ->`: one JSON object per event with `intake_id`, `kind`, and as needed `dealer_name`, `vin`, `otd_cents`, `itemized`, `note`, `source_message_id`, `occurred_at`, plus `actor`, the agent's short name such as `duet-deals`. Kinds from `db/012_deal_events_agents.sql`: `email_received` (a dealer email that isn't a quote), `form_submitted` (an agent filled in a dealer's web form), `needs_mason` (blocked on Mason; `note` is the question and `options` up to six short answers shown as buttons, such as `["Approve", "Counter at $32,500"]`) and `resolved` (`resolves_event_id` plus an optional `answer`, when Mason answered somewhere else).
+- `ran <actor> [minutes] [note]` at the end of every run, even when nothing happened, with how often it runs. Without it the dashboard can't tell a quiet inbox from a dead agent.
+- `answers [actor]` at the start of every run: Mason's answers to that agent's questions that haven't been acted on. After acting, `ack <resolved_id> [note]` logs a note with `source_message_id` `answer:<id>`, which takes it off the list.
+
+**Alerts.** With `OPS_ALERT_EMAIL` set, `GET /api/outbox-dispatch` emails Mason through the `INTAKE_SMTP_*` login: one email per `needs_mason` from the last two days (skipped if answered first), one per agent each time it goes overdue, and a digest once a day after `OPS_DIGEST_HOUR` (default 8 am Central). The digest lists what needs him, agents overdue, quiet deals and what moved in the last 24 hours, and is sent even when nothing needs him, so a missing digest means alerts are broken. Queue: `ops_alert_outbox`, up to five attempts. Vercel's cron runs once a day, so `.github/workflows/ops-alerts.yml` calls `/api/outbox-dispatch?jobs=ops_alerts` every 10 minutes (GitHub may run it late). It needs the repository secret `CRON_SECRET`, the same value as in Vercel; until that is set it does nothing. A failed run means an email failed, and GitHub emails the repository owner.
+
+Only deals that went through `/car-search` have a `deals` row, so only they appear. To turn it on: apply `db/012_deal_events_agents.sql` to Neon (before agents use the new fields), set `OPS_PASSWORD` (24+ random characters) and `OPS_ALERT_EMAIL` in Vercel Production, redeploy, and add `CRON_SECRET` as a GitHub Actions secret.
+
 ## Required environment
 
 | Variable | Requirement |
@@ -221,6 +239,9 @@ Check the deals with `SELECT onboarding_id, shortlisted_at FROM deals ORDER BY c
 | `LEAD_OUTBOX_MAX_ATTEMPTS` | Optional attempt cap, default `8`, allowed `1`–`25`. |
 | `LEAD_OUTBOX_RETRY_SECONDS` | Optional initial retry delay, default `30`, allowed `5`–`3600`; exponential backoff is capped at six hours. |
 | `LEAD_FORWARD_TIMEOUT_MS` | Optional notification request timeout, default `8000`, allowed `500`–`15000`. |
+| `OPS_PASSWORD` | Optional. Turns on the private dashboard at `/api/ops`; at least 24 characters. Unset, the page answers 503. |
+| `OPS_ALERT_EMAIL` | Optional. Where ops alerts and the morning digest go; needs `INTAKE_SMTP_USER`/`INTAKE_SMTP_PASSWORD`. Unset, no alerts. |
+| `OPS_DIGEST_HOUR` | Optional Central-time hour after which the daily digest goes out, default `8`, allowed `0`–`23`. |
 | `DATABASE_MAX_CONNECTIONS` | Optional per-function-process limit, default `1`, allowed `1`–`5`. Use a pooled database endpoint. |
 | `ANALYTICS_FORWARD_URL` | Optional credential-free HTTPS endpoint for the server-side analytics collector. When absent, outbox rows remain pending. |
 | `ANALYTICS_FORWARD_BEARER_TOKEN` | Optional bearer credential for the analytics collector. |

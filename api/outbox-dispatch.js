@@ -5,8 +5,9 @@ import { analyticsDestination } from './_lib/analytics-outbox.js';
 import { intakeEmailSettings } from './_lib/intake-email.js';
 import { leadEmailSettings } from './_lib/lead-email.js';
 import { customerEmailSettings } from './_lib/customer-email.js';
+import { opsAlertSettings, runOpsAlertWorker } from './_lib/ops-alerts.js';
 import { runLeadWorker, runAnalyticsWorker, runIntakeEmailWorker, runLeadEmailWorker, runCustomerEmailWorker } from './_lib/outbox-workers.js';
-import { header, sendJson } from './_lib/http.js';
+import { header, requestUrl, sendJson } from './_lib/http.js';
 
 export const config = { maxDuration: 60 };
 const digest = value => createHash('sha256').update(value).digest();
@@ -14,7 +15,7 @@ const digest = value => createHash('sha256').update(value).digest();
 export function outboxHandler({ environment = process.env, getDatabase = database,
   leadWorker = runLeadWorker, analyticsWorker = runAnalyticsWorker,
   intakeEmailWorker = runIntakeEmailWorker, leadEmailWorker = runLeadEmailWorker,
-  customerEmailWorker = runCustomerEmailWorker, logger = console } = {}) {
+  customerEmailWorker = runCustomerEmailWorker, opsAlertWorker = runOpsAlertWorker, logger = console } = {}) {
   return async (req, res) => {
     if (req.method !== 'GET') return sendJson(res, 405, { ok: false, error: 'method_not_allowed' }, { Allow: 'GET' });
     const secret = environment.CRON_SECRET;
@@ -25,8 +26,13 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
     let sql;
     const jobs = [['leads', leadDestination, leadWorker], ['analytics', analyticsDestination, analyticsWorker],
       ['intake_email', intakeEmailSettings, intakeEmailWorker], ['lead_email', leadEmailSettings, leadEmailWorker],
-      ['customer_email', customerEmailSettings, customerEmailWorker]];
-    const results = await Promise.all(jobs.map(async ([name, destination, worker]) => {
+      ['customer_email', customerEmailSettings, customerEmailWorker], ['ops_alerts', opsAlertSettings, opsAlertWorker]];
+    // ?jobs=ops_alerts runs only those workers: the ops-alerts GitHub workflow
+    // calls it every 10 minutes, while the daily Vercel cron runs everything.
+    const only = (requestUrl(req).searchParams.get('jobs') || '').split(',').map(name => name.trim()).filter(Boolean);
+    if (only.some(name => !jobs.some(([job]) => job === name))) return sendJson(res, 400, { ok: false, error: 'unknown_job' });
+    const selected = only.length ? jobs.filter(([name]) => only.includes(name)) : jobs;
+    const results = await Promise.all(selected.map(async ([name, destination, worker]) => {
       try {
         if (!destination(environment)) return [name, { configured: false, claimed: 0, sent: 0, failed: 0, exhausted: null }];
         sql ||= getDatabase();
