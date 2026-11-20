@@ -75,6 +75,15 @@ Deliberately not used: Delivrd's $2,500 Concierge and $500 consultation (unlinke
 - The "lowest published fee where a person negotiates" line is only true while the hub's first table is complete and current. Recheck it whenever a competitor changes price or a new one is added.
 - Corrections from the companies named go to hello@driverightcarbuying.com; fix confirmed errors the same day.
 
+## Update 2026-11-20: Search Console rewrite of the two best-ranked pages
+
+Search Console (property `sc-domain:steermeright.com`, November 5 to 18, 2026) showed `/caredge-alternatives.html` with 1,336 impressions, 0 clicks and average position 9.9 (almost all from "caredge alternatives", 1,323 impressions), and `/compare-car-buying-services.html` with 237 impressions, 1 click and position 8.3. Both sat at the bottom of page one, so the work was click-through and depth, not new pages.
+
+- **Titles and descriptions:** `caredge-alternatives.html` is now "CarEdge Alternatives (2026): Fees From $395 | Steer Me Right"; the hub is "Car Buying Services Compared 2026: CarEdge vs Delivrd & More". Descriptions are 151 and 154 characters and say "Checked Nov 2026". Compare the "caredge alternatives" and "car buying service comparison" rows in Search Console in two to three weeks.
+- **Depth:** `caredge-alternatives.html` gains an at-a-glance table of CarEdge and seven alternatives, a "Which CarEdge alternative fits you" section and three FAQs (best alternative, free alternative, CarEdge vs Delivrd). The hub gains a "Which car buying service fits you" section and three FAQs (cost, CarEdge vs Delivrd, car broker) and now links `car-broker-vs-car-buying-service.html`. No new outside links and no new Steer Me Right claims; every Steer Me Right line reuses an approved row.
+- **Recheck on the companies' own pages, November 20, 2026:** CarEdge Concierge $999 and AI Buying Agent $49.99 beta (normally $149); Delivrd Insta-Pay $1,000, "New Cars Only", work begins "within 5-8 business days" (the same page also says "3-5 business days of your consult"); Delivrd refund only before work starts, $250 and $500 change fees; Car Pal $1,195 / $1,695 / $495 / $200–$500 surcharge; Automatch $499 / $599. CarEdge's refund and 7 to 10 day answers were read from the pricing page's FAQ data. Visible dates, `dateModified`, sitemap `lastmod`, the `CMP-HUB-*` and `CMP-CE-*` rows for those sources (next review 2026-12-20) and the `COMPARISON-PAGES-2026-10-18` row were updated together.
+- **Why the pages were invisible in Vercel Analytics until now:** `web-analytics.js` only measured 13 paths. It now matches the generated families by pattern; counts start from the November 20 deploy.
+
 ## Measurement
 
 The three URLs return 404 on the live site until the pull request merges. After it deploys:
