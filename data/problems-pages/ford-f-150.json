@@ -1,0 +1,919 @@
+{
+  "key": "ford-f-150",
+  "name": "Ford F-150",
+  "status": "ready",
+  "short": "F-150",
+  "make": "Ford",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Ford F-150 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Ford F-150 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, open investigations and what owners report on Reddit.",
+  "h1": "Ford F-150 problems by year: years to avoid and what owners report",
+  "card": "The best and worst F-150 years, with complaints per 100,000 sold, recalls, an open transmission investigation and what owners report.",
+  "bestYears": "2023–2025",
+  "avoidYears": "2016, 2018, 2021",
+  "answer": [
+    "The best used F-150s are the 2023 to 2025 model years, which draw {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2016, 2018 and 2021: they draw {r:2016}, {r:2018} and {r:2021}, and the 2021 carries {rec:2021} recalls, more than any other year. NHTSA also has an open investigation, EA26001, into 2015 to 2017 trucks with the six-speed transmission that can downshift without warning. The 2017, 2019, 2020 and 2022 trucks sit in between, and in each of them the power train is the part owners name most often.",
+    "Ford publishes no F-150-only sales, so the rates use our estimate of 59% of F-Series sales, the same share our F-150 comparison pages use. They compare years with each other rather than predict one truck, and the hybrid, gas and body-style listings are counted together. Our <a href=\"{guide}\">F-150 price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Ford reports only F-Series sales (which include Super Duty and Lightning), so each year’s F-150 sales are our estimate at 59% of that total.",
+  "salesShare": 0.59,
+  "salesRaw": {
+    "2016": 820799,
+    "2017": 896764,
+    "2018": 909330,
+    "2019": 896526,
+    "2020": 787372,
+    "2021": 726003,
+    "2022": 653957,
+    "2023": 750789,
+    "2024": 765649,
+    "2025": 828832
+  },
+  "sales": {
+    "2016": 484271,
+    "2017": 529091,
+    "2018": 536505,
+    "2019": 528950,
+    "2020": 464549,
+    "2021": 428342,
+    "2022": 385835,
+    "2023": 442966,
+    "2024": 451733,
+    "2025": 489011
+  },
+  "publishedRates": {
+    "2019": 194,
+    "2020": 122,
+    "2021": 311,
+    "2022": 214,
+    "2023": 117,
+    "2024": 53,
+    "2025": 27
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "Power train ({k:2016:POWER TRAIN}), brakes ({k:2016:SERVICE BRAKES}) and engine ({k:2016:ENGINE}) lead the {c:2016} complaints. Open investigation EA26001 covers six-speed trucks of 2015 to 2017."
+    ],
+    "2017": [
+      "check",
+      "Power train ({k:2017:POWER TRAIN}) and engine ({k:2017:ENGINE}) lead. EA26001 covers the six-speed trucks, so confirm which transmission it has and that recall 26V-237 is done."
+    ],
+    "2018": [
+      "avoid",
+      "The most complaints of any year ({c:2018}), with power train at {k:2018:POWER TRAIN}. The {rec:2018} recalls include the 10-speed roll pin (18V-213) and a 3.5-liter fuel pump (18V-392)."
+    ],
+    "2019": [
+      "check",
+      "Power train ({k:2019:POWER TRAIN}) and engine ({k:2019:ENGINE}) lead. A block heater cable recall (18V-894, 19V-278) covers 2015 to 2019 trucks."
+    ],
+    "2020": [
+      "check",
+      "{k:2020:POWER TRAIN} of {c:2020} complaints name the power train. NHTSA’s recall query RQ21002 is still open on the rearview camera recall 20V-575.",
+      "buy to check: 44% of complaints name the power train, and RQ21002 is open"
+    ],
+    "2021": [
+      "avoid",
+      "The most recalls of any year ({rec:2021}). Power train ({k:2021:POWER TRAIN}) and visibility ({k:2021:VISIBILITY}) lead; recalls include 2.7-liter intake valves (24V-635), driveshafts and the electronic brake booster (21V-533)."
+    ],
+    "2022": [
+      "check",
+      "{rec:2022} recalls. Power train ({k:2022:POWER TRAIN}) and electrical ({k:2022:ELECTRICAL SYSTEM}) lead; the intake valve recall (24V-635) and fuel pump recall (25V-455) apply to some."
+    ],
+    "2023": [
+      "buy",
+      "Power train still leads at {k:2023:POWER TRAIN}, but the rate is down to {r:2023}. Fuel tank strap recall 26V-578 covers 2023 to 2027 trucks; ask that it was done."
+    ],
+    "2024": [
+      "buy",
+      "3.5-liter oil leak recalls (24V-851, 25V-198) and a steering shaft recall (24V-329) apply to some trucks; check the VIN."
+    ],
+    "2025": [
+      "buy",
+      "The count is still growing, and {rec:2025} recalls are already out, including connecting rod defects on some trucks (25V-344) and the hybrid’s battery junction box (25V-199)."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and {rec:2026} recalls already, including fuel tank straps (26V-578) and rear axle tail bearings (26V-576)."
+    ]
+  },
+  "chartNote": "Every bar uses the 59% F-150 sales estimate: Good Car Bad Car’s F-Series totals for 2016 to 2018, and the figures on our F-150 comparison pages for 2019 to 2025.",
+  "generations": [
+    {
+      "name": "Thirteenth generation",
+      "years": "2015–2020",
+      "text": "The F-150 launched for 2015 with a 6-speed (6R80) automatic behind all four engines: a 3.5-liter V6, a 2.7-liter EcoBoost, a 3.5-liter EcoBoost and a 5.0-liter V8. The 10-speed (10R80) arrived for 2017 with the high-output 3.5-liter, and for 2018 it spread to the 2.7- and 3.5-liter EcoBoosts, the 5.0 V8 and the new 3.0-liter diesel, while a 3.3-liter V6 took the base slot with the 6-speed (Wikipedia)."
+    },
+    {
+      "name": "Fourteenth generation",
+      "years": "2021–",
+      "text": "The redesigned truck carries the 10-speed on every engine and added the PowerBoost hybrid for 2021. The diesel left after 2021 and the 3.3-liter V6 after 2023, and a 2024 refresh trimmed the engine list further. For 2026 the 3.5-liter V6 became standard on most trims that used the 5.0, except the Lobo (Wikipedia). The Lightning is a separate EV and is not counted here."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Power train, six-speed and early 10-speed trucks",
+      "component": "POWER TRAIN",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "NHTSA’s open analysis EA26001 covers 2015 to 2017 trucks with the 6R80 that downshift without warning, often to first or second gear, with rear wheel lockup. Ford’s recall 26V-237 updates software for 2015 to 2017 trucks. Recall 18V-213 covers a missing roll pin that can defeat Park on 2017 and 2018 trucks with the 10-speed."
+    },
+    {
+      "title": "Power train, 10-speed trucks",
+      "component": "POWER TRAIN",
+      "years": [
+        2019,
+        2022
+      ],
+      "text": "Pickup Truck Talk reports owner complaints of harsh 10-speed shifts on 2021 and later trucks, and we found no recall for the shift quality itself. Recall 22V-188 (2021) covers a false low-fluid-pressure code that can drop the transmission into neutral."
+    },
+    {
+      "title": "Engine, 3.5-liter and 5.0-liter years",
+      "component": "ENGINE",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "Recalls cover a 3.5-liter block heater cable that can corrode (18V-894, 19V-278) and a 3.5-liter high-pressure fuel pump (18V-392). Reddit owners report cam phaser and timing chain trouble on 5.0- and 3.5-liter trucks, which no recall covers."
+    },
+    {
+      "title": "Engine, 2.7-liter years",
+      "component": "ENGINE",
+      "years": [
+        2021,
+        2022
+      ],
+      "text": "Recall 24V-635 covers 2.7-liter intake valves that can break and cut drive power on 2021 and 2022 trucks. Dealers run a cycle test and replace the engine as needed, free."
+    },
+    {
+      "title": "Brakes",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "Three recalls cover the brake master cylinder on 3.5-liter EcoBoost trucks (20V-332, 22V-150, 25V-236), which can leak fluid into the booster. Another covers the 2021 electronic brake booster (21V-533)."
+    },
+    {
+      "title": "Visibility",
+      "component": "VISIBILITY",
+      "years": [
+        2021,
+        2021
+      ],
+      "text": "NHTSA’s component field names the part, not the cause, and no single recall explains this spike. Ask the seller what was repaired."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s reliability complaints line up with the table: the threads single out 2018 to 2022 trucks for recalls and costly warranty repairs, and the 10-speed and older 6R80 for hard shifts and failures. The praise goes to the 5.0 and 2.7-liter engines, which owners report running past 200,000 miles with routine maintenance."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "26V-237",
+      "years": "2015–2017",
+      "title": "Unexpected downshift to second",
+      "text": "A lost signal between the transmission range sensor and the powertrain computer can drop the transmission into second gear. Dealers update the software, free; owner letters went out July 24, 2026."
+    },
+    {
+      "id": "18V-213",
+      "years": "2017–2018 10-speed",
+      "title": "Missing roll pin",
+      "text": "A roll pin may be missing in the 10-speed, which can defeat the Park function. Dealers inspect and fit one, free."
+    },
+    {
+      "id": "24V-635",
+      "years": "2021–2022 2.7-liter",
+      "title": "Broken intake valves",
+      "text": "Intake valves can break while driving and cut drive power. Dealers cycle-test the engine and replace it as needed, free."
+    },
+    {
+      "id": "25V-455",
+      "years": "2021–2023",
+      "title": "Low-pressure fuel pump",
+      "text": "The low-pressure fuel pump can fail and stall the engine. On the F-150, dealers update the powertrain software, free."
+    },
+    {
+      "id": "23V-896 and 25V-512",
+      "years": "2021–2025 Max Trailer Tow",
+      "title": "Rear axle hub bolts",
+      "text": "Trucks with the Trailer Tow Max Duty package and the 9.75-inch axle can have an axle hub bolt problem. Check the build sheet before you buy a tow-package truck."
+    },
+    {
+      "id": "24V-851 and 25V-198",
+      "years": "2024–2025 3.5-liter",
+      "title": "Oil leak, engine stall",
+      "text": "A misaligned engine cup plug can cause a rapid oil leak and a stall. Dealers inspect the plug and replace it as needed, free."
+    },
+    {
+      "id": "25V-344",
+      "years": "2025",
+      "title": "Connecting rods",
+      "text": "Connecting rod and bearing components may have manufacturing defects on certain trucks. The VIN lookup shows whether yours is included."
+    },
+    {
+      "id": "26V-578",
+      "years": "2023–2027",
+      "title": "Fuel tank straps",
+      "text": "The fuel tank may be secured improperly and leak or detach. Dealers inspect and replace the straps, free; owner letters went out September 21, 2026."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA26001",
+      "status": "open",
+      "years": "2015–2017",
+      "title": "Unintended downshift and rear wheel lockup",
+      "text": "NHTSA moved from a preliminary evaluation (PE25002, March 2025) to an engineering analysis on January 31, 2026. The preliminary evaluation cited 329 owner questionnaires from trucks with the 6R80 transmission, and Ford’s recall 26V-237, filed in April 2026, updates the software on the same trucks."
+    },
+    {
+      "id": "RQ21002",
+      "status": "open",
+      "years": "2020",
+      "title": "Rearview camera recall timing",
+      "text": "NHTSA is checking the timing and scope of Ford’s rearview camera recall 20V-575, which covers 2020 F-150s and other Ford models."
+    },
+    {
+      "id": "PE24019",
+      "status": "closed",
+      "years": "2018–2023",
+      "title": "Low-pressure fuel pump failures",
+      "text": "NHTSA closed it in 2025 after Ford’s recall 25V-455 and says it will keep watching vehicles the recall leaves out."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Which transmission it has.",
+      "text": "A 2015 to 2017 with the 6R80 falls under EA26001; confirm recall 26V-237 is done. On any 2018 and later truck, drive it cold and again warm and watch for harsh or late shifts, which owners report on the 10-speed."
+    },
+    {
+      "title": "The engine recalls for its year.",
+      "text": "A 2021 or 2022 2.7-liter needs 24V-635 closed, a 2024 or 2025 3.5-liter needs 24V-851 and 25V-198, and a 2021 to 2023 needs the fuel pump update 25V-455."
+    },
+    {
+      "title": "Brake master cylinder on 3.5-liter EcoBoosts.",
+      "text": "Trucks of 2014 to 2018 with the 3.5-liter have three master cylinder recalls. Check the fluid level and ask for the repair record."
+    },
+    {
+      "title": "A Max Trailer Tow package.",
+      "text": "Look for the Trailer Tow Max Duty package on 2021 to 2025 trucks and confirm the hub bolt recalls (23V-896, 25V-512)."
+    },
+    {
+      "title": "Fuel tank straps on a 2023 or newer.",
+      "text": "Recall 26V-578 is new, with letters sent in September 2026. Confirm the dealer has done it."
+    },
+    {
+      "title": "An independent inspection and a cold start.",
+      "text": "Owners on Reddit report a cold-start tick on the 5.0 and cam phaser trouble on 5.0 and 3.5 engines. Have a shop that isn’t the seller’s check the engine and the transmission before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 F-150 has {c:2026} NHTSA complaints so far and {rec:2026} recalls, including fuel tank straps and rear axle tail bearings. That is too short a record to call it better than a 2023 to 2025.",
+    "Our <a href=\"{guide}\">F-150 price guide</a> has the 2026 prices, the discount to aim for and why we say buy new as a 2026."
+  ],
+  "faq": [
+    [
+      "What are the worst Ford F-150 years?",
+      "The 2016, 2018 and 2021. They draw {r:2016}, {r:2018} and {r:2021} NHTSA complaints per 100,000 sold on our estimate of F-150 sales, against {r:2024} for the 2024. The 2021 also has {rec:2021} recalls."
+    ],
+    [
+      "What is the best used F-150 year?",
+      "The 2023 to 2025 model years have the lowest rates, from {r:2025} for the 2025 to {r:2023} for the 2023. Our price guide also says to make 2023 the floor for a used truck."
+    ],
+    [
+      "Is the F-150 10-speed transmission reliable?",
+      "Owners report harsh shifts on 2021 and later trucks (Pickup Truck Talk), and the power train is the most-named part in nearly every year here. Drive it cold and warm, and confirm the recalls for its year are done."
+    ],
+    [
+      "Are F-150 EcoBoost engines reliable?",
+      "Reddit owners report 2.7-liter trucks passing 200,000 miles and cam phaser trouble on 3.5- and 5.0-liter engines. Recalls cover 2.7-liter intake valves on 2021 and 2022 trucks and oil leaks on 2024 and 2025 3.5-liter trucks."
+    ],
+    [
+      "How do I check a used F-150 for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck, and recall repairs are free at a Ford dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-F150-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=FORD&model=F-150%20(SUPER%20CREW)%20GAS&modelYear=2025",
+      "scope": "every F-150 and F-150 Hybrid listing, model years 2016 to 2026, deduplicated by ODI number; Lightning excluded",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-F150-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-F150-03",
+      "title": "NHTSA: investigation EA26001",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA26001",
+      "scope": "open engineering analysis of unintended downshifts on 2015 to 2017 F-150s with the 6R80",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-F150-04",
+      "title": "NHTSA: investigation RQ21002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ21002",
+      "scope": "open recall query on Ford’s 2020 rearview camera recall",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-F150-05",
+      "title": "NHTSA: investigation PE24019",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE24019",
+      "scope": "closed preliminary evaluation of low-pressure fuel pump failures, closed after recall 25V-455",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-F150-06",
+      "title": "Good Car Bad Car: Ford F-Series sales",
+      "url": "https://www.goodcarbadcar.net/ford-f150-f-series-sales-2025-2026-august/",
+      "scope": "annual U.S. F-Series sales 2016 to 2025; says Ford publishes no F-150-only figure",
+      "note": "read November 21, 2026 through a page summary; the 59% F-150 share is our estimate from our F-150 comparison pages (VEH-F1S-46)"
+    },
+    {
+      "id": "VEH-PRB-F150-07",
+      "title": "Ford: 2025 full-year U.S. sales",
+      "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-2025-full-year-us-sales-results",
+      "scope": "F-Series 828,832 in 2025",
+      "note": "reused from our F-150 vs Silverado page (VEH-F1S-43)"
+    },
+    {
+      "id": "VEH-PRB-F150-08",
+      "title": "Wikipedia: thirteenth-generation Ford F-Series",
+      "url": "https://en.wikipedia.org/wiki/Ford_F-Series_(thirteenth_generation)",
+      "scope": "F-150 engines and transmissions 2015 to 2020",
+      "note": "read November 21, 2026 through a page summary; check against Ford before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-F150-09",
+      "title": "Wikipedia: fourteenth-generation Ford F-Series",
+      "url": "https://en.wikipedia.org/wiki/Ford_F-Series_(fourteenth_generation)",
+      "scope": "F-150 engines and transmissions 2021 to 2026",
+      "note": "read November 21, 2026 through a page summary; check against Ford before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-F150-10",
+      "title": "Pickup Truck Talk: 2021–2026 F-150 known problems",
+      "url": "https://pickuptrucktalk.com/2026/01/2021-2026-ford-f-150-known-problems-transmission-recalls-engines-failure/",
+      "scope": "owner-reported 10-speed transmission complaints on 2021 and later F-150s",
+      "note": "from the F-150 price guide (VEH-F150-17)"
+    }
+  ],
+  "nhtsa": {
+    "make": "FORD",
+    "years": [
+      2016,
+      2026
+    ],
+    "listings": [
+      "F-150",
+      "F-150 SUPER CREW",
+      "F-150 SUPER CAB",
+      "F-150 REGULAR CAB",
+      "F-150 (SUPER CREW) GAS",
+      "F-150 (SUPER CAB) GAS",
+      "F-150 (REGULAR CAB) GAS",
+      "F-150 SUPER CREW HEV",
+      "F-150 (SUPER CREW) HEV",
+      "F-150 HYBRID"
+    ],
+    "models": [
+      "F-150"
+    ],
+    "exclude": "LIGHTNING",
+    "recallModels": [
+      "F-150",
+      "F-150 HYBRID"
+    ],
+    "investigationTerms": [
+      "F-150"
+    ],
+    "readOn": "2026-11-21",
+    "byYear": {
+      "2016": {
+        "complaints": 1818,
+        "crashes": 53,
+        "fires": 23,
+        "components": {
+          "POWER TRAIN": 431,
+          "SERVICE BRAKES": 331,
+          "ENGINE": 315,
+          "UNKNOWN OR OTHER": 220,
+          "STRUCTURE": 192,
+          "ELECTRICAL SYSTEM": 164,
+          "VISIBILITY": 135,
+          "FUEL/PROPULSION SYSTEM": 92,
+          "VEHICLE SPEED CONTROL": 84,
+          "STEERING": 58,
+          "WHEELS": 53,
+          "LATCHES/LOCKS/LINKAGES": 49,
+          "AIR BAGS": 34,
+          "BACK OVER PREVENTION": 27,
+          "SEATS": 20,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 17,
+          "SUSPENSION": 17,
+          "EXTERIOR LIGHTING": 15,
+          "SEAT BELTS": 14,
+          "FORWARD COLLISION AVOIDANCE": 4,
+          "LANE DEPARTURE": 4,
+          "TIRES": 1
+        },
+        "recalls": [
+          "16V-110",
+          "16V-475",
+          "17V-331",
+          "17V-526",
+          "17V-652",
+          "17V-767",
+          "18V-568",
+          "18V-894",
+          "19V-278",
+          "20V-098",
+          "20V-332",
+          "21E-027",
+          "22V-150",
+          "26V-237"
+        ]
+      },
+      "2017": {
+        "complaints": 1162,
+        "crashes": 37,
+        "fires": 19,
+        "components": {
+          "POWER TRAIN": 347,
+          "ENGINE": 325,
+          "UNKNOWN OR OTHER": 138,
+          "ELECTRICAL SYSTEM": 107,
+          "STRUCTURE": 106,
+          "SERVICE BRAKES": 83,
+          "VEHICLE SPEED CONTROL": 52,
+          "STEERING": 51,
+          "VISIBILITY": 51,
+          "LATCHES/LOCKS/LINKAGES": 41,
+          "WHEELS": 40,
+          "FUEL/PROPULSION SYSTEM": 24,
+          "AIR BAGS": 23,
+          "SEAT BELTS": 17,
+          "SUSPENSION": 11,
+          "BACK OVER PREVENTION": 7,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 7,
+          "EXTERIOR LIGHTING": 5,
+          "LANE DEPARTURE": 4,
+          "FORWARD COLLISION AVOIDANCE": 3,
+          "TIRES": 3,
+          "SEATS": 1
+        },
+        "recalls": [
+          "17V-053",
+          "17V-331",
+          "17V-332",
+          "17V-526",
+          "17V-529",
+          "17V-599",
+          "17V-652",
+          "17V-671",
+          "18V-213",
+          "18V-568",
+          "18V-894",
+          "19V-278",
+          "20V-332",
+          "21E-027",
+          "22V-150",
+          "25V-236",
+          "26V-237",
+          "26V-370"
+        ]
+      },
+      "2018": {
+        "complaints": 1945,
+        "crashes": 58,
+        "fires": 29,
+        "components": {
+          "POWER TRAIN": 771,
+          "ENGINE": 538,
+          "UNKNOWN OR OTHER": 198,
+          "STRUCTURE": 187,
+          "ELECTRICAL SYSTEM": 142,
+          "STEERING": 81,
+          "SERVICE BRAKES": 74,
+          "VISIBILITY": 73,
+          "VEHICLE SPEED CONTROL": 61,
+          "FUEL/PROPULSION SYSTEM": 54,
+          "LATCHES/LOCKS/LINKAGES": 52,
+          "WHEELS": 42,
+          "AIR BAGS": 34,
+          "BACK OVER PREVENTION": 20,
+          "EXTERIOR LIGHTING": 20,
+          "SUSPENSION": 20,
+          "SEAT BELTS": 15,
+          "SEATS": 13,
+          "FORWARD COLLISION AVOIDANCE": 7,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 5,
+          "EQUIPMENT": 4,
+          "LANE DEPARTURE": 1,
+          "TIRES": 1,
+          "TRACTION CONTROL SYSTEM": 1,
+          "TRAILER HITCHES": 1
+        },
+        "recalls": [
+          "17V-598",
+          "17V-669",
+          "17V-672",
+          "18V-213",
+          "18V-214",
+          "18V-392",
+          "18V-568",
+          "18V-894",
+          "19V-278",
+          "19V-633",
+          "20V-097",
+          "21E-027",
+          "21V-155",
+          "21V-983",
+          "22V-150",
+          "24V-852",
+          "25V-236",
+          "26V-373",
+          "26V-375"
+        ]
+      },
+      "2019": {
+        "complaints": 1031,
+        "crashes": 14,
+        "fires": 5,
+        "components": {
+          "POWER TRAIN": 531,
+          "ENGINE": 307,
+          "UNKNOWN OR OTHER": 99,
+          "ELECTRICAL SYSTEM": 82,
+          "BACK OVER PREVENTION": 43,
+          "STRUCTURE": 30,
+          "VEHICLE SPEED CONTROL": 30,
+          "VISIBILITY": 29,
+          "FORWARD COLLISION AVOIDANCE": 28,
+          "AIR BAGS": 20,
+          "FUEL/PROPULSION SYSTEM": 20,
+          "SERVICE BRAKES": 20,
+          "STEERING": 19,
+          "EXTERIOR LIGHTING": 11,
+          "LATCHES/LOCKS/LINKAGES": 10,
+          "WHEELS": 9,
+          "SUSPENSION": 8,
+          "LANE DEPARTURE": 7,
+          "SEATS": 5,
+          "TIRES": 5,
+          "SEAT BELTS": 4,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 3,
+          "EQUIPMENT": 1,
+          "PARKING BRAKE": 1
+        },
+        "recalls": [
+          "18V-894",
+          "19V-278",
+          "19V-633",
+          "19V-805",
+          "20V-097",
+          "22V-252",
+          "24V-852",
+          "25V-442",
+          "26V-373"
+        ]
+      },
+      "2020": {
+        "complaints": 569,
+        "crashes": 19,
+        "fires": 4,
+        "components": {
+          "POWER TRAIN": 248,
+          "ENGINE": 113,
+          "ELECTRICAL SYSTEM": 72,
+          "UNKNOWN OR OTHER": 64,
+          "VISIBILITY": 59,
+          "FORWARD COLLISION AVOIDANCE": 22,
+          "STRUCTURE": 19,
+          "SERVICE BRAKES": 18,
+          "BACK OVER PREVENTION": 13,
+          "VEHICLE SPEED CONTROL": 13,
+          "FUEL/PROPULSION SYSTEM": 12,
+          "AIR BAGS": 10,
+          "LATCHES/LOCKS/LINKAGES": 10,
+          "SUSPENSION": 10,
+          "STEERING": 8,
+          "EXTERIOR LIGHTING": 5,
+          "LANE DEPARTURE": 5,
+          "SEATS": 4,
+          "WHEELS": 4,
+          "PARKING BRAKE": 3,
+          "SEAT BELTS": 3,
+          "TIRES": 2
+        },
+        "recalls": [
+          "19V-633",
+          "19V-805",
+          "19V-903",
+          "20V-097",
+          "20V-197",
+          "20V-467",
+          "20V-575",
+          "22V-250",
+          "24V-852",
+          "25V-442",
+          "26V-373"
+        ]
+      },
+      "2021": {
+        "complaints": 1332,
+        "crashes": 18,
+        "fires": 7,
+        "components": {
+          "POWER TRAIN": 463,
+          "ELECTRICAL SYSTEM": 175,
+          "VISIBILITY": 147,
+          "ENGINE": 133,
+          "UNKNOWN OR OTHER": 127,
+          "EXTERIOR LIGHTING": 126,
+          "FUEL/PROPULSION SYSTEM": 114,
+          "SERVICE BRAKES": 80,
+          "WHEELS": 54,
+          "FORWARD COLLISION AVOIDANCE": 52,
+          "STEERING": 51,
+          "STRUCTURE": 48,
+          "BACK OVER PREVENTION": 45,
+          "VEHICLE SPEED CONTROL": 28,
+          "SUSPENSION": 20,
+          "EQUIPMENT": 17,
+          "LANE DEPARTURE": 17,
+          "PARKING BRAKE": 12,
+          "LATCHES/LOCKS/LINKAGES": 10,
+          "AIR BAGS": 7,
+          "SEAT BELTS": 7,
+          "TIRES": 2,
+          "INTERIOR LIGHTING": 1,
+          "SEATS": 1
+        },
+        "recalls": [
+          "21V-090",
+          "21V-381",
+          "21V-407",
+          "21V-533",
+          "21V-653",
+          "21V-805",
+          "21V-986",
+          "22V-142",
+          "22V-188",
+          "22V-193",
+          "22V-250",
+          "22V-414",
+          "22V-623",
+          "22V-842",
+          "23V-163",
+          "23V-509",
+          "23V-896",
+          "24V-443",
+          "24V-635",
+          "24V-852",
+          "25V-132",
+          "25V-169",
+          "25V-315",
+          "25V-348",
+          "25V-455",
+          "25V-729",
+          "26V-104",
+          "26V-402",
+          "26V-489"
+        ]
+      },
+      "2022": {
+        "complaints": 830,
+        "crashes": 25,
+        "fires": 10,
+        "components": {
+          "POWER TRAIN": 245,
+          "ELECTRICAL SYSTEM": 191,
+          "UNKNOWN OR OTHER": 129,
+          "FUEL/PROPULSION SYSTEM": 104,
+          "EXTERIOR LIGHTING": 76,
+          "EQUIPMENT": 74,
+          "ENGINE": 59,
+          "VISIBILITY": 52,
+          "SERVICE BRAKES": 37,
+          "FORWARD COLLISION AVOIDANCE": 29,
+          "VEHICLE SPEED CONTROL": 23,
+          "STRUCTURE": 21,
+          "WHEELS": 21,
+          "BACK OVER PREVENTION": 17,
+          "SUSPENSION": 17,
+          "STEERING": 13,
+          "PARKING BRAKE": 12,
+          "LANE DEPARTURE": 9,
+          "LATCHES/LOCKS/LINKAGES": 7,
+          "AIR BAGS": 5,
+          "SEATS": 4,
+          "SEAT BELTS": 2,
+          "FIRERELATED": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "21V-986",
+          "22V-193",
+          "22V-253",
+          "22V-623",
+          "22V-675",
+          "22V-684",
+          "22V-686",
+          "22V-842",
+          "23V-070",
+          "23V-509",
+          "23V-802",
+          "23V-896",
+          "24V-635",
+          "24V-682",
+          "24V-852",
+          "25V-132",
+          "25V-315",
+          "25V-455",
+          "25V-515",
+          "25V-517",
+          "25V-729",
+          "26V-104",
+          "26V-489"
+        ]
+      },
+      "2023": {
+        "complaints": 529,
+        "crashes": 21,
+        "fires": 5,
+        "components": {
+          "POWER TRAIN": 197,
+          "ELECTRICAL SYSTEM": 125,
+          "UNKNOWN OR OTHER": 89,
+          "SERVICE BRAKES": 62,
+          "ENGINE": 47,
+          "FORWARD COLLISION AVOIDANCE": 35,
+          "VISIBILITY": 32,
+          "EXTERIOR LIGHTING": 29,
+          "STRUCTURE": 24,
+          "WHEELS": 23,
+          "VEHICLE SPEED CONTROL": 21,
+          "FUEL/PROPULSION SYSTEM": 19,
+          "STEERING": 19,
+          "LANE DEPARTURE": 9,
+          "SUSPENSION": 8,
+          "EQUIPMENT": 7,
+          "BACK OVER PREVENTION": 6,
+          "PARKING BRAKE": 4,
+          "SEATS": 4,
+          "TIRES": 4,
+          "SEAT BELTS": 2,
+          "AIR BAGS": 1,
+          "INTERIOR LIGHTING": 1,
+          "LATCHES/LOCKS/LINKAGES": 1,
+          "SERVICE BRAKESAL SYSTEM": 1,
+          "TRAILER HITCHES": 1
+        },
+        "recalls": [
+          "23V-070",
+          "23V-072",
+          "23V-128",
+          "23V-509",
+          "23V-847",
+          "23V-896",
+          "24V-852",
+          "25V-315",
+          "25V-512",
+          "25V-729",
+          "26V-104",
+          "26V-489",
+          "26V-578"
+        ]
+      },
+      "2024": {
+        "complaints": 239,
+        "crashes": 21,
+        "fires": 4,
+        "components": {
+          "POWER TRAIN": 72,
+          "ELECTRICAL SYSTEM": 57,
+          "EXTERIOR LIGHTING": 55,
+          "ENGINE": 25,
+          "UNKNOWN OR OTHER": 23,
+          "FORWARD COLLISION AVOIDANCE": 21,
+          "SERVICE BRAKES": 17,
+          "VEHICLE SPEED CONTROL": 14,
+          "FUEL/PROPULSION SYSTEM": 12,
+          "VISIBILITY": 10,
+          "LANE DEPARTURE": 6,
+          "STEERING": 5,
+          "AIR BAGS": 4,
+          "SEAT BELTS": 3,
+          "STRUCTURE": 3,
+          "SUSPENSION": 3,
+          "BACK OVER PREVENTION": 2,
+          "LATCHES/LOCKS/LINKAGES": 2,
+          "SEATS": 2,
+          "EQUIPMENT": 1,
+          "TIRES": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "24V-329",
+          "24V-486",
+          "24V-851",
+          "24V-852",
+          "25V-022",
+          "25V-164",
+          "25V-198",
+          "25V-315",
+          "25V-512",
+          "26V-104",
+          "26V-578"
+        ]
+      },
+      "2025": {
+        "complaints": 131,
+        "crashes": 7,
+        "fires": 4,
+        "components": {
+          "POWER TRAIN": 33,
+          "ELECTRICAL SYSTEM": 28,
+          "FORWARD COLLISION AVOIDANCE": 28,
+          "SERVICE BRAKES": 28,
+          "UNKNOWN OR OTHER": 26,
+          "VEHICLE SPEED CONTROL": 12,
+          "LANE DEPARTURE": 10,
+          "ENGINE": 8,
+          "VISIBILITY": 8,
+          "EXTERIOR LIGHTING": 6,
+          "FUEL/PROPULSION SYSTEM": 5,
+          "STEERING": 5,
+          "STRUCTURE": 5,
+          "BACK OVER PREVENTION": 3,
+          "WHEELS": 2,
+          "AIR BAGS": 1,
+          "SEATS": 1,
+          "SUSPENSION": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "24V-851",
+          "25V-164",
+          "25V-198",
+          "25V-199",
+          "25V-271",
+          "25V-309",
+          "25V-344",
+          "25V-398",
+          "25V-488",
+          "25V-489",
+          "25V-512",
+          "25V-540",
+          "25V-823",
+          "26V-104",
+          "26V-578",
+          "26V-655"
+        ]
+      },
+      "2026": {
+        "complaints": 24,
+        "crashes": 1,
+        "fires": 0,
+        "components": {
+          "SERVICE BRAKES": 8,
+          "FORWARD COLLISION AVOIDANCE": 7,
+          "ENGINE": 5,
+          "POWER TRAIN": 5,
+          "ELECTRICAL SYSTEM": 4,
+          "UNKNOWN OR OTHER": 2,
+          "LANE DEPARTURE": 1,
+          "STEERING": 1,
+          "STRUCTURE": 1,
+          "VEHICLE SPEED CONTROL": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "26V-104",
+          "26V-550",
+          "26V-576",
+          "26V-577",
+          "26V-578",
+          "26V-653",
+          "26V-655",
+          "26V-689"
+        ]
+      }
+    }
+  }
+}

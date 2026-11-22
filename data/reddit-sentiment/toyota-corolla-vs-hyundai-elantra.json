@@ -18,11 +18,11 @@
  "subreddits": {
   "ElantraN": 20,
   "Elantra": 10,
+  "whatcarshouldIbuy": 110,
   "COROLLA": 16,
-  "whatcarshouldIbuy": 90,
-  "UsedCars": 8,
-  "askcarsales": 1,
-  "carbuying": 5
+  "UsedCars": 9,
+  "askcarsales": 2,
+  "carbuying": 6
  },
  "rules": "Derived by scripts/reddit-sentiment-pair.mjs from data/reddit-sentiment/cars/toyota-corolla.json and hyundai-elantra.json: every thread in either file whose post names both cars, with its coded comments (deduplicated by id; picks of other models and opinions about other models dropped). Collection and coding rules are in the two car files. Venues: r/corolla (home of car a), r/Elantra, r/ElantraN (home of car b), every other subreddit neutral. See scripts/reddit-sentiment.mjs.",
  "gaps": [],
@@ -49,6 +49,16 @@
    "created": "2025-01-02"
   },
   {
+   "id": "1hs3ybd",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-01-02"
+  },
+  {
+   "id": "1hwgcq4",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-01-08"
+  },
+  {
    "id": "1i0ezbu",
    "subreddit": "COROLLA",
    "created": "2025-01-13"
@@ -69,6 +79,11 @@
    "created": "2025-01-23"
   },
   {
+   "id": "1ifzhqr",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-02-02"
+  },
+  {
    "id": "1ii48zx",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-02-05"
@@ -77,6 +92,11 @@
    "id": "1iicjhw",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-02-05"
+  },
+  {
+   "id": "1iiw9tj",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-02-06"
   },
   {
    "id": "1ikbm0y",
@@ -114,6 +134,11 @@
    "created": "2025-02-21"
   },
   {
+   "id": "1iv4bt8",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-02-21"
+  },
+  {
    "id": "1iwp0se",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-02-24"
@@ -122,6 +147,11 @@
    "id": "1iy61ja",
    "subreddit": "ElantraN",
    "created": "2025-02-25"
+  },
+  {
+   "id": "1j1tdnh",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-03-02"
   },
   {
    "id": "1jbbzbu",
@@ -139,6 +169,11 @@
    "created": "2025-03-16"
   },
   {
+   "id": "1jezw3e",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-03-19"
+  },
+  {
    "id": "1jhmeyq",
    "subreddit": "COROLLA",
    "created": "2025-03-23"
@@ -152,6 +187,11 @@
    "id": "1jojdp9",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-04-01"
+  },
+  {
+   "id": "1jqcsu0",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-04-03"
   },
   {
    "id": "1jsvwrg",
@@ -219,9 +259,19 @@
    "created": "2025-05-11"
   },
   {
+   "id": "1knzyi5",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-05-16"
+  },
+  {
    "id": "1ko08la",
    "subreddit": "ElantraN",
    "created": "2025-05-16"
+  },
+  {
+   "id": "1kojkhf",
+   "subreddit": "UsedCars",
+   "created": "2025-05-17"
   },
   {
    "id": "1kpzzoy",
@@ -232,6 +282,11 @@
    "id": "1kq9ewz",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-05-19"
+  },
+  {
+   "id": "1l04d29",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-05-31"
   },
   {
    "id": "1l24fu1",
@@ -274,6 +329,11 @@
    "created": "2025-07-10"
   },
   {
+   "id": "1lw6a0j",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-07-10"
+  },
+  {
    "id": "1lycic7",
    "subreddit": "COROLLA",
    "created": "2025-07-12"
@@ -287,6 +347,11 @@
    "id": "1m1z2xu",
    "subreddit": "whatcarshouldIbuy",
    "created": "2025-07-17"
+  },
+  {
+   "id": "1m2tv46",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-07-18"
   },
   {
    "id": "1m7gy2w",
@@ -306,6 +371,11 @@
   {
    "id": "1mbem2m",
    "subreddit": "Elantra",
+   "created": "2025-07-28"
+  },
+  {
+   "id": "1mbk5wu",
+   "subreddit": "whatcarshouldIbuy",
    "created": "2025-07-28"
   },
   {
@@ -349,9 +419,24 @@
    "created": "2025-09-12"
   },
   {
+   "id": "1nhrav9",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-09-15"
+  },
+  {
    "id": "1ni3grq",
    "subreddit": "COROLLA",
    "created": "2025-09-16"
+  },
+  {
+   "id": "1no38ny",
+   "subreddit": "askcarsales",
+   "created": "2025-09-23"
+  },
+  {
+   "id": "1nwz957",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-10-03"
   },
   {
    "id": "1oagsqr",
@@ -421,6 +506,11 @@
   {
    "id": "1qag95d",
    "subreddit": "UsedCars",
+   "created": "2026-01-12"
+  },
+  {
+   "id": "1qawqyn",
+   "subreddit": "carbuying",
    "created": "2026-01-12"
   },
   {
@@ -619,6 +709,11 @@
    "created": "2026-05-26"
   },
   {
+   "id": "1u1mi0k",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-06-10"
+  },
+  {
    "id": "1u55w8j",
    "subreddit": "COROLLA",
    "created": "2026-06-13"
@@ -724,9 +819,24 @@
    "created": "2026-08-09"
   },
   {
+   "id": "1vltirv",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-08-11"
+  },
+  {
+   "id": "1vq6kmj",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-08-16"
+  },
+  {
    "id": "1vx689s",
    "subreddit": "whatcarshouldIbuy",
    "created": "2026-08-24"
+  },
+  {
+   "id": "1vyd84g",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-08-25"
   },
   {
    "id": "1w4v3mp",
@@ -762,6 +872,11 @@
    "id": "1x3gnhv",
    "subreddit": "whatcarshouldIbuy",
    "created": "2026-10-11"
+  },
+  {
+   "id": "1x3vgxd",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-10-12"
   },
   {
    "id": "1x6ngxz",
@@ -1271,6 +1386,78 @@
   {
    "id": "m5nbams",
    "thread": "1hrvnwp",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m52knrq",
+   "thread": "1hs3ybd",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "space",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m52kub5",
+   "thread": "1hs3ybd",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m52t2m3",
+   "thread": "1hs3ybd",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m612nkk",
+   "thread": "1hwgcq4",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m61h8os",
+   "thread": "1hwgcq4",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m61jnse",
+   "thread": "1hwgcq4",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m61l6gq",
+   "thread": "1hwgcq4",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m61njfk",
+   "thread": "1hwgcq4",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m61rdsi",
+   "thread": "1hwgcq4",
    "rec": null,
    "m": []
   },
@@ -2337,6 +2524,192 @@
    "m": []
   },
   {
+   "id": "makd748",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "makeoks",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "makffe0",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "makgqow",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "makhy6v",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "makj4tq",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "power",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "makjho7",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "power",
+     "neg"
+    ],
+    [
+     "a",
+     "space",
+     "neg"
+    ],
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "makrptj",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mal3t1k",
+   "thread": "1ifzhqr",
+   "rec": "a",
+   "m": []
+  },
+  {
+   "id": "mal5gg1",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "malpwxf",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "malv7u1",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "malxdmf",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "malxosh",
+   "thread": "1ifzhqr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "power",
+     "neg"
+    ],
+    [
+     "a",
+     "tech",
+     "neg"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
    "id": "mb2iwyn",
    "thread": "1ii48zx",
    "rec": null,
@@ -2477,6 +2850,83 @@
     [
      "b",
      "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mb93uie",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mb94wqv",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mb96lo9",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mb96tny",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mb97cyz",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mb9be8g",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mbau3w3",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mbblkxb",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mbby20j",
+   "thread": "1iiw9tj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
      "pos"
     ]
    ]
@@ -2843,6 +3293,66 @@
   {
    "id": "mdx6ehk",
    "thread": "1iug89n",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me2q9wc",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me2r0lp",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me2rqhm",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me2spzv",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me36fz1",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me37wd5",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "power",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "me3hfig",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me3hrna",
+   "thread": "1iv4bt8",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "me3jlon",
+   "thread": "1iv4bt8",
    "rec": null,
    "m": []
   },
@@ -3448,6 +3958,306 @@
    "m": []
   },
   {
+   "id": "mfm9b0h",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfm9fha",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfma51k",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmaai6",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmaq78",
+   "thread": "1j1tdnh",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mfmcmkq",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmdnjr",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmds8z",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfme2gd",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmehuo",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmg9rf",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmgcf6",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmhk0m",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmhml9",
+   "thread": "1j1tdnh",
+   "rec": "b",
+   "m": []
+  },
+  {
+   "id": "mfmi41m",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmjbyr",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mfmjnn1",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmjtc9",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmjtv1",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmk8if",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfml9q3",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmm912",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmnc7k",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmokwq",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmolok",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmp9jn",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmpgdt",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmq3db",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmqijt",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mfmr2pj",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmrcnm",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmsl2b",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmspub",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmssea",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmt8eh",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmujy2",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmx7xq",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfmyga0",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mfn9lzf",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfn9ze3",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfnmmhq",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mfnp9vk",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfnphs7",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfnpy7f",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mfnqmoo",
+   "thread": "1j1tdnh",
+   "rec": null,
+   "m": []
+  },
+  {
    "id": "mhsw5jz",
    "thread": "1jbbzbu",
    "rec": "b",
@@ -3885,6 +4695,120 @@
   {
    "id": "mi15y7y",
    "thread": "1jcbhg3",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mimwnhe",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mimxmwm",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "min0972",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "min4jo7",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minba44",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minblt4",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minbyk4",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minc6nr",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minczk4",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mindkxo",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mindmvf",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minft36",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minhzzy",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minpd0b",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "minrwgd",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mio0d48",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mio5zk5",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mioe805",
+   "thread": "1jezw3e",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mixfanr",
+   "thread": "1jezw3e",
    "rec": null,
    "m": []
   },
@@ -4677,6 +5601,216 @@
    "thread": "1jojdp9",
    "rec": null,
    "m": []
+  },
+  {
+   "id": "ml61u0j",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml629oj",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml62ij0",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml62pnh",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml62q7b",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml632uh",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml669la",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml691ga",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml6dode",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml6f355",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml6jr4u",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml6l3zm",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml6mx0a",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml70mxi",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml73l64",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml773a4",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7888b",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml794by",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml79i8p",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7bv2i",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7fa3i",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7q6f5",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7txbq",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7vout",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml7x93l",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml83r4b",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml8yit5",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml938he",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ml95qus",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mla4uo0",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mla4y32",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mla567h",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mla59uj",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mlhp73v",
+   "thread": "1jqcsu0",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "mpg",
+     "pos"
+    ]
+   ]
   },
   {
    "id": "mlphvie",
@@ -6587,6 +7721,60 @@
    "m": []
   },
   {
+   "id": "msmapoz",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msmg47y",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msmk7op",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msmsv6r",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msmxvvr",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msmybko",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msn54bd",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "msnjxx1",
+   "thread": "1knzyi5",
+   "rec": null,
+   "m": []
+  },
+  {
    "id": "msmdlek",
    "thread": "1ko08la",
    "rec": null,
@@ -6651,6 +7839,42 @@
    "thread": "1ko08la",
    "rec": null,
    "m": []
+  },
+  {
+   "id": "msqnlok",
+   "thread": "1kojkhf",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msqqy1r",
+   "thread": "1kojkhf",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "msqsc72",
+   "thread": "1kojkhf",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "msqusla",
+   "thread": "1kojkhf",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "neg"
+    ]
+   ]
   },
   {
    "id": "mt1x0z5",
@@ -6850,6 +8074,30 @@
   {
    "id": "mt6y60r",
    "thread": "1kq9ewz",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mvadn9o",
+   "thread": "1l04d29",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mvaeczc",
+   "thread": "1l04d29",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mvam6fh",
+   "thread": "1l04d29",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mvbmgp5",
+   "thread": "1l04d29",
    "rec": null,
    "m": []
   },
@@ -8273,6 +9521,60 @@
    "m": []
   },
   {
+   "id": "n2bob07",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2bovj5",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2bq88w",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2d2jiw",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2dg1vv",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2dgugg",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2h28b9",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2h7v7a",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n2i7lc0",
+   "thread": "1lw6a0j",
+   "rec": null,
+   "m": []
+  },
+  {
    "id": "n2sv3u5",
    "thread": "1lycic7",
    "rec": null,
@@ -8418,6 +9720,30 @@
   {
    "id": "n5n117f",
    "thread": "1m1z2xu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n3rmh65",
+   "thread": "1m2tv46",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n3rmtic",
+   "thread": "1m2tv46",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n3rnapq",
+   "thread": "1m2tv46",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n3rxzoj",
+   "thread": "1m2tv46",
    "rec": null,
    "m": []
   },
@@ -8951,6 +10277,47 @@
   {
    "id": "n65j8vo",
    "thread": "1mbem2m",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n5mp2xb",
+   "thread": "1mbk5wu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n5mphcv",
+   "thread": "1mbk5wu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "b",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "n5mpnd0",
+   "thread": "1mbk5wu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n5mpnyr",
+   "thread": "1mbk5wu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n5nh0mw",
+   "thread": "1mbk5wu",
    "rec": null,
    "m": []
   },
@@ -10097,6 +11464,36 @@
    ]
   },
   {
+   "id": "nedi276",
+   "thread": "1nhrav9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nedjj5a",
+   "thread": "1nhrav9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nedk45c",
+   "thread": "1nhrav9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nedkol0",
+   "thread": "1nhrav9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "neez8dn",
+   "thread": "1nhrav9",
+   "rec": null,
+   "m": []
+  },
+  {
    "id": "neg67ph",
    "thread": "1ni3grq",
    "rec": null,
@@ -10143,6 +11540,300 @@
      "neg"
     ]
    ]
+  },
+  {
+   "id": "nfow25y",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfow6wg",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfowl3i",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "nfowmmp",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfowten",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfoxyvr",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfoynkn",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfp0d83",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfp0xos",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfp4831",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfp7lqe",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "nfp7pug",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "nfp8fni",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfp9qo5",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfpbmnr",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfpdb8x",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "nfpeaam",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfphol6",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfpot0l",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfq6oh6",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfrn1xi",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfrnfik",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfrnugj",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfruqft",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfrv4xn",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfrv5e3",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfsi6ip",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfsq1ih",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfsqn5v",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfsz3yl",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nftb7du",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfu5kdj",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfugvdl",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nfuh5t1",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ng10do7",
+   "thread": "1no38ny",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhjxe6a",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhk1fsh",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "nhlcmpe",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhlq2y2",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhm2ewy",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhm351y",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhm6chw",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhm9zmf",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nhmetmz",
+   "thread": "1nwz957",
+   "rec": null,
+   "m": []
   },
   {
    "id": "nk9c75j",
@@ -13092,6 +14783,36 @@
    "thread": "1qag95d",
    "rec": "a",
    "m": []
+  },
+  {
+   "id": "nz7i6rh",
+   "thread": "1qawqyn",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "nz94q9p",
+   "thread": "1qawqyn",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nz9fbh5",
+   "thread": "1qawqyn",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
   },
   {
    "id": "nzfkiz0",
@@ -16712,6 +18433,173 @@
      "pos"
     ]
    ]
+  },
+  {
+   "id": "oqqtuux",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oqqtxam",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqquhr6",
+   "thread": "1u1mi0k",
+   "rec": "a",
+   "m": []
+  },
+  {
+   "id": "oqqvbe4",
+   "thread": "1u1mi0k",
+   "rec": "a",
+   "m": []
+  },
+  {
+   "id": "oqqvles",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqqwctz",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqqxcqd",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqqybcn",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqr0l3p",
+   "thread": "1u1mi0k",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oqr2sil",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqrs8aa",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oqrsttu",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "mpg",
+     "pos"
+    ],
+    [
+     "a",
+     "space",
+     "pos"
+    ],
+    [
+     "a",
+     "ride",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oqrwjjt",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "power",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "oqs1nuz",
+   "thread": "1u1mi0k",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oqs3qst",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oqsjfyg",
+   "thread": "1u1mi0k",
+   "rec": null,
+   "m": []
   },
   {
    "id": "ori8swy",
@@ -21418,6 +23306,417 @@
    "m": []
   },
   {
+   "id": "p344v1v",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p3465gj",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p346vwl",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p348gpp",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p34ajlk",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p34fskl",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p34mgsl",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p34o5pl",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p34qrxb",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p35himk",
+   "thread": "1vltirv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43508f",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4353i8",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4354xh",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4354yy",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p435bok",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "ride",
+     "neg"
+    ],
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p435l3c",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p435qc7",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p436cfb",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p436x4o",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p438upt",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p438xwn",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4391wu",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43asnc",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43bc5a",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43drmr",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43dso3",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43f9hs",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43ihn4",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43jmw6",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43t0sg",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43vkyp",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p43vxyu",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p445h74",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44cce4",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44djj5",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44do1v",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ],
+    [
+     "b",
+     "ride",
+     "neg"
+    ],
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "power",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "p44kobz",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "ride",
+     "neg"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "b",
+     "mpg",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p44lvwo",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44ncr1",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p44nh1b",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44otb1",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p44xkfn",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p45gyfn",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ],
+    [
+     "a",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p45h4va",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p45i0dq",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p46wioe",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4731g6",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mn1co",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mn5uc",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mnijo",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mnxb5",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mof0i",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4monaw",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mpevs",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mrt1w",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p4mtg2z",
+   "thread": "1vq6kmj",
+   "rec": null,
+   "m": []
+  },
+  {
    "id": "p5mbdyu",
    "thread": "1vx689s",
    "rec": null,
@@ -21468,6 +23767,35 @@
   {
    "id": "p5rcyv6",
    "thread": "1vx689s",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p5vyk6z",
+   "thread": "1vyd84g",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p5w0j8y",
+   "thread": "1vyd84g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p5w4wxh",
+   "thread": "1vyd84g",
    "rec": null,
    "m": []
   },
@@ -23622,6 +25950,147 @@
   {
    "id": "ph73mpw",
    "thread": "1x3gnhv",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfejdyp",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pfel7a0",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfeo5f3",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfeo8dk",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfeszbn",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pffpdnj",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "ride",
+     "pos"
+    ],
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pfglzot",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pfgq13r",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pfhf9hh",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfhgtds",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfhh1f0",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfhh40j",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfhslua",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfi44fh",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pfi7c45",
+   "thread": "1x3vgxd",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "neg"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pgeeg4z",
+   "thread": "1x3vgxd",
    "rec": null,
    "m": []
   },

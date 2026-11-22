@@ -1,0 +1,45 @@
+/* "<car> problems by year" pages (scripts/render-problems-pages.mjs). Loaded after price-guide.css, which supplies the layout,
+   tables, columns and plan cards. This file adds only what those pages need: the Buy / Check first / Avoid mark, the verdict
+   colours on the model-year columns, and the problem and recall lists. White page, hairline rules, square corners, no
+   rounded gray boxes, no left-edge accent rules. Every class is pb-*. */
+
+/* One photo in the hero. price-guide.css lays the gallery out for a large photo and four small ones; this keeps its size so the
+   blue arc behind it still lands in the right place. */
+.dr .pb-photo { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); }
+
+/* Verdict mark: the word is always printed. Buy is sign blue, Check first is mid-gray, Avoid is ink. */
+.dr .pb-chip { display:inline-block; padding:3px 9px 4px; font-size:13px; line-height:1.3; font-weight:700; white-space:nowrap; background:var(--sign); color:#fff; }
+.dr .pb-chip--check { background:#C3CBD6; color:var(--ink); }
+.dr .pb-chip--avoid { background:var(--ink); color:#fff; }
+.dr .pb-key { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.dr .pb-na { color:var(--muted); font-size:13px; }
+
+/* Year-by-year table: wider than the trims table, with the reason in the last column. */
+.dr .pb-table { min-width:620px; }
+.dr .pb-table :is(th,td) { padding-right:12px; }
+.dr .pb-table tbody th { width:56px; }
+.dr .pb-table td:last-child { min-width:250px; padding-right:0; }
+.dr .pb-table td strong { font-size:16px; font-variant-numeric:tabular-nums; }
+
+/* Rate columns, one per model year, ten across. */
+.dr .pb-cols { max-width:760px; }
+.dr .pb-cols .vp-cols__bar[data-verdict="check"] { background:#8E9AAB; }
+.dr .pb-cols .vp-cols__bar[data-verdict="avoid"] { background:var(--ink); }
+.dr .pb-cols--recalls { max-width:760px; }
+
+.dr .pb-years { margin-left:6px; font-size:13px; font-weight:400; color:var(--muted); white-space:nowrap; }
+.dr .vp-body h3 .pb-years { font-size:14px; }
+
+/* Problem and recall lists: two columns on a desktop, one on a phone. */
+.dr .pb-issues { display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:22px; border-top:1px solid var(--line); }
+.dr .pb-issues li { padding:14px 0 16px; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.55; }
+.dr .pb-issues strong { display:block; margin-bottom:4px; font-size:15.5px; line-height:1.35; }
+.dr .pb-count { display:block; margin-bottom:4px; font-size:13px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; }
+.dr .pb-rd-more { margin-top:26px; padding-top:20px; border-top:1px solid var(--line); }
+.dr .pb-rd-more li { padding:6px 0; font-size:15px; line-height:1.5; }
+.dr .pb-rd-more li b { font-weight:600; }
+.dr .pb .vp-body > section > p + .vp-bars, .dr .pb .vp-body > section > .vp-bars { max-width:760px; margin-top:16px; }
+
+@media (max-width:760px) {
+  .dr .pb-issues { grid-template-columns:1fr; }
+}

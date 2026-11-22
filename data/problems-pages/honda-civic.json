@@ -1,0 +1,733 @@
+{
+  "key": "honda-civic",
+  "name": "Honda Civic",
+  "status": "ready",
+  "short": "Civic",
+  "make": "Honda",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Honda Civic Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Honda Civic model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the steering recall and what owners report on Reddit.",
+  "h1": "Honda Civic problems by year: years to avoid and what owners report",
+  "card": "The best and worst Civic years, the steering recall behind the 2022 spike, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2020–2021, 2024–2025",
+  "avoidYears": "2016",
+  "answer": [
+    "The best used Civics are the 2020, 2021, 2024 and 2025 model years, which draw {r:2020}, {r:2021}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2016: it draws {r:2016} per 100,000, with steering named in {k:2016:STEERING} of its {c:2016} complaints. The 2022 and 2023 are the years to ask about. The 2022 drew {c:2022} complaints, {k:2022:STEERING} of them about steering, and the 2023 another {k:2023:STEERING}; Honda’s free recall 24V-744 covers the steering gearbox behind them. With proof the recall is done they are fair buys, and without it we’d keep looking.",
+    "The rates divide each model year’s NHTSA complaints, counted across every Civic listing (sedan, coupe, hatchback, Si, Type R and Hybrid), by U.S. sales. Honda’s 2022 sales of 133,932 look low next to the 2023’s 200,381, which inflates the 2022 rate; its complaint count is the highest of any year either way. Our <a href=\"{guide}\">Civic price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s Civic table, which matches the Honda FactBook figures our Civic vs Corolla page uses.",
+  "sales": {
+    "2016": 366927,
+    "2017": 377286,
+    "2018": 325760,
+    "2019": 325650,
+    "2020": 261225,
+    "2021": 263787,
+    "2022": 133932,
+    "2023": 200381,
+    "2024": 242005,
+    "2025": 238661
+  },
+  "publishedRates": {
+    "2019": 142,
+    "2020": 94,
+    "2021": 62,
+    "2022": 719,
+    "2023": 170,
+    "2024": 60,
+    "2025": 45
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "Steering is named in {k:2016:STEERING} of {c:2016} complaints. Recalls cover 2.0-liter piston pins (16V-074) and the electric parking brake (16V-725), and the 1.5-liter turbo’s oil dilution got a warranty extension, not a recall."
+    ],
+    "2017": [
+      "check",
+      "Steering leads again ({k:2017:STEERING}). Recall 18V-663 covers a steering sensor magnet that can reverse assist at full lock, and 17V-706 a sedan and coupe halfshaft."
+    ],
+    "2018": [
+      "check",
+      "Steering ({k:2018:STEERING}) and the fuel system ({k:2018:FUEL/PROPULSION SYSTEM}) lead. Fuel pump recall 20V-314 covers hatchbacks and the Type R."
+    ],
+    "2019": [
+      "check",
+      "The fuel system ({k:2019:FUEL/PROPULSION SYSTEM}) and steering ({k:2019:STEERING}) lead. Fuel pump recalls 20V-314 and 21V-215 apply."
+    ],
+    "2020": [
+      "buy",
+      "Electrical ({k:2020:ELECTRICAL SYSTEM}), power train ({k:2020:POWER TRAIN}) and steering ({k:2020:STEERING}) are close behind each other. Brake master cylinder recall 23V-458 covers 2020 and 2021."
+    ],
+    "2021": [
+      "buy",
+      "A small count led by steering ({k:2021:STEERING}) and automatic emergency braking ({k:2021:FORWARD COLLISION AVOIDANCE}). Recalls 23V-458 and 24V-064 apply."
+    ],
+    "2022": [
+      "check",
+      "The most complaints of any year ({c:2022}), {k:2022:STEERING} of them about steering. Recall 24V-744 and a closed NHTSA analysis cover it; buy only with proof it’s done.",
+      "avoid to check: the complaint spike traces to a free recall a dealer can confirm"
+    ],
+    "2023": [
+      "check",
+      "Steering still leads at {k:2023:STEERING} complaints. Recall 24V-744 applies, so ask for proof."
+    ],
+    "2024": [
+      "buy",
+      "Steering complaints fall to {k:2024:STEERING}. Recall 24V-744 still applies; ask for proof."
+    ],
+    "2025": [
+      "buy",
+      "The count is still growing as the year ages. Recall 24V-763 covers a high-pressure fuel pump that can leak, on 2025 gas and Hybrid cars."
+    ],
+    "2026": [
+      "buy",
+      "{c:2026} complaints and {rec:2026} recall so far. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2022 bar is the tallest partly because Honda sold fewer Civics that year, and the 2022 complaint count is also the highest.",
+  "generations": [
+    {
+      "name": "Tenth generation",
+      "years": "2016–2021",
+      "text": "The sedan arrived for 2016, the coupe followed in March 2016 and ended after 2020, and the hatchback joined for 2017 with the 1.5-liter turbo only. The base engine is a 2.0-liter (158 hp) and the turbo makes 174 hp in the sedan and coupe; the Si and Type R came on the same body, and the Type R is a hatchback with a 2.0-liter turbo. A 2019 refresh made Honda Sensing standard (Wikipedia)."
+    },
+    {
+      "name": "Eleventh generation",
+      "years": "2022–",
+      "text": "The redesigned Civic launched as a 2022 with a 2.0-liter engine on LX and Sport trims and a 1.5-liter turbo above them; the Si returned with a 200-hp turbo and a manual only. A facelift for 2025 added a hybrid sedan and hatchback (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Steering, older cars",
+      "component": "STEERING",
+      "years": [
+        2016,
+        2019
+      ],
+      "text": "Recall 18V-663 covers a torque sensor magnet that can come loose and apply steering assist the wrong way at full lock on 2017 and 2018 cars; dealers replace the gearbox. NHTSA’s complaint field doesn’t say what the 2016 owners describe."
+    },
+    {
+      "title": "Steering, 2022 on",
+      "component": "STEERING",
+      "years": [
+        2022,
+        2025
+      ],
+      "text": "Recall 24V-744 covers a steering gearbox with excess internal friction on 2022 to 2025 Civics, which can make the car hard to steer; dealers replace the worm gear spring and add grease, free. NHTSA’s analysis of “sticky steering,” EA23003, closed in January 2025, and recall 23V-704 covers racks replaced in service on 2022 to 2024 cars."
+    },
+    {
+      "title": "Fuel system",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "Recalls 20V-314 and 21V-215 cover a low-pressure fuel pump inside the tank that can fail and stall the engine. Dealers replace the pump assembly, free; the VIN lookup shows whether it is open."
+    },
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "CarComplaints reports Honda extended warranties for fuel mixing into the 1.5-liter turbo’s oil in cold weather, with a software update; it isn’t a recall. Recall 16V-074 covers 2.0-liter piston pins on 2016 cars built from September 2015 to February 2016."
+    },
+    {
+      "title": "Automatic emergency braking",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2022,
+        2025
+      ],
+      "text": "NHTSA’s field names the driver-assist system, not the cause. Its separate investigation of unexpected automatic braking, EA24002, covers 2017 to 2022 CR-Vs and 2018 to 2022 Accords, and doesn’t name the Civic."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s reliability complaints are the 1.5-liter turbo’s oil dilution in cold weather, head gasket leaks on turbo and hybrid engines, and air conditioning failures on the tenth generation. The 2022 steering spike barely shows up in the threads, so the complaint counts here carry that story, not Reddit."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "24V-744",
+      "years": "2022–2025",
+      "title": "Steering gearbox friction",
+      "text": "A steering gearbox built with excess friction can make the car hard to steer. Dealers replace the worm gear spring and redistribute or add grease, free. It also covers the Type R and the Hybrid."
+    },
+    {
+      "id": "23V-704",
+      "years": "2022–2024",
+      "title": "Replaced steering racks",
+      "text": "A rack installed as a service repair may have been assembled wrong, letting a tire rub the suspension. Dealers inspect and replace the rack as needed, free."
+    },
+    {
+      "id": "18V-663",
+      "years": "2017–2018",
+      "title": "Steering sensor magnet",
+      "text": "A magnet in the torque sensor can come loose and apply assist the wrong way at full lock. Dealers replace the gearbox, free."
+    },
+    {
+      "id": "16V-074",
+      "years": "2016 2.0-liter",
+      "title": "Piston wrist pin clips",
+      "text": "Pistons may lack a wrist pin circlip, which can let the pin damage a cylinder and seize the engine. Dealers replace the pistons and damaged parts, free."
+    },
+    {
+      "id": "17V-706",
+      "years": "2017 sedan, coupe",
+      "title": "Halfshaft heat treatment",
+      "text": "A right halfshaft heat-treated improperly can break and leave the car unable to move. Dealers check the serial number and replace it as needed, free."
+    },
+    {
+      "id": "20V-314 and 21V-215",
+      "years": "2018–2020",
+      "title": "Low-pressure fuel pump",
+      "text": "The in-tank pump can fail and stall the engine. Dealers replace the pump assembly, free."
+    },
+    {
+      "id": "23V-458",
+      "years": "2020–2021",
+      "title": "Brake master cylinder tie rod",
+      "text": "A fastener between the brake booster and master cylinder may be assembled wrong and let the cylinder separate. Dealers inspect and repair the booster as needed, free."
+    },
+    {
+      "id": "24V-763",
+      "years": "2025",
+      "title": "High-pressure fuel pump",
+      "text": "The pump may crack and leak fuel on 2025 Civics and Civic Hybrids. Dealers inspect and replace it as needed, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA23003",
+      "status": "closed",
+      "years": "2022–2023",
+      "title": "Momentary increased steering effort",
+      "text": "NHTSA opened the analysis on November 29, 2023, covering 2022 and 2023 Civics, the 2023 CR-V and the Acura Integra, and closed it in January 2025. Honda’s recall 24V-744 followed in October 2024."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Steering recall on any 2022 to 2025.",
+      "text": "Ask the dealer for proof that 24V-744 is done, and if the steering rack was ever replaced, that 23V-704 is too."
+    },
+    {
+      "title": "Fuel pump recalls.",
+      "text": "On a 2018 to 2020 hatchback or sedan, confirm 20V-314 and 21V-215; on a 2025, confirm 24V-763."
+    },
+    {
+      "title": "Oil on a 2016 to 2018 turbo.",
+      "text": "Owners and CarComplaints report fuel mixing into the oil in cold weather. Check the dipstick for a high level or a fuel smell, and ask which warranty extension still applies."
+    },
+    {
+      "title": "The 2016 and 2017 recalls.",
+      "text": "Confirm 16V-074 (2.0-liter pistons), 16V-725 (parking brake) and 17V-706 (halfshaft) are closed, and on a 2017 or 2018 that 18V-663 is too."
+    },
+    {
+      "title": "Air conditioning on a tenth-generation car.",
+      "text": "Reddit owners report A/C failures on 2016 to 2021 Civics. Run it on the hottest setting during the test drive and make sure the air turns cold."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Owners also report head gasket leaks on turbo and hybrid engines. Have a shop that isn’t the seller’s check coolant level and the steering before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Civic has {c:2026} NHTSA complaint and {rec:2026} recall so far, and the hybrid joined the line for 2025, so it is too new to rate. If you are choosing between a new 2026 and a used 2024 or 2025, steering recall 24V-744 applies to the used ones and not to a new car.",
+    "Our <a href=\"{guide}\">Civic price guide</a> has the 2026 prices, Honda’s financing deadline and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Honda Civic year?",
+      "The 2016 has the highest rate of the years we can fairly compare, {r:2016} NHTSA complaints per 100,000 sold. The 2022 has the most complaints, {c:2022}, and {k:2022:STEERING} of them name steering, which Honda’s free recall 24V-744 covers."
+    ],
+    [
+      "What is the best used Civic year?",
+      "The 2020, 2021, 2024 and 2025 model years, at {r:2020}, {r:2021}, {r:2024} and {r:2025} complaints per 100,000. Ask for proof of recall 24V-744 on the 2024 and 2025."
+    ],
+    [
+      "Is the 2022 Honda Civic reliable?",
+      "It drew {c:2022} NHTSA complaints, more than any other year, and {k:2022:STEERING} name steering. Honda recalled the steering gearbox (24V-744) and NHTSA closed its analysis, so we’d buy one only with proof the recall is done."
+    ],
+    [
+      "Does the Honda Civic 1.5-liter turbo have oil dilution?",
+      "CarComplaints reports fuel mixing into the oil in cold weather on 2016 to 2018 turbo cars and says Honda extended warranties and updated software. It isn’t a recall, so a VIN lookup won’t show it."
+    ],
+    [
+      "How do I check a used Civic for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Honda dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-CIVIC-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=honda&model=civic&modelYear=2022",
+      "scope": "every Civic listing (sedan, coupe, hatchback, Si, Type R, Hybrid) for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-03",
+      "title": "NHTSA: investigation EA23003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA23003",
+      "scope": "closed engineering analysis of momentary increased steering effort on 2022 and 2023 Civics",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-04",
+      "title": "NHTSA: investigation EA24002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24002",
+      "scope": "investigation of unexpected automatic emergency braking on 2017 to 2022 CR-Vs and 2018 to 2022 Accords, which does not name the Civic",
+      "note": "from the Honda CR-V price guide (VEH-CRV-33)"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-05",
+      "title": "Good Car Bad Car: Honda Civic sales figures",
+      "url": "https://www.goodcarbadcar.net/honda-civic-sales-figures/",
+      "scope": "U.S. Civic sales 2016 to 2025; 2022 is 133,932; a search snippet of carfigures.com shows the same total",
+      "note": "read November 21, 2026 through a page summary; our Civic vs Corolla page uses the same figures (VEH-CVC-19)"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-06",
+      "title": "Wikipedia: tenth-generation Honda Civic",
+      "url": "https://en.wikipedia.org/wiki/Honda_Civic_(tenth_generation)",
+      "scope": "body styles, engines and the 2019 refresh",
+      "note": "read November 21, 2026 through a page summary; check against Honda before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-07",
+      "title": "Wikipedia: eleventh-generation Honda Civic",
+      "url": "https://en.wikipedia.org/wiki/Honda_Civic_(eleventh_generation)",
+      "scope": "launch, engines, Si and the 2025 facelift with the hybrid",
+      "note": "read November 21, 2026 through a page summary; check against Honda before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-CIVIC-08",
+      "title": "CarComplaints: Honda oil dilution warranties extended",
+      "url": "https://www.carcomplaints.com/news/2019/honda-civic-cr-v-oil-dilution-warranties-extended.shtml",
+      "scope": "oil dilution on 2016 to 2018 Civic 1.5-liter turbo engines and Honda’s warranty extension",
+      "note": "from our Civic vs Corolla page (VEH-CVC-17)"
+    }
+  ],
+  "nhtsa": {
+    "make": "HONDA",
+    "years": [
+      2016,
+      2026
+    ],
+    "listings": [
+      "CIVIC",
+      "CIVIC SEDAN",
+      "CIVIC HATCHBACK",
+      "CIVIC HATCH",
+      "CIVIC SI",
+      "CIVIC SEDAN SI",
+      "CIVIC SEDAN HYBRID",
+      "CIVIC HATCHBACK HYBRID",
+      "CIVIC HATCHBACK TYPE R",
+      "CIVIC HATCH TYPE-R",
+      "CIVIC TYPE R",
+      "CIVIC COUPE",
+      "CIVIC HYBRID"
+    ],
+    "models": [
+      "CIVIC"
+    ],
+    "recallModels": [
+      "CIVIC",
+      "CIVIC HATCHBACK",
+      "CIVIC HYBRID",
+      "CIVIC SEDAN",
+      "CIVIC SI",
+      "CIVIC TYPE R"
+    ],
+    "investigationTerms": [
+      "Civic"
+    ],
+    "readOn": "2026-11-21",
+    "byYear": {
+      "2016": {
+        "complaints": 1084,
+        "crashes": 36,
+        "fires": 4,
+        "components": {
+          "STEERING": 446,
+          "UNKNOWN OR OTHER": 253,
+          "ELECTRICAL SYSTEM": 119,
+          "ENGINE": 100,
+          "SERVICE BRAKES": 94,
+          "VISIBILITY": 67,
+          "STRUCTURE": 48,
+          "POWER TRAIN": 37,
+          "EXTERIOR LIGHTING": 30,
+          "FUEL/PROPULSION SYSTEM": 30,
+          "AIR BAGS": 28,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 27,
+          "WHEELS": 19,
+          "VEHICLE SPEED CONTROL": 17,
+          "EQUIPMENT": 15,
+          "FORWARD COLLISION AVOIDANCE": 8,
+          "TIRES": 8,
+          "LANE DEPARTURE": 7,
+          "SUSPENSION": 6,
+          "SEAT BELTS": 4,
+          "SEATS": 4,
+          "PARKING BRAKE": 3,
+          "BACK OVER PREVENTION": 1
+        },
+        "recalls": [
+          "16V-074",
+          "16V-526",
+          "16V-725",
+          "23V-858",
+          "26V-332"
+        ]
+      },
+      "2017": {
+        "complaints": 613,
+        "crashes": 23,
+        "fires": 6,
+        "components": {
+          "STEERING": 175,
+          "UNKNOWN OR OTHER": 166,
+          "ELECTRICAL SYSTEM": 106,
+          "ENGINE": 70,
+          "SERVICE BRAKES": 39,
+          "STRUCTURE": 37,
+          "VISIBILITY": 37,
+          "FUEL/PROPULSION SYSTEM": 35,
+          "POWER TRAIN": 29,
+          "AIR BAGS": 26,
+          "VEHICLE SPEED CONTROL": 13,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 11,
+          "FORWARD COLLISION AVOIDANCE": 10,
+          "WHEELS": 9,
+          "LANE DEPARTURE": 6,
+          "SEAT BELTS": 5,
+          "SUSPENSION": 5,
+          "TIRES": 5,
+          "EXTERIOR LIGHTING": 4,
+          "SEATS": 4,
+          "EQUIPMENT": 1,
+          "PARKING BRAKE": 1
+        },
+        "recalls": [
+          "17V-706",
+          "18V-266",
+          "18V-663",
+          "18V-817",
+          "23V-858",
+          "26V-332"
+        ]
+      },
+      "2018": {
+        "complaints": 602,
+        "crashes": 26,
+        "fires": 4,
+        "components": {
+          "STEERING": 225,
+          "FUEL/PROPULSION SYSTEM": 159,
+          "UNKNOWN OR OTHER": 107,
+          "ELECTRICAL SYSTEM": 51,
+          "ENGINE": 51,
+          "SERVICE BRAKES": 22,
+          "AIR BAGS": 20,
+          "STRUCTURE": 19,
+          "POWER TRAIN": 15,
+          "VISIBILITY": 14,
+          "WHEELS": 8,
+          "FORWARD COLLISION AVOIDANCE": 7,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 6,
+          "SEATS": 6,
+          "LANE DEPARTURE": 4,
+          "SUSPENSION": 4,
+          "VEHICLE SPEED CONTROL": 4,
+          "EXTERIOR LIGHTING": 3,
+          "PARKING BRAKE": 3,
+          "SEAT BELTS": 3,
+          "EQUIPMENT": 2,
+          "TIRES": 2
+        },
+        "recalls": [
+          "18V-421",
+          "18V-663",
+          "18V-817",
+          "20V-314",
+          "23V-858",
+          "26V-332"
+        ]
+      },
+      "2019": {
+        "complaints": 464,
+        "crashes": 27,
+        "fires": 1,
+        "components": {
+          "FUEL/PROPULSION SYSTEM": 147,
+          "STEERING": 115,
+          "UNKNOWN OR OTHER": 62,
+          "ELECTRICAL SYSTEM": 38,
+          "ENGINE": 37,
+          "FORWARD COLLISION AVOIDANCE": 35,
+          "SERVICE BRAKES": 33,
+          "LANE DEPARTURE": 15,
+          "POWER TRAIN": 15,
+          "AIR BAGS": 13,
+          "STRUCTURE": 13,
+          "WHEELS": 13,
+          "VEHICLE SPEED CONTROL": 11,
+          "VISIBILITY": 10,
+          "TIRES": 7,
+          "SUSPENSION": 6,
+          "SEAT BELTS": 5,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 3,
+          "EQUIPMENT": 3,
+          "COMMUNICATION": 1,
+          "EXTERIOR LIGHTING": 1,
+          "LATCHES/LOCKS/LINKAGES": 1,
+          "OTHER": 1
+        },
+        "recalls": [
+          "20V-314",
+          "21V-215",
+          "23V-858",
+          "26V-332"
+        ]
+      },
+      "2020": {
+        "complaints": 246,
+        "crashes": 16,
+        "fires": 1,
+        "components": {
+          "ELECTRICAL SYSTEM": 40,
+          "UNKNOWN OR OTHER": 39,
+          "POWER TRAIN": 34,
+          "STEERING": 34,
+          "FUEL/PROPULSION SYSTEM": 33,
+          "AIR BAGS": 31,
+          "FORWARD COLLISION AVOIDANCE": 24,
+          "SERVICE BRAKES": 15,
+          "VISIBILITY": 15,
+          "ENGINE": 13,
+          "WHEELS": 7,
+          "STRUCTURE": 6,
+          "SUSPENSION": 6,
+          "VEHICLE SPEED CONTROL": 5,
+          "EXTERIOR LIGHTING": 4,
+          "LANE DEPARTURE": 3,
+          "PARKING BRAKE": 3,
+          "EQUIPMENT": 2,
+          "SEAT BELTS": 2,
+          "SEATS": 2,
+          "TIRES": 2,
+          "BACK OVER PREVENTION": 1,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 1,
+          "EQUIPMENT ADAPTIVE/MOBILITY": 1,
+          "LATCHES/LOCKS/LINKAGES": 1
+        },
+        "recalls": [
+          "21V-215",
+          "23V-458",
+          "23V-858",
+          "24V-064",
+          "26V-332"
+        ]
+      },
+      "2021": {
+        "complaints": 164,
+        "crashes": 7,
+        "fires": 3,
+        "components": {
+          "STEERING": 69,
+          "FORWARD COLLISION AVOIDANCE": 33,
+          "ELECTRICAL SYSTEM": 21,
+          "SERVICE BRAKES": 18,
+          "AIR BAGS": 14,
+          "UNKNOWN OR OTHER": 13,
+          "LANE DEPARTURE": 11,
+          "ENGINE": 10,
+          "FUEL/PROPULSION SYSTEM": 6,
+          "VEHICLE SPEED CONTROL": 6,
+          "POWER TRAIN": 4,
+          "SEATS": 3,
+          "SUSPENSION": 3,
+          "VISIBILITY": 3,
+          "BACK OVER PREVENTION": 2,
+          "EXTERIOR LIGHTING": 2,
+          "TIRES": 2,
+          "WHEELS": 2,
+          "SEAT BELTS": 1
+        },
+        "recalls": [
+          "23V-458",
+          "23V-858",
+          "24V-064",
+          "26V-332"
+        ]
+      },
+      "2022": {
+        "complaints": 963,
+        "crashes": 35,
+        "fires": 3,
+        "components": {
+          "STEERING": 806,
+          "FORWARD COLLISION AVOIDANCE": 74,
+          "LANE DEPARTURE": 70,
+          "UNKNOWN OR OTHER": 43,
+          "VEHICLE SPEED CONTROL": 43,
+          "ELECTRICAL SYSTEM": 40,
+          "SUSPENSION": 26,
+          "SERVICE BRAKES": 23,
+          "WHEELS": 14,
+          "STRUCTURE": 13,
+          "ENGINE": 12,
+          "POWER TRAIN": 12,
+          "VISIBILITY": 12,
+          "AIR BAGS": 11,
+          "FUEL/PROPULSION SYSTEM": 10,
+          "SEAT BELTS": 4,
+          "SEATS": 4,
+          "EXTERIOR LIGHTING": 2,
+          "TIRES": 2
+        },
+        "recalls": [
+          "23V-704",
+          "24V-064",
+          "24V-744",
+          "26V-332"
+        ]
+      },
+      "2023": {
+        "complaints": 343,
+        "crashes": 20,
+        "fires": 0,
+        "components": {
+          "STEERING": 263,
+          "LANE DEPARTURE": 25,
+          "ELECTRICAL SYSTEM": 22,
+          "FORWARD COLLISION AVOIDANCE": 17,
+          "UNKNOWN OR OTHER": 17,
+          "SERVICE BRAKES": 16,
+          "ENGINE": 14,
+          "AIR BAGS": 8,
+          "POWER TRAIN": 8,
+          "WHEELS": 7,
+          "SUSPENSION": 5,
+          "EXTERIOR LIGHTING": 4,
+          "SEAT BELTS": 4,
+          "STRUCTURE": 4,
+          "TIRES": 4,
+          "VEHICLE SPEED CONTROL": 4,
+          "FUEL/PROPULSION SYSTEM": 3,
+          "SEATS": 2,
+          "BACK OVER PREVENTION": 1
+        },
+        "recalls": [
+          "23V-430",
+          "23V-704",
+          "24V-744",
+          "24V-859"
+        ]
+      },
+      "2024": {
+        "complaints": 146,
+        "crashes": 14,
+        "fires": 1,
+        "components": {
+          "STEERING": 77,
+          "UNKNOWN OR OTHER": 31,
+          "FORWARD COLLISION AVOIDANCE": 18,
+          "LANE DEPARTURE": 11,
+          "ELECTRICAL SYSTEM": 9,
+          "SERVICE BRAKES": 8,
+          "SUSPENSION": 8,
+          "POWER TRAIN": 6,
+          "ENGINE": 5,
+          "VEHICLE SPEED CONTROL": 5,
+          "VISIBILITY": 4,
+          "AIR BAGS": 3,
+          "STRUCTURE": 3,
+          "SEAT BELTS": 2,
+          "EXTERIOR LIGHTING": 1,
+          "SEATS": 1,
+          "TIRES": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "23V-704",
+          "24V-744",
+          "24V-859"
+        ]
+      },
+      "2025": {
+        "complaints": 108,
+        "crashes": 11,
+        "fires": 1,
+        "components": {
+          "STEERING": 44,
+          "FORWARD COLLISION AVOIDANCE": 18,
+          "FUEL/PROPULSION SYSTEM": 16,
+          "UNKNOWN OR OTHER": 16,
+          "SERVICE BRAKES": 12,
+          "LANE DEPARTURE": 10,
+          "ELECTRICAL SYSTEM": 8,
+          "VISIBILITY": 8,
+          "POWER TRAIN": 7,
+          "ENGINE": 6,
+          "VEHICLE SPEED CONTROL": 6,
+          "STRUCTURE": 5,
+          "SUSPENSION": 5,
+          "AIR BAGS": 3,
+          "WHEELS": 3,
+          "SEATS": 2,
+          "BACK OVER PREVENTION": 1,
+          "SEAT BELTS": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "24V-744",
+          "24V-763"
+        ]
+      },
+      "2026": {
+        "complaints": 34,
+        "crashes": 3,
+        "fires": 0,
+        "components": {
+          "FORWARD COLLISION AVOIDANCE": 8,
+          "STEERING": 8,
+          "ELECTRICAL SYSTEM": 6,
+          "ENGINE": 5,
+          "SERVICE BRAKES": 5,
+          "UNKNOWN OR OTHER": 5,
+          "FUEL/PROPULSION SYSTEM": 3,
+          "AIR BAGS": 2,
+          "LANE DEPARTURE": 2,
+          "POWER TRAIN": 2,
+          "SUSPENSION": 2,
+          "VEHICLE SPEED CONTROL": 2,
+          "VISIBILITY": 2,
+          "BACK OVER PREVENTION": 1,
+          "EXTERIOR LIGHTING": 1,
+          "SEAT BELTS": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "24V-744"
+        ]
+      }
+    }
+  }
+}

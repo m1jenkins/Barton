@@ -1,0 +1,753 @@
+{
+  "key": "toyota-rav4",
+  "name": "Toyota RAV4",
+  "status": "ready",
+  "short": "RAV4",
+  "make": "Toyota",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Toyota RAV4 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Toyota RAV4 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Toyota RAV4 problems by year: years to avoid and what owners report",
+  "card": "Which RAV4 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2022–2025",
+  "avoidYears": "2019–2020",
+  "answer": [
+    "The best used RAV4s are the 2022 to 2025 model years, which draw {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2019 and 2020: they draw {r:2019} and {r:2020}, led by fuel-system, engine and steering complaints, and Toyota recalled them for engine casting cracks, lost steering assist and cracked front control arms. A 2021 is worth a look only if both of its air bag recalls are done, and the 2016 to 2018 RAV4s sit in the middle.",
+    "The rates divide each model year’s NHTSA complaints, counted across every RAV4 listing (gas, Hybrid and Prime or Plug-in Hybrid), by U.S. sales. They compare years with each other; they don’t predict one car. The 2026 redesign is too new to rate; our <a href=\"{guide}\">RAV4 price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales come from Toyota’s year-end releases for 2019 to 2025 and Good Car Bad Car for 2016 to 2018.",
+  "sales": {
+    "2016": 352139,
+    "2017": 407594,
+    "2018": 427168,
+    "2019": 448071,
+    "2020": 430387,
+    "2021": 407739,
+    "2022": 399941,
+    "2023": 434943,
+    "2024": 475193,
+    "2025": 479288
+  },
+  "publishedRates": {
+    "2019": 203,
+    "2020": 152,
+    "2021": 125,
+    "2022": 45,
+    "2023": 55,
+    "2024": 44,
+    "2025": 21
+  },
+  "verdicts": {
+    "2016": [
+      "check",
+      "{r:2016} per 100,000. Electrical ({k:2016:ELECTRICAL SYSTEM}) and brakes ({k:2016:SERVICE BRAKES}) lead the complaints. Recall 23V-734 covers replacement batteries that may not fit the tray."
+    ],
+    "2017": [
+      "check",
+      "Electrical leads again with {k:2017:ELECTRICAL SYSTEM} of {c:2017} complaints, and the battery-tray recall 23V-734 applies."
+    ],
+    "2018": [
+      "check",
+      "Electrical has {k:2018:ELECTRICAL SYSTEM} of {c:2018} complaints. The last year of the old design, and recall 23V-734 applies."
+    ],
+    "2019": [
+      "avoid",
+      "{r:2019} per 100,000 against {r:2022} for the 2022. Fuel and hybrid system ({k:2019:FUEL/PROPULSION SYSTEM}) and engine ({k:2019:ENGINE}) lead, and {rec:2019} recalls include engine casting cracks (20V-064), steering assist (20V-373) and front control arms (20V-286)."
+    ],
+    "2020": [
+      "avoid",
+      "{r:2020} per 100,000, led by engine ({k:2020:ENGINE}). The same three recalls as 2019 apply, plus 20V-734 for the steering column’s air bag pins."
+    ],
+    "2021": [
+      "check",
+      "{r:2021} per 100,000, but {k:2021:AIR BAGS} of {c:2021} complaints name air bags, and two free recalls cover them (20V-734, 23V-865). Buy only with both done.",
+      "avoid to check: the complaint spike traces to recalls a VIN lookup confirms"
+    ],
+    "2022": [
+      "buy",
+      "{r:2022} per 100,000, the lowest of the 2019 to 2022 years. Recalls include the front passenger seat sensor (22V-519)."
+    ],
+    "2023": [
+      "buy",
+      "{r:2023} per 100,000. Electrical ({k:2023:ELECTRICAL SYSTEM}) and steering ({k:2023:STEERING}) lead. An instrument cluster recall (25V-595) covers 2023 to 2025."
+    ],
+    "2024": [
+      "buy",
+      "{r:2024} per 100,000. Recall 24V-911 covers loose front brake caliper bolts; ask that it was done."
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000, and the count is still growing as the year ages. Recall 26V-256 covers front seat bracket welds."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales. The plug-in has recall 26V-659 (power loss at higher speeds): get its software update before delivery."
+    ]
+  },
+  "chartNote": "",
+  "generations": [
+    {
+      "name": "Fourth generation",
+      "years": "2013–2018",
+      "text": "The 2016 refresh added LED lamps and a color display, and the RAV4 Hybrid debuted with it (Wikipedia). The 2016 to 2018 years on this page are the last of that design, with the 2.5-liter four-cylinder and six-speed automatic as the core powertrain."
+    },
+    {
+      "name": "Fifth generation",
+      "years": "2019–2025",
+      "text": "It went on sale in December 2018 with a 2.5-liter four-cylinder and an eight-speed automatic; the Hybrid, with standard all-wheel drive, followed in March 2019 (Wikipedia). The RAV4 Prime plug-in arrived for 2021 and was renamed Plug-in Hybrid for 2025. A refresh for 2022 brought new headlights and USB-C ports, the Woodland trim arrived for 2023, and the Adventure and TRD Off-Road trims were dropped for 2025."
+    },
+    {
+      "name": "Sixth generation",
+      "years": "2026–",
+      "text": "Toyota sells the redesigned 2026 only as a hybrid or plug-in hybrid, so the gas engine that carried the 2019 to 2025 cars is gone (Wikipedia; Toyota’s 2026 RAV4 page). Its record is too short to compare with the figures above."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Fuel and hybrid system",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2019,
+        2021
+      ],
+      "text": "CarComplaints reports that some hybrids’ fuel tanks won’t fill to the rated 14.5 gallons, and that a settlement extended that coverage to 15 years or 150,000 miles. NHTSA’s fuel label also catches complaints about gas models, so this count is wider than that one issue."
+    },
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2019,
+        2020
+      ],
+      "text": "Recall 20V-064 covers porosity in 2.5-liter engine castings that can crack and leak coolant. The fix is free and can mean a replacement engine. Ask for proof it was done on any 2019 or 2020."
+    },
+    {
+      "title": "Air bags",
+      "component": "AIR BAGS",
+      "years": [
+        2020,
+        2021
+      ],
+      "text": "Two recalls: 20V-734 (steering column breakaway pins that can affect the driver air bag) and 23V-865 (a short circuit in the passenger occupant sensor that can stop the passenger air bag firing). Both are free; a VIN lookup shows whether they are open."
+    },
+    {
+      "title": "Electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "NHTSA’s complaint field names the part, not the failure. For 2016 to 2018, one recall (23V-734) covers replacement 12-volt batteries that don’t fit the tray, and NHTSA’s closed investigation PE21005 traced battery-area fires on 2013 to 2018 RAV4s to that fit."
+    },
+    {
+      "title": "Steering",
+      "component": "STEERING",
+      "years": [
+        2022,
+        2025
+      ],
+      "text": "The counts are small beside 2019 and 2020. Recall 20V-373 (water in the steering gearbox, lost assist) covers only 2019 and 2020, so nothing in NHTSA’s recall list explains these; check the steering on any 2022 to 2025 you drive."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s reliability gripes are water leaking in from roof rails or clogged drains, a coolant valve message, and worry over salt on the hybrid’s exposed high-voltage cable. The threads rarely give a model year, so Reddit neither confirms nor contradicts the year-by-year table."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "20V-064",
+      "years": "2019–2020",
+      "title": "Engine casting cracks",
+      "text": "Porosity in 2.5-liter engine castings can crack and leak coolant, which can overheat the engine. Dealers inspect and replace the engine as needed, free."
+    },
+    {
+      "id": "20V-373",
+      "years": "2019–2020",
+      "title": "Steering assist loss",
+      "text": "Water can enter the electric steering gearbox cover and cut power assist. Dealers replace the gearbox, free."
+    },
+    {
+      "id": "20V-286",
+      "years": "2019–2020",
+      "title": "Front control arm cracks",
+      "text": "The front lower suspension arms may crack and separate from the wheel assembly. Dealers replace both arms, free."
+    },
+    {
+      "id": "20V-734 and 23V-865",
+      "years": "2020–2021",
+      "title": "Air bag recalls",
+      "text": "20V-734 covers steering column breakaway pins that can affect the driver air bag, and 23V-865 a short in the passenger occupant sensor. Both fixes are free."
+    },
+    {
+      "id": "23V-478",
+      "years": "2021–2022 Prime",
+      "title": "Plug-in charger fire risk",
+      "text": "A damaged DC-DC converter module can short and overheat. Until the dealer replaces it, Toyota tells owners not to charge below about 41 degrees Fahrenheit."
+    },
+    {
+      "id": "24V-911",
+      "years": "2024",
+      "title": "Brake caliper bolts",
+      "text": "Front caliper and wheel-bearing bolts may be loose, which can damage the brake hose or detach a wheel. Dealers inspect and tighten them, free."
+    },
+    {
+      "id": "26V-256",
+      "years": "2025",
+      "title": "Front seat brackets",
+      "text": "Seat rail brackets may be welded improperly. Dealers inspect and repair the welds, free."
+    },
+    {
+      "id": "26V-659",
+      "years": "2026 Plug-in Hybrid",
+      "title": "Power loss at higher speeds",
+      "text": "A software error can cut power or shut the plug-in system down at higher speeds. Dealers update the software, free; owner letters begin November 22, 2026."
+    }
+  ],
+  "investigations": [],
+  "noInvestigations": "NHTSA’s public investigation list showed no open investigation naming the RAV4 on November 21, 2026. The last, PE21005 into battery-area fires on 2013 to 2018 RAV4s, closed in August 2024 after Toyota’s battery-tray recall 23V-734.",
+  "checks": [
+    {
+      "title": "Hybrid cables on 2019 to 2022 AWD hybrids.",
+      "text": "Toyota’s support program 22TE09 covers corroded high-voltage cables for 8 years or 100,000 miles. It isn’t a recall, so a VIN lookup won’t show it; ask for the service record."
+    },
+    {
+      "title": "The 2019 and 2020 recalls.",
+      "text": "Confirm 20V-064 (engine), 20V-373 (steering) and 20V-286 (control arms) are closed on the VIN. A dealer can print the history."
+    },
+    {
+      "title": "The fuel tank on a 2019 to 2021 hybrid.",
+      "text": "Owners report hybrids that stop filling well short of the rated 14.5 gallons. Ask what the seller’s last fill-up took."
+    },
+    {
+      "title": "A plug-in’s charger and software.",
+      "text": "On a 2021 or 2022 Prime, confirm the DC-DC converter recall (23V-478); on a 2026, the software recall 26V-659."
+    },
+    {
+      "title": "Damp carpet and headliner.",
+      "text": "Owners on Reddit report water leaking in from roof rails or clogged drains. Press the carpet under the seats and look for stains at the roof edges."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s look over the brakes, steering and underbody before you sign."
+    }
+  ],
+  "newer": [
+    "Toyota sells the 2026 only as a hybrid or plug-in hybrid, so the 2019 to 2025 gas engine’s record doesn’t carry over. With {c:2026} complaints, {rec:2026} recalls and no full year on the road, it is too early to say it is more reliable; the plug-in needs its recall 26V-659 software update.",
+    "If you are choosing between a new 2026 and a used 2022 to 2025, our <a href=\"{guide}\">RAV4 price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Toyota RAV4 years?",
+      "The 2019 and 2020 model years. They draw {r:2019} and {r:2020} NHTSA complaints per 100,000 sold against {r:2022} to {r:2025} for 2022 to 2025, and carry recalls for engine casting cracks, steering assist loss and front control arm cracks."
+    ],
+    [
+      "What is the best used RAV4 year?",
+      "The 2022 to 2025 model years have the lowest complaint rates, from {r:2025} for the 2025 to {r:2023} for the 2023. The 2025 is still collecting complaints, so its rate will rise a little."
+    ],
+    [
+      "Is the 2021 RAV4 reliable?",
+      "It draws {r:2021} complaints per 100,000, but {k:2021:AIR BAGS} of its {c:2021} complaints name air bags, and two free recalls cover those. We’d buy one with both recalls shown as done."
+    ],
+    [
+      "Do RAV4 hybrids have more problems than the gas model?",
+      "NHTSA counts them together here, so these figures can’t split them. The hybrid-specific items are the 2019 to 2022 AWD cable program 22TE09 and the fuel tank fill complaints on 2019 to 2021 hybrids."
+    ],
+    [
+      "How do I check a used RAV4 for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car; recall repairs are free at a Toyota dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-RAV4-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=toyota&model=rav4&modelYear=2022",
+      "scope": "RAV4, RAV4 Hybrid, RAV4 Prime and RAV4 Plug-in Hybrid complaint counts and components by model year 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-RAV4-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAV4-03",
+      "title": "NHTSA: investigation PE21005",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE21005",
+      "scope": "closed investigation into battery-area fires on 2013 to 2018 RAV4s",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAV4-04",
+      "title": "Good Car Bad Car: Toyota RAV4 sales figures",
+      "url": "https://www.goodcarbadcar.net/toyota-rav4-sales-figures/",
+      "scope": "U.S. RAV4 sales 2016 to 2018",
+      "note": "read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-RAV4-05",
+      "title": "Toyota: December 2019 year-end sales",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-december-2019-year-end-sales-300980867.html",
+      "scope": "U.S. RAV4 sales 2019",
+      "note": "reused from our RAV4 vs CR-V page (VEH-RVC-19)"
+    },
+    {
+      "id": "VEH-PRB-RAV4-06",
+      "title": "Toyota: December 2021 year-end sales",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-us-december-year-end-2021-sales-301453684.html",
+      "scope": "U.S. RAV4 sales 2020 and 2021",
+      "note": "reused from our RAV4 vs CR-V page (VEH-RVC-18)"
+    },
+    {
+      "id": "VEH-PRB-RAV4-07",
+      "title": "Toyota: 2023 U.S. sales results",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2023-us-sales-results-302025453.html",
+      "scope": "U.S. RAV4 sales 2022 and 2023",
+      "note": "reused from our RAV4 vs CR-V page (VEH-RVC-17)"
+    },
+    {
+      "id": "VEH-PRB-RAV4-08",
+      "title": "Toyota: 2025 U.S. sales results",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2025-us-sales-results-302652746.html",
+      "scope": "U.S. RAV4 sales 2024 and 2025; the release lists Hybrid and Plug-in rows separately and we could not confirm the RAV4 row includes them",
+      "note": "reused from our RAV4 vs CR-V page (VEH-RVC-16)"
+    },
+    {
+      "id": "VEH-PRB-RAV4-09",
+      "title": "Wikipedia: Toyota RAV4",
+      "url": "https://en.wikipedia.org/wiki/Toyota_RAV4",
+      "scope": "generation years, engines, hybrid and plug-in timing, trim changes",
+      "note": "read November 21, 2026; check against Toyota before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-RAV4-10",
+      "title": "Toyota: 2026 RAV4",
+      "url": "https://www.toyota.com/rav4/",
+      "scope": "the 2026 RAV4 sold as hybrid and plug-in hybrid",
+      "note": "from the RAV4 price guide"
+    },
+    {
+      "id": "VEH-PRB-RAV4-11",
+      "title": "CarComplaints: RAV4 Hybrid fuel tank settlement",
+      "url": "https://www.carcomplaints.com/news/2021/toyota-rav4-hybrid-fuel-tank-settlement-allegedly-useless-for-owners.shtml",
+      "scope": "hybrid fuel tank fill complaints and the 15-year/150,000-mile coverage",
+      "note": "from the RAV4 price guide"
+    },
+    {
+      "id": "VEH-PRB-RAV4-12",
+      "title": "CarComplaints: Toyota support program 22TE09",
+      "url": "https://www.carcomplaints.com/Toyota/RAV4_Hybrid/2019/tsb/tsb-22te09.shtml",
+      "scope": "corroded high-voltage cables on 2019 to 2022 AWD hybrids, 8 years or 100,000 miles",
+      "note": "from the RAV4 price guide"
+    }
+  ],
+  "nhtsa": {
+    "make": "TOYOTA",
+    "years": [
+      2016,
+      2026
+    ],
+    "listings": [
+      "RAV4",
+      "RAV4 HYBRID",
+      "RAV4 PRIME",
+      "RAV4 PLUG-IN HYBRID"
+    ],
+    "models": [
+      "RAV4"
+    ],
+    "recallModels": [
+      "RAV4",
+      "RAV4 HYBRID",
+      "RAV4 PRIME",
+      "RAV4 PLUG-IN HYBRID"
+    ],
+    "investigationTerms": [
+      "RAV4"
+    ],
+    "readOn": "2026-11-21",
+    "byYear": {
+      "2016": {
+        "complaints": 257,
+        "crashes": 37,
+        "fires": 12,
+        "components": {
+          "ELECTRICAL SYSTEM": 59,
+          "SERVICE BRAKES": 51,
+          "UNKNOWN OR OTHER": 38,
+          "EXTERIOR LIGHTING": 28,
+          "ENGINE": 26,
+          "AIR BAGS": 19,
+          "STRUCTURE": 19,
+          "VISIBILITY": 19,
+          "VEHICLE SPEED CONTROL": 13,
+          "POWER TRAIN": 11,
+          "STEERING": 11,
+          "FUEL/PROPULSION SYSTEM": 6,
+          "SUSPENSION": 4,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 3,
+          "LATCHES/LOCKS/LINKAGES": 3,
+          "FORWARD COLLISION AVOIDANCE": 2,
+          "LANE DEPARTURE": 2,
+          "SEAT BELTS": 2,
+          "SEATS": 2,
+          "TIRES": 2,
+          "BACK OVER PREVENTION": 1
+        },
+        "recalls": [
+          "16V-198",
+          "16V-236",
+          "23V-734"
+        ]
+      },
+      "2017": {
+        "complaints": 324,
+        "crashes": 34,
+        "fires": 25,
+        "components": {
+          "ELECTRICAL SYSTEM": 111,
+          "UNKNOWN OR OTHER": 64,
+          "SERVICE BRAKES": 40,
+          "ENGINE": 34,
+          "EXTERIOR LIGHTING": 33,
+          "STRUCTURE": 21,
+          "AIR BAGS": 20,
+          "POWER TRAIN": 17,
+          "VEHICLE SPEED CONTROL": 15,
+          "FUEL/PROPULSION SYSTEM": 14,
+          "VISIBILITY": 14,
+          "STEERING": 13,
+          "WHEELS": 9,
+          "FORWARD COLLISION AVOIDANCE": 8,
+          "SUSPENSION": 6,
+          "SEAT BELTS": 5,
+          "SEATS": 4,
+          "TIRES": 3,
+          "LATCHES/LOCKS/LINKAGES": 2,
+          "TRACTION CONTROL SYSTEM": 2,
+          "BACK OVER PREVENTION": 1,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 1,
+          "FIRERELATED": 1
+        },
+        "recalls": [
+          "17V-295",
+          "19V-503",
+          "23V-734"
+        ]
+      },
+      "2018": {
+        "complaints": 348,
+        "crashes": 33,
+        "fires": 33,
+        "components": {
+          "ELECTRICAL SYSTEM": 131,
+          "UNKNOWN OR OTHER": 74,
+          "ENGINE": 36,
+          "SERVICE BRAKES": 33,
+          "POWER TRAIN": 28,
+          "EXTERIOR LIGHTING": 23,
+          "VISIBILITY": 23,
+          "VEHICLE SPEED CONTROL": 21,
+          "AIR BAGS": 17,
+          "FUEL/PROPULSION SYSTEM": 15,
+          "STRUCTURE": 15,
+          "STEERING": 12,
+          "FORWARD COLLISION AVOIDANCE": 7,
+          "TIRES": 5,
+          "LANE DEPARTURE": 4,
+          "SEAT BELTS": 3,
+          "SUSPENSION": 3,
+          "BACK OVER PREVENTION": 2,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 2,
+          "LATCHES/LOCKS/LINKAGES": 2,
+          "SEATS": 2,
+          "EQUIPMENT": 1,
+          "FIRERELATED": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "17V-831",
+          "19V-503",
+          "23V-734"
+        ]
+      },
+      "2019": {
+        "complaints": 913,
+        "crashes": 28,
+        "fires": 3,
+        "components": {
+          "FUEL/PROPULSION SYSTEM": 283,
+          "ENGINE": 217,
+          "UNKNOWN OR OTHER": 170,
+          "ELECTRICAL SYSTEM": 106,
+          "STRUCTURE": 93,
+          "POWER TRAIN": 84,
+          "AIR BAGS": 47,
+          "SERVICE BRAKES": 39,
+          "STEERING": 33,
+          "VEHICLE SPEED CONTROL": 30,
+          "VISIBILITY": 22,
+          "FORWARD COLLISION AVOIDANCE": 18,
+          "SUSPENSION": 17,
+          "SEATS": 12,
+          "SEAT BELTS": 10,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 6,
+          "BACK OVER PREVENTION": 5,
+          "LANE DEPARTURE": 5,
+          "LATCHES/LOCKS/LINKAGES": 5,
+          "WHEELS": 4,
+          "EXTERIOR LIGHTING": 3,
+          "PARKING BRAKE": 1
+        },
+        "recalls": [
+          "19V-244",
+          "19V-503",
+          "19V-544",
+          "19V-576",
+          "20V-064",
+          "20V-286",
+          "20V-373",
+          "20V-682"
+        ]
+      },
+      "2020": {
+        "complaints": 659,
+        "crashes": 18,
+        "fires": 5,
+        "components": {
+          "ENGINE": 196,
+          "UNKNOWN OR OTHER": 124,
+          "ELECTRICAL SYSTEM": 122,
+          "FUEL/PROPULSION SYSTEM": 93,
+          "STRUCTURE": 63,
+          "AIR BAGS": 60,
+          "POWER TRAIN": 40,
+          "STEERING": 29,
+          "SERVICE BRAKES": 20,
+          "VISIBILITY": 18,
+          "VEHICLE SPEED CONTROL": 16,
+          "SUSPENSION": 11,
+          "FORWARD COLLISION AVOIDANCE": 10,
+          "LANE DEPARTURE": 10,
+          "SEATS": 6,
+          "LATCHES/LOCKS/LINKAGES": 5,
+          "SEAT BELTS": 4,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 2,
+          "EXTERIOR LIGHTING": 2,
+          "WHEELS": 2
+        },
+        "recalls": [
+          "20V-064",
+          "20V-286",
+          "20V-373",
+          "20V-682",
+          "20V-734",
+          "23V-865"
+        ]
+      },
+      "2021": {
+        "complaints": 513,
+        "crashes": 60,
+        "fires": 8,
+        "components": {
+          "AIR BAGS": 147,
+          "UNKNOWN OR OTHER": 100,
+          "ELECTRICAL SYSTEM": 86,
+          "ENGINE": 44,
+          "FUEL/PROPULSION SYSTEM": 42,
+          "SERVICE BRAKES": 40,
+          "VISIBILITY": 35,
+          "FORWARD COLLISION AVOIDANCE": 29,
+          "POWER TRAIN": 28,
+          "STEERING": 23,
+          "STRUCTURE": 22,
+          "SEATS": 18,
+          "LANE DEPARTURE": 13,
+          "VEHICLE SPEED CONTROL": 12,
+          "LATCHES/LOCKS/LINKAGES": 9,
+          "SEAT BELTS": 9,
+          "TIRES": 8,
+          "EXTERIOR LIGHTING": 6,
+          "SUSPENSION": 6,
+          "WHEELS": 5,
+          "BACK OVER PREVENTION": 3,
+          "TRACTION CONTROL SYSTEM": 2
+        },
+        "recalls": [
+          "20V-698",
+          "22V-239",
+          "23V-041",
+          "23V-478",
+          "23V-865"
+        ]
+      },
+      "2022": {
+        "complaints": 179,
+        "crashes": 19,
+        "fires": 0,
+        "components": {
+          "ELECTRICAL SYSTEM": 49,
+          "UNKNOWN OR OTHER": 45,
+          "ENGINE": 31,
+          "STRUCTURE": 22,
+          "STEERING": 20,
+          "FORWARD COLLISION AVOIDANCE": 15,
+          "POWER TRAIN": 14,
+          "AIR BAGS": 12,
+          "SERVICE BRAKES": 12,
+          "FUEL/PROPULSION SYSTEM": 11,
+          "VISIBILITY": 8,
+          "LANE DEPARTURE": 7,
+          "VEHICLE SPEED CONTROL": 7,
+          "SEAT BELTS": 5,
+          "LATCHES/LOCKS/LINKAGES": 2,
+          "SUSPENSION": 2,
+          "TIRES": 2,
+          "WHEELS": 2,
+          "BACK OVER PREVENTION": 1,
+          "EQUIPMENT": 1,
+          "EXTERIOR LIGHTING": 1
+        },
+        "recalls": [
+          "22V-239",
+          "22V-519",
+          "23V-478"
+        ]
+      },
+      "2023": {
+        "complaints": 248,
+        "crashes": 26,
+        "fires": 1,
+        "components": {
+          "ELECTRICAL SYSTEM": 97,
+          "UNKNOWN OR OTHER": 64,
+          "STEERING": 30,
+          "ENGINE": 28,
+          "FORWARD COLLISION AVOIDANCE": 26,
+          "SERVICE BRAKES": 23,
+          "VISIBILITY": 18,
+          "FUEL/PROPULSION SYSTEM": 15,
+          "VEHICLE SPEED CONTROL": 15,
+          "LANE DEPARTURE": 12,
+          "POWER TRAIN": 12,
+          "STRUCTURE": 12,
+          "BACK OVER PREVENTION": 11,
+          "AIR BAGS": 9,
+          "SUSPENSION": 7,
+          "TIRES": 7,
+          "WHEELS": 4,
+          "EXTERIOR LIGHTING": 3,
+          "LATCHES/LOCKS/LINKAGES": 3,
+          "SEATS": 2,
+          "SEAT BELTS": 1
+        },
+        "recalls": [
+          "23V-485",
+          "25V-595",
+          "25V-744"
+        ]
+      },
+      "2024": {
+        "complaints": 208,
+        "crashes": 31,
+        "fires": 2,
+        "components": {
+          "UNKNOWN OR OTHER": 55,
+          "ELECTRICAL SYSTEM": 43,
+          "ENGINE": 41,
+          "STEERING": 27,
+          "SERVICE BRAKES": 21,
+          "FORWARD COLLISION AVOIDANCE": 17,
+          "STRUCTURE": 17,
+          "VISIBILITY": 15,
+          "VEHICLE SPEED CONTROL": 13,
+          "AIR BAGS": 12,
+          "POWER TRAIN": 10,
+          "LANE DEPARTURE": 7,
+          "SEAT BELTS": 6,
+          "FUEL/PROPULSION SYSTEM": 5,
+          "SUSPENSION": 4,
+          "BACK OVER PREVENTION": 3,
+          "LATCHES/LOCKS/LINKAGES": 3,
+          "SEATS": 3,
+          "TIRES": 3,
+          "WHEELS": 3,
+          "EXTERIOR LIGHTING": 2,
+          "EQUIPMENT": 1
+        },
+        "recalls": [
+          "24V-911",
+          "25V-595",
+          "25V-744",
+          "26V-179"
+        ]
+      },
+      "2025": {
+        "complaints": 103,
+        "crashes": 13,
+        "fires": 0,
+        "components": {
+          "UNKNOWN OR OTHER": 26,
+          "ELECTRICAL SYSTEM": 17,
+          "VISIBILITY": 15,
+          "ENGINE": 14,
+          "SERVICE BRAKES": 9,
+          "STRUCTURE": 9,
+          "VEHICLE SPEED CONTROL": 9,
+          "FORWARD COLLISION AVOIDANCE": 8,
+          "POWER TRAIN": 7,
+          "TIRES": 7,
+          "FUEL/PROPULSION SYSTEM": 6,
+          "STEERING": 5,
+          "BACK OVER PREVENTION": 4,
+          "EXTERIOR LIGHTING": 4,
+          "AIR BAGS": 3,
+          "LANE DEPARTURE": 2,
+          "WHEELS": 2,
+          "SEAT BELTS": 1,
+          "SUSPENSION": 1
+        },
+        "recalls": [
+          "25V-595",
+          "25V-744",
+          "26V-179",
+          "26V-256"
+        ]
+      },
+      "2026": {
+        "complaints": 56,
+        "crashes": 4,
+        "fires": 0,
+        "components": {
+          "UNKNOWN OR OTHER": 20,
+          "FORWARD COLLISION AVOIDANCE": 13,
+          "ELECTRICAL SYSTEM": 12,
+          "POWER TRAIN": 8,
+          "AIR BAGS": 7,
+          "STRUCTURE": 6,
+          "ENGINE": 4,
+          "LANE DEPARTURE": 3,
+          "SERVICE BRAKES": 3,
+          "VISIBILITY": 3,
+          "FUEL/PROPULSION SYSTEM": 2,
+          "SEAT BELTS": 2,
+          "WHEELS": 2,
+          "BACK OVER PREVENTION": 1,
+          "EXTERIOR LIGHTING": 1,
+          "STEERING": 1,
+          "SUSPENSION": 1
+        },
+        "recalls": [
+          "26V-571",
+          "26V-659"
+        ]
+      }
+    }
+  }
+}
