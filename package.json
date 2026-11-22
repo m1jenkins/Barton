@@ -23,6 +23,8 @@
     "check:markets": "node scripts/render-market-pages.mjs --check",
     "build:vehicles": "node scripts/render-vehicle-pages.mjs",
     "check:vehicles": "node scripts/render-vehicle-pages.mjs --check",
+    "build:roundups": "node scripts/render-roundup-pages.mjs",
+    "check:roundups": "node scripts/render-roundup-pages.mjs --check",
     "check:cities": "node --check scripts/preview-cities.mjs && node scripts/render-city-pages.mjs --check",
     "analytics:dispatch": "node scripts/dispatch-analytics.mjs",
     "leads:dispatch": "node scripts/dispatch-leads.mjs",
