@@ -753,7 +753,7 @@ function moreLinks(vehicle, name) {
   if (existsSync(path.join(root, 'data/hybrid-pages', `${key}.json`))) items.push(`<strong><a href="/${key}-hybrid-vs-gas.html">Is the ${name} hybrid worth it?</a></strong>The price gap, the fuel savings and how long it takes to pay back`);
   const roundups = path.join(root, 'data/roundup-pages.json');
   if (existsSync(roundups)) for (const page of JSON.parse(readFileSync(roundups, 'utf8')).pages) if (page.entries.some(entry => entry.guide === vehicle.slug)) items.push(`<strong><a href="/${page.slug}">${page.blogTitle ?? page.h1}</a></strong>Where the ${name} ranks against its rivals`);
-  items.push(`<strong><a href="/cars-selling-below-msrp.html">New cars selling below MSRP</a></strong>How the ${name}’s discount compares with 20 other models`, '<strong><a href="/new-car-deals-this-month.html">New-car deals this month</a></strong>Every current offer on the models we cover');
+  items.push(`<strong><a href="/cars-selling-below-msrp.html">New cars selling below MSRP</a></strong>How the ${name}’s discount compares with every other model we cover`, '<strong><a href="/new-car-deals-this-month.html">New-car deals this month</a></strong>Every current offer on the models we cover');
   return `<section id="more" class="vp-section">
 <h2>More on the ${name}</h2>
 <ul class="vp-watch vp-watch--links" role="list">

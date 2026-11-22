@@ -27,10 +27,10 @@
     },
     {
       "id": "near",
-      "count": 3,
+      "count": 4,
       "min": 0,
       "heading": "Closest to sticker: 1% to 3% under",
-      "intro": "The RAV4 and the hybrid Civic and CR-V sell closest to sticker. Where a guide shows more room on another trim, the line under the car says so."
+      "intro": "The RAV4 and the hybrid Civic, CR-V and Rogue sell closest to sticker. Where a guide shows more room on another trim, the line under the car says so."
     }
   ],
   "cars": {
@@ -126,8 +126,13 @@
     },
     "toyota-rav4": {
       "brand": "Toyota", "segment": "SUVs", "payRow": 0, "prices": ["VEH-RAV4-08", "VEH-RAV4-12"],
-      "line": "The tightest supply of the 21: 24 days at the end of October against 87 for the industry. TrueCar puts the XLE Premium about 1% under, and the Woodland and XSE a little over sticker.",
+      "line": "The tightest supply of the 22: 24 days at the end of October against 87 for the industry. TrueCar puts the XLE Premium about 1% under, and the Woodland and XSE a little over sticker.",
       "needs": ["24 days of supply", "a little over sticker"]
+    },
+    "nissan-rogue": {
+      "brand": "Nissan", "segment": "SUVs", "payRow": 0, "prices": ["VEH-ROGUE-11", "VEH-ROGUE-17", "VEH-ROGUE-12"],
+      "line": "A new hybrid, so deals are thin: Edmunds and Kelley Blue Book both put it about $1,200 under, and Nissan lists no retail cash on it. The gas Rogue gives more room, 4.4–5.3% under in Edmunds’ New York prices.",
+      "needs": ["Edmunds and Kelley Blue Book both put it at about $1,200 under", "4.4–5.3% under sticker"]
     },
     "tesla-model-y": {
       "brand": "Tesla", "segment": "SUVs", "fixedPrice": true, "prices": ["VEH-MODELY-01"],
@@ -151,32 +156,35 @@
     "Hyundai": ["VEH-ELANTRA-03"],
     "Subaru": ["VEH-FORESTER-03"],
     "Kia": ["VEH-SPORTAGE-08"],
+    "Nissan": ["VEH-ROGUE-09"],
     "Tesla": ["VEH-MODELY-04", "VEH-MODELY-06"]
   },
   "dealsExtra": ["VEH-RAV4-19", "VEH-RAV4-06", "VEH-RAV4-07", "VEH-COLORADO-05"],
   "rowKinds": {
     "ram-1500-price.html|Bonus cash on a 2026, by trim": { "kind": "cash", "figure": 6750, "upTo": true, "needsInDetail": "$6,750" },
     "gmc-sierra-1500-price.html|Denali diesel price cut": { "kind": "cash", "figure": 6755, "upTo": false, "needsInDetail": "$6,755 GMC cash" },
+    "nissan-rogue-price.html|Rates on the gas Rogue": { "kind": "apr", "rate": 0, "rateText": "0%", "term": "60 months", "needsInDetail": "0% for 60 months" },
+    "nissan-rogue-price.html|Plug-in hybrid": { "kind": "cash", "figure": 6500, "upTo": true, "needsInDetail": "Up to $6,500" },
     "ram-1500-price.html|0% APR": { "kind": "apr", "rate": 0, "rateText": "0%", "term": "36 or 60 months", "needsInDetail": "36 months on the Tradesman" }
   },
   "pages": {
     "msrp": {
       "slug": "cars-selling-below-msrp.html",
       "published": "2026-11-21",
-      "title": "New Cars Selling Below MSRP (November 2026): 21 Ranked | Steer Me Right",
-      "description": "Which new cars sell furthest under sticker this month: 21 models ranked by how far under MSRP a fair deal runs, with dollars off, this month’s manufacturer offer and the trims that hold at sticker.",
+      "title": "New Cars Selling Below MSRP (November 2026): 22 Ranked | Steer Me Right",
+      "description": "Which new cars sell furthest under sticker this month: 22 models ranked by how far under MSRP a fair deal runs, with dollars off, this month’s manufacturer offer and the trims that hold at sticker.",
       "h1": "New cars selling below MSRP (November 2026)",
       "crumb": "Cars selling below MSRP",
       "image": "https://www.steermeright.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg",
       "lead": [
         "Pickups leave the most room this month. A fair deal on the {top1} {top1Trim} is {top1Fair} under sticker, about {top1Dollars} on a {top1Price} truck, and {deepestRest} all start at 5% under or better. The {bottom1}, {bottom2} and {bottom3} leave the least: {bottomRange} under at a fair price, and the RAV4’s dearest trims sell at sticker.",
-        "Below, all 21 models we cover sit at the trim we’d buy, each with the dollars off and a line on why the number is what it is."
+        "Below, all 22 models we cover sit at the trim we’d buy, each with the dollars off and a line on why the number is what it is."
       ],
       "leadNeeds": [
         { "slug": "toyota-rav4-price.html", "text": "Woodland, XSE, Limited" }
       ],
       "markupHeading": "Trims that sell at or near sticker",
-      "markupIntro": "Across the 21 guides, these trims sell within 2% of sticker. Only one carries a dealer-markup figure: owners on a Ford forum report Raptor R markups of $5,000 and up, a thread we read through a page summary. Get any dealer’s price in writing before you drive anywhere.",
+      "markupIntro": "Across the 22 guides, these trims sell within 2% of sticker. Only one carries a dealer-markup figure: owners on a Ford forum report Raptor R markups of $5,000 and up, a thread we read through a page summary. Get any dealer’s price in writing before you drive anywhere.",
       "markupNeeds": [
         { "slug": "ford-f-150-price.html", "text": "Raptor R markups of $5,000 and up" }
       ],
@@ -191,7 +199,7 @@
         "Fair and strong deals are our estimates from the sources each guide names: TrueCar’s market averages, Edmunds’ Texas suggested prices, Kelley Blue Book’s fair purchase prices, iSeeCars invoice figures, CarWhere’s verified buyers and owner reports. The headline offer is the one in each guide’s offers tile, read on the date shown there; the deals page has every offer with its end date."
       ],
       "faq": [
-        ["Which new cars have the biggest discounts right now?", "{top3Names} lead the 21 models we cover. A fair deal on each starts at {top3Floor} under sticker or better, because the makers carry more trucks than the industry average."],
+        ["Which new cars have the biggest discounts right now?", "{top3Names} lead the 22 models we cover. A fair deal on each starts at {top3Floor} under sticker or better, because the makers carry more trucks than the industry average."],
         ["Is a car selling below MSRP the price I will pay?", "No. A dealer discount, manufacturer cash, destination, add-ons and fees are separate lines on the quote. Compare them on one written out-the-door price, as in <a href=\"/blog-buy-new-car-below-msrp.html\">buying a new car below MSRP</a>."],
         ["Do manufacturer offers come on top of these discounts?", "Mostly, though a maker’s low rate often replaces its cash, so you pick one. The <a href=\"/new-car-deals-this-month.html\">deals page</a> lists each offer with its end date and works out cash against 0%."]
       ],
@@ -201,7 +209,7 @@
       "slug": "new-car-deals-this-month.html",
       "published": "2026-11-21",
       "title": "New-Car Deals This Month (November 2026): 0% APR, Cash Back, Leases | Steer Me Right",
-      "description": "Every current manufacturer offer across 21 models: the best 0% APR deals, the biggest cash back, notable leases and military and college offers, with end dates and a cash-or-0% break-even.",
+      "description": "Every current manufacturer offer across 22 models: the best 0% APR deals, the biggest cash back, notable leases and military and college offers, with end dates and a cash-or-0% break-even.",
       "h1": "New-car deals this month (November 2026): 0% APR, cash back and leases",
       "crumb": "New-car deals this month",
       "image": "https://www.steermeright.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg",
@@ -290,7 +298,7 @@
       ],
       "endsHeading": "What ends when",
       "endsIntro": "End dates are the contract or delivery date the maker prints, and each guide says which. Offers with no date are listed last.",
-      "ledgerSummary": "Every offer in the 21 guides, with its end date",
+      "ledgerSummary": "Every offer in the 22 guides, with its end date",
       "faq": [
         ["Can I get 0% APR and cash back together?", "Seldom. On the F-150, Silverado, Sierra, CX-5, Ram and Tundra the cash and the low rate are separate offers. A small bonus sometimes rides with the rate, such as Ford’s $500 with its 0%, but the headline cash does not."],
         ["Does every buyer get these rates?", "No. The rates and leases need approval through the maker’s own lender, and most are for well-qualified buyers. The guides say which offers need which lender."],
@@ -360,7 +368,11 @@
       { "id": "VEH-DEAL-57", "from": "VEH-SPORTAGE-08" },
       { "id": "VEH-DEAL-58", "from": "VEH-MODELY-04" },
       { "id": "VEH-DEAL-59", "from": "VEH-MODELY-06" },
-      { "id": "VEH-DEAL-60", "from": "VEH-F150-09" }
+      { "id": "VEH-DEAL-60", "from": "VEH-F150-09" },
+      { "id": "VEH-DEAL-61", "from": "VEH-ROGUE-11" },
+      { "id": "VEH-DEAL-62", "from": "VEH-ROGUE-17" },
+      { "id": "VEH-DEAL-63", "from": "VEH-ROGUE-12" },
+      { "id": "VEH-DEAL-64", "from": "VEH-ROGUE-09" }
     ],
     "deals": [
       { "id": "VEH-INC-01", "from": "VEH-F150-03" },
@@ -382,7 +394,8 @@
       { "id": "VEH-INC-17", "from": "VEH-RAV4-19" },
       { "id": "VEH-INC-18", "from": "VEH-RAV4-06" },
       { "id": "VEH-INC-19", "from": "VEH-RAV4-07" },
-      { "id": "VEH-INC-20", "from": "VEH-COLORADO-05" }
+      { "id": "VEH-INC-20", "from": "VEH-COLORADO-05" },
+      { "id": "VEH-INC-21", "from": "VEH-ROGUE-09" }
     ]
   }
 }

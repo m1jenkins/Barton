@@ -200,11 +200,15 @@ async function draftEmail(sql, alert, settings) {
 // Never the held text: the alert says only who sent it.
 async function heldEmail(sql, alert, settings) {
   const { question_id: id } = parseJson(alert.payload);
-  const [mail] = await sql`SELECT q.onboarding_id, q.sender_email, q.held, q.released_at, q.discarded_at, q.created_at, o.name
+  const [mail] = await sql`SELECT q.onboarding_id, q.sender_email, q.held, q.released_at, q.discarded_at, q.created_at, o.name,
+      lower(btrim(q.sender_email)) = lower(btrim(o.email)) AS from_intake
     FROM buyer_questions q JOIN onboarding_submissions o ON o.id = q.onboarding_id WHERE q.id = ${id}`;
   if (!mail || !mail.held || mail.released_at || mail.discarded_at) return null;
+  // The buyer's own address is held only when the mail failed Google's sender check (deal-mail.js).
+  const why = mail.from_intake ? 'That is the address on their intake, but the email didn\'t pass Google\'s sender check (DMARC), so it was held.'
+    : 'That isn\'t the address on their intake, so it was held.';
   return message(`Held email on ${mail.name}'s deal`, [
-    `An email to ${mail.name}'s reply address came from ${mail.sender_email} at ${clock(mail.created_at)} CT. That isn't the address on their intake, so it was held.`,
+    `An email to ${mail.name}'s reply address came from ${mail.sender_email} at ${clock(mail.created_at)} CT. ${why}`,
     '', 'It stays out of the agents\' queue and off the buyer\'s page until you release it. Release or discard it on the dashboard:'
   ], dealUrl(settings, mail.onboarding_id));
 }

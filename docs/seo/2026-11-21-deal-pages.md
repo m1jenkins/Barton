@@ -1,6 +1,6 @@
 # Deal pages — November 21, 2026
 
-Two generated pages that roll the 21 vehicle price guides up into the searches a price guide cannot answer on its own. Read `docs/seo/2026-11-15-vehicle-price-pages.md` first; these pages read their car figures from `data/vehicle-pages.json` and follow its rules.
+Two generated pages that roll the 22 vehicle price guides up into the searches a price guide cannot answer on its own. Read `docs/seo/2026-11-15-vehicle-price-pages.md` first; these pages read their car figures from `data/vehicle-pages.json` and follow its rules.
 
 | Page | Targets |
 | --- | --- |
@@ -42,11 +42,11 @@ npm run check:deals   # CI runs this; fails when the pages drift
 
 Same as the price guides: no listings-connector figures, no tax, title or registration advice, no dealer names, review scores not used, "car search" never the banned word, never call Steer Me Right a broker, no Steer Me Right deal results. Steer Me Right statements are the approved plan copy, word for word. The estimates sentence ("our estimate…, not a promise.") appears once, in the sources note.
 
-Sources: every outside link is a guide's own source under a new id (`VEH-DEAL-01` to `-60`, `VEH-INC-01` to `-20`), registered in `data/source-registry.csv` with the page as `article_url`, the original row's URL, authority and title, and a note that the figure was carried from the guide and not reread on November 21. The `from` field in the data file names the guide source. Nothing on either page was read fresh from a publisher on November 21; the date read is the guide's `checkedOn`, shown beside each source.
+Sources: every outside link is a guide's own source under a new id (`VEH-DEAL-01` to `-64`, `VEH-INC-01` to `-21`), registered in `data/source-registry.csv` with the page as `article_url`, the original row's URL, authority and title, and a note that the figure was carried from the guide and not reread on November 21. The `from` field in the data file names the guide source. Nothing on either page was read fresh from a publisher on November 21; the date read is the guide's `checkedOn`, shown beside each source.
 
 ## Maintenance
 
-**The deals page goes stale at month end.** Most offers on it (104 of the 142 listed) end November 30, 2026, and Honda and Kia's run to January 4, 2027. On December 1:
+**The deals page goes stale at month end.** Most offers on it (113 of the 151 listed) end November 30, 2026, and Honda and Kia's run to January 4, 2027. On December 1:
 
 1. Refresh the price guides' incentives first (`incentives.rows`, `.cards`, `.choice`, `pay` ranges, `checkedOn`), per the monthly steps in the vehicle doc.
 2. In `data/deal-pages.json`: set `asOf` and `updated`; rename "November 2026" in `pages.*.title`, `h1`, `description`, brand headings and `lead`; re-pick the "four to look at" (`picks` need a guide card with that label and figure); recheck the `choice` pairs (rate and cash option indices), `regions` items and `needs` strings; update `groups[].count` and the group intros if cars move between groups; update `rowKinds` overrides the build rejects.
@@ -66,7 +66,7 @@ Every judgment on these pages is mine from the guides, not yours. Read these fir
 5. **Break-even rates** are our arithmetic on each guide's `choice` inputs. They treat a buyer's own loan as running the same term as the guide's example, and leave out employee pricing (Ram), which its 0% gives up. The Ranger row pairs Ford's cash with its 4.9% although Ford's page does not say they combine.
 6. **Weak or snippet-only figures carried over**: the Raptor R markups of $5,000 and up (a Ford Raptor Forum thread read through a page summary, cited as such on the page); the Tucson plug-in offers (read at one ZIP); Ford's Los Angeles 2.9% rate (no end date); the Colorado's November 30 end date (GM Authority and Kelley Blue Book, not Chevrolet's page); the Camry and Corolla lease regions; Tesla's financing (TeslaNorth and Electrek, since Tesla's site refuses automated reads).
 7. **The F-150's 0% offer ended November 16 in most regions**; it stays in the tables with a flag. Decide whether a flagged row should be removed outright.
-8. **Offer counts.** "142 offers" counts guide rows, which include one row per region or model year in some guides, so it overstates distinct offers.
+8. **Offer counts.** "151 offers" counts guide rows, which include one row per region or model year in some guides, so it overstates distinct offers.
 9. **Lease ranking** uses the first region each guide lists. Three lease rows have payments the parser does not read and appear only in the full list.
 10. **Dollar column** uses the pick trim's price where the guides use the row's example trim; the two differ on a few cars (the Sierra's SLT against its Elevation example, for one).
 11. **The cash table** ranks the GMC Denali diesel at the manufacturer's $6,755 and leaves out the $4,545 dealer reduction GMC bundles into its $11,300 headline.

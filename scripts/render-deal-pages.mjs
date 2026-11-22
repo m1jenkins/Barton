@@ -1,6 +1,6 @@
 // Builds the two deal pages from data/deal-pages.json (copy, ordering inputs, sources) and data/vehicle-pages.json (every car figure):
-//   cars-selling-below-msrp.html     the 21 guides ranked by how far under sticker a fair deal runs
-//   new-car-deals-this-month.html    every current manufacturer offer in the 21 guides, sorted
+//   cars-selling-below-msrp.html     the 22 guides ranked by how far under sticker a fair deal runs
+//   new-car-deals-this-month.html    every current manufacturer offer in the 22 guides, sorted
 // A monthly refresh of the price guides flows through on the next build. Run `npm run build:deals` after changing either data file,
 // the script, buying/deal-pages.css or car-negotiation-service.html's head, header or footer; `npm run check:deals` fails on drift.
 import { createHash } from 'node:crypto';
@@ -189,7 +189,7 @@ ${group.cars.map(row => carRow(row, ++rank)).join('\n')}
 
   const body = `<article class="vp dl">
 ${header(page, config.updated)}
-${tabs([['verdict', 'Verdict'], ['ranking', 'All 21 ranked'], ['sticker', 'At sticker'], ['tesla', 'Tesla'], ['method', 'How we ranked'], ['faq', 'Questions'], ['sources', 'Sources']])}
+${tabs([['verdict', 'Verdict'], ['ranking', 'All 22 ranked'], ['sticker', 'At sticker'], ['tesla', 'Tesla'], ['method', 'How we ranked'], ['faq', 'Questions'], ['sources', 'Sources']])}
 <div class="vp-width vp-body dl-body">
 <section id="verdict" class="vp-section vp-section--first">
 <p class="vp-lead">${fill(page.lead[0], tokens)}</p>
@@ -202,7 +202,7 @@ ${extreme('Least room to negotiate', low)}
 ${cta}
 
 <section id="ranking" class="vp-section">
-<h2>All 21 ranked, most room first</h2>
+<h2>All 22 ranked, most room first</h2>
 <p>Each car is shown at the trim we’d buy. Dollars come off that trim’s starting MSRP, and the offer is the headline one from the car’s price guide.</p>
 ${groupHtml}
 </section>
@@ -392,7 +392,7 @@ ${vehicle.incentives.cards.map(card => {
 
   // Ledger
   const kindLabel = { apr: 'Rate', cash: 'Cash', lease: 'Lease', program: 'Program', used: 'Used or certified', none: 'No offer', other: 'Other' };
-  const ledgerTable = table('Every offer in the 21 price guides', ['Car and offer', 'Kind', 'What it is', 'Applies to', 'Ends'],
+  const ledgerTable = table('Every offer in the 22 price guides', ['Car and offer', 'Kind', 'What it is', 'Applies to', 'Ends'],
     ledger.map(offer => [`${carLink(offer.vehicle)}<span>${esc(offer.row.offer)}</span>`, kindLabel[offer.kind], esc(offer.row.detail), esc(offer.row.applies), endCell(offer)]));
 
   requireSources(sources, [...Object.values(config.brandOffers).flat(), ...config.dealsExtra], 'deals page');
