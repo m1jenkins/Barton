@@ -1,7 +1,10 @@
-import { card, checklist, note, paragraph, renderEmail } from '../email-layout.js';
+import { button, card, checklist, note, paragraph, renderEmail, safeUrl } from '../email-layout.js';
 
-// Sent after the deal is marked closed (a 'closed' deal_events row).
-export function render(buyer) {
+// Sent after the deal is marked closed (a 'closed' deal_events row). With a live
+// Deal Tracker link (options.tracker), the last card also carries the link,
+// which keeps working for three days after the close (adr/0001).
+export function render(buyer, { tracker } = {}) {
+  const link = safeUrl(tracker?.link);
   return renderEmail({
     subject: buyer.firstName ? `Congratulations on the new car, ${buyer.firstName}` : 'Congratulations on the new car',
     preheader: 'A short checklist for signing and pickup. I’m still a reply away.',
@@ -28,6 +31,8 @@ export function render(buyer) {
           'Ask the dealer when your plates and registration will arrive, and how.',
           'Questions later about the paperwork or the warranty? Reply here. I’m glad to help.'
         ]),
+        link && paragraph('Your Deal Tracker stays open for three days after the deal closes, if you want to look back at the numbers.'),
+        link && button(link, 'Open your Deal Tracker'),
         note('This checklist is a starting point, not legal or tax advice. Read the final contract terms before you sign.')
       ])
     ],

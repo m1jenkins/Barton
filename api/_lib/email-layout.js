@@ -29,7 +29,9 @@ export function safeUrl(value) {
 // A paragraph's text is a string, or an array of strings and { b: 'bold text' }.
 
 export const paragraph = text => ({ kind: 'p', text });
-export const note = text => ({ kind: 'note', text });
+// htmlOnly: shown in the HTML part only, e.g. a visible copy of a link the text
+// part already prints with its button.
+export const note = (text, { htmlOnly = false } = {}) => ({ kind: 'note', text, htmlOnly });
 export const steps = items => ({ kind: 'steps', items });
 export const checklist = items => ({ kind: 'checklist', items });
 // Things to avoid: a muted cross instead of a check.
@@ -81,7 +83,8 @@ function nodeHtml(node) {
 
 function nodeText(node) {
   switch (node.kind) {
-    case 'p': case 'note': return plain(node.text);
+    case 'p': return plain(node.text);
+    case 'note': return node.htmlOnly ? '' : plain(node.text);
     case 'steps': return node.items.map((item, index) => `${index + 1}. ${item.title}\n   ${plain(item.body)}`).join('\n');
     case 'checklist': return node.items.map(item => `${node.avoid ? 'x' : '-'} ${plain(item)}`).join('\n');
     case 'rows': return node.items.map(([label, value]) => `${label}: ${oneLine(value)}`).join('\n');

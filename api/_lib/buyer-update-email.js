@@ -49,8 +49,8 @@ export function renderBuyerUpdateEmail({ firstName, body, link }) {
     cards: [card('The update', [
       paragraph(preview),
       button(link, 'Read it on your Deal Tracker'),
-      note(['Or open this link: ', link]),
-      paragraph('Have a question about it? Reply to this email and I’ll answer within one business day.')
+      // The text part already prints the link with the button.
+      note(['Or open this link: ', link], { htmlOnly: true })
     ])],
     signoff: 'Talk soon,'
   });

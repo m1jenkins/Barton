@@ -1,5 +1,6 @@
 import { ConfigError } from './config.js';
 import { database } from './db.js';
+import { dealTrackerSettings, linkUrl, replyAddress } from './deal-tracker.js';
 import { intakeEmailSettings, oneLine, smtpTransport } from './intake-email.js';
 import { safeUrl } from './email-layout.js';
 import { EMAIL_TIERS, TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from './customer-emails/index.js';
@@ -12,6 +13,9 @@ import { EMAIL_TIERS, TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from '
 //   review_ask      queued with deal_done, held 4 days; needs GOOGLE_REVIEW_URL
 // The queue is customer_email_outbox (db/011). See "Customer email" in
 // docs/implementation-operations.md.
+// With the Deal Tracker on (DEAL_TRACKER_ENABLED), a buyer whose link is live gets
+// the Deal Tracker version of each email, with the link, and Reply-To set to their
+// reply address when DEAL_REPLY_MAILBOX is set. Everyone else gets today's email.
 
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 const DEFAULT_REPLY_TO = 'mason@steermeright.com';
@@ -127,6 +131,33 @@ async function claimEmails(sql, onboardingId, { batchSize, maxAttempts, leaseSec
   `);
 }
 
+// A closed deal's link stops working this long after the latest close
+// (LINK_GRACE_DAYS in deal-tracker.js, adr/0001).
+const LINK_GRACE_DAYS = 3;
+
+// The live links of the claimed buyers, by intake ID. A separate query, run only
+// with the Deal Tracker on, so claimEmails works on a database without db/013.
+// Revoked links, and links whose deal closed over three days ago (checkLink's
+// 'expired'), get today's email: a link in it would only open the "closed" page.
+async function liveLinks(sql, rows, tracker) {
+  const ids = [...new Set(rows.map(row => row.onboarding_id))];
+  const links = await sql`
+    SELECT l.onboarding_id, l.version
+    FROM deal_tracker_links AS l
+    LEFT JOIN LATERAL (
+      SELECT kind, occurred_at FROM deal_events
+      WHERE onboarding_id = l.onboarding_id AND kind IN ('closed', 'reopened')
+      ORDER BY occurred_at DESC, id DESC LIMIT 1
+    ) AS latest ON true
+    WHERE l.onboarding_id = ANY(${ids}::uuid[]) AND l.revoked_at IS NULL
+      AND (latest.kind IS DISTINCT FROM 'closed' OR latest.occurred_at > now() - ${LINK_GRACE_DAYS} * interval '1 day')
+  `;
+  return new Map(links.map(link => [link.onboarding_id, {
+    link: linkUrl(tracker, link.onboarding_id, link.version),
+    replyAddress: replyAddress(tracker, link.onboarding_id)
+  }]));
+}
+
 async function finish(sql, row, status, lastError = null) {
   const updated = await sql`
     UPDATE customer_email_outbox
@@ -138,17 +169,19 @@ async function finish(sql, row, status, lastError = null) {
   return updated.length === 1;
 }
 
-async function deliver(sql, row, transport, settings) {
+async function deliver(sql, row, transport, settings, tracker) {
   if (row.template === 'review_ask' && !settings.reviewUrl) {
     await finish(sql, row, 'cancelled', 'No GOOGLE_REVIEW_URL');
     return 'skipped';
   }
   try {
-    const { subject, text, html } = renderCustomerEmail(row.template, buyerFromRow(row), { reviewUrl: settings.reviewUrl });
+    // Without a live link the options are exactly today's, so the email is too.
+    const options = tracker ? { reviewUrl: settings.reviewUrl, tracker } : { reviewUrl: settings.reviewUrl };
+    const { subject, text, html } = renderCustomerEmail(row.template, buyerFromRow(row), options);
     await transport.sendMail({
       from: { name: FROM_NAME, address: settings.user },
       to: { name: oneLine(row.name), address: row.email },
-      replyTo: settings.replyTo,
+      replyTo: tracker?.replyAddress || settings.replyTo,
       subject, text, html,
       headers: { 'X-Steer-Customer-Email': row.template }
     });
@@ -165,14 +198,18 @@ async function deliver(sql, row, transport, settings) {
 export async function dispatchCustomerEmails({ sql, environment = process.env, onboardingId = null, createTransport = smtpTransport } = {}) {
   const settings = customerEmailSettings(environment);
   if (!settings) return { configured: false, claimed: 0, sent: 0, failed: 0, skipped: 0 };
+  // Read before claiming: a bad DEAL_TRACKER_SECRET throws ConfigError here, as a
+  // bad CUSTOMER_EMAIL_REPLY_TO does above, and no row is claimed or spent.
+  const tracker = dealTrackerSettings(environment);
   const client = sql || database();
   const rows = await claimEmails(client, onboardingId, settings);
   const result = { configured: true, claimed: rows.length, sent: 0, failed: 0, skipped: 0 };
   if (rows.length === 0) return result;
+  const links = tracker ? await liveLinks(client, rows, tracker) : new Map();
   const transport = createTransport(settings);
   try {
     // One SMTP connection, one message at a time: Gmail throttles parallel sends.
-    for (const row of rows) result[await deliver(client, row, transport, settings)] += 1;
+    for (const row of rows) result[await deliver(client, row, transport, settings, links.get(row.onboarding_id))] += 1;
     return result;
   } finally {
     transport.close?.();

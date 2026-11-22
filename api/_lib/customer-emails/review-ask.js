@@ -1,6 +1,8 @@
 import { GOOGLE_G, HELLO, button, card, paragraph, renderEmail, safeUrl } from '../email-layout.js';
 
-// Sent four days after the deal-done email. Needs GOOGLE_REVIEW_URL.
+// Sent four days after the deal-done email. Needs GOOGLE_REVIEW_URL. It never
+// carries the Deal Tracker link: by then the link has closed (three days after
+// the close, adr/0001), so options.tracker is ignored.
 export function render(buyer, { reviewUrl } = {}) {
   const href = safeUrl(reviewUrl);
   if (!href) throw new Error('The review email needs an https GOOGLE_REVIEW_URL');

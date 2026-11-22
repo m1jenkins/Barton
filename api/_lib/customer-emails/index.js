@@ -56,6 +56,9 @@ export function buyerFromRow(row) {
   };
 }
 
+// options: { reviewUrl, tracker }. tracker is { link, replyAddress } for a buyer
+// with a live Deal Tracker link; without it every template renders exactly as it
+// did before the Deal Tracker.
 export function renderCustomerEmail(template, buyer, options = {}) {
   const module = TEMPLATES[template];
   if (!module) throw new Error(`Unknown customer email: ${template}`);

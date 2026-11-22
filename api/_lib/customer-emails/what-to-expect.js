@@ -1,7 +1,35 @@
-import { avoidList, card, checklist, paragraph, renderEmail, steps } from '../email-layout.js';
+import { avoidList, button, card, checklist, paragraph, renderEmail, safeUrl, steps } from '../email-layout.js';
+
+// With a live Deal Tracker link: a short nudge with the buyer's to-do list. The
+// page's Confirming search stage already explains how the search runs and what
+// to hold off on, so the email points there instead of repeating it.
+function renderTracker(buyer, link) {
+  const todo = [
+    buyer.paying === 'finance' && 'Get a loan pre-approval from your bank or a credit union, and send it on your Deal Tracker. It gives the dealer a rate to beat.',
+    buyer.paying === 'unknown' && 'If you might finance, get a pre-approval from your bank or a credit union, and send it on your Deal Tracker.',
+    buyer.hasTradeIn && 'Get an instant offer for your trade-in from an online car buyer, and add a few photos of it on your Deal Tracker. The offer sets a floor for the dealer’s trade number.',
+    'Line up insurance for the new car before pickup day.',
+    'Tell me if anything changes, like your budget or timing.'
+  ].filter(Boolean);
+  return renderEmail({
+    subject: 'Your to-do list for the car search',
+    preheader: 'A few things that help from your side, and one to hold off on.',
+    kicker: 'Deal Tracker',
+    heading: 'Your to-do list',
+    intro: [`${buyer.firstName ? `Hi ${buyer.firstName}, here’s` : 'Here’s'} your short to-do list. How the search runs is on your Deal Tracker.`],
+    cards: [card('Your to-do list', [
+      checklist(todo),
+      paragraph([{ b: 'Please hold off on' }, ' contacting dealers yourself. It can undercut the prices I’m negotiating.']),
+      button(link, 'Open your Deal Tracker')
+    ])],
+    signoff: 'Talk soon,'
+  });
+}
 
 // Sent the morning after the welcome email.
-export function render(buyer) {
+export function render(buyer, { tracker } = {}) {
+  const link = safeUrl(tracker?.link);
+  if (link) return renderTracker(buyer, link);
   const pro = buyer.isPro;
   const helps = [
     'Keep an eye on your email and phone. A quick answer from you keeps a deal moving.',
