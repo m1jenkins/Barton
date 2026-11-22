@@ -12,11 +12,14 @@ const publicPaths = new Set(['/', '/index.html', '/about.html', '/how-it-works.h
   '/compare-car-buying-services.html', '/caredge-alternatives.html', '/delivrd-alternatives.html',
   '/delivrd-review.html', '/is-caredge-concierge-worth-it.html', '/used-car-buying-service.html',
   '/car-negotiation-service.html', '/car-buying-concierge.html', '/car-finder-service.html',
-  '/new-car-buying-service.html', '/car-buying-help.html']);
+  '/new-car-buying-service.html', '/car-buying-help.html',
+  '/cars-selling-below-msrp.html', '/new-car-deals-this-month.html', '/best-compact-suvs.html',
+  '/best-hybrid-suvs-under-35000.html', '/cheapest-new-pickup-trucks.html']);
 const publicPathPatterns = [
   /^\/[a-z0-9-]+-price\.html$/, // vehicle price guides
   /^\/(?!blog-)[a-z0-9-]+-vs-[a-z0-9-]+\.html$/, // car-versus-car pages (blog-*-vs-* stay noindex)
   /^\/car-buying-service-[a-z0-9-]+\.html$/, // city pages, the near-me hub and the cost page
+  /^\/[a-z0-9-]+-problems\.html$/, // problems-by-year pages (hybrid-vs-gas pages match the -vs- pattern)
 ];
 const isPublicPath = (path) => publicPaths.has(path) || publicPathPatterns.some((re) => re.test(path));
 const hosts = new Set(['www.steermeright.com', 'steermeright.com', 'www.driverightcarbuying.com', 'driverightcarbuying.com']);
