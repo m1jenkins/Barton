@@ -21821,14 +21821,14 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "65<small>out of 100</small>",
-     "b": "67<small>out of 100</small>"
+     "a": "70<small>out of 100</small>",
+     "b": "65<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the Elantra, unless you trade cars every few years. It starts $300 below the Corolla as a gas car, Hyundai adds $2,000 bonus cash on the gas Elantra through November 30 (Toyota’s November offers include no cash back), and the Hybrid Blue is rated 54 mpg combined against 50 for the Corolla Hybrid LE. You also get 3.2 more inches of rear legroom and a 10-year/100,000-mile powertrain warranty, IIHS names it a Top Safety Pick, and all four reviewers we checked score it higher. The Corolla is the lower-risk car: owners filed 28 complaints with NHTSA per 100,000 sold for the 2023–2025 models against the Elantra’s 65, and it lost 9.3% of its value in three years against 16.6%. Reddit leans Corolla in neutral subreddits, 7 picks to 4, but 11 picks is too few to call. Prices were checked on November 21, 2026.",
+   "summary": "We’d buy the Elantra, unless you want the longest-lived car or trade cars every few years. It starts $300 below the Corolla as a gas car, Hyundai adds $2,000 bonus cash on the gas Elantra through November 30 (Toyota’s November offers include no cash back), and the Hybrid Blue is rated 54 mpg combined against 50 for the Corolla Hybrid LE. You also get 3.2 more inches of rear legroom and a 10-year/100,000-mile powertrain warranty, IIHS names it a Top Safety Pick, and all four reviewers we checked score it higher. The Corolla is the lower-risk car: owners filed 28 complaints with NHTSA per 100,000 sold for the 2023–2025 models against the Elantra’s 65, and it lost 9.3% of its value in three years against 16.6%. Reddit picks the Corolla about 3 to 1 (93 picks to 33 in neutral subreddits), mostly on reliability. We still take the Elantra for its price, room and warranty, so treat this as a close call that turns on how much a long-lived car matters to you. Prices were checked on November 21, 2026.",
    "choose": {
     "a": [
-     "You want the fewest problems: owners filed 28 NHTSA complaints per 100,000 sold for 2023–2025 against 65, and Toyota scores 185 problems per 100 cars in J.D. Power’s dependability study against Hyundai’s 198.",
+     "You want the fewest problems: owners filed 28 NHTSA complaints per 100,000 sold for 2023–2025 against 65, Toyota scores 185 problems per 100 cars in J.D. Power’s dependability study against Hyundai’s 198, and Reddit’s neutral subreddits tell people to buy the Corolla 93 times to 33.",
      "You’ll sell or trade within five years: iSeeCars has a gas Corolla losing 28.4% of its value in five years against 36.4% for an Elantra, and a used 2025 Corolla asks $781 more.",
      "You need all-wheel drive: the Corolla Hybrid offers it for $1,400 and still gets 48 mpg. No Elantra has it.",
      "You want the stronger gas engine: 169 hp against 147, and Edmunds timed the Corolla at 8.8 seconds to 60 mph against 9.4 for the base Elantra."
@@ -21921,9 +21921,9 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "65",
-     "b": "67",
-     "win": null
+     "a": "70",
+     "b": "65",
+     "win": "a"
     }
    ],
    "price": {
@@ -22448,60 +22448,69 @@
    "reddit": {
     "dataFile": "data/reddit-sentiment/toyota-corolla-vs-hyundai-elantra.json",
     "intro": [
-     "We read 339 comments in 16 Reddit threads that weighed these two cars, from posts between January 2025 and November 2026. Few people compare them: 13 of the threads are in neutral subreddits (mostly r/whatcarshouldIbuy), 3 are in r/Elantra and r/ElantraN, and none is in r/corolla. Only 11 people in the neutral subreddits picked one car over the other, 7 the Corolla and 4 the Elantra, too few for us to call a winner. Comments were coded by AI, and a second coder agreed on 96% of picks in each car’s file. A score of 50 means praise and complaints balance."
+     "We read 2,885 comments in 150 Reddit threads whose posts named both cars, January 2025 to November 2026. Each car’s own subreddits back its own car, so r/corolla, r/Elantra with r/ElantraN, and the neutral subreddits (mostly r/whatcarshouldIbuy) count equally. A score of 50 means praise and complaints balance.",
+     "Of 434 posts that named both cars, 332 were screened and 288 kept as weighing the two. We drew 43 home threads (1,070 comments) and 89 neutral threads (1,501 comments) evenly by month and had AI code 2,571 comments to a ten-topic rubric, then re-read 262 comments the first pass left empty, and 110 gained a code. With the earlier coding, the neutral subreddits hold 1,701 comments in 104 threads and 126 picks, 93 for the Corolla and 33 for the Elantra; r/corolla has 473 comments in 16 threads and the Elantra’s subreddits 711 in 30. The Elantra N and GR Corolla are coded under their base models, so the N’s praise lifts the Elantra’s power score.",
+     "A blind second coder re-coded 150 comments and agreed with the first on 80% of picks (12 of the 15 comments either coder picked on) and on 76% of stance toward the car (39 of 51). Both are below the 85% we want, so read the index and topic scores as rough."
     ],
     "indexDetail": {
-     "a": "Praised for reliability, a long life and fair prices on base trims. Marked down for a tight back seat, a dull drive and cheap-feeling plastics. It scores 85 in the neutral subreddits and 25 in r/Elantra and r/ElantraN.",
-     "b": "Praised for its back seat, value and fuel economy, and the N for how it drives. Marked down for engine trouble owners report on older cars. It scores 78 in its own subreddits and 53 in the neutral ones."
+     "a": "Praised for reliability and a long life, hybrid fuel economy and resale. Marked down for a dull drive, a tight back seat and a dated, noisy cabin. It scores 69 in the neutral subreddits, 78 in r/corolla and 34 in r/Elantra and r/ElantraN.",
+     "b": "Praised for the N, for value and its warranty, and for a well-equipped cabin. Marked down for reliability worries on older engines and for losing value faster than a Corolla. It scores 79 in its own subreddits, 53 in the neutral ones and 29 in r/corolla."
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. The neutral subreddits have only 11 picks, 7 for the Corolla and 4 for the Elantra. r/Elantra and r/ElantraN gave one pick, to the Corolla, and r/corolla had no thread naming both.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddits mostly pick their own car, though r/Elantra and r/ElantraN picked the Elantra only 3 to 1.",
      "rows": [
       {
        "venue": "neutral",
        "label": "Neutral subreddits"
+      },
+      {
+       "venue": "a",
+       "label": "In r/corolla"
+      },
+      {
+       "venue": "b",
+       "label": "In r/Elantra and r/ElantraN"
       }
      ]
     },
     "minimum": 15,
-    "minimumPicks": 100,
     "topics": {
      "title": "Net opinion by topic",
-     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the venues that had comments weighted equally. A car with fewer than 15 mentions on a topic shows the count instead of a score. Most-discussed topics first."
+     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. The Elantra N and GR Corolla count under their base models. A car with fewer than 15 mentions on a topic shows the count instead of a score. Most-discussed topics first."
     },
     "themes": {
      "a": {
       "praise": [
-       "Reliability and a long life: owners report 200,000 to 300,000 miles on routine maintenance",
-       "Hybrid fuel economy, roughly 50 to 60 mpg in daily driving",
-       "Base trims at fair out-the-door prices, and resale that holds up",
-       "Comfortable and predictable at highway speed"
+       "Reliability and a long life: owners report 300,000 miles on basic maintenance, and the hybrid’s eCVT is called simple and durable",
+       "Hybrid fuel economy, 50 to 60 mpg in what owners report",
+       "Resale that holds up, and low insurance and running costs",
+       "A cheaper hybrid than a Civic’s and a more practical car than a Mazda3"
       ],
       "gripes": [
-       "A tight back seat next to the Elantra’s",
-       "Dull acceleration and handling, and cheap-feeling interior plastics",
-       "Owners report rattles on newer cars and loud road noise on the highway",
-       "Used cars from 2020 on cost nearly as much as new, and new ones are hard to get below sticker"
+       "Called slow, boring and appliance-like to drive",
+       "A tight back seat and a small cabin for families",
+       "A dated, cheap-feeling interior and highway road noise",
+       "Used cars priced near new, dealer markups and a so-called Toyota tax"
       ]
      },
      "b": {
       "praise": [
-       "A roomy back seat and trunk for a compact, with rear legroom that suits tall adults better than a Corolla",
-       "Strong value against the Civic and Corolla, helped by the long warranty and fall discounts",
-       "About 40 mpg on the highway from the gas car and about 50 from the hybrid",
-       "Big screens and CarPlay on lower trims, and a sharp, fun N for the money"
+       "The Elantra N: quick, fun and a bargain for the money",
+       "Strong value: cheaper than a Corolla or Civic new, with a long warranty and rebates",
+       "Big screens and an interior called more premium than a Corolla’s",
+       "Comfortable seats on long commutes, and newer engines and hybrids described as much improved"
       ],
       "gripes": [
-       "Owners report older Elantras burning oil or failing engines around 100,000 to 150,000 miles",
-       "Owners report it losing value faster than a Civic or Corolla, and high insurance rates",
-       "Owners report wind noise, door-panel rattles and cheap-feeling materials",
-       "Owners report the base engine and hybrid feeling slow at highway speed, and warranty repairs met with fees or refusals"
+       "Owners report engine failures and oil use on older Theta and GDI engines",
+       "Many say it won’t last as long as a Corolla",
+       "Depreciates faster than Toyota and Honda rivals",
+       "Theft risk that pushes insurance up"
       ]
      }
     },
     "after": [
-     "The neutral subreddits lean Corolla, 7 picks to 4, and score it 85 against the Elantra’s 53, while Elantra owners score their own car 78. Reliability is the one topic with enough comments to score both cars: the Corolla at +70 on 16 mentions, the Elantra at +8 on 70. A head-to-head collection would give a firmer answer; for now read it as a direction."
+     "Reddit picks the Corolla: 93 picks to 33 in the neutral subreddits and 9 to 0 in r/corolla. The gap is reliability, where the Corolla scores +94 on 193 mentions and the Elantra −9 on 220. The Elantra wins power (+75, much of it the N), space (+62 against −57) and tech (+57 against −36). Our verdict differs from Reddit’s pick on purpose: Reddit’s lead is almost all reliability, which this page already counts for the Corolla, and price, warranty, room and crash tests are why we’d still buy the Elantra. If long-term reliability is the one worry you can’t shake, buy the Corolla."
     ],
     "from": {
      "label": "Comments from",
@@ -22716,7 +22725,7 @@
     ],
     [
      "What does Reddit think of the Corolla vs the Elantra?",
-     "It leans Corolla on thin data. In neutral subreddits 7 people told the poster to buy the Corolla and 4 the Elantra, too few to call. Our Reddit Sentiment Index scores the Elantra 67 and the Corolla 65 out of 100, where 50 means praise and complaints balance. Reddit praises the Corolla’s reliability and resale, and the Elantra’s room and value, and its owners report engine trouble on older Elantras."
+     "It picks the Corolla. In neutral subreddits 93 people told the poster to buy the Corolla and 33 the Elantra, and r/corolla picked it 9 to 0. Our Reddit Sentiment Index scores the Corolla 70 and the Elantra 65 out of 100, where 50 means praise and complaints balance; our check of the coding came in below our accuracy floor, so read it as rough. Reddit praises the Corolla’s reliability and resale and the Elantra’s N, value and cabin, and its owners report engine trouble on older Elantras."
     ],
     [
      "Should I wait for the next Elantra or Corolla?",
