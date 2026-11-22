@@ -1,0 +1,1712 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-21",
+  "decision": "Generated roundup pages. See docs/seo/2026-11-21-roundup-pages.md.",
+  "pages": [
+    {
+      "slug": "best-compact-suvs.html",
+      "kind": "ranked",
+      "code": "CSUV",
+      "published": "2026-11-21",
+      "checkedOn": "2026-11-21",
+      "title": "Best Compact SUVs for 2026, Ranked and Priced | Steer Me Right",
+      "description": "Eight compact SUVs ranked for 2026: the trim we’d buy, price with destination, mpg, cargo room, who each suits and the catch, with a price guide for six of them.",
+      "h1": "Best compact SUVs for 2026, ranked",
+      "crumb": "Best compact SUVs",
+      "tag": "Ranking",
+      "blogTitle": "Best Compact SUVs for 2026",
+      "blogText": "Eight ranked, from the RAV4 to the Equinox: the trim we’d buy, mpg, cargo room and the catch for each.",
+      "blogCta": "See the ranking",
+      "llms": "Eight compact SUVs ranked for 2026 (RAV4, Tucson, Sportage, CR-V, CX-5, Forester, Rogue, Equinox): the trim we’d buy, price with destination, EPA mpg, cargo room, the catch for each, and links to every price guide and head-to-head (checked 2026-11-21).",
+      "lead": "The Toyota RAV4 is our pick for most buyers: every one is a hybrid, rated 43 mpg combined with front drive, and J.D. Power’s owner score of 85 out of 100 is tied for the best in the class. The catch is price. Our estimates put a fair deal on a Tucson Hybrid or Sportage Hybrid at 3–4% under sticker against 1–2% for the RAV4, so they cost less to buy and give up a few mpg. The Chevrolet Equinox ranks last: it’s rated 27 mpg combined, 16 behind the RAV4, and U.S. News puts it 10th of 15 compact SUVs.",
+      "basisHeading": "How we ranked them",
+      "basis": "This is our judgment, not a formula. We weighed each publisher’s score (Edmunds, Kelley Blue Book, U.S. News and J.D. Power, each quoted separately and never averaged), what owners report on Reddit and in J.D. Power’s owner ratings, fuel economy, and what a car costs after a typical dealer discount. A hybrid priced like a gas car beat a better-reviewed gas car, which is why the CX-5 and Forester sit below the three hybrids.",
+      "rankHeading": "The ranking",
+      "quick": [
+        {
+          "label": "Most buyers",
+          "key": "rav4",
+          "text": "RAV4 XLE Premium"
+        },
+        {
+          "label": "Most room",
+          "key": "tucson",
+          "text": "Tucson, 41.2 cubic feet behind the rear seats"
+        },
+        {
+          "label": "Cheapest hybrid",
+          "key": "sportage",
+          "text": "Sportage Hybrid S"
+        },
+        {
+          "label": "AWD standard, no hybrid",
+          "key": "cx-5",
+          "text": "CX-5 Preferred"
+        },
+        {
+          "label": "Snow and dirt roads",
+          "key": "forester",
+          "text": "Forester Premium Hybrid"
+        },
+        {
+          "label": "A gas car that sips",
+          "key": "rogue",
+          "text": "Rogue SV, 30 mpg combined"
+        }
+      ],
+      "faq": [
+        [
+          "What is the best compact SUV for 2026?",
+          "The Toyota RAV4, in our ranking. It’s hybrid-only, rated 43 mpg combined with front drive, and J.D. Power’s owner score of 85 out of 100 ties it for first among compact SUVs. The Hyundai Tucson Hybrid is second for its cargo room and the Kia Sportage Hybrid third for its price."
+        ],
+        [
+          "Which compact SUVs come as hybrids?",
+          "The RAV4 (every one), CR-V, Tucson, Sportage and Forester. Nissan’s Rogue Hybrid starts at $37,065 with destination, and the CX-5 and Equinox have no hybrid."
+        ],
+        [
+          "What is the cheapest compact SUV?",
+          "On starting price with destination, the Sportage LX at {{startAll:sportage}}, then the Rogue S at {{startAll:rogue}} and the Tucson SE at {{startAll:tucson}}. The RAV4 LE is the dearest starting point at {{startAll:rav4}}, but it’s a hybrid."
+        ],
+        [
+          "Does destination count in these prices?",
+          "Yes. Each car’s price is its MSRP plus the maker’s destination charge, which runs from $1,450 on the CR-V and Forester to $1,995 on the Equinox. Dealers add it to every window sticker."
+        ],
+        [
+          "Can you negotiate a compact SUV for me?",
+          "Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do."
+        ],
+        [
+          "Do dealers pay you?",
+          "No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for."
+        ],
+        [
+          "What if I change my mind?",
+          "Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href=\"/policy.html#refund-policy\">refund policy</a>."
+        ]
+      ],
+      "sourcesNote": "Cargo figures are U.S. News’s for each model, taken from its gas version where a model has both; a hybrid can differ by a cubic foot or two. The Rogue and Equinox figures were read from their makers’ own pages and U.S. News, not from a price guide of ours. The Rogue Hybrid’s destination-inclusive price is Nissan’s $35,490 plus $1,575.",
+      "related": "<a href=\"/compare-car-quotes.html\">quote comparison worksheet</a>, <a href=\"/new-car-buying-service.html\">new car buying service</a> and <a href=\"/blog-buy-new-car-below-msrp.html\">comparing complete new-car quotes</a>",
+      "entries": [
+        {
+          "key": "rav4",
+          "name": "Toyota RAV4",
+          "guide": "toyota-rav4-price.html",
+          "year": "2026",
+          "dest": 1595,
+          "startTrim": "LE",
+          "pickTrim": "XLE Premium",
+          "payRow": 0,
+          "epa": "43 mpg combined with front drive, 41 with AWD",
+          "cargo": "37.8",
+          "blurb": "Toyota dropped the gas engine, so every RAV4 is a hybrid: 43 mpg combined with front-wheel drive against 40 for a CR-V Hybrid and 38 for a Tucson Hybrid. J.D. Power’s owner score of 85 out of 100 is tied for the best in the class, and IIHS rates it Good in seven of its eight tests.",
+          "who": "Buy it if you keep cars for a decade and want the lowest fuel bill in the class. It loses value about half as fast as the average vehicle.",
+          "catch": "Dealers had 24 days of RAV4s in stock at the end of October against 87 for the industry, Toyota offers no cash back and most trims sell within 2% of sticker. Reviewers also fault its ride and seat comfort.",
+          "buy": "The XLE Premium adds a power liftgate, heated SofTex (synthetic leather) seats and parking sensors that brake the car. AWD adds $1,400.",
+          "mpg": "43"
+        },
+        {
+          "key": "tucson",
+          "name": "Hyundai Tucson",
+          "guide": "hyundai-tucson-price.html",
+          "year": "2026",
+          "dest": 1650,
+          "startTrim": "SE",
+          "pickTrim": "Hybrid SEL Convenience",
+          "payRow": 2,
+          "epa": "36 mpg combined as an all-wheel-drive hybrid, 28 for the gas SE",
+          "cargo": "41.2",
+          "blurb": "U.S. News ranks the Tucson first among compact SUVs, tied with the CX-5, and Edmunds puts it fourth of 20 small SUVs. It has the most cargo room here, 41.2 cubic feet behind the rear seats against 37.8 in the RAV4, and a 10-year/100,000-mile powertrain warranty.",
+          "who": "Buy it if you haul gear or kids and want a long warranty. Edmunds’ Texas prices show it selling 6–7% under sticker.",
+          "catch": "The hybrid’s 36 mpg trails a front-drive RAV4’s 43 by 7, the gas engine needs 10.2 seconds to reach 60 mph in Edmunds’ test, and the 2026 has six recalls, one of them replacing engines.",
+          "buy": "The Hybrid SEL Convenience adds 12.3-inch digital gauges, leatherette seats and a wireless charger, with AWD included.",
+          "mpg": "36"
+        },
+        {
+          "key": "sportage",
+          "name": "Kia Sportage",
+          "guide": "kia-sportage-price.html",
+          "year": "2027",
+          "col": 1,
+          "dest": 1495,
+          "startTrim": "LX",
+          "pickTrim": "Hybrid S",
+          "payRow": 1,
+          "epa": "41 mpg combined with front drive, 35 with AWD",
+          "cargo": "39.6",
+          "blurb": "A 2027 Sportage Hybrid S costs {{pick:sportage}} before destination, $4,810 less than a 2026 RAV4 XLE Premium, and it’s rated 41 mpg combined with front drive. Edmunds named the S its pick of the 2026 hybrids, and the Sportage has five stars overall from NHTSA and a 2026 IIHS Top Safety Pick+.",
+          "who": "Buy it if you want a hybrid for the least money in this group.",
+          "catch": "AWD drops the hybrid to 35 mpg combined, the gas engine needs more than 9.5 seconds to reach 60 mph, and Kia’s best rates sit on different model years from the trims you may want.",
+          "buy": "The Hybrid S adds heated front seats, a power driver’s seat, blind-spot detection and 18-inch wheels to the LX. AWD costs $1,600 more.",
+          "mpg": "41"
+        },
+        {
+          "key": "cr-v",
+          "name": "Honda CR-V",
+          "guide": "honda-cr-v-price.html",
+          "year": "2026",
+          "dest": 1450,
+          "startTrim": "LX",
+          "pickTrim": "Sport Hybrid",
+          "payRow": 1,
+          "epa": "40 mpg combined with front drive, 37 with AWD",
+          "cargo": "39.3",
+          "blurb": "The CR-V has five stars overall from NHTSA on every version, and the Sport Hybrid’s 40 mpg combined is 10 better than a gas CR-V’s 30. It costs only $230 more than a gas EX-L.",
+          "who": "Buy it if you want a hybrid priced like a gas car. Honda says an all-new, hybrid-only CR-V arrives in 2027 as a 2028 model, so this is the last generation with a gas option.",
+          "catch": "IIHS rates it Poor for rear-seat crash protection, the gas engine needs about 9 seconds to reach 60 mph, and its screens and driver aids trail rivals’. Edmunds scores it 7.4 against the RAV4’s 8.1.",
+          "buy": "The Sport Hybrid has the EX’s equipment, including heated seats and a power moonroof, with the 204-hp hybrid in place of the 190-hp turbo.",
+          "mpg": "40"
+        },
+        {
+          "key": "cx-5",
+          "name": "Mazda CX-5",
+          "guide": "mazda-cx-5-price.html",
+          "year": "2026",
+          "dest": 1595,
+          "startTrim": "2.5 S",
+          "pickTrim": "2.5 S Preferred",
+          "payRow": 0,
+          "epa": "26 mpg combined, AWD standard",
+          "cargo": "33.7",
+          "blurb": "U.S. News ranks the CX-5 first of 14 compact SUVs (9.3 out of 10), AWD is standard, and IIHS names it a Top Safety Pick+. Edmunds calls the back seat expansive, and Mazda’s $1,000 customer cash covers the S, Select and Preferred.",
+          "who": "Buy it if you want standard AWD and have no use for a hybrid.",
+          "catch": "There’s no hybrid, so it’s rated 26 mpg combined against the RAV4’s 41–43, and Edmunds clocked 9.0 seconds to 60 mph and scores it 6.5 out of 10, 14th of 20 small SUVs. Most controls moved to the touchscreen.",
+          "buy": "The Preferred adds heated front seats and steering wheel, a power liftgate, a memory driver’s seat and a head-up display, $2,260 over the Select.",
+          "mpg": "26"
+        },
+        {
+          "key": "forester",
+          "name": "Subaru Forester",
+          "guide": "subaru-forester-price.html",
+          "year": "2026",
+          "dest": 1450,
+          "startTrim": "Base",
+          "pickTrim": "Premium Hybrid",
+          "payRow": 1,
+          "epa": "35 mpg combined, AWD standard",
+          "cargo": "27.5–29.6",
+          "blurb": "Every Forester has AWD and 8.7 inches of ground clearance, IIHS names it a Top Safety Pick+, and it loses 13.3% of its value in three years against 24.8% for the average vehicle.",
+          "who": "Buy it if you drive in snow or on dirt roads and want the lowest depreciation here.",
+          "catch": "The gas engine needs 9.2 seconds to reach 60 mph in Edmunds’ test, which scores the Forester 5.7 out of 10, and the hybrid’s 35 mpg combined is 6 under an AWD RAV4’s.",
+          "buy": "The Premium Hybrid adds the hybrid system (194 hp against 180), 12.3-inch digital gauges, a power rear gate and blind-spot detection.",
+          "mpg": "35"
+        },
+        {
+          "key": "rogue",
+          "name": "Nissan Rogue",
+          "guide": null,
+          "year": "2027",
+          "dest": 1575,
+          "startTrim": "S",
+          "startMsrp": 29690,
+          "pickTrim": "SV",
+          "pickMsrp": 30690,
+          "epa": "30 mpg combined with front drive, 29 with AWD",
+          "cargo": "31.6",
+          "ratings": {
+            "usn": "8.8 out of 10, 6th of 15 compact SUVs (2026)",
+            "nhtsa": "no overall NHTSA rating yet for the 2027; side crash five stars"
+          },
+          "blurb": "A gas Rogue is the thriftiest here without a hybrid: 30 mpg combined with front drive (a gas CR-V is rated 30 too, a CX-5 26), from a 201-hp 1.5-liter three-cylinder. U.S. News ranks the 2026 sixth of 15 compact SUVs.",
+          "who": "Buy it if you want to stay near $32,000 and need a gas car that sips.",
+          "catch": "Nissan’s hybrid starts at $37,065 with destination, 31.6 cubic feet of cargo room trails the RAV4’s 37.8 by 6.2, and the 2027 costs $230 more than the 2026.",
+          "buy": "The SV costs $1,000 more than the S, at $32,265 with destination.",
+          "mpg": "30"
+        },
+        {
+          "key": "equinox",
+          "name": "Chevrolet Equinox",
+          "guide": null,
+          "year": "2027",
+          "dest": 1995,
+          "startTrim": "LT",
+          "startMsrp": 29700,
+          "pickTrim": "LT",
+          "pickMsrp": 29700,
+          "epa": "27 mpg combined with front drive, 26 with AWD",
+          "cargo": "29.8",
+          "ratings": {
+            "usn": "8.5 out of 10, 10th of 15 compact SUVs (2027)",
+            "nhtsa": "five stars overall (2026)"
+          },
+          "blurb": "The Equinox starts at $29,700 with a 175-hp turbo four and an 11.3-inch touchscreen. NHTSA gave the 2026 five stars overall, but U.S. News ranks the 2027 only 10th of 15 (8.5 out of 10).",
+          "who": "Buy it if you have a Chevrolet incentive or lease deal in hand. Price a Tucson SE and a Sportage LX beside it.",
+          "catch": "It’s rated 27 mpg combined, 16 behind the RAV4, with 29.8 cubic feet of cargo room against the Tucson’s 41.2, and its $1,995 destination charge is the highest of the eight. AWD costs $2,000.",
+          "buy": "We’d take the LT: U.S. News says it’s a good value if you don’t load it with options.",
+          "mpg": "27"
+        }
+      ],
+      "sources": [
+        {
+          "id": "VEH-RND-CSUV-01",
+          "url": "https://www.toyota.com/rav4/",
+          "title": "Toyota: 2026 RAV4",
+          "note": "MSRP, trims and destination for the Toyota RAV4, from the Toyota RAV4 price guide (read 2026-11-21).",
+          "scope": "Toyota RAV4 starting MSRP and destination",
+          "authority": "toyota.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-02",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_RAV4.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota RAV4",
+          "note": "EPA fuel economy for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "EPA fuel economy, Toyota RAV4",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-03",
+          "url": "https://www.edmunds.com/toyota/rav4/",
+          "title": "Edmunds: 2026 Toyota RAV4",
+          "note": "Edmunds score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "Edmunds score, Toyota RAV4",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-04",
+          "url": "https://www.kbb.com/toyota/rav4/2026/",
+          "title": "Kelley Blue Book: 2026 Toyota RAV4",
+          "note": "Kelley Blue Book score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "Kelley Blue Book score, Toyota RAV4",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-05",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/rav4",
+          "title": "U.S. News: 2026 Toyota RAV4",
+          "note": "U.S. News score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "U.S. News score, Toyota RAV4",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-06",
+          "url": "https://www.jdpower.com/cars/2026/toyota/rav4",
+          "title": "J.D. Power: 2026 Toyota RAV4",
+          "note": "J.D. Power score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "J.D. Power score, Toyota RAV4",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-CSUV-07",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb056d5c-2026-honda-cr-v-pricing-and-epa-ratings-3",
+          "title": "Honda: 2026 CR-V pricing and EPA ratings",
+          "note": "MSRP, trims and destination for the Honda CR-V, from the Honda CR-V price guide (read 2026-11-21).",
+          "scope": "Honda CR-V starting MSRP and destination",
+          "authority": "hondanews.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-08",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_CR-V.shtml",
+          "title": "FuelEconomy.gov: 2026 Honda CR-V",
+          "note": "EPA fuel economy for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "EPA fuel economy, Honda CR-V",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-09",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/",
+          "title": "Edmunds: 2026 Honda CR-V",
+          "note": "Edmunds score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "Edmunds score, Honda CR-V",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-10",
+          "url": "https://www.kbb.com/honda/cr-v/2026/",
+          "title": "Kelley Blue Book: 2026 Honda CR-V",
+          "note": "Kelley Blue Book score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "Kelley Blue Book score, Honda CR-V",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-11",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v/2026",
+          "title": "U.S. News: 2026 Honda CR-V",
+          "note": "U.S. News score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "U.S. News score, Honda CR-V",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-12",
+          "url": "https://www.jdpower.com/cars/2026/honda/cr-v",
+          "title": "J.D. Power: 2026 Honda CR-V",
+          "note": "J.D. Power score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "J.D. Power score, Honda CR-V",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-CSUV-13",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v",
+          "title": "U.S. News: Honda CR-V",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Honda CR-V, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Honda CR-V",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-14",
+          "url": "https://news.mazdausa.com/2026-01-13-Mazda-Announces-Pricing-and-Packaging-for-All-New-2026-Mazda-CX-5",
+          "title": "Mazda: 2026 CX-5 pricing and packaging",
+          "note": "MSRP, trims and destination for the Mazda CX-5, from the Mazda CX-5 price guide (read 2026-11-21).",
+          "scope": "Mazda CX-5 starting MSRP and destination",
+          "authority": "news.mazdausa.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-15",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Mazda_CX-5.shtml",
+          "title": "FuelEconomy.gov: 2026 Mazda CX-5",
+          "note": "EPA fuel economy for the Mazda CX-5, from the Mazda CX-5 price guide.",
+          "scope": "EPA fuel economy, Mazda CX-5",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-16",
+          "url": "https://www.edmunds.com/mazda/cx-5/2026/",
+          "title": "Edmunds: 2026 Mazda CX-5",
+          "note": "Edmunds score for the Mazda CX-5, from the Mazda CX-5 price guide.",
+          "scope": "Edmunds score, Mazda CX-5",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-17",
+          "url": "https://www.kbb.com/mazda/cx-5/2026/",
+          "title": "Kelley Blue Book: 2026 Mazda CX-5",
+          "note": "Kelley Blue Book score for the Mazda CX-5, from the Mazda CX-5 price guide.",
+          "scope": "Kelley Blue Book score, Mazda CX-5",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-18",
+          "url": "https://cars.usnews.com/cars-trucks/mazda/cx-5",
+          "title": "U.S. News: Mazda CX-5",
+          "note": "U.S. News score for the Mazda CX-5, from the Mazda CX-5 price guide.",
+          "scope": "U.S. News score, Mazda CX-5",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-19",
+          "url": "https://media.subaru.com/newsrelease.do?id=2421",
+          "title": "Subaru: 2026 Forester updated pricing",
+          "note": "MSRP, trims and destination for the Subaru Forester, from the Subaru Forester price guide (read 2026-11-21).",
+          "scope": "Subaru Forester starting MSRP and destination",
+          "authority": "media.subaru.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-20",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Subaru_Forester.shtml",
+          "title": "FuelEconomy.gov: 2026 Subaru Forester",
+          "note": "EPA fuel economy for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "EPA fuel economy, Subaru Forester",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-21",
+          "url": "https://www.edmunds.com/subaru/forester/2026/",
+          "title": "Edmunds: 2026 Subaru Forester",
+          "note": "Edmunds score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "Edmunds score, Subaru Forester",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-22",
+          "url": "https://www.kbb.com/subaru/forester/2026/",
+          "title": "Kelley Blue Book: 2026 Subaru Forester",
+          "note": "Kelley Blue Book score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "Kelley Blue Book score, Subaru Forester",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-23",
+          "url": "https://cars.usnews.com/cars-trucks/subaru/forester",
+          "title": "U.S. News: Subaru Forester",
+          "note": "U.S. News score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "U.S. News score, Subaru Forester",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-24",
+          "url": "https://www.jdpower.com/cars/2026/subaru/forester",
+          "title": "J.D. Power: 2026 Subaru Forester",
+          "note": "J.D. Power score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "J.D. Power score, Subaru Forester",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-CSUV-25",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson",
+          "title": "Hyundai: 2026 Tucson",
+          "note": "MSRP, trims and destination for the Hyundai Tucson, from the Hyundai Tucson price guide (read 2026-11-21).",
+          "scope": "Hyundai Tucson starting MSRP and destination",
+          "authority": "hyundaiusa.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-26",
+          "url": "https://www.edmunds.com/hyundai/tucson/",
+          "title": "Edmunds: 2026 Hyundai Tucson",
+          "note": "Edmunds score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "Edmunds score, Hyundai Tucson",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-27",
+          "url": "https://www.kbb.com/hyundai/tucson/2026/",
+          "title": "Kelley Blue Book: 2026 Hyundai Tucson",
+          "note": "Kelley Blue Book score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "Kelley Blue Book score, Hyundai Tucson",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-28",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/tucson",
+          "title": "U.S. News: 2026 Hyundai Tucson",
+          "note": "U.S. News score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "U.S. News score, Hyundai Tucson",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-29",
+          "url": "https://www.jdpower.com/cars/2026/hyundai/tucson",
+          "title": "J.D. Power: 2026 Hyundai Tucson",
+          "note": "J.D. Power score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "J.D. Power score, Hyundai Tucson",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-CSUV-30",
+          "url": "https://www.kia.com/us/en/sportage",
+          "title": "Kia: 2027 Sportage",
+          "note": "MSRP, trims and destination for the Kia Sportage, from the Kia Sportage price guide (read 2026-11-21).",
+          "scope": "Kia Sportage starting MSRP and destination",
+          "authority": "kia.com"
+        },
+        {
+          "id": "VEH-RND-CSUV-31",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Kia_Sportage.shtml",
+          "title": "FuelEconomy.gov: Kia Sportage",
+          "note": "EPA fuel economy for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "EPA fuel economy, Kia Sportage",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-32",
+          "url": "https://www.edmunds.com/kia/sportage/2026/",
+          "title": "Edmunds: 2026 Kia Sportage",
+          "note": "Edmunds score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "Edmunds score, Kia Sportage",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-CSUV-33",
+          "url": "https://www.kbb.com/kia/sportage/2026/",
+          "title": "Kelley Blue Book: 2026 Kia Sportage",
+          "note": "Kelley Blue Book score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "Kelley Blue Book score, Kia Sportage",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-CSUV-34",
+          "url": "https://cars.usnews.com/cars-trucks/kia/sportage",
+          "title": "U.S. News: Kia Sportage",
+          "note": "U.S. News score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "U.S. News score, Kia Sportage",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-35",
+          "url": "https://www.jdpower.com/cars/2026/kia/sportage",
+          "title": "J.D. Power: 2026 Kia Sportage",
+          "note": "J.D. Power score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "J.D. Power score, Kia Sportage",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-CSUV-36",
+          "url": "https://www.chevrolet.com/suvs/equinox",
+          "title": "Chevrolet: 2027 Equinox",
+          "note": "Starting MSRP of the 2027 Equinox ($29,700, before destination), read on Chevrolet’s own page on 2026-11-21.",
+          "scope": "Equinox starting MSRP",
+          "authority": "Chevrolet"
+        },
+        {
+          "id": "VEH-RND-CSUV-37",
+          "url": "https://cars.usnews.com/cars-trucks/chevrolet/equinox",
+          "title": "U.S. News: Chevrolet Equinox",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Chevrolet Equinox, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Chevrolet Equinox",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-38",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_Chevrolet_Equinox.shtml",
+          "title": "FuelEconomy.gov: 2027 Chevrolet Equinox",
+          "note": "EPA ratings (27 combined front-wheel drive, 26 all-wheel drive), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy, Equinox",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-39",
+          "url": "https://www.nissanusa.com/vehicles/crossovers-suvs/rogue.html",
+          "title": "Nissan: 2027 Rogue",
+          "note": "The 2027 Rogue S at $29,690 and $1,575 destination, and the 2027 Rogue Hybrid SV at $35,490, from the price data in Nissan’s own page, read on 2026-11-21.",
+          "scope": "Rogue starting MSRP and destination",
+          "authority": "Nissan"
+        },
+        {
+          "id": "VEH-RND-CSUV-40",
+          "url": "https://www.motor1.com/news/809124/2027-nissan-rogue-trims-pricing/",
+          "title": "Motor1: 2027 Nissan Rogue pricing",
+          "note": "The 2027 Rogue SV at $32,265 including destination, and its 201-hp engine, read on 2026-11-21. Motor1’s own price table disagrees with its text for some trims; we use only the SV figure, which matches Nissan’s $29,690 S plus $1,000.",
+          "scope": "Rogue SV price",
+          "authority": "Motor1"
+        },
+        {
+          "id": "VEH-RND-CSUV-41",
+          "url": "https://cars.usnews.com/cars-trucks/nissan/rogue",
+          "title": "U.S. News: Nissan Rogue",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Nissan Rogue, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Nissan Rogue",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-CSUV-42",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_Nissan_Rogue.shtml",
+          "title": "FuelEconomy.gov: 2027 Nissan Rogue",
+          "note": "EPA ratings (30 combined front-wheel drive, 29 all-wheel drive), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy, Rogue",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-CSUV-43",
+          "url": "https://www.nhtsa.gov/ratings",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "note": "Overall crash ratings for the 2026 Equinox (five stars) and the 2027 Rogue (no overall rating yet), read through NHTSA’s ratings web service on 2026-11-21.",
+          "scope": "NHTSA overall ratings",
+          "authority": "NHTSA"
+        }
+      ],
+      "queries": [
+        "best compact suvs",
+        "best compact suv 2026",
+        "best small suv 2026",
+        "compact suv rankings",
+        "best compact suv for the money"
+      ]
+    },
+    {
+      "slug": "best-hybrid-suvs-under-35000.html",
+      "kind": "hybrids",
+      "code": "HYBSUV",
+      "published": "2026-11-21",
+      "checkedOn": "2026-11-21",
+      "title": "Best Hybrid SUVs Under $35,000 (2026) | Steer Me Right",
+      "description": "Five hybrid SUVs start under $35,000 with destination in 2026. Ranked: the exact trim and price, EPA mpg, AWD status, and the four that just miss.",
+      "h1": "Best hybrid SUVs under $35,000 (2026)",
+      "crumb": "Best hybrid SUVs under $35,000",
+      "tag": "Ranking",
+      "blogTitle": "Best Hybrid SUVs Under $35,000",
+      "blogText": "Five qualify once destination is counted. The exact trim, price and mpg for each, and the four that miss.",
+      "blogCta": "See the five",
+      "llms": "Hybrid SUVs whose cheapest hybrid trim starts under $35,000 including destination in 2026 (RAV4, Sportage, Tucson, Niro, Corolla Cross), ranked with the exact trim, price, EPA mpg and AWD status, plus the CR-V, Forester, Crosstrek and Rogue that miss (checked 2026-11-21).",
+      "lead": "Five hybrid SUVs start under $35,000 once destination is counted. We’d buy the Toyota RAV4 Hybrid LE: {{offer:rav4:0}} with front drive or {{offer:rav4:1}} with AWD, rated 43 mpg combined, with 37.8 cubic feet of cargo room and a J.D. Power owner score of 85 out of 100. The Kia Sportage Hybrid S is the one to price against it, $710 cheaper with heated seats and 41 mpg. The Honda CR-V and Subaru Forester hybrids start higher.",
+      "basisHeading": "How we ranked them",
+      "basis": "Every price here is MSRP plus the maker’s destination charge, because a $34,700 sticker is $36,295 with a $1,595 fee, and most “under $35,000” lists leave that out. We ranked on what the cheapest sensible trim gives you: reviews and owner scores, mpg, room, and whether all-wheel drive fits under the line. Ranks are our judgment, not a formula.",
+      "rankHeading": "The five, ranked",
+      "faq": [
+        [
+          "What is the cheapest hybrid SUV?",
+          "The Kia Niro, at {{offer:niro:0}} with destination for the 2027 Niro Hybrid. Next come the Sportage Hybrid LX at {{offer:sportage:0}} and the Tucson Hybrid SE at {{offer:tucson:0}}."
+        ],
+        [
+          "Which hybrid SUV under $35,000 has standard all-wheel drive?",
+          "The Toyota Corolla Cross Hybrid. The RAV4 LE, Sportage Hybrid S and Tucson Hybrid offer it as an option; the Niro doesn’t offer it."
+        ],
+        [
+          "Is the Honda CR-V Hybrid under $35,000?",
+          "No. The cheapest CR-V hybrid, the Sport Hybrid, is $35,630 before a $1,450 destination charge, or $37,080. The Subaru Forester Premium Hybrid is $36,180 with destination."
+        ],
+        [
+          "Does destination count toward the $35,000?",
+          "Yes, in this ranking. It is on every window sticker and the dealer can’t waive it."
+        ],
+        [
+          "Can you negotiate a hybrid SUV for me?",
+          "Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do."
+        ],
+        [
+          "Do dealers pay you?",
+          "No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for."
+        ],
+        [
+          "What if I change my mind?",
+          "Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href=\"/policy.html#refund-policy\">refund policy</a>."
+        ]
+      ],
+      "sourcesNote": "The Corolla Cross Hybrid’s 42 mpg is Toyota’s estimate for the 2027; the Niro’s cargo and destination are U.S. News’s figures for the 2026. Cargo is U.S. News’s figure for the model, and a hybrid can differ from the gas version by a cubic foot or two.",
+      "related": "<a href=\"/best-compact-suvs.html\">best compact SUVs</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
+      "entries": [
+        {
+          "key": "rav4",
+          "name": "Toyota RAV4 Hybrid",
+          "guide": "toyota-rav4-price.html",
+          "year": "2026",
+          "dest": 1595,
+          "cargo": "37.8",
+          "offers": [
+            {
+              "trim": "LE",
+              "label": "LE, front-wheel drive",
+              "add": 0,
+              "mpg": "43",
+              "awd": "Optional"
+            },
+            {
+              "trim": "LE",
+              "label": "LE, all-wheel drive",
+              "add": 1400,
+              "mpg": "42",
+              "awd": "Yes"
+            }
+          ],
+          "blurb": "The LE is the cheapest RAV4 and it isn’t stripped: 12.3-inch digital gauges, a 10.5-inch touchscreen with wireless CarPlay and Android Auto, and Toyota Safety Sense 4.0. It’s rated 43 mpg combined with front drive and has 37.8 cubic feet of cargo room, against 22.8 in the Niro and 21.5 in the Corolla Cross. J.D. Power gives the RAV4 an owner score of 85 out of 100, tied for first among compact SUVs.",
+          "who": "Buy the LE with AWD if you see snow: at {{offer:rav4:1}} it clears the line with $105 to spare.",
+          "catch": "Most RAV4 trims sell within 2% of sticker and Toyota offers no cash back, so there’s little to haggle. The power liftgate, heated seats and parking sensors start higher up the lineup, and the XLE Premium that has them is $37,695 with destination."
+        },
+        {
+          "key": "sportage",
+          "name": "Kia Sportage Hybrid",
+          "guide": "kia-sportage-price.html",
+          "year": "2027",
+          "col": 1,
+          "dest": 1495,
+          "cargo": "39.6",
+          "offers": [
+            {
+              "trim": "Hybrid LX",
+              "label": "Hybrid LX, front-wheel drive",
+              "add": 0,
+              "mpg": "41",
+              "awd": "Not offered"
+            },
+            {
+              "trim": "Hybrid S",
+              "label": "Hybrid S, front-wheel drive",
+              "add": 0,
+              "mpg": "41",
+              "awd": "Optional"
+            },
+            {
+              "trim": "Hybrid S",
+              "label": "Hybrid S, all-wheel drive",
+              "add": 1600,
+              "mpg": "35",
+              "awd": "Yes"
+            }
+          ],
+          "blurb": "The Hybrid S adds heated front seats, a power driver’s seat, blind-spot detection and 18-inch wheels to the LX for $700. Edmunds named it its pick of the 2026 hybrids and scores the Sportage Hybrid 8.6 out of 10 against 7.8 for the gas car.",
+          "who": "Buy the S with front drive: at {{offer:sportage:1}} it’s $710 under the RAV4 LE and rated 41 mpg combined.",
+          "catch": "AWD costs $1,600 and drops it to 35 mpg combined. The 2027 S is $1,500 cheaper than the 2026, which came with AWD only at $32,790."
+        },
+        {
+          "key": "tucson",
+          "name": "Hyundai Tucson Hybrid",
+          "guide": "hyundai-tucson-price.html",
+          "year": "2026",
+          "dest": 1650,
+          "cargo": "41.2",
+          "offers": [
+            {
+              "trim": "Hybrid SE",
+              "label": "Hybrid SE, front-wheel drive",
+              "add": 0,
+              "mpg": "38",
+              "awd": "Optional, +$1,500"
+            },
+            {
+              "trim": "Hybrid SEL",
+              "label": "Hybrid SEL, front-wheel drive",
+              "add": 0,
+              "mpg": "38",
+              "awd": "Optional, +$1,500"
+            }
+          ],
+          "blurb": "The Hybrid SEL adds 18-inch wheels, an 8-way power driver’s seat with power lumbar and heated front seats to the SE for $1,450. It has the most cargo room of the five (41.2 cubic feet), and U.S. News ranks the Tucson first among compact SUVs, tied with the CX-5.",
+          "who": "Buy the SEL if you need room more than mpg: it’s rated 38 combined with front drive, 5 under the RAV4.",
+          "catch": "The SEL Convenience in our compact SUV ranking is $36,900 with destination, so the trim under the line skips its 12.3-inch gauges and standard AWD. AWD adds $1,500 and puts the SEL at $35,900. The 2026 has six recalls, one replacing engines."
+        },
+        {
+          "key": "niro",
+          "name": "Kia Niro",
+          "guide": null,
+          "year": "2027",
+          "dest": 1495,
+          "cargo": "22.8",
+          "offers": [
+            {
+              "trim": "Niro Hybrid",
+              "label": "Niro Hybrid, front-wheel drive",
+              "msrp": 29890,
+              "mpg": "50",
+              "awd": "Not offered"
+            }
+          ],
+          "ratings": "U.S. News 8.6 out of 10, 8th of 19 hybrid SUVs; NHTSA four stars overall (2026)",
+          "blurb": "The Niro is the efficiency winner: the EPA rates it 50 mpg combined, and Kia estimates 555 miles of range. At $31,385 with destination it’s the cheapest of the five, and U.S. News ranks it 8th of 19 hybrid SUVs (8.6 out of 10).",
+          "who": "Buy it if you drive mostly around town and never need AWD.",
+          "catch": "It’s front-drive only, holds 22.8 cubic feet behind the rear seats (15 less than the RAV4), and NHTSA rates the 2026 four stars overall against five for the Corolla Cross."
+        },
+        {
+          "key": "corolla-cross",
+          "name": "Toyota Corolla Cross Hybrid",
+          "guide": null,
+          "year": "2027",
+          "dest": 1595,
+          "cargo": "21.5",
+          "offers": [
+            {
+              "trim": "Hybrid SE",
+              "label": "Hybrid SE, all-wheel drive",
+              "msrp": 31415,
+              "mpg": "42",
+              "awd": "Standard"
+            }
+          ],
+          "ratings": "U.S. News 8.0 out of 10, 14th of 16 subcompact SUVs; NHTSA five stars overall (2026)",
+          "blurb": "It’s the only hybrid here with AWD as standard. Toyota estimates 46 mpg in the city, 39 on the highway and 42 combined, and the SE costs $33,010 with destination.",
+          "who": "Buy it if you want AWD and can’t stretch to a RAV4. Toyota’s page still listed a 2026 Hybrid S at $29,795.",
+          "catch": "It’s a subcompact: U.S. News puts cargo room at 21.5 cubic feet with AWD, 16.3 under the RAV4’s, and ranks it 14th of 16 in its class."
+        }
+      ],
+      "missed": [
+        {
+          "name": "Subaru Crosstrek Sport Hybrid",
+          "year": "2027",
+          "msrp": 33995,
+          "dest": 1525,
+          "mpg": "38",
+          "note": "Standard AWD"
+        },
+        {
+          "name": "Subaru Forester Premium Hybrid",
+          "year": "2026",
+          "guide": "subaru-forester-price.html",
+          "trim": "Premium Hybrid",
+          "dest": 1450,
+          "mpg": "35",
+          "note": "Standard AWD"
+        },
+        {
+          "name": "Honda CR-V Sport Hybrid",
+          "year": "2026",
+          "guide": "honda-cr-v-price.html",
+          "trim": "Sport Hybrid",
+          "dest": 1450,
+          "mpg": "40",
+          "note": "AWD +$1,500"
+        },
+        {
+          "name": "Nissan Rogue Hybrid SV",
+          "year": "2027",
+          "msrp": 35490,
+          "dest": 1575,
+          "mpg": "n/a",
+          "note": "AWD only"
+        }
+      ],
+      "sources": [
+        {
+          "id": "VEH-RND-HYBSUV-01",
+          "url": "https://www.toyota.com/rav4/",
+          "title": "Toyota: 2026 RAV4",
+          "note": "MSRP, trims and destination for the Toyota RAV4, from the Toyota RAV4 price guide (read 2026-11-21).",
+          "scope": "Toyota RAV4 starting MSRP and destination",
+          "authority": "toyota.com"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-02",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_RAV4.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota RAV4",
+          "note": "EPA fuel economy for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "EPA fuel economy, Toyota RAV4",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-03",
+          "url": "https://www.edmunds.com/toyota/rav4/",
+          "title": "Edmunds: 2026 Toyota RAV4",
+          "note": "Edmunds score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "Edmunds score, Toyota RAV4",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-04",
+          "url": "https://www.kbb.com/toyota/rav4/2026/",
+          "title": "Kelley Blue Book: 2026 Toyota RAV4",
+          "note": "Kelley Blue Book score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "Kelley Blue Book score, Toyota RAV4",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-05",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/rav4",
+          "title": "U.S. News: 2026 Toyota RAV4",
+          "note": "U.S. News score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "U.S. News score, Toyota RAV4",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-06",
+          "url": "https://www.jdpower.com/cars/2026/toyota/rav4",
+          "title": "J.D. Power: 2026 Toyota RAV4",
+          "note": "J.D. Power score for the Toyota RAV4, from the Toyota RAV4 price guide.",
+          "scope": "J.D. Power score, Toyota RAV4",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-07",
+          "url": "https://www.kia.com/us/en/sportage",
+          "title": "Kia: 2027 Sportage",
+          "note": "MSRP, trims and destination for the Kia Sportage, from the Kia Sportage price guide (read 2026-11-21).",
+          "scope": "Kia Sportage starting MSRP and destination",
+          "authority": "kia.com"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-08",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Kia_Sportage.shtml",
+          "title": "FuelEconomy.gov: Kia Sportage",
+          "note": "EPA fuel economy for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "EPA fuel economy, Kia Sportage",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-09",
+          "url": "https://www.edmunds.com/kia/sportage/2026/",
+          "title": "Edmunds: 2026 Kia Sportage",
+          "note": "Edmunds score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "Edmunds score, Kia Sportage",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-10",
+          "url": "https://www.kbb.com/kia/sportage/2026/",
+          "title": "Kelley Blue Book: 2026 Kia Sportage",
+          "note": "Kelley Blue Book score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "Kelley Blue Book score, Kia Sportage",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-11",
+          "url": "https://cars.usnews.com/cars-trucks/kia/sportage",
+          "title": "U.S. News: Kia Sportage",
+          "note": "U.S. News score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "U.S. News score, Kia Sportage",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-12",
+          "url": "https://www.jdpower.com/cars/2026/kia/sportage",
+          "title": "J.D. Power: 2026 Kia Sportage",
+          "note": "J.D. Power score for the Kia Sportage, from the Kia Sportage price guide.",
+          "scope": "J.D. Power score, Kia Sportage",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-13",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson",
+          "title": "Hyundai: 2026 Tucson",
+          "note": "MSRP, trims and destination for the Hyundai Tucson, from the Hyundai Tucson price guide (read 2026-11-21).",
+          "scope": "Hyundai Tucson starting MSRP and destination",
+          "authority": "hyundaiusa.com"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-14",
+          "url": "https://www.edmunds.com/hyundai/tucson/",
+          "title": "Edmunds: 2026 Hyundai Tucson",
+          "note": "Edmunds score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "Edmunds score, Hyundai Tucson",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-15",
+          "url": "https://www.kbb.com/hyundai/tucson/2026/",
+          "title": "Kelley Blue Book: 2026 Hyundai Tucson",
+          "note": "Kelley Blue Book score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "Kelley Blue Book score, Hyundai Tucson",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-16",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/tucson",
+          "title": "U.S. News: 2026 Hyundai Tucson",
+          "note": "U.S. News score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "U.S. News score, Hyundai Tucson",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-17",
+          "url": "https://www.jdpower.com/cars/2026/hyundai/tucson",
+          "title": "J.D. Power: 2026 Hyundai Tucson",
+          "note": "J.D. Power score for the Hyundai Tucson, from the Hyundai Tucson price guide.",
+          "scope": "J.D. Power score, Hyundai Tucson",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-18",
+          "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb056d5c-2026-honda-cr-v-pricing-and-epa-ratings-3",
+          "title": "Honda: 2026 CR-V pricing and EPA ratings",
+          "note": "MSRP, trims and destination for the Honda CR-V, from the Honda CR-V price guide (read 2026-11-21).",
+          "scope": "Honda CR-V starting MSRP and destination",
+          "authority": "hondanews.com"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-19",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_CR-V.shtml",
+          "title": "FuelEconomy.gov: 2026 Honda CR-V",
+          "note": "EPA fuel economy for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "EPA fuel economy, Honda CR-V",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-20",
+          "url": "https://www.edmunds.com/honda/cr-v/2026/",
+          "title": "Edmunds: 2026 Honda CR-V",
+          "note": "Edmunds score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "Edmunds score, Honda CR-V",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-21",
+          "url": "https://www.kbb.com/honda/cr-v/2026/",
+          "title": "Kelley Blue Book: 2026 Honda CR-V",
+          "note": "Kelley Blue Book score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "Kelley Blue Book score, Honda CR-V",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-22",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v/2026",
+          "title": "U.S. News: 2026 Honda CR-V",
+          "note": "U.S. News score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "U.S. News score, Honda CR-V",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-23",
+          "url": "https://www.jdpower.com/cars/2026/honda/cr-v",
+          "title": "J.D. Power: 2026 Honda CR-V",
+          "note": "J.D. Power score for the Honda CR-V, from the Honda CR-V price guide.",
+          "scope": "J.D. Power score, Honda CR-V",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-24",
+          "url": "https://cars.usnews.com/cars-trucks/honda/cr-v",
+          "title": "U.S. News: Honda CR-V",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Honda CR-V, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Honda CR-V",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-25",
+          "url": "https://media.subaru.com/newsrelease.do?id=2421",
+          "title": "Subaru: 2026 Forester updated pricing",
+          "note": "MSRP, trims and destination for the Subaru Forester, from the Subaru Forester price guide (read 2026-11-21).",
+          "scope": "Subaru Forester starting MSRP and destination",
+          "authority": "media.subaru.com"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-26",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Subaru_Forester.shtml",
+          "title": "FuelEconomy.gov: 2026 Subaru Forester",
+          "note": "EPA fuel economy for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "EPA fuel economy, Subaru Forester",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-27",
+          "url": "https://www.edmunds.com/subaru/forester/2026/",
+          "title": "Edmunds: 2026 Subaru Forester",
+          "note": "Edmunds score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "Edmunds score, Subaru Forester",
+          "authority": "Edmunds"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-28",
+          "url": "https://www.kbb.com/subaru/forester/2026/",
+          "title": "Kelley Blue Book: 2026 Subaru Forester",
+          "note": "Kelley Blue Book score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "Kelley Blue Book score, Subaru Forester",
+          "authority": "Kelley Blue Book"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-29",
+          "url": "https://cars.usnews.com/cars-trucks/subaru/forester",
+          "title": "U.S. News: Subaru Forester",
+          "note": "U.S. News score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "U.S. News score, Subaru Forester",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-30",
+          "url": "https://www.jdpower.com/cars/2026/subaru/forester",
+          "title": "J.D. Power: 2026 Subaru Forester",
+          "note": "J.D. Power score for the Subaru Forester, from the Subaru Forester price guide.",
+          "scope": "J.D. Power score, Subaru Forester",
+          "authority": "J.D. Power"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-31",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_Kia_Sportage.shtml",
+          "title": "FuelEconomy.gov: 2027 Kia Sportage",
+          "note": "EPA ratings for the 2027 Sportage Hybrid (41 combined front-wheel drive, 35 all-wheel drive), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy, 2027 Sportage Hybrid",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-32",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Hyundai_Tucson.shtml",
+          "title": "FuelEconomy.gov: 2026 Hyundai Tucson",
+          "note": "EPA ratings for the 2026 Tucson Hybrid (38 combined front-wheel drive, 36 all-wheel drive), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy, Tucson Hybrid",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-33",
+          "url": "https://pressroom.toyota.com/?p=120379",
+          "title": "Toyota: 2027 Corolla Cross announcement",
+          "note": "Starting MSRP of $31,415 for the 2027 Corolla Cross Hybrid SE, standard AWD and the 46/39/42 mpg estimate, read on 2026-11-21.",
+          "scope": "Corolla Cross Hybrid MSRP, AWD and mpg",
+          "authority": "Toyota"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-34",
+          "url": "https://www.toyota.com/corollacross/2026",
+          "title": "Toyota: 2026 Corolla Cross",
+          "note": "The 2026 Corolla Cross Hybrid S at $29,795 and SE at $31,115, read on 2026-11-21.",
+          "scope": "2026 Corolla Cross Hybrid prices",
+          "authority": "Toyota"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-35",
+          "url": "https://cars.usnews.com/cars-trucks/toyota/corolla-cross",
+          "title": "U.S. News: Toyota Corolla Cross",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Toyota Corolla Cross, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Toyota Corolla Cross",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-36",
+          "url": "https://www.kia.com/us/en/niro",
+          "title": "Kia: 2027 Niro Hybrid",
+          "note": "Starting MSRP of $29,890 and the EPA-estimated 53/46/50 mpg for the 2027 Niro Hybrid, read on 2026-11-21.",
+          "scope": "Niro Hybrid MSRP and mpg",
+          "authority": "Kia"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-37",
+          "url": "https://cars.usnews.com/cars-trucks/kia/niro",
+          "title": "U.S. News: Kia Niro",
+          "note": "Cargo space behind the rear seats, destination charge and rating for the Kia Niro, read 2026-11-21.",
+          "scope": "Cargo, destination and U.S. News rating, Kia Niro",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-38",
+          "url": "https://www.nhtsa.gov/ratings",
+          "title": "NHTSA: 5-Star Safety Ratings",
+          "note": "Overall crash ratings for the 2026 Corolla Cross (five stars) and Niro (four stars), read through NHTSA’s ratings web service on 2026-11-21.",
+          "scope": "NHTSA overall ratings",
+          "authority": "NHTSA"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-39",
+          "url": "https://media.subaru.com/pressrelease/2473/1/subaru-crosstrek-pricing-holds-steady-26995-msrp-2027",
+          "title": "Subaru: 2027 Crosstrek pricing",
+          "note": "Crosstrek Sport Hybrid at $33,995 MSRP and a $1,525 destination charge, read on 2026-11-21.",
+          "scope": "Crosstrek Hybrid price",
+          "authority": "Subaru"
+        },
+        {
+          "id": "VEH-RND-HYBSUV-40",
+          "url": "https://www.nissanusa.com/vehicles/crossovers-suvs/rogue.html",
+          "title": "Nissan: 2027 Rogue Hybrid",
+          "note": "The 2027 Rogue Hybrid SV at $35,490 and $1,575 destination, from the price data in Nissan’s own page, read on 2026-11-21.",
+          "scope": "Rogue Hybrid price",
+          "authority": "Nissan"
+        }
+      ],
+      "queries": [
+        "best hybrid suv under 35000",
+        "cheapest hybrid suv",
+        "best hybrid suv under $35k",
+        "best affordable hybrid suv 2026",
+        "hybrid suv under 35000"
+      ]
+    },
+    {
+      "slug": "cheapest-new-pickup-trucks.html",
+      "kind": "pickups",
+      "code": "TRUCK",
+      "published": "2026-11-21",
+      "checkedOn": "2026-11-21",
+      "title": "Cheapest New Pickup Trucks for 2026, Ranked by Price | Steer Me Right",
+      "description": "Every pickup sold new in the US, ranked by price with destination for 2026: the base trim, what it lacks, and the cheapest trim we’d actually buy.",
+      "h1": "Cheapest new pickup trucks for 2026",
+      "crumb": "Cheapest new pickup trucks",
+      "tag": "Ranking",
+      "blogTitle": "Cheapest New Pickup Trucks",
+      "blogText": "Fourteen pickups ranked by price with destination, from the $29,990 Maverick to the Gladiator, with the trim we’d buy.",
+      "blogCta": "See the prices",
+      "llms": "Fourteen pickup trucks sold new in the US, ranked by starting price with destination (Maverick, Santa Cruz, Frontier, Tacoma, Colorado, Ranger, Silverado 1500, Sierra 1500, Canyon, Ridgeline, F-150, Tundra, Ram 1500, Gladiator): the base trim, what it lacks, and the cheapest trim we’d buy (checked 2026-11-21).",
+      "lead": "The Ford Maverick XL is the cheapest new pickup in the US at {{startAll:maverick}} with destination, and it’s a 38-mpg hybrid. The Hyundai Santa Cruz is next at {{startAll:santa-cruz}}. The cheapest midsize trucks sit within $230 of each other: the Nissan Frontier S King Cab ({{startAll:frontier}}), Toyota Tacoma SR ({{startAll:tacoma}}) and Chevrolet Colorado WT ({{startAll:colorado}}). The cheapest full-size is the Chevrolet Silverado 1500 Work Truck at {{startAll:silverado}}. We’d buy a step up from the base on most of them, and the table shows which.",
+      "basisHeading": "How we ranked them",
+      "basis": "Trucks are ordered by the base trim’s MSRP plus the maker’s destination charge, which is $1,495 on a Ridgeline and $2,795 on a Silverado, so ordering by sticker alone would put the wrong trucks first. Each truck is priced as its maker sells it now: a 2026 where our price guide covers it, and a 2027 where the maker lists only that year. Heavy-duty and electric pickups are left out.",
+      "rankHeading": "Cheapest to dearest",
+      "faq": [
+        [
+          "What is the cheapest new pickup truck?",
+          "The 2027 Ford Maverick XL, at $28,145 MSRP or {{startAll:maverick}} with destination. It’s front-wheel drive with a hybrid engine; AWD adds $3,395."
+        ],
+        [
+          "What is the cheapest full-size pickup?",
+          "The 2026 Chevrolet Silverado 1500 Work Truck, at $37,200 MSRP or {{startAll:silverado}} with destination, then the GMC Sierra 1500 Pro at {{startAll:sierra}} and the Ford F-150 XL at {{startAll:f-150}}."
+        ],
+        [
+          "What is the cheapest truck with 4WD?",
+          "A Maverick XL with AWD, at $33,385 with destination, $65 under a Santa Cruz SE with AWD ($33,450). The cheapest midsize 4WD we priced is a Colorado WT at $37,795, because 4WD adds $3,300."
+        ],
+        [
+          "Does destination count in these prices?",
+          "Yes. Every price here is MSRP plus the destination charge, which is on every window sticker."
+        ],
+        [
+          "Can you negotiate a pickup for me?",
+          "Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do."
+        ],
+        [
+          "Do dealers pay you?",
+          "No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for."
+        ],
+        [
+          "What if I change my mind?",
+          "Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href=\"/policy.html#refund-policy\">refund policy</a>."
+        ]
+      ],
+      "sourcesNote": "Trim-by-trim contents come from each price guide, or from U.S. News’s reviews for the trucks we have no guide for. The Frontier SV’s price is a 2026 figure from U.S. News; Nissan’s own page gave only the 2027 S King Cab. Our price guides cover the Tacoma, Colorado, Ranger, Silverado, Sierra, F-150, Tundra and Ram.",
+      "related": "<a href=\"/compare-car-quotes.html\">quote comparison worksheet</a>, <a href=\"/car-negotiation-service.html\">car negotiation service</a> and <a href=\"/blog-dealership-addons-complete-guide.html\">dealership add-ons guide</a>",
+      "entries": [
+        {
+          "key": "maverick",
+          "name": "Ford Maverick",
+          "cls": "Compact",
+          "guide": null,
+          "year": "2027",
+          "dest": 1845,
+          "mpg": "38 combined",
+          "base": {
+            "trim": "XL hybrid, FWD SuperCrew",
+            "msrp": 28145
+          },
+          "buy": {
+            "trim": "XL hybrid, with AWD if you tow or see snow",
+            "msrp": 28145
+          },
+          "lacks": "AWD ($3,395 more with destination), and the tow package that raises the 2,000-pound rating to 4,000 pounds on AWD trucks.",
+          "why": "U.S. News suggests most buyers stick with the XL or XLT. The 2027 XL is a hybrid; U.S. News listed the 2026 gas XL at $27,145.",
+          "verdict": "The cheapest new pickup you can buy, and no other truck here is close: the next one costs $1,960 more."
+        },
+        {
+          "key": "santa-cruz",
+          "name": "Hyundai Santa Cruz",
+          "cls": "Compact",
+          "guide": null,
+          "year": "2027",
+          "dest": 1650,
+          "mpg": "25 combined (24 with AWD)",
+          "base": {
+            "trim": "SE, FWD",
+            "msrp": 30300
+          },
+          "buy": {
+            "trim": "SE, with AWD if you see snow",
+            "msrp": 30300
+          },
+          "lacks": "AWD ($1,500 on the SE and SEL) and the turbo engine, which only the XRT gets. Blind-spot and lane-keeping aids are standard.",
+          "why": "The SE already has the safety aids, and the next trim up, the SEL Activity, is $34,700.",
+          "verdict": "2027 is the Santa Cruz’s last model year, and U.S. News ranks it second of three compact pickups (8.8 out of 10) behind the Maverick (9.1)."
+        },
+        {
+          "key": "frontier",
+          "name": "Nissan Frontier",
+          "cls": "Midsize",
+          "guide": null,
+          "year": "2027",
+          "dest": 1775,
+          "mpg": "21 combined (rear-drive)",
+          "base": {
+            "trim": "S King Cab, 4x2",
+            "msrp": 32490
+          },
+          "buy": {
+            "trim": "SV Crew Cab, 4x2 (2026 price)",
+            "msrp": 36190,
+            "buyYear": "2026"
+          },
+          "lacks": "A crew cab, the 12.3-inch screen (the S has an 8-inch one) and wireless phone mirroring, which start on the SV.",
+          "why": "The SV adds the 12.3-inch screen and wireless CarPlay and Android Auto, and U.S. News lists it only as a crew cab.",
+          "verdict": "One engine, a 310-hp 3.8-liter V6, on every Frontier, and U.S. News ranks it sixth of seven midsize pickups."
+        },
+        {
+          "key": "tacoma",
+          "name": "Toyota Tacoma",
+          "cls": "Midsize",
+          "guide": "toyota-tacoma-price.html",
+          "year": "2026",
+          "dest": 1745,
+          "mpg": "23 combined (2WD)",
+          "baseTrim": "SR",
+          "buyTrim": "TRD Sport",
+          "payRow": 1,
+          "altNote": "",
+          "lacks": "The 278-hp engine (the SR has 228 hp) and the alloy wheels and coil-spring rear suspension that start on the SR5.",
+          "why": "The TRD Sport adds sport-tuned suspension and 18-inch wheels to the SR5’s engine. 4x4 adds $3,200 with the automatic.",
+          "verdict": "Toyota offers a 326-hp hybrid on the TRD Sport, $6,920 over the gas TRD Sport."
+        },
+        {
+          "key": "colorado",
+          "name": "Chevrolet Colorado",
+          "cls": "Midsize",
+          "guide": "chevrolet-colorado-price.html",
+          "year": "2026",
+          "dest": 2095,
+          "mpg": "21 combined (2WD)",
+          "baseTrim": "WT",
+          "buyTrim": "LT",
+          "payRow": 0,
+          "lacks": "The EZ Lift and Lower tailgate with built-in storage and remote start (LT). 4WD adds $3,300.",
+          "why": "The LT is Edmunds’ pick of the range, and Chevrolet’s $1,000 customer cash applies to it.",
+          "verdict": "Every 2026 Colorado has the same 310-hp turbo four, and Edmunds’ Texas prices show the LT selling 10.0% under sticker, the deepest of any trim."
+        },
+        {
+          "key": "ranger",
+          "name": "Ford Ranger",
+          "cls": "Midsize",
+          "guide": "ford-ranger-price.html",
+          "year": "2026",
+          "dest": 1895,
+          "mpg": "23 combined (2WD)",
+          "baseTrim": "XL",
+          "buyTrim": "XLT",
+          "payRow": 0,
+          "lacks": "4x4 ($3,500) and the 315-hp V6 option, plus the wireless phone charging and rear parking sensors that start on the XLT.",
+          "why": "The XLT costs $2,525 more than the XL, and Edmunds names it its Editors’ Pick.",
+          "verdict": "It costs $950 more than a Colorado WT, and the XL comes with rear-wheel drive only."
+        },
+        {
+          "key": "silverado",
+          "name": "Chevrolet Silverado 1500",
+          "cls": "Full-size",
+          "guide": "chevrolet-silverado-1500-price.html",
+          "year": "2026",
+          "dest": 2795,
+          "mpg": "20 combined (2.7L, 2WD)",
+          "baseTrim": "WT",
+          "buyTrim": "LT",
+          "payRow": 1,
+          "lacks": "The 13.4-inch touchscreen and 12.3-inch digital gauges that start on the LT; adaptive cruise control is optional.",
+          "why": "The LT has the big screen and gauges, and on November 16 Chevrolet put $6,000 cash on a V8 LT.",
+          "verdict": "The cheapest full-size truck, $2,385 under the F-150."
+        },
+        {
+          "key": "sierra",
+          "name": "GMC Sierra 1500",
+          "cls": "Full-size",
+          "guide": "gmc-sierra-1500-price.html",
+          "year": "2026",
+          "dest": 2795,
+          "mpg": "20 combined (2.7L, 2WD)",
+          "baseTrim": "Pro",
+          "buyTrim": "SLT",
+          "payRow": 1,
+          "lacks": "The 13.4-inch screen with Google built-in, digital gauges and heated seats, which start on the $49,000 SLE.",
+          "why": "The SLT is a crew cab with the 5.3-liter V8 and leather. It and the SLE are gone for 2027, so the 2026s are the ones to look for.",
+          "verdict": "It costs $1,400 more than a Silverado WT."
+        },
+        {
+          "key": "canyon",
+          "name": "GMC Canyon",
+          "cls": "Midsize",
+          "guide": null,
+          "year": "2027",
+          "dest": 2095,
+          "mpg": "21 combined (2WD)",
+          "base": {
+            "trim": "Elevation, 2WD",
+            "msrp": 39900
+          },
+          "buy": {
+            "trim": "Elevation, with 4WD if you leave pavement",
+            "msrp": 39900
+          },
+          "lacks": "4WD (about $3,300 on the 2026), and the power driver’s seat, heated seat, dual-zone climate and remote start, which come in the Elevation’s Convenience package and are standard on the $45,500 AT4 (U.S. News).",
+          "why": "U.S. News recommends the Elevation for most buyers. It comes standard with an 11.3-inch screen and 11-inch digital gauges.",
+          "verdict": "GMC starts the Canyon at the Elevation, which costs $7,500 more than a Colorado WT before destination."
+        },
+        {
+          "key": "ridgeline",
+          "name": "Honda Ridgeline",
+          "cls": "Midsize",
+          "guide": null,
+          "year": "2026",
+          "dest": 1495,
+          "mpg": "21 combined (AWD)",
+          "base": {
+            "trim": "Sport, AWD",
+            "msrp": 40795
+          },
+          "buy": {
+            "trim": "Sport, AWD",
+            "msrp": 40795
+          },
+          "lacks": "The RTL’s extras ($2,800 more) and the TrailSport’s all-terrain tires, off-road suspension and skid plates.",
+          "why": "The Sport already has AWD, the 280-hp V6 and the full Honda Sensing suite (adaptive cruise, lane-keep and blind-spot monitor) as standard.",
+          "verdict": "U.S. News ranks it first of seven midsize pickups (9.0 out of 10)."
+        },
+        {
+          "key": "f-150",
+          "name": "Ford F-150",
+          "cls": "Full-size",
+          "guide": "ford-f-150-price.html",
+          "year": "2026",
+          "dest": 2795,
+          "mpg": "21 combined (2.7L, 2WD)",
+          "baseTrim": "XL",
+          "buyTrim": "XLT",
+          "payRow": 1,
+          "lacks": "The 360-degree camera, heated seats and BlueCruise (hands-free driving on mapped highways), which open up on the XLT.",
+          "why": "Ford’s $4,500 cash applies to the XLT alone in most regions, so it can come out cheaper than the STX.",
+          "verdict": "It starts $2,385 above a Silverado WT, and its 2.7-liter V6 is rated 21 mpg combined."
+        },
+        {
+          "key": "tundra",
+          "name": "Toyota Tundra",
+          "cls": "Full-size",
+          "guide": "toyota-tundra-price.html",
+          "year": "2026",
+          "dest": 2195,
+          "mpg": "20 combined (2WD)",
+          "baseTrim": "SR",
+          "buyTrim": "Limited",
+          "payRow": 0,
+          "lacks": "The 389-hp tune (the SR has 358 hp), alloy wheels, and the tow hitch with an integrated trailer brake controller, which start on the SR5.",
+          "why": "The Limited adds a 14-inch touchscreen, 20-inch wheels and heated and ventilated leather seats. The SR5 at $46,510 has the tow gear for $8,350 less.",
+          "verdict": "The only full-size here with a destination charge under $2,300, and a twin-turbo V6 on every trim."
+        },
+        {
+          "key": "ram",
+          "name": "Ram 1500",
+          "cls": "Full-size",
+          "guide": "ram-1500-price.html",
+          "year": "2026",
+          "dest": 2795,
+          "mpg": "22 combined (3.6L, 2WD)",
+          "baseTrim": "Tradesman",
+          "buyTrim": "Laramie",
+          "payRow": 2,
+          "lacks": "The 420-hp Hurricane turbo six, 12-inch screen and leather seats, which start on the Laramie. The Tradesman is a Quad Cab with a 6-foot-4 bed.",
+          "why": "Edmunds names the Laramie its editors’ pick and clocked its turbo six to 60 mph in 5.2 seconds against 6.9 for the V8.",
+          "verdict": "Our estimate of a fair deal on a Tradesman is 8–10% under sticker, the deepest of the full-size trucks in our price guides."
+        },
+        {
+          "key": "gladiator",
+          "name": "Jeep Gladiator",
+          "cls": "Midsize",
+          "guide": null,
+          "year": "2027",
+          "dest": 1995,
+          "mpg": "19 combined (4WD)",
+          "base": {
+            "trim": "Sport S, 4WD",
+            "msrp": 43895
+          },
+          "buy": {
+            "trim": "Sport S, 4WD",
+            "msrp": 43895
+          },
+          "lacks": "Forward collision warning and adaptive cruise control come standard from the Sport S up (U.S. News, 2026 review), which is why the Sport S is the cheapest trim worth having.",
+          "why": "U.S. News calls the Sport S the best starting point for most shoppers.",
+          "verdict": "The most expensive way into a new pickup here: $15,900 more than a Maverick XL with destination."
+        }
+      ],
+      "sources": [
+        {
+          "id": "VEH-RND-TRUCK-01",
+          "url": "https://www.toyota.com/vehicles/tacoma/2026",
+          "title": "Toyota: 2026 Tacoma",
+          "note": "MSRP, trims and destination for the Tacoma, from the Tacoma price guide (read 2026-11-21).",
+          "scope": "Tacoma base and pick-trim MSRP, destination",
+          "authority": "toyota.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-02",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Tacoma.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota Tacoma",
+          "note": "EPA ratings for the 2026 Tacoma (23 combined, 2WD), from the Tacoma price guide.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-03",
+          "url": "https://www.chevrolet.com/trucks/previous-year/colorado",
+          "title": "Chevrolet: 2026 Colorado",
+          "note": "MSRP, trims and destination for the Colorado, from the Colorado price guide (read 2026-11-21).",
+          "scope": "Colorado base and pick-trim MSRP, destination",
+          "authority": "chevrolet.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-04",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Chevrolet_Colorado.shtml",
+          "title": "FuelEconomy.gov: 2026 Chevrolet Colorado",
+          "note": "EPA ratings for the 2026 Colorado (21 combined, 2WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-05",
+          "url": "https://www.ford.com/trucks/ranger/",
+          "title": "Ford: 2026 Ranger",
+          "note": "MSRP, trims and destination for the Ranger, from the Ranger price guide (read 2026-11-21).",
+          "scope": "Ranger base and pick-trim MSRP, destination",
+          "authority": "ford.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-06",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Ford_Ranger.shtml",
+          "title": "FuelEconomy.gov: 2026 Ford Ranger",
+          "note": "EPA ratings for the 2026 Ranger (23 combined, 2WD), from the Ranger price guide.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-07",
+          "url": "https://www.chevrolet.com/trucks/previous-year/silverado/1500",
+          "title": "Chevrolet: 2026 Silverado 1500",
+          "note": "MSRP, trims and destination for the Silverado 1500, from the Silverado 1500 price guide (read 2026-11-21).",
+          "scope": "Silverado 1500 base and pick-trim MSRP, destination",
+          "authority": "chevrolet.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-08",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Chevrolet_Silverado.shtml",
+          "title": "FuelEconomy.gov: 2026 Chevrolet Silverado",
+          "note": "EPA ratings for the 2026 Silverado with the 2.7-liter turbo four (20 combined, 2WD), from the Silverado price guide.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-09",
+          "url": "https://www.gmc.com/trucks/previous-year/sierra/1500",
+          "title": "GMC: 2026 Sierra 1500",
+          "note": "MSRP, trims and destination for the Sierra 1500, from the Sierra 1500 price guide (read 2026-11-21).",
+          "scope": "Sierra 1500 base and pick-trim MSRP, destination",
+          "authority": "gmc.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-10",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_GMC_Sierra.shtml",
+          "title": "FuelEconomy.gov: 2026 GMC Sierra",
+          "note": "EPA ratings for the 2026 Sierra with the 2.7-liter turbo four (20 combined, 2WD), from the Sierra price guide.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-11",
+          "url": "https://www.ford.com/trucks/f150/2026/",
+          "title": "Ford: 2026 F-150",
+          "note": "MSRP, trims and destination for the F-150, from the F-150 price guide (read 2026-11-21).",
+          "scope": "F-150 base and pick-trim MSRP, destination",
+          "authority": "ford.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-12",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Ford_F150.shtml",
+          "title": "FuelEconomy.gov: 2026 Ford F-150",
+          "note": "EPA ratings for the 2026 F-150 with the 2.7-liter V6 (21 combined, 2WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-13",
+          "url": "https://www.toyota.com/tundra/2026/",
+          "title": "Toyota: 2026 Tundra",
+          "note": "MSRP, trims and destination for the Tundra, from the Tundra price guide (read 2026-11-21).",
+          "scope": "Tundra base and pick-trim MSRP, destination",
+          "authority": "toyota.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-14",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Toyota_Tundra.shtml",
+          "title": "FuelEconomy.gov: 2026 Toyota Tundra",
+          "note": "EPA ratings for the 2026 Tundra (20 combined, 2WD), from the Tundra price guide.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-15",
+          "url": "https://www.ramtrucks.com/ram-1500.html",
+          "title": "Ram: 2026 Ram 1500",
+          "note": "MSRP, trims and destination for the Ram 1500, from the Ram 1500 price guide (read 2026-11-21).",
+          "scope": "Ram 1500 base and pick-trim MSRP, destination",
+          "authority": "ramtrucks.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-16",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Ram_1500.shtml",
+          "title": "FuelEconomy.gov: 2026 Ram 1500",
+          "note": "EPA ratings for the 2026 Ram 1500 with the 3.6-liter V6 (22 combined, 2WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-17",
+          "url": "https://www.cars.com/articles/how-much-is-the-2027-ford-maverick-531170/",
+          "title": "Cars.com: how much is the 2027 Ford Maverick?",
+          "note": "The 2027 Maverick XL at $29,990 with a $1,845 destination charge, the XLT at $32,590 and the XL with AWD at $33,385, from an article dated 2026-11-11, read on 2026-11-21.",
+          "scope": "Maverick price and destination",
+          "authority": "Cars.com"
+        },
+        {
+          "id": "VEH-RND-TRUCK-18",
+          "url": "https://cars.usnews.com/cars-trucks/ford/maverick",
+          "title": "U.S. News: Ford Maverick",
+          "note": "Trim notes, destination charge or tow figures for the Ford Maverick, read 2026-11-21.",
+          "scope": "Trim notes and destination, Ford Maverick",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-19",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Ford_Maverick.shtml",
+          "title": "FuelEconomy.gov: 2026 Ford Maverick",
+          "note": "EPA ratings for the 2026 Maverick Hybrid (38 combined, front-wheel drive). The EPA had not listed a 2027 on 2026-11-21; Cars.com quotes the same 38 for the 2027 XL.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-20",
+          "url": "https://www.hyundaiusa.com/us/en/vehicles/santa-cruz",
+          "title": "Hyundai: 2027 Santa Cruz",
+          "note": "The 2027 Santa Cruz SE at $30,300 MSRP and its 3,500-pound tow rating, read on Hyundai’s own page on 2026-11-21.",
+          "scope": "Santa Cruz starting MSRP",
+          "authority": "Hyundai"
+        },
+        {
+          "id": "VEH-RND-TRUCK-21",
+          "url": "https://cars.usnews.com/cars-trucks/hyundai/santa-cruz",
+          "title": "U.S. News: Hyundai Santa Cruz",
+          "note": "Trim notes, destination charge or tow figures for the Hyundai Santa Cruz, read 2026-11-21.",
+          "scope": "Trim notes and destination, Hyundai Santa Cruz",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-22",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_Hyundai_Santa_Cruz.shtml",
+          "title": "FuelEconomy.gov: 2027 Hyundai Santa Cruz",
+          "note": "EPA ratings for the 2027 Santa Cruz (25 combined front-wheel drive, 24 all-wheel drive), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-23",
+          "url": "https://www.nissanusa.com/vehicles/crossovers-suvs/rogue.html",
+          "title": "Nissan: pricing data for the 2027 Frontier",
+          "note": "The 2027 Frontier S King Cab at $32,490 and a $1,775 destination charge, from the price data embedded in Nissan’s own page, read on 2026-11-21.",
+          "scope": "Frontier starting MSRP and destination",
+          "authority": "Nissan"
+        },
+        {
+          "id": "VEH-RND-TRUCK-24",
+          "url": "https://cars.usnews.com/cars-trucks/nissan/frontier",
+          "title": "U.S. News: Nissan Frontier",
+          "note": "Trim notes, destination charge or tow figures for the Nissan Frontier, read 2026-11-21.",
+          "scope": "Trim notes and destination, Nissan Frontier",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-25",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_Nissan_Frontier.shtml",
+          "title": "FuelEconomy.gov: 2027 Nissan Frontier",
+          "note": "EPA ratings for the 2027 Frontier with the 3.8-liter V6 (21 combined, 2WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-26",
+          "url": "https://www.gmc.com/trucks/canyon",
+          "title": "GMC: 2027 Canyon",
+          "note": "The 2027 Canyon Elevation at $39,900 MSRP, read on GMC’s own page on 2026-11-21.",
+          "scope": "Canyon starting MSRP",
+          "authority": "GMC"
+        },
+        {
+          "id": "VEH-RND-TRUCK-27",
+          "url": "https://cars.usnews.com/cars-trucks/gmc/canyon",
+          "title": "U.S. News: GMC Canyon",
+          "note": "Trim notes, destination charge or tow figures for the GMC Canyon, read 2026-11-21.",
+          "scope": "Trim notes and destination, GMC Canyon",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-28",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2027_GMC_Canyon.shtml",
+          "title": "FuelEconomy.gov: 2027 GMC Canyon",
+          "note": "EPA ratings for the 2027 Canyon (21 combined, 2WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-29",
+          "url": "https://cars.usnews.com/cars-trucks/honda/ridgeline",
+          "title": "U.S. News: Honda Ridgeline",
+          "note": "Trim notes, destination charge or tow figures for the Honda Ridgeline, read 2026-11-21.",
+          "scope": "Trim notes and destination, Honda Ridgeline",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-30",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Honda_Ridgeline.shtml",
+          "title": "FuelEconomy.gov: 2026 Honda Ridgeline",
+          "note": "EPA ratings for the 2026 Ridgeline (21 combined, AWD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        },
+        {
+          "id": "VEH-RND-TRUCK-31",
+          "url": "https://www.jeep.com/2027/gladiator.html",
+          "title": "Jeep: 2027 Gladiator",
+          "note": "The 2027 Gladiator at $43,895 MSRP (the Sport S, now the entry trim), read on Jeep’s own page on 2026-11-21.",
+          "scope": "Gladiator starting MSRP",
+          "authority": "Jeep"
+        },
+        {
+          "id": "VEH-RND-TRUCK-32",
+          "url": "https://cars.usnews.com/cars-trucks/jeep/gladiator",
+          "title": "U.S. News: Jeep Gladiator",
+          "note": "Trim notes, destination charge or tow figures for the Jeep Gladiator, read 2026-11-21.",
+          "scope": "Trim notes and destination, Jeep Gladiator",
+          "authority": "U.S. News"
+        },
+        {
+          "id": "VEH-RND-TRUCK-33",
+          "url": "https://www.fueleconomy.gov/feg/bymodel/2026_Jeep_Gladiator.shtml",
+          "title": "FuelEconomy.gov: 2026 Jeep Gladiator",
+          "note": "EPA ratings for the 2026 Gladiator (19 combined, 4WD), read through the EPA web service on 2026-11-21.",
+          "scope": "EPA fuel economy",
+          "authority": "FuelEconomy.gov"
+        }
+      ],
+      "queries": [
+        "cheapest new pickup truck",
+        "cheapest pickup trucks 2026",
+        "cheapest new truck",
+        "cheapest full size truck",
+        "most affordable pickup truck 2026"
+      ]
+    }
+  ]
+}
