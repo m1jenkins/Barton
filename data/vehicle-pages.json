@@ -10389,7 +10389,7 @@
       },
       "condition": {
         "intro": [
-          "<strong>Our take: buy new, and buy the 2026.</strong> A used 2024 asks a median $44,714, only about $1,200 under what TrueCar says buyers pay for a new SR5 ($45,885). The 2022 to 2024 trucks carry NHTSA engine recalls, and used-loan rates average 11.19% against Toyota’s 1.99% on a new hybrid."
+          "<strong>Our take: buy new, and buy the 2026.</strong> A used 2024 asks a median $44,714, only about $1,200 under what TrueCar says buyers pay for a new SR5 ($45,885). The 2022 to 2024 trucks carry NHTSA main-bearing recalls, and a camshaft recall filed November 12 reaches 2025 and 2026 trucks too. Used-loan rates average 11.19% against Toyota’s 1.99% on a new hybrid."
         ],
         "rows": [
           {
@@ -10410,11 +10410,11 @@
           {
             "route": "Used, not certified",
             "when": "Your budget is under about $40,000; a 2022 asks a median $39,079.",
-            "check": "Open recalls by VIN, above all the engine campaigns on 2022 to 2024 trucks, and an independent inspection."
+            "check": "Open recalls by VIN, above all the engine campaigns (main bearings on 2022 to 2024 trucks, a camshaft on 2022, 2023, 2025 and 2026 trucks), and an independent inspection."
           }
         ],
         "after": [
-          "If you buy a 2022, 2023 or 2024 Tundra, get the engine recall work in writing. Toyota has recalled certain 2022 to 2024 trucks with the 3.4-liter V35A engine because manufacturing debris can damage the main bearings and stall the engine; the fix is a main-bearing inspection and, where needed, a new engine, free of charge. Engine is the most-cited component in NHTSA’s owner complaints for those years (166 of 436 on the 2022, 174 of 424 on the 2023, 158 of 365 on the 2024)."
+          "If you buy a 2022 to 2026 Tundra, get the engine recall work in writing. Toyota has recalled certain 2022 to 2024 trucks with the 3.4-liter V35A engine because manufacturing debris can damage the main bearings and stall the engine; the fix is a main-bearing inspection and, where needed, a new engine, free of charge. A fourth campaign, 26V750 (62,490 trucks, filed November 12, 2026), covers a camshaft that may have been made wrong and can crack, snap and stall the engine on 2022 to 2023 and 2025 to 2026 trucks, so a 2025 or 2026 needs its VIN checked too; dealers inspect and replace the camshaft as needed, free of charge, with owner letters expected from December 28, 2026. Engine is the most-cited component in NHTSA’s owner complaints for those years (166 of 436 on the 2022, 174 of 424 on the 2023, 158 of 365 on the 2024)."
         ],
         "charts": [
           {
@@ -10493,7 +10493,7 @@
         ]
       },
       "watch": [
-        "<strong>Engine recalls on 2022 to 2024 trucks.</strong> Three NHTSA campaigns (24V381, 25V767 and 26V320) cover the V35A engine’s main bearings. Ask the dealer to show that each applicable one is done before you take delivery.",
+        "<strong>Engine recalls on 2022 to 2026 trucks.</strong> Four NHTSA campaigns cover the engine: 24V381, 25V767 and 26V320 for the V35A’s main bearings (2022 to 2024 trucks) and 26V750 for a camshaft (2022 to 2023 and 2025 to 2026 trucks). Ask the dealer to show that each applicable one is done before you take delivery.",
         "<strong>The Toyota Financial Services requirement.</strong> The rates and leases need Toyota’s own financing, and the $1,000 cash doesn’t combine with them. Compare the total cost with your bank’s rate.",
         "<strong>The model year.</strong> A 2026 and a 2027 look alike on the lot. In Chicago and Dallas only the 2026 has offers.",
         "<strong>Fuel economy.</strong> Edmunds measured 15.2 mpg on its test route against the EPA’s 19 for a 4WD Tundra. Budget for the real figure if you tow or drive in town.",
@@ -10527,7 +10527,7 @@
         ],
         [
           "Is a used Tundra a better deal than new?",
-          "Rarely. CarWhere’s median asking price for a used 2024 is $44,714 and for a 2025 $50,489, while TrueCar’s average paid for a new 2026 SR5 is $45,885. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 1.99% on a new hybrid. A 2022 to 2024 truck needs its engine recalls checked; a Gold Certified 2024 or 2025 with them done is the used route we’d take."
+          "Rarely. CarWhere’s median asking price for a used 2024 is $44,714 and for a 2025 $50,489, while TrueCar’s average paid for a new 2026 SR5 is $45,885. Used loans averaged 11.19% in the second quarter of 2026, against Toyota’s 1.99% on a new hybrid. A 2022 to 2026 truck needs its engine recalls checked, including the camshaft campaign on 2022, 2023, 2025 and 2026 trucks; a Gold Certified 2024 or 2025 with them done is the used route we’d take."
         ]
       ],
       "sources": [
@@ -10712,6 +10712,12 @@
           "url": "https://www.ramtrucks.com/ram-1500.html",
           "scope": "2026 Ram 1500 Tradesman starting MSRP excluding destination (carried over from the Silverado price page, not re-read)",
           "note": "Ram price"
+        },
+        {
+          "id": "VEH-TUNDRA-27",
+          "url": "https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=26V750000",
+          "title": "NHTSA: recall 26V-750 (Tundra engine camshaft)",
+          "note": "62,490 vehicles, 2022 to 2023 and 2025 to 2026 Tundra, received November 12, 2026; dealers inspect and replace the camshaft as necessary, with owner letters expected from December 28, 2026. Read November 21, 2026. The model-year recall counts in the safety table include it."
         }
       ],
       "photo": {
@@ -10735,7 +10741,7 @@
       "cons": [
         "Edmunds measured 15.2 mpg on its test route",
         "Lower tow and payload ratings than the F-150 and Silverado",
-        "Engine recalls on 2022 to 2024 trucks",
+        "Engine recalls on 2022 to 2026 trucks",
         "TRD Pro sells near sticker, with no Toyota cash or rate"
       ],
       "rivals": [
@@ -10833,11 +10839,11 @@
           },
           {
             "label": "2022",
-            "value": 13
+            "value": 14
           },
           {
             "label": "2023",
-            "value": 13
+            "value": 14
           },
           {
             "label": "2024",
@@ -10845,15 +10851,15 @@
           },
           {
             "label": "2025",
-            "value": 5
+            "value": 6
           },
           {
             "label": "2026",
-            "value": 2
+            "value": 3
           }
         ],
         "reliability": "Consumer Reports expects the 2026 to have <a href=\"https://www.consumerreports.org/cars/toyota/tundra/2026/reliability\" rel=\"noopener\">about average reliability</a> for a new car, judging from the 2023 to 2025 models.",
-        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/toyota/tundra-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. NHTSA has not crash-tested the Double Cab. IIHS rates the headlights Good on the Platinum, 1794 Edition, TRD Pro, Capstone and Limiteds with the Premium package, and Acceptable on the SR, SR5 and other Limiteds; pedestrian front crash prevention and LATCH ease of use are Acceptable, and seat belt reminders Good. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> combine its Tundra and Tundra Hybrid listings by campaign and include distributor label campaigns; most of the 2022 to 2024 engine campaigns are the V35A ones above. Check any used Tundra’s open recalls by VIN before you buy."
+        "note": "Crash ratings from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> and <a href=\"https://www.iihs.org/ratings/vehicle/toyota/tundra-crew-cab-pickup/2026\" rel=\"noopener\">IIHS</a>, read November 18, 2026. NHTSA has not crash-tested the Double Cab. IIHS rates the headlights Good on the Platinum, 1794 Edition, TRD Pro, Capstone and Limiteds with the Premium package, and Acceptable on the SR, SR5 and other Limiteds; pedestrian front crash prevention and LATCH ease of use are Acceptable, and seat belt reminders Good. Recall counts from <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">NHTSA</a> combine its Tundra and Tundra Hybrid listings by campaign and include distributor label campaigns; the engine campaigns are the V35A main-bearing ones above (2022 to 2024 trucks) and the November 2026 camshaft recall (2022 to 2023 and 2025 to 2026). Check any used Tundra’s open recalls by VIN before you buy."
       },
       "gallery": [
         {

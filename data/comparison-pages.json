@@ -11122,7 +11122,7 @@
      "b": "42<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the F-150, unless resale value or IIHS crash tests come first. It tows and hauls more (13,500 pounds and 2,440 against the Tundra’s 12,000 and 1,940), its hybrid gets 23 mpg combined as a 4x4 against 20 for the Tundra’s, its crew cab has more rear legroom, and every reviewer we checked scores it higher. The Tundra has the better long-term numbers: it lost 19.7% of its value in five years against 38.6% for the F-150, its crew cab is a 2026 IIHS Top Safety Pick where the F-150 rates Poor in one frontal test, and it has 30 recalls for 2023 to 2026 models to the F-150’s 48. Its catch is the 3.4L twin-turbo V6: three engine recalls on 2022 to 2024 trucks, and 216 owner complaints to NHTSA per 100,000 sold against about 65 for the F-150. Reddit leans Ford: in neutral subreddits, 100 people told the poster to buy the F-150 and 63 the Tundra. Prices were checked on November 18, 2026.",
+   "summary": "We’d buy the F-150, unless resale value or IIHS crash tests come first. It tows and hauls more (13,500 pounds and 2,440 against the Tundra’s 12,000 and 1,940), its hybrid gets 23 mpg combined as a 4x4 against 20 for the Tundra’s, its crew cab has more rear legroom, and every reviewer we checked scores it higher. The Tundra has the better long-term numbers: it lost 19.7% of its value in five years against 38.6% for the F-150, its crew cab is a 2026 IIHS Top Safety Pick where the F-150 rates Poor in one frontal test, and it has 33 recalls for 2023 to 2026 models to the F-150’s 48. Its catch is the 3.4L twin-turbo V6: four engine recalls (three on 2022 to 2024 trucks and a camshaft recall, filed November 12, that reaches 2025 and 2026 trucks), and 216 owner complaints to NHTSA per 100,000 sold against about 65 for the F-150. Reddit leans Ford: in neutral subreddits, 100 people told the poster to buy the F-150 and 63 the Tundra. Prices were checked on November 18, 2026.",
    "choose": {
     "a": [
      "You tow or haul near the limit: the 3.5L EcoBoost is rated to tow 13,500 pounds and carry 2,440, against 12,000 and up to 1,940 for the Tundra, and KBB lists “Class-leading towing and payload” as its first pro.",
@@ -11133,7 +11133,7 @@
     "b": [
      "You’ll sell or trade it in a few years: iSeeCars has the Tundra losing 19.7% of its value in five years against 38.6% for the F-150, and KBB gave it the 2026 resale award for full-size pickups.",
      "You put crash tests first: IIHS names the Tundra crew cab a 2026 Top Safety Pick, and rates the F-150 Poor in its updated moderate overlap front test.",
-     "You keep trucks a long time and buy a 2025 or newer: iSeeCars gives the model a 56.4% chance of reaching 200,000 miles against 25.0% for the F-150, and RepairPal puts yearly repairs at $606 against $788. The 2022 to 2024 trucks carry the engine recalls.",
+     "You keep trucks a long time: iSeeCars gives the model a 56.4% chance of reaching 200,000 miles against 25.0% for the F-150, and RepairPal puts yearly repairs at $606 against $788. Get the engine recall work in writing on any 2022 to 2026 Tundra; the camshaft recall reaches 2025 and 2026 trucks.",
      "You shop the upper trims: a crew cab 4x4 Limited is $57,860 against $63,360 for a Lariat, and a Platinum is $66,695 against $72,600 (iSeeCars)."
     ]
    },
@@ -11691,7 +11691,7 @@
       "label": "Recalls",
       "note": "2023–2026 model years",
       "a": "48",
-      "b": "30",
+      "b": "33",
       "win": "b"
      },
      {
@@ -11827,7 +11827,7 @@
      {
       "type": "cols",
       "title": "Recalls by model year",
-      "note": "F-150 includes the hybrid, not the Lightning; Tundra includes the hybrid. A recall count says nothing about how many trucks each one covers: the Tundra’s three engine campaigns cover 102,092, 126,691 and 43,566 vehicles (some of them Lexus), and one F-150 fuel tank campaign covers up to 223,472 trucks from 2023 to 2027.",
+      "note": "F-150 includes the hybrid, not the Lightning; Tundra includes the hybrid. A recall count says nothing about how many trucks each one covers: the Tundra’s four engine campaigns cover 102,092, 126,691, 43,566 and 62,490 vehicles (some of them Lexus), and one F-150 fuel tank campaign covers up to 223,472 trucks from 2023 to 2027.",
       "rows": [
        {
         "label": "2019",
@@ -11847,12 +11847,12 @@
        {
         "label": "2022",
         "a": 23,
-        "b": 13
+        "b": 14
        },
        {
         "label": "2023",
         "a": 13,
-        "b": 13
+        "b": 14
        },
        {
         "label": "2024",
@@ -11862,12 +11862,12 @@
        {
         "label": "2025",
         "a": 16,
-        "b": 5
+        "b": 6
        },
        {
         "label": "2026",
         "a": 8,
-        "b": 2
+        "b": 3
        }
       ]
      }
@@ -11875,8 +11875,8 @@
     "issues": [
      {
       "car": "b",
-      "title": "3.4L V6 engine failures, 2022–2024 Tundra",
-      "text": "Recalls 24V-381, 25V-767 and 26V-320 cover metal debris from the engine’s main bearings, with an inspection and an engine replacement if needed. 455 of the Tundra’s 935 NHTSA complaints on 2023–2025 trucks name the engine, against 78 of the F-150’s 893. On a used one, ask for proof the recall work was done."
+      "title": "3.4L V6 engine failures, 2022–2026 Tundra",
+      "text": "Recalls 24V-381, 25V-767 and 26V-320 cover metal debris from the engine’s main bearings on 2022–2024 trucks, with an inspection and an engine replacement if needed. Recall 26V-750, filed November 12, 2026, covers 62,490 trucks from 2022–2023 and 2025–2026 whose camshaft may crack and stall the engine, with an inspection and replacement as needed. 455 of the Tundra’s 935 NHTSA complaints on 2023–2025 trucks name the engine, against 78 of the F-150’s 893. On a used one, ask for proof the recall work was done."
      },
      {
       "car": "b",
@@ -11905,7 +11905,7 @@
      }
     ],
     "after": [
-     "<strong>Our read:</strong> neither truck is the safe bet, and the risks are different. The Tundra’s comes down to one engine, and its recalls cover 2022 to 2024 trucks, so a 2025 or newer sidesteps them (owners report worry that the recalls could widen). The F-150’s is a long recall list and a transmission history with few engine complaints. If reliability comes first, we’d take an F-150 with the 2.7L, 3.5L or 5.0L over the hybrid. In iSeeCars’ September study, 28.2% of Tundras reach 250,000 miles, second among trucks against an 11.1% truck average; it doesn’t list the F-150."
+     "<strong>Our read:</strong> neither truck is the safe bet, and the risks are different. The Tundra’s comes down to one engine, and its recalls now reach 2025 and 2026 trucks through the camshaft campaign filed November 12, so a newer truck does not sidestep them (owners report worry that the recalls could widen). The F-150’s is a long recall list and a transmission history with few engine complaints. If reliability comes first, we’d take an F-150 with the 2.7L, 3.5L or 5.0L over the hybrid. In iSeeCars’ September study, 28.2% of Tundras reach 250,000 miles, second among trucks against an 11.1% truck average; it doesn’t list the F-150."
     ],
     "from": {
      "label": "Sources include",
@@ -12160,7 +12160,7 @@
     ],
     [
      "Which is more reliable, the F-150 or the Tundra?",
-     "Neither is clearly. Owners filed about 65 NHTSA complaints per 100,000 sold on 2023 to 2025 F-150s against 216 on Tundras, where 455 of 935 name the engine. But the Tundra has fewer recalls (30 against 48 for 2023 to 2026 models), Toyota beats Ford in J.D. Power’s brand dependability study (185 problems per 100 vehicles against 228), and iSeeCars gives the Tundra a 56.4% chance of reaching 200,000 miles against 25.0%. Consumer Reports expects both to be about average."
+     "Neither is clearly. Owners filed about 65 NHTSA complaints per 100,000 sold on 2023 to 2025 F-150s against 216 on Tundras, where 455 of 935 name the engine. But the Tundra has fewer recalls (33 against 48 for 2023 to 2026 models, four of the Tundra’s on its engine), Toyota beats Ford in J.D. Power’s brand dependability study (185 problems per 100 vehicles against 228), and iSeeCars gives the Tundra a 56.4% chance of reaching 200,000 miles against 25.0%. Consumer Reports expects both to be about average."
     ],
     [
      "Which tows more, the F-150 or the Tundra?",
@@ -12564,6 +12564,12 @@
      "url": "https://arctic-shift.photon-reddit.com/",
      "title": "Arctic Shift: Reddit archive",
      "note": "public Reddit posts and comments behind the Reddit Sentiment Index."
+    },
+    {
+     "id": "VEH-FVT-65",
+     "url": "https://api.nhtsa.gov/recalls/campaignNumber?campaignNumber=26V750000",
+     "title": "NHTSA: recall 26V-750 (Tundra engine camshaft)",
+     "note": "62,490 vehicles, 2022 to 2023 and 2025 to 2026 Tundra, received November 12, 2026; dealers inspect and replace the camshaft as necessary. Read November 21, 2026. It adds one recall to each of the 2022, 2023, 2025 and 2026 model years in the recall chart, bringing the Tundra’s 2023 to 2026 total to 33."
     }
    ]
   },
@@ -18937,7 +18943,7 @@
      "b": "60<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the RAV4, unless a lower price, a longer warranty or a better crash-test record matters more to you. A 2026 RAV4 is rated 43 mpg combined in front drive against 38 for the Tucson Hybrid (41 against 36 with all-wheel drive), loses 13.8% of its value in three years against the Tucson Hybrid’s 29.2%, and has drawn 41 NHTSA owner complaints per 100,000 sold for 2023–25 models against the Tucson’s 124. The Tucson answers on price and equipment: a Hybrid SEL Convenience starts at $35,250 with all-wheel drive standard, $2,250 under an all-wheel-drive RAV4 XLE Premium ($37,500), Tucsons sell 3–4% under sticker against 1–2% for RAV4s, every Tucson carries a 10-year/100,000-mile powertrain warranty for its first owner, and IIHS gives it a Top Safety Pick+ label the RAV4 lacks. It has more room too, 38.7 cubic feet behind the rear seats against 37.8 and 41.3 inches of rear legroom against 37.8. Reviewers split (Edmunds scores the RAV4 8.1 to the Tucson’s 7.9, U.S. News the Tucson 9.3 to the RAV4’s 8.3), and Reddit’s neutral subreddits picked the RAV4 91 times to 24, though Reddit’s index scores the Tucson higher, 60 to 52. The RAV4 is hybrid-only. A gas Tucson from $29,700 is the cheapest way into either car, and it hands most of that saving back in fuel and resale. Prices were checked on November 21, 2026.",
+   "summary": "We’d buy the RAV4, unless a lower price, a longer warranty or a better crash-test record matters more to you. A 2026 RAV4 is rated 43 mpg combined in front drive against 38 for the Tucson Hybrid (41 against 36 with all-wheel drive), loses 13.8% of its value in three years against the Tucson Hybrid’s 29.2%, and has drawn 41 NHTSA owner complaints per 100,000 sold for 2023–25 models against the Tucson’s 124. The Tucson answers on price and equipment: a Hybrid SEL Convenience starts at $35,250 with all-wheel drive standard, $2,250 under an all-wheel-drive RAV4 XLE Premium ($37,500), Tucsons sell 3–4% under sticker against 1–2% for RAV4s, every Tucson carries a 10-year/100,000-mile powertrain warranty for its first owner, and IIHS gives it a Top Safety Pick+ label the RAV4 lacks. It has more room too, 38.7 cubic feet behind the rear seats against 37.8 and 41.3 inches of rear legroom against 37.8. Reviewers split (Edmunds scores the RAV4 8.1 to the Tucson’s 7.9, U.S. News the Tucson 9.3 to the RAV4’s 8.3), and Reddit’s neutral subreddits picked the RAV4 99 times to 25, though Reddit’s index scores the Tucson higher, 60 to 52. The RAV4 is hybrid-only. A gas Tucson from $29,700 is the cheapest way into either car, and it hands most of that saving back in fuel and resale. Prices were checked on November 21, 2026.",
    "choose": {
     "a": [
      "Fuel economy and running costs matter: 43 mpg combined in front drive and 41 to 42 with all-wheel drive, against 38 and 36 for the Tucson Hybrid and 26 to 28 for the gas Tucson, or $1,400 to $1,450 a year in fuel against $1,600 to $2,300.",
@@ -19061,8 +19067,8 @@
     {
      "label": "Reddit neutral picks",
      "section": "reddit",
-     "a": "91",
-     "b": "24",
+     "a": "99",
+     "b": "25",
      "win": "a"
     }
    ],
@@ -19313,7 +19319,7 @@
    "space": {
     "title": "Space, power and cabin",
     "intro": [
-     "The Tucson is the roomier car, mostly in the back seat. Behind the rear seats it holds 38.7 cubic feet against the RAV4’s 37.8, and 74.8 against 70.4 with the seats folded. Rear legroom is 41.3 inches against 37.8, a 3.5-inch gap that matters with a rear-facing car seat, and front legroom is 41.4 against 41.0. Edmunds says the RAV4’s rivals give passengers more room, and AutoGuide rates the RAV4’s rear legroom average for the class. Reddit owners split on the RAV4: some call its cargo area and back seat roomy for the class and others say it is tight for rear-facing seats, while Tucson owners say theirs takes a stroller and groceries with room to spare. Reddit scores the Tucson +50 on space against −25 for the RAV4 (53 and 74 mentions).",
+     "The Tucson is the roomier car, mostly in the back seat. Behind the rear seats it holds 38.7 cubic feet against the RAV4’s 37.8, and 74.8 against 70.4 with the seats folded. Rear legroom is 41.3 inches against 37.8, a 3.5-inch gap that matters with a rear-facing car seat, and front legroom is 41.4 against 41.0. Edmunds says the RAV4’s rivals give passengers more room, and AutoGuide rates the RAV4’s rear legroom average for the class. Reddit owners split on the RAV4: some call its cargo area and back seat roomy for the class and others say it is tight for rear-facing seats, while Tucson owners say theirs takes a stroller and groceries with room to spare. Reddit scores the Tucson +53 on space against −23 for the RAV4 (57 and 77 mentions).",
      "The RAV4 has the tow rating and, in all-wheel drive, the power. Toyota rates the SE, XLE Premium, XSE, Woodland and Limited with all-wheel drive to tow 3,500 pounds (1,750 on front-drive cars and the LE with all-wheel drive). Dealer pages and TowingSpecs list 2,000 pounds for the Tucson Hybrid and Plug-in Hybrid, sources disagree on the gas Tucson (2,000 to 2,750 pounds), and Hyundai’s own pages would not load, so check the owner’s manual before you buy a hitch. The hybrids are close on power: a RAV4 makes 226 hp in front drive and 236 with all-wheel drive, and every Tucson Hybrid 231 (one towing site prints 226). The gas Tucson makes 187 hp, and Edmunds timed an all-wheel-drive gas Limited at 10.2 seconds to 60 mph, one of the slowest crossovers it has tested. Ground clearance is 8.3 inches on an all-wheel-drive Tucson, 7.1 on a front-drive one and 8.1 on most RAV4s."
     ],
     "charts": [
@@ -19459,8 +19465,8 @@
      }
     ],
     "after": [
-     "Inside, the Tucson gives you more screen for less money. Every Tucson, from the $29,700 SE, has a 12.3-inch touchscreen with wireless Apple CarPlay and Android Auto, adaptive cruise control (holds a set gap to the car ahead) with stop and go, and lane following, while a RAV4 LE has a 10.5-inch screen with wireless phone mirroring and 12.3-inch digital gauges. Reddit scores the Tucson +59 on interior and tech against −45 for the RAV4 (235 and 169 mentions). The Tucson’s catches, per what owners report: a paid Bluelink subscription after the trial, app outages, and forward collision warnings that trigger falsely in rain or glare. Edmunds also says the gas Tucson is slow and its eight-speed clunky unless you drive gently, and that the hybrid is far quicker and about 10 mpg thriftier.",
-     "On comfort the RAV4 gets mixed marks. AutoGuide’s first drive of a Canadian-spec RAV4 found the cabin quieter and the ride smoother than before, though it says the front seats lack support at the hips and shoulders and the 20-inch wheels add a slight harshness, and Kelley Blue Book says the engine and transmission can drone under hard acceleration. Edmunds says the RAV4’s rivals ride more smoothly. Reddit scores the Tucson +90 on ride and comfort against −25 for the RAV4 (84 and 69 mentions) and +76 on noise against −63 (61 and 83). RAV4 owners report road, wind and engine noise at highway speed and stiff seats on some trims; Tucson owners describe a smooth ride, plush seats and a quiet hybrid cabin, with the gas engine loud under hard throttle."
+     "Inside, the Tucson gives you more screen for less money. Every Tucson, from the $29,700 SE, has a 12.3-inch touchscreen with wireless Apple CarPlay and Android Auto, adaptive cruise control (holds a set gap to the car ahead) with stop and go, and lane following, while a RAV4 LE has a 10.5-inch screen with wireless phone mirroring and 12.3-inch digital gauges. Reddit scores the Tucson +60 on interior and tech against −46 for the RAV4 (248 and 177 mentions). The Tucson’s catches, per what owners report: a paid Bluelink subscription after the trial, app outages, and forward collision warnings that trigger falsely in rain or glare. Edmunds also says the gas Tucson is slow and its eight-speed clunky unless you drive gently, and that the hybrid is far quicker and about 10 mpg thriftier.",
+     "On comfort the RAV4 gets mixed marks. AutoGuide’s first drive of a Canadian-spec RAV4 found the cabin quieter and the ride smoother than before, though it says the front seats lack support at the hips and shoulders and the 20-inch wheels add a slight harshness, and Kelley Blue Book says the engine and transmission can drone under hard acceleration. Edmunds says the RAV4’s rivals ride more smoothly. Reddit scores the Tucson +90 on ride and comfort against −26 for the RAV4 (86 and 72 mentions) and +76 on noise against −63 (61 and 83). RAV4 owners report road, wind and engine noise at highway speed and stiff seats on some trims; Tucson owners describe a smooth ride, plush seats and a quiet hybrid cabin, with the gas engine loud under hard throttle."
     ]
    },
    "reliability": {
@@ -19730,7 +19736,7 @@
      }
     ],
     "after": [
-     "<strong>Our read:</strong> the RAV4 is the safer bet on reliability, and the Tucson’s warranty is the reason to buy it anyway. The RAV4 draws a third of the Tucson’s complaints per car sold (41 against 124), has fewer recalls and a better brand dependability score, and Reddit rates it far higher on reliability, the most-discussed topic (+79 against −38 from 246 and 324 mentions). The Tucson’s numbers are driven by the 2022 engine and fuel complaints and the 2025 braking complaints; its 2023 and 2024 cars, at 88 and 77 per 100,000, still run above the RAV4’s 57 and 44. J.D. Power’s owner score and RepairPal lean the other way or tie, and Hyundai’s 10-year/100,000-mile powertrain cover soaks up an engine failure for the first owner. We treat the brand studies, RepairPal and Consumer Reports as secondary signals, since they rest on older cars and brand records."
+     "<strong>Our read:</strong> the RAV4 is the safer bet on reliability, and the Tucson’s warranty is the reason to buy it anyway. The RAV4 draws a third of the Tucson’s complaints per car sold (41 against 124), has fewer recalls and a better brand dependability score, and Reddit rates it far higher on reliability, the most-discussed topic (+79 against −37 from 273 and 353 mentions). The Tucson’s numbers are driven by the 2022 engine and fuel complaints and the 2025 braking complaints; its 2023 and 2024 cars, at 88 and 77 per 100,000, still run above the RAV4’s 57 and 44. J.D. Power’s owner score and RepairPal lean the other way or tie, and Hyundai’s 10-year/100,000-mile powertrain cover soaks up an engine failure for the first owner. We treat the brand studies, RepairPal and Consumer Reports as secondary signals, since they rest on older cars and brand records."
     ],
     "from": {
      "label": "Sources include",
@@ -19745,8 +19751,8 @@
     "dataFile": "data/reddit-sentiment/toyota-rav4-vs-hyundai-tucson.json",
     "minimum": 15,
     "intro": [
-     "We read 4,106 comments in 234 Reddit threads whose posts named both cars, January 2025 to November 2026. The threads come from r/rav4 with r/RAV4Club (18 threads, 506 comments), r/HyundaiTucson (43 threads, 1,176 comments) and the neutral subreddits, mostly r/whatcarshouldIbuy plus r/UsedCars, r/carbuying, r/askcarsales and r/cars, which hold 173 threads, 2,424 comments and 115 picks. Each car’s own subreddits back its own car, so the two home venues and the neutral subreddits count equally. A score of 50 means praise and complaints balance.",
-     "A head-to-head collection found 521 posts naming both cars. 352 had 3 or more comments and were not already coded, and 263 of those were kept as weighing the two. We drew 159 threads (53 home, 106 neutral) and coded 3,130 comments to a ten-topic rubric, evenly by month, on top of the threads already in the two cars’ files. A completeness pass re-read 250 comments the first coders left empty, and 31 gained a code. The coders counted an opinion or a pick only when the comment named the model, so owner comments that give only a trim are not in the index. A blind second coder re-coded 150 comments and agreed with the first on 87% of picks (13 of the 15 comments either coder picked on; 99% across all 150), above our 85% floor, and on 82% of stance toward the car (53 of 65). The stance agreement is below the floor, so read the index and topic scores as rough."
+     "We read 4,721 comments in 258 Reddit threads whose posts named both cars, January 2025 to November 2026. The threads come from r/rav4 with r/RAV4Club (18 threads, 506 comments), r/HyundaiTucson (44 threads, 1,193 comments) and the neutral subreddits, mostly r/whatcarshouldIbuy plus r/UsedCars, r/carbuying, r/askcarsales and r/cars, which hold 196 threads, 3,022 comments and 124 picks. Each car’s own subreddits back its own car, so the two home venues and the neutral subreddits count equally. A score of 50 means praise and complaints balance.",
+     "A head-to-head collection found 521 posts naming both cars. 352 had 3 or more comments and were not already coded, and 263 of those were kept as weighing the two. We drew 159 threads (53 home, 106 neutral) and coded 3,130 comments to a ten-topic rubric, evenly by month, on top of the threads already in the two cars’ files; the pair file also includes head-to-head threads collected for the Model Y vs RAV4 page. A completeness pass re-read 250 comments the first coders left empty, and 31 gained a code. The coders counted an opinion or a pick only when the comment named the model, so owner comments that give only a trim are not in the index. A blind second coder re-coded 150 comments and agreed with the first on 87% of picks (13 of the 15 comments either coder picked on; 99% across all 150), above our 85% floor, and on 82% of stance toward the car (53 of 65). The stance agreement is below the floor, so read the index and topic scores as rough."
     ],
     "indexDetail": {
      "a": "Praised for a durability record owners trust, hybrid mileage of 43 to 50 mpg and resale value. Marked down for dealer markups and waits, an interior and infotainment owners call dated and plasticky next to the Tucson’s, road and engine noise, and a price owners say runs well above a comparable Tucson. It scores 67 in its own subreddits, 50 in the neutral ones and 32 in r/HyundaiTucson.",
@@ -19805,7 +19811,7 @@
      }
     },
     "after": [
-     "Reddit’s picks and its index point opposite ways, and it helps to read them as answers to different questions. The neutral subreddits tell people to buy the RAV4, 91 picks to 24 (79%), and even r/HyundaiTucson split 13 to 11 for it. Yet the index scores the Tucson 60 against 52, because commenters praise the Tucson on most of what they talk about: ride (+90 against −25), noise (+76 against −63), interior and tech (+59 against −45), space (+50 against −25) and price (+19 against −11), and mark the RAV4 down on dealers (−89 against −2, mostly markups and waits). The RAV4 wins the two topics that decide a long-term buy, reliability (+79 against −38, the most-discussed topic) and fuel economy (+97 against −5). The codes don’t say why people pick the RAV4, but reliability and mileage are the likeliest reasons."
+     "Reddit’s picks and its index point opposite ways, and it helps to read them as answers to different questions. The neutral subreddits tell people to buy the RAV4, 99 picks to 25 (80%), and even r/HyundaiTucson split 13 to 11 for it. Yet the index scores the Tucson 60 against 52, because commenters praise the Tucson on most of what they talk about: ride (+90 against −26), noise (+76 against −63), interior and tech (+60 against −46), space (+53 against −23) and price (+20 against −11), and mark the RAV4 down on dealers (−90 against +4, mostly markups and waits). The RAV4 wins the two topics that decide a long-term buy, reliability (+79 against −37, the most-discussed topic) and fuel economy (+97 against −5). The codes don’t say why people pick the RAV4, but reliability and mileage are the likeliest reasons."
     ],
     "from": {
      "label": "Comments from",
@@ -20060,7 +20066,7 @@
     ],
     [
      "What does Reddit think of the RAV4 vs the Tucson?",
-     "In neutral subreddits, 91 people told the poster to buy the RAV4 and 24 the Tucson, but our Reddit Sentiment Index scores the Tucson 60 and the RAV4 52 out of 100, where 50 means praise and complaints balance. Reddit praises the RAV4’s reliability and hybrid mileage and the Tucson’s screens, ride, quiet cabin and price, and marks the RAV4 down on dealer markups and noise and the Tucson on engine and warranty-service complaints. The second coder agreed on stance only 82% of the time, so read the index as rough."
+     "In neutral subreddits, 99 people told the poster to buy the RAV4 and 25 the Tucson, but our Reddit Sentiment Index scores the Tucson 60 and the RAV4 52 out of 100, where 50 means praise and complaints balance. Reddit praises the RAV4’s reliability and hybrid mileage and the Tucson’s screens, ride, quiet cabin and price, and marks the RAV4 down on dealer markups and noise and the Tucson on engine and warranty-service complaints. The second coder agreed on stance only 82% of the time, so read the index as rough."
     ]
    ],
    "related": "<a href=\"/toyota-rav4-vs-honda-cr-v.html\">Toyota RAV4 vs Honda CR-V</a>, <a href=\"/mazda-cx-5-vs-toyota-rav4.html\">Mazda CX-5 vs Toyota RAV4</a>, <a href=\"/subaru-forester-vs-toyota-rav4.html\">Subaru Forester vs Toyota RAV4</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
@@ -21825,10 +21831,10 @@
      "b": "65<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the Elantra, unless you want the longest-lived car or trade cars every few years. It starts $300 below the Corolla as a gas car, Hyundai adds $2,000 bonus cash on the gas Elantra through November 30 (Toyota’s November offers include no cash back), and the Hybrid Blue is rated 54 mpg combined against 50 for the Corolla Hybrid LE. You also get 3.2 more inches of rear legroom and a 10-year/100,000-mile powertrain warranty, IIHS names it a Top Safety Pick, and all four reviewers we checked score it higher. The Corolla is the lower-risk car: owners filed 28 complaints with NHTSA per 100,000 sold for the 2023–2025 models against the Elantra’s 65, and it lost 9.3% of its value in three years against 16.6%. Reddit picks the Corolla about 3 to 1 (93 picks to 33 in neutral subreddits), mostly on reliability. We still take the Elantra for its price, room and warranty, so treat this as a close call that turns on how much a long-lived car matters to you. Prices were checked on November 21, 2026.",
+   "summary": "We’d buy the Elantra, unless you want the longest-lived car or trade cars every few years. It starts $300 below the Corolla as a gas car, Hyundai adds $2,000 bonus cash on the gas Elantra through November 30 (Toyota’s November offers include no cash back), and the Hybrid Blue is rated 54 mpg combined against 50 for the Corolla Hybrid LE. You also get 3.2 more inches of rear legroom and a 10-year/100,000-mile powertrain warranty, IIHS names it a Top Safety Pick, and all four reviewers we checked score it higher. The Corolla is the lower-risk car: owners filed 28 complaints with NHTSA per 100,000 sold for the 2023–2025 models against the Elantra’s 65, and it lost 9.3% of its value in three years against 16.6%. Reddit picks the Corolla about 3 to 1 (101 picks to 34 in neutral subreddits), mostly on reliability. We still take the Elantra for its price, room and warranty, so treat this as a close call that turns on how much a long-lived car matters to you. Prices were checked on November 21, 2026.",
    "choose": {
     "a": [
-     "You want the fewest problems: owners filed 28 NHTSA complaints per 100,000 sold for 2023–2025 against 65, Toyota scores 185 problems per 100 cars in J.D. Power’s dependability study against Hyundai’s 198, and Reddit’s neutral subreddits tell people to buy the Corolla 93 times to 33.",
+     "You want the fewest problems: owners filed 28 NHTSA complaints per 100,000 sold for 2023–2025 against 65, Toyota scores 185 problems per 100 cars in J.D. Power’s dependability study against Hyundai’s 198, and Reddit’s neutral subreddits tell people to buy the Corolla 101 times to 34.",
      "You’ll sell or trade within five years: iSeeCars has a gas Corolla losing 28.4% of its value in five years against 36.4% for an Elantra, and a used 2025 Corolla asks $781 more.",
      "You need all-wheel drive: the Corolla Hybrid offers it for $1,400 and still gets 48 mpg. No Elantra has it.",
      "You want the stronger gas engine: 169 hp against 147, and Edmunds timed the Corolla at 8.8 seconds to 60 mph against 9.4 for the base Elantra."
@@ -22448,13 +22454,13 @@
    "reddit": {
     "dataFile": "data/reddit-sentiment/toyota-corolla-vs-hyundai-elantra.json",
     "intro": [
-     "We read 2,885 comments in 150 Reddit threads whose posts named both cars, January 2025 to November 2026. Each car’s own subreddits back its own car, so r/corolla, r/Elantra with r/ElantraN, and the neutral subreddits (mostly r/whatcarshouldIbuy) count equally. A score of 50 means praise and complaints balance.",
-     "Of 434 posts that named both cars, 332 were screened and 288 kept as weighing the two. We drew 43 home threads (1,070 comments) and 89 neutral threads (1,501 comments) evenly by month and had AI code 2,571 comments to a ten-topic rubric, then re-read 262 comments the first pass left empty, and 110 gained a code. With the earlier coding, the neutral subreddits hold 1,701 comments in 104 threads and 126 picks, 93 for the Corolla and 33 for the Elantra; r/corolla has 473 comments in 16 threads and the Elantra’s subreddits 711 in 30. The Elantra N and GR Corolla are coded under their base models, so the N’s praise lifts the Elantra’s power score.",
+     "We read 3,201 comments in 173 Reddit threads whose posts named both cars, January 2025 to November 2026. Each car’s own subreddits back its own car, so r/corolla, r/Elantra with r/ElantraN, and the neutral subreddits (mostly r/whatcarshouldIbuy) count equally. A score of 50 means praise and complaints balance.",
+     "Of 434 posts that named both cars, 332 were screened and 288 kept as weighing the two. We drew 43 home threads (1,070 comments) and 89 neutral threads (1,501 comments) evenly by month and had AI code 2,571 comments to a ten-topic rubric, then re-read 262 comments the first pass left empty, and 110 gained a code. With the earlier coding, the neutral subreddits hold 2,017 comments in 127 threads and 135 picks, 101 for the Corolla and 34 for the Elantra; r/corolla has 473 comments in 16 threads and the Elantra’s subreddits 711 in 30. The pair file also includes head-to-head threads collected for the Civic vs Elantra page. The Elantra N and GR Corolla are coded under their base models, so the N’s praise lifts the Elantra’s power score.",
      "A blind second coder re-coded 150 comments and agreed with the first on 80% of picks (12 of the 15 comments either coder picked on) and on 76% of stance toward the car (39 of 51). Both are below the 85% we want, so read the index and topic scores as rough."
     ],
     "indexDetail": {
-     "a": "Praised for reliability and a long life, hybrid fuel economy and resale. Marked down for a dull drive, a tight back seat and a dated, noisy cabin. It scores 69 in the neutral subreddits, 78 in r/corolla and 34 in r/Elantra and r/ElantraN.",
-     "b": "Praised for the N, for value and its warranty, and for a well-equipped cabin. Marked down for reliability worries on older engines and for losing value faster than a Corolla. It scores 79 in its own subreddits, 53 in the neutral ones and 29 in r/corolla."
+     "a": "Praised for reliability and a long life, hybrid fuel economy and resale. Marked down for a dull drive, a tight back seat and a dated, noisy cabin. It scores 70 in the neutral subreddits, 78 in r/corolla and 34 in r/Elantra and r/ElantraN.",
+     "b": "Praised for the N, for value and its warranty, and for a well-equipped cabin. Marked down for reliability worries on older engines and for losing value faster than a Corolla. It scores 79 in its own subreddits, 54 in the neutral ones and 29 in r/corolla."
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
@@ -22510,7 +22516,7 @@
      }
     },
     "after": [
-     "Reddit picks the Corolla: 93 picks to 33 in the neutral subreddits and 9 to 0 in r/corolla. The gap is reliability, where the Corolla scores +94 on 193 mentions and the Elantra −9 on 220. The Elantra wins power (+75, much of it the N), space (+62 against −57) and tech (+57 against −36). Our verdict differs from Reddit’s pick on purpose: Reddit’s lead is almost all reliability, which this page already counts for the Corolla, and price, warranty, room and crash tests are why we’d still buy the Elantra. If long-term reliability is the one worry you can’t shake, buy the Corolla."
+     "Reddit picks the Corolla: 101 picks to 34 in the neutral subreddits and 9 to 0 in r/corolla. The gap is reliability, where the Corolla scores +94 on 206 mentions and the Elantra −10 on 234. The Elantra wins power (+75, much of it the N), space (+64 against −56) and tech (+60 against −36). Our verdict differs from Reddit’s pick on purpose: Reddit’s lead is almost all reliability, which this page already counts for the Corolla, and price, warranty, room and crash tests are why we’d still buy the Elantra. If long-term reliability is the one worry you can’t shake, buy the Corolla."
     ],
     "from": {
      "label": "Comments from",
@@ -22725,7 +22731,7 @@
     ],
     [
      "What does Reddit think of the Corolla vs the Elantra?",
-     "It picks the Corolla. In neutral subreddits 93 people told the poster to buy the Corolla and 33 the Elantra, and r/corolla picked it 9 to 0. Our Reddit Sentiment Index scores the Corolla 70 and the Elantra 65 out of 100, where 50 means praise and complaints balance; our check of the coding came in below our accuracy floor, so read it as rough. Reddit praises the Corolla’s reliability and resale and the Elantra’s N, value and cabin, and its owners report engine trouble on older Elantras."
+     "It picks the Corolla. In neutral subreddits 101 people told the poster to buy the Corolla and 34 the Elantra, and r/corolla picked it 9 to 0. Our Reddit Sentiment Index scores the Corolla 70 and the Elantra 65 out of 100, where 50 means praise and complaints balance; our check of the coding came in below our accuracy floor, so read it as rough. Reddit praises the Corolla’s reliability and resale and the Elantra’s N, value and cabin, and its owners report engine trouble on older Elantras."
     ],
     [
      "Should I wait for the next Elantra or Corolla?",
@@ -27699,11 +27705,11 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "51<small>8 threads only</small>",
-     "b": "79<small>8 threads only</small>"
+     "a": "56<small>out of 100</small>",
+     "b": "61<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the RAV4, unless you can charge at home and the Model Y’s speed and crash-test record are worth thousands to you. A new Model Y starts at $39,990, $8,090 above the $31,900 RAV4 LE, and EPA’s numbers say it saves about $850 a year in energy ($550 against $1,400), a payback of nine and a half years on the base cars. It also loses value much faster, 44.1% in three years against 13.8% for the RAV4 Hybrid by iSeeCars’ figures, and owners filed 175 NHTSA complaints per 100,000 Model Ys sold (2023–25 model years, on estimated sales) against 41 for the RAV4. The Model Y answers on safety and pace: IIHS gives the 2026 a Top Safety Pick+ where the RAV4 has no award, NHTSA gives it five stars where it hasn’t rated the 2026 RAV4, and Edmunds timed a Long Range AWD at 4.2 seconds to 60 mph. The two meet on price only used: a 2024 Model Y averaged $36,500 in dealer listings in September against $36,100 for a new RAV4 XLE Premium. Neither car qualifies for a federal tax credit, and Reddit gave us only eight threads naming both, too few to call. Prices were checked on November 21, 2026.",
+   "summary": "We’d buy the RAV4, unless you can charge at home and the Model Y’s speed and crash-test record are worth thousands to you. A new Model Y starts at $39,990, $8,090 above the $31,900 RAV4 LE, and EPA’s numbers say it saves about $850 a year in energy ($550 against $1,400), a payback of nine and a half years on the base cars. It also loses value much faster, 44.1% in three years against 13.8% for the RAV4 Hybrid by iSeeCars’ figures, and owners filed 175 NHTSA complaints per 100,000 Model Ys sold (2023–25 model years, on estimated sales) against 41 for the RAV4. The Model Y answers on safety and pace: IIHS gives the 2026 a Top Safety Pick+ where the RAV4 has no award, NHTSA gives it five stars where it hasn’t rated the 2026 RAV4, and Edmunds timed a Long Range AWD at 4.2 seconds to 60 mph. The two meet on price only used: a 2024 Model Y averaged $36,500 in dealer listings in September against $36,100 for a new RAV4 XLE Premium. Neither car qualifies for a federal tax credit, and Reddit’s neutral subreddits picked the Model Y 53 times to 37 for the RAV4, though 90 picks is under our 100-pick floor for calling it. Prices were checked on November 21, 2026.",
    "choose": {
     "a": [
      "You charge at home and drive a lot: EPA puts a year of electricity at $550 to $700 against $1,400 to $1,450 of gasoline in the RAV4 hybrid, with a full 240-volt charge taking 8 to 12.2 hours by EPA’s records. Reddit owners report that relying on public fast chargers is a hassle and that highway range at 70 to 75 mph falls short of the rating.",
@@ -27820,15 +27826,15 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "51",
-     "b": "79",
+     "a": "56",
+     "b": "61",
      "win": null
     },
     {
      "label": "Reddit neutral picks",
      "section": "reddit",
-     "a": "6",
-     "b": "4",
+     "a": "53",
+     "b": "37",
      "win": null
     }
    ],
@@ -28544,20 +28550,24 @@
    "reddit": {
     "dataFile": "data/reddit-sentiment/tesla-model-y-vs-toyota-rav4.json",
     "intro": [
-     "Only eight Reddit threads in our coded files named both cars, from posts between January 2025 and November 2026: seven in neutral subreddits (six in r/whatcarshouldIbuy, one in r/askcarsales) and one in r/RAV4Club, with 86 comments in all. No thread in r/TeslaModelY named both. That is far too few to build a comparison on, so the index below, Model Y 51 and RAV4 79, rests on 51 opinions and we read nothing into the gap, and the strip at the top says too few to call. A score of 50 means praise and complaints balance.",
-     "The comments were coded by AI to a ten-topic rubric; the method is the one on each car’s price guide. To fill the gap we also looked at each car’s own Reddit file, which is not head-to-head: the Model Y’s holds 2,926 comments in 127 threads and the RAV4’s 8,077 in 571, and both score 52. A head-to-head collection of threads naming both cars would fix the thin sample."
+     "We read 3,215 comments in 117 Reddit threads whose posts named both cars, January 2025 to November 2026. Each car’s own subreddits back its own car, so r/TeslaModelY, r/rav4 with r/RAV4Club, and the neutral subreddits (r/whatcarshouldIbuy, r/UsedCars, r/carbuying, r/askcarsales, r/cars and r/personalfinance) count equally. A score of 50 means praise and complaints balance. The neutral sample is 75 threads and 1,571 comments, but only 90 people there picked one car over the other (53 the Model Y, 37 the RAV4), under our 100-pick floor, so we don’t name a pick.",
+     "Of 196 posts that named both cars, 170 were screened and 127 were kept as weighing the two. We drew 41 home threads (1,613 comments) and 68 neutral ones (1,516), had an AI code 3,129 comments to a ten-topic rubric, and ran a completeness pass on 563 comments the first pass left empty (80 gained a code). A blind second coder re-coded 150 comments and agreed on 82% of picks (14 of the 17 comments either coder picked on) and 70% of stance (40 of 57), both below our 85% floor. Treat the index and the topic scores as rough."
     ],
     "indexDetail": {
-     "a": "Praised for quick acceleration, the Supercharger network and cheap home charging, and software owners call ahead of rivals. Marked down for steep depreciation, service centers, highway range below the rating, and owner reports of worn front bushings and a grinding steering column. Eight threads is too few to lean on, and the Model Y’s own file scores 52.",
-     "b": "Praised for hybrid fuel economy, a reliability record owners put at 200,000 miles or more, a roomy rear seat and cargo area, and resale value. Marked down for a plain, plasticky cabin, a driving feel owners call bland, road noise, and dealer markups and waits. The RAV4’s own file scores 52."
+     "a": "Praised for quick acceleration, software and driver assistance owners call ahead of rivals, and cheap running costs when charged at home. Marked down for steep depreciation, insurance above a comparable gas SUV, owner reports of battery, control-arm and panel-fit trouble, and range lost to cold and highway speed. It scores 72 in r/TeslaModelY, 53 in the neutral subreddits and 36 in r/rav4 and r/RAV4Club.",
+     "b": "Praised for a hybrid system owners call bulletproof, fuel economy and range, resale value and lower insurance. Marked down for a plain, dated cabin and infotainment next to a Tesla, a driving feel owners call boring, cabin noise, and dealer markups and waits. It scores 72 in r/rav4 and r/RAV4Club, 56 in the neutral subreddits and 44 in r/TeslaModelY."
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. Ten neutral picks and three in r/RAV4Club are too few to show a pattern, and no thread in r/TeslaModelY named both cars.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddits mostly back their own car, though r/TeslaModelY picked the RAV4 27 times to 24. The neutral count is 90 picks, under our 100-pick floor, so we call it a lean, not a verdict.",
      "rows": [
       {
        "venue": "neutral",
        "label": "Neutral subreddits"
+      },
+      {
+       "venue": "a",
+       "label": "In r/TeslaModelY"
       },
       {
        "venue": "b",
@@ -28569,40 +28579,40 @@
     "minimumPicks": 100,
     "topics": {
      "title": "Net opinion by topic",
-     "note": "From −100 (every opinion negative) to +100 (every opinion positive). A car with fewer than 15 mentions on a topic shows the count instead of a score, which is every topic here, because only eight threads named both cars. Most-discussed topics first."
+     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. A car with fewer than 15 mentions on a topic shows the count instead of a score. The blind check agreed on only 70% of stance, so read these as rough. Most-discussed topics first."
     },
     "themes": {
      "a": {
       "praise": [
-       "Quick acceleration, and dual-motor all-wheel drive that owners say copes well in snow",
-       "A Supercharger network that makes road trips easy, and home charging that costs far less than gasoline",
-       "Touchscreen software and over-the-air updates that owners call ahead of rivals",
-       "Used examples one to three years old that owners call good value"
+       "Quick, instant-torque acceleration that owners call fun and engaging",
+       "Software, self-driving and driver-assist features that owners rate well ahead of rivals",
+       "Home charging that costs a fraction of gasoline, with almost no maintenance beyond tires",
+       "A roomy cabin and a cargo area with a front trunk that many owners say beat the RAV4’s"
       ],
       "gripes": [
-       "Owners report highway range at 70 to 75 mph falling well short of the rating, and cold weather cutting range",
-       "Owners report steep depreciation, and service centers with long waits that decline warranty work unless the problem can be reproduced",
-       "Owners report worn front control arm bushings and a grinding steering column on newer cars",
-       "Nearly every control on the screen, and an interior owners call cheap on the Standard trim"
+       "Owners report steep depreciation and insurance well above a comparable gas SUV",
+       "Owners report battery, control-arm and suspension repairs out of warranty, and build quality that varies from car to car",
+       "Owners report cold weather and highway speeds cutting range, and Supercharging that costs close to gasoline",
+       "Screen-only controls, no CarPlay and driver-assist features behind a subscription frustrate some owners"
       ]
      },
      "b": {
       "praise": [
-       "Hybrid fuel economy, with owners reporting 37 to 50 mpg in everyday driving",
-       "A reliability record owners put at 200,000 miles or more with routine maintenance",
-       "A rear seat and cargo area owners call roomy for the class",
-       "Resale value that owners say holds well"
+       "A hybrid drivetrain owners call bulletproof, with many high-mileage cars still running well",
+       "Owners report 40-plus mpg and 500 to 600 miles a tank from the hybrid, and daily driving on electricity from the plug-in",
+       "Resale value that owners say beats a Tesla’s, and cheaper insurance",
+       "A cargo area owners find good for camping and towing, and high clearance in snow"
       ],
       "gripes": [
-       "An interior owners call plain and plasticky below the top trims",
-       "A driving feel owners call bland next to the Mazda CX-5",
-       "Owners report road and cabin noise, and hybrid mileage dropping in cold weather",
-       "Owners report dealer markups, long waits and add-ons because demand is high"
+       "An interior and infotainment owners call dated and plain next to a Tesla’s",
+       "A driving feel owners call boring and slow next to the Model Y",
+       "Owners report a noisier cabin than a Model Y’s, with road noise and squeaks",
+       "Owners report dealer markups, add-ons and long waits, and a plug-in that costs about ten thousand dollars more"
       ]
      }
     },
     "after": [
-     "Each car’s own file, which isn’t head-to-head, shows where the opinions differ. Reddit scores the RAV4 far higher on reliability (+47 against −29 for the Model Y) and on fuel economy and range (+79 against +20), and it scores the Model Y higher on power and driving (+63 against +3), tech (+33 against −52) and safety (+30 against −3, from only 33 RAV4 mentions). Both score negative on price (−27 Model Y, −12 RAV4) and on dealers and service (−30 and −78). A test drive of each, and a look at where you’d charge, will tell you more than eight threads can."
+     "Reddit’s picks lean one way and its scores the other. The neutral subreddits picked the Model Y 53 times to 37 and the index scores it 56 against the RAV4’s 61, both within what a below-floor blind check can resolve. The topics show where each car earns its votes. Reddit scores the RAV4 far higher on reliability (+92 against −28 for the Model Y), fuel economy (+75 against +14) and price and value (+40 against −22, with Model Y owners citing depreciation and insurance). It scores the Model Y higher on interior and tech (+52 against −51), power and driving (+59 against −18), noise and refinement (+28 against −54) and space (+57 against +28). Dealers are negative for both, −14 for Tesla’s service and −89 for RAV4 dealers, where owners report markups and waits. r/rav4 and r/RAV4Club picked the RAV4 24 times to 6, and r/TeslaModelY picked the RAV4 27 to 24. Test-drive both, and look at where you’d charge, before you decide."
     ],
     "from": {
      "label": "Comments from",
@@ -28846,7 +28856,7 @@
     ],
     [
      "What does Reddit think of the Model Y vs the RAV4?",
-     "We can’t say head-to-head: only eight threads named both cars, and the neutral subreddits’ 10 picks split 6 for the Model Y and 4 for the RAV4. Each car’s own Reddit file scores 52 out of 100, with owners praising the RAV4’s fuel economy and reliability and the Model Y’s acceleration and software."
+     "In neutral subreddits, 53 people told the poster to buy the Model Y and 37 the RAV4, 90 picks in all, under our 100-pick floor for calling a winner. Our Reddit Sentiment Index scores the Model Y 56 and the RAV4 61 out of 100, where 50 means praise and complaints balance. Reddit praises the Model Y’s acceleration, software and home-charging costs and the RAV4’s reliability, fuel economy and resale; our blind check agreed on 82% of picks and 70% of stance, so treat the scores as rough."
     ]
    ],
    "related": "<a href=\"/toyota-rav4-vs-honda-cr-v.html\">Toyota RAV4 vs Honda CR-V</a>, <a href=\"/subaru-forester-vs-toyota-rav4.html\">Subaru Forester vs Toyota RAV4</a>, <a href=\"/mazda-cx-5-vs-toyota-rav4.html\">Mazda CX-5 vs Toyota RAV4</a>, <a href=\"/blog-used-ev-pros-cons-risks.html\">the risks and rewards of buying a used EV</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
