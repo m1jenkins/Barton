@@ -1,5 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { database } from './_lib/db.js';
+import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
 import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } from './_lib/http.js';
 
@@ -47,9 +48,11 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
     }
     if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff" or left out');
 
+    // With the Deal Tracker on, every car needs its estimated total and color.
+    const tracker = dealTrackerEnabled(environment);
     let shortlist;
     try {
-      shortlist = parseShortlist(body.shortlist);
+      shortlist = parseShortlist(body.shortlist, { requireTracker: tracker });
     } catch (error) {
       if (!(error instanceof ShortlistError)) throw error;
       return sendJson(res, 422, { ok: false, error: 'invalid_shortlist', problems: error.problems });
@@ -58,7 +61,7 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
     const sql = getDatabase();
     const [intake] = await sql`SELECT id FROM onboarding_submissions WHERE id = ${intakeId}`;
     if (!intake) throw new HttpError(404, 'intake_not_found', 'No intake has that ID');
-    const saved = await saveShortlist(sql, intakeId, shortlist);
+    const saved = await saveShortlist(sql, intakeId, shortlist, { tracker });
     if (saved.locked) {
       return sendJson(res, 409, { ok: false, error: 'emails_already_sent',
         message: 'This search\'s dealer emails have already gone out or been handed to Grokbot, so its shortlist can no longer be replaced.' });

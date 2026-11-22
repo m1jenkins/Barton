@@ -1,5 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
+import { bestPrices, dealerKey, droppedAfter } from './deal-view.js';
 
 // Mason's private deal dashboard at /api/ops (docs/implementation-operations.md,
 // "Ops dashboard"). Everything on it is read from Neon: the deals opened at paid
@@ -188,15 +189,14 @@ export function summarizeDeal(deal, events, listings, now = Date.now()) {
     if (event.kind === 'first_email_sent') emailed = true;
     if (DEALER_KINDS.has(event.kind)) lastDealer = Math.max(lastDealer ?? 0, time(event.occurred_at));
     if (!event.dealer_name) continue;
-    const key = event.dealer_name.trim().toLowerCase();
+    const key = dealerKey(event.dealer_name);
     const dealer = dealers.get(key) ?? { name: event.dealer_name, quote: null, vin: null, agreed: false, dropped: false };
     if (['quote', 'agreed'].includes(event.kind) && event.otd_cents != null) {
       dealer.quote = event.otd_cents;
       dealer.vin = event.vin;
     }
     if (event.kind === 'agreed') dealer.agreed = true;
-    if (event.kind === 'dropped') dealer.dropped = true;
-    if (['quote', 'agreed', 'first_email_sent', 'email_received'].includes(event.kind)) dealer.dropped = false;
+    dealer.dropped = droppedAfter(dealer.dropped, event.kind);
     dealers.set(key, dealer);
   }
   const live = [...dealers.values()].filter(dealer => !dealer.dropped);
@@ -552,7 +552,9 @@ function editPanel(deal, summary, listings) {
 
 export function renderDeal(detail, now = Date.now()) {
   const { deal, listings, events, drafts } = detail;
-  const summary = summarizeDeal(deal, [...events].reverse(), listings, now);
+  const oldestFirst = [...events].reverse();
+  const summary = summarizeDeal(deal, oldestFirst, listings, now);
+  const best = bestPrices(listings, oldestFirst);
   const answers = new Map(events.filter(event => event.resolves_event_id).map(event => [String(event.resolves_event_id), event]));
   const shown = events.filter(event => event.kind !== 'resolved');
   const days = Map.groupBy(shown, event => dayLabel(event.occurred_at, now));
@@ -570,12 +572,16 @@ ${editPanel(deal, summary, listings)}
 ${deal.search_summary ? safe`<h2>Search</h2><div class="card"><p class="empty" style="color:inherit">${deal.search_summary}</p></div>` : ''}
 <h2>Shortlist (${listings.length})</h2>
 ${listings.length ? safe`<div class="card scroll"><table>
-  <thead><tr><th>#</th><th>Car</th><th>Dealer</th><th class="num">Asking</th><th class="num">Market</th><th class="num">Target</th><th class="num hide-sm">Walk away</th><th class="num hide-sm">Days on lot</th></tr></thead>
-  <tbody>${join(listings, item => safe`<tr><td>${item.rank}</td>
+  <thead><tr><th>#</th><th>Car</th><th>Dealer</th><th class="num">Asking</th><th class="num">Market</th><th class="num">Target</th><th class="num">Best so far</th><th class="num hide-sm">Walk away</th><th class="num hide-sm">Days on lot</th></tr></thead>
+  <tbody>${join(listings, item => {
+    const price = item.vin ? best.get(item.vin.trim().toUpperCase()) : null;
+    return safe`<tr><td>${item.rank}</td>
     <td class="wide"><a href="${/^https?:\/\//i.test(item.listing_url) ? item.listing_url : '#'}" rel="noopener noreferrer" target="_blank">${item.title}</a>${item.vin ? safe`<br><span class="muted">${item.vin}</span>` : ''}</td>
     <td class="wide">${item.dealer_name}${item.dealer_location ? safe`<br><span class="muted">${item.dealer_location}</span>` : ''}</td>
     <td class="num">${money(item.price_cents)}</td><td class="num">${money(item.market_price_cents)}</td><td class="num">${money(item.target_price_cents)}</td>
-    <td class="num hide-sm">${money(item.walk_away_cents)}</td><td class="num hide-sm">${item.days_on_lot ?? '—'}</td></tr>`)}</tbody></table></div>` : raw('<div class="card"><p class="empty">No cars on the shortlist.</p></div>')}
+    <td class="num">${price ? safe`${money(price.otd_cents)}<br><span class="muted">${price.dealer_name}</span>` : '—'}</td>
+    <td class="num hide-sm">${money(item.walk_away_cents)}</td><td class="num hide-sm">${item.days_on_lot ?? '—'}</td></tr>`;
+  })}</tbody></table></div>` : raw('<div class="card"><p class="empty">No cars on the shortlist.</p></div>')}
 ${drafts.length ? safe`<h2>First emails</h2><div class="card"><ul class="list compact">${join(drafts, draft => safe`<li><div class="main"><strong>${draft.dealer_name}</strong>${draft.last_error ? safe`<p class="muted">${draft.last_error}</p>` : ''}</div>
   <span class="muted nowrap">${draft.status} · ${when(draft.sent_at || draft.created_at, now)}</span></li>`)}</ul></div>` : ''}
 <h2>Log (${shown.length})</h2>

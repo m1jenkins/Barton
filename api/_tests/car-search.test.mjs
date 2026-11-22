@@ -18,10 +18,12 @@ const environment = {
   CAR_SEARCH_TOKEN: token, DEAL_LINK_SECRET: 'link-secret-for-tests-only-0123456789', APP_ORIGIN: 'https://www.steermeright.com',
   INTAKE_SMTP_USER: 'mason@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real'
 };
-const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
+const migrationNames = ['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql']
-  .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
+  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql'];
+const migrations = await Promise.all(migrationNames.map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
+// Production before db/013: what the Deal Tracker switch-off path must still work against.
+const migrationsBefore013 = migrations.filter((_, index) => migrationNames[index] !== '013_deal_tracker.sql');
 
 function tagged(client) {
   const sql = async (strings, ...values) => {
@@ -94,6 +96,45 @@ test('a shortlist is normalized to cents, and every problem in a bad one is repo
     ]);
     return true;
   });
+});
+
+// The same shortlist as the car search skill writes it once the Deal Tracker is on.
+const trackerShortlist = { ...shortlist, listings: [
+  { ...shortlist.listings[0], est_otd: 38250, color: '  Crimson\n Red Pearl ' },
+  { ...shortlist.listings[1], est_otd: 36900, color: 'Magnetite Gray Metallic' }
+] };
+
+test('with the Deal Tracker on, every car needs our estimated total and its color', () => {
+  const parsed = parseShortlist(trackerShortlist, { requireTracker: true });
+  assert.deepEqual(parsed.listings.map(listing => [listing.est_otd_cents, listing.color]),
+    [[3825000, 'Crimson Red Pearl'], [3690000, 'Magnetite Gray Metallic']]);
+
+  assert.throws(() => parseShortlist({ ...shortlist, listings: [shortlist.listings[0], { ...trackerShortlist.listings[1], color: ' ' }] },
+    { requireTracker: true }), error => {
+    assert.deepEqual(error.problems, [
+      'listings[0].est_otd is required: our estimated out-the-door total in whole dollars',
+      'listings[0].color is required: the exterior color as the listing gives it',
+      'listings[1].color is required: the exterior color as the listing gives it'
+    ]);
+    return true;
+  });
+
+  const bad = listings => () => parseShortlist({ ...trackerShortlist, listings }, { requireTracker: true });
+  const [one] = trackerShortlist.listings;
+  assert.throws(bad([{ ...one, est_otd: -1 }, { ...one, rank: 2, est_otd: 38250.5 }, { ...one, rank: 3, est_otd: 1_000_001 },
+    { ...one, rank: 4, color: 'x'.repeat(61) }, { ...one, rank: 5, color: 7 }]), error => {
+    assert.deepEqual(error.problems, [
+      'listings[0].est_otd must be a whole number from 0 to 1000000', 'listings[1].est_otd must be a whole number from 0 to 1000000',
+      'listings[2].est_otd must be a whole number from 0 to 1000000', 'listings[3].color must be at most 60 characters',
+      'listings[4].color must be a string'
+    ]);
+    return true;
+  });
+
+  // Switched off: neither field is needed, and ones that are sent are still checked.
+  assert.deepEqual(parseShortlist(shortlist).listings.map(listing => [listing.est_otd_cents, listing.color]), [[null, null], [null, null]]);
+  assert.deepEqual(parseShortlist(trackerShortlist).listings.map(listing => listing.est_otd_cents), [3825000, 3690000]);
+  assert.throws(() => parseShortlist({ ...shortlist, listings: [{ ...one, est_otd: -1 }] }), /est_otd must be a whole number/);
 });
 
 test('dealer email links verify only for the draft they were made for', () => {
@@ -400,4 +441,93 @@ test('handoff posts the server\'s handoff to Grokbot\'s webhook with its key', a
 
   await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment: { ...environment, DEALER_BOT_URL: 'http://bot.example' },
     fetchImpl: fetchFor(null) }), /https/);
+});
+
+async function addIntake(pg) {
+  const intake = crypto.randomUUID(), attempt = crypto.randomUUID(), purchase = crypto.randomUUID(), session = `cs_live_${intake}`;
+  await pg.query(`INSERT INTO checkout_attempts (id, client_reference_id, idempotency_key, request_hash, tier_id, expected_amount, status)
+    VALUES ($1, $1, $2, $3, 'full_service', 39500, 'paid')`, [attempt, attempt, 'a'.repeat(64)]);
+  await pg.query(`INSERT INTO stripe_events (event_id, event_type, checkout_session_id, livemode, stripe_created_at)
+    VALUES ($1, 'checkout.session.completed', $2, true, now())`, [session, session]);
+  await pg.query(`INSERT INTO purchases (id, checkout_session_id, checkout_attempt_id, client_reference_id, stripe_event_id,
+    stripe_payment_intent_id, tier_id, amount_total, currency, payment_status, livemode, paid_at)
+    VALUES ($1, $2, $3, $4, $5, 'pi_123', 'full_service', 39500, 'usd', 'paid', true, now())`, [purchase, session, attempt, attempt, session]);
+  await pg.query(`INSERT INTO onboarding_submissions (id, checkout_session_id, purchase_id, idempotency_key, request_hash, tier_id, name, email, phone, city, fields)
+    VALUES ($1, $2, $3, $6, $4, 'full_service', 'Pat Buyer', 'pat@example.test', '205-555-0100', 'Tuscaloosa, AL', $5)`,
+  [intake, session, purchase, 'b'.repeat(64), JSON.stringify(fields), intake]);
+  return intake;
+}
+
+async function database(t, migrationList) {
+  const pg = await PGlite.create();
+  t.after(() => pg.close());
+  for (const migration of migrationList) await pg.exec(migration);
+  return pg;
+}
+
+const listingsOf = (pg, intake) => pg.query(`SELECT l.* FROM deal_listings AS l JOIN deals AS d ON d.id = l.deal_id
+  WHERE d.onboarding_id = $1 ORDER BY l.rank`, [intake]).then(result => result.rows);
+
+test('saveShortlist stores each car\'s estimated total and color only with the Deal Tracker on', async t => {
+  const pg = await database(t, migrations);
+  const sql = tagged(pg);
+  const on = await addIntake(pg);
+  await saveShortlist(sql, on, parseShortlist(trackerShortlist, { requireTracker: true }), { tracker: true });
+  assert.deepEqual((await listingsOf(pg, on)).map(row => [row.rank, row.est_otd_cents, row.color]),
+    [[1, 3825000, 'Crimson Red Pearl'], [2, 3690000, 'Magnetite Gray Metallic']]);
+
+  const off = await addIntake(pg);
+  await saveShortlist(sql, off, parseShortlist(trackerShortlist));
+  assert.deepEqual((await listingsOf(pg, off)).map(row => [row.est_otd_cents, row.color]), [[null, null], [null, null]]);
+});
+
+test('with the Deal Tracker off, saveShortlist works on a database without db/013', async t => {
+  const pg = await database(t, migrationsBefore013);
+  const sql = tagged(pg);
+  const intake = await addIntake(pg);
+  const saved = await saveShortlist(sql, intake, parseShortlist(trackerShortlist));
+  assert.equal(saved.locked, false);
+  const rows = await listingsOf(pg, intake);
+  assert.equal(rows.length, 2);
+  assert.ok(!('est_otd_cents' in rows[0]), 'the database really is from before db/013');
+  await assert.rejects(saveShortlist(sql, intake, parseShortlist(trackerShortlist), { tracker: true }), /est_otd_cents/);
+});
+
+test('the car search endpoint requires and stores the estimate and color only when the Deal Tracker is on', async t => {
+  const call = async (api, body) => {
+    const res = response();
+    await api({ method: 'POST', url: '/api/car-search', body,
+      headers: { host: 'www.steermeright.com', authorization: `Bearer ${token}`, 'content-type': 'application/json' } }, res);
+    return res;
+  };
+
+  const pg = await database(t, migrations);
+  const sql = tagged(pg);
+  const on = carSearchHandler({ environment: { ...environment, DEAL_TRACKER_ENABLED: 'true' }, getDatabase: () => sql });
+  const intake = await addIntake(pg);
+  const missing = await call(on, { intake_id: intake, shortlist });
+  assert.equal(missing.statusCode, 422);
+  assert.deepEqual(json(missing).problems, [
+    'listings[0].est_otd is required: our estimated out-the-door total in whole dollars',
+    'listings[0].color is required: the exterior color as the listing gives it',
+    'listings[1].est_otd is required: our estimated out-the-door total in whole dollars',
+    'listings[1].color is required: the exterior color as the listing gives it'
+  ]);
+  assert.equal((await pg.query('SELECT count(*)::int AS n FROM deal_listings')).rows[0].n, 0);
+
+  const saved = await call(on, { intake_id: intake, shortlist: trackerShortlist });
+  assert.equal(saved.statusCode, 200);
+  assert.deepEqual(json(saved), { ok: true, cars: 2, dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
+  assert.deepEqual((await listingsOf(pg, intake)).map(row => [row.est_otd_cents, row.color]),
+    [[3825000, 'Crimson Red Pearl'], [3690000, 'Magnetite Gray Metallic']]);
+
+  // Switched off, against production as it is before db/013: today's body and the new one both save.
+  const before = await database(t, migrationsBefore013);
+  const beforeSql = tagged(before);
+  const off = carSearchHandler({ environment, getDatabase: () => beforeSql });
+  for (const body of [shortlist, trackerShortlist]) {
+    const res = await call(off, { intake_id: await addIntake(before), shortlist: body });
+    assert.equal(res.statusCode, 200);
+    assert.equal(json(res).cars, 2);
+  }
 });

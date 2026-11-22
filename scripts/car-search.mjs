@@ -9,7 +9,9 @@ import { pathToFileURL } from 'node:url';
 // Reads CAR_SEARCH_TOKEN, and optionally CAR_SEARCH_URL, from the environment
 // or from .env.local in the repository root (git-ignored). handoff also needs
 // DEALER_BOT_URL and DEALER_BOT_KEY, Grokbot's "New deal" webhook
-// (docs/dealer-bot-setup-2026-11-03.md, step 6).
+// (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
+// JSON through as is; the server checks it, including each car's est_otd and
+// color once the Deal Tracker is on.
 const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID>';
 
 export function localEnv(file = new URL('../.env.local', import.meta.url)) {

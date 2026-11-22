@@ -75,7 +75,8 @@ Write `.car-searches/<intake ID>.json` (git-ignored) in this shape, with prices 
     {
       "rank": 1,
       "title": "2025 Subaru Ascent Limited, Crimson Red / Slate Black",
-      "price": 35884, "market_price": 37346, "target_price": 34500,
+      "price": 35884, "market_price": 37346, "target_price": 34500, "est_otd": 38250,
+      "color": "Crimson Red Pearl",
       "mileage": 15203, "days_on_lot": 121, "vin": "17-character VIN",
       "listing_url": "the listing's vdp_url",
       "dealer_name": "Wallace Imports", "dealer_location": "Johnson City, TN (about 370 mi)",
@@ -88,6 +89,10 @@ Write `.car-searches/<intake ID>.json` (git-ignored) in this shape, with prices 
   ]
 }
 ```
+
+Two fields per car are for the buyer's Deal Tracker page. They are required once the Deal Tracker is on and harmless before:
+- `est_otd`: our estimate of the out-the-door total in whole dollars: asking price plus the buyer's state and local sales tax, title and registration, and that dealer's usual doc fee. It is what the buyer sees until the dealer quotes in writing.
+- `color`: exterior color as the listing gives it.
 
 Then run `node scripts/car-search.mjs submit <intake ID> .car-searches/<intake ID>.json`.
 - If it returns `problems`, fix every one and submit again.

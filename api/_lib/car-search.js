@@ -100,9 +100,20 @@ function webUrl(value, path, problems) {
   return null;
 }
 
+// est_otd and color are what the buyer's Deal Tracker page shows per car until a
+// dealer quotes in writing, so they are required once it is on. A blank one is
+// reported with what it should hold.
+function trackerField(value, path, problems, required, hint, parse) {
+  if (value == null || (typeof value === 'string' && !oneLine(value))) {
+    if (required) problems.push(`${path} is required: ${hint}`);
+    return null;
+  }
+  return parse();
+}
+
 // Checks a submitted shortlist and reports every problem at once, so one retry
 // can fix them all. Prices are whole dollars in, cents out.
-export function parseShortlist(input) {
+export function parseShortlist(input, { requireTracker = false } = {}) {
   const problems = [];
   const value = input && typeof input === 'object' && !Array.isArray(input) ? input : {};
   const summary = text(value.summary, 'summary', problems, { max: 4000, required: true });
@@ -127,6 +138,10 @@ export function parseShortlist(input) {
       price_cents: cents(whole(listing.price, `${path}.price`, problems, 1_000_000)),
       market_price_cents: cents(whole(listing.market_price, `${path}.market_price`, problems, 1_000_000)),
       target_price_cents: cents(whole(listing.target_price, `${path}.target_price`, problems, 1_000_000)),
+      est_otd_cents: cents(trackerField(listing.est_otd, `${path}.est_otd`, problems, requireTracker,
+        'our estimated out-the-door total in whole dollars', () => whole(listing.est_otd, `${path}.est_otd`, problems, 1_000_000))),
+      color: trackerField(listing.color, `${path}.color`, problems, requireTracker, 'the exterior color as the listing gives it',
+        () => text(listing.color, `${path}.color`, problems, { max: 60, singleLine: true })),
       mileage: whole(listing.mileage, `${path}.mileage`, problems, 1_000_000),
       days_on_lot: whole(listing.days_on_lot, `${path}.days_on_lot`, problems, 3650),
       vin: vin ? vin.toUpperCase() : null,
@@ -161,8 +176,9 @@ export function parseShortlist(input) {
 
 // Opens the intake's deal if needed and replaces its shortlist. Once any dealer
 // email has gone out or been handed to Grokbot the shortlist is locked, so
-// those emails keep their cars.
-export async function saveShortlist(sql, onboardingId, shortlist) {
+// those emails keep their cars. With the Deal Tracker off the listing INSERT
+// names no db/013 column, so it works before that migration is applied.
+export async function saveShortlist(sql, onboardingId, shortlist, { tracker = false } = {}) {
   return sql.begin(async tx => {
     await tx`INSERT INTO deals (id, onboarding_id) VALUES (${randomUUID()}, ${onboardingId}) ON CONFLICT (onboarding_id) DO NOTHING`;
     const [deal] = await tx`SELECT id FROM deals WHERE onboarding_id = ${onboardingId} FOR UPDATE`;
@@ -175,6 +191,18 @@ export async function saveShortlist(sql, onboardingId, shortlist) {
     await tx`DELETE FROM dealer_email_drafts WHERE deal_id = ${deal.id}`;
     await tx`DELETE FROM deal_listings WHERE deal_id = ${deal.id}`;
     for (const listing of shortlist.listings) {
+      if (tracker) {
+        await tx`
+          INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents,
+            mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why,
+            est_otd_cents, color)
+          VALUES (${randomUUID()}, ${deal.id}, ${listing.rank}, ${listing.title}, ${listing.price_cents}, ${listing.market_price_cents},
+            ${listing.target_price_cents}, ${listing.mileage}, ${listing.days_on_lot}, ${listing.vin},
+            ${listing.listing_url}, ${listing.dealer_name}, ${listing.dealer_location}, ${listing.dealer_email},
+            ${listing.dealer_phone}, ${listing.why}, ${listing.est_otd_cents}, ${listing.color})
+        `;
+        continue;
+      }
       await tx`
         INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents,
           mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why)

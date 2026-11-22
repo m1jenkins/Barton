@@ -40,6 +40,23 @@
           "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
+    },
+    {
+      "source": "/deal/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -195,6 +212,12 @@
       "source": "/pricing",
       "destination": "/schedule.html",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/deal/:token",
+      "destination": "/api/deal-tracker?t=:token"
     }
   ],
   "crons": [

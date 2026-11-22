@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 import { allowedOrigins } from '../_lib/config.js';
-import { dealTrackerEnabled } from '../_lib/deal-tracker.js';
+import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderTracker, replyToken, signLink } from '../_lib/deal-tracker.js';
+import { dealTrackerHandler } from '../deal-tracker.js';
 import { onboardingHandler } from '../onboarding.js';
+import { SAMPLE_VIEWS } from '../../scripts/preview-deal-tracker.mjs';
 
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
@@ -96,4 +98,76 @@ test('a paid intake opens its deal and Deal Tracker link only with the switch on
   assert.equal(consultation.status, 201);
   assert.deepEqual(await counts(consultation.id), { deals: 0, links: 0 }, 'a consultation has no car search, so no deal');
   assert.equal((await pg.query('SELECT count(*)::int AS n FROM deals')).rows[0].n, 2);
+});
+
+const SECRET = 'deal-tracker-secret-for-tests-only-0123456789';
+
+test('a signed link round-trips, and its token is the intake ID plus a signature', async t => {
+  const pg = await PGlite.create();
+  t.after(() => pg.close());
+  await pg.exec('CREATE TABLE deal_tracker_links (onboarding_id uuid PRIMARY KEY, version integer NOT NULL, revoked_at timestamptz); CREATE TABLE deal_events (id bigint, onboarding_id uuid, kind text, occurred_at timestamptz)');
+  const id = crypto.randomUUID();
+  await pg.query('INSERT INTO deal_tracker_links VALUES ($1, 3, NULL)', [id]);
+  const token = signLink(SECRET, id, 3);
+  assert.match(token, /^[0-9a-f]{32}\.[A-Za-z0-9_-]{43}$/);
+  assert.equal(token.split('.')[0], id.replaceAll('-', ''));
+  assert.equal(signLink(SECRET, id.toUpperCase(), 3), token, 'the ID is case-insensitive');
+  assert.notEqual(signLink(SECRET, id, 2), token, 'the version is signed');
+  const settings = dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, APP_ORIGIN: 'https://example.test/' });
+  assert.deepEqual(settings, { secret: SECRET, origin: 'https://example.test' });
+  assert.equal(dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET }).origin, 'https://www.steermeright.com');
+  assert.equal(linkUrl(settings, id, 3), `https://example.test/deal/${token}`);
+  const sql = tagged(pg);
+  assert.deepEqual(await checkLink(sql, settings, token), { status: 'ok', onboardingId: id });
+  for (const bad of [signLink(SECRET, id, 1), `${token}x`, token.toUpperCase(), id, '', null]) {
+    assert.equal((await checkLink(sql, settings, bad)).status, 'invalid', String(bad));
+  }
+});
+
+test('the reply token is stable, differs per deal and per secret, and is not the link signature', () => {
+  const id = crypto.randomUUID(), other = crypto.randomUUID();
+  const token = replyToken(SECRET, id);
+  assert.match(token, /^[0-9a-f]{20}$/);
+  assert.equal(replyToken(SECRET, id), token);
+  assert.notEqual(replyToken(SECRET, other), token);
+  assert.notEqual(replyToken(`${SECRET}-other`, id), token);
+  const link = signLink(SECRET, id, 1);
+  assert.ok(!link.includes(token) && !Buffer.from(link.split('.')[1], 'base64url').toString('hex').includes(token));
+});
+
+test('every preview state renders without empty values', () => {
+  for (const [name, view] of Object.entries(SAMPLE_VIEWS)) {
+    const html = renderTracker(view);
+    for (const junk of ['undefined', 'null', 'NaN', '[object']) assert.ok(!html.includes(junk), `${name} contains ${junk}`);
+    assert.doesNotMatch(html, /<script/i, name);
+  }
+  assert.doesNotMatch(renderLinkClosed(), /undefined|null|NaN|\[object|<script/i);
+  assert.match(renderTracker(SAMPLE_VIEWS['closed-other']), /mason@steermeright\.com/);
+  assert.doesNotMatch(renderTracker(SAMPLE_VIEWS['closed-other']), /RAV4|Example Motors/);
+});
+
+test('a car title or color loses its dealer names and VINs, and anything left dangling', () => {
+  const secrets = ['Vandelay Imports', 'Zzyzx Motors', '5YJ3E1EA7KF317000'];
+  const cases = [
+    ['2024 Mazda CX-5 Select at Vandelay Imports 5YJ3E1EA7KF317000', '2024 Mazda CX-5 Select'],
+    ['2024 Mazda CX-5 Select @ vandelay imports', '2024 Mazda CX-5 Select'],
+    ['ZZYZX MOTORS - 2023 Honda CR-V EX-L', '2023 Honda CR-V EX-L'],
+    ['2023 Honda CR-V EX-L | 5yj3e1ea7kf317000', '2023 Honda CR-V EX-L'],
+    ['Soul Red', 'Soul Red'],
+    ['Vandelay Imports', '']
+  ];
+  for (const [text, shown] of cases) assert.equal(redactCarText(text, secrets), shown, text);
+  assert.equal(redactCarText(null, secrets), '');
+  assert.equal(redactCarText('2024 Toyota RAV4 XLE', []), '2024 Toyota RAV4 XLE');
+});
+
+test('the Deal Tracker answers GET only for now', async () => {
+  for (const method of ['POST', 'PUT', 'DELETE', 'HEAD']) {
+    const res = response();
+    await dealTrackerHandler({ environment: { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET }, getDatabase: () => { throw new Error('no database'); } })(
+      { method, url: '/api/deal-tracker?t=x', headers: { host: 'www.steermeright.com' } }, res);
+    assert.equal(res.statusCode, 405, method);
+    assert.equal(res.headers.allow, 'GET');
+    assert.match(res.headers['cache-control'], /no-store/);
+  }
 });

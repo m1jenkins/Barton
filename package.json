@@ -34,6 +34,7 @@
     "customer-emails:cancel": "node scripts/customer-emails.mjs cancel",
     "preview:worksheet": "node scripts/preview-worksheet.mjs",
     "preview:guides": "node scripts/preview-guides.mjs",
+    "deal-tracker:preview": "node scripts/preview-deal-tracker.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {

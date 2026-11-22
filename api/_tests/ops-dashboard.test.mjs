@@ -273,6 +273,30 @@ test('a deal in Confirming search shows once as a tile and once as waiting for a
   assert.equal(digest.subject, 'Deals this morning: 2 need you');
 });
 
+test('the deal page\'s shortlist shows each car\'s best price so far', async t => {
+  t.mock.method(console, 'error', () => {});
+  const pg = await PGlite.create();
+  t.after(() => pg.close());
+  for (const migration of migrations) await pg.exec(migration);
+  const sql = tagged(pg);
+  const { intake, log } = await seed(pg);
+  const pat = await intake('Pat Buyer', 'Austin, TX');
+  await log(pat.id, 'quote', { dealer: 'North Toyota', vin: '2T3P1RFV5SW000001', otd: 3230000, hoursAgo: 5 });
+  await log(pat.id, 'quote', { dealer: 'Lake Toyota', vin: '2T3P1RFV5SW000001', otd: 3190000, hoursAgo: 4 });
+  await log(pat.id, 'quote', { dealer: 'Lake Toyota', vin: '2T3P1RFV5SW000001', otd: 3290000, hoursAgo: 3 });
+  await log(pat.id, 'counter', { dealer: 'South Toyota', vin: '2T3P1RFV5SW000002', otd: 2900000, hoursAgo: 2 });
+
+  const handler = opsHandler({ environment, getDatabase: () => sql });
+  const detail = await call(handler, 'GET', { url: `/api/ops?deal=${pat.id}`, headers: { authorization: basic(password) } });
+  assert.equal(detail.statusCode, 200);
+  const shortlist = detail.body.split('<h2>Shortlist')[1].split('<h2>')[0];
+  assert.ok(shortlist.includes('<th class="num">Target</th><th class="num">Best so far</th>'));
+  const [quoted, unquoted] = shortlist.split('<tbody>')[1].split('</tr>');
+  assert.ok(quoted.includes('$32,300<br><span class="muted">North Toyota</span>'), 'Lake Toyota raised its price, so North Toyota is lowest');
+  assert.ok(!quoted.includes('$31,900') && !quoted.includes('Lake Toyota'));
+  assert.ok(unquoted.includes('2025 Toyota RAV4 LE') && /\$31,000<\/td>\s*<td class="num">—<\/td>/.test(unquoted) &&!unquoted.includes('$29,000'), 'a counter is not a price');
+});
+
 test('ops alerts email each new question and overdue agent once, plus one morning digest', async t => {
   t.mock.method(console, 'error', () => {});
   const pg = await PGlite.create();
