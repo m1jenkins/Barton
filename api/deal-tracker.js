@@ -1,12 +1,16 @@
 import { database } from './_lib/db.js';
+import { keepLooking, makePick } from './_lib/buyer-picks.js';
 import { askQuestion } from './_lib/buyer-questions.js';
-import { checkLink, dealTrackerSettings, loadBuyerView, renderLinkClosed, renderNotice, renderTracker, renderUnavailable, touchOpened } from './_lib/deal-tracker.js';
+import { checkLink, dealTrackerSettings, dollars, loadBuyerView, renderLinkClosed, renderNotice, renderPickConfirm, renderTracker, renderUnavailable, touchOpened } from './_lib/deal-tracker.js';
 import { header, readRawBody, requestUrl, withApiErrors } from './_lib/http.js';
 
 // A buyer's Deal Tracker at /deal/<token> (vercel.json rewrites it here as ?t=).
-// GET checks the link, renders the page and records the open. POST takes a
-// Buyer Question from the page's own form (action=question, body), after the
-// same link check. docs/deal-tracker-build-plan-2026-11-21.md, docs/adr/0001.
+// GET checks the link, renders the page and records the open. POST, after the
+// same link check, takes a Buyer Question from the page's own form
+// (action=question, body) or a Buyer Pick behind a confirm step: pick_review
+// (car=<rank>, price=<cents shown>) and keep_looking_review write nothing and
+// show the confirm page, whose button posts pick or keep_looking.
+// docs/deal-tracker-build-plan-2026-11-21.md, docs/adr/0001 and 0002.
 export const config = { maxDuration: 20 };
 // Every response, refused ones included: private, never cached, never framed,
 // no referrer, and no script at all.
@@ -44,8 +48,28 @@ const NOTICES = Object.freeze({
   too_long: [400, 'That question is too long', 'Please keep it under 4,000 characters, or send the long version by email.'],
   rate_limited: [429, 'I have your questions', `You've sent a few questions in a row. I have them. If something is urgent, email me at ${MASON}.`],
   closed: [409, 'This search is closed', 'Questions can’t be sent from this page any more. Email me instead and I’ll pick it up.'],
-  unknown: [400, 'That didn’t work', 'Go back to your car search and try again.']
+  unknown: [400, 'That didn’t work', 'Go back to your car search and try again.'],
+  // A Buyer Pick that didn't go through. Nothing is saved.
+  pick_closed: [409, 'This search is closed', 'Picks can’t be made from this page any more. Email me instead and I’ll sort it out.'],
+  not_open: [409, 'Picking isn’t open right now', 'I open the pick on your page when the prices are ready for your call. Until then, ask me a question there if you’d like to talk about a car.'],
+  already_picked: [409, 'You’ve already made your pick', 'Your page shows what you chose. If you chose by mistake, ask me a question there and I’ll sort it out.'],
+  no_car: [400, 'That car isn’t on your list', 'Go back to your car search and pick again.'],
+  no_price: [409, 'That car has no written price yet', 'You can pick a car once a dealer has given me a written out-the-door price for it. Go back to your car search to see the cars that have one.']
 });
+const PICKS = new Set(['pick_review', 'keep_looking_review', 'pick', 'keep_looking']);
+const whole = value => (/^\d{1,9}$/.test(String(value ?? '')) ? Number(value) : null);
+
+// The checks makePick and keepLooking make, against the view, for the confirm
+// step that writes nothing. Without a car it is "keep looking".
+function reviewError(view, { car = null, price = null } = {}, isPick = false) {
+  if (!view.pick.open) return { error: 'not_open' };
+  if (view.pick.standing) return { error: 'already_picked' };
+  if (!isPick) return null;
+  if (!car) return { error: 'no_car' };
+  if (car.best_cents == null) return { error: 'no_price' };
+  if (car.best_cents !== price) return { error: 'price_changed', current_cents: car.best_cents };
+  return null;
+}
 
 export function dealTrackerHandler({ environment = process.env, getDatabase = database, now = () => Date.now() } = {}) {
   return withApiErrors(async (req, res) => {
@@ -80,7 +104,30 @@ export function dealTrackerHandler({ environment = process.env, getDatabase = da
         if (error?.status === 413) return notice('too_long');
         throw error;
       }
-      if (form.get('action') !== 'question') return notice('unknown');
+      const action = form.get('action');
+      if (PICKS.has(action)) {
+        if (view.outcome === 'other') return notice('pick_closed');
+        const rank = whole(form.get('car'));
+        const price = whole(form.get('price'));
+        const car = view.cars.find(item => item.rank === rank) ?? null;
+        const refused = result => {
+          if (result.error !== 'price_changed') return notice(result.error);
+          return send(res, 409, renderNotice('The price on that car just changed',
+            `The best price so far on the ${car?.title ?? 'car you picked'} is now ${dollars(result.current_cents)}. Go back to your car search to see it, and pick again if it still suits you.`, self));
+        };
+        const isPick = action.startsWith('pick');
+        if (action.endsWith('_review')) {
+          const problem = reviewError(view, { car, price }, isPick);
+          if (problem) return refused(problem);
+          return send(res, 200, renderPickConfirm(isPick ? car : null, self));
+        }
+        const result = isPick
+          ? await makePick(sql, { onboardingId: link.onboardingId, rank, expectedCents: price, now: at })
+          : await keepLooking(sql, { onboardingId: link.onboardingId, now: at });
+        if (result.error) return refused(result);
+        return send(res, 303, '', { Location: `${self}#dt-pick` });
+      }
+      if (action !== 'question') return notice('unknown');
       // A search closed without a purchase has no question box. Bought still takes questions until the link expires.
       if (view.outcome === 'other') return notice('closed');
       const result = await askQuestion(sql, { onboardingId: link.onboardingId, body: form.get('body'), now: at });

@@ -1,8 +1,9 @@
 import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { buyerFromRow } from './customer-emails/index.js';
+import { openPickRound } from './buyer-picks.js';
 import { MAX_QUESTION_LENGTH } from './buyer-questions.js';
-import { agreedOffer, bestPrices, dealerNames } from './deal-view.js';
+import { agreedOffer, bestPrices, dealerNames, pickStatus } from './deal-view.js';
 import { summarizeDeal } from './ops-dashboard.js';
 
 // The Deal Tracker: a buyer's private page for their deal (GLOSSARY.md,
@@ -157,7 +158,8 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
       recap: summary.stage === 'confirming' ? buyer.recap.map(([label, value]) => ({ label, value })) : []
     },
     cars: [],
-    agreed: null
+    agreed: null,
+    pick: { open: false, standing: null }
   };
   if (outcome === 'other') return view;
 
@@ -186,6 +188,27 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
   const offer = summary.stage === 'agreed' || outcome === 'bought' ? agreedOffer(listings, events) : null;
   const secrets = [...dealerNames(listings, events), ...listings.map(item => item.vin), ...events.map(event => event.vin)];
   const best = bestPrices(listings, events);
+  // The Buyer Pick, in Quotes in only. A pick whose dealer was dropped counts as
+  // cleared here, before the job writes it, since a GET never writes. Its VIN and
+  // dealer stay in this function: the buyer's view names the car by rank.
+  if (summary.stage === 'quoted') {
+    const round = await openPickRound(sql, onboardingId);
+    const judged = round.pick ? pickStatus(round.pick, listings, events) : null;
+    const standing = judged && judged.status !== 'dealer_dropped' ? round.pick : null;
+    const picked = standing?.kind === 'pick' ? listings.find(item => vinKey(item.vin) === vinKey(standing.vin)) : null;
+    view.pick = {
+      open: round.update_id != null,
+      standing: standing && {
+        kind: standing.kind,
+        rank: picked ? Number(picked.rank) : null,
+        otd_cents: cents(standing.otd_cents),
+        at: new Date(standing.created_at).toISOString(),
+        flag: judged.status === 'price_moved' ? 'price_moved' : null,
+        current_cents: standing.kind === 'pick' ? cents(judged.current_cents) : null
+      }
+    };
+  }
+  const canPick = view.pick.open && !view.pick.standing;
   const cars = listings.map(item => {
     const rank = Number(item.rank);
     const vin = vinKey(item.vin);
@@ -199,7 +222,8 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
       estimate_cents: cents(item.est_otd_cents),
       best_cents: vin ? cents(best.get(vin)?.otd_cents) : null,
       agreed: isAgreed,
-      listing_url: isAgreed ? webUrl(item.listing_url) : null
+      listing_url: isAgreed ? webUrl(item.listing_url) : null,
+      can_pick: canPick && Boolean(vin) && best.has(vin)
     };
   });
   if (offer) {
@@ -342,8 +366,15 @@ function holdOff() {
   ])}</div>`);
 }
 
+// The pick button on a priced car while the round is open. It only asks for
+// the confirm step; the price shown travels with it so a change in between shows.
+const pickButton = (car, action) => safe`<form class="dt-pick-form" method="post"${action ? safe` action="${action}"` : NOTHING}>
+      <input type="hidden" name="action" value="pick_review"><input type="hidden" name="car" value="${car.rank}"><input type="hidden" name="price" value="${car.best_cents}">
+      <button class="dt-button" type="submit">Pick this car at ${money(car.best_cents)}</button>
+    </form>`;
+
 // One car: its title, color and mileage, the asking price, and one main figure.
-function carCard(car, view) {
+function carCard(car, view, action = null) {
   const agreedHere = car.agreed && view.agreed;
   const main = agreedHere && view.agreed.otd_cents != null ? ['Agreed out-the-door price', view.agreed.otd_cents]
     : car.best_cents != null ? ['Best price so far', car.best_cents]
@@ -360,18 +391,21 @@ function carCard(car, view) {
     </dl>
     ${waiting ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
     ${agreedHere && car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
+    ${car.can_pick ? pickButton(car, action) : NOTHING}
   </article>`;
 }
 
-const carGrid = (cars, view) => safe`<div class="dt-cars">${join(cars, car => carCard(car, view))}</div>`;
+const carGrid = (cars, view, action = null) => safe`<div class="dt-cars">${join(cars, car => carCard(car, view, action))}</div>`;
 
-function carsSection(view) {
+function carsSection(view, action = null) {
   if (!view.cars.length) return NOTHING;
   const quoted = view.cars.some(car => car.best_cents != null);
-  const lead = quoted
-    ? 'Best price so far is the lowest written out-the-door price a dealer has given me on that car. It can still change while I negotiate. Cars without one yet show my estimated total.'
-    : 'My estimated total is what I expect the out-the-door price to be, with fees, tax and registration. A dealer’s written price replaces it once one comes in.';
-  return section('dt-cars', 'Your cars', safe`${carGrid(view.cars, view)}
+  const lead = view.cars.some(car => car.can_pick)
+    ? 'These prices are ready for your call. Pick the car you want at its best price so far, or ask me to keep looking. The price isn’t agreed until I confirm it with the dealer.'
+    : quoted
+      ? 'Best price so far is the lowest written out-the-door price a dealer has given me on that car. It can still change while I negotiate. Cars without one yet show my estimated total.'
+      : 'My estimated total is what I expect the out-the-door price to be, with fees, tax and registration. A dealer’s written price replaces it once one comes in.';
+  return section('dt-cars', 'Your cars', safe`${carGrid(view.cars, view, action)}
     <p class="dt-aside">I keep dealer names off this page until a price is agreed, so the negotiation stays with me.</p>`, lead);
 }
 
@@ -468,28 +502,90 @@ export function questionSection(view, action = null) {
   </form>`, 'I answer every question here within one business day.');
 }
 
-// Later parts of the build fill these in (plan, "Build order" 5 and 6). They render nothing yet.
-const pickSection = () => NOTHING;
+const MISTAKE = 'If you chose by mistake, ask me a question below and I’ll sort it out.';
+const carTitle = (view, rank) => view.cars.find(car => car.rank === rank)?.title ?? null;
+
+// The Buyer Pick, in Quotes in only (plan, "What the buyer sees": Quotes in).
+// Open with nothing standing: below the cars, the way to ask us to keep looking
+// (each priced car carries its own pick button). Once something stands: what the
+// buyer chose and when, and that the price isn't agreed yet.
+export function pickSection(view, action = null) {
+  const pick = view.pick;
+  if (view.outcome || view.stage !== 'quoted' || !pick) return NOTHING;
+  const standing = pick.standing;
+  if (!standing) {
+    if (!pick.open) return NOTHING;
+    return section('dt-pick', 'None of these right?', safe`<form class="dt-pick-form" method="post"${action ? safe` action="${action}"` : NOTHING}>
+    <input type="hidden" name="action" value="keep_looking_review">
+    <button class="dt-button dt-button--outline" type="submit">None of these, keep looking</button>
+  </form>`, 'Ask me to keep looking and I’ll go back to the search for more cars and more written prices.');
+  }
+  const title = carTitle(view, standing.rank);
+  const chose = standing.kind === 'keep_looking'
+    ? safe`<p>You asked me to keep looking. I’ll keep searching and post an update here when I have more cars for you.</p>`
+    : safe`<p>You picked ${title ? safe`the ${title}` : 'a car'} at ${money(standing.otd_cents)} out the door. The price isn’t agreed until I confirm it with the dealer.</p>
+    ${standing.flag === 'price_moved' ? safe`<p>The price on this car has changed since you picked it. ${standing.current_cents != null
+      ? `Its best price so far is now ${money(standing.current_cents)}.` : 'It has no written price right now.'} I’ll be in touch about it.</p>` : NOTHING}`;
+  return section('dt-pick', 'Your pick', safe`<div class="dt-card dt-pick">
+    ${stamp(standing.kind === 'keep_looking' ? 'You asked' : 'You picked', standing.at)}
+    ${chose}
+    <p class="dt-pick__mistake">${MISTAKE}</p>
+  </div>`);
+}
+
+// Later parts of the build fill this in (plan, "Build order" 6). It renders nothing yet.
 const documentsSection = () => NOTHING;
 
-function stageBody(view) {
+function stageBody(view, action = null) {
   if (view.outcome === 'other') return closedSection();
   if (view.outcome === 'bought') return boughtSection(view);
   if (view.stage === 'confirming') return safe`${searchDetails(view)}${howItWorks()}${yourSide(view)}${holdOff()}`;
   if (view.stage === 'agreed' && view.agreed) return agreedSection(view);
-  return safe`${carsSection(view)}${pickSection(view)}`;
+  return safe`${carsSection(view, action)}${pickSection(view, action)}`;
 }
 
 // action: the page's own path (/deal/<token>), which the question box posts to.
 export function renderTracker(view, { action = null } = {}) {
   const body = safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 ${intro(view)}
-${stageBody(view)}
+${stageBody(view, action)}
 ${timelineSection(view)}
 ${questionSection(view, action)}
 ${documentsSection(view)}
 </main>`;
   return page('Your car search · Steer Me Right', String(body));
+}
+
+export const dollars = money;
+
+// The confirm step before a pick or "keep looking" is written (plan, "The page").
+// car is the view's car being picked, or null for "keep looking". The buttons
+// post to the page's own path; "Go back" returns to the cars.
+export function renderPickConfirm(car, action = null) {
+  const back = `${action ?? ''}#dt-cars`;
+  const target = action ? safe` action="${action}"` : NOTHING;
+  const intro = car
+    ? safe`<h1>Check your pick</h1>
+  <p>You’re picking the ${car.title} at ${money(car.best_cents)} out the door.</p>`
+    : safe`<h1>Keep looking?</h1>
+  <p>You’re asking us to keep looking.</p>`;
+  const next = car
+    ? ['I’ll confirm the price with the dealer in writing. It isn’t agreed until I do, and I’ll post an update on your page when it is.',
+      'Please don’t contact the dealer or put down a deposit yet.']
+    : ['I’ll go back to the search for more cars and more written prices, and post an update on your page when I have them.'];
+  return page(`${car ? 'Check your pick' : 'Keep looking'} · Steer Me Right`, String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
+<div class="page-intro dt-intro">
+  ${intro}
+</div>
+${section('dt-next', 'What happens next', safe`<div class="dt-card">${checklist([...next,
+    'Once you confirm, you can’t change it from your page. If you change your mind, ask me a question there.'])}</div>
+  <form class="dt-pick-form dt-confirm" method="post"${target}>
+    ${car ? safe`<input type="hidden" name="action" value="pick"><input type="hidden" name="car" value="${car.rank}"><input type="hidden" name="price" value="${car.best_cents}">`
+    : safe`<input type="hidden" name="action" value="keep_looking">`}
+    <button class="dt-button" type="submit">${car ? 'Yes, that’s my pick' : 'Yes, keep looking'}</button>
+    <a class="dt-confirm__back" href="${back}">Go back</a>
+  </form>`)}
+</main>`));
 }
 
 // A short answer to a question box POST that didn't go through, with the way back.

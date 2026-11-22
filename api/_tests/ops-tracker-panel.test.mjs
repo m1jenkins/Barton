@@ -405,3 +405,95 @@ test('switched off, loadDashboard runs today\'s queries and works on a database 
   await opsHandler({ environment: off, getDatabase: () => tagged(pg) })(request('GET', { headers: { authorization: basic } }), res);
   assert.equal(res.statusCode, 200);
 });
+
+// ---------- Buyer Picks (build step 5) ----------
+
+const VINS = ['2T3P1RFV5SW000001', '2T3P1RFV5SW000002'];
+// Quotes in on both cars and a "ready for your call" update, then a pick as the buyer's page writes it.
+async function picked(pg, id, { kind = 'pick' } = {}) {
+  await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents, occurred_at)
+    VALUES ($1, 'quote', 'deal-desk', 'Zzyzx Motors', $2, 3640000, now() - interval '1 day'),
+           ($1, 'quote', 'deal-desk', 'Quorra Auto Haus', $3, 3690000, now() - interval '1 day')`, [id, ...VINS]);
+  const { rows: [update] } = await pg.query(`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor) VALUES ($1, 'Ready', 'posted', true, 'mason') RETURNING id`, [id]);
+  const values = kind === 'pick' ? [VINS[0], 'Zzyzx Motors', 3640000] : [null, null, null];
+  const { rows: [row] } = await pg.query(`INSERT INTO buyer_picks (onboarding_id, kind, opened_by_update_id, vin, dealer_name, otd_cents, created_at)
+    VALUES ($1, $2, $3, $4, $5, $6, now() - interval '12 hours') RETURNING id`, [id, kind, update.id, ...values]);
+  return Number(row.id);
+}
+const pickRows = async (pg, id) => (await pg.query('SELECT id, cleared_at, cleared_by FROM buyer_picks WHERE onboarding_id = $1 ORDER BY id', [id])).rows;
+const panelOf = html => html.split('<h2>Buyer Pick')[1].split('<h2>Buyer Questions')[0];
+
+test('the panel shows the standing pick as picked, warns when the price moved or the dealer was dropped, and lists past picks', async t => {
+  const pg = await database(t);
+  const id = await intake(pg);
+  const { page } = ops(pg);
+  const pick = await picked(pg, id);
+  let html = (await page(id)).body;
+  assert.ok(html.includes("Ready for your call opens the buyer's pick"));
+  let panel = panelOf(html);
+  assert.ok(html.includes('<h2>Buyer Pick (1)</h2>'));
+  assert.ok(panel.includes('2025 Toyota RAV4 XLE') && panel.includes(`VIN ${VINS[0]}`) && panel.includes('$36,400 from Zzyzx Motors'));
+  assert.ok(panel.includes('value="clear_pick"') && panel.includes(`name="pick" value="${pick}"`) && !panel.includes('warn-line'));
+
+  await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents) VALUES ($1, 'quote', 'deal-desk', 'Zzyzx Motors', $2, 3700000)`, [id, VINS[0]]);
+  panel = panelOf((await page(id)).body);
+  assert.ok(panel.includes('The price has moved since the pick: best so far is now $37,000') && panel.includes('$36,400 from Zzyzx Motors'));
+
+  await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name) VALUES ($1, 'dropped', 'mason', 'Zzyzx Motors')`, [id]);
+  panel = panelOf((await page(id)).body);
+  assert.ok(panel.includes('Zzyzx Motors was dropped since the pick, so the buyer can pick again.'));
+
+  await pg.query(`UPDATE buyer_picks SET cleared_at = now(), cleared_by = 'dealer_dropped' WHERE id = $1`, [pick]);
+  html = (await page(id)).body;
+  panel = panelOf(html);
+  assert.ok(html.includes('<h2>Buyer Pick (0)</h2>') && panel.includes('No pick standing'));
+  assert.ok(panel.includes('<li class="muted">') && panel.includes('cleared when the dealer was dropped') && !panel.includes('value="clear_pick"'));
+});
+
+test('Clear acts once, only on that deal\'s pick, and the buyer can pick again', async t => {
+  const pg = await database(t);
+  const id = await intake(pg);
+  const other = await intake(pg);
+  const { post, page } = ops(pg);
+  const pick = await picked(pg, id);
+  const foreign = await picked(pg, other, { kind: 'keep_looking' });
+  for (const value of [String(foreign), 'abc', '']) assert.equal((await post({ tracker: 'clear_pick', deal: id, pick: value })).statusCode, 400, value);
+  assert.equal((await pickRows(pg, other))[0].cleared_at, null, 'another deal\'s pick is untouched');
+
+  assert.equal((await post({ tracker: 'clear_pick', deal: id, pick: String(pick) })).statusCode, 303);
+  const [first] = await pickRows(pg, id);
+  assert.equal(first.cleared_by, 'mason');
+  assert.equal((await post({ tracker: 'clear_pick', deal: id, pick: String(pick) })).statusCode, 303, 'a repeat is harmless');
+  assert.deepEqual(await pickRows(pg, id), [first], 'and changes nothing');
+  assert.ok(panelOf((await page(id)).body).includes('cleared by you'));
+  assert.ok((await buyerPage(pg, signLink(SECRET, id, 1))).body.includes('Pick this car at $36,400'), 'the round is open again');
+
+  const switchedOff = await ops(pg, off).post({ tracker: 'clear_pick', deal: other, pick: String(foreign) });
+  assert.equal(switchedOff.statusCode, 404);
+  assert.equal((await pickRows(pg, other))[0].cleared_at, null);
+});
+
+test('the main dashboard tags a deal with a standing pick and lists it under Needs you; switched off, neither', async t => {
+  const pg = await database(t);
+  const pickedDeal = await intake(pg);
+  const looking = await intake(pg);
+  const dropped = await intake(pg);
+  const quiet = await intake(pg);
+  await picked(pg, pickedDeal);
+  await picked(pg, looking, { kind: 'keep_looking' });
+  await picked(pg, dropped);
+  await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name) VALUES ($1, 'dropped', 'mason', 'Zzyzx Motors')`, [dropped]);
+
+  const body = (await ops(pg).home()).body;
+  const tile = deal => body.split('<h2>Open deals')[1].split('<h2>')[0].split('<a class="tile').find(part => part.includes(`deal=${deal}`));
+  assert.ok(tile(pickedDeal).includes('<span class="tag">Pick made</span>'));
+  assert.ok(tile(looking).includes('<span class="tag">Wants more options</span>'));
+  assert.ok(!tile(dropped).includes('Pick made') && !tile(quiet).includes('Pick made'), 'a pick whose dealer was dropped no longer stands');
+  const needs = body.split('<h2>Needs you')[1].split('<h2>')[0];
+  assert.ok(body.includes('<h2>Needs you (2)</h2>'));
+  assert.ok(needs.includes(`/api/ops?deal=${pickedDeal}`) && needs.includes('Picked the 2025 Toyota RAV4 XLE at $36,400 from Zzyzx Motors'));
+  assert.ok(needs.includes(`/api/ops?deal=${looking}`) && needs.includes('Asked us to keep looking'));
+
+  const switchedOff = (await ops(pg, off).home()).body;
+  assert.ok(!switchedOff.includes('Pick made') && !switchedOff.includes('Wants more options') && switchedOff.includes('<h2>Needs you (0)</h2>'));
+});

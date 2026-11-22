@@ -1,3 +1,4 @@
+import { clearDroppedPicks } from './buyer-picks.js';
 import { ConfigError, integerEnv } from './config.js';
 import { dealTrackerEnabled } from './deal-tracker.js';
 import { escapeHtml, intakeEmailSettings, smtpTransport } from './intake-email.js';
@@ -39,6 +40,9 @@ function central(now) {
 // tracker: whether the Deal Tracker is on. Off, this runs exactly the queries it
 // always has and never names a buyer_* table.
 export async function queueAlerts(sql, settings, now = Date.now(), { tracker = false } = {}) {
+  // A pick whose dealer was dropped is cleared first, within one 10-minute run,
+  // so no "picked a car" email goes out for it.
+  if (tracker) await clearDroppedPicks(sql);
   // Only fresh items: an old open question is in the digest, not a new email.
   await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, event_id)
     SELECT 'need:' || e.id, 'needs_mason', e.id FROM deal_events e

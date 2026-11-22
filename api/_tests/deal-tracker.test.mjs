@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 import { allowedOrigins } from '../_lib/config.js';
-import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderTracker, replyToken, signLink } from '../_lib/deal-tracker.js';
+import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderPickConfirm, renderTracker, replyToken, signLink } from '../_lib/deal-tracker.js';
 import { dealTrackerHandler } from '../deal-tracker.js';
 import { onboardingHandler } from '../onboarding.js';
-import { SAMPLE_VIEWS, createDealTrackerPreview } from '../../scripts/preview-deal-tracker.mjs';
+import { SAMPLE_CONFIRMS, SAMPLE_VIEWS, createDealTrackerPreview } from '../../scripts/preview-deal-tracker.mjs';
 
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
@@ -208,4 +208,41 @@ test('the preview takes the question box POST and goes back to the timeline, sav
   assert.equal((await fetch(`${base}/deal/nowhere`, { method: 'POST', body: 'x' })).status, 404);
   const page = await (await fetch(`${base}/deal/quotes-in`)).text();
   assert.ok(page.includes('action="/deal/quotes-in"'));
+});
+
+test('the Buyer Pick previews: buttons only when ready for your call, then what the buyer chose, and the two confirm pages', () => {
+  const html = name => renderTracker(SAMPLE_VIEWS[name], { action: `/deal/${name}` });
+  const ready = html('quotes-in-ready');
+  assert.equal(ready.split('Pick this car at').length - 1, 2, 'one per priced car');
+  assert.ok(ready.includes('Pick this car at $36,400') && ready.includes('None of these, keep looking') && ready.includes('action="/deal/quotes-in-ready"'));
+  for (const name of ['quotes-in', 'quotes-in-picked', 'quotes-in-price-moved', 'quotes-in-keep-looking', 'shortlisted', 'price-agreed']) {
+    assert.ok(!html(name).includes('Pick this car') && !html(name).includes('None of these, keep looking'), name);
+  }
+  assert.ok(html('quotes-in-picked').includes('You picked the 2024 Toyota RAV4 XLE at $36,400 out the door.'));
+  assert.ok(html('quotes-in-price-moved').includes('The price on this car has changed since you picked it. Its best price so far is now $36,900.'));
+  assert.ok(html('quotes-in-keep-looking').includes('You asked me to keep looking.'));
+  for (const [name, car] of Object.entries(SAMPLE_CONFIRMS)) {
+    const page = renderPickConfirm(car, '/deal/quotes-in-ready');
+    for (const junk of ['undefined', 'null', 'NaN', '[object']) assert.ok(!page.includes(junk), `${name} contains ${junk}`);
+    assert.doesNotMatch(page, /<script|\bbriefs?\b/i, name);
+    assert.ok(page.includes('href="/deal/quotes-in-ready#dt-cars">Go back</a>'), name);
+  }
+  assert.ok(renderPickConfirm(SAMPLE_CONFIRMS['confirm-pick']).includes('You’re picking the 2024 Toyota RAV4 XLE at $36,400 out the door.'));
+  assert.ok(renderPickConfirm(null).includes('You’re asking us to keep looking.'));
+});
+
+test('the preview walks the pick: the button shows the confirm page, and confirming goes to the picked sample', async t => {
+  const server = createDealTrackerPreview();
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => server.close());
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const post = body => fetch(`${base}/deal/quotes-in-ready`, { method: 'POST', body, redirect: 'manual', headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+  const review = await post('action=pick_review&car=2&price=3690000');
+  assert.equal(review.status, 200);
+  assert.ok((await review.text()).includes('2023 Honda CR-V EX-L at $36,900'));
+  assert.ok((await (await post('action=keep_looking_review')).text()).includes('keep looking'));
+  assert.equal((await post('action=pick&car=2&price=3690000')).headers.get('location'), '/deal/quotes-in-picked#dt-pick');
+  assert.equal((await post('action=keep_looking')).headers.get('location'), '/deal/quotes-in-keep-looking#dt-pick');
+  assert.ok((await (await fetch(`${base}/deal/confirm-pick`)).text()).includes('Yes, that’s my pick'));
+  assert.ok((await (await fetch(`${base}/deal/confirm-keep-looking`)).text()).includes('Yes, keep looking'));
 });

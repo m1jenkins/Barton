@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { agreedOffer, bestPrices, dealerNames, droppedAfter } from '../_lib/deal-view.js';
+import { agreedOffer, bestPrices, dealerNames, droppedAfter, pickStatus } from '../_lib/deal-view.js';
 
 const A = '2T3P1RFV5SW00000A';
 const B = '2T3P1RFV5SW00000B';
@@ -98,4 +98,24 @@ test('dealer names come from the shortlist and the log, once each', () => {
   const events = [event('first_email_sent', 1, { dealer_name: ' Lake Toyota ' }), quote(2, 'north toyota', A, 3200000), event('note', 3, { note: 'No dealer' })];
   assert.deepEqual(dealerNames(listings, events), ['North Toyota', 'South Toyota', 'Lake Toyota']);
   assert.deepEqual(dealerNames([], []), []);
+});
+
+test('a Buyer Pick stands, is flagged when the price moves, and counts as dropped when its dealer was dropped after it', () => {
+  const quotes = [quote(1, 'North Toyota', A, 3300000), quote(2, 'Lake Toyota', A, 3350000)];
+  const pick = { kind: 'pick', vin: A.toLowerCase(), dealer_name: ' north toyota ', otd_cents: 3300000, created_at: at(3) };
+  assert.deepEqual(pickStatus(pick, listings, quotes), { status: 'standing', current_cents: 3300000 });
+  assert.deepEqual(pickStatus(pick, listings, [...quotes, quote(4, 'North Toyota', A, 3400000)]), { status: 'price_moved', current_cents: 3350000 },
+    'the picked dealer raised: the other dealer is now lowest');
+  assert.deepEqual(pickStatus(pick, listings, [...quotes, quote(4, 'Hill Toyota', A, 3200000)]), { status: 'price_moved', current_cents: 3200000 },
+    'another dealer undercut');
+  assert.deepEqual(pickStatus(pick, listings, [quote(1, 'North Toyota', A, 3300000), quote(4, 'North Toyota', A, 3400000)]), { status: 'price_moved', current_cents: 3400000 });
+  assert.deepEqual(pickStatus(pick, listings, [...quotes, event('dropped', 4, { dealer_name: 'Lake Toyota' })]), { status: 'standing', current_cents: 3300000 },
+    'another dealer dropped changes nothing');
+  assert.deepEqual(pickStatus(pick, listings, [...quotes, event('dropped', 4, { dealer_name: 'NORTH TOYOTA' })]), { status: 'dealer_dropped', current_cents: 3350000 });
+  assert.equal(pickStatus(pick, listings, [...quotes, event('dropped', 4, { dealer_name: 'North Toyota' }), quote(5, 'North Toyota', A, 3300000)]).status, 'dealer_dropped',
+    'back in the deal after the pick, still dropped for this pick');
+  assert.equal(pickStatus(pick, listings, [event('dropped', 0, { dealer_name: 'North Toyota' }), ...quotes]).status, 'standing',
+    'a drop before the pick, with a quote after it, does not count');
+  assert.equal(pickStatus(pick, listings, [quote(1, 'Lake Toyota', A, 3350000)]).status, 'price_moved', 'the picked dealer\'s price is gone');
+  assert.deepEqual(pickStatus({ kind: 'keep_looking', created_at: at(3) }, listings, [event('dropped', 4, { dealer_name: 'North Toyota' })]), { status: 'standing', current_cents: null });
 });

@@ -7,9 +7,10 @@ import { editDeal, isAuthorized, loadDashboard, loadDeal, opsPassword, renderDas
 // sign in with any user name and OPS_PASSWORD. GET renders the page from Neon;
 // POST with resolve=<event id> answers a needs_mason item (answer or reply) or marks it done;
 // POST with edit=<close|reopen|agreed|drop|note> and deal=<intake ID> updates a deal.
-// With the Deal Tracker on, POST with tracker=<post|approve|discard|retract|revoke|restore|reissue|release|discard_mail>,
+// With the Deal Tracker on, POST with tracker=<post|approve|discard|retract|revoke|restore|reissue|release|discard_mail|clear_pick>,
 // deal=<intake ID> and, per update, update=<id> works its panel on the deal page. post takes an
-// optional question=<id> to answer a Buyer Question; release and discard_mail take question=<id>.
+// optional question=<id> to answer a Buyer Question; release and discard_mail take question=<id>;
+// clear_pick takes pick=<id>.
 export const config = { maxDuration: 20 };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const SECURITY_HEADERS = Object.freeze({

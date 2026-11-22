@@ -236,7 +236,8 @@ test('another site cannot post with the link; this page can, whatever Origin its
 test('an unknown action is refused; a search closed without a purchase has no box and takes no question; bought still does', async t => {
   const pg = await database(t);
   const id = await intake(pg, { stage: 'quoted' });
-  const unknown = await ask(pg, tokenFor(id), 'Pick this', { action: 'pick' });
+  // 'pick' is a real action since build step 5 (buyer-picks.test.mjs), so this uses one that isn't.
+  const unknown = await ask(pg, tokenFor(id), 'Wipe this', { action: 'wipe' });
   assert.equal(unknown.statusCode, 400);
 
   await event(pg, id, 'closed', { note: 'Buyer walked away', daysAgo: 1 });

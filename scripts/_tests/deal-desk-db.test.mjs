@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, listPicks, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
@@ -197,4 +197,29 @@ test('showDeal lists the deal\'s Buyer Updates, or null before db/013', async t 
   assert.equal(old.intake_id, before.withDeal);
   assert.equal(old.listings.length, 1);
   assert.deepEqual(old.events, []);
+});
+
+test('picks lists standing Buyer Picks newest first with the car\'s title, never cleared ones, and writes nothing', async t => {
+  const { pg, sql, withDeal } = await database(t);
+  const { rows: [update] } = await pg.query(`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor) VALUES ($1, 'Ready', 'posted', true, 'mason') RETURNING id`, [withDeal]);
+  const { rows: [later] } = await pg.query(`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor) VALUES ($1, 'Ready again', 'posted', true, 'mason') RETURNING id`, [withDeal]);
+  const insert = async (kind, opening, minutesAgo, values = [null, null, null]) =>
+    Number((await pg.query(`INSERT INTO buyer_picks (onboarding_id, kind, opened_by_update_id, vin, dealer_name, otd_cents, created_at)
+      VALUES ($1, $2, $3, $4, $5, $6, now() - $7 * interval '1 minute') RETURNING id`, [withDeal, kind, opening, ...values, minutesAgo])).rows[0].id);
+  const cleared = await insert('pick', update.id, 30, ['2T3P1RFV5SW000001', 'North Toyota', 3300000]);
+  await pg.query(`UPDATE buyer_picks SET cleared_at = now(), cleared_by = 'mason' WHERE id = $1`, [cleared]);
+  const pick = await insert('pick', update.id, 20, ['2T3P1RFV5SW000001', 'North Toyota', 3350000]);
+  const keep = await insert('keep_looking', later.id, 10);
+  const before = JSON.stringify((await pg.query('SELECT * FROM buyer_picks ORDER BY id')).rows);
+
+  const rows = await listPicks(sql, withDeal.toUpperCase());
+  assert.deepEqual(rows.map(row => Number(row.id)), [keep, pick]);
+  assert.deepEqual(Object.keys(rows[0]).sort(), ['created_at', 'dealer_name', 'id', 'intake_id', 'kind', 'otd_cents', 'title', 'vin']);
+  assert.deepEqual([rows[1].kind, rows[1].vin, rows[1].dealer_name, rows[1].otd_cents, rows[1].title, rows[1].intake_id],
+    ['pick', '2T3P1RFV5SW000001', 'North Toyota', 3350000, '2025 Toyota RAV4 XLE', withDeal]);
+  assert.deepEqual([rows[0].kind, rows[0].vin, rows[0].title], ['keep_looking', null, null]);
+  assert.equal((await listPicks(sql)).length, 2);
+  assert.deepEqual(await listPicks(sql, crypto.randomUUID()), []);
+  await assert.rejects(listPicks(sql, withDeal.slice(0, 8)), /full intake ID/);
+  assert.equal(JSON.stringify((await pg.query('SELECT * FROM buyer_picks ORDER BY id')).rows), before, 'read-only');
 });

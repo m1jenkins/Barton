@@ -83,3 +83,20 @@ export function dealerNames(listings, events) {
   }
   return [...names.values()];
 }
+
+// A Buyer Pick against the log as it stands now (GLOSSARY.md, plan "Decisions":
+// Buyer Pick). Shared by the buyer's page, the ops dashboard and the alerts job
+// so all three agree. 'dealer_dropped': the picked dealer is out of the deal, or
+// was dropped at any point after the pick, even if they have since come back.
+// 'price_moved': the dealer is still in, but the car's Best price so far is no
+// longer the price picked (or it has none). "Keep looking" always stands.
+export function pickStatus(pick, listings, events) {
+  if (pick.kind !== 'pick') return { status: 'standing', current_cents: null };
+  const key = dealerKey(pick.dealer_name);
+  const picked = time(pick.created_at);
+  const { isDropped } = replay(events);
+  const current = bestPrices(listings, events).get(vinKey(pick.vin))?.otd_cents ?? null;
+  const droppedSince = events.some(event => event.kind === 'dropped' && dealerKey(event.dealer_name) === key && time(event.occurred_at) > picked);
+  if (isDropped(key) || droppedSince) return { status: 'dealer_dropped', current_cents: current };
+  return { status: current === Number(pick.otd_cents) ? 'standing' : 'price_moved', current_cents: current };
+}

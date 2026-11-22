@@ -2,13 +2,15 @@
 // Local preview of the Deal Tracker page in every state, for Mason to approve the
 // copy before launch. Each page is renderTracker() on a hand-written view, the same
 // shape loadBuyerView() returns. Synthetic buyer and dealers; no database, no secrets.
-// The question box works: a POST saves nothing and just comes back to the page.
+// The question box and the Buyer Pick work: a POST saves nothing. A question comes
+// back to the page; a pick or "keep looking" shows the confirm page, and confirming
+// it goes to the matching sample.
 // npm run deal-tracker:preview, then open http://127.0.0.1:4180
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { renderLinkClosed, renderTracker } from '../api/_lib/deal-tracker.js';
+import { renderLinkClosed, renderPickConfirm, renderTracker } from '../api/_lib/deal-tracker.js';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const buyer = {
@@ -52,20 +54,34 @@ const feesAnswer = update(6, '2026-12-04T22:10:00Z', 'Yes. Every written price I
 const askedPickup = question(12, '2026-12-11T19:05:00Z', 'Can I pick it up Saturday morning, or does it have to be a weekday?', true);
 const pickupAnswer = update(7, '2026-12-11T21:00:00Z', 'Saturday works. The dealer is open from 9, and I’ve told them you’re coming then.', { answers_question_id: 12 });
 const askedTrade = question(13, '2026-12-05T02:45:00Z', 'Should I get my trade-in appraised somewhere first?');
+// The Buyer Pick in Quotes in: open after a "ready for your call" update, then as picked.
+const noPick = { open: false, standing: null };
+const pickable = quoted.map(item => ({ ...item, can_pick: item.best_cents != null }));
+const picked = (extra = {}) => ({ open: true, standing: { kind: 'pick', rank: 1, otd_cents: 3640000, at: '2026-12-10T22:40:00Z', flag: null, current_cents: 3640000, ...extra } });
 const agreedNote = update(5, '2026-12-11T17:30:00Z', 'Done: $36,100 out the door on the RAV4. The dealer has the paperwork ready from Saturday. Bring your license and proof of insurance.');
 
 export const SAMPLE_VIEWS = Object.freeze({
   'confirming-search': { stage: 'confirming', outcome: null, buyer: { ...buyer, recap }, cars: [], agreed: null, timeline: [confirmed] },
   shortlisted: { stage: 'shortlisted', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed] },
   'emailing-dealers': { stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed, emailed, askedFees, feesAnswer, askedTrade] },
-  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, timeline: [emailed, askedFees, feesAnswer, pricesIn, readyForCall] },
+  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, pick: noPick, timeline: [emailed, askedFees, feesAnswer, pricesIn] },
+  'quotes-in-ready': { stage: 'quoted', outcome: null, buyer, cars: pickable, agreed: null, pick: { open: true, standing: null }, timeline: [emailed, pricesIn, readyForCall] },
+  'quotes-in-picked': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, pick: picked(), timeline: [emailed, pricesIn, readyForCall] },
+  'quotes-in-price-moved': { stage: 'quoted', outcome: null, buyer, cars: [{ ...quoted[0], best_cents: 3690000 }, quoted[1], quoted[2]], agreed: null,
+    pick: picked({ flag: 'price_moved', current_cents: 3690000 }), timeline: [emailed, pricesIn, readyForCall] },
+  'quotes-in-keep-looking': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null,
+    pick: { open: true, standing: { kind: 'keep_looking', rank: null, otd_cents: null, at: '2026-12-10T22:40:00Z', flag: null, current_cents: null } }, timeline: [emailed, pricesIn, readyForCall] },
   'price-agreed': { stage: 'agreed', outcome: null, buyer, cars: agreedCars, agreed, timeline: [readyForCall, agreedNote, askedPickup, pickupAnswer] },
   'price-agreed-no-car': { stage: 'agreed', outcome: null, buyer, cars: quoted, agreed: { rank: null, dealer_name: 'Example Motors of Springfield', otd_cents: 3610000 }, timeline: [agreedNote] },
   'closed-bought': { stage: 'closed', outcome: 'bought', buyer, cars: [agreedCars[0]], agreed, timeline: [agreedNote] },
   'closed-other': { stage: 'closed', outcome: 'other', buyer, cars: [], agreed: null }
 });
+// The two confirm pages, each the page a pick button or "keep looking" posts to.
+export const SAMPLE_CONFIRMS = Object.freeze({ 'confirm-pick': pickable[0], 'confirm-keep-looking': null });
 const LABELS = {
   'confirming-search': 'Confirming search', shortlisted: 'Shortlisted', 'emailing-dealers': 'Emailing dealers', 'quotes-in': 'Quotes in',
+  'quotes-in-ready': 'Quotes in, ready for your call', 'quotes-in-picked': 'Quotes in, picked', 'quotes-in-price-moved': 'Quotes in, picked and the price moved',
+  'quotes-in-keep-looking': 'Quotes in, asked to keep looking', 'confirm-pick': 'Confirm page: a pick', 'confirm-keep-looking': 'Confirm page: keep looking',
   'price-agreed': 'Price agreed', 'price-agreed-no-car': 'Price agreed (no car on the shortlist)', 'closed-bought': 'Closed (bought)',
   'closed-other': 'Closed (other)', 'link-closed': 'Refused link'
 };
@@ -89,13 +105,20 @@ export function createDealTrackerPreview() {
     const state = pathname.startsWith('/deal/') ? pathname.slice(6) : null;
     const known = state && Object.hasOwn(SAMPLE_VIEWS, state);
     if (req.method === 'POST') {
-      // The question box posts here, like the real page. Nothing is kept.
-      req.resume();
-      if (known) res.writeHead(303, { Location: `/deal/${state}#dt-updates` }).end();
-      else res.writeHead(404).end('Not found');
+      // The question box and the pick post here, like the real page. Nothing is kept.
+      if (!known) { req.resume(); res.writeHead(404).end('Not found'); return; }
+      const chunks = [];
+      for await (const chunk of req) if ((chunks.push(chunk), chunks.length > 64)) break;
+      const form = new URLSearchParams(Buffer.concat(chunks).toString('utf8').slice(0, 65536));
+      const action = form.get('action');
+      if (action === 'pick_review') return html(renderPickConfirm(SAMPLE_VIEWS[state].cars.find(item => String(item.rank) === form.get('car')) ?? pickable[0], `/deal/${state}`));
+      if (action === 'keep_looking_review') return html(renderPickConfirm(null, `/deal/${state}`));
+      const next = { pick: '/deal/quotes-in-picked#dt-pick', keep_looking: '/deal/quotes-in-keep-looking#dt-pick' }[action] ?? `/deal/${state}#dt-updates`;
+      res.writeHead(303, { Location: next }).end();
       return;
     }
     if (state === 'link-closed') return html(renderLinkClosed());
+    if (state && Object.hasOwn(SAMPLE_CONFIRMS, state)) return html(renderPickConfirm(SAMPLE_CONFIRMS[state], '/deal/quotes-in-ready'));
     if (known) return html(renderTracker(SAMPLE_VIEWS[state], { action: `/deal/${state}` }));
     // The page's own stylesheets, fonts and icon; nothing private.
     try {
