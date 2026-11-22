@@ -1,0 +1,41 @@
+/* "Is the hybrid worth it?" pages (scripts/render-hybrid-pages.mjs). These pages reuse buying/price-guide.css; this sheet only adds
+   what the price guides lack: a one-photo hero, a four-item score strip, "buy if" lists with ticks on both sides,
+   a one-chart row, and the compact fuel-cost tables. Every class is hp-*. */
+.dr .hp-solo { display:block; aspect-ratio:auto; }
+.dr .hp-solo .vp-gallery__main { aspect-ratio:1.93; }
+.dr .hp-strip { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.dr .hp-strip .vp-strip__score { font-size:26px; }
+.dr .hp-strip .vp-strip__score small { display:block; margin-top:4px; font-size:13px; line-height:1.3; }
+.dr .hp-choose .vp-verdict__cons li::before { content:"✓"; color:var(--sign); }
+.dr .hp-numbers { width:100%; min-width:640px; border-collapse:collapse; font-size:14px; line-height:1.5; font-variant-numeric:tabular-nums; }
+.dr .hp-numbers :is(th,td) { padding:10px 16px 10px 0; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+.dr .hp-numbers thead th { border-bottom-color:var(--ink); font-size:13px; font-weight:600; color:var(--muted); }
+.dr .hp-numbers tbody th { font-weight:600; }
+.dr .hp-numbers tbody th small { display:block; margin-top:2px; font-size:12.5px; font-weight:400; color:var(--muted); }
+.dr .hp-numbers td strong { white-space:nowrap; }
+.dr .hp-numbers td small { display:block; margin-top:2px; font-size:12.5px; line-height:1.4; color:var(--muted); }
+.dr .hp-numbers .hp-numbers__gain td, .dr .hp-numbers .hp-numbers__gain th { border-bottom-color:var(--ink); }
+.dr .hp-numbers .hp-numbers__id { font-size:12.5px; color:var(--muted); white-space:nowrap; }
+.dr .hp-table-note { max-width:74ch; margin-top:10px; font-size:13px; line-height:1.55; color:var(--muted); }
+.dr .vp-section .hp-scroll { margin-top:18px; }
+.dr .hp-charts { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.dr .hp-charts--1 { grid-template-columns:minmax(0,1fr); }
+.dr .hp-charts section:nth-child(odd) { padding-left:0; }
+.dr .hp-charts section:nth-child(even) { padding-right:0; }
+.dr .hp-charts section:nth-child(n+3) { border-top:1px solid var(--line); }
+.dr .hp-charts section:nth-child(3) { border-left:0; }
+.dr .hp-reddit { display:grid; grid-template-columns:1fr 1fr; gap:0 40px; margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }
+.dr .hp-reddit h3 { margin-bottom:8px; font-size:16px; }
+.dr .hp-reddit li { padding:6px 0; font-size:15px; line-height:1.5; }
+.dr .hp-related { margin-top:22px; font-size:15px; }
+@media (max-width:1000px) {
+  .dr .hp-strip { grid-template-columns:1fr 1fr; }
+  .dr .hp-strip li:last-child { grid-column:auto; }
+  .dr .hp-strip li:last-child a { flex-direction:column; align-items:stretch; }
+  .dr .hp-solo .vp-gallery__main { aspect-ratio:3 / 2; }
+}
+@media (max-width:700px) {
+  .dr .hp-charts, .dr .hp-reddit { grid-template-columns:minmax(0,1fr); }
+  .dr .hp-charts section + section { border-left:0; border-top:1px solid var(--line); }
+  .dr .hp-charts section:nth-child(n) { padding-left:0; padding-right:0; }
+}

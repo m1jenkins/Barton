@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "key": "hyundai-tucson",
+  "code": "TUCSON",
+  "slug": "hyundai-tucson-hybrid-vs-gas.html",
+  "priceGuide": "hyundai-tucson-price.html",
+  "name": "Hyundai Tucson",
+  "short": "Tucson",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Hyundai Tucson Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The Tucson Hybrid costs $1,700 more than a gas SEL and pays back in about 3 years of gas, but Hyundai’s offers favor gas. Plug-in too. Nov. 21, 2026.",
+  "h1": "Is the Hyundai Tucson hybrid worth it?",
+  "gasLabel": "Gas, 2.5L",
+  "hybridLabel": "Hybrid, 1.6L turbo",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "if you skip Hyundai’s financing",
+    "lead": "<strong>Yes.</strong> A Hybrid SEL costs $1,700 more than a gas SEL and is rated 38 mpg combined against 28 with front-wheel drive, so it burns about 140 fewer gallons at 15,000 miles. At the national average of $3.805 a gallon that is $536 a year, and the premium is back in 3.2 years (4.0 years at 12,000 miles).",
+    "more": [
+      "The one thing that clouds it is Hyundai’s own money. This month the gas Tucson gets 0% financing for up to 60 months and up to $3,000 in bonus cash, while the hybrid gets 2.9% and $1,750. On a $33,000 loan over 60 months, 2.9% costs $2,490 in interest. Take Hyundai’s offers on each and the hybrid’s payback stretches to about 8 years, or 10 if the gas truck gets the full extra $1,250 in cash. Pay cash or finance elsewhere and the 3.2 years stands.",
+      "The hybrid is also the quicker Tucson: 231 hp against 187, and Edmunds timed the gas engine at 10.2 seconds to 60 mph, one of the slowest crossovers it has tested. Hyundai’s plug-in costs $6,425 more again and only pays off if you charge it every day (see below)."
+    ]
+  },
+  "chooseHybrid": [
+    "You pay cash or have your own financing. The Hybrid SEL pays back its $1,700 in about 3 years at 15,000 miles.",
+    "You want all-wheel drive. The hybrid gives up 2 mpg for AWD (36 combined) and the gas Tucson 2 (26), so the hybrid keeps a 10-mpg lead.",
+    "You want a quicker Tucson. The gas engine takes 10.2 seconds to 60 mph in Edmunds’ test, and the hybrid has 44 more hp.",
+    "You do a lot of city driving. EPA rates the front-drive hybrid at 40 mpg in the city against 25 for the gas Tucson."
+  ],
+  "chooseGas": [
+    "You are taking Hyundai’s financing. Gas gets 0% for 60 months and up to $3,000 in bonus cash; the hybrid gets 2.9% and $1,750.",
+    "You want the cheapest Tucson. A gas SE starts at $29,700, and the cheapest hybrid is $31,300.",
+    "You will resell soon. iSeeCars has a three-year-old gas Tucson down 24.8% and a hybrid down 29.2% (from the Tucson price guide).",
+    "You want fewer parts to worry about after the warranty. Hyundai covers the hybrid battery for 10 years or 100,000 miles, and the gas Tucson has no battery pack to replace."
+  ],
+  "premiumIntro": [
+    "Hyundai sells the gas Tucson and the Hybrid on the same SE and SEL trims, so those are the cleanest pairs. The Hybrid Limited has AWD as standard, so we priced it against a gas Limited with AWD added."
+  ],
+  "premiumNote": "AWD adds $1,500 on the gas Tucson and on the Hybrid SE and SEL. The Hybrid SEL Convenience, Limited, Night and both plug-ins come with it.",
+  "scenarios": [
+    {
+      "label": "Hybrid SEL against SEL",
+      "gas": { "trim": "SEL", "version": "2.5L" },
+      "hybrid": { "trim": "Hybrid SEL", "version": "1.6L turbo hybrid" },
+      "note": "Front-wheel drive; AWD adds $1,500 to both",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49453, "comb": 28, "city": 25, "hwy": 33 }, "hybrid": { "id": 51096, "comb": 38, "city": 40, "hwy": 35 } },
+        { "label": "All-wheel drive", "gas": { "id": 49500, "comb": 26, "city": 24, "hwy": 30 }, "hybrid": { "id": 49498, "comb": 36, "city": 36, "hwy": 37 } }
+      ]
+    },
+    {
+      "label": "Hybrid Limited against Limited with AWD",
+      "gas": { "trim": "Limited", "plus": 1500, "version": "2.5L, AWD added" },
+      "hybrid": { "trim": "Hybrid Limited", "version": "AWD standard" },
+      "note": "Leather, surround-view camera, AWD on both",
+      "epa": [
+        { "label": "All-wheel drive", "gas": { "id": 49500, "comb": 26, "city": 24, "hwy": 30 }, "hybrid": { "id": 49498, "comb": 36, "city": 36, "hwy": 37 } }
+      ]
+    }
+  ],
+  "extraPremiums": [
+    { "label": "Hybrid SE against SE", "note": "Cheapest hybrid against cheapest gas, front-wheel drive", "gas": { "trim": "SE", "version": "2.5L" }, "hybrid": { "trim": "Hybrid SE", "version": "1.6L turbo hybrid" } }
+  ],
+  "mpgIntro": [
+    "EPA rates the front-drive Hybrid at 38 mpg combined (40 city, 35 highway) and the front-drive gas Tucson at 28 (25 city, 33 highway). With AWD it is 36 against 26. The gain is in town: on the highway a front-drive hybrid is rated 2 mpg ahead of the gas Tucson, so a mostly highway commute narrows the case."
+  ],
+  "mpgNote": "",
+  "costIntro": [
+    "At 15,000 miles a year a front-drive gas Tucson burns 536 gallons and the Hybrid 395."
+  ],
+  "breakEvenIntro": [
+    "The Hybrid SEL’s $1,700 premium is back in 3.0 to 4.0 years front-drive and 2.7 to 3.5 years with AWD. The Hybrid Limited’s $1,250 gap over an AWD gas Limited takes 2.0 to 2.6 years."
+  ],
+  "breakEvenAfter": [
+    "Hyundai’s offers change the answer. The 0% against 2.9% difference on a $33,000, 60-month loan is $2,490 of interest (about $42 a month). Add that to the $1,700 and the Hybrid SEL’s payback at 15,000 miles and $3.805 gas becomes 7.8 years. Add the extra $1,250 of bonus cash the gas truck can carry and it is about 10 years. That arithmetic is ours, from the rates and cash in the price guide, and it only applies if you finance through Hyundai Motor Finance."
+  ],
+  "changesIntro": [
+    "Cargo is the same, the engine isn’t, and the hybrid has its own battery warranty."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "187 hp", "hybrid": "231 hp combined" },
+    { "label": "Transmission", "gas": "8-speed automatic", "hybrid": "6-speed automatic" },
+    { "label": "Cargo behind the rear seat", "gas": "38.7 cubic feet (74.8 folded)", "hybrid": "38.7 cubic feet (74.5 folded)" },
+    { "label": "Curb weight", "gas": "3,429 pounds", "hybrid": "3,719 pounds" },
+    { "label": "0 to 60 mph", "gas": "10.2 seconds in Edmunds’ test", "hybrid": "Edmunds calls it quicker; we found no timed figure" },
+    { "label": "Drive", "gas": "Front-wheel drive standard; AWD adds $1,500", "hybrid": "Front-wheel drive on the SE and SEL (AWD adds $1,500); AWD standard from SEL Convenience up" },
+    { "label": "Warranty", "gas": "10 years/100,000 miles powertrain, 5 years/60,000 miles basic", "hybrid": "The same, plus 10 years/100,000 miles on the hybrid battery and hybrid system components" }
+  ],
+  "changesAfter": [
+    "The 10-year battery and hybrid-component coverage applies to the plug-in too, and Hyundai says it covers batteries and system components on its hybrid, plug-in and electric cars. Hyundai has an all-new Tucson due in early 2027, so a 2026 is the last of this generation."
+  ],
+  "plugin": {
+    "heading": "What about the plug-in?",
+    "trim": "Plug-in SEL",
+    "label": "Plug-in SEL",
+    "intro": [
+      "The Plug-in SEL costs $6,425 more than a Hybrid SEL with AWD, the trim it matches closest, and EPA rates it 35 mpg combined once the battery is empty, a point worse than the 36 mpg of the AWD Hybrid. Its pitch is 32 miles of electric range. We worked out the best case: a full charge used every day, 365 days a year."
+    ],
+    "compare": { "trim": "Hybrid SEL", "label": "Hybrid SEL with AWD", "plus": 1500, "epa": { "id": 49498, "comb": 36 } },
+    "epa": { "id": 49764, "mpge": 77, "gasComb": 35, "rangeMiles": 32, "kwhPer100": 44 },
+    "after": [
+      "Even in that best case the plug-in takes about 14 years to earn back its premium, and a driver who forgets to plug in for a week or whose commute tops 32 miles gets less. Hyundai quotes $1,665 and up to install a home charger. We’d buy the plug-in only if you can charge at home every night."
+    ]
+  },
+  "incentives": [
+    "This month Hyundai’s offers favor the gas Tucson. The gas Tucson and the Plug-in get 0% APR for up to 60 months plus no payments for 90 days, while the Hybrid gets 2.9% for up to 60 months. Bonus cash runs up to $3,000 on the gas Tucson, $1,750 on the Hybrid and $4,000 on the Plug-in, and on the gas SEL Premium and Limited it requires Hyundai Motor Finance and goes toward the down payment. Everything ends November 30, 2026. Offers are from the Tucson price guide, read at four ZIP codes on Hyundai’s site on November 18, 2026 for well-qualified buyers; the plug-in’s were read in Los Angeles only."
+  ],
+  "resale": [
+    "iSeeCars’ figures from the Tucson price guide put three-year depreciation at 24.8% for the gas Tucson and 29.2% for the Hybrid, against 22.7% for compact SUVs. Its comparison page has five-year depreciation at 45.9% and 47.4%. The hybrid loses a little more, which lengthens the payback a little, but not by as much as Hyundai’s gas-side financing does."
+  ],
+  "reddit": {
+    "lead": "Owners say the hybrid reaches 35 to 40 mpg with gentle driving and the gas Tucson 27 to 30, so both land near their ratings; the complaints are fast highway speeds and short trips."
+  },
+  "faq": [
+    ["How much more does the Tucson Hybrid cost than the gas Tucson?", "$1,600 on an SE ($31,300 against $29,700), $1,700 on an SEL ($32,750 against $31,050) and $1,250 on a Limited once you add AWD to the gas truck ($42,425 against $41,175). Prices are 2026 starting MSRPs without destination, from the Tucson price guide."],
+    ["How much better is the Tucson Hybrid’s mpg?", "EPA rates a front-drive Hybrid at 38 mpg combined against 28 for the gas Tucson, and 36 against 26 with AWD. That is 10 mpg either way, about 140 fewer gallons a year at 15,000 miles."],
+    ["Is the Tucson Plug-in Hybrid worth the extra money?", "Only if you can charge it at home every night. EPA rates it 32 miles of electric range and 35 mpg after that, and it costs $6,425 more than a Hybrid SEL with AWD. In the best case we could work out, that takes about 14 years to earn back."],
+    ["Does Hyundai cover the hybrid battery?", "Yes. Hyundai’s U.S. warranty page lists a 10-year/100,000-mile warranty on hybrid and electric batteries and hybrid system components, including plug-in hybrids."]
+  ],
+  "queries": ["hyundai tucson hybrid worth it", "tucson hybrid vs gas", "tucson hybrid vs gas mpg", "is the hyundai tucson hybrid worth the extra cost"],
+  "blog": { "title": "Is the Hyundai Tucson Hybrid Worth It?", "text": "The hybrid’s $1,700 premium, its 10-mpg gain, the plug-in, and why Hyundai’s financing favors gas.", "cta": "See the Tucson hybrid math" },
+  "llms": { "title": "Is the Hyundai Tucson Hybrid Worth It?", "text": "The 2026 Tucson Hybrid and Plug-in Hybrid against the gas Tucson: price premium by trim, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, cargo, the 10-year battery warranty, Hyundai’s incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-TUCSON-01", "url": "https://www.hyundaiusa.com/us/en/assurance/america-best-warranty", "title": "Hyundai: America’s Best Warranty", "authority": "Hyundai", "scope": "Hyundai's 10-year/100,000-mile hybrid and electric battery and hybrid system components warranty, covering hybrid and plug-in hybrid models", "note": "hybrid battery and system warranty", "status": "primary_source_checked", "registryNote": "Read in a browser on 2026-11-21." },
+    { "id": "VEH-HYB-TUCSON-02", "url": "https://www.iseecars.com/compare/hyundai-tucson-vs-hyundai-tucson_hybrid", "title": "iSeeCars: Hyundai Tucson against Tucson Hybrid", "authority": "iSeeCars", "scope": "Horsepower (187 and 231), cargo volume (38.7 cubic feet behind the rear seat on both), curb weight (3,429 and 3,719 pounds) and five-year depreciation (45.9% and 47.4%) of the Tucson and Tucson Hybrid", "note": "power, cargo, weight and five-year depreciation" },
+    { "id": "VEH-HYB-TUCSON-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49453", "title": "FuelEconomy.gov: 2026 Tucson FWD (vehicle 49453)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tucson 2.5L, front-wheel drive", "note": "EPA ratings, gas, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TUCSON-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49500", "title": "FuelEconomy.gov: 2026 Tucson AWD (vehicle 49500)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tucson 2.5L, all-wheel drive", "note": "EPA ratings, gas, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TUCSON-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/51096", "title": "FuelEconomy.gov: 2026 Tucson Hybrid FWD (vehicle 51096)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tucson Hybrid, front-wheel drive", "note": "EPA ratings, hybrid, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TUCSON-06", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49498", "title": "FuelEconomy.gov: 2026 Tucson Hybrid AWD (vehicle 49498)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tucson Hybrid, all-wheel drive", "note": "EPA ratings, hybrid, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TUCSON-07", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49764", "title": "FuelEconomy.gov: 2026 Tucson Plug-in Hybrid (vehicle 49764)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA ratings for the 2026 Tucson Plug-in Hybrid: 35 mpg combined, 77 MPGe on electricity, 32 miles of electric range, 44 kWh per 100 miles", "note": "EPA ratings, plug-in hybrid", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TUCSON-08", "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson", "title": "Hyundai: 2026 Tucson", "authority": "Hyundai", "scope": "2026 Tucson starting MSRP and offers, as used in the Hyundai Tucson price guide", "note": "gas prices and offers, from the Tucson price guide", "status": "primary_source_checked", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-01), read there on 2026-11-18." },
+    { "id": "VEH-HYB-TUCSON-09", "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson-hybrid", "title": "Hyundai: 2026 Tucson Hybrid", "authority": "Hyundai", "scope": "2026 Tucson Hybrid starting MSRP and offers, as used in the Hyundai Tucson price guide", "note": "hybrid prices and offers, from the Tucson price guide", "status": "primary_source_checked", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-02), read there on 2026-11-18." },
+    { "id": "VEH-HYB-TUCSON-10", "url": "https://www.hyundaiusa.com/us/en/vehicles/tucson-plug-in-hybrid", "title": "Hyundai: 2026 Tucson Plug-in Hybrid", "authority": "Hyundai", "scope": "2026 Tucson Plug-in Hybrid starting MSRP and offers, as used in the Hyundai Tucson price guide", "note": "plug-in prices and offers, from the Tucson price guide", "status": "primary_source_checked", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-03), read there on 2026-11-18." },
+    { "id": "VEH-HYB-TUCSON-11", "url": "https://www.iseecars.com/car/hyundai-tucson/resale-value", "title": "iSeeCars: Hyundai Tucson resale value", "authority": "iSeeCars", "scope": "Three-year depreciation of the gas Tucson, 24.8%, as used in the Hyundai Tucson price guide", "note": "three-year depreciation, gas, from the Tucson price guide", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-10), read there on 2026-11-18." },
+    { "id": "VEH-HYB-TUCSON-12", "url": "https://www.iseecars.com/car/hyundai-tucson-hybrid/resale-value", "title": "iSeeCars: Hyundai Tucson Hybrid resale value", "authority": "iSeeCars", "scope": "Three-year depreciation of the Tucson Hybrid, 29.2%, as used in the Hyundai Tucson price guide", "note": "three-year depreciation, hybrid, from the Tucson price guide", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-11), read there on 2026-11-18." },
+    { "id": "VEH-HYB-TUCSON-13", "url": "https://www.edmunds.com/hyundai/tucson/", "title": "Edmunds: 2026 Hyundai Tucson", "authority": "Edmunds", "scope": "Edmunds' 10.2-second 0-60 mph time for the gas Tucson and its comment that the hybrid is quicker, as used in the Hyundai Tucson price guide", "note": "acceleration, from the Tucson price guide", "registryNote": "Reused from the Hyundai Tucson price guide (VEH-TUCSON-08), read there on 2026-11-18." }
+  ]
+}

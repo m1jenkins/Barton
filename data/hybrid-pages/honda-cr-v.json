@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "key": "honda-cr-v",
+  "code": "CRV",
+  "slug": "honda-cr-v-hybrid-vs-gas.html",
+  "priceGuide": "honda-cr-v-price.html",
+  "name": "Honda CR-V",
+  "short": "CR-V",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Honda CR-V Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The CR-V Hybrid costs $2,480 more than a gas EX and earns it back in 5 to 6.5 years of gas. EPA mpg, power, cargo, incentives. Nov. 21, 2026.",
+  "h1": "Is the Honda CR-V hybrid worth it?",
+  "gasLabel": "Gas, 1.5L turbo",
+  "hybridLabel": "Hybrid, 2.0L",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "for most buyers",
+    "lead": "<strong>Yes, for most buyers.</strong> A CR-V Sport Hybrid costs $2,480 more than a gas EX, the trim it matches on equipment, and Honda rates it 40 mpg combined against 30. At the national average of $3.805 a gallon that is about $476 less gas a year at 15,000 miles, so the premium is back in 5.2 years (6.5 years at 12,000 miles).",
+    "more": [
+      "The case for the hybrid is power as much as fuel. It makes 204 hp against the turbo’s 190, and its electric motor alone is rated 247 lb-ft against 179 for the gas engine. What you give up is practical: 3 cubic feet less cargo room behind the rear seat, 500 pounds less towing, and, on iSeeCars’ figures, a little faster depreciation. Honda also says the next CR-V is hybrid-only, so the gas engine has a short future."
+    ]
+  },
+  "chooseHybrid": [
+    "You keep a car five or six years, or drive about 15,000 miles a year. The Sport Hybrid’s $2,480 premium is back in 5.2 years at that pace.",
+    "You want the quicker CR-V: 204 hp against 190, and Edmunds faults the gas engine as slow.",
+    "Your miles are mostly around town. The hybrid is rated 43 mpg in the city against 28.",
+    "You want the EX’s equipment (heated front seats, moonroof, blind-spot monitoring) with a hybrid, which is what the Sport Hybrid is."
+  ],
+  "chooseGas": [
+    "You tow. The gas CR-V is rated 1,500 pounds and the hybrid 1,000.",
+    "You drive fewer than about 10,000 miles a year. At that pace the premium takes nearly 8 years to earn back.",
+    "You want the cheapest CR-V: an LX starts at $30,920, $4,710 under the cheapest hybrid.",
+    "You need every cubic foot: the gas CR-V has 39.3 cubic feet behind the rear seat and the hybrid 36.3."
+  ],
+  "premiumIntro": [
+    "Honda doesn’t sell a CR-V both ways on the same trim, so we paired each hybrid with the gas trim that matches its equipment. The Sport Hybrid carries the EX’s list (heated front seats, power moonroof, 18-inch wheels, remote start), and the Sport-L Hybrid carries the EX-L’s leather, power tailgate and parking sensors."
+  ],
+  "premiumNote": "AWD adds $1,500 on both versions, so it doesn’t change the gap. For 2027 the Sport Hybrid ($36,030) and the EX ($33,550) each rise $400 and the gap stays $2,480. The cheapest hybrid is $4,710 above the cheapest gas CR-V, the LX, which has less equipment. The price guide’s estimate is that dealers give 2–3% under MSRP on the Sport Hybrid and 3–4% on the EX, which adds about $350 to the real gap.",
+  "scenarios": [
+    {
+      "label": "Sport Hybrid against EX",
+      "gas": { "trim": "EX", "version": "1.5L turbo" },
+      "hybrid": { "trim": "Sport Hybrid", "version": "2.0L hybrid" },
+      "note": "Same equipment, front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49352, "comb": 30, "city": 28, "hwy": 33 }, "hybrid": { "id": 49353, "comb": 40, "city": 43, "hwy": 36 } },
+        { "label": "All-wheel drive", "gas": { "id": 49487, "comb": 29, "city": 27, "hwy": 31 }, "hybrid": { "id": 49488, "comb": 37, "city": 40, "hwy": 34 } }
+      ]
+    },
+    {
+      "label": "Sport-L Hybrid against EX-L",
+      "gas": { "trim": "EX-L", "version": "1.5L turbo" },
+      "hybrid": { "trim": "Sport-L Hybrid", "version": "2.0L hybrid" },
+      "note": "Leather and power tailgate, front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49352, "comb": 30, "city": 28, "hwy": 33 }, "hybrid": { "id": 49353, "comb": 40, "city": 43, "hwy": 36 } }
+      ]
+    }
+  ],
+  "extraPremiums": [],
+  "mpgIntro": [
+    "EPA rates the front-drive hybrid at 40 mpg combined and the front-drive gas CR-V at 30. Most of the gain is in town, 43 mpg against 28; on the highway it is 36 against 33, so a commute that is mostly interstate narrows the gap. All-wheel drive costs the hybrid 3 mpg and the gas car 1, which still leaves the hybrid 8 mpg ahead."
+  ],
+  "mpgNote": "The TrailSport Hybrid, which is AWD only and has all-terrain tires, is rated 35 mpg combined (38 city, 33 highway; EPA vehicle 49489).",
+  "costIntro": [
+    "At 15,000 miles a year the front-drive hybrid burns 375 gallons and the gas CR-V 500, so the hybrid uses 125 fewer."
+  ],
+  "breakEvenIntro": [
+    "Divide the premium by the yearly gas savings. For the Sport Hybrid over the EX that takes 5.0 to 6.5 years in front-drive form and 5.5 to 7.3 years with AWD, depending on mileage and gas price. The Sport-L Hybrid’s bigger premium over the EX-L stretches it to 6.7 to 8.7 years."
+  ],
+  "breakEvenAfter": [
+    "Gas prices move this. The EIA average fell from $4.153 on November 2 to $3.805 on November 16, and every 10 cents shifts the 15,000-mile break-even by roughly a tenth of a year."
+  ],
+  "changesIntro": [
+    "The hybrid gains power and loses a little room and towing."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "190 hp", "hybrid": "204 hp combined, from a 145-hp engine and two motors" },
+    { "label": "Torque", "gas": "179 lb-ft at 1,700 to 5,000 rpm", "hybrid": "247 lb-ft from the electric traction motor at 0 to 2,000 rpm (138 lb-ft from the engine); Honda lists no combined figure" },
+    { "label": "Cargo behind the rear seat", "gas": "39.3 cubic feet (76.5 with the seats folded)", "hybrid": "36.3 cubic feet (71.8 with the seats folded)" },
+    { "label": "Towing", "gas": "1,500 pounds", "hybrid": "1,000 pounds" },
+    { "label": "Drive", "gas": "Front-wheel drive standard; AWD adds $1,500 on LX, EX and EX-L", "hybrid": "Front-wheel drive on Sport Hybrid and Sport-L Hybrid with AWD at +$1,500; AWD standard on TrailSport and Sport Touring" },
+    { "label": "Curb weight, front-wheel drive", "gas": "3,472 pounds (LX)", "hybrid": "3,752 pounds (Sport Hybrid)" },
+    { "label": "Warranty", "gas": "3 years/36,000 miles basic, 5 years/60,000 miles powertrain", "hybrid": "The same, plus a hybrid battery warranty: Honda’s warranty page covers abnormal degradation for 8 years or 100,000 miles" }
+  ],
+  "changesAfter": [
+    "We saw Honda’s battery wording only in a search result, because Honda’s site refused our automated read, and one outlet prints 10 years and 150,000 miles instead. Ask the dealer for the warranty booklet before you rely on either. Honda says the next CR-V, due as a 2028 model, is hybrid-only, so buying gas now means buying the last of it."
+  ],
+  "incentives": [
+    "Honda lists no cash back on either version. Its finance and lease offers sit on the 2027 CR-V and CR-V Hybrid alike: 3.49% APR for 36 months in Chicago and Dallas and 3.99% in Los Angeles and New York, ending January 4, 2027, and none on a leftover 2026. The leases are the only place the versions differ: $299 a month for a 2027 LX and $319 for a Sport Hybrid, both for 39 months with $3,999 due, though they aren’t the same trim. Nothing this month offsets the hybrid’s premium or adds to it. Offers are from the CR-V price guide, read at Honda’s offers pages on November 16, 2026."
+  ],
+  "resale": [
+    "iSeeCars puts three-year depreciation at 13.7% for the gas CR-V and 15.9% for the hybrid, and five-year depreciation at 34.8% against 38.8%. The hybrid does lose value a little faster, but it also resells higher: iSeeCars’ comparison expects a five-year-old hybrid to bring $21,819 and a gas CR-V $20,161, so about $1,658 of the premium comes back at resale on its sample prices. Edmunds scores the hybrid 7.7 and the gas CR-V 7.4, in part because it finds the gas engine slow."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners in these threads mostly say real mileage lands near the rating until winter or a long highway run."
+  },
+  "faq": [
+    ["How much more does the CR-V Hybrid cost than the gas CR-V?", "$2,480 for a Sport Hybrid over an EX, which have the same equipment, and $3,325 for a Sport-L Hybrid over an EX-L. The cheapest hybrid is $4,710 above the cheapest gas CR-V, but that compares it with the LX, which has less equipment. Prices are 2026 starting MSRPs without destination, from the CR-V price guide."],
+    ["How much gas does the CR-V Hybrid save?", "About 125 gallons a year at 15,000 miles (375 against 500), which is $476 at the November 16 national average of $3.805 and $500 at EPA’s $4.00. At 12,000 miles it is about 100 gallons. Owners on Reddit report 35 to 40 mpg in city and mixed driving."],
+    ["Does the CR-V Hybrid come with all-wheel drive?", "On the Sport Hybrid and Sport-L Hybrid it is a $1,500 option. The TrailSport and Sport Touring Hybrids come only with AWD. AWD cuts the hybrid to 37 mpg combined, still 8 mpg better than an AWD gas CR-V."],
+    ["Should I wait for the next CR-V?", "Only if you want the new one. Honda says an all-new, hybrid-only CR-V arrives in 2027 as a 2028 model but hasn’t given a price or a date. The current hybrid is on dealer lots now."]
+  ],
+  "queries": ["honda cr-v hybrid worth it", "honda cr-v hybrid vs gas", "cr-v hybrid vs gas mpg", "is the honda cr-v hybrid worth the extra cost"],
+  "blog": { "title": "Is the Honda CR-V Hybrid Worth It?", "text": "The hybrid’s price premium, its mpg gain and the years of gas it takes to earn the premium back.", "cta": "See the CR-V hybrid math" },
+  "llms": { "title": "Is the Honda CR-V Hybrid Worth It?", "text": "The 2026 CR-V Hybrid against the gas CR-V on like-for-like trims: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, cargo, towing, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-CRV-01", "url": "https://www.hondainfocenter.com/2026/cr-v/feature-guide/specifications/", "title": "Honda Information Center: 2026 CR-V specifications", "authority": "Honda", "scope": "2026 CR-V gas and hybrid horsepower, torque, cargo volume, towing, curb weight and drivetrain by trim", "note": "power, torque, cargo, towing and curb weight by trim", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-02", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49352", "title": "FuelEconomy.gov: 2026 Honda CR-V FWD, 1.5L (vehicle 49352)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA combined, city and highway mpg for the 2026 CR-V 1.5L, front-wheel drive", "note": "EPA ratings, gas, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49353", "title": "FuelEconomy.gov: 2026 Honda CR-V FWD, 2.0L hybrid (vehicle 49353)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA combined, city and highway mpg for the 2026 CR-V hybrid, front-wheel drive", "note": "EPA ratings, hybrid, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49487", "title": "FuelEconomy.gov: 2026 Honda CR-V AWD, 1.5L (vehicle 49487)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA combined, city and highway mpg for the 2026 CR-V 1.5L, all-wheel drive", "note": "EPA ratings, gas, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49488", "title": "FuelEconomy.gov: 2026 Honda CR-V AWD, 2.0L hybrid (vehicle 49488)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA combined, city and highway mpg for the 2026 CR-V hybrid, all-wheel drive", "note": "EPA ratings, hybrid, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-06", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49489", "title": "FuelEconomy.gov: 2026 Honda CR-V AWD TrailSport (vehicle 49489)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA combined, city and highway mpg for the 2026 CR-V TrailSport Hybrid", "note": "EPA ratings, TrailSport Hybrid", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CRV-07", "url": "https://www.iseecars.com/compare/honda-cr__v-vs-honda-cr__v_hybrid", "title": "iSeeCars: Honda CR-V against CR-V Hybrid", "authority": "iSeeCars", "scope": "Five-year depreciation and resale value of the CR-V and CR-V Hybrid, 34.8% and 38.8%, and cargo and warranty terms", "note": "five-year depreciation and resale value" },
+    { "id": "VEH-HYB-CRV-08", "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-cf005034e20eb27505fd8e6bbb056d5c-2026-honda-cr-v-pricing-and-epa-ratings-3", "title": "Honda: 2026 CR-V pricing and EPA ratings", "authority": "Honda", "scope": "2026 CR-V starting MSRP by trim, as used in the Honda CR-V price guide", "note": "2026 prices by trim, from the CR-V price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-01), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-09", "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-5acd4d89f745189a21ef2396a500175b-2027-honda-cr-v-pricing-and-epa-ratings", "title": "Honda: 2027 CR-V pricing and EPA ratings", "authority": "Honda", "scope": "2027 CR-V starting MSRP by trim, as used in the Honda CR-V price guide", "note": "2027 prices by trim, from the CR-V price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-03), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-10", "url": "https://automobiles.honda.com/tools/current-offers", "title": "Honda: current offers", "authority": "Honda", "scope": "Honda finance and lease offers on the 2027 CR-V and CR-V Hybrid, read in four regions on 2026-11-16 for the Honda CR-V price guide", "note": "finance and lease offers, from the CR-V price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-05), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-11", "url": "https://www.iseecars.com/car/honda-cr-v/resale-value", "title": "iSeeCars: Honda CR-V resale value", "authority": "iSeeCars", "scope": "Three-year depreciation of the gas CR-V, 13.7%, as used in the Honda CR-V price guide", "note": "three-year depreciation, gas, from the CR-V price guide", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-15), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-12", "url": "https://www.iseecars.com/car/honda-cr-v-hybrid/resale-value", "title": "iSeeCars: Honda CR-V Hybrid resale value", "authority": "iSeeCars", "scope": "Three-year depreciation of the CR-V Hybrid, 15.9%, as used in the Honda CR-V price guide", "note": "three-year depreciation, hybrid, from the CR-V price guide", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-16), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-13", "url": "https://www.edmunds.com/honda/cr-v/2026/", "title": "Edmunds: 2026 Honda CR-V", "authority": "Edmunds", "scope": "Edmunds review score for the gas CR-V, 7.4, and its comment on the gas engine, as used in the Honda CR-V price guide", "note": "review score, gas, from the CR-V price guide", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-26), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-14", "url": "https://www.edmunds.com/honda/cr-v/2026/hybrid/", "title": "Edmunds: 2026 Honda CR-V Hybrid", "authority": "Edmunds", "scope": "Edmunds review score for the CR-V Hybrid, 7.7, as used in the Honda CR-V price guide", "note": "review score, hybrid, from the CR-V price guide", "registryNote": "Reused from the Honda CR-V price guide (VEH-CRV-27), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CRV-15", "url": "https://automobiles.honda.com/cr-v/warranty", "title": "Honda: CR-V warranty", "authority": "Honda", "scope": "Honda's coverage of abnormal hybrid battery degradation for 8 years or 100,000 miles", "note": "hybrid battery wording, seen only in a search result", "registryNote": "Not read on the page: Honda's site refused automated reads on 2026-11-21. The 8-year/100,000-mile wording came from a search result; one outlet prints 10 years/150,000 miles. Check the warranty booklet." }
+  ]
+}

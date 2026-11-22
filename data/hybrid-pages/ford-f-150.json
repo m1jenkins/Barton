@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "key": "ford-f-150",
+  "code": "F150",
+  "slug": "ford-f-150-hybrid-vs-gas.html",
+  "priceGuide": "ford-f-150-price.html",
+  "name": "Ford F-150",
+  "short": "F-150",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Ford F-150 Hybrid Worth It? PowerBoost vs Gas (2026)",
+  "description": "The F-150 PowerBoost adds up to $9,635 to an XLT and takes up to 26 years of gas savings to earn back. EPA mpg, towing, generator. Nov. 21, 2026.",
+  "h1": "Is the Ford F-150 hybrid worth it?",
+  "gasLabel": "Gas, 2.7L or 3.5L EcoBoost",
+  "hybridLabel": "PowerBoost hybrid, 3.5L",
+  "verdict": {
+    "answer": "No",
+    "detail": "unless you want the generator",
+    "lead": "<strong>No, not for the fuel.</strong> The PowerBoost adds up to $9,635 to an XLT (Cars.com’s figure, which includes 4WD) and is rated 23 mpg combined against 20 for the 4WD 2.7L EcoBoost and 19 for the 3.5L. At the national average of $3.805 a gallon that is about $372 less gas a year against the 2.7L at 15,000 miles, so earning back the full premium takes up to 26 years, and up to 12 years against the 3.5L.",
+    "more": [
+      "What the money buys is a different truck. Ford rates the PowerBoost at 420 hp and 570 lb-ft, more torque than any F-150 engine short of the Raptor R’s 640 lb-ft, and Pro Power Onboard (outlets in the bed and cab that run tools and appliances) can deliver 7.2 kW with it, the most Ford offers. Against that, it tows 11,600 pounds against 13,500 for the 3.5L EcoBoost, carries less (1,740 pounds of payload against 2,440), and loses value faster by iSeeCars’ figures."
+    ]
+  },
+  "chooseHybrid": [
+    "You will use the generator. Ford calls the PowerBoost’s 7.2 kW the highest Pro Power Onboard output available.",
+    "You want torque. 570 lb-ft is 70 more than the 3.5L EcoBoost and 170 more than the 2.7L.",
+    "You tow more than the 2.7L allows (8,400 pounds) but never near the 3.5L’s 13,500. The hybrid is rated 11,600.",
+    "You buy a King Ranch or Platinum anyway. The hybrid premium there is $5,140, the smallest on the trucks, and the payback is about 10 years."
+  ],
+  "chooseGas": [
+    "Fuel savings are the reason you are looking. Even at half of Cars.com’s premium, the XLT hybrid takes about 13 years to earn it back at 15,000 miles a year.",
+    "You tow near the limit or haul heavy loads. The 3.5L EcoBoost is rated 13,500 pounds and 2,440 pounds of payload.",
+    "You will sell in three years. iSeeCars has a three-year-old hybrid down 27.4% against 18.9% for the gas truck.",
+    "You want the cheapest truck. A gas XLT starts at $44,695, and the 2.7L EcoBoost is standard."
+  ],
+  "premiumIntro": [
+    "Ford sells the PowerBoost as an option on the STX, XLT, Lariat, King Ranch and Platinum. It is not offered on the XL, Tremor or Raptor. Cars.com lists the added cost over each trim’s base price as $9,145 on an STX, $9,635 on an XLT, $7,810 on a Lariat and $5,140 on a King Ranch or Platinum, and says the hybrid package includes 4WD.",
+    "That makes the gap hard to pin to the dollar. A gas XLT 4x4 needs 4WD added as its own charge, which we couldn’t confirm from Ford, so the real premium on a 4x4 is lower than these figures. We use Cars.com’s numbers as a ceiling and show how the payback shrinks if the real gap is smaller."
+  ],
+  "premiumNote": "The XLT rows use the guide’s base XLT price and Cars.com’s hybrid and 3.5L EcoBoost charges ($3,220 for the 3.5L on an XLT), so the 3.5L comparison is the XLT premium of $9,635 less $3,220. Cars.com’s article is dated February 18, 2026; Ford’s configurator is the place to confirm the current charge.",
+  "scenarios": [
+    {
+      "label": "XLT: PowerBoost against 2.7L EcoBoost",
+      "gas": { "trim": "XLT", "version": "2.7L EcoBoost" },
+      "hybrid": { "trim": "XLT", "version": "PowerBoost, 4WD included" },
+      "note": "The truck most buyers price",
+      "premium": { "amount": 9635, "atMost": true },
+      "epa": [
+        { "label": "4WD", "gas": { "id": 50098, "comb": 20, "city": 18, "hwy": 23 }, "hybrid": { "id": 50097, "comb": 23, "city": 22, "hwy": 24 } }
+      ]
+    },
+    {
+      "label": "XLT: PowerBoost against 3.5L EcoBoost",
+      "gas": { "trim": "XLT", "plus": 3220, "version": "3.5L EcoBoost, a $3,220 option" },
+      "hybrid": { "trim": "XLT", "version": "PowerBoost, 4WD included" },
+      "note": "The hybrid package less the 3.5L option",
+      "premium": { "amount": 6415, "atMost": true },
+      "epa": [
+        { "label": "4WD", "gas": { "id": 50099, "comb": 19, "city": 17, "hwy": 23 }, "hybrid": { "id": 50097, "comb": 23, "city": 22, "hwy": 24 } }
+      ]
+    },
+    {
+      "label": "King Ranch or Platinum: PowerBoost against 3.5L EcoBoost",
+      "gas": { "trim": "King Ranch", "version": "3.5L EcoBoost, standard" },
+      "hybrid": { "trim": "King Ranch", "version": "PowerBoost" },
+      "note": "The 3.5L is standard on both trims",
+      "premium": { "amount": 5140, "atMost": true },
+      "epa": [
+        { "label": "4WD", "gas": { "id": 50099, "comb": 19, "city": 17, "hwy": 23 }, "hybrid": { "id": 50097, "comb": 23, "city": 22, "hwy": 24 } }
+      ]
+    }
+  ],
+  "extraPremiums": [],
+  "mpgIntro": [
+    "With 4WD, EPA rates the PowerBoost at 23 mpg combined (22 city, 24 highway), the 2.7L EcoBoost at 20 (18 city, 23 highway) and the 3.5L at 19 (17 city, 23 highway). The gain is in town: 22 mpg against 18 and 17. On the highway the hybrid is one mpg ahead, so a truck that lives on the interstate gets little from the hybrid system."
+  ],
+  "mpgNote": "EPA also lists a rear-drive PowerBoost (vehicle 50447, 24 mpg combined) that we didn’t find on Ford’s site, and Cars.com’s price covers the 4WD hybrid only.",
+  "costIntro": [
+    "At 15,000 miles a year a 4WD 2.7L EcoBoost burns 750 gallons, the 3.5L 789 and the PowerBoost 652."
+  ],
+  "breakEvenIntro": [
+    "Dividing the premium ceiling by the yearly gas savings gives 24.6 to 32.4 years against the 2.7L, 11.7 to 15.3 years against the 3.5L on an XLT and 9.4 to 12.3 years on a King Ranch or Platinum. All three are upper limits, because the real premium on a 4x4 is lower."
+  ],
+  "breakEvenAfter": [
+    "Halve the XLT premium to $4,818, a deliberately generous guess, and the payback against the 2.7L is still about 13 years at 15,000 miles and $3.805 gas."
+  ],
+  "changesIntro": [
+    "The PowerBoost sits between the two gas engines on towing and above both on torque."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "2.7L: 325 hp. 3.5L: 400 hp", "hybrid": "420 hp (Ford’s XLT page; Cars.com prints 430)" },
+    { "label": "Torque", "gas": "2.7L: 400 lb-ft. 3.5L: 500 lb-ft", "hybrid": "570 lb-ft" },
+    { "label": "Maximum towing", "gas": "2.7L: 8,400 pounds. 3.5L: 13,500 pounds", "hybrid": "11,600 pounds" },
+    { "label": "Maximum payload", "gas": "2.7L: 1,775 pounds. 3.5L: 2,440 pounds", "hybrid": "1,740 pounds" },
+    { "label": "Pro Power Onboard generator", "gas": "Available at a lower output than the hybrid’s", "hybrid": "Up to 7.2 kW, which Ford calls the highest it offers" },
+    { "label": "Drive", "gas": "2WD or 4WD; 4WD is a separate charge on an XLT", "hybrid": "4WD included in the package (Cars.com)" },
+    { "label": "Where you can get it", "gas": "2.7L standard on XL, STX and XLT. 3.5L standard on Lariat, King Ranch, Platinum and Tremor, a $3,220 option on an XLT", "hybrid": "Option on STX, XLT, Lariat, King Ranch and Platinum" },
+    { "label": "Hybrid battery warranty", "gas": "Not applicable", "hybrid": "8 years or 100,000 miles, per CarGurus and a Ford dealer’s FAQ; Ford’s own page wouldn’t load for us" }
+  ],
+  "changesAfter": [
+    "Tow and payload figures are maximums for the best-equipped truck with each engine, so a typical XLT will rate lower. Reliability is the other worry. Consumer Reports ranked the PowerBoost among its least reliable vehicles in 2022 and 2023, and it now predicts about average reliability for the 2026 (from the F-150 price guide)."
+  ],
+  "incentives": [
+    "Ford’s offers are listed by trim, and none names the engine. The $4,500 cash applies to a 2026 XLT (plus the STX and Lariat in the New York area) through November 30, and the 0% and 1.9% financing deals cover every 2026 trim except the Raptor. As far as Ford’s page shows, a hybrid XLT qualifies the same way as a gas one, so no incentive offsets the hybrid’s premium. Ask the dealer to confirm in writing. Offers are from the F-150 price guide, read on Ford’s site on November 15, 2026."
+  ],
+  "resale": [
+    "iSeeCars figures the standard F-150 loses 18.9% of its value in three years and 38.6% in five, and the hybrid 27.4% and 44.0%. The hybrid’s faster depreciation comes on top of its premium, so resale doesn’t shorten the payback. The F-150 price guide makes the same point."
+  ],
+  "reddit": {
+    "lead": "Owners say the PowerBoost beats the V8s on mileage, though speed and towing pull every F-150 down."
+  },
+  "faq": [
+    ["How much does the F-150 PowerBoost cost?", "Cars.com lists the PowerBoost as an extra $9,145 on an STX, $9,635 on an XLT, $7,810 on a Lariat and $5,140 on a King Ranch or Platinum, with 4WD included. Ford doesn’t offer it on the XL, Tremor or Raptor. Confirm the current charge in Ford’s configurator."],
+    ["How much better is the PowerBoost’s mpg?", "With 4WD, EPA rates it 23 mpg combined against 20 for the 2.7L EcoBoost and 19 for the 3.5L and the 5.0L V8. That is about 100 to 140 fewer gallons a year at 15,000 miles."],
+    ["Does the F-150 hybrid tow less than the gas truck?", "Than the 3.5L EcoBoost, yes: 11,600 pounds against 13,500. Than the 2.7L, no: that engine is rated 8,400 pounds. Ratings are maximums for a well-equipped truck."],
+    ["What is Pro Power Onboard?", "Ford’s built-in generator: outlets in the bed and cab that run tools and appliances. Ford says the PowerBoost can deliver 7.2 kW, the highest output available."]
+  ],
+  "queries": ["ford f-150 hybrid worth it", "f-150 powerboost vs ecoboost", "f-150 hybrid vs gas mpg", "is the f-150 powerboost worth the extra cost"],
+  "blog": { "title": "Is the Ford F-150 Hybrid Worth It?", "text": "The PowerBoost’s premium over the 2.7L and 3.5L EcoBoost, its mpg gain, and why the generator is the real reason to buy it.", "cta": "See the F-150 hybrid math" },
+  "llms": { "title": "Is the Ford F-150 Hybrid Worth It?", "text": "The 2026 F-150 PowerBoost against the 2.7L and 3.5L EcoBoost: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, towing, payload, the Pro Power Onboard generator, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-F150-01", "url": "https://www.ford.com/trucks/f150/2026/models/", "title": "Ford: 2026 F-150 models", "authority": "Ford", "scope": "2026 F-150 starting MSRP by trim, engine horsepower and torque, which trims offer the PowerBoost hybrid, and maximum gas towing and payload", "note": "trims, prices, engines and which trims offer the hybrid", "status": "primary_source_checked", "registryNote": "Read in a browser on 2026-11-21; Ford's pages refuse scripted reads." },
+    { "id": "VEH-HYB-F150-02", "url": "https://www.ford.com/trucks/f150/2026/models/xlt/", "title": "Ford: 2026 F-150 XLT", "authority": "Ford", "scope": "PowerBoost 420 hp and 570 lb-ft, and the 7.2 kW Pro Power Onboard output", "note": "PowerBoost power and generator output", "status": "primary_source_checked", "registryNote": "Read in a browser on 2026-11-21; Ford's pages refuse scripted reads." },
+    { "id": "VEH-HYB-F150-03", "url": "https://www.cars.com/articles/how-much-is-the-2026-ford-f-150-521741/", "title": "Cars.com: how much is the 2026 Ford F-150?", "authority": "Cars.com", "scope": "PowerBoost price over each trim ($9,145 STX, $9,635 XLT, $7,810 Lariat, $5,140 King Ranch and Platinum, 4WD included), the 3.5L option price, and maximum towing and payload by engine, article dated 2026-02-18", "note": "hybrid and engine option prices, towing and payload" },
+    { "id": "VEH-HYB-F150-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50098", "title": "FuelEconomy.gov: 2026 F-150 4WD, 2.7L (vehicle 50098)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 F-150 4WD with the 2.7L EcoBoost", "note": "EPA ratings, 2.7L, 4WD", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-F150-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50099", "title": "FuelEconomy.gov: 2026 F-150 4WD, 3.5L (vehicle 50099)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 F-150 4WD with the 3.5L EcoBoost", "note": "EPA ratings, 3.5L, 4WD", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-F150-06", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50097", "title": "FuelEconomy.gov: 2026 F-150 4WD HEV (vehicle 50097)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 F-150 4WD PowerBoost hybrid", "note": "EPA ratings, PowerBoost, 4WD", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-F150-07", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50447", "title": "FuelEconomy.gov: 2026 F-150 2WD HEV (vehicle 50447)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 F-150 rear-drive PowerBoost hybrid", "note": "EPA ratings, PowerBoost, rear-drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-F150-08", "url": "https://www.iseecars.com/car/ford-f-150/resale-value", "title": "iSeeCars: Ford F-150 resale value", "authority": "iSeeCars", "scope": "Three- and five-year depreciation of the F-150 (18.9% and 38.6%) and the F-150 hybrid (27.4% and 44.0%)", "note": "three- and five-year depreciation, gas and hybrid" },
+    { "id": "VEH-HYB-F150-09", "url": "https://www.ford.com/trucks/f150/2026/incentives-and-offers/", "title": "Ford: 2026 F-150 incentives and offers", "authority": "Ford", "scope": "Ford cash, finance and lease offers on the 2026 F-150, read at four ZIP codes on 2026-11-15 for the Ford F-150 price guide", "note": "cash and finance offers, from the F-150 price guide", "status": "primary_source_checked", "registryNote": "Reused from the Ford F-150 price guide (VEH-F150-03), read there on 2026-11-15." },
+    { "id": "VEH-HYB-F150-10", "url": "https://www.cargurus.com/research/articles/are-hybrid-ford-f-150s-more-reliable", "title": "CarGurus: are hybrid Ford F-150s more reliable?", "authority": "CarGurus", "scope": "Ford's 8-year/100,000-mile coverage of the PowerBoost's high-voltage battery", "note": "hybrid battery warranty, seen only in a search result", "registryNote": "Not read on the page: the 8-year/100,000-mile term came from a search result and a dealer FAQ, and Ford's own warranty page did not load on 2026-11-21." },
+    { "id": "VEH-HYB-F150-11", "url": "https://fordauthority.com/2023/12/ford-f-150-hybrid-powerboost-among-crs-least-reliable-cars/", "title": "Ford Authority: Consumer Reports on the F-150 hybrid", "authority": "Ford Authority", "scope": "Consumer Reports ranking the F-150 PowerBoost among its least reliable vehicles, as used in the Ford F-150 price guide", "note": "hybrid reliability history, from the F-150 price guide", "registryNote": "Reused from the Ford F-150 price guide (VEH-F150-18), read there on 2026-11-15." },
+    { "id": "VEH-HYB-F150-12", "url": "https://www.consumerreports.org/cars/ford/f-150/2026/reliability", "title": "Consumer Reports: 2026 Ford F-150 reliability", "authority": "Consumer Reports", "scope": "Consumer Reports' predicted reliability for the 2026 F-150, as used in the Ford F-150 price guide", "note": "predicted reliability, from the F-150 price guide", "registryNote": "Reused from the Ford F-150 price guide (VEH-F150-19), read there on 2026-11-15." }
+  ]
+}

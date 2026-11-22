@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "key": "toyota-tacoma",
+  "code": "TACOMA",
+  "slug": "toyota-tacoma-hybrid-vs-gas.html",
+  "priceGuide": "toyota-tacoma-price.html",
+  "name": "Toyota Tacoma",
+  "short": "Tacoma",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Toyota Tacoma Hybrid Worth It? i-FORCE MAX vs Gas",
+  "description": "The Tacoma i-FORCE MAX adds $3,720 to a TRD Sport 4x4 and takes about 16 years of gas savings to earn back. EPA mpg, power, outlet. Nov. 21, 2026.",
+  "h1": "Is the Toyota Tacoma hybrid worth it?",
+  "gasLabel": "Gas, i-FORCE 2.4L turbo",
+  "hybridLabel": "i-FORCE MAX hybrid",
+  "verdict": {
+    "answer": "No",
+    "detail": "unless you want the power or the outlet",
+    "lead": "<strong>No, if fuel savings are the point.</strong> The i-FORCE MAX adds $3,720 to a TRD Sport 4x4 and is rated 23 mpg combined against 21 for the gas Tacoma. At the national average of $3.805 a gallon that is about $236 less gas a year at 15,000 miles, a 15.7-year payback (19.7 years at 12,000 miles).",
+    "more": [
+      "The reasons to pay it are the engine and the outlet. Toyota rates the hybrid at 326 hp and 465 lb-ft against 278 hp and 317 lb-ft, and says every hybrid has a 2,400-watt AC outlet in the cab and the bed. Edmunds timed a hybrid TRD Pro at 7.4 seconds to 60 mph against 7.6 for a gas TRD Sport. You give up some towing (iSeeCars lists 6,000 pounds for a TRD Sport hybrid against 6,400 for the gas truck) and resale, where iSeeCars has the hybrid depreciating faster."
+    ]
+  },
+  "chooseHybrid": [
+    "You want the extra grunt: 465 lb-ft is 148 more than the gas engine.",
+    "You will use the 2,400-watt AC outlet that comes standard on every hybrid.",
+    "You want a Trailhunter or a TRD Pro. Both come only as hybrids.",
+    "You are buying a Limited anyway. The hybrid costs $3,325 more there, $395 less than on a TRD Sport."
+  ],
+  "chooseGas": [
+    "Fuel savings are the reason. At 15,000 miles a year the TRD Sport hybrid takes 15.7 years to earn back its $3,720.",
+    "You want a manual. The 6-speed is offered on gas 4x4s only, and the hybrid is automatic.",
+    "You tow near the limit. A gas TRD Sport 4x4 is listed at 6,400 pounds and the hybrid at 6,000.",
+    "You plan to sell in three or five years. iSeeCars has the gas Tacoma down 19.5% in five years and the hybrid down 24.9%."
+  ],
+  "premiumIntro": [
+    "Toyota sells the hybrid as i-FORCE MAX on the TRD Sport, TRD Off-Road and Limited, and as the only engine on the Trailhunter and TRD Pro. Every i-FORCE MAX is a 4x4, so the like-for-like gas truck is a 4x4 automatic. The TRD Sport 4x4 automatic costs $3,200 more than the 4x2 TRD Sport in the price guide’s table."
+  ],
+  "premiumNote": "Dealers also give less off the hybrids. The price guide’s ranges are 5–6% under MSRP for a gas TRD Sport and 2–4% for the hybrids, which puts the gap after typical discounts at roughly $4,000 to $5,400.",
+  "scenarios": [
+    {
+      "label": "TRD Sport 4x4: i-FORCE MAX against gas",
+      "gas": { "trim": "TRD Sport", "plus": 3200, "version": "2.4L turbo, 4x4 automatic" },
+      "hybrid": { "guideTrim": "TRD Sport i-FORCE MAX", "trim": "TRD Sport i-FORCE MAX", "version": "2.4L turbo hybrid" },
+      "note": "Double Cab, 4x4",
+      "epa": [
+        { "label": "4x4", "gas": { "id": 50091, "comb": 21, "city": 19, "hwy": 24 }, "hybrid": { "id": 50109, "comb": 23, "city": 22, "hwy": 24 } }
+      ]
+    }
+  ],
+  "extraPremiums": [
+    { "label": "TRD Off-Road 4x4: i-FORCE MAX against gas", "note": "The price guide’s TRD Off-Road 4x4 automatic is $43,915", "gas": { "trim": "TRD Off-Road", "price": 43915, "version": "2.4L turbo, 4x4 automatic" }, "hybrid": { "trim": "TRD Off-Road i-FORCE MAX", "version": "2.4L turbo hybrid" } },
+    { "label": "Limited: i-FORCE MAX against gas", "note": "4x4 only on both", "gas": { "trim": "Limited", "version": "2.4L turbo" }, "hybrid": { "trim": "Limited i-FORCE MAX", "version": "2.4L turbo hybrid" } }
+  ],
+  "mpgIntro": [
+    "EPA rates the hybrid at 23 mpg combined (22 city, 24 highway) and a gas 4x4 at 21 (19 city, 24 highway). The hybrid’s whole gain is in the city. On the highway the two are rated the same, which is where a loaded truck spends its fuel."
+  ],
+  "mpgNote": "EPA’s other gas 4x4 records (vehicles 50088, 50089 and 50090) are also 21 combined, and a second hybrid record (50110) is 23.",
+  "costIntro": [
+    "At 15,000 miles a year the gas 4x4 burns 714 gallons and the hybrid 652, so the hybrid uses 62 fewer."
+  ],
+  "breakEvenIntro": [
+    "A 2-mpg gain on a truck that returns 21 is worth little, and the premium is large. The TRD Sport hybrid takes 15.0 to 19.7 years to earn back $3,720, depending on mileage and gas price. The Limited’s smaller $3,325 premium still takes more than 13 years."
+  ],
+  "breakEvenAfter": [],
+  "changesIntro": [
+    "Power and an outlet are what the hybrid adds, and weight comes with it."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "278 hp", "hybrid": "326 hp" },
+    { "label": "Torque", "gas": "317 lb-ft", "hybrid": "465 lb-ft" },
+    { "label": "Transmission", "gas": "8-speed automatic, or a 6-speed manual on 4x4 TRD Sport and TRD Off-Road", "hybrid": "8-speed automatic" },
+    { "label": "Towing, TRD Sport Double Cab 4x4", "gas": "6,400 pounds", "hybrid": "6,000 pounds" },
+    { "label": "Payload, TRD Sport Double Cab 4x4", "gas": "1,430 pounds", "hybrid": "1,620 pounds" },
+    { "label": "Curb weight, TRD Sport 4x4", "gas": "4,575 pounds", "hybrid": "5,045 pounds" },
+    { "label": "Power outlet", "gas": "None listed in Toyota’s release", "hybrid": "2,400-watt AC outlet, in the cab and the bed" },
+    { "label": "Drive", "gas": "4x2 or 4x4", "hybrid": "4x4 only" },
+    { "label": "Hybrid battery warranty", "gas": "Not applicable", "hybrid": "10 years or 150,000 miles, and it carries over to the next owner (Toyota)" },
+    { "label": "Trims", "gas": "SR through Limited", "hybrid": "TRD Sport, TRD Off-Road and Limited; the only engine on Trailhunter and TRD Pro" }
+  ],
+  "changesAfter": [
+    "Towing, payload and weight come from iSeeCars’ per-trim list. The hybrid’s higher payload there is a surprise given its extra weight, so check the door-jamb sticker on the truck you buy. Toyota’s own release gives a 6,500-pound maximum for the Tacoma as a whole."
+  ],
+  "incentives": [
+    "Toyota gives the hybrid no better terms than the gas truck. A 3.99% rate for up to 48 months covers the TRD Sport, TRD Off-Road and Limited i-FORCE MAX in all four regions we read, and gas Tacomas other than the SR5 get 2.99% in Chicago and 3.99% in Dallas and Los Angeles (New York gives only the Limited a rate, 2.99%). The SR5 has $500 finance cash on top. Neither version has cash back. The Trailhunter and TRD Pro, which are hybrids, get no finance or lease offers at all. The $500 military and college rebates apply to both. Offers are from the Tacoma price guide, read on Toyota’s site on November 16, 2026 for contracts ending November 30."
+  ],
+  "resale": [
+    "iSeeCars puts a three-year-old gas Tacoma down 3.5% ($1,132) and a hybrid down 11.9% ($5,632), and five years at 19.5% against 24.9%. The Tacoma is the best-resale midsize pickup by Kelley Blue Book’s award (from the Tacoma price guide), and the hybrid gives some of that back. On those samples the hybrid has lost $4,500 more after three years and $5,455 more after five, which is more than its $3,720 premium."
+  ],
+  "reddit": {
+    "lead": "The fuel-economy notes our coders wrote describe the gas four-cylinder, and none of them is about the hybrid."
+  },
+  "faq": [
+    ["How much more does the Tacoma i-FORCE MAX cost?", "$3,720 on a TRD Sport or TRD Off-Road over a 4x4 automatic, and $3,325 on a Limited, from the Tacoma price guide’s 2026 starting prices. The Trailhunter and TRD Pro come only as hybrids, from $63,750 and $64,750."],
+    ["How much better is the hybrid’s mpg?", "EPA rates it 23 mpg combined against 21 for a gas 4x4: 22 city against 19, and 24 on the highway for both."],
+    ["Does the hybrid tow less?", "On iSeeCars’ list, a TRD Sport hybrid is 6,000 pounds and a gas TRD Sport 4x4 6,400. Toyota’s own release gives 6,500 pounds as the Tacoma’s maximum."],
+    ["Can I get a manual with the hybrid?", "No. The i-FORCE MAX comes with an 8-speed automatic. The 6-speed manual is offered on gas 4x4 TRD Sport and TRD Off-Road trucks."]
+  ],
+  "queries": ["toyota tacoma hybrid worth it", "tacoma i-force max vs i-force", "tacoma hybrid vs gas mpg", "is the tacoma hybrid worth the extra cost"],
+  "blog": { "title": "Is the Toyota Tacoma Hybrid Worth It?", "text": "The i-FORCE MAX’s $3,720 premium, its 2-mpg gain, and what the 326 hp and the outlet actually buy.", "cta": "See the Tacoma hybrid math" },
+  "llms": { "title": "Is the Toyota Tacoma Hybrid Worth It?", "text": "The 2026 Tacoma i-FORCE MAX against the gas i-FORCE: price premium by trim, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, torque, towing, payload, the 2,400-watt outlet, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-TACOMA-01", "url": "https://pressroom.toyota.com/?p=111059", "title": "Toyota: 2026 Tacoma press release", "authority": "Toyota", "scope": "i-FORCE MAX 326 hp and 465 lb-ft, i-FORCE 278 hp and 317 lb-ft, the 2,400-watt AC outlet on hybrids, the 6,500-pound towing maximum and the 10-year/150,000-mile hybrid battery warranty", "note": "power, torque, outlet, towing maximum and hybrid battery warranty", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TACOMA-02", "url": "https://www.iseecars.com/car/2026-toyota-tacoma-specs", "title": "iSeeCars: 2026 Toyota Tacoma specs", "authority": "iSeeCars", "scope": "Towing, payload and curb weight by trim for gas and hybrid (HV) Tacomas, such as TRD Sport 4x4 at 6,400 and 6,000 pounds towing", "note": "towing, payload and curb weight by trim" },
+    { "id": "VEH-HYB-TACOMA-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50091", "title": "FuelEconomy.gov: 2026 Tacoma 4WD (vehicle 50091)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tacoma 4WD, 2.4L, automatic", "note": "EPA ratings, gas, 4x4", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TACOMA-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50109", "title": "FuelEconomy.gov: 2026 Tacoma Hybrid 4WD (vehicle 50109)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tacoma i-FORCE MAX hybrid 4WD", "note": "EPA ratings, hybrid, 4x4", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TACOMA-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50088", "title": "FuelEconomy.gov: 2026 Tacoma SR5/Sport/Off-Road/Limited 4WD (vehicle 50088)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Tacoma gas 4WD, SR5 through Limited, 21 mpg combined", "note": "EPA ratings, other gas 4x4 records", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-TACOMA-06", "url": "https://www.iseecars.com/car/toyota-tacoma/resale-value", "title": "iSeeCars: Toyota Tacoma resale value", "authority": "iSeeCars", "scope": "Three- and five-year depreciation of the Tacoma (3.5% and 19.5%) and the Tacoma hybrid (11.9% and 24.9%)", "note": "three- and five-year depreciation, gas and hybrid" },
+    { "id": "VEH-HYB-TACOMA-07", "url": "https://www.toyota.com/vehicles/tacoma/2026", "title": "Toyota: 2026 Tacoma", "authority": "Toyota", "scope": "2026 Tacoma starting MSRP by trim, as used in the Toyota Tacoma price guide", "note": "2026 prices by trim, from the Tacoma price guide", "status": "primary_source_checked", "registryNote": "Reused from the Toyota Tacoma price guide (VEH-TACOMA-01), read there on 2026-11-16." },
+    { "id": "VEH-HYB-TACOMA-08", "url": "https://www.iseecars.com/car/2026-toyota-tacoma-price", "title": "iSeeCars: 2026 Toyota Tacoma price", "authority": "iSeeCars", "scope": "The 4x4, manual and i-FORCE MAX step-up prices by configuration, as used in the Toyota Tacoma price guide", "note": "4x4 and hybrid step-up prices, from the Tacoma price guide", "registryNote": "Reused from the Toyota Tacoma price guide (VEH-TACOMA-05), read there on 2026-11-16." },
+    { "id": "VEH-HYB-TACOMA-09", "url": "https://www.toyota.com/deals-incentives/tacoma/", "title": "Toyota: Tacoma deals and incentives", "authority": "Toyota", "scope": "Toyota finance, lease and rebate offers on the 2026 and 2027 Tacoma, read in four regions on 2026-11-16 for the Toyota Tacoma price guide", "note": "finance and lease offers, from the Tacoma price guide", "status": "primary_source_checked", "registryNote": "Reused from the Toyota Tacoma price guide (VEH-TACOMA-04), read there on 2026-11-16." },
+    { "id": "VEH-HYB-TACOMA-10", "url": "https://www.edmunds.com/toyota/tacoma/2026/", "title": "Edmunds: 2026 Toyota Tacoma", "authority": "Edmunds", "scope": "Edmunds' test times, 7.4 seconds to 60 mph for a hybrid TRD Pro and 7.6 for a gas TRD Sport, as used in the Toyota Tacoma price guide", "note": "0-60 test times, from the Tacoma price guide", "registryNote": "Reused from the Toyota Tacoma price guide (VEH-TACOMA-07), read there on 2026-11-16." },
+    { "id": "VEH-HYB-TACOMA-11", "url": "https://mediaroom.kbb.com/2026-03-19-Kelley-Blue-Book-Announces-2026-Best-Resale-Value-Award-Winners", "title": "Kelley Blue Book: 2026 Best Resale Value Awards", "authority": "Kelley Blue Book", "scope": "Kelley Blue Book's best-resale midsize pickup award for the Tacoma, as used in the Toyota Tacoma price guide", "note": "resale award, from the Tacoma price guide", "registryNote": "Reused from the Toyota Tacoma price guide (VEH-TACOMA-13), read there on 2026-11-16." }
+  ]
+}
