@@ -497,3 +497,76 @@ test('the main dashboard tags a deal with a standing pick and lists it under Nee
   const switchedOff = (await ops(pg, off).home()).body;
   assert.ok(!switchedOff.includes('Pick made') && !switchedOff.includes('Wants more options') && switchedOff.includes('<h2>Needs you (0)</h2>'));
 });
+
+// Buyer Documents on the deal page: the list, and downloads behind the same sign-in.
+const withStore = { ...environment, BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_token_for_tests_only' };
+function memoryStore(files = new Map()) {
+  const calls = [];
+  return {
+    files, calls,
+    async get(pathname) { calls.push(pathname); const file = files.get(pathname); return file ? { body: file, size: file.length, contentType: 'application/pdf' } : null; },
+    async presignUpload() { throw new Error('not here'); }, async head() { throw new Error('not here'); }, async del() { throw new Error('not here'); }
+  };
+}
+const fileRow = async (pg, id, { docType = 'pre_approval', contentType = 'application/pdf', source = 'page', deleted = false } = {}) => {
+  const path = `deals/${id}/${crypto.randomUUID()}.pdf`;
+  const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, mail_message_id, deleted_at)
+    VALUES ($1, $2, $3, $4, 2621440, $5, $6, $7) RETURNING id`, [id, docType, path, contentType, source, source === 'email' ? `mail-${path}` : null, deleted ? '2026-12-01T12:00:00Z' : null]);
+  return { id: Number(row.id), path };
+};
+async function download(pg, documentId, { env = withStore, store, auth = basic } = {}) {
+  const res = response();
+  await opsHandler({ environment: env, getDatabase: () => tagged(pg), documentStore: store })(
+    request('GET', { url: `/api/ops?document=${documentId}`, headers: auth ? { authorization: auth } : {} }), res);
+  return res;
+}
+
+test('the panel lists Buyer Documents with how they came, their size and a download, or when the file was deleted', async t => {
+  const pg = await database(t);
+  const id = await intake(pg);
+  const live = await fileRow(pg, id);
+  const gone = await fileRow(pg, id, { docType: 'id', source: 'email', deleted: true });
+  const page = (await ops(pg).page(id)).body;
+  const panel = page.split('<h2>Buyer Documents (2)</h2>')[1];
+  assert.ok(panel, 'the section is there');
+  assert.ok(panel.includes('<strong>Loan pre-approval</strong>') && panel.includes('on the Deal Tracker · 2.5 MB'));
+  assert.ok(panel.includes(`<a class="nowrap" href="/api/ops?document=${live.id}">Download</a>`));
+  assert.ok(panel.includes('<strong>ID</strong>') && panel.includes('by email') && panel.includes('Deleted Dec 1, 2026'));
+  assert.ok(!panel.includes(`document=${gone.id}`) && !page.includes(live.path), 'no store path on the page');
+  assert.ok(!(await ops(pg, off).page(id)).body.includes('Buyer Documents'), 'switched off, no section');
+});
+
+test('Mason downloads any deal\'s document with the right bytes and headers; unknown 404, deleted 410, no sign-in 401, switched off 404', async t => {
+  const pg = await database(t);
+  const id = await intake(pg);
+  const other = await intake(pg);
+  const mine = await fileRow(pg, id, { docType: 'insurance' });
+  const theirs = await fileRow(pg, other, { contentType: 'text/html' });
+  const deleted = await fileRow(pg, id, { deleted: true });
+  const store = memoryStore(new Map([[mine.path, Buffer.from('%PDF-1.7 MINE')], [theirs.path, Buffer.from('<b>THEIRS</b>')]]));
+
+  const ok = await download(pg, mine.id, { store });
+  assert.equal(ok.statusCode, 200);
+  assert.equal(ok.body, '%PDF-1.7 MINE');
+  assert.equal(ok.headers['content-type'], 'application/pdf');
+  assert.equal(ok.headers['content-disposition'], `attachment; filename="insurance-${mine.id}.pdf"`);
+  assert.equal(ok.headers['x-content-type-options'], 'nosniff');
+  assert.match(ok.headers['cache-control'], /no-store/);
+  assert.equal(ok.headers['content-security-policy'], "sandbox; default-src 'none'");
+  assert.equal(ok.headers['content-length'], '13');
+
+  // Mason owns every deal; a stored type outside the allowed list goes out as plain bytes.
+  const foreign = await download(pg, theirs.id, { store });
+  assert.equal(foreign.statusCode, 200);
+  assert.equal(foreign.headers['content-type'], 'application/octet-stream');
+  assert.equal(foreign.headers['content-disposition'], `attachment; filename="pre_approval-${theirs.id}.bin"`);
+
+  assert.equal((await download(pg, 987654, { store })).statusCode, 404);
+  assert.equal((await download(pg, 'abc', { store })).statusCode, 404);
+  assert.equal((await download(pg, deleted.id, { store })).statusCode, 410);
+  store.calls.length = 0;
+  assert.equal((await download(pg, mine.id, { store, auth: null })).statusCode, 401);
+  assert.equal((await download(pg, mine.id, { store, env: { ...off, BLOB_READ_WRITE_TOKEN: 'x' } })).statusCode, 404);
+  assert.equal((await download(pg, mine.id, { store, env: environment })).statusCode, 503, 'no store set up');
+  assert.equal(store.calls.length, 0, 'none of those reached the store');
+});

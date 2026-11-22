@@ -1,5 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
+import { DOC_LABELS } from './buyer-documents.js';
 import { clearPick } from './buyer-picks.js';
 import { discardHeld, releaseHeld } from './buyer-questions.js';
 import { BuyerUpdateError, MAX_UPDATE_LENGTH, approveDraft, dealerNameWarning, discardDraft, postUpdate, reissueLink, restoreLink, retractUpdate, revokeLink } from './buyer-updates.js';
@@ -120,13 +121,13 @@ export function agentStatus(runs, logged, now = Date.now()) {
 }
 
 // tracker: whether the Deal Tracker is on. Only then are its link row, Buyer
-// Updates, Buyer Questions and Buyer Picks read, so with it off the page runs exactly the
-// queries it always has.
+// Updates, Buyer Questions, Buyer Picks and Buyer Documents read, so with it off
+// the page runs exactly the queries it always has.
 export async function loadDeal(sql, onboardingId, { tracker = false } = {}) {
   const [deal] = await sql`SELECT d.id, d.onboarding_id, d.search_summary, d.created_at, d.shortlisted_at, o.name, o.city, o.tier_id
     FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id WHERE d.onboarding_id = ${onboardingId}`;
   if (!deal) return null;
-  const [listings, events, drafts, links, updates, questions, picks] = await Promise.all([
+  const [listings, events, drafts, links, updates, questions, picks, documents] = await Promise.all([
     sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, walk_away_cents, mileage, days_on_lot,
         dealer_name, dealer_location, listing_url FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`,
     sql`SELECT id, kind, actor, dealer_name, vin, otd_cents, note, options, answer, resolves_event_id, occurred_at
@@ -138,9 +139,13 @@ export async function loadDeal(sql, onboardingId, { tracker = false } = {}) {
     tracker ? sql`SELECT id, body, source, sender_email, held, released_at, discarded_at, created_at
       FROM buyer_questions WHERE onboarding_id = ${onboardingId} AND discarded_at IS NULL ORDER BY created_at DESC, id DESC` : [],
     tracker ? sql`SELECT id, kind, opened_by_update_id, vin, dealer_name, otd_cents, created_at, cleared_at, cleared_by
-      FROM buyer_picks WHERE onboarding_id = ${onboardingId} ORDER BY created_at DESC, id DESC` : []
+      FROM buyer_picks WHERE onboarding_id = ${onboardingId} ORDER BY created_at DESC, id DESC` : [],
+    tracker ? sql`SELECT d.id, d.doc_type, d.source, d.content_type, d.bytes, d.created_at, d.deleted_at,
+        (q.held AND q.released_at IS NULL) AS on_held_mail
+      FROM buyer_documents d LEFT JOIN buyer_questions q ON q.id = d.question_id
+      WHERE d.onboarding_id = ${onboardingId} ORDER BY d.created_at DESC, d.id DESC` : []
   ]);
-  return { deal, listings, events, drafts, ...(tracker ? { tracker: { link: links[0] ?? null, updates, questions, picks, url: null } } : {}) };
+  return { deal, listings, events, drafts, ...(tracker ? { tracker: { link: links[0] ?? null, updates, questions, picks, documents, url: null } } : {}) };
 }
 
 // A needs_mason row that is still open, or null. Used before logging 'resolved'.
@@ -747,7 +752,7 @@ ${held.length ? safe`<h2>Held email (${held.length})</h2><div class="card"><ul c
 // Buyer Questions with held mail. Before a price is agreed, an update that names
 // a shortlisted dealer is flagged.
 function trackerPanel(deal, summary, tracker, listings, events, now) {
-  const { link, updates, url, questions = [], picks = [] } = tracker;
+  const { link, updates, url, questions = [], picks = [], documents = [] } = tracker;
   if (!link) return raw('<div class="card"><p class="empty">This deal opened before the Deal Tracker, so the buyer has no link.</p></div>');
   const hidden = (action = null) => safe`${action ? safe`<input type="hidden" name="tracker" value="${action}">` : ''}<input type="hidden" name="deal" value="${deal.onboarding_id}">`;
   const names = summary.closed || summary.stage === 'agreed' ? [] : namedDealers(listings, events);
@@ -788,7 +793,21 @@ ${drafts.length ? safe`<h2>Drafts to approve (${drafts.length})</h2><div class="
   <form method="post" action="/api/ops" class="answer">${hidden('retract')}<input type="hidden" name="update" value="${update.id}">
     <button type="submit">Take back</button></form></li>`)}</ul>` : raw('<p class="empty">No updates posted yet.</p>')}</div>
 ${pickList(picks, listings, events, hidden, now)}
-${questionLists(deal, questions, updates, hidden, now)}`;
+${questionLists(deal, questions, updates, hidden, now)}
+${documentList(documents, now)}`;
+}
+
+const fileSize = bytes => (bytes >= 1048576 ? `${(bytes / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(bytes / 1024))} KB`);
+
+// The buyer's documents, newest first, each with a download through this page's
+// sign-in (GET /api/ops?document=<id>). A deleted file keeps its row and says when.
+function documentList(documents, now) {
+  return safe`<h2>Buyer Documents (${documents.length})</h2>
+<div class="card">${documents.length ? safe`<ul class="list">${join(documents, doc => safe`<li><div class="main">
+  <p><strong>${DOC_LABELS[doc.doc_type] ?? doc.doc_type}</strong> <span class="muted">· ${doc.source === 'email' ? 'by email' : 'on the Deal Tracker'} · ${fileSize(Number(doc.bytes))} · ${when(doc.created_at, now)}</span></p>
+  ${doc.on_held_mail ? raw('<p class="muted">Came on held email: agents can\'t open it until you release that email.</p>') : ''}</div>
+  ${doc.deleted_at ? safe`<span class="muted nowrap">Deleted ${absolute(doc.deleted_at)}</span>` : safe`<a class="nowrap" href="/api/ops?document=${Number(doc.id)}">Download</a>`}</li>`)}</ul>`
+    : raw('<p class="empty">No documents from the buyer yet.</p>')}</div>`;
 }
 
 // The buyer's picks, newest first: standing ones with what was picked and a

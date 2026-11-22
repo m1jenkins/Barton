@@ -1,4 +1,5 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
+import { blobStore, documentSettings, readDocument, sendDocument } from './_lib/buyer-documents.js';
 import { database } from './_lib/db.js';
 import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
@@ -7,7 +8,8 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
 // GET ?intake=<id> returns the search details; POST saves the shortlist; POST
 // with "action": "handoff" marks the deal's first emails handed off and returns
-// the deal for the script to post to Grokbot.
+// the deal for the script to post to Grokbot. GET ?document=<id> returns a Buyer
+// Document as a download (scripts/car-search.mjs document <id>).
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -18,13 +20,36 @@ const HANDOFF_ERRORS = Object.freeze({
   no_dealer_emails: [409, 'This shortlist has no dealer email left to hand off.']
 });
 
-export function carSearchHandler({ environment = process.env, getDatabase = database } = {}) {
+const DOCUMENT_ERRORS = Object.freeze({
+  not_found: [404, 'document_not_found', 'No Buyer Document has that id.'],
+  held: [403, 'document_held', 'This document came on held email. It opens only once Mason releases that email on the ops dashboard.'],
+  deleted: [410, 'document_deleted', 'This file was deleted 30 days after the deal closed.'],
+  missing: [404, 'document_missing', 'The store has no file for this document.']
+});
+
+// documentStore: the Blob store, for tests; by default built from documentSettings.
+export function carSearchHandler({ environment = process.env, getDatabase = database, documentStore = null } = {}) {
   return withApiErrors(async (req, res) => {
     if (!['GET', 'POST'].includes(req.method)) throw new HttpError(405, 'method_not_allowed', 'Use GET, POST');
     const token = carSearchToken(environment);
     if (!token) throw new HttpError(503, 'service_unavailable', 'Car search is not configured');
     if (!timingSafeEqual(digest(header(req, 'authorization') || ''), digest(`Bearer ${token}`))) {
       throw new HttpError(401, 'unauthorized', 'Bearer token required');
+    }
+
+    if (req.method === 'GET' && requestUrl(req).searchParams.has('document')) {
+      // An agent fetches a Buyer Document (plan, "Documents"). Nothing from held
+      // mail reaches agents until Mason releases it, and the store isn't read for it.
+      if (!dealTrackerEnabled(environment)) return sendJson(res, 404, { ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
+      const documents = documentSettings(environment);
+      if (!documents) return sendJson(res, 503, { ok: false, error: 'documents_unavailable', message: 'The Buyer Document store is not set up.' });
+      const file = await readDocument({ sql: getDatabase(), store: documentStore ?? blobStore(documents),
+        id: requestUrl(req).searchParams.get('document'), forAgent: true });
+      if (file.error) {
+        const [status, error, message] = DOCUMENT_ERRORS[file.error];
+        return sendJson(res, status, { ok: false, error, message });
+      }
+      return sendDocument(res, file);
     }
 
     if (req.method === 'GET') {

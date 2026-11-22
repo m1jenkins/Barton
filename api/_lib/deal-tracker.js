@@ -1,5 +1,6 @@
 import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
+import { CONTENT_TYPES, DOC_LABELS, MAX_BYTES, listReceipts } from './buyer-documents.js';
 import { buyerFromRow } from './customer-emails/index.js';
 import { openPickRound } from './buyer-picks.js';
 import { MAX_QUESTION_LENGTH } from './buyer-questions.js';
@@ -159,9 +160,17 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
     },
     cars: [],
     agreed: null,
-    pick: { open: false, standing: null }
+    pick: { open: false, standing: null },
+    // Buyer Documents: receipts only (type and time), and whether the page takes
+    // a file, and an ID (from Price agreed). Nothing else about a file leaves the database.
+    documents: [],
+    can_upload: false,
+    can_upload_id: false
   };
   if (outcome === 'other') return view;
+  view.documents = await listReceipts(sql, onboardingId);
+  view.can_upload = true;
+  view.can_upload_id = summary.stage === 'agreed' || outcome === 'bought';
 
   // The timeline: posted Buyer Updates and the buyer's own questions, oldest
   // first. Drafts and retracted updates never leave the database. A question
@@ -261,8 +270,9 @@ const STAGES = [
 
 const WORDMARK = '<span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span>';
 
-// A private page: no scripts, nothing from another origin, every URL root-relative.
-function page(title, body) {
+// A private page: nothing from another origin, every URL root-relative. The one
+// script is this site's own upload helper, only on a page with the document form.
+function page(title, body, { script = false } = {}) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -276,7 +286,7 @@ function page(title, body) {
 <link rel="stylesheet" href="/buying/drive-right.css">
 <link rel="stylesheet" href="/logo-motion.css">
 <link rel="stylesheet" href="/buying/deal-tracker.css">
-</head>
+${script ? `<script src="${UPLOAD_SCRIPT}" defer></script>\n` : ''}</head>
 <body class="dr dt"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header page-width">
   <a class="wordmark" href="/" aria-label="Steer Me Right home">${WORDMARK}</a>
@@ -533,8 +543,45 @@ export function pickSection(view, action = null) {
   </div>`);
 }
 
-// Later parts of the build fill this in (plan, "Build order" 6). It renders nothing yet.
-const documentsSection = () => NOTHING;
+export const UPLOAD_SCRIPT = '/buying/deal-tracker.js';
+const DOC_ORDER = ['pre_approval', 'trade_in_photos', 'trade_in_title', 'payoff_letter', 'insurance', 'id', 'other'];
+// Built on use: buyer-documents.js imports this module back, so its constants
+// aren't ready while this one loads.
+const accepted = () => [...Object.keys(CONTENT_TYPES), '.pdf', '.jpg', '.jpeg', '.png', '.heic', '.heif', '.webp'].join(',');
+// Whether the page shows the document form, and so loads its script.
+const showsUploadForm = (view, uploads) => Boolean(view.can_upload && uploads);
+
+// Buyer Documents (plan, "Documents"; adr/0001): a form that sends a file
+// straight to the private store through buying/deal-tracker.js, and the
+// receipts of what was sent. A file can never be opened from this page. The
+// form stays hidden until the script shows it; without script the buyer is
+// told to email the file. ID is offered only from Price agreed. uploads is
+// false when the store isn't set up, and the section says so.
+export function documentsSection(view, { action = null, uploads = true } = {}) {
+  if (!view.can_upload) return NOTHING;
+  const types = DOC_ORDER.filter(type => type !== 'id' || view.can_upload_id);
+  const receipts = view.documents ?? [];
+  const list = safe`<ul class="dt-receipts" id="dt-receipts"${receipts.length ? NOTHING : safe` hidden`}>${join(receipts, item => safe`<li>${DOC_LABELS[item.doc_type] ?? DOC_LABELS.other} · sent <time datetime="${item.at}">${updateTime(item.at)}</time></li>`)}</ul>`;
+  const form = showsUploadForm(view, uploads)
+    ? safe`<form class="dt-docs" id="dt-docs-form" method="post"${action ? safe` action="${action}"` : NOTHING} data-max-bytes="${MAX_BYTES}" hidden>
+    <label class="dt-docs__label" for="dt-doc-type">What it is</label>
+    <span class="dt-select"><select class="dt-field" id="dt-doc-type" name="doc_type" required>
+      <option value="">Choose one</option>
+      ${join(types, type => safe`<option value="${type}">${DOC_LABELS[type]}</option>`)}
+    </select></span>
+    <label class="dt-docs__label" for="dt-doc-file">File</label>
+    <input class="dt-field dt-field--file" id="dt-doc-file" name="file" type="file" accept="${accepted()}" required>
+    <p class="dt-docs__hint">A PDF or a photo (JPEG, PNG, HEIC or WebP), up to 20 MB.</p>
+    <button class="dt-button" type="submit">Send document</button>
+    <p class="dt-docs__status" id="dt-docs-status" role="status" aria-live="polite"></p>
+  </form>
+  <noscript><p class="dt-aside">Sending a file from this page needs JavaScript, which is turned off in your browser. Email the file to me at ${mailto} instead.</p></noscript>`
+    : safe`<div class="dt-card"><p>Sending documents from this page isn’t available right now. Please try again later, or email the file to me at ${mailto}.</p></div>`;
+  const lead = safe`A loan pre-approval, your trade-in’s title or payoff letter, or a few photos of your trade-in help me negotiate.${view.can_upload_id ? ' Now that we have a price, you can send your ID here too.' : ''} Files come only to me and stay private. Once a file is sent, it can’t be opened from this page: you’ll see a receipt of what you sent and when.`;
+  return section('dt-docs', 'Send me a document', safe`${form}
+  <h3 class="dt-receipts__title"${receipts.length ? NOTHING : safe` hidden`} id="dt-receipts-title">What you’ve sent</h3>
+  ${list}`, lead);
+}
 
 function stageBody(view, action = null) {
   if (view.outcome === 'other') return closedSection();
@@ -545,15 +592,16 @@ function stageBody(view, action = null) {
 }
 
 // action: the page's own path (/deal/<token>), which the question box posts to.
-export function renderTracker(view, { action = null } = {}) {
+// uploads: whether the document store is set up (the form shows only then).
+export function renderTracker(view, { action = null, uploads = true } = {}) {
   const body = safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 ${intro(view)}
 ${stageBody(view, action)}
 ${timelineSection(view)}
 ${questionSection(view, action)}
-${documentsSection(view)}
+${documentsSection(view, { action, uploads })}
 </main>`;
-  return page('Your car search · Steer Me Right', String(body));
+  return page('Your car search · Steer Me Right', String(body), { script: showsUploadForm(view, uploads) });
 }
 
 export const dollars = money;

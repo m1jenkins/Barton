@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, listPicks, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, listDocuments, listPicks, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
@@ -222,4 +222,31 @@ test('picks lists standing Buyer Picks newest first with the car\'s title, never
   assert.deepEqual(await listPicks(sql, crypto.randomUUID()), []);
   await assert.rejects(listPicks(sql, withDeal.slice(0, 8)), /full intake ID/);
   assert.equal(JSON.stringify((await pg.query('SELECT * FROM buyer_picks ORDER BY id')).rows), before, 'read-only');
+});
+
+test('documents lists the Buyer Documents an agent may use, newest first, never deleted ones or ones on held mail, and writes nothing', async t => {
+  const { pg, sql, withDeal } = await database(t);
+  const held = async released => Number((await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id, released_at)
+    VALUES ($1, 'files', 'email', 'cousin@example.test', true, $2, $3) RETURNING id`, [withDeal, `mail-${crypto.randomUUID()}`, released ? new Date().toISOString() : null])).rows[0].id);
+  const add = async (docType, minutesAgo, { source = 'page', questionId = null, deleted = false } = {}) =>
+    Number((await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, question_id, mail_message_id, created_at, deleted_at)
+      VALUES ($1, $2, $3, 'application/pdf', 4096, $4, $5, $6, now() - $7 * interval '1 minute', $8) RETURNING id`,
+    [withDeal, docType, `deals/${withDeal}/${crypto.randomUUID()}.pdf`, source, questionId, source === 'email' ? `mail-${crypto.randomUUID()}` : null, minutesAgo,
+      deleted ? new Date().toISOString() : null])).rows[0].id);
+  const older = await add('pre_approval', 30);
+  const newer = await add('insurance', 10);
+  const released = await add('payoff_letter', 20, { source: 'email', questionId: await held(true) });
+  await add('id', 5, { source: 'email', questionId: await held(false) });
+  await add('trade_in_title', 1, { deleted: true });
+  const before = JSON.stringify((await pg.query('SELECT * FROM buyer_documents ORDER BY id')).rows);
+
+  const rows = await listDocuments(sql, withDeal.toUpperCase());
+  assert.deepEqual(rows.map(row => Number(row.id)), [newer, released, older]);
+  assert.deepEqual(Object.keys(rows[0]).sort(), ['bytes', 'content_type', 'created_at', 'doc_type', 'id', 'intake_id', 'source']);
+  assert.ok(!JSON.stringify(rows).includes('deals/'), 'no store path');
+  assert.deepEqual([rows[1].doc_type, rows[1].source, Number(rows[1].bytes), rows[1].intake_id], ['payoff_letter', 'email', 4096, withDeal]);
+  assert.equal((await listDocuments(sql)).length, 3);
+  assert.deepEqual(await listDocuments(sql, crypto.randomUUID()), []);
+  await assert.rejects(listDocuments(sql, withDeal.slice(0, 8)), /full intake ID/);
+  assert.equal(JSON.stringify((await pg.query('SELECT * FROM buyer_documents ORDER BY id')).rows), before, 'read-only');
 });

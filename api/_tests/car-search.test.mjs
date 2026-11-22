@@ -531,3 +531,94 @@ test('the car search endpoint requires and stores the estimate and color only wh
     assert.equal(json(res).cars, 2);
   }
 });
+
+// Agents fetch a Buyer Document with the car-search token (plan, "Documents").
+test('an agent downloads a Buyer Document with the bearer token; held mail is refused until released, and deleted files are gone', async t => {
+  const pg = await database(t, migrations);
+  const sql = tagged(pg);
+  const intake = await addIntake(pg);
+  await pg.query('INSERT INTO deals (id, onboarding_id) VALUES ($1, $2)', [crypto.randomUUID(), intake]);
+  const add = async ({ docType = 'pre_approval', source = 'page', questionId = null, deleted = false } = {}) => {
+    const path = `deals/${intake}/${crypto.randomUUID()}.jpg`;
+    const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, question_id, mail_message_id, deleted_at)
+      VALUES ($1, $2, $3, 'image/jpeg', 11, $4, $5, $6, $7) RETURNING id`,
+    [intake, docType, path, source, questionId, source === 'email' ? `mail-${path}` : null, deleted ? new Date().toISOString() : null]);
+    return { id: Number(row.id), path };
+  };
+  const { rows: [held] } = await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id)
+    VALUES ($1, 'see attached', 'email', 'cousin@example.test', true, 'held-mail-1') RETURNING id`, [intake]);
+  const plain = await add();
+  const onHeld = await add({ docType: 'id', source: 'email', questionId: held.id });
+  const gone = await add({ deleted: true });
+  const reads = [];
+  const store = {
+    async get(pathname) { reads.push(pathname); return { body: Buffer.from('JPEG-BYTES!'), size: 11, contentType: 'image/jpeg' }; },
+    async presignUpload() { throw new Error('no'); }, async head() { throw new Error('no'); }, async del() { throw new Error('no'); }
+  };
+  const on = { ...environment, DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: 'deal-tracker-secret-for-tests-only-0123456789', BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_test' };
+  const get = async (id, { env = on, auth = `Bearer ${token}` } = {}) => {
+    const res = response();
+    await carSearchHandler({ environment: env, getDatabase: () => sql, documentStore: store })(
+      { method: 'GET', url: `/api/car-search?document=${id}`, headers: { host: 'www.steermeright.com', ...(auth ? { authorization: auth } : {}) } }, res);
+    return res;
+  };
+
+  assert.equal((await get(plain.id, { auth: null })).statusCode, 401);
+  assert.equal((await get(plain.id, { auth: 'Bearer wrong' })).statusCode, 401);
+  const ok = await get(plain.id);
+  assert.equal(ok.statusCode, 200);
+  assert.equal(ok.body, 'JPEG-BYTES!');
+  assert.deepEqual([ok.headers['content-type'], ok.headers['content-disposition'], ok.headers['x-content-type-options'], ok.headers['content-security-policy']],
+    ['image/jpeg', `attachment; filename="pre_approval-${plain.id}.jpg"`, 'nosniff', "sandbox; default-src 'none'"]);
+  assert.match(ok.headers['cache-control'], /no-store/);
+
+  reads.length = 0;
+  const refused = await get(onHeld.id);
+  assert.equal(refused.statusCode, 403);
+  assert.equal(json(refused).error, 'document_held');
+  assert.equal(reads.length, 0, 'the store is never read for held mail');
+  await pg.query('UPDATE buyer_questions SET released_at = now() WHERE id = $1', [held.id]);
+  assert.equal((await get(onHeld.id)).statusCode, 200, 'released, it opens');
+
+  assert.equal((await get(gone.id)).statusCode, 410);
+  assert.equal(json(await get(987654)).error, 'document_not_found');
+  assert.equal((await get(987654)).statusCode, 404);
+  assert.equal((await get(plain.id, { env: environment })).statusCode, 404, 'Deal Tracker off');
+  const unset = await get(plain.id, { env: { ...on, BLOB_READ_WRITE_TOKEN: '' } });
+  assert.equal(unset.statusCode, 503);
+  assert.equal(json(unset).error, 'documents_unavailable');
+});
+
+test('the helper script saves a Buyer Document where it is told, or under .car-searches/documents, and never prints it', async t => {
+  const dir = await mkdtemp(join(tmpdir(), 'car-search-doc-'));
+  t.after(() => rm(dir, { recursive: true, force: true }));
+  const environment = { CAR_SEARCH_TOKEN: token, CAR_SEARCH_URL: 'http://localhost:3000' };
+  const calls = [];
+  const fetchImpl = async (url, init = {}) => {
+    calls.push({ url, init });
+    if (url.endsWith('document=404')) return { status: 404, json: async () => ({ ok: false, error: 'document_not_found' }) };
+    return {
+      status: 200,
+      headers: new Headers({ 'content-type': 'application/pdf', 'content-disposition': 'attachment; filename="payoff_letter-12.pdf"' }),
+      arrayBuffer: async () => new TextEncoder().encode('%PDF-PAYOFF').buffer
+    };
+  };
+  const named = join(dir, 'nested', 'payoff.pdf');
+  const saved = await carSearchRequest(['document', '12', named], { environment, fetchImpl });
+  assert.equal(calls[0].url, 'http://localhost:3000/api/car-search?document=12');
+  assert.equal(calls[0].init.headers.Authorization, `Bearer ${token}`);
+  assert.deepEqual(saved, { status: 200, body: { ok: true, document: 12, saved: named, bytes: 11, content_type: 'application/pdf' } });
+  assert.equal(await readFile(named, 'utf8'), '%PDF-PAYOFF');
+  assert.ok(!JSON.stringify(saved).includes('PAYOFF'), 'the result never carries the contents');
+
+  const byDefault = await carSearchRequest(['document', '12'], { environment, fetchImpl, documentsDir: join(dir, 'documents') });
+  assert.equal(byDefault.body.saved, join(dir, 'documents', 'payoff_letter-12.pdf'));
+  assert.equal(await readFile(byDefault.body.saved, 'utf8'), '%PDF-PAYOFF');
+
+  const missing = await carSearchRequest(['document', '404'], { environment, fetchImpl, documentsDir: join(dir, 'documents') });
+  assert.deepEqual(missing, { status: 404, body: { ok: false, error: 'document_not_found' } });
+  for (const bad of [['document'], ['document', 'abc'], ['document', '../12']]) {
+    await assert.rejects(carSearchRequest(bad, { environment, fetchImpl }), /Usage/, bad.join(' '));
+  }
+  assert.equal(calls.length, 3);
+});

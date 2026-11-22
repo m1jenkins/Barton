@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { runDocumentCleanupWorker } from '../_lib/buyer-documents.js';
 import { outboxHandler } from '../outbox-dispatch.js';
 
 const secret = 'test-secret-for-bounded-cron-authentication';
@@ -26,6 +27,7 @@ test('cron honestly skips missing destinations without touching the database', a
   assert.equal(res.body.workers.leads.configured, false);
   assert.equal(res.body.workers.analytics.configured, false);
   assert.equal(res.body.workers.buyer_updates.configured, false);
+  assert.equal(res.body.workers.document_cleanup.configured, false);
 });
 
 test('cron waits for both configured workers and reports aggregate failures without secrets', async () => {
@@ -93,4 +95,36 @@ test('cron runs the Buyer Update worker only with the Deal Tracker on', async ()
   assert.equal(on.statusCode, 200);
   assert.equal(on.body.workers.buyer_updates.sent, 1);
   assert.equal(calls, 1);
+});
+
+test('?jobs=document_cleanup runs the Buyer Document cleanup, and only with the Deal Tracker on and a store set up', async () => {
+  const tracker = { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: 'deal-tracker-secret-for-tests-only-0123456789' };
+  const store = { deleted: [], async del(pathname) { this.deleted.push(pathname); } };
+  // Stands in for Postgres: one file past its 30 days, then its row marked deleted.
+  const queries = [];
+  const sql = async strings => {
+    const query = strings.join('?');
+    queries.push(query);
+    return query.includes('SELECT d.id, d.blob_path') ? [{ id: 7, blob_path: 'deals/x/7.pdf' }] : [{ id: 7 }];
+  };
+  const documentCleanupWorker = options => runDocumentCleanupWorker({ ...options, store });
+  const run = async environment => {
+    const res = response();
+    await outboxHandler({ environment: { CRON_SECRET: secret, ...environment }, getDatabase: () => sql, documentCleanupWorker })(
+      { ...request(), url: '/api/outbox-dispatch?jobs=document_cleanup' }, res);
+    return res;
+  };
+
+  const off = await run({ BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_test' });
+  assert.equal(off.statusCode, 200);
+  assert.deepEqual(Object.keys(off.body.workers), ['document_cleanup']);
+  assert.equal(off.body.workers.document_cleanup.configured, false);
+  assert.equal((await run(tracker)).body.workers.document_cleanup.configured, false, 'no store set up');
+  assert.equal(queries.length, 0);
+
+  const on = await run({ ...tracker, BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_test' });
+  assert.equal(on.statusCode, 200);
+  assert.deepEqual(on.body.workers.document_cleanup, { configured: true, deleted: 1, failed: 0, ok: true });
+  assert.deepEqual(store.deleted, ['deals/x/7.pdf']);
+  assert.doesNotMatch(JSON.stringify(on.body), /vercel_blob_rw_test/);
 });

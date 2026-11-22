@@ -1,18 +1,24 @@
 import { existsSync, readFileSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
-import { pathToFileURL } from 'node:url';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 // Helper for the /car-search skill (.claude/skills/car-search/SKILL.md):
 //   node scripts/car-search.mjs get <intake ID>                    search details for one paid intake
 //   node scripts/car-search.mjs submit <intake ID> <shortlist.json>  save the shortlist and email it to Mason
 //   node scripts/car-search.mjs handoff <intake ID>                hand the deal and its first emails to Grokbot
+//   node scripts/car-search.mjs document <document id> [output file]
+//                                                                  save one Buyer Document (ids from
+//                                                                  `node scripts/deal-desk-db.mjs documents`), by default to
+//                                                                  .car-searches/documents/ (git-ignored); prints where, never the contents
 // Reads CAR_SEARCH_TOKEN, and optionally CAR_SEARCH_URL, from the environment
 // or from .env.local in the repository root (git-ignored). handoff also needs
 // DEALER_BOT_URL and DEALER_BOT_KEY, Grokbot's "New deal" webhook
 // (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
 // JSON through as is; the server checks it, including each car's est_otd and
 // color once the Deal Tracker is on.
-const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID>';
+const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | document <document id> [output file]';
+const DOCUMENTS_DIR = fileURLToPath(new URL('../.car-searches/documents/', import.meta.url));
 
 export function localEnv(file = new URL('../.env.local', import.meta.url)) {
   if (!existsSync(file)) return {};
@@ -53,13 +59,34 @@ async function postToDealerBot(bot, handoff, fetchImpl) {
   };
 }
 
-export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch } = {}) {
+// The server names the file (<type>-<id>.<ext>); only a plain name is kept.
+function savedName(disposition, id) {
+  const name = /filename="([^"]+)"/i.exec(disposition ?? '')?.[1] ?? '';
+  return /^[a-z0-9_-]{1,40}\.[a-z0-9]{1,5}$/i.test(name) ? name : `document-${id}`;
+}
+
+// One Buyer Document saved to disk. The result says where and how big, never what's in it.
+async function saveDocument(base, headers, id, output, fetchImpl, documentsDir) {
+  const response = await fetchImpl(`${base}/api/car-search?document=${encodeURIComponent(id)}`, { headers: { ...headers, Accept: '*/*' } });
+  if (response.status !== 200) {
+    return { status: response.status, body: await response.json().catch(() => ({ ok: false, error: `HTTP ${response.status}` })) };
+  }
+  const bytes = Buffer.from(await response.arrayBuffer());
+  const target = output ? resolve(output) : join(documentsDir, savedName(response.headers.get('content-disposition'), id));
+  await mkdir(dirname(target), { recursive: true });
+  await writeFile(target, bytes, { mode: 0o600 });
+  return { status: 200, body: { ok: true, document: Number(id), saved: target, bytes: bytes.length, content_type: response.headers.get('content-type') } };
+}
+
+export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR } = {}) {
   const token = environment.CAR_SEARCH_TOKEN?.trim();
   if (!token) throw new Error('CAR_SEARCH_TOKEN is not set. Add it to .env.local (see "Car search" in docs/implementation-operations.md).');
-  if (!intakeId || !['get', 'submit', 'handoff'].includes(command) || (command === 'submit' && !file)) throw new Error(USAGE);
+  if (!intakeId || !['get', 'submit', 'handoff', 'document'].includes(command) || (command === 'submit' && !file)) throw new Error(USAGE);
+  if (command === 'document' && !/^[1-9]\d{0,17}$/.test(intakeId)) throw new Error(USAGE);
   const bot = command === 'handoff' ? dealerBot(environment) : null;
   const base = (environment.CAR_SEARCH_URL?.trim() || 'https://www.steermeright.com').replace(/\/+$/, '');
   const headers = { Authorization: `Bearer ${token}`, Accept: 'application/json' };
+  if (command === 'document') return saveDocument(base, headers, intakeId, file, fetchImpl, documentsDir);
   const response = command === 'get'
     ? await fetchImpl(`${base}/api/car-search?intake=${encodeURIComponent(intakeId)}`, { headers })
     : await fetchImpl(`${base}/api/car-search`, {

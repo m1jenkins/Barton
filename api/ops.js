@@ -1,3 +1,4 @@
+import { blobStore, documentSettings, readDocument, sendDocument } from './_lib/buyer-documents.js';
 import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requestUrl, withApiErrors } from './_lib/http.js';
 import { dealTrackerSettings, linkUrl } from './_lib/deal-tracker.js';
@@ -10,7 +11,7 @@ import { editDeal, isAuthorized, loadDashboard, loadDeal, opsPassword, renderDas
 // With the Deal Tracker on, POST with tracker=<post|approve|discard|retract|revoke|restore|reissue|release|discard_mail|clear_pick>,
 // deal=<intake ID> and, per update, update=<id> works its panel on the deal page. post takes an
 // optional question=<id> to answer a Buyer Question; release and discard_mail take question=<id>;
-// clear_pick takes pick=<id>.
+// clear_pick takes pick=<id>. GET ?document=<id> downloads a Buyer Document (any deal's).
 export const config = { maxDuration: 20 };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const SECURITY_HEADERS = Object.freeze({
@@ -29,7 +30,14 @@ function send(res, status, body, extra = {}) {
   res.end(body ?? '');
 }
 
-export function opsHandler({ environment = process.env, getDatabase = database, now = () => Date.now() } = {}) {
+const DOCUMENT_ERRORS = Object.freeze({
+  not_found: [404, 'No such document', 'That link does not match a Buyer Document.'],
+  missing: [404, 'File not found', 'The store has no file for this document.'],
+  deleted: [410, 'File deleted', 'This file was deleted 30 days after the deal closed. Its row stays for the record.']
+});
+
+// documentStore: the Blob store, for tests; by default built from documentSettings.
+export function opsHandler({ environment = process.env, getDatabase = database, now = () => Date.now(), documentStore = null } = {}) {
   return withApiErrors(async (req, res) => {
     if (!['GET', 'POST'].includes(req.method)) throw new HttpError(405, 'method_not_allowed', 'Use GET, POST');
     const password = opsPassword(environment);
@@ -69,6 +77,20 @@ export function opsHandler({ environment = process.env, getDatabase = database, 
       await resolveNeed(sql, eventId, answer || null);
       const back = form.get('back');
       return send(res, 303, null, { Location: UUID.test(back || '') ? `/api/ops?deal=${back.toLowerCase()}` : '/api/ops' });
+    }
+
+    const documentId = requestUrl(req).searchParams.get('document');
+    if (documentId != null) {
+      if (!tracker) return send(res, 404, renderMessage('Not found', 'The Deal Tracker is off.'));
+      const documents = documentSettings(environment);
+      if (!documents) return send(res, 503, renderMessage('Documents are off', 'Set up the Blob store in Vercel to open Buyer Documents.'));
+      const file = await readDocument({ sql, store: documentStore ?? blobStore(documents), id: documentId, forAgent: false });
+      if (file.error) {
+        const [status, title, message] = DOCUMENT_ERRORS[file.error];
+        return send(res, status, renderMessage(title, message));
+      }
+      // sendDocument's own Content-Type, disposition and sandboxing CSP replace the page's.
+      return sendDocument(res, file, SECURITY_HEADERS);
     }
 
     const dealId = requestUrl(req).searchParams.get('deal');

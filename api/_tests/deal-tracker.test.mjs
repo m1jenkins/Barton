@@ -139,7 +139,9 @@ test('every preview state renders without empty values', () => {
   for (const [name, view] of Object.entries(SAMPLE_VIEWS)) {
     const html = renderTracker(view);
     for (const junk of ['undefined', 'null', 'NaN', '[object']) assert.ok(!html.includes(junk), `${name} contains ${junk}`);
-    assert.doesNotMatch(html, /<script/i, name);
+    // The only script is the site's own document helper, on pages with the document form.
+    const scripts = html.match(/<script\b[^>]*>/gi) ?? [];
+    assert.deepEqual(scripts, view.can_upload ? ['<script src="/buying/deal-tracker.js" defer>'] : [], name);
   }
   assert.doesNotMatch(renderLinkClosed(), /undefined|null|NaN|\[object|<script/i);
   assert.match(renderTracker(SAMPLE_VIEWS['closed-other']), /mason@steermeright\.com/);
@@ -245,4 +247,25 @@ test('the preview walks the pick: the button shows the confirm page, and confirm
   assert.equal((await post('action=keep_looking')).headers.get('location'), '/deal/quotes-in-keep-looking#dt-pick');
   assert.ok((await (await fetch(`${base}/deal/confirm-pick`)).text()).includes('Yes, that’s my pick'));
   assert.ok((await (await fetch(`${base}/deal/confirm-keep-looking`)).text()).includes('Yes, keep looking'));
+});
+
+test('the preview walks a document: upload_start, a PUT to its fake local store, then upload_done\'s receipt, keeping nothing', async t => {
+  const server = createDealTrackerPreview();
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => server.close());
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const post = body => fetch(`${base}/deal/price-agreed`, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+  const started = await (await post('action=upload_start&doc_type=id&content_type=image%2Fjpeg&bytes=5')).json();
+  assert.equal(started.ok, true);
+  assert.match(started.upload.url, /^\/preview-upload\/[0-9a-f-]{36}$/);
+  const put = await fetch(`${base}${started.upload.url}`, { method: started.upload.method, headers: started.upload.headers, body: 'hello' });
+  assert.deepEqual(await put.json(), { ok: true, size: 5 });
+  const done = await (await post(`action=upload_done&ticket=${started.ticket}`)).json();
+  assert.equal(done.receipt.doc_type, 'id');
+  assert.ok(!Number.isNaN(Date.parse(done.receipt.at)));
+  assert.equal((await fetch(`${base}/preview-upload/elsewhere`, { method: 'PUT', body: 'x' })).status, 404);
+  const script = await fetch(`${base}/buying/deal-tracker.js`);
+  assert.equal(script.status, 200);
+  assert.match(script.headers.get('content-type'), /javascript/);
+  assert.equal((await fetch(`${base}/buying/app.js`)).status, 404, 'only the Deal Tracker\'s own script is served');
 });
