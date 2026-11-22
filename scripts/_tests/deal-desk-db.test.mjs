@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
@@ -141,6 +141,44 @@ test('addUpdate refuses bad text, Mason\'s name, bad actors and IDs, and intakes
   await assert.rejects(add({ answersQuestionId: 'abc' }), /--answers needs a Buyer Question id/);
   const [{ count }] = await sql`SELECT count(*)::int AS count FROM buyer_updates`;
   assert.equal(count, 1, 'only the 4000-character draft went in');
+});
+
+test('questions lists Buyer Questions unanswered first, hides held mail until released and discarded mail always', async t => {
+  const { pg, sql, withDeal } = await database(t);
+  const ask = async (body, { source = 'page', sender = null, held = false, minutesAgo = 0, deal = withDeal } = {}) =>
+    Number((await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id, created_at)
+      VALUES ($1, $2, $3, $4, $5, $6, now() - $7 * interval '1 minute') RETURNING id`,
+    [deal, body, source, sender, held, source === 'email' ? `msg-id-${body}` : null, minutesAgo])).rows[0].id);
+  const answered = await ask('ANSWERED-OLDEST', { minutesAgo: 30 });
+  const open = await ask('OPEN-LATER', { minutesAgo: 10 });
+  const emailed = await ask('EMAILED', { source: 'email', sender: 'buyer@example.test', minutesAgo: 20 });
+  const held = await ask('HELD-SENTINEL', { source: 'email', sender: 'cousin@example.test', held: true, minutesAgo: 5 });
+  const dropped = await ask('DISCARD-SENTINEL', { source: 'email', sender: 'spam@example.test', held: true, minutesAgo: 4 });
+  await pg.query('UPDATE buyer_questions SET discarded_at = now() WHERE id = $1', [dropped]);
+  await addUpdate(sql, { intakeId: withDeal, actor: 'duet-deals', body: 'A draft does not answer it', answersQuestionId: String(open) });
+  await pg.query(`INSERT INTO buyer_updates (onboarding_id, body, status, actor, answers_question_id) VALUES ($1, 'Yes.', 'posted', 'mason', $2)`, [withDeal, answered]);
+
+  const rows = await listQuestions(sql, withDeal.toUpperCase());
+  assert.deepEqual(rows.map(row => [Number(row.id), row.answered]), [[emailed, false], [open, false], [answered, true]]);
+  assert.deepEqual(Object.keys(rows[0]).sort(), ['answered', 'body', 'created_at', 'id', 'intake_id', 'sender_email', 'source']);
+  assert.deepEqual([rows[0].source, rows[0].sender_email, rows[0].intake_id], ['email', 'buyer@example.test', withDeal]);
+  const everyDeal = await listQuestions(sql);
+  assert.equal(everyDeal.length, 3);
+  assert.ok(!everyDeal.some(row => [held, dropped].includes(Number(row.id))), 'held and discarded mail are not listed');
+  const all = JSON.stringify(everyDeal);
+  for (const hidden of ['HELD-SENTINEL', 'cousin@example.test', 'DISCARD-SENTINEL', 'spam@example.test']) assert.ok(!all.includes(hidden), hidden);
+
+  await pg.query('UPDATE buyer_questions SET released_at = now() WHERE id = $1', [held]);
+  const released = await listQuestions(sql);
+  assert.ok(released.some(row => Number(row.id) === held && row.body === 'HELD-SENTINEL' && row.sender_email === 'cousin@example.test'));
+  assert.ok(!JSON.stringify(released).includes('DISCARD-SENTINEL'));
+
+  // A deal filter: another deal's question doesn't show under this one.
+  const { pg: pg2, sql: sql2, withDeal: deal2 } = await database(t);
+  await pg2.query(`INSERT INTO buyer_questions (onboarding_id, body, source) VALUES ($1, 'THIS-DEAL', 'page')`, [deal2]);
+  assert.deepEqual((await listQuestions(sql2, deal2)).map(row => row.body), ['THIS-DEAL']);
+  assert.deepEqual(await listQuestions(sql2, crypto.randomUUID()), []);
+  await assert.rejects(listQuestions(sql2, deal2.slice(0, 8)), /full intake ID/);
 });
 
 test('showDeal lists the deal\'s Buyer Updates, or null before db/013', async t => {

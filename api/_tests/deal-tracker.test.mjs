@@ -6,7 +6,7 @@ import { allowedOrigins } from '../_lib/config.js';
 import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderTracker, replyToken, signLink } from '../_lib/deal-tracker.js';
 import { dealTrackerHandler } from '../deal-tracker.js';
 import { onboardingHandler } from '../onboarding.js';
-import { SAMPLE_VIEWS } from '../../scripts/preview-deal-tracker.mjs';
+import { SAMPLE_VIEWS, createDealTrackerPreview } from '../../scripts/preview-deal-tracker.mjs';
 
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
@@ -161,13 +161,51 @@ test('a car title or color loses its dealer names and VINs, and anything left da
   assert.equal(redactCarText('2024 Toyota RAV4 XLE', []), '2024 Toyota RAV4 XLE');
 });
 
-test('the Deal Tracker answers GET only for now', async () => {
-  for (const method of ['POST', 'PUT', 'DELETE', 'HEAD']) {
+test('the Deal Tracker answers GET and POST only', async () => {
+  for (const method of ['PUT', 'DELETE', 'PATCH', 'HEAD']) {
     const res = response();
     await dealTrackerHandler({ environment: { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET }, getDatabase: () => { throw new Error('no database'); } })(
       { method, url: '/api/deal-tracker?t=x', headers: { host: 'www.steermeright.com' } }, res);
     assert.equal(res.statusCode, 405, method);
-    assert.equal(res.headers.allow, 'GET');
+    assert.equal(res.headers.allow, 'GET, POST');
     assert.match(res.headers['cache-control'], /no-store/);
   }
+});
+
+test('the question box shows on every preview state but a search closed without a purchase, and the timeline marks the buyer\'s own words', () => {
+  for (const [name, view] of Object.entries(SAMPLE_VIEWS)) {
+    const html = renderTracker(view, { action: `/deal/${name}` });
+    if (view.outcome === 'other') {
+      assert.ok(!html.includes('<form') && !html.includes('dt-ask'), name);
+      continue;
+    }
+    assert.ok(html.includes(`<form class="dt-ask" method="post" action="/deal/${name}">`), name);
+    assert.ok(html.includes('<label class="dt-ask__label" for="dt-question">Your question</label>'), name);
+    assert.match(html, /<textarea class="dt-ask__field" id="dt-question" name="body" rows="5" maxlength="4000" required><\/textarea>/, name);
+    assert.ok(html.includes('<input type="hidden" name="action" value="question">'), name);
+  }
+  // Without an action the form posts to the page's own URL.
+  assert.ok(renderTracker(SAMPLE_VIEWS.shortlisted).includes('<form class="dt-ask" method="post">'));
+
+  const html = renderTracker(SAMPLE_VIEWS['price-agreed']);
+  const thread = html.split('<li class="dt-question">')[1].split('</li>')[0];
+  assert.ok(thread.includes('You asked by email ·') && thread.includes('<div class="dt-answer">') && thread.includes('Mason’s answer ·'));
+  assert.ok(html.indexOf('You asked by email') < html.indexOf('Done: $36,100'), 'newest first');
+  const waiting = renderTracker(SAMPLE_VIEWS['emailing-dealers']).split('<li class="dt-question">').find(part => part.includes('trade-in appraised'));
+  assert.ok(waiting.split('</li>')[0].includes('You asked ·') && !waiting.split('</li>')[0].includes('dt-answer'), 'an unanswered question stands alone');
+  assert.doesNotMatch(html, /\bbriefs?\b|\bticket\b|\brequest\b/i);
+});
+
+test('the preview takes the question box POST and goes back to the timeline, saving nothing', async t => {
+  const server = createDealTrackerPreview();
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => server.close());
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const posted = await fetch(`${base}/deal/quotes-in`, { method: 'POST', body: 'action=question&body=Hello', redirect: 'manual',
+    headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+  assert.equal(posted.status, 303);
+  assert.equal(posted.headers.get('location'), '/deal/quotes-in#dt-updates');
+  assert.equal((await fetch(`${base}/deal/nowhere`, { method: 'POST', body: 'x' })).status, 404);
+  const page = await (await fetch(`${base}/deal/quotes-in`)).text();
+  assert.ok(page.includes('action="/deal/quotes-in"'));
 });

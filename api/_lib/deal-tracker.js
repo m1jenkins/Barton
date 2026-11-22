@@ -1,6 +1,7 @@
 import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { buyerFromRow } from './customer-emails/index.js';
+import { MAX_QUESTION_LENGTH } from './buyer-questions.js';
 import { agreedOffer, bestPrices, dealerNames } from './deal-view.js';
 import { summarizeDeal } from './ops-dashboard.js';
 
@@ -160,13 +161,26 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
   };
   if (outcome === 'other') return view;
 
-  // Posted Buyer Updates only, oldest first. Drafts and retracted ones never
-  // leave the database, and nothing but these four fields does either.
-  const updates = await sql`SELECT id, body, posted_at, ready_for_pick FROM buyer_updates
+  // The timeline: posted Buyer Updates and the buyer's own questions, oldest
+  // first. Drafts and retracted updates never leave the database. A question
+  // shows unless it was discarded or is held mail Mason hasn't released; its
+  // sender address, mail ID and held flag never leave the database either.
+  const updates = await sql`SELECT id, body, posted_at, ready_for_pick, answers_question_id FROM buyer_updates
     WHERE onboarding_id = ${onboardingId} AND status = 'posted' ORDER BY posted_at, id`;
-  view.timeline = updates.map(update => ({
-    type: 'update', id: Number(update.id), body: String(update.body), at: new Date(update.posted_at).toISOString(), ready_for_pick: Boolean(update.ready_for_pick)
-  }));
+  const questions = await sql`SELECT id, body, source, created_at FROM buyer_questions
+    WHERE onboarding_id = ${onboardingId} AND discarded_at IS NULL AND (NOT held OR released_at IS NOT NULL)
+    ORDER BY created_at, id`;
+  const asked = new Set(questions.map(question => Number(question.id)));
+  view.timeline = [
+    ...questions.map(question => ({
+      type: 'question', id: Number(question.id), body: String(question.body), at: new Date(question.created_at).toISOString(), by_email: question.source === 'email'
+    })),
+    ...updates.map(update => ({
+      type: 'update', id: Number(update.id), body: String(update.body), at: new Date(update.posted_at).toISOString(), ready_for_pick: Boolean(update.ready_for_pick),
+      // Only a question the buyer can see is named, so the id says nothing about held mail.
+      ...(asked.has(Number(update.answers_question_id)) ? { answers_question_id: Number(update.answers_question_id) } : {})
+    }))
+  ].sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
 
   // A dealer is named only once a price is agreed, and only that dealer.
   const offer = summary.stage === 'agreed' || outcome === 'bought' ? agreedOffer(listings, events) : null;
@@ -410,19 +424,51 @@ const updateTime = value => new Intl.DateTimeFormat('en-US', {
   timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
 }).format(new Date(value));
 
-// Buyer Updates, newest first. The body is escaped and keeps its line breaks
-// through white-space: pre-line, so nothing Mason or an agent typed becomes markup.
+const stamp = (label, at) => safe`<p class="dt-update__when">${label ? safe`${label} · ` : NOTHING}<time datetime="${at}">${updateTime(at)}</time></p>`;
+// Bodies are escaped and keep their line breaks through white-space: pre-line,
+// so nothing the buyer, Mason or an agent typed becomes markup.
+const words = body => safe`<p class="dt-update__body">${body}</p>`;
+
+// Buyer Updates and Buyer Questions as one conversation, newest first. An
+// update that answers a question sits right under it, and the pair takes the
+// place of its latest entry, so a late answer comes back to the top.
 export function timelineSection(view) {
-  const items = [...(view.timeline ?? [])].reverse();
+  const items = view.timeline ?? [];
   if (!items.length) return NOTHING;
-  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(items, item => safe`<li class="dt-update">
-    <p class="dt-update__when"><time datetime="${item.at}">${updateTime(item.at)}</time></p>
-    <p class="dt-update__body">${item.body}</p>
+  const answers = Map.groupBy(items.filter(item => item.type === 'update' && item.answers_question_id != null), item => item.answers_question_id);
+  const entries = items
+    .filter(item => item.type === 'question' || item.answers_question_id == null || !items.some(other => other.type === 'question' && other.id === item.answers_question_id))
+    .map(item => {
+      const replies = item.type === 'question' ? answers.get(item.id) ?? [] : [];
+      return { item, replies, latest: Math.max(...[item, ...replies].map(entry => Date.parse(entry.at))) };
+    })
+    .reverse()
+    .sort((a, b) => b.latest - a.latest);
+  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(entries, ({ item, replies }) => item.type === 'question'
+    ? safe`<li class="dt-question">
+    ${stamp(item.by_email ? 'You asked by email' : 'You asked', item.at)}
+    ${words(item.body)}
+    ${join(replies, reply => safe`<div class="dt-answer">${stamp('Mason’s answer', reply.at)}${words(reply.body)}</div>`)}
+  </li>`
+    : safe`<li class="dt-update">
+    ${stamp(null, item.at)}
+    ${words(item.body)}
   </li>`)}</ol>`);
 }
 
-// Later parts of the build fill these in (plan, "Build order" 4 to 6). They render nothing yet.
-const questionSection = () => NOTHING;
+// The buyer's question box, on every stage but a closed search that didn't
+// end in a purchase. It posts to the page's own URL; no script.
+export function questionSection(view, action = null) {
+  if (view.outcome === 'other') return NOTHING;
+  return section('dt-ask', 'Ask a question', safe`<form class="dt-ask" method="post"${action ? safe` action="${action}"` : NOTHING}>
+    <input type="hidden" name="action" value="question">
+    <label class="dt-ask__label" for="dt-question">Your question</label>
+    <textarea class="dt-ask__field" id="dt-question" name="body" rows="5" maxlength="${MAX_QUESTION_LENGTH}" required></textarea>
+    <button class="dt-ask__send" type="submit">Send question</button>
+  </form>`, 'I answer every question here within one business day.');
+}
+
+// Later parts of the build fill these in (plan, "Build order" 5 and 6). They render nothing yet.
 const pickSection = () => NOTHING;
 const documentsSection = () => NOTHING;
 
@@ -434,15 +480,27 @@ function stageBody(view) {
   return safe`${carsSection(view)}${pickSection(view)}`;
 }
 
-export function renderTracker(view) {
+// action: the page's own path (/deal/<token>), which the question box posts to.
+export function renderTracker(view, { action = null } = {}) {
   const body = safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 ${intro(view)}
 ${stageBody(view)}
 ${timelineSection(view)}
-${questionSection(view)}
+${questionSection(view, action)}
 ${documentsSection(view)}
 </main>`;
   return page('Your car search · Steer Me Right', String(body));
+}
+
+// A short answer to a question box POST that didn't go through, with the way back.
+export function renderNotice(title, text, back = null) {
+  return page(`${title} · Steer Me Right`, String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
+<div class="page-intro dt-intro">
+  <h1>${title}</h1>
+  <p>${text}</p>
+</div>
+${section('dt-reach', 'What next', safe`<div class="dt-card">${back ? safe`<p><a href="${back}">Back to your car search</a></p>` : NOTHING}<p>You can always email me at ${mailto}. I answer within one business day.</p></div>`)}
+</main>`));
 }
 
 // A refused link. It says nothing about whether a deal exists.

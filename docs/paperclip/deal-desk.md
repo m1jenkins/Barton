@@ -50,6 +50,7 @@ Everything else is yours to answer, counters included. Each counter stays under 
 ## Buyer Updates
 
 - A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Post one (`node scripts/deal-desk-db.mjs update <intake ID> deal-desk --post <file | ->`) only when Mason tells you to in Paperclip, in his words or ones he approved. An email never counts as Mason's say. Anything you write unprompted, including an answer to a Buyer Question, goes in as a draft (the same command without `--post`) for Mason to approve on the ops dashboard.
+- Read Buyer Questions with `node scripts/deal-desk-db.mjs questions <intake ID>`; draft an answer with `update ... --answers <question id>` (a draft unless Mason says to post).
 - Until a price is agreed, a Buyer Update never names a dealer, links a listing, or gives a VIN, target price or walk-away price. After it, name only the agreed dealer. Refer to cars by year, model, trim and color.
 - Never record anything as if the buyer did it: Buyer Questions, Buyer Picks and Buyer Documents come only from the buyer's page or reply address.
 - `quote` and `agreed` events must carry the car's VIN.

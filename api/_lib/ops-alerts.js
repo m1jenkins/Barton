@@ -1,10 +1,12 @@
 import { ConfigError, integerEnv } from './config.js';
+import { dealTrackerEnabled } from './deal-tracker.js';
 import { escapeHtml, intakeEmailSettings, smtpTransport } from './intake-email.js';
 import { agentStatus, loadDashboard, loadRuns, summarizeDeals } from './ops-dashboard.js';
 
 // Emails to Mason from the ops dashboard (docs/implementation-operations.md, "Ops
 // dashboard"): one per needs_mason item, one when an agent goes overdue, and a
-// morning digest. GET /api/outbox-dispatch queues and sends them; the GitHub
+// morning digest. With the Deal Tracker on, also one per Buyer Question, Buyer
+// Pick or "keep looking", held email and agent's draft update. GET /api/outbox-dispatch queues and sends them; the GitHub
 // workflow .github/workflows/ops-alerts.yml calls it every 10 minutes with
 // ?jobs=ops_alerts. Sent through the paid intake's SMTP login (Google Workspace).
 
@@ -34,7 +36,9 @@ function central(now) {
   return { date: `${parts.year}-${parts.month}-${parts.day}`, hour: Number(parts.hour) };
 }
 
-export async function queueAlerts(sql, settings, now = Date.now()) {
+// tracker: whether the Deal Tracker is on. Off, this runs exactly the queries it
+// always has and never names a buyer_* table.
+export async function queueAlerts(sql, settings, now = Date.now(), { tracker = false } = {}) {
   // Only fresh items: an old open question is in the digest, not a new email.
   await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, event_id)
     SELECT 'need:' || e.id, 'needs_mason', e.id FROM deal_events e
@@ -48,12 +52,38 @@ export async function queueAlerts(sql, settings, now = Date.now()) {
         ${JSON.stringify({ actor: agent.actor, last_run: lastRun, expect_minutes: agent.expect_minutes })})
       ON CONFLICT (dedupe_key) DO NOTHING`;
   }
+  if (tracker) await queueBuyerAlerts(sql);
   const today = central(now);
   if (today.hour >= settings.digestHour) {
     await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
       VALUES (${`digest:${today.date}`}, 'digest', ${JSON.stringify({ date: today.date })})
       ON CONFLICT (dedupe_key) DO NOTHING`;
   }
+}
+
+// None of these has a deal_events row, so each is keyed by dedupe_key and
+// carries its row id and intake ID in payload (db/013). Like needs_mason, only
+// the last two days: anything older is on the dashboard and in the digest.
+async function queueBuyerAlerts(sql) {
+  await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
+    SELECT 'question:' || q.id, 'buyer_question', jsonb_build_object('question_id', q.id, 'intake_id', q.onboarding_id)
+    FROM buyer_questions q
+    WHERE q.discarded_at IS NULL AND (NOT q.held OR q.released_at IS NOT NULL)
+      AND coalesce(q.released_at, q.created_at) > now() - interval '2 days'
+    ON CONFLICT (dedupe_key) DO NOTHING`;
+  await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
+    SELECT 'draft:' || u.id, 'update_draft', jsonb_build_object('update_id', u.id, 'intake_id', u.onboarding_id)
+    FROM buyer_updates u WHERE u.status = 'draft' AND u.created_at > now() - interval '2 days'
+    ON CONFLICT (dedupe_key) DO NOTHING`;
+  await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
+    SELECT 'held:' || q.id, 'held_mail', jsonb_build_object('question_id', q.id, 'intake_id', q.onboarding_id)
+    FROM buyer_questions q
+    WHERE q.held AND q.released_at IS NULL AND q.discarded_at IS NULL AND q.created_at > now() - interval '2 days'
+    ON CONFLICT (dedupe_key) DO NOTHING`;
+  await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
+    SELECT 'pick:' || p.id, 'buyer_pick', jsonb_build_object('pick_id', p.id, 'intake_id', p.onboarding_id)
+    FROM buyer_picks p WHERE p.cleared_at IS NULL AND p.created_at > now() - interval '2 days'
+    ON CONFLICT (dedupe_key) DO NOTHING`;
 }
 
 const money = cents => (cents == null ? '—' : `$${Math.round(cents / 100).toLocaleString('en-US')}`);
@@ -94,8 +124,8 @@ async function overdueEmail(sql, alert, settings) {
   ], `${settings.origin}/api/ops`);
 }
 
-export async function digestEmail(sql, settings, now = Date.now()) {
-  const data = await loadDashboard(sql);
+export async function digestEmail(sql, settings, now = Date.now(), { tracker = false } = {}) {
+  const data = await loadDashboard(sql, { tracker });
   const deals = summarizeDeals(data, now);
   const open = deals.filter(deal => !deal.closed);
   const day = now - 86400000;
@@ -110,8 +140,11 @@ export async function digestEmail(sql, settings, now = Date.now()) {
   }
   const overdue = data.agents.filter(agent => agent.overdue);
   const quiet = open.filter(deal => deal.stale);
-  const needCount = data.needs.length + data.drafts.length + data.waiting.length + quiet.length + overdue.length;
+  const questions = data.questions ?? [];
+  const held = data.held ?? [];
+  const needCount = data.needs.length + data.drafts.length + data.waiting.length + quiet.length + overdue.length + questions.length + held.length;
   const section = (title, items) => (items.length ? ['', { h: title }, ...items.map(item => `- ${item}`)] : []);
+  const buyers = tracker ? await buyerCounts(sql, questions, held) : [];
   const lines = [
     needCount ? `${needCount} thing${needCount === 1 ? '' : 's'} need you. ${open.length} open deal${open.length === 1 ? '' : 's'}.`
       : `Nothing needs you. ${open.length} open deal${open.length === 1 ? '' : 's'}.`,
@@ -120,6 +153,7 @@ export async function digestEmail(sql, settings, now = Date.now()) {
     ...section('Paid, no car search yet', data.waiting.map(intake => `${intake.name} (${intake.city})`)),
     ...section('Agents overdue', overdue.map(agent => `${agent.actor}: last ran ${clock(agent.last_run)} CT`)),
     ...section('Quiet for 2+ days', quiet.map(deal => `${deal.name}: ${deal.quiet_days} days, ${deal.car ?? 'no car'}`)),
+    ...section('From your buyers', buyers),
     ...section('Moved in the last 24 hours', [...moved.values()].map(({ deal, kinds }) =>
       `${deal.name}: ${[...new Set(kinds)].join(', ')}${deal.best_cents != null ? `. Best ${money(deal.best_cents)} vs target ${money(deal.target_cents)}` : ''}`)),
     ...(data.leads.length ? ['', `${data.leads.length} website lead${data.leads.length === 1 ? '' : 's'} in the last 14 days.`] : [])
@@ -128,12 +162,95 @@ export async function digestEmail(sql, settings, now = Date.now()) {
     lines, `${settings.origin}/api/ops`);
 }
 
-const BUILDERS = { needs_mason: needEmail, agent_overdue: overdueEmail, digest: (sql, alert, settings) => digestEmail(sql, settings) };
+const dealUrl = (settings, id) => `${settings.origin}/api/ops?deal=${id}`;
+const clipText = (text, max) => (text.length > max ? `${text.slice(0, max).trimEnd()}…` : text);
+// Line by line, so the HTML part keeps the writer's line breaks; every line is escaped by message().
+const bodyLines = (text, max = 4000) => clipText(String(text ?? '').trim(), max).split('\n');
 
-export async function dispatchOpsAlerts({ sql, environment = process.env, createTransport = smtpTransport, now = Date.now() } = {}) {
-  const settings = opsAlertSettings(environment);
-  if (!settings) return { configured: false, claimed: 0, sent: 0, failed: 0, skipped: 0 };
-  await queueAlerts(sql, settings, now);
+// Each builder rereads its row and returns null (skipped) when it no longer needs Mason.
+async function questionEmail(sql, alert, settings) {
+  const { question_id: id } = parseJson(alert.payload);
+  const [question] = await sql`SELECT q.onboarding_id, q.body, q.source, q.sender_email, q.held, q.released_at, q.discarded_at, o.name,
+      EXISTS (SELECT 1 FROM buyer_updates u WHERE u.answers_question_id = q.id AND u.status = 'posted') AS answered
+    FROM buyer_questions q JOIN onboarding_submissions o ON o.id = q.onboarding_id WHERE q.id = ${id}`;
+  if (!question || question.answered || question.discarded_at || (question.held && !question.released_at)) return null;
+  return message(`Question from ${question.name}`, [
+    ...bodyLines(question.body, 600),
+    '', `${question.source === 'email' ? `By email from ${question.sender_email}` : 'Asked on the Deal Tracker'}. The page promises an answer within one business day. Answer it on the dashboard:`
+  ], dealUrl(settings, question.onboarding_id));
+}
+
+async function draftEmail(sql, alert, settings) {
+  const { update_id: id } = parseJson(alert.payload);
+  const [update] = await sql`SELECT u.onboarding_id, u.body, u.status, u.actor, u.ready_for_pick, u.answers_question_id, o.name
+    FROM buyer_updates u JOIN onboarding_submissions o ON o.id = u.onboarding_id WHERE u.id = ${id}`;
+  if (!update || update.status !== 'draft') return null;
+  return message(`Draft update waiting: ${update.name}`, [
+    `${update.actor} wrote this Buyer Update${update.answers_question_id != null ? ' in answer to a Buyer Question' : ''}. The buyer sees it only once you approve it.`,
+    ...(update.ready_for_pick ? ['It is marked ready for the buyer\'s call, so approving it opens their pick.'] : []),
+    '', ...bodyLines(update.body),
+    '', 'Approve or discard it on the dashboard:'
+  ], dealUrl(settings, update.onboarding_id));
+}
+
+// Never the held text: the alert says only who sent it.
+async function heldEmail(sql, alert, settings) {
+  const { question_id: id } = parseJson(alert.payload);
+  const [mail] = await sql`SELECT q.onboarding_id, q.sender_email, q.held, q.released_at, q.discarded_at, q.created_at, o.name
+    FROM buyer_questions q JOIN onboarding_submissions o ON o.id = q.onboarding_id WHERE q.id = ${id}`;
+  if (!mail || !mail.held || mail.released_at || mail.discarded_at) return null;
+  return message(`Held email on ${mail.name}'s deal`, [
+    `An email to ${mail.name}'s reply address came from ${mail.sender_email} at ${clock(mail.created_at)} CT. That isn't the address on their intake, so it was held.`,
+    '', 'It stays out of the agents\' queue and off the buyer\'s page until you release it. Release or discard it on the dashboard:'
+  ], dealUrl(settings, mail.onboarding_id));
+}
+
+async function pickEmail(sql, alert, settings) {
+  const { pick_id: id } = parseJson(alert.payload);
+  const [pick] = await sql`SELECT p.onboarding_id, p.kind, p.vin, p.dealer_name, p.otd_cents, p.cleared_at, o.name,
+      (SELECT l.title FROM deal_listings l JOIN deals d ON d.id = l.deal_id
+        WHERE d.onboarding_id = p.onboarding_id AND upper(l.vin) = upper(p.vin) ORDER BY l.rank LIMIT 1) AS title
+    FROM buyer_picks p JOIN onboarding_submissions o ON o.id = p.onboarding_id WHERE p.id = ${id}`;
+  if (!pick || pick.cleared_at) return null;
+  const link = dealUrl(settings, pick.onboarding_id);
+  if (pick.kind === 'keep_looking') {
+    return message(`${pick.name} asked us to keep looking`, [
+      `${pick.name} chose none of the cars on the shortlist and asked us to keep looking.`, '', 'See the deal on the dashboard:'
+    ], link);
+  }
+  return message(`${pick.name} picked a car`, [
+    `${pick.title ?? 'A car not on the shortlist'} (VIN ${pick.vin})`,
+    `${money(pick.otd_cents)} out the door from ${pick.dealer_name}, their best price so far when picked.`,
+    '', 'The price isn\'t agreed until you confirm it with the dealer. See the deal on the dashboard:'
+  ], link);
+}
+
+// The digest's "From your buyers" lines: counts of the four alert kinds, with names where it helps.
+async function buyerCounts(sql, questions, held) {
+  const [drafts] = await sql`SELECT count(*)::int AS n FROM buyer_updates WHERE status = 'draft'`;
+  const [picks] = await sql`SELECT count(*) FILTER (WHERE kind = 'pick')::int AS picks, count(*) FILTER (WHERE kind = 'keep_looking')::int AS keep_looking
+    FROM buyer_picks WHERE cleared_at IS NULL AND created_at > now() - interval '1 day'`;
+  const count = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  const names = rows => [...new Set(rows.map(row => row.name))].join(', ');
+  return [
+    ...(questions.length ? [`${count(questions.length, 'Buyer Question', 'Buyer Questions')} waiting for an answer (${names(questions)})`] : []),
+    ...(held.length ? [`${count(held.length, 'held email', 'held emails')} to release or discard (${names(held)})`] : []),
+    ...(drafts.n ? [`${count(drafts.n, 'draft update', 'draft updates')} waiting for your approval`] : []),
+    ...(picks.picks ? [`${count(picks.picks, 'buyer', 'buyers')} picked a car in the last 24 hours`] : []),
+    ...(picks.keep_looking ? [`${count(picks.keep_looking, 'buyer', 'buyers')} asked us to keep looking in the last 24 hours`] : [])
+  ];
+}
+
+const BUILDERS = {
+  needs_mason: needEmail, agent_overdue: overdueEmail, digest: (sql, alert, settings) => digestEmail(sql, settings, Date.now(), { tracker: settings.tracker }),
+  buyer_question: questionEmail, update_draft: draftEmail, held_mail: heldEmail, buyer_pick: pickEmail
+};
+
+export async function dispatchOpsAlerts({ sql, environment = process.env, createTransport = smtpTransport, now = Date.now(), tracker = dealTrackerEnabled(environment) } = {}) {
+  const found = opsAlertSettings(environment);
+  if (!found) return { configured: false, claimed: 0, sent: 0, failed: 0, skipped: 0 };
+  const settings = { ...found, tracker };
+  await queueAlerts(sql, settings, now, { tracker });
   const alerts = await sql`UPDATE ops_alert_outbox SET status = 'processing', attempts = attempts + 1, last_attempt_at = now()
     WHERE id IN (SELECT id FROM ops_alert_outbox
       WHERE attempts < ${MAX_ATTEMPTS} AND (status IN ('pending', 'failed')

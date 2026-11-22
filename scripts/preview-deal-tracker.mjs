@@ -2,6 +2,7 @@
 // Local preview of the Deal Tracker page in every state, for Mason to approve the
 // copy before launch. Each page is renderTracker() on a hand-written view, the same
 // shape loadBuyerView() returns. Synthetic buyer and dealers; no database, no secrets.
+// The question box works: a POST saves nothing and just comes back to the page.
 // npm run deal-tracker:preview, then open http://127.0.0.1:4180
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
@@ -44,14 +45,21 @@ const confirmed = update(1, '2026-12-01T16:05:00Z', 'Thanks, Sam. I’ve read th
 const emailed = update(2, '2026-12-03T21:40:00Z', 'All three dealers have my email asking for a written out-the-door price. Most answer within two business days.');
 const pricesIn = update(3, '2026-12-08T19:15:00Z', 'Two written prices are in. The RAV4 is the best so far at $36,400 out the door, and I’ve asked that dealer to do better on the doc fee.\n\nNothing to do on your side yet.');
 const readyForCall = update(4, '2026-12-10T20:15:00Z', 'The RAV4 dealer came down to $36,100. That’s a good price for this car, and I don’t think there’s much more room. Let me know which one you’d like.', { ready_for_pick: true });
+// Buyer Questions as loadBuyerView() returns them, and an update that answers one.
+const question = (id, at, body, byEmail = false) => ({ type: 'question', id, body, at, by_email: byEmail });
+const askedFees = question(11, '2026-12-04T15:20:00Z', 'Will the out-the-door price include the dealer’s doc fee? The last dealer I talked to added $899 at the end.');
+const feesAnswer = update(6, '2026-12-04T22:10:00Z', 'Yes. Every written price I ask for is the full total: the sale price, the doc fee, any add-ons, tax and registration.\n\nIf a dealer leaves something out, I send it back.', { answers_question_id: 11 });
+const askedPickup = question(12, '2026-12-11T19:05:00Z', 'Can I pick it up Saturday morning, or does it have to be a weekday?', true);
+const pickupAnswer = update(7, '2026-12-11T21:00:00Z', 'Saturday works. The dealer is open from 9, and I’ve told them you’re coming then.', { answers_question_id: 12 });
+const askedTrade = question(13, '2026-12-05T02:45:00Z', 'Should I get my trade-in appraised somewhere first?');
 const agreedNote = update(5, '2026-12-11T17:30:00Z', 'Done: $36,100 out the door on the RAV4. The dealer has the paperwork ready from Saturday. Bring your license and proof of insurance.');
 
 export const SAMPLE_VIEWS = Object.freeze({
   'confirming-search': { stage: 'confirming', outcome: null, buyer: { ...buyer, recap }, cars: [], agreed: null, timeline: [confirmed] },
   shortlisted: { stage: 'shortlisted', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed] },
-  'emailing-dealers': { stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed, emailed] },
-  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, timeline: [emailed, pricesIn, readyForCall] },
-  'price-agreed': { stage: 'agreed', outcome: null, buyer, cars: agreedCars, agreed, timeline: [readyForCall, agreedNote] },
+  'emailing-dealers': { stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed, emailed, askedFees, feesAnswer, askedTrade] },
+  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, timeline: [emailed, askedFees, feesAnswer, pricesIn, readyForCall] },
+  'price-agreed': { stage: 'agreed', outcome: null, buyer, cars: agreedCars, agreed, timeline: [readyForCall, agreedNote, askedPickup, pickupAnswer] },
   'price-agreed-no-car': { stage: 'agreed', outcome: null, buyer, cars: quoted, agreed: { rank: null, dealer_name: 'Example Motors of Springfield', otd_cents: 3610000 }, timeline: [agreedNote] },
   'closed-bought': { stage: 'closed', outcome: 'bought', buyer, cars: [agreedCars[0]], agreed, timeline: [agreedNote] },
   'closed-other': { stage: 'closed', outcome: 'other', buyer, cars: [], agreed: null }
@@ -72,15 +80,23 @@ export function createDealTrackerPreview() {
   return createServer(async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-    if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405, { Allow: 'GET, HEAD' }).end('Method not allowed'); return; }
+    if (!['GET', 'HEAD', 'POST'].includes(req.method)) { res.writeHead(405, { Allow: 'GET, HEAD, POST' }).end('Method not allowed'); return; }
     let pathname;
     try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
     catch { res.writeHead(400).end('Invalid path'); return; }
     const html = body => res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }).end(req.method === 'HEAD' ? undefined : body);
     if (pathname === '/') return html(index());
     const state = pathname.startsWith('/deal/') ? pathname.slice(6) : null;
+    const known = state && Object.hasOwn(SAMPLE_VIEWS, state);
+    if (req.method === 'POST') {
+      // The question box posts here, like the real page. Nothing is kept.
+      req.resume();
+      if (known) res.writeHead(303, { Location: `/deal/${state}#dt-updates` }).end();
+      else res.writeHead(404).end('Not found');
+      return;
+    }
     if (state === 'link-closed') return html(renderLinkClosed());
-    if (state && Object.hasOwn(SAMPLE_VIEWS, state)) return html(renderTracker(SAMPLE_VIEWS[state]));
+    if (known) return html(renderTracker(SAMPLE_VIEWS[state], { action: `/deal/${state}` }));
     // The page's own stylesheets, fonts and icon; nothing private.
     try {
       if (pathname.split('/').some(part => part.startsWith('.')) || !/^\/(?:buying\/[\w-]+\.css|logo-motion\.css|favicon\.png|assets\/buying\/fonts\/[\w-]+\.woff2)$/.test(pathname)) throw new Error('Not served');
