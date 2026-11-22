@@ -72,17 +72,6 @@
       ],
       "port": 4180,
       "url": "http://127.0.0.1:4180"
-    },
-    {
-      "name": "spinoff-preview",
-      "runtimeExecutable": "env",
-      "runtimeArgs": [
-        "DRIVE_RIGHT_PREVIEW_PORT=4178",
-        "node",
-        "/Users/useruser/Documents/GitHub/Barton/.claude/worktrees/spinoff-integration/scripts/preview.mjs"
-      ],
-      "port": 4178,
-      "url": "http://127.0.0.1:4178"
     }
   ]
 }
