@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "key": "kia-sportage",
+  "code": "SPO",
+  "slug": "kia-sportage-hybrid-vs-gas.html",
+  "priceGuide": "kia-sportage-price.html",
+  "name": "Kia Sportage",
+  "short": "Sportage",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Kia Sportage Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The Sportage Hybrid LX costs $1,700 more than a gas LX and earns it back in 2.4 to 3.1 years of gas, with 45 more hp. EPA mpg, incentives. Nov. 21, 2026.",
+  "h1": "Is the Kia Sportage hybrid worth it?",
+  "gasLabel": "Gas, 2.5L",
+  "hybridLabel": "Hybrid, 1.6L turbo",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "and by a wide margin",
+    "lead": "<strong>Yes, and by a wide margin.</strong> A 2026 Sportage Hybrid LX costs $1,700 more than a gas LX and is rated 42 mpg combined against 28, which is 179 fewer gallons a year at 15,000 miles. At the national average of $3.805 a gallon that is about $679 a year, and the premium is back in 2.5 years (3.1 years at 12,000 miles). With all-wheel drive on both, a Hybrid EX over a gas EX is $1,400 and pays back just as fast.",
+    "more": [
+      "The hybrid is also the better-driving Sportage on paper. It makes 232 hp against 187, and Edmunds measured 8.0 seconds to 60 mph where the gas car took more than 9.5. Edmunds scores the hybrid 8.6 out of 10 and the gas Sportage 7.8. The costs are small: cargo room is a wash (39.5 cubic feet behind the rear seat against 39.6, Edmunds’ figures from the Sportage price guide), and dealers give a point less off the hybrid, about $300."
+    ]
+  },
+  "chooseHybrid": [
+    "You drive 10,000 miles a year or more. The Hybrid LX’s $1,700 premium is back in 2.5 years at 15,000 miles and 3.1 at 12,000.",
+    "You want all-wheel drive without a big penalty. A Hybrid EX with AWD is rated 35 mpg combined against 26 for a gas EX with AWD.",
+    "You want the quicker Sportage: 232 hp against 187, and 8.0 seconds to 60 mph against more than 9.5 in Edmunds’ tests.",
+    "You’d take a 2027. Kia’s 2027 Hybrid carries 0.90% financing and $500 customer cash, and the 2027 gas Sportage gets 1.99% and no cash."
+  ],
+  "chooseGas": [
+    "You want the cheapest Sportage. A gas LX starts at $28,790, $1,700 under the Hybrid LX.",
+    "You drive fewer than about 6,000 miles a year. At that pace the premium takes more than 6 years to earn back.",
+    "You want all-wheel drive at the lowest sticker. A gas X-Line, AWD standard, starts at $33,090, $2,600 under the Hybrid X-Line.",
+    "You want the simpler powertrain. Kia covers the hybrid battery for 10 years or 100,000 miles, and some Reddit owners report hybrid highway mpg falling short of the rating in cold weather."
+  ],
+  "premiumIntro": [
+    "Kia sells the Sportage Hybrid on the same trims as the gas car for 2026, so the pairs are close: the Hybrid LX is the LX with the hybrid powertrain, and the Hybrid EX has the gas EX’s power liftgate and heated front seats. A 2026 Hybrid EX is all-wheel drive only, so we compared it with a gas EX with the $1,800 AWD option added."
+  ],
+  "premiumNote": "The price guide’s estimate is that dealers give 4–5% under MSRP on the gas trims and 3–4% on the hybrids, about a point less off the hybrid, which adds roughly $300 to the Hybrid LX’s real gap. The 2027 adds front-drive hybrid S and EX trims: a 2027 Hybrid LX is $30,590 against $28,990 for a gas LX, a $1,600 gap. Kia’s $1,495 destination charge is on both versions.",
+  "scenarios": [
+    {
+      "label": "Hybrid LX against LX",
+      "gas": { "trim": "LX", "version": "2.5L" },
+      "hybrid": { "trim": "Hybrid LX", "version": "1.6L turbo hybrid" },
+      "note": "Front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49455, "comb": 28, "city": 25, "hwy": 33 }, "hybrid": { "id": 49456, "comb": 42, "city": 41, "hwy": 44 } }
+      ]
+    },
+    {
+      "label": "Hybrid EX against EX with AWD",
+      "gas": { "trim": "EX", "plus": 1800, "version": "2.5L, AWD added" },
+      "hybrid": { "trim": "Hybrid EX", "version": "AWD standard on the 2026" },
+      "note": "Power liftgate and heated front seats on both; all-wheel drive on both",
+      "epa": [
+        { "label": "All-wheel drive", "gas": { "id": 49503, "comb": 26, "city": 24, "hwy": 30 }, "hybrid": { "id": 49504, "comb": 35, "city": 35, "hwy": 36 } }
+      ]
+    }
+  ],
+  "extraPremiums": [
+    {
+      "label": "Hybrid S against EX with AWD",
+      "note": "The cheapest 2026 hybrid with heated seats against the gas EX with AWD; the gas EX adds a power liftgate and dual-zone climate control, so this is not like for like",
+      "gas": { "trim": "EX", "plus": 1800, "version": "2.5L, AWD added" },
+      "hybrid": { "trim": "Hybrid S", "version": "AWD standard on the 2026" }
+    }
+  ],
+  "mpgIntro": [
+    "EPA rates the front-drive Hybrid LX at 42 mpg combined (41 city, 44 highway) and the gas LX at 28 (25 city, 33 highway). The hybrid’s lead is 14 mpg combined and 11 on the highway. All-wheel drive hurts the hybrid more than the gas car, 7 mpg against 2, so the Hybrid EX is rated 35 and the gas EX with AWD 26; the hybrid is still 9 mpg ahead. Kia’s 2027 front-drive hybrid is rated 41."
+  ],
+  "mpgNote": "",
+  "costIntro": [
+    "At 15,000 miles a year the gas LX burns 536 gallons and the Hybrid LX 357; with AWD the gas EX burns 577 and the Hybrid EX 429."
+  ],
+  "breakEvenIntro": [
+    "The Hybrid LX’s $1,700 premium is back in 2.4 to 3.1 years and the Hybrid EX’s $1,400 over an AWD gas EX in 2.4 to 3.1, depending on mileage and gas price. Few hybrids pay back this fast, because the premium is small and the gas car is a thirsty one at 28 mpg."
+  ],
+  "breakEvenAfter": [
+    "The roughly $300 of extra dealer discount the price guide expects on gas trims lengthens the Hybrid LX’s payback to about 2.9 years at 15,000 miles and $3.805, still under 3 years."
+  ],
+  "changesIntro": [
+    "The hybrid adds power and gives up almost nothing in space. Cargo room is the same to a tenth of a cubic foot."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "187 hp", "hybrid": "232 hp" },
+    { "label": "Transmission", "gas": "8-speed automatic", "hybrid": "6-speed automatic" },
+    { "label": "0 to 60 mph", "gas": "More than 9.5 seconds in Edmunds’ test", "hybrid": "8.0 seconds in Edmunds’ test" },
+    { "label": "Cargo behind the rear seat", "gas": "39.6 cubic feet (Edmunds)", "hybrid": "39.5 cubic feet (Edmunds)" },
+    { "label": "Drive", "gas": "Front-wheel drive standard; AWD adds $1,800", "hybrid": "2026: AWD on every trim; 2027 adds front-drive S and EX" },
+    { "label": "Warranty", "gas": "10 years/100,000 miles powertrain", "hybrid": "Hybrid battery pack covered 10 years/100,000 miles under the powertrain warranty" }
+  ],
+  "changesAfter": [],
+  "plugin": {
+    "heading": "What about the plug-in?",
+    "trim": "Plug-in X-Line",
+    "label": "Plug-in X-Line",
+    "intro": [
+      "The Plug-in X-Line costs $4,800 more than the Hybrid X-Line, the 2026 trim it matches closest (both are AWD with a panoramic sunroof), and EPA rates it 36 mpg combined once the battery is empty, a point better than the hybrid’s 35. Its pitch is 33 miles of electric range and 268 hp. We worked out the best case: a full charge used every day, 365 days a year."
+    ],
+    "compare": {
+      "trim": "Hybrid X-Line",
+      "label": "Hybrid X-Line",
+      "epa": { "id": 49504, "comb": 35 }
+    },
+    "epa": { "id": 49767, "mpge": 83, "gasComb": 36, "rangeMiles": 33, "kwhPer100": 43 },
+    "after": [
+      "Even in that best case the plug-in takes about 9 years to earn back its premium, and a driver who skips charging for a week or whose commute tops 33 miles gets less. Reddit owners report very high mpg when they charge daily and poor mpg once the battery runs out. We’d buy the plug-in only if you can charge at home every night."
+    ]
+  },
+  "incentives": [
+    "This month’s offers favor the hybrid on the 2027 and treat the versions alike on the 2026. All run to January 4, 2027. A 2026 Sportage, Hybrid or Plug-in gets 0% for 48 months, $750 customer cash on a gas or hybrid and $750 Retail Bonus Cash on the hybrid. A 2027 Hybrid gets 0.90% for 48 months and $500 customer cash; a 2027 gas Sportage gets 1.99% and no cash. On a 2027 pair that is about $500 and a point of interest in the hybrid’s favor, which trims its premium. Offers are from the Sportage price guide, read at Kia’s offers page on November 18, 2026, and Kia’s best rates sit on different model years."
+  ],
+  "resale": [
+    "iSeeCars counts three-year depreciation for the Sportage at 21.4%, against 22.7% for compact SUVs and 24.8% for the average vehicle. We found no separate figure for the Sportage Hybrid, so we can’t say whether the hybrid holds its value better or worse than the gas car."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners report 35 to 40 mpg in mixed driving with a light foot, a few points under the 42 rating on the front-drive car."
+  },
+  "faq": [
+    ["How much more does the Sportage Hybrid cost than the gas Sportage?", "$1,700 for a 2026 Hybrid LX over an LX ($30,490 against $28,790) and $1,400 for a Hybrid EX over a gas EX with AWD. A 2027 Hybrid LX is $1,600 over a 2027 gas LX. Prices are starting MSRPs without destination, from the Sportage price guide."],
+    ["How much gas does the Sportage Hybrid save?", "About 179 gallons a year at 15,000 miles for the LX (357 against 536), which is $679 at the November 16 national average of $3.805 and $714 at EPA’s $4.00. At 12,000 miles it is about 143 gallons."],
+    ["Does the Sportage Hybrid come with all-wheel drive?", "On the 2026, every hybrid trim is all-wheel drive except the LX. The 2027 adds front-drive S and EX trims. AWD cuts the hybrid to 35 mpg combined, 9 mpg ahead of a gas EX with AWD."],
+    ["Is the Sportage plug-in worth it?", "Only if you charge every night. It costs $4,800 more than a Hybrid X-Line and earns that back in about 9 years in the best case: 33 electric miles every day, and EPA’s 15 cents a kilowatt-hour."]
+  ],
+  "queries": ["kia sportage hybrid worth it", "sportage hybrid vs gas", "sportage hybrid vs gas mpg", "is the kia sportage hybrid worth the extra cost"],
+  "blog": { "title": "Is the Kia Sportage Hybrid Worth It?", "text": "The Hybrid LX’s $1,700 premium, its 14-mpg gain over a gas LX, the plug-in’s case, and how long the gas savings take to cover it.", "cta": "See the Sportage hybrid math" },
+  "llms": { "title": "Is the Kia Sportage Hybrid Worth It?", "text": "The 2026 Sportage Hybrid LX and EX against the gas Sportage, with the plug-in: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-SPO-01", "url": "https://www.kia.com/us/en/sportage-hybrid", "title": "Kia: Sportage Hybrid", "authority": "Kia", "scope": "Kia lists the Sportage Hybrid (232 hp, from $30,590), Plug-in Hybrid and gas Sportage together; the hybrid battery pack is covered 10 years/100,000 miles under the powertrain warranty", "note": "hybrid power, price and battery warranty", "status": "primary_source_checked", "registryNote": "Also VEH-SPORTAGE-02 in the Sportage price guide (read 2026-11-18); read again on 2026-11-22 for the battery term. The page lists 2027 prices." },
+    { "id": "VEH-HYB-SPO-02", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49455", "title": "FuelEconomy.gov: 2026 Sportage FWD, 2.5L (vehicle 49455)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 gas Sportage with front-wheel drive, 28 mpg combined", "note": "EPA ratings, gas, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-SPO-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49456", "title": "FuelEconomy.gov: 2026 Sportage Hybrid FWD, 1.6L turbo (vehicle 49456)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Sportage Hybrid with front-wheel drive, 42 mpg combined", "note": "EPA ratings, hybrid, front-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-SPO-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49503", "title": "FuelEconomy.gov: 2026 Sportage AWD, 2.5L (vehicle 49503)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 gas Sportage with all-wheel drive, 26 mpg combined", "note": "EPA ratings, gas, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-SPO-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49504", "title": "FuelEconomy.gov: 2026 Sportage Hybrid AWD, 1.6L turbo (vehicle 49504)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Sportage Hybrid with all-wheel drive, 35 mpg combined", "note": "EPA ratings, hybrid, all-wheel drive", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-SPO-06", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49767", "title": "FuelEconomy.gov: 2026 Sportage Plug-in Hybrid, 1.6L turbo (vehicle 49767)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA ratings for the 2026 Sportage Plug-in Hybrid: 83 MPGe, 36 mpg combined once the battery is empty, 33 miles of electric range, 43 kWh per 100 miles", "note": "EPA ratings, plug-in", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-SPO-07", "url": "https://www.edmunds.com/kia/sportage/2026/", "title": "Edmunds: 2026 Kia Sportage", "authority": "Edmunds", "scope": "Edmunds' 7.8 rating, its more-than-9.5-second 0-60 mph time and 39.6-cubic-foot cargo figure for the gas Sportage, as used in the Kia Sportage price guide", "note": "gas acceleration and cargo, from the Sportage price guide", "registryNote": "Reused from the Kia Sportage price guide (VEH-SPORTAGE-12), read there on 2026-11-18. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-SPO-08", "url": "https://www.edmunds.com/kia/sportage-hybrid/2026/", "title": "Edmunds: 2026 Kia Sportage Hybrid", "authority": "Edmunds", "scope": "Edmunds' 8.6 rating, its 8.0-second 0-60 mph time and 39.5-cubic-foot cargo figure for the Sportage Hybrid, as used in the Kia Sportage price guide", "note": "hybrid acceleration and cargo, from the Sportage price guide", "registryNote": "Reused from the Kia Sportage price guide (VEH-SPORTAGE-13), read there on 2026-11-18. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-SPO-09", "url": "https://www.kia.com/us/en/offers", "title": "Kia: current offers", "authority": "Kia", "scope": "Kia finance, lease, customer cash and Retail Bonus Cash offers on the 2026 and 2027 Sportage, Hybrid and Plug-in Hybrid, read in four regions on 2026-11-18 for the Kia Sportage price guide", "note": "finance and cash offers, from the Sportage price guide", "status": "primary_source_checked", "registryNote": "Reused from the Kia Sportage price guide (VEH-SPORTAGE-08), read there on 2026-11-18." },
+    { "id": "VEH-HYB-SPO-10", "url": "https://www.iseecars.com/car/kia-sportage/resale-value", "title": "iSeeCars: Kia Sportage resale value", "authority": "iSeeCars", "scope": "Sportage three-year depreciation, 21.4%, against 22.7% for compact SUVs and 24.8% for all vehicles, as used in the Kia Sportage price guide", "note": "three-year depreciation, from the Sportage price guide", "registryNote": "Reused from the Kia Sportage price guide (VEH-SPORTAGE-26), read there on 2026-11-18." }
+  ]
+}

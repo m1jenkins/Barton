@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "key": "honda-accord",
+  "code": "ACC",
+  "slug": "honda-accord-hybrid-vs-gas.html",
+  "priceGuide": "honda-accord-price.html",
+  "name": "Honda Accord",
+  "short": "Accord",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Honda Accord Hybrid Worth It? Hybrid vs 1.5T (2026)",
+  "description": "The Accord Sport Hybrid costs $3,100 more than a gas SE and earns it back in 5.4 to 7.1 years of gas. EPA mpg, power, incentives. Nov. 21, 2026.",
+  "h1": "Is the Honda Accord hybrid worth it?",
+  "gasLabel": "Gas, 1.5L turbo",
+  "hybridLabel": "Hybrid, 2.0L",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "if you keep it six years or more",
+    "lead": "<strong>Yes, if you keep the car six years or more.</strong> The EX-L Hybrid, the trim we’d buy, costs $4,400 more than a gas SE and is rated 48 mpg combined against 31, which is 171 fewer gallons a year at 15,000 miles. At the national average of $3.805 a gallon that is about $652 a year, and the premium is back in 6.7 years (8.4 years at 12,000 miles). The cheaper Sport Hybrid is $3,100 over the SE at 44 mpg and gets there in 5.7.",
+    "more": [
+      "That is a longer wait than on the Civic or CR-V hybrids, because the Accord’s premium is bigger and its gas car already gets 31 mpg. What the hybrid adds is power, 204 hp against 192, and Edmunds’ 7.0 seconds to 60 mph in a Sport-L Hybrid against 8.5 for a gas SE in U.S. News’ test (two publications, so a rough comparison). The catch is resale: iSeeCars has an Accord Hybrid losing 22.1% in three years against 15.5% for the Accord overall."
+    ]
+  },
+  "chooseHybrid": [
+    "You keep a car six or seven years, or drive about 15,000 miles a year. The EX-L Hybrid’s $4,400 premium is back in 6.7 years at that pace.",
+    "You want the quicker Accord: 204 hp against 192, and Edmunds timed a Sport-L Hybrid at 7.0 seconds to 60 mph.",
+    "Your driving is mostly around town. EPA rates the EX-L Hybrid at 51 mpg in the city against 28 for the gas SE.",
+    "You want leather, a power passenger seat, driver’s seat memory and parking sensors with the hybrid, which is what the EX-L Hybrid adds."
+  ],
+  "chooseGas": [
+    "You want the cheapest Accord. A gas LX starts at $28,395, $6,700 under the EX-L Hybrid, though it has no heated seats, no moonroof and no blind-spot warning.",
+    "You sell at three years. iSeeCars has an Accord Hybrid down 22.1% after three years against 15.5% for the Accord overall.",
+    "You drive fewer than about 10,000 miles a year. At that pace the EX-L Hybrid’s premium takes about 10 years to earn back.",
+    "You can’t find an EX-L Hybrid. Edmunds says its stock is tighter than the other trims’, and a gas SE is easy to find."
+  ],
+  "premiumIntro": [
+    "Honda sells the gas Accord as an LX and an SE, and every hybrid starts a step higher, at the Sport Hybrid, so there is no same-trim pair. The SE (heated front seats, moonroof, blind-spot warning, dual-zone climate control, power driver’s seat, 19-inch wheels) is the nearest gas car. The EX-L Hybrid adds leather, a power passenger seat, driver’s seat memory and parking sensors that the SE doesn’t have, so its gap overstates the cost of the hybrid system alone."
+  ],
+  "premiumNote": "The price guide’s estimate is that dealers give 2–3% under MSRP on an SE and 3–4% on an EX-L Hybrid, about a point more off the hybrid, which takes roughly $350 off the EX-L Hybrid’s real gap. Honda’s destination charge is $1,295 on both versions. Honda hasn’t announced a 2027 Accord.",
+  "scenarios": [
+    {
+      "label": "EX-L Hybrid against SE",
+      "gas": { "trim": "SE", "version": "1.5L turbo" },
+      "hybrid": { "trim": "EX-L Hybrid", "version": "2.0L hybrid" },
+      "note": "Front-wheel drive; the hybrid also adds leather and a power passenger seat",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 50055, "comb": 31, "city": 28, "hwy": 36 }, "hybrid": { "id": 50071, "comb": 48, "city": 51, "hwy": 44 } }
+      ]
+    },
+    {
+      "label": "Sport Hybrid against SE",
+      "gas": { "trim": "SE", "version": "1.5L turbo" },
+      "hybrid": { "trim": "Sport Hybrid", "version": "2.0L hybrid" },
+      "note": "Front-wheel drive; the cheapest hybrid, on 19-inch wheels",
+      "epa": [
+        { "label": "Front-wheel drive, 19-inch wheels", "gas": { "id": 50055, "comb": 31, "city": 28, "hwy": 36 }, "hybrid": { "id": 50056, "comb": 44, "city": 46, "hwy": 41 } }
+      ]
+    }
+  ],
+  "extraPremiums": [],
+  "mpgIntro": [
+    "EPA rates the EX-L Hybrid at 48 mpg combined (51 city, 44 highway) and the gas SE at 31 (28 city, 36 highway). The Sport Hybrid and the other 19-inch hybrids are rated 44 (46 city, 41 highway), so the EX-L’s 17-inch wheels are worth 4 mpg. The hybrid leads on the highway too, by 8 mpg for the EX-L and 5 for the Sport, so an interstate commute still pays. Honda doesn’t offer all-wheel drive on either version."
+  ],
+  "mpgNote": "",
+  "costIntro": [
+    "At 15,000 miles a year the gas SE burns 484 gallons, the EX-L Hybrid 313 and the Sport Hybrid 341."
+  ],
+  "breakEvenIntro": [
+    "The EX-L Hybrid’s $4,400 premium is back in 6.4 to 8.4 years and the Sport Hybrid’s $3,100 in 5.4 to 7.1, depending on mileage and gas price. That is slower than the Civic’s or CR-V’s payback, which is why the verdict carries a condition: this is a car to keep."
+  ],
+  "breakEvenAfter": [
+    "The roughly $350 of extra dealer discount the price guide expects on an EX-L Hybrid trims the EX-L’s payback to about 6.2 years at 15,000 miles and $3.805."
+  ],
+  "changesIntro": [
+    "The hybrid is the more powerful Accord and the only one with a choice of wheels that changes its mpg. Little else on Honda’s spec sheet differs."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "192 hp", "hybrid": "204 hp" },
+    { "label": "0 to 60 mph", "gas": "8.5 seconds in U.S. News’ test of an SE", "hybrid": "7.0 seconds in Edmunds’ test of a Sport-L Hybrid" },
+    { "label": "Wheels and mpg", "gas": "SE: 19-inch wheels, 31 mpg combined", "hybrid": "EX-L: 17-inch wheels, 48 mpg combined; Sport and Touring: 19-inch wheels, 44" },
+    { "label": "Screen", "gas": "9-inch touchscreen on the LX", "hybrid": "12.3-inch touchscreen on the Sport Hybrid" },
+    { "label": "Drive", "gas": "Front-wheel drive", "hybrid": "Front-wheel drive" }
+  ],
+  "changesAfter": [
+    "We found no new-car hybrid battery term. Honda’s certified-used page lists 8 years or 100,000 miles on the hybrid battery from first sale, and we couldn’t read Honda’s new-car warranty page, so ask the dealer for Honda’s hybrid coverage in writing."
+  ],
+  "incentives": [
+    "Honda treats the two versions almost alike this month. Its financing runs to January 4, 2027: 3.99% for 24 to 60 months on the gas Accord in all four regions we checked, and on the Hybrid 3.49% in Chicago and Dallas and 3.99% in Los Angeles and New York. On $35,000 over 60 months, 3.49% costs about $470 less interest than 3.99% (our arithmetic), which trims the hybrid’s gap a little where it applies. Honda lists no cash back on any Accord. The leases differ because the trims do: $229 a month for an LX against $299 for a Sport Hybrid, both for 36 months. The $750 owner offer and the $500 military and graduate offers cover every Accord and Accord Hybrid. Offers are from the Accord price guide, read at Honda’s offers pages on November 17, 2026."
+  ],
+  "resale": [
+    "iSeeCars counts three-year depreciation at 15.5% for the Accord overall and 22.1% for the Accord Hybrid, against 24.8% for the average vehicle. So the hybrid gives back 6.6 points more than the Accord average, which is the main case for the gas car. Both hold their value better than the average new vehicle, and the figures come from iSeeCars’ sample prices, not Honda’s."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners report 46 to 50 mpg in mixed driving, near the 44-to-48 rating, though some say real mileage falls short of EPA’s figure."
+  },
+  "faq": [
+    ["How much more does the Accord Hybrid cost than the gas Accord?", "$4,400 for an EX-L Hybrid over a gas SE ($35,095 against $30,695) and $3,100 for a Sport Hybrid over the SE ($33,795). Honda sells no hybrid below the Sport, so the gas LX ($28,395) leaves a $5,400 gap to the cheapest hybrid with less equipment. Prices are 2026 starting MSRPs without destination, from the Accord price guide."],
+    ["How much gas does the Accord Hybrid save?", "About 171 gallons a year at 15,000 miles for the EX-L Hybrid (313 against 484), which is $652 at the November 16 national average of $3.805 and $685 at EPA’s $4.00. At 12,000 miles it is about 137 gallons."],
+    ["Is the Accord Hybrid faster than the gas Accord?", "Yes. It makes 204 hp against 192, and Edmunds timed a Sport-L Hybrid at 7.0 seconds to 60 mph where U.S. News took 8.5 seconds in a gas SE."],
+    ["Does the Accord come with all-wheel drive?", "No. Every 2026 Accord, gas or hybrid, is front-wheel drive. If you need AWD, the Toyota Camry offers it on its hybrid."]
+  ],
+  "queries": ["honda accord hybrid worth it", "accord hybrid vs gas", "accord hybrid vs gas mpg", "is the honda accord hybrid worth the extra cost"],
+  "blog": { "title": "Is the Honda Accord Hybrid Worth It?", "text": "The EX-L Hybrid’s $4,400 premium over a gas SE, its 17-mpg gain, and how long the gas savings take to cover it.", "cta": "See the Accord hybrid math" },
+  "llms": { "title": "Is the Honda Accord Hybrid Worth It?", "text": "The 2026 Accord EX-L Hybrid and Sport Hybrid against the gas 1.5T SE: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-ACC-01", "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d810f9e5-2026-honda-accord-pricing-epa-ratings-september", "title": "Honda: 2026 Accord pricing, September 2026", "authority": "Honda", "scope": "2026 Accord and Accord Hybrid trims, starting MSRP excluding destination, the $1,295 destination charge and EPA ratings by trim (September 9, 2026 release)", "note": "2026 prices and EPA ratings by trim, from the Accord price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-01), read there on 2026-11-17 and again on 2026-11-22 for the trim list." },
+    { "id": "VEH-HYB-ACC-02", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50055", "title": "FuelEconomy.gov: 2026 Accord SE, 1.5L turbo (vehicle 50055)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Accord SE, gas, 31 mpg combined", "note": "EPA ratings, gas SE", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ACC-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50071", "title": "FuelEconomy.gov: 2026 Accord Hybrid, 2.0L (vehicle 50071)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Accord Hybrid on 17-inch wheels (EX-L), 48 mpg combined", "note": "EPA ratings, EX-L Hybrid", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ACC-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/50056", "title": "FuelEconomy.gov: 2026 Accord Hybrid Sport/Touring, 2.0L (vehicle 50056)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Accord Hybrid Sport, Sport-L and Touring on 19-inch wheels, 44 mpg combined", "note": "EPA ratings, Sport Hybrid", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ACC-05", "url": "https://www.iseecars.com/car/honda-accord/resale-value", "title": "iSeeCars: Honda Accord resale value", "authority": "iSeeCars", "scope": "Accord depreciation at three years, 15.5%, as used in the Honda Accord price guide", "note": "three-year depreciation, from the Accord price guide", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-12), read there on 2026-11-17." },
+    { "id": "VEH-HYB-ACC-06", "url": "https://www.iseecars.com/car/honda-accord-hybrid/resale-value", "title": "iSeeCars: Honda Accord Hybrid resale value", "authority": "iSeeCars", "scope": "Accord Hybrid depreciation at three years, 22.1%, against the 24.8% all-vehicle average, as used in the Honda Accord price guide", "note": "three-year depreciation, hybrid, from the Accord price guide", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-13), read there on 2026-11-17." },
+    { "id": "VEH-HYB-ACC-07", "url": "https://www.edmunds.com/honda/accord/2026/", "title": "Edmunds: 2026 Honda Accord", "authority": "Edmunds", "scope": "Edmunds' 7.0-second 0-60 mph time for a Sport-L Hybrid and its note that EX-L Hybrid stock is tight, as used in the Honda Accord price guide", "note": "acceleration and stock, from the Accord price guide", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-06), read there on 2026-11-17. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-ACC-08", "url": "https://cars.usnews.com/cars-trucks/honda/accord", "title": "U.S. News: Honda Accord", "authority": "U.S. News", "scope": "U.S. News' 8.5-second 0-60 mph time for a gas Accord SE, as used in the Honda Accord price guide", "note": "acceleration, gas, from the Accord price guide", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-08), read there on 2026-11-17." },
+    { "id": "VEH-HYB-ACC-09", "url": "https://automobiles.honda.com/tools/current-offers", "title": "Honda: current offers", "authority": "Honda", "scope": "Honda finance, lease, loyalty, military and graduate offers on the 2026 Accord and Accord Hybrid, read in four regions on 2026-11-17 for the Honda Accord price guide", "note": "finance and lease offers, from the Accord price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-05), read there on 2026-11-17." },
+    { "id": "VEH-HYB-ACC-10", "url": "https://www.hondacertified.com/certified-preowned-benefits", "title": "Honda: HondaTrue Certified benefits", "authority": "Honda", "scope": "HondaTrue Certified terms, including the hybrid battery covered 8 years/100,000 miles from first sale, as used in the Honda Accord price guide", "note": "certified-used hybrid battery term, from the Accord price guide", "registryNote": "Reused from the Honda Accord price guide (VEH-ACCORD-26), read there on 2026-11-17." }
+  ]
+}

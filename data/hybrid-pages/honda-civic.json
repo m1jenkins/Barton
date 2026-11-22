@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "key": "honda-civic",
+  "code": "CIVIC",
+  "slug": "honda-civic-hybrid-vs-gas.html",
+  "priceGuide": "honda-civic-price.html",
+  "name": "Honda Civic",
+  "short": "Civic",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Honda Civic Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The Civic Sport Hybrid costs $2,700 more than a gas Sport and earns it back in 5 to 6.6 years of gas, with 50 more hp. EPA mpg, incentives. Nov. 21, 2026.",
+  "h1": "Is the Honda Civic hybrid worth it?",
+  "gasLabel": "Gas, 2.0L",
+  "hybridLabel": "Hybrid, 2.0L",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "for most buyers",
+    "lead": "<strong>Yes, for most buyers.</strong> A Civic Sport Hybrid sedan costs $2,700 more than a gas Sport and is rated 49 mpg combined against 34, which is 135 fewer gallons a year at 15,000 miles. At the national average of $3.805 a gallon that is about $514 a year, and the premium is back in 5.3 years (6.6 years at 12,000 miles).",
+    "more": [
+      "The hybrid is also the Civic worth driving. It has 200 hp against 150, and Edmunds timed it at 6.6 seconds to 60 mph where a gas Sport took 10.0 (both from the Civic price guide). It adds heated front seats, a moonroof and dual-zone climate control. The costs are modest: dealers give a point less off the hybrid, about $300 on this car, and iSeeCars has it depreciating faster over five years."
+    ]
+  },
+  "chooseHybrid": [
+    "You drive 12,000 miles a year or more and keep a car five years. The Sport Hybrid’s $2,700 premium is back in 5.3 years at 15,000 miles.",
+    "You want the quicker Civic: 200 hp against 150, and 6.6 seconds to 60 mph against 10.0 in Edmunds’ test.",
+    "Your driving is mostly around town. EPA rates the sedan at 50 mpg in the city against 31.",
+    "You want heated front seats, a moonroof and dual-zone climate control, which the Sport Hybrid adds and the gas Sport doesn’t have."
+  ],
+  "chooseGas": [
+    "You want the cheapest Civic. An LX starts at $24,695, $4,700 under the Sport Hybrid, with a 7-inch screen and no heated seats.",
+    "You drive fewer than about 10,000 miles a year. At that pace the premium takes nearly 8 years to earn back.",
+    "You can take a 2027. Its new gas Sport-L ($28,495) has leather and heated seats and sits $1,200 under the 2027 Sport Hybrid ($29,695).",
+    "You sell at five years. iSeeCars has a five-year-old Civic Hybrid down 35.1% against 28.4% for the gas Civic."
+  ],
+  "premiumIntro": [
+    "Honda sells the Civic Sport as a gas car and the Sport Hybrid as its hybrid twin on both the sedan and the hatchback, and the hybrid has a $2,700 higher starting price on each. The Sport Hybrid’s extras (heated seats, moonroof, dual-zone climate control) are part of that, so the gap overstates the cost of the hybrid system alone."
+  ],
+  "premiumNote": "The price guide’s estimate is that dealers give 1–2% under MSRP on the hybrids and 2–3% on gas sedans, which adds about $300 to the Sport Hybrid’s real gap. For 2027 the gas Sport-L ($28,495) has leather and heated seats and leaves a $1,200 gap to the 2027 Sport Hybrid ($29,695). Honda’s destination charge is $1,295 on both versions.",
+  "scenarios": [
+    {
+      "label": "Sedan: Sport Hybrid against Sport",
+      "gas": { "trim": "Sport", "version": "2.0L" },
+      "hybrid": { "trim": "Sport Hybrid", "version": "2.0L hybrid" },
+      "note": "Front-wheel drive",
+      "epa": [
+        { "label": "Sedan", "gas": { "id": 49288, "comb": 34, "city": 31, "hwy": 39 }, "hybrid": { "id": 49289, "comb": 49, "city": 50, "hwy": 47 } }
+      ]
+    },
+    {
+      "label": "Hatchback: Sport Hybrid against Sport",
+      "gas": { "trim": "Hatchback Sport", "version": "2.0L" },
+      "hybrid": { "trim": "Hatchback Sport Hybrid", "version": "2.0L hybrid" },
+      "note": "Front-wheel drive, with the 24.5-cubic-foot cargo area",
+      "epa": [
+        { "label": "Hatchback", "gas": { "id": 49315, "comb": 34, "city": 30, "hwy": 38 }, "hybrid": { "id": 49316, "comb": 48, "city": 50, "hwy": 45 } }
+      ]
+    }
+  ],
+  "extraPremiums": [],
+  "mpgIntro": [
+    "EPA rates the Sport Hybrid sedan at 49 mpg combined (50 city, 47 highway) and the gas Sport at 34 (31 city, 39 highway). The hatchback hybrid is 48 against 34. Unlike the trucks, the Civic hybrid leads on the highway too, by 8 mpg on the sedan, so a commute on the interstate still pays."
+  ],
+  "mpgNote": "",
+  "costIntro": [
+    "At 15,000 miles a year the gas Sport burns 441 gallons and the Sport Hybrid sedan 306."
+  ],
+  "breakEvenIntro": [
+    "The sedan’s $2,700 premium is back in 5.0 to 6.6 years and the hatchback’s in 5.2 to 6.9, depending on mileage and gas price. That is a middling payback. What tips the Civic toward yes is the 50 extra hp as much as the fuel."
+  ],
+  "breakEvenAfter": [],
+  "changesIntro": [
+    "The hybrid is heavier and has a smaller fuel tank. Little else changes on the spec sheet."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "150 hp", "hybrid": "200 hp total system (141 hp engine, 181 hp motor)" },
+    { "label": "Torque", "gas": "133 lb-ft", "hybrid": "232 lb-ft from the motor, 134 from the engine" },
+    { "label": "0 to 60 mph", "gas": "10.0 seconds in Edmunds’ test", "hybrid": "6.6 seconds in Edmunds’ test" },
+    { "label": "Trunk, sedan", "gas": "14.8 cubic feet", "hybrid": "14.8 cubic feet" },
+    { "label": "Curb weight, sedan", "gas": "2,926 pounds (Sport)", "hybrid": "3,208 pounds (Sport Hybrid)" },
+    { "label": "Fuel tank", "gas": "12.4 gallons", "hybrid": "10.6 gallons" },
+    { "label": "Equipment", "gas": "18-inch gloss-black wheels, 8-speaker audio, paddle shifters", "hybrid": "Adds heated front seats, a moonroof and dual-zone climate control" },
+    { "label": "Drive", "gas": "Front-wheel drive", "hybrid": "Front-wheel drive" }
+  ],
+  "changesAfter": [
+    "We couldn’t read Honda’s Civic warranty page, so we have no hybrid battery term to quote. Ask the dealer for Honda’s hybrid battery and hybrid-component coverage in writing."
+  ],
+  "incentives": [
+    "Honda treats the two versions alike this month. Its 3.99% financing for 24 to 60 months covers every 2026 Civic sedan, hatchback and Hybrid and ends November 30, 2026, and Honda lists no cash back on any Civic. The leases differ only because the trims do: $209 a month for a 2026 LX against $259 for a Sport Hybrid, both for 39 months. The $500 loyalty offer for Honda owners covers the sedan and the Hybrid sedan, and the $500 military and graduate offers cover every Civic. Nothing this month shrinks or grows the hybrid’s premium. Offers are from the Civic price guide, read at Honda’s offers pages on November 16, 2026."
+  ],
+  "resale": [
+    "iSeeCars’ comparison page puts five-year depreciation at 28.4% ($6,983) for the Civic and 35.1% ($10,283) for the Civic Hybrid. So the hybrid has lost more in dollars than its premium after five years, on iSeeCars’ sample prices, which mix model years. The Civic still holds its value well against the average vehicle, and the Civic price guide has the three-year figure at 7.0%."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners report the mid-40s to mid-50s in mild weather, which brackets the 49-mpg rating."
+  },
+  "faq": [
+    ["How much more does the Civic Hybrid cost than the gas Civic?", "$2,700 for a Sport Hybrid over a Sport, on the sedan ($29,395 against $26,695) and on the hatchback ($30,595 against $27,895). The Sport Hybrid also adds heated seats, a moonroof and dual-zone climate control. Prices are 2026 starting MSRPs without destination, from the Civic price guide."],
+    ["How much gas does the Civic Hybrid save?", "About 135 gallons a year at 15,000 miles (306 against 441), which is $514 at the November 16 national average of $3.805 and $540 at EPA’s $4.00. At 12,000 miles it is about 108 gallons."],
+    ["Is the Civic Hybrid faster than the gas Civic?", "Yes. It has 200 hp against 150, and Edmunds timed it at 6.6 seconds to 60 mph against 10.0 for a gas Sport."],
+    ["Should I wait for the 2027 Civic?", "Only if you want its changes. Every 2027 that carries over costs $300 more, the 2027 hybrid hatchback is rated 47 mpg combined against 48, and a new gas Sport-L with leather and heated seats starts at $28,495. Honda’s 3.99% financing is on the 2026 only."]
+  ],
+  "queries": ["honda civic hybrid worth it", "civic hybrid vs gas", "civic hybrid vs gas mpg", "is the honda civic hybrid worth the extra cost"],
+  "blog": { "title": "Is the Honda Civic Hybrid Worth It?", "text": "The Sport Hybrid’s $2,700 premium, its 15-mpg gain over a gas Sport, and how long the gas savings take to cover it.", "cta": "See the Civic hybrid math" },
+  "llms": { "title": "Is the Honda Civic Hybrid Worth It?", "text": "The 2026 Civic Sport Hybrid against the gas Sport, sedan and hatchback: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-CIVIC-01", "url": "https://www.hondainfocenter.com/2026/Civic-Sedan/Feature-Guide/Civic-Sedan-Specifications/", "title": "Honda Information Center: 2026 Civic Sedan specifications", "authority": "Honda", "scope": "2026 Civic sedan gas and hybrid horsepower, torque, trunk volume, curb weight and fuel tank by trim", "note": "power, torque, trunk, weight and fuel tank", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CIVIC-02", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49288", "title": "FuelEconomy.gov: 2026 Civic 4Dr, 2.0L (vehicle 49288)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Civic sedan, 2.0L gas, 34 mpg combined", "note": "EPA ratings, gas sedan", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CIVIC-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49289", "title": "FuelEconomy.gov: 2026 Civic 4Dr, hybrid (vehicle 49289)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Civic sedan hybrid, 49 mpg combined", "note": "EPA ratings, hybrid sedan", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CIVIC-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49315", "title": "FuelEconomy.gov: 2026 Civic 5Dr, 2.0L (vehicle 49315)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Civic hatchback, 2.0L gas, 34 mpg combined", "note": "EPA ratings, gas hatchback", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CIVIC-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49316", "title": "FuelEconomy.gov: 2026 Civic 5Dr, hybrid (vehicle 49316)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Civic hatchback hybrid, 48 mpg combined", "note": "EPA ratings, hybrid hatchback", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-CIVIC-06", "url": "https://www.iseecars.com/compare/honda-civic-vs-honda-civic_hybrid", "title": "iSeeCars: Honda Civic against Civic Hybrid", "authority": "iSeeCars", "scope": "Five-year depreciation of the Civic (28.39%, $6,983) and Civic Hybrid (35.10%, $10,283), and their cargo, horsepower and curb weight", "note": "five-year depreciation" },
+    { "id": "VEH-HYB-CIVIC-07", "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-bb136e6e7af7ccb6b0336e10d8112b0f-2026-honda-civic-sedan-pricing-and-epa-ratings-september", "title": "Honda: 2026 Civic sedan pricing, September 2026", "authority": "Honda", "scope": "2026 Civic sedan starting MSRP by trim and the $1,295 destination charge, as used in the Honda Civic price guide", "note": "2026 sedan prices, from the Civic price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-01), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-08", "url": "https://hondanews.com/en-US/releases/release-bb136e6e7af7ccb6b0336e10d81121d6-2026-honda-civic-hatchback-pricing-and-epa-ratings-september", "title": "Honda: 2026 Civic hatchback pricing, September 2026", "authority": "Honda", "scope": "2026 Civic hatchback starting MSRP by trim, as used in the Honda Civic price guide", "note": "2026 hatchback prices, from the Civic price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-02), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-09", "url": "https://hondanews.com/en-US/honda-automobiles/releases/release-62166a21f970e5815b4639c627011a7c-2027-honda-civic-sedan-pricing-and-epa-ratings", "title": "Honda: 2027 Civic sedan pricing", "authority": "Honda", "scope": "2027 Civic sedan starting MSRP by trim, including the new Sport-L, as used in the Honda Civic price guide", "note": "2027 sedan prices, from the Civic price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-06), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-10", "url": "https://automobiles.honda.com/tools/current-offers", "title": "Honda: current offers", "authority": "Honda", "scope": "Honda finance, lease and owner offers on the 2026 and 2027 Civic, read in four regions on 2026-11-16 for the Honda Civic price guide", "note": "finance and lease offers, from the Civic price guide", "status": "primary_source_checked", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-15), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-11", "url": "https://www.edmunds.com/honda/civic/2026/", "title": "Edmunds: 2026 Honda Civic", "authority": "Edmunds", "scope": "Edmunds' 10.0-second 0-60 mph time for a gas Civic Sport, as used in the Honda Civic price guide", "note": "acceleration, gas, from the Civic price guide", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-16), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-12", "url": "https://www.edmunds.com/honda/civic/2026/hybrid/", "title": "Edmunds: 2026 Honda Civic Hybrid", "authority": "Edmunds", "scope": "Edmunds' 6.6-second 0-60 mph time for the Civic Sport Hybrid, as used in the Honda Civic price guide", "note": "acceleration, hybrid, from the Civic price guide", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-17), read there on 2026-11-16." },
+    { "id": "VEH-HYB-CIVIC-13", "url": "https://www.iseecars.com/car/honda-civic/resale-value", "title": "iSeeCars: Honda Civic resale value", "authority": "iSeeCars", "scope": "Three-year depreciation of the Civic, 7.0%, as used in the Honda Civic price guide", "note": "three-year depreciation, from the Civic price guide", "registryNote": "Reused from the Honda Civic price guide (VEH-CIVIC-24), read there on 2026-11-16." }
+  ]
+}

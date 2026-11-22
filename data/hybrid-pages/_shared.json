@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "note": "Shared by every file in this folder. Files starting with an underscore are not car pages. Refresh the gas prices monthly (the EIA price weekly if you want it current) and rebuild with npm run build:hybrids.",
+  "updated": "2026-11-21",
+  "miles": [12000, 15000],
+  "gasPrices": {
+    "epa": { "regular": 4.0, "electricity": 0.15, "label": "$4.00", "retrieved": "2026-11-21" },
+    "eia": { "regular": 3.805, "label": "$3.805", "week": "2026-11-16", "released": "2026-11-17", "retrieved": "2026-11-21" }
+  },
+  "sharedSources": [
+    {
+      "key": "epaPrices",
+      "url": "https://www.fueleconomy.gov/ws/rest/fuelprices",
+      "title": "FuelEconomy.gov: fuel prices used in EPA calculations",
+      "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy",
+      "scope": "EPA's price assumptions: $4.00 a gallon for regular gasoline and $0.15 a kilowatt-hour for electricity",
+      "note": "the price EPA uses for its fuel-cost figures, read from the fueleconomy.gov web service"
+    },
+    {
+      "key": "epaLabel",
+      "url": "https://www.fueleconomy.gov/feg/label/learn-more-gasoline-label.shtml",
+      "title": "FuelEconomy.gov: learn more about the gasoline fuel economy label",
+      "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy",
+      "scope": "EPA's annual fuel cost assumes 15,000 miles a year; combined mpg weights 55% city and 45% highway",
+      "note": "how EPA works out annual fuel cost and combined mpg"
+    },
+    {
+      "key": "eia",
+      "url": "https://www.eia.gov/petroleum/gasdiesel/",
+      "title": "U.S. Energy Information Administration: gasoline and diesel fuel update",
+      "authority": "U.S. Energy Information Administration",
+      "scope": "U.S. average retail price of regular gasoline, $3.805 a gallon for the week of November 16, 2026 (released November 17, 2026)",
+      "note": "the current national average price of regular gasoline, from the weekly survey"
+    },
+    {
+      "key": "reddit",
+      "url": "https://arctic-shift.photon-reddit.com/",
+      "title": "Arctic Shift: Reddit archive",
+      "authority": "Arctic Shift",
+      "scope": "Public Reddit posts and comments behind the fuel-economy opinions counted from the car's Reddit file, collected 2026-11-18",
+      "note": "the public Reddit archive the coded comments came from"
+    }
+  ]
+}

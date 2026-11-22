@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "key": "hyundai-elantra",
+  "code": "ELA",
+  "slug": "hyundai-elantra-hybrid-vs-gas.html",
+  "priceGuide": "hyundai-elantra-price.html",
+  "name": "Hyundai Elantra",
+  "short": "Elantra",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Hyundai Elantra Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The Elantra Hybrid Blue costs $1,700 more than a gas SEL Sport and is rated 54 mpg against 34. Break-even is 2.6 to 3.4 years, 4.9 to 6.4 with Hyundai’s cash.",
+  "h1": "Is the Hyundai Elantra hybrid worth it?",
+  "gasLabel": "Gas, 2.0L",
+  "hybridLabel": "Hybrid, 1.6L",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "even after Hyundai’s gas-car cash",
+    "lead": "<strong>Yes, even after Hyundai’s gas-car cash.</strong> An Elantra Hybrid Blue costs $1,700 more than a gas SEL Sport and is rated 54 mpg combined against 34, which is 163 fewer gallons a year at 15,000 miles. At the national average of $3.805 a gallon that is about $622 a year, and the premium is back in 2.7 years (3.4 years at 12,000 miles). Hyundai pays $2,000 on the gas car this month and $500 on the hybrid, which widens the real gap to about $3,200 and the payback to 5.1 years.",
+    "more": [
+      "At 54 mpg the Blue also out-rates the Corolla Hybrid’s 50, and it starts at $25,650. The cost is power: the hybrid makes 139 hp against the gas car’s 147, and Edmunds timed a gas Elantra at 9.4 seconds to 60 mph (we found no hybrid time). Edmunds still scores the hybrid higher, 7.6 out of 10 against 6.8 for the gas car. Hyundai’s financing runs 3.9% on the hybrid against 3.49% on the gas car, a difference of about $280 in interest on a $25,000 loan (our arithmetic)."
+    ]
+  },
+  "chooseHybrid": [
+    "You drive 12,000 miles a year or more. The Blue’s $1,700 premium is back in 3.4 years at 12,000 miles and 2.7 at 15,000, before Hyundai’s cash.",
+    "You want 54 mpg combined, against 34 for the gas SEL Sport and 50 for a Corolla Hybrid.",
+    "You do a lot of highway miles. The Blue is rated 58 mpg on the highway against 40 for the gas car.",
+    "You want a sunroof and leatherette seats with the hybrid. The Hybrid SEL Sport Plus has them for $2,850 over the gas SEL Sport Plus."
+  ],
+  "chooseGas": [
+    "You want the cheapest Elantra. A gas SE starts at $22,825, $2,825 under the Hybrid Blue.",
+    "You’ll finance with Hyundai. The gas car gets $2,000 bonus cash and 3.49%; the hybrid gets $500 and 3.9%, so the hybrid’s payback roughly doubles.",
+    "You want the most power. The gas Elantra makes 147 hp against 139 for the hybrid, and the N Line turbo makes 201.",
+    "You drive fewer than about 6,000 miles a year. At that pace the Blue takes more than 6 years to earn back $1,700, and nearly 13 with Hyundai’s cash."
+  ],
+  "premiumIntro": [
+    "Hyundai sells the hybrid on its own trims, so no pair matches exactly. The Hybrid Blue (proximity key, wireless Apple CarPlay, LED projector headlights) is the entry hybrid, and the SEL Sport (gloss-black 17-inch wheels, spoiler, leather-wrapped wheel) is the gas car it is closest to in price. The Hybrid SEL Sport Plus and the gas SEL Sport Plus both have a power sunroof and leatherette seats, so that pair is the closest on equipment."
+  ],
+  "premiumNote": "The price guide’s estimate is that dealers give 3–4% under MSRP on the SEL Sport and the Hybrid Blue alike, so the sticker gap holds. Hyundai’s cash does not: $2,000 on the gas car and $500 on the hybrid, which adds $1,500 to the Blue’s real gap. Hyundai’s destination charge is $1,295 on both versions, and Hyundai lists no 2027 Elantra yet.",
+  "scenarios": [
+    {
+      "label": "Hybrid Blue against SEL Sport",
+      "gas": { "trim": "SEL Sport", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid Blue", "version": "1.6L hybrid" },
+      "note": "Front-wheel drive; the hybrid’s entry trim against the gas trim nearest its price",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49813, "comb": 34, "city": 30, "hwy": 40 }, "hybrid": { "id": 49817, "comb": 54, "city": 51, "hwy": 58 } }
+      ]
+    },
+    {
+      "label": "Hybrid SEL Sport Plus against SEL Sport Plus",
+      "gas": { "trim": "SEL Sport Plus", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid SEL Sport Plus", "version": "1.6L hybrid" },
+      "note": "Power sunroof and leatherette seats on both; front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49813, "comb": 34, "city": 30, "hwy": 40 }, "hybrid": { "id": 49816, "comb": 50, "city": 49, "hwy": 52 } }
+      ]
+    }
+  ],
+  "extraPremiums": [
+    {
+      "label": "Hybrid Blue against SE",
+      "note": "Cheapest hybrid against cheapest gas",
+      "gas": { "trim": "SE", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid Blue", "version": "1.6L hybrid" }
+    },
+    {
+      "label": "Hybrid Limited against Limited",
+      "note": "The hybrid has ventilated seats and a memory driver’s seat; the gas Limited has Bose audio and Highway Driving Assist",
+      "gas": { "trim": "Limited", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid Limited", "version": "1.6L hybrid" }
+    }
+  ],
+  "mpgIntro": [
+    "EPA rates the Hybrid Blue at 54 mpg combined (51 city, 58 highway) and the gas SEL Sport at 34 (30 city, 40 highway). The Hybrid SEL Sport Plus is rated 50 (49 city, 52 highway), so its sunroof and bigger wheels cost 4 mpg. The Blue leads by 21 mpg in the city and 18 on the highway, an unusually even gain, so a long commute pays about as well as city driving."
+  ],
+  "mpgNote": "The Elantra price guide lists the gas SE at 35 mpg combined (EPA’s stop-start record, vehicle 49814), a point above the other gas trims; we used the SEL Sport’s 34 for both pairs.",
+  "costIntro": [
+    "At 15,000 miles a year the gas SEL Sport burns 441 gallons, the Hybrid Blue 278 and the Hybrid SEL Sport Plus 300."
+  ],
+  "breakEvenIntro": [
+    "The Blue’s $1,700 premium is back in 2.6 to 3.4 years and the Hybrid SEL Sport Plus’s $2,850 in 5.0 to 6.6, depending on mileage and gas price. The Blue’s payback is short because the gas car is a 34-mpg compact and the hybrid is a 54-mpg one."
+  ],
+  "breakEvenAfter": [
+    "Hyundai’s cash changes the order. Add $1,500 for the gap between the gas car’s $2,000 and the hybrid’s $500, and the Blue’s $3,200 real premium takes 4.9 to 6.4 years. The cash ends November 30, so next month’s gap may be different."
+  ],
+  "changesIntro": [
+    "The hybrid gives up some power and changes transmissions. Edmunds says the base gas engine is slow and the cabin loud, and it scores the hybrid higher."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "147 hp", "hybrid": "139 hp combined" },
+    { "label": "Transmission", "gas": "CVT", "hybrid": "Six-speed dual-clutch automatic" },
+    { "label": "0 to 60 mph", "gas": "9.4 seconds in Edmunds’ test", "hybrid": "We found no timed figure" },
+    { "label": "Edmunds rating", "gas": "6.8 out of 10", "hybrid": "7.6 out of 10, second of 10 small sedans" },
+    { "label": "Days to sell", "gas": "A median 39 days (Edmunds)", "hybrid": "A median 16 days (Edmunds)" },
+    { "label": "Warranty", "gas": "10 years/100,000 miles powertrain", "hybrid": "10 years/100,000 miles on the hybrid battery and hybrid system components" },
+    { "label": "Drive", "gas": "Front-wheel drive", "hybrid": "Front-wheel drive" }
+  ],
+  "changesAfter": [],
+  "incentives": [
+    "This is the one pair where Hyundai’s offers favor the gas car, and the page’s verdict allows for it. Hyundai gives $2,000 bonus cash and 3.49% financing for up to 60 months on a gas Elantra, and $500 and 3.9% on the Hybrid, the same in all four regions we checked. Hyundai’s Dallas fine print says the gas car’s $2,000 requires Hyundai Motor Finance; the other three regions don’t say. On the hybrid, Hyundai’s fine print names the Blue in Chicago and New York and the SEL Sport in Dallas and Los Angeles, so ask which trims qualify for the $500. Leases are $239 a month for an SEL Sport and $269 for a Hybrid Blue, both for 36 months with $3,599 due. Everything ends November 30, 2026. Offers are from the Elantra price guide, read at Hyundai’s offers page on November 18, 2026."
+  ],
+  "resale": [
+    "iSeeCars counts three-year depreciation for the Elantra at 16.6%, against 12.1% for compact cars and 24.8% for the average vehicle. We found no separate figure for the Elantra Hybrid. The gas Elantra loses more than its class, so a hybrid that holds a little better would help its case, but we can’t say it does. The Elantra is also due for a redesign in 2027."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners report about 50 mpg in everyday driving, below the Blue’s 54 but at the SEL Sport Plus’s 50 rating, and some mention a recall update they say cut highway mileage."
+  },
+  "faq": [
+    ["How much more does the Elantra Hybrid cost than the gas Elantra?", "$1,700 for a Hybrid Blue over an SEL Sport ($25,650 against $23,950), $2,850 for a Hybrid SEL Sport Plus over an SEL Sport Plus, and $2,825 for the Blue over the cheapest gas SE ($22,825). Prices are 2026 starting MSRPs without destination, from the Elantra price guide."],
+    ["How much gas does the Elantra Hybrid save?", "About 163 gallons a year at 15,000 miles for the Blue (278 against 441), which is $622 at the November 16 national average of $3.805 and $654 at EPA’s $4.00. At 12,000 miles it is about 131 gallons."],
+    ["Does Hyundai’s gas-car cash change the answer?", "It lengthens the payback but doesn’t reverse it. With $2,000 on the gas car and $500 on the hybrid, the Blue’s real premium is about $3,200 and it earns that back in 4.9 to 6.4 years. The offers end November 30, 2026."],
+    ["Should I wait for the 2027 Elantra?", "Only if you want the redesign. Kelley Blue Book reported the eighth-generation Elantra shown in South Korea in June 2026 and expected in U.S. showrooms in 2027, and Hyundai hasn’t announced U.S. prices. The 2026 is the last of this design and carries this month’s cash."]
+  ],
+  "queries": ["hyundai elantra hybrid worth it", "elantra hybrid vs gas", "elantra hybrid vs gas mpg", "is the hyundai elantra hybrid worth the extra cost"],
+  "blog": { "title": "Is the Hyundai Elantra Hybrid Worth It?", "text": "The Hybrid Blue’s $1,700 premium, its 20-mpg gain over a gas SEL Sport, how Hyundai’s cash changes it, and how long the gas savings take to cover it.", "cta": "See the Elantra hybrid math" },
+  "llms": { "title": "Is the Hyundai Elantra Hybrid Worth It?", "text": "The 2026 Elantra Hybrid Blue and SEL Sport Plus against the gas SEL Sport: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, Hyundai’s gas-car cash, power, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-ELA-01", "url": "https://www.hyundaiusa.com/us/en/vehicles/elantra", "title": "Hyundai: 2026 Elantra", "authority": "Hyundai", "scope": "2026 Elantra and Elantra Hybrid trims, starting MSRP excluding destination, equipment and EPA mpg, as used in the Hyundai Elantra price guide", "note": "2026 trims, prices and equipment, from the Elantra price guide", "status": "primary_source_checked", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-01), read there on 2026-11-18. Hyundai’s page returned only template text to our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-ELA-02", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49813", "title": "FuelEconomy.gov: 2026 Elantra non-ISG, 2.0L (vehicle 49813)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 gas Elantra without idle stop-start (SEL Sport and above), 34 mpg combined", "note": "EPA ratings, gas", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ELA-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49817", "title": "FuelEconomy.gov: 2026 Elantra Hybrid Blue, 1.6L (vehicle 49817)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Elantra Hybrid Blue, 54 mpg combined", "note": "EPA ratings, Hybrid Blue", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ELA-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49816", "title": "FuelEconomy.gov: 2026 Elantra Hybrid, 1.6L (vehicle 49816)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Elantra Hybrid SEL Sport, SEL Sport Plus and Limited, 50 mpg combined", "note": "EPA ratings, Hybrid SEL Sport Plus", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-ELA-05", "url": "https://www.hyundaiusa.com/us/en/assurance/america-best-warranty", "title": "Hyundai: America’s Best Warranty", "authority": "Hyundai", "scope": "Hyundai's 10-year/100,000-mile powertrain warranty and its 10-year/100,000-mile hybrid battery and hybrid system components warranty", "note": "powertrain and hybrid battery warranty", "status": "primary_source_checked", "registryNote": "Read in a browser on 2026-11-21 for the Hyundai Tucson hybrid page (VEH-HYB-TUCSON-01); the hybrid term applies across Hyundai’s hybrid models." },
+    { "id": "VEH-HYB-ELA-06", "url": "https://www.edmunds.com/hyundai/elantra/2026/", "title": "Edmunds: 2026 Hyundai Elantra", "authority": "Edmunds", "scope": "Edmunds' 6.8 rating, its 9.4-second 0-60 mph time for the gas Elantra and its median 39 days to sell, as used in the Hyundai Elantra price guide", "note": "gas rating, acceleration and days to sell, from the Elantra price guide", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-10), read there on 2026-11-18. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-ELA-07", "url": "https://www.edmunds.com/hyundai/elantra-hybrid/2026/", "title": "Edmunds: 2026 Hyundai Elantra Hybrid", "authority": "Edmunds", "scope": "Edmunds' 7.6 rating, second of 10 small sedans, and its median 16 days to sell for the Elantra Hybrid, as used in the Hyundai Elantra price guide", "note": "hybrid rating and days to sell, from the Elantra price guide", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-11), read there on 2026-11-18. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-ELA-08", "url": "https://www.hyundaiusa.com/us/en/offers", "title": "Hyundai: current offers", "authority": "Hyundai", "scope": "Hyundai Motor Finance rates, bonus cash and leases on the 2026 Elantra and Elantra Hybrid in four regions, read 2026-11-18 for the Hyundai Elantra price guide", "note": "finance, bonus cash and lease offers, from the Elantra price guide", "status": "primary_source_checked", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-03), read there on 2026-11-18." },
+    { "id": "VEH-HYB-ELA-09", "url": "https://www.iseecars.com/car/hyundai-elantra/resale-value", "title": "iSeeCars: Hyundai Elantra resale value", "authority": "iSeeCars", "scope": "Elantra three-year depreciation, 16.6%, against 12.1% for compact cars and 24.8% for all vehicles, as used in the Hyundai Elantra price guide", "note": "three-year depreciation, from the Elantra price guide", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-09), read there on 2026-11-18." },
+    { "id": "VEH-HYB-ELA-10", "url": "https://www.kbb.com/car-news/redesigned-2027-hyundai-elantra-sedan-unveiled/", "title": "Kelley Blue Book: redesigned 2027 Hyundai Elantra unveiled", "authority": "Kelley Blue Book", "scope": "Report of the eighth-generation 2027 Elantra shown in South Korea in June 2026, with U.S. arrival expected in 2027, as used in the Hyundai Elantra price guide", "note": "next-generation Elantra, from the Elantra price guide", "registryNote": "Reused from the Hyundai Elantra price guide (VEH-ELANTRA-28), read there on 2026-11-18." }
+  ]
+}
