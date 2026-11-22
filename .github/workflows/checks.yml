@@ -24,5 +24,7 @@ jobs:
       - run: npm run check:vehicles
       - run: npm run check:deals
       - run: npm run check:hybrids
+      - run: npm run check:problems
+      - run: npm run check:roundups
       - run: npm test
       - run: git diff --check

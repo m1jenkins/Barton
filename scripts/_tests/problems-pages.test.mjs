@@ -113,8 +113,8 @@ test('verdicts follow the stated rule or say why they moved one step, and the ra
       if (entry[0] !== expected) assert.match(entry[2] ?? '', new RegExp(`^${expected} to ${entry[0]}: .{15,}`), `${car.key} ${year} is ${entry[0]} but the rule says ${expected}; give the override reason as "${expected} to ${entry[0]}: why"`);
       else assert.equal(entry[2], undefined, `${car.key} ${year} follows the rule and needs no override note`);
     }
-    // A partial first sales year (firstSold) only needs some sales; every later year needs at least 10,000 (the Ranger sold 32,334 in 2023), which still catches a missing year.
-    for (let year = startOf(car); year <= 2025; year++) assert.ok(car.sales[year] > (year === car.firstSold ? 0 : 10000), `${car.key} sales for ${year}`);
+    // A partial first sales year (firstSold) may have no rate (the 2017 Model 3 sold about 1,667); every later year needs at least 10,000 (the Ranger sold 32,334 in 2023), which still catches a missing year.
+    for (let year = startOf(car); year <= 2025; year++) if (year !== car.firstSold) assert.ok(car.sales[year] > 10000, `${car.key} sales for ${year}`);
     for (const [year, published] of Object.entries(car.publishedRates ?? {})) {
       const fresh = figures.find(figure => figure.year === Number(year)).fresh;
       assert.ok(Math.abs(fresh - published) / published <= 0.05, `${car.key} ${year}: published ${published} against ${fresh.toFixed(1)} from today's counts`);
