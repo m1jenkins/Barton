@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "key": "toyota-corolla",
+  "code": "COR",
+  "slug": "toyota-corolla-hybrid-vs-gas.html",
+  "priceGuide": "toyota-corolla-price.html",
+  "name": "Toyota Corolla",
+  "short": "Corolla",
+  "modelYear": 2026,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Is the Toyota Corolla Hybrid Worth It? Hybrid vs Gas (2026)",
+  "description": "The Corolla Hybrid LE costs $1,850 more than a gas LE and earns it back in 3.6 to 4.7 years of gas, at 50 mpg. EPA mpg, incentives. Nov. 21, 2026.",
+  "h1": "Is the Toyota Corolla hybrid worth it?",
+  "gasLabel": "Gas, 2.0L",
+  "hybridLabel": "Hybrid, 1.8L",
+  "verdict": {
+    "answer": "Yes",
+    "detail": "for nearly every buyer",
+    "lead": "<strong>Yes, for nearly every buyer.</strong> A Corolla Hybrid LE costs $1,850 more than a gas LE and is rated 50 mpg combined against 35, which is 129 fewer gallons a year at 15,000 miles. At the national average of $3.805 a gallon that is about $489 a year, and the premium is back in 3.8 years (4.7 years at 12,000 miles). That is a short payback next to the Civic hybrid’s 5.3 years.",
+    "more": [
+      "Two things make this an easy call. The gap is small, and the hybrid’s resale is good: iSeeCars has a three-year-old Corolla Hybrid down 11.9% against 9.3% for the gas Corolla, and 24.8% for the average vehicle. The cost is power. The hybrid makes 138 hp against the gas car’s 169, and the gas Corolla was already slow in Edmunds’ test, 8.8 seconds to 60 mph. Edmunds tells shoppers to look at the hybrid first."
+    ]
+  },
+  "chooseHybrid": [
+    "You drive 10,000 miles a year or more. The Hybrid LE’s $1,850 premium is back in 3.8 years at 15,000 miles and 4.7 at 12,000.",
+    "You want the best mpg Toyota sells in this class: 50 combined, 53 in the city, against 35 for the gas LE.",
+    "You keep the car a long time. Toyota covers the hybrid battery for 10 years or 150,000 miles.",
+    "You want the cheapest hybrid in the size. The Hybrid LE starts at $24,975, $4,420 under the Civic Sport Hybrid’s $29,395."
+  ],
+  "chooseGas": [
+    "You want the cheapest Corolla. A gas LE starts at $23,125, $1,850 under the Hybrid LE.",
+    "You want the extra power. The gas Corolla makes 169 hp against the hybrid’s 138, though neither is quick.",
+    "You drive fewer than about 6,000 miles a year. At that pace the Hybrid LE takes nearly 10 years to earn back its premium.",
+    "You want a hatchback. The 2026 Hatchback is gas-only and rated 35 mpg combined."
+  ],
+  "premiumIntro": [
+    "Toyota sells the gas Corolla as an LE, SE and XSE and the hybrid as an LE, SE and XLE, so the first two pair on the same equipment: the Hybrid LE carries the LE’s list, and the Hybrid SE carries the SE’s 18-inch wheels, sport seats and drive modes. The Hybrid XLE matches the XSE on moonroof, heated seats and screens, with a $500 gap, though EPA lists no separate mpg record we could match to it."
+  ],
+  "premiumNote": "The price guide’s estimate is that dealers give 5–6% under MSRP on a gas LE and SE and 3–4% on the Hybrid LE and SE, about two points less off the hybrid, which adds roughly $400 to the Hybrid LE’s real gap. Toyota’s destination charge is $1,295 on both versions. The 2027 costs $200 more on each version, so the gap stays $1,850.",
+  "scenarios": [
+    {
+      "label": "Hybrid LE against LE",
+      "gas": { "trim": "LE", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid LE", "version": "1.8L hybrid" },
+      "note": "Same equipment, front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49807, "comb": 35, "city": 32, "hwy": 41 }, "hybrid": { "id": 49804, "comb": 50, "city": 53, "hwy": 46 } }
+      ]
+    },
+    {
+      "label": "Hybrid SE against SE",
+      "gas": { "trim": "SE", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid SE", "version": "1.8L hybrid" },
+      "note": "18-inch wheels, sport seats and drive modes on both; front-wheel drive",
+      "epa": [
+        { "label": "Front-wheel drive", "gas": { "id": 49808, "comb": 34, "city": 31, "hwy": 40 }, "hybrid": { "id": 49803, "comb": 47, "city": 50, "hwy": 43 } }
+      ]
+    }
+  ],
+  "extraPremiums": [
+    {
+      "label": "Hybrid XLE against XSE",
+      "note": "Moonroof, heated SofTex seats, 10.5-inch screen and 12.3-inch gauges on both; the XSE has paddle shifters",
+      "gas": { "trim": "XSE", "version": "2.0L" },
+      "hybrid": { "trim": "Hybrid XLE", "version": "1.8L hybrid" }
+    }
+  ],
+  "mpgIntro": [
+    "EPA rates the Hybrid LE at 50 mpg combined (53 city, 46 highway) and the gas LE at 35 (32 city, 41 highway). The Hybrid SE’s 18-inch wheels cost it 3 mpg, to 47, against a gas SE at 34. The hybrid leads on the highway too, by 5 to 6 mpg, so a commute on the interstate still pays. All-wheel drive on the Hybrid LE (a $1,400 option) is rated 48 mpg; the gas Corolla has none."
+  ],
+  "mpgNote": "",
+  "costIntro": [
+    "At 15,000 miles a year the gas LE burns 429 gallons and the Hybrid LE 300; the gas SE burns 441 and the Hybrid SE 319."
+  ],
+  "breakEvenIntro": [
+    "The Hybrid LE’s $1,850 premium is back in 3.6 to 4.7 years and the Hybrid SE’s, also $1,850, in 3.8 to 5.0, depending on mileage and gas price. That is short enough that the hybrid has paid for itself well before the 10-year, 150,000-mile battery warranty ends."
+  ],
+  "breakEvenAfter": [
+    "The roughly $400 of extra dealer discount the price guide expects on a gas LE stretches the Hybrid LE’s real payback to about 4.6 years at 15,000 miles and $3.805. Even with that and 12,000 miles it stays under 6 years."
+  ],
+  "changesIntro": [
+    "The hybrid gives up some power. The rest of what we could confirm is below."
+  ],
+  "changes": [
+    { "label": "Power", "gas": "169 hp", "hybrid": "138 hp, with a 1.8-liter engine and electric motor (Toyota)" },
+    { "label": "0 to 60 mph", "gas": "8.8 seconds in Edmunds’ test", "hybrid": "We found no timed figure" },
+    { "label": "Trunk, sedan", "gas": "13.1 cubic feet (Edmunds)", "hybrid": "We found no separate hybrid figure" },
+    { "label": "Drive", "gas": "Front-wheel drive only", "hybrid": "Front-wheel drive; AWD on the LE and SE adds $1,400" },
+    { "label": "Warranty", "gas": "Toyota’s new-car coverage", "hybrid": "Hybrid battery 10 years/150,000 miles; other hybrid parts 8 years/100,000" }
+  ],
+  "changesAfter": [
+    "Toyota’s pressroom says the hybrid battery is covered for 10 years or 150,000 miles, whichever comes first, and the coverage transfers to later owners. The 8-year, 100,000-mile term on other hybrid parts is from Toyota’s warranty page as read for the Corolla price guide."
+  ],
+  "incentives": [
+    "Toyota treats the two versions alike this month. Its 4.99% financing for 48 months covers the 2026 and 2027 Corolla, Corolla Hybrid and Corolla Hatchback (Midwest buyers get it on the 2027 only, Southern California on the 2026 only), and Toyota lists no cash back on any Corolla. The leases differ because the trims do: $239 a month for a 2026 LE in Los Angeles, $329 for a 2026 Hybrid SE with $2,999 due. The $500 military and college rebates cover every Corolla, hybrid included. Everything ends November 30, 2026. Nothing this month shrinks or grows the hybrid’s premium. Offers are from the Corolla price guide, read at Toyota’s offers pages on November 16, 2026."
+  ],
+  "resale": [
+    "iSeeCars counts three-year depreciation at 9.3% for the Corolla and 11.9% for the Corolla Hybrid, against 24.8% for the average vehicle. In three years the hybrid gives back 2.6 points more, about $650 on a $25,000 car, roughly a third of the premium; both are far better than the average vehicle."
+  ],
+  "reddit": {
+    "lead": "Hybrid owners report roughly 50 to 60 mpg in daily driving, which brackets the 50-mpg rating."
+  },
+  "faq": [
+    ["How much more does the Corolla Hybrid cost than the gas Corolla?", "$1,850 for a Hybrid LE over an LE ($24,975 against $23,125) and for a Hybrid SE over an SE ($27,415 against $25,565). Prices are 2026 starting MSRPs without destination, from the Corolla price guide."],
+    ["How much gas does the Corolla Hybrid save?", "About 129 gallons a year at 15,000 miles for the LE (300 against 429), which is $489 at the November 16 national average of $3.805 and $514 at EPA’s $4.00. At 12,000 miles it is about 103 gallons."],
+    ["Does the Corolla Hybrid come with all-wheel drive?", "On the LE and SE it is a $1,400 option, and it drops the LE to 48 mpg combined and the SE to 44. The Hybrid XLE is front-wheel drive only. The gas Corolla has no AWD."],
+    ["Should I wait for the 2027 Corolla?", "Only if you want the 2027’s changes. It costs $200 more on each version with the same engines, and Toyota’s ToyotaCare drops to one year on it. Toyota’s 4.99% financing covers both model years."]
+  ],
+  "queries": ["toyota corolla hybrid worth it", "corolla hybrid vs gas", "corolla hybrid vs gas mpg", "is the toyota corolla hybrid worth the extra cost"],
+  "blog": { "title": "Is the Toyota Corolla Hybrid Worth It?", "text": "The Hybrid LE’s $1,850 premium, its 15-mpg gain over a gas LE, and how long the gas savings take to cover it.", "cta": "See the Corolla hybrid math" },
+  "llms": { "title": "Is the Toyota Corolla Hybrid Worth It?", "text": "The 2026 Corolla Hybrid LE and SE against the gas LE and SE: price premium, EPA mpg, annual gas cost at 12,000 and 15,000 miles, break-even years, power, incentives, resale and what Reddit owners report" },
+  "sources": [
+    { "id": "VEH-HYB-COR-01", "url": "https://www.toyota.com/corolla/2026/", "title": "Toyota: 2026 Corolla", "authority": "Toyota", "scope": "2026 Corolla and Corolla Hybrid trims, starting MSRP excluding destination, equipment and estimated mpg, as used in the Toyota Corolla price guide", "note": "2026 trims and prices, from the Corolla price guide", "status": "primary_source_checked", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-01), read there on 2026-11-16." },
+    { "id": "VEH-HYB-COR-02", "url": "https://pressroom.toyota.com/the-toyota-corolla-hybrid-brings-efficiency-and-style-into-2026/", "title": "Toyota: the 2026 Corolla Hybrid", "authority": "Toyota", "scope": "2026 Corolla Hybrid 138 hp, all-wheel-drive availability on the LE and SE, and the 10-year/150,000-mile hybrid battery warranty", "note": "hybrid power, AWD and battery warranty", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-COR-03", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49807", "title": "FuelEconomy.gov: 2026 Corolla, 2.0L (vehicle 49807)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 gas Corolla LE, 35 mpg combined", "note": "EPA ratings, gas LE", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-COR-04", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49804", "title": "FuelEconomy.gov: 2026 Corolla Hybrid, 1.8L (vehicle 49804)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Corolla Hybrid LE, 50 mpg combined", "note": "EPA ratings, Hybrid LE", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-COR-05", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49808", "title": "FuelEconomy.gov: 2026 Corolla (3-mode), 2.0L (vehicle 49808)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 gas Corolla SE with Sport and Eco modes, 34 mpg combined", "note": "EPA ratings, gas SE", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-COR-06", "url": "https://www.fueleconomy.gov/ws/rest/vehicle/49803", "title": "FuelEconomy.gov: 2026 Corolla Hybrid SE, 1.8L (vehicle 49803)", "authority": "U.S. Environmental Protection Agency and U.S. Department of Energy", "scope": "EPA mpg for the 2026 Corolla Hybrid SE, 47 mpg combined", "note": "EPA ratings, Hybrid SE", "status": "primary_source_checked" },
+    { "id": "VEH-HYB-COR-07", "url": "https://www.toyota.com/owners/warranty-owners-manuals/", "title": "Toyota: warranty and owner's manuals", "authority": "Toyota", "scope": "Toyota new-vehicle, hybrid component and hybrid battery warranty terms, as used in the Toyota Corolla price guide", "note": "hybrid component warranty, from the Corolla price guide", "status": "primary_source_checked", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-38), read there on 2026-11-16." },
+    { "id": "VEH-HYB-COR-08", "url": "https://www.iseecars.com/car/toyota-corolla/resale-value", "title": "iSeeCars: Toyota Corolla resale value", "authority": "iSeeCars", "scope": "Corolla three-year depreciation, 9.3%, against the 24.8% all-vehicle average, as used in the Toyota Corolla price guide", "note": "three-year depreciation, gas, from the Corolla price guide", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-30), read there on 2026-11-16." },
+    { "id": "VEH-HYB-COR-09", "url": "https://www.iseecars.com/car/toyota-corolla-hybrid/resale-value", "title": "iSeeCars: Toyota Corolla Hybrid resale value", "authority": "iSeeCars", "scope": "Corolla Hybrid three-year depreciation, 11.9%, as used in the Toyota Corolla price guide", "note": "three-year depreciation, hybrid, from the Corolla price guide", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-31), read there on 2026-11-16." },
+    { "id": "VEH-HYB-COR-10", "url": "https://www.edmunds.com/toyota/corolla/2026/", "title": "Edmunds: 2026 Toyota Corolla", "authority": "Edmunds", "scope": "Edmunds' 8.8-second 0-60 mph time and 13.1-cubic-foot trunk for the gas Corolla, and its advice to look at the hybrid first, as used in the Toyota Corolla price guide", "note": "gas acceleration and trunk, from the Corolla price guide", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-18), read there on 2026-11-16. Edmunds refused our automated read on 2026-11-22." },
+    { "id": "VEH-HYB-COR-11", "url": "https://www.toyota.com/deals-incentives/", "title": "Toyota: deals and incentives", "authority": "Toyota", "scope": "Toyota finance and lease offers on the 2026 and 2027 Corolla, Corolla Hybrid and Corolla Hatchback in four regions, read 2026-11-16 for the Toyota Corolla price guide", "note": "finance and lease offers, from the Corolla price guide", "status": "primary_source_checked", "registryNote": "Reused from the Toyota Corolla price guide (VEH-COROLLA-08), read there on 2026-11-16." }
+  ]
+}
