@@ -18924,11 +18924,11 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "39<small>out of 100</small>",
-     "b": "71<small>out of 100</small>"
+     "a": "52<small>out of 100</small>",
+     "b": "60<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the RAV4, unless a lower price, a longer warranty or a better crash-test record matters more to you. A 2026 RAV4 is rated 43 mpg combined in front drive against 38 for the Tucson Hybrid (41 against 36 with all-wheel drive), loses 13.8% of its value in three years against the Tucson Hybrid’s 29.2%, and has drawn 41 NHTSA owner complaints per 100,000 sold for 2023–25 models against the Tucson’s 124. The Tucson answers on price and equipment: a Hybrid SEL Convenience starts at $35,250 with all-wheel drive standard, $2,250 under an all-wheel-drive RAV4 XLE Premium ($37,500), Tucsons sell 3–4% under sticker against 1–2% for RAV4s, every Tucson carries a 10-year/100,000-mile powertrain warranty for its first owner, and IIHS gives it a Top Safety Pick+ label the RAV4 lacks. It has more room too, 38.7 cubic feet behind the rear seats against 37.8 and 41.3 inches of rear legroom against 37.8. Reviewers split (Edmunds scores the RAV4 8.1 to the Tucson’s 7.9, U.S. News the Tucson 9.3 to the RAV4’s 8.3), and Reddit’s neutral subreddits picked the RAV4 25 times to 11, too few picks for us to call. The RAV4 is hybrid-only. A gas Tucson from $29,700 is the cheapest way into either car, and it hands most of that saving back in fuel and resale. Prices were checked on November 21, 2026.",
+   "summary": "We’d buy the RAV4, unless a lower price, a longer warranty or a better crash-test record matters more to you. A 2026 RAV4 is rated 43 mpg combined in front drive against 38 for the Tucson Hybrid (41 against 36 with all-wheel drive), loses 13.8% of its value in three years against the Tucson Hybrid’s 29.2%, and has drawn 41 NHTSA owner complaints per 100,000 sold for 2023–25 models against the Tucson’s 124. The Tucson answers on price and equipment: a Hybrid SEL Convenience starts at $35,250 with all-wheel drive standard, $2,250 under an all-wheel-drive RAV4 XLE Premium ($37,500), Tucsons sell 3–4% under sticker against 1–2% for RAV4s, every Tucson carries a 10-year/100,000-mile powertrain warranty for its first owner, and IIHS gives it a Top Safety Pick+ label the RAV4 lacks. It has more room too, 38.7 cubic feet behind the rear seats against 37.8 and 41.3 inches of rear legroom against 37.8. Reviewers split (Edmunds scores the RAV4 8.1 to the Tucson’s 7.9, U.S. News the Tucson 9.3 to the RAV4’s 8.3), and Reddit’s neutral subreddits picked the RAV4 91 times to 24, though Reddit’s index scores the Tucson higher, 60 to 52. The RAV4 is hybrid-only. A gas Tucson from $29,700 is the cheapest way into either car, and it hands most of that saving back in fuel and resale. Prices were checked on November 21, 2026.",
    "choose": {
     "a": [
      "Fuel economy and running costs matter: 43 mpg combined in front drive and 41 to 42 with all-wheel drive, against 38 and 36 for the Tucson Hybrid and 26 to 28 for the gas Tucson, or $1,400 to $1,450 a year in fuel against $1,600 to $2,300.",
@@ -19045,15 +19045,15 @@
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "39",
-     "b": "71",
+     "a": "52",
+     "b": "60",
      "win": "b"
     },
     {
      "label": "Reddit neutral picks",
      "section": "reddit",
-     "a": "25",
-     "b": "11",
+     "a": "91",
+     "b": "24",
      "win": "a"
     }
    ],
@@ -19189,7 +19189,7 @@
    "mpg": {
     "intro": [
      "The RAV4 is the thriftier car in every like-for-like match, though the Tucson Hybrid is much closer than the gas Tucson. A front-drive RAV4 is rated 43 mpg combined (47 city/40 highway) against 38 (40/35) for a front-drive Tucson Hybrid; with all-wheel drive it is 41 to 42 against 36. EPA puts a year of fuel at $1,400 to $1,450 for the RAV4 and $1,600 to $1,650 for the Tucson Hybrid, a $200 gap. The gas Tucson is rated 28 mpg combined in front drive (25/33) and 26 with all-wheel drive (24/30), which costs $2,150 to $2,300 a year, and the RAV4 has no gas version to set against it. On plug-ins, EPA rates the Tucson Plug-in Hybrid at 35 mpg combined with 32 miles of electric range; its database had no 2026 RAV4 plug-in on November 21, 2026, and the 54 miles on Toyota’s own page (read for the RAV4 price guide) is not an EPA figure.",
-     "Owners on Reddit report 37 to 50 mpg from RAV4 hybrids, with a noticeable drop in cold weather, and 35 to 40 from Tucson hybrids driven gently and 27 to 30 from gas Tucsons, with fast highway driving cutting into both Tucson figures."
+     "Owners on Reddit report 43 to 50 mpg from RAV4 hybrids and 35 to 41 from Tucson hybrids driven gently, with 27 to 32 reported on some Tucsons, and say cold weather and highway speed cut the Tucson’s mileage below its sticker."
     ],
     "charts": [
      {
@@ -19304,7 +19304,7 @@
    "space": {
     "title": "Space, power and cabin",
     "intro": [
-     "The Tucson is the roomier car, mostly in the back seat. Behind the rear seats it holds 38.7 cubic feet against the RAV4’s 37.8, and 74.8 against 70.4 with the seats folded. Rear legroom is 41.3 inches against 37.8, a 3.5-inch gap that matters with a rear-facing car seat, and front legroom is 41.4 against 41.0. Edmunds says the RAV4’s rivals give passengers more room, and AutoGuide rates the RAV4’s rear legroom average for the class. Reddit owners split on the RAV4: some call its cargo area and back seat roomy for the class and others say it is tight for rear-facing seats, while Tucson owners say theirs takes a stroller and groceries with room to spare. Reddit scores the RAV4 −55 on space against too few mentions to score the Tucson (24 and 9).",
+     "The Tucson is the roomier car, mostly in the back seat. Behind the rear seats it holds 38.7 cubic feet against the RAV4’s 37.8, and 74.8 against 70.4 with the seats folded. Rear legroom is 41.3 inches against 37.8, a 3.5-inch gap that matters with a rear-facing car seat, and front legroom is 41.4 against 41.0. Edmunds says the RAV4’s rivals give passengers more room, and AutoGuide rates the RAV4’s rear legroom average for the class. Reddit owners split on the RAV4: some call its cargo area and back seat roomy for the class and others say it is tight for rear-facing seats, while Tucson owners say theirs takes a stroller and groceries with room to spare. Reddit scores the Tucson +50 on space against −25 for the RAV4 (53 and 74 mentions).",
      "The RAV4 has the tow rating and, in all-wheel drive, the power. Toyota rates the SE, XLE Premium, XSE, Woodland and Limited with all-wheel drive to tow 3,500 pounds (1,750 on front-drive cars and the LE with all-wheel drive). Dealer pages and TowingSpecs list 2,000 pounds for the Tucson Hybrid and Plug-in Hybrid, sources disagree on the gas Tucson (2,000 to 2,750 pounds), and Hyundai’s own pages would not load, so check the owner’s manual before you buy a hitch. The hybrids are close on power: a RAV4 makes 226 hp in front drive and 236 with all-wheel drive, and every Tucson Hybrid 231 (one towing site prints 226). The gas Tucson makes 187 hp, and Edmunds timed an all-wheel-drive gas Limited at 10.2 seconds to 60 mph, one of the slowest crossovers it has tested. Ground clearance is 8.3 inches on an all-wheel-drive Tucson, 7.1 on a front-drive one and 8.1 on most RAV4s."
     ],
     "charts": [
@@ -19450,8 +19450,8 @@
      }
     ],
     "after": [
-     "Inside, the Tucson gives you more screen for less money. Every Tucson, from the $29,700 SE, has a 12.3-inch touchscreen with wireless Apple CarPlay and Android Auto, adaptive cruise control (holds a set gap to the car ahead) with stop and go, and lane following, while a RAV4 LE has a 10.5-inch screen with wireless phone mirroring and 12.3-inch digital gauges. Reddit scores the Tucson +68 on interior and tech against −47 for the RAV4 (35 and 20 mentions). The Tucson’s catches, per what owners report: a paid Bluelink subscription after the trial, app outages, and forward collision warnings that trigger falsely in rain or glare. Edmunds also says the gas Tucson is slow and its eight-speed clunky unless you drive gently, and that the hybrid is far quicker and about 10 mpg thriftier.",
-     "On comfort the RAV4 gets mixed marks. AutoGuide’s first drive of a Canadian-spec RAV4 found the cabin quieter and the ride smoother than before, though it says the front seats lack support at the hips and shoulders and the 20-inch wheels add a slight harshness, and Kelley Blue Book says the engine and transmission can drone under hard acceleration. Edmunds says the RAV4’s rivals ride more smoothly. RAV4 owners on Reddit report road and cabin noise and a plain, plasticky interior below the top trims. Tucson owners describe comfortable seats and ride on long trips and good visibility, with driver-seat bolsters that tire some of them and rattles from the dash and console."
+     "Inside, the Tucson gives you more screen for less money. Every Tucson, from the $29,700 SE, has a 12.3-inch touchscreen with wireless Apple CarPlay and Android Auto, adaptive cruise control (holds a set gap to the car ahead) with stop and go, and lane following, while a RAV4 LE has a 10.5-inch screen with wireless phone mirroring and 12.3-inch digital gauges. Reddit scores the Tucson +59 on interior and tech against −45 for the RAV4 (235 and 169 mentions). The Tucson’s catches, per what owners report: a paid Bluelink subscription after the trial, app outages, and forward collision warnings that trigger falsely in rain or glare. Edmunds also says the gas Tucson is slow and its eight-speed clunky unless you drive gently, and that the hybrid is far quicker and about 10 mpg thriftier.",
+     "On comfort the RAV4 gets mixed marks. AutoGuide’s first drive of a Canadian-spec RAV4 found the cabin quieter and the ride smoother than before, though it says the front seats lack support at the hips and shoulders and the 20-inch wheels add a slight harshness, and Kelley Blue Book says the engine and transmission can drone under hard acceleration. Edmunds says the RAV4’s rivals ride more smoothly. Reddit scores the Tucson +90 on ride and comfort against −25 for the RAV4 (84 and 69 mentions) and +76 on noise against −63 (61 and 83). RAV4 owners report road, wind and engine noise at highway speed and stiff seats on some trims; Tucson owners describe a smooth ride, plush seats and a quiet hybrid cabin, with the gas engine loud under hard throttle."
     ]
    },
    "reliability": {
@@ -19721,7 +19721,7 @@
      }
     ],
     "after": [
-     "<strong>Our read:</strong> the RAV4 is the safer bet on reliability, and the Tucson’s warranty is the reason to buy it anyway. The RAV4 draws a third of the Tucson’s complaints per car sold (41 against 124), has fewer recalls and a better brand dependability score, and Reddit rates it far higher on reliability, the most-discussed topic (+76 against −10 from 49 and 47 mentions). The Tucson’s numbers are driven by the 2022 engine and fuel complaints and the 2025 braking complaints; its 2023 and 2024 cars, at 88 and 77 per 100,000, still run above the RAV4’s 57 and 44. J.D. Power’s owner score and RepairPal lean the other way or tie, and Hyundai’s 10-year/100,000-mile powertrain cover soaks up an engine failure for the first owner. We treat the brand studies, RepairPal and Consumer Reports as secondary signals, since they rest on older cars and brand records."
+     "<strong>Our read:</strong> the RAV4 is the safer bet on reliability, and the Tucson’s warranty is the reason to buy it anyway. The RAV4 draws a third of the Tucson’s complaints per car sold (41 against 124), has fewer recalls and a better brand dependability score, and Reddit rates it far higher on reliability, the most-discussed topic (+79 against −38 from 246 and 324 mentions). The Tucson’s numbers are driven by the 2022 engine and fuel complaints and the 2025 braking complaints; its 2023 and 2024 cars, at 88 and 77 per 100,000, still run above the RAV4’s 57 and 44. J.D. Power’s owner score and RepairPal lean the other way or tie, and Hyundai’s 10-year/100,000-mile powertrain cover soaks up an engine failure for the first owner. We treat the brand studies, RepairPal and Consumer Reports as secondary signals, since they rest on older cars and brand records."
     ],
     "from": {
      "label": "Sources include",
@@ -19734,62 +19734,69 @@
    },
    "reddit": {
     "dataFile": "data/reddit-sentiment/toyota-rav4-vs-hyundai-tucson.json",
-    "minimumPicks": 100,
     "minimum": 15,
     "intro": [
-     "We read 888 comments in 67 Reddit threads whose posts named both cars, January 2025 to November 2026. That is a thin sample: 62 of the threads are in the neutral subreddits (mostly r/whatcarshouldIbuy), and only 36 people there picked one car over the other, 25 the RAV4 and 11 the Tucson, so we mark Reddit’s pick “Too few to call.” Each car’s own subreddits back its own car, so r/rav4 with r/RAV4Club, r/HyundaiTucson and the neutral subreddits count equally. A score of 50 means praise and complaints balance.",
-     "The threads come from the cars’ own subreddits and r/whatcarshouldIbuy, r/UsedCars, r/carbuying, r/askcarsales and r/cars. The RAV4’s own subreddits add 2 threads and 41 comments and the Tucson’s 3 threads and 63, with no picks in either. We drew the comments evenly by month and had them coded by AI to a ten-topic rubric. A blind second coder re-coded 50 comments from each car’s file and agreed on 98% of picks and 86% of stance for the RAV4, and 92% and 86% for the Tucson."
+     "We read 4,106 comments in 234 Reddit threads whose posts named both cars, January 2025 to November 2026. The threads come from r/rav4 with r/RAV4Club (18 threads, 506 comments), r/HyundaiTucson (43 threads, 1,176 comments) and the neutral subreddits, mostly r/whatcarshouldIbuy plus r/UsedCars, r/carbuying, r/askcarsales and r/cars, which hold 173 threads, 2,424 comments and 115 picks. Each car’s own subreddits back its own car, so the two home venues and the neutral subreddits count equally. A score of 50 means praise and complaints balance.",
+     "A head-to-head collection found 521 posts naming both cars. 352 had 3 or more comments and were not already coded, and 263 of those were kept as weighing the two. We drew 159 threads (53 home, 106 neutral) and coded 3,130 comments to a ten-topic rubric, evenly by month, on top of the threads already in the two cars’ files. A completeness pass re-read 250 comments the first coders left empty, and 31 gained a code. The coders counted an opinion or a pick only when the comment named the model, so owner comments that give only a trim are not in the index. A blind second coder re-coded 150 comments and agreed with the first on 87% of picks (13 of the 15 comments either coder picked on; 99% across all 150), above our 85% floor, and on 82% of stance toward the car (53 of 65). The stance agreement is below the floor, so read the index and topic scores as rough."
     ],
     "indexDetail": {
-     "a": "Praised for a reliability record owners trust, a hybrid that owners say pulls away quickly, and hybrid mileage of 37 to 50 mpg. Marked down for dealer markups and waits, a tight rear seat and cargo area with car seats, a plain interior and road noise, and a price owners call steep on loaded trims.",
-     "b": "Praised for big screens and a modern cabin, a cargo area owners call spacious, low-rate financing and lease deals, and a hybrid that owners say beats the gas engine. Marked down for owner reports of engine trouble on older cars and software glitches on 2025 ones, weaker resale than Toyota, and a paid app subscription."
+     "a": "Praised for a durability record owners trust, hybrid mileage of 43 to 50 mpg and resale value. Marked down for dealer markups and waits, an interior and infotainment owners call dated and plasticky next to the Tucson’s, road and engine noise, and a price owners say runs well above a comparable Tucson. It scores 67 in its own subreddits, 50 in the neutral ones and 32 in r/HyundaiTucson.",
+     "b": "Praised for a nicer interior and more features for the money, a smooth, quiet ride, a roomy rear seat, and low-rate financing and rebates. Marked down for owner reports of engine trouble and oil use on older cars, electrical and infotainment glitches and warranty-service fights, and steeper depreciation than Toyota. It scores 75 in its own subreddits, 57 in the neutral ones and 40 in the RAV4 subreddits."
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. Only the neutral subreddits had picks, 36 of them, so only that row is shown; neither car’s own subreddits had any in these threads. Treat the 25 to 11 as a lean.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddits mostly pick their own car, and r/HyundaiTucson is close to even, 13 picks for the RAV4 and 11 for the Tucson.",
      "rows": [
       {
        "venue": "neutral",
        "label": "Neutral subreddits"
+      },
+      {
+       "venue": "a",
+       "label": "In r/rav4 and r/RAV4Club"
+      },
+      {
+       "venue": "b",
+       "label": "In r/HyundaiTucson"
       }
      ]
     },
     "topics": {
      "title": "Net opinion by topic",
-     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. A car with fewer than 15 mentions on a topic isn’t scored. Most-discussed topics first."
+     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. Most-discussed topics first."
     },
     "themes": {
      "a": {
       "praise": [
-       "Reliability owners say runs past 200,000 miles on routine maintenance, with a hybrid that has fewer wear parts",
-       "Hybrid mileage owners put at roughly 37 to 50 mpg in everyday driving",
-       "A hybrid that owners say pulls away quickly from a stop on electric torque",
-       "Resale value that owners say holds up, with a hybrid premium that pays back within a few years"
+       "A durability record owners expect to run past 200,000 miles, with the hybrid system called proven",
+       "Hybrid fuel economy owners say beats the Tucson’s, with 43 to 50 mpg reported in everyday driving",
+       "Resale value owners say holds up better than the Tucson’s, with a lower cost of ownership over time",
+       "A smooth, comfortable ride from some new-generation owners and a hybrid that owners say drives strongly"
       ],
       "gripes": [
-       "Owners report dealer markups, long waits and little stock because demand is high",
-       "Owners report a rear seat that is tight for rear-facing car seats and growing families",
-       "An interior owners call plain and plasticky below the top trims, and road and cabin noise",
-       "Loaded hybrid and plug-in trims that owners say feel steep when new"
+       "An interior and infotainment that cross-shoppers call dated, cheap and plasticky next to the Tucson’s",
+       "Cabin, road and engine noise that owners say is louder than the Tucson’s at highway speed",
+       "Owners report markups, add-ons, long waits and thin stock on the redesigned 2026",
+       "A price owners say runs well above a comparable Tucson, with weaker financing offers"
       ]
      },
      "b": {
       "praise": [
-       "Large screens, a head-up display and a 360-degree camera that owners find modern and easy to use",
-       "A cargo area and cabin owners call spacious, with room for car seats, a stroller and groceries",
-       "Low-rate financing and lease deals that owners say make a new hybrid good value for the features",
-       "A hybrid that owners say accelerates better than the gas version, with 35 to 40 mpg reported with gentle driving"
+       "A more upscale interior and more equipment for the money, with big screens, a head-up display and a 360-degree camera",
+       "A smooth, comfortable ride and plush seats, and a cabin owners call quieter than the RAV4’s",
+       "A roomier rear seat and legroom than the RAV4, with room for three car seats across",
+       "Lower prices, rebates, 0% financing and a long warranty that owners say add up to better value"
       ],
       "gripes": [
-       "Owners report older 2.0 and 1.6 turbo engines burning oil or failing near 100,000 miles, and keyless-entry faults and software glitches on 2025 cars",
-       "Resale value owners say is weaker than Toyota’s or Honda’s, so depreciation costs more",
-       "Owners report Bluelink app outages and a paid subscription after the trial",
-       "Owners report forward collision warnings that trigger falsely in rain, fog or sun glare"
+       "Owners report engine failures and oil use on older Tucsons, and check-engine lights and shop visits on new hybrids",
+       "Owners report electrical glitches, digital-key and phone problems, and warranty claims that were slow or denied",
+       "Depreciation owners say is steeper than Toyota’s, with higher insurance costs tied to theft",
+       "Owners report hybrid mileage well below the sticker, 27 to 32 mpg in some cases, especially in cold weather"
       ]
      }
     },
     "after": [
-     "Reddit’s picks and its index point opposite ways, and the sample is too small to settle it. The neutral subreddits tell people to buy the RAV4, 25 picks to 11, yet the index scores the Tucson 71 against 39. The topics show why. Reddit scores the Tucson higher on interior and tech (+68 against −47) and price (+26 against −28), marks the RAV4 down on space (−55) and, from 15 mentions, on dealers (−100, mostly markups and waits), and scores the RAV4 far higher on reliability, the most-discussed topic (+76 against −10). Reliability is the likeliest reason people pick the RAV4, though the codes don’t say so. Within the neutral subreddits alone the index is 47 for the RAV4 and 63 for the Tucson."
+     "Reddit’s picks and its index point opposite ways, and it helps to read them as answers to different questions. The neutral subreddits tell people to buy the RAV4, 91 picks to 24 (79%), and even r/HyundaiTucson split 13 to 11 for it. Yet the index scores the Tucson 60 against 52, because commenters praise the Tucson on most of what they talk about: ride (+90 against −25), noise (+76 against −63), interior and tech (+59 against −45), space (+50 against −25) and price (+19 against −11), and mark the RAV4 down on dealers (−89 against −2, mostly markups and waits). The RAV4 wins the two topics that decide a long-term buy, reliability (+79 against −38, the most-discussed topic) and fuel economy (+97 against −5). The codes don’t say why people pick the RAV4, but reliability and mileage are the likeliest reasons."
     ],
     "from": {
      "label": "Comments from",
@@ -20044,7 +20051,7 @@
     ],
     [
      "What does Reddit think of the RAV4 vs the Tucson?",
-     "In neutral subreddits, 25 people told the poster to buy the RAV4 and 11 the Tucson, too few picks for us to call, while our Reddit Sentiment Index scores the Tucson 71 and the RAV4 39 out of 100, where 50 means praise and complaints balance. Reddit praises the RAV4’s reliability and the Tucson’s screens, price and room, and marks the RAV4 down on dealer markups and the Tucson on engine and software complaints."
+     "In neutral subreddits, 91 people told the poster to buy the RAV4 and 24 the Tucson, but our Reddit Sentiment Index scores the Tucson 60 and the RAV4 52 out of 100, where 50 means praise and complaints balance. Reddit praises the RAV4’s reliability and hybrid mileage and the Tucson’s screens, ride, quiet cabin and price, and marks the RAV4 down on dealer markups and noise and the Tucson on engine and warranty-service complaints. The second coder agreed on stance only 82% of the time, so read the index as rough."
     ]
    ],
    "related": "<a href=\"/toyota-rav4-vs-honda-cr-v.html\">Toyota RAV4 vs Honda CR-V</a>, <a href=\"/mazda-cx-5-vs-toyota-rav4.html\">Mazda CX-5 vs Toyota RAV4</a>, <a href=\"/subaru-forester-vs-toyota-rav4.html\">Subaru Forester vs Toyota RAV4</a>, <a href=\"/compare-car-quotes.html\">quote comparison worksheet</a> and <a href=\"/new-car-buying-service.html\">new car buying service</a>",
