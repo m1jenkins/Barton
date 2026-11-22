@@ -1,7 +1,343 @@
 {
   "key": "tesla-model-3",
   "name": "Tesla Model 3",
-  "status": "stub",
+  "status": "ready",
+  "short": "Model 3",
+  "make": "Tesla",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Tesla Model 3 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Tesla Model 3 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the open front suspension evaluation and what owners report on Reddit.",
+  "h1": "Tesla Model 3 problems by year: years to avoid and what owners report",
+  "card": "The best and worst Model 3 years, the open front suspension evaluation, complaints per 100,000 sold on estimated sales and what owners report.",
+  "bestYears": "2023–2025",
+  "avoidYears": "2018, 2021",
+  "answer": [
+    "The best used Model 3s are the 2023, 2024 and 2025 model years, which draw {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a Model 3 yardstick of {base}. Skip the 2018 and the 2021. The 2018 draws {r:2018} per 100,000 on {c:2018} complaints, the most of any year, with the front suspension named in {k:2018:SUSPENSION}. The 2021 draws {r:2021}, with {k:2021:FORWARD COLLISION AVOIDANCE} of its {c:2021} complaints naming automatic emergency braking. The 2019, 2020 and 2022 are the years to ask about, because NHTSA’s open evaluation PE26006 covers 2018 to 2020 Model 3s whose front lateral links can detach with no warning. The 2017 is too small to rate: Tesla began deliveries in July 2017, and no 2016 Model 3 was sold.",
+    "Tesla publishes no model-level U.S. sales, so the rates divide each model year’s NHTSA complaints, counted across both Model 3 listings, by Good Car Bad Car’s estimates, the method our Tesla Model Y vs Toyota RAV4 page uses. The 2021 estimate of 121,610 looks low next to the 2020’s 206,500, which inflates that year’s rate; its {c:2021} complaints are third highest either way. Our <a href=\"{guide}\">Model 3 price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Tesla publishes no model-level U.S. sales. Sales are Good Car Bad Car’s estimates, the same method our Tesla Model Y vs Toyota RAV4 page uses; the 2017 estimate of 1,667 is too small to rate, so the 2017 is judged on its counts, and no 2016 Model 3 was sold.",
+  "sales": {
+    "2018": 140317,
+    "2019": 161100,
+    "2020": 206500,
+    "2021": 121610,
+    "2022": 195698,
+    "2023": 232702,
+    "2024": 142100,
+    "2025": 171161
+  },
+  "verdicts": {
+    "2017": [
+      "check",
+      "Too few cars to rate: Tesla began deliveries in July 2017 and Good Car Bad Car estimates 1,667 sold, against {c:2017} complaints. Later recalls name the 2017, among them rearview camera cable recall 21V00D000."
+    ],
+    "2018": [
+      "avoid",
+      "The most complaints of any year ({c:2018}): automatic emergency braking {k:2018:FORWARD COLLISION AVOIDANCE}, suspension {k:2018:SUSPENSION}, air bags {k:2018:AIR BAGS}. Lateral link recall 23V-235 and open evaluation PE26006 cover the front suspension."
+    ],
+    "2019": [
+      "check",
+      "Automatic emergency braking ({k:2019:FORWARD COLLISION AVOIDANCE}), electrical ({k:2019:ELECTRICAL SYSTEM}) and air bags ({k:2019:AIR BAGS}) lead. Lateral link recalls 21V-835 and 23V-235 apply, and PE26006 covers the year."
+    ],
+    "2020": [
+      "check",
+      "Automatic emergency braking ({k:2020:FORWARD COLLISION AVOIDANCE}) leads, and the rate sits at the yardstick. Open evaluation PE26006 covers 2018 to 2020 Model 3s and its failures go beyond lateral link recall 21V-835.",
+      "buy to check: open NHTSA evaluation PE26006 covers the 2020 and its failures exceed the earlier recalls"
+    ],
+    "2021": [
+      "avoid",
+      "{k:2021:FORWARD COLLISION AVOIDANCE} of {c:2021} complaints name automatic emergency braking, and brakes ({k:2021:SERVICE BRAKES}) and speed control ({k:2021:VEHICLE SPEED CONTROL}) follow. The sales estimate looks low, but the {c:2021} complaints still run above the 2020’s {c:2020}."
+    ],
+    "2022": [
+      "check",
+      "{k:2022:FORWARD COLLISION AVOIDANCE} of {c:2022} complaints name automatic emergency braking. NHTSA closed its unexpected-braking evaluation PE22002 in June 2026 after reports faded."
+    ],
+    "2023": [
+      "buy",
+      "Automatic emergency braking ({k:2023:FORWARD COLLISION AVOIDANCE}) and steering ({k:2023:STEERING}) lead. Recall 25V-092 covers loss of power steering assist, and NHTSA closed analysis EA24001 on it."
+    ],
+    "2024": [
+      "buy",
+      "{c:2024} complaints, led by electrical ({k:2024:ELECTRICAL SYSTEM}) and automatic braking ({k:2024:FORWARD COLLISION AVOIDANCE}). The first model year of the refreshed car in the U.S."
+    ],
+    "2025": [
+      "buy",
+      "The lowest rate of any year ({c:2025} complaints). Recalls 24V-935 (tire pressure light), 25V-002 (rearview camera) and 25V-690 (battery contactors) apply."
+    ],
+    "2026": [
+      "buy",
+      "{c:2026} complaints and {rec:2026} recall so far (25V-410, seat back fasteners). Too new to rate."
+    ]
+  },
+  "chartNote": "Years before 2018 and the 2026 are not charted: the Model 3 was not sold before July 2017 and the 2017 sales estimate is too small to rate. The 2021 bar is partly a low sales estimate.",
+  "generations": [
+    {
+      "name": "Original Model 3",
+      "years": "2017–2023",
+      "text": "Tesla held its first delivery event on July 28, 2017. Trims came and went: a Mid Range from October 2018, Standard Range and Standard Range Plus from March 2019, and a rear-wheel-drive car from November 2021 to January 2024 beside the Long Range and Performance (Wikipedia)."
+    },
+    {
+      "name": "Refreshed Model 3",
+      "years": "2024–",
+      "text": "Tesla announced the redesign on September 1, 2023, and U.S. deliveries began in January 2024 from Fremont. A cheaper Model 3 Standard arrived in October 2025, and turn signal stalks returned for the 2026 model year (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Automatic emergency braking, 2018 to 2023",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2018,
+        2023
+      ],
+      "text": "The biggest part count on most years. NHTSA’s evaluation PE22002 looked at unexpected braking with adaptive cruise control on 2021 and 2022 Model 3s and Model Ys and closed it in June 2026, saying reports had faded and no collisions were identified. Recall 21V-846 covers a 2021 software fault that could trigger false forward collision warnings or braking."
+    },
+    {
+      "title": "Front suspension, 2018 to 2020",
+      "component": "SUSPENSION",
+      "years": [
+        2018,
+        2020
+      ],
+      "text": "Recalls 21V-835 (2019 to 2021) and 23V-235 (2018 and 2019) cover front lateral link fasteners that can loosen and let the link separate from the subframe. NHTSA’s open evaluation PE26006 says the failures it is looking at exceed those recalls."
+    },
+    {
+      "title": "Speed control, 2020 to 2023",
+      "component": "VEHICLE SPEED CONTROL",
+      "years": [
+        2020,
+        2023
+      ],
+      "text": "NHTSA’s field names the part and not the cause. In 2021 NHTSA denied a petition on sudden unintended acceleration in Tesla cars after finding that the crashes with event data came from pedal misapplication."
+    },
+    {
+      "title": "Brakes, 2021 and 2022",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2021,
+        2022
+      ],
+      "text": "Recall 21V-387 covers brake caliper bolts that may be loose on 2019 to 2021 Model 3s, which can let the caliper separate and touch the wheel rim. Tesla’s fix is a service visit. The 2022’s count has no recall of its own."
+    },
+    {
+      "title": "Steering, 2023",
+      "component": "STEERING",
+      "years": [
+        2023,
+        2023
+      ],
+      "text": "Recall 25V-092 covers a power steering circuit board that can overstress and cut assist on 2023 Model 3s and Model Ys, and Tesla pushed a software fix in October 2023. NHTSA closed analysis EA24001 in June 2026 in view of the recall."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit owners report high-mileage cars that run trouble-free, with slow battery loss, and describe the refreshed Model 3 as better built than earlier ones. What they report going wrong is worn control arms and suspension bushings, 12-volt battery faults, paint peeling on the rocker panels, and rattles, rust and build quality problems on early 2018 and 2019 cars. The 2018’s suspension complaints sit beside those reports."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "21V-835 and 23V-235",
+      "years": "2018–2021",
+      "title": "Front lateral link fasteners",
+      "text": "The fasteners may loosen and let the front lateral link separate from the subframe. The repair is a service visit and free."
+    },
+    {
+      "id": "21V-387",
+      "years": "2019–2021",
+      "title": "Brake caliper bolts",
+      "text": "Loose caliper bolts can let a caliper separate and contact the wheel rim. Tesla tightens or replaces them free."
+    },
+    {
+      "id": "21V-846",
+      "years": "2017–2021",
+      "title": "False collision warning software",
+      "text": "A software communication error in release 2021.36.5.2 may cause a false forward collision warning or unexpected automatic braking. Tesla’s fix was an over-the-air software update."
+    },
+    {
+      "id": "21V00D000",
+      "years": "2017–2020",
+      "title": "Rearview camera cable",
+      "text": "The camera cable harness can be damaged as the trunk lid opens and closes, which keeps the image from displaying. Tesla repairs it free."
+    },
+    {
+      "id": "23V-434",
+      "years": "2023",
+      "title": "Pyrotechnic battery disconnect",
+      "text": "The pyrotechnic battery disconnect may be defective on some 2023 Model 3s and Model Ys. Tesla replaces it free."
+    },
+    {
+      "id": "25V-092",
+      "years": "2023",
+      "title": "Power steering assist",
+      "text": "The power steering circuit board can overstress and cause a loss of assist; Tesla began issuing a software update in October 2023, and the recall followed in February 2025."
+    },
+    {
+      "id": "25V-690",
+      "years": "2025",
+      "title": "Battery pack contactors",
+      "text": "The contactors may fail and cause a loss of drive power on some 2025 Model 3s and 2026 Model Ys. The repair is a service visit and free."
+    },
+    {
+      "id": "26V-507",
+      "years": "2017–2023",
+      "title": "Headlight low beams",
+      "text": "The low beams may be too bright and exceed the maximum light output. Tesla filed the recall on August 5, 2026, and our Model 3 price guide says the repair was not yet available."
+    },
+    {
+      "id": "26V-283",
+      "years": "2021–2023",
+      "title": "Rearview camera delay",
+      "text": "Software release 2026.8.6 may delay the rearview image when the car is put in reverse. A software update fixes it."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "PE26006",
+      "status": "open",
+      "years": "2018–2020",
+      "title": "Front lower lateral link detachment",
+      "text": "NHTSA opened the evaluation on July 29, 2026 after 156 complaints of front lower lateral link failures on 2018 to 2020 Model 3s and 2021 to 2023 Model Ys. In most cases the owner had no warning, and the car may not be drivable afterward. NHTSA says the failures exceed the scope of recalls 21V-835 and 23V-235 and don’t seem tied to the production issue behind them."
+    },
+    {
+      "id": "PE22002",
+      "status": "closed",
+      "years": "2021–2022",
+      "title": "Unexpected brake activation",
+      "text": "NHTSA opened the evaluation on February 16, 2022 on sudden slowing with adaptive cruise control, Autopilot or Full Self-Driving engaged, and closed it on June 29, 2026. It cited a low demonstrated hazard, no identified collisions, Tesla’s software updates and reports that fell to 45 in 2024, 19 in 2025 and 3 so far in 2026, without finding that no defect exists."
+    },
+    {
+      "id": "EA24001",
+      "status": "closed",
+      "years": "2023",
+      "title": "Loss of steering control",
+      "text": "NHTSA upgraded its evaluation of lost power steering assist on 2023 Model 3s and Model Ys on February 2, 2024, and closed it on June 25, 2026 after Tesla’s recall 25V-092."
+    },
+    {
+      "id": "DP20001",
+      "status": "closed",
+      "years": "2013–2020",
+      "title": "Sudden unintended acceleration",
+      "text": "NHTSA denied a petition on Model S, Model X and Model 3 acceleration in January 2021, saying that in every case with event data the crash came from pedal misapplication."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "The front suspension on a 2018 to 2021.",
+      "text": "Confirm 21V-835 and 23V-235 are closed, then have an independent shop check the lateral links and control arms. NHTSA’s open evaluation PE26006 covers failures beyond those recalls, and owners often get no warning."
+    },
+    {
+      "title": "Headlight and camera recalls on a 2017 to 2023.",
+      "text": "Recall 26V-507 covers low beams that are too bright and, per our price guide, had no repair yet; 21V00D000 (2017 to 2020) and 26V-283 (2021 to 2023) cover the rearview camera."
+    },
+    {
+      "title": "Power steering on a 2023.",
+      "text": "Confirm 25V-092 (steering assist) and 23V-434 (battery disconnect) are closed."
+    },
+    {
+      "title": "Battery contactors on a 2025.",
+      "text": "Ask for proof that 25V-690 was done; our price guide says it needs a service visit."
+    },
+    {
+      "title": "Battery and drive unit warranty.",
+      "text": "Our price guide puts the cover at 8 years or 120,000 miles on a Long Range or Performance and 8 years or 100,000 on a Standard or Standard Range Plus, from first delivery. Ask for the delivery date."
+    },
+    {
+      "title": "Wear parts on any used car.",
+      "text": "Reddit owners report worn control arms and bushings and 12-volt battery faults. Ask when the 12-volt battery was last replaced."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s look over the suspension, brakes and body before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Model 3 has {c:2026} NHTSA complaints and {rec:2026} recall so far, for seat back fasteners, and it is too new to rate. If you are choosing between a new 2026 and a used 2024 or 2025, the 2024 has {rec:2024} recalls and the 2025 {rec:2025} to confirm, including battery contactor recall 25V-690 on the 2025.",
+    "Our <a href=\"{guide}\">Model 3 price guide</a> has the 2026 prices, Tesla’s financing and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Tesla Model 3 year?",
+      "The 2018, at {r:2018} NHTSA complaints per 100,000 sold on {c:2018} complaints, the most of any year. The 2021 is next at {r:2021}, on a sales estimate that looks low."
+    ],
+    [
+      "What is the best used Model 3 year?",
+      "The 2023, 2024 and 2025, at {r:2023}, {r:2024} and {r:2025} complaints per 100,000 sold. These rates rest on Good Car Bad Car’s estimates, since Tesla publishes no model-level U.S. sales."
+    ],
+    [
+      "Is there a 2016 Tesla Model 3?",
+      "No. Tesla held its first Model 3 delivery event on July 28, 2017, so the 2017 is the first model year, and it is too small to rate."
+    ],
+    [
+      "What is wrong with the Model 3 front suspension?",
+      "NHTSA’s open evaluation PE26006 has 156 complaints of front lower lateral links detaching on 2018 to 2020 Model 3s and 2021 to 2023 Model Ys, usually with no warning. It is separate from recalls 21V-835 and 23V-235, so a clean VIN lookup doesn’t rule it out."
+    ],
+    [
+      "How do I check a used Model 3 for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Tesla service center."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-MODEL3-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=tesla&model=model%203&modelYear=2022",
+      "scope": "every Model 3 listing (MODEL 3 and MODEL 3 (ALL VARIANTS)) for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-03",
+      "title": "NHTSA: investigation PE26006",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE26006",
+      "scope": "open evaluation of front lower lateral link detachment on 2018 to 2020 Model 3s and 2021 to 2023 Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-04",
+      "title": "NHTSA: investigation PE22002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE22002",
+      "scope": "closed evaluation of unexpected brake activation on 2021 and 2022 Model 3s and Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-05",
+      "title": "NHTSA: investigation EA24001",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24001",
+      "scope": "closed analysis of loss of power steering assist on 2023 Model 3s and Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-06",
+      "title": "NHTSA: investigation DP20001",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=DP20001",
+      "scope": "denied petition on sudden unintended acceleration in Model S, Model X and Model 3",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-07",
+      "title": "Good Car Bad Car: Tesla Model 3 sales figures",
+      "url": "https://www.goodcarbadcar.net/tesla-model-3-sales-figures-usa-canada/",
+      "scope": "estimated U.S. Model 3 sales 2017 to 2025 (1,667 in 2017); the page says Tesla does not report country-level sales by model",
+      "note": "read November 21, 2026 through a page summary; estimates, the same method our Model Y vs RAV4 page (VEH-MYRV-30) uses for the Model Y"
+    },
+    {
+      "id": "VEH-PRB-MODEL3-08",
+      "title": "Wikipedia: Tesla Model 3",
+      "url": "https://en.wikipedia.org/wiki/Tesla_Model_3",
+      "scope": "first deliveries, trims by year, the 2024 refresh and the 2025 Model 3 Standard",
+      "note": "read November 21, 2026 through a page summary of the first 100,000 characters; check against Tesla before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "TESLA",
     "years": [
@@ -462,5 +798,6 @@
         ]
       }
     }
-  }
+  },
+  "firstSold": 2017
 }

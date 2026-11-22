@@ -1,7 +1,289 @@
 {
   "key": "toyota-tundra",
   "name": "Toyota Tundra",
-  "status": "stub",
+  "status": "ready",
+  "short": "Tundra",
+  "make": "Toyota",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Toyota Tundra Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Toyota Tundra model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, engine recalls by year, and what owners report on Reddit.",
+  "h1": "Toyota Tundra problems by year: years to avoid and what owners report",
+  "card": "Which Tundra model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, the engine recalls by year and what owners report.",
+  "bestYears": "2016–2021",
+  "avoidYears": "2022–2024",
+  "answer": [
+    "The best used Tundras are the older trucks, the 2016 to 2021 model years, which draw {r:2021} NHTSA owner complaints per 100,000 sold for the 2021 up to {r:2016} for the 2016. Skip the 2022, 2023 and 2024: they draw {r:2022}, {r:2023} and {r:2024}, with the engine named in {k:2022:ENGINE}, {k:2023:ENGINE} and {k:2024:ENGINE} of their complaints, and Toyota has recalled them for engine bearing debris (24V-381, 25V-767, 26V-320) and a camshaft that can crack (26V-750). That last recall, filed November 12, 2026, also reaches 2025 and 2026 trucks, so we rate the 2025 Check first even though its rate is {r:2025}.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Tundra and Tundra Hybrid listings, by U.S. sales. They compare years with each other; they don’t predict one truck. The Tundra was redesigned for 2022, so the older trucks and the newer ones carry different engines. The 2026 is too new to rate; our <a href=\"{guide}\">Tundra price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales are Good Car Bad Car’s annual U.S. Tundra totals for 2016 to 2025, read through a page summary; Toyota’s 2025 release agrees on 2024 and 2025.",
+  "sales": {
+    "2016": 114489,
+    "2017": 116285,
+    "2018": 118258,
+    "2019": 111673,
+    "2020": 109203,
+    "2021": 81959,
+    "2022": 104246,
+    "2023": 125185,
+    "2024": 159528,
+    "2025": 147610
+  },
+  "publishedRates": {
+    "2019": 66,
+    "2020": 44,
+    "2021": 29,
+    "2022": 418,
+    "2023": 339,
+    "2024": 229,
+    "2025": 99
+  },
+  "verdicts": {
+    "2016": [
+      "buy",
+      "{r:2016} per 100,000, the highest of the 2016 to 2021 trucks. Brakes ({k:2016:SERVICE BRAKES}) and the electrical system ({k:2016:ELECTRICAL SYSTEM}) lead, and the power steering gear recalls 21V-920 and 21E-103 apply."
+    ],
+    "2017": [
+      "buy",
+      "{r:2017} per 100,000 on {c:2017} complaints. Electrical leads ({k:2017:ELECTRICAL SYSTEM}), and a rear bench seat bracket recall (18V-123) applies."
+    ],
+    "2018": [
+      "buy",
+      "{r:2018} per 100,000. Electrical ({k:2018:ELECTRICAL SYSTEM}) and brakes ({k:2018:SERVICE BRAKES}) lead; recalls include the stability control power supply (18V-122) and the air bag control unit (18V-685)."
+    ],
+    "2019": [
+      "buy",
+      "{r:2019} per 100,000. Fuel and hybrid system leads ({k:2019:FUEL/PROPULSION SYSTEM}), and the fuel pump recalls 20V-012 and 20V-682 apply."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000 on {c:2020} complaints, the second-lowest in the table. Fuel pump recall 20V-682 and turn signal recall 20V-410 apply."
+    ],
+    "2021": [
+      "buy",
+      "{r:2021} per 100,000 on {c:2021} complaints, the lowest in the table. The power steering gear recalls apply."
+    ],
+    "2022": [
+      "avoid",
+      "{r:2022} per 100,000, the highest in the table. Engine ({k:2022:ENGINE} of {c:2022}), fuel and hybrid system ({k:2022:FUEL/PROPULSION SYSTEM}) and power train ({k:2022:POWER TRAIN}) lead, and {rec:2022} recalls include the engine campaigns 24V-381, 25V-767 and 26V-750."
+    ],
+    "2023": [
+      "avoid",
+      "{r:2023} per 100,000, with {k:2023:ENGINE} of {c:2023} complaints naming the engine. The same engine recalls apply: 24V-381, 25V-767 and 26V-750."
+    ],
+    "2024": [
+      "avoid",
+      "{r:2024} per 100,000, with engine ({k:2024:ENGINE}) in the lead. Recalls 25V-767 and 26V-320 cover the main bearings on 2024 trucks; the camshaft recall 26V-750 does not list the 2024."
+    ],
+    "2025": [
+      "check",
+      "{r:2025} per 100,000 on {c:2025} complaints, and the count is still growing. Camshaft recall 26V-750 covers 2025 trucks.",
+      "buy to check: recall 26V-750 reaches 2025 trucks, was filed November 12, 2026, and its owner letters do not start until December 28, 2026"
+    ],
+    "2026": [
+      "check",
+      "NHTSA had no 2026 complaints on November 21, 2026, so there is nothing to rate. Camshaft recall 26V-750 covers 2026 trucks, and {rec:2026} recalls are listed in all."
+    ]
+  },
+  "chartNote": "The 2022 redesign replaced the 5.7-liter V8 with a twin-turbo V6, and the bars jump with it. The 2021 bar is short partly because Toyota sold only 81,959 trucks that year and owners filed {c:2021} complaints.",
+  "generations": [
+    {
+      "name": "Second generation (XK50)",
+      "years": "2007–2021",
+      "text": "Toyota built it from late 2006 to October 2021. From 2016 to 2021 the 5.7-liter V8 (381 hp) was the main engine, with a six-speed automatic; the 4.6-liter V8 left the lineup for 2020, and Toyota Safety Sense became standard for 2018 (Wikipedia). The 2016 to 2021 rows on this page are this truck."
+    },
+    {
+      "name": "Third generation (XK70)",
+      "years": "2022–",
+      "text": "Production began in December 2021 in San Antonio. Toyota dropped the V8 for a 3.4-liter twin-turbo V6 (the V35A, 348 to 389 hp), added an i-FORCE MAX hybrid rated at 437 hp, and fitted a 10-speed automatic (Wikipedia). Every engine recall on this page is on this truck."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2022,
+        2025
+      ],
+      "text": "Recalls 24V-381, 25V-767 and 26V-320 cover manufacturing debris in the 3.4-liter V6 that can fail the main bearings and stall the engine; dealers replace the engine or, under the later two, inspect the number-one main bearing and replace the engine if needed, free. Recall 26V-750 covers a camshaft that may crack and snap on 2022–2023 and 2025–2026 trucks, and dealers inspect and replace it as necessary, free. Engine is the top complaint part on every year from 2022 to 2025."
+    },
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2022,
+        2024
+      ],
+      "text": "Power train complaints run {k:2022:POWER TRAIN}, {k:2023:POWER TRAIN} and {k:2024:POWER TRAIN} on the 2022 to 2024 trucks. Recall 22V-445 covers rear axle shaft flange nuts that can loosen on 2022 trucks, and 24V-125 (2022–2024) covers unexpected movement in neutral, fixed with a software update. NHTSA’s label spans the transmission, axles and driveline, so the count doesn’t say which part."
+    },
+    {
+      "title": "Fuel and hybrid system",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2022,
+        2024
+      ],
+      "text": "Recall 23V-566 (2022–2023) covers a plastic fuel tube that can chafe against brake lines and leak; dealers add protection and a clamp, free. NHTSA files hybrid-system complaints under the same label, so this count is wider than the fuel tube alone."
+    },
+    {
+      "title": "Electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "Electrical leads the 2017 and 2018 counts, but on {c:2017} and {c:2018} complaints in total they are small, and NHTSA’s label names a part, not a failure."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s Tundra owners split by generation. The older 5.7 V8 trucks are widely reported to last 250,000 miles or more, which fits the low 2016 to 2021 rates, with timing chain tensioner wear on some years the main gripe. The third-generation threads center on the twin-turbo V6’s engine failures and the recalls, while some owners report trouble-free miles and call failures a small share. The threads rarely give a model year, so they agree with the table without confirming any one year."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "24V-381",
+      "years": "2022–2023",
+      "title": "Engine main bearings",
+      "text": "Debris from manufacturing can contaminate the V35A engine and fail the main bearings, which can stall the engine and cut drive power. Dealers replace the engine assembly, free."
+    },
+    {
+      "id": "25V-767",
+      "years": "2022–2024",
+      "title": "Engine main bearings, wider scope",
+      "text": "The same debris problem, extended to 2022 to 2024 Tundras. Dealers inspect the number-one main bearing with vehicle software and drive data and replace the engine if necessary, free."
+    },
+    {
+      "id": "26V-320",
+      "years": "2024",
+      "title": "Engine main bearing",
+      "text": "A third V35A debris campaign, for certain 2024 trucks, with the same inspection and engine replacement as needed, free."
+    },
+    {
+      "id": "26V-750",
+      "years": "2022–2023 and 2025–2026",
+      "title": "Camshaft cracks",
+      "text": "A camshaft may have been made incorrectly, which lets cracks develop and can snap it, stalling the engine and cutting drive power. Filed November 12, 2026 and covering 62,490 trucks; dealers inspect and replace the camshaft as necessary, free. Owner letters begin December 28, 2026."
+    },
+    {
+      "id": "22V-445",
+      "years": "2022",
+      "title": "Rear axle shaft nuts",
+      "text": "Flange nuts on the axle shaft can loosen over time and let an axle shaft separate from the axle housing. Dealers inspect and tighten them and replace damaged parts, free."
+    },
+    {
+      "id": "24V-125",
+      "years": "2022–2024",
+      "title": "Movement in neutral",
+      "text": "The vehicle can move unexpectedly when it is in neutral with the brakes off. Dealers update the transmission control software, free."
+    },
+    {
+      "id": "23V-566",
+      "years": "2022–2023",
+      "title": "Fuel tube chafing",
+      "text": "A plastic fuel tube near metal brake lines can chafe and leak fuel. Dealers install protective material and a clamp, free."
+    },
+    {
+      "id": "21V-920 and 21E-103",
+      "years": "2016–2021",
+      "title": "Power steering gear oil leak",
+      "text": "A power steering gear assembly may have been built incorrectly and leak oil. Dealers inspect and replace the assembly as needed, free."
+    }
+  ],
+  "investigations": [],
+  "noInvestigations": "NHTSA’s public investigation list showed no investigation naming the Tundra from 2016 to November 21, 2026. The engine problems have gone through Toyota’s own recalls: three for the V35A’s main bearings and one for the camshaft.",
+  "checks": [
+    {
+      "title": "The engine recalls on a 2022 to 2026.",
+      "text": "Ask for the dealer’s service record showing 24V-381, 25V-767 and 26V-320 closed, whichever apply to the truck’s build, and for any engine replacement paperwork. A VIN lookup lists what is open."
+    },
+    {
+      "title": "The camshaft recall on a 2022, 2023, 2025 or 2026.",
+      "text": "Recall 26V-750 was filed November 12, 2026 and its letters start December 28, 2026, so a truck may not have had the inspection yet. Ask the seller to schedule it, or price the risk in."
+    },
+    {
+      "title": "The power steering gear on a 2016 to 2021.",
+      "text": "Confirm 21V-920 or 21E-103 was done: the fix replaces a gear assembly that can leak oil."
+    },
+    {
+      "title": "The fuel tube on a 2022 or 2023.",
+      "text": "Recall 23V-566 adds a clamp and protection to a tube that can chafe; the VIN lookup shows whether it is open."
+    },
+    {
+      "title": "The frame on an older truck.",
+      "text": "Owners on Reddit raise frame rust as a worry for used Tundra buyers, mostly on first-generation trucks. Have a shop look at the frame of any older truck from a salt-belt state."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the engine for codes, leaks and recall history before you sign."
+    }
+  ],
+  "newer": [
+    "NHTSA had no 2026 Tundra complaints on its list yet, and the truck already has {rec:2026} recalls, including the camshaft recall 26V-750. The newer trucks share the 2022 to 2024 engine design, so we wouldn’t call the 2026 more reliable until the engine recalls stop reaching new model years.",
+    "If you are choosing between a new 2026 and a used 2016 to 2021, our <a href=\"{guide}\">Tundra price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Toyota Tundra years?",
+      "The 2022, 2023 and 2024 model years. They draw {r:2022}, {r:2023} and {r:2024} NHTSA complaints per 100,000 sold against {r:2021} for the 2021, and they carry the engine bearing recalls 24V-381, 25V-767 and 26V-320."
+    ],
+    [
+      "What is the best used Tundra year?",
+      "The 2016 to 2021 trucks have the lowest rates, from {r:2021} for the 2021 to {r:2016} for the 2016. They are the older truck with the 5.7-liter V8, so the newer engine’s recalls don’t apply to them."
+    ],
+    [
+      "Does the camshaft recall 26V-750 cover my Tundra?",
+      "It lists 2022–2023 and 2025–2026 trucks. The 2024 isn’t on that list but has its own bearing recalls, so check the VIN at nhtsa.gov/recalls for what is open on your truck."
+    ],
+    [
+      "Is a 2025 Tundra a good buy?",
+      "It draws {r:2025} complaints per 100,000, which is low, but the camshaft recall reaches it and the owner letters start December 28, 2026. We rate it Check first until the inspection is done on the truck you are buying."
+    ],
+    [
+      "How do I check a used Tundra for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Toyota dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-TUNDRA-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=toyota&model=tundra&modelYear=2023",
+      "scope": "Tundra and Tundra Hybrid complaint counts and components by model year 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-TUNDRA-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-TUNDRA-03",
+      "title": "Good Car Bad Car: Toyota Tundra sales",
+      "url": "https://www.goodcarbadcar.net/toyota-tundra-sales-figures/",
+      "scope": "annual U.S. Tundra sales 2016 to 2025",
+      "note": "reused from our F-150 vs Tundra page (VEH-FVT-33) for 2019 to 2025; 2016 to 2018 read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-TUNDRA-04",
+      "title": "The Auto Channel (Toyota release text): Toyota 2025 U.S. sales",
+      "url": "https://www.theautochannel.com/news/2026/01/05/1618015-toyota-motor-north-america-reports-2025-u-s-sales-results.html",
+      "scope": "Tundra 147,610 in 2025 and 159,528 in 2024",
+      "note": "reused from our F-150 vs Tundra page (VEH-FVT-34)"
+    },
+    {
+      "id": "VEH-PRB-TUNDRA-05",
+      "title": "Wikipedia: Toyota Tundra",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Tundra",
+      "scope": "generation years, engines and transmissions",
+      "note": "read November 21, 2026 through a page summary; check against Toyota before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "TOYOTA",
     "years": [

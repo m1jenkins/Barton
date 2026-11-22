@@ -1,7 +1,329 @@
 {
   "key": "honda-accord",
   "name": "Honda Accord",
-  "status": "stub",
+  "status": "ready",
+  "short": "Accord",
+  "make": "Honda",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Honda Accord Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Honda Accord model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the open automatic braking investigation and what owners report on Reddit.",
+  "h1": "Honda Accord problems by year: years to avoid and what owners report",
+  "card": "The best and worst Accord years, the open automatic braking investigation, the 2018 and 2019 complaint spike and what owners report.",
+  "bestYears": "2023–2024",
+  "avoidYears": "2018–2019",
+  "answer": [
+    "The best used Accords are the 2023 and 2024 model years, which draw {r:2023} and {r:2024} NHTSA owner complaints per 100,000 sold against an Accord yardstick of {base}. Skip the 2018 and 2019: the 2018 draws {r:2018} per 100,000 on {c:2018} complaints, the most of any year, with the engine named in {k:2018:ENGINE}, the fuel system in {k:2018:FUEL/PROPULSION SYSTEM} and automatic emergency braking in {k:2018:FORWARD COLLISION AVOIDANCE}, and the 2019 draws {r:2019}. The 2020 to 2022 are the years to ask about, because NHTSA’s open analysis EA24002 covers 2018 to 2022 Accords that brake hard on their own. The 2025 rates lowest at {r:2025}, but {k:2025:STEERING} of its {c:2025} complaints name steering and no recall covers them, so we rate it Check first.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Accord, Accord Hybrid and Accord Sedan listings, by U.S. sales. The 2022 and 2025 sales, 154,612 and 150,196, are the lowest of the run, which lifts those two rates. Our <a href=\"{guide}\">Accord price guide</a> makes 2023 the floor for a used one, which this page matches."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s Accord table, which gives the same rates as our Camry vs Accord page for 2019 to 2024.",
+  "sales": {
+    "2016": 345135,
+    "2017": 322655,
+    "2018": 291071,
+    "2019": 267567,
+    "2020": 199458,
+    "2021": 202676,
+    "2022": 154612,
+    "2023": 197947,
+    "2024": 162723,
+    "2025": 150196
+  },
+  "publishedRates": {
+    "2019": 298,
+    "2020": 207,
+    "2021": 146,
+    "2022": 208,
+    "2023": 120,
+    "2024": 146,
+    "2025": 85
+  },
+  "verdicts": {
+    "2016": [
+      "buy",
+      "Electrical ({k:2016:ELECTRICAL SYSTEM}) and exterior lighting ({k:2016:EXTERIOR LIGHTING}) lead. Recall 17V-418 covers a battery sensor case that can let water in and short, and 19V-060 the V6 fuel pump."
+    ],
+    "2017": [
+      "check",
+      "Just over the Buy line. Electrical ({k:2017:ELECTRICAL SYSTEM}), engine ({k:2017:ENGINE}) and fuel system ({k:2017:FUEL/PROPULSION SYSTEM}) lead; recall 19V-060 covers the V6 fuel pump."
+    ],
+    "2018": [
+      "avoid",
+      "The most complaints of any year ({c:2018}): engine {k:2018:ENGINE}, fuel system {k:2018:FUEL/PROPULSION SYSTEM}, automatic braking {k:2018:FORWARD COLLISION AVOIDANCE}. Fuel pump recalls 20V-314 and 23V-858 and open analysis EA24002 apply."
+    ],
+    "2019": [
+      "avoid",
+      "Engine ({k:2019:ENGINE}), fuel system ({k:2019:FUEL/PROPULSION SYSTEM}) and automatic braking ({k:2019:FORWARD COLLISION AVOIDANCE}) lead. Fuel pump recalls 20V-314 and 21V-215 and open analysis EA24002 apply."
+    ],
+    "2020": [
+      "check",
+      "Automatic braking ({k:2020:FORWARD COLLISION AVOIDANCE}) leads, and open analysis EA24002 covers it. Recalls 20V-771 (body control module software) and 21V-215 (fuel pump) apply."
+    ],
+    "2021": [
+      "check",
+      "A modest count ({c:2021}) that would rate Buy, but open analysis EA24002 covers 2018 to 2022 Accords that brake hard on their own, and {k:2021:FORWARD COLLISION AVOIDANCE} complaints name automatic braking.",
+      "buy to check: open NHTSA analysis EA24002 covers the 2021 and no recall addresses it"
+    ],
+    "2022": [
+      "check",
+      "Electrical ({k:2022:ELECTRICAL SYSTEM}) and automatic braking ({k:2022:FORWARD COLLISION AVOIDANCE}) lead, and EA24002 covers the year. Recall 23V-430 covers a leaking brake modulator valve."
+    ],
+    "2023": [
+      "buy",
+      "Electrical ({k:2023:ELECTRICAL SYSTEM}) and brakes ({k:2023:SERVICE BRAKES}) lead. {rec:2023} recalls include fuel pump 24V-763, seat 24V-859 and Hybrid software 25V-785."
+    ],
+    "2024": [
+      "buy",
+      "Steering leads ({k:2024:STEERING}) with no recall. Recalls 24V-763, 24V-859 and 23V-782 apply, and 25V-785 on a Hybrid."
+    ],
+    "2025": [
+      "check",
+      "The lowest rate of any year, but {k:2025:STEERING} of {c:2025} complaints name steering and no recall covers them. Hybrid recall 25V-785 applies.",
+      "buy to check: steering carries over 40% of the complaints and no recall covers it"
+    ],
+    "2026": [
+      "buy",
+      "{c:2026} complaints and {rec:2026} recalls so far, both for the Hybrid’s tire repair kit. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2018 bar is the tallest and the 2025 bar the shortest. Honda sold the fewest Accords in 2022 and 2025, which lifts those rates.",
+  "generations": [
+    {
+      "name": "Ninth generation",
+      "years": "2016–2017",
+      "text": "The 2013 to 2017 Accord got a 2016 refresh with a new front end and lights. It came with a 2.4-liter four-cylinder (185 hp), a 3.5-liter V6 (278 hp) and a hybrid, with a CVT on the four, and a six-speed manual was offered on the four-cylinder and V6 coupe (Wikipedia)."
+    },
+    {
+      "name": "Tenth generation",
+      "years": "2018–2022",
+      "text": "The sedan went on sale in October 2017 as a 2018 with a 1.5-liter turbo four (192 hp) and, from December 2017, a 2.0-liter turbo (252 hp) that replaced the V6; the hybrid (212 hp) followed in March 2018. A 2021 refresh dropped the manual gearbox and made Apple CarPlay and Android Auto standard (Wikipedia)."
+    },
+    {
+      "name": "Eleventh generation",
+      "years": "2023–",
+      "text": "Unveiled in November 2022 for the 2023 model year, with the 1.5-liter turbo kept, the 2.0-liter dropped and a 212-hp hybrid. The SE replaced the EX for 2025, and the 2026 model added a 9-inch screen with wireless Apple CarPlay and Android Auto on LX and SE (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine, 2018 and 2019",
+      "component": "ENGINE",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "The biggest part count on the two worst years. NHTSA’s field doesn’t say what owners describe, and none of the recalls in these years names the engine. Reddit owners report head gasket failures and oil dilution on the 1.5-liter turbo, which became the Accord’s base engine in 2018."
+    },
+    {
+      "title": "Fuel system, 2018 and 2019",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "Recalls 20V-314 and 21V-215 cover an in-tank low-pressure fuel pump that can fail and stall the engine, and 23V-858 extends the fuel pump fix across 2013 to 2023 Accords. Dealers replace the pump assembly free; the VIN lookup shows what is open."
+    },
+    {
+      "title": "Automatic emergency braking, 2018 to 2022",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2018,
+        2022
+      ],
+      "text": "NHTSA’s analysis EA24002, still open, covers cars that brake hard on their own with nothing in the lane, with 1,294 complaints across 2018 to 2022 Accords and 2017 to 2022 CR-Vs. No recall covers it yet."
+    },
+    {
+      "title": "Electrical system, 2016 and 2017",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2016,
+        2017
+      ],
+      "text": "Recall 17V-418 covers a battery sensor case on 2013 to 2016 cars that can let water in and cause a short, which raises fire risk. Dealers replace the sensor, with an interim adhesive repair, free."
+    },
+    {
+      "title": "Steering, 2024 and 2025",
+      "component": "STEERING",
+      "years": [
+        2024,
+        2025
+      ],
+      "text": "Our Accord price guide counted 128 steering complaints on these two years, many describing a clicking or sticky steering rack. No recall or investigation covers it."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit owners praise the Accord for reaching 200,000 miles on routine maintenance, and call the four-cylinder, V6 and hybrid systems durable. What they report going wrong is the 1.5-liter turbo’s head gasket and oil dilution, transmission failures on some older cars and older four-cylinders burning oil. Those threads line up with the 2018 engine count above, while the NHTSA steering and automatic braking counts don’t appear among the reliability themes."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "26V-332",
+      "years": "2016–2022",
+      "title": "Passenger weight sensor",
+      "text": "The front passenger seat weight sensor may crack and short circuit, which can set off the air bags unintentionally in a crash. Dealers replace the sensor free, and 24V-064 covers the same part on 2020 to 2022 cars."
+    },
+    {
+      "id": "20V-314, 21V-215 and 23V-858",
+      "years": "2013–2023",
+      "title": "In-tank fuel pump",
+      "text": "The low-pressure fuel pump inside the tank can fail and stall the engine. Dealers replace the pump assembly free."
+    },
+    {
+      "id": "20V-771",
+      "years": "2018–2020",
+      "title": "Body control module software",
+      "text": "A software error can interrupt communication between the body control module and other parts, which can disable the wipers, defroster, rearview camera or exterior lights. Dealers update the software free."
+    },
+    {
+      "id": "23V-158",
+      "years": "2018–2019",
+      "title": "Seat belt buckle",
+      "text": "The front seat belt buckle channel can interfere with the release button and keep the buckle from latching. Dealers replace the button or buckle free."
+    },
+    {
+      "id": "17V-418 and 19V-060",
+      "years": "2013–2017",
+      "title": "Battery sensor and V6 fuel pump",
+      "text": "Recall 17V-418 covers a battery sensor case that can let water in and short, and 19V-060 a V6 fuel pump that particulates can slow, which can stall the engine. Both repairs are free."
+    },
+    {
+      "id": "24V-763",
+      "years": "2023–2024",
+      "title": "High-pressure fuel pump",
+      "text": "The pump may crack and leak fuel, which raises fire risk. Dealers inspect and replace it as needed, free."
+    },
+    {
+      "id": "24V-859 and 26V-054",
+      "years": "2023–2024",
+      "title": "Driver seat cushion frame",
+      "text": "The driver’s seat cushion frame may not have been tightened properly, which can leave the seat loose in a crash. Dealers replace the frame free."
+    },
+    {
+      "id": "25V-785",
+      "years": "2023–2025 Hybrid",
+      "title": "Hybrid control software",
+      "text": "A software error can reset the integrated control module while driving and cause a loss of drive power. Dealers reprogram it free."
+    },
+    {
+      "id": "26V-366 and 26V-663",
+      "years": "2023–2026 Hybrid",
+      "title": "Tire repair kit",
+      "text": "Pressure can build in the sealant bottle and detach its cap like a small projectile. Dealers replace the nozzle or bottle free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA24002",
+      "status": "open",
+      "years": "2018–2022",
+      "title": "Inadvertent automatic emergency braking",
+      "text": "NHTSA opened the analysis on April 16, 2024, upgrading preliminary evaluation PE22003 from February 2022. It covers 2017 to 2022 CR-Vs and 2018 to 2022 Accords whose automatic emergency braking can brake hard with no obstruction ahead; NHTSA counts 1,294 complaints, and Honda has said some owners may misunderstand the system’s limits. Our verdicts treat the 2021 as Check first because of it."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Automatic braking on a 2018 to 2022.",
+      "text": "Open analysis EA24002 has no recall yet. Ask the owner whether the car has ever braked hard on its own, and drive a highway stretch with cruise control on before you sign."
+    },
+    {
+      "title": "Fuel pump recalls.",
+      "text": "On a 2018 to 2020, confirm 20V-314 and 21V-215; on any 2016 to 2023, that 23V-858 is closed; on a 2023 or 2024, that 24V-763 is."
+    },
+    {
+      "title": "The passenger weight sensor on a 2016 to 2022.",
+      "text": "Confirm recall 26V-332 (and 24V-064 on a 2020 to 2022). The repair is free at a Honda dealer."
+    },
+    {
+      "title": "Steering on a 2024 or 2025.",
+      "text": "Owners report a clicking or sticky steering rack and no recall exists. Turn the wheel lock to lock when you test-drive it and have a shop check the rack."
+    },
+    {
+      "title": "Oil and coolant on a 2018 or later 1.5-liter turbo.",
+      "text": "Reddit owners report oil dilution and head gasket leaks. Check the dipstick for a high level or a fuel smell and the coolant level."
+    },
+    {
+      "title": "Hybrid software and seat recalls on a 2023 to 2025.",
+      "text": "Confirm 25V-785 on a Hybrid, and 24V-859 and 26V-054 for the driver’s seat on a 2023 or 2024."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the engine, transmission and brakes before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Accord has {c:2026} NHTSA complaints and {rec:2026} recalls so far, both for the Hybrid’s tire repair kit, and it is too new to rate. If you are choosing between a new 2026 and a used 2023 or 2024, the used cars carry the fuel pump, seat and Hybrid software recalls, and the 2026 does not.",
+    "Our <a href=\"{guide}\">Accord price guide</a> has the 2026 prices, Honda’s financing and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Honda Accord year?",
+      "The 2018, at {r:2018} NHTSA complaints per 100,000 sold and {c:2018} complaints, the most of any year. The 2019 is next at {r:2019}."
+    ],
+    [
+      "What is the best used Accord year?",
+      "The 2023 and 2024, at {r:2023} and {r:2024} complaints per 100,000. The 2025 has the lowest rate, {r:2025}, but {k:2025:STEERING} of its {c:2025} complaints name steering, so we rate it Check first."
+    ],
+    [
+      "Is the Honda Accord reliable?",
+      "Reddit owners report Accords reaching 200,000 miles on routine maintenance. NHTSA’s counts say it depends on the year: {r:2021} complaints per 100,000 for the 2021 and {r:2023} for the 2023, against {r:2018} for the 2018."
+    ],
+    [
+      "Does the Accord brake hard on its own?",
+      "NHTSA’s open analysis EA24002 covers 2018 to 2022 Accords and 2017 to 2022 CR-Vs whose automatic emergency braking can brake hard with nothing ahead. There is no recall, so a VIN lookup won’t show it."
+    ],
+    [
+      "How do I check a used Accord for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Honda dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-ACCORD-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=honda&model=accord&modelYear=2019",
+      "scope": "every Accord, Accord Hybrid and Accord Sedan listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-ACCORD-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-ACCORD-03",
+      "title": "NHTSA: investigation EA24002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24002",
+      "scope": "open engineering analysis of inadvertent automatic emergency braking on 2018 to 2022 Accords and 2017 to 2022 CR-Vs",
+      "note": "read November 21, 2026; also from the Accord price guide (VEH-ACCORD-21)"
+    },
+    {
+      "id": "VEH-PRB-ACCORD-04",
+      "title": "Good Car Bad Car: Honda Accord sales figures",
+      "url": "https://www.goodcarbadcar.net/honda-accord-sales-figures/",
+      "scope": "U.S. Accord sales 2016 to 2025",
+      "note": "read November 21, 2026 through a page summary; the rates for 2019 to 2024 match our Camry vs Accord page (VEH-CVA-15), built from Honda’s FactBook"
+    },
+    {
+      "id": "VEH-PRB-ACCORD-05",
+      "title": "Wikipedia: ninth-generation Honda Accord",
+      "url": "https://en.wikipedia.org/wiki/Honda_Accord_(ninth_generation)",
+      "scope": "model years, the 2016 refresh, engines and transmissions",
+      "note": "read November 21, 2026 through a page summary; check against Honda before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-ACCORD-06",
+      "title": "Wikipedia: Honda Accord (tenth and eleventh generations)",
+      "url": "https://en.wikipedia.org/wiki/Honda_Accord_(tenth_generation)",
+      "scope": "tenth-generation launch, engines, hybrid and 2021 refresh; eleventh-generation launch, engines and trim changes",
+      "note": "read November 21, 2026 through a page summary of the combined Honda Accord article; check against Honda before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "HONDA",
     "years": [

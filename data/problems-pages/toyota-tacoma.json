@@ -1,7 +1,309 @@
 {
   "key": "toyota-tacoma",
   "name": "Toyota Tacoma",
-  "status": "stub",
+  "status": "ready",
+  "short": "Tacoma",
+  "make": "Toyota",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Toyota Tacoma Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Toyota Tacoma model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Toyota Tacoma problems by year: years to avoid and what owners report",
+  "card": "Which Tacoma model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2020–2023, 2025",
+  "avoidYears": "2016–2019, 2024",
+  "answer": [
+    "The best used Tacomas are the 2020 to 2023 model years, which draw {r:2023} to {r:2020} NHTSA owner complaints per 100,000 sold, and the 2025 at {r:2025}. Skip the 2016 to 2019 trucks ({r:2016}, {r:2017}, {r:2018} and {r:2019}), where transmission and drivetrain, fuel-system and brake complaints stack up beside recalls for the rear differential, crank position sensor, fuel pump and brake master cylinder, and skip the 2024 ({r:2024}), the first year of the redesign, which has recalls for rear brake hoses and shock absorbers.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Tacoma and Tacoma Hybrid listings, by U.S. sales. They compare years with each other; they don’t predict one truck. The Tacoma’s yardstick is low, {base}, because its 2020 to 2023 trucks draw so few complaints, so Avoid here means a bad year for a Tacoma. The 2026 is too new to rate; our <a href=\"{guide}\">Tacoma price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales are Toyota’s U.S. Tacoma totals from its year-end releases for 2019 to 2025 and Good Car Bad Car’s for 2016 to 2018. Toyota lists the Tacoma Hybrid separately and we used its Tacoma total.",
+  "sales": {
+    "2016": 191631,
+    "2017": 198124,
+    "2018": 245659,
+    "2019": 248801,
+    "2020": 238806,
+    "2021": 252520,
+    "2022": 237323,
+    "2023": 234768,
+    "2024": 192813,
+    "2025": 274638
+  },
+  "publishedRates": {
+    "2019": 88,
+    "2020": 37.7,
+    "2021": 32.1,
+    "2022": 25.3,
+    "2023": 24.3,
+    "2024": 81.9,
+    "2025": 44.4
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "{r:2016} per 100,000, the highest in the table. Transmission and drivetrain leads ({k:2016:POWER TRAIN} of {c:2016}), and recalls cover a rear differential oil leak (17V-285) and a crank position sensor that can stall the V6 (17V-356)."
+    ],
+    "2017": [
+      "avoid",
+      "{r:2017} per 100,000. Transmission and drivetrain ({k:2017:POWER TRAIN}) and engine ({k:2017:ENGINE}) lead, and the same differential and crank sensor recalls apply."
+    ],
+    "2018": [
+      "avoid",
+      "{r:2018} per 100,000. Fuel and hybrid system ({k:2018:FUEL/PROPULSION SYSTEM}) and brakes ({k:2018:SERVICE BRAKES}) lead; recalls cover the fuel pump (20V-012, 20V-682) and the brake master cylinder (18V-888)."
+    ],
+    "2019": [
+      "avoid",
+      "{r:2019} per 100,000, with fuel ({k:2019:FUEL/PROPULSION SYSTEM}) and brakes ({k:2019:SERVICE BRAKES}) leading. The same fuel pump and master cylinder recalls apply."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000, equal to the yardstick. Fuel system still leads ({k:2020:FUEL/PROPULSION SYSTEM} of {c:2020}), and the fuel pump recall 20V-682 is the only recall listed."
+    ],
+    "2021": [
+      "buy",
+      "{r:2021} per 100,000 on {c:2021} complaints, and the only model year with no recall on NHTSA’s list."
+    ],
+    "2022": [
+      "buy",
+      "{r:2022} per 100,000, the second-lowest. Recalls cover the upper child seat anchor welds (22V-520) and rear axle shafts (24V-152)."
+    ],
+    "2023": [
+      "buy",
+      "{r:2023} per 100,000, the lowest in the table. Electrical leads ({k:2023:ELECTRICAL SYSTEM}), and a steering column spiral cable recall (23V-480) can deactivate the driver air bag until it is replaced."
+    ],
+    "2024": [
+      "avoid",
+      "{r:2024} per 100,000 in the first year of the redesign. Transmission and drivetrain ({k:2024:POWER TRAIN}) and brakes ({k:2024:SERVICE BRAKES}) lead, and {rec:2024} recalls include rear brake hoses on 4x4s (25V-058) and shock absorbers (26V-514)."
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000. Structure leads ({k:2025:STRUCTURE} of {c:2025}), a count we can’t tie to a recall. Front driveshaft (25V-656) and shock absorber (26V-514) recalls apply, and Toyota expects the final shock fix in March 2027."
+    ],
+    "2026": [
+      "check",
+      "NHTSA had no 2026 Tacoma complaints or recalls on November 21, 2026, so there is no record to judge. It is the same design as the 2024 and 2025, which draw recalls for brake hoses, driveshafts and shocks."
+    ]
+  },
+  "chartNote": "The Tacoma was redesigned for 2024, so the 2016 to 2023 bars are the older truck. Its 2020 to 2023 bars are short enough that a handful of complaints moves them.",
+  "generations": [
+    {
+      "name": "Third generation (N300)",
+      "years": "2016–2023",
+      "text": "Sold in the U.S. from September 2015 and built in Mexico and San Antonio. It came with a 2.7-liter four-cylinder (159 hp) or a 3.5-liter V6 (278 hp), a six-speed automatic or manual, and a 2020 facelift added new styling and wired Apple CarPlay and Android Auto (Wikipedia)."
+    },
+    {
+      "name": "Fourth generation (N400)",
+      "years": "2024–",
+      "text": "Revealed May 19, 2023, with production starting in December 2023. It uses a 2.4-liter turbo four-cylinder (228 to 278 hp) with a six-speed manual or eight-speed automatic, plus an i-FORCE MAX hybrid rated at 326 hp (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2016,
+        2024
+      ],
+      "text": "Power train leads the 2016 ({k:2016:POWER TRAIN}) and the 2024 ({k:2024:POWER TRAIN}). Recall 17V-285 (2016–2017) covers a rear differential oil leak, 24V-152 (2022–2023) rear axle shafts that can separate, and 25V-656 (2025) a front driveshaft joint that can break. No recall explains the 2024 count, and owners on Reddit worry the newer turbo four and its transmission are unproven."
+    },
+    {
+      "title": "Fuel and hybrid system",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2018,
+        2020
+      ],
+      "text": "Toyota recalled the fuel pump on 2018–2019 trucks (20V-012) and 2017–2020 trucks (20V-682); dealers replace the pump assembly, free. NHTSA’s label also catches the hybrid system on newer trucks."
+    },
+    {
+      "title": "Brakes",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "Recall 18V-888 (2018–2019) covers improper machining of the brake master cylinder, which can damage a seal and affect braking; dealers replace it, free. The 2024 and 2025 4x4s have their own recall for rear brake hoses (25V-058)."
+    },
+    {
+      "title": "Structure",
+      "component": "STRUCTURE",
+      "years": [
+        2025,
+        2025
+      ],
+      "text": "Structure is the top part on the 2025 with {k:2025:STRUCTURE} of {c:2025} complaints. NHTSA’s label doesn’t say which structural part, and no recall on its list explains the count."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Owners on Reddit report Tacomas passing 200,000 miles on routine maintenance and say the four-cylinder is simple and durable. Their worries are frame rust on older trucks in salt-belt states, the unproven turbo four and its transmission on the 2024 and 2025, and costly seals, bushings and suspension parts on high-mileage trucks. Rust is a long-term condition NHTSA’s complaint counts barely register, so the table can’t judge it; a frame inspection can."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "17V-285",
+      "years": "2016–2017",
+      "title": "Rear differential oil leak",
+      "text": "Oil can leak where the rear differential carrier meets the axle housing. Dealers inspect it, tighten or replace the fastening nuts and gasket, and replace the carrier if parts are damaged, free."
+    },
+    {
+      "id": "17V-356",
+      "years": "2016–2017 V6",
+      "title": "Crank position sensor",
+      "text": "A crank position sensor may malfunction and stall the six-cylinder engine. Dealers replace it with an improved design, free."
+    },
+    {
+      "id": "18V-888",
+      "years": "2018–2019",
+      "title": "Brake master cylinder",
+      "text": "Improper machining can damage a seal and affect brake performance. Dealers replace the master cylinder, free."
+    },
+    {
+      "id": "20V-012 and 20V-682",
+      "years": "2017–2020",
+      "title": "Fuel pump",
+      "text": "Two campaigns cover the fuel pump on certain Tacomas. Dealers replace the fuel pump assembly with an improved one, free."
+    },
+    {
+      "id": "24V-152",
+      "years": "2022–2023",
+      "title": "Rear axle shafts",
+      "text": "Debris can leave axle fasteners improperly secured, so a shaft may separate from the axle housing. Dealers inspect, tighten the retaining nuts and replace damaged parts, free."
+    },
+    {
+      "id": "23V-480",
+      "years": "2023",
+      "title": "Steering column spiral cable",
+      "text": "A weak weld in the spiral cable assembly can disconnect and deactivate the driver air bag. Dealers inspect and replace the assembly if necessary, free."
+    },
+    {
+      "id": "25V-058",
+      "years": "2024–2025 4x4",
+      "title": "Rear brake hoses",
+      "text": "Mud and dirt packed inside the rear wheels can damage the brake hoses and leak brake fluid. Dealers replace both rear hoses, free."
+    },
+    {
+      "id": "26V-514",
+      "years": "2024–2025",
+      "title": "Shock absorber flanges",
+      "text": "The metal flange on the front and rear shock absorbers may corrode and let the oil reservoir detach. Dealers inspect and replace the shocks as necessary, free; Toyota expects the final remedy in March 2027."
+    }
+  ],
+  "investigations": [],
+  "noInvestigations": "NHTSA’s public investigation list showed no investigation naming the Tacoma from 2016 to November 21, 2026.",
+  "checks": [
+    {
+      "title": "The fuel pump on a 2017 to 2020.",
+      "text": "Confirm 20V-012 or 20V-682 was done. The VIN lookup lists what is open; the dealer’s service record shows what was replaced."
+    },
+    {
+      "title": "The differential and crank sensor on a 2016 or 2017.",
+      "text": "Ask for proof of 17V-285 (rear differential oil leak) and, on a V6, 17V-356 (crank position sensor)."
+    },
+    {
+      "title": "The master cylinder on a 2018 or 2019.",
+      "text": "Recall 18V-888 replaces a master cylinder with a seal that can fail; confirm it is closed."
+    },
+    {
+      "title": "The rear axle on a 2022 or 2023.",
+      "text": "Confirm 24V-152 (axle shafts) and 22V-520 (child seat anchor welds, 2022–2023) are done."
+    },
+    {
+      "title": "Hoses, shocks and driveshaft on a 2024 or 2025.",
+      "text": "Ask which of 25V-058, 26V-514 and 25V-656 apply and are closed; the shock recall’s final remedy isn’t expected until March 2027."
+    },
+    {
+      "title": "The frame on an older truck.",
+      "text": "Owners on Reddit report frame rust on older Tacomas, especially in salt-belt states. Have a shop look at the frame and underbody before you sign."
+    }
+  ],
+  "newer": [
+    "NHTSA had no 2026 Tacoma complaints or recalls on its list yet, so the 2026 has no record to judge. It shares the 2024 and 2025 design, which draws recalls for rear brake hoses, front driveshafts and shock absorbers, so we rate it Check first.",
+    "If you are choosing between a new 2026 and a used 2020 to 2023, our <a href=\"{guide}\">Tacoma price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Toyota Tacoma years?",
+      "The 2016 to 2019 model years and the 2024. They draw {r:2016}, {r:2017}, {r:2018}, {r:2019} and {r:2024} NHTSA complaints per 100,000 sold against {r:2023} for the 2023, with recalls for the rear differential, crank sensor, fuel pump, master cylinder and, on the 2024, brake hoses and shocks."
+    ],
+    [
+      "What is the best used Tacoma year?",
+      "The 2020 to 2023 model years have the lowest rates, from {r:2023} for the 2023 to {r:2020} for the 2020, and the 2025 draws {r:2025}. The 2025 shares its recalls with the 2024."
+    ],
+    [
+      "Is the 2024 Tacoma reliable?",
+      "It draws {r:2024} complaints per 100,000, nearly double the 2025’s {r:2025}, and {rec:2024} recalls. We rate it Avoid on the numbers, and we’d want 25V-058 and 26V-514 shown as handled on any 2024 we considered."
+    ],
+    [
+      "Do Tacoma hybrids have more problems?",
+      "NHTSA counts the Tacoma and Tacoma Hybrid listings together here, so these figures can’t split them. The 2024 and 2025 shock recall and the 2025 driveshaft recall cover hybrid and gas trucks."
+    ],
+    [
+      "How do I check a used Tacoma for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Toyota dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-TACOMA-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=toyota&model=tacoma&modelYear=2022",
+      "scope": "Tacoma and Tacoma Hybrid complaint counts and components by model year 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-03",
+      "title": "Good Car Bad Car: Toyota Tacoma sales figures",
+      "url": "https://www.goodcarbadcar.net/toyota-tacoma-sales-figures/",
+      "scope": "U.S. Tacoma sales 2016 to 2018",
+      "note": "read November 21, 2026 through a page summary, which says it can’t tell whether the totals include the Tacoma Hybrid"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-04",
+      "title": "Toyota: December 2019 year-end sales",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-december-2019-year-end-sales-300980867.html",
+      "scope": "U.S. Tacoma sales 2019",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-30)"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-05",
+      "title": "Toyota: December 2021 year-end sales",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-us-december-year-end-2021-sales-301453684.html",
+      "scope": "U.S. Tacoma sales 2020 and 2021",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-29)"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-06",
+      "title": "Toyota: 2023 U.S. sales results",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2023-us-sales-results-302025453.html",
+      "scope": "U.S. Tacoma sales 2022 and 2023",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-28)"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-07",
+      "title": "Toyota: 2025 U.S. sales results",
+      "url": "https://www.prnewswire.com/news-releases/toyota-motor-north-america-reports-2025-us-sales-results-302652746.html",
+      "scope": "U.S. Tacoma sales 2024 and 2025; the release lists Tacoma Hybrid separately and we could not confirm the Tacoma row includes it",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-27)"
+    },
+    {
+      "id": "VEH-PRB-TACOMA-08",
+      "title": "Wikipedia: Toyota Tacoma",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Tacoma",
+      "scope": "generation years, engines and transmissions",
+      "note": "read November 21, 2026 through a page summary; check against Toyota before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "TOYOTA",
     "years": [

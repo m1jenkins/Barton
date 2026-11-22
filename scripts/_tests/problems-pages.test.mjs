@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { csvRows, htmlDocument } from '../metro-release.mjs';
-import { baselineOf, firstYear, problemsCars, renderProblemsPages, yearFigures } from '../render-problems-pages.mjs';
+import { baselineOf, firstYear, startOf, problemsCars, renderProblemsPages, yearFigures } from '../render-problems-pages.mjs';
 
 const root = new URL('../../', import.meta.url);
 const read = name => readFile(new URL(name, root), 'utf8');
@@ -104,7 +104,7 @@ test('verdicts follow the stated rule or say why they moved one step, and the ra
   for (const car of ready) {
     const figures = yearFigures(car);
     const baseline = baselineOf(figures);
-    for (let year = firstYear; year <= car.nhtsa.years[1]; year++) {
+    for (let year = startOf(car); year <= car.nhtsa.years[1]; year++) {
       const entry = car.verdicts[year];
       assert.ok(entry && ['buy', 'check', 'avoid'].includes(entry[0]) && entry[1], `${car.key} ${year} verdict and reason`);
       const item = figures.find(figure => figure.year === year);
@@ -113,7 +113,8 @@ test('verdicts follow the stated rule or say why they moved one step, and the ra
       if (entry[0] !== expected) assert.match(entry[2] ?? '', new RegExp(`^${expected} to ${entry[0]}: .{15,}`), `${car.key} ${year} is ${entry[0]} but the rule says ${expected}; give the override reason as "${expected} to ${entry[0]}: why"`);
       else assert.equal(entry[2], undefined, `${car.key} ${year} follows the rule and needs no override note`);
     }
-    for (let year = 2016; year <= 2025; year++) assert.ok(car.sales[year] > 50000, `${car.key} sales for ${year}`);
+    // A partial first sales year (firstSold) only needs some sales; every later year needs at least 10,000 (the Ranger sold 32,334 in 2023), which still catches a missing year.
+    for (let year = startOf(car); year <= 2025; year++) assert.ok(car.sales[year] > (year === car.firstSold ? 0 : 10000), `${car.key} sales for ${year}`);
     for (const [year, published] of Object.entries(car.publishedRates ?? {})) {
       const fresh = figures.find(figure => figure.year === Number(year)).fresh;
       assert.ok(Math.abs(fresh - published) / published <= 0.05, `${car.key} ${year}: published ${published} against ${fresh.toFixed(1)} from today's counts`);

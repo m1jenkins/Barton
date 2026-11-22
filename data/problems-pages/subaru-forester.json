@@ -1,7 +1,333 @@
 {
   "key": "subaru-forester",
   "name": "Subaru Forester",
-  "status": "stub",
+  "status": "ready",
+  "short": "Forester",
+  "make": "Subaru",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Subaru Forester Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Subaru Forester model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the 2019 and 2020 windshield complaints and what owners report on Reddit.",
+  "h1": "Subaru Forester problems by year: years to avoid and what owners report",
+  "card": "The best and worst Forester years, the 2019 and 2020 windshield complaints, the passenger air bag sensor recall, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2022–2025",
+  "avoidYears": "2016–2020",
+  "answer": [
+    "The best used Foresters are the 2022 to 2025 model years, which draw {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a yardstick of {base} for this car. Skip the 2016 to 2020: they draw {r:2016}, {r:2017}, {r:2018}, {r:2019} and {r:2020}, and the 2019 and 2020 stand out for one part, with visibility named in {k:2019:VISIBILITY} of the 2019’s {c:2019} complaints and {k:2020:VISIBILITY} of the 2020’s {c:2020}. In the complaint text we read, nearly all of those are cracked windshields. The 2021 ({r:2021}) is Check first, and the 2022 sits right at the yardstick.",
+    "The rates divide each model year’s NHTSA complaints by Subaru’s U.S. Forester sales, which count gas and hybrid Foresters together. Sales were low in 2022 (114,096 against 152,566 in 2023), which lifts that year’s rate, and the 2025 is a redesign with {c:2025} complaints and {rec:2025} recalls. The 2026 is too new to rate and has a do-not-drive ball joint recall. Our <a href=\"{guide}\">Forester price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Sales come from Subaru’s year-end releases for 2019 to 2025, the same figures our Forester comparison pages use, and from Good Car Bad Car’s Forester table for 2016 to 2018.",
+  "sales": {
+    "2016": 178593,
+    "2017": 177563,
+    "2018": 171613,
+    "2019": 180179,
+    "2020": 176996,
+    "2021": 154723,
+    "2022": 114096,
+    "2023": 152566,
+    "2024": 175521,
+    "2025": 175070
+  },
+  "publishedRates": {
+    "2019": 463,
+    "2020": 341,
+    "2021": 139,
+    "2022": 89,
+    "2023": 51,
+    "2024": 18,
+    "2025": 59
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "Air bags ({k:2016:AIR BAGS}) and electrical ({k:2016:ELECTRICAL SYSTEM}) lead {c:2016} complaints. Recall 19V-701 covers the passenger air bag sensor harness, and recall 16V-162 a cracked turbo duct on 2.0XT cars."
+    ],
+    "2017": [
+      "avoid",
+      "Air bags lead ({k:2017:AIR BAGS}), then visibility ({k:2017:VISIBILITY}) and electrical ({k:2017:ELECTRICAL SYSTEM}). Most of the air bag complaints mention the passenger seat’s warning light, which recall 19V-701 covers."
+    ],
+    "2018": [
+      "avoid",
+      "Visibility ({k:2018:VISIBILITY}) and air bags ({k:2018:AIR BAGS}) lead. Recalls 19V-701 (air bag sensor harness) and 21V-587 (fuel pump) apply."
+    ],
+    "2019": [
+      "avoid",
+      "The highest rate in the table. Visibility is {k:2019:VISIBILITY} of {c:2019}, nearly all about cracked windshields in the text we read. Recalls cover the PCV valve (19V-856), the rear stabilizer bracket bolts (21V-263) and the steering (19V-065)."
+    ],
+    "2020": [
+      "avoid",
+      "Visibility again, {k:2020:VISIBILITY} of {c:2020}, nearly all windshields. No recall covers it, and NHTSA lists no recalls for the 2020 itself."
+    ],
+    "2021": [
+      "check",
+      "Visibility falls to {k:2021:VISIBILITY} of {c:2021} complaints. NHTSA lists no recalls for the 2021."
+    ],
+    "2022": [
+      "buy",
+      "Visibility ({k:2022:VISIBILITY}) leads a count of {c:2022} that is lifted by low sales. Recall 23V-755 covers a transmission inhibitor switch that can fail and cut the reverse lights and rearview camera."
+    ],
+    "2023": [
+      "buy",
+      "{c:2023} complaints, led by unspecified parts ({k:2023:UNKNOWN OR OTHER}) and automatic emergency braking ({k:2023:FORWARD COLLISION AVOIDANCE}). Recall 23V-754 covers a front driveshaft that can crack."
+    ],
+    "2024": [
+      "buy",
+      "The lowest rate in the table, {r:2024}, on {c:2024} complaints. Recalls cover the front driveshaft (23V-754) and the engine water pipe bolts (23V-723)."
+    ],
+    "2025": [
+      "buy",
+      "The redesign: {c:2025} complaints, led by visibility ({k:2025:VISIBILITY}) and the fuel system ({k:2025:FUEL/PROPULSION SYSTEM}). Recalls cover 18-inch wheels (25V-033), child seat anchor bolts (25V-419) and a certification label (26V-436)."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints and {rec:2026} recalls so far, among them ball joint recall 26V-685, which tells owners not to drive an affected car until it is fixed. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2019 and 2020 bars are tall mostly because of windshield complaints. The 2022 bar is lifted by low sales, 114,096 against 152,566 in 2023.",
+  "generations": [
+    {
+      "name": "Fourth generation",
+      "years": "2014–2018",
+      "text": "The SJ Forester went on sale in March 2013 with a 170-hp 2.5-liter, a 250-hp turbo that rose to 268 hp, a six-speed manual or CVT, and a facelift for 2017 (Wikipedia). The 2016 to 2018 years on this page are its last three."
+    },
+    {
+      "name": "Fifth generation",
+      "years": "2019–2025",
+      "text": "The SK Forester had one U.S. engine, a 182-hp 2.5-liter, with a CVT only, and a facelift for 2022 that introduced the Wilderness trim (Wikipedia). The 2025 is a redesign, which our Forester price guide covers."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Windshields, 2019 and 2020",
+      "component": "VISIBILITY",
+      "years": [
+        2019,
+        2020
+      ],
+      "text": "NHTSA’s visibility category holds {k:2019:VISIBILITY} complaints on the 2019 and {k:2020:VISIBILITY} on the 2020, against {k:2022:VISIBILITY} on the 2022. In the text we read, almost all describe a windshield cracking, and a few mention EyeSight, Subaru’s camera-based driver assist. No recall covers it, so a VIN lookup shows nothing; ask when the glass was last replaced."
+    },
+    {
+      "title": "Passenger air bag sensor, 2016 to 2018",
+      "component": "AIR BAGS",
+      "years": [
+        2016,
+        2018
+      ],
+      "text": "Recall 19V-701 covers 2015 to 2018 Foresters with heated seats whose front passenger occupant detection connection can loosen, which can switch the passenger air bag off with someone in the seat. Most of the air bag complaints we read mention the seat’s warning light. Dealers inspect and replace the harness, free."
+    },
+    {
+      "title": "Engine on the 2019",
+      "component": "ENGINE",
+      "years": [
+        2019,
+        2019
+      ],
+      "text": "Recall 19V-856 covers a PCV (crankcase ventilation) valve that can separate and let parts enter the engine, which can cost power. Dealers replace the valve, or the short block engine if the parts can’t be found, free. The 2019 has {k:2019:ENGINE} engine complaints."
+    },
+    {
+      "title": "Electrical faults across the years",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2016,
+        2020
+      ],
+      "text": "Electrical is among the four leading parts on every year from 2016 to 2020 ({k:2016:ELECTRICAL SYSTEM} on the 2016, {k:2019:ELECTRICAL SYSTEM} on the 2019). NHTSA’s field doesn’t say what failed, so the count shows only which part owners pointed to."
+    },
+    {
+      "title": "Automatic emergency braking, recent years",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2022,
+        2026
+      ],
+      "text": "The system draws a steady trickle on the 2022 to 2026 ({k:2022:FORWARD COLLISION AVOIDANCE}, {k:2023:FORWARD COLLISION AVOIDANCE} and {k:2025:FORWARD COLLISION AVOIDANCE} complaints on the 2022, 2023 and 2025). No recall or open investigation names the Forester’s system."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "The head gasket and oil worries are about older engines than the table’s 2016 and later years, and the windshield pattern behind the 2019 and 2020 rates barely shows up in the threads, so the complaint counts here carry that part of the record."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "26V-685",
+      "years": "2026",
+      "title": "Left-front ball joint",
+      "text": "A castle nut on the lower control arm ball joint may be loose, which can let the joint separate and cost control of the car. Subaru tells owners not to drive an affected car until the dealer has replaced the joint, free."
+    },
+    {
+      "id": "19V-701",
+      "years": "2015–2018 with heated seats",
+      "title": "Passenger air bag sensor harness",
+      "text": "A loosening connection in the passenger seat’s occupant detection system can switch off the passenger air bag when someone is in the seat. Dealers inspect and replace the harness, free."
+    },
+    {
+      "id": "19V-856",
+      "years": "2019",
+      "title": "PCV valve",
+      "text": "An aluminum crankcase ventilation valve can separate and send parts into the engine, which can cost power while driving. Dealers replace the valve, or the engine block assembly if needed, free."
+    },
+    {
+      "id": "23V-754",
+      "years": "2023–2024",
+      "title": "Front driveshaft",
+      "text": "The outer race of the front driveshafts can crack and break, which can cut drive power or let the car roll away in Park. Dealers inspect and replace the shafts, free."
+    },
+    {
+      "id": "23V-723",
+      "years": "2024",
+      "title": "Engine water pipe bolts",
+      "text": "Loose bolts can let a coolant pipe leak onto hot exhaust. The cars covered had not been delivered when it was filed, so owners got no letter; the VIN lookup says if yours was affected."
+    },
+    {
+      "id": "23V-755",
+      "years": "2022",
+      "title": "Transmission inhibitor switch",
+      "text": "Water can enter a poorly welded switch and cause it to fail, which can leave the reverse lights and rearview camera off. Dealers replace the switch, free."
+    },
+    {
+      "id": "25V-033",
+      "years": "2025",
+      "title": "18-inch wheels",
+      "text": "Alloy wheels with an incorrect lug seat can attach badly and cost stability. Dealers inspect and replace the wheels, free."
+    },
+    {
+      "id": "26V-346 and 25V-889",
+      "years": "2026",
+      "title": "Moonroof glass and hatch bracket",
+      "text": "The moonroof’s glass panel may not be bonded properly and can detach; the rear hatch support bracket may be wrong or backwards and let the hatch fall. Dealers inspect and replace the parts, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "PE19009",
+      "status": "closed",
+      "years": "2016–2018",
+      "title": "Occupant detection system failure",
+      "text": "NHTSA opened the evaluation on August 6, 2019 after 51 complaints that the passenger air bag sensor failed or switched the air bag off with an adult in the seat on 2016 to 2018 Foresters. Subaru filed a defect report on October 3, 2019 covering 366,282 2015 to 2018 Foresters with seat heaters, and recall 19V-701 followed. NHTSA closed the evaluation on January 22, 2020."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Passenger air bag recall on a 2016 to 2018.",
+      "text": "Confirm 19V-701 is done, and on a car with heated seats check that the passenger air bag warning light is off with someone in the seat."
+    },
+    {
+      "title": "The windshield on a 2017 to 2021.",
+      "text": "Look for chips and cracks in the glass, ask when it was last replaced, and ask whether the replacement kept the camera system calibrated. No recall covers it."
+    },
+    {
+      "title": "The 2019 recalls.",
+      "text": "Confirm 19V-856 (PCV valve), 21V-263 (rear stabilizer bracket bolts) and 19V-065 (steering) are closed on a 2019."
+    },
+    {
+      "title": "Driveshaft and water pipe on a 2023 or 2024.",
+      "text": "Confirm 23V-754 (driveshaft) and, on a 2024, 23V-723 (engine water pipe)."
+    },
+    {
+      "title": "The ball joint on a 2026.",
+      "text": "Ask whether 26V-685 is done and get the repair in writing. Subaru tells owners not to drive an affected car until it is fixed."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Reddit owners report head gasket leaks and oil consumption on older engines, CVT faults on 2014 to 2016 cars and rusted rear strut towers. Have a shop that isn’t the seller’s check coolant and oil level, the rear suspension and the CVT before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Forester has {c:2026} NHTSA complaints and {rec:2026} recalls so far, including ball joint recall 26V-685, so it is too new to rate. The 2022 to 2024 record describes the previous design, so it says little about the redesign, and a used 2022 to 2024 has fewer open questions than a new one.",
+    "Our <a href=\"{guide}\">Forester price guide</a> has the 2026 prices, Subaru’s incentives and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Subaru Forester year?",
+      "The 2019, at {r:2019} NHTSA complaints per 100,000 sold, then the 2020 at {r:2020}. Visibility, which in the complaint text we read means cracked windshields, accounts for {k:2019:VISIBILITY} of the 2019’s {c:2019} complaints."
+    ],
+    [
+      "What is the best used Forester year?",
+      "The 2022 to 2025 model years, at {r:2022}, {r:2023}, {r:2024} and {r:2025} complaints per 100,000 sold. The 2024 is lowest at {r:2024}, though it has two recalls."
+    ],
+    [
+      "Do Subaru Foresters have a windshield problem?",
+      "NHTSA complaints on the 2019 and 2020 Forester name visibility {k:2019:VISIBILITY} and {k:2020:VISIBILITY} times, and nearly all of those we read describe a cracked windshield. No recall covers it, so a VIN lookup won’t show it."
+    ],
+    [
+      "Is the 2025 Subaru Forester reliable?",
+      "It is a redesign and the early record is mixed: a rate of {r:2025}, {c:2025} complaints and three recalls (25V-033, 25V-419 and 26V-436). We’d buy one with the recalls confirmed."
+    ],
+    [
+      "How do I check a used Forester for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Subaru dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-FORESTER-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=subaru&model=forester&modelYear=2019",
+      "scope": "every Forester listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only, plus our own hand tally of key words in the cached complaint text for the visibility and air bag complaints"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-03",
+      "title": "NHTSA: investigation PE19009",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE19009",
+      "scope": "closed preliminary evaluation of passenger occupant detection failures on 2016 to 2018 Foresters",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-04",
+      "title": "Subaru: December 2025 and year-end sales",
+      "url": "https://media.subaru.com/pressrelease/2410/1/subaru-america-reports-december-2025-year-end-sales",
+      "scope": "U.S. Forester sales for 2025 (175,070) and 2024 (175,521)",
+      "note": "reused from the Forester versus CR-V page (VEH-FVC-14), read there on November 18, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-05",
+      "title": "Subaru: December 2024 and year-end sales",
+      "url": "https://media.subaru.com/pressrelease/2265/1/subaru-america-reports-december-sales-up-7.1-percent",
+      "scope": "U.S. Forester sales for 2024 and 2023 (152,566)",
+      "note": "reused from the Forester versus CR-V page (VEH-FVC-15), read there on November 18, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-06",
+      "title": "Subaru: December 2022 and year-end sales",
+      "url": "https://media.subaru.com/pressrelease/2004/1/subaru-america-inc-reports-december-2022-year-end",
+      "scope": "U.S. Forester sales for 2022 (114,096) and 2021 (154,723)",
+      "note": "reused from the Forester versus CR-V page (VEH-FVC-16), read there on November 18, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-07",
+      "title": "Subaru: December 2020 and year-end sales",
+      "url": "https://media.subaru.com/pressrelease/1703/120/subaru-america-inc-announces-december-2020-year-end",
+      "scope": "U.S. Forester sales for 2020 (176,996) and 2019 (180,179)",
+      "note": "reused from the Forester versus CR-V page (VEH-FVC-17), read there on November 18, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-08",
+      "title": "Good Car Bad Car: Subaru Forester sales figures",
+      "url": "https://www.goodcarbadcar.net/subaru-forester-sales-figures/",
+      "scope": "U.S. Forester sales 2016 to 2018 (178,593, 177,563 and 171,613), and a cross-check of 2019 to 2025",
+      "note": "read November 21, 2026 through a page summary; a third-party compilation, and 2016 to 2018 rest on it alone"
+    },
+    {
+      "id": "VEH-PRB-FORESTER-09",
+      "title": "Wikipedia: Subaru Forester",
+      "url": "https://en.wikipedia.org/wiki/Subaru_Forester",
+      "scope": "generations, U.S. engines and the 2017 and 2022 facelifts",
+      "note": "read November 21, 2026 through a page summary that stopped before the sixth generation; check against Subaru before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "SUBARU",
     "years": [

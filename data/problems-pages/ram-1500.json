@@ -1,7 +1,351 @@
 {
   "key": "ram-1500",
   "name": "Ram 1500",
-  "status": "stub",
+  "status": "ready",
+  "short": "Ram 1500",
+  "make": "Ram",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Ram 1500 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Ram 1500 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Ram 1500 problems by year: years to avoid and what owners report",
+  "card": "Which Ram 1500 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2020–2021, 2023–2024",
+  "avoidYears": "2016",
+  "answer": [
+    "The best used Ram 1500s are the 2023 and 2024 model years, at {r:2023} and {r:2024} NHTSA owner complaints per 100,000 sold, and the 2020 and 2021 at {r:2020} and {r:2021}. Skip the 2016: it draws {r:2016}, with engine ({k:2016:ENGINE}), steering ({k:2016:STEERING}) and brake ({k:2016:SERVICE BRAKES}) complaints each in the hundreds. The 2019 ({r:2019} and {rec:2019} recalls, the most of any year), the 2017, the 2022 and the 2025 ({r:2025}, with {k:2025:ELECTRICAL SYSTEM} of {c:2025} complaints naming the electrical system) are Check first.",
+    "These counts include the Ram 1500 Classic, the old-body truck Ram sold beside the new one from 2019 to 2024, because NHTSA files its complaints and recalls under the same 1500 name and we can’t separate them. The rates also rest on weak sales figures: Ram published no 1500-only total before 2024, so 2016 to 2023 divide by all Ram pickups (1500, Classic and heavy duty), which understates those rates, while 2024 and 2025 divide by Ram’s light-duty pickups. Treat the step from the 2023 to the 2024 as partly a change of denominator. The 2026 is too new to rate; our <a href=\"{guide}\">Ram 1500 price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Ram published no 1500-only sales before 2024. The 2016 to 2021 figures are Ram pickup totals (1500, Classic and heavy duty) from carfigures.com, 2022 is the Ram pickup total reported by Auto Dealer Today and 2023 is Motor1’s Ram figure; 2024 and 2025 are Ram’s light-duty pickups from the FCA US release. The first eight years therefore divide by more trucks than the 1500 and understate its rate.",
+  "sales": {
+    "2016": 487558,
+    "2017": 500723,
+    "2018": 536980,
+    "2019": 633694,
+    "2020": 563676,
+    "2021": 569388,
+    "2022": 468344,
+    "2023": 444926,
+    "2024": 187013,
+    "2025": 204139
+  },
+  "publishedRates": {
+    "2024": 42,
+    "2025": 187
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "{r:2016} per 100,000, the highest in the table, though on all Ram pickups. Engine ({k:2016:ENGINE}), steering ({k:2016:STEERING}), brakes ({k:2016:SERVICE BRAKES}) and fuel ({k:2016:FUEL/PROPULSION SYSTEM}) each draw hundreds, and NHTSA’s open RQ23003 covers loss of power steering assist on 2013–2016 trucks."
+    ],
+    "2017": [
+      "check",
+      "{r:2017} per 100,000. Steering ({k:2017:STEERING}) and engine ({k:2017:ENGINE}) lead; recalls cover a differential pin screw that can loosen (17V-198) and a fuel tank control valve (17V-434)."
+    ],
+    "2018": [
+      "buy",
+      "{r:2018} per 100,000, the lowest of the 2016 to 2019 years. Electrical ({k:2018:ELECTRICAL SYSTEM}) and engine ({k:2018:ENGINE}) lead; recalls include rear differential fluid (18V-556) and a rear driveshaft weld (19V-324)."
+    ],
+    "2019": [
+      "check",
+      "{r:2019} per 100,000 and {rec:2019} recalls, the most of any year, including air bags disabled by corrupted memory (19V-407) and a contaminated power steering gear (19V-812). Electrical ({k:2019:ELECTRICAL SYSTEM}) and steering ({k:2019:STEERING}) lead. The count includes Classic trucks."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000. Engine ({k:2020:ENGINE}) and electrical ({k:2020:ELECTRICAL SYSTEM}) lead; the air bag memory recall (19V-407) and a seat belt retractor recall (20V-580) apply."
+    ],
+    "2021": [
+      "buy",
+      "{r:2021} per 100,000, at the yardstick. Engine leads ({k:2021:ENGINE} of {c:2021}), and recall 23V-265 covers 5.7-liter eTorque trucks whose engine software can cause a stall."
+    ],
+    "2022": [
+      "check",
+      "{r:2022} per 100,000, but engine ({k:2022:ENGINE} of {c:2022}) leads and NHTSA’s open PE24018 covers engine stalls on 2022 trucks with the 5.7-liter eTorque system.",
+      "buy to check: NHTSA’s open PE24018 covers engine stalls on 2022 trucks and engine is the top complaint part"
+    ],
+    "2023": [
+      "buy",
+      "{r:2023} per 100,000 on {c:2023} complaints. Electrical leads ({k:2023:ELECTRICAL SYSTEM}); recalls cover a transmission control unit weld (24V-413) and the turn signal self-cancel feature (24V-729)."
+    ],
+    "2024": [
+      "buy",
+      "{r:2024} per 100,000 on only {c:2024} complaints, the lowest count in the table, against Ram’s light-duty sales. {rec:2024} recalls include ABS software that can disable stability control (24V-653)."
+    ],
+    "2025": [
+      "check",
+      "{r:2025} per 100,000, with {k:2025:ELECTRICAL SYSTEM} of {c:2025} complaints naming the electrical system. Recalls cover an instrument cluster that goes blank (25V-826, 26V-225), headlight software (24V-942) and front hub encoder rings that can disable stability control (24V-794)."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales, with {rec:2026} recalls already: headlight wiring (26V-421), a side air bag connector (26V-622) and tire pressure sensors (26V-623)."
+    ]
+  },
+  "chartNote": "The 2016 to 2023 bars divide by all Ram pickups, heavy duty included, and the 2024 and 2025 bars by light-duty pickups, so the step from 2023 to 2024 is partly the denominator. The 2025 bar is tall because {c:2025} complaints land on 204,139 sales after the 2024’s {c:2024}.",
+  "generations": [
+    {
+      "name": "Fourth generation (DS)",
+      "years": "2009–2018",
+      "text": "The 2016 to 2018 model years are this truck. It got a new front end, a 3.6-liter Pentastar V6, an optional eight-speed automatic and electric power steering for 2013, and a 3.0-liter EcoDiesel for 2014 (Wikipedia)."
+    },
+    {
+      "name": "Ram 1500 Classic",
+      "years": "2019–2024",
+      "text": "When the fifth generation arrived, Ram kept the old-body truck in production as a lower-priced, commercial-oriented model through the 2024 model year (Wikipedia). NHTSA files its complaints and recalls under the 1500 name, so the 2019 to 2024 counts here include it, and Ram’s sales totals include it too."
+    },
+    {
+      "name": "Fifth generation (DT)",
+      "years": "2019–",
+      "text": "It debuted at the January 2018 Detroit auto show as a 2019 model with an optional eTorque mild-hybrid system on the 5.7-liter Hemi, a 12-inch touchscreen and about 225 pounds less weight. The 2025 model year swapped the Hemi for the 3.0-liter Hurricane twin-turbo six, and the Hemi V8 returned for 2026 (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2016,
+        2022
+      ],
+      "text": "Engine tops the 2016 ({k:2016:ENGINE}) and the 2020 to 2022 trucks ({k:2020:ENGINE}, {k:2021:ENGINE} and {k:2022:ENGINE}). Recall 23V-265 covers 2021 5.7-liter eTorque trucks whose engine software can stall the engine, and NHTSA’s open PE24018 looks at stalls on 2022 trucks that FCA says may have an electrical cause. The 3.0-liter EcoDiesel (2014–2019) has its own recalls: 19V-757 (a cracking EGR cooler that can cause a fire in the intake manifold) and 22V-406 (a high-pressure fuel pump that can starve the engine)."
+    },
+    {
+      "title": "Steering",
+      "component": "STEERING",
+      "years": [
+        2016,
+        2019
+      ],
+      "text": "Steering leads the 2016 ({k:2016:STEERING}), the 2017 ({k:2017:STEERING}) and the 2019 ({k:2019:STEERING}). Recall 16V-167 covers a short on the electric power steering board of 2015–2016 trucks, 19V-812 covers a contaminated steering gear on 2019 trucks, and NHTSA’s open RQ23003 looks at 380 reports of lost power steering assist on 2013–2016 trucks that may fall outside the 2016 recall."
+    },
+    {
+      "title": "Electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2018,
+        2026
+      ],
+      "text": "Electrical is the top part on the 2018, the 2019 ({k:2019:ELECTRICAL SYSTEM}), the 2023 to 2026 trucks and the 2025 above all ({k:2025:ELECTRICAL SYSTEM}). NHTSA’s label names a part, not a failure. The 2025–2026 instrument cluster recalls (25V-826, 26V-225) and the 2019 cluster recall (19V-556) are electrical, and owners on Reddit report eTorque faults and dead batteries."
+    },
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2021,
+        2022
+      ],
+      "text": "Power train draws {k:2021:POWER TRAIN} complaints on the 2021 and {k:2022:POWER TRAIN} on the 2022. Recall 24V-413 covers a weld in the transmission control unit on 2023 trucks, and 20V-080 covered a transfer case gear on 2019 four-wheel-drive trucks; neither explains the 2021 and 2022 counts."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Owners on Reddit report more than 100,000 miles on the 5.7 Hemi without major repairs and trouble-free early miles on the Hurricane six. What they say goes wrong is the Hemi’s lifter and camshaft failures and cracked exhaust manifolds, eTorque mild-hybrid faults including dead batteries, and air suspension failures in cold weather. The threads rarely name a model year, so they agree with the engine and electrical counts without confirming any one year."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "17V-198",
+      "years": "2016–2017",
+      "title": "Differential pin screw",
+      "text": "The differential pin retaining screw can come loose while driving, which can break or lock the differential. Dealers inspect and replace the retaining pin, free."
+    },
+    {
+      "id": "16V-167 and 19V-812",
+      "years": "2015–2016 and 2019",
+      "title": "Power steering contamination",
+      "text": "Contamination in the electric power steering unit can short out and cut assist. Dealers replace the unit (2015–2016) or the gear assembly (2019), free."
+    },
+    {
+      "id": "19V-407",
+      "years": "2019–2020",
+      "title": "Air bags disabled",
+      "text": "Corrupted memory in the occupant restraint controller can disable the air bags and seat belt pretensioners. Dealers reprogram or replace the controller, free."
+    },
+    {
+      "id": "19V-757",
+      "years": "2014–2019 EcoDiesel",
+      "title": "EGR cooler fire risk",
+      "text": "The EGR cooler on 3.0-liter diesels may crack and let coolant vapor combust in the intake manifold. Dealers replace the cooler and inspect the manifold, free."
+    },
+    {
+      "id": "23V-265",
+      "years": "2021 5.7-liter eTorque",
+      "title": "Engine stall",
+      "text": "Powertrain control software can create an incorrect fuel mixture and stall the engine. Dealers update the calibration, free."
+    },
+    {
+      "id": "24V-653",
+      "years": "2019, 2021–2024",
+      "title": "Stability control disabled",
+      "text": "An ABS control module software fault may disable electronic stability control. Dealers update the software, free."
+    },
+    {
+      "id": "25V-826 and 26V-225",
+      "years": "2025–2026",
+      "title": "Blank instrument cluster",
+      "text": "A software error can leave the instrument cluster display blank or failed, hiding warning lights and gear selection. Dealers update the software or replace the cluster, free."
+    },
+    {
+      "id": "26V-495",
+      "years": "2019–2026",
+      "title": "Rear seat belt anchors",
+      "text": "The second-row center and left-side seat belt buckle anchors may have been installed wrong. Dealers inspect and attach them to the body, free; owner letters were expected beginning August 18, 2026."
+    },
+    {
+      "id": "26V-756",
+      "years": "2022–2024 Classic",
+      "title": "ABS module and brake lights",
+      "text": "Filed November 19, 2026 for the Classic: ABS software may misread the brake pedal, which can light the brake lights wrongly, let the truck move unintentionally or disable stability control. Dealers update the software, free; owner letters are expected January 14, 2027."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "PE24018",
+      "status": "open",
+      "years": "2022",
+      "title": "Engine stalls on 5.7-liter eTorque trucks",
+      "text": "NHTSA opened it in July 2024 after 80 complaints that 2022 Ram 1500s and Jeep Wagoneers with the 5.7-liter eTorque system stall, often at slow speed, with a battery warning light. FCA told NHTSA the cause is probably not the fuel mixture behind recall 23V-265 and may be electrical."
+    },
+    {
+      "id": "RQ23003",
+      "status": "open",
+      "years": "2013–2016",
+      "title": "Loss of power steering assist",
+      "text": "NHTSA opened a recall query in August 2023 after 380 reports of intermittent or complete loss of power steering assist, to check whether FCA’s 2016 recall 16V-167 (440 trucks) covered the right trucks."
+    },
+    {
+      "id": "PE16014",
+      "status": "closed",
+      "years": "2013–2016 and later",
+      "title": "Rollaway with the rotary shifter",
+      "text": "NHTSA closed it in January 2024. It found no design or manufacturing defect behind 43 rollaway incidents, and said FCA’s customer service notifications, which secure the vehicle when the driver exits without reaching Park, reduced them."
+    }
+  ],
+  "checks": [
+    {
+      "title": "Whether it is a Classic.",
+      "text": "On a 2019 to 2024 truck, ask whether it is the Ram 1500 Classic or the new body. They have different recalls: the Classic has 26V-756 and the new body has the 2025 and 2026 cluster recalls."
+    },
+    {
+      "title": "The 5.7-liter eTorque engine on a 2021 or 2022.",
+      "text": "Confirm 23V-265 was done on a 2021, and ask a 2022’s seller about stalls, battery warning lights and low-voltage faults. PE24018 is still open."
+    },
+    {
+      "title": "The power steering on a 2016 or 2019.",
+      "text": "Ask for proof of 16V-167 or 19V-812, and have a shop check the steering on a 2016, since RQ23003 is open on trucks that may fall outside the recall."
+    },
+    {
+      "title": "The air bag and seat belt recalls.",
+      "text": "On a 2019 or 2020 confirm 19V-407, on a 2019 to 2026 truck 26V-495 (rear seat belt anchors), and on a 2019 or 2021 to 2024 truck 24V-653 (stability control)."
+    },
+    {
+      "title": "A 3.0-liter EcoDiesel.",
+      "text": "Confirm 19V-757 (EGR cooler) and 22V-406 (high-pressure fuel pump) were done, with receipts."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s scan for engine and battery codes, and check the air suspension if the truck has it."
+    }
+  ],
+  "newer": [
+    "The 2026 brings the Hemi back after the 2025’s Hurricane six, and NHTSA already lists {c:2026} complaints and {rec:2026} recalls for it, from headlight wiring to a side air bag connector. We wouldn’t call it more reliable than the 2023 and 2024 until its recall list stops growing.",
+    "If you are choosing between a new 2026 and a used 2023 or 2024, our <a href=\"{guide}\">Ram 1500 price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Ram 1500 years?",
+      "The 2016 draws {r:2016} NHTSA complaints per 100,000 sold, the highest, and the 2019 has {rec:2019} recalls, the most of any year. These rates divide by all Ram pickups, heavy duty included, so they understate the 1500’s own rate in every year before 2024."
+    ],
+    [
+      "What is the best used Ram 1500 year?",
+      "The 2023 and 2024 draw {r:2023} and {r:2024}, and the 2020 and 2021 draw {r:2020} and {r:2021}. The 2024 count is only {c:2024} complaints, and the step from 2023 to 2024 is partly a change in the sales figure behind the rate."
+    ],
+    [
+      "Do these Ram 1500 figures include the Classic?",
+      "Yes. NHTSA files the Ram 1500 Classic’s complaints and recalls under the same name, so the 2019 to 2024 counts include it, and the sales totals include it too."
+    ],
+    [
+      "Is the 2025 Ram 1500 reliable?",
+      "It draws {r:2025} complaints per 100,000, with {k:2025:ELECTRICAL SYSTEM} of {c:2025} naming the electrical system, and recalls for the instrument cluster, headlights and hub encoders. We rate it Check first."
+    ],
+    [
+      "How do I check a used Ram 1500 for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Ram dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-RAM1500-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=ram&model=1500&modelYear=2019",
+      "scope": "Ram 1500 complaint counts and components by model year 2016 to 2026 across the 1500, Classic, Crew Cab and Quad Cab listings, deduplicated by ODI number; NHTSA returns the Classic’s records under the same name",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-03",
+      "title": "NHTSA: investigation PE24018",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE24018",
+      "scope": "open investigation into engine stalls on 2022 Ram 1500s with the 5.7-liter eTorque system",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-04",
+      "title": "NHTSA: investigation RQ23003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ23003",
+      "scope": "open recall query into loss of power steering assist on 2013–2016 Ram 1500s",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-05",
+      "title": "NHTSA: investigation PE16014",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE16014",
+      "scope": "closed investigation into rollaway incidents with the rotary shifter",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-06",
+      "title": "carfigures.com: Ram pickup U.S. sales",
+      "url": "https://carfigures.com/us-market-brand/ram/ram-pickup",
+      "scope": "Ram pickup totals (1500, Classic and heavy duty) 2016 to 2021",
+      "note": "read November 21, 2026 through a page summary; the page’s 2022 and 2023 figures disagree with other sources and were not used"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-07",
+      "title": "Auto Dealer Today: Stellantis reports sixth quarter of sales declines",
+      "url": "https://www.autodealertodaymagazine.com/369743/stellantis-reports-6th-quarter-of-sales-declines",
+      "scope": "Ram pickup sales 2022 (468,344)",
+      "note": "read November 21, 2026 through a search summary only; the article corrects an earlier version that used the Ram brand total"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-08",
+      "title": "Motor1: best-selling trucks of 2023",
+      "url": "https://www.motor1.com/news/704848/best-selling-trucks-2023/",
+      "scope": "Ram sales 2023 (444,926); the article doesn’t say whether heavy-duty or Classic trucks are included",
+      "note": "read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-09",
+      "title": "FCA US: fourth-quarter and full-year 2025 U.S. sales results",
+      "url": "https://www.nasdaq.com/press-release/fca-us-fourth-quarter-total-sales-increase-4-year-over-year-reports-full-year-2025-us",
+      "scope": "Ram light-duty pickups 187,013 in 2024 and 204,139 in 2025",
+      "note": "reused from our F-150 vs Ram 1500 page (VEH-F1RM-44)"
+    },
+    {
+      "id": "VEH-PRB-RAM1500-10",
+      "title": "Wikipedia: Ram 1500",
+      "url": "https://en.wikipedia.org/wiki/Ram_1500",
+      "scope": "generation years, the Classic, engine changes for 2025 and 2026",
+      "note": "read November 21, 2026 through a page summary of the first part of the article; check against Ram before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "RAM",
     "years": [

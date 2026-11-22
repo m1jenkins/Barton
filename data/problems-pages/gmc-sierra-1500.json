@@ -1,7 +1,379 @@
 {
   "key": "gmc-sierra-1500",
   "name": "GMC Sierra 1500",
-  "status": "stub",
+  "status": "ready",
+  "short": "Sierra",
+  "make": "GMC",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "GMC Sierra 1500 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which GMC Sierra 1500 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "GMC Sierra 1500 problems by year: years to avoid and what owners report",
+  "card": "Which Sierra 1500 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2025, 2017",
+  "avoidYears": "2019, 2022",
+  "answer": [
+    "Few Sierras escape the engine question, so the best used year we can support is the 2025, at {r:2025} NHTSA owner complaints per 100,000 sold; the 2017, at {r:2017}, is the only other year the rules leave at Buy. Skip the 2019 and the 2022: they draw {r:2019} and {r:2022}, with {k:2019:ENGINE} and {k:2022:ENGINE} of their complaints naming the engine, and the 2022 adds {k:2022:STRUCTURE} complaints on structure, where NHTSA’s open recall query RQ26003 covers grille deflectors that detach. Everything else is Check first, mostly on the same engine evidence: NHTSA’s open EA25007 covers 6.2-liter V8 failures on 2019 to 2024 trucks.",
+    "The rates divide each model year’s NHTSA complaints by U.S. light-duty Sierra sales. They compare years with each other; they don’t predict one truck. The 2016 count is only {c:2016} complaints, which looks incomplete next to the {c:2017} for the 2017, so we don’t trust its rate. The 2026 is too new to rate; our <a href=\"{guide}\">Sierra price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales for 2019 to 2025 are GMC’s light-duty Sierra figures from Best-Selling-Cars’ GM tables. GM didn’t split light-duty from heavy-duty before 2019, so 2016 to 2018 are our estimate: Good Car Bad Car’s all-Sierra totals times 74%, the 2019 light-duty share (172,452 of 232,325).",
+  "salesShare": 0.742,
+  "salesRaw": {
+    "2016": 221680,
+    "2017": 217943,
+    "2018": 219554
+  },
+  "sales": {
+    "2016": 164550,
+    "2017": 161776,
+    "2018": 162972,
+    "2019": 172452,
+    "2020": 179239,
+    "2021": 178346,
+    "2022": 142404,
+    "2023": 189288,
+    "2024": 214819,
+    "2025": 230156
+  },
+  "publishedRates": {
+    "2019": 386,
+    "2020": 271,
+    "2021": 341,
+    "2022": 430,
+    "2023": 275,
+    "2024": 180,
+    "2025": 57
+  },
+  "verdicts": {
+    "2016": [
+      "check",
+      "{r:2016} per 100,000, but only {c:2016} complaints against {c:2017} for the 2017, so the count looks incomplete. {rec:2016} recalls include front control arm welds (16V-256) and, since September 2026, roof-rail air bag inflators (26V-611).",
+      "buy to check: the NHTSA count of 54 complaints looks incomplete next to the 2017’s 433, so the low rate can’t be trusted"
+    ],
+    "2017": [
+      "buy",
+      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; the brake vacuum pump recall 19V-645 applies."
+    ],
+    "2018": [
+      "check",
+      "{r:2018} per 100,000 on our estimated light-duty sales, but transmission and drivetrain is {k:2018:POWER TRAIN} of {c:2018} complaints and NHTSA lists no recall for it.",
+      "buy to check: transmission and drivetrain is 43% of the complaints and no recall on NHTSA’s list covers it"
+    ],
+    "2019": [
+      "avoid",
+      "{r:2019} per 100,000, with {k:2019:ENGINE} of {c:2019} complaints naming the engine. {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889), and EA25007 is open.",
+      "check to avoid: engine is 51% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2020": [
+      "check",
+      "{r:2020} per 100,000, with {k:2020:ENGINE} of {c:2020} complaints on the engine and {rec:2020} recalls, including 20V-650 (driveshaft weld).",
+      "buy to check: engine is 54% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2021": [
+      "check",
+      "{r:2021} per 100,000, just inside the Buy range, but {k:2021:ENGINE} of {c:2021} complaints name the engine, and recall 25V-274 covers 6.2-liter trucks from this year.",
+      "buy to check: engine is 62% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2022": [
+      "avoid",
+      "{r:2022} per 100,000, the highest in the table. Engine ({k:2022:ENGINE}) and structure ({k:2022:STRUCTURE}) lead; recall 25V-060 covers chrome grille deflectors and RQ26003 asks whether it went far enough.",
+      "check to avoid: engine is 44% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2023": [
+      "check",
+      "{r:2023} per 100,000, with engine ({k:2023:ENGINE}) and structure ({k:2023:STRUCTURE}) leading. RQ26003 on grille deflectors names the 2023 and EA25007 covers its 6.2-liter trucks.",
+      "buy to check: engine is 46% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2024": [
+      "check",
+      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 covers 6.2-liter trucks, and RQ26003 names the 2024 grille deflector.",
+      "buy to check: engine is 58% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000, the lowest of the rated years, on {c:2025} complaints, with engine still leading ({k:2025:ENGINE}) and the count still growing."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed."
+    ]
+  },
+  "chartNote": "The 2016 bar is nearly empty because NHTSA lists only {c:2016} complaints, not because the truck was trouble free. The 2016 to 2018 bars also rest on our estimated light-duty sales.",
+  "generations": [
+    {
+      "name": "Fourth generation (K2XX)",
+      "years": "2014–2018",
+      "text": "The 2016 to 2018 model years are this truck, with a 4.3-liter V6, 5.3- and 6.2-liter V8s and six- or eight-speed automatics; the 5.3 also came as an eAssist mild hybrid from 2016 to 2018 (Wikipedia). GM renamed it the Sierra Limited for 2019 and ended it in December 2019; it returned for 2022 as a stop-gap."
+    },
+    {
+      "name": "Fifth generation (T1XX)",
+      "years": "2019–",
+      "text": "Unveiled March 1, 2018 and on sale that September as a 2019 model. Engines were a 2.7-liter turbo four (2019–2021, High Output from 2022), a 4.3-liter V6 (2019–2021), 5.3- and 6.2-liter V8s, and a 3.0-liter Duramax diesel from 2020, with a 10-speed automatic standard on gas trucks (Wikipedia). The 2022 refresh brought a new front end and interior and the AT4X and Denali Ultimate trims."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2019,
+        2025
+      ],
+      "text": "Engine tops every year from 2019 to 2025: {k:2019:ENGINE} on the 2019, {k:2021:ENGINE} on the 2021. Recall 25V-274 covers 6.2-liter V8s from 2021 to 2024, where a connecting rod or crankshaft defect can lead to engine failure; dealers inspect and repair or replace the engine, free. NHTSA’s EA25007 counted 1,157 reports of 6.2-liter engine failure across GM trucks and SUVs, 173 of them outside the recall. Owners on Reddit also report 5.3 lifter and cylinder deactivation trouble on used trucks, and early problems on the 3.0 Duramax."
+    },
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2017,
+        2019
+      ],
+      "text": "Power train leads the 2017 ({k:2017:POWER TRAIN}) and the 2018 ({k:2018:POWER TRAIN}), with no recall on NHTSA’s list for it. NHTSA’s label spans the transmission, driveshaft and axles, so it doesn’t say which. Recall 20V-650 covers a driveshaft joint weld on 2019–2020 trucks that can separate the shaft and cut propulsion."
+    },
+    {
+      "title": "Structure",
+      "component": "STRUCTURE",
+      "years": [
+        2022,
+        2023
+      ],
+      "text": "Structure draws {k:2022:STRUCTURE} complaints on the 2022 and {k:2023:STRUCTURE} on the 2023. Recall 25V-060 covers the chrome front grille deflector on 2022 trucks, whose attachments can fracture and let it detach. NHTSA’s open recall query RQ26003 has 118 complaints of detachment on 2022 to 2024 Sierras, 21 of them after the recall repair."
+    },
+    {
+      "title": "Brakes",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2016,
+        2017
+      ],
+      "text": "Brakes are second on the 2017 ({k:2017:SERVICE BRAKES}). Recall 19V-645 (2014–2018 trucks) has dealers reprogram the brake control module because the vacuum pump’s output can fall over time and lengthen stopping distances."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Owners on Reddit report many trouble-free miles on 3.0 Duramax and V8 trucks and call a well-kept 5.3 good for 200,000 miles, but they raise the same engine worries as Silverado owners: 6.2 failures and anxiety about the recall repair, and 5.3 lifter and cylinder deactivation trouble on used trucks. The Sierra threads add the 3.0 Duramax (emissions faults, oil leaks and early engine issues), which NHTSA’s engine count can’t separate from the gas engines."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "25V-274",
+      "years": "2021–2024 6.2-liter",
+      "title": "Engine connecting rod and crankshaft",
+      "text": "Manufacturing defects in the connecting rod or crankshaft can lead to engine damage and failure. Dealers inspect the engine and repair or replace it as necessary, free."
+    },
+    {
+      "id": "19V-645",
+      "years": "2016–2018",
+      "title": "Brake vacuum pump",
+      "text": "The vacuum pump’s output can drop over time, reducing brake assist and lengthening stopping distances. Dealers reprogram the brake control module, free."
+    },
+    {
+      "id": "20V-650",
+      "years": "2019–2020",
+      "title": "Driveshaft joint weld",
+      "text": "A driveshaft joint may not have been welded properly and can separate while moving, cutting propulsion. Dealers replace the driveshaft, free."
+    },
+    {
+      "id": "19V-889",
+      "years": "2019",
+      "title": "ESC and ABS software",
+      "text": "A software error can disable stability control and ABS without lighting their warning lamps. Dealers reprogram the brake control module, free."
+    },
+    {
+      "id": "25V-060",
+      "years": "2022",
+      "title": "Chrome grille deflector",
+      "text": "The attachments that hold the chrome front grille deflector can fracture and let it detach, leaving a road hazard. Dealers reinforce or repair the attachment points, free."
+    },
+    {
+      "id": "24V-756",
+      "years": "2018",
+      "title": "Roof-rail air bag inflators",
+      "text": "An inflator end cap can detach or the inflator can rupture and throw fragments into the cabin. Dealers replace both roof-rail modules, free."
+    },
+    {
+      "id": "26V-611",
+      "years": "2016–2017",
+      "title": "Roof-rail air bag inflators, second campaign",
+      "text": "The same inflator fault on 2016–2017 trucks, filed September 24, 2026. Dealers replace both modules, free; owner letters were mailed October 21, 2026."
+    },
+    {
+      "id": "26V-289",
+      "years": "2026 4WD",
+      "title": "Transfer case",
+      "text": "A missing component in the transfer case can lock the front or rear wheels without warning. GM advises owners not to drive an affected truck until a dealer inspects and, if needed, replaces the transfer case, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA25007",
+      "status": "open",
+      "years": "2019–2024",
+      "title": "Loss of power from 6.2-liter engine failure",
+      "text": "NHTSA opened the engineering analysis on October 23, 2025 after 1,157 reports of L87 6.2-liter engine bearing failure, 173 of them outside recall 25V-274’s scope. Its opening summary names 2019 to 2024 Sierra 1500s and Chevrolet Silverado 1500s, among other GM trucks and SUVs."
+    },
+    {
+      "id": "RQ26003",
+      "status": "open",
+      "years": "2022–2024",
+      "title": "Upper grille deflector detachment",
+      "text": "NHTSA opened a recall query on October 9, 2026 after 118 complaints that the upper grille deflector detaches on 2022 to 2024 Sierras, some leading to a cracked windshield or evasive maneuvers. Recall 25V-060 covered only 2022 trucks with the chrome deflector."
+    },
+    {
+      "id": "PE21010",
+      "status": "closed",
+      "years": "2020–2021",
+      "title": "Air bag warning light",
+      "text": "NHTSA closed it in August 2023 after finding the failure rate low and the warning easy to spot, on trucks built during a seven-month pandemic production gap."
+    },
+    {
+      "id": "PE18012",
+      "status": "closed",
+      "years": "2014–2016",
+      "title": "Brake vacuum pump",
+      "text": "NHTSA closed it in April 2022 after GM’s special coverage for the vacuum pump and the later recall 19V-645."
+    }
+  ],
+  "checks": [
+    {
+      "title": "The 6.2-liter V8 on a 2021 to 2024.",
+      "text": "Ask for the dealer’s record showing the 25V-274 inspection was done and how the truck passed. EA25007 is open on engines the recall doesn’t cover."
+    },
+    {
+      "title": "The grille deflector on a 2022 to 2024.",
+      "text": "Recall 25V-060 covers only 2022 trucks with the chrome deflector, and RQ26003 reports detachments after the repair and on 2023 and 2024 trucks. Look at how the deflector is attached."
+    },
+    {
+      "title": "The 5.3 and 3.0 Duramax.",
+      "text": "Owners on Reddit report 5.3 lifter and cylinder deactivation trouble and 3.0 Duramax emissions faults and oil leaks. Ask for service records and have a shop scan for codes."
+    },
+    {
+      "title": "The driveshaft and brake module on a 2019 or 2020.",
+      "text": "Confirm 20V-650 (driveshaft weld) and, on a 2019, 19V-889 (stability control and ABS software)."
+    },
+    {
+      "title": "The roof-rail air bags on a 2016 to 2018.",
+      "text": "Recall 26V-611 (2016–2017) was filed in September 2026 and 24V-756 covers the 2018; the VIN lookup shows whether they are open."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the engine for codes, the transmission for shift faults and the front suspension before you sign."
+    }
+  ],
+  "newer": [
+    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Sierra already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025.",
+    "If you are choosing between a new 2026 and a used 2025, our <a href=\"{guide}\">Sierra price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst GMC Sierra years?",
+      "The 2019 and 2022. They draw {r:2019} and {r:2022} NHTSA complaints per 100,000 sold against {r:2025} for the 2025, with engine named in {k:2019:ENGINE} and {k:2022:ENGINE} complaints, and the 2022 adds the grille deflector recall query."
+    ],
+    [
+      "What is the best used Sierra year?",
+      "The 2025 draws {r:2025} complaints per 100,000 and the 2017 draws {r:2017}. The 2025 is still collecting complaints, so its rate will rise a little."
+    ],
+    [
+      "Why is the 2016 Sierra count so low?",
+      "NHTSA lists only {c:2016} complaints for the 2016 against {c:2017} for the 2017. We checked other listing names for the 2016 and found nothing more, so the count looks incomplete and we rate the year Check first."
+    ],
+    [
+      "Does the Sierra have the same engine problems as the Silverado?",
+      "Their 6.2-liter V8s share recall 25V-274 and investigation EA25007, and engine is the top complaint part on both trucks from 2019 to 2025. NHTSA counts complaints by part, not by engine, so these figures can’t say which engine."
+    ],
+    [
+      "How do I check a used Sierra for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a GMC dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-SIERRA-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=gmc&model=sierra%201500&modelYear=2022",
+      "scope": "Sierra 1500 complaint counts and components by model year 2016 to 2026 across the 1500, Limited and Sierra listings, heavy-duty and EV names excluded, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-03",
+      "title": "NHTSA: investigation EA25007",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA25007",
+      "scope": "open engineering analysis into 6.2-liter engine failures on 2019 to 2024 Silverado 1500 and Sierra 1500 trucks",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-04",
+      "title": "NHTSA: investigation RQ26003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ26003",
+      "scope": "open recall query into upper grille deflector detachment on 2022 to 2024 Sierras",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-05",
+      "title": "NHTSA: investigation PE21010",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE21010",
+      "scope": "closed investigation into air bag warning lights on 2020–2021 GM trucks and cars",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-06",
+      "title": "NHTSA: investigation PE18012",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE18012",
+      "scope": "closed investigation into brake vacuum pump failures on 2014 to 2016 Silverado 1500 and Sierra 1500 trucks",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-07",
+      "title": "Good Car Bad Car: GMC Sierra sales figures",
+      "url": "https://www.goodcarbadcar.net/gmc-sierra-sales-figures/",
+      "scope": "all-Sierra U.S. sales 2016 to 2019 (221,680; 217,943; 219,554; 232,325), which we scaled to light duty; the page doesn’t say whether it includes heavy-duty trucks",
+      "note": "read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-08",
+      "title": "Best-Selling-Cars: 2020 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2020-full-year-usa-gm-sales-chevrolet-buick-cadillac-gmc/",
+      "scope": "Sierra light-duty sales 2019 and 2020",
+      "note": "reused from our GMC Sierra 1500 vs Chevrolet Silverado 1500 page (VEH-SVS-42)"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-09",
+      "title": "Best-Selling-Cars: 2021 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2021-full-year-usa-gm-sales-chevrolet-buick-cadillac-gmc/",
+      "scope": "Sierra light-duty sales 2021",
+      "note": "reused from our GMC Sierra 1500 vs Chevrolet Silverado 1500 page (VEH-SVS-43)"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-10",
+      "title": "Best-Selling-Cars: 2023 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2023-full-year-usa-gm-chevrolet-gmc-cadillac-buick-car-sales-by-model",
+      "scope": "Sierra light-duty sales 2022 and 2023",
+      "note": "reused from our GMC Sierra 1500 vs Chevrolet Silverado 1500 page (VEH-SVS-44)"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-11",
+      "title": "Best-Selling-Cars: 2025 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2025-full-year-usa-gm-buick-cadillac-chevrolet-gmc-car-sales-by-model/",
+      "scope": "Sierra light-duty sales 2024 and 2025",
+      "note": "reused from our GMC Sierra 1500 vs Chevrolet Silverado 1500 page (VEH-SVS-45)"
+    },
+    {
+      "id": "VEH-PRB-SIERRA-12",
+      "title": "Wikipedia: GMC Sierra",
+      "url": "https://en.wikipedia.org/wiki/GMC_Sierra",
+      "scope": "generation years, engines, transmissions, the Sierra Limited and the 2022 refresh",
+      "note": "read November 21, 2026 through a page summary of the first part of the article; check against GMC before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "GMC",
     "years": [

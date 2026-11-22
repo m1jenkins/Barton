@@ -1,7 +1,363 @@
 {
   "key": "tesla-model-y",
   "name": "Tesla Model Y",
-  "status": "stub",
+  "status": "ready",
+  "short": "Model Y",
+  "make": "Tesla",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Tesla Model Y Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Tesla Model Y model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, two open NHTSA evaluations and what owners report on Reddit.",
+  "h1": "Tesla Model Y problems by year: years to avoid and what owners report",
+  "card": "The best and worst Model Y years, two open NHTSA evaluations, complaints per 100,000 sold on estimated sales and what owners report.",
+  "bestYears": "2024–2025",
+  "avoidYears": "2021",
+  "answer": [
+    "The best used Model Ys are the 2024 and 2025 model years, which draw {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a Model Y yardstick of {base}. Skip the 2021: it draws {r:2021} on {c:2021} complaints, {k:2021:FORWARD COLLISION AVOIDANCE} of them about automatic emergency braking, and two open NHTSA evaluations name it, PE25010 on electronic door handles and PE26006 on front lateral links. The 2020, 2022 and 2023 are the years to ask about. PE26006 covers the 2021 to 2023, the 2023 drew {c:2023} complaints, the most of any year, and the 2020’s rate of {r:2020} rests on a partial first year of sales. No 2016 to 2019 Model Y was sold.",
+    "Tesla publishes no model-level U.S. sales, so the rates divide each model year’s NHTSA complaints, counted across every Model Y listing, by Good Car Bad Car’s estimates, the method our Tesla Model Y vs Toyota RAV4 page uses. Cox Automotive’s estimates run higher, which would lower the rates. Our <a href=\"{guide}\">Model Y price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Tesla publishes no model-level U.S. sales. Sales are Good Car Bad Car’s estimates, the method our Tesla Model Y vs Toyota RAV4 page uses, where the 2020 figure of 40,001 is a partial first year; Cox Automotive’s estimates are higher, which would lower every rate, and no Model Y was sold before 2020.",
+  "sales": {
+    "2020": 40001,
+    "2021": 161527,
+    "2022": 225799,
+    "2023": 385897,
+    "2024": 313699,
+    "2025": 253020
+  },
+  "publishedRates": {
+    "2020": 713,
+    "2021": 685,
+    "2022": 393,
+    "2023": 312,
+    "2024": 109,
+    "2025": 47
+  },
+  "verdicts": {
+    "2020": [
+      "check",
+      "A partial first year on an estimated 40,001 sales, which inflates the rate, and {c:2020} complaints, the fewest of 2020 to 2023. Automatic emergency braking ({k:2020:FORWARD COLLISION AVOIDANCE}) leads; recalls 20V-709, 21V-835 and 21V-912 cover suspension parts.",
+      "avoid to check: the 40,001 sales is a partial first year that inflates the rate, and the 285 complaints are the fewest of 2020 to 2023"
+    ],
+    "2021": [
+      "avoid",
+      "Automatic emergency braking ({k:2021:FORWARD COLLISION AVOIDANCE}) leads {c:2021} complaints. Two open NHTSA evaluations name the year, PE25010 (door handles) and PE26006 (front lateral links), on a rate already near the Avoid line.",
+      "check to avoid: two open NHTSA evaluations, PE25010 and PE26006, name the 2021 and its rate is near the Avoid line"
+    ],
+    "2022": [
+      "check",
+      "Automatic emergency braking ({k:2022:FORWARD COLLISION AVOIDANCE}) leads {c:2022} complaints. Open evaluation PE26006 covers 2021 to 2023 Model Ys; recalls 21V-912 and 23V-130 apply.",
+      "buy to check: open NHTSA evaluation PE26006 covers the 2022 and its failures exceed the earlier recalls"
+    ],
+    "2023": [
+      "check",
+      "The most complaints of any year ({c:2023}): automatic emergency braking {k:2023:FORWARD COLLISION AVOIDANCE}, steering {k:2023:STEERING}, suspension {k:2023:SUSPENSION}. Open evaluation PE26006 covers the year; recalls 22V-895 and 25V-092 apply.",
+      "buy to check: open NHTSA evaluation PE26006 covers the 2023 and its failures exceed the earlier recalls"
+    ],
+    "2024": [
+      "buy",
+      "Automatic emergency braking ({k:2024:FORWARD COLLISION AVOIDANCE}), electrical ({k:2024:ELECTRICAL SYSTEM}) and the backup camera ({k:2024:BACK OVER PREVENTION}) lead. Recalls 24V-886 (seat recliner weld) and 25V-002 (rearview camera) apply."
+    ],
+    "2025": [
+      "buy",
+      "The lowest rate of any year ({c:2025} complaints), led by automatic emergency braking ({k:2025:FORWARD COLLISION AVOIDANCE}). Recalls 24V-935, 25V-002 and 26V-315 apply."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints on NHTSA’s list and {rec:2026} recalls so far, including front lateral link fasteners (26V-558) and battery contactors (25V-690). Too new to rate."
+    ]
+  },
+  "chartNote": "The 2020 bar rests on a partial first year of sales, and years before 2020 are not charted because the Model Y was not sold.",
+  "generations": [
+    {
+      "name": "First generation",
+      "years": "2020–2024",
+      "text": "Tesla began building the Model Y in Fremont in January 2020 and added Austin in late 2021. A seven-seat option arrived in January 2021 and ran until the 2025 refresh. A Standard Range AWD built in Austin with 4680 cells and a structural battery pack went on sale to the public around April 2023 and left in September, and a Standard Range RWD returned in October 2023 before a Long Range RWD replaced it in May 2024 (Wikipedia)."
+    },
+    {
+      "name": "Refreshed Model Y",
+      "years": "2025–",
+      "text": "The refresh reached the U.S. in March 2025. In October 2025 Tesla renamed the Long Range trims Premium and added a rear-wheel-drive Model Y Standard, and a six-seat Model Y L launched on July 2, 2026 (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Automatic emergency braking, 2020 to 2023",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2020,
+        2023
+      ],
+      "text": "The biggest part count on every year. NHTSA’s evaluation PE22002 looked at unexpected braking with adaptive cruise control on 2021 and 2022 Model Ys and Model 3s and closed it in June 2026, saying reports had faded and no collisions were identified. Reddit owners report Full Self-Driving braking abruptly for no obvious reason."
+    },
+    {
+      "title": "Suspension, 2020 to 2023",
+      "component": "SUSPENSION",
+      "years": [
+        2020,
+        2023
+      ],
+      "text": "Recalls cover upper control arm bolts (20V-709, 2020), lateral link fasteners (21V-835, 2020 and 2021, and 22V-895, 2023) and fracturing knuckles (21V-912, 2020 to 2022). NHTSA’s open evaluation PE26006 says the lateral link failures it is looking at exceed the recalls."
+    },
+    {
+      "title": "Steering, 2023",
+      "component": "STEERING",
+      "years": [
+        2023,
+        2023
+      ],
+      "text": "Recall 25V-092 covers a power steering circuit board that can overstress and cut assist on 2023 Model Ys and Model 3s, 23V-385 a loose steering wheel fastener on 2022 and 2023 cars. NHTSA closed analysis EA24001 in June 2026 and evaluation PE23003, on two cars delivered without the wheel’s retaining bolt, in April 2026."
+    },
+    {
+      "title": "Brakes, 2021 to 2023",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2021,
+        2023
+      ],
+      "text": "Recall 21V-387 covers brake caliper bolts that may be loose on 2020 and 2021 Model Ys, which can let a caliper separate and touch the wheel rim. Tesla tightens or replaces the bolts free; the 2022 and 2023 counts have no recall of their own."
+    },
+    {
+      "title": "Backup camera, 2023 to 2025",
+      "component": "BACK OVER PREVENTION",
+      "years": [
+        2023,
+        2025
+      ],
+      "text": "Recall 25V-002 covers a computer circuit board that can short and lose the rearview image on 2023 to 2025 cars, and 26V-283 a software delay on 2020 to 2023 cars; 24V-035 covers a 2023 software fault. Tesla fixes the software over the air and replaces boards that failed."
+    },
+    {
+      "title": "Door latches, 2021",
+      "component": "LATCHES/LOCKS/LINKAGES",
+      "years": [
+        2021,
+        2021
+      ],
+      "text": "NHTSA’s evaluation PE25010 covers 2021 Model Ys whose outside door handles stop working when the 12-volt battery runs low. A small count of complaints, but NHTSA notes that Tesla cars have manual releases inside the cabin which a child may not be able to use."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit owners report drivetrains and batteries holding up past 150,000 miles and battery health staying high after 60,000, and they describe the refreshed Model Y as better built than the early cars. What they report going wrong is battery health tests of 80 to 85 percent after a few years, front control arm bushings that wear and knock, and a grinding steering column on newer refreshed cars, a different group from the 2023’s steering complaints, which recall 25V-092 covers."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "21V-835",
+      "years": "2020–2021",
+      "title": "Front lateral link fasteners",
+      "text": "The fasteners may loosen and let the lateral link separate from the subframe. Tesla tightens or replaces them free; recall 22V-895 covers the same part on 2023 cars."
+    },
+    {
+      "id": "21V-912",
+      "years": "2020–2022",
+      "title": "Suspension knuckles",
+      "text": "The front and rear knuckles may fracture and let the suspension links separate. Tesla inspects and replaces the knuckles as needed, free."
+    },
+    {
+      "id": "20V-709",
+      "years": "2020",
+      "title": "Upper control arm bolts",
+      "text": "The bolts joining the upper control arm and steering knuckle may be loose and let the arm detach. Tesla tightens them free."
+    },
+    {
+      "id": "23V-385",
+      "years": "2022–2023",
+      "title": "Steering wheel fastener",
+      "text": "The steering wheel fastener may be loose. Tesla repairs it free."
+    },
+    {
+      "id": "25V-092",
+      "years": "2023",
+      "title": "Power steering assist",
+      "text": "A power steering circuit board can overstress and cause a loss of assist. Tesla’s fix is an over-the-air software update."
+    },
+    {
+      "id": "24V-886",
+      "years": "2024",
+      "title": "Seat recliner weld",
+      "text": "The weld holding the front seat recliner may fail. Tesla replaces the seat assembly free."
+    },
+    {
+      "id": "26V-507",
+      "years": "2020–2023",
+      "title": "Headlight low beams",
+      "text": "The low beams may be too bright and exceed the maximum light output. Tesla will replace the headlights free, and our Model Y price guide says the repair was not yet available."
+    },
+    {
+      "id": "25V-690",
+      "years": "2026",
+      "title": "Battery pack contactors",
+      "text": "The contactors may fail and cause a loss of drive power on some 2026 Model Ys and 2025 Model 3s. Tesla replaces them free."
+    },
+    {
+      "id": "26V-558",
+      "years": "2026",
+      "title": "Front lateral link fasteners",
+      "text": "One or more fasteners may not have been tightened properly, which can let the link loosen or separate. Tesla tightens or replaces them and checks the alignment, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "PE26006",
+      "status": "open",
+      "years": "2021–2023",
+      "title": "Front lower lateral link detachment",
+      "text": "NHTSA opened the evaluation on July 29, 2026 after 156 complaints of front lower lateral link failures on 2021 to 2023 Model Ys and 2018 to 2020 Model 3s. In most cases the owner had no warning, and the car may not be drivable afterward. NHTSA says the failures exceed the scope of the earlier lateral link recalls."
+    },
+    {
+      "id": "PE25010",
+      "status": "open",
+      "years": "2021",
+      "title": "Electronic door handles inoperative",
+      "text": "NHTSA opened the evaluation on September 15, 2025 after nine complaints that 2021 Model Y doors would not open, four of them from owners who broke a window to get in, mostly parents with a child inside. NHTSA’s early reading is that the electronic locks get too little voltage, and the owner’s manual describes a jump-start method to power them from outside."
+    },
+    {
+      "id": "PE22002",
+      "status": "closed",
+      "years": "2021–2022",
+      "title": "Unexpected brake activation",
+      "text": "NHTSA opened the evaluation on February 16, 2022 and closed it on June 29, 2026, citing a low demonstrated hazard, no identified collisions, Tesla’s software updates and reports that fell to 45 in 2024, 19 in 2025 and 3 so far in 2026, without finding that no defect exists."
+    },
+    {
+      "id": "EA24001",
+      "status": "closed",
+      "years": "2023",
+      "title": "Loss of steering control",
+      "text": "NHTSA upgraded its evaluation of lost power steering assist on 2023 Model Ys and Model 3s on February 2, 2024, and closed it on June 25, 2026 after Tesla’s recall 25V-092."
+    },
+    {
+      "id": "PE23003",
+      "status": "closed",
+      "years": "2023",
+      "title": "Steering wheel detachment",
+      "text": "NHTSA opened the evaluation on March 4, 2023 after two 2023 Model Ys left the factory without the steering wheel’s retaining bolt, and closed it on April 24, 2026."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "The front suspension on a 2020 to 2023.",
+      "text": "Confirm 20V-709 (2020), 21V-835, 21V-912 and 22V-895 (2023) are closed, then have an independent shop check the lateral links and control arms. Open evaluation PE26006 covers failures beyond those recalls, usually with no warning."
+    },
+    {
+      "title": "Door handles on a 2021.",
+      "text": "Ask when the 12-volt battery was last replaced, and learn where the manual door releases are before you drive away."
+    },
+    {
+      "title": "Headlights on a 2020 to 2023.",
+      "text": "Recall 26V-507 covers low beams that are too bright and, per our price guide, had no repair yet. Ask the seller to say whether the notice has arrived."
+    },
+    {
+      "title": "Power steering on a 2023.",
+      "text": "Confirm 25V-092 (steering assist) and 23V-385 (steering wheel fastener) are closed."
+    },
+    {
+      "title": "Strut and contactor recalls on a 2026.",
+      "text": "Ask the dealer to show lateral link recall 26V-558 and, on a car that qualifies, contactor recall 25V-690 are done before you take delivery."
+    },
+    {
+      "title": "Battery health and warranty.",
+      "text": "Reddit owners report battery tests of 80 to 85 percent after a few years. Our price guide puts the battery and drive unit cover at 8 years or 120,000 miles on a Long Range or Performance, from first delivery, so ask for that date."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s look over the suspension, brakes and bushings before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Model Y has {c:2026} complaints on NHTSA’s list and {rec:2026} recalls so far, including front lateral link and battery contactor recalls, and it is too new to rate. If you are choosing between a new 2026 and a used 2024 or 2025, the 2024 has {rec:2024} recalls and the 2025 {rec:2025} to confirm, and neither is covered by evaluation PE26006.",
+    "Our <a href=\"{guide}\">Model Y price guide</a> has the 2026 prices, Tesla’s financing and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Tesla Model Y year?",
+      "The 2021, at {r:2021} NHTSA complaints per 100,000 sold on {c:2021} complaints, with two open NHTSA evaluations naming it. The 2023 has the most complaints of any year, {c:2023}."
+    ],
+    [
+      "What is the best used Model Y year?",
+      "The 2024 and 2025, at {r:2024} and {r:2025} complaints per 100,000 sold. These rates rest on Good Car Bad Car’s estimates, since Tesla publishes no model-level U.S. sales."
+    ],
+    [
+      "Is there a 2019 Tesla Model Y?",
+      "Not for sale. The Model Y reached U.S. buyers in 2020. NHTSA lists three recalls whose model year ranges start in 2019 and no complaints for that year."
+    ],
+    [
+      "What is wrong with the Model Y front suspension?",
+      "NHTSA’s open evaluation PE26006 has 156 complaints of front lower lateral links detaching on 2021 to 2023 Model Ys and 2018 to 2020 Model 3s, usually with no warning. It goes beyond recalls 21V-835 and 22V-895, so a clean VIN lookup doesn’t rule it out."
+    ],
+    [
+      "How do I check a used Model Y for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Tesla service center."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-MODELY-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=tesla&model=model%20y&modelYear=2022",
+      "scope": "every Model Y listing (MODEL Y, its 5- and 7-seat names, MODEL Y RWD and MODEL Y (All Variants)) for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-MODELY-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-03",
+      "title": "NHTSA: investigation PE26006",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE26006",
+      "scope": "open evaluation of front lower lateral link detachment on 2018 to 2020 Model 3s and 2021 to 2023 Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-04",
+      "title": "NHTSA: investigation PE25010",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE25010",
+      "scope": "open evaluation of inoperative electronic door handles on 2021 Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-05",
+      "title": "NHTSA: investigation PE22002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE22002",
+      "scope": "closed evaluation of unexpected brake activation on 2021 and 2022 Model 3s and Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-06",
+      "title": "NHTSA: investigation EA24001",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24001",
+      "scope": "closed analysis of loss of power steering assist on 2023 Model 3s and Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-07",
+      "title": "NHTSA: investigation PE23003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE23003",
+      "scope": "closed evaluation of steering wheel detachment on two 2023 Model Ys",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-MODELY-08",
+      "title": "Good Car Bad Car: Tesla Model Y sales figures",
+      "url": "https://www.goodcarbadcar.net/tesla-model-y-sales-figures/",
+      "scope": "estimated U.S. Model Y sales 2020 to 2025; the page says Tesla does not report country-level sales by model, and the 2020 figure is a partial first year",
+      "note": "read November 21, 2026 through a page summary; estimates, reused from our Model Y vs RAV4 page (VEH-MYRV-30)"
+    },
+    {
+      "id": "VEH-PRB-MODELY-09",
+      "title": "Wikipedia: Tesla Model Y",
+      "url": "https://en.wikipedia.org/wiki/Tesla_Model_Y",
+      "scope": "production start, the Austin plant, trims by year, the 2025 refresh, Model Y Standard and Model Y L",
+      "note": "read November 21, 2026 through a page summary of the first 100,000 characters; check against Tesla before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "TESLA",
     "years": [
@@ -351,5 +707,6 @@
         ]
       }
     }
-  }
+  },
+  "firstSold": 2020
 }

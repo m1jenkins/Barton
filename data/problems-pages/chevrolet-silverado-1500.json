@@ -1,7 +1,361 @@
 {
   "key": "chevrolet-silverado-1500",
   "name": "Chevrolet Silverado 1500",
-  "status": "stub",
+  "status": "ready",
+  "short": "Silverado",
+  "make": "Chevrolet",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Chevrolet Silverado 1500 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Chevrolet Silverado 1500 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Chevrolet Silverado 1500 problems by year: years to avoid and what owners report",
+  "card": "Which Silverado 1500 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2025, 2020",
+  "avoidYears": "2021",
+  "answer": [
+    "Engine is the top complaint part on every Silverado from 2019 to 2025, so the best used years are the ones where it matters least: the 2025, at {r:2025} NHTSA owner complaints per 100,000 sold, and the 2020, at {r:2020}. Skip the 2021. It draws {r:2021}, {k:2021:ENGINE} of its {c:2021} complaints name the engine, and NHTSA’s open investigation EA25007 covers 6.2-liter V8 engine failures that Chevrolet’s recall 25V-274 leaves out. The 2019 and the 2022 to 2024 trucks are Check first, the 2022 to 2024 on the same engine evidence, and the 2016 to 2018 trucks rate Buy on a sales figure we had to estimate.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Silverado 1500 listings, by U.S. light-duty Silverado sales. They compare years with each other; they don’t predict one truck. The 2026 is too new to rate; our <a href=\"{guide}\">Silverado price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales for 2019 to 2025 are GM’s light-duty Silverado figures from Best-Selling-Cars’ GM tables. GM didn’t split light-duty from heavy-duty before 2019, so 2016 to 2018 are our estimate: Good Car Bad Car’s all-Silverado totals times 76%, the 2019 light-duty share (438,686 of 575,569).",
+  "salesShare": 0.762,
+  "salesRaw": {
+    "2016": 574876,
+    "2017": 585864,
+    "2018": 585582
+  },
+  "sales": {
+    "2016": 438158,
+    "2017": 446533,
+    "2018": 446318,
+    "2019": 438686,
+    "2020": 436281,
+    "2021": 380715,
+    "2022": 324603,
+    "2023": 354775,
+    "2024": 358771,
+    "2025": 362909
+  },
+  "publishedRates": {
+    "2019": 253,
+    "2020": 173,
+    "2021": 227,
+    "2022": 206,
+    "2023": 113,
+    "2024": 91,
+    "2025": 32
+  },
+  "verdicts": {
+    "2016": [
+      "buy",
+      "{r:2016} per 100,000 on our estimated light-duty sales. Brakes ({k:2016:SERVICE BRAKES}) and transmission and drivetrain ({k:2016:POWER TRAIN}) lead; recalls cover front control arm welds (16V-256) and, since September 2026, the roof-rail air bag inflators (26V-611)."
+    ],
+    "2017": [
+      "buy",
+      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; recalls include the brake vacuum pump (19V-645) and the roof-rail air bags (26V-611)."
+    ],
+    "2018": [
+      "buy",
+      "{r:2018} per 100,000, the lowest of the 2016 to 2019 years, on our estimated light-duty sales. Recalls include the brake vacuum pump (19V-645) and roof-rail air bag inflators (24V-756)."
+    ],
+    "2019": [
+      "check",
+      "{r:2019} per 100,000, the highest in the table. Engine ({k:2019:ENGINE}) and transmission and drivetrain ({k:2019:POWER TRAIN}) lead, and {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889)."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000, equal to the yardstick. Engine ({k:2020:ENGINE}) and transmission and drivetrain ({k:2020:POWER TRAIN}) lead; {rec:2020} recalls include 20V-650 (driveshaft weld)."
+    ],
+    "2021": [
+      "avoid",
+      "{r:2021} per 100,000, with {k:2021:ENGINE} of {c:2021} complaints naming the engine. Recall 25V-274 covers 6.2-liter engines from this year, and NHTSA’s open EA25007 counts engine failures beyond the recall.",
+      "check to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2022": [
+      "check",
+      "{r:2022} per 100,000, but {k:2022:ENGINE} of {c:2022} complaints name the engine, and EA25007 covers this year’s 6.2-liter trucks.",
+      "buy to check: engine is 42% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2023": [
+      "check",
+      "{r:2023} per 100,000, with {k:2023:ENGINE} of {c:2023} complaints on the engine. Recalls 25V-274 and a brake fluid warning lamp fault (24V-674) apply.",
+      "buy to check: engine is 45% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2024": [
+      "check",
+      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 applies to 6.2-liter trucks, and a trailer hitch bracket recall (24V-626) covers some trucks.",
+      "buy to check: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000, the lowest in the table, on {c:2025} complaints and no recall on NHTSA’s list. Engine still leads ({k:2025:ENGINE}), and the count is still growing."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed."
+    ]
+  },
+  "chartNote": "The 2016 to 2018 bars rest on our estimated light-duty sales (76% of all Silverado sales, the 2019 share) and could move a few points with GM’s real figures.",
+  "generations": [
+    {
+      "name": "Third generation (K2XX)",
+      "years": "2014–2018",
+      "text": "The 2016 to 2018 model years are this truck, with a 4.3-liter V6 and 5.3- and 6.2-liter V8s and, from 2015, an eight-speed automatic on the 6.2 (Wikipedia). GM renamed it the Silverado LD for 2019, a double cab only with the 5.3, and sold it beside the new truck until December 2019; a 2022 Silverado Limited was a separate stop-gap."
+    },
+    {
+      "name": "Fourth generation (T1XX)",
+      "years": "2019–2026",
+      "text": "It went on sale in August 2018 as a 2019 model with a 2.7-liter turbo four, a 4.3-liter V6 through 2021, 5.3- and 6.2-liter V8s, and a 3.0-liter Duramax diesel added for 2020, with six-, eight- and 10-speed automatics (Wikipedia). The 2022 refresh brought a new front end and interior and dropped the V6, and the 2.7 was renamed TurboMax for 2024."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2019,
+        2025
+      ],
+      "text": "Engine tops every year from 2019 to 2025: {k:2019:ENGINE} on the 2019, {k:2021:ENGINE} on the 2021. Recall 25V-274 covers 6.2-liter V8s from 2021 to 2024, where a connecting rod or crankshaft defect can lead to engine failure; dealers inspect and repair or replace the engine, free. NHTSA’s EA25007 counted 1,157 reports of 6.2-liter engine failure across GM trucks and SUVs when it opened, 173 of them outside the recall. Owners on Reddit also report lifter and camshaft failures tied to cylinder deactivation on 5.3 and 6.2 V8s."
+    },
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2016,
+        2022
+      ],
+      "text": "NHTSA’s label spans the transmission, driveshaft and axles. Recall 20V-650 covers a driveshaft joint weld on 2019–2020 trucks that can separate the shaft and cut propulsion, and 24V-797 and 26V-083 cover diesel transmission control valve software on 2020–2022 trucks. Owners on Reddit report transmission and torque converter failures between 80,000 and 160,000 miles."
+    },
+    {
+      "title": "Brakes",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2016,
+        2017
+      ],
+      "text": "Brakes lead the 2016 ({k:2016:SERVICE BRAKES}) and rank second on the 2017 ({k:2017:SERVICE BRAKES}). Recall 19V-645 (2014–2018 trucks) has dealers reprogram the brake control module because the vacuum pump’s output can fall over time and lengthen stopping distances. NHTSA closed PE18012 on hard brake pedal from the vacuum pump on 2014 to 2016 trucks after GM added six-year, 72,000-mile special coverage in December 2018, which may have lapsed on an older truck."
+    },
+    {
+      "title": "Electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2019,
+        2022
+      ],
+      "text": "Electrical is third on the 2019 ({k:2019:ELECTRICAL SYSTEM}) and the 2022 ({k:2022:ELECTRICAL SYSTEM}). NHTSA’s label names a part, not a failure. Recalls 19V-888 (2019–2020, a cable ring with excess glue that can make an intermittent alternator connection) and 19V-889 (2019, a brake control module fault that can disable stability control and ABS without a warning light) are the best-documented items."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Owners on Reddit describe a 5.3 that runs past 150,000 miles with few repairs until its lifters fail, and report 6.2 failures even on trucks the recall covered, which fits NHTSA’s EA25007. The 2.7 turbo is called trouble free so far. The threads rarely name a model year, so they back the engine pattern in the table without confirming any one year."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "25V-274",
+      "years": "2021–2024 6.2-liter",
+      "title": "Engine connecting rod and crankshaft",
+      "text": "Manufacturing defects in the connecting rod or crankshaft can lead to engine damage and failure. Dealers inspect the engine and repair or replace it as necessary; trucks that pass get higher-viscosity oil and a new filter. Repairs are free."
+    },
+    {
+      "id": "16V-256",
+      "years": "2016–2017",
+      "title": "Front upper control arm welds",
+      "text": "Inadequate welds near the control arm bushing can let the arm separate and compromise steering. Dealers replace both upper arms and realign the truck, free; GM told owners not to drive until repaired."
+    },
+    {
+      "id": "19V-645",
+      "years": "2016–2018",
+      "title": "Brake vacuum pump",
+      "text": "The vacuum pump’s output can drop over time, reducing brake assist and lengthening stopping distances. Dealers reprogram the brake control module, free."
+    },
+    {
+      "id": "20V-650",
+      "years": "2019–2020",
+      "title": "Driveshaft joint weld",
+      "text": "A driveshaft joint may not have been welded properly and can separate while moving, cutting propulsion. Dealers replace the driveshaft, free."
+    },
+    {
+      "id": "19V-889",
+      "years": "2019",
+      "title": "ESC and ABS software",
+      "text": "A software error can disable stability control and ABS without lighting their warning lamps. Dealers reprogram the brake control module, free."
+    },
+    {
+      "id": "24V-797 and 26V-083",
+      "years": "2020–2022 diesel",
+      "title": "Transmission control valve",
+      "text": "On diesel trucks the transmission control valve can fail and lock the rear wheels. 24V-797 updates the software and GM covers transmissions the software flags; 26V-083 re-inspects trucks that were repaired incorrectly under it."
+    },
+    {
+      "id": "26V-611",
+      "years": "2016–2017",
+      "title": "Roof-rail air bag inflators",
+      "text": "An inflator end cap can detach or the inflator can rupture and throw fragments into the cabin. Dealers replace both roof-rail modules, free; owner letters were mailed October 21, 2026."
+    },
+    {
+      "id": "26V-289",
+      "years": "2026 4WD",
+      "title": "Transfer case",
+      "text": "A missing component in the transfer case can lock the front or rear wheels without warning. GM advises owners not to drive an affected truck until a dealer inspects and, if needed, replaces the transfer case, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA25007",
+      "status": "open",
+      "years": "2019–2024",
+      "title": "Loss of power from 6.2-liter engine failure",
+      "text": "NHTSA opened the engineering analysis on October 23, 2025 after 1,157 reports of L87 6.2-liter engine bearing failure, 173 of them outside recall 25V-274’s scope. Its opening summary names 2019 to 2024 Silverado 1500s and GMC Sierra 1500s, among other GM trucks and SUVs."
+    },
+    {
+      "id": "PE21010",
+      "status": "closed",
+      "years": "2020–2021",
+      "title": "Air bag warning light",
+      "text": "NHTSA closed it in August 2023. It looked at rust particles in the driver air bag connector that could light the air bag warning lamp and, rarely, stop the bag from deploying, on trucks built during a seven-month pandemic production gap, and found the failure rate low and easy to spot."
+    },
+    {
+      "id": "PE18012",
+      "status": "closed",
+      "years": "2014–2016",
+      "title": "Brake vacuum pump",
+      "text": "NHTSA closed it in April 2022 after GM’s special coverage for the vacuum pump and the later recall 19V-645."
+    }
+  ],
+  "checks": [
+    {
+      "title": "The 6.2-liter V8 on a 2021 to 2024.",
+      "text": "Ask for the dealer’s record showing the 25V-274 inspection was done and how the truck passed. EA25007 is open on engines the recall doesn’t cover, so a clean recall record isn’t a clean bill."
+    },
+    {
+      "title": "The 5.3 and 6.2 lifters.",
+      "text": "Owners on Reddit report lifter and camshaft failures tied to cylinder deactivation. Ask for oil change records and have a shop scan for misfire codes."
+    },
+    {
+      "title": "The driveshaft and brake module on a 2019 or 2020.",
+      "text": "Confirm 20V-650 (driveshaft weld) and, on a 2019, 19V-889 (stability control and ABS software)."
+    },
+    {
+      "title": "The brake vacuum pump on a 2016 to 2018.",
+      "text": "Confirm 19V-645 was done; GM’s special coverage ran six years or 72,000 miles from December 2018 and may be over."
+    },
+    {
+      "title": "The roof-rail air bags on a 2016 to 2018.",
+      "text": "Recall 26V-611 (2016–2017) was filed in September 2026 and 24V-756 covers the 2018; the VIN lookup shows whether they are open."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the engine for codes, the transmission for shift faults and the front suspension before you sign."
+    }
+  ],
+  "newer": [
+    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Silverado already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025.",
+    "If you are choosing between a new 2026 and a used 2025, our <a href=\"{guide}\">Silverado price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Chevrolet Silverado years?",
+      "We rate the 2021 Avoid: it draws {r:2021} NHTSA complaints per 100,000 sold, {k:2021:ENGINE} of {c:2021} naming the engine. The 2019 draws {r:2019}, the highest rate, and the 2022 to 2024 are Check first on engine evidence."
+    ],
+    [
+      "What is the best used Silverado year?",
+      "The 2025 draws {r:2025} complaints per 100,000 and the 2020 draws {r:2020}. The 2025 is still collecting complaints, so its rate will rise a little."
+    ],
+    [
+      "Is the 2023 Silverado reliable?",
+      "It draws {r:2023}, which is low, but {k:2023:ENGINE} of its {c:2023} complaints name the engine and NHTSA’s EA25007 is open on 6.2-liter failures. We rate it Check first and would want the engine and recall history in writing."
+    ],
+    [
+      "Which Silverado engine has the most problems?",
+      "NHTSA counts complaints by part, not by engine, so these figures can’t say. Engine is the top part on every year from 2019 to 2025, and the recall and the open investigation both concern the 6.2-liter V8."
+    ],
+    [
+      "How do I check a used Silverado for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Chevrolet dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-SILVERADO-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=chevrolet&model=silverado%201500&modelYear=2022",
+      "scope": "Silverado 1500 complaint counts and components by model year 2016 to 2026 across the 1500, LD, Limited and Silverado listings, heavy-duty and EV names excluded, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-03",
+      "title": "NHTSA: investigation EA25007",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA25007",
+      "scope": "open engineering analysis into 6.2-liter engine failures on 2019 to 2024 Silverado 1500 and Sierra 1500 trucks",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-04",
+      "title": "NHTSA: investigation PE21010",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE21010",
+      "scope": "closed investigation into air bag warning lights on 2020–2021 GM trucks and cars",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-05",
+      "title": "NHTSA: investigation PE18012",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE18012",
+      "scope": "closed investigation into brake vacuum pump failures on 2014 to 2016 Silverado 1500 and Sierra 1500 trucks",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-06",
+      "title": "Good Car Bad Car: Chevrolet Silverado sales figures",
+      "url": "https://www.goodcarbadcar.net/chevrolet-silverado-sales-figures/",
+      "scope": "all-Silverado U.S. sales 2016 to 2018 (574,876; 585,864; 585,582), which we scaled to light duty; the page doesn’t say whether it includes heavy-duty trucks",
+      "note": "read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-07",
+      "title": "Best-Selling-Cars: 2019 GM sales",
+      "url": "https://www.best-selling-cars.com/usa/2019-full-year-usa-gm-general-motors-sales/",
+      "scope": "Silverado light-duty sales 2019 (about 438,686)",
+      "note": "reused from our F-150 vs Silverado page (VEH-F1S-52); read there through a search summary only"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-08",
+      "title": "Best-Selling-Cars: 2021 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2021-full-year-usa-gm-sales-chevrolet-buick-cadillac-gmc/",
+      "scope": "Silverado light-duty sales 2020 and 2021",
+      "note": "reused from our F-150 vs Silverado page (VEH-F1S-51)"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-09",
+      "title": "Best-Selling-Cars: 2023 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2023-full-year-usa-gm-chevrolet-gmc-cadillac-buick-car-sales-by-model",
+      "scope": "Silverado light-duty sales 2022 and 2023",
+      "note": "reused from our F-150 vs Silverado page (VEH-F1S-50)"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-10",
+      "title": "Best-Selling-Cars: 2025 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2025-full-year-usa-gm-buick-cadillac-chevrolet-gmc-car-sales-by-model/",
+      "scope": "Silverado light-duty sales 2024 and 2025",
+      "note": "reused from our GMC Sierra 1500 vs Chevrolet Silverado 1500 page (VEH-SVS-45)"
+    },
+    {
+      "id": "VEH-PRB-SILVERADO-11",
+      "title": "Wikipedia: Chevrolet Silverado",
+      "url": "https://en.wikipedia.org/wiki/Chevrolet_Silverado",
+      "scope": "generation years, engines, transmissions and the LD and Limited trucks",
+      "note": "read November 21, 2026 through a page summary of the first part of the article; check against Chevrolet before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "CHEVROLET",
     "years": [

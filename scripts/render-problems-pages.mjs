@@ -27,6 +27,8 @@ export const slugFor = key => `${key}-problems.html`;
 export const verdictNames = { buy: 'Buy', check: 'Check first', avoid: 'Avoid' };
 // The model years the pages cover. Calendar-year sales exist through 2025; the newest model year has no rate.
 export const firstYear = 2016, lastRatedYear = 2025;
+// A car first sold in the U.S. after 2016 (Model 3, Model Y, the returning Ranger) sets `firstSold`; its table, chart and counts start there.
+export const startOf = car => Math.max(firstYear, car.firstSold ?? firstYear);
 
 // NHTSA's component names, in plain words. A name not listed here is shown in sentence case.
 export const componentLabels = {
@@ -103,7 +105,7 @@ const median = list => { const sorted = list.toSorted((x, y) => x - y), mid = so
 // of the fresh count over sales.
 export function yearFigures(car) {
   const years = [];
-  for (let year = firstYear; year <= car.nhtsa.years[1]; year++) {
+  for (let year = startOf(car); year <= car.nhtsa.years[1]; year++) {
     const row = car.nhtsa.byYear[year];
     if (!row) continue;
     const sold = car.sales?.[year] ?? null;
@@ -203,7 +205,7 @@ function problemsPage(car, vehicle, comparisons, coded, updated) {
     ['Best used years', car.bestYears, 'years'],
     ['Years to avoid', car.avoidYears, 'years'],
     [`Complaints per 100,000 sold, 2023–2025`, `${rateText(recent.rate)}`, 'chart'],
-    [`Recalls, ${firstYear}–${car.nhtsa.years[1]} model years`, `${recalls.length}`, 'recalls'],
+    [`Recalls, ${startOf(car)}–${car.nhtsa.years[1]} model years`, `${recalls.length}`, 'recalls'],
   ];
   const body = `<article class="vp pb">
 <header class="vp-head vp-width">
@@ -234,7 +236,7 @@ ${car.answer.map((text, index) => `<p class="${index ? '' : 'vp-lead'}">${subst(
 
 <section id="years" class="vp-section">
 <h2>${car.name} reliability by year</h2>
-${table('years-caption', `${car.name} model years ${firstYear} to ${car.nhtsa.years[1]}: our verdict, NHTSA owner complaints and recalls, checked ${checked}`,
+${table('years-caption', `${car.name} model years ${startOf(car)} to ${car.nhtsa.years[1]}: our verdict, NHTSA owner complaints and recalls, checked ${checked}`,
     ['Year', 'Our verdict', 'Per 100,000 sold', 'Complaints', 'Recalls', 'Why'],
     figures.map(item => { const [verdict, reason] = car.verdicts[item.year]; return [`${item.year}`, chip(verdict), item.rate === null ? '<span class="pb-na">Too new to rate</span>' : `<strong>${count(item.rate)}</strong>`, count(item.complaints), `${item.recalls}`, subst(reason)]; }))}
 <p class="vp-note">Complaints are owner reports to NHTSA, counted once each across every ${car.name} listing (${car.nhtsa.listings.length > 3 ? 'all the trim and body-style listings' : car.nhtsa.listings.join(', ')}) and read on ${longDate(car.nhtsa.readOn)}. Each rate divides a model year’s complaints by the U.S. sales of the same calendar year. Model years and calendar years don’t line up, since a model year’s cars sell across two calendar years, so the rate compares years with each other. ${car.salesNote} Our verdicts use this car’s own yardstick, the median of ${count(baseline)} complaints per 100,000 across its 2019 to 2025 model years: Buy up to 1.25 times it, Check first up to twice it, Avoid above that. A year can move one step when a free recall explains most of its complaints, and the reason column says so.</p>
@@ -243,7 +245,7 @@ ${table('years-caption', `${car.name} model years ${firstYear} to ${car.nhtsa.ye
 <section id="chart" class="vp-section vp-section--band">
 <h2>Complaints per 100,000 sold, by model year</h2>
 ${rateColumns(figures, car)}
-<p class="vp-note">NHTSA owner complaints for each model year over that calendar year’s U.S. sales, ${firstYear} to ${lastRatedYear}. A newer model year has had less time on the road to collect complaints, so its bar is still growing. The ${car.nhtsa.years[1]} model year has no full year of sales and is not charted.${car.chartNote ? ` ${subst(car.chartNote)}` : ''}</p>
+<p class="vp-note">NHTSA owner complaints for each model year over that calendar year’s U.S. sales, ${startOf(car)} to ${lastRatedYear}. A newer model year has had less time on the road to collect complaints, so its bar is still growing. The ${car.nhtsa.years[1]} model year has no full year of sales and is not charted.${car.chartNote ? ` ${subst(car.chartNote)}` : ''}</p>
 ${versus.length ? `<p class="vp-note">The same method runs on our head-to-head pages: ${versus.map(cmp => `<a href="/${cmp.slug}">${cmp.crumb}</a>`).join(', ')}.</p>` : ''}
 </section>
 
@@ -254,7 +256,7 @@ ${car.generations.map(gen => `<h3>${gen.name} <span class="pb-years">${gen.years
 
 <section id="problems" class="vp-section vp-section--band">
 <h2>Common ${car.short} problems by component</h2>
-<p>NHTSA files each complaint under the parts the owner names, and one complaint can name more than one. Across all ${count(totalComplaints)} ${car.short} complaints for the ${firstYear} to ${car.nhtsa.years[1]} model years, these parts come up most:</p>
+<p>NHTSA files each complaint under the parts the owner names, and one complaint can name more than one. Across all ${count(totalComplaints)} ${car.short} complaints for the ${startOf(car)} to ${car.nhtsa.years[1]} model years, these parts come up most:</p>
 ${bars(topParts.map(([name, n]) => ({ label: componentLabel(name), value: n, display: count(n) })))}
 <ul class="pb-issues" role="list">
 ${car.problems.map(problem => {
@@ -269,7 +271,7 @@ ${redditSection(car, coded)}
 
 <section id="recalls" class="vp-section vp-section--band">
 <h2>${car.short} recalls and investigations</h2>
-<p>${car.recallsIntro ? subst(car.recallsIntro) : `NHTSA lists ${recalls.length} different recall campaigns against ${car.short} model years ${firstYear} to ${car.nhtsa.years[1]}.`} A campaign that covers several model years counts once in each, so the bars add to more than that.</p>
+<p>${car.recallsIntro ? subst(car.recallsIntro) : `NHTSA lists ${recalls.length} different recall campaigns against ${car.short} model years ${startOf(car)} to ${car.nhtsa.years[1]}.`} A campaign that covers several model years counts once in each, so the bars add to more than that.</p>
 ${recallColumns(figures)}
 <h3 style="margin-top:28px">Recalls worth knowing about</h3>
 <ul class="pb-issues" role="list">

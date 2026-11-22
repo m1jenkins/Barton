@@ -1,7 +1,338 @@
 {
   "key": "chevrolet-colorado",
   "name": "Chevrolet Colorado",
-  "status": "stub",
+  "status": "ready",
+  "short": "Colorado",
+  "make": "Chevrolet",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Chevrolet Colorado Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Chevrolet Colorado model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Chevrolet Colorado problems by year: years to avoid and what owners report",
+  "card": "Which Colorado model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2018–2022, 2024–2025",
+  "avoidYears": "2016–2017",
+  "answer": [
+    "The best used Colorados are the 2018 to 2022 model years and the 2024 and 2025, which draw from {r:2025} to {r:2018} NHTSA owner complaints per 100,000 sold. Skip the 2016 and 2017. The 2016 draws {r:2016}, with {k:2016:STEERING} of its {c:2016} complaints naming steering and no steering recall on NHTSA’s list for that year, and the 2017 draws {r:2017} with half its complaints on the transmission and drivetrain. The 2023 is Check first at {r:2023}, and NHTSA’s open brake investigation EA26006 names 2023 to 2026 Colorados.",
+    "The rates divide each model year’s NHTSA complaints by U.S. Colorado sales. They compare years with each other; they don’t predict one truck. Chevrolet redesigned the Colorado for 2023, so the 2016 to 2022 rows are the older truck. The 2026 is too new to rate; our <a href=\"{guide}\">Colorado price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales are Best-Selling-Cars’ GM tables for 2019 to 2025 and Good Car Bad Car’s annual Colorado totals for 2016 to 2018.",
+  "sales": {
+    "2016": 108725,
+    "2017": 112996,
+    "2018": 134842,
+    "2019": 122304,
+    "2020": 96238,
+    "2021": 73008,
+    "2022": 89197,
+    "2023": 71081,
+    "2024": 98012,
+    "2025": 107867
+  },
+  "publishedRates": {
+    "2019": 124.3,
+    "2020": 91.4,
+    "2021": 110.9,
+    "2022": 65,
+    "2023": 204,
+    "2024": 130.6,
+    "2025": 26
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "{r:2016} per 100,000, the highest in the table, with {k:2016:STEERING} of {c:2016} complaints naming steering. The steering assist recalls 16V-054 and 21V-213 list only 2015 trucks, so NHTSA’s list shows no steering recall for the 2016."
+    ],
+    "2017": [
+      "avoid",
+      "{r:2017} per 100,000, with transmission and drivetrain at {k:2017:POWER TRAIN} of {c:2017} complaints and no recall for it. The fuel pump recall 18V-358 applies.",
+      "check to avoid: transmission and drivetrain is half of the complaints (108 of 218) and NHTSA lists no recall for it"
+    ],
+    "2018": [
+      "buy",
+      "{r:2018} per 100,000, just inside the Buy range. Transmission and drivetrain still leads ({k:2018:POWER TRAIN}), and the fuel pump recall 18V-358 applies."
+    ],
+    "2019": [
+      "buy",
+      "{r:2019} per 100,000 and no recall on NHTSA’s list. Transmission and drivetrain leads ({k:2019:POWER TRAIN})."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000 and no recall on NHTSA’s list. Transmission and drivetrain leads ({k:2020:POWER TRAIN} of {c:2020})."
+    ],
+    "2021": [
+      "buy",
+      "{r:2021} per 100,000, equal to the yardstick. Engine ({k:2021:ENGINE}) and brakes ({k:2021:SERVICE BRAKES}) tie for the lead; one recall, 20V-811, covers incorrect seat belt bolts."
+    ],
+    "2022": [
+      "buy",
+      "{r:2022} per 100,000, the second-lowest. Electrical leads ({k:2022:ELECTRICAL SYSTEM}), and recall 22V-375 covers a weak weld on a manual passenger seat."
+    ],
+    "2023": [
+      "check",
+      "{r:2023} per 100,000 in the first year of the redesign. Forward collision avoidance ({k:2023:FORWARD COLLISION AVOIDANCE}) and electrical ({k:2023:ELECTRICAL SYSTEM}) lead; recalls cover automatic emergency braking that can engage by mistake (24V-133), front wheel hub bolts (24V-237) and a seat belt buckle bolt (24V-703)."
+    ],
+    "2024": [
+      "buy",
+      "{r:2024} per 100,000 on {c:2024} complaints. Recalls cover tires that don’t match the label (24V-366), a fuel pump lock ring (24V-491) and the seat belt buckle bolt (24V-703); EA26006 names the 2024."
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000 on {c:2025} complaints, the lowest in the table, and the count is still growing. EA26006 names the 2025 too."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales. NHTSA’s open EA26006 on loss of brake assist names 2026 Colorados."
+    ]
+  },
+  "chartNote": "The 2016 bar dwarfs the rest because {k:2016:STEERING} of that year’s {c:2016} complaints name steering. The Colorado was redesigned for 2023, so the bars before it are the older truck.",
+  "generations": [
+    {
+      "name": "Second generation",
+      "years": "2015–2022",
+      "text": "A mid-size pickup built at Wentzville, Missouri. It launched with a 2.5-liter four-cylinder and a 3.6-liter V6, a 2.8-liter Duramax turbodiesel joined for 2016, and the ZR2 off-road trim for 2017 (Wikipedia). The GMC Canyon is its mechanical twin; the counts here are Chevrolet’s only."
+    },
+    {
+      "name": "Third generation",
+      "years": "2023–",
+      "text": "Built at Wentzville and offered only as a crew cab with one bed length. Its only engine is a 2.7-liter turbo four-cylinder with an eight-speed automatic (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Steering",
+      "component": "STEERING",
+      "years": [
+        2016,
+        2016
+      ],
+      "text": "Steering is the 2016’s top complaint by a wide margin ({k:2016:STEERING} of {c:2016}). NHTSA’s closed recall query RQ19001 looked at loss of power steering assist on Colorado and Canyon trucks; the recalls behind it, 16V-054 and 21V-213, list only 2015 trucks. A 2016 buyer should ask whether the steering was ever repaired."
+    },
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2017,
+        2020
+      ],
+      "text": "Power train leads the 2017 to 2020 counts ({k:2017:POWER TRAIN}, {k:2018:POWER TRAIN}, {k:2019:POWER TRAIN} and {k:2020:POWER TRAIN}) and has no recall on NHTSA’s list for those years. NHTSA’s label spans the transmission, axles and driveline, so it doesn’t say which part. Owners on Reddit report transmission shudder and hard shifts, most often on eight-speed trucks, which means the 2023 and later."
+    },
+    {
+      "title": "Forward collision avoidance",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2023,
+        2024
+      ],
+      "text": "Recall 24V-133 covers 2023 trucks whose front camera may falsely detect an obstacle and brake on its own (automatic emergency braking). Dealers update the camera software, free. The count is {k:2023:FORWARD COLLISION AVOIDANCE} on the 2023 and {k:2024:FORWARD COLLISION AVOIDANCE} on the 2024."
+    },
+    {
+      "title": "Brakes",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2023,
+        2025
+      ],
+      "text": "Brake complaints run {k:2023:SERVICE BRAKES}, {k:2024:SERVICE BRAKES} and {k:2025:SERVICE BRAKES} on the 2023 to 2025 trucks. NHTSA’s engineering analysis EA26006 is studying loss of brake assist in GM’s eBoost brake system, which the Colorado shares with several other GM models."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Owners on Reddit report older Colorados and 2.8 Duramax diesels past 200,000 miles on routine maintenance, and call the 2.7 turbo four tough so far. What they say goes wrong clusters on the newer truck: transmission shudder and hard shifts, a steering column rattle that returns after repair on 2024 to 2026 trucks, and upper radiator hose and coolant leaks on 2023 and 2024 trucks. NHTSA’s complaint labels don’t isolate the rattle or the hose, so Reddit adds problems the table can’t show."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "17V-621",
+      "years": "2015–2016",
+      "title": "Driver air bag",
+      "text": "The driver’s frontal air bag may inflate improperly in the second stage of a high-speed crash. Dealers replace the module, free."
+    },
+    {
+      "id": "18V-358",
+      "years": "2016–2018",
+      "title": "High-pressure fuel pump",
+      "text": "The pump may detach from its mounting flange and damage the high-pressure fuel line. Dealers replace the pump and the fuel pipe, free."
+    },
+    {
+      "id": "22V-375",
+      "years": "2022",
+      "title": "Manual passenger seat",
+      "text": "A hook attachment on a manual front passenger seat may not have been welded properly and can separate from the seat track. Dealers inspect the seat and replace the cushion frame if necessary, free."
+    },
+    {
+      "id": "24V-133",
+      "years": "2023",
+      "title": "Unexpected automatic braking",
+      "text": "The front camera module may falsely detect an obstacle and engage automatic emergency braking. Dealers update the software, free."
+    },
+    {
+      "id": "24V-237",
+      "years": "2023",
+      "title": "Front wheel hub bolts",
+      "text": "The front wheel hub bolts may have been over-tightened and damaged during assembly. Dealers replace the left and right bolts, free."
+    },
+    {
+      "id": "24V-703",
+      "years": "2023–2024",
+      "title": "Seat belt buckle bolt",
+      "text": "A front seat may have a seat belt buckle attachment bolt that was not tightened properly. Dealers tighten the bolts on both front seats, free."
+    },
+    {
+      "id": "24V-366",
+      "years": "2024",
+      "title": "Wrong tires",
+      "text": "Some trucks may have tires that don’t match the tire label, and the tire pressure monitor may then give inaccurate information. Dealers inspect and replace the tires as necessary, free."
+    },
+    {
+      "id": "24V-491",
+      "years": "2024",
+      "title": "Fuel pump lock ring",
+      "text": "The ring that secures the fuel pump to the tank may not have been fully locked, which can leak fuel in a crash. Dealers inspect and lock it, free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA26006",
+      "status": "open",
+      "years": "2023–2026",
+      "title": "Loss of brake assist (eBoost)",
+      "text": "NHTSA upgraded its preliminary evaluation PE24011 to an engineering analysis on August 21, 2026. It began with 2023 Cadillac Lyriq complaints and now covers GM vehicles with the eBoost brake system, a list that includes the 2023 to 2026 Colorado. No recall had been issued when we checked."
+    },
+    {
+      "id": "RQ19001",
+      "status": "closed",
+      "years": "2015",
+      "title": "Loss of power steering assist",
+      "text": "NHTSA opened a recall query in 2019 after 50 complaints of lost steering assist on trucks outside the first recall (16V-054), and closed it after GM’s 2021 recall 21V-213 for 2015 Colorado and Canyon trucks."
+    }
+  ],
+  "checks": [
+    {
+      "title": "The 2016’s steering.",
+      "text": "NHTSA lists no steering recall for the 2016, yet {k:2016:STEERING} owners named steering. Ask whether the steering unit was ever replaced and have a shop check it."
+    },
+    {
+      "title": "The transmission on a 2017 to 2020.",
+      "text": "Power train is the top complaint part on those years with no recall to explain it. Ask for service records and have a shop scan for transmission codes."
+    },
+    {
+      "title": "The recalls on a 2023 or 2024.",
+      "text": "Confirm 24V-133 (automatic braking software), 24V-237 (hub bolts) and 24V-703 (seat belt bolts) on a 2023, and 24V-366 (tires), 24V-491 (fuel pump lock ring) and 24V-703 on a 2024. The VIN lookup shows what is open."
+    },
+    {
+      "title": "The brake assist on a 2023 to 2026.",
+      "text": "EA26006 is open and no recall existed when we checked. Read the brake complaints on NHTSA for the model year and ask the dealer about any brake warning messages in the truck’s history."
+    },
+    {
+      "title": "Coolant hoses on a 2023 or 2024.",
+      "text": "Owners on Reddit report upper radiator hose and coolant leaks. Look for coolant stains and a low reservoir."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s look over the steering, transmission and brakes before you sign."
+    }
+  ],
+  "newer": [
+    "NHTSA lists {c:2026} complaints and {rec:2026} recall for the 2026 Colorado, an owner’s manual notice (26V-114), and the open brake investigation EA26006 names the 2026. With that little on record we can’t say it is more reliable than the 2024 and 2025.",
+    "If you are choosing between a new 2026 and a used 2024 or 2025, our <a href=\"{guide}\">Colorado price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What are the worst Chevrolet Colorado years?",
+      "The 2016 and 2017 model years. They draw {r:2016} and {r:2017} NHTSA complaints per 100,000 sold against {r:2022} for the 2022, and {k:2016:STEERING} of the 2016’s {c:2016} complaints name steering."
+    ],
+    [
+      "What is the best used Colorado year?",
+      "The 2022 draws {r:2022} and the 2025 {r:2025}, and the 2018 to 2022 and 2024 trucks all rate Buy. The 2025 is still collecting complaints, so its rate will rise a little."
+    ],
+    [
+      "Is the 2023 Colorado reliable?",
+      "It draws {r:2023} complaints per 100,000, the highest since the 2016, and {rec:2023} recalls, including one for automatic emergency braking that can engage by mistake (24V-133). We rate it Check first."
+    ],
+    [
+      "Does the GMC Canyon have the same problems?",
+      "The two trucks are mechanical twins, but NHTSA counts them under separate names and these figures are the Colorado’s alone. EA26006 and recalls such as 24V-133 name both."
+    ],
+    [
+      "How do I check a used Colorado for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Chevrolet dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-COLORADO-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=chevrolet&model=colorado&modelYear=2022",
+      "scope": "Colorado complaint counts and components by model year 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-03",
+      "title": "NHTSA: investigation EA26006",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA26006",
+      "scope": "open engineering analysis into loss of brake assist in GM’s eBoost system, including the 2023 to 2026 Colorado",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-04",
+      "title": "NHTSA: investigation RQ19001",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ19001",
+      "scope": "closed recall query into loss of power steering assist on Colorado and Canyon trucks",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-05",
+      "title": "Good Car Bad Car: Chevrolet Colorado sales figures",
+      "url": "https://www.goodcarbadcar.net/chevrolet-colorado-sales-figures/",
+      "scope": "U.S. Colorado sales 2016 to 2018",
+      "note": "read November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-06",
+      "title": "Best-Selling-Cars: 2019 GM sales",
+      "url": "https://www.best-selling-cars.com/usa/2019-full-year-usa-gm-general-motors-sales/",
+      "scope": "U.S. Colorado sales 2019",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-26)"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-07",
+      "title": "Best-Selling-Cars: 2021 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2021-full-year-usa-gm-sales-chevrolet-buick-cadillac-gmc/",
+      "scope": "U.S. Colorado sales 2020 and 2021",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-25)"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-08",
+      "title": "Best-Selling-Cars: 2023 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2023-full-year-usa-gm-chevrolet-gmc-cadillac-buick-car-sales-by-model",
+      "scope": "U.S. Colorado sales 2022 and 2023",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-24)"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-09",
+      "title": "Best-Selling-Cars: 2025 GM sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2025-full-year-usa-gm-buick-cadillac-chevrolet-gmc-car-sales-by-model/",
+      "scope": "U.S. Colorado sales 2024 and 2025",
+      "note": "reused from our Colorado vs Tacoma page (VEH-COT-23)"
+    },
+    {
+      "id": "VEH-PRB-COLORADO-10",
+      "title": "Wikipedia: Chevrolet Colorado",
+      "url": "https://en.wikipedia.org/wiki/Chevrolet_Colorado",
+      "scope": "generation years, engines and trims",
+      "note": "read November 21, 2026 through a page summary; check against Chevrolet before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "CHEVROLET",
     "years": [

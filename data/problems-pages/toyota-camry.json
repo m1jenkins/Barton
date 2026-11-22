@@ -1,7 +1,339 @@
 {
   "key": "toyota-camry",
   "name": "Toyota Camry",
-  "status": "stub",
+  "status": "ready",
+  "short": "Camry",
+  "make": "Toyota",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Toyota Camry Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Toyota Camry model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the 2018 and 2019 brake and fuel pump recalls and what owners report on Reddit.",
+  "h1": "Toyota Camry problems by year: years to avoid and what owners report",
+  "card": "The best and worst Camry years, the 2018 and 2019 brake and fuel pump recalls, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2016–2017, 2021–2025",
+  "avoidYears": "2018–2019",
+  "answer": [
+    "The best used Camrys are the 2021 to 2025 model years, which draw {r:2021}, {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a Camry yardstick of {base}. The 2016 and 2017 also rate Buy, at {r:2016} and {r:2017}. Skip the 2018 ({r:2018}) and the 2019 ({r:2019}). The 2018 drew {c:2018} complaints, the most of any year, led by the power train ({k:2018:POWER TRAIN}), brakes ({k:2018:SERVICE BRAKES}) and engine ({k:2018:ENGINE}), and recalls cover its brake vacuum pump, 2.5-liter pistons and fuel pump. The 2020 ({r:2020}) is a Check first year, and the 2025, the first all-hybrid Camry, draws {r:2025} with six recalls, so ask for proof its inverter recall is done.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Camry and Camry Hybrid listings, by U.S. sales. Our <a href=\"{guide}\">Camry price guide</a> tells used shoppers to skip the 2019 and 2020; this page rates the 2020 Check first, since its {c:2020} complaints work out to {r:2020} against the 2019’s {r:2019}. The 2026 is too new to rate."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s Camry table, which gives the same rates as our Camry vs Accord page, built from Toyota’s year-end releases for 2019 to 2025.",
+  "sales": {
+    "2016": 388616,
+    "2017": 387081,
+    "2018": 343439,
+    "2019": 336978,
+    "2020": 294348,
+    "2021": 313795,
+    "2022": 295201,
+    "2023": 290649,
+    "2024": 309875,
+    "2025": 316185
+  },
+  "publishedRates": {
+    "2019": 124,
+    "2020": 98,
+    "2021": 53,
+    "2022": 23,
+    "2023": 24,
+    "2024": 17,
+    "2025": 57
+  },
+  "verdicts": {
+    "2016": [
+      "buy",
+      "Air bags ({k:2016:AIR BAGS}) lead a modest count. Recalls cover front passenger sensor calibration (16V-215) and the Hybrid’s front drive shaft (17V-462)."
+    ],
+    "2017": [
+      "buy",
+      "A small count ({c:2017}) spread across air bags, electrical and brakes. Recall 16V-906 covers a front passenger knee air bag on cars built August to September 2016."
+    ],
+    "2018": [
+      "avoid",
+      "The most complaints of any year ({c:2018}): power train {k:2018:POWER TRAIN}, brakes {k:2018:SERVICE BRAKES}, engine {k:2018:ENGINE}. Recalls 18V-211 and 21V-890 (brake vacuum pump), 18V-200 (2.5-liter pistons) and three fuel pump recalls apply."
+    ],
+    "2019": [
+      "avoid",
+      "Power train ({k:2019:POWER TRAIN}), fuel system ({k:2019:FUEL/PROPULSION SYSTEM}) and engine ({k:2019:ENGINE}) lead. Fuel pump recalls 20V-012 and 20V-682 and vacuum pump recall 21V-890 apply."
+    ],
+    "2020": [
+      "check",
+      "Electrical ({k:2020:ELECTRICAL SYSTEM}), engine ({k:2020:ENGINE}) and air bags ({k:2020:AIR BAGS}) lead. Recalls 20V-064 (2.5-liter engine casting), 20V-682 and 23V-865 apply."
+    ],
+    "2021": [
+      "buy",
+      "{k:2021:AIR BAGS} of {c:2021} complaints name air bags. Recall 23V-865 covers the passenger occupant sensor on 2020 to 2022 cars; ask for proof."
+    ],
+    "2022": [
+      "buy",
+      "A small count ({c:2022}). Recall 23V-865 still applies."
+    ],
+    "2023": [
+      "buy",
+      "{c:2023} complaints. Recalls cover loose lug nuts (23V-432) and rear head restraint brackets (24V-128)."
+    ],
+    "2024": [
+      "buy",
+      "The fewest complaints of any year ({c:2024}). Recall 24V-128 applies."
+    ],
+    "2025": [
+      "buy",
+      "The count rises to {c:2025}, led by body and structure ({k:2025:STRUCTURE}) and electrical ({k:2025:ELECTRICAL SYSTEM}). Six recalls include inverter recall 25V-869 and display recall 26V-511."
+    ],
+    "2026": [
+      "buy",
+      "{c:2026} complaints on NHTSA’s list and {rec:2026} recalls so far. Too new to rate; have the dealer show 25V-869 and 26V-511 are done."
+    ]
+  },
+  "chartNote": "The 2018 and 2019 bars are the tallest, and both years have recalls on the brake vacuum pump or fuel pump.",
+  "generations": [
+    {
+      "name": "Seventh generation",
+      "years": "2016–2017",
+      "text": "The 2012 to 2017 Camry ended its U.S. run in May 2017. It came with a 2.5-liter four-cylinder (177 to 181 hp), a 3.5-liter V6 (268 hp) and a hybrid, with a six-speed automatic on the gas cars, and Toyota facelifted it for 2015 (Wikipedia)."
+    },
+    {
+      "name": "Eighth generation",
+      "years": "2018–2024",
+      "text": "It went on sale in late July 2017 as a 2018, with a 2.5-liter four (203 to 207 hp), a 300-hp V6 and a 208-hp hybrid. The four and V6 got an eight-speed automatic. All-wheel drive returned for 2020 along with a V6-only TRD trim, and a 2021 refresh added Android Auto and Toyota Safety Sense 2.5+. U.S. production ended in April 2024 (Wikipedia)."
+    },
+    {
+      "name": "Ninth generation",
+      "years": "2025–",
+      "text": "Every U.S. Camry is now a hybrid: a 2.5-liter system making 225 hp with front-wheel drive and 232 hp with all-wheel drive, which is optional on every trim. Production began in Kentucky in April 2024, and the 2026 model year added the Nightshade Edition (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Power train, 2018 and 2019",
+      "component": "POWER TRAIN",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "The biggest single part count on the two worst years. NHTSA’s field names the part and not what the owner describes, and no recall covers it, so a test drive and an inspection are the only check."
+    },
+    {
+      "title": "Brakes, 2018 and 2019",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "Recall 18V-211 covers a brake booster vacuum pump rotor that may have been machined wrong, on 2018 cars, and 21V-890 covers a vacuum pump vane cap that can break on 2018 and 2019 cars. Both can mean a sudden loss of brake assist, and dealers repair or replace the pump free."
+    },
+    {
+      "title": "Fuel system, 2018 to 2020",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2018,
+        2020
+      ],
+      "text": "Recalls 20V-012 and 20V-682 cover a low-pressure fuel pump that can fail and stall the engine on 2018 to 2020 cars, and 25V-028 repeats the fuel pump fix for some 2018s. Dealers replace the pump assembly free."
+    },
+    {
+      "title": "Engine, 2018 and 2020",
+      "component": "ENGINE",
+      "years": [
+        2018,
+        2020
+      ],
+      "text": "Recall 18V-200 covers 2018 four-cylinder engines whose pistons may be oversize and stall the engine, and 20V-064 covers 2020 2.5-liter engines with casting porosity that can leak coolant. Dealers inspect and replace the engine as needed, free."
+    },
+    {
+      "title": "Air bag sensor, 2020 and 2021",
+      "component": "AIR BAGS",
+      "years": [
+        2020,
+        2021
+      ],
+      "text": "Recall 23V-865 covers a short circuit in the passenger occupant sensor that can stop the front passenger air bag from deploying, on 2020 to 2022 Camrys and Camry Hybrids. Dealers inspect and replace the sensor free; the VIN lookup shows whether it is open."
+    },
+    {
+      "title": "Body and structure, 2025",
+      "component": "STRUCTURE",
+      "years": [
+        2025,
+        2025
+      ],
+      "text": "Our Camry price guide counted about 27 of the 2025’s complaints describing a front bumper cover that comes loose, and about 21 a cracked windshield. Neither has a recall."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit owners praise the Camry’s staying power and describe the used ones as a safe buy when inspected first. The reliability complaints are small ones, such as paint that chips and older four-cylinders that burn oil. The 2018 and 2019 power train, brake and fuel pump counts above don’t appear among those themes, so the NHTSA figures carry that story."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "25V-869",
+      "years": "2025–2026 Hybrid",
+      "title": "Inverter bolt",
+      "text": "A bolt inside the inverter may not have been tightened, which can cut drive power or cause a fire. Dealers replace the inverter free."
+    },
+    {
+      "id": "26V-511",
+      "years": "2025–2026 Hybrid",
+      "title": "Instrument cluster and hazard lights",
+      "text": "The instrument cluster display may fail at startup, which turns off the hazard lights. Dealers fix it free."
+    },
+    {
+      "id": "21V-890",
+      "years": "2018–2019",
+      "title": "Vacuum pump vane cap",
+      "text": "The vane cap inside the brake vacuum pump may break and the pump fail, causing a sudden loss of brake assist. Dealers repair or replace the pump free."
+    },
+    {
+      "id": "18V-211",
+      "years": "2018",
+      "title": "Brake booster vacuum pump",
+      "text": "The oil galley in the pump rotor may have been machined wrong, which can cause a sudden loss of brake assist. Dealers replace the pump free."
+    },
+    {
+      "id": "18V-200",
+      "years": "2018 2.5-liter",
+      "title": "Oversize pistons",
+      "text": "Pistons larger than specified can stall the engine. Dealers check the production date codes and replace the engine if a piston is from the affected period, free."
+    },
+    {
+      "id": "20V-012 and 20V-682",
+      "years": "2018–2020",
+      "title": "Low-pressure fuel pump",
+      "text": "The in-tank pump can fail and stall the engine. Dealers replace the pump assembly with an improved one, free; 25V-028 covers some 2018 cars again."
+    },
+    {
+      "id": "20V-064",
+      "years": "2020 2.5-liter",
+      "title": "Engine casting porosity",
+      "text": "Porosity in the engine castings can crack and leak coolant, which can overheat or stall a gas car and damage the engine. Dealers inspect and replace the engine as needed, free."
+    },
+    {
+      "id": "23V-865",
+      "years": "2020–2022",
+      "title": "Passenger occupant sensor",
+      "text": "A short circuit in the sensor can keep the front passenger air bag from deploying. Dealers inspect and replace the sensor free."
+    },
+    {
+      "id": "23V-432 and 24V-128",
+      "years": "2023–2024",
+      "title": "Lug nuts and rear head restraints",
+      "text": "Recall 23V-432 covers loose lug nuts on 2023 cars that can let a wheel detach, and 24V-128 insufficiently welded rear head restraint brackets on 2023 and 2024 cars. Both repairs are free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "DP19004",
+      "status": "closed",
+      "years": "2016–2019 Hybrid",
+      "title": "Brake actuator valve wear",
+      "text": "A petitioner asked NHTSA in September 2019 to investigate Prius, Camry Hybrid and Avalon Hybrid brake actuator valve wear, which Toyota covers under customer support programs ZJB and ZKK. The petitioner withdrew in August 2020 and NHTSA denied the petition as moot without a finding on the defect."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Inverter and display recalls on a 2025 or 2026.",
+      "text": "Ask the dealer to show 25V-869 (inverter) and 26V-511 (hazard lights and display) are done."
+    },
+    {
+      "title": "Brake and fuel pump recalls on a 2018 or 2019.",
+      "text": "Confirm 18V-211 (2018 only), 21V-890, 20V-012 and 20V-682 are closed, and on a 2018 that 25V-028 is too."
+    },
+    {
+      "title": "Engine recalls on a 2018 or 2020 four-cylinder.",
+      "text": "Ask for proof that 18V-200 (2018) or 20V-064 (2020) was done, and check the coolant level and for oil leaks."
+    },
+    {
+      "title": "The air bag sensor on a 2020 to 2022.",
+      "text": "Confirm 23V-865 is closed. The passenger sensor repair is free at a Toyota dealer."
+    },
+    {
+      "title": "Bumper cover and windshield on a 2025.",
+      "text": "Our price guide counted loose front bumper covers and cracked windshields in the 2025’s complaints with no recall. Look at the bumper seams and the glass."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the brakes, the coolant level and the transmission before you sign, especially on a 2018 or 2019."
+    }
+  ],
+  "newer": [
+    "The 2026 Camry has {c:2026} NHTSA complaints and {rec:2026} recalls so far, including inverter recall 25V-869 and display recall 26V-511, and it is too new to rate. If you are choosing between a new 2026 and a used 2024, the 2024 carries {rec:2024} recall (24V-128, rear head restraints) against the 2026’s {rec:2026} to confirm.",
+    "Our <a href=\"{guide}\">Camry price guide</a> has the 2026 prices, Toyota’s financing and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Toyota Camry year?",
+      "The 2018, at {r:2018} NHTSA complaints per 100,000 sold and {c:2018} complaints, the most of any year. The 2019 is next at {r:2019}."
+    ],
+    [
+      "What is the best used Camry year?",
+      "The 2021 to 2025 model years, at {r:2021}, {r:2022}, {r:2023}, {r:2024} and {r:2025} complaints per 100,000. The 2016 and 2017 also rate Buy, at {r:2016} and {r:2017}."
+    ],
+    [
+      "Is the 2025 Camry reliable?",
+      "It draws {r:2025} complaints per 100,000, near the Camry yardstick of {base}, with {c:2025} complaints and six recalls. Ask for proof that inverter recall 25V-869 and display recall 26V-511 are done."
+    ],
+    [
+      "Did Toyota recall the 2018 and 2019 Camry for the brakes and fuel pump?",
+      "Yes. Recalls 18V-211 and 21V-890 cover the brake vacuum pump and 20V-012 and 20V-682 the low-pressure fuel pump. The repairs are free at a Toyota dealer, and a VIN lookup shows which are still open on a given car."
+    ],
+    [
+      "How do I check a used Camry for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Toyota dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-CAMRY-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=toyota&model=camry&modelYear=2018",
+      "scope": "every Camry and Camry Hybrid listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-03",
+      "title": "NHTSA: investigation DP19004",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=DP19004",
+      "scope": "closed defect petition on brake actuator valve wear in Prius, Camry Hybrid and Avalon Hybrid",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-04",
+      "title": "Good Car Bad Car: Toyota Camry sales figures",
+      "url": "https://www.goodcarbadcar.net/toyota-camry-sales-figures/",
+      "scope": "U.S. Camry sales 2016 to 2025",
+      "note": "read November 21, 2026 through a page summary; the 2019 to 2025 rates match our Camry vs Accord page, built from Toyota’s year-end releases (VEH-CVA-16 to VEH-CVA-19)"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-05",
+      "title": "Wikipedia: Toyota Camry (XV50)",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Camry_(XV50)",
+      "scope": "seventh-generation model years, engines and the 2015 facelift",
+      "note": "read November 21, 2026 through a page summary; check against Toyota before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-06",
+      "title": "Wikipedia: Toyota Camry (XV70)",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Camry_(XV70)",
+      "scope": "eighth-generation launch, engines, transmissions, AWD, the 2021 refresh and the end of U.S. production",
+      "note": "read November 21, 2026 through a page summary; check against Toyota before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-CAMRY-07",
+      "title": "Wikipedia: Toyota Camry (XV80)",
+      "url": "https://en.wikipedia.org/wiki/Toyota_Camry_(XV80)",
+      "scope": "ninth-generation hybrid-only lineup, output and the 2026 Nightshade Edition",
+      "note": "read November 21, 2026 through a page summary; check against Toyota before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "TOYOTA",
     "years": [

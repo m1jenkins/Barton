@@ -1,7 +1,360 @@
 {
   "key": "hyundai-elantra",
   "name": "Hyundai Elantra",
-  "status": "stub",
+  "status": "ready",
+  "short": "Elantra",
+  "make": "Hyundai",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Hyundai Elantra Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Hyundai Elantra model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the 2019 and 2020 engine recall and what owners report on Reddit.",
+  "h1": "Hyundai Elantra problems by year: years to avoid and what owners report",
+  "card": "The best and worst Elantra years, the engine complaints on the 2017 to 2020 cars, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2021–2025",
+  "avoidYears": "2017",
+  "answer": [
+    "The best used Elantras are the 2021 to 2025 model years, which draw {r:2021}, {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against an Elantra yardstick of {base}. Skip the 2017: it draws {r:2017} per 100,000 on {c:2017} complaints, the most of any year, with the engine named in {k:2017:ENGINE}. The 2016, 2018, 2019 and 2020 are the years to ask about. The engine leads the complaints on the 2018, 2019 and 2020 ({k:2018:ENGINE}, {k:2019:ENGINE} and {k:2020:ENGINE}), and the 2016 carries Hyundai’s May 2026 recall for an air bag inflator that may rupture. The 2018’s middling rate of {r:2018} hides the engine count: no recall covers that year.",
+    "The rates divide each model year’s NHTSA complaints, counted across the Elantra, Elantra Hybrid and Elantra N listings, by U.S. sales. The Elantra’s yardstick is high, so a Buy year here still draws far more complaints than a Buy year on a Corolla; our <a href=\"/toyota-corolla-vs-hyundai-elantra.html\">Corolla vs Elantra page</a> sets the two side by side. The 2020 rate is lifted by Hyundai’s low 2020 sales of 105,475. Our <a href=\"{guide}\">Elantra price guide</a> tells used shoppers to start at the 2023, and this page starts a little earlier."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s Elantra table, which names no source of its own and matches the figures our Corolla vs Elantra page uses. Hyundai’s tables list one Elantra row that may not include the hybrid, which would overstate the rates.",
+  "sales": {
+    "2016": 208319,
+    "2017": 198210,
+    "2018": 200415,
+    "2019": 175094,
+    "2020": 105475,
+    "2021": 124422,
+    "2022": 117177,
+    "2023": 134149,
+    "2024": 136698,
+    "2025": 148200
+  },
+  "publishedRates": {
+    "2019": 144,
+    "2020": 243,
+    "2021": 130,
+    "2022": 136,
+    "2023": 130,
+    "2024": 47,
+    "2025": 24
+  },
+  "verdicts": {
+    "2016": [
+      "check",
+      "Engine ({k:2016:ENGINE}) leads a modest count. Recall 26V-307 (May 2026) covers a driver air bag inflator that may rupture, NHTSA’s inflator analysis EA16003 is open, and trunk latch recall 24V-146 applies.",
+      "buy to check: air bag inflator recall 26V-307 covers the 2016 and NHTSA’s inflator analysis EA16003 is open"
+    ],
+    "2017": [
+      "avoid",
+      "The most complaints of any year ({c:2017}): engine {k:2017:ENGINE}, body and structure {k:2017:STRUCTURE}, electrical {k:2017:ELECTRICAL SYSTEM}. Recalls cover air bag inflators (16V-232, 16V-956), the brake booster (17V-063) and a power steering connector (17V-213)."
+    ],
+    "2018": [
+      "check",
+      "The engine is named in {k:2018:ENGINE} of {c:2018} complaints, and NHTSA lists no recall for the year.",
+      "buy to check: the engine carries over 40% of the complaints and no recall covers the 2018"
+    ],
+    "2019": [
+      "check",
+      "The engine is named in {k:2019:ENGINE} of {c:2019} complaints, over half, and recall 21V-301 (piston oil rings) covers 2.0-liter cars only. Exterior lighting ({k:2019:EXTERIOR LIGHTING}) is next.",
+      "buy to check: the engine carries over 40% of the complaints and recall 21V-301 covers only 2.0-liter cars"
+    ],
+    "2020": [
+      "check",
+      "Engine ({k:2020:ENGINE}) and power train ({k:2020:POWER TRAIN}) lead. Recalls 21V-301 (piston oil rings), 19V-720 (rear lug nuts) and 19V-721 (ball joint fasteners) apply."
+    ],
+    "2021": [
+      "buy",
+      "Electrical ({k:2021:ELECTRICAL SYSTEM}) and automatic braking ({k:2021:FORWARD COLLISION AVOIDANCE}) lead. Pretensioner recalls 21V-796, 22V-218 and 22V-354 and windshield recall 21V00M000 apply."
+    ],
+    "2022": [
+      "buy",
+      "Electrical ({k:2022:ELECTRICAL SYSTEM}) and seat belts ({k:2022:SEAT BELTS}) lead. Pretensioner recalls 22V-123, 22V-218 and 22V-354 and camera recall 24V-879 apply."
+    ],
+    "2023": [
+      "buy",
+      "Electrical ({k:2023:ELECTRICAL SYSTEM}) leads. Recalls cover the air bag cover emblem (22V-632) and the idle-stop oil pump controller (23V-526)."
+    ],
+    "2024": [
+      "buy",
+      "{c:2024} complaints. EGR valve recall 24V-308 and Hybrid control unit recall 26V-308 apply."
+    ],
+    "2025": [
+      "buy",
+      "The lowest rate of any year ({c:2025} complaints). Side impact sensor recall 26V-254 (Elantra N) and Hybrid recall 26V-308 apply."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and {rec:2026} recalls: front strut fasteners (26V-692), lug nuts that can let a wheel detach (26V-693), side impact sensors (26V-254) and the Hybrid control unit (26V-308). Too new to rate."
+    ]
+  },
+  "chartNote": "The 2020 bar is the tallest, partly because Hyundai sold fewer Elantras that year; the 2017 has the most complaints.",
+  "generations": [
+    {
+      "name": "Fifth generation",
+      "years": "2016",
+      "text": "The 2011 to 2016 U.S. Elantra was built in Alabama, with the sedan updated for 2014 and further changes for 2015 and 2016 (Wikipedia)."
+    },
+    {
+      "name": "Sixth generation",
+      "years": "2017–2020",
+      "text": "Hyundai launched it for 2017 with a 2.0-liter four-cylinder (147 hp) and a 1.4-liter turbo Eco (128 hp, seven-speed dual-clutch), and added the 201-hp 1.6-liter turbo Sport in mid-2017. A 2019 refresh brought optional LED headlights and made advanced safety features standard on SEL and above, and the 2020 paired the 2.0-liter with a CVT (Wikipedia)."
+    },
+    {
+      "name": "Seventh generation",
+      "years": "2021–2025",
+      "text": "It arrived in late 2020 as a 2021, with a 139-hp hybrid and, from July 2021, the 276-hp Elantra N. A refresh for 2024 simplified the hybrid to one trim and made rear side-impact air bags standard (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine, 2016 to 2020",
+      "component": "ENGINE",
+      "years": [
+        2016,
+        2020
+      ],
+      "text": "Recall 21V-301 covers piston oil rings on 2019 and 2020 cars with the 2.0-liter engine that may not have been heat-treated properly, which can damage the engine. Dealers fix it free. No recall covers the 2016 to 2018 engines, and Reddit owners report older Elantras burning oil or failing around 100,000 to 150,000 miles."
+    },
+    {
+      "title": "Body and structure, 2017",
+      "component": "STRUCTURE",
+      "years": [
+        2017,
+        2017
+      ],
+      "text": "The 2017’s second-largest part count after the engine. NHTSA’s field names the part and not what the owner describes, and no recall covers it."
+    },
+    {
+      "title": "Air bag inflators, 2016 and 2017",
+      "component": "AIR BAGS",
+      "years": [
+        2016,
+        2017
+      ],
+      "text": "Recalls 16V-232 and 16V-956 cover 2017 driver air bag modules built in 2016, and 26V-307 (May 2026) a driver air bag inflator on 2015 and 2016 cars that may rupture. Dealers inspect and replace the part free; Hyundai said the final remedy was due in August 2026."
+    },
+    {
+      "title": "Seat belts, 2021 and 2022",
+      "component": "SEAT BELTS",
+      "years": [
+        2021,
+        2022
+      ],
+      "text": "Recalls 21V-796, 22V-123, 22V-218 and 22V-354 cover front seat belt pretensioners that can burst on deployment and throw metal fragments. NHTSA closed its recall query RQ22003 in May 2023 after Hyundai widened the recalls. Dealers replace the part free."
+    },
+    {
+      "title": "Electrical system, 2021 to 2023",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2021,
+        2023
+      ],
+      "text": "The biggest part count on the newer seventh-generation cars. No recall of its own covers it, and NHTSA’s field doesn’t say what owners describe."
+    },
+    {
+      "title": "Automatic emergency braking, 2021 to 2023",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2021,
+        2023
+      ],
+      "text": "NHTSA’s field names the driver-assist system and not the cause, and no recall covers it. Reddit owners report the forward safety warning light coming on at random and disabling cruise control."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit owners say 2021 and newer Elantras hold up better than older ones, which fits the NHTSA split above, and some cite Hyundai’s long powertrain warranty as reassurance on a newer car. What they report going wrong is older engines burning oil or failing around 100,000 to 150,000 miles, white paint that chips or peels, and warranty claims that dealers refuse. Some call a used Elantra a riskier long-term buy than a Corolla."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "26V-307",
+      "years": "2015–2016",
+      "title": "Driver air bag inflator",
+      "text": "The driver’s air bag inflator may rupture during deployment and throw sharp metal fragments. Dealers inspect and replace it as needed, free; ask whether the final remedy is in stock."
+    },
+    {
+      "id": "16V-232 and 16V-956",
+      "years": "2017",
+      "title": "Driver air bag modules",
+      "text": "On 2017 cars built in early to late 2016, a missing second-stage enhancer or a badly installed end seal can leave the driver’s air bag under-inflated. Dealers replace the module free."
+    },
+    {
+      "id": "17V-063 and 17V-213",
+      "years": "2017",
+      "title": "Brake booster and power steering connector",
+      "text": "The brake booster may fail and cut power brake assist (17V-063), and a damaged connector may cut power steering assist (17V-213). Dealers replace the booster or the steering motor free."
+    },
+    {
+      "id": "21V-301",
+      "years": "2019–2020 2.0-liter",
+      "title": "Piston oil rings",
+      "text": "Oil rings that were not heat-treated properly can damage the engine. Dealers repair the engine as needed, free."
+    },
+    {
+      "id": "19V-720 and 19V-721",
+      "years": "2020",
+      "title": "Lug nuts and ball joint",
+      "text": "Right rear lug nuts may be under-tightened and let a wheel detach (19V-720), and lower control arm ball joint fasteners may be loose (19V-721). Dealers tighten them free."
+    },
+    {
+      "id": "21V-796, 22V-123, 22V-218 and 22V-354",
+      "years": "2021–2022",
+      "title": "Seat belt pretensioners",
+      "text": "A front pretensioner can explode on deployment and send metal fragments into the cabin. Dealers replace it free."
+    },
+    {
+      "id": "21V00M000",
+      "years": "2020–2021",
+      "title": "Windshield bonding",
+      "text": "The windshield may not have been bonded properly and can detach in a crash. Dealers remove and reinstall it free."
+    },
+    {
+      "id": "22V-632 and 23V-526",
+      "years": "2022–2023",
+      "title": "Air bag emblem and oil pump controller",
+      "text": "An air bag cover emblem may detach on deployment (22V-632), and the idle-stop oil pump controller may overheat and raise fire risk (23V-526). Both repairs are free."
+    },
+    {
+      "id": "26V-692 and 26V-693",
+      "years": "2026",
+      "title": "Front struts and lug nuts",
+      "text": "Front strut fasteners may be loose and cost steering control (26V-692), and lug nuts may loosen and let a wheel detach (26V-693; Hyundai replaces the hub bearings). Both repairs are free."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA16003",
+      "status": "open",
+      "years": "2016",
+      "title": "Air bag inflator rupture",
+      "text": "NHTSA upgraded its evaluation of ARC Automotive air bag inflators to an engineering analysis on August 4, 2016, after ruptures in older Chrysler, Kia and Hyundai cars, including a fatal 2009 Elantra crash in Canada. It remains open. Hyundai filed recall 26V-307 for 2015 and 2016 Elantras in May 2026; NHTSA’s summary does not say whether that inflator is part of this analysis."
+    },
+    {
+      "id": "RQ22003",
+      "status": "closed",
+      "years": "2021–2022",
+      "title": "Seat belt pretensioners",
+      "text": "NHTSA opened a recall query on August 8, 2022 after three injuries from front pretensioners that ruptured in Hyundai and Kia cars, including 2021 and 2022 Elantras. It closed it in May 2023 once Hyundai widened its recalls."
+    },
+    {
+      "id": "DP21003",
+      "status": "closed",
+      "years": "2007–2016",
+      "title": "Throttle control vulnerabilities",
+      "text": "NHTSA denied a petition on electronic throttle systems in 2007 to 2016 Elantras and other Hyundai and Kia models in June 2023, saying a formal investigation wasn’t warranted."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "The air bag recall on a 2015 to 2017.",
+      "text": "Ask the dealer to show 26V-307 is done on a 2016, and 16V-232 or 16V-956 on a 2017. The repair is free."
+    },
+    {
+      "title": "Engine history on a 2016 to 2020.",
+      "text": "Ask for service records and the oil-change history. Read the dipstick, look for oil leaks and confirm 21V-301 is closed on a 2019 or 2020 2.0-liter car."
+    },
+    {
+      "title": "Seat belt and camera recalls on a 2021 or 2022.",
+      "text": "Confirm the pretensioner recalls (21V-796, 22V-123, 22V-218, 22V-354) and the camera recall 24V-879 are closed."
+    },
+    {
+      "title": "Hybrid recalls on a 2024 to 2026.",
+      "text": "Confirm 26V-308, the hybrid control unit software, is done."
+    },
+    {
+      "title": "Strut and lug nut recalls on a 2026.",
+      "text": "Ask the dealer to show 26V-692 and 26V-693 are done before you take delivery."
+    },
+    {
+      "title": "Warranty status.",
+      "text": "Ask a Hyundai dealer what powertrain warranty still covers the exact car; Hyundai’s terms change with the owner and the mileage."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s check the engine, oil level and coolant before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Elantra has {c:2026} NHTSA complaints and {rec:2026} recalls so far, including strut fasteners and lug nuts that can let a wheel detach, and it is too new to rate. If you are choosing between a new 2026 and a used 2024 or 2025, the 2024 and 2025 have {rec:2024} recalls each to confirm, and the 2026 has two fastener recalls to confirm before you take delivery.",
+    "Our <a href=\"{guide}\">Elantra price guide</a> has the 2026 prices, Hyundai’s financing and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Hyundai Elantra year?",
+      "The 2017, at {r:2017} NHTSA complaints per 100,000 sold on {c:2017} complaints, the most of any year; {k:2017:ENGINE} name the engine. The 2020 is next at {r:2020}."
+    ],
+    [
+      "What is the best used Elantra year?",
+      "The 2021 to 2025 model years, at {r:2021}, {r:2022}, {r:2023}, {r:2024} and {r:2025} complaints per 100,000. Ask for proof the 2021 and 2022 pretensioner recalls are done."
+    ],
+    [
+      "Do Hyundai Elantras have engine problems?",
+      "NHTSA’s counts name the engine in {k:2017:ENGINE}, {k:2018:ENGINE}, {k:2019:ENGINE} and {k:2020:ENGINE} complaints on the 2017 to 2020 model years, and Reddit owners report older Elantras burning oil or failing around 100,000 to 150,000 miles. Recall 21V-301 covers piston oil rings on 2019 and 2020 cars with the 2.0-liter engine."
+    ],
+    [
+      "Is the 2026 Elantra reliable?",
+      "It is too new to rate. It has {c:2026} NHTSA complaints and {rec:2026} recalls so far, including front strut fasteners and lug nuts, so ask the dealer to show both repairs are done."
+    ],
+    [
+      "How do I check a used Elantra for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Hyundai dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-ELANTRA-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=hyundai&model=elantra&modelYear=2019",
+      "scope": "every Elantra, Elantra Hybrid, Elantra HEV and Elantra N listing (the Elantra GT is left out) for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only. The Elantra HEV listing holds the 2023 and 2024 hybrids and was added after the first read"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-03",
+      "title": "NHTSA: investigation EA16003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA16003",
+      "scope": "open engineering analysis of ARC Automotive air bag inflator ruptures",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-04",
+      "title": "NHTSA: investigation RQ22003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ22003",
+      "scope": "closed recall query on ruptured seat belt pretensioners in 2020 to 2022 Hyundai and Kia cars",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-05",
+      "title": "NHTSA: investigation DP21003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=DP21003",
+      "scope": "denied petition on electronic throttle control in 2007 to 2016 Elantras and other Hyundai and Kia models",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-06",
+      "title": "Good Car Bad Car: Hyundai Elantra sales figures",
+      "url": "https://www.goodcarbadcar.net/hyundai-elantra-sales-figures/",
+      "scope": "U.S. Elantra sales 2016 to 2025; the page names no source of its own",
+      "note": "read November 21, 2026 through a page summary; the 2019 to 2025 figures match our Corolla vs Elantra page (VEH-COEL-52 to VEH-COEL-54)"
+    },
+    {
+      "id": "VEH-PRB-ELANTRA-07",
+      "title": "Wikipedia: Hyundai Elantra",
+      "url": "https://en.wikipedia.org/wiki/Hyundai_Elantra",
+      "scope": "fifth-, sixth- and seventh-generation U.S. model years, engines, the 2019 and 2024 refreshes and the Elantra N",
+      "note": "read November 21, 2026 through page summaries; check against Hyundai before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "HYUNDAI",
     "years": [
@@ -11,7 +364,8 @@
     "listings": [
       "ELANTRA",
       "ELANTRA HYBRID",
-      "ELANTRA N"
+      "ELANTRA N",
+      "ELANTRA HEV"
     ],
     "models": [
       "ELANTRA"
@@ -20,12 +374,13 @@
     "recallModels": [
       "ELANTRA",
       "ELANTRA HYBRID",
-      "ELANTRA N"
+      "ELANTRA N",
+      "ELANTRA HEV"
     ],
     "investigationTerms": [
       "Elantra"
     ],
-    "readOn": "2026-11-21",
+    "readOn": "2026-11-22",
     "byYear": {
       "2016": {
         "complaints": 295,
@@ -218,6 +573,7 @@
           "21V00M000",
           "22V-218",
           "22V-354",
+          "23V-589",
           "24V-879"
         ]
       },
@@ -252,60 +608,63 @@
           "22V-354",
           "22V-632",
           "22V-746",
+          "23V-589",
           "24V-528",
           "24V-879"
         ]
       },
       "2023": {
-        "complaints": 119,
-        "crashes": 11,
+        "complaints": 174,
+        "crashes": 16,
         "fires": 0,
         "components": {
-          "ELECTRICAL SYSTEM": 29,
-          "ENGINE": 27,
-          "UNKNOWN OR OTHER": 25,
-          "FORWARD COLLISION AVOIDANCE": 21,
-          "POWER TRAIN": 12,
-          "SERVICE BRAKES": 11,
-          "LANE DEPARTURE": 10,
-          "VISIBILITY": 8,
-          "VEHICLE SPEED CONTROL": 7,
-          "AIR BAGS": 6,
-          "FUEL/PROPULSION SYSTEM": 6,
+          "ELECTRICAL SYSTEM": 46,
+          "UNKNOWN OR OTHER": 37,
+          "FORWARD COLLISION AVOIDANCE": 34,
+          "ENGINE": 31,
+          "POWER TRAIN": 21,
+          "SERVICE BRAKES": 16,
+          "VEHICLE SPEED CONTROL": 15,
+          "LANE DEPARTURE": 13,
+          "AIR BAGS": 9,
+          "FUEL/PROPULSION SYSTEM": 9,
+          "STEERING": 9,
+          "VISIBILITY": 9,
+          "EXTERIOR LIGHTING": 5,
+          "SUSPENSION": 5,
           "BACK OVER PREVENTION": 4,
-          "STEERING": 4,
-          "SUSPENSION": 4,
+          "STRUCTURE": 4,
           "TIRES": 4,
-          "STRUCTURE": 3,
-          "EXTERIOR LIGHTING": 2,
           "SEAT BELTS": 2,
-          "WHEELS": 1
+          "WHEELS": 2,
+          "LATCHES/LOCKS/LINKAGES": 1
         },
         "recalls": [
           "22V-632",
           "23V-526",
+          "23V-589",
           "24V-528"
         ]
       },
       "2024": {
-        "complaints": 58,
+        "complaints": 64,
         "crashes": 6,
-        "fires": 0,
+        "fires": 1,
         "components": {
-          "UNKNOWN OR OTHER": 18,
-          "ELECTRICAL SYSTEM": 17,
+          "ELECTRICAL SYSTEM": 20,
+          "UNKNOWN OR OTHER": 19,
+          "ENGINE": 10,
           "FORWARD COLLISION AVOIDANCE": 9,
-          "ENGINE": 8,
           "STEERING": 7,
-          "VEHICLE SPEED CONTROL": 6,
-          "LANE DEPARTURE": 5,
+          "VEHICLE SPEED CONTROL": 7,
+          "LANE DEPARTURE": 6,
           "SERVICE BRAKES": 4,
           "EXTERIOR LIGHTING": 3,
           "POWER TRAIN": 3,
+          "STRUCTURE": 3,
+          "VISIBILITY": 3,
           "AIR BAGS": 2,
-          "STRUCTURE": 2,
           "SUSPENSION": 2,
-          "VISIBILITY": 2,
           "WHEELS": 2,
           "FUEL/PROPULSION SYSTEM": 1,
           "TIRES": 1
