@@ -1,7 +1,313 @@
 {
   "key": "ford-ranger",
   "name": "Ford Ranger",
-  "status": "stub",
+  "status": "ready",
+  "short": "Ranger",
+  "make": "Ford",
+  "newerYear": "2026",
+  "firstSold": 2019,
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Ford Ranger Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Ford Ranger model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
+  "h1": "Ford Ranger problems by year: years to avoid and what owners report",
+  "card": "Which Ranger model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
+  "bestYears": "2020–2023, 2025",
+  "avoidYears": "2019",
+  "answer": [
+    "The best used Rangers are the 2020 to 2023 model years, at {r:2020}, {r:2021}, {r:2022} and {r:2023} NHTSA owner complaints per 100,000 sold, and the 2025 at {r:2025}. Skip the 2019, the first year back: it draws {r:2019}, led by transmission and drivetrain complaints ({k:2019:POWER TRAIN} of {c:2019}), and its {rec:2019} recalls include shifter, blower motor and rear light faults. The redesigned 2024 is Check first at {r:2024} and {rec:2024} recalls, and the 2025 and 2026 trucks carry engine recalls (26V-343, 26V-548) that can cut drive power.",
+    "The rates divide each model year’s NHTSA complaints by U.S. Ranger sales. They compare years with each other; they don’t predict one truck. The Ranger returned to the U.S. for 2019, so the table starts there. The 2026 is too new to rate; our <a href=\"{guide}\">Ranger price guide</a> covers what it costs new."
+  ],
+  "salesNote": "Sales for 2019 to 2025 are Best-Selling-Cars’ Ford tables; on one page the 2020 and 2021 columns are both labeled FY2021.",
+  "sales": {
+    "2019": 89571,
+    "2020": 101486,
+    "2021": 94755,
+    "2022": 57005,
+    "2023": 32334,
+    "2024": 46205,
+    "2025": 70960
+  },
+  "publishedRates": {
+    "2019": 303.7,
+    "2020": 130.1,
+    "2021": 126.6,
+    "2022": 68.4,
+    "2023": 58.8,
+    "2024": 214.3,
+    "2025": 64.8
+  },
+  "verdicts": {
+    "2019": [
+      "avoid",
+      "{r:2019} per 100,000 in the first year back. Transmission and drivetrain leads ({k:2019:POWER TRAIN} of {c:2019}), and {rec:2019} recalls include a shifter that can leave Park without the brake pedal (19V-071) and loose shifter cable bracket fasteners (19V-366)."
+    ],
+    "2020": [
+      "buy",
+      "{r:2020} per 100,000. Power train leads ({k:2020:POWER TRAIN}); recalls cover a shift cable clip that can leave the transmission in a different gear than the shifter shows (20V-197) and the rearview camera (20V-575)."
+    ],
+    "2021": [
+      "buy",
+      "{r:2021} per 100,000, at the yardstick. Power train is {k:2021:POWER TRAIN} of {c:2021} complaints."
+    ],
+    "2022": [
+      "buy",
+      "{r:2022} per 100,000. Recalls cover a windshield that may not be bonded properly (22V-451) and a loose fuel line on 2.3-liter engines (22V-685)."
+    ],
+    "2023": [
+      "buy",
+      "{r:2023} per 100,000, the lowest in the table, on only {c:2023} complaints and 32,334 sales while Ford changed over to the new truck. A lug nut recall (23V-283) applies."
+    ],
+    "2024": [
+      "check",
+      "{r:2024} per 100,000 in the redesign’s first year, with power train ({k:2024:POWER TRAIN}) and electrical ({k:2024:ELECTRICAL SYSTEM}) leading. {rec:2024} recalls include the front upper ball joint (24V-770, 25V-310), the window closing feature (24V-597, 25V-237) and fuel pump bolts (25V-597)."
+    ],
+    "2025": [
+      "buy",
+      "{r:2025} per 100,000. Recall 26V-343 covers engines that can fail and cut drive power on 2025–2026 trucks; the fix is a new engine long block, so confirm it was done. Other recalls cover the passenger air bag (25V-678) and windshield bonding (25V-683)."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints so far and no full year of sales. Two engine recalls apply, 26V-343 and 26V-548 (piston domes that can fail, remedy expected December 2026), and so does 26V-605 for the rearview camera screen, whose remedy is still under development."
+    ]
+  },
+  "chartNote": "The 2023 bar rests on {c:2023} complaints against 32,334 sales while Ford changed over to the new truck.",
+  "generations": [
+    {
+      "name": "The T6 Ranger returns",
+      "years": "2019–2023",
+      "text": "The T6 truck returned to the U.S. for 2019 with a 2.3-liter EcoBoost four-cylinder and a 10-speed automatic, built at Michigan Assembly, and the Tremor off-road trim arrived for 2021 (Wikipedia)."
+    },
+    {
+      "name": "Second generation (P703)",
+      "years": "2024–",
+      "text": "Unveiled May 10, 2023 and engineered for the U.S. market. It has the 2.3-liter EcoBoost as the base engine, an optional 2.7-liter twin-turbo V6 on XLT and Lariat, a 10-speed automatic, and a Raptor with a 3.0-liter EcoBoost V6 (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Transmission and drivetrain",
+      "component": "POWER TRAIN",
+      "years": [
+        2019,
+        2025
+      ],
+      "text": "Power train is the top complaint part on every Ranger year from 2019 to 2025 ({k:2019:POWER TRAIN} on the 2019, {k:2021:POWER TRAIN} of {c:2021} on the 2021). NHTSA’s label spans the transmission, axles and driveline, so it can’t isolate the 10-speed. Recalls 19V-071, 19V-366 and 20V-197 cover shifter and shift cable faults on 2019–2020 trucks, and owners on Reddit say newer Rangers sorted out early 10-speed problems."
+    },
+    {
+      "title": "Electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2019,
+        2024
+      ],
+      "text": "Electrical is second on the 2019 ({k:2019:ELECTRICAL SYSTEM}) and the 2024 ({k:2024:ELECTRICAL SYSTEM}). NHTSA’s label names a part, not a failure, and no recall on its list obviously matches the 2024 count. The 2025 instrument cluster recall (25V-399) and the 2026 camera screen recall (26V-605) are electrical."
+    },
+    {
+      "title": "Engine",
+      "component": "ENGINE",
+      "years": [
+        2024,
+        2026
+      ],
+      "text": "Engine counts are small ({k:2024:ENGINE} on the 2024, {k:2025:ENGINE} on the 2025), but two recalls cover engines that can fail and cut drive power: 26V-343 (2025–2026, new engine long block, owner letters mailed October 23, 2026) and 26V-548 (2026, piston domes, remedy expected December 2026). Owners on Reddit report timing chain trouble on the 2.7 EcoBoost and oil use on the 2.3, which NHTSA’s counts can’t confirm."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s Ranger threads mix this page’s trucks with the older Ranger Ford stopped selling in the U.S. before 2019, which we don’t rate. For the trucks that are rated, owners say newer Rangers have sorted out the early 10-speed problems, which fits the 2019’s 272 complaints falling to 39 on the 2022 and 19 on the 2023. The newer-truck gripes are timing chain trouble on the 2.7 and oil use on the 2.3. Frame and leaf spring hanger rust and the old 4.0 V6’s timing chain guides are older-Ranger complaints that don’t apply to a 2019 or later."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "19V-071",
+      "years": "2019",
+      "title": "Shifter leaves Park",
+      "text": "On some 10-speed trucks the shift lever can move out of Park without the key in the ignition and without the brake pedal pressed. Dealers inspect and repair the shifter interlock, free."
+    },
+    {
+      "id": "20V-197",
+      "years": "2020",
+      "title": "Shift cable clip",
+      "text": "A shift cable lock clip that isn’t fully seated can leave the transmission in a different gear than the shifter shows. Dealers correct the clip, free."
+    },
+    {
+      "id": "20V-575",
+      "years": "2020",
+      "title": "Rearview camera",
+      "text": "A camera circuit board fault can make the rearview camera work intermittently on 2020 Rangers and other Ford models. NHTSA’s recall query RQ21002 is still checking the recall’s timing and scope."
+    },
+    {
+      "id": "24V-770 and 25V-310",
+      "years": "2024–2025",
+      "title": "Front upper ball joint",
+      "text": "The front upper control arm ball joint fastener may be missing or loose, which can let the arm detach from the knuckle. Dealers inspect and tighten or replace the parts, free."
+    },
+    {
+      "id": "25V-541",
+      "years": "2024–2026",
+      "title": "Side curtain air bags",
+      "text": "The side curtain air bags may contact the B-pillar reinforcements and tear when they deploy. Dealers install protective shields, free."
+    },
+    {
+      "id": "25V-597",
+      "years": "2024",
+      "title": "Fuel pump bolts",
+      "text": "The bolts that secure the high-pressure fuel pump may be loose, which can leak fuel. Dealers replace the mounting bolts, free."
+    },
+    {
+      "id": "26V-343",
+      "years": "2025–2026",
+      "title": "Engine failure",
+      "text": "The engine may fail and cut drive power. Dealers replace the engine long block, free; owner letters were mailed October 23, 2026."
+    },
+    {
+      "id": "26V-548",
+      "years": "2026",
+      "title": "Piston domes",
+      "text": "Piston domes made incorrectly can fail and cut drive power. Dealers inspect and replace the long block if needed, free, once the remedy arrives, expected in December 2026."
+    },
+    {
+      "id": "26V-605",
+      "years": "2026",
+      "title": "Rearview camera screen",
+      "text": "On trucks with the 10.1-inch screen, the display can lose power and drop the rearview camera image. The remedy is still under development."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "RQ21002",
+      "status": "open",
+      "years": "2020",
+      "title": "Rearview camera recall timing",
+      "text": "NHTSA opened a recall query in August 2021 to check the timing and scope of Ford’s rearview camera recall 20V-575 and Ford’s reporting. It covers 2020 Rangers and other Ford models and is still open."
+    },
+    {
+      "id": "PE24019",
+      "status": "closed",
+      "years": "2024–2025",
+      "title": "Low-pressure fuel pump failures",
+      "text": "NHTSA closed it on September 19, 2025 after Ford’s recall 25V-455 for 2021–2023 F-150s, Broncos and other models. It names 2024–2025 Rangers among vehicles with similar pumps that the recall leaves out, and says it will keep watching them."
+    }
+  ],
+  "checks": [
+    {
+      "title": "The engine recalls on a 2025 or 2026.",
+      "text": "Ask for proof that 26V-343 was done (a new engine long block) and, on a 2026, that 26V-548’s remedy is scheduled; it isn’t expected until December 2026."
+    },
+    {
+      "title": "The shifter recalls on a 2019 or 2020.",
+      "text": "Confirm 19V-071, 19V-366 and 20V-197 are closed; they cover shifter and shift cable faults."
+    },
+    {
+      "title": "The rearview camera on a 2020 or 2026.",
+      "text": "A 2020 needs 20V-575 done, and a 2026 with the 10.1-inch screen has 26V-605 with no remedy yet. The VIN lookup shows both."
+    },
+    {
+      "title": "The front ball joint on a 2024 or 2025.",
+      "text": "Ask for proof of 24V-770 or 25V-310, and of 25V-597 on a 2024."
+    },
+    {
+      "title": "The passenger seat belt on a Super Cab.",
+      "text": "Recalls 19V-518 and 21V-811 cover a front passenger belt that may be assembled wrong on 2019–2021 Super Cabs."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Have a shop that isn’t the seller’s scan for transmission codes and look over the front suspension before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Ranger has {c:2026} complaints so far and {rec:2026} recalls, including two engine recalls and a rearview camera recall whose remedy is still under development. We’d wait for those remedies before calling it better than a 2020 to 2023.",
+    "If you are choosing between a new 2026 and a used 2020 to 2023, our <a href=\"{guide}\">Ranger price guide</a> has the new prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Ford Ranger year?",
+      "The 2019, the first year after Ford’s U.S. gap. It draws {r:2019} NHTSA complaints per 100,000 sold against {r:2020} for the 2020 and {r:2023} for the 2023, and {rec:2019} recalls."
+    ],
+    [
+      "What is the best used Ranger year?",
+      "The 2020 to 2023 model years have the lowest rates, from {r:2023} for the 2023 to {r:2020} for the 2020, and the 2025 draws {r:2025}. The 2025 carries engine recall 26V-343, so confirm it was done."
+    ],
+    [
+      "Why does the table start at 2019?",
+      "Ford returned the Ranger to the U.S. for 2019, so earlier model years have no sales to divide by and no truck to rate."
+    ],
+    [
+      "Is the 2024 Ranger reliable?",
+      "It draws {r:2024} complaints per 100,000 and {rec:2024} recalls, more than three times the 2023’s rate, and we rate it Check first. The recalls cover front ball joints, windows and fuel pump bolts, and each is free at a Ford dealer."
+    ],
+    [
+      "How do I check a used Ranger for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that truck; recall repairs are free at a Ford dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-RANGER-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=ford&model=ranger&modelYear=2020",
+      "scope": "Ranger complaint counts and components by model year 2016 to 2026 across the Ranger, Super Cab and Super Crew listings, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only"
+    },
+    {
+      "id": "VEH-PRB-RANGER-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RANGER-03",
+      "title": "NHTSA: investigation RQ21002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=RQ21002",
+      "scope": "open recall query into the timing and scope of Ford’s rearview camera recall 20V-575",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RANGER-04",
+      "title": "NHTSA: investigation PE24019",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE24019",
+      "scope": "closed investigation into low-pressure fuel pump failures, including 2024–2025 Rangers",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-RANGER-05",
+      "title": "Best-Selling-Cars: 2019 Ford and Lincoln sales",
+      "url": "https://www.best-selling-cars.com/usa/2019-full-year-usa-ford-and-lincoln-sales/",
+      "scope": "U.S. Ranger sales 2019",
+      "note": "reused from our Tacoma vs Ranger page (VEH-TARN-40)"
+    },
+    {
+      "id": "VEH-PRB-RANGER-06",
+      "title": "Best-Selling-Cars: 2021 Ford and Lincoln sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2021-full-year-usa-ford-and-lincoln-sales-by-model/",
+      "scope": "U.S. Ranger sales 2020 and 2021; the page labels both columns FY2021",
+      "note": "reused from our Tacoma vs Ranger page (VEH-TARN-39)"
+    },
+    {
+      "id": "VEH-PRB-RANGER-07",
+      "title": "Best-Selling-Cars: 2023 Ford and Lincoln sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2023-full-year-usa-ford-and-lincoln-us-car-sales-by-model/",
+      "scope": "U.S. Ranger sales 2022 and 2023",
+      "note": "reused from our Tacoma vs Ranger page (VEH-TARN-38)"
+    },
+    {
+      "id": "VEH-PRB-RANGER-08",
+      "title": "Best-Selling-Cars: 2025 Ford and Lincoln sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2025-full-year-usa-ford-and-lincoln-car-sales-by-model/",
+      "scope": "U.S. Ranger sales 2024 and 2025",
+      "note": "reused from our Tacoma vs Ranger page (VEH-TARN-37)"
+    },
+    {
+      "id": "VEH-PRB-RANGER-09",
+      "title": "Wikipedia: Ford Ranger (T6)",
+      "url": "https://en.wikipedia.org/wiki/Ford_Ranger_(T6)",
+      "scope": "the Ranger’s absence from the U.S. market, its 2019 return and the 2024 redesign",
+      "note": "read November 21, 2026 through a page summary; check against Ford before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "FORD",
     "years": [

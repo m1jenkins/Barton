@@ -1,7 +1,298 @@
 {
   "key": "kia-sportage",
   "name": "Kia Sportage",
-  "status": "stub",
+  "status": "ready",
+  "short": "Sportage",
+  "make": "Kia",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Kia Sportage Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Kia Sportage model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the engine complaints and what owners report on Reddit.",
+  "h1": "Kia Sportage problems by year: years to avoid and what owners report",
+  "card": "The best and worst Sportage years, the 2016 to 2020 engine complaints, the 2023 redesign year, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2021–2022, 2024–2025",
+  "avoidYears": "2016–2018, 2020, 2023",
+  "answer": [
+    "The best used Sportages are the 2021, 2022, 2024 and 2025 model years, which draw {r:2021}, {r:2022}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a yardstick of {base} for this car. Skip the 2016, 2017, 2018 and 2020 ({r:2016}, {r:2017}, {r:2018} and {r:2020}), all led by the engine, and the 2023 ({r:2023}), the first year of the current generation, which has {c:2023} complaints and {rec:2023} recalls. The 2019 ({r:2019}) is Check first: its rate is low, but the engine is {k:2019:ENGINE} of {c:2019} complaints.",
+    "The rates divide each model year’s NHTSA complaints, counted across the gas, Hybrid and Plug-in Hybrid listings, by Kia’s U.S. Sportage sales. The sales page doesn’t say whether its total includes the hybrids, and the 2023 is the first year of the current generation. The 2026 is too new to rate and has one recall. Our <a href=\"{guide}\">Sportage price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s Sportage table, which matches Kia’s releases for 2024 and 2025; 2016 to 2023 rest on the table alone, as they do on our Tucson versus Sportage page.",
+  "sales": {
+    "2016": 81066,
+    "2017": 72824,
+    "2018": 82823,
+    "2019": 89278,
+    "2020": 84343,
+    "2021": 88688,
+    "2022": 125245,
+    "2023": 140780,
+    "2024": 161917,
+    "2025": 182823
+  },
+  "publishedRates": {
+    "2019": 82,
+    "2020": 206,
+    "2021": 61,
+    "2022": 38,
+    "2023": 151,
+    "2024": 69,
+    "2025": 42
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "The engine leads ({k:2016:ENGINE} of {c:2016}), then brakes ({k:2016:SERVICE BRAKES}). Recall 22V-051 covers a brake control unit that can short and start a fire, and 18V-907 a fuel pipe on cars that got a replacement engine."
+    ],
+    "2017": [
+      "avoid",
+      "Engine complaints ({k:2017:ENGINE}) are the most for any part in any year. Recalls cover the brake control unit (21V-137) and a fuel pipe on replacement-engine cars (18V-907)."
+    ],
+    "2018": [
+      "avoid",
+      "Engine again, {k:2018:ENGINE} of {c:2018}. Recalls 18V-907 and 21V-137 apply."
+    ],
+    "2019": [
+      "check",
+      "The lowest engine count of the older years ({k:2019:ENGINE}), but that is 56% of {c:2019} complaints and no recall covers it. Recall 21V-137 (brake control unit fire risk) applies.",
+      "buy to check: the engine carries 56% of the complaints with no recall to explain them, and the rate is four points under the line"
+    ],
+    "2020": [
+      "avoid",
+      "The engine carries {k:2020:ENGINE} of {c:2020} complaints, and in the text we read, most mention oil. Recalls 21V-137 and 22V-703 (tow hitch harness) apply."
+    ],
+    "2021": [
+      "buy",
+      "{c:2021} complaints, led by the engine ({k:2021:ENGINE}). Recall 21V-137 applies."
+    ],
+    "2022": [
+      "buy",
+      "The lowest rate in the table, {r:2022}, on {c:2022} complaints. Recall 22V-703 covers a tow hitch harness short on cars fitted with one."
+    ],
+    "2023": [
+      "avoid",
+      "The first year of the current generation: unspecified parts ({k:2023:UNKNOWN OR OTHER}), electrical ({k:2023:ELECTRICAL SYSTEM}), engine ({k:2023:ENGINE}) and brakes ({k:2023:SERVICE BRAKES}) lead. Recalls cover curtain air bags (22V-878), the brake booster (23V-410), the alternator terminal (22V-651), the instrument cluster (23V-298), an oil pump controller (23V-531) and roof molding (24V-025)."
+    ],
+    "2024": [
+      "buy",
+      "{c:2024} complaints, with no part above {k:2024:UNKNOWN OR OTHER}. Recall 24V-422 covers a power steering circuit board that can short and cost assist, and 24V-025 the roof molding."
+    ],
+    "2025": [
+      "buy",
+      "The count ({c:2025}) is still growing as the year ages. The one recall is 25V-874, for a tow hitch harness accessory that can blank the instrument screen."
+    ],
+    "2026": [
+      "buy",
+      "{c:2026} complaints and {rec:2026} recall so far, 26V-046, an instrument panel software fix delivered over the air or at a dealer. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2017 bar is the tallest. The 2023 bar is the current generation’s first year, and the 2022 and 2025 bars are the lowest.",
+  "generations": [
+    {
+      "name": "Fourth generation",
+      "years": "2017–2022",
+      "text": "The QL Sportage launched as a 2017 in North America with a 181-hp 2.4-liter or a 240-hp 2.0-liter turbo, both with a six-speed automatic, and was facelifted for 2020 (Wikipedia). The 2016 on this page is the last year of the generation before it."
+    },
+    {
+      "name": "Fifth generation",
+      "years": "2023–",
+      "text": "The redesigned Sportage was revealed in October 2021 as a 2023, is built in West Point, Georgia, and added a hybrid at launch; it was facelifted in May 2025 (Wikipedia). Our Sportage price guide covers the current lineup."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine, 2016 to 2020",
+      "component": "ENGINE",
+      "years": [
+        2016,
+        2020
+      ],
+      "text": "The engine is the leading part on the 2016, 2017, 2018, 2019 and 2020 ({k:2016:ENGINE}, {k:2017:ENGINE}, {k:2018:ENGINE}, {k:2019:ENGINE} and {k:2020:ENGINE}). In the text we read, oil is the word that comes up most, with knocking, stalling and fires named less often. Recall 18V-907 covers a fuel pipe on cars that already got a replacement engine under an earlier recall, but no recall covers the oil complaints, and NHTSA’s field doesn’t say what failed."
+    },
+    {
+      "title": "Brake control unit fire risk, 2014 to 2021",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2016,
+        2021
+      ],
+      "text": "Recalls 22V-051 (2014 to 2016) and 21V-137 (2017 to 2021) cover a hydraulic brake control unit that can short and start an engine compartment fire. Dealers install a fuse, free, and Kia advises owners to park outside until it’s done."
+    },
+    {
+      "title": "The 2023 redesign year",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2023,
+        2023
+      ],
+      "text": "The 2023 has {k:2023:ELECTRICAL SYSTEM} electrical complaints, and in the text we read many name the screen, a warning light or the instrument cluster. Recall 23V-298 covers instrument cluster software that can leave the display blank, and 22V-651 an alternator terminal nut that can loosen and stall the engine."
+    },
+    {
+      "title": "Brakes on the 2023",
+      "component": "SERVICE BRAKES",
+      "years": [
+        2023,
+        2023
+      ],
+      "text": "Recall 23V-410 covers a brake booster diaphragm that can misalign and cost power brake assist; dealers replace the booster as needed, free. The 2023 has {k:2023:SERVICE BRAKES} brake complaints."
+    },
+    {
+      "title": "Power steering, 2024",
+      "component": "STEERING",
+      "years": [
+        2024,
+        2024
+      ],
+      "text": "Recall 24V-422 covers a power steering circuit board that can short and leave the car without assist. Dealers replace the electric power pack, free."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "The Theta engine worries match the 2016 to 2020 engine counts in the table, and the owners who call recent years free of them agree with the lower 2021 and 2022 rates. The 2023 recall list rarely comes up in the threads."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "21V-137 and 22V-051",
+      "years": "2014–2021",
+      "title": "Brake control unit short",
+      "text": "The hydraulic brake control unit can short and cause an engine compartment fire. Dealers install a fuse, free, and Kia tells owners to park outside until it is done."
+    },
+    {
+      "id": "18V-907",
+      "years": "2016–2018",
+      "title": "Fuel pipe after an engine replacement",
+      "text": "On cars that already had a replacement engine, the high-pressure fuel pipe may have been damaged or badly torqued, which can leak fuel. Dealers inspect and replace the pipe, free."
+    },
+    {
+      "id": "24V-422",
+      "years": "2024",
+      "title": "Power steering circuit board",
+      "text": "The circuit board can short and leave the car without power steering assist. Dealers replace the electric power pack, free."
+    },
+    {
+      "id": "23V-410",
+      "years": "2023",
+      "title": "Brake booster diaphragm",
+      "text": "The diaphragm can misalign and cause a vacuum leak that cuts power brake assist. Dealers replace the booster as needed, free."
+    },
+    {
+      "id": "22V-651 and 22V-878",
+      "years": "2023",
+      "title": "Alternator terminal and curtain air bags",
+      "text": "A loose alternator nut can stall the engine or cause a surge, and curtain air bags may have been twisted during installation. Dealers tighten the nut and reinstall the air bags, free."
+    },
+    {
+      "id": "24V-025",
+      "years": "2023–2024",
+      "title": "Roof molding",
+      "text": "The molding can loosen and detach and become a road hazard. Dealers replace or secure it, free."
+    },
+    {
+      "id": "23V-298 and 26V-046",
+      "years": "2023 and 2026",
+      "title": "Instrument cluster software",
+      "text": "A software error can leave the instrument panel blank. Dealers update it, and on the 2026 the fix is also delivered over the air, free."
+    },
+    {
+      "id": "22V-703",
+      "years": "2017–2022",
+      "title": "Tow hitch harness module",
+      "text": "Moisture and debris can short the module on cars fitted with the Kia harness and start a fire. Dealers replace a fuse or the module, free."
+    }
+  ],
+  "investigations": [],
+  "noInvestigations": "NHTSA’s public investigation list showed no investigation naming the Sportage on November 21, 2026.",
+  "checks": [
+    {
+      "title": "Brake control unit recall on a 2016 to 2021.",
+      "text": "Confirm 22V-051 or 21V-137 is closed. It is a fire recall, and the fix is a fuse."
+    },
+    {
+      "title": "The engine on a 2016 to 2020.",
+      "text": "Ask for service records showing regular oil changes, check the dipstick, and listen for knocking on a cold start. If the car got a replacement engine, confirm 18V-907 on a 2016 to 2018."
+    },
+    {
+      "title": "The 2023 recalls.",
+      "text": "Confirm 22V-651, 22V-878, 23V-298, 23V-410, 23V-531 and 24V-025 are closed; there are six on a 2023."
+    },
+    {
+      "title": "Steering on a 2024.",
+      "text": "Confirm 24V-422 (power steering circuit board) is done."
+    },
+    {
+      "title": "Hybrid battery on a Hybrid.",
+      "text": "Reddit owners report the 12-volt battery draining after a few days parked. Ask the seller whether it has been replaced and have a shop test it."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Owners also report peeling paint and trim on several model years. Have a shop that isn’t the seller’s check the engine, the battery and the paint before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 Sportage has {c:2026} NHTSA complaints and {rec:2026} recall so far, an instrument panel software fix, so it is too new to rate. The facelift that brought the 2026 is the same generation as the 2023 to 2025, whose record is mixed: a rough first year and two clean ones.",
+    "Our <a href=\"{guide}\">Sportage price guide</a> has the 2026 prices, Kia’s incentives and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Kia Sportage year?",
+      "The 2017, at {r:2017} NHTSA complaints per 100,000 sold, with {k:2017:ENGINE} of its {c:2017} complaints about the engine. The 2020 ({r:2020}) and 2018 ({r:2018}) follow."
+    ],
+    [
+      "What is the best used Sportage year?",
+      "The 2022 has the lowest rate, {r:2022}. The 2021, 2024 and 2025 are also Buy, at {r:2021}, {r:2024} and {r:2025}. Confirm recall 21V-137 on the 2021 and 24V-422 on the 2024."
+    ],
+    [
+      "Is the 2023 Kia Sportage reliable?",
+      "It is the weakest year of the current generation: {r:2023} complaints per 100,000 sold, {c:2023} complaints and {rec:2023} recalls, among them the brake booster (23V-410) and curtain air bags (22V-878). Dealers fix them free, so we’d buy one only with proof they are done."
+    ],
+    [
+      "Does the Kia Sportage have engine problems?",
+      "On the 2016 to 2020 the engine is the most-named part, from {k:2016:ENGINE} complaints on the 2016 to {k:2017:ENGINE} on the 2017. Reddit owners report older Theta II and GDI engines failing or burning oil, and recent years are seen as free of that."
+    ],
+    [
+      "How do I check a used Sportage for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Kia dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-SPORTAGE-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=kia&model=sportage&modelYear=2023",
+      "scope": "every Sportage, Sportage Hybrid and Sportage Plug-In Hybrid listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only, plus our own hand tally of key words in the cached complaint text for the engine and electrical complaints; the Plug-in Hybrid listing (SPORTAGE PHEV) is included, and adds 16 complaints to the 2023"
+    },
+    {
+      "id": "VEH-PRB-SPORTAGE-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-SPORTAGE-03",
+      "title": "Good Car Bad Car: Kia Sportage sales figures",
+      "url": "https://www.goodcarbadcar.net/kia-sportage-sales-figures/",
+      "scope": "U.S. Sportage sales 2016 to 2025; the page does not say whether the totals include hybrids and plug-ins",
+      "note": "read November 21, 2026 through a page summary; a third-party compilation, and 2016 to 2023 rest on it alone (2019 to 2023 are also used on our Tucson versus Sportage page, VEH-TUSP-35)"
+    },
+    {
+      "id": "VEH-PRB-SPORTAGE-04",
+      "title": "Best Selling Cars Blog: 2025 full-year U.S. Kia sales by model",
+      "url": "https://www.best-selling-cars.com/usa/2025-full-year-usa-kia-america-us-car-sales-by-model/",
+      "scope": "U.S. Sportage sales of 182,823 for 2025 and 161,917 for 2024, matching Kia’s own release as reported elsewhere",
+      "note": "reused from the Tucson versus Sportage page (VEH-TUSP-33), read there on November 21, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-SPORTAGE-05",
+      "title": "Wikipedia: Kia Sportage",
+      "url": "https://en.wikipedia.org/wiki/Kia_Sportage",
+      "scope": "fourth- and fifth-generation launch years, engines and facelifts",
+      "note": "read November 21, 2026 through a page summary; check against Kia before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "KIA",
     "years": [
@@ -11,7 +302,8 @@
     "listings": [
       "SPORTAGE",
       "SPORTAGE HYBRID",
-      "SPORTAGE PLUG-IN HYBRID"
+      "SPORTAGE PLUG-IN HYBRID",
+      "SPORTAGE PHEV"
     ],
     "models": [
       "SPORTAGE"
@@ -19,12 +311,13 @@
     "recallModels": [
       "SPORTAGE",
       "SPORTAGE HYBRID",
-      "SPORTAGE PLUG-IN HYBRID"
+      "SPORTAGE PLUG-IN HYBRID",
+      "SPORTAGE PHEV"
     ],
     "investigationTerms": [
       "Sportage"
     ],
-    "readOn": "2026-11-21",
+    "readOn": "2026-11-22",
     "byYear": {
       "2016": {
         "complaints": 135,
@@ -226,25 +519,25 @@
         ]
       },
       "2023": {
-        "complaints": 196,
+        "complaints": 212,
         "crashes": 24,
         "fires": 1,
         "components": {
-          "UNKNOWN OR OTHER": 49,
-          "ELECTRICAL SYSTEM": 46,
-          "ENGINE": 40,
-          "SERVICE BRAKES": 34,
-          "FORWARD COLLISION AVOIDANCE": 24,
-          "POWER TRAIN": 19,
-          "FUEL/PROPULSION SYSTEM": 14,
-          "VISIBILITY": 13,
+          "UNKNOWN OR OTHER": 52,
+          "ELECTRICAL SYSTEM": 49,
+          "ENGINE": 44,
+          "SERVICE BRAKES": 35,
+          "FORWARD COLLISION AVOIDANCE": 26,
+          "POWER TRAIN": 21,
+          "FUEL/PROPULSION SYSTEM": 17,
+          "VISIBILITY": 14,
+          "VEHICLE SPEED CONTROL": 13,
+          "BACK OVER PREVENTION": 12,
           "AIR BAGS": 11,
-          "BACK OVER PREVENTION": 11,
-          "VEHICLE SPEED CONTROL": 10,
           "LANE DEPARTURE": 8,
+          "STRUCTURE": 7,
+          "STEERING": 6,
           "SEATS": 5,
-          "STEERING": 5,
-          "STRUCTURE": 5,
           "WHEELS": 3,
           "EQUIPMENT": 1,
           "EXTERIOR LIGHTING": 1,
@@ -258,7 +551,8 @@
           "23V-298",
           "23V-410",
           "23V-531",
-          "24V-025"
+          "24V-025",
+          "25V-874"
         ]
       },
       "2024": {
@@ -320,19 +614,19 @@
         ]
       },
       "2026": {
-        "complaints": 46,
+        "complaints": 48,
         "crashes": 7,
         "fires": 0,
         "components": {
           "UNKNOWN OR OTHER": 12,
-          "ELECTRICAL SYSTEM": 10,
+          "ELECTRICAL SYSTEM": 11,
           "SERVICE BRAKES": 10,
           "FORWARD COLLISION AVOIDANCE": 9,
-          "FUEL/PROPULSION SYSTEM": 5,
-          "ENGINE": 4,
+          "ENGINE": 6,
+          "FUEL/PROPULSION SYSTEM": 6,
+          "POWER TRAIN": 4,
           "STRUCTURE": 4,
           "LANE DEPARTURE": 3,
-          "POWER TRAIN": 3,
           "STEERING": 3,
           "AIR BAGS": 2,
           "VEHICLE SPEED CONTROL": 2,

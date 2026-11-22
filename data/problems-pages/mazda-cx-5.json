@@ -1,7 +1,303 @@
 {
   "key": "mazda-cx-5",
   "name": "Mazda CX-5",
-  "status": "stub",
+  "status": "ready",
+  "short": "CX-5",
+  "make": "Mazda",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Mazda CX-5 Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Mazda CX-5 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the engine oil complaints and what owners report on Reddit.",
+  "h1": "Mazda CX-5 problems by year: years to avoid and what owners report",
+  "card": "The best and worst CX-5 years, the 2018 to 2021 engine oil complaints, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2022–2025",
+  "avoidYears": "2016, 2017, 2019, 2021",
+  "answer": [
+    "The best used CX-5s are the 2022 to 2025 model years, which draw {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a yardstick of {base} for this car. Skip the 2016 ({r:2016}), 2017 ({r:2017}), 2019 ({r:2019}) and 2021 ({r:2021}). The 2019 and 2021 have the engine at the center: {k:2019:ENGINE} of the 2019’s {c:2019} complaints and {k:2021:ENGINE} of the 2021’s {c:2021} name it, and in the complaint text we read most of those mention oil. The 2018 ({r:2018}) and 2020 ({r:2020}) sit in between and are Check first.",
+    "The rates divide each model year’s NHTSA complaints by Mazda’s U.S. CX-5 sales. The CX-5 is a small-count car in NHTSA’s files, with no year above {c:2016} complaints, so one recall or one part can move a rate a long way; a daytime-running-light recall explains {k:2016:EXTERIOR LIGHTING} of the 2016’s {c:2016} complaints. The 2026 is a redesign and too new to rate. Our <a href=\"{guide}\">CX-5 price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Sales come from Mazda’s year-end releases for 2019 to 2025, the same figures our CX-5 comparison pages use, and from Good Car Bad Car’s CX-5 table for 2016 to 2018.",
+  "sales": {
+    "2016": 112235,
+    "2017": 127563,
+    "2018": 150622,
+    "2019": 154545,
+    "2020": 146420,
+    "2021": 168383,
+    "2022": 151594,
+    "2023": 153808,
+    "2024": 134088,
+    "2025": 136335
+  },
+  "publishedRates": {
+    "2019": 179,
+    "2020": 75,
+    "2021": 90,
+    "2022": 46,
+    "2023": 44,
+    "2024": 35,
+    "2025": 21
+  },
+  "verdicts": {
+    "2016": [
+      "avoid",
+      "The highest rate of any year, though {k:2016:EXTERIOR LIGHTING} of its {c:2016} complaints name exterior lighting, mostly the LED daytime running lights that recall 20V-063 covers. Without them the rate is still well above the yardstick. Recall 16V-064 covers a fuel filler pipe."
+    ],
+    "2017": [
+      "avoid",
+      "A small count ({c:2017}) on 127,563 sales, led by electrical ({k:2017:ELECTRICAL SYSTEM}). The only recall is 17V-744, for an accessory trailer hitch harness."
+    ],
+    "2018": [
+      "check",
+      "Engine is {k:2018:ENGINE} of {c:2018} complaints, and the text we read mostly mentions oil and cylinder deactivation, which became standard this year. Recalls 18V-426 (curtain air bags), 19V-497 (engine stall software) and 21V-875 (fuel pump) apply."
+    ],
+    "2019": [
+      "avoid",
+      "Engine again, {k:2019:ENGINE} of {c:2019}, and the highest rate since 2016. Recalls 19V-497 (engine stall software) and 21V-875 (fuel pump) apply."
+    ],
+    "2020": [
+      "check",
+      "A small count ({c:2020}) led by electrical ({k:2020:ELECTRICAL SYSTEM}) and brakes ({k:2020:SERVICE BRAKES}). NHTSA lists no recall for the 2020."
+    ],
+    "2021": [
+      "avoid",
+      "The engine carries {k:2021:ENGINE} of {c:2021} complaints, mostly mentioning oil in the text we read, and NHTSA lists no recall for the 2021. The rate sits two points under the line to Avoid.",
+      "check to avoid: the engine carries 55% of the complaints with no recall to explain them"
+    ],
+    "2022": [
+      "buy",
+      "The first low year ({c:2022}). Exterior lighting ({k:2022:EXTERIOR LIGHTING}) leads and NHTSA lists no recall."
+    ],
+    "2023": [
+      "buy",
+      "{c:2023} complaints spread across engine, brakes and lighting, none above {k:2023:ENGINE}. No recalls."
+    ],
+    "2024": [
+      "buy",
+      "{c:2024} complaints and no recalls. The count may still grow."
+    ],
+    "2025": [
+      "buy",
+      "The lowest rate here, {r:2025}, on {c:2025} complaints. The count is still growing as the year ages, and NHTSA lists no recall."
+    ],
+    "2026": [
+      "check",
+      "The CX-5 was redesigned for 2026. {c:2026} complaints so far, led by electrical ({k:2026:ELECTRICAL SYSTEM}), and no recalls. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2016 bar is the tallest, and nearly a third of its complaints concern the lighting covered by one recall. Sales were only 112,235 in 2016.",
+  "generations": [
+    {
+      "name": "First generation",
+      "years": "2013–2016",
+      "text": "The first CX-5 came with a 2.0-liter engine for 2013, added an optional 2.5-liter for 2014 and made it standard on almost every trim at a 2016.5 refresh (Wikipedia). The 2016 on this page is the last year of that design."
+    },
+    {
+      "name": "Second generation",
+      "years": "2017–2025",
+      "text": "The second generation made the 2.5-liter the only engine for 2017, added cylinder deactivation (shutting some cylinders off to save fuel) as standard for 2018, brought a 2.5-liter turbo and a short-lived diesel for 2019, and made all-wheel drive standard for 2022 (Wikipedia). A facelift was revealed in September 2021."
+    },
+    {
+      "name": "Third generation",
+      "years": "2026–",
+      "text": "The redesigned CX-5 reached North America in January 2026 with the naturally aspirated 2.5-liter as its only U.S. engine (Wikipedia)."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine oil, 2018 to 2021",
+      "component": "ENGINE",
+      "years": [
+        2018,
+        2021
+      ],
+      "text": "The engine is the leading part on the 2018, 2019 and 2021 ({k:2018:ENGINE}, {k:2019:ENGINE} and {k:2021:ENGINE} complaints). In the text we read, most of those mention oil, and the 2018 and 2019 ones often mention cylinder deactivation. NHTSA’s field doesn’t say what failed, and no recall covers the oil complaints. Recall 19V-497 covers a software error that can stall the 2018 and 2019."
+    },
+    {
+      "title": "Lighting on the 2016",
+      "component": "EXTERIOR LIGHTING",
+      "years": [
+        2016,
+        2016
+      ],
+      "text": "Recall 20V-063 covers LED daytime running lights that can fail on 2016 cars; dealers check the headlights and replace a gasket or the assembly, free. It accounts for {k:2016:EXTERIOR LIGHTING} of the 2016’s {c:2016} complaints, nearly a third."
+    },
+    {
+      "title": "Fuel pump, 2018 and 2019",
+      "component": "ENGINE",
+      "years": [
+        2018,
+        2019
+      ],
+      "text": "Recall 21V-875 covers a low-pressure fuel pump impeller that can crack and stall the engine on 2018 and 2019 cars. Dealers replace the pump, free; the VIN lookup shows whether it is open."
+    },
+    {
+      "title": "Electrical faults on the 2026",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2026,
+        2026
+      ],
+      "text": "The 2026 redesign has {k:2026:ELECTRICAL SYSTEM} electrical complaints of {c:2026}, and Reddit owners report electrical faults and software bugs on it. Nothing has been recalled."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "Reddit’s engine talk centers on cold-start ticking and rarely mentions the oil complaints that lead the 2018, 2019 and 2021 rows, so the complaint counts here carry that part of the record. The electrical and software reports on the 2026 match its early NHTSA complaints."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "19V-497",
+      "years": "2018–2019",
+      "title": "Engine stall software",
+      "text": "A software error in the powertrain control module may stall the engine. Dealers reprogram it, free. It also covers the Mazda6 and the 2019 Mazda3."
+    },
+    {
+      "id": "21V-875",
+      "years": "2018–2019",
+      "title": "Low-pressure fuel pump",
+      "text": "The pump impeller may crack and deform, which can stall the engine. Dealers replace the pump, free."
+    },
+    {
+      "id": "18V-426",
+      "years": "2018",
+      "title": "Curtain air bags",
+      "text": "In a side impact or rollover the side curtain air bags may not unfold properly. Dealers replace them, free."
+    },
+    {
+      "id": "20V-063",
+      "years": "2016",
+      "title": "LED daytime running lights",
+      "text": "The lights may fail while driving, which reduces visibility to other drivers. Dealers inspect the headlights and replace the gasket or assemblies, free."
+    },
+    {
+      "id": "16V-064",
+      "years": "2014–2016",
+      "title": "Fuel filler pipe",
+      "text": "The filler pipe may rupture in a crash and leak fuel. Dealers change how the pipe attaches to its bracket, free."
+    },
+    {
+      "id": "17V-744",
+      "years": "2017 with a hitch harness",
+      "title": "Accessory trailer hitch wiring",
+      "text": "The accessory harness may be routed too close to the muffler and get damaged, which can knock out trailer lights. It affects only cars fitted with it; dealers reroute or replace it, free."
+    }
+  ],
+  "investigations": [],
+  "noInvestigations": "NHTSA’s public investigation list showed no investigation naming the CX-5 on November 21, 2026.",
+  "checks": [
+    {
+      "title": "Engine oil on a 2018 to 2021.",
+      "text": "Owners’ NHTSA complaints on these years mention oil often. Check the dipstick level and color, ask for service records showing oil changes on schedule, and have a shop look for oil leaks."
+    },
+    {
+      "title": "Engine stall and fuel pump recalls.",
+      "text": "On a 2018 or 2019 confirm 19V-497 (software) and 21V-875 (fuel pump) are closed; on a 2018, 18V-426 too."
+    },
+    {
+      "title": "Daytime running lights on a 2016.",
+      "text": "Confirm 20V-063 is done and that both lights work in the daytime."
+    },
+    {
+      "title": "Transmission behavior.",
+      "text": "Reddit owners report torque converter and transmission failures on 2017 and newer automatics. Ask for the service history and drive it cold, through stop-and-go traffic."
+    },
+    {
+      "title": "Software and screens on a 2026.",
+      "text": "Reddit owners report electrical faults and software bugs on the redesign. Ask the dealer to confirm every software update is installed and that nothing is waiting."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "NHTSA lists few recalls for the CX-5 after 2019, so the VIN lookup says little about condition. Have a shop that isn’t the seller’s look at the engine and the transmission before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 CX-5 is a new generation with one engine, and it has {c:2026} NHTSA complaints and no recalls so far, so it is too new to rate. The 2019 to 2021 record doesn’t carry over to it, and neither does the 2022 to 2025’s.",
+    "Our <a href=\"{guide}\">CX-5 price guide</a> has the 2026 prices, the discount to aim for and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Mazda CX-5 year?",
+      "The 2016 has the highest rate, {r:2016} NHTSA complaints per 100,000 sold, partly from a daytime-running-light recall. Of the later years the 2019 is worst, at {r:2019}, with {k:2019:ENGINE} of its {c:2019} complaints about the engine."
+    ],
+    [
+      "What is the best used CX-5 year?",
+      "The 2022 to 2025 model years, at {r:2022}, {r:2023}, {r:2024} and {r:2025} complaints per 100,000 sold. NHTSA lists no recalls for them."
+    ],
+    [
+      "Does the CX-5 burn oil?",
+      "Owners’ NHTSA complaints on the 2018, 2019 and 2021 name the engine most often, and in the text we read most mention oil. It isn’t a recall, so a VIN lookup won’t show it; check the dipstick and the service records."
+    ],
+    [
+      "Is the 2026 Mazda CX-5 reliable?",
+      "It is too new to rate: {c:2026} complaints and no recalls so far on a redesigned car, with Reddit owners reporting electrical faults and software bugs."
+    ],
+    [
+      "How do I check a used CX-5 for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Mazda dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-CX5-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=mazda&model=cx-5&modelYear=2021",
+      "scope": "every CX-5 listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only, plus our own hand tally of key words in the cached complaint text for the engine and lighting complaints"
+    },
+    {
+      "id": "VEH-PRB-CX5-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CX5-03",
+      "title": "Mazda North American Operations: December and full-year 2025 sales",
+      "url": "https://news.mazdausa.com/2026-01-05-Mazda-Reports-December-Sales-and-Strong-Full-Year-2025-Sales-Results",
+      "scope": "U.S. CX-5 sales for 2025 (136,335) and 2024 (134,088)",
+      "note": "reused from the CX-5 versus RAV4 page (VEH-CXR-35), read there on November 18, 2026 through a page summary; a search summary of another site showed 122,954 for 2024, and we used Mazda’s"
+    },
+    {
+      "id": "VEH-PRB-CX5-04",
+      "title": "Mazda North American Operations: full-year 2023 sales",
+      "url": "https://news.mazdausa.com/2024-01-03-Mazda-Reports-Record-December-and-Full-Year-2023-Sales-Results",
+      "scope": "U.S. CX-5 sales for 2023 (153,808) and 2022 (151,594)",
+      "note": "reused from the CR-V versus CX-5 page (VEH-CRC-22), read there on November 20, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-CX5-05",
+      "title": "Mazda North American Operations: full-year 2021 sales",
+      "url": "https://news.mazdausa.com/2022-01-04-Mazda-Reports-December-and-Full-Year-2021-Sales-Results",
+      "scope": "U.S. CX-5 sales for 2021 (168,383), printed in the release text",
+      "note": "reused from the CR-V versus CX-5 page (VEH-CRC-23); Good Car Bad Car prints 163,940 for 2021, and we used Mazda’s"
+    },
+    {
+      "id": "VEH-PRB-CX5-06",
+      "title": "Mazda North American Operations: full-year 2020 sales",
+      "url": "https://news.mazdausa.com/2021-01-05-Mazda-Reports-December-and-Full-Year-2020-Sales-Results",
+      "scope": "U.S. CX-5 sales for 2020 (146,420) and 2019 (154,545)",
+      "note": "reused from the CR-V versus CX-5 page (VEH-CRC-24), read there on November 20, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-CX5-07",
+      "title": "Good Car Bad Car: Mazda CX-5 sales figures",
+      "url": "https://www.goodcarbadcar.net/mazda-cx-5-sales-figures/",
+      "scope": "U.S. CX-5 sales 2016 to 2018 (112,235, 127,563 and 150,622), and a cross-check of the later years",
+      "note": "read November 21, 2026 through a page summary; a third-party compilation, and 2016 to 2018 rest on it alone"
+    },
+    {
+      "id": "VEH-PRB-CX5-08",
+      "title": "Wikipedia: Mazda CX-5",
+      "url": "https://en.wikipedia.org/wiki/Mazda_CX-5",
+      "scope": "generations, engines, cylinder deactivation and the 2026 redesign",
+      "note": "read November 21, 2026 through a page summary that did not reach the end of the page; check against Mazda before relying on a detail"
+    }
+  ],
   "nhtsa": {
     "make": "MAZDA",
     "years": [

@@ -1,7 +1,361 @@
 {
   "key": "honda-cr-v",
   "name": "Honda CR-V",
-  "status": "stub",
+  "status": "ready",
+  "short": "CR-V",
+  "make": "Honda",
+  "newerYear": "2026",
+  "published": "2026-11-21",
+  "checkedOn": "2026-11-21",
+  "title": "Honda CR-V Problems by Year: Years to Avoid and What Owners Report | Steer Me Right",
+  "description": "Which Honda CR-V model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, the open braking investigation and what owners report on Reddit.",
+  "h1": "Honda CR-V problems by year: years to avoid and what owners report",
+  "card": "The best and worst CR-V years, the open braking investigation, the 2017 and 2018 engine complaints, complaints per 100,000 sold and what owners report.",
+  "bestYears": "2024–2025",
+  "avoidYears": "2017–2019",
+  "answer": [
+    "The best used CR-Vs are the 2024 and 2025 model years, which draw {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold against a yardstick of {base} for this car. Skip the 2017, 2018 and 2019: they draw {r:2017}, {r:2018} and {r:2019}, with the 2017 and 2018 led by engine complaints ({k:2017:ENGINE} and {k:2018:ENGINE}) and the 2019 by automatic emergency braking ({k:2019:FORWARD COLLISION AVOIDANCE}). The 2020, 2021 and 2022 rate low enough to buy ({r:2020}, {r:2021} and {r:2022}), but NHTSA’s open engineering analysis EA24002 covers unexpected automatic braking on 2017 to 2022 CR-Vs, so we call them Check first. The 2023 ({r:2023}) is Check first for its steering count: {k:2023:STEERING} of {c:2023} complaints, which Honda’s free recall 24V-744 covers.",
+    "The rates divide each model year’s NHTSA complaints, counted across the gas and Hybrid listings, by U.S. sales. Honda’s sales table doesn’t say in words that its CR-V total includes the Hybrid, and 2022 sales of 238,155 were low next to 361,457 in 2023, which lifts the 2022 rate. The 2016, the last of the previous generation, rates Buy at {r:2016}, though it is ten years old. The 2026 is too new to rate. Our <a href=\"{guide}\">CR-V price guide</a> covers what a new or used one costs."
+  ],
+  "salesNote": "Sales come from Good Car Bad Car’s CR-V table, whose 2019 to 2025 figures reproduce the rates on our CR-V comparison pages built from Honda’s FactBook.",
+  "sales": {
+    "2016": 357335,
+    "2017": 377895,
+    "2018": 379013,
+    "2019": 384168,
+    "2020": 323502,
+    "2021": 361271,
+    "2022": 238155,
+    "2023": 361457,
+    "2024": 402791,
+    "2025": 403768
+  },
+  "publishedRates": {
+    "2019": 290,
+    "2020": 136,
+    "2021": 125,
+    "2022": 149,
+    "2023": 176,
+    "2024": 121,
+    "2025": 75
+  },
+  "verdicts": {
+    "2016": [
+      "buy",
+      "The smallest count of 2016 to 2019 ({c:2016}), led by engine ({k:2016:ENGINE}) and the fuel system ({k:2016:FUEL/PROPULSION SYSTEM}). Recall 15V-714 covers a driver air bag inflator housing on early builds, and fuel pump recall 23V-858 applies."
+    ],
+    "2017": [
+      "avoid",
+      "Engine ({k:2017:ENGINE}), electrical ({k:2017:ELECTRICAL SYSTEM}) and the fuel system ({k:2017:FUEL/PROPULSION SYSTEM}) lead. CarComplaints reports fuel mixing into the oil on the 1.5-liter turbo, and Honda’s warranty extension has run out."
+    ],
+    "2018": [
+      "avoid",
+      "The most complaints of any year ({c:2018}): the fuel system ({k:2018:FUEL/PROPULSION SYSTEM}), engine ({k:2018:ENGINE}), automatic emergency braking ({k:2018:FORWARD COLLISION AVOIDANCE}) and steering ({k:2018:STEERING}). Steering recall 18V-663 and fuel pump recalls 21V-215 and 23V-858 apply."
+    ],
+    "2019": [
+      "avoid",
+      "Automatic emergency braking leads ({k:2019:FORWARD COLLISION AVOIDANCE}), then the fuel system ({k:2019:FUEL/PROPULSION SYSTEM}) and steering ({k:2019:STEERING}). EA24002 is open, and recalls cover the rear subframe bolts (19V-865) and the fuel tank weld (19V-569)."
+    ],
+    "2020": [
+      "check",
+      "Automatic emergency braking ({k:2020:FORWARD COLLISION AVOIDANCE}) leads a small count. EA24002 is open, PE25016 covers the Hybrid, and recalls cover the subframe bolts (19V-865) and the Hybrid’s DC-DC converter (20V-798).",
+      "buy to check: NHTSA’s analysis EA24002 into inadvertent braking is still open on 2017 to 2022 CR-Vs, and PE25016 covers 2020 to 2022 Hybrids"
+    ],
+    "2021": [
+      "check",
+      "Steering ({k:2021:STEERING}) and automatic emergency braking ({k:2021:FORWARD COLLISION AVOIDANCE}) lead. EA24002 and PE25016 are open, and the Hybrid’s battery cable recall 23V-844 applies.",
+      "buy to check: NHTSA’s analysis EA24002 into inadvertent braking is still open on 2017 to 2022 CR-Vs, and PE25016 covers 2020 to 2022 Hybrids"
+    ],
+    "2022": [
+      "check",
+      "Steering leads ({k:2022:STEERING} of {c:2022}), ahead of automatic emergency braking ({k:2022:FORWARD COLLISION AVOIDANCE}). EA24002 and PE25016 are open, and Hybrid recalls 21V-939 and 23V-844 apply.",
+      "buy to check: NHTSA’s analysis EA24002 into inadvertent braking is still open on 2017 to 2022 CR-Vs, and PE25016 covers 2020 to 2022 Hybrids"
+    ],
+    "2023": [
+      "check",
+      "Steering is named in {k:2023:STEERING} of {c:2023} complaints. Recall 24V-744 covers it, and Hybrid recalls 23V-588 (transmission) and 24V-745 (battery modules) apply."
+    ],
+    "2024": [
+      "buy",
+      "Steering falls to {k:2024:STEERING} of {c:2024}. Recall 24V-744 still applies, as does fuel pump recall 24V-763 on Hybrids."
+    ],
+    "2025": [
+      "buy",
+      "The count ({c:2025}) is still growing as the year ages. Recalls cover the Hybrid’s high-pressure fuel pump (24V-763) and fuel feed hose (25V-378), plus 24V-744."
+    ],
+    "2026": [
+      "check",
+      "{c:2026} complaints and {rec:2026} recalls so far, both for the Hybrid’s tire repair kit, and Honda reissued the second one in October. Too new to rate."
+    ]
+  },
+  "chartNote": "The 2017 to 2019 bars are the tallest. The 2022 bar is lifted by low sales that year, 238,155 against 361,457 in 2023.",
+  "generations": [
+    {
+      "name": "Fourth generation",
+      "years": "2012–2016",
+      "text": "Honda’s fourth-generation CR-V went on sale in December 2011 as a 2012 with a 2.4-liter engine and was facelifted for 2015 (Wikipedia). The 2016 is its last year."
+    },
+    {
+      "name": "Fifth generation",
+      "years": "2017–2022",
+      "text": "The fifth generation went on sale in December 2016 as a 2017 and was updated for 2020 (Wikipedia). It carried a turbo engine in its first years, and NHTSA files a CR-V Hybrid recall from 2020, so the Hybrid arrived with the update."
+    },
+    {
+      "name": "Sixth generation",
+      "years": "2023–",
+      "text": "The redesigned CR-V went on sale in September 2022 as a 2023 (Wikipedia). Hybrids made 54% of 2025 sales, from the Honda FactBook figures our CR-V versus Mazda CX-5 page uses."
+    }
+  ],
+  "problems": [
+    {
+      "title": "Engine and fuel in the 2017 and 2018 turbo",
+      "component": "ENGINE",
+      "years": [
+        2017,
+        2018
+      ],
+      "text": "These two years have the most engine complaints of any CR-V ({k:2017:ENGINE} and {k:2018:ENGINE}), and in the complaint text we read most mention oil or a fuel smell. CarComplaints reports Honda extended warranties for fuel mixing into the turbo’s oil and that the extension has run out; it was never a recall, so a VIN lookup won’t show it."
+    },
+    {
+      "title": "Unexpected automatic braking",
+      "component": "FORWARD COLLISION AVOIDANCE",
+      "years": [
+        2017,
+        2022
+      ],
+      "text": "NHTSA’s EA24002 covers 2017 to 2022 CR-Vs and 2018 to 2022 Accords after owners reported the emergency braking system activating with nothing in the car’s path. There is no recall yet. The 2019 alone has {k:2019:FORWARD COLLISION AVOIDANCE} complaints naming the system."
+    },
+    {
+      "title": "Steering, 2023 on",
+      "component": "STEERING",
+      "years": [
+        2023,
+        2025
+      ],
+      "text": "Recall 24V-744 covers a steering gearbox with excess internal friction on 2023 to 2025 CR-Vs and the Hybrid; dealers replace the worm gear spring and add grease, free. NHTSA’s analysis EA23003, which covered the 2023 CR-V, closed in January 2025. The 2023 has {k:2023:STEERING} steering complaints, the 2024 {k:2024:STEERING} and the 2025 {k:2025:STEERING}."
+    },
+    {
+      "title": "Fuel pumps and tanks",
+      "component": "FUEL/PROPULSION SYSTEM",
+      "years": [
+        2018,
+        2020
+      ],
+      "text": "Recalls 21V-215 and 23V-858 cover an in-tank fuel pump that can fail and stall the engine on 2018 and later cars, and 19V-569 a fuel tank weld on 2019 cars. Dealers repair each one free. NHTSA’s field doesn’t say what failed, so the {k:2018:FUEL/PROPULSION SYSTEM} complaints on the 2018 may describe more than one problem."
+    },
+    {
+      "title": "The Hybrid’s power and electrical system",
+      "component": "ELECTRICAL SYSTEM",
+      "years": [
+        2020,
+        2023
+      ],
+      "text": "Hybrid recalls cover a DC-DC converter that can shut down (20V-798), a battery cable missing a fuse (23V-844), battery modules that can spark (24V-745) and a transmission (23V-588). NHTSA’s open PE25016 covers 2020 to 2022 Hybrids that lose power at highway speed without a fault code."
+    }
+  ],
+  "reddit": {
+    "paragraphs": [
+      "The turbo-engine worries in those threads line up with the 2017 and 2018 engine counts in the table. The steering and braking stories that fill the 2019 and 2023 rows barely appear, so the complaint counts here carry that part of the record."
+    ]
+  },
+  "recallsIntro": "",
+  "notableRecalls": [
+    {
+      "id": "24V-744",
+      "years": "2023–2025",
+      "title": "Steering gearbox friction",
+      "text": "A steering gearbox built with excess friction can make the car hard to steer. Dealers replace the worm gear spring and redistribute or add grease, free. It covers the Hybrid and the 2025 fuel cell model too."
+    },
+    {
+      "id": "24V-763",
+      "years": "2023–2025 Hybrid",
+      "title": "High-pressure fuel pump",
+      "text": "The pump may crack and leak fuel, which raises the risk of a fire. Dealers inspect and replace it as needed, free."
+    },
+    {
+      "id": "25V-378",
+      "years": "2025 Hybrid",
+      "title": "Fuel feed hose",
+      "text": "A hose that was installed wrong can let fuel leak. Dealers fit a new hose and connector cover, free."
+    },
+    {
+      "id": "23V-858 and 21V-215",
+      "years": "2018–2023",
+      "title": "In-tank fuel pump",
+      "text": "The pump inside the tank may fail and stall the engine. The recalls cover the CR-V in several model years; dealers replace the pump module, free, and the VIN lookup shows which one applies."
+    },
+    {
+      "id": "19V-865",
+      "years": "2019–2020",
+      "title": "Rear subframe bolts",
+      "text": "Bolts that were made wrong can loosen and let the rear subframe separate. Dealers retorque or replace them, free."
+    },
+    {
+      "id": "19V-569",
+      "years": "2019",
+      "title": "Fuel tank weld",
+      "text": "The weld between the tank and the vapor return line may fail and leak fuel. Dealers replace the tank, free."
+    },
+    {
+      "id": "18V-663",
+      "years": "2017–2018",
+      "title": "Steering sensor magnet",
+      "text": "A magnet in the torque sensor can come loose and apply steering assist the wrong way. Dealers replace the gearbox, free."
+    },
+    {
+      "id": "23V-588 and 24V-745",
+      "years": "2023 Hybrid",
+      "title": "Transmission and battery modules",
+      "text": "A transmission built wrong can cost drive power, and battery modules built wrong can spark and break a busbar. Dealers replace the e-CVT or the module, free."
+    },
+    {
+      "id": "26V-366 and 26V-663",
+      "years": "2023–2026 Hybrid",
+      "title": "Tire repair kit bottle cap",
+      "text": "Pressure can build in the sealant bottle and blow its cap off. Dealers replace the nozzle or bottle, and the second recall covers cars already fixed under the first."
+    }
+  ],
+  "investigations": [
+    {
+      "id": "EA24002",
+      "status": "open",
+      "years": "2017–2022",
+      "title": "Inadvertent automatic emergency braking",
+      "text": "NHTSA opened the engineering analysis on April 16, 2024, upgrading PE22003, after 1,294 owner complaints of the braking system activating with no obstruction ahead, 31 of them alleging a crash. It covers 2017 to 2022 CR-Vs and 2018 to 2022 Accords. Honda has not recalled anything for it."
+    },
+    {
+      "id": "PE25016",
+      "status": "open",
+      "years": "2020–2022 Hybrid",
+      "title": "Loss of motive power",
+      "text": "NHTSA opened the preliminary evaluation on October 29, 2025 after 48 owner reports of intermittent power loss at highway speed, with a flashing check engine light, in 2020 to 2022 CR-V Hybrids. Turning the car off and on restores power but also clears the fault codes, so repairs often find nothing."
+    },
+    {
+      "id": "EA23003",
+      "status": "closed",
+      "years": "2023",
+      "title": "Momentary increased steering effort",
+      "text": "NHTSA’s analysis of steering effort covered the 2023 CR-V along with the 2022 and 2023 Civic and the Acura Integra. It closed in January 2025, after Honda’s recall 24V-744."
+    }
+  ],
+  "noInvestigations": "",
+  "checks": [
+    {
+      "title": "Steering recall on any 2023 to 2025.",
+      "text": "Ask the dealer for proof that 24V-744 is done."
+    },
+    {
+      "title": "Braking on a 2017 to 2022.",
+      "text": "Ask whether the seller has had automatic emergency braking activate by itself. No recall covers EA24002, so a VIN lookup won’t show it; check that the system works as described on the test drive."
+    },
+    {
+      "title": "Oil on a 2017 or 2018 turbo.",
+      "text": "Owners and CarComplaints report fuel mixing into the oil in cold weather. Check the dipstick for a high level or a fuel smell, and ask for service records of oil changes."
+    },
+    {
+      "title": "Fuel pump and subframe recalls.",
+      "text": "Confirm 21V-215 and 23V-858 on a 2018 to 2020, 19V-569 and 19V-865 on a 2019, and 24V-763 on a 2023 to 2025 Hybrid."
+    },
+    {
+      "title": "Hybrid power loss.",
+      "text": "On a 2020 to 2022 Hybrid, ask whether the car has ever lost power with a flashing check engine light, and have a shop read stored codes and service history, since the fault clears itself."
+    },
+    {
+      "title": "An independent inspection.",
+      "text": "Owners report head gasket leaks on turbo engines and a windshield that cracks easily. Have a shop that isn’t the seller’s check coolant, the windshield and the all-wheel-drive rear differential before you sign."
+    }
+  ],
+  "newer": [
+    "The 2026 CR-V has {c:2026} NHTSA complaints and {rec:2026} recalls so far, both for the Hybrid’s tire repair kit, so it is too new to rate. The steering recall 24V-744 applies to used 2023 to 2025 cars and not to a new one, and Honda’s open braking analysis covers cars through 2022 only.",
+    "Our <a href=\"{guide}\">CR-V price guide</a> has the 2026 and 2027 prices, Honda’s financing terms and our take on buying new."
+  ],
+  "faq": [
+    [
+      "What is the worst Honda CR-V year?",
+      "The 2018 has the most complaints ({c:2018}) and the highest rate of any year, {r:2018} NHTSA complaints per 100,000 sold. The 2017 ({r:2017}) and 2019 ({r:2019}) are close behind, and the 2017 and 2018 are the years CarComplaints’ oil story covers."
+    ],
+    [
+      "What is the best used CR-V year?",
+      "The 2024 and 2025, at {r:2024} and {r:2025} complaints per 100,000 sold. Ask for proof of steering recall 24V-744 on the 2024 and fuel pump recall 24V-763 on a Hybrid."
+    ],
+    [
+      "Does the CR-V have an oil dilution problem?",
+      "CarComplaints reports fuel mixing into the oil on 2017 and 2018 CR-Vs with the 1.5-liter turbo in cold weather, and says Honda extended warranties that have since run out. It isn’t a recall, so a VIN lookup won’t show it."
+    ],
+    [
+      "Is the 2023 Honda CR-V reliable?",
+      "It drew {c:2023} NHTSA complaints, {k:2023:STEERING} of them about steering. Honda’s free recall 24V-744 covers the gearbox, and the Hybrid has two more recalls, so we’d buy one only with proof they are done."
+    ],
+    [
+      "How do I check a used CR-V for recalls?",
+      "Enter the VIN at nhtsa.gov/recalls. It lists open recalls for that car, and recall repairs are free at a Honda dealer."
+    ]
+  ],
+  "sources": [
+    {
+      "id": "VEH-PRB-CRV-01",
+      "title": "NHTSA: owner complaints API",
+      "url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=honda&model=cr-v&modelYear=2023",
+      "scope": "every CR-V and CR-V Hybrid listing for model years 2016 to 2026, deduplicated by ODI number",
+      "note": "read November 21, 2026 with scripts/nhtsa-problems.mjs; counts only, plus our own hand tally of key words in the cached complaint text for the 2017 and 2018 engine complaints"
+    },
+    {
+      "id": "VEH-PRB-CRV-02",
+      "title": "NHTSA: recalls and VIN lookup",
+      "url": "https://www.nhtsa.gov/recalls",
+      "scope": "recall campaigns by model year, deduplicated by campaign number, and the VIN lookup",
+      "note": "read through NHTSA’s recallsByVehicle API on November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CRV-03",
+      "title": "NHTSA: investigation EA24002",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA24002",
+      "scope": "open engineering analysis of inadvertent automatic emergency braking on 2017 to 2022 CR-Vs and 2018 to 2022 Accords",
+      "note": "read November 21, 2026; also cited by the CR-V price guide (VEH-CRV-33)"
+    },
+    {
+      "id": "VEH-PRB-CRV-04",
+      "title": "NHTSA: investigation PE25016",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=PE25016",
+      "scope": "open preliminary evaluation of loss of motive power on 2020 to 2022 CR-V Hybrids",
+      "note": "read November 21, 2026"
+    },
+    {
+      "id": "VEH-PRB-CRV-05",
+      "title": "NHTSA: investigation EA23003",
+      "url": "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=EA23003",
+      "scope": "closed engineering analysis of momentary increased steering effort, covering the 2023 CR-V",
+      "note": "from our Civic problems page (VEH-PRB-CIVIC-03); NHTSA’s summary names the 2023 CR-V"
+    },
+    {
+      "id": "VEH-PRB-CRV-06",
+      "title": "Good Car Bad Car: Honda CR-V sales figures",
+      "url": "https://www.goodcarbadcar.net/honda-cr-v-sales-figures/",
+      "scope": "U.S. CR-V sales 2016 to 2025; the page does not say in words that the totals include the hybrid",
+      "note": "read November 21, 2026 through a page summary; 2019 to 2025 reproduce the Honda FactBook figures behind our CR-V comparison pages (VEH-CRC-19), and 2016 to 2018 rest on this page alone"
+    },
+    {
+      "id": "VEH-PRB-CRV-07",
+      "title": "American Honda: Digital FactBook, North America sales",
+      "url": "https://hondanews.com/en-US/releases/digital-factbook-north-america-sales",
+      "scope": "CR-V sales by calendar year and the hybrid’s 54% share of 2025",
+      "note": "reused from the CR-V versus Mazda CX-5 page (VEH-CRC-19), read there on November 20, 2026 through a page summary"
+    },
+    {
+      "id": "VEH-PRB-CRV-08",
+      "title": "Wikipedia: Honda CR-V",
+      "url": "https://en.wikipedia.org/wiki/Honda_CR-V",
+      "scope": "generation launch dates and the 2015 and 2020 updates",
+      "note": "read November 21, 2026 through a page summary that did not reach the engine tables; check against Honda before relying on a detail"
+    },
+    {
+      "id": "VEH-PRB-CRV-09",
+      "title": "CarComplaints: Honda oil dilution warranties extended",
+      "url": "https://www.carcomplaints.com/news/2019/honda-civic-cr-v-oil-dilution-warranties-extended.shtml",
+      "scope": "oil dilution on 2017 and 2018 CR-V 1.5-liter turbo engines and Honda’s warranty extension",
+      "note": "from the Honda CR-V price guide (VEH-CRV-34)"
+    }
+  ],
   "nhtsa": {
     "make": "HONDA",
     "years": [
