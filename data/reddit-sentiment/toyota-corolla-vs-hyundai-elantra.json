@@ -1,0 +1,3148 @@
+{
+ "page": "toyota-corolla-vs-hyundai-elantra.html",
+ "cars": {
+  "a": "Toyota Corolla",
+  "b": "Hyundai Elantra"
+ },
+ "home": {
+  "a": "corolla",
+  "b": [
+   "Elantra",
+   "ElantraN"
+  ]
+ },
+ "collected": "2026-11-18",
+ "source": "Arctic Shift Reddit archive (https://arctic-shift.photon-reddit.com/)",
+ "threadsFrom": "2025-01-01",
+ "threadsTo": "2026-09-27",
+ "subreddits": {
+  "ElantraN": 1,
+  "UsedCars": 1,
+  "whatcarshouldIbuy": 12,
+  "Elantra": 2
+ },
+ "rules": "Derived by scripts/reddit-sentiment-pair.mjs from data/reddit-sentiment/cars/toyota-corolla.json and hyundai-elantra.json: every thread in either file whose post names both cars, with its coded comments (deduplicated by id; picks of other models and opinions about other models dropped). Collection and coding rules are in the two car files. Venues: r/corolla (home of car a), r/Elantra, r/ElantraN (home of car b), every other subreddit neutral. See scripts/reddit-sentiment.mjs.",
+ "gaps": [],
+ "uncoded": 0,
+ "keepThreads": [],
+ "threads": [
+  {
+   "id": "1hqt4j1",
+   "subreddit": "ElantraN",
+   "created": "2025-01-01"
+  },
+  {
+   "id": "1jbbzbu",
+   "subreddit": "UsedCars",
+   "created": "2025-03-14"
+  },
+  {
+   "id": "1k8fb8g",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-04-26"
+  },
+  {
+   "id": "1kpzzoy",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-05-19"
+  },
+  {
+   "id": "1ludy1f",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-07-08"
+  },
+  {
+   "id": "1mdkvc7",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-07-30"
+  },
+  {
+   "id": "1n81qm6",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-09-04"
+  },
+  {
+   "id": "1pjvaot",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2025-12-11"
+  },
+  {
+   "id": "1qmdmlo",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-01-25"
+  },
+  {
+   "id": "1shw9zr",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-04-10"
+  },
+  {
+   "id": "1t6jzxp",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-05-07"
+  },
+  {
+   "id": "1u61u1v",
+   "subreddit": "Elantra",
+   "created": "2026-06-15"
+  },
+  {
+   "id": "1uegdbc",
+   "subreddit": "Elantra",
+   "created": "2026-06-24"
+  },
+  {
+   "id": "1uroyz0",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-07-09"
+  },
+  {
+   "id": "1w8qbaa",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-09-06"
+  },
+  {
+   "id": "1wrcbv9",
+   "subreddit": "whatcarshouldIbuy",
+   "created": "2026-09-27"
+  }
+ ],
+ "comments": [
+  {
+   "id": "m4sfgdk",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4si7dl",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4skhg6",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4skomn",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4skwti",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "mixed"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4sl71q",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "m4sm96a",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4sminm",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4so9c9",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4szw5x",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4t9e2d",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4t9ws4",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4ta1sd",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "m4tvl3k",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4tw4w5",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4u8w62",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "m4up82i",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4uvsl8",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4vqd2b",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4w9ps2",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4y1mx4",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4yhm2a",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m4yl331",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m4yok4h",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m518m7j",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m51amy9",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m51dyty",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "m5u07bu",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "m5u0i67",
+   "thread": "1hqt4j1",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mhsw5jz",
+   "thread": "1jbbzbu",
+   "rec": "b",
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mhswi4f",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mhswolp",
+   "thread": "1jbbzbu",
+   "rec": "a",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mhsxtp6",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mht2qt1",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mht4lfo",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mht71wm",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mht7ar5",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mht7hl8",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "mhtl0mg",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mhtp8mv",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mhtquy2",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhtxreu",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhu41mq",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhubfdh",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mhvhkh1",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhvyxfm",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mhw1o7u",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhyiw2b",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhykw5v",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mhyn68r",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhyoz47",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mhyrpan",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mhzwpce",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi3ok54",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi4902p",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi52sus",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mi5in6v",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi5kn9z",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi5v188",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi65g15",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi67m8j",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mi6ei6f",
+   "thread": "1jbbzbu",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mp6p5zh",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp6pjt6",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "mp6sfbz",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp6vsee",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mp70997",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp713zf",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp730nx",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mp7g1hz",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp7sgsv",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp95lna",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp97n9p",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mp9r3qv",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mpai6a6",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mpb2tyk",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mpbrlt0",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mplsahj",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mpq5tz0",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mpt0zqb",
+   "thread": "1k8fb8g",
+   "rec": "b",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mpvi4mx",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mq14h22",
+   "thread": "1k8fb8g",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "mt1x0z5",
+   "thread": "1kpzzoy",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "power",
+     "neg"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "mt5pvif",
+   "thread": "1kpzzoy",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1x8bn2",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1x8d21",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1x8sf1",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1x9lor",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1x9npq",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "n1xinex",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1xiptg",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1y0ycv",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1y10fz",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1y14la",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1yblho",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n1zsazx",
+   "thread": "1ludy1f",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62cwrb",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62d4v0",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62dc4e",
+   "thread": "1mdkvc7",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "n62e1kb",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "n62eaig",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62fd2d",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62fg4j",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62jgu3",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "neg"
+    ],
+    [
+     "b",
+     "tech",
+     "neg"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "n62usy9",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n62uuyv",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "n63re46",
+   "thread": "1mdkvc7",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncbquty",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncbr48m",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncbsv95",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncbsvsp",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncbup5p",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncc1nsc",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncc1tjl",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncc62rr",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncc6a4h",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nccbun9",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nccc18l",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncccr1a",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nccp3ue",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nccwbct",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nccxomp",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd2qxy",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd51qc",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd5btv",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd5djz",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd6t51",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncd8xrz",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdaeyi",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdb6ld",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdd8q8",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncderl2",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdgt0d",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdiayt",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdienq",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdmo02",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdt5tz",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdubp6",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncdv180",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nce7jhj",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nce8beq",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncedu1a",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncen14s",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nceopfz",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncf15tq",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncfka3y",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncfs785",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncfzsfk",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nch0aos",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncildcn",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncmj96t",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ncs1a5z",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nd0ykte",
+   "thread": "1n81qm6",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "nth1bxd",
+   "thread": "1pjvaot",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "nth6pdg",
+   "thread": "1pjvaot",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "mixed"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ntmcerd",
+   "thread": "1pjvaot",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "ride",
+     "neg"
+    ],
+    [
+     "b",
+     "space",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "ntmpp3e",
+   "thread": "1pjvaot",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1l57sl",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1l61sw",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1l7k6x",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1l7ox0",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1l8hkj",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "o1l8iky",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lb4dq",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1ldstf",
+   "thread": "1qmdmlo",
+   "rec": "b",
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "o1ldsvs",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lejv6",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lf32c",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "o1ljngy",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1llot0",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "o1loegt",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lortg",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lr5ex",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lrakd",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lri8j",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1ls6ff",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lsvu6",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lt7ip",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1ltck0",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lteuw",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1lunyn",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "noise",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "o1lvdpx",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1maete",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1mdv8m",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1mej6t",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1meobh",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1ml4fd",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1mmd5n",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1mqeyo",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1n5ukz",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "o1nbbv9",
+   "thread": "1qmdmlo",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "offs4ih",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "offtan6",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "offul36",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "offvhdq",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofg7532",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhbxes",
+   "thread": "1shw9zr",
+   "rec": "a",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ofhf48s",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhgcmj",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofho903",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhoc52",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhoh6k",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhqbbv",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhqicv",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "ofhsjsr",
+   "thread": "1shw9zr",
+   "rec": "a",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ofht9eg",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "ofhti44",
+   "thread": "1shw9zr",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "okiqhjg",
+   "thread": "1t6jzxp",
+   "rec": "a",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "okj6d1d",
+   "thread": "1t6jzxp",
+   "rec": "a",
+   "m": []
+  },
+  {
+   "id": "orpgnix",
+   "thread": "1u61u1v",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ],
+    [
+     "b",
+     "ride",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ors814n",
+   "thread": "1u61u1v",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "oru1zj9",
+   "thread": "1u61u1v",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otjia4a",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otjjsdu",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otjksrt",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "space",
+     "pos"
+    ],
+    [
+     "a",
+     "space",
+     "neg"
+    ],
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otjo9gd",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otjs4gs",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otjuwdn",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otjx01f",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otjy0b3",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otjync1",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otk14j7",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otk2379",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otk3pxz",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otk76hh",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otkf3rb",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otkhoel",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otkjixv",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otknigu",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otknpyj",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "space",
+     "neg"
+    ],
+    [
+     "b",
+     "space",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otkpbxs",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "space",
+     "neg"
+    ],
+    [
+     "a",
+     "power",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otkprvu",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otkqoyc",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "tech",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otkr9ts",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otkrrih",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otkt649",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otktksw",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otkursa",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otkxunp",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otl4jvs",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "neg"
+    ],
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otli53a",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otlidsu",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otlj14l",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otln6ym",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "ride",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otlpmnp",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otm13el",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otm8lj4",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otma1e6",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otmb35e",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otmo7zb",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otmt6fm",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otn0ud9",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otn1jl3",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "mpg",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otn61p5",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otnizk9",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnjd7g",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnrzho",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnsprl",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnsyjl",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnwh8j",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otnwubg",
+   "thread": "1uegdbc",
+   "rec": "a",
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ],
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oto6udx",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otost1h",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "mpg",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otq2g69",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otq4u7f",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otq4zkd",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otq5w1i",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otq63d9",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otq6ohp",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otqgxkg",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "otqi72n",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otqyqys",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otr5as8",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otrcfma",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otrju6q",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otvd2md",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "mixed"
+    ],
+    [
+     "b",
+     "tech",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otvgkz7",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otvvdan",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "otxbthe",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otxmcn7",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "otyvm7p",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "space",
+     "pos"
+    ],
+    [
+     "a",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otyvq9h",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "space",
+     "pos"
+    ],
+    [
+     "a",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "otzdxu5",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "ou5hu4w",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "ou8u6bv",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ou92pp4",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "ouaic33",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oubl9lo",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oucdeqq",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "owhq7zu",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oxn232t",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oz6xe4q",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "oz6xjep",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "oz6xo39",
+   "thread": "1uegdbc",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "owhj23k",
+   "thread": "1uroyz0",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "owhm34t",
+   "thread": "1uroyz0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "owi2t4h",
+   "thread": "1uroyz0",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "owiuc0e",
+   "thread": "1uroyz0",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p84jpy8",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "p84lbul",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p84llht",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p84llz9",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p84ly6f",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p84zqxy",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p85gb4z",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p85s84a",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p85ue4l",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p85w4vk",
+   "thread": "1w8qbaa",
+   "rec": "a",
+   "m": [
+    [
+     "a",
+     "reliability",
+     "pos"
+    ],
+    [
+     "a",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "p862fx7",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p863een",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p868lhy",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p86da95",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p876ucq",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p886ont",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p88cjrn",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "p8amjjn",
+   "thread": "1w8qbaa",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbe4vs",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pcbg0lx",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbifck",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "mixed"
+    ],
+    [
+     "b",
+     "space",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "pcbikfl",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbing1",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbl4ki",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "a",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pcbmjbt",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbngn7",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcbuxdx",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "reliability",
+     "pos"
+    ],
+    [
+     "b",
+     "power",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pcc69rb",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcc6i4i",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pccfurd",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "a",
+     "price",
+     "neg"
+    ]
+   ]
+  },
+  {
+   "id": "pccgx9g",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pccndhm",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pccppkb",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": [
+    [
+     "b",
+     "noise",
+     "pos"
+    ],
+    [
+     "b",
+     "space",
+     "pos"
+    ],
+    [
+     "b",
+     "tech",
+     "pos"
+    ],
+    [
+     "a",
+     "power",
+     "pos"
+    ],
+    [
+     "a",
+     "ride",
+     "pos"
+    ],
+    [
+     "a",
+     "tech",
+     "neg"
+    ],
+    [
+     "b",
+     "power",
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "id": "pcd6dak",
+   "thread": "1wrcbv9",
+   "rec": "b",
+   "m": [
+    [
+     "b",
+     "power",
+     "pos"
+    ],
+    [
+     "b",
+     "price",
+     "pos"
+    ]
+   ]
+  },
+  {
+   "id": "pcdoigq",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pce37y8",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pce7h8k",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcect5z",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcegz89",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pcfd498",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  },
+  {
+   "id": "pdwz6gn",
+   "thread": "1wrcbv9",
+   "rec": null,
+   "m": []
+  }
+ ]
+}
