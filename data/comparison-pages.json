@@ -20511,17 +20511,17 @@
     {
      "label": "Owner complaints",
      "section": "reliability",
-     "a": "76<small>per 100k sold, 2023–25</small>",
+     "a": "88<small>per 100k sold, 2023–25</small>",
      "b": "65<small>per 100k sold, 2023–25</small>"
     },
     {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "79<small>out of 100, thin sample</small>",
-     "b": "56<small>out of 100, thin sample</small>"
+     "a": "61<small>out of 100</small>",
+     "b": "62<small>out of 100</small>"
     }
    ],
-   "summary": "We’d buy the Civic, unless the sticker price and the warranty matter most. Hybrid against hybrid, the Civic has 200 horsepower against 139 and reached 60 mph in 6.6 seconds in Edmunds’ test against 9.0 for the Elantra; it also loses far less value (7.0% against 16.6% in three years for the gas cars, by iSeeCars’ figures) and is far likelier to reach 200,000 miles in iSeeCars’ data (40.3% against 10.3%). The Elantra Hybrid Blue starts $3,745 lower, is rated 54 mpg combined against 49, sells 3–6% under sticker where a Civic sells 1–3% under, has a 10-year/100,000-mile powertrain warranty against Honda’s 5 years/60,000 miles, and beats the Civic sedan in IIHS’s updated front crash test. Edmunds’ own test of the 2025 pair called them closely matched and gave the Civic the overall win. Reddit leans Civic, 9 picks to 7, but only 16 people in neutral subreddits picked one, too few for us to call. Civic prices were checked November 16, 2026 and Elantra prices November 18; both makers’ offers end November 30.",
+   "summary": "We’d buy the Civic, unless the sticker price and the warranty matter most. Hybrid against hybrid, the Civic has 200 horsepower against 139 and reached 60 mph in 6.6 seconds in Edmunds’ test against 9.0 for the Elantra; it also loses far less value (7.0% against 16.6% in three years for the gas cars, by iSeeCars’ figures) and is far likelier to reach 200,000 miles in iSeeCars’ data (40.3% against 10.3%). The Elantra Hybrid Blue starts $3,745 lower, is rated 54 mpg combined against 49, sells 3–6% under sticker where a Civic sells 1–3% under, has a 10-year/100,000-mile powertrain warranty against Honda’s 5 years/60,000 miles, and beats the Civic sedan in IIHS’s updated front crash test. Edmunds’ own test of the 2025 pair called them closely matched and gave the Civic the overall win. Reddit’s picks lean Civic, 91 to 47 in neutral subreddits, while its index is level at 61 to 62; our blind check of the coding fell below our floor, so read both as rough. Civic prices were checked November 16, 2026 and Elantra prices November 18; both makers’ offers end November 30.",
    "choose": {
     "a": [
      "You want the better car to drive: the hybrid has 200 hp against 139, and Edmunds timed it to 60 mph in 6.6 seconds against 9.0.",
@@ -20589,7 +20589,7 @@
     {
      "label": "Complaints per 100k sold",
      "section": "reliability",
-     "a": "76",
+     "a": "88",
      "b": "65",
      "win": "b"
     },
@@ -20622,11 +20622,18 @@
      "win": "b"
     },
     {
+     "label": "Reddit picks, neutral subreddits",
+     "section": "reddit",
+     "a": "91",
+     "b": "47",
+     "win": "a"
+    },
+    {
      "label": "Reddit Sentiment Index",
      "section": "reddit",
-     "a": "79",
-     "b": "56",
-     "win": "a"
+     "a": "61",
+     "b": "62",
+     "win": null
     }
    ],
    "price": {
@@ -20899,7 +20906,7 @@
    },
    "reliability": {
     "intro": [
-     "Nobody can measure a 2026’s reliability yet, so we lined up every signal we could check. Owner complaints are close, and the headline rate hides a split: most of the Civic’s total is one steering fault with a recall fix. The Civic wins the long-life and repair-cost signals, the Elantra beats Honda in J.D. Power’s brand dependability study, and the two score the same from RepairPal. Hyundai’s 10-year/100,000-mile warranty is a reason to buy the Elantra that doesn’t show up in these numbers."
+     "Nobody can measure a 2026’s reliability yet, so we lined up every signal we could check. The Elantra draws fewer owner complaints per car sold, though most of the Civic’s total is one steering fault with a recall fix. The Civic wins the long-life and repair-cost signals, the Elantra beats Honda in J.D. Power’s brand dependability study, and the two score the same from RepairPal. Hyundai’s 10-year/100,000-mile warranty is a reason to buy the Elantra that doesn’t show up in these numbers."
     ],
     "signals": [
      {
@@ -20911,8 +20918,8 @@
      },
      {
       "label": "Owner complaints to NHTSA",
-      "note": "Per 100,000 sold, 2023–2025 model years. Without steering the Civic’s rate is 27 and the Elantra’s 61",
-      "a": "76",
+      "note": "Per 100,000 sold, 2023–2025 model years. Without steering the Civic’s rate is 31 and the Elantra’s 61",
+      "a": "88",
       "b": "65",
       "win": "b"
      },
@@ -20992,12 +20999,12 @@
        },
        {
         "label": "2024",
-        "a": 55,
+        "a": 60,
         "b": 47
        },
        {
         "label": "2025",
-        "a": 33,
+        "a": 45,
         "b": 24
        }
       ]
@@ -21008,59 +21015,59 @@
       "rows": [
        {
         "label": "Steering",
-        "a": 48.6,
-        "aText": "48.6",
+        "a": 56.4,
+        "aText": "56.4",
         "b": 4.3,
         "bText": "4.3"
        },
        {
         "label": "Electrical",
-        "a": 4.9,
-        "aText": "4.9",
+        "a": 5.7,
+        "aText": "5.7",
         "b": 16.7,
         "bText": "16.7"
        },
        {
         "label": "Automatic emergency braking",
         "sub": "NHTSA’s “forward collision avoidance”",
-        "a": 6.7,
-        "aText": "6.7",
+        "a": 7.8,
+        "aText": "7.8",
         "b": 11.5,
         "bText": "11.5"
        },
        {
         "label": "Engine",
-        "a": 3,
-        "aText": "3.0",
+        "a": 3.5,
+        "aText": "3.5",
         "b": 10.7,
         "bText": "10.7"
        },
        {
         "label": "Power train",
         "sub": "Transmission, drive and clutch",
-        "a": 2.7,
-        "aText": "2.7",
+        "a": 3.1,
+        "aText": "3.1",
         "b": 6.7,
         "bText": "6.7"
        },
        {
         "label": "Lane keeping",
-        "a": 5.8,
-        "aText": "5.8",
+        "a": 6.8,
+        "aText": "6.8",
         "b": 6.4,
         "bText": "6.4"
        },
        {
         "label": "Brakes",
-        "a": 4.6,
-        "aText": "4.6",
+        "a": 5.3,
+        "aText": "5.3",
         "b": 5.5,
         "bText": "5.5"
        },
        {
         "label": "Air bags",
-        "a": 1.8,
-        "aText": "1.8",
+        "a": 2.1,
+        "aText": "2.1",
         "b": 3.3,
         "bText": "3.3"
        }
@@ -21142,7 +21149,7 @@
      }
     ],
     "after": [
-     "<strong>Our read:</strong> neither car is the safe bet. By NHTSA’s complaints the Elantra looks a little better, 65 against 76 per 100,000 sold for 2023–2025, but leave out the Civic’s steering fault, which has a recall fix, and the Civic falls to 27 against the Elantra’s 61. More Civics reach 200,000 miles in iSeeCars’ data and cost less to repair, while Hyundai beats Honda in J.D. Power’s brand study and covers the powertrain for twice as long. The sales figures behind these rates come from each maker’s year-end reports; Hyundai’s tables list one Elantra row that may not include the hybrid, which would overstate the Elantra’s rate."
+     "<strong>Our read:</strong> neither car is the safe bet. By NHTSA’s complaints the Elantra looks better, 65 against 88 per 100,000 sold for 2023–2025, but leave out the Civic’s steering fault, which has a recall fix, and the Civic falls to 31 against the Elantra’s 61. More Civics reach 200,000 miles in iSeeCars’ data and cost less to repair, while Hyundai beats Honda in J.D. Power’s brand study and covers the powertrain for twice as long. The sales figures behind these rates come from each maker’s year-end reports. The Civic’s leave out the separate hybrid column in Honda’s FactBook, as on our Civic vs Corolla page; Hyundai’s tables list one Elantra row that may not include the hybrid, which would overstate the Elantra’s rate."
     ],
     "from": {
      "label": "Sources include",
@@ -21156,60 +21163,68 @@
    "reddit": {
     "dataFile": "data/reddit-sentiment/honda-civic-vs-hyundai-elantra.json",
     "intro": [
-     "We read 224 comments in 17 Reddit threads that weighed these two cars, from posts between February 2025 and September 2026. They come from r/whatcarshouldIbuy (15 threads), r/personalfinance and r/carbuying. This is a thin sample: only 16 people in those threads picked one car over the other (9 the Civic, 7 the Elantra), and we haven’t yet run a head-to-head collection for this pair, so the page is built from the threads in our two per-car files that name both. None of the threads are from r/civic or r/Elantra. A score of 50 means praise and complaints balance."
+     "We read 4,167 comments in 201 Reddit threads that weighed these two cars, January 2025 to November 2026. Each car’s own subreddit backs its own car, so r/civic (with r/CivicSi), r/Elantra (with r/ElantraN) and the neutral subreddits (mostly r/whatcarshouldIbuy) count equally. A score of 50 means praise and complaints balance. Of 594 posts that named both cars, we screened 461 and kept 324 that weigh the two; the top-up sample drew 47 home threads (1,502 comments) and 95 neutral threads (1,607 comments), an AI coded 3,109 comments to a ten-topic rubric, and a completeness pass on 230 empty comments gave 19 a code.",
+     "A blind second coder agreed on only 59% of picks (10 of the 17 comments either coder picked on) and 70% of stance (48 of 69) over 150 comments, well below our 85% floor, so read the pick counts and the index as rough. Many comments about the Si, Type R and Elantra N are coded under the base Civic and Elantra, so the power scores mostly reflect those sportier cars."
     ],
     "indexDetail": {
-     "a": "Praised for reliability, a quicker hybrid and resale value. Marked down for owner reports of oil dilution and head gasket trouble, and for the cost of a used or new Si.",
-     "b": "Praised for value, a long warranty and a roomy back seat. Marked down for owner reports of older engines failing, wind noise and losing value faster than a Civic or Corolla."
+     "a": "Praised for reliability and longevity, the Si’s shifter and handling, a quicker hybrid, resale value and a nicer interior. Marked down for owner reports of 1.5-turbo head gasket and oil dilution trouble, dealer markups on the Si and Type R, and cheap-looking plastics on lower trims. It scores 68 in the neutral subreddits, 63 in r/civic and 48 in r/Elantra.",
+     "b": "Praised for value, the Elantra N’s speed for the money, a long warranty and more features per dollar. Marked down for owner reports of engine failures on older Hyundais, faster depreciation than a Civic, theft-driven insurance costs and a stiff, noisy N. It scores 74 in r/Elantra, 55 in the neutral subreddits and 53 in r/civic."
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. Only 16 people picked, 9 the Civic and 7 the Elantra, so this is a direction at best.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddit mostly picks its own car. In r/civic the Civic got 29 picks to the Elantra’s 16; in r/Elantra the Elantra got 38 to the Civic’s 2.",
      "rows": [
       {
        "venue": "neutral",
        "label": "Neutral subreddits"
+      },
+      {
+       "venue": "a",
+       "label": "In r/civic and r/CivicSi"
+      },
+      {
+       "venue": "b",
+       "label": "In r/Elantra and r/ElantraN"
       }
      ]
     },
-    "minimum": 15,
-    "minimumPicks": 100,
+    "minimum": 30,
     "topics": {
      "title": "Net opinion by topic",
-     "note": "From −100 (every opinion negative) to +100 (every opinion positive), from the neutral subreddits only. A car with fewer than 15 mentions on a topic shows the count instead of a score. Most-discussed topics first."
+     "note": "From −100 (every opinion negative) to +100 (every opinion positive), with the three venues weighted equally. A car with fewer than 30 mentions on a topic shows the count instead of a score. Most-discussed topics first."
     },
     "themes": {
      "a": {
       "praise": [
-       "Owners report Civics running past 150,000 miles with only routine maintenance",
-       "A hybrid that feels quicker and more responsive than the gas 2.0",
-       "Hybrid owners report mid 40s to mid 50s mpg in mild weather",
-       "Strong resale value on Civics and Si models"
+       "Owners report Civics lasting 200,000 miles or more on basic maintenance",
+       "Si and Type R manual shifters and handling, and a quick hybrid",
+       "Holds resale value much better than the Elantra",
+       "An interior seen as better made and more premium"
       ],
       "gripes": [
-       "Owners report oil dilution on the 1.5-liter turbo, especially in cold weather",
-       "Owners report head gasket leaks on turbo and hybrid engines",
-       "Road and wind noise on the highway, especially in the hatchback",
-       "Dealer markups on the Si and high used asking prices"
+       "Owners report head gasket and oil dilution trouble on the 1.5 turbo",
+       "Dealer markups on the Si and Type R, with prices called high for what they add",
+       "The Si called slow next to an Elantra N",
+       "Owners report cheap-looking plastics and dated screens on lower trims"
       ]
      },
      "b": {
       "praise": [
-       "Strong value against a Civic or Corolla, helped by the long warranty",
-       "A roomy back seat and trunk that fit car seats, with rear legroom that suits tall adults",
-       "Lower trims that include CarPlay and Android Auto, and large screens",
-       "Hybrid owners report about 50 mpg in everyday driving"
+       "More car per dollar, with more features and screens at lower trims",
+       "The Elantra N called fast and fun for the money, close to a Type R for much less",
+       "The 10-year warranty eases reliability worries",
+       "A hybrid that owners report gets 51 to 53 mpg, with a low sticker"
       ],
       "gripes": [
-       "Owners report older Elantras burning oil or failing engines around 100,000 to 150,000 miles",
-       "Owners report wind noise near the driver’s window at highway speed",
-       "Owners report losing value faster than a Civic or Corolla, and high insurance rates",
-       "Owners report a base 2.0 and a hybrid that feel slow at highway speeds"
+       "Owners report engine failures and oil burning on older Hyundai engines",
+       "Owners report faster depreciation than the Civic, and higher insurance on theft-prone cars",
+       "Owners report the N rides stiff, sits low and is noisy",
+       "Owners report the 10-year warranty shrinks for second owners"
       ]
      }
     },
     "after": [
-     "Reliability is what Reddit discusses most, 21 mentions for each car, and the Civic nets +71 against the Elantra’s −10. That lines up with the iSeeCars lifespan numbers and the Elantra’s 2019–2020 engine complaints, but 16 picks and 103 opinions can’t settle it. Test-drive both on roads you know before you decide."
+     "Reddit’s picks lean Civic, 91 to 47 in the neutral subreddits, while the overall index is level, Civic 61 and Elantra 62: the index averages three venues, and the Elantra’s home subreddit scores its car 74 against the Civic’s 68 in neutral threads. On reliability Reddit lines up with the data on older cars: the Civic nets +48 and the Elantra −14, much of it owner reports of older Hyundai engines. On power the Elantra nets +77 against the Civic’s +7, largely the N against the Si. Test-drive both on roads you know before you decide."
     ],
     "from": {
      "label": "Comments from",
@@ -21388,7 +21403,7 @@
    "faq": [
     [
      "Which is more reliable, the Civic or the Elantra?",
-     "Neither has a clear lead. Owners of 2023 to 2025 models filed 65 complaints with NHTSA per 100,000 Elantras sold against 76 for the Civic, but the Civic’s total is mostly a steering fault fixed by recall 24V-744; without it the Civic’s rate is 27 and the Elantra’s 61. Hyundai beats Honda in J.D. Power’s 2026 dependability study (198 problems per 100 cars against 211), RepairPal rates both 4.5 out of 5, and iSeeCars gives a Civic a 40.3% chance of reaching 200,000 miles against 10.3% for an Elantra."
+     "Neither has a clear lead. Owners of 2023 to 2025 models filed 65 complaints with NHTSA per 100,000 Elantras sold against 88 for the Civic, but the Civic’s total is mostly a steering fault fixed by recall 24V-744; without it the Civic’s rate is 31 and the Elantra’s 61. Hyundai beats Honda in J.D. Power’s 2026 dependability study (198 problems per 100 cars against 211), RepairPal rates both 4.5 out of 5, and iSeeCars gives a Civic a 40.3% chance of reaching 200,000 miles against 10.3% for an Elantra."
     ],
     [
      "Is the Civic Hybrid or the Elantra Hybrid better on gas?",
@@ -21408,7 +21423,7 @@
     ],
     [
      "What does Reddit think of the Civic vs the Elantra?",
-     "It leans Civic, but the sample is small. In neutral subreddits, 9 people told the poster to buy the Civic and 7 the Elantra. Our Reddit Sentiment Index scores the Civic 79 and the Elantra 56 out of 100, where 50 means praise and complaints balance, with reliability the topic most discussed."
+     "Picks lean Civic and the index is level. In neutral subreddits, 91 people told the poster to buy the Civic and 47 the Elantra, and each car’s own subreddit mostly picks its own car. Our Reddit Sentiment Index scores the Elantra 62 and the Civic 61 out of 100, where 50 means praise and complaints balance. Reddit trusts the Civic more on reliability and the Elantra N more on driving, but our coding check agreed on only 59% of picks and 70% of stance, so read the numbers as rough."
     ],
     [
      "Should I wait for the next Elantra?",
@@ -21571,7 +21586,7 @@
      "id": "VEH-CIEL-26",
      "url": "https://hondanews.com/en-US/releases/digital-factbook-north-america-sales",
      "title": "Honda: Digital FactBook, North America sales",
-     "note": "Civic and Civic hybrid sales by year, read November 21, 2026 through a page summary; the hybrid column is added to the Civic row for 2024 and 2025"
+     "note": "Civic sales by year, read November 21, 2026 through a page summary; the separate Civic hybrid column is left out, as on the Civic vs Corolla page"
     },
     {
      "id": "VEH-CIEL-27",
