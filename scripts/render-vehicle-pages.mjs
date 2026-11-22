@@ -403,6 +403,7 @@ ${vehicle.watch.map(item => `<li>${item}</li>`).join('\n')}
 <p>Compare dealers on the whole price in writing. The free <a href="/compare-car-quotes.html">quote comparison worksheet</a> lines offers up side by side, and the <a href="/blog-dealership-addons-complete-guide.html">dealership add-ons guide</a> covers what to ask about each extra.</p>
 </section>
 
+${moreLinks(vehicle, text.moreName ?? name)}
 <section id="faq" class="vp-section vp-section--band">
 <h2>Common questions</h2>
 ${faq([
@@ -742,6 +743,26 @@ ${cmp.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source
 }
 
 // A price guide's coded Reddit file: data/reddit-sentiment/cars/<slug stem>.json (toyota-camry-price.html → toyota-camry).
+// Links from a price guide to the other pages about the same car: its problems-by-year page (when ready), its
+// hybrid-vs-gas page, the roundups that rank it, and the two cross-model deal pages. Read at build time, so a new
+// page in any of those families shows up here on the next build.
+function moreLinks(vehicle, name) {
+  const key = vehicle.slug.replace(/-price\.html$/, ''), items = [];
+  const problems = path.join(root, 'data/problems-pages', `${key}.json`);
+  if (existsSync(problems) && JSON.parse(readFileSync(problems, 'utf8')).status === 'ready') items.push(`<strong><a href="/${key}-problems.html">${name} problems by year</a></strong>Owner complaints per 100,000 sold, recalls and the used years to avoid`);
+  if (existsSync(path.join(root, 'data/hybrid-pages', `${key}.json`))) items.push(`<strong><a href="/${key}-hybrid-vs-gas.html">Is the ${name} hybrid worth it?</a></strong>The price gap, the fuel savings and how long it takes to pay back`);
+  const roundups = path.join(root, 'data/roundup-pages.json');
+  if (existsSync(roundups)) for (const page of JSON.parse(readFileSync(roundups, 'utf8')).pages) if (page.entries.some(entry => entry.guide === vehicle.slug)) items.push(`<strong><a href="/${page.slug}">${page.blogTitle ?? page.h1}</a></strong>Where the ${name} ranks against its rivals`);
+  items.push(`<strong><a href="/cars-selling-below-msrp.html">New cars selling below MSRP</a></strong>How the ${name}’s discount compares with 20 other models`, '<strong><a href="/new-car-deals-this-month.html">New-car deals this month</a></strong>Every current offer on the models we cover');
+  return `<section id="more" class="vp-section">
+<h2>More on the ${name}</h2>
+<ul class="vp-watch vp-watch--links" role="list">
+${items.map(item => `<li>${item}</li>`).join('\n')}
+</ul>
+</section>
+`;
+}
+
 export const carSentimentFile = vehicle => `data/reddit-sentiment/cars/${vehicle.slug.replace(/-price\.html$/, '')}.json`;
 const versusSheet = 'buying/versus.css';
 const sheetLink = (file, css) => `<link rel="stylesheet" href="/${file}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;

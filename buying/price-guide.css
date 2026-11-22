@@ -298,6 +298,8 @@
 .dr .vp-watch li { counter-increment:watch; position:relative; padding:16px 0 18px 36px; border-bottom:1px solid var(--line); font-size:15px; line-height:1.55; }
 .dr .vp-watch li::before { content:counter(watch); position:absolute; left:0; top:16px; font-weight:600; color:var(--sign); font-variant-numeric:tabular-nums; }
 .dr .vp-watch strong { display:block; font-size:16px; }
+.dr .vp-watch--links li { padding-left:0; }
+.dr .vp-watch--links li::before { content:none; }
 
 /* Questions */
 .dr .vp-faq { margin-top:6px; }
