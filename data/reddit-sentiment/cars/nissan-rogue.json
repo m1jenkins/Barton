@@ -190,6 +190,135 @@
    "neg": []
   }
  },
+ "focus": {
+  "hybrid": {
+   "name": "new Rogue Hybrid",
+   "scope": "the 2027 Rogue Hybrid (e-POWER) and the Rogue Plug-in Hybrid",
+   "threads": [
+    "1k83w1t",
+    "1mhg5w2",
+    "1nyw5p0",
+    "1ozhpm8",
+    "1ozg4bf",
+    "1q6l3he",
+    "1qns61t",
+    "1rqx23x",
+    "1s9l4uo",
+    "1sbi1um",
+    "1shqgzk",
+    "1skanf1",
+    "1skuttd",
+    "1smb0jy",
+    "1tqzuvx",
+    "1u8ujeh",
+    "1v0i89d",
+    "1vh4lye",
+    "1vhbpio",
+    "1vmu2e0",
+    "1w3be5v",
+    "1w3wcak",
+    "1wmgqte",
+    "1wmbaqq",
+    "1wmbok5",
+    "1wn907i",
+    "1wnkbpm",
+    "1wnmudx",
+    "1wo89tu",
+    "1wo83aa",
+    "1x69a2y",
+    "1xki12j",
+    "1xlaapc",
+    "1xn75ty",
+    "1xmg0ao",
+    "1xoq1tj",
+    "1xr7ltm",
+    "1xr5cc6",
+    "1xujryw",
+    "1xxrz0h",
+    "1xyrdlz"
+   ],
+   "themes": {
+    "reliability": {
+     "pos": [
+      "Early hybrid buyers expect the series-hybrid system to prove reliable, citing years of use overseas",
+      "Hybrid shoppers like that it drops the CVT and the variable-compression engine"
+     ],
+     "neg": [
+      "Shoppers call the first-year hybrid unproven and advise waiting a year or two",
+      "Shoppers worry the small hybrid battery will degrade and strand the car",
+      "Early hybrid buyers worry about a small turbo engine running as a generator"
+     ]
+    },
+    "mpg": {
+     "pos": [
+      "Hybrid shoppers expect big fuel savings because the engine runs at its efficient point"
+     ],
+     "neg": [
+      "Early hybrid buyers say the estimated 38 mpg combined trails the RAV4 Hybrid",
+      "Shoppers say hybrid highway economy suffers because the engine never drives the wheels",
+      "Plug-in owners report mpg in the mid-20s once the battery runs down"
+     ]
+    },
+    "ride": {
+     "pos": [
+      "Early hybrid buyers found the front and rear seats comfortable on test drives"
+     ],
+     "neg": []
+    },
+    "noise": {
+     "pos": [
+      "Hybrid shoppers expect a quiet, smooth drive since the engine never drives the wheels",
+      "Early hybrid buyers report an almost silent cabin on test drives"
+     ],
+     "neg": []
+    },
+    "power": {
+     "pos": [
+      "Hybrid shoppers like the electric-car feel, with no CVT and motors doing the work"
+     ],
+     "neg": []
+    },
+    "tech": {
+     "pos": [
+      "Hybrid shoppers like the physical climate and shifter buttons and the nicer interior versus the RAV4",
+      "Early hybrid buyers like the sharp 2027 exterior styling"
+     ],
+     "neg": [
+      "Hybrid shoppers say the flat button panel looks unfinished or cheap",
+      "Early hybrid buyers dislike the white interior and console faceplate plastic",
+      "Plug-in shoppers say the Outlander-based plug-in looks cheaper than the new hybrid"
+     ]
+    },
+    "space": {
+     "pos": [],
+     "neg": []
+    },
+    "price": {
+     "pos": [
+      "Hybrid shoppers expect Nissan incentives, low-rate financing and lease deals to undercut the RAV4",
+      "Hybrid shoppers like AWD and heated seats being standard"
+     ],
+     "neg": [
+      "Early buyers say the hybrid starts high next to the RAV4 Hybrid",
+      "Plug-in owners call the rebadged plug-in overpriced and likely to lose value"
+     ]
+    },
+    "dealer": {
+     "pos": [],
+     "neg": [
+      "Hybrid shoppers fear dealer market adjustments on early units",
+      "Plug-in owners note a weaker warranty than the Mitsubishi it is based on"
+     ]
+    },
+    "safety": {
+     "pos": [
+      "ProPilot Assist kept the hybrid centered on early test drives"
+     ],
+     "neg": []
+    }
+   }
+  }
+ },
  "threads": [
   {"id":"1hyp9a2","subreddit":"NissanRogue","created":"2025-01-11","names":["nissan-rogue"]},
   {"id":"1hzr926","subreddit":"whatcarshouldIbuy","created":"2025-01-12","names":["chevrolet-equinox","ford-escape","honda-cr-v","nissan-rogue"]},

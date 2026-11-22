@@ -133,7 +133,18 @@ test('per-car Reddit files hold ids and codes only, and every vehicle key is wel
   const known = key => keyPattern.test(key) && Boolean(models[key]);
   const fields = ['car', 'collected', 'comments', 'duplicatePicksDropped', 'gaps', 'home', 'keepThreadPicksDropped', 'keepThreads', 'rules', 'source', 'subreddits', 'themes', 'threads', 'threadsFrom', 'threadsTo', 'uncoded'];
   for (const [file, coded] of await carFiles()) {
-    assert.deepEqual(Object.keys(coded).sort(), fields, `${file} fields`);
+    // `focus` is optional: a version of the car (the Rogue Hybrid) scored on its own threads, with its own theme notes.
+    assert.deepEqual(Object.keys(coded).filter(key => key !== 'focus').sort(), fields, `${file} fields`);
+    for (const [key, focus] of Object.entries(coded.focus ?? {})) {
+      assert.deepEqual(Object.keys(focus).sort(), ['name', 'scope', 'themes', 'threads'], `${file} focus ${key} fields`);
+      const listed = new Set(coded.threads.map(thread => thread.id));
+      for (const id of focus.threads) assert.ok(listed.has(id), `${file} focus ${key}: thread ${id} is in the file`);
+      for (const [topic, sides] of Object.entries(focus.themes)) {
+        assert.ok(topics[topic], `${file} focus ${key} theme topic ${topic}`);
+        assert.deepEqual(Object.keys(sides).sort(), ['neg', 'pos'], `${file} focus ${key} ${topic}`);
+        for (const note of [...sides.pos, ...sides.neg]) assert.doesNotMatch(note, /["“”]|\bu\/|https?:/, `${file} focus ${key} ${topic}: paraphrases only`);
+      }
+    }
     assert.equal(file, `${coded.car.key}.json`, file);
     assert.equal(models[coded.car.key], coded.car.name, `${file} car name matches models.json`);
     const threads = new Set();
@@ -183,5 +194,11 @@ test('every price guide has a Reddit car file and shows the figures computed fro
       assert.ok(html.includes(shown), `${vehicle.slug} shows a topic net of ${figure.net} from ${figure.mentions} mentions`);
     }
     for (const item of summary.crossShopped) assert.match(html, new RegExp(`${item.threads} threads?</span>`), `${vehicle.slug} cross-shopped count`);
+    if (vehicle.reddit?.strip) assert.match(html, new RegExp(`Reddit Sentiment Index</span><span class="vp-strip__score">${summary.index}<`), `${vehicle.slug} strip shows the computed index`);
+    if (vehicle.reddit?.focus) {
+      const coded = files.get(file), ids = new Set(coded.focus[vehicle.reddit.focus].threads);
+      const sub = summarizeCar({ ...coded, threads: coded.threads.filter(thread => ids.has(thread.id)), comments: coded.comments.filter(comment => ids.has(comment.thread)) });
+      assert.match(html, new RegExp(`id="reddit-focus"[\\s\\S]*?vp-rd-big">${sub.index}<`), `${vehicle.slug} shows the focus index computed from its threads`);
+    }
   }
 });

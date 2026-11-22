@@ -214,6 +214,39 @@ function redditSection(vehicle, coded, sentiment, { models, vehicles, comparison
     return `<li><span>${label}</span>${meter(item.threads, crossTop)}<span class="vp-rd-cross__value">${item.threads} thread${item.threads === 1 ? '' : 's'}</span></li>`;
   };
   const praise = themeList('pos'), gripes = themeList('neg');
+  // Optional: one version of the car scored on its own threads (vehicle.reddit.focus names a key in the car file's
+  // `focus`, which lists those threads and their own theme notes). Same coding and formula, computed here.
+  const focusKey = vehicle.reddit?.focus;
+  let focusBlock = '';
+  if (focusKey) {
+    const focus = coded.focus?.[focusKey];
+    if (!focus) throw new Error(`${coded.car.key}.json has no focus "${focusKey}"`);
+    const ids = new Set(focus.threads);
+    const threads = coded.threads.filter(entry => ids.has(entry.id));
+    if (threads.length !== ids.size) throw new Error(`${coded.car.key}.json focus "${focusKey}" lists threads the file doesn’t have`);
+    const sub = summarizeCar({ ...coded, threads, comments: coded.comments.filter(comment => ids.has(comment.thread)) });
+    const dates = threads.map(entry => entry.created).sort();
+    const focusRows = Object.entries(sub.topics).filter(([, figure]) => figure.mentions >= redditMinimum).sort((x, y) => y[1].net - x[1].net);
+    const focusNotes = side => Object.entries(sub.topics)
+      .filter(([topic, figure]) => figure[side] >= 5 && focus.themes?.[topic]?.[side]?.length)
+      .sort((x, y) => y[1][side] - x[1][side]).slice(0, 3)
+      .map(([topic]) => `<li><b>${sentimentTopics[topic]}.</b> ${focus.themes[topic][side][0]}</li>`).join('');
+    focusBlock = `<section id="reddit-focus" class="vp-rd-focus">
+<h3>The ${focus.name} on Reddit</h3>
+<p>${count(sub.threads)} threads and ${count(sub.comments)} comments about ${focus.scope}, ${monthYear(dates[0])} to ${monthYear(dates.at(-1))}, scored the same way.</p>
+<div class="vp-rd-focus__grid">
+<div><p class="vp-rd-label">Sentiment in these threads</p><p class="vp-rd-big">${sub.index}<small> / 100</small></p><div class="vp-rd-scale" aria-hidden="true"><i style="--w:${sub.index}%"></i></div><p class="vp-rd-detail">Against ${sentiment.index} across every ${short} thread. From ${count(sub.opinions)} opinions.</p></div>
+<ul class="vp-rd-net" role="list">
+${focusRows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${sentimentTopics[topic]}<small>${count(figure.mentions)} mentions</small></span>${netBar(figure)}</li>`).join('\n')}
+</ul>
+</div>
+<div class="vp-rd-themes">
+<section><h3>What they like</h3><ul role="list">${focusNotes('pos')}</ul></section>
+<section><h3>What worries them</h3><ul class="vp-rd-themes__neg" role="list">${focusNotes('neg')}</ul></section>
+</div>
+</section>
+`;
+  }
   return `<section id="reddit" class="vp-section">
 <h2>What Reddit says about the ${short}</h2>
 <p>We read ${count(sentiment.comments)} comments in ${count(sentiment.threads)} Reddit threads about the ${short}, posted from ${monthYear(coded.threadsFrom)} to ${monthYear(coded.threadsTo)}, and noted each opinion they give and which car they tell the poster to buy. Owners in a car’s own subreddit and shoppers elsewhere see it differently, so ${homeSubs.length > 1 ? `its own subreddits (${homeText})` : homeText} and the rest of Reddit count equally. A score of 50 means praise and complaints balance.</p>
@@ -221,8 +254,8 @@ function redditSection(vehicle, coded, sentiment, { models, vehicles, comparison
 <div><p class="vp-rd-label">Reddit Sentiment Index</p><p class="vp-rd-big">${sentiment.index}<small> / 100</small></p><div class="vp-rd-scale" aria-hidden="true"><i style="--w:${sentiment.index}%"></i></div><p class="vp-rd-ends" aria-hidden="true"><span>All negative</span><span>50 = even</span><span>All positive</span></p><p class="vp-rd-detail">${homeText} alone: ${sentiment.venues.home.index ?? 'too few to score'}. The rest of Reddit: ${sentiment.venues.neutral.index ?? 'too few to score'}. From ${count(sentiment.opinions)} opinions about the ${short}.</p></div>
 <div><p class="vp-rd-label">Picked when it was an option</p>${enoughPicks ? `<p class="vp-rd-big">${picks.share}%</p><div class="vp-rd-scale vp-rd-scale--plain" aria-hidden="true"><i style="--w:${picks.share}%"></i></div><p class="vp-rd-detail">${count(picks.car)} of ${count(picks.all)} picks in ${count(picks.threads)} threads outside ${homeText} that weighed the ${short} against another model.${rival ? ` Next most picked: the ${modelName(rival[0])}, with ${count(rival[1])}.` : ''}</p>` : `<p class="vp-rd-big">${count(picks.all)}<small> picks</small></p><p class="vp-rd-detail">Too few picks outside ${homeText} to give a share: ${count(picks.car)} of ${count(picks.all)} went to the ${short}.</p>`}</div>
 </div>
-<section class="vp-rd-topics">
-<h3>Net opinion by topic</h3>
+${focusBlock}<section class="vp-rd-topics">
+<h3>Net opinion by topic${focusBlock ? `, every ${short} thread` : ''}</h3>
 <p>Positive minus negative opinions about the ${short}, as a share of all its opinions on that topic, from −100 to +100. Topics with fewer than ${redditMinimum} mentions aren’t scored.</p>
 <ul class="vp-rd-net" role="list">
 ${rows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${sentimentTopics[topic]}<small>${count(figure.mentions)} mentions</small></span>${netBar(figure)}</li>`).join('\n')}
@@ -242,7 +275,7 @@ ${cross.map(crossItem).join('\n')}
 </section>`;
 }
 
-function vehiclePage(vehicle, updated, reddit) {
+function vehiclePage(vehicle, updated, reddit, sentiment) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
   const ask = `<a href="/schedule.html">Ask us</a>`;
@@ -272,7 +305,9 @@ function vehiclePage(vehicle, updated, reddit) {
     related: '<a href="/new-car-buying-service.html">new car buying service</a>, <a href="/blog-buy-new-car-below-msrp.html">comparing complete new-car quotes</a> and <a href="/car-negotiation-service.html">car negotiation service</a>',
     ...vehicle.labels,
   };
-  const tabs = [['overview', 'Overview'], ['pay', 'What to pay'], ['reviews', 'Review scores'], ...(reddit ? [['reddit', 'Reddit']] : []), ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
+  // vehicle.reddit.first moves the Reddit section up to sit under the overview; .strip adds its index to the score strip.
+  const redditFirst = Boolean(reddit && vehicle.reddit?.first), redditStrip = Boolean(reddit && vehicle.reddit?.strip);
+  const tabs = [['overview', 'Overview'], ...(redditFirst ? [['reddit', 'Reddit']] : []), ['pay', 'What to pay'], ['reviews', 'Review scores'], ...(reddit && !redditFirst ? [['reddit', 'Reddit']] : []), ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   if (vehicle.spotlight) tabs.splice(tabs.findIndex(([id]) => id === 'pick') + 1, 0, [vehicle.spotlight.id, vehicle.spotlight.tab]);
   const body = `<article class="vp">
 <header class="vp-head vp-width">
@@ -286,9 +321,9 @@ function vehiclePage(vehicle, updated, reddit) {
 <div class="vp-layout vp-width">
 <div class="vp-hero">
 ${gallery(vehicle.photo, vehicle.gallery)}
-<ul class="vp-strip" role="list">
+<ul class="vp-strip${redditStrip ? ' vp-strip--6' : ''}" role="list">
 ${vehicle.scores.cards.map(card => `<li><a href="#reviews"><span class="vp-strip__source">${card.source}</span><span class="vp-strip__score">${card.display}<small>/${card.scale}</small></span></a></li>`).join('\n')}
-<li><a href="#safety"><span class="vp-strip__source">${vehicle.safety.label}</span>${vehicle.safety.outOf ? `<span class="vp-strip__score">${safetyScore(vehicle.safety)}</span>` : stars(vehicle.safety.overall)}</a></li>
+${redditStrip ? `<li class="vp-strip__reddit"><a href="#reddit"><span class="vp-strip__source">Reddit Sentiment Index</span><span class="vp-strip__score">${sentiment.index}<small>/100</small></span></a></li>\n` : ''}<li><a href="#safety"><span class="vp-strip__source">${vehicle.safety.label}</span>${vehicle.safety.outOf ? `<span class="vp-strip__score">${safetyScore(vehicle.safety)}</span>` : stars(vehicle.safety.overall)}</a></li>
 </ul>
 </div>
 
@@ -308,7 +343,7 @@ ${vehicle.glance.map(tile => `<li><a href="#${tile.section}"><span class="vp-gla
 <section class="vp-verdict__cons"><h2>What we’d think twice about</h2><ul role="list">${vehicle.cons.map(item => `<li>${item}</li>`).join('')}</ul></section>
 </div>
 </section>
-
+${redditFirst ? `\n${reddit}\n` : ''}
 <section id="pay" class="vp-section vp-section--band">
 <h2>${text.payHeading}</h2>
 ${paragraphs(vehicle.pay.intro)}
@@ -327,7 +362,7 @@ ${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${c
 </ul>
 <p class="vp-note">${vehicle.scores.note}</p>
 </section>
-${reddit ? `\n${reddit}\n` : ''}
+${reddit && !redditFirst ? `\n${reddit}\n` : ''}
 <aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>
 
 <section id="trims" class="vp-section">
@@ -776,8 +811,9 @@ export async function renderVehiclePages() {
     const updated = vehicle.checkedOn > data.updated ? vehicle.checkedOn : data.updated;
     const carFile = path.join(root, carSentimentFile(vehicle));
     const coded = existsSync(carFile) ? JSON.parse(readFileSync(carFile, 'utf8')) : null;
-    const reddit = coded && redditSection(vehicle, coded, summarizeCar(coded), { models, vehicles: data.vehicles, comparisons: comparisons.comparisons });
-    const page = vehiclePage(vehicle, updated, reddit);
+    const sentiment = coded && summarizeCar(coded);
+    const reddit = coded && redditSection(vehicle, coded, sentiment, { models, vehicles: data.vehicles, comparisons: comparisons.comparisons });
+    const page = vehiclePage(vehicle, updated, reddit, sentiment);
     const html = shell(chrome, { ...page, published: vehicle.published, updated }, page.body);
     return { slug: page.slug, html: html.replace('</head>', `    ${link}\n</head>`) };
   });

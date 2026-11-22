@@ -18665,7 +18665,7 @@
           "section": "new-used"
         }
       ],
-      "summary": "The 2027 Rogue Hybrid is the Rogue we’d buy. Nissan’s new e-POWER system uses the 1.5-liter turbo engine only to charge a battery, and two electric motors drive all four wheels, so there’s no transmission and no plug. It starts at $35,490 ($37,065 with destination) with all-wheel drive standard, and Nissan estimates 38 mpg combined, short of the RAV4 Hybrid’s 41 (the EPA hasn’t rated the Rogue yet). Edmunds scores it 8.2 out of 10, second of 12 small hybrid SUVs, against 6.4 for the gas Rogue, and timed an SR at 6.9 seconds to 60 mph, more than a second quicker than the Sportage Hybrid it tested. The catch is timing: only the $41,490 SR with the Technology Package is at dealers now, the SV, SR and Platinum are due in January 2027, and Edmunds says early deals run about $1,200 off sticker. Reddit is warier than the reviewers, mostly because of Nissan’s recent engine record. The gas Rogue ($29,690, 30 mpg combined) is easier to discount, with $3,000 of Nissan cash on every 2027. Prices and offers were checked on November 21, 2026.",
+      "summary": "The 2027 Rogue Hybrid is the Rogue we’d buy. Its e-POWER system uses the 1.5-liter turbo engine only as a generator, and two electric motors drive all four wheels. It starts at $35,490 ($37,065 with destination), and Nissan estimates 38 mpg combined, short of the RAV4 Hybrid’s 41. Edmunds scores it 8.2 out of 10 against 6.4 for the gas Rogue, but only the $41,490 SR Technology is at dealers until January 2027. Reddit is warier than the reviewers, mostly over Nissan’s recent engine and CVT record.",
       "trims": {
         "columns": [
           "2027 MSRP",
@@ -18765,17 +18765,15 @@
           }
         ],
         "after": [
-          "Nissan’s $1,575 destination charge is extra on every Rogue. AWD adds $1,400 on the gas S, SV and Dark Armor; the Rock Creek, Platinum and every Hybrid are AWD only. The 2027 gas Rogue costs $200 more than the 2026 ($400 on the Platinum) with a retuned CVT, and Kelley Blue Book says the gas Rogue is redesigned for 2028. Nissan’s SV Premium Package ($2,100) takes a Hybrid SV to $37,590.",
-          "The plug-in hybrid is a 2026 only: Nissan priced the SL at $45,990 and the Platinum at $49,990 before destination, for 38 miles of electric range, 248 hp and three rows of seats, and Edmunds lists no 2027 plug-in. Nissan rates it 64 MPGe and 26 mpg combined on gas."
+          "Destination is $1,575. AWD adds $1,400 on the gas S, SV and Dark Armor; every Hybrid has it. The 2027 gas Rogue costs $200 more than the 2026 ($400 on the Platinum). The Rogue Plug-in Hybrid is a 2026 only: SL $45,990, Platinum $49,990, with 38 miles of electric range."
         ]
       },
       "pick": [
-        "<strong>A 2027 Hybrid SV.</strong> At $35,490 it costs $3,400 more than a gas SV with AWD ($32,090) and buys the e-POWER hybrid system, standard all-wheel drive, dual 12.3-inch screens with wireless CarPlay and Android Auto, and heated front seats. Nissan estimates 38 mpg combined for the SR, and Edmunds lists 37 for the SV, against 29 for an AWD gas Rogue: about 90 fewer gallons a year at 12,000 miles.",
-        "The catch is timing: Nissan expects the SV in January 2027, and the only Hybrid at dealers now is the SR with the Technology Package at $41,490. If you can’t wait, Edmunds says an optioned SR is worse value than the $43,490 Platinum, which adds ventilated seats, a power passenger seat and an auto-dimming mirror. Skip the hybrid if payment comes first: a gas Dark Armor ($33,540), Edmunds’ pick of the gas Rogues, carries $3,000 of Nissan cash."
+        "<strong>A 2027 Hybrid SV.</strong> For $35,490, $3,400 more than an AWD gas SV, you get the e-POWER drivetrain, standard AWD, dual 12.3-inch screens with wireless CarPlay and heated front seats. Edmunds lists 37 mpg combined for it against 29 for the gas car, about 90 fewer gallons a year at 12,000 miles. It arrives in January. If you can’t wait, Edmunds prefers the $43,490 Platinum to a loaded SR; if payment comes first, a gas Dark Armor ($33,540) carries $3,000 of Nissan cash."
       ],
       "pay": {
         "intro": [
-          "The Hybrid is new, so deals are thin. Edmunds says shoppers are landing about $1,200 off sticker with no general cash rebate, and Kelley Blue Book’s fair purchase price is $1,065 to $1,265 under MSRP with destination (SV $36,000, SR $38,000, Platinum $43,800). The gas Rogue has more room: Edmunds counted nearly 19,700 new ones on lots, and its New York suggested prices run 4.4–5.3% under sticker with destination. The 2026 plug-in is the biggest discount: Edmunds’ price for an SL is $44,206 against $47,565 with destination, 7.1% under, before Nissan’s cash."
+          "Hybrid deals are thin: Edmunds says buyers get about $1,200 off sticker, and Kelley Blue Book’s fair price is $1,065 to $1,265 under. The gas Rogue has more room, with Edmunds’ New York prices 4.4–5.3% under sticker."
         ],
         "tableTitle": "Dealer discount by trim",
         "rows": [
@@ -18814,7 +18812,7 @@
       },
       "incentives": {
         "intro": [
-          "Every offer ends November 30. On the Hybrid, Nissan offers 4.9% financing for 60 months everywhere we checked, a lease on the SR Technology and no retail cash; the cash is on the gas Rogue ($3,000 on a 2027, $4,500 on a 2026 Platinum), and a 2026 Rogue still carries 0% for 60 months."
+          "Every offer ends November 30. The Hybrid gets 4.9% for 60 months and a lease, but no cash. The cash is on the gas Rogue: $3,000 on a 2027, $4,500 on a 2026 Platinum."
         ],
         "rows": [
           {
@@ -18908,7 +18906,7 @@
         "addons": [
           {
             "title": "Military, or a recent graduate?",
-            "text": "Nissan adds $500 for qualified military and $500 for recent graduates on a 2027 Rogue Hybrid, and the two can’t be combined with each other.",
+            "text": "Nissan adds $500 for qualified military or recent graduates on a 2027 Rogue Hybrid, but not both.",
             "figure": "$500",
             "unit": "off",
             "detail": "Ends November 30",
@@ -18928,7 +18926,7 @@
         "choice": {
           "eyebrow": "Nissan’s 4.9%",
           "title": "4.9% costs about {gap} less than the average loan",
-          "text": "Each bar is how much less you pay in total than at the 6.35% average new-car rate, on a $37,000 Rogue Hybrid over 60 months. Nissan lists no retail cash on the Hybrid, so the rate is its main offer. Borrowers with top credit averaged 4.41%, so get your bank’s rate before you sign.",
+          "text": "Total saved against the 6.35% average new-car rate on a $37,000 Rogue Hybrid over 60 months. Borrowers with top credit averaged 4.41%, so get your bank’s rate first.",
           "price": 37000,
           "months": 60,
           "baseRate": 6.35,
@@ -18956,7 +18954,7 @@
       },
       "condition": {
         "intro": [
-          "<strong>Our take: buy new, and for the Hybrid that’s the only choice.</strong> The last Rogue Hybrid ended with the 2019 model year and was a different car, so there’s no used e-POWER Rogue yet. A used gas Rogue saves less than it looks: CarWhere’s median used 2025 asks $21,464 at about 42,600 miles, against $29,490 for a new 2026 S, and Nissan’s $4,500 and $3,000 cash on the gas car narrows the gap. Nissan’s 4.9% on a new Hybrid is also far below the 11.19% used-loan average."
+          "<strong>Our take: buy new.</strong> There’s no used e-POWER Rogue yet, and Nissan’s 4.9% on a new Hybrid beats the 11.19% used-loan average. A used 2025 gas Rogue asks a median $21,464 at about 42,600 miles against $29,490 for a new 2026 S, and Nissan’s cash narrows that gap."
         ],
         "rows": [
           {
@@ -19056,61 +19054,43 @@
           }
         ],
         "after": [
-          "If you buy a used gas Rogue, lean to a 2025 or 2026 and check the engine. The 2023 drew 784 NHTSA owner complaints, more than 400 of them naming the engine, against 244 for the 2024 and 212 for the 2025. Nissan recalled 2021 to 2024 Rogues with the 1.5-liter VC-Turbo three-cylinder for engine bearings that may have manufacturing defects (25V437, an engine software update) and 2023 to 2025 ones because hot oil can break down and seize the bearings (26V080, a software update, with an engine replacement if the dealer finds metal debris). The 2027 gas Rogue keeps the same engine family; Nissan says the Hybrid’s 1.5-liter is a different one."
+          "On a used gas Rogue, lean to a 2025 or 2026. The 2023 drew 784 NHTSA owner complaints, more than 400 about the engine, and 2021 to 2025 Rogues with the 1.5-liter VC-Turbo are on engine-bearing recalls 25V437 and 26V080. Nissan says the Hybrid’s 1.5-liter is a different engine."
         ]
       },
       "watch": [
-        "<strong>Which Hybrid you’re being quoted.</strong> Only the SR with the Technology Package ($41,490, $43,065 with destination) is at dealers now. Nissan’s own page says the SV, SR and Platinum are expected in January 2027, so ask for the trim, price and delivery month in writing before you put money down.",
-        "<strong>Nissan’s 38 mpg is an estimate.</strong> Nissan quotes 38 mpg combined for the SR “subject to EPA confirmation,” and Edmunds lists 37 on the SV and Platinum; the EPA hadn’t posted the Hybrid on fueleconomy.gov on November 21. Check the window sticker. Edmunds’ test SR returned 42.2 mpg in its own driving.",
-        "<strong>Cash or the rate.</strong> Nissan’s $3,000 and $4,500 retail cash can’t be combined with its special rate or lease, so price both on a gas Rogue. The Hybrid’s $1,500 trade-in cash is for owners of a 2021 or newer Toyota RAV4 only.",
-        "<strong>The model year.</strong> A 2026 and a 2027 gas Rogue look alike. The 2027 costs $200 more ($400 on the Platinum), and the rates and cash differ by year and region, so ask which year the quote assumes.",
-        "<strong>The gas engine recalls.</strong> Rogues with the 1.5-liter VC-Turbo are on engine-bearing recalls 25V437 (2021–2024) and 26V080 (2023–2025). Ask the dealer to show the software update was done on any used Rogue.",
-        "<strong>Accessories.</strong> Nissan’s price list shows $470 floor mats and cargo protector, $270 splash guards and a $795 lighting package on the Hybrid. They’re port-installed extras you can refuse or negotiate."
+        "<strong>Which Hybrid you’re quoted.</strong> Only the SR Technology ($43,065 with destination) is on lots now. Get the trim, price and delivery month in writing before a deposit.",
+        "<strong>The 38 mpg.</strong> It’s Nissan’s estimate until the EPA rates the car, and Edmunds lists 37 for the SV and Platinum. Check the window sticker.",
+        "<strong>Cash or the rate.</strong> On a gas Rogue, Nissan’s cash can’t be combined with its special rate or lease, so price both.",
+        "<strong>Accessories.</strong> Hybrids arrive with port-installed extras such as $470 floor mats and a $795 lighting package. You can refuse or negotiate them."
       ],
       "faq": [
         [
           "How much is the Nissan Rogue Hybrid?",
-          "The 2027 Rogue Hybrid starts at $35,490 for the SV, $37,490 for the SR, $41,490 for the SR with the Technology Package and $43,490 for the Platinum, all with standard all-wheel drive. Destination adds $1,575. Edmunds says shoppers are landing about $1,200 off sticker, and Kelley Blue Book’s fair purchase price is $1,065 to $1,265 under MSRP with destination."
+          "From $35,490 for the SV to $43,490 for the Platinum, all with AWD, plus $1,575 destination. Edmunds says buyers are getting about $1,200 off."
         ],
         [
           "How many mpg does the Rogue Hybrid get?",
-          "Nissan estimates up to 41 mpg city, 36 highway and 38 combined for the SR, based on its own testing and subject to EPA confirmation. Edmunds lists 37 combined for the SV and Platinum, and its test SR returned 42.2 mpg in real-world driving. The EPA hadn’t posted a rating for the Hybrid on fueleconomy.gov on November 21, 2026. The gas Rogue is rated 30 mpg combined with front-wheel drive and 29 with AWD."
+          "Nissan estimates 38 mpg combined (41 city/36 highway) for the SR, pending EPA confirmation. Edmunds lists 37 for the SV and Platinum, and its test SR returned 42.2 mpg. The gas Rogue is rated 30 with front drive and 29 with AWD."
         ],
         [
           "When does the Rogue Hybrid go on sale?",
-          "It’s on sale now as the SR with the Technology Package ($41,490), which Nissan said would reach dealers in fall 2026; Edmunds listed 183 of them for sale on November 21, 2026. Nissan’s SV, SR and Platinum are expected in January 2027."
+          "Now, as the $41,490 SR with the Technology Package. The SV, SR and Platinum are due in January 2027."
         ],
         [
-          "What is e-POWER, and do I plug the Rogue Hybrid in?",
-          "You don’t plug it in. The 1.5-liter turbo three-cylinder works as a generator that charges the battery and shuts off when the battery has enough charge, and two electric motors turn the wheels, so there’s no transmission and the engine never drives the wheels. Nissan covers the e-POWER drivetrain, battery included, for 8 years/100,000 miles. It’s the first e-POWER car Nissan has sold in the U.S., though it has sold nearly 2 million worldwide since 2016."
-        ],
-        [
-          "Is the Rogue Hybrid worth more than the gas Rogue?",
-          "For most buyers, yes. A Hybrid SV costs $3,400 more than a gas SV with AWD, makes 225 hp against 201, and Nissan estimates 38 mpg combined against 29. Edmunds timed an SR at 6.9 seconds to 60 mph and scores the Hybrid 8.2 out of 10 against 6.4 for the gas Rogue. If payment comes first, the gas Rogue carries $3,000 of Nissan cash and starts at $29,690."
-        ],
-        [
-          "How much under MSRP can you get a Nissan Rogue?",
-          "On a Hybrid, we’d call 2–3% under MSRP fair and 4% or more strong: Edmunds says about $1,200 off, and Kelley Blue Book’s fair price is $1,065 to $1,265 under. On a gas Rogue, 4–5% under is fair and 6% or more strong. Those ranges are our read of Edmunds’ New York prices, Kelley Blue Book and CarWhere’s invoice estimates, so a given dealer may land a point either side. Nissan’s cash comes on top."
-        ],
-        [
-          "Does the Rogue Hybrid have all-wheel drive?",
-          "Yes, on every trim. It’s dual-motor electric AWD, with one motor on each axle. Nissan notes that the RAV4 Hybrid and Tucson Hybrid don’t include AWD as standard."
-        ],
-        [
-          "Is the Nissan Rogue Hybrid any good?",
-          "Reviewers like it so far. Edmunds scores it 8.2 out of 10 and ranks it second of 12 small hybrid SUVs, Kelley Blue Book’s experts give it 4.4 out of 5 and CarGurus’ 7.8 out of 10. U.S. News hasn’t scored it, and neither NHTSA nor IIHS has rated its crash safety yet."
+          "What is e-POWER, and do I plug it in?",
+          "No plug. The 1.5-liter turbo engine only charges the battery, and two electric motors drive the wheels, so there’s no transmission. Nissan covers the hybrid system and battery for 8 years/100,000 miles."
         ],
         [
           "What does Reddit think of the Rogue Hybrid?",
-          "In the 41 Reddit threads about the new Hybrid or the plug-in that we read, posted from January 2025 to November 2026, shoppers like the electric-car feel, the quiet cabin and the lack of a CVT, but many call a first-year hybrid unproven and say it starts high next to the RAV4 Hybrid. Few owners had posted yet, since it reached dealers this fall. Across every Rogue, Reddit’s complaints center on CVT and 1.5-liter turbo engine failures on older cars."
+          "In the 41 threads about the new Hybrid and the plug-in, people like the power, the quiet and the electric-car feel, but call a first-year hybrid unproven and say it costs more than a RAV4 Hybrid. Across all Rogues, most complaints are about CVT and 1.5-liter turbo failures on older cars."
         ],
         [
-          "Should I buy a 2026 or a 2027 gas Rogue?",
-          "Whichever has the better offer where you live. The 2027 costs $200 more ($400 on the Platinum) and has $3,000 cash on every trim or 2.9% in Chicago and Los Angeles; the 2026 has 0% for 60 months and $4,500 on the Platinum. Kelley Blue Book says the gas Rogue is redesigned for 2028."
+          "Is the Rogue Hybrid worth it over the gas Rogue?",
+          "For most buyers, yes. A Hybrid SV costs $3,400 more than an AWD gas SV and brings 225 hp against 201, 37 to 38 mpg against 29, and an 8.2 Edmunds score against 6.4. If payment comes first, the gas Rogue starts at $29,690 with $3,000 of Nissan cash."
         ],
         [
-          "What is the destination charge on a Rogue?",
-          "$1,575 on the gas Rogue, the Hybrid and the 2026 plug-in. Nissan’s advertised starting prices leave it out."
+          "How much under MSRP can you get a Nissan Rogue?",
+          "On a Hybrid, 2–3% under is a fair deal and 4% or more a strong one. On a gas Rogue, 4–5% is fair and 6% or more strong, before Nissan’s cash. Our estimate from Edmunds, Kelley Blue Book and CarWhere."
         ]
       ],
       "sources": [
@@ -19350,7 +19330,7 @@
         "Gas Rogue ranks 15th of 20 small SUVs at Edmunds and its engine has had bearing recalls"
       ],
       "rivals": [
-        "Get quotes on the RAV4 Hybrid, CR-V Hybrid, Tucson Hybrid, Sportage Hybrid and Forester Hybrid too; the prices and mpg below are carried over from our own price guides. Nissan says no other hybrid in its class has an all-electric drivetrain. A <a href=\"/toyota-rav4-price.html\">RAV4 Hybrid</a> LE starts at $31,900 (AWD adds $1,400) and is rated 41 mpg combined with AWD, though dealers sell most trims within about 2% of sticker. The <a href=\"/honda-cr-v-price.html\">CR-V Hybrid</a> starts at $35,630 and is rated 37 mpg with AWD. The <a href=\"/hyundai-tucson-price.html\">Tucson Hybrid</a> SE starts at $31,300 (AWD adds $1,500) and a Hybrid SEL with AWD is rated 36. The <a href=\"/kia-sportage-price.html\">Sportage Hybrid</a> S with standard AWD starts at $32,790 and is rated 35, and Edmunds measured 8.0 seconds to 60 mph in one. The <a href=\"/subaru-forester-price.html\">Forester Hybrid</a> starts at $34,730 with standard AWD and is rated 36 on the EPA’s 2027 listing. Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
+        "Prices and mpg below come from our own price guides. A <a href=\"/toyota-rav4-price.html\">RAV4 Hybrid</a> LE starts at $31,900 plus $1,400 for AWD and is rated 41 mpg combined, but sells within about 2% of sticker. The <a href=\"/honda-cr-v-price.html\">CR-V Hybrid</a> starts at $35,630 (37 mpg with AWD), the <a href=\"/hyundai-tucson-price.html\">Tucson Hybrid</a> SE at $31,300 plus $1,500 for AWD (36), the <a href=\"/kia-sportage-price.html\">Sportage Hybrid</a> S at $32,790 with AWD (35) and the <a href=\"/subaru-forester-price.html\">Forester Hybrid</a> at $34,730 with AWD (36). Torn between two or three? Steer Me Right Pro prices up to three models side by side and gives you our pick."
       ],
       "scores": {
         "cards": [
@@ -19465,7 +19445,7 @@
           }
         ],
         "reliability": "J.D. Power’s owners rate the 2026 gas Rogue’s <a href=\"https://www.jdpower.com/cars/2026/nissan/rogue\" rel=\"noopener\">quality and reliability 87 out of 100</a>. There’s no reliability verdict for the 2027 Rogue Hybrid yet.",
-        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2025 Rogue, front- and all-wheel drive, which rate the same; NHTSA has no overall rating for the 2026 or 2027 gas Rogue (the 2027 shows 5 stars for the side crash and 4 for rollover) and none for the Rogue Hybrid. Grades from <a href=\"https://www.iihs.org/ratings/vehicle/nissan/rogue-4-door-suv/2026\" rel=\"noopener\">IIHS</a> for the 2026 gas Rogue, read November 21, 2026; IIHS has no rating for the Hybrid, and the Rogue isn’t on its <a href=\"https://www.iihs.org/ratings/top-safety-picks/2026\" rel=\"noopener\">2026 Top Safety Pick list</a>. Recall counts are for NHTSA’s <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">Rogue listing</a>; the 2026 ones are a wrong-size spare tire (25V912) and a missing gear indicator (26V419), and the Hybrid has none yet. Check any used Rogue’s open recalls by VIN before you buy."
+        "note": "Stars from <a href=\"https://www.nhtsa.gov/ratings\" rel=\"noopener\">NHTSA</a> for the 2025 Rogue; NHTSA hasn’t given the 2026, the 2027 or the Hybrid an overall rating. Grades from <a href=\"https://www.iihs.org/ratings/vehicle/nissan/rogue-4-door-suv/2026\" rel=\"noopener\">IIHS</a> for the 2026 gas Rogue, which isn’t on the <a href=\"https://www.iihs.org/ratings/top-safety-picks/2026\" rel=\"noopener\">2026 Top Safety Pick list</a>; IIHS hasn’t rated the Hybrid. Recall counts are NHTSA’s <a href=\"https://www.nhtsa.gov/recalls\" rel=\"noopener\">Rogue listing</a>. Check any used Rogue’s open recalls by VIN."
       },
       "gallery": [
         {
@@ -19522,14 +19502,14 @@
         "tab": "Rogue Hybrid",
         "heading": "Rogue Hybrid: Nissan’s first e-POWER car in the U.S.",
         "intro": [
-          "The 2027 Rogue Hybrid is priced from $35,490 ($37,065 with destination), rated 38 mpg combined by Nissan (the EPA hadn’t posted its own figure on November 21), and at dealers now only as the $41,490 SR Technology; the SV, SR and Platinum are expected in January 2027. Its e-POWER system works backwards from most hybrids: the 1.5-liter turbo engine only charges the battery, and two electric motors, one per axle, turn the wheels for 225 hp, so there’s no plug and no transmission. Edmunds scores it 8.2, ranked second of 12 small hybrid SUVs; Kelley Blue Book’s experts give it 4.4 out of 5 and CarGurus 7.8 out of 10."
+          "Nissan’s first e-POWER car in the U.S. The 1.5-liter turbo engine only charges the battery, and two electric motors, one per axle, drive the wheels for 225 hp. No plug, no transmission."
         ],
         "photo": {
           "file": "vehicle-nissan-rogue-hybrid",
           "width": 1260,
           "height": 920,
           "alt": "Red 2026 Nissan Rogue Plug-in Hybrid at an auto show with its tailgate open, front view",
-          "caption": "The 2026 Rogue Plug-in Hybrid. No free photo of the 2027 Rogue Hybrid exists yet.",
+          "caption": "The 2026 Rogue Plug-in Hybrid.",
           "author": "Carsandcoasters7",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nissan_Rogue_PHEV_Front.jpg",
           "license": "CC0",
@@ -19607,7 +19587,7 @@
         },
         "pay": {
           "intro": [
-            "There’s no sale history for the SV or Platinum, since neither is at dealers yet. For the SR Technology, Edmunds’ listings on November 21 showed SR asking prices from $42,101 to $44,805 against a $43,065 sticker with destination, before accessories, and Kelley Blue Book’s fair price for an SR is $38,000 against $39,065 with destination."
+            "Only the SR Technology has sold so far. Edmunds’ listings show asking prices of $42,101 to $44,805 against a $43,065 sticker with destination."
           ],
           "tableTitle": "Rogue Hybrid dealer discount",
           "rows": [
@@ -19711,10 +19691,14 @@
           }
         ],
         "after": [
-          "<strong>The one at dealers now is the SR with the Technology Package.</strong> If you can wait until January, the SV has the same powertrain for $6,000 less. If you can’t, it’s the car Edmunds tested, and Edmunds says the Platinum ($43,490) is the better buy than a loaded SR because ventilated seats, a power passenger seat and an auto-dimming mirror come only on it.",
-          "It’s too new for crash ratings: NHTSA and IIHS haven’t rated it, and U.S. News hasn’t scored it because it lacks safety data. Nissan quotes 31.1 cubic feet of cargo space behind the rear seats and 65.9 with them folded.",
-          "<strong>What Reddit says about the Hybrid.</strong> We also read every Reddit thread about the new Hybrid or the plug-in posted from January 2025 to November 2026, 41 of them, and counted them with the rest of the Rogue’s comments in the Reddit section above. Early buyers and test-drivers like the electric-car feel with no CVT, the quiet cabin, and the physical climate buttons and nicer interior next to a RAV4. The doubts are about trust and price. Many call a first-year hybrid unproven and say to wait a year or two, some worry about a small turbo engine working as a generator, and early buyers say it starts high next to the RAV4 Hybrid. Shoppers expect Nissan’s usual deals to close that gap; so far Nissan offers 4.9% financing and no cash on it."
+          "<strong>The one at dealers now is the SR Technology.</strong> Wait until January and the SV has the same drivetrain for $6,000 less. Can’t wait? Edmunds prefers the $43,490 Platinum to a loaded SR. NHTSA and IIHS haven’t crash-tested the Hybrid yet.",
+          "<strong>What Reddit says.</strong> In the 41 threads about the new Hybrid, people like the power and the quiet but doubt a first-year hybrid and its price next to the RAV4 Hybrid. <a href=\"#reddit-focus\">See the Hybrid’s Reddit scores</a>."
         ]
+      },
+      "reddit": {
+        "first": true,
+        "strip": true,
+        "focus": "hybrid"
       }
     }
   ]
