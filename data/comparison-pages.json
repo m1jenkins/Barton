@@ -18168,7 +18168,7 @@
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddit mostly picks its own car, and the neutral ones have only 34 picks, 12 for the Tucson and 22 for the Sportage, so treat the gap as a direction, not a margin.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddit mostly picks its own car, and the neutral ones have only 34 picks, 12 for the Tucson and 22 for the Sportage, so the gap shows only which way they lean.",
      "rows": [
       {
        "venue": "neutral",
@@ -28574,7 +28574,7 @@
     },
     "split": {
      "title": "Which one Reddit tells people to buy",
-     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddits mostly back their own car, though r/TeslaModelY picked the RAV4 27 times to 24. The neutral count is 90 picks, under our 100-pick floor, so we call it a lean, not a verdict.",
+     "note": "One pick per person per thread. Read the neutral subreddits first: each car’s own subreddits mostly back their own car, though r/TeslaModelY picked the RAV4 27 times to 24. The neutral count is 90 picks, under our 100-pick floor, so we read it as a lean.",
      "rows": [
       {
        "venue": "neutral",
