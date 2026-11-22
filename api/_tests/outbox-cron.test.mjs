@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { runDocumentCleanupWorker } from '../_lib/buyer-documents.js';
 import { outboxHandler } from '../outbox-dispatch.js';
 
@@ -28,6 +29,7 @@ test('cron honestly skips missing destinations without touching the database', a
   assert.equal(res.body.workers.analytics.configured, false);
   assert.equal(res.body.workers.buyer_updates.configured, false);
   assert.equal(res.body.workers.document_cleanup.configured, false);
+  assert.equal(res.body.workers.deal_mail.configured, false);
 });
 
 test('cron waits for both configured workers and reports aggregate failures without secrets', async () => {
@@ -127,4 +129,37 @@ test('?jobs=document_cleanup runs the Buyer Document cleanup, and only with the 
   assert.deepEqual(on.body.workers.document_cleanup, { configured: true, deleted: 1, failed: 0, ok: true });
   assert.deepEqual(store.deleted, ['deals/x/7.pdf']);
   assert.doesNotMatch(JSON.stringify(on.body), /vercel_blob_rw_test/);
+});
+
+test('?jobs=ops_alerts,buyer_updates,deal_mail, as the 10-minute workflow calls it, runs the reply-address mail job only once it is set up', async () => {
+  const workflow = await readFile(new URL('../../.github/workflows/ops-alerts.yml', import.meta.url), 'utf8');
+  assert.ok(workflow.includes('/api/outbox-dispatch?jobs=ops_alerts,buyer_updates,deal_mail"'));
+  const mail = {
+    DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: 'deal-tracker-secret-for-tests-only-0123456789', DEAL_REPLY_MAILBOX: 'replies@example.test',
+    BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_test', DEAL_MAIL_CLIENT_ID: 'id', DEAL_MAIL_CLIENT_SECRET: 'client-secret-not-real', DEAL_MAIL_REFRESH_TOKEN: 'refresh-token-not-real'
+  };
+  let calls = 0;
+  const dealMailWorker = async ({ sql }) => { calls++; assert.ok(sql); return { configured: true, listed: 3, already: 0, not_ours: 2, skipped: 0, accepted: 1, held: 0, documents: 0, failed: 0, exitCode: 0 }; };
+  const quiet = async () => ({ configured: true, claimed: 0, sent: 0, failed: 0, exhausted: 0, exitCode: 0 });
+  const run = async environment => {
+    const res = response();
+    await outboxHandler({ environment: { CRON_SECRET: secret, ...environment }, getDatabase: () => ({}), dealMailWorker, opsAlertWorker: quiet, buyerUpdateWorker: quiet })(
+      { ...request(), url: '/api/outbox-dispatch?jobs=ops_alerts,buyer_updates,deal_mail' }, res);
+    return res;
+  };
+
+  const off = await run({ ...mail, DEAL_TRACKER_ENABLED: '' });
+  assert.equal(off.statusCode, 200);
+  assert.deepEqual(Object.keys(off.body.workers), ['ops_alerts', 'buyer_updates', 'deal_mail']);
+  assert.equal(off.body.workers.deal_mail.configured, false);
+  for (const name of ['DEAL_REPLY_MAILBOX', 'BLOB_READ_WRITE_TOKEN', 'DEAL_MAIL_CLIENT_ID', 'DEAL_MAIL_CLIENT_SECRET', 'DEAL_MAIL_REFRESH_TOKEN']) {
+    assert.equal((await run({ ...mail, [name]: '' })).body.workers.deal_mail.configured, false, name);
+  }
+  assert.equal(calls, 0);
+
+  const on = await run(mail);
+  assert.equal(on.statusCode, 200);
+  assert.equal(on.body.workers.deal_mail.accepted, 1);
+  assert.equal(calls, 1);
+  assert.doesNotMatch(JSON.stringify(on.body), /not-real|vercel_blob_rw_test|replies@/);
 });

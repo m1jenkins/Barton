@@ -8,6 +8,7 @@ import { customerEmailSettings } from './_lib/customer-email.js';
 import { opsAlertSettings, runOpsAlertWorker } from './_lib/ops-alerts.js';
 import { buyerUpdateEmailSettings, runBuyerUpdateWorker } from './_lib/buyer-update-email.js';
 import { documentSettings, runDocumentCleanupWorker } from './_lib/buyer-documents.js';
+import { dealMailSettings, runDealMailWorker } from './_lib/deal-mail.js';
 import { runLeadWorker, runAnalyticsWorker, runIntakeEmailWorker, runLeadEmailWorker, runCustomerEmailWorker } from './_lib/outbox-workers.js';
 import { header, requestUrl, sendJson } from './_lib/http.js';
 
@@ -18,7 +19,8 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
   leadWorker = runLeadWorker, analyticsWorker = runAnalyticsWorker,
   intakeEmailWorker = runIntakeEmailWorker, leadEmailWorker = runLeadEmailWorker,
   customerEmailWorker = runCustomerEmailWorker, opsAlertWorker = runOpsAlertWorker,
-  buyerUpdateWorker = runBuyerUpdateWorker, documentCleanupWorker = runDocumentCleanupWorker, logger = console } = {}) {
+  buyerUpdateWorker = runBuyerUpdateWorker, documentCleanupWorker = runDocumentCleanupWorker,
+  dealMailWorker = runDealMailWorker, logger = console } = {}) {
   return async (req, res) => {
     if (req.method !== 'GET') return sendJson(res, 405, { ok: false, error: 'method_not_allowed' }, { Allow: 'GET' });
     const secret = environment.CRON_SECRET;
@@ -30,8 +32,9 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
     const jobs = [['leads', leadDestination, leadWorker], ['analytics', analyticsDestination, analyticsWorker],
       ['intake_email', intakeEmailSettings, intakeEmailWorker], ['lead_email', leadEmailSettings, leadEmailWorker],
       ['customer_email', customerEmailSettings, customerEmailWorker], ['ops_alerts', opsAlertSettings, opsAlertWorker],
-      ['buyer_updates', buyerUpdateEmailSettings, buyerUpdateWorker], ['document_cleanup', documentSettings, documentCleanupWorker]];
-    // ?jobs=ops_alerts,buyer_updates runs only those workers: the ops-alerts GitHub
+      ['buyer_updates', buyerUpdateEmailSettings, buyerUpdateWorker], ['document_cleanup', documentSettings, documentCleanupWorker],
+      ['deal_mail', dealMailSettings, dealMailWorker]];
+    // ?jobs=ops_alerts,buyer_updates,deal_mail runs only those workers: the ops-alerts GitHub
     // workflow calls it every 10 minutes, while the daily Vercel cron runs everything,
     // which is where document_cleanup (Buyer Documents 30 days after close) runs.
     const only = (requestUrl(req).searchParams.get('jobs') || '').split(',').map(name => name.trim()).filter(Boolean);

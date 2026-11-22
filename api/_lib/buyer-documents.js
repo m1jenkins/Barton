@@ -1,4 +1,5 @@
 import { createHash, createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
+import { dealMailClient } from './deal-mail.js';
 import { dealTrackerSettings } from './deal-tracker.js';
 
 // Buyer Documents (GLOSSARY.md, docs/adr/0001, plan "Documents"). Write-only
@@ -95,6 +96,12 @@ export function blobStore(settings) {
     async del(pathname) {
       const { del } = await sdk();
       await del(pathname, auth);
+    },
+    // A file the server already holds: an emailed document (deal-mail.js). Its
+    // pathname is worked out from the mail ID, so a retry overwrites, never duplicates.
+    async put(pathname, body, { contentType }) {
+      const { put } = await sdk();
+      await put(pathname, body, { ...auth, access: 'private', contentType, addRandomSuffix: false, allowOverwrite: true });
     }
   };
 }
@@ -234,8 +241,8 @@ export async function sendDocument(res, file, extra = {}) {
 
 // Every live file on a deal whose latest close/reopen is a close more than 30
 // days before now: the file goes, then the row records when. Reopened and open
-// deals keep theirs. One failure doesn't stop the rest. The mailbox side
-// (mail_trashed_at) is the mail job's.
+// deals keep theirs. One failure doesn't stop the rest. The emailed originals
+// are trashMailOriginals' job, below.
 export async function cleanupDocuments({ sql, store, now = Date.now() }) {
   const due = await sql`SELECT d.id, d.blob_path FROM buyer_documents d
     JOIN LATERAL (SELECT e.kind, e.occurred_at FROM deal_events e
@@ -256,10 +263,48 @@ export async function cleanupDocuments({ sql, store, now = Date.now() }) {
   return { deleted, failed };
 }
 
-// The worker shape api/outbox-dispatch.js expects; the daily cron runs it.
-export async function runDocumentCleanupWorker({ sql, environment = process.env, store = null, now = Date.now() } = {}) {
+// The email a document arrived on goes to the mailbox's trash on the same
+// schedule as the file (adr/0001), once per message however many documents it
+// carried. Mail with no document stays where it is. mail.trash only ever moves a
+// message to trash, which the mail provider empties 30 days later; nothing here
+// deletes mail. A message already gone from the mailbox counts as trashed. A
+// failure leaves mail_trashed_at unset, so the next run tries again.
+export async function trashMailOriginals({ sql, mail, now = Date.now() }) {
+  const due = await sql`SELECT DISTINCT d.mail_message_id FROM buyer_documents d
+    JOIN LATERAL (SELECT e.kind, e.occurred_at FROM deal_events e
+      WHERE e.onboarding_id = d.onboarding_id AND e.kind IN ('closed', 'reopened')
+      ORDER BY e.occurred_at DESC, e.id DESC LIMIT 1) last ON true
+    WHERE d.source = 'email' AND d.mail_trashed_at IS NULL AND last.kind = 'closed'
+      AND last.occurred_at < ${iso(now - KEEP_DAYS * DAY)}::timestamptz
+    ORDER BY d.mail_message_id`;
+  let trashed = 0, failed = 0;
+  for (const { mail_message_id: messageId } of due) {
+    try {
+      await mail.trash(messageId);
+      await sql`UPDATE buyer_documents SET mail_trashed_at = ${iso(now)}::timestamptz
+        WHERE mail_message_id = ${messageId} AND mail_trashed_at IS NULL`;
+      trashed += 1;
+    } catch {
+      failed += 1;
+    }
+  }
+  return { trashed, trash_failed: failed };
+}
+
+// The worker shape api/outbox-dispatch.js expects; the daily cron runs it. With
+// the mailbox set up too (deal-mail.js), it also trashes the emailed originals;
+// a mailbox failure never holds up the files.
+export async function runDocumentCleanupWorker({ sql, environment = process.env, store = null, mail = undefined, now = Date.now() } = {}) {
   const settings = documentSettings(environment);
   if (!settings) return { configured: false, deleted: 0, failed: 0, exitCode: 1 };
   const result = await cleanupDocuments({ sql, store: store ?? blobStore(settings), now });
-  return { configured: true, ...result, exitCode: result.failed ? 1 : 0 };
+  const mailbox = mail === undefined ? dealMailClient(environment) : mail;
+  if (!mailbox) return { configured: true, ...result, exitCode: result.failed ? 1 : 0 };
+  let trash;
+  try {
+    trash = await trashMailOriginals({ sql, mail: mailbox, now });
+  } catch {
+    trash = { trashed: 0, trash_failed: 1 };
+  }
+  return { configured: true, ...result, ...trash, exitCode: result.failed || trash.trash_failed ? 1 : 0 };
 }

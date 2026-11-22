@@ -16,7 +16,8 @@ export const dealTrackerEnabled = (environment = process.env) =>
 const DEFAULT_ORIGIN = 'https://www.steermeright.com';
 const DAY = 86400000;
 // A closed deal's link keeps working this long after the latest close (adr/0001).
-const LINK_GRACE_DAYS = 3;
+// The reply address lives exactly as long (deal-mail.js).
+export const LINK_GRACE_DAYS = 3;
 const MASON = 'mason@steermeright.com';
 // A plain local@domain: each buyer's reply address adds +<token> to the local part.
 const MAILBOX = /^[^\s@<>+]+@[^\s@<>]+\.[^\s@<>]+$/;
@@ -52,7 +53,7 @@ export function signLink(secret, onboardingId, version) {
 
 export const linkUrl = (settings, onboardingId, version) => `${settings.origin}/deal/${signLink(settings.secret, onboardingId, version)}`;
 
-// The buyer's reply address token (a later step). A different message under the
+// The buyer's reply address token (read back by deal-mail.js). A different message under the
 // same secret, so it can't be worked out from the link token or the other way round.
 export const replyToken = (secret, onboardingId) => hmac(secret, `reply:${intakeId(onboardingId)}`).toString('hex').slice(0, 20);
 
