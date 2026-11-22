@@ -82,6 +82,12 @@ MSRP, incentives and discount estimates are dated on each page and change often.
 - [Ford F-150 vs GMC Sierra 1500](https://www.steermeright.com/ford-f-150-vs-gmc-sierra-1500.html): The 2026 Ford F-150 and GMC Sierra 1500 compared in charts: price by trim and how far under sticker each sells, EPA mpg, towing and payload, NHTSA owner complaints and recalls per 100,000 sold, resale, crash tests, and a Reddit Sentiment Index built from public comparison threads, with the small Sierra sample stated (checked 2026-11-18).
 - [Honda CR-V vs Mazda CX-5](https://www.steermeright.com/honda-cr-v-vs-mazda-cx-5.html): The 2026 Honda CR-V and Mazda CX-5 compared in charts: price by trim and how far under sticker each sells, EPA mpg, space, NHTSA owner complaints and recalls per 100,000 sold, resale, crash tests, and a Reddit Sentiment Index built from public comparison threads (checked 2026-11-20).
 
+## Problems by model year
+Which years to buy used and which to skip, from NHTSA owner complaints and recalls, dated on each page.
+- [Ford F-150 Problems by Year](https://www.steermeright.com/ford-f-150-problems.html): The best and worst F-150 years, with complaints per 100,000 sold, recalls, an open transmission investigation and what owners report. (checked 2026-11-21).
+- [Honda Civic Problems by Year](https://www.steermeright.com/honda-civic-problems.html): The best and worst Civic years, the steering recall behind the 2022 spike, complaints per 100,000 sold and what owners report. (checked 2026-11-21).
+- [Toyota RAV4 Problems by Year](https://www.steermeright.com/toyota-rav4-problems.html): Which RAV4 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report. (checked 2026-11-21).
+
 ## Cities
 Steer Me Right has one office, in Austin, Texas, and no office in the cities below. Listing counts are dealer listings within 50 miles of each city center, pulled 2026-11-15.
 - [Car Buying Service Near You](https://www.steermeright.com/car-buying-service-near-me.html): Where we work, what “near me” means for a remote service, and seventeen cities with local numbers.

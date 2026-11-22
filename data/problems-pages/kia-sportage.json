@@ -1,0 +1,352 @@
+{
+  "key": "kia-sportage",
+  "name": "Kia Sportage",
+  "status": "stub",
+  "nhtsa": {
+    "make": "KIA",
+    "years": [
+      2016,
+      2026
+    ],
+    "listings": [
+      "SPORTAGE",
+      "SPORTAGE HYBRID",
+      "SPORTAGE PLUG-IN HYBRID"
+    ],
+    "models": [
+      "SPORTAGE"
+    ],
+    "recallModels": [
+      "SPORTAGE",
+      "SPORTAGE HYBRID",
+      "SPORTAGE PLUG-IN HYBRID"
+    ],
+    "investigationTerms": [
+      "Sportage"
+    ],
+    "readOn": "2026-11-21",
+    "byYear": {
+      "2016": {
+        "complaints": 135,
+        "crashes": 8,
+        "fires": 5,
+        "components": {
+          "ENGINE": 64,
+          "SERVICE BRAKES": 38,
+          "UNKNOWN OR OTHER": 18,
+          "ELECTRICAL SYSTEM": 17,
+          "FUEL/PROPULSION SYSTEM": 9,
+          "POWER TRAIN": 8,
+          "VEHICLE SPEED CONTROL": 7,
+          "AIR BAGS": 5,
+          "STEERING": 4,
+          "STRUCTURE": 4,
+          "VISIBILITY": 4,
+          "EXTERIOR LIGHTING": 3,
+          "SEAT BELTS": 2,
+          "FORWARD COLLISION AVOIDANCE": 1,
+          "SEATS": 1,
+          "SUSPENSION": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "18V-907",
+          "22V-051"
+        ]
+      },
+      "2017": {
+        "complaints": 404,
+        "crashes": 14,
+        "fires": 28,
+        "components": {
+          "ENGINE": 230,
+          "UNKNOWN OR OTHER": 69,
+          "ELECTRICAL SYSTEM": 63,
+          "POWER TRAIN": 41,
+          "SERVICE BRAKES": 25,
+          "FUEL/PROPULSION SYSTEM": 24,
+          "STRUCTURE": 24,
+          "VEHICLE SPEED CONTROL": 18,
+          "AIR BAGS": 16,
+          "EXTERIOR LIGHTING": 15,
+          "STEERING": 9,
+          "VISIBILITY": 9,
+          "WHEELS": 6,
+          "TRAILER HITCHES": 4,
+          "SEAT BELTS": 3,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 2,
+          "FIRERELATED": 2,
+          "LATCHES/LOCKS/LINKAGES": 2,
+          "SEATS": 2,
+          "EQUIPMENT": 1,
+          "PARKING BRAKE": 1,
+          "SUSPENSION": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "16V-862",
+          "18V-907",
+          "21V-137",
+          "22V-703"
+        ]
+      },
+      "2018": {
+        "complaints": 166,
+        "crashes": 7,
+        "fires": 13,
+        "components": {
+          "ENGINE": 97,
+          "ELECTRICAL SYSTEM": 31,
+          "UNKNOWN OR OTHER": 20,
+          "POWER TRAIN": 18,
+          "FUEL/PROPULSION SYSTEM": 11,
+          "SERVICE BRAKES": 11,
+          "STEERING": 9,
+          "VEHICLE SPEED CONTROL": 8,
+          "EXTERIOR LIGHTING": 6,
+          "STRUCTURE": 6,
+          "VISIBILITY": 5,
+          "SEATS": 4,
+          "TRAILER HITCHES": 3,
+          "FORWARD COLLISION AVOIDANCE": 2,
+          "AIR BAGS": 1,
+          "ELECTRONIC STABILITY CONTROL (ESC)": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "18V-907",
+          "21V-137",
+          "22V-703"
+        ]
+      },
+      "2019": {
+        "complaints": 73,
+        "crashes": 3,
+        "fires": 3,
+        "components": {
+          "ENGINE": 41,
+          "UNKNOWN OR OTHER": 15,
+          "ELECTRICAL SYSTEM": 11,
+          "FUEL/PROPULSION SYSTEM": 7,
+          "POWER TRAIN": 7,
+          "SERVICE BRAKES": 7,
+          "AIR BAGS": 3,
+          "EXTERIOR LIGHTING": 3,
+          "TRAILER HITCHES": 3,
+          "FORWARD COLLISION AVOIDANCE": 2,
+          "STEERING": 2,
+          "STRUCTURE": 2,
+          "VEHICLE SPEED CONTROL": 2,
+          "SEAT BELTS": 1,
+          "TIRES": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "21V-137",
+          "22V-703"
+        ]
+      },
+      "2020": {
+        "complaints": 174,
+        "crashes": 11,
+        "fires": 13,
+        "components": {
+          "ENGINE": 91,
+          "UNKNOWN OR OTHER": 35,
+          "ELECTRICAL SYSTEM": 20,
+          "SERVICE BRAKES": 13,
+          "STRUCTURE": 11,
+          "FUEL/PROPULSION SYSTEM": 9,
+          "STEERING": 9,
+          "FORWARD COLLISION AVOIDANCE": 6,
+          "VEHICLE SPEED CONTROL": 5,
+          "VISIBILITY": 5,
+          "POWER TRAIN": 4,
+          "AIR BAGS": 3,
+          "EXTERIOR LIGHTING": 3,
+          "LANE DEPARTURE": 3,
+          "TRAILER HITCHES": 3,
+          "BACK OVER PREVENTION": 1,
+          "FIRERELATED": 1,
+          "SUSPENSION": 1,
+          "TIRES": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "21V-137",
+          "22V-703"
+        ]
+      },
+      "2021": {
+        "complaints": 54,
+        "crashes": 3,
+        "fires": 7,
+        "components": {
+          "ENGINE": 29,
+          "UNKNOWN OR OTHER": 14,
+          "ELECTRICAL SYSTEM": 6,
+          "POWER TRAIN": 4,
+          "VISIBILITY": 3,
+          "EXTERIOR LIGHTING": 2,
+          "FUEL/PROPULSION SYSTEM": 2,
+          "TRAILER HITCHES": 2,
+          "AIR BAGS": 1,
+          "EQUIPMENT": 1,
+          "LANE DEPARTURE": 1,
+          "STRUCTURE": 1,
+          "VEHICLE SPEED CONTROL": 1
+        },
+        "recalls": [
+          "21V-137",
+          "22V-703"
+        ]
+      },
+      "2022": {
+        "complaints": 47,
+        "crashes": 6,
+        "fires": 2,
+        "components": {
+          "ENGINE": 23,
+          "ELECTRICAL SYSTEM": 8,
+          "FORWARD COLLISION AVOIDANCE": 5,
+          "VISIBILITY": 5,
+          "TRAILER HITCHES": 4,
+          "UNKNOWN OR OTHER": 4,
+          "FUEL/PROPULSION SYSTEM": 3,
+          "POWER TRAIN": 3,
+          "AIR BAGS": 2,
+          "SEATS": 2,
+          "SERVICE BRAKES": 2,
+          "STEERING": 2,
+          "TIRES": 1,
+          "VEHICLE SPEED CONTROL": 1
+        },
+        "recalls": [
+          "22V-703"
+        ]
+      },
+      "2023": {
+        "complaints": 196,
+        "crashes": 24,
+        "fires": 1,
+        "components": {
+          "UNKNOWN OR OTHER": 49,
+          "ELECTRICAL SYSTEM": 46,
+          "ENGINE": 40,
+          "SERVICE BRAKES": 34,
+          "FORWARD COLLISION AVOIDANCE": 24,
+          "POWER TRAIN": 19,
+          "FUEL/PROPULSION SYSTEM": 14,
+          "VISIBILITY": 13,
+          "AIR BAGS": 11,
+          "BACK OVER PREVENTION": 11,
+          "VEHICLE SPEED CONTROL": 10,
+          "LANE DEPARTURE": 8,
+          "SEATS": 5,
+          "STEERING": 5,
+          "STRUCTURE": 5,
+          "WHEELS": 3,
+          "EQUIPMENT": 1,
+          "EXTERIOR LIGHTING": 1,
+          "LATCHES/LOCKS/LINKAGES": 1,
+          "SEAT BELTS": 1,
+          "SUSPENSION": 1
+        },
+        "recalls": [
+          "22V-651",
+          "22V-878",
+          "23V-298",
+          "23V-410",
+          "23V-531",
+          "24V-025"
+        ]
+      },
+      "2024": {
+        "complaints": 112,
+        "crashes": 11,
+        "fires": 0,
+        "components": {
+          "UNKNOWN OR OTHER": 28,
+          "ELECTRICAL SYSTEM": 25,
+          "ENGINE": 16,
+          "FORWARD COLLISION AVOIDANCE": 16,
+          "VEHICLE SPEED CONTROL": 16,
+          "VISIBILITY": 14,
+          "SERVICE BRAKES": 11,
+          "FUEL/PROPULSION SYSTEM": 9,
+          "STRUCTURE": 9,
+          "POWER TRAIN": 6,
+          "LANE DEPARTURE": 5,
+          "STEERING": 5,
+          "AIR BAGS": 4,
+          "EXTERIOR LIGHTING": 3,
+          "SEAT BELTS": 2,
+          "WHEELS": 2,
+          "BACK OVER PREVENTION": 1,
+          "SEATS": 1,
+          "SUSPENSION": 1
+        },
+        "recalls": [
+          "24V-025",
+          "24V-422",
+          "25V-874"
+        ]
+      },
+      "2025": {
+        "complaints": 77,
+        "crashes": 9,
+        "fires": 0,
+        "components": {
+          "UNKNOWN OR OTHER": 25,
+          "ELECTRICAL SYSTEM": 20,
+          "FORWARD COLLISION AVOIDANCE": 14,
+          "ENGINE": 10,
+          "POWER TRAIN": 10,
+          "VEHICLE SPEED CONTROL": 9,
+          "SERVICE BRAKES": 8,
+          "STEERING": 8,
+          "LANE DEPARTURE": 6,
+          "VISIBILITY": 6,
+          "FUEL/PROPULSION SYSTEM": 5,
+          "STRUCTURE": 5,
+          "BACK OVER PREVENTION": 4,
+          "AIR BAGS": 1,
+          "EXTERIOR LIGHTING": 1,
+          "SUSPENSION": 1,
+          "WHEELS": 1
+        },
+        "recalls": [
+          "25V-874"
+        ]
+      },
+      "2026": {
+        "complaints": 46,
+        "crashes": 7,
+        "fires": 0,
+        "components": {
+          "UNKNOWN OR OTHER": 12,
+          "ELECTRICAL SYSTEM": 10,
+          "SERVICE BRAKES": 10,
+          "FORWARD COLLISION AVOIDANCE": 9,
+          "FUEL/PROPULSION SYSTEM": 5,
+          "ENGINE": 4,
+          "STRUCTURE": 4,
+          "LANE DEPARTURE": 3,
+          "POWER TRAIN": 3,
+          "STEERING": 3,
+          "AIR BAGS": 2,
+          "VEHICLE SPEED CONTROL": 2,
+          "VISIBILITY": 2,
+          "BACK OVER PREVENTION": 1,
+          "SEAT BELTS": 1,
+          "SEATS": 1,
+          "SUSPENSION": 1,
+          "TIRES": 1
+        },
+        "recalls": [
+          "26V-046"
+        ]
+      }
+    }
+  }
+}
