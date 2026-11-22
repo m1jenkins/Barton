@@ -5,9 +5,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
-import { carSearchToken, parseShortlist, ShortlistError } from '../_lib/car-search.js';
+import { carSearchToken, loadSearch, parseShortlist, saveShortlist, ShortlistError } from '../_lib/car-search.js';
 import { dealLinkSettings, draftToken, verifyDraftToken } from '../_lib/deal-email.js';
 import { renderIntakeEmail } from '../_lib/intake-email.js';
+import { loadDeal, summarizeDeal } from '../_lib/ops-dashboard.js';
 import { carSearchHandler } from '../car-search.js';
 import { dealerEmailHandler } from '../dealer-email.js';
 import { carSearchRequest, localEnv } from '../../scripts/car-search.mjs';
@@ -19,7 +20,7 @@ const environment = {
 };
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql', '008_deal_events_per_car.sql']
+  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -306,6 +307,44 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     await assert.rejects(log('quote', 'gmail-4', -1), /deal_events_otd_valid/);
     await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind) VALUES ($1, 'note')`, [crypto.randomUUID()]), /foreign key/);
   });
+});
+
+test('a shortlist for a deal opened at paid intake fills that same deal and moves it out of Confirming search', async () => {
+  const pg = await PGlite.create();
+  const sql = tagged(pg);
+  for (const migration of migrations) await pg.exec(migration);
+  const intake = crypto.randomUUID(), attempt = crypto.randomUUID(), purchase = crypto.randomUUID(), session = `cs_live_${intake}`;
+  await pg.query(`INSERT INTO checkout_attempts (id, client_reference_id, idempotency_key, request_hash, tier_id, expected_amount, status)
+    VALUES ($1, $2, $3, $4, 'full_service', 39500, 'paid')`, [attempt, attempt, attempt, 'a'.repeat(64)]);
+  await pg.query(`INSERT INTO stripe_events (event_id, event_type, checkout_session_id, livemode, stripe_created_at)
+    VALUES ($1, 'checkout.session.completed', $2, true, now())`, [session, session]);
+  await pg.query(`INSERT INTO purchases (id, checkout_session_id, checkout_attempt_id, client_reference_id, stripe_event_id,
+    stripe_payment_intent_id, tier_id, amount_total, currency, payment_status, livemode, paid_at)
+    VALUES ($1, $2, $3, $4, $5, 'pi_123', 'full_service', 39500, 'usd', 'paid', true, now())`, [purchase, session, attempt, attempt, session]);
+  await pg.query(`INSERT INTO onboarding_submissions (id, checkout_session_id, purchase_id, idempotency_key, request_hash, tier_id, name, email, phone, city, fields)
+    VALUES ($1, $2, $3, $6, $4, 'full_service', 'Pat Buyer', 'pat@example.test', '205-555-0100', 'Tuscaloosa, AL', $5)`,
+  [intake, session, purchase, 'b'.repeat(64), JSON.stringify(fields), intake]);
+  // What POST /api/onboarding does with the Deal Tracker switched on.
+  const dealId = crypto.randomUUID();
+  await pg.query('INSERT INTO deals (id, onboarding_id) VALUES ($1, $2)', [dealId, intake]);
+  await pg.query('INSERT INTO deal_tracker_links (onboarding_id) VALUES ($1)', [intake]);
+
+  const stage = async () => {
+    const detail = await loadDeal(sql, intake);
+    return summarizeDeal(detail.deal, [...detail.events].reverse(), detail.listings).stage;
+  };
+  assert.equal((await loadSearch(sql, intake)).shortlist, null, 'a deal in Confirming search has no shortlist yet');
+  assert.equal(await stage(), 'confirming');
+
+  const saved = await saveShortlist(sql, intake, parseShortlist(shortlist));
+  assert.equal(saved.dealId, dealId, 'the deal opened at intake keeps its ID');
+  const deals = (await pg.query('SELECT id, shortlisted_at FROM deals WHERE onboarding_id = $1', [intake])).rows;
+  assert.equal(deals.length, 1);
+  assert.ok(deals[0].shortlisted_at);
+  assert.equal((await loadSearch(sql, intake)).shortlist.cars, 2);
+  assert.equal(await stage(), 'shortlisted');
+  assert.equal((await pg.query('SELECT count(*)::int AS n FROM deal_tracker_links WHERE onboarding_id = $1', [intake])).rows[0].n, 1);
+  await pg.close();
 });
 
 test('the helper script calls the API with the token from .env.local', async t => {

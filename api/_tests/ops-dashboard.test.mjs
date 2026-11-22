@@ -5,7 +5,7 @@ import { Readable } from 'node:stream';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
 import { agentStatus, dollarsToCents, isAuthorized, opsPassword, summarizeDeal } from '../_lib/ops-dashboard.js';
-import { dispatchOpsAlerts, opsAlertSettings } from '../_lib/ops-alerts.js';
+import { digestEmail, dispatchOpsAlerts, opsAlertSettings } from '../_lib/ops-alerts.js';
 import { outboxHandler } from '../outbox-dispatch.js';
 import { pendingAnswers } from '../../scripts/deal-desk-db.mjs';
 import { opsHandler } from '../ops.js';
@@ -15,7 +15,7 @@ const environment = { OPS_PASSWORD: password, APP_ORIGIN: 'https://www.steermeri
 const basic = (pass, user = 'mason') => `Basic ${Buffer.from(`${user}:${pass}`).toString('base64')}`;
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql']
+  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -46,7 +46,7 @@ async function call(handler, method, options) {
 }
 
 async function seed(pg) {
-  const intake = async (name, city, { deal = true } = {}) => {
+  const intake = async (name, city, { deal = true, confirming = false } = {}) => {
     const id = crypto.randomUUID(), attempt = crypto.randomUUID(), purchase = crypto.randomUUID(), session = `cs_live_${id}`;
     await pg.query(`INSERT INTO checkout_attempts (id, client_reference_id, idempotency_key, request_hash, tier_id, expected_amount, status)
       VALUES ($1, $1, $2, $3, 'full_service', 39500, 'paid')`, [attempt, attempt, 'a'.repeat(64)]);
@@ -60,6 +60,12 @@ async function seed(pg) {
     [id, session, purchase, 'b'.repeat(64), name, city, id]);
     if (!deal) return { id };
     const dealId = crypto.randomUUID();
+    // Opened at paid intake with the Deal Tracker on: no shortlist yet.
+    if (confirming) {
+      await pg.query(`INSERT INTO deals (id, onboarding_id, created_at) VALUES ($1, $2, now() - interval '5 days')`, [dealId, id]);
+      await pg.query('INSERT INTO deal_tracker_links (onboarding_id) VALUES ($1)', [id]);
+      return { id, dealId };
+    }
     await pg.query(`INSERT INTO deals (id, onboarding_id, search_summary, shortlisted_at, created_at) VALUES ($1, $2, 'Two RAV4s near Austin', now() - interval '5 days', now() - interval '5 days')`, [dealId, id]);
     await pg.query(`INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, target_price_cents, vin, listing_url, dealer_name)
       VALUES ($1, $2, 1, '2025 Toyota RAV4 XLE', 3400000, 3250000, '2T3P1RFV5SW000001', 'https://dealer.example/rav4', 'North Toyota'),
@@ -107,6 +113,14 @@ test('a deal\'s stage, best price and quiet days come from its event log alone',
   assert.deepEqual([agreed.stage, agreed.best_cents, agreed.stale], ['agreed', 2990000, false]);
   const closed = summarizeDeal(deal, [...events, { kind: 'closed', occurred_at: at(15) }], listings, now);
   assert.deepEqual([closed.stage, closed.stale], ['closed', false]);
+
+  // Opened at paid intake, before its shortlist: Confirming search, and never quiet.
+  const opened = { ...deal, shortlisted_at: null };
+  const confirming = summarizeDeal(opened, [], [], now);
+  assert.deepEqual([confirming.stage, confirming.stale, confirming.quiet_days, confirming.car], ['confirming', false, 10, null]);
+  assert.equal(summarizeDeal(opened, [{ kind: 'note', note: 'Called the buyer', occurred_at: at(11) }], [], now).stage, 'confirming');
+  assert.equal(summarizeDeal(opened, [{ kind: 'closed', note: 'Refunded', occurred_at: at(12) }], [], now).stage, 'closed');
+  assert.equal(summarizeDeal(opened, events, [], now).stage, 'quoted', 'a quote outranks a missing shortlist');
 });
 
 test('/api/ops asks for a password, renders every deal from Neon, and takes Mason\'s answers', async t => {
@@ -218,6 +232,45 @@ test('/api/ops asks for a password, renders every deal from Neon, and takes Maso
   await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind) VALUES ($1, 'resolved')`, [pat.id]), /deal_events_resolves_valid/);
   await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind, options) VALUES ($1, 'note', '["x"]')`, [pat.id]), /deal_events_options_valid/);
   await assert.rejects(pg.query(`INSERT INTO deal_events (onboarding_id, kind, resolves_event_id) VALUES ($1, 'note', $2)`, [pat.id, need.id]), /deal_events_resolves_valid/);
+});
+
+test('a deal in Confirming search shows once as a tile and once as waiting for a car search', async t => {
+  t.mock.method(console, 'error', () => {});
+  const pg = await PGlite.create();
+  t.after(() => pg.close());
+  for (const migration of migrations) await pg.exec(migration);
+  const sql = tagged(pg);
+  const { intake, log } = await seed(pg);
+  const casey = await intake('Casey Confirming', 'Austin, TX', { confirming: true });
+  const old = await intake('Old Paid', 'Houston, TX', { deal: false });
+  const shut = await intake('Shut Confirming', 'Waco, TX', { confirming: true });
+  await log(shut.id, 'closed', { note: 'Refunded', hoursAgo: 5 });
+  await intake('Pat Shortlisted', 'Dallas, TX');
+
+  const handler = opsHandler({ environment, getDatabase: () => sql });
+  const page = await call(handler, 'GET', { headers: { authorization: basic(password) } });
+  assert.equal(page.statusCode, 200);
+  const [, openPart] = page.body.split('<h2>Open deals');
+  const tiles = openPart.split('<h2>Needs you')[0];
+  const needs = page.body.split('<h2>Needs you')[1].split('<h2>')[0];
+  assert.equal(tiles.split(`href="/api/ops?deal=${casey.id}"`).length - 1, 1, 'one tile for the confirming deal');
+  assert.ok(tiles.includes('Confirming search') && tiles.includes('Search not run yet') && tiles.includes('No car picked yet'));
+  assert.ok(!tiles.includes('Target —'));
+  assert.equal(needs.split('Casey Confirming').length - 1, 1, 'listed once under Needs you');
+  assert.ok(needs.includes(casey.id) && needs.includes('Paid intake with no car search yet'));
+  assert.ok(needs.includes('Old Paid') && needs.includes(old.id), 'an intake from before the Deal Tracker still waits');
+  assert.ok(!needs.includes('Shut Confirming') && !needs.includes('Pat Shortlisted'), 'closed or shortlisted deals do not wait');
+  assert.ok(!needs.includes('Quiet'), 'a confirming deal is never quiet');
+  assert.ok(page.body.includes('<h2>Needs you (2)</h2>'));
+
+  const detail = await call(handler, 'GET', { url: `/api/ops?deal=${casey.id}`, headers: { authorization: basic(password) } });
+  assert.equal(detail.statusCode, 200);
+  assert.ok(detail.body.includes('<b>Confirming search</b>') && detail.body.includes('No cars on the shortlist.') && detail.body.includes('Nothing logged yet.'));
+
+  const alertEnv = { OPS_ALERT_EMAIL: 'alerts@example.test', INTAKE_SMTP_USER: 'mason@steermeright.com', INTAKE_SMTP_PASSWORD: 'not-real' };
+  const digest = await digestEmail(sql, opsAlertSettings(alertEnv));
+  assert.ok(digest.text.includes('Casey Confirming (Austin, TX)') && !digest.text.includes('Quiet for 2+ days'));
+  assert.equal(digest.subject, 'Deals this morning: 2 need you');
 });
 
 test('ops alerts email each new question and overdue agent once, plus one morning digest', async t => {

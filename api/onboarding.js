@@ -2,18 +2,22 @@ import { randomUUID } from 'node:crypto';
 import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
 import { analyticsProperties, pageContext } from './_lib/analytics.js';
 import { database } from './_lib/db.js';
+import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { dispatchCustomerEmailsSafely, enqueueIntakeEmails } from './_lib/customer-email.js';
 import { dispatchIntakeEmailsSafely } from './_lib/intake-email.js';
 import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { idempotencyKey, payloadHash, validateOnboardingPayload } from './_lib/validation.js';
 
-async function handle(req, res) {
+// The two paid plans with a car search, so the two that get a deal and a Deal Tracker.
+const DEAL_TIERS = Object.freeze(['full_service', 'concierge']);
+
+async function handle(req, res, { environment, getDatabase }) {
   requireMethod(req, 'POST');
   assertSameOrigin(req);
   const key = idempotencyKey(req);
   const onboarding = validateOnboardingPayload(await readJsonBody(req, 65536));
   const hash = payloadHash(onboarding);
-  const sql = database();
+  const sql = getDatabase();
 
   const [prior] = await sql`
     SELECT id, request_hash FROM onboarding_submissions WHERE idempotency_key = ${key}
@@ -82,6 +86,12 @@ async function handle(req, res) {
       `;
       await tx`INSERT INTO intake_email_outbox (onboarding_id) VALUES (${inserted[0].id})`;
       await enqueueIntakeEmails(tx, { onboardingId: inserted[0].id, tierId: onboarding.tier });
+      // The deal opens at paid intake in Confirming search; saveShortlist later
+      // fills this same row. Switched off, the intake runs exactly as before.
+      if (dealTrackerEnabled(environment) && DEAL_TIERS.includes(onboarding.tier)) {
+        await tx`INSERT INTO deals (id, onboarding_id) VALUES (${randomUUID()}, ${inserted[0].id}) ON CONFLICT (onboarding_id) DO NOTHING`;
+        await tx`INSERT INTO deal_tracker_links (onboarding_id) VALUES (${inserted[0].id}) ON CONFLICT (onboarding_id) DO NOTHING`;
+      }
       return { id: inserted[0].id, created: true };
     }
     const [idempotentRace] = await tx`
@@ -99,4 +109,8 @@ async function handle(req, res) {
   return sendJson(res, persisted.created ? 201 : 200, { ok: true, onboarding_id: persisted.id });
 }
 
-export default withApiErrors(handle);
+export function onboardingHandler({ environment = process.env, getDatabase = database } = {}) {
+  return withApiErrors((req, res) => handle(req, res, { environment, getDatabase }));
+}
+
+export default onboardingHandler();

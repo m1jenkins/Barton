@@ -2,9 +2,9 @@ import { createHash, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 
 // Mason's private deal dashboard at /api/ops (docs/implementation-operations.md,
-// "Ops dashboard"). Everything on it is read from Neon: the deals the /car-search
-// skill opened and the deal_events log his agents add to. It only ever writes one
-// thing, a 'resolved' row when Mason marks a needs_mason item done.
+// "Ops dashboard"). Everything on it is read from Neon: the deals opened at paid
+// intake or by the /car-search skill and the deal_events log his agents add to.
+// It only ever writes one thing, a 'resolved' row when Mason marks a needs_mason item done.
 
 const STALE_DAYS = 2;
 const TIME_ZONE = 'America/Chicago';
@@ -15,7 +15,7 @@ const KIND_LABELS = Object.freeze({
   needs_mason: 'Needs you', resolved: 'Resolved'
 });
 const STAGES = Object.freeze({
-  shortlisted: 'Shortlisted', emailing: 'Emailing dealers', quoted: 'Quotes in', agreed: 'Price agreed', closed: 'Closed'
+  confirming: 'Confirming search', shortlisted: 'Shortlisted', emailing: 'Emailing dealers', quoted: 'Quotes in', agreed: 'Price agreed', closed: 'Closed'
 });
 const TIERS = Object.freeze({ consultation: 'Consultation', full_service: 'Full service', concierge: 'Concierge' });
 
@@ -48,9 +48,13 @@ export async function loadDashboard(sql) {
     sql`SELECT d.dealer_name, d.status, d.created_at, d.last_error, o.name, deals.onboarding_id
       FROM dealer_email_drafts d JOIN deals ON deals.id = d.deal_id JOIN onboarding_submissions o ON o.id = deals.onboarding_id
       WHERE d.status IN ('pending', 'failed') ORDER BY d.created_at`,
+    // Paid intakes still waiting for a car search: no deal yet (before the Deal
+    // Tracker, or the switch off) or a deal in Confirming search, unless Mason closed it.
     sql`SELECT o.id, o.name, o.city, o.tier_id, o.created_at, o.fields->>'preferred_makes' AS wants
-      FROM onboarding_submissions o
-      WHERE NOT EXISTS (SELECT 1 FROM deals WHERE deals.onboarding_id = o.id) AND o.created_at > now() - interval '60 days'
+      FROM onboarding_submissions o LEFT JOIN deals d ON d.onboarding_id = o.id
+      WHERE d.shortlisted_at IS NULL AND o.created_at > now() - interval '60 days'
+        AND (SELECT e.kind FROM deal_events e WHERE e.onboarding_id = o.id AND e.kind IN ('closed', 'reopened')
+          ORDER BY e.occurred_at DESC, e.id DESC LIMIT 1) IS DISTINCT FROM 'closed'
       ORDER BY o.created_at`,
     sql`SELECT d.id, d.onboarding_id, d.created_at, d.shortlisted_at, o.name, o.city, o.tier_id
       FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id
@@ -201,7 +205,9 @@ export function summarizeDeal(deal, events, listings, now = Date.now()) {
   const agreed = live.find(dealer => dealer.agreed) ?? null;
   const pick = agreed ?? best;
   const listing = (pick?.vin && listings.find(item => item.vin === pick.vin)) || listings[0] || null;
-  const stage = closed ? 'closed' : agreed ? 'agreed' : quoted.length ? 'quoted' : emailed || dealers.size ? 'emailing' : 'shortlisted';
+  // A deal opened at paid intake is in Confirming search until its shortlist arrives.
+  const stage = closed ? 'closed' : agreed ? 'agreed' : quoted.length ? 'quoted' : !deal.shortlisted_at ? 'confirming'
+    : emailed || dealers.size ? 'emailing' : 'shortlisted';
   const quietDays = Math.floor((now - lastActivity) / 86400000);
   return {
     onboarding_id: deal.onboarding_id, name: deal.name, city: deal.city, tier_id: deal.tier_id,
@@ -210,7 +216,8 @@ export function summarizeDeal(deal, events, listings, now = Date.now()) {
     dealers: dealers.size, quotes: quoted.length, stage, closed, outcome,
     live_dealers: live.map(dealer => dealer.name),
     last_activity: new Date(lastActivity), last_dealer: lastDealer ? new Date(lastDealer) : null,
-    quiet_days: quietDays, stale: !closed && stage !== 'shortlisted' && quietDays >= STALE_DAYS
+    // A confirming deal is already under "Needs you" as waiting for a car search.
+    quiet_days: quietDays, stale: !closed && !['confirming', 'shortlisted'].includes(stage) && quietDays >= STALE_DAYS
   };
 }
 
@@ -422,7 +429,8 @@ function dealTiles(rows, now) {
     <span class="tile-top"><span class="icon s-${deal.stage}">${CAR_ICON}</span>
       <span class="tile-name"><strong>${deal.name}</strong><span class="muted">${deal.city}</span></span></span>
     <span class="tile-car">${deal.car ?? 'No car picked yet'}${deal.cars > 1 ? safe` <span class="muted">+${deal.cars - 1}</span>` : ''}</span>
-    <span class="tile-price">${deal.best_cents != null ? safe`<strong>${money(deal.best_cents)}</strong>${versus(deal.best_cents, deal.target_cents)}` : safe`<span class="muted">Target ${money(deal.target_cents)}</span>`}</span>
+    <span class="tile-price">${deal.best_cents != null ? safe`<strong>${money(deal.best_cents)}</strong>${versus(deal.best_cents, deal.target_cents)}`
+      : deal.stage === 'confirming' ? raw('<span class="muted">Search not run yet</span>') : safe`<span class="muted">Target ${money(deal.target_cents)}</span>`}</span>
     <span class="tile-foot"><span class="tag ${deal.stage === 'agreed' ? 'good' : ''}">${STAGES[deal.stage]}</span>${deal.stale ? safe` <span class="tag warn">Quiet ${deal.quiet_days}d</span>` : ''}
       <span class="muted">${when(deal.last_activity, now)}</span></span></a>`)}</div>`;
 }
@@ -487,7 +495,7 @@ export function renderDashboard(data, now = Date.now()) {
   const summaries = summarizeDeals(data, now);
   const open = summaries.filter(deal => !deal.closed);
   const recentClosed = summaries.filter(deal => deal.closed && now - time(deal.last_activity) < 30 * 86400000);
-  const order = { agreed: 0, quoted: 1, emailing: 2, shortlisted: 3 };
+  const order = { agreed: 0, quoted: 1, emailing: 2, shortlisted: 3, confirming: 4 };
   open.sort((a, b) => order[a.stage] - order[b.stage] || time(b.last_activity) - time(a.last_activity));
   const needCount = data.needs.length + data.drafts.length + data.waiting.length + open.filter(deal => deal.stale).length
     + (data.agents ?? []).filter(agent => agent.overdue).length;
