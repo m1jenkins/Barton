@@ -254,11 +254,11 @@
       "cashIntro": "At Ford, Chevrolet, GMC, Mazda, Ram and on the Toyota Tundra, the cash replaces the low rate: you take one or the other. Hyundai’s cash needs Hyundai financing in the regions that say so.",
       "cashNeeds": [
         { "slug": "ford-f-150-price.html", "text": "Ford won’t combine 0% with the $4,500" },
-        { "slug": "chevrolet-silverado-1500-price.html", "text": "The cash and the 0% don’t combine" },
+        { "slug": "chevrolet-silverado-1500-price.html", "text": "The cash can’t be combined with special financing or a lease" },
         { "slug": "gmc-sierra-1500-price.html", "text": "Not with GMC financing or a lease" },
-        { "slug": "mazda-cx-5-price.html", "text": "can’t be combined with the 0% rate" },
-        { "slug": "ram-1500-price.html", "text": "Ram’s 0% can’t be combined with its cash" },
-        { "slug": "toyota-tundra-price.html", "text": "The cash and the rate don’t combine" },
+        { "slug": "mazda-cx-5-price.html", "text": "can’t be combined with its special APR or lease" },
+        { "slug": "ram-1500-price.html", "text": "The 0% can’t be combined with any other incentive" },
+        { "slug": "toyota-tundra-price.html", "text": "It doesn’t combine with the $1,000 cash" },
         { "slug": "hyundai-elantra-price.html", "text": "the car must be financed through Hyundai Motor Finance" }
       ],
       "choiceHeading": "Cash or 0%?",

@@ -177,6 +177,53 @@ ${paragraphs(spot.after)}
 </section>`;
 }
 
+// Logos on a price guide (owner, November 22, 2026: the guides were "missing logos"). `mark` prints a file from
+// assets/logos (see `logoFiles` below) at a height set in CSS. A make or source with no file falls back to type.
+const mark = (name, { alt = logoFiles[name][2], cls = '', eager = false } = {}) => `<img class="vp-logo${cls ? ` ${cls}` : ''}" src="/assets/logos/${name}.webp" alt="${alt}" width="${logoFiles[name][0]}" height="${logoFiles[name][1]}" decoding="async"${eager ? '' : ' loading="lazy"'}>`;
+const sourceLogos = { Edmunds: 'edmunds', 'Kelley Blue Book': 'kbb', 'U.S. News': 'us-news', 'J.D. Power': 'jd-power', 'Consumer Reports': 'consumer-reports' };
+const makeNames = ['Chevrolet', 'Ford', 'GMC', 'Honda', 'Hyundai', 'Kia', 'Mazda', 'Nissan', 'Ram', 'Subaru', 'Tesla', 'Toyota', 'Volkswagen', 'Jeep'];
+// The make a model name starts with, as a logo file name, or null when assets/logos has no file for it.
+const makeOf = name => { const make = makeNames.find(entry => name.startsWith(`${entry} `) || name === entry)?.toLowerCase(); return make && logoFiles[make] ? make : null; };
+// A section heading with the logos of the sources behind it on the right.
+const headRow = (title, label, names) => `<div class="vp-headrow"><h2>${title}</h2><p class="vp-from"><span>${label}</span>${names.map(name => mark(name)).join('')}</p></div>`;
+
+// "The trim we'd buy" as a card instead of paragraphs: the trim and its price, three or four reasons, then the trims
+// to step up to or skip. `pick.price` overrides the starting MSRP of the trims row marked `pick`.
+function pickCard(pick, vehicle) {
+  const row = vehicle.trims.rows.find(trim => trim.pick);
+  const price = pick.price ?? (row ? dollars(row.prices[0]) : null);
+  if (!price) throw new Error(`${vehicle.slug}: pick needs a price or a trims row marked pick`);
+  return `<div class="vp-pick">
+<div class="vp-pick__main"><p class="vp-pick__label">Our pick</p><p class="vp-pick__name">${pick.trim}</p><p class="vp-pick__price">${price} <span>${pick.priceNote ?? 'starting MSRP'}</span></p></div>
+<ul class="vp-pick__why" role="list">
+${pick.reasons.map(item => `<li>${tick}${item}</li>`).join('\n')}
+</ul>
+</div>
+${pick.text ? `<p>${pick.text}</p>\n` : ''}<ul class="vp-pick__also" role="list">
+${pick.also.map(item => `<li class="vp-pick__alt${/^skip/i.test(item.label) ? ' vp-pick__alt--skip' : ''}"><p class="vp-pick__kind">${item.label}</p><p class="vp-pick__alt-name">${item.name}${item.price ? ` <span>${item.price}</span>` : ''}</p><p>${item.text}</p></li>`).join('\n')}
+</ul>`;
+}
+
+// Rivals as a price chart instead of a paragraph: this car's comparison trim first, then each rival with its make's
+// logo, one figure (mpg, towing) and a line on how it differs. Bars are starting MSRP (or `priceLabel`, for the used-car guides), scaled to the dearest.
+function rivalsChart(rivals, vehicle) {
+  const pro = '<p>Torn between two or three? <a href="#plans">Steer Me Right Pro</a> prices up to three models side by side and gives you our pick.</p>';
+  // A guide whose sources price fewer than two rivals says what it knows in a line instead of drawing a chart.
+  if (rivals.cars.length < 2) return `<p>${rivals.note}</p>\n${pro}`;
+  const priceLabel = rivals.priceLabel ?? 'Starting MSRP';
+  const rows = [{ ...rivals.self, self: true }, ...rivals.cars];
+  const top = Math.max(...rows.map(row => row.price));
+  const badge = row => { const make = makeOf(row.self ? vehicle.name : row.name); return make ? mark(make, { alt: '' }) : `<span class="vp-rivals__mono" aria-hidden="true">${row.name[0]}</span>`; };
+  return `<table class="vp-rivals">
+<caption class="sr-only">${vehicle.name} and its rivals: ${rivals.statLabel ? `${rivals.statLabel.toLowerCase()} and ` : ''}${priceLabel.toLowerCase()}</caption>
+<thead><tr><th scope="col">Model</th>${rivals.statLabel ? `<th scope="col">${rivals.statLabel}</th>` : ''}<th scope="col">${priceLabel}</th></tr></thead>
+<tbody>
+${rows.map(row => `<tr${row.self ? ' class="vp-rivals__self"' : ''}><th scope="row"><span class="vp-rivals__badge">${badge(row)}</span><span class="vp-rivals__name">${row.href ? `<a href="${row.href}">${row.name}</a>` : row.name}${row.self ? ' <span class="vp-tag">This guide</span>' : ''}<small>${row.text}</small></span></th>${rivals.statLabel ? `<td class="vp-rivals__stat">${row.stat ?? '–'}</td>` : ''}<td class="vp-trims__price"><span>${dollars(row.price)}</span>${meter(row.price, top)}</td></tr>`).join('\n')}
+</tbody>
+</table>
+${rivals.note ? `<p class="vp-note">${rivals.note}</p>\n` : ''}${pro}`;
+}
+
 // ---- Reddit section of a price guide, from the car's own coded file (data/reddit-sentiment/cars/<key>.json) ----
 // Every figure is worked out at build time by summarizeCar(), so the page cannot drift from the data. Model names come
 // from data/reddit-sentiment/models.json. A cross-shopped model links to our comparison when there is one, else to its
@@ -248,15 +295,15 @@ ${focusRows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${senti
 `;
   }
   return `<section id="reddit" class="vp-section">
-<h2>What Reddit says about the ${short}</h2>
-<p>We read ${count(sentiment.comments)} comments in ${count(sentiment.threads)} Reddit threads about the ${short}, posted from ${monthYear(coded.threadsFrom)} to ${monthYear(coded.threadsTo)}, and noted each opinion they give and which car they tell the poster to buy. Owners in a car’s own subreddit and shoppers elsewhere see it differently, so ${homeSubs.length > 1 ? `its own subreddits (${homeText})` : homeText} and the rest of Reddit count equally. A score of 50 means praise and complaints balance.</p>
+${headRow(`What Reddit says about the ${short}`, 'Opinions from', ['reddit'])}
+<p class="vp-rd-method">${count(sentiment.comments)} comments in ${count(sentiment.threads)} threads, ${monthYear(coded.threadsFrom)} to ${monthYear(coded.threadsTo)}. A score of 50 means praise and complaints balance.</p>
 <div class="vp-rd-top">
-<div><p class="vp-rd-label">Reddit Sentiment Index</p><p class="vp-rd-big">${sentiment.index}<small> / 100</small></p><div class="vp-rd-scale" aria-hidden="true"><i style="--w:${sentiment.index}%"></i></div><p class="vp-rd-ends" aria-hidden="true"><span>All negative</span><span>50 = even</span><span>All positive</span></p><p class="vp-rd-detail">${homeText} alone: ${sentiment.venues.home.index ?? 'too few to score'}. The rest of Reddit: ${sentiment.venues.neutral.index ?? 'too few to score'}. From ${count(sentiment.opinions)} opinions about the ${short}.</p></div>
-<div><p class="vp-rd-label">Picked when it was an option</p>${enoughPicks ? `<p class="vp-rd-big">${picks.share}%</p><div class="vp-rd-scale vp-rd-scale--plain" aria-hidden="true"><i style="--w:${picks.share}%"></i></div><p class="vp-rd-detail">${count(picks.car)} of ${count(picks.all)} picks in ${count(picks.threads)} threads outside ${homeText} that weighed the ${short} against another model.${rival ? ` Next most picked: the ${modelName(rival[0])}, with ${count(rival[1])}.` : ''}</p>` : `<p class="vp-rd-big">${count(picks.all)}<small> picks</small></p><p class="vp-rd-detail">Too few picks outside ${homeText} to give a share: ${count(picks.car)} of ${count(picks.all)} went to the ${short}.</p>`}</div>
+<div><p class="vp-rd-label">Reddit Sentiment Index</p><p class="vp-rd-big">${sentiment.index}<small> / 100</small></p><div class="vp-rd-scale" aria-hidden="true"><i style="--w:${sentiment.index}%"></i></div><p class="vp-rd-ends" aria-hidden="true"><span>All negative</span><span>50 = even</span><span>All positive</span></p><p class="vp-rd-detail">${homeText}: ${sentiment.venues.home.index ?? 'too few to score'}. Rest of Reddit: ${sentiment.venues.neutral.index ?? 'too few to score'}. From ${count(sentiment.opinions)} opinions.</p></div>
+<div><p class="vp-rd-label">Picked when it was an option</p>${enoughPicks ? `<p class="vp-rd-big">${picks.share}%</p><div class="vp-rd-scale vp-rd-scale--plain" aria-hidden="true"><i style="--w:${picks.share}%"></i></div><p class="vp-rd-detail">${count(picks.car)} of ${count(picks.all)} picks in ${count(picks.threads)} threads outside ${homeText} that weighed it against another model.${rival ? ` The ${modelName(rival[0])} got ${count(rival[1])}.` : ''}</p>` : `<p class="vp-rd-big">${count(picks.all)}<small> picks</small></p><p class="vp-rd-detail">Too few picks outside ${homeText} to give a share: ${count(picks.car)} of ${count(picks.all)} went to the ${short}.</p>`}</div>
 </div>
 ${focusBlock}<section class="vp-rd-topics">
 <h3>Net opinion by topic${focusBlock ? `, every ${short} thread` : ''}</h3>
-<p>Positive minus negative opinions about the ${short}, as a share of all its opinions on that topic, from −100 to +100. Topics with fewer than ${redditMinimum} mentions aren’t scored.</p>
+<p>Praise minus complaints as a share of all opinions on the topic, from −100 to +100.</p>
 <ul class="vp-rd-net" role="list">
 ${rows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${sentimentTopics[topic]}<small>${count(figure.mentions)} mentions</small></span>${netBar(figure)}</li>`).join('\n')}
 <li class="vp-rd-net__axis" aria-hidden="true"><span></span><span><span>All negative</span><span>Even</span><span>All positive</span></span></li>
@@ -264,14 +311,14 @@ ${rows.map(([topic, figure]) => `<li><span class="vp-rd-net__label">${sentimentT
 </section>
 ${praise || gripes ? `<div class="vp-rd-themes">
 <section><h3>What people praise</h3><ul role="list">${praise}</ul></section>
-<section><h3>What owners and shoppers complain about</h3><ul class="vp-rd-themes__neg" role="list">${gripes}</ul></section>
+<section><h3>What people complain about</h3><ul class="vp-rd-themes__neg" role="list">${gripes}</ul></section>
 </div>\n` : ''}${cross.length ? `<section class="vp-rd-cross">
 <h3>Cross-shopped with</h3>
-<p>Models named alongside the ${short} in threads outside ${homeText}, by number of threads (${count(sentiment.neutralThreads)} in all).</p>
+<p>Models named with the ${short} in ${count(sentiment.neutralThreads)} threads outside ${homeText}.</p>
 <ol role="list">
 ${cross.map(crossItem).join('\n')}
 </ol>
-</section>\n` : ''}<p class="vp-note">Our own reading of public Reddit comments from the Arctic Shift archive, collected ${longDate(coded.collected)}: comments of 15 characters or more, coded by AI to a fixed rubric and checked by a second coder on a sample. One pick per person per thread. It isn’t a survey, and complaints are what owners report, not confirmed defects.</p>
+</section>\n` : ''}<p class="vp-note">Our own reading of public Reddit comments from the Arctic Shift archive, collected ${longDate(coded.collected)}: comments of 15 characters or more, coded by AI to a fixed rubric and checked by a second coder on a sample. ${homeSubs.length > 1 ? 'The car’s own subreddits' : homeText} and the rest of Reddit count equally, topics with fewer than ${redditMinimum} mentions aren’t scored, and each person gets one pick per thread. It isn’t a survey, and complaints are what owners report, not confirmed defects.</p>
 </section>`;
 }
 
@@ -306,15 +353,19 @@ function vehiclePage(vehicle, updated, reddit, sentiment) {
     ...vehicle.labels,
   };
   // vehicle.reddit.first moves the Reddit section up to sit under the overview; .strip adds its index to the score strip.
+  const make = makeOf(name);
+  const sourceMark = (source, eager) => sourceLogos[source] ? mark(sourceLogos[source], { alt: source, eager }) : source;
+  const safetyLogo = /IIHS/.test(vehicle.safety.label) ? 'iihs-hldi' : 'nhtsa';
+  const safetySources = [.../NHTSA/.test(vehicle.safety.label) || vehicle.safety.rows.some(row => row.stars) ? ['nhtsa'] : [], ...safetyLogo === 'iihs-hldi' || vehicle.safety.rows.some(row => row.grade) ? ['iihs-hldi'] : []];
   const redditFirst = Boolean(reddit && vehicle.reddit?.first), redditStrip = Boolean(reddit && vehicle.reddit?.strip);
   const tabs = [['overview', 'Overview'], ...(redditFirst ? [['reddit', 'Reddit']] : []), ['pay', 'What to pay'], ['reviews', 'Review scores'], ...(reddit && !redditFirst ? [['reddit', 'Reddit']] : []), ['trims', text.trimsTab], ['pick', 'Our pick'], ['incentives', text.incentivesTab], ['new-used', text.conditionTab], ['watch', 'What to watch for'], ['faq', 'Questions'], ['safety', 'Safety']];
   if (vehicle.spotlight) tabs.splice(tabs.findIndex(([id]) => id === 'pick') + 1, 0, [vehicle.spotlight.id, vehicle.spotlight.tab]);
   const body = `<article class="vp">
-<header class="vp-head vp-width">
-<p class="vp-crumb"><a href="/blog.html">Resources</a> / ${text.crumb}</p>
+<header class="vp-head vp-width${make ? ' vp-head--make' : ''}">
+<div><p class="vp-crumb"><a href="/blog.html">Resources</a> / ${text.crumb}</p>
 <h1>${vehicle.h1}</h1>
-<p class="vp-byline">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p>
-</header>
+<p class="vp-byline">By <a href="/about.html">Mason</a> · Updated <time datetime="${updated}">${longDate(updated)}</time></p></div>
+${make ? mark(`${make}-white`, { alt: '', cls: 'vp-head__make', eager: true }) : ''}</header>
 <nav class="vp-tabs" aria-label="Article contents"><ul class="vp-width" role="list">${tabs.map(([id, label]) => `<li><a href="#${id}">${label}</a></li>`).join('')}</ul></nav>
 
 <div class="vp-stage">
@@ -322,8 +373,8 @@ function vehiclePage(vehicle, updated, reddit, sentiment) {
 <div class="vp-hero">
 ${gallery(vehicle.photo, vehicle.gallery)}
 <ul class="vp-strip${redditStrip ? ' vp-strip--6' : ''}" role="list">
-${vehicle.scores.cards.map(card => `<li><a href="#reviews"><span class="vp-strip__source">${card.source}</span><span class="vp-strip__score">${card.display}<small>/${card.scale}</small></span></a></li>`).join('\n')}
-${redditStrip ? `<li class="vp-strip__reddit"><a href="#reddit"><span class="vp-strip__source">Reddit Sentiment Index</span><span class="vp-strip__score">${sentiment.index}<small>/100</small></span></a></li>\n` : ''}<li><a href="#safety"><span class="vp-strip__source">${vehicle.safety.label}</span>${vehicle.safety.outOf ? `<span class="vp-strip__score">${safetyScore(vehicle.safety)}</span>` : stars(vehicle.safety.overall)}</a></li>
+${vehicle.scores.cards.map(card => `<li><a href="#reviews"><span class="vp-strip__source">${sourceMark(card.source, true)}</span><span class="vp-strip__score">${card.display}<small>/${card.scale}</small></span></a></li>`).join('\n')}
+${redditStrip ? `<li class="vp-strip__reddit"><a href="#reddit"><span class="vp-strip__source">${mark('reddit', { alt: 'Reddit Sentiment Index', eager: true })}</span><span class="vp-strip__score">${sentiment.index}<small>/100</small></span></a></li>\n` : ''}<li><a href="#safety"><span class="vp-strip__source">${mark(safetyLogo, { eager: true })}<span class="vp-strip__what">${vehicle.safety.label.replace(/^NHTSA | by IIHS$/g, '')}</span></span>${vehicle.safety.outOf ? `<span class="vp-strip__score">${safetyScore(vehicle.safety)}</span>` : stars(vehicle.safety.overall)}</a></li>
 </ul>
 </div>
 
@@ -352,13 +403,18 @@ ${dealCards(vehicle.pay, vehicle.trims.rows)}
 ${priceMath(walk)}
 </div>
 <p class="vp-note">${vehicle.pay.note}</p>
-${paragraphs(vehicle.pay.after)}
+${vehicle.pay.evidence ? `<details class="vp-more"><summary>How we set these ranges</summary>
+${paragraphs(vehicle.pay.evidence.intro)}
+<ul>
+${vehicle.pay.evidence.rows.map(row => `<li><strong>${row.trims}.</strong> ${row.why}</li>`).join('\n')}
+</ul>
+</details>\n` : ''}${paragraphs(vehicle.pay.after)}
 </section>
 
 <section id="reviews" class="vp-section">
 <h2>What the reviewers say</h2>
 ${vehicle.scores.intro ? `<p>${vehicle.scores.intro}</p>\n` : ''}<ul class="vp-scorecard" role="list">
-${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${card.source}</a><p class="vp-scorecard__score">${card.display}<span> out of ${card.scale}</span></p>${meter(card.value, card.scale)}<p class="vp-scorecard__detail">${card.detail}</p></li>`).join('\n')}
+${vehicle.scores.cards.map(card => `<li><a href="${card.url}" rel="noopener">${sourceMark(card.source)}</a><p class="vp-scorecard__score">${card.display}<span> out of ${card.scale}</span></p>${meter(card.value, card.scale)}<p class="vp-scorecard__detail">${card.detail}</p></li>`).join('\n')}
 </ul>
 <p class="vp-note">${vehicle.scores.note}</p>
 </section>
@@ -383,7 +439,7 @@ ${table('trim-caption', text.trimsMoreCaption, [text.trimsColumn, ...vehicle.tri
 
 <section id="pick" class="vp-section vp-section--band">
 <h2>${text.pickHeading}</h2>
-${paragraphs(vehicle.pick)}
+${pickCard(vehicle.pick, vehicle)}
 </section>
 ${vehicle.spotlight ? `\n${spotlight(vehicle.spotlight, checked)}\n` : ''}
 <section id="plans" class="vp-section vp-plans">
@@ -427,7 +483,7 @@ ${table('condition-caption', text.conditionCaption, ['Route', 'Best when', 'What
 
 <section id="rivals" class="vp-section vp-section--band">
 <h2>Rivals worth pricing against it</h2>
-${paragraphs(vehicle.rivals)}
+${rivalsChart(vehicle.rivals, vehicle)}
 </section>
 
 <section id="watch" class="vp-section">
@@ -450,7 +506,7 @@ ${faq([
 </section>
 
 <section id="safety" class="vp-section">
-<h2>Safety report card</h2>
+${headRow('Safety report card', 'Ratings from', safetySources)}
 <div class="vp-safety">
 <div class="vp-safety__overall"><p class="vp-safety__score">${vehicle.safety.overall}<span> ${vehicle.safety.outOf ? `of ${vehicle.safety.outOf}` : 'out of 5'}</span></p>${safetyMark(vehicle.safety)}<p>${vehicle.safety.label}</p><p class="vp-safety__vehicle">${vehicle.safety.vehicle}</p></div>
 <dl class="vp-safety__tests">
@@ -490,6 +546,9 @@ const logoFiles = {
   gmc: [343, 96, 'GMC'], 'gmc-white': [343, 96, 'GMC'],
   subaru: [161, 96, 'Subaru'], 'subaru-white': [161, 96, 'Subaru'],
   mazda: [396, 96, 'Mazda'], 'mazda-white': [396, 96, 'Mazda'],
+  hyundai: [189, 96, 'Hyundai'], 'hyundai-white': [189, 96, 'Hyundai'], kia: [408, 96, 'Kia'], 'kia-white': [408, 96, 'Kia'],
+  nissan: [115, 96, 'Nissan'], 'nissan-white': [115, 96, 'Nissan'], ram: [1018, 96, 'Ram'], 'ram-white': [1018, 96, 'Ram'],
+  tesla: [96, 96, 'Tesla'], 'tesla-white': [96, 96, 'Tesla'],
   'rav4-white': [402, 64, 'RAV4'], 'cr-v-white': [379, 64, 'CR-V'], 'corolla-white': [550, 64, 'Corolla'], 'camry-white': [442, 64, 'Camry'], edmunds: [414, 72, 'Edmunds'], 'edmunds-icon': [107, 72, 'Edmunds'],
   reddit: [343, 96, 'Reddit'], 'reddit-snoo': [96, 96, 'Reddit'], 'iihs-hldi': [178, 120, 'IIHS-HLDI'], nhtsa: [407, 96, 'NHTSA'],
   kbb: [399, 108, 'Kelley Blue Book'], 'us-news': [291, 72, 'U.S. News'], 'jd-power': [409, 60, 'J.D. Power'], 'consumer-reports': [376, 96, 'Consumer Reports'],

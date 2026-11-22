@@ -17230,12 +17230,18 @@
     {
      "slug": "hyundai-tucson-price.html",
      "short": "Tucson",
-     "name": "Hyundai Tucson"
+     "name": "Hyundai Tucson",
+     "logos": {
+      "make": "hyundai"
+     }
     },
     {
      "slug": "kia-sportage-price.html",
      "short": "Sportage",
-     "name": "Kia Sportage"
+     "name": "Kia Sportage",
+     "logos": {
+      "make": "kia"
+     }
     }
    ],
    "strip": [
@@ -18887,7 +18893,10 @@
     {
      "slug": "hyundai-tucson-price.html",
      "short": "Tucson",
-     "name": "Hyundai Tucson"
+     "name": "Hyundai Tucson",
+     "logos": {
+      "make": "hyundai"
+     }
     }
    ],
    "strip": [
@@ -20465,7 +20474,10 @@
     {
      "slug": "hyundai-elantra-price.html",
      "short": "Elantra",
-     "name": "Hyundai Elantra"
+     "name": "Hyundai Elantra",
+     "logos": {
+      "make": "hyundai"
+     }
     }
    ],
    "strip": [
@@ -21790,7 +21802,10 @@
     {
      "slug": "hyundai-elantra-price.html",
      "short": "Elantra",
-     "name": "Hyundai Elantra"
+     "name": "Hyundai Elantra",
+     "logos": {
+      "make": "hyundai"
+     }
     }
    ],
    "strip": [
@@ -24723,7 +24738,10 @@
     {
      "slug": "ram-1500-price.html",
      "short": "Ram 1500",
-     "name": "Ram 1500"
+     "name": "Ram 1500",
+     "logos": {
+      "make": "ram"
+     }
     }
    ],
    "strip": [
@@ -26049,7 +26067,10 @@
     {
      "slug": "ram-1500-price.html",
      "short": "Ram 1500",
-     "name": "Ram 1500"
+     "name": "Ram 1500",
+     "logos": {
+      "make": "ram"
+     }
     }
    ],
    "strip": [
@@ -27659,7 +27680,10 @@
     {
      "slug": "tesla-model-y-price.html",
      "short": "Model Y",
-     "name": "Tesla Model Y"
+     "name": "Tesla Model Y",
+     "logos": {
+      "make": "tesla"
+     }
     },
     {
      "slug": "toyota-rav4-price.html",

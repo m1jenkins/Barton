@@ -463,3 +463,70 @@
   .dr .vp-plan { padding:28px 24px; }
   .dr .vp-sources ul { columns:1; }
 }
+
+/* Logos (owner, November 22, 2026): the make on the title band, each reviewer's mark in the score strip and scorecard,
+   and the sources of a section beside its heading. Files are in assets/logos; a make or source without one prints as type. */
+.dr .vp img.vp-logo { display:block; flex:none; width:auto; height:18px; max-width:100%; object-fit:contain; object-position:left center; }
+.dr .vp-head--make { display:flex; align-items:center; justify-content:space-between; gap:32px; }
+.dr .vp img.vp-head__make { height:auto; max-height:clamp(40px,5vw,60px); max-width:210px; opacity:.96; }
+.dr .vp-strip__source:has(.vp-logo) { display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; min-height:20px; }
+.dr .vp-strip .vp-logo[src*="jd-power"] { height:13px; }
+.dr .vp-strip .vp-logo[src*="iihs"] { height:26px; }
+.dr .vp-strip .vp-logo[src*="kbb"] { height:22px; }
+.dr .vp img.vp-logo--icon { height:18px; }
+.dr .vp-strip__what { font-size:12px; line-height:1.2; }
+.dr .vp-scorecard li > a:has(.vp-logo) { display:block; }
+.dr .vp-scorecard .vp-logo { height:22px; max-width:150px; }
+.dr .vp-scorecard .vp-logo[src*="jd-power"] { height:15px; }
+.dr .vp-scorecard .vp-logo[src*="kbb"] { height:28px; }
+.dr .vp-headrow { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 24px; margin-bottom:14px; }
+.dr .vp-headrow h2 { margin:0; font-size:clamp(23px,2.3vw,29px); line-height:1.2; letter-spacing:-.02em; }
+.dr .vp-section .vp-from { display:flex; align-items:center; gap:14px; max-width:none; margin:0; font-size:12px; color:var(--muted); }
+.dr .vp-from .vp-logo { height:22px; }
+.dr .vp-from .vp-logo[src*="iihs"] { height:30px; }
+.dr .vp-section > .vp-rd-method { margin-top:0; font-size:14px; color:var(--muted); }
+
+/* The trim we'd buy: the pick and its price on the left, the reasons ticked beside it, then the trims to step up to or
+   skip in a ruled row. White on the tint band, square, hairline edges. */
+.dr .vp-pick { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); margin-top:20px; border:1px solid var(--line); background:var(--paper); }
+.dr .vp-pick__main { display:flex; flex-direction:column; justify-content:center; padding:26px 28px; background:var(--sign); color:#fff; }
+.dr .vp-pick__label { font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--sky); }
+.dr .vp-pick__name { margin-top:8px; font-size:clamp(24px,2.6vw,32px); line-height:1.1; font-weight:700; letter-spacing:-.02em; }
+.dr .vp-pick__price { margin-top:14px; font-size:22px; line-height:1; font-weight:600; font-variant-numeric:tabular-nums; }
+.dr .vp-pick__price span { font-size:13px; font-weight:400; color:var(--sky); }
+.dr .vp-pick__why { display:grid; align-content:center; gap:12px; padding:24px 28px; font-size:15px; line-height:1.4; }
+.dr .vp-pick__why li { display:grid; grid-template-columns:20px 1fr; gap:10px; }
+.dr .vp-pick__why svg { width:20px; height:20px; fill:none; stroke:var(--sign); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+.dr .vp-pick__also { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0 32px; margin-top:22px; }
+.dr .vp-pick__alt { padding:14px 0 4px; border-top:2px solid var(--sign); font-size:14px; line-height:1.5; }
+.dr .vp-pick__alt--skip { border-top-color:var(--field,#C3CBD6); }
+.dr .vp-pick__kind { font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--sign); }
+.dr .vp-pick__alt--skip .vp-pick__kind { color:var(--muted); }
+.dr .vp-pick__alt-name { margin:2px 0 4px; font-size:17px; font-weight:600; }
+.dr .vp-pick__alt-name span { font-size:14px; font-weight:400; color:var(--muted); font-variant-numeric:tabular-nums; }
+
+/* Rivals: one row per car with its make's logo, one figure and a starting-price bar, in the trims table's rules. */
+.dr .vp-rivals { width:100%; margin-top:20px; border-collapse:collapse; font-size:15px; line-height:1.35; font-variant-numeric:tabular-nums; }
+.dr .vp-rivals :is(th,td) { padding:14px 20px 14px 0; text-align:left; vertical-align:middle; border-bottom:1px solid var(--line); }
+.dr .vp-rivals :is(th,td):last-child { padding-right:0; }
+.dr .vp-rivals thead th { padding-top:0; padding-bottom:10px; border-bottom-color:var(--ink); font-size:13px; font-weight:600; color:var(--muted); white-space:nowrap; }
+.dr .vp-rivals tbody th { display:grid; grid-template-columns:72px minmax(0,1fr); gap:14px; align-items:center; font-size:16px; font-weight:600; }
+.dr .vp-rivals__badge { display:flex; align-items:center; justify-content:center; height:30px; }
+.dr .vp-rivals__badge .vp-logo { height:auto; max-height:26px; max-width:72px; object-position:center; }
+.dr .vp-rivals__mono { display:flex; align-items:center; justify-content:center; width:30px; height:30px; border:1px solid var(--field,#C3CBD6); border-radius:50%; font-size:14px; color:var(--muted); }
+.dr .vp-rivals__name small { display:block; margin-top:2px; font-size:13px; font-weight:400; color:var(--muted); }
+.dr .vp-rivals__name a { text-decoration:underline; text-underline-offset:3px; }
+.dr .vp-rivals__stat { font-weight:600; white-space:nowrap; }
+.dr .vp-rivals__self .vp-meter > span { background:var(--ink); }
+.dr .vp-rivals .vp-trims__price { width:34%; }
+
+@media (max-width:760px) {
+  .dr .vp img.vp-head__make { display:none; }
+  .dr .vp-pick { grid-template-columns:1fr; }
+  .dr .vp-pick__main, .dr .vp-pick__why { padding:22px 20px; }
+  .dr .vp-rivals { font-size:14px; }
+  .dr .vp-rivals :is(th,td) { padding:12px 12px 12px 0; }
+  .dr .vp-rivals tbody th { grid-template-columns:40px minmax(0,1fr); gap:10px; font-size:15px; }
+  .dr .vp-rivals__badge .vp-logo { max-width:40px; max-height:20px; }
+  .dr .vp-rivals .vp-trims__price { width:auto; }
+}

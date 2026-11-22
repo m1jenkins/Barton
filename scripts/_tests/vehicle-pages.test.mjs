@@ -194,7 +194,7 @@ test('every price guide has a Reddit car file and shows the figures computed fro
       assert.ok(html.includes(shown), `${vehicle.slug} shows a topic net of ${figure.net} from ${figure.mentions} mentions`);
     }
     for (const item of summary.crossShopped) assert.match(html, new RegExp(`${item.threads} threads?</span>`), `${vehicle.slug} cross-shopped count`);
-    if (vehicle.reddit?.strip) assert.match(html, new RegExp(`Reddit Sentiment Index</span><span class="vp-strip__score">${summary.index}<`), `${vehicle.slug} strip shows the computed index`);
+    if (vehicle.reddit?.strip) assert.match(html, new RegExp(`alt="Reddit Sentiment Index"[^>]*></span><span class="vp-strip__score">${summary.index}<`), `${vehicle.slug} strip shows the computed index`);
     if (vehicle.reddit?.focus) {
       const coded = files.get(file), ids = new Set(coded.focus[vehicle.reddit.focus].threads);
       const sub = summarizeCar({ ...coded, threads: coded.threads.filter(thread => ids.has(thread.id)), comments: coded.comments.filter(comment => ids.has(comment.thread)) });
