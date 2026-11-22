@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-21",
+  "updated": "2026-11-21",
+  "decision": "docs/seo/2026-11-21-deal-pages.md",
+  "topCreditRate": 4.41,
+  "groups": [
+    {
+      "id": "deepest",
+      "count": 8,
+      "min": 5,
+      "heading": "Deepest discounts: 5% under sticker or better",
+      "intro": "Seven of these eight are pickups. The Ford, GMC, Chevrolet and Ram trucks carry more days of supply than the industry average. The Tacoma and Tundra sell quickly and still land 5% or better under. The Forester is the lone crossover.",
+      "needs": [
+        { "slug": "ram-1500-price.html", "text": "148 days of supply for Ram at the end of October against 87 for the industry" },
+        { "slug": "ford-f-150-price.html", "text": "101 days of supply against 82 for the industry" },
+        { "slug": "gmc-sierra-1500-price.html", "text": "110 days of supply for GMC at the end of October, against 87 for the industry" },
+        { "slug": "chevrolet-silverado-1500-price.html", "text": "99 days of supply for the Silverado 1500 at the end of October, against 87 for the industry" }
+      ]
+    },
+    {
+      "id": "few",
+      "count": 8,
+      "min": 3,
+      "heading": "A few percent under: 3% to 5%",
+      "intro": "Cars, crossovers and the Ranger, five of them with a hybrid on the pick. A fair deal here takes roughly $1,050 to $1,750 off a $35,000 car. Hyundai, Mazda and Kia add manufacturer money on top this month: see <a href=\"/new-car-deals-this-month.html\">new-car deals this month</a>."
+    },
+    {
+      "id": "near",
+      "count": 3,
+      "min": 0,
+      "heading": "Closest to sticker: 1% to 3% under",
+      "intro": "The RAV4 and the hybrid Civic and CR-V sell closest to sticker. Where a guide shows more room on another trim, the line under the car says so."
+    }
+  ],
+  "cars": {
+    "ram-1500": {
+      "brand": "Ram", "segment": "Pickups", "payRow": 2, "prices": ["VEH-RAM1500-08", "VEH-RAM1500-16", "VEH-RAM1500-18"],
+      "line": "Ram carried 148 days of supply at the end of October against 87 for the industry, and Edmunds counted 126 days to sell a new 2026. Ram’s cash is $5,250 on the Laramie, or $6,750 in Los Angeles.",
+      "needs": ["148 days of supply for Ram", "126 days to sell", "Ram’s cash is $5,250, or $6,750 in Los Angeles"]
+    },
+    "chevrolet-colorado": {
+      "brand": "Chevrolet", "segment": "Pickups", "payRow": 0, "prices": ["VEH-COLORADO-07", "VEH-COLORADO-18"],
+      "line": "Plenty to choose from: Edmunds counts about 18,900 new Colorados nationwide. Its Texas prices run about 10% under on the LT, so our 6–7% fair range is the cautious end.",
+      "needs": ["about 18,900 new trucks nationwide", "10.0% on the LT"]
+    },
+    "ford-f-150": {
+      "brand": "Ford", "segment": "Pickups", "payRow": 1, "prices": ["VEH-F150-06", "VEH-F150-08"],
+      "line": "Ford dealers held 101 days of supply at the end of September against 82 for the industry, and TrueCar puts the average 2026 XLT 5.6% under.",
+      "needs": ["101 days of supply against 82 for the industry", "5.6% under MSRP"]
+    },
+    "gmc-sierra-1500": {
+      "brand": "GMC", "segment": "Pickups", "payRow": 1, "prices": ["VEH-SIERRA-08", "VEH-SIERRA-11"],
+      "line": "The 2026 is the outgoing truck. GMC held 110 days of supply at the end of October against 87 for the industry, and TrueCar puts the SLT about 7.5% under.",
+      "needs": ["110 days of supply for GMC", "the SLT and Denali about 7.5% under"]
+    },
+    "chevrolet-silverado-1500": {
+      "brand": "Chevrolet", "segment": "Pickups", "payRow": 1, "prices": ["VEH-SILVERADO-07", "VEH-SILVERADO-11"],
+      "line": "Chevrolet carried 99 days of supply on the Silverado against 87 for the industry, and TrueCar puts the LT and its Trail Boss versions 5–6% under.",
+      "needs": ["99 days of supply for the Silverado 1500", "5–6% under"]
+    },
+    "toyota-tundra": {
+      "brand": "Toyota", "segment": "Pickups", "payRow": 0, "prices": ["VEH-TUNDRA-06", "VEH-TUNDRA-08", "VEH-TUNDRA-09"],
+      "line": "It sells in about 30 days against 34 for the average new vehicle, yet CarWhere’s 27 verified buyers paid a median 7.5% under. That is a small sample.",
+      "needs": ["selling in about 30 days against 34 for the average new vehicle", "27 verified 2026 buyers paid a median 7.5% under MSRP"]
+    },
+    "toyota-tacoma": {
+      "brand": "Toyota", "segment": "Pickups", "payRow": 1, "prices": ["VEH-TACOMA-06", "VEH-TACOMA-08", "VEH-TACOMA-09"],
+      "line": "Edmunds says new Tacomas sell in about 18 days against 34 for the average new vehicle, and CarWhere’s 31 verified buyers still paid a median 7.9% under.",
+      "needs": ["selling in about 18 days against 34 for the average new vehicle", "31 verified 2026 buyers paid a median 7.9% under MSRP"]
+    },
+    "subaru-forester": {
+      "brand": "Subaru", "segment": "SUVs", "payRow": 1, "prices": ["VEH-FORESTER-12"],
+      "line": "Edmunds’ Texas prices run 7.2–7.4% under on the hybrids. It also says Foresters sell in a median 16 days, so the scarcer trims will give less.",
+      "needs": ["7.2–7.4% under", "median 16 days"]
+    },
+    "toyota-camry": {
+      "brand": "Toyota", "segment": "Cars", "payRow": 1, "prices": ["VEH-CAMRY-08", "VEH-CAMRY-11", "VEH-CAMRY-13"],
+      "line": "Scarce but still discounted: 28 days of supply against 87 for the industry, yet CarWhere’s 90 verified buyers paid a median 6.2% under. Kelley Blue Book is stingier, at $295 to $395 under MSRP.",
+      "needs": ["28 days of supply", "90 verified 2026 buyers paid a median 6.2% under MSRP", "$295 to $395 under MSRP"]
+    },
+    "mazda-cx-5": {
+      "brand": "Mazda", "segment": "SUVs", "payRow": 0, "prices": ["VEH-CX5-10", "VEH-CX5-08", "VEH-CX5-11"],
+      "line": "Plentiful: Edmunds counts about 27,300 new CX-5s and a median 57 days to sell one, against 34 for the average new vehicle. Mazda’s $1,000 customer cash is separate.",
+      "needs": ["about 27,300 new ones for sale", "median 57 days to sell"]
+    },
+    "honda-accord": {
+      "brand": "Honda", "segment": "Cars", "payRow": 1, "prices": ["VEH-ACCORD-10", "VEH-ACCORD-06"],
+      "line": "Edmunds says Accords sell in about 25 days against a 34-day market average. The EX-L is the tight trim, so TrueCar’s 3.3–3.8% under is the figure to aim at.",
+      "needs": ["sell in about 25 days against a 34-day market average", "TrueCar averages 3.3–3.8% under"]
+    },
+    "hyundai-elantra": {
+      "brand": "Hyundai", "segment": "Cars", "payRow": 0, "prices": ["VEH-ELANTRA-10"],
+      "line": "Edmunds’ Texas prices run 6–7% under, but its buyer tips say about 3%. Hyundai’s $2,000 bonus cash on the gas car is separate.",
+      "needs": ["buyers pay about 3% (Edmunds tips)", "Hyundai’s $2,000 cash is separate"]
+    },
+    "ford-ranger": {
+      "brand": "Ford", "segment": "Pickups", "payRow": 0, "prices": ["VEH-RANGER-07", "VEH-RANGER-09"],
+      "line": "Edmunds puts the average buyer about $1,362 under MSRP before Ford’s cash, and Ford carries 112 days of supply against 87 for the industry.",
+      "needs": ["about $1,362 under MSRP before cash", "112 days of supply for the brand in October against 87 for the industry"]
+    },
+    "toyota-corolla": {
+      "brand": "Toyota", "segment": "Cars", "payRow": 1, "prices": ["VEH-COROLLA-11", "VEH-COROLLA-17"],
+      "line": "Easier to discount than most Toyotas: 36 days of supply, against 24 for the RAV4, and TrueCar averages the hybrids 2.9–4.8% under.",
+      "needs": ["36 days of supply", "TrueCar averages 2.9–4.8% under"]
+    },
+    "hyundai-tucson": {
+      "brand": "Hyundai", "segment": "SUVs", "payRow": 2, "prices": ["VEH-TUCSON-08"],
+      "line": "Edmunds counts about 40,800 new Tucsons selling in about 25 days. Hyundai’s own offers do more than the dealer discount here: see the deals page.",
+      "needs": ["about 40,800 new Tucsons nationwide"]
+    },
+    "kia-sportage": {
+      "brand": "Kia", "segment": "SUVs", "payRow": 1, "prices": ["VEH-SPORTAGE-11", "VEH-SPORTAGE-12"],
+      "line": "A leftover 2026 sells further under sticker than a 2027: Edmunds counts 175 days to sell a new 2026 hybrid, against 34 for the average new vehicle.",
+      "needs": ["175 for the hybrid", "against 34 for the average new vehicle"]
+    },
+    "honda-cr-v": {
+      "brand": "Honda", "segment": "SUVs", "payRow": 1, "prices": ["VEH-CRV-07", "VEH-CRV-12"],
+      "line": "Not scarce, at 43 days of supply against 24 for the RAV4, but the hybrids sell closest to sticker: TrueCar averages 1.6–1.8% under.",
+      "needs": ["43 days of supply", "TrueCar averages 1.6–1.8% under"]
+    },
+    "honda-civic": {
+      "brand": "Honda", "segment": "Cars", "payRow": 1, "prices": ["VEH-CIVIC-16", "VEH-CIVIC-25", "VEH-CIVIC-28"],
+      "line": "Hybrids are over 30% of Civic sales, and Edmunds’ Texas price for a Sport Hybrid runs about 1% under.",
+      "needs": ["over 30% of Civic sales", "Sport Hybrid runs about 1% under"]
+    },
+    "toyota-rav4": {
+      "brand": "Toyota", "segment": "SUVs", "payRow": 0, "prices": ["VEH-RAV4-08", "VEH-RAV4-12"],
+      "line": "The tightest supply of the 21: 24 days at the end of October against 87 for the industry. TrueCar puts the XLE Premium about 1% under, and the Woodland and XSE a little over sticker.",
+      "needs": ["24 days of supply", "a little over sticker"]
+    },
+    "tesla-model-y": {
+      "brand": "Tesla", "segment": "SUVs", "fixedPrice": true, "prices": ["VEH-MODELY-01"],
+      "line": "Tesla sells new Model Ys at a set price, so there is no dealer discount to chase. The used-car estimate rests on Recurrent’s 16-day median to sell.",
+      "needs": ["16 days from listing to sale"]
+    },
+    "tesla-model-3": {
+      "brand": "Tesla", "segment": "Cars", "fixedPrice": true, "prices": ["VEH-MODEL3-01"],
+      "line": "Tesla sells new Model 3s at a set price, so there is no dealer discount to chase. Used asking prices eased 1.9% from June to September, by Recurrent’s figures.",
+      "needs": ["eased 1.9% from June to September"]
+    }
+  },
+  "brandOffers": {
+    "Ford": ["VEH-F150-03", "VEH-RANGER-03"],
+    "Toyota": ["VEH-RAV4-05", "VEH-CAMRY-07", "VEH-TACOMA-04", "VEH-TUNDRA-04"],
+    "Honda": ["VEH-CRV-05"],
+    "GMC": ["VEH-SIERRA-05"],
+    "Chevrolet": ["VEH-SILVERADO-05"],
+    "Ram": ["VEH-RAM1500-05"],
+    "Mazda": ["VEH-CX5-04"],
+    "Hyundai": ["VEH-ELANTRA-03"],
+    "Subaru": ["VEH-FORESTER-03"],
+    "Kia": ["VEH-SPORTAGE-08"],
+    "Tesla": ["VEH-MODELY-04", "VEH-MODELY-06"]
+  },
+  "dealsExtra": ["VEH-RAV4-19", "VEH-RAV4-06", "VEH-RAV4-07", "VEH-COLORADO-05"],
+  "rowKinds": {
+    "ram-1500-price.html|Bonus cash on a 2026, by trim": { "kind": "cash", "figure": 6750, "upTo": true, "needsInDetail": "$6,750" },
+    "gmc-sierra-1500-price.html|Denali diesel price cut": { "kind": "cash", "figure": 6755, "upTo": false, "needsInDetail": "$6,755 GMC cash" },
+    "ram-1500-price.html|0% APR": { "kind": "apr", "rate": 0, "rateText": "0%", "term": "36 or 60 months", "needsInDetail": "36 months on the Tradesman" }
+  },
+  "pages": {
+    "msrp": {
+      "slug": "cars-selling-below-msrp.html",
+      "published": "2026-11-21",
+      "title": "New Cars Selling Below MSRP (November 2026): 21 Ranked | Steer Me Right",
+      "description": "Which new cars sell furthest under sticker this month: 21 models ranked by how far under MSRP a fair deal runs, with dollars off, this month’s manufacturer offer and the trims that hold at sticker.",
+      "h1": "New cars selling below MSRP (November 2026)",
+      "crumb": "Cars selling below MSRP",
+      "image": "https://www.steermeright.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg",
+      "lead": [
+        "Pickups leave the most room this month. A fair deal on the {top1} {top1Trim} is {top1Fair} under sticker, about {top1Dollars} on a {top1Price} truck, and {deepestRest} all start at 5% under or better. The {bottom1}, {bottom2} and {bottom3} leave the least: {bottomRange} under at a fair price, and the RAV4’s dearest trims sell at sticker.",
+        "Below, all 21 models we cover sit at the trim we’d buy, each with the dollars off and a line on why the number is what it is."
+      ],
+      "leadNeeds": [
+        { "slug": "toyota-rav4-price.html", "text": "Woodland, XSE, Limited" }
+      ],
+      "markupHeading": "Trims that sell at or near sticker",
+      "markupIntro": "Across the 21 guides, these trims sell within 2% of sticker. Only one carries a dealer-markup figure: owners on a Ford forum report Raptor R markups of $5,000 and up, a thread we read through a page summary. Get any dealer’s price in writing before you drive anywhere.",
+      "markupNeeds": [
+        { "slug": "ford-f-150-price.html", "text": "Raptor R markups of $5,000 and up" }
+      ],
+      "markupSource": "VEH-F150-09",
+      "markupMax": 2,
+      "tesla": {
+        "heading": "Tesla: a set price new, 1% to 4% under asking used",
+        "intro": "Tesla sells new cars direct at a posted price, so there is no dealer discount to chase on a new Model Y or Model 3. On used ones, the rows below are our estimate off the dealer’s asking price."
+      },
+      "method": [
+        "Cars are placed by the middle of the fair-deal range in each price guide, for the pay row that covers the trim we’d buy. Ties go to the strong-deal range. Dollars are that percentage of the trim’s starting MSRP as the guide lists it, rounded to $50.",
+        "Fair and strong deals are our estimates from the sources each guide names: TrueCar’s market averages, Edmunds’ Texas suggested prices, Kelley Blue Book’s fair purchase prices, iSeeCars invoice figures, CarWhere’s verified buyers and owner reports. The headline offer is the one in each guide’s offers tile, read on the date shown there; the deals page has every offer with its end date."
+      ],
+      "faq": [
+        ["Which new cars have the biggest discounts right now?", "{top3Names} lead the 21 models we cover. A fair deal on each starts at {top3Floor} under sticker or better, because the makers carry more trucks than the industry average."],
+        ["Is a car selling below MSRP the price I will pay?", "No. A dealer discount, manufacturer cash, destination, add-ons and fees are separate lines on the quote. Compare them on one written out-the-door price, as in <a href=\"/blog-buy-new-car-below-msrp.html\">buying a new car below MSRP</a>."],
+        ["Do manufacturer offers come on top of these discounts?", "Mostly, though a maker’s low rate often replaces its cash, so you pick one. The <a href=\"/new-car-deals-this-month.html\">deals page</a> lists each offer with its end date and works out cash against 0%."]
+      ],
+      "related": "<a href=\"/new-car-deals-this-month.html\">new-car deals this month</a>, <a href=\"/new-car-pricing-incentives.html\">new-car pricing and incentives</a>, <a href=\"/blog-buy-new-car-below-msrp.html\">buying below MSRP</a> and <a href=\"/blog-high-demand-vehicles-msrp.html\">buying high-demand vehicles at MSRP</a>"
+    },
+    "deals": {
+      "slug": "new-car-deals-this-month.html",
+      "published": "2026-11-21",
+      "title": "New-Car Deals This Month (November 2026): 0% APR, Cash Back, Leases | Steer Me Right",
+      "description": "Every current manufacturer offer across 21 models: the best 0% APR deals, the biggest cash back, notable leases and military and college offers, with end dates and a cash-or-0% break-even.",
+      "h1": "New-car deals this month (November 2026): 0% APR, cash back and leases",
+      "crumb": "New-car deals this month",
+      "image": "https://www.steermeright.com/assets/external/social/drive-right-two-mazda-miatas-1200x630.jpg",
+      "lead": [
+        "The strongest offer this month is Hyundai’s 0% for 60 months on a gas or plug-in Tucson, worth about {tucsonLess} less than the same loan at the average rate on a $36,000 crossover. The one that outlasts November is Kia’s 0% on a leftover 2026 Sportage, good through January 4. Truck buyers should run the arithmetic before taking cash: Chevrolet’s $6,000 beats its 0% only if you can borrow for less than {silveradoEven}%.",
+        "{liveCount} offers on {carCount} models are in the tables below, and {novCount} of them end November 30. Offers differ by ZIP, and every figure comes from the price guides, read {readSpan}."
+      ],
+      "picksHeading": "The four to look at",
+      "picks": [
+        {
+          "slug": "hyundai-tucson-price.html", "label": "Financing", "figure": "0%", "option": 0,
+          "who": "Anyone financing a gas or plug-in crossover for the full 60 months.",
+          "catch": "The Hybrid gets 2.9% instead, and Hyundai’s plug-in offers were read in Los Angeles only.",
+          "needs": ["Plug-in offers were read at 90012 only"]
+        },
+        {
+          "slug": "kia-sportage-price.html", "label": "Financing", "figure": "0%", "option": 0,
+          "who": "Shoppers who won’t close by November 30: Kia’s offers run to January 4, and a 2027 Hybrid gets 0.90% for 48 months.",
+          "catch": "Kia says only a limited number of customers qualify.",
+          "needs": ["only a limited number of customers qualify"]
+        },
+        {
+          "slug": "chevrolet-silverado-1500-price.html", "label": "Financing", "figure": "0%", "option": 0,
+          "who": "V8 truck buyers who haven’t lined up a loan yet. Compare it with the $6,000 cash on the same truck: the cash wins if your credit union beats {even}.",
+          "catch": "Some buyers won’t qualify for 0%, and the cash and the rate can’t be combined.",
+          "pair": { "rate": 0, "cash": 1 },
+          "needs": ["Some buyers won’t qualify"]
+        },
+        {
+          "slug": "toyota-tundra-price.html", "label": "Financing", "figure": "1.99%", "option": 0,
+          "who": "Truck buyers who finance for six years. The rate covers the i-FORCE MAX hybrid trims, and it beats the $1,000 cash unless your own rate is under {even}.",
+          "catch": "The TRD Pro is left out, and the gas trims get 2.99% in most regions.",
+          "pair": { "rate": 0, "cash": 2 },
+          "needs": ["except the TRD Pro", "2.99% APR for up to 72 months"]
+        }
+      ],
+      "aprHeading": "Best APR deals",
+      "aprIntro": "Ranked by rate, lowest first. A rate is only as good as the term and the model year it is tied to, so read those columns before the first one.",
+      "aprFeature": 3.99,
+      "aprMoreSummary": "Rates above 3.99%",
+      "cashHeading": "Biggest cash back",
+      "cashIntro": "At Ford, Chevrolet, GMC, Mazda, Ram and on the Toyota Tundra, the cash replaces the low rate: you take one or the other. Hyundai’s cash needs Hyundai financing in the regions that say so.",
+      "cashNeeds": [
+        { "slug": "ford-f-150-price.html", "text": "Ford won’t combine 0% with the $4,500" },
+        { "slug": "chevrolet-silverado-1500-price.html", "text": "The cash and the 0% don’t combine" },
+        { "slug": "gmc-sierra-1500-price.html", "text": "Not with GMC financing or a lease" },
+        { "slug": "mazda-cx-5-price.html", "text": "can’t be combined with the 0% rate" },
+        { "slug": "ram-1500-price.html", "text": "Ram’s 0% can’t be combined with its cash" },
+        { "slug": "toyota-tundra-price.html", "text": "The cash and the rate don’t combine" },
+        { "slug": "hyundai-elantra-price.html", "text": "the car must be financed through Hyundai Motor Finance" }
+      ],
+      "choiceHeading": "Cash or 0%?",
+      "choiceIntro": "Each row takes the guide’s loan (price, term and the {baseRate}% average new-car rate from Experian) and finds the loan rate at which the cash and the low rate cost the same. If your bank or credit union quotes less than the last column, take the cash. Borrowers with top credit averaged {topCredit}%, so the cash wins more often for them.",
+      "choiceNeeds": [
+        { "slug": "chevrolet-silverado-1500-price.html", "text": "4.41%" }
+      ],
+      "choice": [
+        { "slug": "ford-f-150-price.html", "rate": 1, "cash": 2 },
+        { "slug": "gmc-sierra-1500-price.html", "rate": 0, "cash": 1 },
+        { "slug": "chevrolet-silverado-1500-price.html", "rate": 0, "cash": 1 },
+        { "slug": "ram-1500-price.html", "rate": 0, "cash": 1 },
+        { "slug": "toyota-tundra-price.html", "rate": 0, "cash": 2 },
+        { "slug": "mazda-cx-5-price.html", "rate": 0, "cash": 1 },
+        { "slug": "ford-ranger-price.html", "rate": 1, "cash": 0 }
+      ],
+      "choiceAfter": "The F-150 row uses Ford’s 1.9% plus $1,500, because its 0% ended November 16 in most regions. The Ranger row weighs Ford’s 4.9% against $2,500 cash; Ford lists them as separate offers and doesn’t say whether they combine. Ram’s 0% also gives up employee pricing, which this arithmetic leaves out.",
+      "leaseHeading": "Notable leases",
+      "leaseIntro": "A payment alone hides the money due at signing, so the last column spreads it over the term. Each segment shows the five cheapest by that measure, for the first region the guide lists; other regions differ.",
+      "leaseTop": 5,
+      "programHeading": "Military, college, first-responder and loyalty offers",
+      "programIntro": "Most makers pay $500 to military buyers and recent graduates, usually only if you finance or lease through the maker’s own lender. The bigger amounts go to owners: Mazda’s loyalty reward is up to $1,000, and Chevrolet pays $2,000 to Tacoma, Ranger and other rival-truck owners on a Colorado.",
+      "programNeeds": [
+        { "slug": "mazda-cx-5-price.html", "text": "$1,000 in Dallas" },
+        { "slug": "chevrolet-colorado-price.html", "text": "$2,000 for owners or lessees of a 2012 or newer Ford Bronco or Ranger" }
+      ],
+      "brandHeading": "Offers by brand",
+      "regionHeading": "Offers differ by ZIP",
+      "regionIntro": "The guides read each maker’s page at four ZIP codes: 60601 (Chicago), 75201 (Dallas), 90012 (Los Angeles) and 10001 (New York). A few of the differences that cost real money:",
+      "regions": [
+        { "text": "Ford’s F-150 cash applies to the XLT alone in most regions, but the New York area adds the STX and Lariat.", "needs": [{ "slug": "ford-f-150-price.html", "text": "In the New York area, also STX and Lariat." }] },
+        { "text": "Ram’s bonus cash on a Laramie is $5,250 in Chicago, Dallas and New York and $6,750 in Los Angeles, which has no 0% offer. Dallas adds $1,000 for Texas residents.", "needs": [{ "slug": "ram-1500-price.html", "text": "Los Angeles pays $6,750" }, { "slug": "ram-1500-price.html", "text": "$1,000 more for Texas residents" }, { "slug": "ram-1500-price.html", "text": "none in Los Angeles" }] },
+        { "text": "Mazda’s 0% runs up to 36 months in Dallas, Los Angeles and New York but up to 60 months on the Preferred alone in Chicago. Its loyalty reward is $1,000 in Dallas and $500 in New York.", "needs": [{ "slug": "mazda-cx-5-price.html", "text": "$1,000 in Dallas, $750 in Chicago and Los Angeles, $500 in New York" }, { "slug": "mazda-cx-5-price.html", "text": "0% APR for up to 60 months" }] },
+        { "text": "Honda’s CR-V rate is 3.49% in Chicago and Dallas and 3.99% in Los Angeles and New York, and it applies to the 2027 only.", "needs": [{ "slug": "honda-cr-v-price.html", "text": "3.49% in Chicago and Dallas, 3.99% in Los Angeles and New York" }] },
+        { "text": "Toyota’s $500 military and college rebates are not offered in Alabama, Florida, Georgia, Hawaii, North Carolina or South Carolina.", "needs": [{ "slug": "toyota-corolla-price.html", "text": "Not offered in AL, FL, GA, HI, NC or SC" }] },
+        { "text": "A 2027 Corolla LE lease is $229 a month with $3,999 due in Chicago and $299 with $299 due in New York, so the cheaper payment is the dearer lease.", "needs": [{ "slug": "toyota-corolla-price.html", "text": "$229 a month for 39 months with $3,999 due in Chicago" }, { "slug": "toyota-corolla-price.html", "text": "$299 with $299 due in New York" }] }
+      ],
+      "endsHeading": "What ends when",
+      "endsIntro": "End dates are the contract or delivery date the maker prints, and each guide says which. Offers with no date are listed last.",
+      "ledgerSummary": "Every offer in the 21 guides, with its end date",
+      "faq": [
+        ["Can I get 0% APR and cash back together?", "Seldom. On the F-150, Silverado, Sierra, CX-5, Ram and Tundra the cash and the low rate are separate offers. A small bonus sometimes rides with the rate, such as Ford’s $500 with its 0%, but the headline cash does not."],
+        ["Does every buyer get these rates?", "No. The rates and leases need approval through the maker’s own lender, and most are for well-qualified buyers. The guides say which offers need which lender."],
+        ["Is the dealer’s discount on top of the manufacturer’s offer?", "The price guides treat them as separate lines, and the <a href=\"/cars-selling-below-msrp.html\">list of cars selling below MSRP</a> covers the dealer side. Ask for both on one written quote so you can see the price after each."]
+      ],
+      "related": "<a href=\"/cars-selling-below-msrp.html\">new cars selling below MSRP</a>, <a href=\"/new-car-pricing-incentives.html\">new-car pricing and incentives</a> and <a href=\"/blog-buy-new-car-below-msrp.html\">buying below MSRP</a>"
+    }
+  },
+  "sources": {
+    "msrp": [
+      { "id": "VEH-DEAL-01", "from": "VEH-RAM1500-08" },
+      { "id": "VEH-DEAL-02", "from": "VEH-RAM1500-16" },
+      { "id": "VEH-DEAL-03", "from": "VEH-RAM1500-18" },
+      { "id": "VEH-DEAL-04", "from": "VEH-COLORADO-07" },
+      { "id": "VEH-DEAL-05", "from": "VEH-COLORADO-18" },
+      { "id": "VEH-DEAL-06", "from": "VEH-F150-06" },
+      { "id": "VEH-DEAL-07", "from": "VEH-F150-08" },
+      { "id": "VEH-DEAL-08", "from": "VEH-SIERRA-08" },
+      { "id": "VEH-DEAL-09", "from": "VEH-SIERRA-11" },
+      { "id": "VEH-DEAL-10", "from": "VEH-SILVERADO-07" },
+      { "id": "VEH-DEAL-11", "from": "VEH-SILVERADO-11" },
+      { "id": "VEH-DEAL-12", "from": "VEH-TUNDRA-06" },
+      { "id": "VEH-DEAL-13", "from": "VEH-TUNDRA-08" },
+      { "id": "VEH-DEAL-14", "from": "VEH-TUNDRA-09" },
+      { "id": "VEH-DEAL-15", "from": "VEH-TACOMA-06" },
+      { "id": "VEH-DEAL-16", "from": "VEH-TACOMA-08" },
+      { "id": "VEH-DEAL-17", "from": "VEH-TACOMA-09" },
+      { "id": "VEH-DEAL-18", "from": "VEH-FORESTER-12" },
+      { "id": "VEH-DEAL-19", "from": "VEH-CAMRY-08" },
+      { "id": "VEH-DEAL-20", "from": "VEH-CAMRY-11" },
+      { "id": "VEH-DEAL-21", "from": "VEH-CAMRY-13" },
+      { "id": "VEH-DEAL-22", "from": "VEH-CX5-10" },
+      { "id": "VEH-DEAL-23", "from": "VEH-CX5-08" },
+      { "id": "VEH-DEAL-24", "from": "VEH-CX5-11" },
+      { "id": "VEH-DEAL-25", "from": "VEH-ACCORD-10" },
+      { "id": "VEH-DEAL-26", "from": "VEH-ACCORD-06" },
+      { "id": "VEH-DEAL-27", "from": "VEH-ELANTRA-10" },
+      { "id": "VEH-DEAL-28", "from": "VEH-RANGER-07" },
+      { "id": "VEH-DEAL-29", "from": "VEH-RANGER-09" },
+      { "id": "VEH-DEAL-30", "from": "VEH-COROLLA-11" },
+      { "id": "VEH-DEAL-31", "from": "VEH-COROLLA-17" },
+      { "id": "VEH-DEAL-32", "from": "VEH-TUCSON-08" },
+      { "id": "VEH-DEAL-33", "from": "VEH-SPORTAGE-11" },
+      { "id": "VEH-DEAL-34", "from": "VEH-SPORTAGE-12" },
+      { "id": "VEH-DEAL-35", "from": "VEH-CRV-07" },
+      { "id": "VEH-DEAL-36", "from": "VEH-CRV-12" },
+      { "id": "VEH-DEAL-37", "from": "VEH-CIVIC-16" },
+      { "id": "VEH-DEAL-38", "from": "VEH-CIVIC-25" },
+      { "id": "VEH-DEAL-39", "from": "VEH-CIVIC-28" },
+      { "id": "VEH-DEAL-40", "from": "VEH-RAV4-08" },
+      { "id": "VEH-DEAL-41", "from": "VEH-RAV4-12" },
+      { "id": "VEH-DEAL-42", "from": "VEH-MODELY-01" },
+      { "id": "VEH-DEAL-43", "from": "VEH-MODEL3-01" },
+      { "id": "VEH-DEAL-44", "from": "VEH-F150-03" },
+      { "id": "VEH-DEAL-45", "from": "VEH-RANGER-03" },
+      { "id": "VEH-DEAL-46", "from": "VEH-RAV4-05" },
+      { "id": "VEH-DEAL-47", "from": "VEH-CAMRY-07" },
+      { "id": "VEH-DEAL-48", "from": "VEH-TACOMA-04" },
+      { "id": "VEH-DEAL-49", "from": "VEH-TUNDRA-04" },
+      { "id": "VEH-DEAL-50", "from": "VEH-CRV-05" },
+      { "id": "VEH-DEAL-51", "from": "VEH-SIERRA-05" },
+      { "id": "VEH-DEAL-52", "from": "VEH-SILVERADO-05" },
+      { "id": "VEH-DEAL-53", "from": "VEH-RAM1500-05" },
+      { "id": "VEH-DEAL-54", "from": "VEH-CX5-04" },
+      { "id": "VEH-DEAL-55", "from": "VEH-ELANTRA-03" },
+      { "id": "VEH-DEAL-56", "from": "VEH-FORESTER-03" },
+      { "id": "VEH-DEAL-57", "from": "VEH-SPORTAGE-08" },
+      { "id": "VEH-DEAL-58", "from": "VEH-MODELY-04" },
+      { "id": "VEH-DEAL-59", "from": "VEH-MODELY-06" },
+      { "id": "VEH-DEAL-60", "from": "VEH-F150-09" }
+    ],
+    "deals": [
+      { "id": "VEH-INC-01", "from": "VEH-F150-03" },
+      { "id": "VEH-INC-02", "from": "VEH-RANGER-03" },
+      { "id": "VEH-INC-03", "from": "VEH-RAV4-05" },
+      { "id": "VEH-INC-04", "from": "VEH-CAMRY-07" },
+      { "id": "VEH-INC-05", "from": "VEH-TACOMA-04" },
+      { "id": "VEH-INC-06", "from": "VEH-TUNDRA-04" },
+      { "id": "VEH-INC-07", "from": "VEH-CRV-05" },
+      { "id": "VEH-INC-08", "from": "VEH-SIERRA-05" },
+      { "id": "VEH-INC-09", "from": "VEH-SILVERADO-05" },
+      { "id": "VEH-INC-10", "from": "VEH-RAM1500-05" },
+      { "id": "VEH-INC-11", "from": "VEH-CX5-04" },
+      { "id": "VEH-INC-12", "from": "VEH-ELANTRA-03" },
+      { "id": "VEH-INC-13", "from": "VEH-FORESTER-03" },
+      { "id": "VEH-INC-14", "from": "VEH-SPORTAGE-08" },
+      { "id": "VEH-INC-15", "from": "VEH-MODELY-04" },
+      { "id": "VEH-INC-16", "from": "VEH-MODELY-06" },
+      { "id": "VEH-INC-17", "from": "VEH-RAV4-19" },
+      { "id": "VEH-INC-18", "from": "VEH-RAV4-06" },
+      { "id": "VEH-INC-19", "from": "VEH-RAV4-07" },
+      { "id": "VEH-INC-20", "from": "VEH-COLORADO-05" }
+    ]
+  }
+}
