@@ -12,9 +12,9 @@
   "h1": "Toyota RAV4 problems by year: years to avoid and what owners report",
   "card": "Which RAV4 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
   "bestYears": "2022–2025",
-  "avoidYears": "2019–2020",
+  "avoidYears": "2019–2021",
   "answer": [
-    "The best used RAV4s are the 2022 to 2025 model years, which draw {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2019 and 2020: they draw {r:2019} and {r:2020}, led by fuel-system, engine and steering complaints, and Toyota recalled them for engine casting cracks, lost steering assist and cracked front control arms. A 2021 is worth a look only if both of its air bag recalls are done, and the 2016 to 2018 RAV4s sit in the middle.",
+    "The best used RAV4s are the 2022 to 2025 model years, which draw {r:2022}, {r:2023}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2019, 2020 and 2021: they draw {r:2019}, {r:2020} and {r:2021}, led by fuel-system, engine, steering and air bag complaints, and Toyota recalled them for engine casting cracks, lost steering assist, cracked front control arms and air bag faults. A finished recall doesn’t change our rating of a year. The 2016 to 2018 RAV4s sit in the middle.",
     "The rates divide each model year’s NHTSA complaints, counted across every RAV4 listing (gas, Hybrid and Prime or Plug-in Hybrid), by U.S. sales. They compare years with each other; they don’t predict one car. The 2026 redesign is too new to rate; our <a href=\"{guide}\">RAV4 price guide</a> covers what it costs new."
   ],
   "salesNote": "Sales come from Toyota’s year-end releases for 2019 to 2025 and Good Car Bad Car for 2016 to 2018.",
@@ -61,9 +61,8 @@
       "{r:2020} per 100,000, led by engine ({k:2020:ENGINE}). The same three recalls as 2019 apply, plus 20V-734 for the steering column’s air bag pins."
     ],
     "2021": [
-      "check",
-      "{r:2021} per 100,000, but {k:2021:AIR BAGS} of {c:2021} complaints name air bags, and two free recalls cover them (20V-734, 23V-865). Buy only with both done.",
-      "avoid to check: the complaint spike traces to recalls a VIN lookup confirms"
+      "avoid",
+      "{r:2021} per 100,000, with {k:2021:AIR BAGS} of {c:2021} complaints naming air bags. Two recalls cover them (20V-734, 23V-865), but we rate a year on its complaints whether or not a recall is done."
     ],
     "2022": [
       "buy",
@@ -250,7 +249,7 @@
     ],
     [
       "Is the 2021 RAV4 reliable?",
-      "It draws {r:2021} complaints per 100,000, but {k:2021:AIR BAGS} of its {c:2021} complaints name air bags, and two free recalls cover those. We’d buy one with both recalls shown as done."
+      "It draws {r:2021} complaints per 100,000, and {k:2021:AIR BAGS} of its {c:2021} complaints name air bags. Two recalls cover those, but we rate the year on its complaints, so we’d skip it. If you buy one anyway, get both recalls shown as done."
     ],
     [
       "Do RAV4 hybrids have more problems than the gas model?",

@@ -106,7 +106,7 @@ Mason's call, from the numbers. The rule gives a starting verdict; a session may
 2. **Buy:** rate at or under 1.25 times the yardstick.
 3. **Check first:** over 1.25 and up to 2 times the yardstick.
 4. **Avoid:** over 2 times the yardstick.
-5. **Overrides (one step only).** Down a step when a free recall explains most of a spike and a VIN lookup shows whether it was done (RAV4 2021 air bags, Civic 2022 steering). Up a step when an open NHTSA investigation or recall query covers the year, or one part carries over 40% of the complaints with no completed recall (F-150 2020). Name the recall or investigation and its number in the reason.
+5. **Overrides (one step only).** A free recall never moves a verdict (Mason, November 22, 2026): there is no down-step for a recall a VIN lookup can confirm, and a recall does not exempt a year from the up-step tests. Up a step when an open NHTSA investigation or recall query covers the year, or one part carries over 40% of the complaints (F-150 2020). Name the recall or investigation and its number in the reason. The one two-step exception is the GM trucks below.
 6. **2016 to 2018** use the fresh rate (no comparison page covers them). **2026** has no full year of sales and no rate: give it Buy or Check first on recalls and early complaints only, and say it is too new to rate.
 7. **Doubtful sales figures.** If the denominator looks wrong, judge on the counts and the parts named too, and say so on the page (the Civic's 2022).
 8. **Best used years** are the Buy years from the newest ones back to the first Check first; a Buy year sandwiched between worse years can still be listed ("2020–2021, 2024–2025"). **Years to avoid** are the Avoid years, after overrides.
@@ -149,6 +149,12 @@ NHTSA counts grow as owners file and as new recalls land. Each month (with the p
 - The verdict marks use sign blue (Buy), mid gray (Check first) and ink (Avoid), with the word always printed, so color is never the only signal.
 - The renderer reuses the price guide's photo and credits. No new images.
 
+## Rule changes of November 22, 2026 (Mason)
+
+1. **A free recall never changes a verdict.** The down-step is gone (RAV4 2021 and Civic 2022 are Avoid again, no override) and a recall no longer exempts a year from the up-step tests. Left as written because they rest on the recall itself being a hazard, not on a recall excusing a year: Elantra 2016 (26V-307) and Tundra 2025 (26V-750, no remedy yet). Say the word to drop those two as well.
+2. **Every Silverado 1500 and Sierra 1500 year, 2016 to 2026, is Avoid** for trucks with the 5.3-liter or 6.2-liter V8. This is the one place the table moves a verdict more than one step (notes read "buy to avoid: Mason's call..."). NHTSA files complaints by part, not by engine, so the figures cannot split V8 trucks from the 2.7-liter turbo, 4.3-liter V6 and 3.0-liter diesel; the pages say so. The evidence for the 5.3 is Reddit reports of lifter and camshaft failures, not an NHTSA investigation (EA25007 names the 6.2 only).
+3. **Not yet applied: years the recall-blind rule would now move.** Where one part carries half or more of a year's complaints and the verdict has not moved, a recall (or a judgment about one) was the reason. Following rule 5 literally: F-150 2019 (power train 52%, Check first to Avoid), Civic 2023 (steering 77%, Check first to Avoid), CR-V 2023 (steering 62%, Check first to Avoid), CX-5 2018 (engine 83%, Check first to Avoid), Ram 1500 2025 (electrical 53%, Check first to Avoid), Model 3 2022 (forward collision avoidance 69%, Check first to Avoid), Ranger 2021 (power train 50% of 120, Buy to Check first), Civic 2024 (steering 53% of 146, Buy to Check first), Camry 2021 (air bags 52% of 166, Buy to Check first). Decide whether to apply them; Camry 2021 would leave its best years.
+
 ## Open items for Mason
 
 Every verdict below is from the rule above; the override column is where a judgment moved it. Read the picks, the overrides and the weak figures.
@@ -169,7 +175,7 @@ Every verdict below is from the rule above; the override column is where a judgm
 | 2025 | Buy | 27 | 131 | 16 |  |
 | 2026 | Check first | n/a | 24 | 8 |  |
 
-**Honda Civic** (yardstick 94 per 100,000; Buy up to 118, Check first up to 188, Avoid above that). Best used: 2020–2021, 2024–2025. Avoid: 2016.
+**Honda Civic** (yardstick 94 per 100,000; Buy up to 118, Check first up to 188, Avoid above that). Best used: 2020–2021, 2024–2025. Avoid: 2016, 2022.
 
 | Model year | Our verdict | Per 100,000 | Complaints | Recalls | Override |
 |---|---|---|---|---|---|
@@ -179,13 +185,13 @@ Every verdict below is from the rule above; the override column is where a judgm
 | 2019 | Check first | 142 | 464 | 4 |  |
 | 2020 | Buy | 94 | 246 | 5 |  |
 | 2021 | Buy | 62 | 164 | 4 |  |
-| 2022 | Check first | 719 | 963 | 4 | avoid to check: the complaint spike traces to a free recall a dealer can confirm |
+| 2022 | Avoid | 719 | 963 | 4 |  |
 | 2023 | Check first | 170 | 343 | 4 |  |
 | 2024 | Buy | 60 | 146 | 3 |  |
 | 2025 | Buy | 45 | 108 | 2 |  |
 | 2026 | Buy | n/a | 34 | 1 |  |
 
-**Toyota RAV4** (yardstick 55 per 100,000; Buy up to 69, Check first up to 110, Avoid above that). Best used: 2022–2025. Avoid: 2019–2020.
+**Toyota RAV4** (yardstick 55 per 100,000; Buy up to 69, Check first up to 110, Avoid above that). Best used: 2022–2025. Avoid: 2019–2021.
 
 | Model year | Our verdict | Per 100,000 | Complaints | Recalls | Override |
 |---|---|---|---|---|---|
@@ -194,7 +200,7 @@ Every verdict below is from the rule above; the override column is where a judgm
 | 2018 | Check first | 81 | 348 | 3 |  |
 | 2019 | Avoid | 203 | 913 | 8 |  |
 | 2020 | Avoid | 152 | 659 | 6 |  |
-| 2021 | Check first | 125 | 513 | 5 | avoid to check: the complaint spike traces to recalls a VIN lookup confirms |
+| 2021 | Avoid | 125 | 513 | 5 |  |
 | 2022 | Buy | 45 | 179 | 3 |  |
 | 2023 | Buy | 55 | 248 | 3 |  |
 | 2024 | Buy | 44 | 208 | 4 |  |
@@ -203,7 +209,7 @@ Every verdict below is from the rule above; the override column is where a judgm
 
 Judgment calls and weak figures:
 
-1. **Read every verdict and override.** The three overrides: RAV4 2021 (Avoid to Check first: 147 of 513 complaints name air bags and two free recalls cover them), Civic 2022 (Avoid to Check first: 806 of 963 complaints name steering; Honda recalled the gearbox, 24V-744, and NHTSA closed EA23003), F-150 2020 (Buy to Check first: 248 of 569 complaints name the power train and NHTSA's recall query RQ21002 is open). The 2026 rows are Buy or Check first on recalls and early complaints alone.
+1. **Read every verdict and override.** RAV4 2021 and Civic 2022 are Avoid again (November 22, 2026: a free recall no longer lowers a verdict). The remaining first-pass override: F-150 2020 (Buy to Check first: 248 of 569 complaints name the power train and NHTSA's recall query RQ21002 is open). The 2026 rows are Buy or Check first on recalls and early complaints alone.
 2. **The F-150 rates rest on our estimate** of 59% of F-Series sales (Ford publishes no F-150 total), the share our F-150 comparison pages use; a quarter's production share was the only check. The 2016 to 2018 rates use Good Car Bad Car's F-Series totals read through a page summary.
 3. **The Civic's 2022 rate (719) rests on 133,932 sales,** which looks low next to 2023's 200,381 (read through Good Car Bad Car's table and a search snippet). Without a better figure the page leans on the count (963, the highest of any year).
 4. **The price guides' used-year floors differ slightly from the pages.** The RAV4 guide says make 2023 the floor; the page lists 2022 to 2025 (2022's rate, 45, is lower than 2023's, 55). The F-150 guide's 2023 floor and the page's 2023 to 2025 agree. The Civic guide says look at a 2023 to 2025; the page calls the 2023 Check first and lists 2020 to 2021 and 2024 to 2025 as best.
@@ -215,7 +221,7 @@ Judgment calls and weak figures:
 
 ### Override rule added while finishing the other 18 cars (November 22, 2026)
 
-Besides a free recall explaining most of a year's complaints, a year may move up one step when an open NHTSA investigation names it and that part is the year's top complaint part, with at least 100 complaints and 40% or more of the year's total (used for the GM trucks under EA25007 and the 2022 Ram under PE24018). A year may also move up when one uncovered part carries half or more of its complaints (Colorado 2017; Tucson 2018–2019; CX-5 2021), when a recall without a remedy reaches it (Tundra 2025, 26V-750), or when NHTSA's count looks incomplete (Sierra 2016). Every such year says so in its reason. Mason should confirm or narrow this rule.
+A year may move up one step when an open NHTSA investigation names it and that part is the year's top complaint part, with at least 100 complaints and 40% or more of the year's total (used for the GM trucks under EA25007 and the 2022 Ram under PE24018). A year may also move up when one part carries half or more of its complaints (Colorado 2017; Tucson 2018–2019; CX-5 2021), when a recall without a remedy reaches it (Tundra 2025, 26V-750), or when NHTSA's count looks incomplete (Sierra 2016). Every such year says so in its reason. Mason should confirm or narrow this rule.
 
 `firstSold` (Model 3 2017, Model Y 2020, Ranger 2019) starts a car's table, chart and checks at its first U.S. sales year; the test's sales floor is 10,000 a year after the first.
 
@@ -537,21 +543,21 @@ Judgment calls and weak figures:
 ### chevrolet-silverado-1500
 ### Chevrolet Silverado 1500: problems verdicts (open items)
 
-**Chevrolet Silverado 1500** (yardstick 173 per 100,000; Buy up to 216.3, Check first up to 346, Avoid above that). Best used: 2025, 2020. Avoid: 2021.
+**Chevrolet Silverado 1500** (yardstick 173 per 100,000; Buy up to 216.3, Check first up to 346, Avoid above that). Best used: none with a 5.3-liter or 6.2-liter V8. Avoid: 2016–2026 (V8s).
 
 | Model year | Our verdict | Per 100,000 | Complaints | Recalls | Override |
 |---|---|---|---|---|---|
-| 2016 | Buy | 183 | 804 | 12 |  |
-| 2017 | Buy | 189 | 842 | 7 |  |
-| 2018 | Buy | 117 | 524 | 7 |  |
-| 2019 | Check first | 253 | 1,112 | 10 |  |
-| 2020 | Buy | 173 | 759 | 12 |  |
-| 2021 | Avoid | 227 | 866 | 8 | check to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2022 | Check first | 206 | 672 | 6 | buy to check: engine is 42% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2023 | Check first | 113 | 406 | 3 | buy to check: engine is 45% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2024 | Check first | 91 | 328 | 2 | buy to check: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2025 | Buy | 32 | 119 | 0 |  |
-| 2026 | Check first | n/a | 137 | 3 |  |
+| 2016 | Avoid | 183 | 804 | 12 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2017 | Avoid | 189 | 842 | 7 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2018 | Avoid | 117 | 524 | 7 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2019 | Avoid | 253 | 1,112 | 10 | check to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2020 | Avoid | 173 | 759 | 12 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2021 | Avoid | 227 | 866 | 8 | check to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2022 | Avoid | 206 | 672 | 6 | buy to avoid: engine is 42% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2023 | Avoid | 113 | 406 | 3 | buy to avoid: engine is 45% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2024 | Avoid | 91 | 328 | 2 | buy to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2025 | Avoid | 32 | 119 | 0 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2026 | Avoid | n/a | 137 | 3 |  |
 
 Judgment calls and weak figures:
 
@@ -565,21 +571,21 @@ Judgment calls and weak figures:
 ### gmc-sierra-1500
 ### GMC Sierra 1500: problems verdicts (open items)
 
-**GMC Sierra 1500** (yardstick 275 per 100,000; Buy up to 343.8, Check first up to 550, Avoid above that). Best used: 2025, 2017. Avoid: 2019, 2022.
+**GMC Sierra 1500** (yardstick 275 per 100,000; Buy up to 343.8, Check first up to 550, Avoid above that). Best used: none with a 5.3-liter or 6.2-liter V8. Avoid: 2016–2026 (V8s).
 
 | Model year | Our verdict | Per 100,000 | Complaints | Recalls | Override |
 |---|---|---|---|---|---|
-| 2016 | Check first | 33 | 54 | 8 | buy to check: the NHTSA count of 54 complaints looks incomplete next to the 2017’s 433, so the low rate can’t be trusted |
-| 2017 | Buy | 268 | 433 | 6 |  |
-| 2018 | Check first | 188 | 307 | 7 | buy to check: transmission and drivetrain is 43% of the complaints and no recall on NHTSA’s list covers it |
-| 2019 | Avoid | 386 | 668 | 10 | check to avoid: engine is 51% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2020 | Check first | 271 | 489 | 12 | buy to check: engine is 54% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2021 | Check first | 341 | 611 | 7 | buy to check: engine is 62% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2022 | Avoid | 430 | 616 | 6 | check to avoid: engine is 44% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2023 | Check first | 275 | 522 | 3 | buy to check: engine is 46% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2024 | Check first | 180 | 386 | 1 | buy to check: engine is 58% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open |
-| 2025 | Buy | 57 | 132 | 1 |  |
-| 2026 | Check first | n/a | 92 | 2 |  |
+| 2016 | Avoid | 33 | 54 | 8 | buy to avoid: the NHTSA count of 54 complaints looks incomplete next to the 2017’s 433, so the low rate can’t be trusted, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2017 | Avoid | 268 | 433 | 6 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2018 | Avoid | 188 | 307 | 7 | buy to avoid: transmission and drivetrain is 43% of the complaints and no recall on NHTSA’s list covers it, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2019 | Avoid | 386 | 668 | 10 | check to avoid: engine is 51% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2020 | Avoid | 271 | 489 | 12 | buy to avoid: engine is 54% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2021 | Avoid | 341 | 611 | 7 | buy to avoid: engine is 62% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2022 | Avoid | 430 | 616 | 6 | check to avoid: engine is 44% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2023 | Avoid | 275 | 522 | 3 | buy to avoid: engine is 46% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2024 | Avoid | 180 | 386 | 1 | buy to avoid: engine is 58% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2025 | Avoid | 57 | 132 | 1 | buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid |
+| 2026 | Avoid | n/a | 92 | 2 |  |
 
 Judgment calls and weak figures:
 

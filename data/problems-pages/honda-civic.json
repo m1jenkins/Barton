@@ -12,9 +12,9 @@
   "h1": "Honda Civic problems by year: years to avoid and what owners report",
   "card": "The best and worst Civic years, the steering recall behind the 2022 spike, complaints per 100,000 sold and what owners report.",
   "bestYears": "2020–2021, 2024–2025",
-  "avoidYears": "2016",
+  "avoidYears": "2016, 2022",
   "answer": [
-    "The best used Civics are the 2020, 2021, 2024 and 2025 model years, which draw {r:2020}, {r:2021}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2016: it draws {r:2016} per 100,000, with steering named in {k:2016:STEERING} of its {c:2016} complaints. The 2022 and 2023 are the years to ask about. The 2022 drew {c:2022} complaints, {k:2022:STEERING} of them about steering, and the 2023 another {k:2023:STEERING}; Honda’s free recall 24V-744 covers the steering gearbox behind them. With proof the recall is done they are fair buys, and without it we’d keep looking.",
+    "The best used Civics are the 2020, 2021, 2024 and 2025 model years, which draw {r:2020}, {r:2021}, {r:2024} and {r:2025} NHTSA owner complaints per 100,000 sold. Skip the 2016 and the 2022. The 2016 draws {r:2016} per 100,000, with steering named in {k:2016:STEERING} of its {c:2016} complaints, and the 2022 drew {c:2022} complaints, {k:2022:STEERING} of them about steering. Honda’s free recall 24V-744 covers the steering gearbox behind them, but we rate a year on its complaints whether or not the recall is done. The 2023 is the year to ask about: steering is another {k:2023:STEERING} of its complaints, and without proof of the recall we’d keep looking.",
     "The rates divide each model year’s NHTSA complaints, counted across every Civic listing (sedan, coupe, hatchback, Si, Type R and Hybrid), by U.S. sales. Honda’s 2022 sales of 133,932 look low next to the 2023’s 200,381, which inflates the 2022 rate; its complaint count is the highest of any year either way. Our <a href=\"{guide}\">Civic price guide</a> covers what a new or used one costs."
   ],
   "salesNote": "Sales come from Good Car Bad Car’s Civic table, which matches the Honda FactBook figures our Civic vs Corolla page uses.",
@@ -65,9 +65,8 @@
       "A small count led by steering ({k:2021:STEERING}) and automatic emergency braking ({k:2021:FORWARD COLLISION AVOIDANCE}). Recalls 23V-458 and 24V-064 apply."
     ],
     "2022": [
-      "check",
-      "The most complaints of any year ({c:2022}), {k:2022:STEERING} of them about steering. Recall 24V-744 and a closed NHTSA analysis cover it; buy only with proof it’s done.",
-      "avoid to check: the complaint spike traces to a free recall a dealer can confirm"
+      "avoid",
+      "The most complaints of any year ({c:2022}), {k:2022:STEERING} of them about steering. Recall 24V-744 and a closed NHTSA analysis cover it, but we rate a year on its complaints whether or not a recall is done."
     ],
     "2023": [
       "check",
@@ -253,7 +252,7 @@
     ],
     [
       "Is the 2022 Honda Civic reliable?",
-      "It drew {c:2022} NHTSA complaints, more than any other year, and {k:2022:STEERING} name steering. Honda recalled the steering gearbox (24V-744) and NHTSA closed its analysis, so we’d buy one only with proof the recall is done."
+      "It drew {c:2022} NHTSA complaints, more than any other year, and {k:2022:STEERING} name steering. Honda recalled the steering gearbox (24V-744) and NHTSA closed its analysis, but we rate the year on its complaints, so we’d skip it. If you buy one anyway, get proof the recall is done."
     ],
     [
       "Does the Honda Civic 1.5-liter turbo have oil dilution?",

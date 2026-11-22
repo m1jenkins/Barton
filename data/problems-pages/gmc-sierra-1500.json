@@ -11,10 +11,10 @@
   "description": "Which GMC Sierra 1500 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
   "h1": "GMC Sierra 1500 problems by year: years to avoid and what owners report",
   "card": "Which Sierra 1500 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
-  "bestYears": "2025, 2017",
-  "avoidYears": "2019, 2022",
+  "bestYears": "None (V8s)",
+  "avoidYears": "2016–2026 (V8s)",
   "answer": [
-    "Few Sierras escape the engine question, so the best used year we can support is the 2025, at {r:2025} NHTSA owner complaints per 100,000 sold; the 2017, at {r:2017}, is the only other year the rules leave at Buy. Skip the 2019 and the 2022: they draw {r:2019} and {r:2022}, with {k:2019:ENGINE} and {k:2022:ENGINE} of their complaints naming the engine, and the 2022 adds {k:2022:STRUCTURE} complaints on structure, where NHTSA’s open recall query RQ26003 covers grille deflectors that detach. Everything else is Check first, mostly on the same engine evidence: NHTSA’s open EA25007 covers 6.2-liter V8 failures on 2019 to 2024 trucks.",
+    "We rate every Sierra 1500 year Avoid when it has the 5.3-liter or 6.2-liter V8, so there is no best used year for those engines. Engine is the top complaint part on every Sierra from 2019 to 2025, and NHTSA’s open EA25007 covers 6.2-liter V8 failures on 2019 to 2024 trucks. By the numbers the 2019 and the 2022 draw the highest rates, {r:2019} and {r:2022} NHTSA owner complaints per 100,000 sold, with {k:2019:ENGINE} and {k:2022:ENGINE} of their complaints naming the engine, and the 2022 adds {k:2022:STRUCTURE} complaints on structure, where NHTSA’s open recall query RQ26003 covers grille deflectors that detach. The lowest rates are the 2025, at {r:2025}, and the 2017, at {r:2017}. The 2.7-liter turbo, 4.3-liter V6 and 3.0-liter diesel trucks aren’t covered by that call, but NHTSA counts complaints by part, not by engine, so this table can’t rate them on their own.",
     "The rates divide each model year’s NHTSA complaints by U.S. light-duty Sierra sales. They compare years with each other; they don’t predict one truck. The 2016 count is only {c:2016} complaints, which looks incomplete next to the {c:2017} for the 2017, so we don’t trust its rate. The 2026 is too new to rate; our <a href=\"{guide}\">Sierra price guide</a> covers what it costs new."
   ],
   "salesNote": "Sales for 2019 to 2025 are GMC’s light-duty Sierra figures from Best-Selling-Cars’ GM tables. GM didn’t split light-duty from heavy-duty before 2019, so 2016 to 2018 are our estimate: Good Car Bad Car’s all-Sierra totals times 74%, the 2019 light-duty share (172,452 of 232,325).",
@@ -47,56 +47,58 @@
   },
   "verdicts": {
     "2016": [
-      "check",
-      "{r:2016} per 100,000, but only {c:2016} complaints against {c:2017} for the 2017, so the count looks incomplete. {rec:2016} recalls include front control arm welds (16V-256) and, since September 2026, roof-rail air bag inflators (26V-611).",
-      "buy to check: the NHTSA count of 54 complaints looks incomplete next to the 2017’s 433, so the low rate can’t be trusted"
+      "avoid",
+      "{r:2016} per 100,000, but only {c:2016} complaints against {c:2017} for the 2017, so the count looks incomplete. {rec:2016} recalls include front control arm welds (16V-256) and, since September 2026, roof-rail air bag inflators (26V-611). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: the NHTSA count of 54 complaints looks incomplete next to the 2017’s 433, so the low rate can’t be trusted, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2017": [
-      "buy",
-      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; the brake vacuum pump recall 19V-645 applies."
+      "avoid",
+      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; the brake vacuum pump recall 19V-645 applies. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2018": [
-      "check",
-      "{r:2018} per 100,000 on our estimated light-duty sales, but transmission and drivetrain is {k:2018:POWER TRAIN} of {c:2018} complaints and NHTSA lists no recall for it.",
-      "buy to check: transmission and drivetrain is 43% of the complaints and no recall on NHTSA’s list covers it"
+      "avoid",
+      "{r:2018} per 100,000 on our estimated light-duty sales, but transmission and drivetrain is {k:2018:POWER TRAIN} of {c:2018} complaints and NHTSA lists no recall for it. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: transmission and drivetrain is 43% of the complaints and no recall on NHTSA’s list covers it, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2019": [
       "avoid",
-      "{r:2019} per 100,000, with {k:2019:ENGINE} of {c:2019} complaints naming the engine. {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889), and EA25007 is open.",
-      "check to avoid: engine is 51% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "{r:2019} per 100,000, with {k:2019:ENGINE} of {c:2019} complaints naming the engine. {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889), and EA25007 is open. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "check to avoid: engine is 51% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2020": [
-      "check",
-      "{r:2020} per 100,000, with {k:2020:ENGINE} of {c:2020} complaints on the engine and {rec:2020} recalls, including 20V-650 (driveshaft weld).",
-      "buy to check: engine is 54% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2020} per 100,000, with {k:2020:ENGINE} of {c:2020} complaints on the engine and {rec:2020} recalls, including 20V-650 (driveshaft weld). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 54% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2021": [
-      "check",
-      "{r:2021} per 100,000, just inside the Buy range, but {k:2021:ENGINE} of {c:2021} complaints name the engine, and recall 25V-274 covers 6.2-liter trucks from this year.",
-      "buy to check: engine is 62% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2021} per 100,000, just inside the Buy range, but {k:2021:ENGINE} of {c:2021} complaints name the engine, and recall 25V-274 covers 6.2-liter trucks from this year. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 62% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2022": [
       "avoid",
-      "{r:2022} per 100,000, the highest in the table. Engine ({k:2022:ENGINE}) and structure ({k:2022:STRUCTURE}) lead; recall 25V-060 covers chrome grille deflectors and RQ26003 asks whether it went far enough.",
-      "check to avoid: engine is 44% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "{r:2022} per 100,000, the highest in the table. Engine ({k:2022:ENGINE}) and structure ({k:2022:STRUCTURE}) lead; recall 25V-060 covers chrome grille deflectors and RQ26003 asks whether it went far enough. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "check to avoid: engine is 44% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2023": [
-      "check",
-      "{r:2023} per 100,000, with engine ({k:2023:ENGINE}) and structure ({k:2023:STRUCTURE}) leading. RQ26003 on grille deflectors names the 2023 and EA25007 covers its 6.2-liter trucks.",
-      "buy to check: engine is 46% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2023} per 100,000, with engine ({k:2023:ENGINE}) and structure ({k:2023:STRUCTURE}) leading. RQ26003 on grille deflectors names the 2023 and EA25007 covers its 6.2-liter trucks. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 46% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2024": [
-      "check",
-      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 covers 6.2-liter trucks, and RQ26003 names the 2024 grille deflector.",
-      "buy to check: engine is 58% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 covers 6.2-liter trucks, and RQ26003 names the 2024 grille deflector. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 58% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2025": [
-      "buy",
-      "{r:2025} per 100,000, the lowest of the rated years, on {c:2025} complaints, with engine still leading ({k:2025:ENGINE}) and the count still growing."
+      "avoid",
+      "{r:2025} per 100,000, the lowest of the rated years, on {c:2025} complaints, with engine still leading ({k:2025:ENGINE}) and the count still growing. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2026": [
-      "check",
-      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed."
+      "avoid",
+      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year."
     ]
   },
   "chartNote": "The 2016 bar is nearly empty because NHTSA lists only {c:2016} complaints, not because the truck was trouble free. The 2016 to 2018 bars also rest on our estimated light-duty sales.",
@@ -263,21 +265,21 @@
     }
   ],
   "newer": [
-    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Sierra already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025.",
+    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Sierra already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025. We rate the 2026 5.3-liter and 6.2-liter V8 trucks Avoid too.",
     "If you are choosing between a new 2026 and a used 2025, our <a href=\"{guide}\">Sierra price guide</a> has the new prices, the discount to aim for and our take on buying new."
   ],
   "faq": [
     [
       "What are the worst GMC Sierra years?",
-      "The 2019 and 2022. They draw {r:2019} and {r:2022} NHTSA complaints per 100,000 sold against {r:2025} for the 2025, with engine named in {k:2019:ENGINE} and {k:2022:ENGINE} complaints, and the 2022 adds the grille deflector recall query."
+      "With a 5.3-liter or 6.2-liter V8, every one: we rate 2016 to 2026 Avoid. By the numbers the 2019 and 2022 are the worst, drawing {r:2019} and {r:2022} NHTSA complaints per 100,000 sold against {r:2025} for the 2025, with engine named in {k:2019:ENGINE} and {k:2022:ENGINE} complaints, and the 2022 adds the grille deflector recall query."
     ],
     [
       "What is the best used Sierra year?",
-      "The 2025 draws {r:2025} complaints per 100,000 and the 2017 draws {r:2017}. The 2025 is still collecting complaints, so its rate will rise a little."
+      "With a 5.3-liter or 6.2-liter V8 we don’t have one. The 2025 draws the lowest rate, {r:2025} complaints per 100,000, and the 2017 draws {r:2017}, but we rate them Avoid like the rest because engine is the top complaint part. The 2.7-liter turbo, 4.3-liter V6 and 3.0-liter diesel trucks aren’t covered by that call, but NHTSA counts complaints by part, not by engine, so this table can’t rate them on their own."
     ],
     [
       "Why is the 2016 Sierra count so low?",
-      "NHTSA lists only {c:2016} complaints for the 2016 against {c:2017} for the 2017. We checked other listing names for the 2016 and found nothing more, so the count looks incomplete and we rate the year Check first."
+      "NHTSA lists only {c:2016} complaints for the 2016 against {c:2017} for the 2017. We checked other listing names for the 2016 and found nothing more, so the count looks incomplete and its low rate can’t be trusted. It rates Avoid with the other V8 years."
     ],
     [
       "Does the Sierra have the same engine problems as the Silverado?",

@@ -11,10 +11,10 @@
   "description": "Which Chevrolet Silverado 1500 model years to buy used and which to skip, from NHTSA owner complaints per 100,000 sold, recalls by year, and what owners report on Reddit.",
   "h1": "Chevrolet Silverado 1500 problems by year: years to avoid and what owners report",
   "card": "Which Silverado 1500 model years to buy used and which to skip, with NHTSA complaints per 100,000 sold, recalls by year and what owners report.",
-  "bestYears": "2025, 2020",
-  "avoidYears": "2021",
+  "bestYears": "None (V8s)",
+  "avoidYears": "2016–2026 (V8s)",
   "answer": [
-    "Engine is the top complaint part on every Silverado from 2019 to 2025, so the best used years are the ones where it matters least: the 2025, at {r:2025} NHTSA owner complaints per 100,000 sold, and the 2020, at {r:2020}. Skip the 2021. It draws {r:2021}, {k:2021:ENGINE} of its {c:2021} complaints name the engine, and NHTSA’s open investigation EA25007 covers 6.2-liter V8 engine failures that Chevrolet’s recall 25V-274 leaves out. The 2019 and the 2022 to 2024 trucks are Check first, the 2022 to 2024 on the same engine evidence, and the 2016 to 2018 trucks rate Buy on a sales figure we had to estimate.",
+    "We rate every Silverado 1500 year Avoid when it has the 5.3-liter or 6.2-liter V8, so there is no best used year for those engines. Engine is the top complaint part on every Silverado from 2019 to 2025, {k:2021:ENGINE} of the 2021’s {c:2021} complaints name it, and NHTSA’s open investigation EA25007 covers 6.2-liter V8 engine failures that Chevrolet’s recall 25V-274 leaves out; owners on Reddit report lifter and camshaft failures on the 5.3 too. By the numbers the 2019 draws the highest rate, {r:2019} NHTSA owner complaints per 100,000 sold, and the lowest are the 2025, at {r:2025}, and the 2020, at {r:2020}. The 2.7-liter turbo, 4.3-liter V6 and 3.0-liter diesel trucks aren’t covered by that call, but NHTSA counts complaints by part, not by engine, so this table can’t rate them on their own. The 2016 to 2018 rates rest on a sales figure we had to estimate.",
     "The rates divide each model year’s NHTSA complaints, counted across the Silverado 1500 listings, by U.S. light-duty Silverado sales. They compare years with each other; they don’t predict one truck. The 2026 is too new to rate; our <a href=\"{guide}\">Silverado price guide</a> covers what it costs new."
   ],
   "salesNote": "Sales for 2019 to 2025 are GM’s light-duty Silverado figures from Best-Selling-Cars’ GM tables. GM didn’t split light-duty from heavy-duty before 2019, so 2016 to 2018 are our estimate: Good Car Bad Car’s all-Silverado totals times 76%, the 2019 light-duty share (438,686 of 575,569).",
@@ -47,52 +47,58 @@
   },
   "verdicts": {
     "2016": [
-      "buy",
-      "{r:2016} per 100,000 on our estimated light-duty sales. Brakes ({k:2016:SERVICE BRAKES}) and transmission and drivetrain ({k:2016:POWER TRAIN}) lead; recalls cover front control arm welds (16V-256) and, since September 2026, the roof-rail air bag inflators (26V-611)."
+      "avoid",
+      "{r:2016} per 100,000 on our estimated light-duty sales. Brakes ({k:2016:SERVICE BRAKES}) and transmission and drivetrain ({k:2016:POWER TRAIN}) lead; recalls cover front control arm welds (16V-256) and, since September 2026, the roof-rail air bag inflators (26V-611). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2017": [
-      "buy",
-      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; recalls include the brake vacuum pump (19V-645) and the roof-rail air bags (26V-611)."
+      "avoid",
+      "{r:2017} per 100,000 on our estimated light-duty sales. Transmission and drivetrain ({k:2017:POWER TRAIN}) and brakes ({k:2017:SERVICE BRAKES}) lead; recalls include the brake vacuum pump (19V-645) and the roof-rail air bags (26V-611). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2018": [
-      "buy",
-      "{r:2018} per 100,000, the lowest of the 2016 to 2019 years, on our estimated light-duty sales. Recalls include the brake vacuum pump (19V-645) and roof-rail air bag inflators (24V-756)."
+      "avoid",
+      "{r:2018} per 100,000, the lowest of the 2016 to 2019 years, on our estimated light-duty sales. Recalls include the brake vacuum pump (19V-645) and roof-rail air bag inflators (24V-756). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2019": [
-      "check",
-      "{r:2019} per 100,000, the highest in the table. Engine ({k:2019:ENGINE}) and transmission and drivetrain ({k:2019:POWER TRAIN}) lead, and {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889)."
+      "avoid",
+      "{r:2019} per 100,000, the highest in the table. Engine ({k:2019:ENGINE}) and transmission and drivetrain ({k:2019:POWER TRAIN}) lead, and {rec:2019} recalls include a driveshaft weld (20V-650) and an ESC and ABS software fault (19V-889). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "check to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2020": [
-      "buy",
-      "{r:2020} per 100,000, equal to the yardstick. Engine ({k:2020:ENGINE}) and transmission and drivetrain ({k:2020:POWER TRAIN}) lead; {rec:2020} recalls include 20V-650 (driveshaft weld)."
+      "avoid",
+      "{r:2020} per 100,000, equal to the yardstick. Engine ({k:2020:ENGINE}) and transmission and drivetrain ({k:2020:POWER TRAIN}) lead; {rec:2020} recalls include 20V-650 (driveshaft weld). We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2021": [
       "avoid",
-      "{r:2021} per 100,000, with {k:2021:ENGINE} of {c:2021} complaints naming the engine. Recall 25V-274 covers 6.2-liter engines from this year, and NHTSA’s open EA25007 counts engine failures beyond the recall.",
-      "check to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "{r:2021} per 100,000, with {k:2021:ENGINE} of {c:2021} complaints naming the engine. Recall 25V-274 covers 6.2-liter engines from this year, and NHTSA’s open EA25007 counts engine failures beyond the recall. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "check to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2022": [
-      "check",
-      "{r:2022} per 100,000, but {k:2022:ENGINE} of {c:2022} complaints name the engine, and EA25007 covers this year’s 6.2-liter trucks.",
-      "buy to check: engine is 42% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2022} per 100,000, but {k:2022:ENGINE} of {c:2022} complaints name the engine, and EA25007 covers this year’s 6.2-liter trucks. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 42% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2023": [
-      "check",
-      "{r:2023} per 100,000, with {k:2023:ENGINE} of {c:2023} complaints on the engine. Recalls 25V-274 and a brake fluid warning lamp fault (24V-674) apply.",
-      "buy to check: engine is 45% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2023} per 100,000, with {k:2023:ENGINE} of {c:2023} complaints on the engine. Recalls 25V-274 and a brake fluid warning lamp fault (24V-674) apply. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 45% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2024": [
-      "check",
-      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 applies to 6.2-liter trucks, and a trailer hitch bracket recall (24V-626) covers some trucks.",
-      "buy to check: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open"
+      "avoid",
+      "{r:2024} per 100,000, with {k:2024:ENGINE} of {c:2024} complaints on the engine. Recall 25V-274 applies to 6.2-liter trucks, and a trailer hitch bracket recall (24V-626) covers some trucks. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: engine is 53% of the complaints and NHTSA’s EA25007 on 6.2-liter engine failures is still open, and Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2025": [
-      "buy",
-      "{r:2025} per 100,000, the lowest in the table, on {c:2025} complaints and no recall on NHTSA’s list. Engine still leads ({k:2025:ENGINE}), and the count is still growing."
+      "avoid",
+      "{r:2025} per 100,000, the lowest in the table, on {c:2025} complaints and no recall on NHTSA’s list. Engine still leads ({k:2025:ENGINE}), and the count is still growing. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year.",
+      "buy to avoid: Mason’s call, November 22, 2026: every truck with a 5.3-liter or 6.2-liter V8 rates Avoid"
     ],
     "2026": [
-      "check",
-      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed."
+      "avoid",
+      "{c:2026} complaints so far and no full year of sales; engine already leads ({k:2026:ENGINE}). Recall 26V-289 covers the 4WD transfer case, and GM tells owners not to drive an affected truck until it is fixed. We rate the 5.3-liter and 6.2-liter V8 trucks Avoid in every year."
     ]
   },
   "chartNote": "The 2016 to 2018 bars rest on our estimated light-duty sales (76% of all Silverado sales, the 2019 share) and could move a few points with GM’s real figures.",
@@ -252,21 +258,21 @@
     }
   ],
   "newer": [
-    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Silverado already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025.",
+    "NHTSA lists {c:2026} complaints and {rec:2026} recalls for the 2026 Silverado already, with {k:2026:ENGINE} complaints on the engine, and recall 26V-289 tells owners of affected 4WD trucks not to drive them. It is too early to say it is better than the 2025. We rate the 2026 5.3-liter and 6.2-liter V8 trucks Avoid too.",
     "If you are choosing between a new 2026 and a used 2025, our <a href=\"{guide}\">Silverado price guide</a> has the new prices, the discount to aim for and our take on buying new."
   ],
   "faq": [
     [
       "What are the worst Chevrolet Silverado years?",
-      "We rate the 2021 Avoid: it draws {r:2021} NHTSA complaints per 100,000 sold, {k:2021:ENGINE} of {c:2021} naming the engine. The 2019 draws {r:2019}, the highest rate, and the 2022 to 2024 are Check first on engine evidence."
+      "With a 5.3-liter or 6.2-liter V8, every one: we rate 2016 to 2026 Avoid. By the numbers the 2019 draws the highest rate, {r:2019} NHTSA complaints per 100,000 sold, and {k:2021:ENGINE} of the 2021’s {c:2021} complaints name the engine."
     ],
     [
       "What is the best used Silverado year?",
-      "The 2025 draws {r:2025} complaints per 100,000 and the 2020 draws {r:2020}. The 2025 is still collecting complaints, so its rate will rise a little."
+      "With a 5.3-liter or 6.2-liter V8 we don’t have one. The 2025 draws the lowest rate, {r:2025} complaints per 100,000, and the 2020 draws {r:2020}, but engine is the top complaint part on both and we rate them Avoid like the rest. The 2.7-liter turbo, 4.3-liter V6 and 3.0-liter diesel trucks aren’t covered by that call, but NHTSA counts complaints by part, not by engine, so this table can’t rate them on their own."
     ],
     [
       "Is the 2023 Silverado reliable?",
-      "It draws {r:2023}, which is low, but {k:2023:ENGINE} of its {c:2023} complaints name the engine and NHTSA’s EA25007 is open on 6.2-liter failures. We rate it Check first and would want the engine and recall history in writing."
+      "It draws {r:2023}, which is low, but {k:2023:ENGINE} of its {c:2023} complaints name the engine and NHTSA’s EA25007 is open on 6.2-liter failures. We rate it Avoid with a 5.3-liter or 6.2-liter V8, and if you buy one anyway we’d want the engine and recall history in writing."
     ],
     [
       "Which Silverado engine has the most problems?",
