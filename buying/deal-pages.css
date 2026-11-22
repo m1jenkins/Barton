@@ -1,0 +1,88 @@
+/* Deal pages (scripts/render-deal-pages.mjs): cars-selling-below-msrp.html and new-car-deals-this-month.html.
+   They load buying/price-guide.css first and borrow its title band, section bar, ruled sections, tables, plan cards and
+   questions; this sheet only adds the list rows, the two-column verdict and the small flags. Every class is dl-*.
+   White page, hairline rules, square corners, no filled boxes, no left-edge accent rules (same rules as the price guides). */
+.dr .dl .vp-body { grid-area:auto; }
+.dr .dl-body { padding-block:8px 24px; }
+.dr .dl-body .vp-section--first { padding-top:28px; }
+
+/* Verdict: the three cars with the most room beside the three with the least */
+.dr .dl-extremes { display:grid; grid-template-columns:1fr 1fr; gap:0 48px; margin-top:28px; }
+.dr .dl-extreme { border-top:1px solid var(--ink); }
+.dr .dl-body .dl-extreme h3 { margin:14px 0 6px; font-size:15px; font-weight:600; color:var(--muted); }
+.dr .dl-extreme ol { counter-reset:extreme; }
+.dr .dl-extreme li { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 16px; padding:12px 0; border-top:1px solid var(--line); font-variant-numeric:tabular-nums; }
+.dr .dl-extreme li > span { grid-row:1 / 3; font-size:16px; font-weight:600; }
+.dr .dl-extreme li small { display:block; margin-top:2px; font-size:13px; font-weight:400; color:var(--muted); }
+.dr .dl-extreme li strong { font-size:26px; line-height:1.1; font-weight:600; letter-spacing:-.02em; text-align:right; }
+.dr .dl-extreme li em { font-size:13px; font-style:normal; color:var(--muted); text-align:right; }
+
+/* Ranked rows: photo, name and line, the two deal figures, the offer */
+.dr .dl-group { margin-top:34px; }
+.dr .dl-body .dl-group h3 { margin:0 0 8px; padding-top:14px; border-top:1px solid var(--ink); font-size:20px; line-height:1.25; letter-spacing:-.01em; }
+.dr .dl-group > p { max-width:74ch; margin:0 0 14px; }
+.dr .dl-cars { margin:0; padding:0; list-style:none; }
+.dr .dl-car { display:grid; grid-template-columns:112px minmax(0,1fr) 270px 150px; gap:6px 24px; align-items:start; padding:20px 0; border-top:1px solid var(--line); }
+.dr .dl-car__photo { display:block; align-self:start; }
+.dr .dl-car__photo img { display:block; width:112px; height:auto; aspect-ratio:1.5; object-fit:cover; }
+.dr .dl-car__name h4 { display:flex; align-items:baseline; gap:10px; margin:0; font-size:18px; line-height:1.3; }
+.dr .dl-car__rank { flex:none; min-width:1.4em; font-size:14px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; }
+.dr .dl-car__trim { margin:4px 0 0; font-size:13px; line-height:1.45; color:var(--muted); }
+.dr .dl-car__line { max-width:62ch; margin:8px 0 0; font-size:14.5px; line-height:1.55; }
+.dr .dl-car__more { margin:6px 0 0; font-size:13px; line-height:1.45; color:var(--muted); }
+.dr .dl-car__deal { display:grid; grid-template-columns:1fr 1fr; gap:0 18px; margin:0; }
+.dr .dl-tile dt { font-size:12.5px; font-weight:600; color:var(--muted); }
+.dr .dl-tile dd { margin:2px 0 0; }
+.dr .dl-tile strong { display:block; font-size:25px; line-height:1.1; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--ink); }
+.dr .dl-tile--strong strong { color:var(--sign); }
+.dr .dl-tile span { display:block; font-size:12.5px; color:var(--muted); }
+.dr .dl-tile em { display:block; margin-top:3px; font-size:12.5px; line-height:1.35; font-style:normal; color:var(--ink); }
+.dr .dl-car__offer { margin:0; font-size:13px; line-height:1.4; color:var(--muted); }
+.dr .dl-car__offer span { display:block; font-weight:600; }
+.dr .dl-car__offer strong { display:block; margin-top:2px; font-size:15px; font-weight:600; color:var(--ink); }
+
+/* Tables: the price guide's, with a note line under the first cell */
+.dr .dl-body .vp-table { min-width:640px; }
+.dr .dl-body .vp-table tbody th { width:auto; min-width:150px; }
+.dr .dl-body .vp-table td > strong { font-variant-numeric:tabular-nums; }
+.dr .dl-body .vp-table tbody th > a + span, .dr .dl-body .vp-table td > a + span { display:block; margin-top:3px; font-size:13px; font-weight:400; color:var(--muted); }
+.dr .dl-body .vp-table td { font-variant-numeric:tabular-nums; }
+.dr .dl-body .vp-scroll { margin-top:18px; }
+.dr .dl-body h3 { margin:30px 0 0; }
+.dr .dl-flag { display:inline-block; margin:0 0 0 8px; padding:1px 7px; border:1px solid var(--field,#C3CBD6); border-radius:4px; font-size:11px; line-height:1.5; font-weight:600; white-space:nowrap; vertical-align:1px; color:var(--ink); }
+.dr .dl-table-flag { display:block; }
+
+/* Picks: the price guide's two-by-two offer grid with who it suits and the catch */
+.dr .dl-body .dl-picks { margin-top:18px; }
+.dr .dl-picks li { padding-bottom:26px; }
+.dr .dl-picks .vp-ic-offers__label { font-size:16px; }
+.dr .dl-picks p { margin:0; }
+.dr .dl-picks .dl-pick__less { margin-top:8px; font-size:14px; font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums; }
+.dr .dl-picks .dl-pick__who, .dr .dl-picks .dl-pick__catch { margin-top:8px; font-size:14.5px; line-height:1.55; color:var(--ink); }
+.dr .dl-picks .dl-pick__catch { color:var(--muted); }
+.dr .dl-body .dl-sub { margin:36px 0 0; font-size:clamp(21px,2vw,25px); line-height:1.2; letter-spacing:-.02em; }
+
+/* By brand: the guides' own headline cards, listed under each maker */
+.dr .dl-brand { margin-top:30px; }
+.dr .dl-body .dl-brand h3 { margin:0 0 6px; padding-top:14px; border-top:1px solid var(--ink); font-size:20px; letter-spacing:-.01em; }
+.dr .dl-brand__src { max-width:none; margin:0 0 8px; font-size:13px; color:var(--muted); }
+.dr .dl-brand__cars { margin:0; padding:0; }
+.dr .dl-brand__cars > li { display:grid; grid-template-columns:200px minmax(0,1fr); gap:6px 24px; padding:14px 0; border-top:1px solid var(--line); }
+.dr .dl-body .dl-brand__cars h4 { margin:0; font-size:16px; }
+.dr .dl-brand__cars ul li { margin:0 0 6px; font-size:14.5px; line-height:1.5; }
+.dr .dl-brand__cars ul li strong { font-size:16px; font-variant-numeric:tabular-nums; }
+.dr .dl-brand__cars ul li > span:not(.dl-flag) { font-weight:600; color:var(--sign); }
+
+@media (max-width:1100px) {
+  .dr .dl-car { grid-template-columns:96px minmax(0,1fr) 240px; }
+  .dr .dl-car__photo img { width:96px; }
+  .dr .dl-car__offer { grid-column:2 / -1; }
+}
+@media (max-width:760px) {
+  .dr .dl-extremes { grid-template-columns:1fr; gap:8px; }
+  .dr .dl-car { grid-template-columns:76px minmax(0,1fr); gap:6px 14px; padding:18px 0; }
+  .dr .dl-car__photo img { width:76px; }
+  .dr .dl-car__deal { grid-column:1 / -1; gap:0 12px; }
+  .dr .dl-car__offer { grid-column:1 / -1; }
+  .dr .dl-brand__cars > li { grid-template-columns:1fr; gap:4px; }
+}
