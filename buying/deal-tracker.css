@@ -66,11 +66,17 @@
 .dt .dt-car--agreed .dt-car__link a:hover { background:var(--sky); }
 .dt .dt-car--agreed a:focus-visible { outline-color:#fff; }
 
+/* Buyer Updates: newest first, one tinted card each, the date above the words. */
+.dt .dt-timeline { list-style:none; margin:18px 0 0; padding:0; display:grid; gap:14px; }
+.dt .dt-update { padding:22px 20px; border-radius:24px; background:var(--sage); }
+.dt .dt-update__when { font:600 14px/1.4 var(--sans); color:var(--muted); }
+.dt .dt-update__body { margin-top:8px; max-width:44rem; font-size:16px; line-height:1.6; white-space:pre-line; overflow-wrap:anywhere; }
+
 @media(min-width:640px) {
  .dt .dt-stages { grid-template-columns:repeat(3,minmax(0,1fr)); }
  .dt .dt-details > div { grid-template-columns:180px minmax(0,1fr); gap:16px; }
  .dt .dt-cars { grid-template-columns:repeat(2,minmax(0,1fr)); }
- .dt .dt-card,.dt .dt-car { padding:26px 28px; }
+ .dt .dt-card,.dt .dt-car,.dt .dt-update { padding:26px 28px; }
 }
 @media(min-width:1000px) {
  .dt .dt-intro { padding:56px 0 52px; }

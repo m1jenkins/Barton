@@ -25,6 +25,7 @@ test('cron honestly skips missing destinations without touching the database', a
   assert.equal(res.statusCode, 200);
   assert.equal(res.body.workers.leads.configured, false);
   assert.equal(res.body.workers.analytics.configured, false);
+  assert.equal(res.body.workers.buyer_updates.configured, false);
 });
 
 test('cron waits for both configured workers and reports aggregate failures without secrets', async () => {
@@ -71,5 +72,25 @@ test('cron runs the customer email worker only once it is turned on', async () =
   await outboxHandler({ environment: { CRON_SECRET: secret, ...smtp, CUSTOMER_EMAIL_ENABLED: '1' }, getDatabase: () => ({}), customerEmailWorker, ...quiet })(request(), on);
   assert.equal(on.statusCode, 200);
   assert.equal(on.body.workers.customer_email.sent, 1);
+  assert.equal(calls, 1);
+});
+
+test('cron runs the Buyer Update worker only with the Deal Tracker on', async () => {
+  const smtp = { INTAKE_SMTP_USER: 'hello@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real' };
+  let calls = 0;
+  const buyerUpdateWorker = async () => { calls++; return { configured: true, claimed: 1, sent: 1, failed: 0, exhausted: 0, exitCode: 0 }; };
+  const quiet = { intakeEmailWorker: async () => ({ configured: true, claimed: 0, sent: 0, failed: 0, exhausted: 0, exitCode: 0 }) };
+
+  const off = response();
+  await outboxHandler({ environment: { CRON_SECRET: secret, ...smtp }, getDatabase: () => ({}), buyerUpdateWorker, ...quiet })(request(), off);
+  assert.equal(off.statusCode, 200);
+  assert.equal(off.body.workers.buyer_updates.configured, false);
+  assert.equal(calls, 0);
+
+  const on = response();
+  const tracker = { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: 'deal-tracker-secret-for-tests-only-0123456789' };
+  await outboxHandler({ environment: { CRON_SECRET: secret, ...smtp, ...tracker }, getDatabase: () => ({}), buyerUpdateWorker, ...quiet })(request(), on);
+  assert.equal(on.statusCode, 200);
+  assert.equal(on.body.workers.buyer_updates.sent, 1);
   assert.equal(calls, 1);
 });

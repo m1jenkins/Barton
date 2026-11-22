@@ -114,7 +114,7 @@ test('a signed link round-trips, and its token is the intake ID plus a signature
   assert.equal(signLink(SECRET, id.toUpperCase(), 3), token, 'the ID is case-insensitive');
   assert.notEqual(signLink(SECRET, id, 2), token, 'the version is signed');
   const settings = dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, APP_ORIGIN: 'https://example.test/' });
-  assert.deepEqual(settings, { secret: SECRET, origin: 'https://example.test' });
+  assert.deepEqual(settings, { secret: SECRET, origin: 'https://example.test', replyMailbox: null });
   assert.equal(dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET }).origin, 'https://www.steermeright.com');
   assert.equal(linkUrl(settings, id, 3), `https://example.test/deal/${token}`);
   const sql = tagged(pg);

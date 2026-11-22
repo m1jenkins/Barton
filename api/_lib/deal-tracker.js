@@ -15,15 +15,21 @@ const DAY = 86400000;
 // A closed deal's link keeps working this long after the latest close (adr/0001).
 const LINK_GRACE_DAYS = 3;
 const MASON = 'mason@steermeright.com';
+// A plain local@domain: each buyer's reply address adds +<token> to the local part.
+const MAILBOX = /^[^\s@<>+]+@[^\s@<>]+\.[^\s@<>]+$/;
 
 // Null while the switch is off. On, it needs a real secret: a short one would
 // make every buyer's link guessable, so it fails loudly instead.
+// DEAL_REPLY_MAILBOX is the mailbox buyers' replies go to (adr/0001); unset,
+// update emails fall back to the ordinary reply-to.
 export function dealTrackerSettings(environment = process.env) {
   if (!dealTrackerEnabled(environment)) return null;
   const secret = String(environment.DEAL_TRACKER_SECRET ?? '').trim();
   if (secret.length < 32) throw new ConfigError('DEAL_TRACKER_SECRET must be at least 32 characters');
   const origin = (String(environment.APP_ORIGIN ?? '').trim() || DEFAULT_ORIGIN).replace(/\/+$/, '');
-  return { secret, origin };
+  const replyMailbox = String(environment.DEAL_REPLY_MAILBOX ?? '').trim() || null;
+  if (replyMailbox && !MAILBOX.test(replyMailbox)) throw new ConfigError('DEAL_REPLY_MAILBOX must be a plain email address, with no + in it');
+  return { secret, origin, replyMailbox };
 }
 
 // ---------- Link ----------
@@ -46,6 +52,14 @@ export const linkUrl = (settings, onboardingId, version) => `${settings.origin}/
 // The buyer's reply address token (a later step). A different message under the
 // same secret, so it can't be worked out from the link token or the other way round.
 export const replyToken = (secret, onboardingId) => hmac(secret, `reply:${intakeId(onboardingId)}`).toString('hex').slice(0, 20);
+
+// The buyer's own reply address: the mailbox with +<reply token>, or null when
+// DEAL_REPLY_MAILBOX is unset.
+export function replyAddress(settings, onboardingId) {
+  if (!settings.replyMailbox) return null;
+  const at = settings.replyMailbox.lastIndexOf('@');
+  return `${settings.replyMailbox.slice(0, at)}+${replyToken(settings.secret, onboardingId)}${settings.replyMailbox.slice(at)}`;
+}
 
 function parseToken(token) {
   const match = TOKEN.exec(String(token ?? ''));
@@ -145,6 +159,14 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
     agreed: null
   };
   if (outcome === 'other') return view;
+
+  // Posted Buyer Updates only, oldest first. Drafts and retracted ones never
+  // leave the database, and nothing but these four fields does either.
+  const updates = await sql`SELECT id, body, posted_at, ready_for_pick FROM buyer_updates
+    WHERE onboarding_id = ${onboardingId} AND status = 'posted' ORDER BY posted_at, id`;
+  view.timeline = updates.map(update => ({
+    type: 'update', id: Number(update.id), body: String(update.body), at: new Date(update.posted_at).toISOString(), ready_for_pick: Boolean(update.ready_for_pick)
+  }));
 
   // A dealer is named only once a price is agreed, and only that dealer.
   const offer = summary.stage === 'agreed' || outcome === 'bought' ? agreedOffer(listings, events) : null;
@@ -384,8 +406,22 @@ function closedSection() {
   return section('dt-closed', 'This search is closed', safe`<div class="dt-card"><p>If you have a question about it, or you’d like to pick it back up, email me at ${mailto}. I answer within one business day.</p></div>`);
 }
 
-// Later parts of the build fill these in (plan, "Build order" 3 to 6). They render nothing yet.
-const timelineSection = () => NOTHING;
+const updateTime = value => new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/Chicago', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+}).format(new Date(value));
+
+// Buyer Updates, newest first. The body is escaped and keeps its line breaks
+// through white-space: pre-line, so nothing Mason or an agent typed becomes markup.
+export function timelineSection(view) {
+  const items = [...(view.timeline ?? [])].reverse();
+  if (!items.length) return NOTHING;
+  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(items, item => safe`<li class="dt-update">
+    <p class="dt-update__when"><time datetime="${item.at}">${updateTime(item.at)}</time></p>
+    <p class="dt-update__body">${item.body}</p>
+  </li>`)}</ol>`);
+}
+
+// Later parts of the build fill these in (plan, "Build order" 4 to 6). They render nothing yet.
 const questionSection = () => NOTHING;
 const pickSection = () => NOTHING;
 const documentsSection = () => NOTHING;

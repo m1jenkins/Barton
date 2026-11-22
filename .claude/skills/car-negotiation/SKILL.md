@@ -137,3 +137,10 @@ Then show Mason:
 - the draft and its subject (`Re:` plus the dealer's subject), ready to paste
 
 Remind him that nothing has gone to the dealer yet.
+
+## Buyer Updates
+
+- A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Post one (`node scripts/deal-desk-db.mjs update <intake ID> car-negotiation --post <file | ->`) only when Mason tells you to in this chat, in his words or ones he approved. Anything you write unprompted, including an answer to a Buyer Question, goes in as a draft (the same command without `--post`) for Mason to approve on the ops dashboard.
+- Until a price is agreed, a Buyer Update never names a dealer, links a listing, or gives a VIN, target price or walk-away price. After it, name only the agreed dealer. Refer to cars by year, model, trim and color.
+- Never record anything as if the buyer did it: Buyer Questions, Buyer Picks and Buyer Documents come only from the buyer's page or reply address.
+- `quote` and `agreed` events must carry the car's VIN.

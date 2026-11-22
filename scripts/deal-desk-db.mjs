@@ -7,7 +7,15 @@ import { localEnv } from './car-search.mjs';
 //   node scripts/deal-desk-db.mjs deals                 every deal with its last logged event
 //   node scripts/deal-desk-db.mjs deal <intake ID or its first 8 characters>
 //                                                       one deal's shortlist and its full event log
-//   node scripts/deal-desk-db.mjs log <events.json | ->  add events to deal_events; a rerun adds nothing twice
+//                                                       (and its Buyer Updates, so an agent sees what the buyer was told)
+//   node scripts/deal-desk-db.mjs log <events.json | ->  add events to deal_events; a rerun adds nothing twice.
+//                                                       A quote or agreed needs the car's VIN: the Deal Tracker prices each car by VIN
+//   node scripts/deal-desk-db.mjs update <intake ID> <actor> [--post] [--ready-for-pick] [--answers <question id>] <text file | ->
+//                                                       add a Buyer Update (1-4000 characters). Without --post it is a draft
+//                                                       for Mason to approve on the ops dashboard. --post only on Mason's say
+//                                                       in this chat (adr/0002): the buyer sees it at once and the email leaves
+//                                                       about five minutes later unless Mason takes it back. --ready-for-pick
+//                                                       opens the Buyer Pick; --answers links the Buyer Question it answers
 //   node scripts/deal-desk-db.mjs ran <actor> [minutes] [note]
 //                                                       record that an agent ran (every run, even with nothing new);
 //                                                       minutes is how often it runs, for the dashboard's overdue check
@@ -15,9 +23,11 @@ import { localEnv } from './car-search.mjs';
 //   node scripts/deal-desk-db.mjs ack <resolved id> [note]
 //                                                       mark one of those answers acted on, so it stops being listed
 // Connects with DEAL_DESK_DATABASE_URL, the paperclip_agent role from db/010, which can read
-// every table and insert into deal_events only. Amounts are cents, as in deal_events.
-const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | -> | ran <actor> [minutes] [note] | answers [actor] | ack <resolved id> [note]';
+// every table, insert into deal_events and, from db/013, insert into buyer_updates. Amounts are cents, as in deal_events.
+const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | -> | update <intake ID> <actor> [--post] [--ready-for-pick] [--answers <question id>] <text file | -> | ran <actor> [minutes] [note] | answers [actor] | ack <resolved id> [note]';
 const ACTOR = /^[a-z0-9][a-z0-9 ._-]{0,59}$/i;
+const INTAKE_ID = /^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
+export const POST_RULE = 'Posted on Mason\'s say. He can take it back on the ops dashboard before the email leaves.';
 // email_received, form_submitted, needs_mason and resolved come from db/012; the ops
 // dashboard (/api/ops) lists open needs_mason rows under "Needs you" until a
 // resolved row names them in resolves_event_id.
@@ -31,13 +41,15 @@ export function parseEvent(input) {
   const problems = [];
   const event = input && typeof input === 'object' && !Array.isArray(input) ? input : {};
   if (event !== input) problems.push('each event must be a JSON object');
-  if (!/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(event.intake_id ?? '')) problems.push('intake_id must be the full intake ID');
+  if (!INTAKE_ID.test(event.intake_id ?? '')) problems.push('intake_id must be the full intake ID');
   if (!EVENT_KINDS.includes(event.kind)) problems.push(`kind must be one of ${EVENT_KINDS.join(', ')}`);
   if (event.vin != null && !/^[A-HJ-NPR-Z0-9]{17}$/i.test(event.vin)) problems.push('vin must be 17 characters');
   if (event.otd_cents != null && !(Number.isInteger(event.otd_cents) && event.otd_cents >= 0)) problems.push('otd_cents must be a whole number of cents');
   if (event.itemized != null && (typeof event.itemized !== 'object' || Array.isArray(event.itemized))) problems.push('itemized must be an object of line items in cents');
   if (event.occurred_at != null && Number.isNaN(Date.parse(event.occurred_at))) problems.push('occurred_at must be an ISO date');
   if (['quote', 'counter', 'agreed'].includes(event.kind) && event.otd_cents == null && event.itemized == null) problems.push(`a ${event.kind} needs otd_cents or itemized`);
+  // The buyer's page prices each car by VIN, so a quote without one would never show.
+  if (['quote', 'agreed'].includes(event.kind) && !event.vin) problems.push(`a ${event.kind} needs vin, the 17-character VIN of the car it prices`);
   if (event.kind === 'needs_mason' && !text(event.note, 4000)) problems.push('a needs_mason needs a note saying what Mason has to do');
   if (event.kind === 'resolved' && !(Number.isInteger(event.resolves_event_id) && event.resolves_event_id > 0)) problems.push('a resolved needs resolves_event_id, the id of the needs_mason row it closes');
   if (event.kind !== 'resolved' && event.resolves_event_id != null) problems.push('only a resolved takes resolves_event_id');
@@ -89,7 +101,60 @@ export async function showDeal(sql, id) {
     FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`;
   const events = await sql`SELECT id, occurred_at, kind, actor, dealer_name, vin, otd_cents, itemized, note, options, answer, source_message_id, resolves_event_id
     FROM deal_events WHERE onboarding_id = ${deal.onboarding_id} ORDER BY occurred_at, id`;
-  return { intake_id: deal.onboarding_id, summary: deal.search_summary, shortlisted_at: deal.shortlisted_at, listings, events };
+  let updates = null;
+  try {
+    updates = await sql`SELECT id, status, actor, on_masons_say, ready_for_pick, answers_question_id, body,
+        created_at, posted_at, emailed_at, retracted_at
+      FROM buyer_updates WHERE onboarding_id = ${deal.onboarding_id} ORDER BY created_at, id`;
+  } catch (error) {
+    // 42P01: db/013 isn't applied yet, so there are no Buyer Updates to show.
+    if (error?.code !== '42P01') throw error;
+  }
+  return { intake_id: deal.onboarding_id, summary: deal.search_summary, shortlisted_at: deal.shortlisted_at, listings, events, updates };
+}
+
+// One Buyer Update (db/013). Plain tagged values, no sql(row) helper, so tests can run it on PGlite.
+export async function addUpdate(sql, { intakeId, actor, body, post = false, readyForPick = false, answersQuestionId = null } = {}) {
+  const problems = [];
+  const words = typeof body === 'string' ? body.trim() : '';
+  const name = typeof actor === 'string' ? actor.trim() : '';
+  const question = answersQuestionId == null || answersQuestionId === '' ? null : Number(answersQuestionId);
+  if (!INTAKE_ID.test(intakeId ?? '')) problems.push('the intake ID must be the full intake ID');
+  if (!ACTOR.test(name)) problems.push('actor must be the agent\'s short name, up to 60 letters, digits, spaces, dots, dashes or underscores');
+  // The ops dashboard signs Mason's own updates; an agent never does.
+  else if (name.toLowerCase() === 'mason') problems.push('actor can\'t be mason: use the agent\'s own name');
+  if (!words) problems.push('the update needs some text');
+  else if ([...words].length > 4000) problems.push('the update must be at most 4000 characters');
+  if (question != null && !(Number.isSafeInteger(question) && question > 0)) problems.push('--answers needs a Buyer Question id');
+  if (problems.length) throw new Error(problems.join('; '));
+  const id = intakeId.toLowerCase();
+  const [deal] = await sql`SELECT onboarding_id FROM deals WHERE onboarding_id = ${id}`;
+  if (!deal) throw new Error(`No deal for ${id}, so there is no Deal Tracker to post to.`);
+  if (question != null) {
+    const [asked] = await sql`SELECT id FROM buyer_questions WHERE id = ${question} AND onboarding_id = ${id}`;
+    if (!asked) throw new Error(`Buyer Question ${question} isn't on this deal.`);
+  }
+  // The insert trigger sets posted_at and email_after; on_masons_say is this agent's claim that Mason said to post.
+  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, answers_question_id, actor, on_masons_say)
+    VALUES (${id}, ${words}, ${post ? 'posted' : 'draft'}, ${Boolean(readyForPick)}, ${question}, ${name}, ${Boolean(post)})
+    RETURNING id, status, posted_at, email_after`;
+  return row;
+}
+
+// update's arguments after the intake ID: <actor> [--post] [--ready-for-pick] [--answers <id>] <text file | ->
+export function parseUpdateArgs(args) {
+  const options = { post: false, readyForPick: false, answersQuestionId: null };
+  const positional = [];
+  for (let index = 0; index < args.length; index++) {
+    const arg = args[index];
+    if (arg === '--post') options.post = true;
+    else if (arg === '--ready-for-pick') options.readyForPick = true;
+    else if (arg === '--answers') options.answersQuestionId = args[++index] ?? '';
+    else if (arg.startsWith('--')) throw new Error(`Unknown option ${arg}. ${USAGE}`);
+    else positional.push(arg);
+  }
+  if (positional.length !== 2 || options.answersQuestionId === '') throw new Error(USAGE);
+  return { actor: positional[0], source: positional[1], ...options };
 }
 
 export async function logEvents(sql, inputs) {
@@ -136,16 +201,21 @@ async function main([command, argument, ...rest]) {
   const environment = { ...localEnv(), ...process.env };
   const url = environment.DEAL_DESK_DATABASE_URL?.trim();
   if (!url) throw new Error('DEAL_DESK_DATABASE_URL is not set. It is the paperclip_agent connection string (db/010_paperclip_agent_grants.sql).');
-  if (!['deals', 'deal', 'log', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
+  if (!['deals', 'deal', 'log', 'update', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'update', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
+  const update = command === 'update' ? parseUpdateArgs(rest) : null;
+  const read = source => (source === '-' ? new Response(process.stdin).text() : readFile(source, 'utf8'));
   const sql = postgres(url, { max: 1, idle_timeout: 5, connect_timeout: 10, prepare: false, transform: { undefined: null } });
   try {
     if (command === 'deals') return await listDeals(sql);
     if (command === 'deal') return await showDeal(sql, argument);
+    if (update) {
+      const row = await addUpdate(sql, { intakeId: argument, ...update, body: await read(update.source) });
+      return update.post ? { ...row, rule: POST_RULE } : row;
+    }
     if (command === 'ran') return await recordRun(sql, argument, /^\d+$/.test(rest[0] ?? '') ? rest.shift() : null, rest.join(' '));
     if (command === 'answers') return await pendingAnswers(sql, argument ?? null);
     if (command === 'ack') return await ackAnswer(sql, argument, rest.join(' '));
-    const raw = argument === '-' ? await new Response(process.stdin).text() : await readFile(argument, 'utf8');
-    return await logEvents(sql, JSON.parse(raw));
+    return await logEvents(sql, JSON.parse(await read(argument)));
   } finally {
     await sql.end({ timeout: 5 });
   }

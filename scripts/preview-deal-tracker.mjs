@@ -38,15 +38,22 @@ const agreedCars = [
   quoted[1], quoted[2]
 ];
 const agreed = { rank: 1, dealer_name: 'Example Motors of Springfield', otd_cents: 3610000 };
+// Buyer Updates as loadBuyerView() returns them: posted only, oldest first.
+const update = (id, at, body, extra = {}) => ({ type: 'update', id, body, at, ready_for_pick: false, ...extra });
+const confirmed = update(1, '2026-12-01T16:05:00Z', 'Thanks, Sam. I’ve read through your search details and I’m starting with used RAV4s and CR-Vs from 2022 on, within 100 miles of Springfield.\n\nI’ll post the shortlist here in a day or two.');
+const emailed = update(2, '2026-12-03T21:40:00Z', 'All three dealers have my email asking for a written out-the-door price. Most answer within two business days.');
+const pricesIn = update(3, '2026-12-08T19:15:00Z', 'Two written prices are in. The RAV4 is the best so far at $36,400 out the door, and I’ve asked that dealer to do better on the doc fee.\n\nNothing to do on your side yet.');
+const readyForCall = update(4, '2026-12-10T20:15:00Z', 'The RAV4 dealer came down to $36,100. That’s a good price for this car, and I don’t think there’s much more room. Let me know which one you’d like.', { ready_for_pick: true });
+const agreedNote = update(5, '2026-12-11T17:30:00Z', 'Done: $36,100 out the door on the RAV4. The dealer has the paperwork ready from Saturday. Bring your license and proof of insurance.');
 
 export const SAMPLE_VIEWS = Object.freeze({
-  'confirming-search': { stage: 'confirming', outcome: null, buyer: { ...buyer, recap }, cars: [], agreed: null },
-  shortlisted: { stage: 'shortlisted', outcome: null, buyer, cars: shortlist, agreed: null },
-  'emailing-dealers': { stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null },
-  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null },
-  'price-agreed': { stage: 'agreed', outcome: null, buyer, cars: agreedCars, agreed },
-  'price-agreed-no-car': { stage: 'agreed', outcome: null, buyer, cars: quoted, agreed: { rank: null, dealer_name: 'Example Motors of Springfield', otd_cents: 3610000 } },
-  'closed-bought': { stage: 'closed', outcome: 'bought', buyer, cars: [agreedCars[0]], agreed },
+  'confirming-search': { stage: 'confirming', outcome: null, buyer: { ...buyer, recap }, cars: [], agreed: null, timeline: [confirmed] },
+  shortlisted: { stage: 'shortlisted', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed] },
+  'emailing-dealers': { stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed, emailed] },
+  'quotes-in': { stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, timeline: [emailed, pricesIn, readyForCall] },
+  'price-agreed': { stage: 'agreed', outcome: null, buyer, cars: agreedCars, agreed, timeline: [readyForCall, agreedNote] },
+  'price-agreed-no-car': { stage: 'agreed', outcome: null, buyer, cars: quoted, agreed: { rank: null, dealer_name: 'Example Motors of Springfield', otd_cents: 3610000 }, timeline: [agreedNote] },
+  'closed-bought': { stage: 'closed', outcome: 'bought', buyer, cars: [agreedCars[0]], agreed, timeline: [agreedNote] },
   'closed-other': { stage: 'closed', outcome: 'other', buyer, cars: [], agreed: null }
 });
 const LABELS = {

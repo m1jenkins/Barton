@@ -1,6 +1,7 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
-import { bestPrices, dealerKey, droppedAfter } from './deal-view.js';
+import { BuyerUpdateError, MAX_UPDATE_LENGTH, approveDraft, dealerNameWarning, discardDraft, postUpdate, reissueLink, restoreLink, retractUpdate, revokeLink } from './buyer-updates.js';
+import { bestPrices, dealerKey, dealerNames as namedDealers, droppedAfter } from './deal-view.js';
 
 // Mason's private deal dashboard at /api/ops (docs/implementation-operations.md,
 // "Ops dashboard"). Everything on it is read from Neon: the deals opened at paid
@@ -97,18 +98,23 @@ export function agentStatus(runs, logged, now = Date.now()) {
   }).sort((a, b) => Number(b.overdue) - Number(a.overdue) || a.actor.localeCompare(b.actor));
 }
 
-export async function loadDeal(sql, onboardingId) {
+// tracker: whether the Deal Tracker is on. Only then are its link row and Buyer
+// Updates read, so with it off the page runs exactly the queries it always has.
+export async function loadDeal(sql, onboardingId, { tracker = false } = {}) {
   const [deal] = await sql`SELECT d.id, d.onboarding_id, d.search_summary, d.created_at, d.shortlisted_at, o.name, o.city, o.tier_id
     FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id WHERE d.onboarding_id = ${onboardingId}`;
   if (!deal) return null;
-  const [listings, events, drafts] = await Promise.all([
+  const [listings, events, drafts, links, updates] = await Promise.all([
     sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, walk_away_cents, mileage, days_on_lot,
         dealer_name, dealer_location, listing_url FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`,
     sql`SELECT id, kind, actor, dealer_name, vin, otd_cents, note, options, answer, resolves_event_id, occurred_at
       FROM deal_events WHERE onboarding_id = ${onboardingId} ORDER BY occurred_at DESC, id DESC`,
-    sql`SELECT dealer_name, status, created_at, sent_at, last_error FROM dealer_email_drafts WHERE deal_id = ${deal.id} ORDER BY created_at`
+    sql`SELECT dealer_name, status, created_at, sent_at, last_error FROM dealer_email_drafts WHERE deal_id = ${deal.id} ORDER BY created_at`,
+    tracker ? sql`SELECT version, revoked_at, first_opened_at, last_opened_at FROM deal_tracker_links WHERE onboarding_id = ${onboardingId}` : [],
+    tracker ? sql`SELECT id, body, status, ready_for_pick, actor, on_masons_say, created_at, posted_at, email_after, emailed_at, email_attempts
+      FROM buyer_updates WHERE onboarding_id = ${onboardingId} AND status IN ('draft', 'posted') ORDER BY created_at DESC, id DESC` : []
   ]);
-  return { deal, listings, events, drafts };
+  return { deal, listings, events, drafts, ...(tracker ? { tracker: { link: links[0] ?? null, updates, url: null } } : {}) };
 }
 
 // A needs_mason row that is still open, or null. Used before logging 'resolved'.
@@ -169,6 +175,47 @@ export async function editDeal(sql, onboardingId, form) {
   }
   await sql`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents, note)
     VALUES (${onboardingId}, ${row.kind}, 'mason', ${row.dealer}, ${row.vin}, ${row.otd}, ${row.note})`;
+  return { ok: true };
+}
+
+export const TRACKER_ACTIONS = Object.freeze(['post', 'approve', 'discard', 'retract', 'revoke', 'restore', 'reissue']);
+const UPDATE_ACTIONS = { approve: approveDraft, discard: discardDraft, retract: retractUpdate };
+
+// Mason's Deal Tracker controls on a deal's page (form field tracker=<action>).
+// Returns an error message when the form can't be saved. A repeated submit is
+// harmless: each write checks the row's current state, and an update or link
+// already past that state just redirects back.
+export async function trackerAction(sql, onboardingId, form) {
+  const action = form.tracker;
+  if (!TRACKER_ACTIONS.includes(action)) return { error: 'Unknown change' };
+  const [deal] = await sql`SELECT d.onboarding_id, l.version FROM deals d
+    LEFT JOIN deal_tracker_links l ON l.onboarding_id = d.onboarding_id WHERE d.onboarding_id = ${onboardingId}`;
+  if (!deal) return { error: 'No such deal' };
+  if (deal.version == null) return { error: 'This deal has no Deal Tracker link' };
+  if (action === 'post') {
+    try {
+      await postUpdate(sql, { onboardingId, body: form.body, readyForPick: form.ready_for_pick === '1' });
+    } catch (error) {
+      if (error instanceof BuyerUpdateError) return { error: error.message };
+      throw error;
+    }
+    return { ok: true };
+  }
+  if (UPDATE_ACTIONS[action]) {
+    const id = Number(form.update);
+    if (!Number.isSafeInteger(id) || id <= 0) return { error: 'Unknown update' };
+    // The update must belong to this deal, whatever its state now.
+    const [update] = await sql`SELECT id FROM buyer_updates WHERE id = ${id} AND onboarding_id = ${onboardingId}`;
+    if (!update) return { error: 'That update is not on this deal' };
+    await UPDATE_ACTIONS[action](sql, id, onboardingId);
+    return { ok: true };
+  }
+  if (action === 'revoke') await revokeLink(sql, onboardingId);
+  if (action === 'restore') await restoreLink(sql, onboardingId);
+  if (action === 'reissue') {
+    const from = Number(form.version);
+    await reissueLink(sql, onboardingId, Number.isSafeInteger(from) && from > 0 ? from : deal.version);
+  }
   return { ok: true };
 }
 
@@ -348,6 +395,13 @@ details.note p{color:var(--text);white-space:pre-wrap}
 .edit input,.edit select{font:inherit;font-size:13px;padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-weight:400;min-width:0}
 .edit label.grow input{flex:1}
 .edit input.money{width:130px}
+.edit textarea{font:inherit;font-size:14px;line-height:1.45;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%;min-height:110px;resize:vertical}
+.edit label.block{flex:1 1 100%;flex-direction:column;align-items:stretch;gap:6px}
+.edit label.check{font-weight:400}
+.edit input.link{flex:1 1 320px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.edit .row p{margin:0;flex:1 1 100%}
+.update-body{white-space:pre-wrap}
+.warn-line{color:var(--warn);font-weight:600}
 @media (max-width:640px){.hide-sm{display:none}th,td{padding:9px 10px}}
 `;
 
@@ -550,6 +604,67 @@ function editPanel(deal, summary, listings) {
   <datalist id="dealers-${deal.onboarding_id}">${join(dealerNames, name => safe`<option value="${name}">`)}</datalist></div>`;
 }
 
+// Chicago clock time, with the date when it isn't today.
+function clock(value, now) {
+  const options = dayKey(value) === dayKey(now) ? { hour: 'numeric', minute: '2-digit' } : { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' };
+  return new Intl.DateTimeFormat('en-US', { timeZone: TIME_ZONE, ...options }).format(new Date(value));
+}
+
+const EMAIL_ATTEMPTS = 8;
+function emailState(update, link, now) {
+  if (update.emailed_at) return `Email sent ${clock(update.emailed_at, now)}`;
+  if (update.email_attempts >= EMAIL_ATTEMPTS) return `Email failed ${EMAIL_ATTEMPTS} times; not retrying`;
+  if (update.email_attempts > 0) return 'Email failed, will retry';
+  if (link.revoked_at) return 'Email held while the link is revoked';
+  const minutes = Math.ceil((time(update.email_after) - now) / 60000);
+  return minutes > 0 ? `Email leaves in about ${minutes} min` : 'Email leaves on the next run';
+}
+
+// Mason's Deal Tracker controls (plan, "Ops dashboard panel"): the buyer's link,
+// a box to post a Buyer Update, agents' drafts, and posted updates to take back.
+// Before a price is agreed, an update that names a shortlisted dealer is flagged.
+function trackerPanel(deal, summary, tracker, listings, events, now) {
+  const { link, updates, url } = tracker;
+  if (!link) return raw('<div class="card"><p class="empty">This deal opened before the Deal Tracker, so the buyer has no link.</p></div>');
+  const hidden = (action = null) => safe`${action ? safe`<input type="hidden" name="tracker" value="${action}">` : ''}<input type="hidden" name="deal" value="${deal.onboarding_id}">`;
+  const names = summary.closed || summary.stage === 'agreed' ? [] : namedDealers(listings, events);
+  const warning = body => {
+    const named = dealerNameWarning(body, names);
+    return named.length ? safe`<p class="warn-line">Names ${named.join(', ')}, which the buyer can't see yet</p>` : '';
+  };
+  const who = update => (update.actor === 'mason' ? 'You' : `${update.actor}, on your say`);
+  const drafts = updates.filter(update => update.status === 'draft');
+  const posted = updates.filter(update => update.status === 'posted').sort((a, b) => time(b.posted_at) - time(a.posted_at) || Number(b.id) - Number(a.id));
+  const opened = link.first_opened_at
+    ? safe`Opened first ${when(link.first_opened_at, now)}, last ${when(link.last_opened_at, now)}`
+    : 'Not opened yet';
+  return safe`<div class="card edit">
+  <div class="row"><label class="grow">Buyer's link <input type="text" class="link" readonly value="${url ?? ''}" aria-label="The buyer's Deal Tracker link"></label>
+    <p class="muted">${link.revoked_at ? safe`<span class="tag warn">Revoked</span> ${when(link.revoked_at, now)} · ` : ''}${opened}</p></div>
+  <form method="post" action="/api/ops" class="row">${hidden(link.revoked_at ? 'restore' : 'revoke')}
+    <button type="submit">${link.revoked_at ? 'Restore link' : 'Revoke link'}</button>
+    <span class="muted">${link.revoked_at ? 'The same link works again.' : 'The buyer sees a “link isn’t active” page until you restore it.'}</span></form>
+  <form method="post" action="/api/ops" class="row">${hidden('reissue')}<input type="hidden" name="version" value="${link.version}">
+    <button type="submit">Reissue link</button><span class="muted">Reissue kills the current link. Send the buyer the new one.</span></form>
+  <form method="post" action="/api/ops" class="row">${hidden('post')}
+    <label class="block">Post a Buyer Update <textarea name="body" maxlength="${MAX_UPDATE_LENGTH}" rows="5" required></textarea></label>
+    <label class="check"><input type="checkbox" name="ready_for_pick" value="1"> Ready for your call</label>
+    <button type="submit" class="primary">Post</button>
+    <p class="muted">The buyer's email leaves about five minutes after you post, unless you take it back.</p></form>
+</div>
+${drafts.length ? safe`<h2>Drafts to approve (${drafts.length})</h2><div class="card"><ul class="list">${join(drafts, update => safe`<li><div class="main">
+  <p class="update-body">${update.body}</p>${warning(update.body)}
+  <p class="muted">Draft by ${update.actor} · ${when(update.created_at, now)}${update.ready_for_pick ? ' · Ready for your call' : ''}</p></div>
+  <form method="post" action="/api/ops" class="answer">${hidden()}<input type="hidden" name="update" value="${update.id}">
+    <button type="submit" name="tracker" value="approve" class="primary">Approve</button><button type="submit" name="tracker" value="discard">Discard</button></form></li>`)}</ul></div>` : ''}
+<h2>Posted updates (${posted.length})</h2>
+<div class="card">${posted.length ? safe`<ul class="list">${join(posted, update => safe`<li><div class="main">
+  <p class="update-body">${update.body}</p>${warning(update.body)}
+  <p class="muted">${who(update)} · ${when(update.posted_at, now)} · ${emailState(update, link, now)}${update.ready_for_pick ? ' · Ready for your call' : ''}</p></div>
+  <form method="post" action="/api/ops" class="answer">${hidden('retract')}<input type="hidden" name="update" value="${update.id}">
+    <button type="submit">Take back</button></form></li>`)}</ul>` : raw('<p class="empty">No updates posted yet.</p>')}</div>`;
+}
+
 export function renderDeal(detail, now = Date.now()) {
   const { deal, listings, events, drafts } = detail;
   const oldestFirst = [...events].reverse();
@@ -569,6 +684,7 @@ export function renderDeal(detail, now = Date.now()) {
 </div>
 <h2>Update deal</h2>
 ${editPanel(deal, summary, listings)}
+${detail.tracker ? safe`<h2>Deal Tracker</h2>${trackerPanel(deal, summary, detail.tracker, listings, oldestFirst, now)}` : ''}
 ${deal.search_summary ? safe`<h2>Search</h2><div class="card"><p class="empty" style="color:inherit">${deal.search_summary}</p></div>` : ''}
 <h2>Shortlist (${listings.length})</h2>
 ${listings.length ? safe`<div class="card scroll"><table>

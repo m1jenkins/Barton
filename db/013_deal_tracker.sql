@@ -80,9 +80,10 @@ CREATE TABLE IF NOT EXISTS buyer_updates (
   CONSTRAINT buyer_updates_status_valid CHECK (status IN ('draft', 'posted', 'retracted')),
   CONSTRAINT buyer_updates_body_valid CHECK (length(btrim(body)) > 0 AND length(body) <= 4000),
   CONSTRAINT buyer_updates_actor_valid CHECK (length(btrim(actor)) > 0),
-  CONSTRAINT buyer_updates_posted_on_masons_say CHECK (status = 'draft' OR actor = 'mason' OR on_masons_say),
+  CONSTRAINT buyer_updates_posted_on_masons_say CHECK (status <> 'posted' OR actor = 'mason' OR on_masons_say),
+  -- A discarded draft is retracted without ever having been posted.
   CONSTRAINT buyer_updates_times_valid CHECK (
-    (status = 'draft') = (posted_at IS NULL)
+    (status <> 'draft' OR posted_at IS NULL) AND (status <> 'posted' OR posted_at IS NOT NULL)
     AND (status = 'retracted') = (retracted_at IS NOT NULL)
     AND (emailed_at IS NULL OR posted_at IS NOT NULL)
     AND email_attempts >= 0
