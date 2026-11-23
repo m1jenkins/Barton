@@ -889,7 +889,7 @@ export async function renderVehiclePages() {
     const carFile = path.join(root, carSentimentFile(vehicle));
     const coded = existsSync(carFile) ? JSON.parse(readFileSync(carFile, 'utf8')) : null;
     const sentiment = coded && summarizeCar(coded);
-    if (vehicle.layout === 'dashboard') {
+    if (vehicle.layout !== 'legacy') {
       const page = renderDashboardVehiclePage({
         vehicle,
         updated,

@@ -30,14 +30,18 @@ function initSubTabs(container) {
 function initCalculator(root) {
   const select = root.querySelector('[data-vd-trim-select]');
   const tierButtons = [...root.querySelectorAll('[data-vd-tier]')];
+  const stickerLabelEl = root.querySelector('[data-vd-calc-sticker-label]');
   const stickerEl = root.querySelector('[data-vd-calc-sticker]');
   const discLabelEl = root.querySelector('[data-vd-calc-disc-label]');
   const discValEl = root.querySelector('[data-vd-calc-disc]');
+  const extraValEl = root.querySelector('[data-vd-calc-extra]');
   const totalEl = root.querySelector('[data-vd-calc-total]');
   const underEl = root.querySelector('[data-vd-calc-under]');
   if (!select || !tierButtons.length || !stickerEl || !discValEl || !totalEl) return;
 
   const destination = Number(root.dataset.vdDestination || 0);
+  const base = root.dataset.vdBase || 'sticker';
+  const underLabel = root.dataset.vdUnder || 'under sticker';
   let tier = 'fair';
 
   const update = () => {
@@ -45,20 +49,32 @@ function initCalculator(root) {
     if (!opt) return;
     const msrp = Number(opt.dataset.msrp || 0);
     const pct = Number(tier === 'strong' ? opt.dataset.strongPct : opt.dataset.fairPct);
+    const extraCash = Number(opt.dataset.extraCash || 0);
     const sticker = msrp + destination;
     const discount = Math.round(sticker * (pct / 100) / 5) * 5;
-    const total = sticker - discount;
+    const total = sticker - discount - extraCash;
+    const totalOff = sticker - total;
 
+    if (stickerLabelEl && opt.dataset.stickerLabel) {
+      stickerLabelEl.textContent = opt.dataset.stickerLabel;
+    }
     stickerEl.textContent = dollars(sticker);
     if (discLabelEl) {
       discLabelEl.textContent = pct > 0
         ? `Dealer discount, ${pct}%`
-        : 'Dealer discount (sticker)';
+        : `Dealer discount (${base})`;
     }
     discValEl.innerHTML = `<span class="sr-only">minus </span>${dollars(discount)}`;
+    if (extraValEl) {
+      extraValEl.innerHTML = `<span class="sr-only">minus </span>${dollars(extraCash)}`;
+    }
     totalEl.textContent = dollars(total);
     if (underEl) {
-      underEl.textContent = discount > 0 ? `${dollars(discount)} under sticker` : 'Pay MSRP, no markup';
+      underEl.textContent = totalOff > 0
+        ? `${dollars(totalOff)} ${underLabel}`
+        : base === 'asking'
+          ? 'Pay asking price, no markup'
+          : 'Pay MSRP, no markup';
     }
   };
 
@@ -91,16 +107,6 @@ function initWorkspace(root) {
   const panels = [...root.querySelectorAll('[data-vd-panel]')];
   if (!tabs.length || !panels.length) return;
 
-  const hashToTab = {
-    trims: 'trims',
-    pick: 'trims',
-    'new-used': 'new-used',
-    rivals: 'rivals',
-    safety: 'safety',
-    watch: 'safety',
-    faq: 'faq',
-  };
-
   const activate = (key, { focus = false } = {}) => {
     tabs.forEach(tab => {
       const active = tab.dataset.vdTab === key;
@@ -109,6 +115,17 @@ function initWorkspace(root) {
       if (active && focus) tab.focus();
     });
     panels.forEach(panel => { panel.hidden = panel.dataset.vdPanel !== key; });
+  };
+
+  const openForHash = hash => {
+    const id = hash.replace(/^#/, '');
+    if (!id) return false;
+    const el = document.getElementById(id);
+    const panel = el?.closest('[data-vd-panel]');
+    const targetTab = panel?.dataset.vdPanel;
+    if (!targetTab) return false;
+    activate(targetTab);
+    return true;
   };
 
   tabs.forEach((tab, index) => {
@@ -121,16 +138,19 @@ function initWorkspace(root) {
     });
   });
 
-  const openForHash = hash => {
-    const id = hash.replace(/^#/, '');
-    const targetTab = hashToTab[id];
-    if (!targetTab) return false;
-    activate(targetTab);
-    return true;
-  };
-
   // Initial state: honor URL hash if it points into a tab, otherwise open the first tab.
-  if (!openForHash(window.location.hash)) activate(tabs[0].dataset.vdTab);
+  if (openForHash(window.location.hash)) {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      const scrollTarget = () => target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      requestAnimationFrame(() => requestAnimationFrame(scrollTarget));
+      if (document.readyState !== 'complete') {
+        window.addEventListener('load', () => requestAnimationFrame(scrollTarget), { once: true });
+      }
+    }
+  } else {
+    activate(tabs[0].dataset.vdTab);
+  }
 
   // Intercept in-page links pointing inside a tab so the tab switches before scrolling.
   document.addEventListener('click', event => {

@@ -85,7 +85,7 @@
     <link rel="stylesheet" href="/logo-motion.css?v=924dcb7b7cb5">
     <script type="module" src="/logo-motion.js?v=e5b4ed3d47fb"></script>
     <link rel="stylesheet" href="/buying/resources.css?v=7303a08bfc8a">
-    <link rel="stylesheet" href="/buying/vehicle-dashboard.css?v=f346fef76e21">
+    <link rel="stylesheet" href="/buying/vehicle-dashboard.css?v=ebe6f6ac27b0">
 </head>
 <body class="dr" data-buying-page="guide">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -114,7 +114,7 @@
           <span class="vd-make-mark"><img class="vp-logo" src="/assets/logos/toyota.webp" alt="" width="151" height="96" decoding="async"></span>
           <div>
             <h1>Toyota RAV4 price: what to pay and how far under MSRP to aim</h1>
-            <p class="vd-title-sub">2026 Toyota RAV4 buyer dashboard · Reviews, Reddit sentiment, and live dealer pricing targets</p>
+            <p class="vd-title-sub">2026 Toyota RAV4 buyer dashboard · Reviews, Reddit sentiment, and dealer targets</p>
           </div>
         </div>
         <div class="vd-title-actions">
@@ -134,7 +134,7 @@
           <span class="vd-kpi__sub">Fair target · 3–4% strong</span>
         </a>
         <a class="vd-kpi" href="#incentives">
-          <span class="vd-kpi__label">Current offer</span>
+          <span class="vd-kpi__label">Current offers</span>
           <span class="vd-kpi__value">4.99% APR, no cash</span>
           <span class="vd-kpi__sub">48 mo · Ends Nov 30</span>
         </a>
@@ -144,7 +144,7 @@
           <span class="vd-kpi__sub">12,552 comments · 20% pick</span>
         </a>
         <a class="vd-kpi" href="#pick">
-          <span class="vd-kpi__label">Our pick</span>
+          <span class="vd-kpi__label">Trim we’d buy</span>
           <span class="vd-kpi__value">2026 XLE Premium</span>
           <span class="vd-kpi__sub">New, as a 2026</span>
         </a>
@@ -175,7 +175,7 @@
       <section id="overview" class="vd-card vd-col-5">
         <div class="vd-card__head">
           <h2>The bottom line</h2>
-          <span class="vd-meta-label vd-meta-label--accent">Buy new · 2026</span>
+          <span class="vd-meta-label vd-meta-label--accent">New, as a 2026</span>
         </div>
         <p class="vd-verdict-lead">The RAV4 is hybrid-only now and still easy to recommend: 43 mpg combined with front-wheel drive, and it loses value about half as fast as the average vehicle. The catch is price. Toyota offers no cash back, and TrueCar’s averages put most trims within 2% of sticker. Price a 2026 XLE Premium and aim for 1–2% under MSRP.</p>
         <div class="vd-verdict-split">
@@ -212,6 +212,7 @@
           <h2>How well reviewed it is</h2>
           <span class="vd-card__eyebrow">4 major outlets</span>
         </div>
+
         <ul class="vd-scores" role="list">
           <li>
             <a class="vd-score-row" href="https://www.edmunds.com/toyota/rav4/" rel="noopener">
@@ -248,18 +249,17 @@
         </ul>
         <div class="vd-safety-mini">
           <div class="vd-safety-mini__left">
-            <img class="vp-logo" src="/assets/logos/iihs-hldi.webp" alt="IIHS-HLDI" width="178" height="120" decoding="async" loading="lazy">
+            <div class="vd-safety-mini__logos"><img class="vp-logo" src="/assets/logos/iihs-hldi.webp" alt="IIHS-HLDI" width="178" height="120" decoding="async" loading="lazy"></div>
             <div>
               <p class="vd-safety-mini__title">7/8 Rated Good by IIHS</p>
               <span class="vd-tally" role="img" aria-label="7 of 8 rated Good"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
-              <p class="vd-safety-mini__sub">Consumer Reports: more reliable than average</p>
+              <p class="vd-safety-mini__sub">2026 RAV4 Hybrid</p>
             </div>
           </div>
           <a class="vd-link" href="#safety" style="font-size:13px;font-weight:600;white-space:nowrap;">Full report</a>
         </div>
         <p class="vd-note">Scores for the 2026 RAV4 hybrid as published on November 15, 2026. They are not Steer Me Right ratings, and we have not averaged them.</p>
       </section>
-
       <div class="vd-card vd-col-7" data-vd-subtabs>
         <section id="reddit" class="vp-section">
           <div class="vd-card__head">
@@ -285,6 +285,8 @@
               <p class="vd-rd-sub">244 of 1,219 picks in 431 neutral threads. Next closest: Mazda CX-5 (134).</p>
             </div>
           </div>
+
+
 
           <div class="vd-rd-controls">
             <div class="vd-seg" role="tablist" aria-label="Reddit breakdown views">
@@ -342,7 +344,7 @@
       </div>
     </div>
 
-    <!-- ROW C: Dealership Deals & Target Price + Current Toyota Offers -->
+    <!-- ROW C: Dealership Deals & Target Price + Current Offers -->
     <div class="vd-grid">
       <section id="pay" class="vd-card vd-col-7">
         <div class="vd-card__head">
@@ -377,21 +379,21 @@
           </li>
         </ul>
 
-        <div class="vd-calc" data-vd-calc data-vd-destination="1595">
+        <div class="vd-calc" data-vd-calc data-vd-destination="1595" data-vd-base="sticker" data-vd-under="under sticker">
           <div class="vd-calc__top">
             <label class="vd-calc__title" for="vd-trim-picker">Estimate your target price</label>
             <div class="vd-calc__controls">
               <select id="vd-trim-picker" class="vd-select" data-vd-trim-select aria-label="Choose a RAV4 trim">
-                <option value="LE" data-msrp="31900" data-fair-pct="1.5" data-strong-pct="3.5">2026 LE ($31,900)</option>
-                <option value="SE" data-msrp="34700" data-fair-pct="1.5" data-strong-pct="3.5">2026 SE ($34,700)</option>
-                <option value="XLE Premium" data-msrp="36100" data-fair-pct="1.5" data-strong-pct="3.5" selected>2026 XLE Premium ($36,100)</option>
-                <option value="Woodland" data-msrp="39900" data-fair-pct="0" data-strong-pct="2">2026 Woodland ($39,900)</option>
-                <option value="XSE" data-msrp="41300" data-fair-pct="0" data-strong-pct="2">2026 XSE ($41,300)</option>
-                <option value="Limited" data-msrp="43300" data-fair-pct="0" data-strong-pct="2">2026 Limited ($43,300)</option>
-                <option value="SE Plug-in" data-msrp="41500" data-fair-pct="2.5" data-strong-pct="4">2026 SE Plug-in ($41,500)</option>
-                <option value="Woodland Plug-in" data-msrp="45300" data-fair-pct="2.5" data-strong-pct="4">2026 Woodland Plug-in ($45,300)</option>
-                <option value="XSE Plug-in" data-msrp="47200" data-fair-pct="2.5" data-strong-pct="4">2026 XSE Plug-in ($47,200)</option>
-                <option value="GR Sport" data-msrp="48500" data-fair-pct="2.5" data-strong-pct="4">2026 GR Sport ($48,500)</option>
+                <option value="LE" data-msrp="31900" data-fair-pct="1.5" data-strong-pct="3.5" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 LE ($31,900)</option>
+                <option value="SE" data-msrp="34700" data-fair-pct="1.5" data-strong-pct="3.5" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 SE ($34,700)</option>
+                <option value="XLE Premium" data-msrp="36100" data-fair-pct="1.5" data-strong-pct="3.5" data-extra-cash="0" data-sticker-label="Sticker with destination" selected>2026 XLE Premium ($36,100)</option>
+                <option value="Woodland" data-msrp="39900" data-fair-pct="0" data-strong-pct="2" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 Woodland ($39,900)</option>
+                <option value="XSE" data-msrp="41300" data-fair-pct="0" data-strong-pct="2" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 XSE ($41,300)</option>
+                <option value="Limited" data-msrp="43300" data-fair-pct="0" data-strong-pct="2" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 Limited ($43,300)</option>
+                <option value="SE Plug-in" data-msrp="41500" data-fair-pct="2.5" data-strong-pct="4" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 SE Plug-in ($41,500)</option>
+                <option value="Woodland Plug-in" data-msrp="45300" data-fair-pct="2.5" data-strong-pct="4" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 Woodland Plug-in ($45,300)</option>
+                <option value="XSE Plug-in" data-msrp="47200" data-fair-pct="2.5" data-strong-pct="4" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 XSE Plug-in ($47,200)</option>
+                <option value="GR Sport" data-msrp="48500" data-fair-pct="2.5" data-strong-pct="4" data-extra-cash="0" data-sticker-label="Sticker with destination">2026 GR Sport ($48,500)</option>
               </select>
               <div class="vd-seg" role="group" aria-label="Target deal tier">
                 <button type="button" class="vd-seg__btn" data-vd-tier="fair" aria-pressed="true">Fair deal</button>
@@ -401,7 +403,7 @@
           </div>
           <div class="vd-math-grid">
             <div class="vd-math-box">
-              <span>Sticker with destination</span>
+              <span data-vd-calc-sticker-label>Sticker with destination</span>
               <strong data-vd-calc-sticker>$37,695</strong>
             </div>
             <span class="vd-math-op" aria-hidden="true">−</span>
@@ -422,7 +424,9 @@
           <summary>How we set these discount targets</summary>
           <div class="vd-more__body">
             <p style="margin-bottom:8px;">RAV4s are scarce. Cox Automotive counted 24 days of supply at the end of October, against 39 for Toyota as a whole and 87 for the industry. TrueCar’s November averages show the LE and SE selling about 1.5% under MSRP, the XLE Premium about 1% under, and the Woodland and XSE a little over sticker. Edmunds’ suggested prices, based on Texas sales, run 2–3.4% under.</p>
-            <p>Have a dealer quote in hand? Email <a class="vd-link" href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a class="vd-link" href="/schedule.html">pricing page</a> for a free gut check within one business day.</p>
+            <ul style="list-style:disc;padding-left:18px;margin-bottom:8px;"><li style="margin-bottom:4px;"><strong>LE, SE, XLE Premium.</strong> TrueCar averages 0.9–1.6% under. Dealer invoice sits about 6% under MSRP.</li><li style="margin-bottom:4px;"><strong>Woodland, XSE, Limited.</strong> TrueCar’s averages sit at sticker or just above it.</li><li style="margin-bottom:4px;"><strong>Plug-in hybrid.</strong> Edmunds’ suggested prices run about 3% under. TrueCar shows no plug-in figure yet.</li></ul>
+            <p style="margin-bottom:8px;">Not sure what a specific RAV4 should cost? Send us the window sticker or the dealer’s quote and we’ll tell you what we’d aim for. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/schedule.html">pricing page</a>.</p>
+
           </div>
         </details>
         <p class="vd-note">Checked November 15, 2026. Ranges are our estimate from public market data, not a promise.</p>
@@ -495,15 +499,15 @@
           <div class="vd-more__body vd-scroll">
             <table class="vd-table">
               <caption class="sr-only">Manufacturer offers on the Toyota RAV4, checked November 15, 2026</caption>
-              <thead><tr><th scope="col">Offer</th><th scope="col">Details</th><th scope="col">Ends</th></tr></thead>
+              <thead><tr><th scope="col">Offer</th><th scope="col">What it is</th><th scope="col">Applies to</th><th scope="col">Ends</th></tr></thead>
               <tbody>
-                <tr><th scope="row">4.99% APR for 48 months<span class="vd-sub">Every 2026 hybrid trim, and every plug-in but the GR Sport</span></th><td>Through Toyota Financial Services</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">Longer terms in Southern California<span class="vd-sub">2026 RAV4 and Plug-in Hybrid, California</span></th><td>5.99% for 60 months or 6.99% for 72. The plug-in gets 6.99% for 72 months only.</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">LE lease<span class="vd-sub">2026 LE</span></th><td>$299 a month for 39 months with $3,999 due in Dallas; $309 in Chicago; $279 in Los Angeles; $379 with $379 due in New York</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">Plug-in SE lease<span class="vd-sub">2026 RAV4 Plug-in Hybrid SE</span></th><td>$429 a month for 39 months in New York, $439 in Chicago, $449 in Los Angeles, each with $3,999 due. None in Dallas.</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">Military rebate<span class="vd-sub">2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.</span></th><td>$500 when you finance or lease through Toyota Financial Services</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">College rebate<span class="vd-sub">2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.</span></th><td>$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
-                <tr><th scope="row">2027 RAV4<span class="vd-sub">All 2027 trims</span></th><td>No public offers yet</td><td style="white-space:nowrap;"><a class="vd-link" href="/schedule.html">Ask us</a></td></tr>
+                <tr><th scope="row">4.99% APR for 48 months</th><td>Through Toyota Financial Services</td><td>Every 2026 hybrid trim, and every plug-in but the GR Sport</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">Longer terms in Southern California</th><td>5.99% for 60 months or 6.99% for 72. The plug-in gets 6.99% for 72 months only.</td><td>2026 RAV4 and Plug-in Hybrid, California</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">LE lease</th><td>$299 a month for 39 months with $3,999 due in Dallas; $309 in Chicago; $279 in Los Angeles; $379 with $379 due in New York</td><td>2026 LE</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">Plug-in SE lease</th><td>$429 a month for 39 months in New York, $439 in Chicago, $449 in Los Angeles, each with $3,999 due. None in Dallas.</td><td>2026 RAV4 Plug-in Hybrid SE</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">Military rebate</th><td>$500 when you finance or lease through Toyota Financial Services</td><td>2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">College rebate</th><td>$500 for recent and soon-to-be graduates who finance or lease through Toyota Financial Services</td><td>2026 RAV4 and Plug-in Hybrid. Not offered in AL, FL, GA, HI, NC or SC.</td><td style="white-space:nowrap;">November 30, 2026</td></tr>
+                <tr><th scope="row">2027 RAV4</th><td>No public offers yet</td><td>All 2027 trims</td><td style="white-space:nowrap;"><a class="vd-link" href="/schedule.html">Ask us</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -569,62 +573,52 @@
             <tbody>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">LE<span class="vd-sub">12.3-inch digital gauges, 10.5-inch touchscreen with wireless CarPlay and Android Auto, Toyota Safety Sense 4.0</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$31,900</span><span class="vd-bar" aria-hidden="true"><span style="--w:65.8%"></span></span></div></td>
-                <td><strong>$32,300</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$31,900</span><span class="vd-bar" aria-hidden="true"><span style="--w:65.8%"></span></span></div></td><td><strong>$32,300</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 226 hp FWD or 236 hp AWD</td>
               </tr>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">SE<span class="vd-sub">18-inch black alloys, black fender trim, blue interior stitching</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$34,700</span><span class="vd-bar" aria-hidden="true"><span style="--w:71.5%"></span></span></div></td>
-                <td><strong>$35,100</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$34,700</span><span class="vd-bar" aria-hidden="true"><span style="--w:71.5%"></span></span></div></td><td><strong>$35,100</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 226 hp FWD or 236 hp AWD</td>
               </tr>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">XLE Premium <span class="vd-inline-label">Our pick</span><span class="vd-sub">Power liftgate, SofTex heated front seats, parking sensors that brake for you</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$36,100</span><span class="vd-bar" aria-hidden="true"><span style="--w:74.4%"></span></span></div></td>
-                <td><strong>$36,500</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$36,100</span><span class="vd-bar" aria-hidden="true"><span style="--w:74.4%"></span></span></div></td><td><strong>$36,500</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 226 hp FWD or 236 hp AWD</td>
               </tr>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">Woodland<span class="vd-sub">All-terrain tires, raised roof rails with cross bars, Rigid LED fog lights</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$39,900</span><span class="vd-bar" aria-hidden="true"><span style="--w:82.3%"></span></span></div></td>
-                <td><strong>$40,655</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$39,900</span><span class="vd-bar" aria-hidden="true"><span style="--w:82.3%"></span></span></div></td><td><strong>$40,655</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 236 hp, AWD only</td>
               </tr>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">XSE<span class="vd-sub">20-inch black wheels, heated and ventilated seats, 12.9-inch touchscreen</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$41,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:85.2%"></span></span></div></td>
-                <td><strong>$41,900</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$41,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:85.2%"></span></span></div></td><td><strong>$41,900</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 236 hp, AWD only</td>
               </tr>
               <tr data-vd-trim-group="hybrid">
                 <th scope="row">Limited<span class="vd-sub">Panoramic glass roof, nine-speaker JBL audio, dual wireless phone chargers</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$43,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:89.3%"></span></span></div></td>
-                <td><strong>$43,900</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$43,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:89.3%"></span></span></div></td><td><strong>$43,900</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L hybrid, 236 hp, AWD only</td>
               </tr>
               <tr data-vd-trim-group="plugin">
                 <th scope="row">SE Plug-in<span class="vd-sub">The plug-in hybrid, with an EPA-rated 54 miles of electric range</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$41,500</span><span class="vd-bar" aria-hidden="true"><span style="--w:85.6%"></span></span></div></td>
-                <td><strong>$42,100</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$41,500</span><span class="vd-bar" aria-hidden="true"><span style="--w:85.6%"></span></span></div></td><td><strong>$42,100</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L plug-in hybrid, 324 hp, AWD</td>
               </tr>
               <tr data-vd-trim-group="plugin">
                 <th scope="row">Woodland Plug-in<span class="vd-sub">Woodland equipment on the plug-in, plus DC fast charging</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$45,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:93.4%"></span></span></div></td>
-                <td><strong>$46,055</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$45,300</span><span class="vd-bar" aria-hidden="true"><span style="--w:93.4%"></span></span></div></td><td><strong>$46,055</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L plug-in hybrid, 324 hp, AWD</td>
               </tr>
               <tr data-vd-trim-group="plugin">
                 <th scope="row">XSE Plug-in<span class="vd-sub">XSE equipment on the plug-in, plus DC fast charging</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$47,200</span><span class="vd-bar" aria-hidden="true"><span style="--w:97.3%"></span></span></div></td>
-                <td><strong>$47,800</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$47,200</span><span class="vd-bar" aria-hidden="true"><span style="--w:97.3%"></span></span></div></td><td><strong>$47,800</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L plug-in hybrid, 324 hp, AWD</td>
               </tr>
               <tr data-vd-trim-group="plugin">
                 <th scope="row">GR Sport<span class="vd-sub">Plug-in only: GR-tuned suspension and steering, 20-inch wheels, rear spoiler</span></th>
-                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$48,500</span><span class="vd-bar" aria-hidden="true"><span style="--w:100%"></span></span></div></td>
-                <td><strong>$49,100</strong></td>
+                <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$48,500</span><span class="vd-bar" aria-hidden="true"><span style="--w:100%"></span></span></div></td><td><strong>$49,100</strong></td>
                 <td style="font-size:13px;color:var(--muted);">2.5L plug-in hybrid, 324 hp, AWD</td>
               </tr>
             </tbody>
@@ -635,7 +629,10 @@
 
       <!-- TAB 2: New vs Used vs CPO -->
       <div id="panel-new-used" class="vd-tabpanel" role="tabpanel" aria-labelledby="tab-new-used" data-vd-panel="new-used" hidden>
-        <div id="new-used" class="vd-take-bar"><strong>Our take: buy new, and buy the 2026.</strong> A used RAV4 Hybrid barely costs less: the median used 2025 asks $32,299, and TrueCar’s average paid for a new 2026 LE is $32,951. Used loans average 11.19% against Toyota’s 4.99% on a new one.</div>
+        <div id="new-used" class="vd-table-head">
+          <h3>New, used or CPO?</h3>
+        </div>
+        <div class="vd-take-bar"><strong>Our take: buy new, and buy the 2026.</strong> A used RAV4 Hybrid barely costs less: the median used 2025 asks $32,299, and TrueCar’s average paid for a new 2026 LE is $32,951. Used loans average 11.19% against Toyota’s 4.99% on a new one.</div>
         <div class="vd-mini-charts">
           <section class="vd-mini-chart">
             <h3>Value lost in three years</h3>
@@ -698,7 +695,7 @@
         </div>
         <div class="vd-scroll">
           <table class="vd-table vd-table--wide">
-            <caption class="sr-only">Toyota RAV4 and its rivals: starting MSRP</caption>
+            <caption class="sr-only">Toyota RAV4 and its rivals: starting msrp</caption>
             <thead><tr><th scope="col">Model</th><th scope="col">Starting MSRP</th></tr></thead>
             <tbody>
               <tr>
@@ -708,6 +705,7 @@
                     <span>RAV4 LE <span class="vd-inline-label">This guide</span><span class="vd-sub">Hybrid-only, 43 mpg combined with front-wheel drive</span></span>
                   </div>
                 </th>
+
                 <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$31,900</span><span class="vd-bar" aria-hidden="true"><span style="--w:89.5%"></span></span></div></td>
               </tr>
               <tr>
@@ -717,6 +715,7 @@
                     <span>Honda CR-V Sport Hybrid<span class="vd-sub">$3,730 more to start; Kelley Blue Book’s 2026 best resale value compact SUV</span></span>
                   </div>
                 </th>
+
                 <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$35,630</span><span class="vd-bar" aria-hidden="true"><span style="--w:100%"></span></span></div></td>
               </tr>
               <tr>
@@ -726,6 +725,7 @@
                     <span>Hyundai Tucson Hybrid<span class="vd-sub">Its $34,050 includes destination; the RAV4 LE’s $31,900 leaves out $1,595</span></span>
                   </div>
                 </th>
+
                 <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$34,050</span><span class="vd-bar" aria-hidden="true"><span style="--w:95.6%"></span></span></div></td>
               </tr>
               <tr>
@@ -735,6 +735,7 @@
                     <span>Mazda CX-50 Hybrid<span class="vd-sub">$2,850 more to start; destination is $1,595, the same as the RAV4’s</span></span>
                   </div>
                 </th>
+
                 <td class="vd-price-cell"><div class="vd-price-cell__wrap"><span class="vd-price-cell__num">$34,750</span><span class="vd-bar" aria-hidden="true"><span style="--w:97.5%"></span></span></div></td>
               </tr>
             </tbody>
@@ -748,8 +749,15 @@
         <div class="vd-two-col">
           <section id="safety">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-              <h3>IIHS safety &amp; NHTSA recalls</h3>
-              <img class="vp-logo" src="/assets/logos/iihs-hldi.webp" alt="IIHS-HLDI" width="178" height="120" decoding="async" loading="lazy">
+              <h3>Safety &amp; NHTSA recalls</h3>
+              <div class="vd-safety-mini__logos"><img class="vp-logo" src="/assets/logos/iihs-hldi.webp" alt="IIHS-HLDI" width="178" height="120" decoding="async" loading="lazy"></div>
+            </div>
+            <div class="vd-safety-overall-inline">
+              <div>
+                <strong>7/8 Rated Good by IIHS</strong>
+                <span>2026 RAV4 Hybrid</span>
+              </div>
+              <span class="vd-tally" role="img" aria-label="7 of 8 rated Good"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
             </div>
             <dl class="vd-safety-tests">
               <div><dt>Small overlap front</dt><dd><span class="vd-grade" aria-hidden="true">G</span><span>Good</span></dd></div>
@@ -923,6 +931,6 @@
 <script src="/script.js?v=c242ab436c23"></script>
 <script type="module" src="/buying/app.js?v=44b1a48f8182"></script>
 
-<script type="module" src="/buying/vehicle-dashboard.js?v=eb0a724a1852"></script>
+<script type="module" src="/buying/vehicle-dashboard.js?v=95b74df84995"></script>
 </body>
 </html>
