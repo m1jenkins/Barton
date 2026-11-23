@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { shell } from './render-market-pages.mjs';
 import { summarize, summarizeCar, topics as sentimentTopics } from './reddit-sentiment.mjs';
+import { renderDashboardVehiclePage } from './render-vehicle-dashboard.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://www.steermeright.com';
@@ -840,7 +841,7 @@ ${cmp.sources.map(source => `<li><a href="${source.url}" rel="noopener">${source
 // Links from a price guide to the other pages about the same car: its problems-by-year page (when ready), its
 // hybrid-vs-gas page, the roundups that rank it, and the two cross-model deal pages. Read at build time, so a new
 // page in any of those families shows up here on the next build.
-function moreLinks(vehicle, name) {
+function moreLinkItems(vehicle, name) {
   const key = vehicle.slug.replace(/-price\.html$/, ''), items = [];
   const problems = path.join(root, 'data/problems-pages', `${key}.json`);
   if (existsSync(problems) && JSON.parse(readFileSync(problems, 'utf8')).status === 'ready') items.push(`<strong><a href="/${key}-problems.html">${name} problems by year</a></strong>Owner complaints per 100,000 sold, recalls and the used years to avoid`);
@@ -848,6 +849,10 @@ function moreLinks(vehicle, name) {
   const roundups = path.join(root, 'data/roundup-pages.json');
   if (existsSync(roundups)) for (const page of JSON.parse(readFileSync(roundups, 'utf8')).pages) if (page.entries.some(entry => entry.guide === vehicle.slug)) items.push(`<strong><a href="/${page.slug}">${page.blogTitle ?? page.h1}</a></strong>Where the ${name} ranks against its rivals`);
   items.push(`<strong><a href="/cars-selling-below-msrp.html">New cars selling below MSRP</a></strong>How the ${name}’s discount compares with every other model we cover`, '<strong><a href="/new-car-deals-this-month.html">New-car deals this month</a></strong>Every current offer on the models we cover');
+  return items;
+}
+function moreLinks(vehicle, name) {
+  const items = moreLinkItems(vehicle, name);
   return `<section id="more" class="vp-section">
 <h2>More on the ${name}</h2>
 <ul class="vp-watch vp-watch--links" role="list">
@@ -859,11 +864,24 @@ ${items.map(item => `<li>${item}</li>`).join('\n')}
 
 export const carSentimentFile = vehicle => `data/reddit-sentiment/cars/${vehicle.slug.replace(/-price\.html$/, '')}.json`;
 const versusSheet = 'buying/versus.css';
+const dashboardSheet = 'buying/vehicle-dashboard.css';
+const dashboardScript = 'buying/vehicle-dashboard.js';
 const sheetLink = (file, css) => `<link rel="stylesheet" href="/${file}?v=${createHash('sha256').update(css).digest('hex').slice(0, 12)}">`;
+const scriptTag = (file, js) => `<script type="module" src="/${file}?v=${createHash('sha256').update(js).digest('hex').slice(0, 12)}"></script>`;
 
 export async function renderVehiclePages() {
-  const [chrome, data, comparisons, css, versusCss] = await Promise.all([read(chromePage), read('data/vehicle-pages.json').then(JSON.parse), read('data/comparison-pages.json').then(JSON.parse), readFile(path.join(root, stylesheet)), readFile(path.join(root, versusSheet))]);
+  const [chrome, data, comparisons, css, versusCss, dashCss, dashJs] = await Promise.all([
+    read(chromePage),
+    read('data/vehicle-pages.json').then(JSON.parse),
+    read('data/comparison-pages.json').then(JSON.parse),
+    readFile(path.join(root, stylesheet)),
+    readFile(path.join(root, versusSheet)),
+    readFile(path.join(root, dashboardSheet)),
+    readFile(path.join(root, dashboardScript)),
+  ]);
   const link = sheetLink(stylesheet, css);
+  const dashLink = sheetLink(dashboardSheet, dashCss);
+  const dashScriptTag = scriptTag(dashboardScript, dashJs);
   const models = JSON.parse(await read('data/reddit-sentiment/models.json'));
   const pages = data.vehicles.map(vehicle => {
     // A page checked after the file-wide date carries its own date.
@@ -871,6 +889,28 @@ export async function renderVehiclePages() {
     const carFile = path.join(root, carSentimentFile(vehicle));
     const coded = existsSync(carFile) ? JSON.parse(readFileSync(carFile, 'utf8')) : null;
     const sentiment = coded && summarizeCar(coded);
+    if (vehicle.layout === 'dashboard') {
+      const page = renderDashboardVehiclePage({
+        vehicle,
+        updated,
+        coded,
+        sentiment,
+        origin,
+        models,
+        vehicles: data.vehicles,
+        comparisons: comparisons.comparisons,
+        planCards,
+        mark,
+        makeOf,
+        sourceLogos,
+        sentimentTopics,
+        moreItems: moreLinkItems(vehicle, vehicle.labels?.moreName ?? vehicle.name),
+      });
+      const html = shell(chrome, { ...page, published: vehicle.published, updated }, page.body)
+        .replace('</head>', `    ${dashLink}\n</head>`)
+        .replace('</body>', `${dashScriptTag}\n</body>`);
+      return { slug: page.slug, html };
+    }
     const reddit = coded && redditSection(vehicle, coded, sentiment, { models, vehicles: data.vehicles, comparisons: comparisons.comparisons });
     const page = vehiclePage(vehicle, updated, reddit, sentiment);
     const html = shell(chrome, { ...page, published: vehicle.published, updated }, page.body);

@@ -855,6 +855,7 @@
     },
     {
       "slug": "toyota-rav4-price.html",
+      "layout": "dashboard",
       "name": "Toyota RAV4",
       "modelYear": 2026,
       "published": "2026-11-15",
