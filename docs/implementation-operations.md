@@ -349,6 +349,26 @@ The production `/_vercel/insights/script.js` endpoint was confirmed enabled. PR 
 
 Only released informational paths on production hosts can load the SDK. `beforeSend` accepts page views only, strips query/fragment data, excludes customer identity/custom-event payloads and rejects unknown paths. Receipts and the quote worksheet are excluded. Since the SDK sends external referrers intact, views with an external path/query/fragment/credentials are suppressed. The SDK identity is reset before any automatic view. Browser tests confirm the revised consent UI; regression tests cover the production host, GPC, receipt, referrer and URL filters. Cookieless page measurement does not close the separate purchase outbox collector or destination reconciliation gap.
 
+Update, November 25, 2026: `beforeSend` now also accepts four custom events, `cta_click`, `generate_lead`, `begin_checkout` and `phone_click`, which `script.js`'s `track()` hands to `web-analytics.js`. Each event's payload is rebuilt from an allowlist of at most one slug-valued field (`cta_location`, `form_name` or `service_tier`), never IDs, labels or typed text. The rebuild matters because the SDK sends the original payload if `beforeSend` returns none. Vercel stores custom events only on Pro or Enterprise, and its UTM breakdowns are a paid add-on.
+
+## Campaign tags on links we control — November 25, 2026
+
+`script.js` saves `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` and `utm_term` as first and last touch. Leads (`leads.attribution`) and checkouts (`checkout_attempts.attribution`) carry them, and so does the GTM dataLayer. Vercel does not show them without the paid add-on, so read them in Neon or GA4.
+
+Links on channels we run use one lowercase scheme so the sources group cleanly:
+
+| Channel | Link |
+|---|---|
+| Google Business Profile, website button | `https://www.steermeright.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` |
+| YouTube channel links section | `https://www.steermeright.com/?utm_source=youtube&utm_medium=social&utm_campaign=channel` |
+| YouTube video descriptions | `https://www.steermeright.com/?utm_source=youtube&utm_medium=social&utm_campaign=video&utm_content=<video-slug>` |
+| Reddit posts and comments | `https://www.steermeright.com/?utm_source=reddit&utm_medium=social&utm_campaign=<subreddit>` |
+| Mason's email signature | `https://www.steermeright.com/?utm_source=email&utm_medium=signature&utm_campaign=mason` |
+
+Point a tag at a deeper page by swapping the path, keeping the query. Every page carries a self-canonical, so tagged URLs are not indexed separately. ChatGPT search adds `utm_source=chatgpt.com` to the links it cites and sends no referrer; that is why ChatGPT visits looked like direct traffic in Vercel. From October 15 to November 25, 2026 it was first touch on 6 of 25 leads and 11 started checkouts, but only 1 of 10 paid checkouts. Google referrals were first touch on 6 of those 10.
+
+Lifecycle emails are not tagged: they reach people who have already paid, and their only site links are the shared logo and footer in `api/_lib/email-layout.js`. The Deal Tracker emails share that file.
+
 ## September 18, 2026 local measurement changes
 
 Internal navigation preserves the last acquisition touch; a new external referrer or explicit campaign can replace it. Stripe returns and confirmation routes preserve acquisition instead of creating a payment-provider referral. First touch remains the stored first acquisition. Browser and API restrict referrer to HTTP(S) origin and source/landing paths to pathname (no credentials, query or fragment). Delivery sanitizes historical queued payload copies too, without rewriting the ledger. Pre-change lead retries compare normalized stored business fields when the old hash differs; changed business data still conflicts. Existing consent mechanisms are retained; the live GTM consent/configuration still needs the documented account audit. `generate_lead` uses `lead:<lead_id>` and `begin_checkout` uses `checkout:<attempt_id>`, with session and memory guards. CTA/phone clicks remain intent only. No contact or buying-brief content is added to analytics. GA4 identity and collector/destination reconciliation remain unresolved.
