@@ -141,6 +141,16 @@ test('a GUID already saved for one deal is never moved onto another', async t =>
   assert.equal((await loadTexts(sql, one)).texts[0].body, 'Is the RAV4 still there?');
 });
 
+test('attachments go to Postgres as text, so postgres.js can\'t encode them twice', async () => {
+  const queries = [];
+  const sql = async (strings, ...values) => {
+    queries.push(strings.join('?'));
+    return strings.join('').includes('FROM deals d') ? [{ id: 'x', phone: '', email: '', created_at: '2026-12-01' }] : [{ message_guid: 'G-1' }];
+  };
+  await saveTexts(sql, 'x', parseTexts([message('G-1', { attachments: [{ name: 'IMG_1.jpg', mime: 'image/jpeg' }] })]));
+  assert.match(queries.find(query => query.includes('INSERT INTO buyer_texts')), /\?::text::jsonb/);
+});
+
 test('messages are checked before anything is saved', () => {
   assert.throws(() => parseTexts('nope'), TextsError);
   assert.throws(() => parseTexts(Array.from({ length: 501 }, (_, n) => message(`G-${n}`))), /at most 500/);

@@ -91,10 +91,12 @@ export async function saveTexts(sql, intakeId, messages, { now = Date.now() } = 
   if (!open.some(thread => thread.intake_id === intakeId)) return { error: 'not_syncing' };
   let saved = 0;
   for (const message of messages) {
+    // ::text first: a bare ::jsonb makes postgres.js see a jsonb parameter and
+    // encode the JSON string again, storing a string instead of an array.
     const rows = await sql`INSERT INTO buyer_texts (message_guid, onboarding_id, sent_at, from_buyer, body, service,
         unsent, edited, attachments, synced_at)
       VALUES (${message.guid}, ${intakeId}, ${message.sent_at}::timestamptz, ${message.from_buyer}, ${message.body},
-        ${message.service}, ${message.unsent}, ${message.edited}, ${JSON.stringify(message.attachments)}::jsonb, ${iso(now)}::timestamptz)
+        ${message.service}, ${message.unsent}, ${message.edited}, ${JSON.stringify(message.attachments)}::text::jsonb, ${iso(now)}::timestamptz)
       ON CONFLICT (message_guid) DO UPDATE SET body = EXCLUDED.body, unsent = EXCLUDED.unsent, edited = EXCLUDED.edited,
         attachments = EXCLUDED.attachments, synced_at = EXCLUDED.synced_at
       WHERE buyer_texts.onboarding_id = EXCLUDED.onboarding_id
