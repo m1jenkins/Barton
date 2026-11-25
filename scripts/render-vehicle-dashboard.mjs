@@ -870,6 +870,10 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
               <em data-vd-calc-under>${initialUnderText}</em>
             </div>
           </div>
+          <div class="vd-calc-cta">
+            <p><strong>Rather not haggle for <span data-vd-calc-cta-total>${dollars(initialTotal)}</span> yourself?</strong> We contact the dealers that have your ${short} in stock and negotiate the price and fees for you. $395 one time, with a full refund if you cancel before negotiations begin.</p>
+            <a class="vd-btn" href="/schedule.html#full-service" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-calculator">Get my ${short} negotiated</a>
+          </div>
         </div>
 
         <details class="vd-more">

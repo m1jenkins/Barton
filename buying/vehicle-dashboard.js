@@ -37,6 +37,7 @@ function initCalculator(root) {
   const extraValEl = root.querySelector('[data-vd-calc-extra]');
   const totalEl = root.querySelector('[data-vd-calc-total]');
   const underEl = root.querySelector('[data-vd-calc-under]');
+  const ctaTotalEl = root.querySelector('[data-vd-calc-cta-total]');
   if (!select || !tierButtons.length || !stickerEl || !discValEl || !totalEl) return;
 
   const destination = Number(root.dataset.vdDestination || 0);
@@ -69,6 +70,7 @@ function initCalculator(root) {
       extraValEl.innerHTML = `<span class="sr-only">minus </span>${dollars(extraCash)}`;
     }
     totalEl.textContent = dollars(total);
+    if (ctaTotalEl) ctaTotalEl.textContent = dollars(total);
     if (underEl) {
       underEl.textContent = totalOff > 0
         ? `${dollars(totalOff)} ${underLabel}`
