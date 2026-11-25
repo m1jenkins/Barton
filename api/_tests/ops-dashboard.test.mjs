@@ -5,7 +5,7 @@ import { Readable } from 'node:stream';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
 import { agentStatus, dollarsToCents, isAuthorized, opsPassword, summarizeDeal } from '../_lib/ops-dashboard.js';
-import { digestEmail, dispatchOpsAlerts, opsAlertSettings } from '../_lib/ops-alerts.js';
+import { digestEmail, dispatchOpsAlerts, opsAlertSettings, queueAlerts } from '../_lib/ops-alerts.js';
 import { outboxHandler } from '../outbox-dispatch.js';
 import { pendingAnswers } from '../../scripts/deal-desk-db.mjs';
 import { opsHandler } from '../ops.js';
@@ -374,4 +374,17 @@ test('an agent is overdue only after missing two of its stated runs', () => {
     { actor: 'unknown', last_run: at(600), expect_minutes: null }
   ], [{ actor: 'logger-only', last_logged: at(5) }], now);
   assert.deepEqual(status.map(agent => [agent.actor, agent.overdue]), [['late', true], ['fine', false], ['logger-only', false], ['unknown', false]]);
+});
+
+test('alert payloads go to Postgres as text, so postgres.js can\'t encode them twice', async () => {
+  const queries = [];
+  const sql = async (strings, ...values) => {
+    const query = strings.join('?');
+    queries.push(query);
+    return query.includes('agent_runs') ? [{ actor: 'duet-deals', last_run: '2026-11-01T12:00:00Z', expect_minutes: 10, note: null }] : [];
+  };
+  await queueAlerts(sql, { digestHour: 0 }, Date.parse('2026-11-25T18:00:00Z'));
+  const inserts = queries.filter(query => query.includes('INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)'));
+  assert.equal(inserts.length, 2, 'an overdue agent and the digest');
+  for (const insert of inserts) assert.match(insert, /\?::text::jsonb\)/);
 });

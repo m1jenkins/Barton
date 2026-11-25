@@ -527,6 +527,21 @@ test('saveShortlist stores each car\'s estimated total, color, photos and detail
     [[null, null, [], {}], [null, null, [], {}]], 'switched off, the columns keep their defaults');
 });
 
+test('photos and details go to Postgres as text, so postgres.js can\'t encode them twice', async () => {
+  const queries = [];
+  const tx = async (strings, ...values) => {
+    const query = strings.join('?');
+    queries.push(query);
+    if (query.includes('SELECT id FROM deals')) return [{ id: 'deal-1' }];
+    if (query.includes('count(*)')) return [{ count: 0 }];
+    return [];
+  };
+  const sql = { begin: work => work(tx) };
+  await saveShortlist(sql, 'intake-1', parseShortlist(trackerShortlist, { requireTracker: true }), { tracker: true });
+  const insert = queries.find(query => query.includes('INSERT INTO deal_listings'));
+  assert.match(insert, /\?::text::jsonb, \?::text::jsonb\)/);
+});
+
 test('with the Deal Tracker off, saveShortlist works on a database without db/013', async t => {
   const pg = await database(t, migrationsBefore013);
   const sql = tagged(pg);

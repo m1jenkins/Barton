@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, listDocuments, listPicks, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, listDocuments, listPicks, logEvents, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
@@ -40,11 +40,22 @@ test('an agent logs who it is, what blocks it, and which block is resolved', () 
 });
 
 test('a question carries answer buttons, and an answer belongs on its resolved', () => {
-  assert.equal(parseEvent({ intake_id: intake, kind: 'needs_mason', note: 'Counter?', options: [' Approve ', 'Decline'] }).options, '["Approve","Decline"]');
+  assert.deepEqual(parseEvent({ intake_id: intake, kind: 'needs_mason', note: 'Counter?', options: [' Approve ', 'Decline'] }).options, ['Approve', 'Decline']);
   assert.throws(() => parseEvent({ intake_id: intake, kind: 'needs_mason', note: 'x', options: [] }), /options is for a needs_mason only/);
   assert.throws(() => parseEvent({ intake_id: intake, kind: 'note', note: 'x', options: ['a'] }), /options is for a needs_mason only/);
   assert.equal(parseEvent({ intake_id: intake, kind: 'resolved', resolves_event_id: 7, answer: 'Approve' }).answer, 'Approve');
   assert.throws(() => parseEvent({ intake_id: intake, kind: 'note', note: 'x', answer: 'Approve' }), /answer is for a resolved only/);
+});
+
+test('logEvents sends answer buttons tagged as jsonb, so postgres.js encodes them once', async () => {
+  const inserted = [];
+  const sql = (first, ...rest) => (first?.raw ? Promise.resolve({ count: 1 }) : (inserted.push(first), ''));
+  sql.json = value => ({ json: value });
+  await logEvents(sql, [
+    { intake_id: intake, kind: 'needs_mason', note: 'Counter?', options: ['Approve', 'Decline'] },
+    { intake_id: intake, kind: 'note', note: 'Dealer called' }
+  ]);
+  assert.deepEqual(inserted.map(row => row.options), [{ json: ['Approve', 'Decline'] }, null]);
 });
 
 test('a quote or agreed names the car by VIN; a counter needn\'t', () => {

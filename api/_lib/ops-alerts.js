@@ -49,18 +49,20 @@ export async function queueAlerts(sql, settings, now = Date.now(), { tracker = f
     WHERE e.kind = 'needs_mason' AND e.occurred_at > now() - interval '2 days'
       AND NOT EXISTS (SELECT 1 FROM deal_events r WHERE r.resolves_event_id = e.id)
     ON CONFLICT (dedupe_key) DO NOTHING`;
+  // payload is jsonb, so postgres.js would encode a bare JSON string a second
+  // time and store a string; ::text::jsonb stores the object.
   for (const agent of agentStatus(await loadRuns(sql), [], now).filter(item => item.overdue)) {
     const lastRun = new Date(agent.last_run).toISOString();
     await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
       VALUES (${`agent:${agent.actor}:${lastRun}`}, 'agent_overdue',
-        ${JSON.stringify({ actor: agent.actor, last_run: lastRun, expect_minutes: agent.expect_minutes })})
+        ${JSON.stringify({ actor: agent.actor, last_run: lastRun, expect_minutes: agent.expect_minutes })}::text::jsonb)
       ON CONFLICT (dedupe_key) DO NOTHING`;
   }
   if (tracker) await queueBuyerAlerts(sql);
   const today = central(now);
   if (today.hour >= settings.digestHour) {
     await sql`INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)
-      VALUES (${`digest:${today.date}`}, 'digest', ${JSON.stringify({ date: today.date })})
+      VALUES (${`digest:${today.date}`}, 'digest', ${JSON.stringify({ date: today.date })}::text::jsonb)
       ON CONFLICT (dedupe_key) DO NOTHING`;
   }
 }
