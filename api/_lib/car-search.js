@@ -242,6 +242,8 @@ export async function saveShortlist(sql, onboardingId, shortlist, { tracker = fa
     await tx`DELETE FROM deal_listings WHERE deal_id = ${deal.id}`;
     for (const listing of shortlist.listings) {
       if (tracker) {
+        // ::text first: a bare ::jsonb makes postgres.js see a jsonb parameter and
+        // encode the JSON string again, storing a string the CHECKs reject.
         await tx`
           INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents,
             mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why,
@@ -250,7 +252,7 @@ export async function saveShortlist(sql, onboardingId, shortlist, { tracker = fa
             ${listing.target_price_cents}, ${listing.mileage}, ${listing.days_on_lot}, ${listing.vin},
             ${listing.listing_url}, ${listing.dealer_name}, ${listing.dealer_location}, ${listing.dealer_email},
             ${listing.dealer_phone}, ${listing.why}, ${listing.est_otd_cents}, ${listing.color},
-            ${JSON.stringify(listing.photo_urls)}::jsonb, ${JSON.stringify(listing.details)}::jsonb)
+            ${JSON.stringify(listing.photo_urls)}::text::jsonb, ${JSON.stringify(listing.details)}::text::jsonb)
         `;
         continue;
       }
