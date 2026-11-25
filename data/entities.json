@@ -96,7 +96,7 @@
     "publicUrl": null,
     "publicUrlStatus": "pending_verification",
     "addressVisibility": "hidden_for_verification_not_for_schema",
-    "note": "Owner confirmed a live SAB on 2026-09-21/22. On 2026-11-07 Maps showed two Steer Me Right listings (see observedListings). Resolve the duplicate and the hours before adding a GBP URL to sameAs. Do not render streetAddress, geo or LocalBusiness.",
+    "note": "Owner confirmed a live SAB on 2026-09-21/22. On 2026-11-25 the managed profile (cid 14692427625443379224) was updated: hours Mon-Fri 9-5 (was Open 24 hours), website https://www.steermeright.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp, menu link https://www.steermeright.com/schedule.html with the same tags, YouTube channel added under social profiles, and a new description; category left as Auto broker by owner decision. The second listing (cid 4449030103840805460) now shows as \"AM LLC\", Auto broker, with a public street address and an unclaimed-business prompt; it is still open. Resolve it before adding a GBP URL to sameAs. Do not render streetAddress, geo or LocalBusiness.",
     "observedListings2026-11-07": [
       {
         "name": "Steer Me Right",

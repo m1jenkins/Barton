@@ -70,6 +70,8 @@ Accounts and settings are Mason's. Each step says how to verify it.
 | 9 | Point the old apex `driverightcarbuying.com` straight at `https://www.steermeright.com` in the Vercel domain settings, skipping the www hop. The apex is proxied by Cloudflare, and the 301 to www comes from Vercel (`x-vercel-id` on the response) | Vercel → Project → Domains | `curl -sI https://driverightcarbuying.com/` returns 308 to `www.steermeright.com` |
 | 10 | Update every profile that still says Drive Right or links the old domain: Stripe receipts (done Oct 30), email signatures, Facebook, Instagram, LinkedIn, Yelp, BBB, Apple Business Connect, Bing Places | Each service | A Google search for `"driverightcarbuying.com"` returns only redirects and old pages |
 
+**Update 2026-11-25 (item 5):** on the managed profile, hours are now Mon–Fri 9–5, the website and menu links are the tagged https URLs, the YouTube channel is listed under social profiles, and the description reads "Steer Me Right is a car buying and negotiation service based in Austin, working with buyers nationwide. One advisor finds the car, works the dealers by phone and email, negotiates the price and checks the fees. Dealers and lenders pay us nothing." The category stays Auto broker (owner's decision). Still open: the second listing now appears as "AM LLC" (Auto broker, public street address, unclaimed). Nothing was reported or claimed; that is Mason's call.
+
 ## Earning the bare phrase (months, not days)
 
 The song won't go away. Steer Me Right can only win "steer me right" for searchers who mean the business, and that comes from popularity, not markup. In order of expected effect:
