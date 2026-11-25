@@ -58,7 +58,7 @@ export function shell(chrome, { slug, title, description, h1, published, updated
 // A free, no-payment way to reach Mason under the plan cards. It opens the car search inquiry dialog that every page
 // built from the chrome page carries; `vehicle` pre-fills the car field on pages about one car.
 const attr = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
-export const askMason = (location, vehicle = '') => `<p class="ask-mason">Not ready to pay? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet"${vehicle ? ` data-inquiry-vehicle="${attr(vehicle)}"` : ''} data-cta-location="${location}-ask">Ask Mason a question first</button> It’s free, and there’s nothing to pay to ask.</p>`;
+export const askMason = (location, vehicle = '') => `<p class="ask-mason">Not sure which plan you need? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet"${vehicle ? ` data-inquiry-vehicle="${attr(vehicle)}"` : ''} data-cta-location="${location}-ask">Talk to Mason first</button> No payment needed to ask, and we reply within one business day.</p>`;
 
 // The two plan cards, word for word from the approved plan copy (PLAN-NAMES, DRIVE-RIGHT-SCOPE and PRO-SCOPE of 2026-10-23).
 // The buttons are plain /schedule.html links; script.js turns them into checkout. Do not add data-plan.

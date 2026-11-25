@@ -64,7 +64,7 @@ const standardFaq = [
   ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing, and you’re the only one we work for.'],
   ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
 ];
-const cta = '<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><div class="vp-cta__actions"><a class="vp-cta__button" href="#plans" data-cta-location="deals-early">Let us do the work</a><button type="button" class="vp-cta__ask" data-open-inquiry="Deal question" data-cta-location="deals-early-ask">Ask Mason about a deal</button></div></aside>';
+const cta = '<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><div class="vp-cta__actions"><a class="vp-cta__button" href="#plans" data-cta-location="deals-early">Let us do the work</a><button type="button" class="vp-cta__ask" data-open-inquiry="Deal question" data-cta-location="deals-early-ask">Talk to Mason first</button></div></aside>';
 
 let tableCount = 0;
 function table(caption, head, rows, className = 'vp-table') {
