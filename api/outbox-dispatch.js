@@ -8,6 +8,7 @@ import { customerEmailSettings } from './_lib/customer-email.js';
 import { opsAlertSettings, runOpsAlertWorker } from './_lib/ops-alerts.js';
 import { buyerUpdateEmailSettings, runBuyerUpdateWorker } from './_lib/buyer-update-email.js';
 import { documentSettings, runDocumentCleanupWorker } from './_lib/buyer-documents.js';
+import { buyerTextSettings, runBuyerTextCleanupWorker } from './_lib/buyer-texts.js';
 import { runLeadWorker, runAnalyticsWorker, runIntakeEmailWorker, runLeadEmailWorker, runCustomerEmailWorker } from './_lib/outbox-workers.js';
 import { header, requestUrl, sendJson } from './_lib/http.js';
 
@@ -19,6 +20,7 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
   intakeEmailWorker = runIntakeEmailWorker, leadEmailWorker = runLeadEmailWorker,
   customerEmailWorker = runCustomerEmailWorker, opsAlertWorker = runOpsAlertWorker,
   buyerUpdateWorker = runBuyerUpdateWorker, documentCleanupWorker = runDocumentCleanupWorker,
+  textCleanupWorker = runBuyerTextCleanupWorker,
   logger = console } = {}) {
   return async (req, res) => {
     if (req.method !== 'GET') return sendJson(res, 405, { ok: false, error: 'method_not_allowed' }, { Allow: 'GET' });
@@ -31,10 +33,12 @@ export function outboxHandler({ environment = process.env, getDatabase = databas
     const jobs = [['leads', leadDestination, leadWorker], ['analytics', analyticsDestination, analyticsWorker],
       ['intake_email', intakeEmailSettings, intakeEmailWorker], ['lead_email', leadEmailSettings, leadEmailWorker],
       ['customer_email', customerEmailSettings, customerEmailWorker], ['ops_alerts', opsAlertSettings, opsAlertWorker],
-      ['buyer_updates', buyerUpdateEmailSettings, buyerUpdateWorker], ['document_cleanup', documentSettings, documentCleanupWorker]];
+      ['buyer_updates', buyerUpdateEmailSettings, buyerUpdateWorker], ['document_cleanup', documentSettings, documentCleanupWorker],
+      ['text_cleanup', buyerTextSettings, textCleanupWorker]];
     // ?jobs=ops_alerts,buyer_updates runs only those workers: the ops-alerts GitHub
     // workflow calls it every 10 minutes, while the daily Vercel cron runs everything,
-    // which is where document_cleanup (Buyer Documents 30 days after close) runs.
+    // which is where document_cleanup (Buyer Documents 30 days after close) and
+    // text_cleanup (Buyer Texts 30 days after close, adr/0004) run.
     const only = (requestUrl(req).searchParams.get('jobs') || '').split(',').map(name => name.trim()).filter(Boolean);
     if (only.some(name => !jobs.some(([job]) => job === name))) return sendJson(res, 400, { ok: false, error: 'unknown_job' });
     const selected = only.length ? jobs.filter(([name]) => only.includes(name)) : jobs;

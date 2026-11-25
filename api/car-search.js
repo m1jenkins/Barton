@@ -3,13 +3,16 @@ import { blobStore, documentSettings, readDocument, sendDocument } from './_lib/
 import { database } from './_lib/db.js';
 import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
+import { TextsError, listTextThreads, parseTexts, saveTexts } from './_lib/buyer-texts.js';
 import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } from './_lib/http.js';
 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
 // GET ?intake=<id> returns the search details; POST saves the shortlist; POST
 // with "action": "handoff" marks the deal's first emails handed off and returns
 // the deal for the script to post to Grokbot. GET ?document=<id> returns a Buyer
-// Document as a download (scripts/car-search.mjs document <id>).
+// Document as a download (scripts/car-search.mjs document <id>). GET ?texts=threads
+// lists the open deals' numbers and POST "action": "texts" saves one thread's
+// Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -50,6 +53,10 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       return sendDocument(res, file);
     }
 
+    if (req.method === 'GET' && requestUrl(req).searchParams.get('texts') === 'threads') {
+      return sendJson(res, 200, { ok: true, threads: await listTextThreads(getDatabase()) });
+    }
+
     if (req.method === 'GET') {
       const intakeId = requestUrl(req).searchParams.get('intake') || '';
       if (!UUID.test(intakeId)) throw new HttpError(400, 'invalid_intake', 'intake must be an intake ID');
@@ -69,7 +76,19 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       }
       return sendJson(res, 200, { ok: true, handoff: result.handoff });
     }
-    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff" or left out');
+    if (body.action === 'texts') {
+      let messages;
+      try {
+        messages = parseTexts(body.messages);
+      } catch (error) {
+        if (!(error instanceof TextsError)) throw error;
+        return sendJson(res, 422, { ok: false, error: 'invalid_texts', problems: error.problems });
+      }
+      const result = await saveTexts(getDatabase(), intakeId, messages);
+      if (result.error) return sendJson(res, 409, { ok: false, error: 'not_syncing', message: 'This intake has no open deal, so its texts are not synced.' });
+      return sendJson(res, 200, { ok: true, saved: result.saved });
+    }
+    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts" or left out');
 
     // With the Deal Tracker on, every car needs its estimated total and color.
     const tracker = dealTrackerEnabled(environment);
