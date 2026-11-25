@@ -38,7 +38,7 @@ export function render(buyer, { tracker } = {}) {
       preheader: 'Your private Deal Tracker link is inside. I’ll confirm your search within one business day.',
       cards: [
         card('Your Deal Tracker', [
-          paragraph('This is your private page for the whole search: where it stands, my updates, your questions and your documents.'),
+          paragraph('This is your private page for the whole search: where it stands, your cars and their prices, my updates and your documents.'),
           button(link, 'Open your Deal Tracker'),
           note('Keep this link to yourself. Anyone who has it can see how your deal is going.')
         ]),

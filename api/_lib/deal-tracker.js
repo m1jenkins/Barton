@@ -3,9 +3,9 @@ import { ConfigError } from './config.js';
 import { CONTENT_TYPES, DOC_LABELS, MAX_BYTES, listReceipts } from './buyer-documents.js';
 import { buyerFromRow } from './customer-emails/index.js';
 import { openPickRound } from './buyer-picks.js';
-import { MAX_QUESTION_LENGTH } from './buyer-questions.js';
 import { agreedOffer, bestPrices, dealerNames, pickStatus } from './deal-view.js';
 import { summarizeDeal } from './ops-dashboard.js';
+import { DETAIL_FIELDS, MAX_FEATURES, MAX_PHOTOS, photoUrl } from './listing-media.js';
 
 // The Deal Tracker: a buyer's private page for their deal (GLOSSARY.md,
 // docs/deal-tracker-build-plan-2026-11-21.md). DEAL_TRACKER_ENABLED switches the
@@ -16,24 +16,34 @@ export const dealTrackerEnabled = (environment = process.env) =>
 const DEFAULT_ORIGIN = 'https://www.steermeright.com';
 const DAY = 86400000;
 // A closed deal's link keeps working this long after the latest close (adr/0001).
-// The reply address lives exactly as long (deal-mail.js).
 export const LINK_GRACE_DAYS = 3;
 const MASON = 'mason@steermeright.com';
-// A plain local@domain: each buyer's reply address adds +<token> to the local part.
-const MAILBOX = /^[^\s@<>+]+@[^\s@<>]+\.[^\s@<>]+$/;
+
+// The number buyers text Mason at (adr/0003), as a US number: ten digits, or
+// eleven starting with 1, in any punctuation. Null when it isn't given.
+export function textNumber(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return null;
+  const digits = raw.replace(/[\s().+-]/g, '');
+  const match = /^1?(\d{10})$/.exec(digits);
+  if (!match || /[^\d\s().+-]/.test(raw)) return null;
+  const ten = match[1];
+  return { href: `sms:+1${ten}`, label: `(${ten.slice(0, 3)}) ${ten.slice(3, 6)}-${ten.slice(6)}` };
+}
 
 // Null while the switch is off. On, it needs a real secret: a short one would
 // make every buyer's link guessable, so it fails loudly instead.
-// DEAL_REPLY_MAILBOX is the mailbox buyers' replies go to (adr/0001); unset,
-// update emails fall back to the ordinary reply-to.
+// DEAL_TRACKER_TEXT_NUMBER is the number buyers text Mason at; unset, the page
+// asks them to email instead.
 export function dealTrackerSettings(environment = process.env) {
   if (!dealTrackerEnabled(environment)) return null;
   const secret = String(environment.DEAL_TRACKER_SECRET ?? '').trim();
   if (secret.length < 32) throw new ConfigError('DEAL_TRACKER_SECRET must be at least 32 characters');
   const origin = (String(environment.APP_ORIGIN ?? '').trim() || DEFAULT_ORIGIN).replace(/\/+$/, '');
-  const replyMailbox = String(environment.DEAL_REPLY_MAILBOX ?? '').trim() || null;
-  if (replyMailbox && !MAILBOX.test(replyMailbox)) throw new ConfigError('DEAL_REPLY_MAILBOX must be a plain email address, with no + in it');
-  return { secret, origin, replyMailbox };
+  const rawText = String(environment.DEAL_TRACKER_TEXT_NUMBER ?? '').trim();
+  const text = textNumber(rawText);
+  if (rawText && !text) throw new ConfigError('DEAL_TRACKER_TEXT_NUMBER must be a 10-digit US phone number');
+  return { secret, origin, text };
 }
 
 // ---------- Link ----------
@@ -52,18 +62,6 @@ export function signLink(secret, onboardingId, version) {
 }
 
 export const linkUrl = (settings, onboardingId, version) => `${settings.origin}/deal/${signLink(settings.secret, onboardingId, version)}`;
-
-// The buyer's reply address token (read back by deal-mail.js). A different message under the
-// same secret, so it can't be worked out from the link token or the other way round.
-export const replyToken = (secret, onboardingId) => hmac(secret, `reply:${intakeId(onboardingId)}`).toString('hex').slice(0, 20);
-
-// The buyer's own reply address: the mailbox with +<reply token>, or null when
-// DEAL_REPLY_MAILBOX is unset.
-export function replyAddress(settings, onboardingId) {
-  if (!settings.replyMailbox) return null;
-  const at = settings.replyMailbox.lastIndexOf('@');
-  return `${settings.replyMailbox.slice(0, at)}+${replyToken(settings.secret, onboardingId)}${settings.replyMailbox.slice(at)}`;
-}
 
 function parseToken(token) {
   const match = TOKEN.exec(String(token ?? ''));
@@ -133,6 +131,39 @@ function webUrl(value) {
   } catch { return null; }
 }
 
+const jsonValue = value => {
+  if (typeof value !== 'string') return value;
+  try { return JSON.parse(value); } catch { return null; }
+};
+const photoList = value => {
+  const list = jsonValue(value);
+  return Array.isArray(list) ? list.map(photoUrl).filter(Boolean).slice(0, MAX_PHOTOS) : [];
+};
+
+// A car's listing details as the buyer may see them: the named fields only, as
+// text, each run through redact (which takes out dealer names and VINs), and
+// up to 40 features.
+function carDetails(value, redact) {
+  const raw = jsonValue(value);
+  const details = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
+  const facts = DETAIL_FIELDS.flatMap(([key, label]) => {
+    const item = details[key];
+    if (item == null || typeof item === 'object') return [];
+    const value = redact(String(item).slice(0, 120));
+    return value ? [{ label, value }] : [];
+  });
+  const features = (Array.isArray(details.features) ? details.features : [])
+    .filter(item => typeof item === 'string')
+    .map(item => redact(item.slice(0, 120)))
+    .filter(Boolean)
+    .slice(0, MAX_FEATURES);
+  return { facts, features };
+}
+
+// Whether the page names each car's dealer and links its listing: from Quotes
+// in on (adr/0003). Before that, the dealer is taken out of everything shown.
+export const dealersShown = (stage, outcome) => stage === 'quoted' || stage === 'agreed' || outcome === 'bought';
+
 // Everything the page may show about a deal, built field by field from named
 // columns. Nothing here is a spread row, so a column added later stays private
 // until someone adds it on purpose. Returns null when there is no deal.
@@ -140,7 +171,8 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
   const [deal] = await sql`SELECT d.id, d.onboarding_id, d.shortlisted_at, d.created_at, o.name, o.tier_id, o.city, o.fields
     FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id WHERE d.onboarding_id = ${onboardingId}`;
   if (!deal) return null;
-  const listings = await sql`SELECT rank, title, color, mileage, price_cents, est_otd_cents, vin, listing_url, dealer_name
+  const listings = await sql`SELECT rank, title, color, mileage, price_cents, est_otd_cents, vin, listing_url, dealer_name, dealer_location,
+    photo_urls, details
     FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`;
   const events = await sql`SELECT id, kind, dealer_name, vin, otd_cents, note, occurred_at
     FROM deal_events WHERE onboarding_id = ${onboardingId} ORDER BY occurred_at, id`;
@@ -161,6 +193,7 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
     },
     cars: [],
     agreed: null,
+    dealers_shown: false,
     pick: { open: false, standing: null },
     // Buyer Documents: receipts only (type and time), and whether the page takes
     // a file, and an ID (from Price agreed). Nothing else about a file leaves the database.
@@ -173,30 +206,21 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
   view.can_upload = true;
   view.can_upload_id = summary.stage === 'agreed' || outcome === 'bought';
 
-  // The timeline: posted Buyer Updates and the buyer's own questions, oldest
-  // first. Drafts and retracted updates never leave the database. A question
-  // shows unless it was discarded or is held mail Mason hasn't released; its
-  // sender address, mail ID and held flag never leave the database either.
-  const updates = await sql`SELECT id, body, posted_at, ready_for_pick, answers_question_id FROM buyer_updates
+  // The timeline: posted Buyer Updates, oldest first. Drafts and retracted
+  // updates never leave the database.
+  const updates = await sql`SELECT id, body, posted_at, ready_for_pick FROM buyer_updates
     WHERE onboarding_id = ${onboardingId} AND status = 'posted' ORDER BY posted_at, id`;
-  const questions = await sql`SELECT id, body, source, created_at FROM buyer_questions
-    WHERE onboarding_id = ${onboardingId} AND discarded_at IS NULL AND (NOT held OR released_at IS NOT NULL)
-    ORDER BY created_at, id`;
-  const asked = new Set(questions.map(question => Number(question.id)));
-  view.timeline = [
-    ...questions.map(question => ({
-      type: 'question', id: Number(question.id), body: String(question.body), at: new Date(question.created_at).toISOString(), by_email: question.source === 'email'
-    })),
-    ...updates.map(update => ({
-      type: 'update', id: Number(update.id), body: String(update.body), at: new Date(update.posted_at).toISOString(), ready_for_pick: Boolean(update.ready_for_pick),
-      // Only a question the buyer can see is named, so the id says nothing about held mail.
-      ...(asked.has(Number(update.answers_question_id)) ? { answers_question_id: Number(update.answers_question_id) } : {})
-    }))
-  ].sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
+  view.timeline = updates.map(update => ({
+    type: 'update', id: Number(update.id), body: String(update.body), at: new Date(update.posted_at).toISOString(), ready_for_pick: Boolean(update.ready_for_pick)
+  }));
 
-  // A dealer is named only once a price is agreed, and only that dealer.
+  const shown = dealersShown(summary.stage, outcome);
+  view.dealers_shown = shown;
   const offer = summary.stage === 'agreed' || outcome === 'bought' ? agreedOffer(listings, events) : null;
+  // Every dealer name and VIN on the deal comes out of the car text (a feed
+  // title can carry both). From Quotes in the dealer has its own line instead.
   const secrets = [...dealerNames(listings, events), ...listings.map(item => item.vin), ...events.map(event => event.vin)];
+  const redact = text => redactCarText(text, secrets);
   const best = bestPrices(listings, events);
   // The Buyer Pick, in Quotes in only. A pick whose dealer was dropped counts as
   // cleared here, before the job writes it, since a GET never writes. Its VIN and
@@ -225,14 +249,21 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
     const isAgreed = Boolean(offer?.vin && vin === offer.vin);
     return {
       rank,
-      title: redactCarText(item.title, secrets) || `Car ${rank}`,
-      color: redactCarText(item.color, secrets) || null,
+      title: redact(item.title) || `Car ${rank}`,
+      color: redact(item.color) || null,
       mileage: item.mileage == null ? null : Number(item.mileage),
       asking_cents: cents(item.price_cents),
       estimate_cents: cents(item.est_otd_cents),
       best_cents: vin ? cents(best.get(vin)?.otd_cents) : null,
       agreed: isAgreed,
-      listing_url: isAgreed ? webUrl(item.listing_url) : null,
+      // How many photos the page serves for this car, at <link>/photo/<rank>/<n>.
+      // The photos' own URLs never leave the server.
+      photo_count: photoList(item.photo_urls).length,
+      details: carDetails(item.details, redact),
+      dealer: shown && String(item.dealer_name ?? '').trim()
+        ? { name: String(item.dealer_name).trim(), location: String(item.dealer_location ?? '').trim() || null }
+        : null,
+      listing_url: shown ? webUrl(item.listing_url) : null,
       can_pick: canPick && Boolean(vin) && best.has(vin)
     };
   });
@@ -243,6 +274,18 @@ export async function loadBuyerView(sql, onboardingId, now = Date.now()) {
   // After a purchase only the car bought stays on the page.
   view.cars = outcome === 'bought' ? cars.filter(car => car.agreed) : cars;
   return view;
+}
+
+// The source URL of one listing photo for the page's photo route: the deal's
+// car by rank, its nth photo (from 0). Null when there's no such photo, or the
+// search is closed without a purchase (that page shows no cars).
+export async function loadPhotoSource(sql, onboardingId, rank, index, now = Date.now()) {
+  if (!Number.isSafeInteger(rank) || !Number.isSafeInteger(index) || index < 0 || index >= MAX_PHOTOS) return null;
+  const view = await loadBuyerView(sql, onboardingId, now);
+  if (!view || !view.cars.some(car => car.rank === rank)) return null;
+  const [row] = await sql`SELECT l.photo_urls FROM deal_listings l JOIN deals d ON d.id = l.deal_id
+    WHERE d.onboarding_id = ${onboardingId} AND l.rank = ${rank}`;
+  return row ? photoList(row.photo_urls)[index] ?? null : null;
 }
 
 // ---------- HTML ----------
@@ -263,6 +306,11 @@ const NOTHING = new Safe('');
 const money = value => `$${Math.round(value / 100).toLocaleString('en-US')}`;
 const miles = value => `${value.toLocaleString('en-US')} miles`;
 const mailto = safe`<a href="mailto:${MASON}">${MASON}</a>`;
+// How a buyer reaches Mason (adr/0003): a text when DEAL_TRACKER_TEXT_NUMBER is
+// set (contact is textNumber()'s result), otherwise email.
+const reach = (contact, start = false) => contact
+  ? safe`${start ? 'Text' : 'text'} me at <a href="${contact.href}">${contact.label}</a>`
+  : safe`${start ? 'Email' : 'email'} me at ${mailto}`;
 
 const STAGES = [
   ['confirming', 'Confirming search'], ['shortlisted', 'Shortlisted'], ['emailing', 'Emailing dealers'],
@@ -273,7 +321,7 @@ const WORDMARK = '<span class="wordmark-type">steer me righ<svg class="wordmark-
 
 // A private page: nothing from another origin, every URL root-relative. The one
 // script is this site's own upload helper, only on a page with the document form.
-function page(title, body, { script = false } = {}) {
+function page(title, body, { script = false, contact = null } = {}) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -295,7 +343,7 @@ ${script ? `<script src="${UPLOAD_SCRIPT}" defer></script>\n` : ''}</head>
 ${body}
 <footer class="site-footer page-width dt-footer">
   <div class="footer-top"><div><a class="wordmark" href="/" aria-label="Steer Me Right home">${WORDMARK}</a>
-    <p>Questions about your deal? Email me at ${mailto}. I answer within one business day.</p></div></div>
+    <p>Questions about your deal? ${reach(contact, true)}. I answer within one business day.</p></div></div>
   <div class="footer-bottom"><span>© 2026 Steer Me Right</span></div>
 </footer>
 </body>
@@ -347,7 +395,7 @@ function searchDetails(view) {
     ? safe`<dl class="dt-details">${join(recap, ({ label, value }) => safe`<div><dt>${label}</dt><dd>${value}</dd></div>`)}</dl>`
     : safe`<p>I have your search details from your intake.</p>`;
   return section('dt-search', 'Your search details', safe`<div class="dt-card">${details}</div>`,
-    safe`This is what you told me. If anything has changed, email me at ${mailto} and I’ll update the search.`);
+    safe`This is what you told me. If anything has changed, ${reach(view.contact)} and I’ll update the search.`);
 }
 
 function howItWorks() {
@@ -364,7 +412,7 @@ function yourSide(view) {
   const items = [
     ...(view.buyer.finance ? [safe`If you might finance, get a loan pre-approval from your bank or credit union. It gives us a rate for the dealer to beat.`] : []),
     ...(view.buyer.trade_in ? [safe`If you’re trading in, find your title or loan payoff details, and take a few clear photos of the car in daylight.`] : []),
-    safe`Watch your email. When I need an answer from you, a quick reply keeps the dealers moving.`
+    safe`Keep an eye on your texts and email. When I need an answer from you, a quick reply keeps the dealers moving.`
   ];
   return section('dt-help', 'What helps from your side', safe`<div class="dt-card">${checklist(items)}</div>`);
 }
@@ -384,7 +432,29 @@ const pickButton = (car, action) => safe`<form class="dt-pick-form" method="post
       <button class="dt-button" type="submit">Pick this car at ${money(car.best_cents)}</button>
     </form>`;
 
-// One car: its title, color and mileage, the asking price, and one main figure.
+// The listing's photos as one swipeable strip. Each is served from the page's
+// own path (/deal/<token>/photo/<rank>/<n>), so the photo host never shows.
+function photoStrip(car, action) {
+  const count = Math.min(Number(car.photo_count) || 0, MAX_PHOTOS);
+  if (!count || !action) return NOTHING;
+  const indexes = Array.from({ length: count }, (_, index) => index);
+  return safe`<div class="dt-photos" role="region" aria-label="Photos of the ${car.title}" tabindex="0">${join(indexes, index => safe`<img class="dt-photo" src="${action}/photo/${car.rank}/${index}" alt="${car.title}, photo ${index + 1} of ${count}" width="640" height="480"${index ? safe` loading="lazy"` : NOTHING} decoding="async">`)}</div>
+    ${count > 1 ? safe`<p class="dt-photos__count">${count} photos · swipe for more</p>` : NOTHING}`;
+}
+
+// The listing's details, folded away under the figures.
+function detailsBlock(car) {
+  const { facts = [], features = [] } = car.details ?? {};
+  if (!facts.length && !features.length) return NOTHING;
+  return safe`<details class="dt-car__more">
+      <summary>Car details</summary>
+      ${facts.length ? safe`<dl class="dt-facts">${join(facts, fact => safe`<div><dt>${fact.label}</dt><dd>${fact.value}</dd></div>`)}</dl>` : NOTHING}
+      ${features.length ? safe`<ul class="dt-features">${join(features, feature => safe`<li>${feature}</li>`)}</ul>` : NOTHING}
+    </details>`;
+}
+
+// One car: its photos, title, color and mileage, the dealer from Quotes in, the
+// asking price and one main figure, then its details.
 function carCard(car, view, action = null) {
   const agreedHere = car.agreed && view.agreed;
   const main = agreedHere && view.agreed.otd_cents != null ? ['Agreed out-the-door price', view.agreed.otd_cents]
@@ -392,16 +462,19 @@ function carCard(car, view, action = null) {
     : car.estimate_cents != null ? ['Estimated total', car.estimate_cents] : null;
   const meta = [car.color, car.mileage != null ? miles(car.mileage) : null].filter(Boolean).join(' · ');
   const waiting = ['shortlisted', 'emailing', 'quoted'].includes(view.stage) && car.best_cents == null;
+  const dealer = car.dealer ?? (agreedHere && view.agreed.dealer_name ? { name: view.agreed.dealer_name, location: null } : null);
   return safe`<article class="dt-car${agreedHere ? ' dt-car--agreed' : ''}" id="car-${car.rank}">
+    ${photoStrip(car, action)}
     <h3 class="dt-car__title">${car.title}</h3>
     ${meta ? safe`<p class="dt-car__meta">${meta}</p>` : NOTHING}
-    ${agreedHere ? safe`<p class="dt-car__dealer">At ${view.agreed.dealer_name}</p>` : NOTHING}
+    ${dealer ? safe`<p class="dt-car__dealer">At ${dealer.name}${dealer.location ? `, ${dealer.location}` : ''}</p>` : NOTHING}
     <dl class="dt-figures">
       ${main ? safe`<div class="dt-figure dt-figure--main"><dt>${main[0]}</dt><dd>${money(main[1])}</dd></div>` : NOTHING}
       ${car.asking_cents != null ? safe`<div class="dt-figure"><dt>Asking price</dt><dd>${money(car.asking_cents)}</dd></div>` : NOTHING}
     </dl>
     ${waiting ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
-    ${agreedHere && car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
+    ${car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
+    ${detailsBlock(car)}
     ${car.can_pick ? pickButton(car, action) : NOTHING}
   </article>`;
 }
@@ -416,8 +489,11 @@ function carsSection(view, action = null) {
     : quoted
       ? 'Best price so far is the lowest written out-the-door price a dealer has given me on that car. It can still change while I negotiate. Cars without one yet show my estimated total.'
       : 'My estimated total is what I expect the out-the-door price to be, with fees, tax and registration. A dealer’s written price replaces it once one comes in.';
+  const aside = view.dealers_shown
+    ? 'Please don’t contact these dealers yourself. I’m negotiating with them, and a call or visit from you can cost us the price.'
+    : 'Each car’s dealer and listing show here once written prices come in.';
   return section('dt-cars', 'Your cars', safe`${carGrid(view.cars, view, action)}
-    <p class="dt-aside">I keep dealer names off this page until a price is agreed, so the negotiation stays with me.</p>`, lead);
+    <p class="dt-aside">${aside}</p>`, lead);
 }
 
 // The agreed price when it isn't tied to a car on the shortlist: the dealer and the figure, no car marked.
@@ -428,17 +504,17 @@ function agreedWithoutCar(view) {
   </div>`;
 }
 
-function agreedSection(view) {
+function agreedSection(view, action = null) {
   const car = view.cars.find(item => item.agreed);
   const others = view.cars.filter(item => !item.agreed);
   const price = view.agreed.otd_cents != null ? money(view.agreed.otd_cents) : null;
-  return safe`${section('dt-agreed', car ? 'Your car' : 'Your agreed price', car ? carGrid([car], view) : agreedWithoutCar(view))}
+  return safe`${section('dt-agreed', car ? 'Your car' : 'Your agreed price', car ? carGrid([car], view, action) : agreedWithoutCar(view))}
   ${section('dt-sign', 'Before you sign', safe`<div class="dt-card">${checklist([
     price ? `Check that the out-the-door price on the buyer’s order is ${price}, to the dollar.` : 'Check that the out-the-door price on the buyer’s order matches the one we agreed, to the dollar.',
     'Read every line for add-ons you didn’t ask for, like paint protection, VIN etching or an extended warranty. You can say no.',
     'Check that the VIN on the paperwork matches the car in front of you.',
     'If you’re financing, compare the dealer’s rate and term with your pre-approval before you sign.',
-    'If anything doesn’t match what we agreed, stop and email me before you sign.'
+    `If anything doesn’t match what we agreed, stop and ${view.contact ? 'text' : 'email'} me before you sign.`
   ])}</div>`)}
   ${section('dt-pickup', 'At pickup', safe`<div class="dt-card">${checklist([
     'Bring your driver’s license, proof of insurance for the new car, and your payment or loan details.',
@@ -446,23 +522,23 @@ function agreedSection(view) {
     'Walk around the car in good light before you drive off. Look for scratches and dents, and check you have both keys and the manuals.',
     'Try the things you’ll use every day, like the phone connection, the climate controls and the seats.'
   ])}</div>`)}
-  ${others.length ? section('dt-others', 'Your other cars', carGrid(others, view), 'These stay here for reference.') : NOTHING}`;
+  ${others.length ? section('dt-others', 'Your other cars', carGrid(others, view, action), 'These stay here for reference.') : NOTHING}`;
 }
 
-function boughtSection(view) {
+function boughtSection(view, action = null) {
   const car = view.cars.find(item => item.agreed);
-  return safe`${car ? section('dt-bought', 'Your car', carGrid([car], view)) : view.agreed ? section('dt-bought', 'Your car', agreedWithoutCar(view)) : NOTHING}
+  return safe`${car ? section('dt-bought', 'Your car', carGrid([car], view, action)) : view.agreed ? section('dt-bought', 'Your car', agreedWithoutCar(view)) : NOTHING}
   ${section('dt-after', 'After you drive off', safe`<div class="dt-card">${checklist([
     'Keep copies of everything you signed: the buyer’s order, the contract and the title paperwork.',
     'Note when your temporary tag expires, and call the dealer if your plates or registration haven’t arrived well before then.',
     'If you financed, set up your first payment with the lender rather than waiting for a bill.',
     'If you traded in a car with a loan, check that the loan shows as paid off.',
     'Move or cancel the insurance on any car you traded in.'
-  ])}</div>`, safe`This page stays up for three days after your deal closes. If anything comes up with the car or the paperwork, email me at ${mailto}.`)}`;
+  ])}</div>`, safe`This page stays up for three days after your deal closes. If anything comes up with the car or the paperwork, ${reach(view.contact)}.`)}`;
 }
 
-function closedSection() {
-  return section('dt-closed', 'This search is closed', safe`<div class="dt-card"><p>If you have a question about it, or you’d like to pick it back up, email me at ${mailto}. I answer within one business day.</p></div>`);
+function closedSection(view) {
+  return section('dt-closed', 'This search is closed', safe`<div class="dt-card"><p>If you have a question about it, or you’d like to pick it back up, ${reach(view.contact)}. I answer within one business day.</p></div>`);
 }
 
 const updateTime = value => new Intl.DateTimeFormat('en-US', {
@@ -474,46 +550,25 @@ const stamp = (label, at) => safe`<p class="dt-update__when">${label ? safe`${la
 // so nothing the buyer, Mason or an agent typed becomes markup.
 const words = body => safe`<p class="dt-update__body">${body}</p>`;
 
-// Buyer Updates and Buyer Questions as one conversation, newest first. An
-// update that answers a question sits right under it, and the pair takes the
-// place of its latest entry, so a late answer comes back to the top.
+// Buyer Updates, newest first.
 export function timelineSection(view) {
   const items = view.timeline ?? [];
   if (!items.length) return NOTHING;
-  const answers = Map.groupBy(items.filter(item => item.type === 'update' && item.answers_question_id != null), item => item.answers_question_id);
-  const entries = items
-    .filter(item => item.type === 'question' || item.answers_question_id == null || !items.some(other => other.type === 'question' && other.id === item.answers_question_id))
-    .map(item => {
-      const replies = item.type === 'question' ? answers.get(item.id) ?? [] : [];
-      return { item, replies, latest: Math.max(...[item, ...replies].map(entry => Date.parse(entry.at))) };
-    })
-    .reverse()
-    .sort((a, b) => b.latest - a.latest);
-  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(entries, ({ item, replies }) => item.type === 'question'
-    ? safe`<li class="dt-question">
-    ${stamp(item.by_email ? 'You asked by email' : 'You asked', item.at)}
-    ${words(item.body)}
-    ${join(replies, reply => safe`<div class="dt-answer">${stamp('Mason’s answer', reply.at)}${words(reply.body)}</div>`)}
-  </li>`
-    : safe`<li class="dt-update">
+  const newest = [...items].reverse().sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
+  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(newest, item => safe`<li class="dt-update">
     ${stamp(null, item.at)}
     ${words(item.body)}
   </li>`)}</ol>`);
 }
 
-// The buyer's question box, on every stage but a closed search that didn't
-// end in a purchase. It posts to the page's own URL; no script.
-export function questionSection(view, action = null) {
+// How to reach Mason, on every stage but a closed search that didn't end in a
+// purchase (that page says it itself). Buyers text him (adr/0003).
+export function contactSection(view) {
   if (view.outcome === 'other') return NOTHING;
-  return section('dt-ask', 'Ask a question', safe`<form class="dt-ask" method="post"${action ? safe` action="${action}"` : NOTHING}>
-    <input type="hidden" name="action" value="question">
-    <label class="dt-ask__label" for="dt-question">Your question</label>
-    <textarea class="dt-ask__field" id="dt-question" name="body" rows="5" maxlength="${MAX_QUESTION_LENGTH}" required></textarea>
-    <button class="dt-ask__send" type="submit">Send question</button>
-  </form>`, 'I answer every question here within one business day.');
+  return section('dt-ask', 'Questions?', safe`<div class="dt-card"><p>${reach(view.contact, true)}. I answer within one business day.</p></div>`);
 }
 
-const MISTAKE = 'If you chose by mistake, ask me a question below and I’ll sort it out.';
+const MISTAKE = 'If you chose by mistake, let me know and I’ll sort it out.';
 const carTitle = (view, rank) => view.cars.find(car => car.rank === rank)?.title ?? null;
 
 // The Buyer Pick, in Quotes in only (plan, "What the buyer sees": Quotes in).
@@ -585,24 +640,26 @@ export function documentsSection(view, { action = null, uploads = true } = {}) {
 }
 
 function stageBody(view, action = null) {
-  if (view.outcome === 'other') return closedSection();
-  if (view.outcome === 'bought') return boughtSection(view);
+  if (view.outcome === 'other') return closedSection(view);
+  if (view.outcome === 'bought') return boughtSection(view, action);
   if (view.stage === 'confirming') return safe`${searchDetails(view)}${howItWorks()}${yourSide(view)}${holdOff()}`;
-  if (view.stage === 'agreed' && view.agreed) return agreedSection(view);
+  if (view.stage === 'agreed' && view.agreed) return agreedSection(view, action);
   return safe`${carsSection(view, action)}${pickSection(view, action)}`;
 }
 
-// action: the page's own path (/deal/<token>), which the question box posts to.
-// uploads: whether the document store is set up (the form shows only then).
-export function renderTracker(view, { action = null, uploads = true } = {}) {
+// action: the page's own path (/deal/<token>), which its forms post to and its
+// photos load from. uploads: whether the document store is set up (the form
+// shows only then). contact: the text number (textNumber()), or null for email.
+export function renderTracker(view, { action = null, uploads = true, contact = null } = {}) {
+  const shown = { ...view, contact };
   const body = safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-${intro(view)}
-${stageBody(view, action)}
-${timelineSection(view)}
-${questionSection(view, action)}
-${documentsSection(view, { action, uploads })}
+${intro(shown)}
+${stageBody(shown, action)}
+${timelineSection(shown)}
+${contactSection(shown)}
+${documentsSection(shown, { action, uploads })}
 </main>`;
-  return page('Your car search · Steer Me Right', String(body), { script: showsUploadForm(view, uploads) });
+  return page('Your car search · Steer Me Right', String(body), { script: showsUploadForm(shown, uploads), contact });
 }
 
 export const dollars = money;
@@ -610,7 +667,7 @@ export const dollars = money;
 // The confirm step before a pick or "keep looking" is written (plan, "The page").
 // car is the view's car being picked, or null for "keep looking". The buttons
 // post to the page's own path; "Go back" returns to the cars.
-export function renderPickConfirm(car, action = null) {
+export function renderPickConfirm(car, action = null, contact = null) {
   const back = `${action ?? ''}#dt-cars`;
   const target = action ? safe` action="${action}"` : NOTHING;
   const intro = car
@@ -627,45 +684,45 @@ export function renderPickConfirm(car, action = null) {
   ${intro}
 </div>
 ${section('dt-next', 'What happens next', safe`<div class="dt-card">${checklist([...next,
-    'Once you confirm, you can’t change it from your page. If you change your mind, ask me a question there.'])}</div>
+    'Once you confirm, you can’t change it from your page. If you change your mind, just let me know.'])}</div>
   <form class="dt-pick-form dt-confirm" method="post"${target}>
     ${car ? safe`<input type="hidden" name="action" value="pick"><input type="hidden" name="car" value="${car.rank}"><input type="hidden" name="price" value="${car.best_cents}">`
     : safe`<input type="hidden" name="action" value="keep_looking">`}
     <button class="dt-button" type="submit">${car ? 'Yes, that’s my pick' : 'Yes, keep looking'}</button>
     <a class="dt-confirm__back" href="${back}">Go back</a>
   </form>`)}
-</main>`));
+</main>`), { contact });
 }
 
-// A short answer to a question box POST that didn't go through, with the way back.
-export function renderNotice(title, text, back = null) {
+// A short answer to a POST that didn't go through, with the way back.
+export function renderNotice(title, text, back = null, contact = null) {
   return page(`${title} · Steer Me Right`, String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 <div class="page-intro dt-intro">
   <h1>${title}</h1>
   <p>${text}</p>
 </div>
-${section('dt-reach', 'What next', safe`<div class="dt-card">${back ? safe`<p><a href="${back}">Back to your car search</a></p>` : NOTHING}<p>You can always email me at ${mailto}. I answer within one business day.</p></div>`)}
-</main>`));
+${section('dt-reach', 'What next', safe`<div class="dt-card">${back ? safe`<p><a href="${back}">Back to your car search</a></p>` : NOTHING}<p>You can always ${reach(contact)}. I answer within one business day.</p></div>`)}
+</main>`), { contact });
 }
 
 // A refused link. It says nothing about whether a deal exists.
-export function renderLinkClosed() {
+export function renderLinkClosed(contact = null) {
   return page('Link not active · Steer Me Right', String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 <div class="page-intro dt-intro">
   <h1>This link isn’t active</h1>
   <p>It may have expired or been replaced by a newer one.</p>
 </div>
-${section('dt-reach', 'Need it back?', safe`<div class="dt-card"><p>Email me, Mason, at ${mailto} and I’ll sort it out. I answer within one business day.</p></div>`)}
-</main>`));
+${section('dt-reach', 'Need it back?', safe`<div class="dt-card"><p>${reach(contact, true)} and I’ll sort it out. I answer within one business day.</p></div>`)}
+</main>`), { contact });
 }
 
 // For an unexpected error: nothing about the deal, just a way to reach Mason.
-export function renderUnavailable() {
+export function renderUnavailable(contact = null) {
   return page('Not available · Steer Me Right', String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
 <div class="page-intro dt-intro">
   <h1>This page isn’t available right now</h1>
   <p>Please try again in a few minutes.</p>
 </div>
-${section('dt-reach', 'Need something now?', safe`<div class="dt-card"><p>Email me at ${mailto}. I answer within one business day.</p></div>`)}
-</main>`));
+${section('dt-reach', 'Need something now?', safe`<div class="dt-card"><p>${reach(contact, true)}. I answer within one business day.</p></div>`)}
+</main>`), { contact });
 }

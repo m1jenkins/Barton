@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { SEARCH_FIELDS, display, oneLine } from './intake-email.js';
+import { DETAIL_FIELDS, MAX_FEATURES, MAX_PHOTOS, photoUrl } from './listing-media.js';
 
 // Mason runs each car search himself in Claude Code with the /car-search skill
 // (.claude/skills/car-search). The skill reads an intake's search details and
@@ -111,6 +112,53 @@ function trackerField(value, path, problems, required, hint, parse) {
   return parse();
 }
 
+// The listing's photos for the buyer's page (adr/0003): up to 20 https URLs, in
+// the listing's order. Optional: a listing without photos shows none.
+function photos(value, path, problems) {
+  if (value == null) return [];
+  if (!Array.isArray(value)) {
+    problems.push(`${path} must be a list of photo URLs`);
+    return [];
+  }
+  if (value.length > MAX_PHOTOS) problems.push(`${path} can hold at most ${MAX_PHOTOS} photos`);
+  return value.slice(0, MAX_PHOTOS).flatMap((item, index) => {
+    const url = photoUrl(item);
+    if (!url) problems.push(`${path}[${index}] must be an https photo URL on a named host`);
+    return url ? [url] : [];
+  });
+}
+
+// The listing's details for the buyer's page: only the named fields
+// (DETAIL_FIELDS), each a short line of text, and up to 40 features.
+const DETAIL_KEYS = new Set([...DETAIL_FIELDS.map(([key]) => key), 'features']);
+function details(value, path, problems) {
+  if (value == null) return {};
+  if (typeof value !== 'object' || Array.isArray(value)) {
+    problems.push(`${path} must be an object of listing details`);
+    return {};
+  }
+  const out = {};
+  for (const key of Object.keys(value)) {
+    if (!DETAIL_KEYS.has(key)) problems.push(`${path}.${key} isn't a detail the page shows; use ${[...DETAIL_KEYS].join(', ')}`);
+  }
+  for (const [key] of DETAIL_FIELDS) {
+    const item = value[key];
+    if (item == null || item === '') continue;
+    const line = typeof item === 'number' && Number.isFinite(item) ? String(item) : typeof item === 'string' ? oneLine(item) : null;
+    if (line == null || line.length > 120) problems.push(`${path}.${key} must be one line of text, up to 120 characters`);
+    else if (line) out[key] = line;
+  }
+  if (value.features != null) {
+    const list = Array.isArray(value.features) ? value.features : null;
+    if (!list || list.length > MAX_FEATURES || list.some(item => typeof item !== 'string' || !oneLine(item) || oneLine(item).length > 120)) {
+      problems.push(`${path}.features must be a list of up to ${MAX_FEATURES} features, each one line up to 120 characters`);
+    } else if (list.length) {
+      out.features = [...new Set(list.map(oneLine))];
+    }
+  }
+  return out;
+}
+
 // Checks a submitted shortlist and reports every problem at once, so one retry
 // can fix them all. Prices are whole dollars in, cents out.
 export function parseShortlist(input, { requireTracker = false } = {}) {
@@ -150,7 +198,9 @@ export function parseShortlist(input, { requireTracker = false } = {}) {
       dealer_location: text(listing.dealer_location, `${path}.dealer_location`, problems, { max: 200, singleLine: true }),
       dealer_email: email(listing.dealer_email, `${path}.dealer_email`, problems, false),
       dealer_phone: text(listing.dealer_phone, `${path}.dealer_phone`, problems, { max: 40, singleLine: true }),
-      why: text(listing.why, `${path}.why`, problems, { max: 2000 }) || ''
+      why: text(listing.why, `${path}.why`, problems, { max: 2000 }) || '',
+      photo_urls: photos(listing.photos, `${path}.photos`, problems),
+      details: details(listing.details, `${path}.details`, problems)
     };
   });
 
@@ -195,11 +245,12 @@ export async function saveShortlist(sql, onboardingId, shortlist, { tracker = fa
         await tx`
           INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents,
             mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why,
-            est_otd_cents, color)
+            est_otd_cents, color, photo_urls, details)
           VALUES (${randomUUID()}, ${deal.id}, ${listing.rank}, ${listing.title}, ${listing.price_cents}, ${listing.market_price_cents},
             ${listing.target_price_cents}, ${listing.mileage}, ${listing.days_on_lot}, ${listing.vin},
             ${listing.listing_url}, ${listing.dealer_name}, ${listing.dealer_location}, ${listing.dealer_email},
-            ${listing.dealer_phone}, ${listing.why}, ${listing.est_otd_cents}, ${listing.color})
+            ${listing.dealer_phone}, ${listing.why}, ${listing.est_otd_cents}, ${listing.color},
+            ${JSON.stringify(listing.photo_urls)}::jsonb, ${JSON.stringify(listing.details)}::jsonb)
         `;
         continue;
       }

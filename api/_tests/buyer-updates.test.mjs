@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import { PGlite } from '@electric-sql/pglite';
-import { loadBuyerView, replyToken, signLink } from '../_lib/deal-tracker.js';
+import { loadBuyerView, signLink } from '../_lib/deal-tracker.js';
 import { approveDraft, discardDraft, postUpdate, retractUpdate } from '../_lib/buyer-updates.js';
 import { buyerUpdateEmailSettings, dispatchBuyerUpdateEmails } from '../_lib/buyer-update-email.js';
 import { dealTrackerHandler } from '../deal-tracker.js';
@@ -16,7 +16,7 @@ import { dealTrackerHandler } from '../deal-tracker.js';
 const SECRET = 'deal-tracker-secret-for-tests-only-0123456789';
 const environment = {
   DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, APP_ORIGIN: 'https://www.steermeright.com',
-  DEAL_REPLY_MAILBOX: 'deals@mailbox.example.test', INTAKE_SMTP_USER: 'sender@example.test', INTAKE_SMTP_PASSWORD: 'smtp-password-for-tests'
+  INTAKE_SMTP_USER: 'sender@example.test', INTAKE_SMTP_PASSWORD: 'smtp-password-for-tests'
 };
 const NOW = Date.parse('2026-12-10T18:00:00Z');
 
@@ -148,7 +148,7 @@ test('the database refuses an agent row that is posted without on_masons_say, or
   assert.equal(row.held, true);
 });
 
-test('a posted update emails the buyer once, after the take-back window, with their link and reply address', async t => {
+test('a posted update emails the buyer once, after the take-back window, with their link, replying to Mason', async t => {
   const pg = await database(t);
   const sql = tagged(pg);
   const id = await intake(pg);
@@ -169,7 +169,7 @@ test('a posted update emails the buyer once, after the take-back window, with th
   const link = `https://www.steermeright.com/deal/${signLink(SECRET, id, 1)}`;
   assert.ok(message.text.includes(link) && message.html.includes(link), 'the email carries the buyer\'s link');
   const replyTo = typeof message.replyTo === 'string' ? message.replyTo : message.replyTo.address;
-  assert.equal(replyTo, `deals+${replyToken(SECRET, id)}@mailbox.example.test`);
+  assert.equal(replyTo, 'mason@steermeright.com');
   assert.doesNotMatch(`${message.subject}\n${message.text}\n${message.html}`, /\bbriefs?\b/i);
 
   assert.equal((await dispatch(pg, mail)).sent, 0, 'a rerun sends nothing twice');

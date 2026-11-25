@@ -1,5 +1,5 @@
 import { ConfigError } from './config.js';
-import { dealTrackerSettings, linkUrl, replyAddress } from './deal-tracker.js';
+import { dealTrackerSettings, linkUrl } from './deal-tracker.js';
 import { button, card, note, paragraph, renderEmail } from './email-layout.js';
 import { intakeEmailSettings, oneLine, smtpTransport } from './intake-email.js';
 import { buyerFromRow } from './customer-emails/index.js';
@@ -77,7 +77,7 @@ async function deliver(sql, id, transport, settings) {
       await transport.sendMail({
         from: { name: FROM_NAME, address: settings.user },
         to: { name: oneLine(row.name), address: row.email },
-        replyTo: replyAddress(settings.tracker, row.onboarding_id) ?? settings.replyTo,
+        replyTo: settings.replyTo,
         subject: email.subject, text: email.text, html: email.html,
         headers: { 'X-Steer-Customer-Email': 'buyer_update' }
       });

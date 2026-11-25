@@ -1,7 +1,6 @@
 name: Ops alerts
 # Sends the ops dashboard's emails to Mason (api/_lib/ops-alerts.js) and the
-# buyers' Buyer Update emails (api/_lib/buyer-update-email.js), and reads mail to
-# the buyers' reply addresses (api/_lib/deal-mail.js), every 10 minutes.
+# buyers' Buyer Update emails (api/_lib/buyer-update-email.js) every 10 minutes.
 # Vercel's own cron only runs once a day. Needs the repository secret
 # CRON_SECRET, set to the same value as CRON_SECRET in Vercel Production; until
 # it is set, each run does nothing.
@@ -18,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Send pending ops alerts and Buyer Update emails, and read reply mail
+      - name: Send pending ops alerts and Buyer Update emails
         env:
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
@@ -28,4 +27,4 @@ jobs:
           fi
           curl --silent --show-error --fail-with-body --max-time 90 \
             -H "Authorization: Bearer $CRON_SECRET" \
-            "https://www.steermeright.com/api/outbox-dispatch?jobs=ops_alerts,buyer_updates,deal_mail"
+            "https://www.steermeright.com/api/outbox-dispatch?jobs=ops_alerts,buyer_updates"

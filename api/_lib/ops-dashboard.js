@@ -2,7 +2,6 @@ import { createHash, timingSafeEqual } from 'node:crypto';
 import { ConfigError } from './config.js';
 import { DOC_LABELS } from './buyer-documents.js';
 import { clearPick } from './buyer-picks.js';
-import { discardHeld, releaseHeld } from './buyer-questions.js';
 import { BuyerUpdateError, MAX_UPDATE_LENGTH, approveDraft, dealerNameWarning, discardDraft, postUpdate, reissueLink, restoreLink, retractUpdate, revokeLink } from './buyer-updates.js';
 import { bestPrices, dealerKey, dealerNames as namedDealers, droppedAfter, pickStatus } from './deal-view.js';
 
@@ -44,10 +43,9 @@ export function isAuthorized(authorization, password) {
   return timingSafeEqual(digest(decoded.slice(colon + 1)), digest(password));
 }
 
-// tracker: whether the Deal Tracker is on. Only then are Buyer Questions and
-// Buyer Picks read, so with it off the dashboard runs exactly the queries it always has.
+// tracker: whether the Deal Tracker is on. Only then are Buyer Picks read, so with it off the dashboard runs exactly the queries it always has.
 export async function loadDashboard(sql, { tracker = false } = {}) {
-  const [needs, drafts, waiting, deals, events, activity, leads, runs, logged, questions, held, picks] = await Promise.all([
+  const [needs, drafts, waiting, deals, events, activity, leads, runs, logged, picks] = await Promise.all([
     sql`SELECT e.id, e.onboarding_id, e.note, e.options, e.actor, e.dealer_name, e.occurred_at, o.name
       FROM deal_events e JOIN onboarding_submissions o ON o.id = e.onboarding_id
       WHERE e.kind = 'needs_mason' AND NOT EXISTS (SELECT 1 FROM deal_events r WHERE r.resolves_event_id = e.id)
@@ -77,10 +75,6 @@ export async function loadDashboard(sql, { tracker = false } = {}) {
       WHERE created_at > now() - interval '14 days' ORDER BY created_at DESC LIMIT 30`,
     loadRuns(sql),
     loadLogged(sql),
-    tracker ? loadUnanswered(sql) : [],
-    tracker ? sql`SELECT q.id, q.onboarding_id, q.sender_email, q.created_at, o.name
-      FROM buyer_questions q JOIN onboarding_submissions o ON o.id = q.onboarding_id
-      WHERE q.held AND q.released_at IS NULL AND q.discarded_at IS NULL ORDER BY q.created_at, q.id` : [],
     tracker ? sql`SELECT p.id, p.onboarding_id, p.kind, p.vin, p.dealer_name, p.otd_cents, p.created_at, o.name,
         (SELECT l.title FROM deal_listings l JOIN deals d ON d.id = l.deal_id
           WHERE d.onboarding_id = p.onboarding_id AND upper(l.vin) = upper(p.vin) ORDER BY l.rank LIMIT 1) AS title
@@ -89,16 +83,8 @@ export async function loadDashboard(sql, { tracker = false } = {}) {
   ]);
   const listings = deals.length ? await sql`SELECT deal_id, rank, title, vin, price_cents, target_price_cents
     FROM deal_listings WHERE deal_id IN (SELECT id FROM deals WHERE created_at > now() - interval '180 days') ORDER BY deal_id, rank` : [];
-  return { needs, drafts, waiting, deals, events, activity, leads, listings, agents: agentStatus(runs, logged), ...(tracker ? { questions, held, picks } : {}) };
+  return { needs, drafts, waiting, deals, events, activity, leads, listings, agents: agentStatus(runs, logged), ...(tracker ? { picks } : {}) };
 }
-
-// A Buyer Question waits for Mason while it shows to the buyer (not discarded,
-// not held mail he hasn't released) and no posted update answers it.
-export const loadUnanswered = sql => sql`SELECT q.id, q.onboarding_id, q.body, q.source, q.created_at, o.name
-  FROM buyer_questions q JOIN onboarding_submissions o ON o.id = q.onboarding_id
-  WHERE q.discarded_at IS NULL AND (NOT q.held OR q.released_at IS NOT NULL)
-    AND NOT EXISTS (SELECT 1 FROM buyer_updates u WHERE u.answers_question_id = q.id AND u.status = 'posted')
-  ORDER BY q.created_at, q.id`;
 
 export const loadRuns = sql => sql`SELECT DISTINCT ON (actor) actor, ran_at AS last_run, expect_minutes, note
   FROM agent_runs WHERE ran_at > now() - interval '30 days' ORDER BY actor, ran_at DESC`;
@@ -121,31 +107,27 @@ export function agentStatus(runs, logged, now = Date.now()) {
 }
 
 // tracker: whether the Deal Tracker is on. Only then are its link row, Buyer
-// Updates, Buyer Questions, Buyer Picks and Buyer Documents read, so with it off
+// Updates, Buyer Picks and Buyer Documents read, so with it off
 // the page runs exactly the queries it always has.
 export async function loadDeal(sql, onboardingId, { tracker = false } = {}) {
   const [deal] = await sql`SELECT d.id, d.onboarding_id, d.search_summary, d.created_at, d.shortlisted_at, o.name, o.city, o.tier_id
     FROM deals d JOIN onboarding_submissions o ON o.id = d.onboarding_id WHERE d.onboarding_id = ${onboardingId}`;
   if (!deal) return null;
-  const [listings, events, drafts, links, updates, questions, picks, documents] = await Promise.all([
+  const [listings, events, drafts, links, updates, picks, documents] = await Promise.all([
     sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, walk_away_cents, mileage, days_on_lot,
         dealer_name, dealer_location, listing_url FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`,
     sql`SELECT id, kind, actor, dealer_name, vin, otd_cents, note, options, answer, resolves_event_id, occurred_at
       FROM deal_events WHERE onboarding_id = ${onboardingId} ORDER BY occurred_at DESC, id DESC`,
     sql`SELECT dealer_name, status, created_at, sent_at, last_error FROM dealer_email_drafts WHERE deal_id = ${deal.id} ORDER BY created_at`,
     tracker ? sql`SELECT version, revoked_at, first_opened_at, last_opened_at FROM deal_tracker_links WHERE onboarding_id = ${onboardingId}` : [],
-    tracker ? sql`SELECT id, body, status, ready_for_pick, answers_question_id, actor, on_masons_say, created_at, posted_at, email_after, emailed_at, email_attempts
+    tracker ? sql`SELECT id, body, status, ready_for_pick, actor, on_masons_say, created_at, posted_at, email_after, emailed_at, email_attempts
       FROM buyer_updates WHERE onboarding_id = ${onboardingId} AND status IN ('draft', 'posted') ORDER BY created_at DESC, id DESC` : [],
-    tracker ? sql`SELECT id, body, source, sender_email, held, released_at, discarded_at, created_at
-      FROM buyer_questions WHERE onboarding_id = ${onboardingId} AND discarded_at IS NULL ORDER BY created_at DESC, id DESC` : [],
     tracker ? sql`SELECT id, kind, opened_by_update_id, vin, dealer_name, otd_cents, created_at, cleared_at, cleared_by
       FROM buyer_picks WHERE onboarding_id = ${onboardingId} ORDER BY created_at DESC, id DESC` : [],
-    tracker ? sql`SELECT d.id, d.doc_type, d.source, d.content_type, d.bytes, d.created_at, d.deleted_at,
-        (q.held AND q.released_at IS NULL) AS on_held_mail
-      FROM buyer_documents d LEFT JOIN buyer_questions q ON q.id = d.question_id
-      WHERE d.onboarding_id = ${onboardingId} ORDER BY d.created_at DESC, d.id DESC` : []
+    tracker ? sql`SELECT id, doc_type, content_type, bytes, created_at, deleted_at
+      FROM buyer_documents WHERE onboarding_id = ${onboardingId} ORDER BY created_at DESC, id DESC` : []
   ]);
-  return { deal, listings, events, drafts, ...(tracker ? { tracker: { link: links[0] ?? null, updates, questions, picks, documents, url: null } } : {}) };
+  return { deal, listings, events, drafts, ...(tracker ? { tracker: { link: links[0] ?? null, updates, picks, documents, url: null } } : {}) };
 }
 
 // A needs_mason row that is still open, or null. Used before logging 'resolved'.
@@ -209,9 +191,8 @@ export async function editDeal(sql, onboardingId, form) {
   return { ok: true };
 }
 
-export const TRACKER_ACTIONS = Object.freeze(['post', 'approve', 'discard', 'retract', 'revoke', 'restore', 'reissue', 'release', 'discard_mail', 'clear_pick']);
+export const TRACKER_ACTIONS = Object.freeze(['post', 'approve', 'discard', 'retract', 'revoke', 'restore', 'reissue', 'clear_pick']);
 const UPDATE_ACTIONS = { approve: approveDraft, discard: discardDraft, retract: retractUpdate };
-const HELD_ACTIONS = { release: releaseHeld, discard_mail: discardHeld };
 const rowId = value => (/^\d{1,15}$/.test(String(value ?? '')) ? Number(value) : null);
 
 // Mason's Deal Tracker controls on a deal's page (form field tracker=<action>).
@@ -226,16 +207,8 @@ export async function trackerAction(sql, onboardingId, form) {
   if (!deal) return { error: 'No such deal' };
   if (deal.version == null) return { error: 'This deal has no Deal Tracker link' };
   if (action === 'post') {
-    // An answer names its Buyer Question, which must be this deal's and one the buyer can see.
-    let answersQuestionId = null;
-    if (form.question != null && form.question !== '') {
-      answersQuestionId = rowId(form.question);
-      const [question] = answersQuestionId ? await sql`SELECT id FROM buyer_questions
-        WHERE id = ${answersQuestionId} AND onboarding_id = ${onboardingId} AND discarded_at IS NULL AND (NOT held OR released_at IS NOT NULL)` : [];
-      if (!question) return { error: 'That question is not on this deal' };
-    }
     try {
-      await postUpdate(sql, { onboardingId, body: form.body, readyForPick: form.ready_for_pick === '1', answersQuestionId });
+      await postUpdate(sql, { onboardingId, body: form.body, readyForPick: form.ready_for_pick === '1' });
     } catch (error) {
       if (error instanceof BuyerUpdateError) return { error: error.message };
       throw error;
@@ -249,14 +222,6 @@ export async function trackerAction(sql, onboardingId, form) {
     const [update] = await sql`SELECT id FROM buyer_updates WHERE id = ${id} AND onboarding_id = ${onboardingId}`;
     if (!update) return { error: 'That update is not on this deal' };
     await UPDATE_ACTIONS[action](sql, id, onboardingId);
-    return { ok: true };
-  }
-  if (HELD_ACTIONS[action]) {
-    const id = rowId(form.question);
-    const [question] = id ? await sql`SELECT id FROM buyer_questions WHERE id = ${id} AND onboarding_id = ${onboardingId}` : [];
-    if (!question) return { error: 'That email is not on this deal' };
-    // Acts only on held mail not yet released or discarded; a repeat changes nothing.
-    await HELD_ACTIONS[action](sql, id, onboardingId);
     return { ok: true };
   }
   if (action === 'clear_pick') {
@@ -501,17 +466,7 @@ function needsSection(data, summaries, now, picks = []) {
       <p>Nothing logged for ${deal.quiet_days} days${deal.car ? ` on the ${deal.car}` : ''}</p>
       <p class="muted">Last activity ${when(deal.last_activity, now)}</p></div>
       <span class="tag warn">Quiet</span></li>` })),
-    // With the Deal Tracker on: each unanswered Buyer Question and each held email.
-    ...(data.questions ?? []).map(question => ({ group: 1, at: question.created_at, html: safe`<li><div class="main">
-      <strong>${dealLink(question.onboarding_id, question.name)}</strong> <span class="muted">· ${question.source === 'email' ? 'by email' : 'on the Deal Tracker'}</span>
-      <p>${clip(question.body.replace(/\s+/g, ' ').trim(), 200)}</p>
-      <p class="muted">${when(question.created_at, now)}</p></div>
-      <span class="tag">Buyer Question</span></li>` })),
-    ...(data.held ?? []).map(mail => ({ group: 1, at: mail.created_at, html: safe`<li><div class="main">
-      <strong>${dealLink(mail.onboarding_id, mail.name)}</strong>
-      <p>Email from ${mail.sender_email}, held until you release or discard it</p>
-      <p class="muted">${when(mail.created_at, now)}</p></div>
-      <span class="tag warn">Held email</span></li>` })),
+    // With the Deal Tracker on: each standing Buyer Pick.
     ...picks.map(pick => ({ group: 1, at: pick.created_at, html: safe`<li><div class="main">
       <strong>${dealLink(pick.onboarding_id, pick.name)}</strong> <span class="muted">· on the Deal Tracker</span>
       <p>${pick.kind === 'keep_looking' ? 'Asked us to keep looking'
@@ -570,7 +525,7 @@ function standingPicks(data, open) {
 const PICK_TAGS = Object.freeze({ pick: 'Pick made', keep_looking: 'Wants more options' });
 
 // One clickable tile per open deal; the whole tile opens the deal's page.
-function dealTiles(rows, now, asked = new Set(), picked = new Map()) {
+function dealTiles(rows, now, picked = new Map()) {
   if (!rows.length) return raw('<div class="card"><p class="empty">No open deals.</p></div>');
   return safe`<div class="tiles">${join(rows, deal => safe`<a class="tile${deal.stale ? ' stale' : ''}" href="/api/ops?deal=${deal.onboarding_id}">
     <span class="tile-top"><span class="icon s-${deal.stage}">${CAR_ICON}</span>
@@ -578,7 +533,7 @@ function dealTiles(rows, now, asked = new Set(), picked = new Map()) {
     <span class="tile-car">${deal.car ?? 'No car picked yet'}${deal.cars > 1 ? safe` <span class="muted">+${deal.cars - 1}</span>` : ''}</span>
     <span class="tile-price">${deal.best_cents != null ? safe`<strong>${money(deal.best_cents)}</strong>${versus(deal.best_cents, deal.target_cents)}`
       : deal.stage === 'confirming' ? raw('<span class="muted">Search not run yet</span>') : safe`<span class="muted">Target ${money(deal.target_cents)}</span>`}</span>
-    <span class="tile-foot"><span class="tag ${deal.stage === 'agreed' ? 'good' : ''}">${STAGES[deal.stage]}</span>${deal.stale ? safe` <span class="tag warn">Quiet ${deal.quiet_days}d</span>` : ''}${asked.has(deal.onboarding_id) ? raw(' <span class="tag">Question waiting</span>') : ''}${picked.has(deal.onboarding_id) ? safe` <span class="tag">${PICK_TAGS[picked.get(deal.onboarding_id)]}</span>` : ''}
+    <span class="tile-foot"><span class="tag ${deal.stage === 'agreed' ? 'good' : ''}">${STAGES[deal.stage]}</span>${deal.stale ? safe` <span class="tag warn">Quiet ${deal.quiet_days}d</span>` : ''}${picked.has(deal.onboarding_id) ? safe` <span class="tag">${PICK_TAGS[picked.get(deal.onboarding_id)]}</span>` : ''}
       <span class="muted">${when(deal.last_activity, now)}</span></span></a>`)}</div>`;
 }
 
@@ -646,8 +601,7 @@ export function renderDashboard(data, now = Date.now()) {
   open.sort((a, b) => order[a.stage] - order[b.stage] || time(b.last_activity) - time(a.last_activity));
   const picks = standingPicks(data, open);
   const needCount = data.needs.length + data.drafts.length + data.waiting.length + open.filter(deal => deal.stale).length
-    + (data.agents ?? []).filter(agent => agent.overdue).length + (data.questions ?? []).length + (data.held ?? []).length + picks.length;
-  const asked = new Set((data.questions ?? []).map(question => question.onboarding_id));
+    + (data.agents ?? []).filter(agent => agent.overdue).length + picks.length;
   const picked = new Map(picks.map(pick => [pick.onboarding_id, pick.kind]));
   const body = safe`
 <header><h1>Deals</h1><span class="muted">Updated ${absolute(now)} CT · refreshes every 2 minutes</span></header>
@@ -659,7 +613,7 @@ export function renderDashboard(data, now = Date.now()) {
   <div class="stat"><b>${data.leads.length}</b><span class="muted">Leads, last 14 days</span></div>
 </div>
 <h2>Open deals (${open.length})</h2>
-${dealTiles(open, now, asked, picked)}
+${dealTiles(open, now, picked)}
 ${recentClosed.length ? safe`<details><summary>Closed in the last 30 days (${recentClosed.length})</summary>${dealsTable(recentClosed, now)}</details>` : ''}
 ${needsSection(data, open, now, picks)}
 ${agentsSection(data.agents, now)}
@@ -716,46 +670,15 @@ function emailState(update, link, now) {
   return minutes > 0 ? `Email leaves in about ${minutes} min` : 'Email leaves on the next run';
 }
 
-// Buyer Questions, newest first, each with its posted answer or a box to post
-// one (a Buyer Update tied to the question). Then held mail from anyone but the
-// buyer, which Mason releases or discards; until then nothing of it shows to
-// the buyer or counts as a question. Everything the buyer or a sender wrote is escaped.
-function questionLists(deal, questions, updates, hidden, now) {
-  const answers = Map.groupBy(updates.filter(update => update.answers_question_id != null), update => String(update.answers_question_id));
-  const shown = questions.filter(question => !question.held || question.released_at);
-  const held = questions.filter(question => question.held && !question.released_at);
-  const how = question => (question.source === 'email' ? safe`By email from ${question.sender_email}${question.held ? ' · released by you' : ''}` : 'On the Deal Tracker');
-  const questionItem = question => {
-    const replies = answers.get(String(question.id)) ?? [];
-    const posted = replies.filter(update => update.status === 'posted');
-    const drafted = replies.filter(update => update.status === 'draft');
-    return safe`<li><div class="main">
-  <p class="update-body">${question.body}</p>
-  <p class="muted">${how(question)} · ${when(question.created_at, now)}</p>
-  ${posted.length ? join(posted, update => safe`<p class="note"><span class="tag good">Answered</span> ${clip(update.body.replace(/\s+/g, ' ').trim(), 200)} <span class="muted">· ${when(update.posted_at, now)}</span></p>`)
-    : safe`${drafted.length ? safe`<p class="note">A draft answer by ${drafted[0].actor} is waiting above.</p>` : ''}<form method="post" action="/api/ops" class="row">${hidden('post')}<input type="hidden" name="question" value="${question.id}">
-    <label class="block">Answer <textarea name="body" maxlength="${MAX_UPDATE_LENGTH}" rows="4" required></textarea></label>
-    <button type="submit" class="primary">Post answer</button></form>`}</div></li>`;
-  };
-  return safe`<h2>Buyer Questions (${shown.length})</h2>
-<div class="card edit">${shown.length ? safe`<ul class="list">${join(shown, questionItem)}</ul>` : raw('<p class="empty">No questions from the buyer yet.</p>')}</div>
-${held.length ? safe`<h2>Held email (${held.length})</h2><div class="card"><ul class="list">${join(held, mail => safe`<li><div class="main">
-  <p><strong>${mail.sender_email}</strong> <span class="muted">· ${when(mail.created_at, now)}</span></p>
-  <p class="update-body">${mail.body}</p>
-  <p class="muted">Not from the buyer's address, so agents and the buyer's page don't see it until you release it.</p></div>
-  <form method="post" action="/api/ops" class="answer">${hidden()}<input type="hidden" name="question" value="${mail.id}">
-    <button type="submit" name="tracker" value="release" class="primary">Release</button><button type="submit" name="tracker" value="discard_mail">Discard</button></form></li>`)}</ul></div>` : ''}`;
-}
-
 // Mason's Deal Tracker controls (plan, "Ops dashboard panel"): the buyer's link,
-// a box to post a Buyer Update, agents' drafts, posted updates to take back, and
-// Buyer Questions with held mail. Before a price is agreed, an update that names
-// a shortlisted dealer is flagged.
+// a box to post a Buyer Update, agents' drafts, posted updates to take back, the
+// buyer's picks and documents. Before Quotes in, an update that names a
+// shortlisted dealer is flagged (adr/0003).
 function trackerPanel(deal, summary, tracker, listings, events, now) {
-  const { link, updates, url, questions = [], picks = [], documents = [] } = tracker;
+  const { link, updates, url, picks = [], documents = [] } = tracker;
   if (!link) return raw('<div class="card"><p class="empty">This deal opened before the Deal Tracker, so the buyer has no link.</p></div>');
   const hidden = (action = null) => safe`${action ? safe`<input type="hidden" name="tracker" value="${action}">` : ''}<input type="hidden" name="deal" value="${deal.onboarding_id}">`;
-  const names = summary.closed || summary.stage === 'agreed' ? [] : namedDealers(listings, events);
+  const names = summary.closed || ['quoted', 'agreed'].includes(summary.stage) ? [] : namedDealers(listings, events);
   const warning = body => {
     const named = dealerNameWarning(body, names);
     return named.length ? safe`<p class="warn-line">Names ${named.join(', ')}, which the buyer can't see yet</p>` : '';
@@ -783,7 +706,7 @@ function trackerPanel(deal, summary, tracker, listings, events, now) {
 </div>
 ${drafts.length ? safe`<h2>Drafts to approve (${drafts.length})</h2><div class="card"><ul class="list">${join(drafts, update => safe`<li><div class="main">
   <p class="update-body">${update.body}</p>${warning(update.body)}
-  <p class="muted">Draft by ${update.actor} · ${when(update.created_at, now)}${update.ready_for_pick ? ' · Ready for your call' : ''}${update.answers_question_id != null ? ' · Answers a Buyer Question' : ''}</p></div>
+  <p class="muted">Draft by ${update.actor} · ${when(update.created_at, now)}${update.ready_for_pick ? ' · Ready for your call' : ''}</p></div>
   <form method="post" action="/api/ops" class="answer">${hidden()}<input type="hidden" name="update" value="${update.id}">
     <button type="submit" name="tracker" value="approve" class="primary">Approve</button><button type="submit" name="tracker" value="discard">Discard</button></form></li>`)}</ul></div>` : ''}
 <h2>Posted updates (${posted.length})</h2>
@@ -793,7 +716,6 @@ ${drafts.length ? safe`<h2>Drafts to approve (${drafts.length})</h2><div class="
   <form method="post" action="/api/ops" class="answer">${hidden('retract')}<input type="hidden" name="update" value="${update.id}">
     <button type="submit">Take back</button></form></li>`)}</ul>` : raw('<p class="empty">No updates posted yet.</p>')}</div>
 ${pickList(picks, listings, events, hidden, now)}
-${questionLists(deal, questions, updates, hidden, now)}
 ${documentList(documents, now)}`;
 }
 
@@ -804,8 +726,7 @@ const fileSize = bytes => (bytes >= 1048576 ? `${(bytes / 1048576).toFixed(1)} M
 function documentList(documents, now) {
   return safe`<h2>Buyer Documents (${documents.length})</h2>
 <div class="card">${documents.length ? safe`<ul class="list">${join(documents, doc => safe`<li><div class="main">
-  <p><strong>${DOC_LABELS[doc.doc_type] ?? doc.doc_type}</strong> <span class="muted">· ${doc.source === 'email' ? 'by email' : 'on the Deal Tracker'} · ${fileSize(Number(doc.bytes))} · ${when(doc.created_at, now)}</span></p>
-  ${doc.on_held_mail ? raw('<p class="muted">Came on held email: agents can\'t open it until you release that email.</p>') : ''}</div>
+  <p><strong>${DOC_LABELS[doc.doc_type] ?? doc.doc_type}</strong> <span class="muted">· ${fileSize(Number(doc.bytes))} · ${when(doc.created_at, now)}</span></p></div>
   ${doc.deleted_at ? safe`<span class="muted nowrap">Deleted ${absolute(doc.deleted_at)}</span>` : safe`<a class="nowrap" href="/api/ops?document=${Number(doc.id)}">Download</a>`}</li>`)}</ul>`
     : raw('<p class="empty">No documents from the buyer yet.</p>')}</div>`;
 }

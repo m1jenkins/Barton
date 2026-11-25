@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 import { allowedOrigins } from '../_lib/config.js';
-import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderPickConfirm, renderTracker, replyToken, signLink } from '../_lib/deal-tracker.js';
+import { checkLink, dealTrackerEnabled, dealTrackerSettings, linkUrl, redactCarText, renderLinkClosed, renderPickConfirm, renderTracker, signLink, textNumber } from '../_lib/deal-tracker.js';
 import { dealTrackerHandler } from '../deal-tracker.js';
 import { onboardingHandler } from '../onboarding.js';
-import { SAMPLE_CONFIRMS, SAMPLE_VIEWS, createDealTrackerPreview } from '../../scripts/preview-deal-tracker.mjs';
+import { SAMPLE_CONFIRMS, SAMPLE_CONTACT, SAMPLE_VIEWS, createDealTrackerPreview } from '../../scripts/preview-deal-tracker.mjs';
 
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
@@ -114,7 +114,7 @@ test('a signed link round-trips, and its token is the intake ID plus a signature
   assert.equal(signLink(SECRET, id.toUpperCase(), 3), token, 'the ID is case-insensitive');
   assert.notEqual(signLink(SECRET, id, 2), token, 'the version is signed');
   const settings = dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, APP_ORIGIN: 'https://example.test/' });
-  assert.deepEqual(settings, { secret: SECRET, origin: 'https://example.test', replyMailbox: null });
+  assert.deepEqual(settings, { secret: SECRET, origin: 'https://example.test', text: null });
   assert.equal(dealTrackerSettings({ DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET }).origin, 'https://www.steermeright.com');
   assert.equal(linkUrl(settings, id, 3), `https://example.test/deal/${token}`);
   const sql = tagged(pg);
@@ -124,15 +124,13 @@ test('a signed link round-trips, and its token is the intake ID plus a signature
   }
 });
 
-test('the reply token is stable, differs per deal and per secret, and is not the link signature', () => {
-  const id = crypto.randomUUID(), other = crypto.randomUUID();
-  const token = replyToken(SECRET, id);
-  assert.match(token, /^[0-9a-f]{20}$/);
-  assert.equal(replyToken(SECRET, id), token);
-  assert.notEqual(replyToken(SECRET, other), token);
-  assert.notEqual(replyToken(`${SECRET}-other`, id), token);
-  const link = signLink(SECRET, id, 1);
-  assert.ok(!link.includes(token) && !Buffer.from(link.split('.')[1], 'base64url').toString('hex').includes(token));
+test('the text number reads any US punctuation, and a bad one stops the tracker loudly', () => {
+  const want = { href: 'sms:+15125550142', label: '(512) 555-0142' };
+  for (const raw of ['5125550142', '512-555-0142', '(512) 555-0142', '+1 512 555 0142', '1.512.555.0142']) assert.deepEqual(textNumber(raw), want, raw);
+  for (const raw of ['', null, '555-0142', '512555014', '44 20 7946 0958', '512-555-0142 ext 4', 'call me']) assert.equal(textNumber(raw), null, String(raw));
+  const on = { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET };
+  assert.deepEqual(dealTrackerSettings({ ...on, DEAL_TRACKER_TEXT_NUMBER: '512-555-0142' }).text, want);
+  assert.throws(() => dealTrackerSettings({ ...on, DEAL_TRACKER_TEXT_NUMBER: 'not a number' }), /DEAL_TRACKER_TEXT_NUMBER/);
 });
 
 test('every preview state renders without empty values', () => {
@@ -174,42 +172,37 @@ test('the Deal Tracker answers GET and POST only', async () => {
   }
 });
 
-test('the question box shows on every preview state but a search closed without a purchase, and the timeline marks the buyer\'s own words', () => {
+test('every page but a closed search says how to reach Mason: by text when the number is set, by email otherwise', () => {
   for (const [name, view] of Object.entries(SAMPLE_VIEWS)) {
-    const html = renderTracker(view, { action: `/deal/${name}` });
-    if (view.outcome === 'other') {
-      assert.ok(!html.includes('<form') && !html.includes('dt-ask'), name);
-      continue;
-    }
-    assert.ok(html.includes(`<form class="dt-ask" method="post" action="/deal/${name}">`), name);
-    assert.ok(html.includes('<label class="dt-ask__label" for="dt-question">Your question</label>'), name);
-    assert.match(html, /<textarea class="dt-ask__field" id="dt-question" name="body" rows="5" maxlength="4000" required><\/textarea>/, name);
-    assert.ok(html.includes('<input type="hidden" name="action" value="question">'), name);
+    const texted = renderTracker(view, { action: `/deal/${name}`, contact: SAMPLE_CONTACT });
+    const emailed = renderTracker(view, { action: `/deal/${name}` });
+    // No question box any more (adr/0003).
+    for (const html of [texted, emailed]) assert.ok(!html.includes('dt-ask__field') && !html.includes('value="question"'), name);
+    assert.ok(texted.includes('Text me at <a href="sms:+15125550142">(512) 555-0142</a>'), name);
+    assert.ok(!emailed.includes('sms:') && emailed.includes('mailto:mason@steermeright.com'), name);
+    assert.equal(texted.includes('<section class="dt-section" aria-labelledby="dt-ask">'), view.outcome !== 'other', name);
   }
-  // Without an action the form posts to the page's own URL.
-  assert.ok(renderTracker(SAMPLE_VIEWS.shortlisted).includes('<form class="dt-ask" method="post">'));
-
+  assert.ok(renderLinkClosed(SAMPLE_CONTACT).includes('Text me at'));
+  assert.ok(renderPickConfirm(null, '/deal/x', SAMPLE_CONTACT).includes('sms:+15125550142'));
+  // Buyer Updates, newest first.
   const html = renderTracker(SAMPLE_VIEWS['price-agreed']);
-  const thread = html.split('<li class="dt-question">')[1].split('</li>')[0];
-  assert.ok(thread.includes('You asked by email ·') && thread.includes('<div class="dt-answer">') && thread.includes('Mason’s answer ·'));
-  assert.ok(html.indexOf('You asked by email') < html.indexOf('Done: $36,100'), 'newest first');
-  const waiting = renderTracker(SAMPLE_VIEWS['emailing-dealers']).split('<li class="dt-question">').find(part => part.includes('trade-in appraised'));
-  assert.ok(waiting.split('</li>')[0].includes('You asked ·') && !waiting.split('</li>')[0].includes('dt-answer'), 'an unanswered question stands alone');
+  assert.ok(html.indexOf('Done: $36,100') < html.indexOf('The RAV4 dealer came down'), 'newest first');
   assert.doesNotMatch(html, /\bbriefs?\b|\bticket\b|\brequest\b/i);
 });
 
-test('the preview takes the question box POST and goes back to the timeline, saving nothing', async t => {
+test('the preview serves each sample car\'s photos at the page\'s own photo path', async t => {
   const server = createDealTrackerPreview();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => server.close());
   const base = `http://127.0.0.1:${server.address().port}`;
-  const posted = await fetch(`${base}/deal/quotes-in`, { method: 'POST', body: 'action=question&body=Hello', redirect: 'manual',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' } });
-  assert.equal(posted.status, 303);
-  assert.equal(posted.headers.get('location'), '/deal/quotes-in#dt-updates');
+  const photo = await fetch(`${base}/deal/quotes-in/photo/1/0`);
+  assert.equal(photo.status, 200);
+  assert.equal(photo.headers.get('content-type'), 'image/webp');
+  assert.ok((await photo.arrayBuffer()).byteLength > 1000);
+  assert.equal((await fetch(`${base}/deal/quotes-in/photo/1/9`)).status, 404);
   assert.equal((await fetch(`${base}/deal/nowhere`, { method: 'POST', body: 'x' })).status, 404);
   const page = await (await fetch(`${base}/deal/quotes-in`)).text();
-  assert.ok(page.includes('action="/deal/quotes-in"'));
+  assert.ok(page.includes('src="/deal/quotes-in/photo/1/0"'));
 });
 
 test('the Buyer Pick previews: buttons only when ready for your call, then what the buyer chose, and the two confirm pages', () => {

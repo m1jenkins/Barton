@@ -13,7 +13,7 @@ import { SAMPLE_BUYERS, SAMPLE_REVIEW_URL, renderSamples } from '../../scripts/c
 import { createHash } from 'node:crypto';
 import { renderBuyerUpdateEmail } from '../_lib/buyer-update-email.js';
 import { allowedOrigins } from '../_lib/config.js';
-import { checkLink, dealTrackerSettings, linkUrl, replyAddress } from '../_lib/deal-tracker.js';
+import { checkLink, dealTrackerSettings, linkUrl } from '../_lib/deal-tracker.js';
 import { onboardingHandler } from '../onboarding.js';
 import { SAMPLE_TRACKER, SAMPLE_UPDATE, renderTrackerSamples } from '../../scripts/customer-emails.mjs';
 
@@ -299,7 +299,7 @@ test('the Google G on the review button is a committed PNG, since email clients 
 // ---------- With the Deal Tracker (build step 8) ----------
 
 const SECRET = 'deal-tracker-secret-for-tests-only-0123456789';
-const trackerEnvironment = { ...environment, DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, DEAL_REPLY_MAILBOX: 'deals@example.test' };
+const trackerEnvironment = { ...environment, DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET };
 const trackerMigrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
   '007_deal_events.sql', '008_deal_events_per_car.sql', '011_customer_email_outbox.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql']
@@ -388,8 +388,8 @@ function snapshot(template, options) {
 
 test('without a live Deal Tracker link every email is byte-for-byte today\'s', () => {
   for (const template of TEMPLATE_NAMES) {
-    for (const options of [{}, { tracker: undefined }, { tracker: null }, { tracker: { link: '', replyAddress: null } },
-      { tracker: { link: 'http://www.steermeright.com/deal/not-https', replyAddress: 'x@example.test' } }]) {
+    for (const options of [{}, { tracker: undefined }, { tracker: null }, { tracker: { link: '' } },
+      { tracker: { link: 'http://www.steermeright.com/deal/not-https' } }]) {
       assert.equal(snapshot(template, options), TODAY[template], `${template} ${JSON.stringify(options)}`);
     }
   }
@@ -484,7 +484,7 @@ test('the queue sends today\'s email on a database without db/013, touching no D
   }
 });
 
-test('with the Deal Tracker on, only a buyer with a live link gets the link and their reply address', async t => {
+test('with the Deal Tracker on, only a buyer with a live link gets the link, and every email replies to Mason', async t => {
   const pg = await PGlite.create();
   t.after(() => pg.close());
   for (const migration of trackerMigrations) await pg.exec(migration);
@@ -519,15 +519,14 @@ test('with the Deal Tracker on, only a buyer with a live link gets the link and 
   const today = patToday('welcome');
   const hex = id => id.replaceAll('-', '');
 
-  for (const [env, replyTo] of [[trackerEnvironment, null], [{ ...trackerEnvironment, DEAL_REPLY_MAILBOX: '' }, 'mason@steermeright.com']]) {
-    const { linked, others } = await send(env);
+  {
+    const { linked, others } = await send(trackerEnvironment);
     assert.deepEqual([...linked.keys()].sort(), [hex(live), hex(closedRecent)].sort(), 'not revoked, missing or closed over three days ago');
     assert.equal(others.length, 3);
     const message = linked.get(hex(live));
     const link = linkUrl(settings, live, 2);
     assert.ok(message.text.includes(link) && message.html.includes(link));
-    assert.equal(message.replyTo, replyTo ?? replyAddress(settings, live));
-    if (!replyTo) assert.match(message.replyTo, /^deals\+[0-9a-f]{20}@example\.test$/);
+    assert.equal(message.replyTo, 'mason@steermeright.com');
     assert.deepEqual(await checkLink(sql, settings, link.split('/deal/')[1]), { status: 'ok', onboardingId: live });
     for (const other of others) {
       assert.deepEqual([other.subject, other.text, other.html, other.replyTo], [today.subject, today.text, today.html, 'mason@steermeright.com']);
@@ -557,7 +556,7 @@ test('a paid intake\'s welcome carries the new buyer\'s Deal Tracker link', asyn
   const link = linkUrl(settings, id, 1);
   assert.ok(welcome.text.includes(`Open your Deal Tracker: ${link}`) && welcome.html.includes(`href="${link}"`));
   assert.deepEqual(await checkLink(sql, settings, link.split('/deal/')[1]), { status: 'ok', onboardingId: id });
-  assert.equal(welcome.replyTo, replyAddress(settings, id));
+  assert.equal(welcome.replyTo, 'mason@steermeright.com');
 });
 
 test('a bad DEAL_TRACKER_SECRET never breaks a paid intake, and spends no email attempt', async t => {

@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
 import { carSearchToken, loadSearch, parseShortlist, saveShortlist, ShortlistError } from '../_lib/car-search.js';
+import { DETAIL_FIELDS } from '../_lib/listing-media.js';
 import { dealLinkSettings, draftToken, verifyDraftToken } from '../_lib/deal-email.js';
 import { renderIntakeEmail } from '../_lib/intake-email.js';
 import { loadDeal, summarizeDeal } from '../_lib/ops-dashboard.js';
@@ -135,6 +136,47 @@ test('with the Deal Tracker on, every car needs our estimated total and its colo
   assert.deepEqual(parseShortlist(shortlist).listings.map(listing => [listing.est_otd_cents, listing.color]), [[null, null], [null, null]]);
   assert.deepEqual(parseShortlist(trackerShortlist).listings.map(listing => listing.est_otd_cents), [3825000, 3690000]);
   assert.throws(() => parseShortlist({ ...shortlist, listings: [{ ...one, est_otd: -1 }] }), /est_otd must be a whole number/);
+});
+
+test('photos are up to 20 https URLs on a named host, in order; anything else is reported', () => {
+  const one = trackerShortlist.listings[0];
+  const photos = ['https://cdn.example.test/a.jpg', 'https://photos.dealer.example/b.webp?w=1024'];
+  const parsed = parseShortlist({ ...trackerShortlist, listings: [{ ...one, photos }] }, { requireTracker: true });
+  assert.deepEqual(parsed.listings[0].photo_urls, photos);
+  assert.deepEqual(parseShortlist(trackerShortlist, { requireTracker: true }).listings[0].photo_urls, [], 'optional: none is an empty list');
+
+  const bad = ['http://cdn.example.test/a.jpg', 'https://10.0.0.5/a.jpg', 'https://localhost/a.jpg', 'https://intranet/a.jpg',
+    'https://user:pass@cdn.example.test/a.jpg', 'https://cdn.example.test:8443/a.jpg', 'https://[::1]/a.jpg', 'not a url', 42];
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, photos: bad }] }), error => {
+    assert.ok(error instanceof ShortlistError);
+    assert.deepEqual(error.problems, bad.map((_, index) => `listings[0].photos[${index}] must be an https photo URL on a named host`));
+    return true;
+  });
+  const many = Array.from({ length: 21 }, (_, index) => `https://cdn.example.test/${index}.jpg`);
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, photos: many }] }), /listings\[0\]\.photos can hold at most 20 photos/);
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, photos: 'https://cdn.example.test/a.jpg' }] }), /listings\[0\]\.photos must be a list of photo URLs/);
+});
+
+test('details keep only the named listing fields and up to 40 features; an unknown key is reported', () => {
+  const one = trackerShortlist.listings[0];
+  const details = { trim: ' Limited ', drivetrain: 'AWD', engine: '2.4L turbo', mpg: 21, interior_color: 'Slate Black', seats: 7,
+    features: ['Heated seats', ' Heated   seats ', 'Third row'] };
+  const parsed = parseShortlist({ ...trackerShortlist, listings: [{ ...one, details }] });
+  assert.deepEqual(parsed.listings[0].details, { trim: 'Limited', drivetrain: 'AWD', engine: '2.4L turbo', mpg: '21', interior_color: 'Slate Black', seats: '7',
+    features: ['Heated seats', 'Third row'] });
+  assert.deepEqual(parseShortlist(trackerShortlist).listings[0].details, {}, 'optional: none is an empty object');
+  for (const [key] of DETAIL_FIELDS) assert.ok(parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: { [key]: 'x' } }] }).listings[0].details[key] === 'x', key);
+
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: { trim: 'XLE', vin: 'nope', dealer_name: 'Dealer One' } }] }), error => {
+    assert.ok(error.problems.some(problem => problem.startsWith('listings[0].details.vin isn\'t a detail the page shows')));
+    assert.ok(error.problems.some(problem => problem.startsWith('listings[0].details.dealer_name isn\'t a detail the page shows')));
+    return true;
+  });
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: { engine: 'x'.repeat(121) } }] }), /details\.engine must be one line of text, up to 120 characters/);
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: { trim: { name: 'XLE' } } }] }), /details\.trim must be one line/);
+  const tooMany = Array.from({ length: 41 }, (_, index) => `Feature ${index}`);
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: { features: tooMany } }] }), /details\.features must be a list of up to 40 features/);
+  assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: ['AWD'] }] }), /details must be an object of listing details/);
 });
 
 test('dealer email links verify only for the draft they were made for', () => {
@@ -468,17 +510,21 @@ async function database(t, migrationList) {
 const listingsOf = (pg, intake) => pg.query(`SELECT l.* FROM deal_listings AS l JOIN deals AS d ON d.id = l.deal_id
   WHERE d.onboarding_id = $1 ORDER BY l.rank`, [intake]).then(result => result.rows);
 
-test('saveShortlist stores each car\'s estimated total and color only with the Deal Tracker on', async t => {
+test('saveShortlist stores each car\'s estimated total, color, photos and details only with the Deal Tracker on', async t => {
   const pg = await database(t, migrations);
   const sql = tagged(pg);
   const on = await addIntake(pg);
-  await saveShortlist(sql, on, parseShortlist(trackerShortlist, { requireTracker: true }), { tracker: true });
-  assert.deepEqual((await listingsOf(pg, on)).map(row => [row.rank, row.est_otd_cents, row.color]),
-    [[1, 3825000, 'Crimson Red Pearl'], [2, 3690000, 'Magnetite Gray Metallic']]);
+  const photos = ['https://cdn.example.test/1.jpg', 'https://cdn.example.test/2.jpg'];
+  const details = { trim: 'Limited', drivetrain: 'AWD', features: ['Third row'] };
+  const withMedia = { ...trackerShortlist, listings: [{ ...trackerShortlist.listings[0], photos, details }, trackerShortlist.listings[1]] };
+  await saveShortlist(sql, on, parseShortlist(withMedia, { requireTracker: true }), { tracker: true });
+  assert.deepEqual((await listingsOf(pg, on)).map(row => [row.rank, row.est_otd_cents, row.color, row.photo_urls, row.details]),
+    [[1, 3825000, 'Crimson Red Pearl', photos, details], [2, 3690000, 'Magnetite Gray Metallic', [], {}]]);
 
   const off = await addIntake(pg);
-  await saveShortlist(sql, off, parseShortlist(trackerShortlist));
-  assert.deepEqual((await listingsOf(pg, off)).map(row => [row.est_otd_cents, row.color]), [[null, null], [null, null]]);
+  await saveShortlist(sql, off, parseShortlist(withMedia));
+  assert.deepEqual((await listingsOf(pg, off)).map(row => [row.est_otd_cents, row.color, row.photo_urls, row.details]),
+    [[null, null, [], {}], [null, null, [], {}]], 'switched off, the columns keep their defaults');
 });
 
 test('with the Deal Tracker off, saveShortlist works on a database without db/013', async t => {
@@ -533,22 +579,20 @@ test('the car search endpoint requires and stores the estimate and color only wh
 });
 
 // Agents fetch a Buyer Document with the car-search token (plan, "Documents").
-test('an agent downloads a Buyer Document with the bearer token; held mail is refused until released, and deleted files are gone', async t => {
+test('an agent downloads a Buyer Document with the bearer token, and deleted files are gone', async t => {
   const pg = await database(t, migrations);
   const sql = tagged(pg);
   const intake = await addIntake(pg);
   await pg.query('INSERT INTO deals (id, onboarding_id) VALUES ($1, $2)', [crypto.randomUUID(), intake]);
-  const add = async ({ docType = 'pre_approval', source = 'page', questionId = null, deleted = false } = {}) => {
+  const add = async ({ docType = 'pre_approval', deleted = false } = {}) => {
     const path = `deals/${intake}/${crypto.randomUUID()}.jpg`;
-    const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, question_id, mail_message_id, deleted_at)
-      VALUES ($1, $2, $3, 'image/jpeg', 11, $4, $5, $6, $7) RETURNING id`,
-    [intake, docType, path, source, questionId, source === 'email' ? `mail-${path}` : null, deleted ? new Date().toISOString() : null]);
+    const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, deleted_at)
+      VALUES ($1, $2, $3, 'image/jpeg', 11, $4) RETURNING id`,
+    [intake, docType, path, deleted ? new Date().toISOString() : null]);
     return { id: Number(row.id), path };
   };
-  const { rows: [held] } = await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id)
-    VALUES ($1, 'see attached', 'email', 'cousin@example.test', true, 'held-mail-1') RETURNING id`, [intake]);
   const plain = await add();
-  const onHeld = await add({ docType: 'id', source: 'email', questionId: held.id });
+  const idDoc = await add({ docType: 'id' });
   const gone = await add({ deleted: true });
   const reads = [];
   const store = {
@@ -572,13 +616,9 @@ test('an agent downloads a Buyer Document with the bearer token; held mail is re
     ['image/jpeg', `attachment; filename="pre_approval-${plain.id}.jpg"`, 'nosniff', "sandbox; default-src 'none'"]);
   assert.match(ok.headers['cache-control'], /no-store/);
 
-  reads.length = 0;
-  const refused = await get(onHeld.id);
-  assert.equal(refused.statusCode, 403);
-  assert.equal(json(refused).error, 'document_held');
-  assert.equal(reads.length, 0, 'the store is never read for held mail');
-  await pg.query('UPDATE buyer_questions SET released_at = now() WHERE id = $1', [held.id]);
-  assert.equal((await get(onHeld.id)).statusCode, 200, 'released, it opens');
+  const id = await get(idDoc.id);
+  assert.equal(id.statusCode, 200);
+  assert.equal(id.headers['content-disposition'], `attachment; filename="id-${idDoc.id}.jpg"`);
 
   assert.equal((await get(gone.id)).statusCode, 410);
   assert.equal(json(await get(987654)).error, 'document_not_found');

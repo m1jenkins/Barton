@@ -10,22 +10,18 @@ import { localEnv } from './car-search.mjs';
 //                                                       (and its Buyer Updates, so an agent sees what the buyer was told)
 //   node scripts/deal-desk-db.mjs log <events.json | ->  add events to deal_events; a rerun adds nothing twice.
 //                                                       A quote or agreed needs the car's VIN: the Deal Tracker prices each car by VIN
-//   node scripts/deal-desk-db.mjs update <intake ID> <actor> [--post] [--ready-for-pick] [--answers <question id>] <text file | ->
+//   node scripts/deal-desk-db.mjs update <intake ID> <actor> [--post] [--ready-for-pick] <text file | ->
 //                                                       add a Buyer Update (1-4000 characters). Without --post it is a draft
 //                                                       for Mason to approve on the ops dashboard. --post only on Mason's say
 //                                                       in this chat (adr/0002): the buyer sees it at once and the email leaves
 //                                                       about five minutes later unless Mason takes it back. --ready-for-pick
-//                                                       opens the Buyer Pick; --answers links the Buyer Question it answers
-//   node scripts/deal-desk-db.mjs questions [intake ID] Buyer Questions, unanswered first (answered: a posted update
-//                                                       answers it); with an intake ID, that deal's only. Held mail from
-//                                                       anyone but the buyer never shows here until Mason releases it
+//                                                       opens the Buyer Pick. Buyers ask questions by text to Mason (adr/0003)
 //   node scripts/deal-desk-db.mjs picks [intake ID]     standing Buyer Picks, newest first, with the car's title: one car
 //                                                       at its price as picked, or "keep looking". Read-only: only the
 //                                                       buyer makes one (adr/0002). A pick is what they want, not an
 //                                                       agreed price: Mason confirms it with the dealer
-//   node scripts/deal-desk-db.mjs documents [intake ID] Buyer Documents an agent may use, newest first: id, type, how it
-//                                                       came (page or email), size. Deleted files and documents on held
-//                                                       mail Mason hasn't released never show. Fetch one with
+//   node scripts/deal-desk-db.mjs documents [intake ID] Buyer Documents an agent may use, newest first: id, type, size.
+//                                                       Deleted files never show. Fetch one with
 //                                                       `node scripts/car-search.mjs document <id>`. They can hold ID and
 //                                                       financial details: use them for the deal, never quote them to a
 //                                                       dealer or in a Buyer Update, and don't copy them anywhere else
@@ -37,7 +33,7 @@ import { localEnv } from './car-search.mjs';
 //                                                       mark one of those answers acted on, so it stops being listed
 // Connects with DEAL_DESK_DATABASE_URL, the paperclip_agent role from db/010, which can read
 // every table, insert into deal_events and, from db/013, insert into buyer_updates. Amounts are cents, as in deal_events.
-const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | -> | update <intake ID> <actor> [--post] [--ready-for-pick] [--answers <question id>] <text file | -> | questions [intake ID] | picks [intake ID] | documents [intake ID] | ran <actor> [minutes] [note] | answers [actor] | ack <resolved id> [note]';
+const USAGE = 'Usage: node scripts/deal-desk-db.mjs deals | deal <intake ID> | log <events.json | -> | update <intake ID> <actor> [--post] [--ready-for-pick] <text file | -> | picks [intake ID] | documents [intake ID] | ran <actor> [minutes] [note] | answers [actor] | ack <resolved id> [note]';
 const ACTOR = /^[a-z0-9][a-z0-9 ._-]{0,59}$/i;
 const INTAKE_ID = /^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
 export const POST_RULE = 'Posted on Mason\'s say. He can take it back on the ops dashboard before the email leaves.';
@@ -116,7 +112,7 @@ export async function showDeal(sql, id) {
     FROM deal_events WHERE onboarding_id = ${deal.onboarding_id} ORDER BY occurred_at, id`;
   let updates = null;
   try {
-    updates = await sql`SELECT id, status, actor, on_masons_say, ready_for_pick, answers_question_id, body,
+    updates = await sql`SELECT id, status, actor, on_masons_say, ready_for_pick, body,
         created_at, posted_at, emailed_at, retracted_at
       FROM buyer_updates WHERE onboarding_id = ${deal.onboarding_id} ORDER BY created_at, id`;
   } catch (error) {
@@ -127,60 +123,40 @@ export async function showDeal(sql, id) {
 }
 
 // One Buyer Update (db/013). Plain tagged values, no sql(row) helper, so tests can run it on PGlite.
-export async function addUpdate(sql, { intakeId, actor, body, post = false, readyForPick = false, answersQuestionId = null } = {}) {
+export async function addUpdate(sql, { intakeId, actor, body, post = false, readyForPick = false } = {}) {
   const problems = [];
   const words = typeof body === 'string' ? body.trim() : '';
   const name = typeof actor === 'string' ? actor.trim() : '';
-  const question = answersQuestionId == null || answersQuestionId === '' ? null : Number(answersQuestionId);
   if (!INTAKE_ID.test(intakeId ?? '')) problems.push('the intake ID must be the full intake ID');
   if (!ACTOR.test(name)) problems.push('actor must be the agent\'s short name, up to 60 letters, digits, spaces, dots, dashes or underscores');
   // The ops dashboard signs Mason's own updates; an agent never does.
   else if (name.toLowerCase() === 'mason') problems.push('actor can\'t be mason: use the agent\'s own name');
   if (!words) problems.push('the update needs some text');
   else if ([...words].length > 4000) problems.push('the update must be at most 4000 characters');
-  if (question != null && !(Number.isSafeInteger(question) && question > 0)) problems.push('--answers needs a Buyer Question id');
   if (problems.length) throw new Error(problems.join('; '));
   const id = intakeId.toLowerCase();
   const [deal] = await sql`SELECT onboarding_id FROM deals WHERE onboarding_id = ${id}`;
   if (!deal) throw new Error(`No deal for ${id}, so there is no Deal Tracker to post to.`);
-  if (question != null) {
-    const [asked] = await sql`SELECT id FROM buyer_questions WHERE id = ${question} AND onboarding_id = ${id}`;
-    if (!asked) throw new Error(`Buyer Question ${question} isn't on this deal.`);
-  }
   // The insert trigger sets posted_at and email_after; on_masons_say is this agent's claim that Mason said to post.
-  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, answers_question_id, actor, on_masons_say)
-    VALUES (${id}, ${words}, ${post ? 'posted' : 'draft'}, ${Boolean(readyForPick)}, ${question}, ${name}, ${Boolean(post)})
+  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor, on_masons_say)
+    VALUES (${id}, ${words}, ${post ? 'posted' : 'draft'}, ${Boolean(readyForPick)}, ${name}, ${Boolean(post)})
     RETURNING id, status, posted_at, email_after`;
   return row;
 }
 
-// update's arguments after the intake ID: <actor> [--post] [--ready-for-pick] [--answers <id>] <text file | ->
+// update's arguments after the intake ID: <actor> [--post] [--ready-for-pick] <text file | ->
 export function parseUpdateArgs(args) {
-  const options = { post: false, readyForPick: false, answersQuestionId: null };
+  const options = { post: false, readyForPick: false };
   const positional = [];
   for (let index = 0; index < args.length; index++) {
     const arg = args[index];
     if (arg === '--post') options.post = true;
     else if (arg === '--ready-for-pick') options.readyForPick = true;
-    else if (arg === '--answers') options.answersQuestionId = args[++index] ?? '';
     else if (arg.startsWith('--')) throw new Error(`Unknown option ${arg}. ${USAGE}`);
     else positional.push(arg);
   }
-  if (positional.length !== 2 || options.answersQuestionId === '') throw new Error(USAGE);
+  if (positional.length !== 2) throw new Error(USAGE);
   return { actor: positional[0], source: positional[1], ...options };
-}
-
-// The agents' queue of Buyer Questions (db/013). Discarded ones never show, and
-// held mail shows only once Mason releases it, body or otherwise (adr/0001).
-export async function listQuestions(sql, intakeId = null) {
-  if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('questions takes the full intake ID, or nothing for every deal');
-  const id = intakeId?.toLowerCase() ?? null;
-  return sql`SELECT q.id, q.onboarding_id AS intake_id, q.source, q.sender_email, q.body, q.created_at,
-      EXISTS (SELECT 1 FROM buyer_updates u WHERE u.answers_question_id = q.id AND u.status = 'posted') AS answered
-    FROM buyer_questions q
-    WHERE q.discarded_at IS NULL AND (NOT q.held OR q.released_at IS NOT NULL)
-      AND (${id}::uuid IS NULL OR q.onboarding_id = ${id}::uuid)
-    ORDER BY answered, q.created_at, q.id`;
 }
 
 // Standing Buyer Picks (db/013), newest first. Only the website writes them;
@@ -197,16 +173,14 @@ export async function listPicks(sql, intakeId = null) {
 }
 
 // Buyer Documents an agent may fetch (db/013), newest first. Read-only: only the
-// website files them (adr/0002). A document from held mail stays out until Mason
-// releases that mail, as on the buyer's page; a deleted file is gone for good.
+// website files them (adr/0002). A deleted file is gone for good.
 export async function listDocuments(sql, intakeId = null) {
   if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('documents takes the full intake ID, or nothing for every deal');
   const id = intakeId?.toLowerCase() ?? null;
-  return sql`SELECT d.id, d.onboarding_id AS intake_id, d.doc_type, d.source, d.content_type, d.bytes, d.created_at
-    FROM buyer_documents d LEFT JOIN buyer_questions q ON q.id = d.question_id
-    WHERE d.deleted_at IS NULL AND (q.id IS NULL OR NOT q.held OR q.released_at IS NOT NULL)
-      AND (${id}::uuid IS NULL OR d.onboarding_id = ${id}::uuid)
-    ORDER BY d.created_at DESC, d.id DESC`;
+  return sql`SELECT id, onboarding_id AS intake_id, doc_type, content_type, bytes, created_at
+    FROM buyer_documents
+    WHERE deleted_at IS NULL AND (${id}::uuid IS NULL OR onboarding_id = ${id}::uuid)
+    ORDER BY created_at DESC, id DESC`;
 }
 
 export async function logEvents(sql, inputs) {
@@ -253,7 +227,7 @@ async function main([command, argument, ...rest]) {
   const environment = { ...localEnv(), ...process.env };
   const url = environment.DEAL_DESK_DATABASE_URL?.trim();
   if (!url) throw new Error('DEAL_DESK_DATABASE_URL is not set. It is the paperclip_agent connection string (db/010_paperclip_agent_grants.sql).');
-  if (!['deals', 'deal', 'log', 'update', 'questions', 'picks', 'documents', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'update', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
+  if (!['deals', 'deal', 'log', 'update', 'picks', 'documents', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'update', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
   const update = command === 'update' ? parseUpdateArgs(rest) : null;
   const read = source => (source === '-' ? new Response(process.stdin).text() : readFile(source, 'utf8'));
   const sql = postgres(url, { max: 1, idle_timeout: 5, connect_timeout: 10, prepare: false, transform: { undefined: null } });
@@ -264,7 +238,6 @@ async function main([command, argument, ...rest]) {
       const row = await addUpdate(sql, { intakeId: argument, ...update, body: await read(update.source) });
       return update.post ? { ...row, rule: POST_RULE } : row;
     }
-    if (command === 'questions') return await listQuestions(sql, argument ?? null);
     if (command === 'picks') return await listPicks(sql, argument ?? null);
     if (command === 'documents') return await listDocuments(sql, argument ?? null);
     if (command === 'ran') return await recordRun(sql, argument, /^\d+$/.test(rest[0] ?? '') ? rest.shift() : null, rest.join(' '));

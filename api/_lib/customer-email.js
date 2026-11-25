@@ -1,6 +1,6 @@
 import { ConfigError } from './config.js';
 import { database } from './db.js';
-import { dealTrackerSettings, linkUrl, replyAddress } from './deal-tracker.js';
+import { dealTrackerSettings, linkUrl } from './deal-tracker.js';
 import { intakeEmailSettings, oneLine, smtpTransport } from './intake-email.js';
 import { safeUrl } from './email-layout.js';
 import { EMAIL_TIERS, TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from './customer-emails/index.js';
@@ -14,8 +14,8 @@ import { EMAIL_TIERS, TEMPLATE_NAMES, buyerFromRow, renderCustomerEmail } from '
 // The queue is customer_email_outbox (db/011). See "Customer email" in
 // docs/implementation-operations.md.
 // With the Deal Tracker on (DEAL_TRACKER_ENABLED), a buyer whose link is live gets
-// the Deal Tracker version of each email, with the link, and Reply-To set to their
-// reply address when DEAL_REPLY_MAILBOX is set. Everyone else gets today's email.
+// the Deal Tracker version of each email, with the link. Everyone else gets
+// today's email.
 
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 const DEFAULT_REPLY_TO = 'mason@steermeright.com';
@@ -152,10 +152,7 @@ async function liveLinks(sql, rows, tracker) {
     WHERE l.onboarding_id = ANY(${ids}::uuid[]) AND l.revoked_at IS NULL
       AND (latest.kind IS DISTINCT FROM 'closed' OR latest.occurred_at > now() - ${LINK_GRACE_DAYS} * interval '1 day')
   `;
-  return new Map(links.map(link => [link.onboarding_id, {
-    link: linkUrl(tracker, link.onboarding_id, link.version),
-    replyAddress: replyAddress(tracker, link.onboarding_id)
-  }]));
+  return new Map(links.map(link => [link.onboarding_id, { link: linkUrl(tracker, link.onboarding_id, link.version) }]));
 }
 
 async function finish(sql, row, status, lastError = null) {
@@ -181,7 +178,7 @@ async function deliver(sql, row, transport, settings, tracker) {
     await transport.sendMail({
       from: { name: FROM_NAME, address: settings.user },
       to: { name: oneLine(row.name), address: row.email },
-      replyTo: tracker?.replyAddress || settings.replyTo,
+      replyTo: settings.replyTo,
       subject, text, html,
       headers: { 'X-Steer-Customer-Email': row.template }
     });

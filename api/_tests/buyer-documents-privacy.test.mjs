@@ -139,7 +139,6 @@ test('a buyer hands over a document and gets a receipt of its type and time, not
   const [row] = await rows(pg, id);
   assert.equal(row.doc_type, 'insurance');
   assert.equal(row.blob_path, pathname);
-  assert.equal(row.source, 'page');
   assert.equal(Number(row.bytes), 2 * MB);
   assert.ok(pathname.includes(id), 'the file is stored under its deal');
 

@@ -1,5 +1,4 @@
 import { createHash, createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
-import { dealMailClient } from './deal-mail.js';
 import { dealTrackerSettings } from './deal-tracker.js';
 
 // Buyer Documents (GLOSSARY.md, docs/adr/0001, plan "Documents"). Write-only
@@ -96,12 +95,6 @@ export function blobStore(settings) {
     async del(pathname) {
       const { del } = await sdk();
       await del(pathname, auth);
-    },
-    // A file the server already holds: an emailed document (deal-mail.js). Its
-    // pathname is worked out from the mail ID, so a retry overwrites, never duplicates.
-    async put(pathname, body, { contentType }) {
-      const { put } = await sdk();
-      await put(pathname, body, { ...auth, access: 'private', contentType, addRandomSuffix: false, allowOverwrite: true });
     }
   };
 }
@@ -149,7 +142,7 @@ export async function startUpload({ sql, store, settings, onboardingId, stage, o
   if (!size) return { error: 'empty' };
   if (size > MAX_BYTES) return { error: 'too_large' };
   const [recent] = await sql`SELECT count(*) FILTER (WHERE created_at > ${iso(now - 60 * MINUTE)}::timestamptz)::int AS hour, count(*)::int AS day
-    FROM buyer_documents WHERE onboarding_id = ${onboardingId} AND source = 'page' AND created_at > ${iso(now - DAY)}::timestamptz`;
+    FROM buyer_documents WHERE onboarding_id = ${onboardingId} AND created_at > ${iso(now - DAY)}::timestamptz`;
   if (recent && (recent.hour >= PER_HOUR || recent.day >= PER_DAY)) return { error: 'rate_limited' };
   const pathname = `deals/${onboardingId}/${randomUUID()}.${CONTENT_TYPES[type]}`;
   const upload = await store.presignUpload({ pathname, contentType: type, maximumSizeInBytes: MAX_BYTES });
@@ -172,21 +165,18 @@ export async function finishUpload({ sql, store, settings, onboardingId, ticket,
     await store.del(upload.pathname);
     return { error: 'mismatch' };
   }
-  const [row] = await sql`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, created_at)
-    VALUES (${onboardingId}, ${upload.docType}, ${upload.pathname}, ${upload.contentType}, ${size}, 'page', ${iso(now)}::timestamptz)
+  const [row] = await sql`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, created_at)
+    VALUES (${onboardingId}, ${upload.docType}, ${upload.pathname}, ${upload.contentType}, ${size}, ${iso(now)}::timestamptz)
     ON CONFLICT (blob_path) DO NOTHING RETURNING doc_type, created_at`;
   if (row) return { receipt: receipt(row) };
   const [filed] = await sql`SELECT doc_type, created_at FROM buyer_documents WHERE blob_path = ${upload.pathname} AND onboarding_id = ${onboardingId}`;
   return filed ? { receipt: receipt(filed) } : { error: 'bad_ticket' };
 }
 
-// The buyer's receipts, oldest first. A receipt outlives its file. A document
-// that came on held mail shows only once Mason releases that mail (a discarded
-// email was never released); agents follow the same rule.
+// The buyer's receipts, oldest first. A receipt outlives its file.
 export async function listReceipts(sql, onboardingId) {
-  const rows = await sql`SELECT d.doc_type, d.created_at FROM buyer_documents d LEFT JOIN buyer_questions q ON q.id = d.question_id
-    WHERE d.onboarding_id = ${onboardingId} AND (q.id IS NULL OR NOT q.held OR q.released_at IS NOT NULL)
-    ORDER BY d.created_at, d.id`;
+  const rows = await sql`SELECT doc_type, created_at FROM buyer_documents
+    WHERE onboarding_id = ${onboardingId} ORDER BY created_at, id`;
   return rows.map(receipt);
 }
 
@@ -194,15 +184,13 @@ export async function listReceipts(sql, onboardingId) {
 
 export const fileType = contentType => (Object.hasOwn(CONTENT_TYPES, baseType(contentType)) ? baseType(contentType) : 'application/octet-stream');
 
-// One document's file for Mason (forAgent false) or an agent. Errors:
-// not_found, deleted, missing (no file in the store), and for agents held:
-// nothing from held mail reaches them until Mason releases it.
-export async function readDocument({ sql, store, id, forAgent = false }) {
+// One document's file for Mason or an agent. Errors: not_found, deleted, and
+// missing (no file in the store).
+export async function readDocument({ sql, store, id }) {
   if (!/^[1-9]\d{0,17}$/.test(String(id ?? ''))) return { error: 'not_found' };
-  const [doc] = await sql`SELECT d.id, d.doc_type, d.blob_path, d.content_type, d.bytes, d.deleted_at, q.held, q.released_at
-    FROM buyer_documents d LEFT JOIN buyer_questions q ON q.id = d.question_id WHERE d.id = ${String(id)}::bigint`;
+  const [doc] = await sql`SELECT id, doc_type, blob_path, content_type, bytes, deleted_at
+    FROM buyer_documents WHERE id = ${String(id)}::bigint`;
   if (!doc) return { error: 'not_found' };
-  if (forAgent && doc.held && !doc.released_at) return { error: 'held' };
   if (doc.deleted_at) return { error: 'deleted' };
   const file = await store.get(doc.blob_path);
   if (!file) return { error: 'missing' };
@@ -241,8 +229,7 @@ export async function sendDocument(res, file, extra = {}) {
 
 // Every live file on a deal whose latest close/reopen is a close more than 30
 // days before now: the file goes, then the row records when. Reopened and open
-// deals keep theirs. One failure doesn't stop the rest. The emailed originals
-// are trashMailOriginals' job, below.
+// deals keep theirs. One failure doesn't stop the rest.
 export async function cleanupDocuments({ sql, store, now = Date.now() }) {
   const due = await sql`SELECT d.id, d.blob_path FROM buyer_documents d
     JOIN LATERAL (SELECT e.kind, e.occurred_at FROM deal_events e
@@ -263,48 +250,10 @@ export async function cleanupDocuments({ sql, store, now = Date.now() }) {
   return { deleted, failed };
 }
 
-// The email a document arrived on goes to the mailbox's trash on the same
-// schedule as the file (adr/0001), once per message however many documents it
-// carried. Mail with no document stays where it is. mail.trash only ever moves a
-// message to trash, which the mail provider empties 30 days later; nothing here
-// deletes mail. A message already gone from the mailbox counts as trashed. A
-// failure leaves mail_trashed_at unset, so the next run tries again.
-export async function trashMailOriginals({ sql, mail, now = Date.now() }) {
-  const due = await sql`SELECT DISTINCT d.mail_message_id FROM buyer_documents d
-    JOIN LATERAL (SELECT e.kind, e.occurred_at FROM deal_events e
-      WHERE e.onboarding_id = d.onboarding_id AND e.kind IN ('closed', 'reopened')
-      ORDER BY e.occurred_at DESC, e.id DESC LIMIT 1) last ON true
-    WHERE d.source = 'email' AND d.mail_trashed_at IS NULL AND last.kind = 'closed'
-      AND last.occurred_at < ${iso(now - KEEP_DAYS * DAY)}::timestamptz
-    ORDER BY d.mail_message_id`;
-  let trashed = 0, failed = 0;
-  for (const { mail_message_id: messageId } of due) {
-    try {
-      await mail.trash(messageId);
-      await sql`UPDATE buyer_documents SET mail_trashed_at = ${iso(now)}::timestamptz
-        WHERE mail_message_id = ${messageId} AND mail_trashed_at IS NULL`;
-      trashed += 1;
-    } catch {
-      failed += 1;
-    }
-  }
-  return { trashed, trash_failed: failed };
-}
-
-// The worker shape api/outbox-dispatch.js expects; the daily cron runs it. With
-// the mailbox set up too (deal-mail.js), it also trashes the emailed originals;
-// a mailbox failure never holds up the files.
-export async function runDocumentCleanupWorker({ sql, environment = process.env, store = null, mail = undefined, now = Date.now() } = {}) {
+// The worker shape api/outbox-dispatch.js expects; the daily cron runs it.
+export async function runDocumentCleanupWorker({ sql, environment = process.env, store = null, now = Date.now() } = {}) {
   const settings = documentSettings(environment);
   if (!settings) return { configured: false, deleted: 0, failed: 0, exitCode: 1 };
   const result = await cleanupDocuments({ sql, store: store ?? blobStore(settings), now });
-  const mailbox = mail === undefined ? dealMailClient(environment) : mail;
-  if (!mailbox) return { configured: true, ...result, exitCode: result.failed ? 1 : 0 };
-  let trash;
-  try {
-    trash = await trashMailOriginals({ sql, mail: mailbox, now });
-  } catch {
-    trash = { trashed: 0, trash_failed: 1 };
-  }
-  return { configured: true, ...result, ...trash, exitCode: result.failed || trash.trash_failed ? 1 : 0 };
+  return { configured: true, ...result, exitCode: result.failed ? 1 : 0 };
 }

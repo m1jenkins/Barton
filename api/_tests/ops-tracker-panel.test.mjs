@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { Readable } from 'node:stream';
 import { PGlite } from '@electric-sql/pglite';
-import { dealTrackerSettings, replyAddress, replyToken, signLink } from '../_lib/deal-tracker.js';
+import { dealTrackerSettings, signLink } from '../_lib/deal-tracker.js';
 import { dealerNameWarning } from '../_lib/buyer-updates.js';
 import { loadDashboard } from '../_lib/ops-dashboard.js';
 import { renderBuyerUpdateEmail } from '../_lib/buyer-update-email.js';
@@ -12,7 +12,7 @@ import { outboxHandler } from '../outbox-dispatch.js';
 import { opsHandler } from '../ops.js';
 
 // The Deal Tracker panel on the ops dashboard's deal page (plan, "Ops dashboard
-// panel"), the Buyer Update email and the reply address.
+// panel"), the Buyer Update email and the text number.
 
 const password = 'ops-password-for-tests-only-0123456789';
 const SECRET = 'deal-tracker-secret-for-tests-only-0123456789';
@@ -187,7 +187,7 @@ test('revoke, restore and reissue the buyer\'s link from the ops page', async t 
   assert.equal((await post({ tracker: 'post', deal: unlinked, body: 'hello' })).statusCode, 400);
 });
 
-test('the panel shows drafts to approve, warns about a dealer name before Price agreed, and escapes what agents write', async t => {
+test('the panel shows drafts to approve, warns about a dealer name before Quotes in, and escapes what agents write', async t => {
   const pg = await database(t);
   const id = await intake(pg);
   const { post, page } = ops(pg);
@@ -204,6 +204,9 @@ test('the panel shows drafts to approve, warns about a dealer name before Price 
   assert.ok(panel.includes("The buyer's email leaves about five minutes after you post, unless you take it back."));
   assert.ok(before.indexOf('<h2>Update deal</h2>') < before.indexOf('<h2>Deal Tracker</h2>'));
 
+  // From Quotes in the buyer's page names each car's dealer (adr/0003), so there's nothing to warn about.
+  await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents) VALUES ($1, 'quote', 'mason', 'Zzyzx Motors', '2T3P1RFV5SW000001', 3500000)`, [id]);
+  assert.ok(!(await page(id)).body.includes('which the buyer can'), 'no warning once quotes are in');
   await post({ edit: 'agreed', deal: id, dealer: 'Zzyzx Motors', otd: '33000', vin: '2T3P1RFV5SW000001' });
   assert.ok(!(await page(id)).body.includes('which the buyer can'), 'no warning once a price is agreed');
 });
@@ -243,17 +246,17 @@ test('the update email previews the start of the update, carries the link, and e
   assert.ok(short.text.includes('Short one.') && !short.text.includes('…'));
 });
 
-test('the reply address is the mailbox plus the buyer\'s reply token, and the mailbox must be plain', () => {
+test('the text number buyers reach Mason at is a 10-digit US number, optional, and the old reply mailbox is ignored', () => {
   const base = { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET };
-  const id = crypto.randomUUID();
-  const settings = dealTrackerSettings({ ...base, DEAL_REPLY_MAILBOX: ' deals@mailbox.example.test ' });
-  assert.equal(settings.replyMailbox, 'deals@mailbox.example.test');
-  assert.equal(replyAddress(settings, id), `deals+${replyToken(SECRET, id)}@mailbox.example.test`);
-  assert.equal(dealTrackerSettings(base).replyMailbox, null);
-  assert.equal(replyAddress(dealTrackerSettings(base), id), null);
-  for (const bad of ['deals+x@mailbox.example.test', 'not an address', 'deals@']) {
-    assert.throws(() => dealTrackerSettings({ ...base, DEAL_REPLY_MAILBOX: bad }), /DEAL_REPLY_MAILBOX/, bad);
+  assert.equal(dealTrackerSettings(base).text, null);
+  for (const value of ['512-555-0142', '(512) 555-0142', '+1 512 555 0142', '15125550142']) {
+    assert.deepEqual(dealTrackerSettings({ ...base, DEAL_TRACKER_TEXT_NUMBER: value }).text, { href: 'sms:+15125550142', label: '(512) 555-0142' }, value);
   }
+  for (const bad of ['555-0142', '512-555-014x', '+44 20 7946 0958']) {
+    assert.throws(() => dealTrackerSettings({ ...base, DEAL_TRACKER_TEXT_NUMBER: bad }), /DEAL_TRACKER_TEXT_NUMBER/, bad);
+  }
+  const settings = dealTrackerSettings({ ...base, DEAL_REPLY_MAILBOX: 'deals+x@not valid' });
+  assert.ok(!('replyMailbox' in settings), 'DEAL_REPLY_MAILBOX is no longer read');
 });
 
 test('a dealer-name warning lists each named dealer once, ignoring case and spacing', () => {
@@ -279,115 +282,6 @@ test('?jobs=buyer_updates runs only the Buyer Update worker', async () => {
   assert.deepEqual(Object.keys(JSON.parse(res.body).workers), ['buyer_updates']);
 });
 
-// ---------- Buyer Questions and held mail (build step 4) ----------
-
-let messages = 0;
-const asked = async (pg, id, body, { source = 'page', sender = null, held = false } = {}) =>
-  Number((await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`,
-    [id, body, source, sender, held, source === 'email' ? `msg-id-${++messages}` : null])).rows[0].id);
-const question = async (pg, id) => (await pg.query('SELECT released_at, discarded_at FROM buyer_questions WHERE id = $1', [id])).rows[0];
-
-test('Mason answers a Buyer Question from the panel: the answer is a posted update tied to it, and the question shows as answered', async t => {
-  const pg = await database(t);
-  const id = await intake(pg);
-  const other = await intake(pg);
-  const { post, page } = ops(pg);
-  const mine = await asked(pg, id, 'Q-SENTINEL does it include <b>tax</b>?\nThanks');
-  const theirs = await asked(pg, other, 'FOREIGN-QUESTION');
-  const hidden = await asked(pg, id, 'HELD-QUESTION', { source: 'email', sender: 'cousin@example.test', held: true });
-  await asked(pg, id, 'EMAILED-QUESTION', { source: 'email', sender: 'riley.buyer@example.test' });
-
-  const panel = (await page(id)).body.split('<h2>Deal Tracker</h2>')[1].split('<h2>Shortlist')[0];
-  const list = panel.split('<h2>Buyer Questions (2)</h2>')[1].split('<h2>Held email')[0];
-  assert.ok(list.includes('Q-SENTINEL does it include &lt;b&gt;tax&lt;/b&gt;?\nThanks') && !list.includes('<b>tax'), 'escaped, line breaks kept');
-  assert.ok(list.includes('On the Deal Tracker') && list.includes('By email from riley.buyer@example.test'));
-  assert.ok(list.includes(`name="question" value="${mine}"`) && list.split('Post answer').length - 1 === 2);
-  assert.ok(list.indexOf('EMAILED-QUESTION') < list.indexOf('Q-SENTINEL'), 'newest first');
-  assert.ok(!list.includes('HELD-QUESTION'), 'held mail is listed apart');
-
-  for (const value of [String(theirs), String(hidden), 'abc', '-1']) {
-    const refused = await post({ tracker: 'post', deal: id, question: value, body: 'Wrong one' });
-    assert.equal(refused.statusCode, 400, value);
-  }
-  assert.equal((await updates(pg, id)).length, 0, 'nothing refused was written');
-
-  assert.equal((await post({ tracker: 'post', deal: id, question: String(mine), body: 'A-SENTINEL Yes, tax is in it.' })).statusCode, 303);
-  const { rows: [answer] } = await pg.query('SELECT status, actor, answers_question_id FROM buyer_updates WHERE onboarding_id = $1', [id]);
-  assert.deepEqual([answer.status, answer.actor, Number(answer.answers_question_id)], ['posted', 'mason', mine]);
-
-  const after = (await page(id)).body.split('<h2>Buyer Questions')[1].split('<h2>Shortlist')[0];
-  const item = after.split('<li>').find(part => part.includes('Q-SENTINEL'));
-  assert.ok(item.includes('Answered') && item.includes('A-SENTINEL') && !item.includes('Post answer') && !item.includes('name="question"'));
-  const buyer = (await buyerPage(pg, signLink(SECRET, id, 1))).body;
-  const thread = buyer.split('<li class="dt-question">').find(part => part.includes('Q-SENTINEL'));
-  assert.ok(thread.split('</li>')[0].includes('A-SENTINEL'), 'the buyer sees the answer under the question');
-});
-
-test('Release and Discard act once, only on held mail of that deal', async t => {
-  const pg = await database(t);
-  const id = await intake(pg);
-  const other = await intake(pg);
-  const { post, page } = ops(pg);
-  const release = await asked(pg, id, 'RELEASE-SENTINEL <i>hi</i>', { source: 'email', sender: 'cousin@example.test', held: true });
-  const discard = await asked(pg, id, 'DISCARD-SENTINEL', { source: 'email', sender: 'spam@example.test', held: true });
-  const foreign = await asked(pg, other, 'FOREIGN-HELD', { source: 'email', sender: 'x@example.test', held: true });
-  const open = await asked(pg, id, 'PAGE-QUESTION');
-
-  const held = (await page(id)).body.split('<h2>Held email (2)</h2>')[1].split('<h2>Shortlist')[0];
-  assert.ok(held.includes('cousin@example.test') && held.includes('RELEASE-SENTINEL &lt;i&gt;hi&lt;/i&gt;') && held.includes('value="release"') && held.includes('value="discard_mail"'));
-  assert.ok(!(await buyerPage(pg, signLink(SECRET, id, 1))).body.includes('RELEASE-SENTINEL'));
-
-  assert.equal((await post({ tracker: 'release', deal: id, question: String(foreign) })).statusCode, 400);
-  assert.equal((await question(pg, foreign)).released_at, null, 'another deal\'s mail is untouched');
-  assert.equal((await post({ tracker: 'release', deal: id, question: 'abc' })).statusCode, 400);
-
-  assert.equal((await post({ tracker: 'release', deal: id, question: String(release) })).statusCode, 303);
-  const first = (await question(pg, release)).released_at;
-  assert.ok(first);
-  assert.equal((await post({ tracker: 'release', deal: id, question: String(release) })).statusCode, 303, 'a repeat is harmless');
-  assert.equal((await post({ tracker: 'discard_mail', deal: id, question: String(release) })).statusCode, 303);
-  assert.deepEqual(await question(pg, release), { released_at: first, discarded_at: null }, 'released mail can no longer be discarded');
-  assert.ok((await buyerPage(pg, signLink(SECRET, id, 1))).body.includes('RELEASE-SENTINEL'), 'released, it shows as the buyer\'s question');
-
-  assert.equal((await post({ tracker: 'discard_mail', deal: id, question: String(discard) })).statusCode, 303);
-  await post({ tracker: 'release', deal: id, question: String(discard) });
-  const dropped = await question(pg, discard);
-  assert.ok(dropped.discarded_at && dropped.released_at === null, 'discarded mail can no longer be released');
-  await post({ tracker: 'release', deal: id, question: String(open) });
-  await post({ tracker: 'discard_mail', deal: id, question: String(open) });
-  assert.deepEqual(await question(pg, open), { released_at: null, discarded_at: null }, 'a page question is not held mail');
-
-  const panel = (await page(id)).body;
-  assert.ok(!panel.includes('<h2>Held email') && !panel.includes('DISCARD-SENTINEL'));
-  assert.ok(panel.includes('By email from cousin@example.test · released by you'));
-});
-
-test('the main dashboard tags a deal with a question waiting and lists questions and held mail under Needs you', async t => {
-  const pg = await database(t);
-  const id = await intake(pg);
-  const quiet = await intake(pg);
-  const { post, home } = ops(pg);
-  const waiting = await asked(pg, id, 'NEEDS-SENTINEL when will I hear back?');
-  await asked(pg, id, 'HELD-BODY-SENTINEL', { source: 'email', sender: 'cousin@example.test', held: true });
-
-  const body = (await home()).body;
-  const tiles = body.split('<h2>Open deals')[1].split('<h2>')[0];
-  const tile = tiles.split('<a class="tile').find(part => part.includes(`deal=${id}`));
-  assert.ok(tile.includes('<span class="tag">Question waiting</span>'));
-  assert.ok(!tiles.split('<a class="tile').find(part => part.includes(`deal=${quiet}`)).includes('Question waiting'));
-  const needs = body.split('<h2>Needs you')[1].split('<h2>')[0];
-  assert.ok(body.includes('<h2>Needs you (2)</h2>'));
-  assert.ok(needs.includes('NEEDS-SENTINEL when will I hear back?') && needs.includes(`/api/ops?deal=${id}`));
-  assert.ok(needs.includes('Email from cousin@example.test') && !needs.includes('HELD-BODY-SENTINEL'), 'held text stays on the deal page');
-
-  await post({ tracker: 'post', deal: id, question: String(waiting), body: 'Tomorrow.' });
-  const answered = (await home()).body;
-  assert.ok(!answered.includes('Question waiting') && answered.includes('<h2>Needs you (1)</h2>'));
-
-  const switchedOff = (await ops(pg, off).home()).body;
-  assert.ok(switchedOff.includes('<h2>Needs you (0)</h2>') && !switchedOff.includes('cousin@example.test') && !switchedOff.includes('Question waiting'));
-});
-
 test('switched off, loadDashboard runs today\'s queries and works on a database without db/013', async t => {
   const pg = await PGlite.create();
   t.after(() => pg.close());
@@ -399,7 +293,7 @@ test('switched off, loadDashboard runs today\'s queries and works on a database 
     return (await pg.query(query, values)).rows;
   };
   const data = await loadDashboard(sql);
-  assert.ok(!('questions' in data) && !('held' in data));
+  assert.ok(!('picks' in data));
   assert.ok(seen.length && !seen.some(query => /buyer_/.test(query)));
   const res = response();
   await opsHandler({ environment: off, getDatabase: () => tagged(pg) })(request('GET', { headers: { authorization: basic } }), res);
@@ -421,7 +315,7 @@ async function picked(pg, id, { kind = 'pick' } = {}) {
   return Number(row.id);
 }
 const pickRows = async (pg, id) => (await pg.query('SELECT id, cleared_at, cleared_by FROM buyer_picks WHERE onboarding_id = $1 ORDER BY id', [id])).rows;
-const panelOf = html => html.split('<h2>Buyer Pick')[1].split('<h2>Buyer Questions')[0];
+const panelOf = html => html.split('<h2>Buyer Pick')[1].split('<h2>Buyer Documents')[0];
 
 test('the panel shows the standing pick as picked, warns when the price moved or the dealer was dropped, and lists past picks', async t => {
   const pg = await database(t);
@@ -508,10 +402,10 @@ function memoryStore(files = new Map()) {
     async presignUpload() { throw new Error('not here'); }, async head() { throw new Error('not here'); }, async del() { throw new Error('not here'); }
   };
 }
-const fileRow = async (pg, id, { docType = 'pre_approval', contentType = 'application/pdf', source = 'page', deleted = false } = {}) => {
+const fileRow = async (pg, id, { docType = 'pre_approval', contentType = 'application/pdf', deleted = false } = {}) => {
   const path = `deals/${id}/${crypto.randomUUID()}.pdf`;
-  const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, mail_message_id, deleted_at)
-    VALUES ($1, $2, $3, $4, 2621440, $5, $6, $7) RETURNING id`, [id, docType, path, contentType, source, source === 'email' ? `mail-${path}` : null, deleted ? '2026-12-01T12:00:00Z' : null]);
+  const { rows: [row] } = await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, deleted_at)
+    VALUES ($1, $2, $3, $4, 2621440, $5) RETURNING id`, [id, docType, path, contentType, deleted ? '2026-12-01T12:00:00Z' : null]);
   return { id: Number(row.id), path };
 };
 async function download(pg, documentId, { env = withStore, store, auth = basic } = {}) {
@@ -521,17 +415,17 @@ async function download(pg, documentId, { env = withStore, store, auth = basic }
   return res;
 }
 
-test('the panel lists Buyer Documents with how they came, their size and a download, or when the file was deleted', async t => {
+test('the panel lists Buyer Documents with their size and a download, or when the file was deleted', async t => {
   const pg = await database(t);
   const id = await intake(pg);
   const live = await fileRow(pg, id);
-  const gone = await fileRow(pg, id, { docType: 'id', source: 'email', deleted: true });
+  const gone = await fileRow(pg, id, { docType: 'id', deleted: true });
   const page = (await ops(pg).page(id)).body;
   const panel = page.split('<h2>Buyer Documents (2)</h2>')[1];
   assert.ok(panel, 'the section is there');
-  assert.ok(panel.includes('<strong>Loan pre-approval</strong>') && panel.includes('on the Deal Tracker · 2.5 MB'));
+  assert.ok(panel.includes('<strong>Loan pre-approval</strong>') && panel.includes('· 2.5 MB'));
   assert.ok(panel.includes(`<a class="nowrap" href="/api/ops?document=${live.id}">Download</a>`));
-  assert.ok(panel.includes('<strong>ID</strong>') && panel.includes('by email') && panel.includes('Deleted Dec 1, 2026'));
+  assert.ok(panel.includes('<strong>ID</strong>') && panel.includes('Deleted Dec 1, 2026'));
   assert.ok(!panel.includes(`document=${gone.id}`) && !page.includes(live.path), 'no store path on the page');
   assert.ok(!(await ops(pg, off).page(id)).body.includes('Buyer Documents'), 'switched off, no section');
 });

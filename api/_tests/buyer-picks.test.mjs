@@ -49,7 +49,10 @@ const CARS = [
   { rank: 2, title: '2023 Honda CR-V EX-L', vin: '2T3W1RFV8MW123456', dealer: 'Quorra Auto Haus', url: 'https://listings.example/sentinel-listing-2', otd: 3690000 },
   { rank: 3, title: '2024 Mazda CX-5 Select', vin: '5YJ3E1EA7KF317000', dealer: 'Vandelay Imports', url: 'https://listings.example/sentinel-listing-3', otd: null }
 ];
-const SECRETS = [...CARS.flatMap(car => [car.dealer, car.url, car.vin]), 'Ozymandias Autoplex', 'sales@dealer.example', 'WHY-SENTINEL'];
+// From Quotes in the page names each car's listed dealer and links its listing
+// (adr/0003); a VIN, another dealer's name from the log, contact details and our
+// notes never show.
+const SECRETS = [...CARS.map(car => car.vin), 'Ozymandias Autoplex', 'sales@dealer.example', 'WHY-SENTINEL'];
 
 const event = (pg, id, kind, { dealer = null, vin = null, otd = null, daysAgo = 5 } = {}) =>
   pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents, note, occurred_at)
@@ -233,7 +236,7 @@ test('the confirm step writes nothing; the pick writes one row with the VIN, dea
   const html = (await open(pg, id)).body;
   const section = html.split('id="dt-pick"')[1].split('</section>')[0];
   assert.ok(section.includes('You picked the 2024 Toyota RAV4 XLE at $36,400 out the door. The price isn’t agreed until I confirm it with the dealer.'));
-  assert.ok(section.includes('If you chose by mistake, ask me a question below'));
+  assert.ok(section.includes('If you chose by mistake, let me know'));
   assert.ok(!html.includes('Pick this car') && !html.includes('None of these, keep looking'), 'the buttons are gone');
   const view = await loadBuyerView(tagged(pg), id, NOW);
   assert.deepEqual(view.pick, { open: true, standing: { kind: 'pick', rank: 1, otd_cents: 3640000, at: new Date(NOW).toISOString(), flag: null, current_cents: 3640000 } });
@@ -370,7 +373,7 @@ test('"keep looking" writes one row with no car, dealer or price, and the page s
     { kind: 'keep_looking', rank: null, otd_cents: null, at: new Date(NOW).toISOString(), flag: null, current_cents: null });
 });
 
-test('privacy: with a pick standing, nothing the link returns names a dealer, links a listing or gives a VIN', async t => {
+test('privacy: with a pick standing, nothing the link returns gives a VIN, another dealer from the log, contact details or our notes', async t => {
   const pg = await database(t);
   const id = await intake(pg);
   await readyUpdate(pg, id);

@@ -41,7 +41,7 @@
 .dt .dt-steps { margin:18px 0 0; padding-left:24px; display:grid; gap:12px; font-size:16px; line-height:1.6; }
 .dt .dt-steps li::marker { font-weight:600; color:var(--sign); }
 
-/* Cars: one card each, with one clearly labelled main figure. */
+/* Cars: one card each, with the listing's photos on top and one clearly labelled main figure. */
 .dt .dt-cars { margin-top:18px; display:grid; grid-template-columns:1fr; gap:14px; }
 .dt .dt-car { padding:22px 20px; border-radius:24px; background:var(--sage); display:flex; flex-direction:column; }
 .dt .dt-car__title { font:600 19px/1.3 var(--sans); }
@@ -55,16 +55,33 @@
 .dt .dt-figure--main dt { font-weight:600; font-size:14px; color:var(--ink); }
 .dt .dt-figure--main dd { font:600 30px/1.1 var(--sans); letter-spacing:-.02em; }
 .dt .dt-car__note { margin-top:14px; font-size:14px; color:var(--muted); }
-.dt .dt-car__link { margin-top:16px; }
-.dt .dt-car__link a { display:inline-flex; align-items:center; min-height:44px; padding:10px 20px; border-radius:9999px; background:var(--ink); color:#fff; font-weight:600; font-size:15px; }
-.dt .dt-car__link a:hover { background:var(--sign); }
+.dt .dt-car__link { margin-top:10px; }
+.dt .dt-car__link a { display:inline-flex; align-items:center; min-height:44px; color:var(--sign); font-weight:600; font-size:15px; text-decoration:underline; text-underline-offset:3px; }
+.dt .dt-car__link a:hover { color:var(--ink); }
+/* The listing's photos: one swipeable row, a photo per stop, set into the card's top. */
+.dt .dt-photos { margin:-22px -20px 18px; display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border-radius:24px 24px 0 0; background:var(--line); scrollbar-width:thin; }
+.dt .dt-photos:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
+.dt .dt-photo { flex:0 0 100%; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; scroll-snap-align:start; }
+.dt .dt-photos__count { margin:-10px 0 14px; font-size:13px; color:var(--muted); }
+.dt .dt-car--agreed .dt-photos__count { color:rgba(255,255,255,.82); }
+/* The listing's details, folded under the figures. */
+.dt .dt-car__more { margin-top:16px; border-top:1px solid var(--line); padding-top:12px; font-size:15px; }
+.dt .dt-car__more summary { cursor:pointer; font-weight:600; padding:6px 0; }
+.dt .dt-car__more summary:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
+.dt .dt-facts { margin:10px 0 0; display:grid; gap:6px; }
+.dt .dt-facts > div { display:flex; justify-content:space-between; gap:16px; }
+.dt .dt-facts dt { color:var(--muted); }
+.dt .dt-facts dd { margin:0; text-align:right; }
+.dt .dt-features { margin:12px 0 0; padding-left:20px; display:grid; gap:4px; line-height:1.5; }
+.dt .dt-car--agreed .dt-car__more { border-top-color:rgba(255,255,255,.3); }
+.dt .dt-car--agreed .dt-facts dt { color:rgba(255,255,255,.82); }
 
 /* The agreed car (or agreed price) sits on the sign blue, like the homepage's featured plan. */
 .dt :is(.dt-car--agreed,.dt-agreed) { background:var(--sign); color:#fff; border-radius:28px; }
 .dt :is(.dt-car--agreed,.dt-agreed) :is(.dt-car__meta,.dt-figure dt) { color:rgba(255,255,255,.82); }
 .dt :is(.dt-car--agreed,.dt-agreed) :is(.dt-car__dealer,.dt-figure--main dt,.dt-agreed__dealer) { color:#fff; font-weight:600; }
-.dt .dt-car--agreed .dt-car__link a { background:#fff; color:var(--sign); }
-.dt .dt-car--agreed .dt-car__link a:hover { background:var(--sky); }
+.dt .dt-car--agreed .dt-car__link a { color:#fff; }
+.dt .dt-car--agreed .dt-car__link a:hover { color:var(--sky); }
 .dt .dt-car--agreed a:focus-visible { outline-color:#fff; }
 
 /* Buyer Updates: newest first, one tinted card each, the date above the words. */
@@ -72,20 +89,6 @@
 .dt .dt-update { padding:22px 20px; border-radius:24px; background:var(--sage); }
 .dt .dt-update__when { font:600 14px/1.4 var(--sans); color:var(--muted); }
 .dt .dt-update__body { margin-top:8px; max-width:44rem; font-size:16px; line-height:1.6; white-space:pre-line; overflow-wrap:anywhere; }
-/* The buyer's own questions: the sky tint and set in from the left, so they read as theirs.
-   Mason's answer sits inside, on white. */
-.dt .dt-question { margin-left:24px; padding:22px 20px; border-radius:24px; background:var(--sky); }
-.dt .dt-answer { margin-top:16px; padding:18px 18px; border-radius:18px; background:var(--paper); }
-
-/* The question box: the site's form-field style (.ai_rules 5) and a navy pill button. */
-.dt .dt-ask { margin-top:18px; max-width:44rem; display:grid; gap:8px; }
-.dt .dt-ask__label { font-weight:600; font-size:14px; color:var(--ink); }
-.dt .dt-ask__field { width:100%; min-height:132px; padding:12px 16px; border:1px solid var(--field); border-radius:12px; background-color:#fff; color:var(--ink); font:16px/1.5 var(--sans); resize:vertical; transition:border-color .15s,box-shadow .15s; }
-.dt .dt-ask__field:hover { border-color:var(--field-hover); }
-.dt .dt-ask__field:focus { outline:0; border-color:var(--sign); box-shadow:0 0 0 3px var(--focus-ring); }
-.dt .dt-ask__send { justify-self:start; margin-top:8px; min-height:48px; padding:12px 26px; border:0; border-radius:9999px; background:var(--ink); color:#fff; font:600 16px/1.2 var(--sans); cursor:pointer; }
-.dt .dt-ask__send:hover { background:var(--sign); }
-.dt .dt-ask__send:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
 
 /* The Buyer Pick: a navy pill on each priced car, an outline pill for "keep looking", and once
    something stands, a plain tinted card that says what the buyer chose. No status pills. */
@@ -129,9 +132,8 @@
  .dt .dt-stages { grid-template-columns:repeat(3,minmax(0,1fr)); }
  .dt .dt-details > div { grid-template-columns:180px minmax(0,1fr); gap:16px; }
  .dt .dt-cars { grid-template-columns:repeat(2,minmax(0,1fr)); }
- .dt .dt-card,.dt .dt-car,.dt .dt-update,.dt .dt-question { padding:26px 28px; }
- .dt .dt-question { margin-left:12%; }
- .dt .dt-answer { padding:20px 22px; }
+ .dt .dt-card,.dt .dt-car,.dt .dt-update { padding:26px 28px; }
+ .dt .dt-photos { margin:-26px -28px 18px; }
 }
 @media(min-width:1000px) {
  .dt .dt-intro { padding:56px 0 52px; }

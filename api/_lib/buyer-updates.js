@@ -24,10 +24,10 @@ export function cleanBody(body) {
 
 // Mason's own update: posted at once. The insert trigger sets posted_at and
 // email_after (five minutes on), which is his window to take it back.
-export async function postUpdate(sql, { onboardingId, body, readyForPick = false, answersQuestionId = null }) {
+export async function postUpdate(sql, { onboardingId, body, readyForPick = false }) {
   const text = cleanBody(body);
-  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, answers_question_id, actor)
-    SELECT d.onboarding_id, ${text}, 'posted', ${Boolean(readyForPick)}, ${answersQuestionId}, 'mason'
+  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor)
+    SELECT d.onboarding_id, ${text}, 'posted', ${Boolean(readyForPick)}, 'mason'
     FROM deals d WHERE d.onboarding_id = ${onboardingId}
     RETURNING id`;
   if (!row) throw new BuyerUpdateError('No such deal');

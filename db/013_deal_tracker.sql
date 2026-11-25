@@ -6,13 +6,23 @@ BEGIN;
 -- so every table here hangs off deals(onboarding_id), as deal_events does.
 --
 -- Who writes what (adr/0002): only the website writes deal_tracker_links,
--- buyer_questions, buyer_picks and buyer_documents, so an agent can never record
+-- buyer_picks and buyer_documents, so an agent can never record
 -- something as if the buyer did it. Agents may insert into buyer_updates and
 -- nothing else here; only the website changes a row once it exists.
 
--- What the buyer's page shows per car until a dealer quotes in writing.
+-- What the buyer's page shows per car: our estimated total until a dealer
+-- quotes in writing, the color, and the listing's photos and details
+-- (adr/0003). photo_urls is a JSON array of the listing's https photo URLs,
+-- which the page serves through its own link so a photo host can't name the
+-- dealer early; details is a JSON object of named listing fields.
 ALTER TABLE deal_listings ADD COLUMN IF NOT EXISTS est_otd_cents integer;
 ALTER TABLE deal_listings ADD COLUMN IF NOT EXISTS color varchar(60);
+ALTER TABLE deal_listings ADD COLUMN IF NOT EXISTS photo_urls jsonb NOT NULL DEFAULT '[]'::jsonb;
+ALTER TABLE deal_listings ADD COLUMN IF NOT EXISTS details jsonb NOT NULL DEFAULT '{}'::jsonb;
+ALTER TABLE deal_listings DROP CONSTRAINT IF EXISTS deal_listings_photos_valid;
+ALTER TABLE deal_listings ADD CONSTRAINT deal_listings_photos_valid CHECK (jsonb_typeof(photo_urls) = 'array' AND jsonb_array_length(photo_urls) <= 20);
+ALTER TABLE deal_listings DROP CONSTRAINT IF EXISTS deal_listings_details_valid;
+ALTER TABLE deal_listings ADD CONSTRAINT deal_listings_details_valid CHECK (jsonb_typeof(details) = 'object');
 ALTER TABLE deal_listings DROP CONSTRAINT IF EXISTS deal_listings_est_otd_valid;
 ALTER TABLE deal_listings ADD CONSTRAINT deal_listings_est_otd_valid CHECK (est_otd_cents IS NULL OR est_otd_cents >= 0);
 
@@ -30,32 +40,6 @@ CREATE TABLE IF NOT EXISTS deal_tracker_links (
   CONSTRAINT deal_tracker_links_version_valid CHECK (version >= 1)
 );
 
--- A Buyer Question, from the page or from mail to the buyer's reply address.
--- Mail from anyone but the buyer's intake address is held: nothing from a held
--- row (text or attachments) counts until Mason releases it. mail_message_id is
--- the mailbox's ID for the message, so a rerun of the mail job files nothing twice.
-CREATE TABLE IF NOT EXISTS buyer_questions (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  onboarding_id uuid NOT NULL REFERENCES deals(onboarding_id) ON DELETE CASCADE,
-  body text NOT NULL,
-  source varchar(10) NOT NULL,
-  sender_email varchar(254),
-  held boolean NOT NULL DEFAULT false,
-  released_at timestamptz,
-  discarded_at timestamptz,
-  mail_message_id varchar(255) UNIQUE,
-  created_at timestamptz NOT NULL DEFAULT now(),
-  CONSTRAINT buyer_questions_source_valid CHECK (source IN ('page', 'email')),
-  CONSTRAINT buyer_questions_body_valid CHECK (length(body) <= 20000 AND (source = 'email' OR length(btrim(body)) > 0)),
-  CONSTRAINT buyer_questions_email_valid CHECK ((source = 'email') = (mail_message_id IS NOT NULL) AND (source = 'page' OR sender_email IS NOT NULL)),
-  CONSTRAINT buyer_questions_held_valid CHECK (
-    (source = 'email' OR NOT held)
-    AND (released_at IS NULL OR held) AND (discarded_at IS NULL OR held)
-    AND (released_at IS NULL OR discarded_at IS NULL)
-  )
-);
-CREATE INDEX IF NOT EXISTS buyer_questions_deal_idx ON buyer_questions (onboarding_id, created_at);
-
 -- A Buyer Update: the only free text a buyer sees from us. A draft never shows.
 -- A posted one shows at once and its email leaves after email_after, so Mason
 -- has a few minutes to take it back; a retracted one disappears and never emails.
@@ -67,7 +51,6 @@ CREATE TABLE IF NOT EXISTS buyer_updates (
   body text NOT NULL,
   status varchar(10) NOT NULL DEFAULT 'draft',
   ready_for_pick boolean NOT NULL DEFAULT false,
-  answers_question_id bigint REFERENCES buyer_questions(id) ON DELETE SET NULL,
   actor varchar(60) NOT NULL,
   on_masons_say boolean NOT NULL DEFAULT false,
   created_at timestamptz NOT NULL DEFAULT now(),
@@ -152,8 +135,7 @@ CREATE INDEX IF NOT EXISTS buyer_picks_deal_idx ON buyer_picks (onboarding_id, c
 
 -- A Buyer Document, held in a private Vercel Blob store at blob_path. The buyer
 -- sees only a receipt (type and time). deleted_at is when the file was removed,
--- 30 days after the deal's latest close; mail_trashed_at is when the original
--- email of an emailed document went to the mailbox's trash.
+-- 30 days after the deal's latest close.
 CREATE TABLE IF NOT EXISTS buyer_documents (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   onboarding_id uuid NOT NULL REFERENCES deals(onboarding_id) ON DELETE CASCADE,
@@ -161,35 +143,27 @@ CREATE TABLE IF NOT EXISTS buyer_documents (
   blob_path varchar(500) NOT NULL UNIQUE,
   content_type varchar(100) NOT NULL,
   bytes bigint NOT NULL,
-  source varchar(10) NOT NULL,
-  question_id bigint REFERENCES buyer_questions(id) ON DELETE SET NULL,
-  mail_message_id varchar(255),
   created_at timestamptz NOT NULL DEFAULT now(),
   deleted_at timestamptz,
-  mail_trashed_at timestamptz,
   CONSTRAINT buyer_documents_type_valid CHECK (doc_type IN (
     'pre_approval', 'trade_in_photos', 'trade_in_title', 'payoff_letter', 'insurance', 'id', 'other')),
-  CONSTRAINT buyer_documents_bytes_valid CHECK (bytes BETWEEN 1 AND 20971520),
-  CONSTRAINT buyer_documents_source_valid CHECK (source IN ('page', 'email')),
-  CONSTRAINT buyer_documents_email_valid CHECK ((source = 'email') = (mail_message_id IS NOT NULL))
+  CONSTRAINT buyer_documents_bytes_valid CHECK (bytes BETWEEN 1 AND 20971520)
 );
 CREATE INDEX IF NOT EXISTS buyer_documents_deal_idx ON buyer_documents (onboarding_id, created_at);
-CREATE INDEX IF NOT EXISTS buyer_documents_mail_idx ON buyer_documents (mail_message_id) WHERE mail_message_id IS NOT NULL;
 
--- Four more emails to Mason: a Buyer Question, a Buyer Pick or "keep looking",
--- held mail, and an agent's draft waiting for approval. None has a deal_events
--- row, so each is keyed by dedupe_key ('question:<id>', 'pick:<id>',
--- 'held:<id>', 'draft:<id>') and carries its ids in payload.
+-- Two more emails to Mason: a Buyer Pick or "keep looking", and an agent's
+-- draft waiting for approval. Neither has a deal_events row, so each is keyed
+-- by dedupe_key ('pick:<id>', 'draft:<id>') and carries its ids in payload.
 ALTER TABLE ops_alert_outbox DROP CONSTRAINT IF EXISTS ops_alert_kind_valid;
 ALTER TABLE ops_alert_outbox ADD CONSTRAINT ops_alert_kind_valid CHECK (kind IN (
-  'needs_mason', 'agent_overdue', 'digest', 'buyer_question', 'buyer_pick', 'held_mail', 'update_draft'));
+  'needs_mason', 'agent_overdue', 'digest', 'buyer_pick', 'update_draft'));
 
 -- Paperclip's role (db/010) reads the new tables and inserts Buyer Updates only.
 -- Skipped where the role doesn't exist.
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'paperclip_agent') THEN
-    GRANT SELECT ON deal_tracker_links, buyer_questions, buyer_updates, buyer_picks, buyer_documents TO paperclip_agent;
+    GRANT SELECT ON deal_tracker_links, buyer_updates, buyer_picks, buyer_documents TO paperclip_agent;
     GRANT INSERT ON buyer_updates TO paperclip_agent;
   END IF;
 END $$;

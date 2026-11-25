@@ -226,6 +226,10 @@
   ],
   "rewrites": [
     {
+      "source": "/deal/:token/photo/:rank/:n",
+      "destination": "/api/deal-tracker?t=:token&photo=:rank.:n"
+    },
+    {
       "source": "/deal/:token",
       "destination": "/api/deal-tracker?t=:token"
     }

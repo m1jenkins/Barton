@@ -22,7 +22,6 @@ const HANDOFF_ERRORS = Object.freeze({
 
 const DOCUMENT_ERRORS = Object.freeze({
   not_found: [404, 'document_not_found', 'No Buyer Document has that id.'],
-  held: [403, 'document_held', 'This document came on held email. It opens only once Mason releases that email on the ops dashboard.'],
   deleted: [410, 'document_deleted', 'This file was deleted 30 days after the deal closed.'],
   missing: [404, 'document_missing', 'The store has no file for this document.']
 });
@@ -38,13 +37,12 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
     }
 
     if (req.method === 'GET' && requestUrl(req).searchParams.has('document')) {
-      // An agent fetches a Buyer Document (plan, "Documents"). Nothing from held
-      // mail reaches agents until Mason releases it, and the store isn't read for it.
+      // An agent fetches a Buyer Document (plan, "Documents").
       if (!dealTrackerEnabled(environment)) return sendJson(res, 404, { ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
       const documents = documentSettings(environment);
       if (!documents) return sendJson(res, 503, { ok: false, error: 'documents_unavailable', message: 'The Buyer Document store is not set up.' });
       const file = await readDocument({ sql: getDatabase(), store: documentStore ?? blobStore(documents),
-        id: requestUrl(req).searchParams.get('document'), forAgent: true });
+        id: requestUrl(req).searchParams.get('document') });
       if (file.error) {
         const [status, error, message] = DOCUMENT_ERRORS[file.error];
         return sendJson(res, status, { ok: false, error, message });

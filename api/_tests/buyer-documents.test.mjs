@@ -71,10 +71,10 @@ async function deal(pg, { agreed = false } = {}) {
 const event = (pg, id, kind, { otd = null, note = null, daysAgo = 5 } = {}) =>
   pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, dealer_name, vin, otd_cents, note, occurred_at)
     VALUES ($1, $2, 'mason', 'Zzyzx Motors', $3, $4, $5, $6)`, [id, kind, VIN, otd, note, new Date(NOW - daysAgo * DAY).toISOString()]);
-const addDocument = (pg, id, { minutesAgo = 5, docType = 'insurance', source = 'page', questionId = null, deleted = false } = {}) =>
-  pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, question_id, mail_message_id, created_at, deleted_at)
-    VALUES ($1, $2, $3, 'application/pdf', 1000, $4, $5, $6, $7, $8) RETURNING id`,
-  [id, docType, `deals/${id}/${crypto.randomUUID()}.pdf`, source, questionId, source === 'email' ? `mail-${crypto.randomUUID()}` : null,
+const addDocument = (pg, id, { minutesAgo = 5, docType = 'insurance', deleted = false } = {}) =>
+  pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, created_at, deleted_at)
+    VALUES ($1, $2, $3, 'application/pdf', 1000, $4, $5) RETURNING id`,
+  [id, docType, `deals/${id}/${crypto.randomUUID()}.pdf`,
     new Date(NOW - minutesAgo * 60000).toISOString(), deleted ? new Date(NOW).toISOString() : null]).then(result => Number(result.rows[0].id));
 
 function fakeStore() {
@@ -154,10 +154,10 @@ test('the 21st document in an hour, or the 61st in a day, is refused without ask
   const other = await deal(pg);
   for (let index = 0; index < 60; index++) await addDocument(pg, other, { minutesAgo: 120 + index * 10 });
   assert.equal((await start(pg, store, other)).statusCode, 429);
-  // Emailed documents don't count against the page.
-  const mailed = await deal(pg);
-  for (let index = 0; index < 20; index++) await addDocument(pg, mailed, { minutesAgo: 30, source: 'email' });
-  assert.equal((await start(pg, store, mailed)).statusCode, 200);
+  // Documents older than a day don't count.
+  const older = await deal(pg);
+  for (let index = 0; index < 60; index++) await addDocument(pg, older, { minutesAgo: 25 * 60 });
+  assert.equal((await start(pg, store, older)).statusCode, 200);
   assert.equal(store.calls.length, 1);
 });
 
@@ -244,7 +244,7 @@ test('buying/deal-tracker.js parses and reaches no other site on its own', async
   assert.doesNotMatch(source, /\bimport\b|gtag|dataLayer|analytics|localStorage|document\.cookie|innerHTML/);
 });
 
-test('readDocument gives Mason any file, keeps held mail from agents, and says when a file is gone', async t => {
+test('readDocument gives Mason or an agent any file, and says when a file is gone or missing', async t => {
   const pg = await database(t);
   const sql = tagged(pg);
   const store = fakeStore();
@@ -252,16 +252,11 @@ test('readDocument gives Mason any file, keeps held mail from agents, and says w
   const live = await addDocument(pg, id, { docType: 'pre_approval' });
   const [{ blob_path: path }] = (await pg.query('SELECT blob_path FROM buyer_documents WHERE id = $1', [live])).rows;
   store.put(path, { contentType: 'application/pdf' });
-  const file = await readDocument({ sql, store, id: live, forAgent: true });
+  const file = await readDocument({ sql, store, id: live });
   assert.deepEqual([file.filename, file.contentType, file.bytes, String(file.body)], [`pre_approval-${live}.pdf`, 'application/pdf', 9, 'FILE-BODY']);
 
-  const { rows: [held] } = await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id)
-    VALUES ($1, '', 'email', 'cousin@example.test', true, 'held-1') RETURNING id`, [id]);
-  const onHeld = await addDocument(pg, id, { source: 'email', questionId: held.id });
-  store.calls.length = 0;
-  assert.deepEqual(await readDocument({ sql, store, id: onHeld, forAgent: true }), { error: 'held' });
-  assert.equal(store.calls.length, 0, 'the store is never read for held mail');
-  assert.deepEqual(await readDocument({ sql, store, id: onHeld, forAgent: false }), { error: 'missing' }, 'Mason gets past the hold');
+  // A row whose file never reached the store.
+  assert.deepEqual(await readDocument({ sql, store, id: await addDocument(pg, id) }), { error: 'missing' });
 
   assert.deepEqual(await readDocument({ sql, store, id: await addDocument(pg, id, { deleted: true }) }), { error: 'deleted' });
   for (const bad of ['999999', '0', '-1', '1 OR 1=1', '', null]) assert.deepEqual(await readDocument({ sql, store, id: bad }), { error: 'not_found' }, String(bad));

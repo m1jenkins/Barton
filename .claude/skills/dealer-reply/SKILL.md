@@ -82,10 +82,10 @@ Hand over the subject (`Re:` plus the dealer's subject), the body, and one line 
 ## Buyer Updates
 
 The buyer is not the dealer: what you write for the buyer follows its own rules.
-- A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Post one (`node scripts/deal-desk-db.mjs update <intake ID> <your agent name> --post <file | ->`) only when Mason tells you to in this chat, in his words or ones he approved. Anything you write unprompted, including an answer to a Buyer Question, goes in as a draft (the same command without `--post`) for Mason to approve on the ops dashboard.
-- Read Buyer Questions with `node scripts/deal-desk-db.mjs questions <intake ID>`; draft an answer with `update ... --answers <question id>` (a draft unless Mason says to post).
+- A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Post one (`node scripts/deal-desk-db.mjs update <intake ID> <your agent name> --post <file | ->`) only when Mason tells you to in this chat, in his words or ones he approved. Anything you write unprompted goes in as a draft (the same command without `--post`) for Mason to approve on the ops dashboard.
+- Buyers ask questions by text to Mason, outside this system (adr/0003). If he passes one on, answer it in a draft update unless he says to post.
 - See what the buyer picked with `node scripts/deal-desk-db.mjs picks <intake ID>`. A Buyer Pick is what they want, not an agreed price: Mason confirms with the dealer.
 - List Buyer Documents with `node scripts/deal-desk-db.mjs documents <intake ID>` and fetch one with `node scripts/car-search.mjs document <id>`. They can hold ID and financial details: use what you need for the deal, never quote them into a dealer email or a Buyer Update, and don't copy them anywhere else.
-- Until a price is agreed, a Buyer Update never names a dealer, links a listing, or gives a VIN, target price or walk-away price. After it, name only the agreed dealer. Refer to cars by year, model, trim and color.
-- Never record anything as if the buyer did it: Buyer Questions, Buyer Picks and Buyer Documents come only from the buyer's page or reply address.
+- Until Quotes in, a Buyer Update never names a dealer, links a listing or gives a VIN; from Quotes in the buyer's page shows each car's dealer and listing, so an update may name them. An update never gives a target price or walk-away price. Refer to cars by year, model, trim and color.
+- Never record anything as if the buyer did it: Buyer Picks and Buyer Documents come only from the buyer's page.
 - `quote` and `agreed` events must carry the car's VIN.

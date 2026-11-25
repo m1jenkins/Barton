@@ -20,7 +20,7 @@ import { localEnv } from './car-search.mjs';
 const USAGE = 'Usage: node scripts/customer-emails.mjs preview | test <template|all> | dispatch | cancel <intake ID>';
 export const SAMPLE_REVIEW_URL = 'https://g.page/r/CRhIsN4U_eXLEBM/review';
 // Made up: what a buyer with a live Deal Tracker link gets instead.
-export const SAMPLE_TRACKER = Object.freeze({ link: 'https://www.steermeright.com/deal/sample-link', replyAddress: 'mason+sample-reply@example.test' });
+export const SAMPLE_TRACKER = Object.freeze({ link: 'https://www.steermeright.com/deal/sample-link' });
 export const SAMPLE_UPDATE = 'Your shortlist is in: three Subaru Ascents within 150 miles, each with my estimated total. I’ve emailed all three dealers for written out-the-door prices and will post them here as they come in.';
 const TODAY_REPLY_TO = 'mason@steermeright.com';
 
@@ -77,7 +77,7 @@ export function renderTrackerSamples() {
     key, template, file: `${key}-${template}-tracker`,
     ...(template === 'review_ask'
       ? { label: `${sample.label} · same as today, since the link has closed by then`, replyTo: TODAY_REPLY_TO }
-      : { label: sample.label, replyTo: SAMPLE_TRACKER.replyAddress }),
+      : { label: sample.label, replyTo: TODAY_REPLY_TO }),
     ...renderCustomerEmail(template, buyerFromRow(sample.row), { reviewUrl: SAMPLE_REVIEW_URL, tracker: SAMPLE_TRACKER })
   })));
 }
@@ -108,7 +108,7 @@ function previewIndex(renders) {
     + `.who{margin:0;color:#6B7585;font-size:13px}.subject{margin:4px 0 0;font-weight:600}.pre{margin:0 0 12px;color:#465061}`
     + `.frames{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}iframe{border:1px solid #DDE2E9;border-radius:8px;background:#fff;max-width:100%}`
     + `pre{white-space:pre-wrap;background:#f6f7f9;padding:12px;border-radius:8px;font-size:13px}</style></head>`
-    + `<body><h1>Customer email previews</h1><p>Sample buyers only. Each email at desktop and phone width; subject and inbox preview text above it. “Today” is what buyers get now; “With the Deal Tracker” is what a buyer with a live Deal Tracker link gets once it is switched on (sample link and reply address).</p>`
+    + `<body><h1>Customer email previews</h1><p>Sample buyers only. Each email at desktop and phone width; subject and inbox preview text above it. “Today” is what buyers get now; “With the Deal Tracker” is what a buyer with a live Deal Tracker link gets once it is switched on (sample link).</p>`
     + `<nav>${nav}</nav>${sections}</body></html>`;
 }
 
@@ -118,7 +118,7 @@ export async function writePreviews(folder = new URL('../.email-previews/', impo
     ...renderTrackerSamples().map(render => ({ ...render, form: 'tracker' })),
     {
       key: 'standard', template: 'buyer_update', form: 'tracker', file: 'buyer-update', label: 'A posted Buyer Update',
-      replyTo: SAMPLE_TRACKER.replyAddress,
+      replyTo: TODAY_REPLY_TO,
       ...renderBuyerUpdateEmail({ firstName: buyerFromRow(SAMPLE_BUYERS.standard.row).firstName, body: SAMPLE_UPDATE, link: SAMPLE_TRACKER.link })
     }
   ];

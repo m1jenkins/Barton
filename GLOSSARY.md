@@ -46,9 +46,8 @@ _Avoid_: Best offer, top quote
 A short message written for the buyer about their deal, and the only free text a buyer ever sees from us on the Deal Tracker. The buyer sees one only when Mason posts it, tells an agent to post it, or approves an agent's draft. Mason can take one back.
 _Avoid_: Note (a note is internal to Mason and the agents), status update
 
-**Buyer Question**:
-A question a buyer asks about their deal, either on the Deal Tracker or by replying to one of its emails. A Buyer Update answers it. A reply from anyone but the buyer counts only once Mason releases it.
-_Avoid_: Ticket, request, message (unqualified)
+**Buyer Question** (retired):
+Dropped before launch on November 25, 2026 ([adr/0003](docs/adr/0003-dealers-shown-from-quotes-in-and-buyers-text-mason.md)). Buyers text Mason instead; there is no question box or reply address.
 
 **Buyer Pick**:
 The offer a buyer chooses on the Deal Tracker: one car at its best price so far. It records the price as picked, so a later rise shows. It's what they want; the price isn't agreed until Mason confirms it with the dealer. Mason can clear a pick made by mistake. Instead of picking, a buyer can ask us to keep looking.
@@ -61,7 +60,7 @@ _Avoid_: Attachment, upload (as a noun)
 ## Pages
 
 **Deal Tracker**:
-A buyer's private page and their main channel with us for the whole deal: where it stands, Buyer Updates, Buyer Questions, their pick and their documents. Dealers stay unnamed until a price is agreed, and then only the agreed dealer is named.
+A buyer's private page for the whole deal: where it stands, their cars with the listings' photos and details, Buyer Updates, their pick, their documents and the number to text Mason at. Dealers, listing links and VINs stay hidden until Quotes in; from then on each car names its dealer and links its listing.
 _Avoid_: Client dashboard, portal, buyer dashboard
 
 **Ops dashboard**:

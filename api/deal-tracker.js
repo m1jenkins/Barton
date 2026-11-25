@@ -1,21 +1,22 @@
 import { database } from './_lib/db.js';
 import { UPLOAD_ORIGIN, blobStore, documentSettings, finishUpload, startUpload } from './_lib/buyer-documents.js';
 import { keepLooking, makePick } from './_lib/buyer-picks.js';
-import { askQuestion } from './_lib/buyer-questions.js';
-import { checkLink, dealTrackerSettings, dollars, loadBuyerView, renderLinkClosed, renderNotice, renderPickConfirm, renderTracker, renderUnavailable, touchOpened } from './_lib/deal-tracker.js';
+import { checkLink, dealTrackerSettings, dollars, loadBuyerView, loadPhotoSource, renderLinkClosed, renderNotice, renderPickConfirm, renderTracker, renderUnavailable, touchOpened } from './_lib/deal-tracker.js';
 import { header, readRawBody, requestUrl, withApiErrors } from './_lib/http.js';
 
 // A buyer's Deal Tracker at /deal/<token> (vercel.json rewrites it here as ?t=).
-// GET checks the link, renders the page and records the open. POST, after the
-// same link check, takes a Buyer Question from the page's own form
-// (action=question, body) or a Buyer Pick behind a confirm step: pick_review
+// GET checks the link, renders the page and records the open. A listing photo,
+// /deal/<token>/photo/<rank>/<n> (?t=&photo=<rank>.<n>), is fetched from the
+// listing's photo host and passed through after the same check, so the page
+// never shows where a photo lives (adr/0003). POST, after the same link check,
+// takes a Buyer Pick behind a confirm step: pick_review
 // (car=<rank>, price=<cents shown>) and keep_looking_review write nothing and
 // show the confirm page, whose button posts pick or keep_looking. The page's own
 // script sends a Buyer Document: upload_start (doc_type, content_type, bytes)
 // answers JSON with a presigned upload URL and a ticket, the browser sends the
 // file straight to the private store, and upload_done (ticket) files it and
 // answers with a receipt. Nothing here ever reads a file or returns where one is.
-// docs/deal-tracker-build-plan-2026-11-21.md, docs/adr/0001 and 0002.
+// docs/deal-tracker-build-plan-2026-11-21.md, docs/adr/0001, 0002 and 0003.
 export const config = { maxDuration: 20 };
 // Every response, refused ones included: private, never cached, never framed,
 // no referrer. The only script is this site's own upload helper, and the only
@@ -30,6 +31,11 @@ const SECURITY_HEADERS = Object.freeze({
 });
 const REFUSED = Object.freeze({ invalid: 404, revoked: 410, expired: 410 });
 const MASON = 'mason@steermeright.com';
+// A listing photo passed through: an image type, under Vercel's 4.5 MB response cap.
+const PHOTO_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/avif']);
+const PHOTO_MAX_BYTES = 4 * 1024 * 1024;
+const PHOTO_TIMEOUT_MS = 8000;
+const PHOTO = /^(\d{1,2})\.(\d{1,2})$/;
 
 function send(res, status, body, extra = {}) {
   res.statusCode = status;
@@ -56,17 +62,14 @@ function crossSite(req) {
   return Boolean(site) && site !== 'same-origin';
 }
 
-// What the buyer sees when a question doesn't go through. Nothing is saved.
+// What the buyer sees when a POST doesn't go through. Nothing is saved.
 const NOTICES = Object.freeze({
-  empty: [400, 'Your question didn’t come through', 'The box was empty. Go back, type your question and send it again.'],
-  too_long: [400, 'That question is too long', 'Please keep it under 4,000 characters, or send the long version by email.'],
-  rate_limited: [429, 'I have your questions', `You've sent a few questions in a row. I have them. If something is urgent, email me at ${MASON}.`],
-  closed: [409, 'This search is closed', 'Questions can’t be sent from this page any more. Email me instead and I’ll pick it up.'],
+  too_long: [400, 'That didn’t go through', 'Go back to your car search and try again.'],
   unknown: [400, 'That didn’t work', 'Go back to your car search and try again.'],
   // A Buyer Pick that didn't go through. Nothing is saved.
-  pick_closed: [409, 'This search is closed', 'Picks can’t be made from this page any more. Email me instead and I’ll sort it out.'],
-  not_open: [409, 'Picking isn’t open right now', 'I open the pick on your page when the prices are ready for your call. Until then, ask me a question there if you’d like to talk about a car.'],
-  already_picked: [409, 'You’ve already made your pick', 'Your page shows what you chose. If you chose by mistake, ask me a question there and I’ll sort it out.'],
+  pick_closed: [409, 'This search is closed', 'Picks can’t be made from this page any more. Get in touch and I’ll sort it out.'],
+  not_open: [409, 'Picking isn’t open right now', 'I open the pick on your page when the prices are ready for your call. Until then, get in touch if you’d like to talk about a car.'],
+  already_picked: [409, 'You’ve already made your pick', 'Your page shows what you chose. If you chose by mistake, let me know and I’ll sort it out.'],
   no_car: [400, 'That car isn’t on your list', 'Go back to your car search and pick again.'],
   no_price: [409, 'That car has no written price yet', 'You can pick a car once a dealer has given me a written out-the-door price for it. Go back to your car search to see the cars that have one.']
 });
@@ -100,34 +103,71 @@ function reviewError(view, { car = null, price = null } = {}, isPick = false) {
   return null;
 }
 
+// Fetches one listing photo and hands back its bytes and type, or null when it
+// can't be had as a small image. No cookies, no referrer, no redirects followed:
+// a redirect could point anywhere.
+export async function fetchPhoto(url, { fetchImpl = fetch } = {}) {
+  try {
+    const response = await fetchImpl(url, {
+      redirect: 'manual', credentials: 'omit', referrerPolicy: 'no-referrer',
+      headers: { Accept: 'image/avif,image/webp,image/jpeg,image/png,image/*;q=0.8' },
+      signal: AbortSignal.timeout(PHOTO_TIMEOUT_MS)
+    });
+    if (response.status !== 200) return null;
+    const type = String(response.headers.get('content-type') ?? '').split(';', 1)[0].trim().toLowerCase();
+    if (!PHOTO_TYPES.has(type)) return null;
+    const length = Number(response.headers.get('content-length'));
+    if (Number.isFinite(length) && length > PHOTO_MAX_BYTES) return null;
+    const body = Buffer.from(await response.arrayBuffer());
+    if (!body.length || body.length > PHOTO_MAX_BYTES) return null;
+    return { body, type };
+  } catch {
+    return null;
+  }
+}
+
 // documentStore: the Blob store, for tests; by default built from documentSettings
 // on the first document request. It is used only while the store is configured.
-export function dealTrackerHandler({ environment = process.env, getDatabase = database, now = () => Date.now(), documentStore = null } = {}) {
+// fetchImpl: fetch for listing photos, for tests.
+export function dealTrackerHandler({ environment = process.env, getDatabase = database, now = () => Date.now(), documentStore = null, fetchImpl = fetch } = {}) {
   return withApiErrors(async (req, res) => {
     if (!['GET', 'POST'].includes(req.method)) return send(res, 405, renderLinkClosed(), { Allow: 'GET, POST' });
+    let contact = null;
     try {
       // Switched off, the page does not exist and the database is never opened.
       const settings = dealTrackerSettings(environment);
       if (!settings) return send(res, 404, renderLinkClosed());
-      if (req.method === 'POST' && crossSite(req)) return send(res, 403, renderLinkClosed());
+      contact = settings.text;
+      if (req.method === 'POST' && crossSite(req)) return send(res, 403, renderLinkClosed(contact));
       const sql = getDatabase();
       const at = now();
-      const token = requestUrl(req).searchParams.get('t') ?? '';
+      const params = requestUrl(req).searchParams;
+      const token = params.get('t') ?? '';
       const link = await checkLink(sql, settings, token, at);
-      if (link.status !== 'ok') return send(res, REFUSED[link.status] ?? 404, renderLinkClosed());
+      if (link.status !== 'ok') return send(res, REFUSED[link.status] ?? 404, renderLinkClosed(contact));
+      if (req.method === 'GET' && params.has('photo')) {
+        const match = PHOTO.exec(params.get('photo') ?? '');
+        const source = match ? await loadPhotoSource(sql, link.onboardingId, Number(match[1]), Number(match[2]), at) : null;
+        const photo = source ? await fetchPhoto(source, { fetchImpl }) : null;
+        if (!photo) return send(res, 404, '');
+        res.statusCode = 200;
+        for (const [name, value] of Object.entries({ ...SECURITY_HEADERS, 'Cache-Control': 'private, max-age=3600', 'Content-Type': photo.type,
+          'Content-Length': String(photo.body.length), 'Content-Security-Policy': "default-src 'none'; sandbox" })) res.setHeader(name, value);
+        return res.end(photo.body);
+      }
       const view = await loadBuyerView(sql, link.onboardingId, at);
-      if (!view) return send(res, 404, renderLinkClosed());
+      if (!view) return send(res, 404, renderLinkClosed(contact));
       // The token passed checkLink, so it is hex, a dot and base64url: safe in a path.
       const self = `/deal/${token}`;
       const documents = documentSettings(environment);
       if (req.method === 'GET') {
         await touchOpened(sql, link.onboardingId, at);
-        return send(res, 200, renderTracker(view, { action: self, uploads: Boolean(documents) }));
+        return send(res, 200, renderTracker(view, { action: self, uploads: Boolean(documents), contact }));
       }
 
       const notice = key => {
         const [status, title, text] = NOTICES[key];
-        return send(res, status, renderNotice(title, text, self));
+        return send(res, status, renderNotice(title, text, self, contact));
       };
       let form;
       try {
@@ -161,13 +201,13 @@ export function dealTrackerHandler({ environment = process.env, getDatabase = da
         const refused = result => {
           if (result.error !== 'price_changed') return notice(result.error);
           return send(res, 409, renderNotice('The price on that car just changed',
-            `The best price so far on the ${car?.title ?? 'car you picked'} is now ${dollars(result.current_cents)}. Go back to your car search to see it, and pick again if it still suits you.`, self));
+            `The best price so far on the ${car?.title ?? 'car you picked'} is now ${dollars(result.current_cents)}. Go back to your car search to see it, and pick again if it still suits you.`, self, contact));
         };
         const isPick = action.startsWith('pick');
         if (action.endsWith('_review')) {
           const problem = reviewError(view, { car, price }, isPick);
           if (problem) return refused(problem);
-          return send(res, 200, renderPickConfirm(isPick ? car : null, self));
+          return send(res, 200, renderPickConfirm(isPick ? car : null, self, contact));
         }
         const result = isPick
           ? await makePick(sql, { onboardingId: link.onboardingId, rank, expectedCents: price, now: at })
@@ -175,17 +215,12 @@ export function dealTrackerHandler({ environment = process.env, getDatabase = da
         if (result.error) return refused(result);
         return send(res, 303, '', { Location: `${self}#dt-pick` });
       }
-      if (action !== 'question') return notice('unknown');
-      // A search closed without a purchase has no question box. Bought still takes questions until the link expires.
-      if (view.outcome === 'other') return notice('closed');
-      const result = await askQuestion(sql, { onboardingId: link.onboardingId, body: form.get('body'), now: at });
-      if (result.error) return notice(result.error);
-      return send(res, 303, '', { Location: `${self}#dt-updates` });
+      return notice('unknown');
     } catch (error) {
       // Database errors can quote values, so only the error's kind is logged and
       // the visitor gets a page that says nothing about the deal.
       console.error('[deal_tracker_error]', { name: error?.name || 'Error', code: error?.code || 'unknown' });
-      return send(res, error?.name === 'ConfigError' ? 503 : 500, renderUnavailable());
+      return send(res, error?.name === 'ConfigError' ? 503 : 500, renderUnavailable(contact));
     }
   });
 }

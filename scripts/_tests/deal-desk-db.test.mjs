@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, listDocuments, listPicks, listQuestions, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, listDocuments, listPicks, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
@@ -57,12 +57,14 @@ test('a quote or agreed names the car by VIN; a counter needn\'t', () => {
 });
 
 test('parseUpdateArgs reads the actor, the flags and the text source in any order', () => {
-  assert.deepEqual(parseUpdateArgs(['duet-deals', '--post', '--answers', '12', '--ready-for-pick', '-']),
-    { actor: 'duet-deals', source: '-', post: true, readyForPick: true, answersQuestionId: '12' });
+  assert.deepEqual(parseUpdateArgs(['duet-deals', '--post', '--ready-for-pick', '-']),
+    { actor: 'duet-deals', source: '-', post: true, readyForPick: true });
+  assert.deepEqual(parseUpdateArgs(['--ready-for-pick', 'duet-deals', 'update.txt']),
+    { actor: 'duet-deals', source: 'update.txt', post: false, readyForPick: true });
   assert.deepEqual(parseUpdateArgs(['duet-deals', 'update.txt']),
-    { actor: 'duet-deals', source: 'update.txt', post: false, readyForPick: false, answersQuestionId: null });
+    { actor: 'duet-deals', source: 'update.txt', post: false, readyForPick: false });
   assert.throws(() => parseUpdateArgs(['duet-deals']), /Usage/);
-  assert.throws(() => parseUpdateArgs(['duet-deals', '-', '--answers']), /Usage/);
+  assert.throws(() => parseUpdateArgs(['duet-deals', '--answers', '12', '-']), /Unknown option --answers/, 'Buyer Questions are gone');
   assert.throws(() => parseUpdateArgs(['duet-deals', '--publish', '-']), /Unknown option --publish/);
 });
 
@@ -116,14 +118,13 @@ test('addUpdate saves a draft for Mason to approve', async t => {
 });
 
 test('addUpdate with post shows at once and emails about five minutes later', async t => {
-  const { pg, sql, withDeal } = await database(t);
-  const [{ id: questionId }] = (await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source) VALUES ($1, 'Any news?', 'page') RETURNING id`, [withDeal])).rows;
-  const row = await addUpdate(sql, { intakeId: withDeal, actor: 'duet-deals', body: 'Prices are in. Pick the one you want.', post: true, readyForPick: true, answersQuestionId: String(questionId) });
+  const { sql, withDeal } = await database(t);
+  const row = await addUpdate(sql, { intakeId: withDeal, actor: 'duet-deals', body: 'Prices are in. Pick the one you want.', post: true, readyForPick: true });
   assert.equal(row.status, 'posted');
   const wait = new Date(row.email_after) - new Date(row.posted_at);
   assert.ok(Math.abs(wait - 5 * 60_000) < 1000, `email_after is ${wait} ms after posted_at`);
-  const [saved] = await sql`SELECT on_masons_say, ready_for_pick, answers_question_id FROM buyer_updates WHERE id = ${row.id}`;
-  assert.deepEqual([saved.on_masons_say, saved.ready_for_pick, Number(saved.answers_question_id)], [true, true, Number(questionId)]);
+  const [saved] = await sql`SELECT on_masons_say, ready_for_pick FROM buyer_updates WHERE id = ${row.id}`;
+  assert.deepEqual([saved.on_masons_say, saved.ready_for_pick], [true, true]);
 });
 
 test('addUpdate refuses bad text, Mason\'s name, bad actors and IDs, and intakes with no deal', async t => {
@@ -137,48 +138,8 @@ test('addUpdate refuses bad text, Mason\'s name, bad actors and IDs, and intakes
   await assert.rejects(add({ actor: '<bot>' }), /actor must be/);
   await assert.rejects(add({ intakeId: withDeal.slice(0, 8) }), /full intake ID/);
   await assert.rejects(add({ intakeId: withoutDeal }), /No deal for/);
-  await assert.rejects(add({ answersQuestionId: '999' }), /Buyer Question 999 isn't on this deal/);
-  await assert.rejects(add({ answersQuestionId: 'abc' }), /--answers needs a Buyer Question id/);
   const [{ count }] = await sql`SELECT count(*)::int AS count FROM buyer_updates`;
   assert.equal(count, 1, 'only the 4000-character draft went in');
-});
-
-test('questions lists Buyer Questions unanswered first, hides held mail until released and discarded mail always', async t => {
-  const { pg, sql, withDeal } = await database(t);
-  const ask = async (body, { source = 'page', sender = null, held = false, minutesAgo = 0, deal = withDeal } = {}) =>
-    Number((await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id, created_at)
-      VALUES ($1, $2, $3, $4, $5, $6, now() - $7 * interval '1 minute') RETURNING id`,
-    [deal, body, source, sender, held, source === 'email' ? `msg-id-${body}` : null, minutesAgo])).rows[0].id);
-  const answered = await ask('ANSWERED-OLDEST', { minutesAgo: 30 });
-  const open = await ask('OPEN-LATER', { minutesAgo: 10 });
-  const emailed = await ask('EMAILED', { source: 'email', sender: 'buyer@example.test', minutesAgo: 20 });
-  const held = await ask('HELD-SENTINEL', { source: 'email', sender: 'cousin@example.test', held: true, minutesAgo: 5 });
-  const dropped = await ask('DISCARD-SENTINEL', { source: 'email', sender: 'spam@example.test', held: true, minutesAgo: 4 });
-  await pg.query('UPDATE buyer_questions SET discarded_at = now() WHERE id = $1', [dropped]);
-  await addUpdate(sql, { intakeId: withDeal, actor: 'duet-deals', body: 'A draft does not answer it', answersQuestionId: String(open) });
-  await pg.query(`INSERT INTO buyer_updates (onboarding_id, body, status, actor, answers_question_id) VALUES ($1, 'Yes.', 'posted', 'mason', $2)`, [withDeal, answered]);
-
-  const rows = await listQuestions(sql, withDeal.toUpperCase());
-  assert.deepEqual(rows.map(row => [Number(row.id), row.answered]), [[emailed, false], [open, false], [answered, true]]);
-  assert.deepEqual(Object.keys(rows[0]).sort(), ['answered', 'body', 'created_at', 'id', 'intake_id', 'sender_email', 'source']);
-  assert.deepEqual([rows[0].source, rows[0].sender_email, rows[0].intake_id], ['email', 'buyer@example.test', withDeal]);
-  const everyDeal = await listQuestions(sql);
-  assert.equal(everyDeal.length, 3);
-  assert.ok(!everyDeal.some(row => [held, dropped].includes(Number(row.id))), 'held and discarded mail are not listed');
-  const all = JSON.stringify(everyDeal);
-  for (const hidden of ['HELD-SENTINEL', 'cousin@example.test', 'DISCARD-SENTINEL', 'spam@example.test']) assert.ok(!all.includes(hidden), hidden);
-
-  await pg.query('UPDATE buyer_questions SET released_at = now() WHERE id = $1', [held]);
-  const released = await listQuestions(sql);
-  assert.ok(released.some(row => Number(row.id) === held && row.body === 'HELD-SENTINEL' && row.sender_email === 'cousin@example.test'));
-  assert.ok(!JSON.stringify(released).includes('DISCARD-SENTINEL'));
-
-  // A deal filter: another deal's question doesn't show under this one.
-  const { pg: pg2, sql: sql2, withDeal: deal2 } = await database(t);
-  await pg2.query(`INSERT INTO buyer_questions (onboarding_id, body, source) VALUES ($1, 'THIS-DEAL', 'page')`, [deal2]);
-  assert.deepEqual((await listQuestions(sql2, deal2)).map(row => row.body), ['THIS-DEAL']);
-  assert.deepEqual(await listQuestions(sql2, crypto.randomUUID()), []);
-  await assert.rejects(listQuestions(sql2, deal2.slice(0, 8)), /full intake ID/);
 });
 
 test('showDeal lists the deal\'s Buyer Updates, or null before db/013', async t => {
@@ -188,7 +149,7 @@ test('showDeal lists the deal\'s Buyer Updates, or null before db/013', async t 
   const deal = await showDeal(sql, withDeal.slice(0, 8));
   assert.deepEqual(deal.updates.map(update => [update.body, update.status, update.on_masons_say]),
     [['Draft for Mason', 'draft', false], ['Posted on his say', 'posted', true]]);
-  assert.deepEqual(Object.keys(deal.updates[0]).sort(), ['actor', 'answers_question_id', 'body', 'created_at', 'emailed_at', 'id',
+  assert.deepEqual(Object.keys(deal.updates[0]).sort(), ['actor', 'body', 'created_at', 'emailed_at', 'id',
     'on_masons_say', 'posted_at', 'ready_for_pick', 'retracted_at', 'status']);
 
   const before = await database(t, { through013: false });
@@ -224,27 +185,24 @@ test('picks lists standing Buyer Picks newest first with the car\'s title, never
   assert.equal(JSON.stringify((await pg.query('SELECT * FROM buyer_picks ORDER BY id')).rows), before, 'read-only');
 });
 
-test('documents lists the Buyer Documents an agent may use, newest first, never deleted ones or ones on held mail, and writes nothing', async t => {
+test('documents lists the Buyer Documents an agent may use, newest first, never deleted ones, and writes nothing', async t => {
   const { pg, sql, withDeal } = await database(t);
-  const held = async released => Number((await pg.query(`INSERT INTO buyer_questions (onboarding_id, body, source, sender_email, held, mail_message_id, released_at)
-    VALUES ($1, 'files', 'email', 'cousin@example.test', true, $2, $3) RETURNING id`, [withDeal, `mail-${crypto.randomUUID()}`, released ? new Date().toISOString() : null])).rows[0].id);
-  const add = async (docType, minutesAgo, { source = 'page', questionId = null, deleted = false } = {}) =>
-    Number((await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, source, question_id, mail_message_id, created_at, deleted_at)
-      VALUES ($1, $2, $3, 'application/pdf', 4096, $4, $5, $6, now() - $7 * interval '1 minute', $8) RETURNING id`,
-    [withDeal, docType, `deals/${withDeal}/${crypto.randomUUID()}.pdf`, source, questionId, source === 'email' ? `mail-${crypto.randomUUID()}` : null, minutesAgo,
+  const add = async (docType, minutesAgo, { deleted = false } = {}) =>
+    Number((await pg.query(`INSERT INTO buyer_documents (onboarding_id, doc_type, blob_path, content_type, bytes, created_at, deleted_at)
+      VALUES ($1, $2, $3, 'application/pdf', 4096, now() - $4 * interval '1 minute', $5) RETURNING id`,
+    [withDeal, docType, `deals/${withDeal}/${crypto.randomUUID()}.pdf`, minutesAgo,
       deleted ? new Date().toISOString() : null])).rows[0].id);
   const older = await add('pre_approval', 30);
   const newer = await add('insurance', 10);
-  const released = await add('payoff_letter', 20, { source: 'email', questionId: await held(true) });
-  await add('id', 5, { source: 'email', questionId: await held(false) });
+  const middle = await add('payoff_letter', 20);
   await add('trade_in_title', 1, { deleted: true });
   const before = JSON.stringify((await pg.query('SELECT * FROM buyer_documents ORDER BY id')).rows);
 
   const rows = await listDocuments(sql, withDeal.toUpperCase());
-  assert.deepEqual(rows.map(row => Number(row.id)), [newer, released, older]);
-  assert.deepEqual(Object.keys(rows[0]).sort(), ['bytes', 'content_type', 'created_at', 'doc_type', 'id', 'intake_id', 'source']);
+  assert.deepEqual(rows.map(row => Number(row.id)), [newer, middle, older]);
+  assert.deepEqual(Object.keys(rows[0]).sort(), ['bytes', 'content_type', 'created_at', 'doc_type', 'id', 'intake_id']);
   assert.ok(!JSON.stringify(rows).includes('deals/'), 'no store path');
-  assert.deepEqual([rows[1].doc_type, rows[1].source, Number(rows[1].bytes), rows[1].intake_id], ['payoff_letter', 'email', 4096, withDeal]);
+  assert.deepEqual([rows[1].doc_type, Number(rows[1].bytes), rows[1].intake_id], ['payoff_letter', 4096, withDeal]);
   assert.equal((await listDocuments(sql)).length, 3);
   assert.deepEqual(await listDocuments(sql, crypto.randomUUID()), []);
   await assert.rejects(listDocuments(sql, withDeal.slice(0, 8)), /full intake ID/);

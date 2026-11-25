@@ -8,9 +8,8 @@ import { editDeal, isAuthorized, loadDashboard, loadDeal, opsPassword, renderDas
 // sign in with any user name and OPS_PASSWORD. GET renders the page from Neon;
 // POST with resolve=<event id> answers a needs_mason item (answer or reply) or marks it done;
 // POST with edit=<close|reopen|agreed|drop|note> and deal=<intake ID> updates a deal.
-// With the Deal Tracker on, POST with tracker=<post|approve|discard|retract|revoke|restore|reissue|release|discard_mail|clear_pick>,
-// deal=<intake ID> and, per update, update=<id> works its panel on the deal page. post takes an
-// optional question=<id> to answer a Buyer Question; release and discard_mail take question=<id>;
+// With the Deal Tracker on, POST with tracker=<post|approve|discard|retract|revoke|restore|reissue|clear_pick>,
+// deal=<intake ID> and, per update, update=<id> works its panel on the deal page.
 // clear_pick takes pick=<id>. GET ?document=<id> downloads a Buyer Document (any deal's).
 export const config = { maxDuration: 20 };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -84,7 +83,7 @@ export function opsHandler({ environment = process.env, getDatabase = database, 
       if (!tracker) return send(res, 404, renderMessage('Not found', 'The Deal Tracker is off.'));
       const documents = documentSettings(environment);
       if (!documents) return send(res, 503, renderMessage('Documents are off', 'Set up the Blob store in Vercel to open Buyer Documents.'));
-      const file = await readDocument({ sql, store: documentStore ?? blobStore(documents), id: documentId, forAgent: false });
+      const file = await readDocument({ sql, store: documentStore ?? blobStore(documents), id: documentId });
       if (file.error) {
         const [status, title, message] = DOCUMENT_ERRORS[file.error];
         return send(res, status, renderMessage(title, message));

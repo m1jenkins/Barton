@@ -7,9 +7,10 @@ import { checkLink, dealTrackerSettings, loadBuyerView, signLink } from '../_lib
 import { dealTrackerHandler } from '../deal-tracker.js';
 
 // The rules that protect buyers and dealers on the Deal Tracker
-// (docs/deal-tracker-build-plan-2026-11-21.md, "Decisions": Hidden, Link).
-// Written before the page was built. Every fixture value that must stay hidden
-// is a sentinel that could not appear by accident.
+// (docs/deal-tracker-build-plan-2026-11-21.md, "Decisions": Hidden, Link; and
+// docs/adr/0003: dealers and listings show from Quotes in, photos come through
+// the page's own path). Every fixture value that must stay hidden is a sentinel
+// that could not appear by accident.
 
 const SECRET = 'deal-tracker-secret-for-tests-only-0123456789';
 const environment = { DEAL_TRACKER_ENABLED: '1', DEAL_TRACKER_SECRET: SECRET, APP_ORIGIN: 'https://www.steermeright.com' };
@@ -41,11 +42,20 @@ const CARS = [
   { rank: 3, title: '2024 Mazda CX-5 Select at Vandelay Imports 5YJ3E1EA7KF317000', color: 'Soul Red', mileage: 34567, vin: '5YJ3E1EA7KF317000',
     dealer: 'Vandelay Imports', url: 'https://listings.example/sentinel-listing-3', email: 'internet@vandelay.example' }
 ];
-// asking 34,500 and estimated total 37,777 are for the buyer; the rest never are.
+// Each car's photos sit on a host named for its dealer, so a photo URL on the page
+// would name the dealer. The page serves them from its own path instead.
+const photosOf = car => [1, 2, 3].map(n => `https://photos-${car.rank}.sentinel-cdn.example/img-${n}.jpg`);
+// A feature that carries the dealer's name: the name comes out of car text at
+// every stage (from Quotes in the dealer has its own line).
+const detailsOf = car => ({ trim: 'XLE', drivetrain: 'AWD', features: ['Blind-spot monitor', `Certified by ${car.dealer}`] });
+// asking 34,500 and estimated total 37,777 are for the buyer; the rest never are,
+// at any stage: targets, walk-away, our notes, the dealer's email and phone, and
+// where a photo really lives.
 const NEVER = ['31,111', '31111', '32,222', '32222', '33,333', '33333', '35,555', '35555',
-  'WHY-SENTINEL', 'SUMMARY-SENTINEL', 'NOTE-SENTINEL', 'Sentinelville', '512-555-0142',
+  'WHY-SENTINEL', 'SUMMARY-SENTINEL', 'NOTE-SENTINEL', '512-555-0142', 'sentinel-cdn',
   ...CARS.map(car => car.email)];
-const dealerSecrets = car => [car.dealer, car.url, car.vin];
+// What names a dealer: hidden before Quotes in. The VIN stays off the page always.
+const dealerSecrets = car => [car.dealer, car.url, car.vin, 'Sentinelville'];
 
 async function database(t) {
   const pg = await PGlite.create();
@@ -78,9 +88,10 @@ async function shortlist(pg, id) {
     WHERE onboarding_id = $1 RETURNING id`, [id, at(9)]);
   for (const car of CARS) {
     await pg.query(`INSERT INTO deal_listings (id, deal_id, rank, title, price_cents, market_price_cents, target_price_cents, walk_away_cents,
-        mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why, est_otd_cents, color)
-      VALUES ($1, $2, $3, $4, 3450000, 3333300, 3111100, 3222200, $5, 41, $6, $7, $8, 'Sentinelville, TX', $9, '512-555-0142', 'WHY-SENTINEL', 3777700, $10)`,
-    [crypto.randomUUID(), deal.id, car.rank, car.title, car.mileage, car.vin, car.url, car.dealer, car.email, car.color]);
+        mileage, days_on_lot, vin, listing_url, dealer_name, dealer_location, dealer_email, dealer_phone, why, est_otd_cents, color, photo_urls, details)
+      VALUES ($1, $2, $3, $4, 3450000, 3333300, 3111100, 3222200, $5, 41, $6, $7, $8, 'Sentinelville, TX', $9, '512-555-0142', 'WHY-SENTINEL', 3777700, $10, $11, $12)`,
+    [crypto.randomUUID(), deal.id, car.rank, car.title, car.mileage, car.vin, car.url, car.dealer, car.email, car.color,
+      JSON.stringify(photosOf(car)), JSON.stringify(detailsOf(car))]);
   }
 }
 
@@ -138,8 +149,8 @@ async function everything(pg, id) {
   return { html: page.body, view, page };
 }
 
-for (const stage of ['confirming', 'shortlisted', 'emailing', 'quoted']) {
-  test(`before Price agreed (${stage}): no dealer name, listing link, VIN, target or walk-away price reaches the buyer`, async t => {
+for (const stage of ['confirming', 'shortlisted', 'emailing']) {
+  test(`before Quotes in (${stage}): no dealer name, location, listing link, VIN, photo source, target or walk-away price reaches the buyer`, async t => {
     const pg = await database(t);
     const id = await dealAt(pg, stage);
     const { html, view } = await everything(pg, id);
@@ -151,12 +162,34 @@ for (const stage of ['confirming', 'shortlisted', 'emailing', 'quoted']) {
   });
 }
 
-test('from Shortlisted the buyer sees each car with its asking price and estimated total, then its best price so far', async t => {
+test('from Quotes in every car names its dealer and location and links its listing; VINs, photo sources and targets stay hidden', async t => {
   const pg = await database(t);
-  const listed = await everything(pg, await dealAt(pg, 'shortlisted'));
-  for (const shown of ['2024 Toyota RAV4 XLE', '2023 Honda CR-V EX-L', '2024 Mazda CX-5 Select', 'Lunar Rock', '12,345', '34,500', '37,777']) {
+  const id = await dealAt(pg, 'quoted');
+  const { html, view } = await everything(pg, id);
+  for (const car of CARS) {
+    assert.ok(html.includes(car.dealer), `the page names ${car.dealer}`);
+    assert.ok(html.includes(car.url), `the page links ${car.url}`);
+  }
+  assert.ok(html.includes('Sentinelville, TX'), 'the dealer\'s location shows');
+  assert.match(html, /don’t contact these dealers yourself/);
+  for (const [where, text] of [['the page', html], ['the buyer view', view]]) {
+    assertAbsent(text, [...CARS.map(car => car.vin), ...NEVER], where);
+    assertAbsent(text, ['ADDRESS-SENTINEL', 'PLATE-SENTINEL', 'riley.buyer@example.test', '205-555-0100'], where);
+  }
+});
+
+test('from Shortlisted the buyer sees each car with its photos, details, asking price and estimated total, then its best price so far', async t => {
+  const pg = await database(t);
+  const listedId = await dealAt(pg, 'shortlisted');
+  const listed = await everything(pg, listedId);
+  for (const shown of ['2024 Toyota RAV4 XLE', '2023 Honda CR-V EX-L', '2024 Mazda CX-5 Select', 'Lunar Rock', '12,345', '34,500', '37,777',
+    'Car details', 'Drivetrain', 'AWD', 'Blind-spot monitor', '3 photos']) {
     assert.ok(listed.html.includes(shown), `the page shows ${shown}`);
   }
+  // Photos come from the page's own path, never from where they live.
+  const token = tokenFor(listedId);
+  for (const car of CARS) for (const n of [0, 1, 2]) assert.ok(listed.html.includes(`src="/deal/${token}/photo/${car.rank}/${n}"`), `photo ${car.rank}/${n} is served by the page`);
+  assert.ok(listed.html.includes('Each car’s dealer and listing show here once written prices come in.'));
   const quoted = await everything(pg, await dealAt(pg, 'quoted'));
   assert.ok(quoted.html.includes('36,400') && quoted.html.includes('36,900'), 'written prices show');
   assert.ok(quoted.html.includes('37,777'), 'the unquoted car keeps its estimated total');
@@ -169,7 +202,7 @@ test('a confirming deal shows the search details the buyer gave, minus the priva
   assert.ok(html.includes('Riley'));
 });
 
-test('after Price agreed only the agreed dealer is named, and targets stay hidden', async t => {
+test('after Price agreed the agreed car leads with its dealer and price, the others stay listed, and targets stay hidden', async t => {
   const pg = await database(t);
   const id = await dealAt(pg, 'agreed');
   const { html, view } = await everything(pg, id);
@@ -177,18 +210,18 @@ test('after Price agreed only the agreed dealer is named, and targets stay hidde
   assert.ok(html.includes('https://listings.example/sentinel-listing-1'), 'the agreed car links to its listing');
   assert.ok(html.includes('36,100'), 'the agreed price shows');
   for (const [where, text] of [['the page', html], ['the buyer view', view]]) {
-    assertAbsent(text, [...dealerSecrets(CARS[1]), ...dealerSecrets(CARS[2])], where);
-    assertAbsent(text, NEVER, where);
+    assertAbsent(text, [...CARS.map(car => car.vin), ...NEVER], where);
   }
   assert.ok(html.includes('2023 Honda CR-V EX-L'), 'the other cars stay listed');
 });
 
-test('closing a deal never reveals more: bought keeps only the agreed dealer, any other close names no dealer', async t => {
+test('closing a deal never reveals more: bought keeps only the car bought, any other close names no dealer', async t => {
   const pg = await database(t);
   const bought = await dealAt(pg, 'agreed');
   await event(pg, bought, 'closed', { note: 'Bought: NOTE-SENTINEL picked up Saturday', daysAgo: 1 });
   const done = await everything(pg, bought);
-  assertAbsent(done.html, [...dealerSecrets(CARS[1]), ...dealerSecrets(CARS[2]), ...NEVER], 'the bought page');
+  assert.ok(done.html.includes('Zzyzx Motors'), 'the dealer of the car bought is named');
+  assertAbsent(done.html, [CARS[1].dealer, CARS[1].url, CARS[2].dealer, CARS[2].url, ...CARS.map(car => car.vin), ...NEVER], 'the bought page');
   const walked = await dealAt(pg, 'quoted');
   await event(pg, walked, 'closed', { note: 'Buyer walked away: NOTE-SENTINEL', daysAgo: 1 });
   const closed = await everything(pg, walked);
@@ -204,12 +237,14 @@ test('the page is private: no caching, no indexing, no referrer, no script or re
   assert.match(page.headers['content-security-policy'], /default-src 'none'/);
   assert.match(html, /<meta name="robots" content="noindex/);
   assertAbsent(html, ['googletagmanager', 'gtag(', 'google-analytics', 'web-analytics', 'openai-ads', 'script.js'], 'the page');
-  // Every URL the browser would fetch on load is this site's own. The agreed car's listing is a link the buyer chooses to follow.
+  // Every URL the browser would fetch on load is this site's own, photos
+  // included. Listings are links the buyer chooses to follow.
   for (const [, tag, url] of html.matchAll(/<(link|script|img|source|iframe)\b[^>]*?\b(?:href|src)="([^"]*)"/g)) {
     assert.ok(url.startsWith('/') && !url.startsWith('//'), `${tag} loads ${url}`);
   }
+  assert.ok(html.includes('<img class="dt-photo"'), 'the page has photos to check');
   for (const [, url] of html.matchAll(/<a\b[^>]*?\bhref="(https?:[^"]*)"/g)) {
-    assert.ok(url === 'https://listings.example/sentinel-listing-1' || new URL(url).hostname === 'www.steermeright.com', `links to ${url}`);
+    assert.ok(CARS.some(car => car.url === url) || new URL(url).hostname === 'www.steermeright.com', `links to ${url}`);
   }
   assert.doesNotMatch(html, /\bbriefs?\b/i);
 });
@@ -217,7 +252,7 @@ test('the page is private: no caching, no indexing, no referrer, no script or re
 test('opening the page changes nothing except the opened times', async t => {
   const pg = await database(t);
   const id = await dealAt(pg, 'quoted');
-  const tables = ['deals', 'deal_listings', 'deal_events', 'buyer_updates', 'buyer_questions', 'buyer_picks', 'buyer_documents', 'ops_alert_outbox', 'onboarding_submissions'];
+  const tables = ['deals', 'deal_listings', 'deal_events', 'buyer_updates', 'buyer_picks', 'buyer_documents', 'ops_alert_outbox', 'onboarding_submissions'];
   const snapshot = async () => JSON.stringify(await Promise.all(tables.map(async name => (await pg.query(`SELECT * FROM ${name} ORDER BY 1`)).rows)));
   const before = await snapshot();
   await open(pg, tokenFor(id), { now: NOW });
@@ -277,6 +312,80 @@ test('the link works until 3 days after the latest close, and reopening restores
   await pg.query(`INSERT INTO deal_events (onboarding_id, kind, actor, note, occurred_at) VALUES ($1, 'closed', 'mason', 'Refunded', $2)`, [id, new Date(NOW + 4 * DAY).toISOString()]);
   assert.equal((await open(pg, token, { now: NOW + 6 * DAY })).statusCode, 200, 'two days after the latest close');
   assert.equal((await open(pg, token, { now: NOW + 8 * DAY })).statusCode >= 400, true, 'four days after the latest close');
+});
+
+// A stand-in for fetch: records each URL and answers with what the test says.
+function photoHost(answer = () => ({ status: 200, type: 'image/jpeg', body: Buffer.from('JPEG-BYTES') })) {
+  const asked = [];
+  const fetchImpl = async (url, options) => {
+    asked.push({ url, redirect: options.redirect });
+    const { status, type, body = Buffer.alloc(0), length } = answer(url);
+    return {
+      status,
+      headers: new Headers({ 'content-type': type ?? '', ...(length != null ? { 'content-length': String(length) } : {}) }),
+      arrayBuffer: async () => body
+    };
+  };
+  return { asked, fetchImpl };
+}
+async function photo(pg, token, which, fetchImpl, { now = NOW } = {}) {
+  const res = response();
+  await dealTrackerHandler({ environment, getDatabase: () => tagged(pg), now: () => now, fetchImpl })(
+    request('GET', `/api/deal-tracker?t=${encodeURIComponent(token)}&photo=${which}`), res);
+  return res;
+}
+
+test('a listing photo comes through the page: only the stored URL is fetched, redirects are not followed, and only small images pass', async t => {
+  const pg = await database(t);
+  const id = await dealAt(pg, 'shortlisted');
+  const token = tokenFor(id);
+  const host = photoHost();
+  const res = await photo(pg, token, '2.1', host.fetchImpl);
+  assert.equal(res.statusCode, 200);
+  assert.equal(res.headers['content-type'], 'image/jpeg');
+  assert.equal(res.body, 'JPEG-BYTES');
+  assert.match(res.headers['cache-control'], /private/);
+  assert.equal(res.headers['referrer-policy'], 'no-referrer');
+  assert.deepEqual(host.asked, [{ url: photosOf(CARS[1])[1], redirect: 'manual' }]);
+  assertAbsent(JSON.stringify(res.headers), ['sentinel-cdn', ...CARS.flatMap(dealerSecrets)], 'the photo response');
+  // No such car or photo, or a malformed one: nothing is fetched.
+  const none = photoHost();
+  for (const which of ['9.0', '1.3', '1.20', 'x', '1', '1.-1', '']) assert.equal((await photo(pg, token, which, none.fetchImpl)).statusCode, 404, which);
+  assert.deepEqual(none.asked, []);
+  // What the host answers decides nothing but whether a photo shows.
+  for (const [label, answer] of [
+    ['a redirect', () => ({ status: 302, type: 'text/html' })],
+    ['a page', () => ({ status: 200, type: 'text/html', body: Buffer.from('<html>') })],
+    ['an SVG', () => ({ status: 200, type: 'image/svg+xml', body: Buffer.from('<svg/>') })],
+    ['too big by header', () => ({ status: 200, type: 'image/jpeg', length: 5 * 1024 * 1024 })],
+    ['too big by body', () => ({ status: 200, type: 'image/jpeg', body: Buffer.alloc(5 * 1024 * 1024) })],
+    ['empty', () => ({ status: 200, type: 'image/jpeg' })],
+    ['a failure', () => { throw new Error('network'); }]
+  ]) {
+    const refused = await photo(pg, token, '1.0', photoHost(answer).fetchImpl);
+    assert.equal(refused.statusCode, 404, label);
+    assert.equal(refused.body, '', label);
+  }
+});
+
+test('a refused link or a closed search fetches no photo, and a bad stored URL is never fetched', async t => {
+  const pg = await database(t);
+  const id = await dealAt(pg, 'shortlisted');
+  const host = photoHost();
+  assert.ok((await photo(pg, signLink('another-secret-that-is-long-enough-0123456789', id, 1), '1.0', host.fetchImpl)).statusCode >= 400);
+  await pg.query('UPDATE deal_tracker_links SET revoked_at = now() WHERE onboarding_id = $1', [id]);
+  assert.equal((await photo(pg, tokenFor(id), '1.0', host.fetchImpl)).statusCode, 410);
+  const walked = await dealAt(pg, 'quoted');
+  await event(pg, walked, 'closed', { note: 'Buyer walked away', daysAgo: 1 });
+  assert.equal((await photo(pg, tokenFor(walked), '1.0', host.fetchImpl)).statusCode, 404, 'a search closed without a purchase shows no cars');
+  // Rows written before the checks, or by hand: an http, address or local URL is skipped, not fetched.
+  const odd = await dealAt(pg, 'shortlisted');
+  await pg.query(`UPDATE deal_listings SET photo_urls = $1 WHERE deal_id = (SELECT id FROM deals WHERE onboarding_id = $2) AND rank = 1`,
+    [JSON.stringify(['http://photos.example/a.jpg', 'https://10.0.0.1/a.jpg', 'https://localhost/a.jpg', 'https://intranet/a.jpg', 'https://ok.example/a.jpg']), odd]);
+  const html = (await open(pg, tokenFor(odd))).body;
+  assert.ok(html.includes(`/photo/1/0"`) && !html.includes(`/photo/1/1"`), 'only the one good photo is offered');
+  await photo(pg, tokenFor(odd), '1.0', host.fetchImpl);
+  assert.deepEqual(host.asked.map(item => item.url), ['https://ok.example/a.jpg']);
 });
 
 test('switched off, the page does not exist and the database is never touched', async () => {
