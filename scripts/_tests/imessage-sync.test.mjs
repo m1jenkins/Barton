@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import test from 'node:test';
-import { batches, launchAgentPlist, planThreads, syncTexts, toPayload } from '../imessage-sync.mjs';
+import { batches, fakePhone, launchAgentPlist, planThreads, syncTexts, toPayload } from '../imessage-sync.mjs';
 
 // The Mac side of Buyer Texts (adr/0004). The rule that matters: only threads
 // the server lists, from their start date, ever leave the Mac. Invented data only.
@@ -111,6 +111,20 @@ test('a number two open deals share, or a short phone, is skipped', () => {
   ]);
   assert.deepEqual(ready.map((plan) => [plan.intake_id, plan.keys]), [['d', ['5125550142']]]);
   assert.deepEqual(skipped.map((skip) => skip.intake_id), ['a', 'b', 'c']);
+});
+
+test('fake phone numbers are ignored, and the intake\'s email still matches', () => {
+  for (const fake of ['0000000000', '9999999999', '1235550100', '2051550100']) assert.ok(fakePhone(fake), fake);
+  for (const real of ['2055550100', '5125550142', 'pat@example.test', null]) assert.ok(!fakePhone(real), real);
+  const since = '2026-11-24T00:00:00Z';
+  const { ready, skipped } = planThreads([
+    { intake_id: 'a', phone: '000-000-0000', email: 'pat@example.test', since },
+    { intake_id: 'b', phone: '0000000000', email: null, since },
+    { intake_id: 'c', phone: '000-000-0000', email: null, since }
+  ]);
+  assert.deepEqual(ready.map((plan) => [plan.intake_id, plan.keys]), [['a', ['pat@example.test']]]);
+  assert.deepEqual(skipped.map((skip) => [skip.intake_id, skip.reason]),
+    [['b', 'has no usable phone or email'], ['c', 'has no usable phone or email']], 'two fake numbers are not a shared number');
 });
 
 test('payloads and batches stay inside the endpoint\'s limits', () => {

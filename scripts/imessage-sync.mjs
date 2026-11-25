@@ -26,12 +26,19 @@ const INTERVAL_SECONDS = 600;
 const MAX_BATCH_BYTES = 200000; // the endpoint reads at most 262144
 const MAX_BATCH_COUNT = 500;
 
-// Which handles to read for each open deal. A phone with fewer than ten digits
-// is ignored; a number or email two deals share is dropped from both.
+// A ten-digit US number that can't be real: one digit repeated (0000000000),
+// or an area code or exchange starting with 0 or 1, which US numbers never do.
+export function fakePhone(key) {
+  return /^\d{10}$/.test(key) && (/^(\d)\1{9}$/.test(key) || !/^[2-9]\d{2}[2-9]\d{6}$/.test(key));
+}
+
+// Which handles to read for each open deal. A phone with fewer than ten digits,
+// or a fake one, is ignored; a number or email two deals share is dropped from both.
 export function planThreads(threads) {
   const owners = new Map();
   const plans = threads.map((thread) => {
-    const keys = [...new Set([handleKey(thread.phone), handleKey(thread.email)].filter(Boolean))];
+    const phone = handleKey(thread.phone);
+    const keys = [...new Set([fakePhone(phone) ? null : phone, handleKey(thread.email)].filter(Boolean))];
     for (const key of keys) owners.set(key, (owners.get(key) ?? 0) + 1);
     return { intake_id: thread.intake_id, keys, since: new Date(thread.since) };
   });
