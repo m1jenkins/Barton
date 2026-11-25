@@ -94,6 +94,8 @@ export const SAMPLE_VIEWS = Object.freeze({
   shortlisted: { ...docs('shortlisted'), documents: [sentPreApproval], stage: 'shortlisted', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed] },
   'emailing-dealers': { ...docs('emailing'), documents: [sentPreApproval], stage: 'emailing', outcome: null, buyer, cars: shortlist, agreed: null, timeline: [confirmed, emailed] },
   'quotes-in': { dealers_shown: true, ...docs('quoted'), documents: [sentPreApproval, sentTradePhotos], stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, pick: noPick, timeline: [emailed, pricesIn] },
+  // A listing that came with no photos: its card has no photo strip.
+  'quotes-in-no-photos': { dealers_shown: true, ...docs('quoted'), documents: [sentPreApproval], stage: 'quoted', outcome: null, buyer, cars: [quoted[0], quoted[1], { ...quoted[2], photo_count: 0 }], agreed: null, pick: noPick, timeline: [emailed, pricesIn] },
   'quotes-in-ready': { dealers_shown: true, ...docs('quoted'), documents: [sentPreApproval, sentTradePhotos], stage: 'quoted', outcome: null, buyer, cars: pickable, agreed: null, pick: { open: true, standing: null }, timeline: [emailed, pricesIn, readyForCall] },
   'quotes-in-picked': { dealers_shown: true, ...docs('quoted'), documents: [sentPreApproval, sentTradePhotos], stage: 'quoted', outcome: null, buyer, cars: quoted, agreed: null, pick: picked(), timeline: [emailed, pricesIn, readyForCall] },
   'quotes-in-price-moved': { dealers_shown: true, ...docs('quoted'), documents: [sentPreApproval, sentTradePhotos], stage: 'quoted', outcome: null, buyer, cars: [{ ...quoted[0], best_cents: 3690000 }, quoted[1], quoted[2]], agreed: null,
@@ -109,7 +111,7 @@ export const SAMPLE_VIEWS = Object.freeze({
 export const SAMPLE_CONFIRMS = Object.freeze({ 'confirm-pick': pickable[0], 'confirm-keep-looking': null });
 const LABELS = {
   'confirming-search': 'Confirming search', shortlisted: 'Shortlisted', 'emailing-dealers': 'Emailing dealers', 'quotes-in': 'Quotes in',
-  'quotes-in-ready': 'Quotes in, ready for your call', 'quotes-in-picked': 'Quotes in, picked', 'quotes-in-price-moved': 'Quotes in, picked and the price moved',
+  'quotes-in-no-photos': 'Quotes in, one car without photos', 'quotes-in-ready': 'Quotes in, ready for your call', 'quotes-in-picked': 'Quotes in, picked', 'quotes-in-price-moved': 'Quotes in, picked and the price moved',
   'quotes-in-keep-looking': 'Quotes in, asked to keep looking', 'confirm-pick': 'Confirm page: a pick', 'confirm-keep-looking': 'Confirm page: keep looking',
   'price-agreed': 'Price agreed', 'price-agreed-no-car': 'Price agreed (no car on the shortlist)', 'closed-bought': 'Closed (bought)',
   'closed-other': 'Closed (other)', 'link-closed': 'Refused link'

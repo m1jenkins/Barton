@@ -1,144 +1,227 @@
-/* Deal Tracker: a buyer's private page, rendered by api/deal-tracker.js on top of daisy.css and
-   drive-right.css. Mobile first, since most buyers open it from an email on a phone. One script
-   (buying/deal-tracker.js, for documents); no pills for status: the stage list uses weight and
-   color of text only (.ai_rules 1-3). */
-.dt .site-header { justify-content:flex-start; }
-/* No mascot on this page (logo-motion.js is not loaded), so the wordmark needs no room for it. */
-.dt .site-header .wordmark,.dt .footer-top .wordmark { padding-right:0; }
-.dt .site-footer { margin-top:64px; }
-.dt .footer-top p { max-width:36rem; font-size:15px; line-height:1.6; }
-.dt .footer-top p a { display:inline; min-height:0; text-decoration:underline; text-underline-offset:3px; }
+/* Deal Tracker: a buyer's private page, rendered by api/_lib/deal-tracker.js. Its look is its
+   own, laid out after Turo's booked-trip page (owner, November 25, 2026): a white page, a
+   SemiBold sentence-case title, small uppercase section labels, hairline boxes with 8px
+   corners, one accent color, and a narrow rail on the right. It loads none of the site's shared
+   stylesheets except logo-motion.css for the wordmark, so everything it needs is here.
+   Mobile first, since most buyers open it from an email on a phone. The page's CSP allows no
+   inline styles and no data: images, so every icon is drawn in CSS. .ai_rules 1, 2, 3 and 6
+   still hold: no pulsing dots, no status pills, no side-rule call-outs. */
+@font-face{font-family:Inter;src:url('../assets/buying/fonts/inter-latin.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF}
+@font-face{font-family:Inter;src:url('../assets/buying/fonts/inter-semibold-latin.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122,U+2190-21FF}
 
-.dt .dt-intro { padding:32px 0 36px; margin-bottom:8px; }
-.dt .dt-intro h1 { font-size:clamp(34px,8vw,64px); max-width:18ch; }
-.dt .dt-intro p { max-width:40rem; margin-top:16px; font-size:17px; line-height:1.5; }
-.dt .dt-intro .page-kicker { margin:0 0 14px; color:var(--sky); font:600 14px/1.3 var(--sans); }
+.dt {
+  /* The one accent, the site's sign blue: links, the main button, the current stage. Change it here only. */
+  --dt-accent:#1A4B8C; --dt-accent-dark:#0E1B2E;
+  --dt-ink:#121214; --dt-muted:#63636E; --dt-line:#E2E2E6; --dt-field:#C6C6CE; --dt-fill:#F4F4F5;
+  --dt-info:#E3F1FE; --dt-info-mark:#1A4B8C; --dt-done:#0A7D55; --dt-focus:rgba(26,75,140,.32);
+  --dt-sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  margin:0; background:#fff; color:var(--dt-ink); font:400 15px/1.5 var(--dt-sans); -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%;
+}
+.dt *,.dt *::before,.dt *::after { box-sizing:border-box; }
+.dt :is(h1,h2,h3,p,ol,ul,dl,dd,figure) { margin:0; }
+.dt a { color:var(--dt-accent); text-decoration:none; font-weight:600; }
+.dt a[href^="sms:"] { white-space:nowrap; }
+.dt a:hover { color:var(--dt-accent-dark); text-decoration:underline; text-underline-offset:3px; }
+.dt :is(a,button,summary,select,input):focus-visible { outline:3px solid var(--dt-focus); outline-offset:2px; border-radius:4px; }
+.dt [hidden] { display:none; }
+.dt img { max-width:100%; }
+.dt-wrap { width:100%; max-width:1040px; margin:0 auto; padding:0 20px; }
+.dt .dt-skip { position:fixed; top:8px; left:12px; z-index:20; padding:10px 16px; border-radius:8px; background:var(--dt-ink); color:#fff; transform:translateY(-200%); }
+.dt .dt-skip:focus { transform:none; }
 
-/* Where the deal stands: six names, the current one in white SemiBold, the rest quieter. */
-.dt .dt-stages { list-style:none; margin:28px 0 0; padding:20px 0 0; border-top:1px solid rgba(255,255,255,.22); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 16px; counter-reset:stage; }
-.dt .dt-stage { counter-increment:stage; display:flex; gap:8px; align-items:baseline; font:400 14px/1.4 var(--sans); color:rgba(255,255,255,.62); }
-.dt .dt-stage::before { content:counter(stage); font-size:12px; color:inherit; }
-.dt .dt-stage[data-state="done"] { color:rgba(255,255,255,.82); }
-.dt .dt-stage[aria-current="step"] { color:#fff; font-weight:600; }
+/* Header: the wordmark on white over a hairline. */
+.dt .dt-header { border-bottom:1px solid var(--dt-line); }
+.dt .dt-header .dt-wrap { display:flex; align-items:center; min-height:60px; }
+.dt .dt-logo { display:inline-flex; align-items:center; min-height:44px; color:var(--dt-ink); font-size:26px; line-height:1; }
+.dt .dt-logo:hover { color:var(--dt-ink); text-decoration:none; }
+.dt .dt-footer { margin-top:72px; border-top:1px solid var(--dt-line); padding:28px 0 40px; font-size:14px; color:var(--dt-muted); }
+.dt .dt-footer__legal { margin-top:8px; font-size:13px; }
+/* A page that already says how to reach Mason just above doesn't say it again in the footer. */
+.dt .dt-page:has([aria-labelledby="dt-ask"]) ~ .dt-footer p:first-child { display:none; }
+.dt .dt-page:has([aria-labelledby="dt-ask"]) ~ .dt-footer .dt-footer__legal { margin-top:0; }
 
-.dt .dt-page { padding-bottom:8px; }
-.dt .dt-section { margin-top:40px; }
-.dt .dt-section h2 { font:600 24px/1.25 var(--sans); letter-spacing:-.02em; }
-.dt .dt-lead { max-width:44rem; margin-top:10px; font-size:16px; line-height:1.6; color:var(--muted); }
-.dt .dt-lead a,.dt .dt-card a { color:var(--sign); text-decoration:underline; text-underline-offset:3px; }
-.dt .dt-aside { margin-top:16px; font-size:14px; line-height:1.6; color:var(--muted); }
+/* Title row: whose search it is, a hairline under it, and the car that matters most at the
+   far end with a small photo. */
+.dt .dt-page { padding-top:28px; outline:0; }
+.dt .dt-title { display:grid; gap:18px; padding-bottom:20px; border-bottom:1px solid var(--dt-line); }
+.dt .dt-kicker { font:600 12px/1.4 var(--dt-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--dt-muted); }
+.dt :is(.dt-title,.dt-intro) h1 { margin-top:4px; font:600 30px/1.15 var(--dt-sans); letter-spacing:-.02em; }
+.dt .dt-hero { display:flex; flex-direction:row-reverse; justify-content:flex-end; align-items:center; gap:12px; color:var(--dt-ink); }
+.dt .dt-hero:hover { text-decoration:none; }
+.dt .dt-hero__text { display:grid; gap:2px; min-width:0; }
+.dt .dt-hero__title { font-weight:400; color:var(--dt-ink); }
+.dt .dt-hero__sub { color:var(--dt-accent); font-weight:600; }
+.dt .dt-hero:hover .dt-hero__sub { text-decoration:underline; text-underline-offset:3px; }
+.dt .dt-hero__thumb { flex:none; width:68px; height:44px; border-radius:4px; object-fit:cover; background:var(--dt-fill); }
 
-/* Cards: tinted and borderless, 24px corners. */
-.dt .dt-card { margin-top:18px; padding:22px 20px; border-radius:24px; background:var(--sage); font-size:16px; line-height:1.6; }
-.dt .dt-details { display:grid; gap:0; }
-.dt .dt-details > div { display:grid; grid-template-columns:1fr; gap:2px; padding:12px 0; border-top:1px solid var(--line); }
-.dt .dt-details > div:first-child { border-top:0; padding-top:0; }
-.dt .dt-details dt { font-weight:600; font-size:14px; color:var(--muted); }
-.dt .dt-details dd { margin:0; }
-.dt .dt-checklist { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-.dt .dt-checklist li { position:relative; padding-left:26px; }
-.dt .dt-checklist li::before { content:''; position:absolute; left:2px; top:.5em; width:12px; height:7px; border-left:2px solid var(--sign); border-bottom:2px solid var(--sign); transform:rotate(-45deg); }
-.dt .dt-steps { margin:18px 0 0; padding-left:24px; display:grid; gap:12px; font-size:16px; line-height:1.6; }
-.dt .dt-steps li::marker { font-weight:600; color:var(--sign); }
+.dt .dt-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:32px; padding-top:24px; }
+.dt .dt-main { min-width:0; display:grid; grid-template-columns:minmax(0,1fr); gap:40px; align-content:start; }
 
-/* Cars: one card each, with the listing's photos on top and one clearly labelled main figure. */
-.dt .dt-cars { margin-top:18px; display:grid; grid-template-columns:1fr; gap:14px; }
-.dt .dt-car { padding:22px 20px; border-radius:24px; background:var(--sage); display:flex; flex-direction:column; }
-.dt .dt-car__title { font:600 19px/1.3 var(--sans); }
-.dt .dt-car__meta,.dt .dt-car__dealer { margin-top:4px; font-size:15px; color:var(--muted); }
-.dt .dt-car__dealer { color:var(--ink); font-weight:600; }
-.dt .dt-figures { margin:18px 0 0; display:grid; gap:10px; }
-.dt .dt-figure { display:flex; justify-content:space-between; align-items:baseline; gap:16px; font-size:15px; }
-.dt .dt-figure dt { color:var(--muted); }
-.dt .dt-figure dd { margin:0; font-variant-numeric:tabular-nums; }
-.dt .dt-figure--main { flex-direction:column; align-items:flex-start; gap:2px; }
-.dt .dt-figure--main dt { font-weight:600; font-size:14px; color:var(--ink); }
-.dt .dt-figure--main dd { font:600 30px/1.1 var(--sans); letter-spacing:-.02em; }
-.dt .dt-car__note { margin-top:14px; font-size:14px; color:var(--muted); }
-.dt .dt-car__link { margin-top:10px; }
-.dt .dt-car__link a { display:inline-flex; align-items:center; min-height:44px; color:var(--sign); font-weight:600; font-size:15px; text-decoration:underline; text-underline-offset:3px; }
-.dt .dt-car__link a:hover { color:var(--ink); }
-/* The listing's photos: one swipeable row, a photo per stop, set into the card's top. */
-.dt .dt-photos { margin:-22px -20px 18px; display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border-radius:24px 24px 0 0; background:var(--line); scrollbar-width:thin; }
-.dt .dt-photos:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
-.dt .dt-photo { flex:0 0 100%; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; scroll-snap-align:start; }
-.dt .dt-photos__count { margin:-10px 0 14px; font-size:13px; color:var(--muted); }
-.dt .dt-car--agreed .dt-photos__count { color:rgba(255,255,255,.82); }
-/* The listing's details, folded under the figures. */
-.dt .dt-car__more { margin-top:16px; border-top:1px solid var(--line); padding-top:12px; font-size:15px; }
-.dt .dt-car__more summary { cursor:pointer; font-weight:600; padding:6px 0; }
-.dt .dt-car__more summary:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
-.dt .dt-facts { margin:10px 0 0; display:grid; gap:6px; }
-.dt .dt-facts > div { display:flex; justify-content:space-between; gap:16px; }
-.dt .dt-facts dt { color:var(--muted); }
-.dt .dt-facts dd { margin:0; text-align:right; }
-.dt .dt-features { margin:12px 0 0; padding-left:20px; display:grid; gap:4px; line-height:1.5; }
-.dt .dt-car--agreed .dt-car__more { border-top-color:rgba(255,255,255,.3); }
-.dt .dt-car--agreed .dt-facts dt { color:rgba(255,255,255,.82); }
+/* The stage box, top of the rail: a hairline box with the stage, a sentence on what is
+   happening, and the six stages as a checklist. */
+.dt .dt-box { padding:16px; border:1px solid var(--dt-line); border-radius:8px; }
+.dt .dt-box__now { font:600 12px/1.4 var(--dt-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--dt-muted); }
+.dt .dt-box__lead { margin-top:6px; }
+/* On a phone the six stages are six short bars, filled up to the current one; the line above
+   names the stage, and each bar keeps its name for a screen reader. From 960px they become the
+   checklist below. */
+.dt .dt-stages { list-style:none; margin-top:14px; padding:0; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:4px; }
+.dt .dt-stage { height:4px; border-radius:2px; background:var(--dt-line); }
+.dt .dt-stage[data-state="done"] { background:var(--dt-done); }
+.dt .dt-stage[data-state="current"] { background:var(--dt-accent); }
+.dt .dt-stage__name { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 
-/* The agreed car (or agreed price) sits on the sign blue, like the homepage's featured plan. */
-.dt :is(.dt-car--agreed,.dt-agreed) { background:var(--sign); color:#fff; border-radius:28px; }
-.dt :is(.dt-car--agreed,.dt-agreed) :is(.dt-car__meta,.dt-figure dt) { color:rgba(255,255,255,.82); }
-.dt :is(.dt-car--agreed,.dt-agreed) :is(.dt-car__dealer,.dt-figure--main dt,.dt-agreed__dealer) { color:#fff; font-weight:600; }
-.dt .dt-car--agreed .dt-car__link a { color:#fff; }
-.dt .dt-car--agreed .dt-car__link a:hover { color:var(--sky); }
-.dt .dt-car--agreed a:focus-visible { outline-color:#fff; }
+/* Sections: a small uppercase label, then the content, no box around it. */
+.dt .dt-section { min-width:0; }
+.dt .dt-section h2 { font:600 12px/1.4 var(--dt-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--dt-ink); }
+.dt .dt-lead { margin-top:8px; max-width:40rem; color:var(--dt-muted); }
+.dt .dt-aside { margin-top:16px; font-size:13px; line-height:1.5; color:var(--dt-muted); }
+.dt .dt-card { margin-top:10px; }
+.dt .dt-card p + p { margin-top:8px; }
 
-/* Buyer Updates: newest first, one tinted card each, the date above the words. */
-.dt .dt-timeline { list-style:none; margin:18px 0 0; padding:0; display:grid; gap:14px; }
-.dt .dt-update { padding:22px 20px; border-radius:24px; background:var(--sage); }
-.dt .dt-update__when { font:600 14px/1.4 var(--sans); color:var(--muted); }
-.dt .dt-update__body { margin-top:8px; max-width:44rem; font-size:16px; line-height:1.6; white-space:pre-line; overflow-wrap:anywhere; }
+/* Label-and-value rows under hairlines (the search details, the folded-away car details). */
+.dt :is(.dt-details,.dt-facts) > div { display:flex; justify-content:space-between; gap:20px; padding:12px 0; border-top:1px solid var(--dt-line); }
+.dt :is(.dt-details,.dt-facts) > div:first-child { border-top:0; }
+.dt :is(.dt-details,.dt-facts) dt { flex:none; max-width:45%; }
+.dt :is(.dt-details,.dt-facts) dd { text-align:right; color:var(--dt-muted); overflow-wrap:anywhere; }
+.dt .dt-checklist { list-style:none; padding:0; display:grid; gap:14px; }
+.dt .dt-checklist li { position:relative; padding-left:34px; }
+.dt .dt-checklist li::before { content:''; position:absolute; left:0; top:1px; width:20px; height:20px; border:1.5px solid var(--dt-accent); border-radius:50%; }
+.dt .dt-checklist li::after { content:''; position:absolute; left:6px; top:7px; width:9px; height:5px; border-left:1.5px solid var(--dt-accent); border-bottom:1.5px solid var(--dt-accent); transform:rotate(-45deg); }
+.dt .dt-steps { margin-top:10px; padding-left:22px; display:grid; gap:12px; }
+.dt .dt-steps li::marker { font-weight:600; }
+.dt .dt-pair { display:grid; grid-template-columns:minmax(0,1fr); gap:32px; }
 
-/* The Buyer Pick: a navy pill on each priced car, an outline pill for "keep looking", and once
-   something stands, a plain tinted card that says what the buyer chose. No status pills. */
-.dt .dt-pick-form { margin-top:auto; padding-top:18px; }
-.dt .dt-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 24px; border:2px solid var(--ink); border-radius:9999px; background:var(--ink); color:#fff; font:600 16px/1.2 var(--sans); text-align:center; cursor:pointer; }
-.dt .dt-button:hover { background:var(--sign); border-color:var(--sign); }
-.dt .dt-button:focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; }
-.dt .dt-button--outline { background:transparent; color:var(--ink); }
-.dt .dt-button--outline:hover { background:var(--ink); border-color:var(--ink); color:#fff; }
-.dt .dt-pick p + p { margin-top:10px; }
-.dt .dt-pick .dt-update__when + p { margin-top:8px; }
-.dt .dt-pick__mistake { color:var(--muted); font-size:15px; }
+/* The latest Buyer Update: the light blue notice at the top of the page, with an "i" mark. */
+.dt [aria-labelledby="dt-latest"] { position:relative; padding:16px 16px 16px 50px; border-radius:8px; background:var(--dt-info); }
+.dt [aria-labelledby="dt-latest"]::before { content:'i'; position:absolute; left:16px; top:16px; width:20px; height:20px; border-radius:50%; background:var(--dt-info-mark); color:#fff; font:600 13px/20px var(--dt-sans); text-align:center; }
+.dt [aria-labelledby="dt-latest"] h2 { font:600 15px/1.4 var(--dt-sans); letter-spacing:0; text-transform:none; }
+.dt .dt-update__when { font-size:13px; line-height:1.4; color:var(--dt-muted); }
+.dt .dt-update--latest .dt-update__when { margin-top:2px; color:#3D4A5C; }
+.dt .dt-update__body { margin-top:6px; max-width:40rem; white-space:pre-line; overflow-wrap:anywhere; }
+.dt .dt-timeline { list-style:none; margin-top:4px; padding:0; }
+.dt .dt-timeline .dt-update { padding:14px 0; border-top:1px solid var(--dt-line); }
+.dt .dt-timeline .dt-update:first-child { border-top:0; }
+
+/* Cars: bordered cards, photo across the top, two to a row from a tablet up. */
+.dt .dt-cars { margin-top:16px; display:grid; grid-template-columns:minmax(0,1fr); gap:28px; }
+.dt .dt-car { display:flex; flex-direction:column; min-width:0; border:1px solid var(--dt-line); border-radius:8px; overflow:hidden; background:#fff; scroll-margin-top:16px; }
+.dt .dt-car--agreed { border-color:var(--dt-ink); }
+.dt .dt-car__media { position:relative; }
+/* The listing's photos: one swipeable row, a photo per stop, with how many there are in the
+   corner. overscroll-behavior keeps a swipe at either end on the photos. */
+.dt .dt-photos { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; touch-action:manipulation; background:var(--dt-fill); scrollbar-width:none; }
+.dt .dt-photos::-webkit-scrollbar { display:none; }
+.dt .dt-photos:focus-visible { outline-offset:-3px; border-radius:0; }
+.dt .dt-photo { flex:0 0 100%; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; scroll-snap-align:center; }
+.dt .dt-photos__count { position:absolute; right:10px; bottom:10px; padding:5px 10px; border-radius:6px; background:#fff; box-shadow:0 1px 4px rgba(18,18,20,.18); color:var(--dt-ink); font:600 12px/1.3 var(--dt-sans); pointer-events:none; }
+.dt .dt-car__body { display:flex; flex-direction:column; flex:1; min-width:0; padding:16px 16px 12px; }
+.dt .dt-car__title { font:600 18px/1.3 var(--dt-sans); letter-spacing:-.01em; }
+.dt .dt-car__meta { margin-top:2px; font-size:14px; color:var(--dt-muted); }
+.dt .dt-car__dealer { margin-top:6px; font-size:14px; }
+/* A few of the listing's facts as square grey tags; the label is kept for screen readers. */
+.dt .dt-specs { margin-top:14px; display:flex; flex-wrap:wrap; gap:6px; }
+.dt .dt-specs > div { padding:5px 9px; border-radius:6px; background:var(--dt-fill); font-size:12px; line-height:1.4; }
+.dt .dt-specs dt { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+/* The price: the main figure large, the asking price beside its label, then the pick button. */
+.dt .dt-price { margin-top:18px; padding-top:16px; border-top:1px solid var(--dt-line); }
+.dt .dt-figures { display:grid; gap:8px; }
+.dt .dt-figure { display:flex; justify-content:space-between; align-items:baseline; gap:16px; font-size:14px; }
+.dt .dt-figure dt { color:var(--dt-muted); }
+.dt .dt-figure dd { font-variant-numeric:tabular-nums; }
+.dt .dt-figure--main { flex-direction:column; align-items:flex-start; gap:0; }
+.dt .dt-figure--main dt { font:600 12px/1.4 var(--dt-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--dt-ink); }
+.dt .dt-figure--main dd { font:600 28px/1.2 var(--dt-sans); letter-spacing:-.02em; }
+.dt .dt-car__note { margin-top:10px; font-size:13px; color:var(--dt-muted); }
+.dt .dt-car__link { margin-top:8px; font-size:14px; }
+.dt .dt-car__link a { display:inline-flex; align-items:center; min-height:44px; }
+.dt .dt-car__more { margin-top:4px; border-top:1px solid var(--dt-line); font-size:14px; }
+.dt .dt-car__more summary { display:flex; justify-content:space-between; align-items:center; min-height:44px; cursor:pointer; list-style:none; }
+.dt .dt-car__more summary::-webkit-details-marker { display:none; }
+.dt .dt-car__more summary::after { content:''; width:8px; height:8px; margin-right:4px; border-right:1.5px solid var(--dt-muted); border-bottom:1.5px solid var(--dt-muted); transform:rotate(-45deg); }
+.dt .dt-car__more[open] summary::after { transform:rotate(45deg); }
+.dt .dt-facts > div { padding:8px 0; }
+.dt .dt-features { margin-top:8px; padding-left:18px; display:grid; gap:4px; color:var(--dt-muted); }
+/* The agreed price when it isn't tied to a car: the same hairline box. */
+.dt .dt-agreed { padding:16px; border:1px solid var(--dt-ink); border-radius:8px; }
+.dt .dt-agreed__dealer { font-weight:600; }
+.dt .dt-agreed .dt-figures { margin-top:10px; }
+
+/* Buttons: 8px corners. The accent fill for the one main action, a hairline outline otherwise. */
+.dt .dt-button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 18px; border:1px solid var(--dt-accent); border-radius:8px; background:var(--dt-accent); color:#fff; font:600 15px/1.2 var(--dt-sans); text-align:center; cursor:pointer; }
+.dt .dt-button:hover { background:var(--dt-accent-dark); border-color:var(--dt-accent-dark); }
+.dt .dt-button--outline { border-color:var(--dt-field); background:#fff; color:var(--dt-ink); }
+.dt .dt-button--outline:hover { border-color:var(--dt-ink); background:#fff; }
+.dt .dt-pick-form { padding-top:14px; }
+.dt .dt-price .dt-button { width:100%; }
+/* The Buyer Pick once something stands: a hairline box that says what the buyer chose. */
+.dt .dt-pick { padding:16px; border:1px solid var(--dt-line); border-radius:8px; }
+.dt .dt-pick .dt-update__when + p { margin-top:6px; }
+.dt .dt-pick__mistake { color:var(--dt-muted); font-size:14px; }
 .dt .dt-confirm { display:flex; flex-wrap:wrap; align-items:center; gap:14px 24px; padding-top:24px; }
-.dt .dt-confirm__back { color:var(--sign); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
 
-/* Buyer Documents: the site's form-field style (.ai_rules 5), a navy pill to send, and the
-   receipts as a plain list. The select's chevron is drawn in CSS: the page's CSP allows no
-   data: images. */
-.dt .dt-docs { margin-top:18px; max-width:44rem; display:grid; gap:8px; }
-.dt .dt-docs[hidden],.dt [hidden] { display:none; }
-.dt .dt-docs__label { margin-top:8px; font-weight:600; font-size:14px; color:var(--ink); }
+/* Buyer Documents: plain fields, and receipts as ticked rows. The select's chevron is drawn
+   in CSS, since the page's CSP allows no data: images. */
+.dt .dt-docs { margin-top:14px; max-width:26rem; display:grid; gap:6px; }
+.dt .dt-docs__label { margin-top:10px; font-weight:600; font-size:14px; }
 .dt .dt-docs__label:first-child { margin-top:0; }
-.dt .dt-field { width:100%; min-height:52px; padding:12px 16px; border:1px solid var(--field); border-radius:12px; background-color:#fff; color:var(--ink); font:16px/1.5 var(--sans); transition:border-color .15s,box-shadow .15s; }
-.dt .dt-field:hover { border-color:var(--field-hover); }
-.dt .dt-field:focus,.dt .dt-field:focus-within { outline:0; border-color:var(--sign); box-shadow:0 0 0 3px var(--focus-ring); }
+.dt .dt-field { width:100%; min-height:48px; padding:10px 14px; border:1px solid var(--dt-field); border-radius:8px; background-color:#fff; color:var(--dt-ink); font:400 16px/1.5 var(--dt-sans); }
+.dt .dt-field:hover { border-color:var(--dt-muted); }
+.dt .dt-field:focus,.dt .dt-field:focus-within { outline:0; border-color:var(--dt-accent); box-shadow:0 0 0 3px var(--dt-focus); }
 .dt .dt-select { position:relative; display:block; }
 .dt .dt-select select { appearance:none; padding-right:44px; cursor:pointer; }
-.dt .dt-select::after { content:''; position:absolute; right:20px; top:50%; width:8px; height:8px; margin-top:-6px; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); transform:rotate(45deg); pointer-events:none; }
-.dt .dt-field--file { padding:12px 16px; cursor:pointer; }
-.dt .dt-field--file::file-selector-button { margin-right:14px; padding:6px 14px; border:1px solid var(--field); border-radius:9999px; background:var(--sage); color:var(--ink); font:600 14px/1.3 var(--sans); cursor:pointer; }
-.dt .dt-docs__hint { font-size:14px; color:var(--muted); }
-.dt .dt-docs .dt-button { justify-self:start; margin-top:8px; }
+.dt .dt-select::after { content:''; position:absolute; right:18px; top:50%; width:8px; height:8px; margin-top:-6px; border-right:1.5px solid var(--dt-ink); border-bottom:1.5px solid var(--dt-ink); transform:rotate(45deg); pointer-events:none; }
+.dt .dt-field--file { cursor:pointer; font-size:14px; }
+.dt .dt-field--file::file-selector-button { margin-right:12px; padding:6px 12px; border:1px solid var(--dt-field); border-radius:6px; background:#fff; color:var(--dt-ink); font:600 13px/1.3 var(--dt-sans); cursor:pointer; }
+.dt .dt-docs__hint { font-size:13px; color:var(--dt-muted); }
+.dt .dt-docs .dt-button { justify-self:start; margin-top:10px; }
 .dt .dt-docs .dt-button:disabled { opacity:.6; cursor:wait; }
-.dt .dt-docs__status { min-height:1.5em; font-size:15px; line-height:1.5; }
-.dt .dt-receipts__title { margin-top:28px; font:600 18px/1.3 var(--sans); }
-.dt .dt-receipts { list-style:none; margin:10px 0 0; padding:0; max-width:44rem; }
-.dt .dt-receipts li { padding:12px 0; border-top:1px solid var(--line); font-size:15px; line-height:1.5; }
-.dt .dt-receipts li:first-child { border-top:0; }
+.dt .dt-docs__status { min-height:1.5em; font-size:14px; }
+.dt .dt-receipts__title { margin-top:24px; font:600 12px/1.4 var(--dt-sans); letter-spacing:.06em; text-transform:uppercase; color:var(--dt-muted); }
+.dt .dt-receipts { list-style:none; margin-top:6px; padding:0; max-width:26rem; }
+.dt .dt-receipts li { position:relative; padding:9px 34px 9px 0; }
+.dt .dt-receipts li::before { content:''; position:absolute; right:0; top:9px; width:20px; height:20px; border:1.5px solid var(--dt-accent); border-radius:50%; }
+.dt .dt-receipts li::after { content:''; position:absolute; right:5px; top:15px; width:9px; height:5px; border-left:1.5px solid var(--dt-accent); border-bottom:1.5px solid var(--dt-accent); transform:rotate(-45deg); }
+
+/* How to reach Mason, in the rail: a round mark with his initial beside the line. */
+.dt .dt-host { display:flex; align-items:center; gap:14px; margin-top:12px; }
+.dt .dt-host::before { content:'M'; flex:none; width:56px; height:56px; border-radius:50%; background:var(--dt-fill); color:var(--dt-ink); font:600 20px/56px var(--dt-sans); text-align:center; }
+
+/* The short pages (confirm a pick, a notice, a refused link): one narrow column. */
+.dt .dt-page--narrow { max-width:600px; display:grid; gap:28px; }
+.dt .dt-intro { padding-bottom:20px; border-bottom:1px solid var(--dt-line); }
+.dt .dt-intro p { margin-top:10px; }
 
 @media(min-width:640px) {
- .dt .dt-stages { grid-template-columns:repeat(3,minmax(0,1fr)); }
- .dt .dt-details > div { grid-template-columns:180px minmax(0,1fr); gap:16px; }
- .dt .dt-cars { grid-template-columns:repeat(2,minmax(0,1fr)); }
- .dt .dt-card,.dt .dt-car,.dt .dt-update { padding:26px 28px; }
- .dt .dt-photos { margin:-26px -28px 18px; }
+ .dt-wrap { padding:0 32px; }
+ .dt .dt-cars { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+ .dt .dt-cars--one { grid-template-columns:minmax(0,1fr); }
+ .dt .dt-cars--one .dt-photo { aspect-ratio:16/9; }
+ .dt .dt-title { grid-template-columns:minmax(0,1fr) auto; align-items:end; }
+ .dt .dt-hero { flex-direction:row; text-align:right; }
+ .dt .dt-hero__thumb { width:68px; height:44px; }
 }
-@media(min-width:1000px) {
- .dt .dt-intro { padding:56px 0 52px; }
- .dt .dt-stages { grid-template-columns:repeat(6,minmax(0,1fr)); }
- .dt .dt-cars { grid-template-columns:repeat(3,minmax(0,1fr)); }
- .dt .dt-section { margin-top:56px; }
- .dt .dt-section h2 { font-size:30px; }
+@media(min-width:960px) {
+ .dt .dt-page { padding-top:44px; }
+ .dt :is(.dt-title,.dt-intro) h1 { font-size:36px; }
+ /* Two columns: the deal, and a 300px rail. The stage box heads the rail; how to reach Mason
+    sits under it. In the page's source the stage box comes first, for a phone. */
+ .dt .dt-layout { grid-template-columns:minmax(0,1fr) 300px; grid-template-rows:auto 1fr; column-gap:48px; row-gap:28px; }
+ .dt .dt-main { grid-column:1; grid-row:1 / span 2; gap:32px; }
+ .dt .dt-rail { grid-column:2; }
+ .dt .dt-rail--top { grid-row:1; }
+ .dt .dt-rail--more { grid-row:2; }
+ /* The stages as a checklist: an empty ring to come, a filled ring now, a green disc with a
+    tick when done. */
+ .dt .dt-stages { display:block; margin-top:16px; border:1px solid var(--dt-line); border-radius:8px; }
+ .dt .dt-stage { display:flex; align-items:center; gap:12px; height:auto; min-height:44px; padding:8px 14px; border-radius:0; background:none; color:var(--dt-muted); }
+ .dt .dt-stage:is([data-state="done"],[data-state="current"]) { background:none; }
+ .dt .dt-stage + .dt-stage { border-top:1px solid var(--dt-line); }
+ .dt .dt-stage__name { position:static; width:auto; height:auto; margin:0; overflow:visible; clip:auto; white-space:normal; }
+ .dt .dt-stage::before { content:''; flex:none; width:20px; height:20px; border:2px solid var(--dt-line); border-radius:50%; }
+ .dt .dt-stage[data-state="current"] { color:var(--dt-ink); font-weight:600; }
+ .dt .dt-stage[data-state="current"]::before { border:6px solid var(--dt-accent); }
+ .dt .dt-stage[data-state="done"] { color:var(--dt-ink); position:relative; }
+ .dt .dt-stage[data-state="done"]::before { border-color:var(--dt-done); background:var(--dt-done); }
+ .dt .dt-stage[data-state="done"]::after { content:''; position:absolute; left:20px; top:50%; width:9px; height:5px; margin-top:-4px; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(-45deg); }
 }

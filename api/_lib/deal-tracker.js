@@ -319,7 +319,9 @@ const STAGES = [
 
 const WORDMARK = '<span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span>';
 
-// A private page: nothing from another origin, every URL root-relative. The one
+// A private page: nothing from another origin, every URL root-relative. Its look
+// is its own (buying/deal-tracker.css, laid out after Turo's booked-trip page), so
+// it loads none of the site's shared stylesheets but the wordmark's. The one
 // script is this site's own upload helper, only on a page with the document form.
 function page(title, body, { script = false, contact = null } = {}) {
   return `<!doctype html>
@@ -331,34 +333,40 @@ function page(title, body, { script = false, contact = null } = {}) {
 <meta name="referrer" content="no-referrer">
 <title>${escapeHtml(title)}</title>
 <link rel="icon" href="/favicon.png" type="image/png">
-<link rel="stylesheet" href="/buying/daisy.css">
-<link rel="stylesheet" href="/buying/drive-right.css">
 <link rel="stylesheet" href="/logo-motion.css">
 <link rel="stylesheet" href="/buying/deal-tracker.css">
 ${script ? `<script src="${UPLOAD_SCRIPT}" defer></script>\n` : ''}</head>
-<body class="dr dt"><a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header page-width">
-  <a class="wordmark" href="/" aria-label="Steer Me Right home">${WORDMARK}</a>
-</header>
+<body class="dt"><a class="dt-skip" href="#main-content">Skip to main content</a>
+<header class="dt-header"><div class="dt-wrap">
+  <a class="dt-logo" href="/" aria-label="Steer Me Right home">${WORDMARK}</a>
+</div></header>
 ${body}
-<footer class="site-footer page-width dt-footer">
-  <div class="footer-top"><div><a class="wordmark" href="/" aria-label="Steer Me Right home">${WORDMARK}</a>
-    <p>Questions about your deal? ${reach(contact, true)}. I answer within one business day.</p></div></div>
-  <div class="footer-bottom"><span>© 2026 Steer Me Right</span></div>
-</footer>
+<footer class="dt-footer"><div class="dt-wrap">
+  <p>Questions about your deal? ${reach(contact, true)}. I answer within one business day.</p>
+  <p class="dt-footer__legal">© 2026 Steer Me Right</p>
+</div></footer>
 </body>
 </html>`;
 }
 
-function stagesList(current) {
-  const at = STAGES.findIndex(([key]) => key === current);
-  return safe`<ol class="dt-stages" aria-label="Where your deal stands">${join(STAGES, ([key, label]) => {
-    const index = STAGES.findIndex(([name]) => name === key);
+// Where the deal stands, as the box at the top of the side rail: a line naming
+// the stage, a sentence on what is happening, and the six stages as a checklist
+// (done, current, still to come). A search closed without a purchase shows no
+// checklist: ticking stages it never reached would mislead.
+function stageBox(view) {
+  const key = view.outcome ?? view.stage;
+  const lead = key === 'agreed' && !view.agreed ? 'We have a price. I’ll be in touch about the next steps.' : LEADS[key];
+  const at = STAGES.findIndex(([name]) => name === view.stage);
+  const now = at < 0 ? NOTHING : safe`<p class="dt-box__now" aria-hidden="true">Stage ${at + 1} of ${STAGES.length} · ${STAGES[at][1]}</p>`;
+  return safe`<div class="dt-box dt-progress">${now}
+  <p class="dt-box__lead">${lead}</p>
+  ${view.outcome === 'other' ? NOTHING : safe`<ol class="dt-stages" aria-label="Where your deal stands">${join(STAGES, ([name, label]) => {
+    const index = STAGES.findIndex(([key]) => key === name);
     const state = index < at ? 'done' : index === at ? 'current' : 'next';
-    return key === current
-      ? safe`<li class="dt-stage" data-state="${state}" aria-current="step">${label}</li>`
-      : safe`<li class="dt-stage" data-state="${state}">${label}</li>`;
-  })}</ol>`;
+    return name === view.stage
+      ? safe`<li class="dt-stage" data-state="${state}" aria-current="step"><span class="dt-stage__name">${label}</span></li>`
+      : safe`<li class="dt-stage" data-state="${state}"><span class="dt-stage__name">${label}</span></li>`;
+  })}</ol>`}</div>`;
 }
 
 const LEADS = {
@@ -371,15 +379,24 @@ const LEADS = {
   other: 'This car search is closed.'
 };
 
-function intro(view) {
-  const key = view.outcome ?? view.stage;
-  const lead = key === 'agreed' && !view.agreed ? 'We have a price. I’ll be in touch about the next steps.' : LEADS[key];
+// The page's title row: whose search it is and, beside it, the car that matters
+// most right now (the agreed one, else the first on the shortlist) with its
+// main figure, as a link down to that car.
+function titleRow(view, action = null) {
   const name = view.buyer.first_name;
-  return safe`<div class="page-intro dt-intro">
-  <p class="page-kicker">Deal Tracker · ${view.buyer.plan}</p>
-  <h1>${name ? `${name}’s car search` : 'Your car search'}</h1>
-  <p>${lead}</p>
-  ${stagesList(view.stage)}
+  // With a price agreed that isn't tied to a car on the shortlist, no car is named here.
+  const car = view.cars.find(item => item.agreed) ?? (view.agreed ? null : view.cars[0]) ?? null;
+  const main = car ? mainFigure(car, view) : null;
+  const hero = car ? safe`<a class="dt-hero" href="#car-${car.rank}">
+    <span class="dt-hero__text"><span class="dt-hero__title">${car.title}</span>${main ? safe`<span class="dt-hero__sub">${main[0]} ${money(main[1])}</span>` : NOTHING}</span>
+    ${action && Number(car.photo_count) > 0 ? safe`<img class="dt-hero__thumb" src="${action}/photo/${car.rank}/0" alt="" width="136" height="88" decoding="async">` : NOTHING}
+  </a>` : NOTHING;
+  return safe`<div class="dt-title">
+  <div class="dt-title__text">
+    <p class="dt-kicker">Deal Tracker · ${view.buyer.plan}</p>
+    <h1>${name ? `${name}’s car search` : 'Your car search'}</h1>
+  </div>
+  ${hero}
 </div>`;
 }
 
@@ -432,54 +449,79 @@ const pickButton = (car, action) => safe`<form class="dt-pick-form" method="post
       <button class="dt-button" type="submit">Pick this car at ${money(car.best_cents)}</button>
     </form>`;
 
-// The listing's photos as one swipeable strip. Each is served from the page's
-// own path (/deal/<token>/photo/<rank>/<n>), so the photo host never shows.
+// The listing's photos as one swipeable strip, with how many there are in its
+// corner. Each is served from the page's own path
+// (/deal/<token>/photo/<rank>/<n>), so the photo host never shows.
 function photoStrip(car, action) {
   const count = Math.min(Number(car.photo_count) || 0, MAX_PHOTOS);
   if (!count || !action) return NOTHING;
   const indexes = Array.from({ length: count }, (_, index) => index);
-  return safe`<div class="dt-photos" role="region" aria-label="Photos of the ${car.title}" tabindex="0">${join(indexes, index => safe`<img class="dt-photo" src="${action}/photo/${car.rank}/${index}" alt="${car.title}, photo ${index + 1} of ${count}" width="640" height="480"${index ? safe` loading="lazy"` : NOTHING} decoding="async">`)}</div>
-    ${count > 1 ? safe`<p class="dt-photos__count">${count} photos · swipe for more</p>` : NOTHING}`;
+  return safe`<div class="dt-car__media">
+      <div class="dt-photos" role="region" aria-label="Photos of the ${car.title}" tabindex="0">${join(indexes, index => safe`<img class="dt-photo" src="${action}/photo/${car.rank}/${index}" alt="${car.title}, photo ${index + 1} of ${count}" width="640" height="480"${index ? safe` loading="lazy"` : NOTHING} decoding="async">`)}</div>
+      ${count > 1 ? safe`<p class="dt-photos__count">${count} photos</p>` : NOTHING}
+    </div>`;
 }
 
-// The listing's details, folded away under the figures.
+// How many of a listing's facts sit in the open, beside the price. The rest
+// fold away with the features.
+const OPEN_FACTS = 4;
+const factList = (facts, name) => safe`<dl class="${name}">${join(facts, fact => safe`<div><dt>${fact.label}</dt><dd>${fact.value}</dd></div>`)}</dl>`;
+
+// The rest of the listing's details, folded away under the car.
 function detailsBlock(car) {
   const { facts = [], features = [] } = car.details ?? {};
-  if (!facts.length && !features.length) return NOTHING;
+  const rest = facts.slice(OPEN_FACTS);
+  if (!rest.length && !features.length) return NOTHING;
   return safe`<details class="dt-car__more">
       <summary>Car details</summary>
-      ${facts.length ? safe`<dl class="dt-facts">${join(facts, fact => safe`<div><dt>${fact.label}</dt><dd>${fact.value}</dd></div>`)}</dl>` : NOTHING}
+      ${rest.length ? factList(rest, 'dt-facts') : NOTHING}
       ${features.length ? safe`<ul class="dt-features">${join(features, feature => safe`<li>${feature}</li>`)}</ul>` : NOTHING}
     </details>`;
 }
 
-// One car: its photos, title, color and mileage, the dealer from Quotes in, the
-// asking price and one main figure, then its details.
-function carCard(car, view, action = null) {
+// A car's one main figure: the agreed price, else its best price so far, else
+// our estimated total.
+function mainFigure(car, view) {
   const agreedHere = car.agreed && view.agreed;
-  const main = agreedHere && view.agreed.otd_cents != null ? ['Agreed out-the-door price', view.agreed.otd_cents]
+  return agreedHere && view.agreed.otd_cents != null ? ['Agreed out-the-door price', view.agreed.otd_cents]
     : car.best_cents != null ? ['Best price so far', car.best_cents]
     : car.estimate_cents != null ? ['Estimated total', car.estimate_cents] : null;
+}
+const isWaiting = (car, view) => ['shortlisted', 'emailing', 'quoted'].includes(view.stage) && car.best_cents == null;
+
+// One car as a card: its photos across the top, then its name, color and
+// mileage, the dealer from Quotes in, a few facts as tags, the price (one main
+// figure, the asking price and the pick button together), and the rest of the
+// listing folded away.
+function carCard(car, view, action = null) {
+  const agreedHere = car.agreed && view.agreed;
+  const main = mainFigure(car, view);
   const meta = [car.color, car.mileage != null ? miles(car.mileage) : null].filter(Boolean).join(' · ');
-  const waiting = ['shortlisted', 'emailing', 'quoted'].includes(view.stage) && car.best_cents == null;
   const dealer = car.dealer ?? (agreedHere && view.agreed.dealer_name ? { name: view.agreed.dealer_name, location: null } : null);
-  return safe`<article class="dt-car${agreedHere ? ' dt-car--agreed' : ''}" id="car-${car.rank}">
-    ${photoStrip(car, action)}
-    <h3 class="dt-car__title">${car.title}</h3>
-    ${meta ? safe`<p class="dt-car__meta">${meta}</p>` : NOTHING}
-    ${dealer ? safe`<p class="dt-car__dealer">At ${dealer.name}${dealer.location ? `, ${dealer.location}` : ''}</p>` : NOTHING}
-    <dl class="dt-figures">
-      ${main ? safe`<div class="dt-figure dt-figure--main"><dt>${main[0]}</dt><dd>${money(main[1])}</dd></div>` : NOTHING}
-      ${car.asking_cents != null ? safe`<div class="dt-figure"><dt>Asking price</dt><dd>${money(car.asking_cents)}</dd></div>` : NOTHING}
-    </dl>
-    ${waiting ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
-    ${car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
-    ${detailsBlock(car)}
-    ${car.can_pick ? pickButton(car, action) : NOTHING}
+  const open = (car.details?.facts ?? []).slice(0, OPEN_FACTS);
+  const photos = photoStrip(car, action);
+  return safe`<article class="dt-car${agreedHere ? ' dt-car--agreed' : ''}${photos === NOTHING ? ' dt-car--no-photos' : ''}" id="car-${car.rank}">
+    ${photos}
+    <div class="dt-car__body">
+      <h3 class="dt-car__title">${car.title}</h3>
+      ${meta ? safe`<p class="dt-car__meta">${meta}</p>` : NOTHING}
+      ${dealer ? safe`<p class="dt-car__dealer">At ${dealer.name}${dealer.location ? `, ${dealer.location}` : ''}</p>` : NOTHING}
+      ${open.length ? factList(open, 'dt-specs') : NOTHING}
+      <div class="dt-price">
+        <dl class="dt-figures">
+          ${main ? safe`<div class="dt-figure dt-figure--main"><dt>${main[0]}</dt><dd>${money(main[1])}</dd></div>` : NOTHING}
+          ${car.asking_cents != null ? safe`<div class="dt-figure"><dt>Asking price</dt><dd>${money(car.asking_cents)}</dd></div>` : NOTHING}
+        </dl>
+        ${isWaiting(car, view) ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
+        ${car.can_pick ? pickButton(car, action) : NOTHING}
+      </div>
+      ${car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
+      ${detailsBlock(car)}
+    </div>
   </article>`;
 }
 
-const carGrid = (cars, view, action = null) => safe`<div class="dt-cars">${join(cars, car => carCard(car, view, action))}</div>`;
+const carGrid = (cars, view, action = null) => safe`<div class="dt-cars${cars.length === 1 ? ' dt-cars--one' : ''}">${join(cars, car => carCard(car, view, action))}</div>`;
 
 function carsSection(view, action = null) {
   if (!view.cars.length) return NOTHING;
@@ -509,6 +551,7 @@ function agreedSection(view, action = null) {
   const others = view.cars.filter(item => !item.agreed);
   const price = view.agreed.otd_cents != null ? money(view.agreed.otd_cents) : null;
   return safe`${section('dt-agreed', car ? 'Your car' : 'Your agreed price', car ? carGrid([car], view, action) : agreedWithoutCar(view))}
+  <div class="dt-pair">
   ${section('dt-sign', 'Before you sign', safe`<div class="dt-card">${checklist([
     price ? `Check that the out-the-door price on the buyer’s order is ${price}, to the dollar.` : 'Check that the out-the-door price on the buyer’s order matches the one we agreed, to the dollar.',
     'Read every line for add-ons you didn’t ask for, like paint protection, VIN etching or an extended warranty. You can say no.',
@@ -522,6 +565,7 @@ function agreedSection(view, action = null) {
     'Walk around the car in good light before you drive off. Look for scratches and dents, and check you have both keys and the manuals.',
     'Try the things you’ll use every day, like the phone connection, the climate controls and the seats.'
   ])}</div>`)}
+  </div>
   ${others.length ? section('dt-others', 'Your other cars', carGrid(others, view, action), 'These stay here for reference.') : NOTHING}`;
 }
 
@@ -550,12 +594,23 @@ const stamp = (label, at) => safe`<p class="dt-update__when">${label ? safe`${la
 // so nothing the buyer, Mason or an agent typed becomes markup.
 const words = body => safe`<p class="dt-update__body">${body}</p>`;
 
-// Buyer Updates, newest first.
+// Buyer Updates, newest first. The newest sits at the top of the page, above
+// the cars, since it says what just changed; the earlier ones follow lower down.
+const newestFirst = view => [...(view.timeline ?? [])].reverse().sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
+
+export function latestUpdate(view) {
+  const [latest] = newestFirst(view);
+  if (!latest) return NOTHING;
+  return section('dt-latest', 'Latest from Mason', safe`<div class="dt-update dt-update--latest">
+    ${stamp(null, latest.at)}
+    ${words(latest.body)}
+  </div>`);
+}
+
 export function timelineSection(view) {
-  const items = view.timeline ?? [];
-  if (!items.length) return NOTHING;
-  const newest = [...items].reverse().sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
-  return section('dt-updates', 'Updates from Mason', safe`<ol class="dt-timeline">${join(newest, item => safe`<li class="dt-update">
+  const earlier = newestFirst(view).slice(1);
+  if (!earlier.length) return NOTHING;
+  return section('dt-updates', 'Earlier updates', safe`<ol class="dt-timeline">${join(earlier, item => safe`<li class="dt-update">
     ${stamp(null, item.at)}
     ${words(item.body)}
   </li>`)}</ol>`);
@@ -565,7 +620,7 @@ export function timelineSection(view) {
 // purchase (that page says it itself). Buyers text him (adr/0003).
 export function contactSection(view) {
   if (view.outcome === 'other') return NOTHING;
-  return section('dt-ask', 'Questions?', safe`<div class="dt-card"><p>${reach(view.contact, true)}. I answer within one business day.</p></div>`);
+  return section('dt-ask', 'Questions?', safe`<div class="dt-card dt-host"><p>${reach(view.contact, true)}. I answer within one business day.</p></div>`);
 }
 
 const MISTAKE = 'If you chose by mistake, let me know and I’ll sort it out.';
@@ -652,12 +707,26 @@ function stageBody(view, action = null) {
 // shows only then). contact: the text number (textNumber()), or null for email.
 export function renderTracker(view, { action = null, uploads = true, contact = null } = {}) {
   const shown = { ...view, contact };
-  const body = safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-${intro(shown)}
+  const ask = contactSection(shown);
+  // Two columns from a wide screen: the deal on the left; on the right a rail
+  // with where it stands and how to reach Mason. On a phone the stage box comes
+  // first, then the deal, then the rest of the rail.
+  const body = safe`<main id="main-content" class="dt-wrap dt-page" tabindex="-1">
+${titleRow(shown, action)}
+<div class="dt-layout">
+<div class="dt-rail dt-rail--top">
+${stageBox(shown)}
+</div>
+<div class="dt-main">
+${latestUpdate(shown)}
 ${stageBody(shown, action)}
 ${timelineSection(shown)}
-${contactSection(shown)}
 ${documentsSection(shown, { action, uploads })}
+</div>
+${ask === NOTHING ? NOTHING : safe`<div class="dt-rail dt-rail--more">
+${ask}
+</div>`}
+</div>
 </main>`;
   return page('Your car search · Steer Me Right', String(body), { script: showsUploadForm(shown, uploads), contact });
 }
@@ -679,8 +748,8 @@ export function renderPickConfirm(car, action = null, contact = null) {
     ? ['I’ll confirm the price with the dealer in writing. It isn’t agreed until I do, and I’ll post an update on your page when it is.',
       'Please don’t contact the dealer or put down a deposit yet.']
     : ['I’ll go back to the search for more cars and more written prices, and post an update on your page when I have them.'];
-  return page(`${car ? 'Check your pick' : 'Keep looking'} · Steer Me Right`, String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-<div class="page-intro dt-intro">
+  return page(`${car ? 'Check your pick' : 'Keep looking'} · Steer Me Right`, String(safe`<main id="main-content" class="dt-wrap dt-page dt-page--narrow" tabindex="-1">
+<div class="dt-intro">
   ${intro}
 </div>
 ${section('dt-next', 'What happens next', safe`<div class="dt-card">${checklist([...next,
@@ -696,8 +765,8 @@ ${section('dt-next', 'What happens next', safe`<div class="dt-card">${checklist(
 
 // A short answer to a POST that didn't go through, with the way back.
 export function renderNotice(title, text, back = null, contact = null) {
-  return page(`${title} · Steer Me Right`, String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-<div class="page-intro dt-intro">
+  return page(`${title} · Steer Me Right`, String(safe`<main id="main-content" class="dt-wrap dt-page dt-page--narrow" tabindex="-1">
+<div class="dt-intro">
   <h1>${title}</h1>
   <p>${text}</p>
 </div>
@@ -707,8 +776,8 @@ ${section('dt-reach', 'What next', safe`<div class="dt-card">${back ? safe`<p><a
 
 // A refused link. It says nothing about whether a deal exists.
 export function renderLinkClosed(contact = null) {
-  return page('Link not active · Steer Me Right', String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-<div class="page-intro dt-intro">
+  return page('Link not active · Steer Me Right', String(safe`<main id="main-content" class="dt-wrap dt-page dt-page--narrow" tabindex="-1">
+<div class="dt-intro">
   <h1>This link isn’t active</h1>
   <p>It may have expired or been replaced by a newer one.</p>
 </div>
@@ -718,8 +787,8 @@ ${section('dt-reach', 'Need it back?', safe`<div class="dt-card"><p>${reach(cont
 
 // For an unexpected error: nothing about the deal, just a way to reach Mason.
 export function renderUnavailable(contact = null) {
-  return page('Not available · Steer Me Right', String(safe`<main id="main-content" class="page-width dt-page" tabindex="-1">
-<div class="page-intro dt-intro">
+  return page('Not available · Steer Me Right', String(safe`<main id="main-content" class="dt-wrap dt-page dt-page--narrow" tabindex="-1">
+<div class="dt-intro">
   <h1>This page isn’t available right now</h1>
   <p>Please try again in a few minutes.</p>
 </div>

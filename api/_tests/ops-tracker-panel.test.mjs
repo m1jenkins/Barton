@@ -107,7 +107,7 @@ test('Mason posts a Buyer Update from the ops page and the buyer sees it; an emp
   const [row] = await updates(pg, id);
   assert.deepEqual([row.actor, row.status, row.ready_for_pick, row.body], ['mason', 'posted', true, 'PANEL-SENTINEL Two prices are in.\n\nMore tomorrow.']);
   const seen = await buyerPage(pg, signLink(SECRET, id, 1));
-  assert.ok(seen.body.includes('Updates from Mason') && seen.body.includes('PANEL-SENTINEL Two prices are in.'));
+  assert.ok(seen.body.includes('Latest from Mason') && seen.body.includes('PANEL-SENTINEL Two prices are in.'));
 
   await post({ tracker: 'post', deal: id, body: 'no tick' });
   assert.equal((await updates(pg, id))[1].ready_for_pick, false);
