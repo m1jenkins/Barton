@@ -84,6 +84,15 @@ Search Console (property `sc-domain:steermeright.com`, November 5 to 18, 2026) s
 - **Recheck on the companies' own pages, November 20, 2026:** CarEdge Concierge $999 and AI Buying Agent $49.99 beta (normally $149); Delivrd Insta-Pay $1,000, "New Cars Only", work begins "within 5-8 business days" (the same page also says "3-5 business days of your consult"); Delivrd refund only before work starts, $250 and $500 change fees; Car Pal $1,195 / $1,695 / $495 / $200–$500 surcharge; Automatch $499 / $599. CarEdge's refund and 7 to 10 day answers were read from the pricing page's FAQ data. Visible dates, `dateModified`, sitemap `lastmod`, the `CMP-HUB-*` and `CMP-CE-*` rows for those sources (next review 2026-12-20) and the `COMPARISON-PAGES-2026-10-18` row were updated together.
 - **Why the pages were invisible in Vercel Analytics until now:** `web-analytics.js` only measured 13 paths. It now matches the generated families by pattern; counts start from the November 20 deploy.
 
+## Update 2026-11-25: retitles from the pages' own queries
+
+Search Console (October 28 to November 24, 2026), filtered to each page:
+
+- **The hub.** Most impressions came from automated AI-Mode persona prompts at positions 1 to 10, which never click. The searches people typed were brand comparisons: "caredge alternatives" (13 at 9.6), "caredge vs truecar" (6), "car edge vs delivrd" and "caredge vs delivrd" (7 together at about 6 to 8). The title is now "CarEdge vs Delivrd vs Car Pal: Car Buying Services Compared (2026)". It has no fee range because the hub's table includes free and $49.99 options and Car Pal's $1,695 truck fee, so no simple "from X to Y" is true.
+- **Delivrd review.** The searches were "delivrd reviews", "does delivrd do used cars" and "how much does delivrd charge", so the title answers the last two from the November 20 recheck: "Delivrd Review (2026): $1,000 Fee, New Cars Only, Refund Rules | Steer Me Right". It still gives no rating and answers "legit" only from Delivrd's own pages.
+- **CarEdge alternatives.** This page now gets links from `car-buying-service.html`, `how-it-works.html` and the CarEdge-or-Delivrd question on `schedule.html`. The homepage still links no competitor page.
+- **To measure:** compare clicks and positions for these three pages from November 26.
+
 ## Measurement
 
 The three URLs return 404 on the live site until the pull request merges. After it deploys:
