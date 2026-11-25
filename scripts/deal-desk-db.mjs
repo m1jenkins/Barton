@@ -87,8 +87,7 @@ export function parseEvent(input) {
     occurred_at: event.occurred_at ? new Date(event.occurred_at).toISOString() : new Date().toISOString(),
     actor: text(event.actor, 60),
     resolves_event_id: event.resolves_event_id ?? null,
-    // A JSON string: postgres.js would send a bare JS array as a Postgres array, not jsonb.
-    options: event.options ? JSON.stringify(event.options.map(option => option.trim())) : null,
+    options: event.options ? event.options.map(option => option.trim()) : null,
     answer: text(event.answer, 1000)
   };
 }
@@ -216,7 +215,10 @@ export async function logEvents(sql, inputs) {
   const rows = (Array.isArray(inputs) ? inputs : [inputs]).map(parseEvent);
   let added = 0;
   for (const row of rows) {
-    const result = await sql`INSERT INTO deal_events ${sql(row, 'onboarding_id', 'kind', 'dealer_name', 'vin', 'otd_cents', 'itemized', 'note', 'source_message_id', 'occurred_at', 'actor', 'resolves_event_id', 'options', 'answer')}
+    // sql.json, not a JSON string: a bare array would go as a Postgres array, and
+    // a string postgres.js encodes again, storing a string the CHECK rejects.
+    const values = { ...row, options: row.options && sql.json(row.options) };
+    const result = await sql`INSERT INTO deal_events ${sql(values, 'onboarding_id', 'kind', 'dealer_name', 'vin', 'otd_cents', 'itemized', 'note', 'source_message_id', 'occurred_at', 'actor', 'resolves_event_id', 'options', 'answer')}
       ON CONFLICT DO NOTHING`;
     added += result.count;
   }
