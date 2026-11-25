@@ -58,6 +58,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=6b8e8485d4e1">
     <link rel="stylesheet" href="/buying/daisy.css?v=1c17940497d8">
     <link rel="stylesheet" href="/buying/drive-right.css?v=1b27b5ae54c3">
+    <link rel="stylesheet" href="/buying/inquiry.css?v=871fcd8e9289">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
     <!-- Google Tag Manager -->
@@ -152,6 +153,7 @@
 </div>
 
 <div class="highlight-box"><p><strong>Ready to hand off the dealer?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Your advisor searches, works the dealers by phone and email, negotiates and checks the fees. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
+<p class="ask-mason">Not ready to pay? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet" data-cta-location="is-caredge-concierge-worth-it-ask">Ask Mason a question first</button> It’s free, and there’s nothing to pay to ask.</p>
 
 <section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. CarEdge’s price, AI agent price and “no commissions” line were read on its pricing page on November 10, 2026; its service scope, refund FAQ, timing FAQ, dealer program and terms were read on October 18, 2026. We recheck the prices monthly and the rest quarterly. Related: <a href="/delivrd-review.html">Delivrd review</a>, <a href="/delivrd-alternatives.html">Delivrd alternatives</a>, <a href="/used-car-buying-service.html">used car buying service</a>, <a href="/car-buying-service-cost.html">what a car buying service costs</a> and <a href="/car-negotiation-service.html">how a car negotiation service works</a>.</p><p>CarEdge, Automatch Consulting and Delivrd are names owned by their companies. Steer Me Right is not affiliated with or endorsed by CarEdge or any other company named here. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p></section>
 </div>
@@ -164,8 +166,30 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Steer Me Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
+<dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+  <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
+  <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
+  <form id="car-search-inquiry-form">
+    <input type="hidden" name="service_interest" value="Not sure yet">
+    <div class="inquiry-fields">
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-vehicle">What car are you looking for?<input id="inquiry-vehicle" name="vehicle" type="text" maxlength="300" placeholder="Make, model or the kind of car you have in mind" required autofocus></label>
+      <label class="inquiry-field" for="inquiry-budget"><span>Approximate vehicle budget <span class="optional">Optional</span></span><input id="inquiry-budget" name="budget" type="text" maxlength="80" placeholder="For example, $35,000–$45,000"></label>
+      <label class="inquiry-field" for="inquiry-timeline"><span>Buying timeline <span class="optional">Optional</span></span><select id="inquiry-timeline" name="timeline"><option value="">Choose a timeline</option><option>Within 2 weeks</option><option>Within a month</option><option>1–3 months</option><option>Still exploring</option></select></label>
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-details"><span>Questions or anything else Mason should know <span class="optional">Optional</span></span><textarea id="inquiry-details" name="details" rows="4" maxlength="2000" placeholder="Ask about the service, or add trim, color, trade-in or delivery details"></textarea></label>
+      <label class="inquiry-field" for="inquiry-email">Email<input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="inquiry-field" for="inquiry-phone"><span>Phone <span class="optional">Optional</span></span><input id="inquiry-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
+      <label class="inquiry-field" for="inquiry-name"><span>Name <span class="optional">Optional</span></span><input id="inquiry-name" name="name" type="text" autocomplete="name" maxlength="120"></label>
+    </div>
+    <div class="form-honeypot" aria-hidden="true"><label for="inquiry-website">Leave this field empty<input id="inquiry-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <button class="primary-button" type="submit">Send my car search inquiry</button>
+    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+    <a class="outline-button inquiry-email" data-email-inquiry href="mailto:hello@steermeright.com" hidden>Email Mason these details</a>
+    <p class="small-note">See our <a href="/policy.html#privacy-policy">privacy policy</a>.</p>
+  </form>
+</dialog>
 <script src="/script.js?v=945c4885324a"></script>
 <script type="module" src="/buying/app.js?v=44b1a48f8182"></script>
+<script type="module" src="/buying/inquiry.js?v=f6573d0b0718"></script>
 
 </body>
 </html>
