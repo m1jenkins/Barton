@@ -28,7 +28,7 @@ test('GPC, previews, receipts, the worksheet and unknown routes never load the S
 test('filter strips queries and fragments, excludes payloads and stops on revocation', () => {
   const f = fixture(); f.analytics.setConsent(true);
   assert.deepEqual(f.analytics.beforeSend({ type: 'pageview', url: 'https://www.steermeright.com/blog.html?email=private#secret', payload: { name: 'private' } }), { type: 'pageview', url: 'https://www.steermeright.com/blog.html' });
-  for (const event of [{ type: 'event', url: 'https://www.steermeright.com/' }, { type: 'pageview', url: 'https://other.test/' }, { type: 'pageview', url: 'https://www.steermeright.com/payment-success.html?session_id=secret' }, { type: 'pageview', url: 'not a url' }]) assert.equal(f.analytics.beforeSend(event), null);
+  for (const event of [{ type: 'event', url: 'https://www.steermeright.com/', payload: { name: 'signup', data: {} } }, { type: 'pageview', url: 'https://other.test/' }, { type: 'pageview', url: 'https://www.steermeright.com/payment-success.html?session_id=secret' }, { type: 'pageview', url: 'not a url' }]) assert.equal(f.analytics.beforeSend(event), null);
   f.analytics.setConsent(false); assert.equal(f.analytics.beforeSend({ type: 'pageview', url: 'https://www.steermeright.com/' }), null);
 });
 
@@ -50,4 +50,25 @@ test('measured pages are exactly the indexable sitemap pages, minus the quote wo
   for (const file of readdirSync(root).filter(name => name.endsWith('.html'))) {
     if (!sitemap.has(`/${file}`) && file !== 'index.html') assert.equal(measured(`/${file}`), false, `${file} is not in the sitemap`);
   }
+});
+
+test('conversion events keep only allowlisted names and slug-valued fields', () => {
+  const f = fixture({ url: 'https://www.steermeright.com/toyota-rav4-price.html' }); f.analytics.setConsent(true);
+  const send = (payload) => f.analytics.beforeSend({ type: 'event', url: 'https://www.steermeright.com/toyota-rav4-price.html?lead=secret#x', payload });
+  assert.deepEqual(send({ name: 'cta_click', data: { cta_location: 'vehicle-toyota-rav4-calculator', cta_label: 'Get my RAV4 negotiated' } }),
+    { type: 'event', url: 'https://www.steermeright.com/toyota-rav4-price.html', payload: { name: 'cta_click', data: { cta_location: 'vehicle-toyota-rav4-calculator' } } });
+  assert.deepEqual(send({ name: 'generate_lead', data: { form_name: 'hero_lead', lead_id: 'lead_123', email: 'private@example.test' } }).payload, { name: 'generate_lead', data: { form_name: 'hero_lead' } });
+  assert.deepEqual(send({ name: 'begin_checkout', data: { service_tier: 'full_service', checkout_attempt_id: 'att_1' } }).payload, { name: 'begin_checkout', data: { service_tier: 'full_service' } });
+  assert.deepEqual(send({ name: 'phone_click', data: { link_text: '512-555-0100' } }).payload, { name: 'phone_click', data: {} });
+  assert.deepEqual(send({ name: 'cta_click', data: { cta_location: 'private@example.test is here' } }).payload, { name: 'cta_click', data: {} });
+  for (const payload of [{ name: 'purchase_verified', data: {} }, { name: 'toString', data: {} }, undefined]) assert.equal(send(payload), null);
+});
+
+test('track sends allowlisted conversions only after the SDK loads on a measured page', () => {
+  const f = fixture(); f.analytics.track('cta_click', { cta_location: 'hero' }); assert.equal(f.calls.length, 0);
+  f.analytics.setConsent(true); f.analytics.track('cta_click', { cta_location: 'hero', cta_label: 'Start' }); f.analytics.track('signup', {});
+  assert.deepEqual(f.calls.at(-1), ['event', { name: 'cta_click', data: { cta_location: 'hero' } }]);
+  assert.equal(f.calls.filter(call => call[0] === 'event').length, 1);
+  const receipt = fixture({ url: 'https://www.steermeright.com/payment-success.html' }); receipt.analytics.setConsent(true);
+  receipt.analytics.track('begin_checkout', { service_tier: 'full_service' }); assert.equal(receipt.calls.length, 0);
 });

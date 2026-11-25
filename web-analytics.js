@@ -21,6 +21,20 @@ const publicPathPatterns = [
   /^\/car-buying-service-[a-z0-9-]+\.html$/, // city pages, the near-me hub and the cost page
   /^\/[a-z0-9-]+-problems\.html$/, // problems-by-year pages (hybrid-vs-gas pages match the -vs- pattern)
 ];
+// Conversion events Vercel may record, and the only data keys each may carry. Lead and checkout IDs,
+// button labels and anything a person typed stay out; a value must be a short slug.
+const eventFields = { cta_click: ['cta_location'], generate_lead: ['form_name'], begin_checkout: ['service_tier'], phone_click: [] };
+const slugValue = /^[a-z0-9][a-z0-9_./-]{0,79}$/i;
+export function eventPayload(name, data) {
+  const fields = Object.hasOwn(eventFields, name) ? eventFields[name] : null;
+  if (!fields) return null;
+  const clean = {};
+  for (const key of fields) {
+    const value = data?.[key];
+    if (typeof value === 'string' && slugValue.test(value)) clean[key] = value;
+  }
+  return { name, data: clean };
+}
 const isPublicPath = (path) => publicPaths.has(path) || publicPathPatterns.some((re) => re.test(path));
 const hosts = new Set(['www.steermeright.com', 'steermeright.com', 'www.driverightcarbuying.com', 'driverightcarbuying.com']);
 
@@ -39,12 +53,21 @@ export function createWebAnalytics(w, d) {
     } catch { return false; }
   };
   function beforeSend(event) {
-    if (!permitted() || !safeReferrer() || event?.type !== 'pageview') return null;
+    if (!permitted() || !safeReferrer() || (event?.type !== 'pageview' && event?.type !== 'event')) return null;
     try {
       const url = new URL(event.url);
       if (url.origin !== w.location.origin || !isPublicPath(url.pathname) || url.username || url.password) return null;
-      return { type: 'pageview', url: `${url.origin}${url.pathname === '/index.html' ? '/' : url.pathname}` };
+      const clean = `${url.origin}${url.pathname === '/index.html' ? '/' : url.pathname}`;
+      if (event.type === 'pageview') return { type: 'pageview', url: clean };
+      // The SDK sends the original payload when the returned one is missing, so always return a rebuilt one.
+      const payload = eventPayload(event.payload?.name, event.payload?.data);
+      return payload ? { type: 'event', url: clean, payload } : null;
     } catch { return null; }
+  }
+  function track(name, data) {
+    if (!loaded || !permitted()) return;
+    const payload = eventPayload(name, data);
+    if (payload) w.va('event', payload);
   }
   function setConsent(value) {
     consent = value === true;
@@ -59,7 +82,7 @@ export function createWebAnalytics(w, d) {
     script.referrerPolicy = 'no-referrer';
     d.head.appendChild(script);
   }
-  return { setConsent, beforeSend };
+  return { setConsent, beforeSend, track };
 }
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {

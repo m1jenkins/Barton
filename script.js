@@ -1,6 +1,6 @@
 const openAIAds = { track(...args) { try { window.driveRightOpenAIAds?.track(...args); } catch {} } };
 import("./openai-ads.js?v=cc4832ef4638").catch(() => {});
-import("./web-analytics.js?v=2e5a4acc2be6").catch(() => {});
+import("./web-analytics.js?v=407f59b65307").catch(() => {});
 // Shared adapter for the redesigned buying pages; legacy page handlers stay intact.
 window.addEventListener('DOMContentLoaded', () => {
   window.driveRightClient = { requestJson, track, createId, emailMason, attribution: attributionData };
@@ -25,6 +25,7 @@ function track(event, properties = {}, { beforeNavigation = false } = {}) {
     try { window.sessionStorage.setItem(key, '1'); } catch {}
   }
   openAIAds.track(event, properties);
+  try { window.driveRightWebAnalytics?.track(event, properties); } catch {}
   const context = pageContext(), first = attributionData?.first_touch || {}, last = attributionData?.last_touch || {};
   const payload = {event, event_id:eventId, page_type:context.page_type, topic_cluster:context.cluster, city:context.city,
     first_touch_source:first.utm_source || '', first_touch_medium:first.utm_medium || '', first_touch_campaign:first.utm_campaign || '', first_touch_referrer:first.referrer || '', first_touch_landing_path:first.landing_path || '',
