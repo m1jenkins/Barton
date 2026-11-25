@@ -1111,6 +1111,23 @@
   border-top: 1px solid var(--line);
 }
 
+.dr .vd-calc-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: none;
+}
+
+.dr .vd-ask {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .dr .vd-calc-cta p {
   margin: 0;
   font-size: 14px;

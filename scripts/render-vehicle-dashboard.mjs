@@ -872,7 +872,10 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
           </div>
           <div class="vd-calc-cta">
             <p><strong>Rather not haggle for <span data-vd-calc-cta-total>${dollars(initialTotal)}</span> yourself?</strong> We contact the dealers that have your ${short} in stock and negotiate the price and fees for you. $395 one time, with a full refund if you cancel before negotiations begin.</p>
-            <a class="vd-btn" href="/schedule.html#full-service" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-calculator">Get my ${short} negotiated</a>
+            <div class="vd-calc-cta__actions">
+              <a class="vd-btn" href="/schedule.html#full-service" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-calculator">Get my ${short} negotiated</a>
+              <button type="button" class="vd-btn vd-btn--ghost" data-open-inquiry="Dealer quote review" data-inquiry-vehicle="${name}" data-inquiry-prompt="Paste the dealer’s quote, or the price, fees and add-ons they offered" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-quote">Send Mason your dealer quote</button>
+            </div>
           </div>
         </div>
 
@@ -1097,6 +1100,7 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
       <div class="vd-plans__grid">
         ${planCards.map(card => planCardHtml(card, `vehicle-${vehicle.slug.replace(/-price\.html$/, '')}`)).join('\n        ')}
       </div>
+      <p class="vd-ask">Not ready to pay? <button type="button" class="vd-btn vd-btn--ghost" data-open-inquiry="Not sure yet" data-inquiry-vehicle="${name}" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-ask">Ask Mason a question first</button> It’s free, and there’s nothing to pay to ask.</p>
       <p class="vd-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
     </section>
 

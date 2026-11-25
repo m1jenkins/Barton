@@ -84,6 +84,7 @@
     </script>
     <link rel="stylesheet" href="/logo-motion.css?v=924dcb7b7cb5">
     <script type="module" src="/logo-motion.js?v=e5b4ed3d47fb"></script>
+    <link rel="stylesheet" href="/buying/inquiry.css?v=871fcd8e9289">
     <link rel="stylesheet" href="/buying/resources.css?v=7303a08bfc8a">
     <link rel="stylesheet" href="/buying/market.css?v=4720a1906eb3">
 </head>
@@ -122,6 +123,7 @@
     <a href="/schedule.html#concierge" data-cta-location="market-philadelphia" class="outline-button">Get Steer Me Right Pro</a>
   </article>
 </section>
+<p class="ask-mason">Not ready to pay? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet" data-cta-location="market-philadelphia-ask">Ask Mason a question first</button> It’s free, and there’s nothing to pay to ask.</p>
 <p class="plan-policy">A model means a make and model, like a BMW X5. Trims, colors and packages within a model don’t count extra. On the Steer Me Right plan, you can upgrade to Steer Me Right Pro later by paying the $300 difference.</p>
 
 <div class="guide-body">
@@ -210,8 +212,30 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Steer Me Right</span><span id="saved-indicator" role="status"></span></div>
 </footer>
+<dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+  <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
+  <p class="dialog-description" id="car-search-inquiry-description">Tell us what you’re looking for and how to reach you. No payment needed to ask about your search.</p>
+  <form id="car-search-inquiry-form">
+    <input type="hidden" name="service_interest" value="Not sure yet">
+    <div class="inquiry-fields">
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-vehicle">What car are you looking for?<input id="inquiry-vehicle" name="vehicle" type="text" maxlength="300" placeholder="Make, model or the kind of car you have in mind" required autofocus></label>
+      <label class="inquiry-field" for="inquiry-budget"><span>Approximate vehicle budget <span class="optional">Optional</span></span><input id="inquiry-budget" name="budget" type="text" maxlength="80" placeholder="For example, $35,000–$45,000"></label>
+      <label class="inquiry-field" for="inquiry-timeline"><span>Buying timeline <span class="optional">Optional</span></span><select id="inquiry-timeline" name="timeline"><option value="">Choose a timeline</option><option>Within 2 weeks</option><option>Within a month</option><option>1–3 months</option><option>Still exploring</option></select></label>
+      <label class="inquiry-field inquiry-field--wide" for="inquiry-details"><span>Questions or anything else Mason should know <span class="optional">Optional</span></span><textarea id="inquiry-details" name="details" rows="4" maxlength="2000" placeholder="Ask about the service, or add trim, color, trade-in or delivery details"></textarea></label>
+      <label class="inquiry-field" for="inquiry-email">Email<input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="inquiry-field" for="inquiry-phone"><span>Phone <span class="optional">Optional</span></span><input id="inquiry-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></label>
+      <label class="inquiry-field" for="inquiry-name"><span>Name <span class="optional">Optional</span></span><input id="inquiry-name" name="name" type="text" autocomplete="name" maxlength="120"></label>
+    </div>
+    <div class="form-honeypot" aria-hidden="true"><label for="inquiry-website">Leave this field empty<input id="inquiry-website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <button class="primary-button" type="submit">Send my car search inquiry</button>
+    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+    <a class="outline-button inquiry-email" data-email-inquiry href="mailto:hello@steermeright.com" hidden>Email Mason these details</a>
+    <p class="small-note">See our <a href="/policy.html#privacy-policy">privacy policy</a>.</p>
+  </form>
+</dialog>
 <script src="/script.js?v=945c4885324a"></script>
 <script type="module" src="/buying/app.js?v=44b1a48f8182"></script>
+<script type="module" src="/buying/inquiry.js?v=f6573d0b0718"></script>
 
 </body>
 </html>

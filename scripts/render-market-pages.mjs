@@ -55,6 +55,11 @@ export function shell(chrome, { slug, title, description, h1, published, updated
   return `${head}<main id="main-content" tabindex="-1">\n${body}\n${chrome.slice(end)}`;
 }
 
+// A free, no-payment way to reach Mason under the plan cards. It opens the car search inquiry dialog that every page
+// built from the chrome page carries; `vehicle` pre-fills the car field on pages about one car.
+const attr = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+export const askMason = (location, vehicle = '') => `<p class="ask-mason">Not ready to pay? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet"${vehicle ? ` data-inquiry-vehicle="${attr(vehicle)}"` : ''} data-cta-location="${location}-ask">Ask Mason a question first</button> It’s free, and there’s nothing to pay to ask.</p>`;
+
 // The two plan cards, word for word from the approved plan copy (PLAN-NAMES, DRIVE-RIGHT-SCOPE and PRO-SCOPE of 2026-10-23).
 // The buttons are plain /schedule.html links; script.js turns them into checkout. Do not add data-plan.
 export const plans = location => `<section class="plan-grid guide-plans" aria-label="Steer Me Right plans">
@@ -69,6 +74,7 @@ export const plans = location => `<section class="plan-grid guide-plans" aria-la
     <a href="/schedule.html#concierge" data-cta-location="${location}" class="outline-button">Get Steer Me Right Pro</a>
   </article>
 </section>
+${askMason(location)}
 <p class="plan-policy">A model means a make and model, like a BMW X5. Trims, colors and packages within a model don’t count extra. On the Steer Me Right plan, you can upgrade to Steer Me Right Pro later by paying the $300 difference.</p>`;
 
 // City photos are licensed (Wikimedia Commons) and credited in the folded list under "Sources and updates".

@@ -7,7 +7,7 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { shell } from './render-market-pages.mjs';
+import { shell, askMason } from './render-market-pages.mjs';
 import {
   breakEven, cardEnd, carKey, checkNeeds, discountRange, dollars, dollarsOff, endState, fill, longDate, midpoint,
   offerLedger, percentText, rankCars, roundTo50, shortDate, strip, totalPaid,
@@ -54,6 +54,7 @@ const plansSection = location => `<section id="plans" class="vp-section vp-plans
 <div class="vp-plans__grid">
 ${planCards.map(card => planCard(card, location)).join('\n')}
 </div>
+${askMason(location)}
 <p class="vp-note">Dealers and lenders pay us nothing. You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>`;
 const negotiate = 'Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do.';
@@ -63,7 +64,7 @@ const standardFaq = [
   ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing, and you’re the only one we work for.'],
   ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
 ];
-const cta = '<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><a class="vp-cta__button" href="#plans">Let us do the work</a></aside>';
+const cta = '<aside class="vp-cta" aria-label="Steer Me Right plans"><div><p><strong>Don’t overpay, or lose weeks calling dealers.</strong>We contact dozens of dealers, negotiate the price and fees, and bring you the offers.</p><p class="vp-cta__fine">From $395. Full refund if you cancel before negotiations begin.</p></div><div class="vp-cta__actions"><a class="vp-cta__button" href="#plans" data-cta-location="deals-early">Let us do the work</a><button type="button" class="vp-cta__ask" data-open-inquiry="Deal question" data-cta-location="deals-early-ask">Ask Mason about a deal</button></div></aside>';
 
 let tableCount = 0;
 function table(caption, head, rows, className = 'vp-table') {

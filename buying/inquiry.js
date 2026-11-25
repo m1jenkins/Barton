@@ -6,6 +6,9 @@ if (dialog && form) {
   const status = form.querySelector('[data-form-status]');
   const emailHandoff = form.querySelector('[data-email-inquiry]');
   const interest = form.elements.namedItem('service_interest');
+  const vehicleField = form.elements.namedItem('vehicle');
+  const detailsField = form.elements.namedItem('details');
+  const defaultPrompt = detailsField?.placeholder || '';
   let pendingKey = '';
   let pendingPayload = '';
   let opener;
@@ -23,6 +26,9 @@ if (dialog && form) {
     button.addEventListener('click', () => {
       opener = button;
       interest.value = button.dataset.openInquiry || 'Not sure yet';
+      // Pages about one car fill it in; the visitor can still change it.
+      if (button.dataset.inquiryVehicle && !vehicleField.value.trim()) vehicleField.value = button.dataset.inquiryVehicle;
+      if (detailsField) detailsField.placeholder = button.dataset.inquiryPrompt || defaultPrompt;
       status.textContent = '';
       emailHandoff.hidden = true;
       emailDraft = '';

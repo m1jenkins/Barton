@@ -7,7 +7,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { shell } from './render-market-pages.mjs';
+import { shell, askMason } from './render-market-pages.mjs';
 import { summarize, summarizeCar, topics as sentimentTopics } from './reddit-sentiment.mjs';
 import { renderDashboardVehiclePage } from './render-vehicle-dashboard.mjs';
 
@@ -807,6 +807,7 @@ ${charts(cmp.safety.charts)}
 <div class="vp-plans__grid">
 ${planCards.map(card => planCard(card, `comparison-${cmp.slug.replace(/\.html$/, '')}`)).join('\n')}
 </div>
+${askMason(`comparison-${cmp.slug.replace(/\.html$/, '')}`, cmp.cars.map(car => car.name).join(' or '))}
 <p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>
 

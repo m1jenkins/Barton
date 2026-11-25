@@ -10,7 +10,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { shell } from './render-market-pages.mjs';
+import { shell, askMason } from './render-market-pages.mjs';
 import { summarizeCar, topics as sentimentTopics } from './reddit-sentiment.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -336,6 +336,7 @@ ${redditSection}
 <div class="vp-plans__grid">
 ${planCards.map(card => planCard(card, `hybrid-${car.key}`)).join('\n')}
 </div>
+${askMason(`hybrid-${car.key}`, name)}
 <p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>
 

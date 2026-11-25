@@ -9,7 +9,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { shell } from './render-market-pages.mjs';
+import { shell, askMason } from './render-market-pages.mjs';
 import { summarizeCar, topics as sentimentTopics } from './reddit-sentiment.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -304,6 +304,7 @@ ${paragraphs(car.newer.map(subst))}
 <div class="vp-plans__grid">
 ${planCards.map(card => planCard(card, `problems-${car.key}`)).join('\n')}
 </div>
+${askMason(`problems-${car.key}`, car.name)}
 <p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. We can’t promise a specific discount: the market for a given car sets what a dealer will do. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>
 
