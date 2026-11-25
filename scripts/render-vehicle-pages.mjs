@@ -883,7 +883,12 @@ export async function renderVehiclePages() {
   const dashLink = sheetLink(dashboardSheet, dashCss);
   const dashScriptTag = scriptTag(dashboardScript, dashJs);
   const models = JSON.parse(await read('data/reddit-sentiment/models.json'));
-  const pages = data.vehicles.map(vehicle => {
+  // `{from}` in a title is the cheapest trim's first listed price, so the search title moves with the trim table.
+  const withTitle = vehicle => {
+    const from = Math.min(...vehicle.trims.rows.map(row => row.prices[0]).filter(Number.isFinite));
+    return { ...vehicle, title: vehicle.title.replace('{from}', '$' + from.toLocaleString('en-US')) };
+  };
+  const pages = data.vehicles.map(withTitle).map(vehicle => {
     // A page checked after the file-wide date carries its own date.
     const updated = vehicle.checkedOn > data.updated ? vehicle.checkedOn : data.updated;
     const carFile = path.join(root, carSentimentFile(vehicle));

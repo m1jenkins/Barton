@@ -179,6 +179,16 @@
       "permanent": true
     },
     {
+      "source": "/blog-flat-fees-vs-commissions",
+      "destination": "/how-it-works.html",
+      "permanent": true
+    },
+    {
+      "source": "/san-marcos",
+      "destination": "/san-marcos.html",
+      "permanent": true
+    },
+    {
       "source": "/blog-zero-kickbacks-promise.html",
       "destination": "/how-it-works.html",
       "permanent": true
