@@ -7,6 +7,8 @@ import { loadBuyerView, signLink } from '../_lib/deal-tracker.js';
 import { approveDraft, discardDraft, postUpdate, retractUpdate } from '../_lib/buyer-updates.js';
 import { buyerUpdateEmailSettings, dispatchBuyerUpdateEmails } from '../_lib/buyer-update-email.js';
 import { dealTrackerHandler } from '../deal-tracker.js';
+import { carSearchHandler } from '../car-search.js';
+import { carSearchRequest } from '../../scripts/car-search.mjs';
 
 // Buyer Updates are the only free text a buyer sees from us (GLOSSARY.md,
 // docs/adr/0002). Written before the feature: a draft never shows, a retracted
@@ -229,4 +231,55 @@ test('a failed send is retried, and switched off nothing is sent or read', async
   assert.equal(buyerUpdateEmailSettings({ ...environment, INTAKE_SMTP_USER: '', INTAKE_SMTP_PASSWORD: '' }), null);
   const off = await dispatchBuyerUpdateEmails({ sql: () => { throw new Error('the database must not be read'); }, environment: { ...environment, DEAL_TRACKER_ENABLED: '' }, createTransport: mail.createTransport });
   assert.equal(off.configured, false);
+});
+
+// The /car-search skill drafts the shortlist update through /api/car-search
+// (scripts/car-search.mjs draft). Whatever the request says, the row is a draft
+// signed car-search, so only Mason's approval on the ops dashboard posts it.
+test('a /car-search draft is always a draft signed car-search, and the buyer never sees it', async t => {
+  t.mock.method(console, 'error', () => {});
+  const pg = await database(t);
+  const sql = tagged(pg);
+  const id = await intake(pg);
+  const token = 'car-search-token-for-tests-only-0123456789';
+  const post = async (body, env = environment) => {
+    const res = response();
+    await carSearchHandler({ environment: { ...env, CAR_SEARCH_TOKEN: token }, getDatabase: () => sql })({
+      method: 'POST', url: '/api/car-search', body,
+      headers: { host: 'www.steermeright.com', authorization: `Bearer ${token}`, 'content-type': 'application/json' }
+    }, res);
+    return { status: res.statusCode, body: JSON.parse(res.body) };
+  };
+  const rows = async () => (await pg.query(`SELECT status, actor, on_masons_say, ready_for_pick, posted_at, email_after
+    FROM buyer_updates WHERE onboarding_id = $1 ORDER BY id`, [id])).rows;
+
+  const saved = await post({ intake_id: id, action: 'draft_update', text: 'CARSEARCH-SENTINEL Your shortlist is in.',
+    status: 'posted', post: true, actor: 'mason', on_masons_say: true, ready_for_pick: true });
+  assert.equal(saved.status, 200);
+  assert.equal(saved.body.update.status, 'draft');
+  assert.deepEqual(await rows(), [{ status: 'draft', actor: 'car-search', on_masons_say: false, ready_for_pick: false, posted_at: null, email_after: null }]);
+  assert.ok(!(await seen(pg, id)).includes('CARSEARCH-SENTINEL'), 'the draft is not on the page or in the view');
+
+  await approveDraft(sql, saved.body.update.id);
+  assert.ok((await seen(pg, id)).includes('CARSEARCH-SENTINEL Your shortlist is in.'), 'Mason\'s approval posts it');
+
+  assert.equal((await post({ intake_id: id, action: 'draft_update', text: '   ' })).body.error, 'invalid_update');
+  assert.equal((await post({ intake_id: id, action: 'draft_update', text: 'x'.repeat(4001) })).status, 422);
+  const missing = await post({ intake_id: crypto.randomUUID(), action: 'draft_update', text: 'Hello' });
+  assert.deepEqual([missing.status, missing.body.error], [404, 'deal_not_found']);
+  const off = await post({ intake_id: id, action: 'draft_update', text: 'Hello' }, { APP_ORIGIN: environment.APP_ORIGIN });
+  assert.deepEqual([off.status, off.body.error], [404, 'not_found']);
+  assert.equal((await rows()).length, 1, 'nothing else was saved');
+
+  // The script sends the text as it reads it, from a file or stdin.
+  const calls = [];
+  const fetchImpl = async (url, init) => {
+    calls.push({ url, init });
+    return new Response(JSON.stringify({ ok: true, update: { id: 9, status: 'draft' } }), { status: 200 });
+  };
+  const sent = await carSearchRequest(['draft', id, '-'], { environment: { CAR_SEARCH_TOKEN: token }, fetchImpl, read: async () => 'From stdin' });
+  assert.equal(sent.status, 200);
+  assert.equal(calls[0].url, 'https://www.steermeright.com/api/car-search');
+  assert.deepEqual(JSON.parse(calls[0].init.body), { intake_id: id, action: 'draft_update', text: 'From stdin' });
+  await assert.rejects(carSearchRequest(['draft', id], { environment: { CAR_SEARCH_TOKEN: token }, fetchImpl }), /Usage/);
 });

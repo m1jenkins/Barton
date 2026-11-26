@@ -21,7 +21,7 @@ const USAGE = 'Usage: node scripts/customer-emails.mjs preview | test <template|
 export const SAMPLE_REVIEW_URL = 'https://g.page/r/CRhIsN4U_eXLEBM/review';
 // Made up: what a buyer with a live Deal Tracker link gets instead.
 export const SAMPLE_TRACKER = Object.freeze({ link: 'https://www.steermeright.com/deal/sample-link' });
-export const SAMPLE_UPDATE = 'Your shortlist is in: three Subaru Ascents within 150 miles, each with my estimated total. I’ve emailed all three dealers for written out-the-door prices and will post them here as they come in.';
+export const SAMPLE_UPDATE = 'Your shortlist is in: three Subaru Ascents within 150 miles, each with my estimated total. Take a look and let me know if there’s a specific one you prefer.';
 const TODAY_REPLY_TO = 'mason@steermeright.com';
 
 // Made-up buyers that cover each plan and the edge cases a template must survive.

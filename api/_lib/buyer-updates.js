@@ -1,6 +1,7 @@
 // The writes only the website makes to Buyer Updates and the buyer's link
 // (GLOSSARY.md, docs/adr/0002, docs/deal-tracker-build-plan-2026-11-21.md).
-// Agents insert updates through scripts/deal-desk-db.mjs; every change after
+// Agents insert updates through scripts/deal-desk-db.mjs, or as drafts through
+// /api/car-search (scripts/car-search.mjs draft); every change after
 // that is Mason's, from the ops dashboard. Each statement checks the row's
 // current state in its WHERE clause, so a double submit changes nothing twice.
 
@@ -32,6 +33,18 @@ export async function postUpdate(sql, { onboardingId, body, readyForPick = false
     RETURNING id`;
   if (!row) throw new BuyerUpdateError('No such deal');
   return { id: row.id };
+}
+
+// A draft from the /car-search skill (POST /api/car-search "draft_update"). It
+// never posts: only Mason's approval on the ops dashboard does. Null when the
+// intake has no deal.
+export async function draftUpdate(sql, { onboardingId, body, actor }) {
+  const text = cleanBody(body);
+  const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor)
+    SELECT d.onboarding_id, ${text}, 'draft', false, ${actor}
+    FROM deals d WHERE d.onboarding_id = ${onboardingId}
+    RETURNING id`;
+  return row ? { id: Number(row.id) } : null;
 }
 
 // Each of these takes an optional intake ID: the ops dashboard passes the deal

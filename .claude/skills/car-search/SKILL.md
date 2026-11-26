@@ -98,7 +98,7 @@ Two fields per car are for the buyer's Deal Tracker page. They are required once
 - `color`: exterior color as the listing gives it.
 
 Two more are optional and show on the buyer's page from the shortlist on (adr/0003):
-- `photos`: the listing's photo URLs (MarketCheck `media.photo_links`), https only, in the listing's order, up to 20. The page serves them through the buyer's own link, so the photo host never shows.
+- `photos`: the listing's photo URLs (MarketCheck `media.photo_links`), https only, in the listing's order, up to 20. The page serves them through the buyer's own link, so the photo host never shows. Leave `photos` out for CarMax listings (`img2.carmax.com`): that host never answers Vercel's servers, so each photo times out and shows broken (checked November 25, 2026; dealer.com, HomeNet and Jazel photos load fine).
 - `details`: the listing's facts under these keys only: `trim`, `body_type`, `drivetrain`, `engine`, `transmission`, `fuel_type`, `mpg`, `interior_color`, `seats`, `doors`, each one line, plus `features`, up to 40 short lines from the listing's features or options. Leave out dealer marketing text, phone numbers and anything that names the dealer: before Quotes in the buyer doesn't see the dealer.
 
 Then run `node scripts/car-search.mjs submit <intake ID> .car-searches/<intake ID>.json`.
@@ -113,9 +113,20 @@ When Mason says "send them", run `node scripts/car-search.mjs handoff <intake ID
 - If it says `DEALER_BOT_URL and DEALER_BOT_KEY are not set`, point Mason to step 6 of `docs/dealer-bot-setup-2026-11-03.md`.
 - If Grokbot answered with an error, show it. Nothing reached a dealer. Once the webhook works, run `handoff` again: the server returns the same handoff.
 
+## 9. Draft the shortlist update
+
+Every search ends with a draft Buyer Update telling the buyer their shortlist is in. Write it once Mason says the shortlist is final or says "send them", starting from his wording:
+
+> Your shortlist is in: three Subaru Ascents within 150 miles, each with my estimated total. Take a look and let me know if there’s a specific one you prefer.
+
+- Fill in this search's count, model and radius, and keep the ask to tell Mason which car they prefer. Start straight in: the page and the email add the greeting and sign-off. The rules under "Buyer Updates" apply.
+- Run the text through the `unslop` skill (`/unslop voice-match`), with Mason's wording above as the voice sample. The count, model, radius and the ask come through unchanged.
+- Save it: pipe the text to `node scripts/car-search.mjs draft <intake ID> -`. It is always a draft: Mason gets an email, then approves or discards it on the deal's ops page, and the buyer sees it only once he approves.
+- Tell Mason the draft is waiting. If the shortlist changes after that, save a new draft and ask him to discard the old one.
+
 ## Buyer Updates
 
-- A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Post one (`node scripts/deal-desk-db.mjs update <intake ID> car-search --post <file | ->`) only when Mason tells you to in this chat, in his words or ones he approved. Anything you write unprompted goes in as a draft (the same command without `--post`) for Mason to approve on the ops dashboard.
+- A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Every one you write goes in as a draft with `node scripts/car-search.mjs draft <intake ID> <file | ->`, and Mason's approval on the deal's ops page posts it.
 - Buyers ask questions by text to Mason, outside this system (adr/0003). If he passes one on, answer it in a draft update unless he says to post.
 - See what the buyer picked with `node scripts/deal-desk-db.mjs picks <intake ID>`. A Buyer Pick is what they want, not an agreed price: Mason confirms with the dealer.
 - List Buyer Documents with `node scripts/deal-desk-db.mjs documents <intake ID>` and fetch one with `node scripts/car-search.mjs document <id>`. They can hold ID and financial details: use what you need for the deal, never quote them into a dealer email or a Buyer Update, and don't copy them anywhere else.

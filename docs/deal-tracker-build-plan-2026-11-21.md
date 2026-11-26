@@ -1,6 +1,6 @@
 # Deal Tracker build plan — November 21, 2026
 
-Status: built and on `main`, not launched (behind `DEAL_TRACKER_ENABLED`). Mason settled the decisions below on November 21, 2026, and changed two of them on November 25, 2026 ([adr/0003](adr/0003-dealers-shown-from-quotes-in-and-buyers-text-mason.md)): each car shows the listing's photos and details, its dealer and listing link show from Quotes in, and buyers text Mason instead of asking on the page. Buyer Questions, the reply address and the mail job were removed before launch. Where this plan still describes them below, 0003 wins.
+Status: launched in Production on November 25, 2026 (`DEAL_TRACKER_ENABLED=1`; launch record under "Deal Tracker" in [implementation-operations.md](implementation-operations.md)). Mason settled the decisions below on November 21, 2026, and changed two of them on November 25, 2026 ([adr/0003](adr/0003-dealers-shown-from-quotes-in-and-buyers-text-mason.md)): each car shows the listing's photos and details, its dealer and listing link show from Quotes in, and buyers text Mason instead of asking on the page. Buyer Questions, the reply address and the mail job were removed before launch. Where this plan still describes them below, 0003 wins.
 
 The Deal Tracker is a private page where a buyer follows their deal and talks with Mason, instead of over email. Terms are in [GLOSSARY.md](../GLOSSARY.md). The decisions that are hard to undo are recorded in [adr/0001](adr/0001-deal-tracker-private-link-and-buyer-documents.md) (private link, write-only documents), [adr/0002](adr/0002-buyer-records-outside-the-deal-log.md) (what agents can and can't write) and [adr/0003](adr/0003-dealers-shown-from-quotes-in-and-buyers-text-mason.md) (dealers from Quotes in, texting). This file holds everything else, and the order to build it in.
 
@@ -97,7 +97,7 @@ A quote on a car that isn't on the shortlist doesn't show until the car is added
 
 ### Buyer Updates from a chat
 
-`node scripts/deal-desk-db.mjs update <intake ID> --post` inserts a posted update with `on_masons_say`; without `--post` it inserts a draft. The rule that agents post only on Mason's word goes into the `car-search`, `car-negotiation` and `dealer-reply` skills and Deal Desk's instructions in `docs/paperclip/`. A posted update sets `email_after` to five minutes on, so the email leaves on the next 10-minute run unless Mason takes it back first. The ops dashboard warns when a draft or update contains a shortlisted dealer's name before Quotes in.
+`node scripts/deal-desk-db.mjs update <intake ID> --post` inserts a posted update with `on_masons_say`; without `--post` it inserts a draft. The rule that agents post only on Mason's word goes into the `car-search`, `car-negotiation` and `dealer-reply` skills. A posted update sets `email_after` to five minutes on, so the email leaves on the next 10-minute run unless Mason takes it back first. The ops dashboard warns when a draft or update contains a shortlisted dealer's name before Quotes in.
 
 ### Reading the reply addresses
 

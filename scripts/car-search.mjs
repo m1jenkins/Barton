@@ -7,6 +7,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 //   node scripts/car-search.mjs get <intake ID>                    search details for one paid intake
 //   node scripts/car-search.mjs submit <intake ID> <shortlist.json>  save the shortlist and email it to Mason
 //   node scripts/car-search.mjs handoff <intake ID>                hand the deal and its first emails to Grokbot
+//   node scripts/car-search.mjs draft <intake ID> <text file | ->  save a draft Buyer Update for Mason to approve
+//                                                                  on the deal's ops page; it never posts one
 //   node scripts/car-search.mjs document <document id> [output file]
 //                                                                  save one Buyer Document (ids from
 //                                                                  `node scripts/deal-desk-db.mjs documents`), by default to
@@ -17,7 +19,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 // (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
 // JSON through as is; the server checks it, including each car's est_otd and
 // color once the Deal Tracker is on.
-const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | document <document id> [output file]';
+const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> | document <document id> [output file]';
 const DOCUMENTS_DIR = fileURLToPath(new URL('../.car-searches/documents/', import.meta.url));
 
 export function localEnv(file = new URL('../.env.local', import.meta.url)) {
@@ -78,10 +80,13 @@ async function saveDocument(base, headers, id, output, fetchImpl, documentsDir) 
   return { status: 200, body: { ok: true, document: Number(id), saved: target, bytes: bytes.length, content_type: response.headers.get('content-type') } };
 }
 
-export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR } = {}) {
+// draft reads its text from a file, or from stdin when the file is -.
+const readText = source => (source === '-' ? new Response(process.stdin).text() : readFile(source, 'utf8'));
+
+export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR, read = readText } = {}) {
   const token = environment.CAR_SEARCH_TOKEN?.trim();
   if (!token) throw new Error('CAR_SEARCH_TOKEN is not set. Add it to .env.local (see "Car search" in docs/implementation-operations.md).');
-  if (!intakeId || !['get', 'submit', 'handoff', 'document'].includes(command) || (command === 'submit' && !file)) throw new Error(USAGE);
+  if (!intakeId || !['get', 'submit', 'handoff', 'draft', 'document'].includes(command) || (['submit', 'draft'].includes(command) && !file)) throw new Error(USAGE);
   if (command === 'document' && !/^[1-9]\d{0,17}$/.test(intakeId)) throw new Error(USAGE);
   const bot = command === 'handoff' ? dealerBot(environment) : null;
   const base = (environment.CAR_SEARCH_URL?.trim() || 'https://www.steermeright.com').replace(/\/+$/, '');
@@ -94,7 +99,9 @@ export async function carSearchRequest([command, intakeId, file], { environment 
       headers: { ...headers, 'Content-Type': 'application/json' },
       body: JSON.stringify(command === 'submit'
         ? { intake_id: intakeId, shortlist: JSON.parse(await readFile(file, 'utf8')) }
-        : { intake_id: intakeId, action: 'handoff' })
+        : command === 'draft'
+          ? { intake_id: intakeId, action: 'draft_update', text: await read(file) }
+          : { intake_id: intakeId, action: 'handoff' })
     });
   const body = await response.json().catch(() => ({ ok: false, error: `HTTP ${response.status}` }));
   if (command !== 'handoff' || !body.ok) return { status: response.status, body };

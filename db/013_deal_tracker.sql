@@ -158,7 +158,7 @@ ALTER TABLE ops_alert_outbox DROP CONSTRAINT IF EXISTS ops_alert_kind_valid;
 ALTER TABLE ops_alert_outbox ADD CONSTRAINT ops_alert_kind_valid CHECK (kind IN (
   'needs_mason', 'agent_overdue', 'digest', 'buyer_pick', 'update_draft'));
 
--- Paperclip's role (db/010) reads the new tables and inserts Buyer Updates only.
+-- The agents' role (db/010) reads the new tables and inserts Buyer Updates only.
 -- Skipped where the role doesn't exist.
 DO $$
 BEGIN

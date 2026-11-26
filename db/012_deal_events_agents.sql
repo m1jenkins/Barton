@@ -1,6 +1,6 @@
 BEGIN;
 -- The ops dashboard (/api/ops) reads every deal from this log. Mason's agents
--- (Claude Duet and Paperclip) add rows through scripts/deal-desk-db.mjs; they
+-- (Claude Duet) add rows through scripts/deal-desk-db.mjs; they
 -- never edit or delete one.
 --   actor             who logged the row: an agent's short name, or 'mason'
 --   email_received    a dealer email came in that isn't a quote or counter
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS ops_alert_outbox (
 );
 CREATE INDEX IF NOT EXISTS ops_alert_outbox_status_idx ON ops_alert_outbox (status, created_at);
 
--- Paperclip's role (db/010) may log runs too. Skipped where the role doesn't exist.
+-- The agents' role (db/010) may log runs too. Skipped where the role doesn't exist.
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'paperclip_agent') THEN

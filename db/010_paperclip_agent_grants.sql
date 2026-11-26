@@ -1,6 +1,5 @@
 BEGIN;
--- Paperclip's agents (docs/paperclip-operating-plan-2026-11-11.md) connect as
--- paperclip_agent, never as neondb_owner. Mason chose on November 11, 2026 to
+-- Agents connect as paperclip_agent, never as neondb_owner. Mason chose on November 11, 2026 to
 -- let them read everything, buyer details included, so the role reads every
 -- table. It writes one thing: new rows in deal_events (scripts/deal-desk-db.mjs).
 -- Create the role in the Neon console first (Roles → New role), so Neon keeps

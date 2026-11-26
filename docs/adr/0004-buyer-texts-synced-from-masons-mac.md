@@ -6,11 +6,11 @@ Mason decided this on November 25, 2026. It changes one consequence of [0003](00
 
 **Who is covered.** A buyer whose intake has a deal row: one opened at paid intake while the Deal Tracker is on, or by `/car-search`. A deal syncs until a `closed` event, so a finished deal never marked closed keeps syncing. A buyer who texts from a number or email not on the intake is not matched.
 
-**Where it lives.** `buyer_texts` and `buyer_text_threads` (db/014) in Neon. Paperclip's role reads both and writes neither, because a row reads as the buyer's own words. Only `/api/car-search` writes them, so whoever holds `CAR_SEARCH_TOKEN` (today only Mason's `.env.local` and Vercel) can add rows and list every open buyer's phone and email. Agents read through `node scripts/deal-desk-db.mjs texts <intake ID>`, which shows when the Mac last synced. The daily cron's `text_cleanup` deletes a deal's texts 30 days after its latest close, as for Buyer Documents. The buyer's Deal Tracker never shows them.
+**Where it lives.** `buyer_texts` and `buyer_text_threads` (db/014) in Neon. The agents' database role reads both and writes neither, because a row reads as the buyer's own words. Only `/api/car-search` writes them, so whoever holds `CAR_SEARCH_TOKEN` (today only Mason's `.env.local` and Vercel) can add rows and list every open buyer's phone and email. Agents read through `node scripts/deal-desk-db.mjs texts <intake ID>`, which shows when the Mac last synced. The daily cron's `text_cleanup` deletes a deal's texts 30 days after its latest close, as for Buyer Documents. The buyer's Deal Tracker never shows them.
 
 ## Considered options
 
-- **Read the Messages database only when an agent runs on the Mac** (`scripts/imessage-thread.mjs`): kept for runs on the Mac, but Paperclip and cloud agents can't reach it.
+- **Read the Messages database only when an agent runs on the Mac** (`scripts/imessage-thread.mjs`): kept for runs on the Mac, but cloud agents can't reach it.
 - **Android phone with Google Messages for Web, read through the browser**: rejected. It needs an open, paired browser tab, and it's slow and breaks when the page changes.
 - **A business texting line with an API** (Quo and others): still open. It would sync without the Mac, but needs A2P 10DLC registration and moving buyers to a new number.
 - **Mac connects to Neon directly**: rejected. It would put a write-capable database credential on the Mac, while the car-search token is already there.

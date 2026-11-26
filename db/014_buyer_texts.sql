@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS buyer_text_threads (
   last_synced_at timestamptz NOT NULL
 );
 
--- Paperclip's role (db/010) reads both tables and writes neither: a row here
+-- The agents' role (db/010) reads both tables and writes neither: a row here
 -- reads as the buyer's own words, so only the sync endpoint adds them.
 DO $$
 BEGIN

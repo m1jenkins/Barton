@@ -1,5 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { blobStore, documentSettings, readDocument, sendDocument } from './_lib/buyer-documents.js';
+import { BuyerUpdateError, draftUpdate } from './_lib/buyer-updates.js';
 import { database } from './_lib/db.js';
 import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
@@ -13,6 +14,8 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 // Document as a download (scripts/car-search.mjs document <id>). GET ?texts=threads
 // lists the open deals' numbers and POST "action": "texts" saves one thread's
 // Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
+// POST "action": "draft_update" saves a draft Buyer Update for Mason to approve
+// on the ops dashboard (scripts/car-search.mjs draft); it never posts one.
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -88,7 +91,22 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       if (result.error) return sendJson(res, 409, { ok: false, error: 'not_syncing', message: 'This intake has no open deal, so its texts are not synced.' });
       return sendJson(res, 200, { ok: true, saved: result.saved });
     }
-    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts" or left out');
+    if (body.action === 'draft_update') {
+      // Always a draft, always signed car-search: whatever else the request says,
+      // only Mason's approval on the ops dashboard puts it in front of the buyer.
+      if (!dealTrackerEnabled(environment)) return sendJson(res, 404, { ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
+      let draft;
+      try {
+        draft = await draftUpdate(getDatabase(), { onboardingId: intakeId, body: body.text, actor: 'car-search' });
+      } catch (error) {
+        if (!(error instanceof BuyerUpdateError)) throw error;
+        return sendJson(res, 422, { ok: false, error: 'invalid_update', message: error.message });
+      }
+      if (!draft) return sendJson(res, 404, { ok: false, error: 'deal_not_found', message: 'This intake has no deal, so it has no Deal Tracker to draft for.' });
+      return sendJson(res, 200, { ok: true, update: { id: draft.id, status: 'draft' },
+        next: 'Mason gets an email and approves or discards the draft on the deal\'s ops page. The buyer sees nothing until he approves.' });
+    }
+    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts", "draft_update" or left out');
 
     // With the Deal Tracker on, every car needs its estimated total and color.
     const tracker = dealTrackerEnabled(environment);

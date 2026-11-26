@@ -4,7 +4,7 @@ import postgres from 'postgres';
 import { localEnv } from './car-search.mjs';
 import { loadTexts } from '../api/_lib/buyer-texts.js';
 
-// Neon access for Paperclip's Deal Desk agent (docs/paperclip-operating-plan-2026-11-11.md):
+// Neon access for the agents that work deals:
 //   node scripts/deal-desk-db.mjs deals                 every deal with its last logged event
 //   node scripts/deal-desk-db.mjs deal <intake ID or its first 8 characters>
 //                                                       one deal's shortlist and its full event log
@@ -131,7 +131,7 @@ export async function showDeal(sql, id) {
   if (!/^[0-9a-f-]{8,36}$/i.test(id ?? '')) throw new Error(USAGE);
   const deals = await sql`SELECT id, onboarding_id, search_summary, shortlisted_at FROM deals
     WHERE onboarding_id::text LIKE ${id.toLowerCase() + '%'}`;
-  if (deals.length !== 1) throw new Error(deals.length ? `${id} matches ${deals.length} deals; give more of the intake ID` : `No deal for ${id}. Deals that never went through /car-search have no row, so log them in Paperclip only.`);
+  if (deals.length !== 1) throw new Error(deals.length ? `${id} matches ${deals.length} deals; give more of the intake ID` : `No deal for ${id}. Deals that never went through /car-search have no row.`);
   const [deal] = deals;
   const listings = await sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, mileage,
       days_on_lot, dealer_name, dealer_location, dealer_email, dealer_phone, listing_url, why
