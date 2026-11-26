@@ -1,8 +1,8 @@
 import { randomUUID } from 'node:crypto';
 import { dispatchAnalyticsOutboxSafely } from './_lib/analytics-outbox.js';
 import { purchaseEventPayload } from './_lib/analytics.js';
-import { expectedPaidAmount } from './_lib/checkout-offer.js';
-import { requiredEnv } from './_lib/config.js';
+import { paidTier } from './_lib/checkout-offer.js';
+import { requiredEnv, SERVICE_TIERS } from './_lib/config.js';
 import { database } from './_lib/db.js';
 import { HttpError, header, readRawBody, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { stripeClient } from './_lib/stripe-client.js';
@@ -60,7 +60,9 @@ export async function recordEvent(event, sql = database()) {
 
     const amountTotal = Number.isInteger(session.amount_total) ? session.amount_total : null;
     const currency = typeof session.currency === 'string' ? session.currency.toLowerCase() : '';
-    if (amountTotal !== expectedPaidAmount(session, attempt.expected_amount) || currency !== attempt.currency) {
+    // Usually the attempt's own tier; Pro when a Steer Me Right checkout took the Pro add-on.
+    const tierId = currency === attempt.currency ? paidTier(session, attempt, SERVICE_TIERS) : null;
+    if (!tierId) {
       await tx`
         UPDATE checkout_attempts SET status = 'review_required', stripe_checkout_session_id = ${session.id}
         WHERE id = ${attempt.id}
@@ -80,7 +82,7 @@ export async function recordEvent(event, sql = database()) {
         stripe_payment_intent_id, tier_id, amount_total, currency, payment_status, livemode, paid_at
       ) VALUES (
         ${purchaseId}, ${session.id}, ${attempt.id}, ${attempt.client_reference_id}, ${event.id},
-        ${paymentIntentId}, ${attempt.tier_id}, ${amountTotal}, ${currency}, 'paid', ${Boolean(event.livemode)}, ${stripeCreatedAt}
+        ${paymentIntentId}, ${tierId}, ${amountTotal}, ${currency}, 'paid', ${Boolean(event.livemode)}, ${stripeCreatedAt}
       )
       ON CONFLICT (checkout_session_id) DO NOTHING
       RETURNING id
@@ -110,7 +112,7 @@ export async function recordEvent(event, sql = database()) {
           checkoutAttemptId: attempt.id,
           leadId: attempt.lead_id,
           sourcePage: attempt.source_page,
-          serviceTier: attempt.tier_id,
+          serviceTier: tierId,
           amountTotal,
           currency,
           attribution: attempt.attribution

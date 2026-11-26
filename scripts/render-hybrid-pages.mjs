@@ -79,10 +79,10 @@ const credit = (label, image) => `<li>${label}: <a href="${image.sourceUrl}" rel
 const picture = (image, widths, sizes) => `<picture>${['avif', 'webp'].map(type => `<source type="image/${type}" srcset="${widths.map(width => `/assets/external/optimized/${image.file}-${width}.${type} ${width}w`).join(', ')}" sizes="${sizes}">`).join('')}<img src="/assets/external/source/${image.file}-original.jpg" alt="${image.alt}" width="${image.width}" height="${image.height}" decoding="async" fetchpriority="high"></picture>`;
 // The homepage's two plan cards (index.html, #plans), word for word, as on the price guides (render-vehicle-pages.mjs, planCards).
 const planCards = [
-  { name: 'Steer Me Right', fit: 'Best if you know the car you want.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
-    items: ['One model, with any trims, colors and packages', 'We contact dozens of dealers that have it in stock', 'We negotiate the price and fees'] },
-  { name: 'Steer Me Right Pro', fit: 'Best if you’re torn between a few cars.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
-    items: ['We present offers on up to three models', 'We handle the paperwork remotely where we can, so you just pick up your car', 'Shipping help in some cases'] },
+  { name: 'Steer Me Right', fit: 'Best if the car is within a day’s drive.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
+    items: ['One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees'] },
+  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
+    items: ['Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models'] },
 ];
 const tick = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 const planCard = (card, location) => `<article class="vp-plan${card.pro ? ' vp-plan--pro' : ''}">
@@ -337,7 +337,7 @@ ${redditSection}
 ${planCards.map(card => planCard(card, `hybrid-${car.key}`)).join('\n')}
 </div>
 ${askMason(`hybrid-${car.key}`, name)}
-<p class="vp-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
+<p class="vp-note">The Steer Me Right plan covers dealers within 200 miles of you; Steer Me Right Pro covers dealers nationwide. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>
 
 <section id="faq" class="vp-section vp-section--band">

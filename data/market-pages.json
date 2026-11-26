@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "decision": "docs/seo/2026-11-15-market-and-service-pages.md",
   "published": "2026-11-15",
-  "updated": "2026-11-17",
+  "updated": "2026-11-26",
   "inventory": {
     "source": "API connector to dealership listings (the inventory data used for client car searches)",
     "pulledOn": "2026-11-15",
@@ -18,7 +18,7 @@
   "markets": [
     {
       "slug": "car-buying-service-new-york.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "New York",
       "area": "New York-area",
       "center": "Midtown Manhattan",
@@ -49,7 +49,7 @@
         "lon": -73.9971,
         "title": "Map of the 50-mile circle around Midtown Manhattan",
         "description": "A 50-mile circle centered on Midtown Manhattan covers New York City, Westchester and Long Island, northern and central New Jersey from Paterson to Princeton and Asbury Park, and southwestern Connecticut as far as Stamford. Dashed lines mark the state lines; the Atlantic Ocean and Long Island Sound fill the east and south sides.",
-        "caption": "Fifty miles from Midtown reaches into three states. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from Midtown reaches into three states, and dashed lines mark where one ends and the next begins. Every dealer in the circle is within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers them on any side of a line.",
         "centerLabel": "Midtown Manhattan",
         "regions": [
           { "name": "NEW YORK", "lat": 41.5, "lon": -74.15 },
@@ -77,17 +77,17 @@
         ["Ask where a used car spent its winters", "New York, New Jersey and Connecticut salt their roads when it snows, and a car parked on the street all winter takes more of it than one kept in a garage. The rust starts underneath, on the brake lines, the exhaust, the subframe and the rocker panels below the doors. Ask the dealer where the car has lived. On a used search we can ask for photos of the underside, and you can have a mechanic you choose put the car on a lift before you sign."],
         ["Tell us where the car will park", "Many New York buyers park on the street or rent a garage space, and a car’s length and width can rule it out before its price does. Tell us your limits when you start, and we’ll say whether your model fits before we ask any dealer for a price."]
       ],
-      "plan": "Which state you live in matters when you pick a plan. The Steer Me Right plan ($395) does not include out-of-state dealers, so it covers the ones in your own state. If you live in New Jersey and want New York and Connecticut dealers competing too, that is Steer Me Right Pro ($695).",
+      "plan": "State lines don’t decide the plan here. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, and every dealer in that circle is well inside that, whether it sits in New York, New Jersey or Connecticut. A New Jersey buyer can have Queens and Stamford stores competing on the $395 plan. Steer Me Right Pro ($695) is for going past 200 miles: dealers nationwide, with shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in New York?", "No. We’re based in Austin, Texas, and we work with New York-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from New Jersey and Connecticut dealers as well as New York ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."],
+        ["Can you get offers from New Jersey and Connecticut dealers as well as New York ones?", "Yes, on either plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, whichever state they are in, and the New York, New Jersey and Connecticut dealers in the circle are all inside that. Steer Me Right Pro ($695) covers dealers nationwide."],
         ["I don’t own a car. Can I still use a car buying service?", "Yes. You pick up the car at the dealer like every buyer. Tell us which train line or crossing you’d use and how long a trip you’d make, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."],
         ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent winters parked on the street."]
       ]
     },
     {
       "slug": "car-buying-service-los-angeles.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Los Angeles",
       "area": "Los Angeles-area",
       "center": "downtown Los Angeles",
@@ -141,17 +141,17 @@
         ["Tell us how long you’d drive", "A 50-mile circle on a map says little about the drive. The same trip can take far longer on a weekday afternoon than on a Sunday morning, whether you’re on the 405, the 10, the 5 or the 101. Tell us where you’d start, when you’d go and the longest drive you’d make, and we ask the dealers inside that window."],
         ["Look at what the sun did to a used car", "Los Angeles sun wears a car from above. Look for a dashboard top that has cracked or gone chalky, clear coat peeling on the roof and hood, headlight lenses turned yellow or cloudy, and dry, cracked rubber trim and tire sidewalls. A car parked outside for years shows more of it than one kept in a garage. On a used search we can ask the dealer for photos of those spots. Have a mechanic you choose look the car over before you sign."]
       ],
-      "plan": "All of those dealers are in California, so every one of them is in play on the Steer Me Right plan ($395). Dealers in Arizona or Nevada are out of state, and out-of-state dealers are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Los Angeles-area ZIP code, so all of them are in play on the Steer Me Right plan ($395). The 200 miles go past the circle too: San Diego dealers are covered if you’d make the drive. A dealer farther off, in the Bay Area or Phoenix, is part of Steer Me Right Pro ($695), which covers dealers nationwide. On Pro we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Los Angeles?", "No. We’re based in Austin, Texas, and we work with Los Angeles-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Will you contact dealers in Orange County and the Inland Empire too?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area. They are all California dealers, so both plans cover them."],
+        ["Will you contact dealers in Orange County and the Inland Empire too?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area. They are all well within 200 miles of you, so both plans cover them."],
         ["Can you limit the search to dealers within a certain drive time?", "Yes. Tell us where you’d start and the longest drive you’d make, and we ask the dealers inside that window. If a dealer farther out sends a lower written offer, you decide whether it’s worth the trip."],
         ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the paint, the headlights and the tires, and send them to you. Have a mechanic you choose look the car over before you sign."]
       ]
     },
     {
       "slug": "car-buying-service-chicago.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Chicago",
       "area": "Chicago-area",
       "center": "the Loop",
@@ -182,7 +182,7 @@
         "lon": -87.6278,
         "title": "Map of the 50-mile circle around the Loop",
         "description": "A 50-mile circle centered on the Loop covers Chicago and its suburbs in Illinois, northwest Indiana from Gary to Valparaiso and Michigan City, Kenosha in Wisconsin and New Buffalo in Michigan. Dashed lines mark the state lines; Lake Michigan fills the east side of the circle.",
-        "caption": "Fifty miles from the Loop reaches into four states. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from the Loop reaches into four states, and dashed lines mark the state lines. Every dealer in the circle is within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers them in all four.",
         "centerLabel": "The Loop",
         "regions": [
           { "name": "ILLINOIS", "lat": 41.03, "lon": -88.45 },
@@ -212,17 +212,17 @@
         ["You may not need all-wheel drive", "We think front-wheel drive on a set of winter tires gets most city drivers through a Chicago winter, and it usually costs less than the all-wheel-drive version of the same car. All-wheel drive helps a car pull away on snow. It does little for stopping or turning, which is where winter tires earn their keep. If your street is the last one plowed, the extra traction may be worth paying for. If you’d take either, tell us: that brings more cars into the search and more offers to price against each other."],
         ["Count the trip to pick it up", "You pick up the car at the dealer, so if you live in the city and don’t own a car yet, the trip out is part of the cost. A store in Schaumburg or Merrillville might beat a city dealer by a few hundred dollars and still take most of an afternoon to reach. Tell us how far you’d go, and we ask the dealers you would actually get to."]
       ],
-      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. An Illinois buyer who wants Indiana or Wisconsin dealers in the mix, or an Indiana buyer who wants the Illinois stores, should pick Steer Me Right Pro ($695).",
+      "plan": "The state line doesn’t matter here. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, so an Illinois buyer gets the Indiana and Wisconsin dealers in that circle on it, and an Indiana buyer gets the Illinois stores. Steer Me Right Pro ($695) adds dealers anywhere in the country and shipping quotes on long-distance deals; you pay the carrier. Pro also covers up to three models and trade-in support.",
       "faq": [
         ["Do you have an office in Chicago?", "No. We’re based in Austin, Texas, and we work with Chicago-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you include dealers in northwest Indiana?", "Yes. For an Illinois buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Indiana, they are covered on either plan."],
+        ["Can you include dealers in northwest Indiana?", "Yes, on either plan. The Steer Me Right plan covers dealers within 200 miles of your ZIP code, and northwest Indiana is well inside that for a Chicago-area buyer. It works the same way for an Indiana buyer who wants the Illinois stores."],
         ["Do you check used cars for rust?", "From photos. We can ask the dealer for pictures of the underside and tell you what we see in them. Photos miss things, so before you sign, have a mechanic you choose put the car on a lift. On a car that has spent a few Chicago winters outside, that hour is worth it."],
         ["I live in the city and don’t have a car. How do I pick it up?", "At the dealer, like every buyer. Say so when you start, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."]
       ]
     },
     {
       "slug": "car-buying-service-miami.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Miami",
       "area": "South Florida",
       "center": "downtown Miami",
@@ -253,7 +253,7 @@
         "lon": -80.2,
         "title": "Map of the 50-mile circle around downtown Miami",
         "description": "A 50-mile circle centered on downtown Miami covers the Atlantic coast from Homestead to Boca Raton, through Miami-Dade and Broward counties, with the Everglades to the west and the Atlantic Ocean to the east. Every part of it is in Florida.",
-        "caption": "No state line crosses this circle. Every dealer from Homestead to Boca Raton is a Florida dealer, so the Steer Me Right plan covers all of them.",
+        "caption": "No state line crosses this circle. Every dealer from Homestead to Boca Raton is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them.",
         "centerLabel": "Downtown Miami",
         "regions": [
           { "name": "FLORIDA", "lat": 26.0, "lon": -81.2 },
@@ -279,17 +279,17 @@
         ["Ask whether a used car was in a flood", "Miami sits low, and hurricanes push water into streets and parking garages. A flooded car can look fine on the lot and fail months later, because water gets into the wiring and electronics. Look for a musty smell, silt or a water line under the carpet, rust on the seat bolts and under the dashboard, and moisture inside the headlights. A history report only shows floods that were reported, so on a used search we can ask the dealer to say in writing whether the car has been in one, and to send photos of the trunk floor and the carpet edges. Have a mechanic you choose look the car over before you sign."],
         ["Look at what sun and salt air did", "South Florida sun cracks dashboards, clouds headlight lenses and dries out tires and rubber seals. Salt air from the coast adds rust on the underside, the exposed bolts and the brake parts, even on a car that never drove on a salted road. Ask for photos of the dashboard, the headlights, the tires and the underside. On the test drive, run the air conditioning at full blast the whole way, and price the repair if it blows warm."]
       ],
-      "plan": "Everything in that strip is a Florida dealer, and so is the rest of the state. On the Steer Me Right plan ($395) a Miami buyer isn’t limited to South Florida: if you’d drive to West Palm Beach or Naples for the right number, tell us and those dealers get asked too. Dealers outside Florida are part of Steer Me Right Pro ($695).",
+      "plan": "Everything in that strip is well within 200 miles of a Miami ZIP code, which is what the Steer Me Right plan ($395) covers. A Miami buyer isn’t limited to South Florida on it: if you’d drive to West Palm Beach or Naples for the right number, tell us and those dealers get asked too. A dealer more than 200 miles away, in Jacksonville or in another state, is part of Steer Me Right Pro ($695), where we also get shipping quotes. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Miami?", "No. We’re based in Austin, Texas, and we work with South Florida dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Do you cover Fort Lauderdale and the rest of Broward County?", "Yes. Broward dealers are inside the same 50-mile circle and are Florida dealers, so both plans cover them."],
+        ["Do you cover Fort Lauderdale and the rest of Broward County?", "Yes. Broward dealers are inside the same 50-mile circle, well within 200 miles of a Miami buyer, so both plans cover them."],
         ["How can I tell if a used car in Miami was flooded?", "Check the history report, get the dealer’s answer in writing, then look at the car: a musty smell, silt or a water line under the carpet, rust on the seat bolts, moisture inside the lights. A report only shows floods that were reported. We can ask the dealer for photos and a written answer. Have a mechanic you choose look the car over before you sign."],
         ["Is a used car from South Florida a bad idea?", "No. A garaged car with service records can be a good buy. Sun and salt-air wear is visible, so ask for photos of the dashboard, the headlights, the tires and the underside, and have a mechanic you choose look at the car before you sign."]
       ]
     },
     {
       "slug": "car-buying-service-atlanta.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Atlanta",
       "area": "Atlanta-area",
       "center": "downtown Atlanta",
@@ -320,7 +320,7 @@
         "lon": -84.3902,
         "title": "Map of the 50-mile circle around downtown Atlanta",
         "description": "A 50-mile circle centered on downtown Atlanta covers the city and its suburbs from Kennesaw and Alpharetta in the north to Peachtree City and McDonough in the south, and from Douglasville in the west to Conyers and Covington in the east. Every part of it is in Georgia.",
-        "caption": "No state line crosses this circle. Every dealer from Kennesaw to McDonough is a Georgia dealer, so the Steer Me Right plan covers all of them.",
+        "caption": "No state line crosses this circle. Every dealer from Kennesaw to McDonough is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them.",
         "centerLabel": "Downtown Atlanta",
         "regions": [
           { "name": "GEORGIA", "lat": 33.12, "lon": -84.4 },
@@ -345,7 +345,7 @@
         ["Let the used inventory narrow the search", "Atlanta has more used cars listed than new ones, so you can be picky. Give us the trims you’d take, the most miles you’d accept and the colors you’d skip, and the search can pass over cars that are almost right and wait for one that is. When one dealer won’t move on price, the same car is usually listed at another store. Tell us what you’d pass on and we build the list from there."],
         ["Find out where a used car came from", "In a market this large, used cars arrive as lease returns, trade-ins and former rental and fleet cars. Ask the dealer which one a car is, get the VIN and run a history report on it. Two cars at the same price can have very different mileage and service records, so line them up on those before you pick one to drive."]
       ],
-      "plan": "Every dealer in that circle is a Georgia dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Alabama, Tennessee or the Carolinas are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is within 200 miles of an Atlanta-area ZIP code, so all of them are in play on the Steer Me Right plan ($395). State lines don’t count: a Chattanooga dealer about 100 miles north of downtown is covered as well. Steer Me Right Pro ($695) covers dealers nationwide, and on it we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Atlanta?", "No. We’re based in Austin, Texas, and we work with Atlanta-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Do you negotiate used cars in Atlanta?", "Yes. Used and CPO cars from dealers are part of both plans, at the same flat fee as a new car."],
@@ -355,7 +355,7 @@
     },
     {
       "slug": "car-buying-service-washington-dc.html",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Washington, DC",
       "area": "Washington-area",
       "center": "downtown Washington",
@@ -386,7 +386,7 @@
         "lon": -77.0174,
         "title": "Map of the 50-mile circle around downtown Washington",
         "description": "A 50-mile circle centered on downtown Washington covers the District, the Maryland suburbs from Frederick to Annapolis and Baltimore, and Northern Virginia from Leesburg to Fredericksburg. Dashed lines mark the state lines; the Chesapeake Bay fills the east side and a corner of West Virginia reaches in at the northwest.",
-        "caption": "Fifty miles from downtown crosses the Potomac and reaches Baltimore. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from downtown crosses the Potomac and reaches Baltimore. Dashed lines mark the state lines. Every dealer in the circle is within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers both sides of the river.",
         "centerLabel": "Downtown Washington",
         "regions": [
           { "name": "VIRGINIA", "lat": 38.3, "lon": -77.85 },
@@ -411,21 +411,21 @@
         ]
       },
       "local": [
-        ["Choose Maryland or Virginia before you choose a dealer", "A dealer on each side of the Potomac can be the same distance from your door and a very different trip, depending on the bridge, the Beltway or the Metro line between you. Tell us which side you could reach and how you’d get there. If you live in the District, ask us which plan fits before you pay."],
+        ["Choose Maryland or Virginia before you choose a dealer", "A dealer on each side of the Potomac can be the same distance from your door and a very different trip, depending on the bridge, the Beltway or the Metro line between you. Tell us which side you could reach and how you’d get there. Either plan covers dealers on both sides, wherever in the area you live."],
         ["Look under a used car that has seen a few winters", "Maryland and Virginia treat roads with salt and brine before and during winter storms, and the damage shows underneath before it shows in the paint. Look at the brake lines, the exhaust and the rocker panels below the doors. Ask the dealer where the car has lived: one that came down from the snowy northern states has had more salt than one that stayed in the Southeast. On a used search we can ask for photos of the underside. Have a mechanic you choose put the car on a lift before you sign."]
       ],
-      "plan": "That makes the plan choice matter more here than in most places. The Steer Me Right plan ($395) does not include out-of-state dealers. A Virginia buyer gets Virginia dealers on it and a Maryland buyer gets Maryland dealers; to have both sides of the Potomac competing, pick Steer Me Right Pro ($695). If you live in the District, ask us before you pay. It’s free to ask, and nearly every dealer near you is across a state line.",
+      "plan": "A search that crosses state lines doesn’t need the bigger plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, so a Virginia buyer, a Maryland buyer and a District buyer all get both sides of the Potomac competing on it. Steer Me Right Pro ($695) is for a search beyond 200 miles: dealers nationwide, with shipping quotes on long-distance deals. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Washington?", "No. We’re based in Austin, Texas, and we work with Washington-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from both Maryland and Virginia dealers?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."],
-        ["I live in the District. Which plan do I need?", "Ask us before you pay. Nearly every dealer near you is in Maryland or Virginia, and the Steer Me Right plan doesn’t include out-of-state dealers. Tell us which dealers you could reach and we’ll tell you which plan fits. No payment is needed to ask."],
+        ["Can you get offers from both Maryland and Virginia dealers?", "Yes, on either plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, and the Maryland and Virginia dealers in the circle are all inside that. Steer Me Right Pro ($695) covers dealers nationwide."],
+        ["I live in the District. Which plan do I need?", "Either one works. Nearly every dealer near you is in Maryland or Virginia, and they are all well within 200 miles of a District ZIP code, so the Steer Me Right plan ($395) covers them. Pick Steer Me Right Pro ($695) if you want dealers nationwide, up to three models or trade-in support. Not sure? No payment is needed to ask."],
         ["Does road salt matter for a used car in the Washington area?", "It can, on a car with a few winters behind it. We can ask the dealer for photos of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign."]
       ]
     },
     {
       "slug": "car-buying-service-philadelphia.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Philadelphia",
       "area": "Philadelphia-area",
       "center": "Center City",
@@ -460,7 +460,7 @@
         "lon": -75.1652,
         "title": "Map of the 50-mile circle around Center City Philadelphia",
         "description": "A 50-mile circle centered on Center City Philadelphia covers the city and its suburbs, Trenton, Princeton and Vineland in New Jersey, Wilmington in Delaware, a corner of Maryland, and Pottstown and Allentown in Pennsylvania. The Delaware River is the line between Pennsylvania and New Jersey; dashed lines mark the other state lines.",
-        "caption": "Fifty miles from Center City reaches into three states and clips a corner of a fourth. The Delaware River is the line between Pennsylvania and New Jersey, and dashed lines mark the others. A dealer across any of them from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from Center City reaches into three states and clips a corner of a fourth. The Delaware River is the line between Pennsylvania and New Jersey, and dashed lines mark the others. Every dealer in the circle is within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers them on any side of a line.",
         "centerLabel": "Center City",
         "regions": [
           { "name": "PENNSYLVANIA", "lat": 40.5, "lon": -76.3 },
@@ -481,15 +481,15 @@
         ]
       },
       "local": [
-        ["Check which side of the river you’re buying on", "The Delaware River divides Pennsylvania from New Jersey here, and a dealer on the far bank can sit minutes from a Center City address. It is still an out-of-state dealer. Tell us where you live and which bridges you’d cross, and we say which dealers your plan covers before we ask any of them for a price."],
+        ["Check which side of the river you’re buying on", "The Delaware River divides Pennsylvania from New Jersey here, and a dealer on the far bank can sit minutes from a Center City address. Both plans cover it, because what counts is the distance from your ZIP code and not the state. Tell us where you live and which bridges you’d cross, and we ask the dealers you’d actually drive to."],
         ["Ask where a used car spent its winters", "Pennsylvania treats winter roads with salt and brine, and a car that lived outside takes it from below. The rust shows first on the brake lines, the exhaust and the rocker panels under the doors, often before the paint gives anything away. On a used search we can ask the dealer for photos of the underside. Before you sign, have a mechanic you choose put the car on a lift."],
         ["Plan how you’ll get to the dealer", "You pick up the car at the dealer, so a buyer without a car needs a route there and a way to drive home. A store in the suburbs or across the river can look close on the map and still take a train and a ride to reach. Tell us the train line or bridge you’d use, and we ask the dealers you can actually get to."],
         ["Tell us where the car will park", "Many Philadelphia blocks are lined with rowhouses and street parking, and a car that fits a driveway may not fit a curb. Tell us the longest and widest car you can park, and whether it will live on the street or in a garage. We check your model against those limits before we ask any dealer for a price, so a car that won’t fit never reaches your shortlist."]
       ],
-      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Pennsylvania buyer who wants New Jersey or Delaware dealers in the mix, or a New Jersey buyer who wants the Philadelphia stores, should pick Steer Me Right Pro ($695).",
+      "plan": "The state lines don’t change the plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, so a Pennsylvania buyer gets the New Jersey and Delaware dealers in that circle on it, and a New Jersey buyer gets the Philadelphia stores. Steer Me Right Pro ($695) covers dealers nationwide. On Pro we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Philadelphia?", "No. We’re based in Austin, Texas, and we work with Philadelphia-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from New Jersey and Delaware dealers as well as Pennsylvania ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in, so a New Jersey buyer on that plan gets New Jersey dealers, and the Philadelphia stores need Pro."],
+        ["Can you get offers from New Jersey and Delaware dealers as well as Pennsylvania ones?", "Yes, on either plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, whichever state they are in, so a New Jersey buyer on that plan gets the Philadelphia and Wilmington stores as well as the New Jersey ones."],
         ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent its winters parked outside."],
         ["I don’t own a car. Can I still use a car buying service?", "Yes. You pick up the car at the dealer like every buyer. Tell us which train line or bridge you’d use and how long a trip you’d make, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."]
       ]
@@ -497,7 +497,7 @@
     {
       "slug": "car-buying-service-boston.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Boston",
       "area": "Boston-area",
       "center": "downtown Boston",
@@ -532,7 +532,7 @@
         "lon": -71.0638,
         "title": "Map of the 50-mile circle around downtown Boston",
         "description": "A 50-mile circle centered on downtown Boston covers Boston and its suburbs, Lowell, Worcester and Plymouth in Massachusetts, Nashua and Manchester in New Hampshire, and Providence in Rhode Island. Dashed lines mark the state lines; Massachusetts Bay fills the east side of the circle.",
-        "caption": "Fifty miles from downtown reaches into three states. A dealer across a dashed line from where you live is out of state, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from downtown reaches into three states, and dashed lines mark the state lines. Every dealer in the circle is within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers them in all three.",
         "centerLabel": "Downtown Boston",
         "regions": [
           { "name": "MASSACHUSETTS", "lat": 42.17, "lon": -71.45 },
@@ -558,12 +558,12 @@
         ["Ask where a used car spent its winters", "Massachusetts and New Hampshire salt their roads every winter, and a car that lived outside takes the worst of it from below. The brake lines, the exhaust and the rocker panels under the doors rust first, often on a car whose paint still looks fine. Ask the dealer where the car has lived. On a used search we can ask for photos of the underside, and you can have a mechanic you choose put the car on a lift before you sign."],
         ["Check the car against your street", "Many Boston streets are narrow, and a lot of cars park on them. A big SUV that wins on price can lose the first night you try to park it. Tell us the longest and widest car you can live with and whether you have a garage or a driveway, and we check each model against those limits before we ask any dealer for a price."],
         ["Work out how you’ll reach the dealer by train", "You pick up the car at the dealer. A store that looks close on the map can still take a train and a ride to reach, and you need a way to drive home afterward. Tell us which line you’d use and how long a trip you’d make, and we ask the dealers you can actually reach."],
-        ["Count the state lines", "The circle holds three states: Massachusetts, New Hampshire and Rhode Island. A store a few miles over a line may be nearer than one across the city, but it is out of state on the Steer Me Right plan. Tell us which side you live on and how far you’d drive, and we say which dealers your plan covers before we ask for any price."]
+        ["A dealer over the state line still counts", "The circle holds three states: Massachusetts, New Hampshire and Rhode Island. A store a few miles over a line may be nearer than one across the city, and both plans cover it, because the Steer Me Right plan goes by distance from your ZIP code and not by state. Tell us which side you live on and how far you’d drive, and we start with the dealers inside that."]
       ],
-      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Massachusetts buyer who wants New Hampshire or Rhode Island dealers in the mix, or a New Hampshire buyer who wants the Boston stores, should pick Steer Me Right Pro ($695).",
+      "plan": "On the Steer Me Right plan ($395) we contact dealers within 200 miles of your ZIP code, and state lines don’t come into it. A Massachusetts buyer gets the New Hampshire and Rhode Island dealers in that circle, and a New Hampshire buyer gets the Boston stores. Steer Me Right Pro ($695) goes further: dealers nationwide, shipping quotes on long-distance deals (you pay the carrier), trade-in support and up to three models.",
       "faq": [
         ["Do you have an office in Boston?", "No. We’re based in Austin, Texas, and we work with Boston-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you get offers from New Hampshire and Rhode Island dealers as well as Massachusetts ones?", "Yes, on Steer Me Right Pro, which includes out-of-state dealers. The Steer Me Right plan covers dealers in the state you live in."],
+        ["Can you get offers from New Hampshire and Rhode Island dealers as well as Massachusetts ones?", "Yes, on either plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, and the Massachusetts, New Hampshire and Rhode Island dealers in the circle are all inside that."],
         ["Do you check used cars for road-salt rust?", "From photos. We can ask the dealer for pictures of the underside and tell you what we see in them. Photos miss things, so before you sign, have a mechanic you choose put the car on a lift. On a car that has spent a few Boston winters outside, that hour is worth it."],
         ["I take the train to work. Can I still use a car buying service?", "Yes. You pick up the car at the dealer like every buyer. Tell us which line you’d use and how long a trip you’d make, and we weigh how easy each dealer is to reach alongside its price. Some dealers will deliver the car to you; whether they do, and what they charge, is up to them."]
       ]
@@ -571,7 +571,7 @@
     {
       "slug": "car-buying-service-phoenix.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Phoenix",
       "area": "Phoenix-area",
       "center": "downtown Phoenix",
@@ -603,7 +603,7 @@
         "lon": -112.074,
         "title": "Map of the 50-mile circle around downtown Phoenix",
         "description": "A 50-mile circle centered on downtown Phoenix covers the Phoenix valley, from Surprise and Buckeye in the west to Apache Junction and Queen Creek in the east, and from Carefree in the north to Casa Grande in the south. Every part of it is in Arizona.",
-        "caption": "No state line crosses this circle. Every dealer from Surprise to Queen Creek is an Arizona dealer, so the Steer Me Right plan covers all of them.",
+        "caption": "No state line crosses this circle. Every dealer from Surprise to Queen Creek is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them.",
         "centerLabel": "Phoenix",
         "regions": [
           { "name": "ARIZONA", "lat": 32.75, "lon": -112.9 }
@@ -628,10 +628,10 @@
         ["Test the air conditioning at its worst", "A weak air conditioner is the repair you’ll notice first here, and plenty of cars feel fine on a cool morning. Ask the dealer for an afternoon test drive, run the air conditioning at full blast the whole way, and watch how fast the cabin cools. Keep an eye on the temperature gauge in traffic. If the air blows warm, price the repair before you talk price on the car."],
         ["Tell us how far across the valley you’d drive", "Metro Phoenix spreads over a wide, flat valley. A lower written offer from the far side of it can cost you a long drive to pick up the car. Tell us where you’d start and the longest drive you’d make, and we ask the dealers inside that window."]
       ],
-      "plan": "Every dealer in that circle is an Arizona dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in California, Nevada or New Mexico are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Phoenix-area ZIP code, so all of them are in play on the Steer Me Right plan ($395). So are Tucson dealers, if you’d make the drive. A dealer farther off, in Los Angeles for example, is part of Steer Me Right Pro ($695), which covers dealers nationwide. On Pro we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Phoenix?", "No. We’re based in Austin, Texas, and we work with Phoenix-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Will you contact dealers across the whole valley?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area, from Surprise to Gilbert and beyond. They are all Arizona dealers, so both plans cover them."],
+        ["Will you contact dealers across the whole valley?", "Yes. Tell us how far you’d go to pick up the car and we ask dealers across that area, from Surprise to Gilbert and beyond. They are all well within 200 miles of you, so both plans cover them."],
         ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the headlights, the tires and the battery label, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."],
         ["What should I check on a test drive in the heat?", "Run the air conditioning at full blast for the whole drive and see how fast the cabin cools. Watch the temperature gauge in stop-and-go traffic. We can ask a dealer to schedule an afternoon drive, and a mechanic you choose can look the car over before you sign."]
       ]
@@ -639,7 +639,7 @@
     {
       "slug": "car-buying-service-dallas-fort-worth.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Dallas–Fort Worth",
       "area": "DFW-area",
       "center": "Arlington",
@@ -674,7 +674,7 @@
         "lon": -97.1081,
         "title": "Map of the 50-mile circle around Arlington",
         "description": "A 50-mile circle centered on Arlington, midway between Dallas and Fort Worth, covers both cities and their suburbs, from Denton, Frisco and McKinney in the north to Cleburne and Waxahachie in the south, and from Weatherford in the west to Rockwall in the east. Every part of it is in Texas. The Red River, the Oklahoma line, touches the top edge of the map.",
-        "caption": "No state line crosses this circle; the Oklahoma line along the Red River only touches the top edge of the map. Every dealer from Denton to Waxahachie is a Texas dealer, so the Steer Me Right plan covers all of them.",
+        "caption": "No state line crosses this circle; the Oklahoma line along the Red River only touches the top edge of the map. Every dealer from Denton to Waxahachie is well within 200 miles of a buyer who lives in the circle, so the Steer Me Right plan covers all of them.",
         "centerLabel": "Arlington",
         "centerAnchor": "below",
         "regions": [
@@ -702,7 +702,7 @@
         ["Test a used car for summer heat", "North Texas summers are hot enough to wear on a car. Look at the dashboard top for cracks, the headlight lenses for yellowing, the tire sidewalls for cracks and the roof paint for fading. Ask how old the battery is, and ask for an afternoon test drive with the air conditioning at full blast to see how fast the cabin cools. On a used search we can ask the dealer for photos of those spots and of the battery label. Tell us if you want us to ask for an afternoon drive."],
         ["Count the toll roads between you and the dealer", "Dallas and Fort Worth sit on opposite sides of the metroplex, and the route to a dealer on the far side can run on a toll road. The North Texas Tollway Authority runs the Dallas North Tollway, the President George Bush Turnpike, the Sam Rayburn Tollway and the Chisholm Trail Parkway. Drivers without a TollTag get a ZipCash bill by mail at the higher rate. Tell us which side you live on and whether you have a TollTag, and we weigh each dealer’s price against the drive to reach it."]
       ],
-      "plan": "Every dealer in that circle is a Texas dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Oklahoma or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Dallas–Fort Worth ZIP code, so all of them are in play on the Steer Me Right plan ($395). The 200 miles run past the metroplex as well: a Waco dealer is covered if you’d make the drive. For a dealer farther away than that, in Texas or out of it, pick Steer Me Right Pro ($695). It covers dealers nationwide, and we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Dallas–Fort Worth?", "No. We’re based in Austin, Texas, and we work with DFW-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Can you tell if a used car has hail damage?", "Only from what the dealer sends us. We can ask for a written answer on hail damage and repair, and for daylight photos of the roof and hood, and pass them to you. Photos miss dents, so have a mechanic you choose look the car over before you sign."],
@@ -713,7 +713,7 @@
     {
       "slug": "car-buying-service-houston.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Houston",
       "area": "Houston-area",
       "center": "downtown Houston",
@@ -748,7 +748,7 @@
         "lon": -95.3677,
         "title": "Map of the 50-mile circle around downtown Houston",
         "description": "A 50-mile circle centered on downtown Houston covers the city and its suburbs, from Katy and Sugar Land in the west to Baytown and Liberty in the east, and from Conroe and The Woodlands in the north to Pearland, League City and Galveston in the south. Every part of it is in Texas, so there are no state lines on this map. Galveston Bay fills the southeast side.",
-        "caption": "No state line crosses this circle. Every dealer from Katy to Baytown is a Texas dealer, so the Steer Me Right plan covers all of them. The blue on the southeast side is Galveston Bay and the Gulf.",
+        "caption": "No state line crosses this circle. Every dealer from Katy to Baytown is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them. The blue on the southeast side is Galveston Bay and the Gulf.",
         "centerLabel": "Downtown Houston",
         "regions": [
           { "name": "TEXAS", "lat": 30.4, "lon": -96.1 },
@@ -776,18 +776,18 @@
         ["Plan the drive to the dealer", "A dealer on the far side of Houston can mean a long trip to pick up the car, and the route may run on a toll road. TxDOT says it collects tolls on its Houston-area toll roads electronically, including most of the Grand Parkway (SH 99). Tell us where you’d start and the longest drive you’d make, and we ask the dealers inside that window. Before pickup day, check your route for toll roads and how you’d pay."],
         ["Measure your garage before you pick a truck", "Full-size pickups are a big part of the Houston market, and S&P Global Mobility links the area’s high monthly payments to them. A crew-cab pickup or a large SUV can be too long or too wide for an older garage or a tight apartment space. Tell us the longest and widest vehicle you can park and where it will live, and we check each model against those limits before we ask any dealer for a price."]
       ],
-      "plan": "Every dealer in that circle is a Texas dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Louisiana or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Houston-area ZIP code, so all of them are in play on the Steer Me Right plan ($395). Dealers a longer drive out, in Beaumont for example, are covered too. Past 200 miles is Steer Me Right Pro ($695): dealers nationwide, with shipping quotes on long-distance deals. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Houston?", "No. We’re based in Austin, Texas, and we work with Houston-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Can you tell if a used car has heat wear?", "Only from photos. We can ask the dealer for pictures of the battery label, the battery terminals and the hoses and belts under the hood, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."],
-        ["Will you contact dealers across the whole Houston area?", "Yes. Tell us where you’d start and the longest drive you’d make, and we ask dealers across that area. They are all Texas dealers, so both plans cover them. Check your route for toll roads before you go to pick up the car."],
+        ["Will you contact dealers across the whole Houston area?", "Yes. Tell us where you’d start and the longest drive you’d make, and we ask dealers across that area. They are all well within 200 miles of you, so both plans cover them. Check your route for toll roads before you go to pick up the car."],
         ["Can you check whether a big pickup will fit my garage?", "Yes. Tell us the longest and widest vehicle you can park and where it will live, and we compare each model’s published size with those limits before we ask any dealer for a price. Measure the space yourself first, and ask the dealer to confirm the exact size of the truck you’re buying."]
       ]
     },
     {
       "slug": "car-buying-service-san-francisco.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "San Francisco",
       "area": "Bay Area",
       "center": "downtown San Francisco",
@@ -823,7 +823,7 @@
         "lon": -122.4075,
         "title": "Map of the 50-mile circle around downtown San Francisco",
         "description": "A 50-mile circle centered on downtown San Francisco covers the Bay Area from Santa Rosa and Petaluma in the north to San Jose in the south, and from the Pacific coast to Livermore and Walnut Creek in the east. San Francisco Bay and San Pablo Bay sit inside it. Every part of it that is land is in California.",
-        "caption": "No state line crosses this circle. Every dealer from Santa Rosa to San Jose is a California dealer, so the Steer Me Right plan covers all of them. The ocean and the two bays are water.",
+        "caption": "No state line crosses this circle. Every dealer from Santa Rosa to San Jose is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them. The ocean and the two bays are water.",
         "centerLabel": "San Francisco",
         "centerAnchor": "end",
         "regions": [
@@ -854,7 +854,7 @@
         ["Tell us where you’ll charge", "Electric vehicle registrations outnumber hybrids in this market, and most electric car owners charge overnight at home, on a standard outlet or a faster dedicated charger. If you own a house, an electrician can tell you whether it has the capacity for a charger. If you rent or live in a building with shared parking, the landlord or building manager decides whether you can charge where you park. Ask before you shop. Tell us whether you can charge at home, and we search electric, plug-in hybrid, hybrid or gas models to match."],
         ["Tell us how steep your street is", "San Francisco law requires you to turn your wheels toward or against the curb when you park on a steep street, and a driver who doesn’t can be fined. The city’s Public Works office publishes a street grade map you can look your block up on. On a test drive, stop on a slope and check that the parking brake holds the car. Tell us your street and the longest and widest car you can park, and we check your model against those limits before we ask any dealer for a price."]
       ],
-      "plan": "Every dealer in that circle is a California dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Nevada, Oregon or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Bay Area ZIP code, so all of them are in play on the Steer Me Right plan ($395). Sacramento dealers are inside the 200 miles too. A dealer in Los Angeles is not, and that is where Steer Me Right Pro ($695) comes in: it covers dealers nationwide, and we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in San Francisco?", "No. We’re based in Austin, Texas, and we work with Bay Area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Will I pay a bridge toll to pick up the car?", "Maybe, depending on the bridge and the way you cross. The state-owned bridges each charge in one direction only, and the Golden Gate Bridge charges southbound. Tell us which side of the bay you live on and which bridges you’d cross, and we ask the dealers you can reach with the fewest crossings."],
@@ -865,7 +865,7 @@
     {
       "slug": "car-buying-service-detroit.html",
       "published": "2026-11-17",
-      "updated": "2026-11-17",
+      "updated": "2026-11-26",
       "name": "Detroit",
       "area": "Detroit-area",
       "center": "downtown Detroit",
@@ -901,7 +901,7 @@
         "foreignLand": ["CAN"],
         "title": "Map of the 50-mile circle around downtown Detroit",
         "description": "A 50-mile circle centered on downtown Detroit covers Detroit and its suburbs, Pontiac, Ann Arbor, Brighton and Monroe in Michigan, a thin sliver of Ohio at the southwest edge, and across the Detroit River the Ontario shore around Amherstburg. Lake St. Clair and the west end of Lake Erie are inside it. The dashed line is the Michigan-Ohio state line.",
-        "caption": "Fifty miles from downtown Detroit reaches across Michigan, clips a sliver of Ohio and crosses the Detroit River into Ontario. The dashed line is the Michigan-Ohio state line. The Detroit River is the border with Canada, and Windsor across it is in Ontario. A dealer across the dashed line is out of state for a Michigan buyer, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from downtown Detroit reaches across Michigan, clips a sliver of Ohio and crosses the Detroit River into Ontario. The dashed line is the Michigan-Ohio state line. The Detroit River is the border with Canada, and Windsor across it is in Ontario. The Michigan and Ohio dealers in the circle are all within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers them on both sides of the dashed line.",
         "centerLabel": "Downtown Detroit",
         "regions": [
           { "name": "MICHIGAN", "lat": 42.75, "lon": -83.55 },
@@ -930,18 +930,18 @@
         ["Ask where a used car spent its winters", "Michigan’s environment agency says road salt is the most commonly used deicer and that it corrodes vehicles. A car that lived through Michigan winters takes that salt from below. Rust shows first on the brake lines, the exhaust and the rocker panels under the doors. On a used search we can ask the dealer for photos of the underside. Before you sign, have a mechanic you choose put the car on a lift."],
         ["Check what tires the car wears", "Michigan State Police say all-season tires have limited ice and snow capability, and that winter tires grip better. A certified winter tire carries a mountain-and-snowflake symbol on the sidewall. Tell us if you want winter tires, and we ask each dealer what tires are on the car and for a photo of the sidewall, so you can compare cars on their tires as well as their price."]
       ],
-      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Michigan buyer who wants Ohio dealers around Toledo in the mix should pick Steer Me Right Pro ($695).",
+      "plan": "The Ohio line doesn’t change the plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, so a Michigan buyer gets the Ohio dealers around Toledo on it along with the Michigan ones. Steer Me Right Pro ($695) covers dealers nationwide, with shipping quotes on long-distance deals; you pay the carrier. Pro is also the plan for comparing up to three models or working a trade-in into the deal.",
       "faq": [
         ["Do you have an office in Detroit?", "No. We’re based in Austin, Texas, and we work with Detroit-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent its winters outside."],
         ["Can you find out what tires a car has?", "Yes. We can ask the dealer what tires are on the car and for a photo of the sidewall, and a certified winter tire shows a mountain-and-snowflake symbol. Tell us whether you want winter tires, and we put the answer next to each dealer’s price."],
-        ["Can you include dealers in Ohio?", "Yes. For a Michigan buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Ohio, they are covered on either plan."]
+        ["Can you include dealers in Ohio?", "Yes, on either plan. The Steer Me Right plan covers dealers within 200 miles of your ZIP code, and the Ohio dealers around Toledo are well inside that for a Detroit-area buyer."]
       ]
     },
     {
       "slug": "car-buying-service-seattle.html",
       "published": "2026-11-18",
-      "updated": "2026-11-18",
+      "updated": "2026-11-26",
       "name": "Seattle",
       "area": "Seattle-area",
       "center": "downtown Seattle",
@@ -973,7 +973,7 @@
         "lon": -122.3331,
         "title": "Map of the 50-mile circle around downtown Seattle",
         "description": "A 50-mile circle centered on downtown Seattle covers Puget Sound and the cities around it, from Marysville and Everett in the north to Tacoma and Puyallup in the south, and from Bremerton and Bainbridge Island in the west to Issaquah and Monroe in the east. Every part of it is in Washington.",
-        "caption": "No state line crosses this circle. Every dealer from Everett to Tacoma is a Washington dealer, so the Steer Me Right plan covers all of them. The blue inside it is Puget Sound and Lake Washington.",
+        "caption": "No state line crosses this circle. Every dealer from Everett to Tacoma is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them. The blue inside it is Puget Sound and Lake Washington.",
         "centerLabel": "Seattle",
         "centerAnchor": "below",
         "regions": [
@@ -1002,10 +1002,10 @@
         ["Ask about the ferry if you live across the water", "If you live on Bainbridge Island, on Vashon or on the Kitsap side, a dealer in Seattle means a ferry ride home in the car you just bought. Washington State Ferries runs routes from Seattle to Bainbridge Island and to Bremerton, and from Fauntleroy to Vashon and Southworth. WSDOT’s Best Times to Travel tool shows the busiest and least busy times to take a vehicle on a ferry. Tell us where you live, and we ask the dealers you could reach on your own schedule."],
         ["Check where you will charge at home", "Find out where an electric car will plug in before you shop for one. Seattle City Light says a faster home charger can use the same type of outlet that powers a laundry dryer or an electric oven. The US Department of Energy says an electrician can tell you whether your home has enough electrical capacity. Tell us if you want an electric car or a plug-in hybrid and whether you can charge at home, and we search the powertrain that fits."]
       ],
-      "plan": "Every dealer in that circle is a Washington dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Oregon, Idaho or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Seattle-area ZIP code, so all of them are in play on the Steer Me Right plan ($395), on either shore of the Sound. Bellingham dealers to the north are inside the 200 miles too. Steer Me Right Pro ($695) is for a search past that: dealers nationwide, with shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Seattle?", "No. We’re based in Austin, Texas, and we work with Seattle-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Will you contact dealers on both sides of Puget Sound?", "Yes. Tell us where you live and which crossings you’d drive, and we ask dealers on both shores, from Everett to Tacoma and across the water on the Kitsap side. They are all Washington dealers, so both plans cover them."],
+        ["Will you contact dealers on both sides of Puget Sound?", "Yes. Tell us where you live and which crossings you’d drive, and we ask dealers on both shores, from Everett to Tacoma and across the water on the Kitsap side. They are all well within 200 miles of you, so both plans cover them."],
         ["Do I need a Good To Go! pass to drive to a dealer?", "No. Without a pass, WSDOT photographs your plate and mails a bill at a higher rate than the pass rate, and the Tacoma Narrows Bridge also has toll booths. Tell us which crossings are on your route, and we weigh dealers by how far you’d drive."],
         ["Can I take a ferry to pick up a car?", "Yes. WSDOT’s Best Times to Travel tool shows the busiest and least busy times to take a vehicle on a ferry. Tell us where you’d start, and we ask the dealers on the shore you can reach."]
       ]
@@ -1013,7 +1013,7 @@
     {
       "slug": "car-buying-service-denver.html",
       "published": "2026-11-18",
-      "updated": "2026-11-18",
+      "updated": "2026-11-26",
       "name": "Denver",
       "area": "Denver-area",
       "center": "downtown Denver",
@@ -1034,7 +1034,7 @@
         "lon": -104.9903,
         "title": "Map of the 50-mile circle around downtown Denver",
         "description": "A 50-mile circle centered on downtown Denver covers the Denver metro area, from Longmont and Boulder in the north to Castle Rock in the south, and from the foothills at Black Hawk and Evergreen to Brighton and Aurora on the plains. Every part of it is in Colorado.",
-        "caption": "No state line crosses this circle. Every dealer from Longmont to Castle Rock is a Colorado dealer, so the Steer Me Right plan covers all of them.",
+        "caption": "No state line crosses this circle. Every dealer from Longmont to Castle Rock is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them.",
         "centerLabel": "Downtown Denver",
         "regions": [
           { "name": "COLORADO", "lat": 39.15, "lon": -104 }
@@ -1059,7 +1059,7 @@
         ["Check the tires before you drive I-70 into the mountains", "If you’ll drive I-70 into the mountains, the tires decide whether the car meets Colorado’s traction law. CDOT says the law covers I-70 between Morrison and Dotsero from fall through spring. While it is in effect, a passenger car needs tires with the required tread depth that are rated all-weather or winter, marked with a mountain-snowflake, M+S or M/S, or it must carry chains or another approved traction device. CDOT also highly recommends all-wheel or four-wheel drive in the mountains, but a worn all-wheel-drive car can still fall short of the law. Tell us whether the mountains are in your plans, and we ask each dealer what tires are on the car and for a photo of the tread and sidewall."],
         ["Plan for E-470 on the way to a dealer", "E-470 collects its tolls without cash. Without an ExpressToll account, cameras read your plates and a statement is mailed to the vehicle’s owner, at higher rates than ExpressToll customers pay. A dealer you reach on E-470 comes with that bill. Tell us how far you’d drive and whether you’d rather skip toll roads, and we ask the dealers inside that window."]
       ],
-      "plan": "Every dealer in that circle is a Colorado dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Wyoming or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Denver-area ZIP code, so all of them are in play on the Steer Me Right plan ($395). So are dealers up and down the Front Range, from Colorado Springs to Cheyenne, because the plan goes by distance and not by state. Steer Me Right Pro ($695) covers dealers nationwide, and on it we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Denver?", "No. We’re based in Austin, Texas, and we work with Denver-area dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
         ["Can you tell if a used car has hail damage?", "Only from photos and the dealer’s written answer. We can ask for pictures of the roof, hood and trunk lid and for a written answer on hail repair, and send them to you. Photos miss dents, so have a mechanic you choose look the car over before you sign."],
@@ -1070,7 +1070,7 @@
     {
       "slug": "car-buying-service-minneapolis-st-paul.html",
       "published": "2026-11-18",
-      "updated": "2026-11-18",
+      "updated": "2026-11-26",
       "name": "Minneapolis–St. Paul",
       "area": "Twin Cities",
       "center": "the Midway, between the two downtowns",
@@ -1102,7 +1102,7 @@
         "lon": -93.1775,
         "title": "Map of the 50-mile circle around the Midway",
         "description": "A 50-mile circle centered on the Midway, between downtown Minneapolis and downtown St. Paul, covers both cities and their suburbs in Minnesota, from Elk River and Cambridge in the north to Northfield in the south. Across the St. Croix River it takes in Hudson, River Falls, New Richmond and Prescott in Wisconsin. The dashed line is the Minnesota-Wisconsin state line.",
-        "caption": "Fifty miles from the Midway reaches across the Twin Cities and into western Wisconsin. The dashed line is the Wisconsin line, which follows the St. Croix River down to Prescott and then the Mississippi. A dealer across it is out of state for a Minnesota buyer, and out-of-state dealers are part of Steer Me Right Pro.",
+        "caption": "Fifty miles from the Midway reaches across the Twin Cities and into western Wisconsin. The dashed line is the Wisconsin line, which follows the St. Croix River down to Prescott and then the Mississippi. Dealers on both sides of it are within 200 miles of a buyer who lives in the circle, so the Steer Me Right plan covers them.",
         "centerLabel": "Midway",
         "centerAnchor": "below",
         "regions": [
@@ -1132,10 +1132,10 @@
         ["Ask for a photo of the tread", "AAA’s Minneapolis club says tread depth is critical to traction and suggests a quarter test: put the quarter in the groove with Washington’s head down, and if you can see the top of his head, it’s time for new tires. A used car on worn tires means a tire bill right after you buy it. Tell us which cars you’re weighing, and we ask each dealer for a photo of each tire’s tread with a quarter in the groove."],
         ["Plan the drive around the express lanes", "Driving alone at rush hour without an E-ZPass account, you stay in the general lanes, so a dealer that looks close on the map can be a slow trip. MnDOT runs E-ZPass express lanes on I-394, I-35W and I-35E. Carpools, buses and motorcycles use them free at peak hours, and solo drivers pay a fee from an E-ZPass account. Tell us where you start and when you’d drive, and we weigh dealers by how far you would go."]
       ],
-      "plan": "The state line matters here. The Steer Me Right plan ($395) does not include out-of-state dealers. A Minnesota buyer who wants Wisconsin dealers around Hudson and River Falls in the mix, or a Wisconsin buyer who wants the Twin Cities stores, should pick Steer Me Right Pro ($695).",
+      "plan": "The river doesn’t change the plan. The Steer Me Right plan ($395) covers dealers within 200 miles of your ZIP code, so a Minnesota buyer gets the Wisconsin dealers around Hudson and River Falls on it, and a Wisconsin buyer gets the Twin Cities stores. Steer Me Right Pro ($695) covers dealers nationwide. On Pro we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Minneapolis–St. Paul?", "No. We’re based in Austin, Texas, and we work with Twin Cities dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Can you include dealers in Wisconsin?", "Yes. For a Minnesota buyer they are out-of-state dealers, which Steer Me Right Pro includes. If you live in Wisconsin, they are covered on either plan, and the Minnesota dealers are the out-of-state ones."],
+        ["Can you include dealers in Wisconsin?", "Yes, on either plan. The Steer Me Right plan covers dealers within 200 miles of your ZIP code, and Hudson, River Falls and the other Wisconsin dealers in the circle are well inside that. A Wisconsin buyer gets the Minnesota dealers the same way."],
         ["Can you tell if a used car has road-salt rust?", "Only from photos. We can ask the dealer for pictures of the underside and send them to you. Photos miss things, so have a mechanic you choose put the car on a lift before you sign, especially on a car that spent its winters outside."],
         ["Can you find out how worn a used car’s tires are?", "From photos. We can ask the dealer for a picture of each tire’s tread with a quarter in the groove and send them to you. Have a mechanic you choose check the tires before you sign."]
       ]
@@ -1143,7 +1143,7 @@
     {
       "slug": "car-buying-service-tampa.html",
       "published": "2026-11-18",
-      "updated": "2026-11-18",
+      "updated": "2026-11-26",
       "name": "Tampa",
       "area": "Tampa Bay",
       "center": "downtown Tampa",
@@ -1175,7 +1175,7 @@
         "lon": -82.4572,
         "title": "Map of the 50-mile circle around downtown Tampa",
         "description": "A 50-mile circle centered on downtown Tampa covers Tampa and St. Petersburg, Brooksville and Spring Hill to the north, Zephyrhills, Plant City and Lakeland to the east, and Bradenton to the south. Tampa Bay and the edge of the Gulf are on the west side. Every part of it is in Florida.",
-        "caption": "No state line crosses this circle. Every dealer from Spring Hill to Bradenton is a Florida dealer, so the Steer Me Right plan covers all of them. The blue on the west side is Tampa Bay and the Gulf.",
+        "caption": "No state line crosses this circle. Every dealer from Spring Hill to Bradenton is well within 200 miles of a buyer who lives in it, so the Steer Me Right plan covers all of them. The blue on the west side is Tampa Bay and the Gulf.",
         "centerLabel": "Tampa",
         "regions": [
           { "name": "FLORIDA", "lat": 28.8, "lon": -82.3 },
@@ -1203,10 +1203,10 @@
         ["Run the air conditioning for the whole test drive", "AAA says that if the inside of a car isn’t cool, the air conditioning’s refrigerant charge may be low or the system may not be working. Run the air conditioning at full blast through the whole drive, and watch how fast the cabin cools. If it stays warm, get a repair estimate before you talk price on the car. Tell us if you want an afternoon drive, and we ask the dealer for one."],
         ["Expect tolls on the way to a dealer across the bay", "The Selmon Expressway and the Sunshine Skyway Bridge both charge tolls, and the Florida Department of Transportation has made the Skyway cashless. The Tampa Hillsborough Expressway Authority says SunPass users pay lower toll rates than cash or toll-by-plate users. Tell us which side of the bay you’d drive to, and we weigh the dealers by how far you’d go."]
       ],
-      "plan": "Every dealer in that circle is a Florida dealer, so all of them are in play on the Steer Me Right plan ($395). Dealers in Georgia or another state are out of state and are part of Steer Me Right Pro ($695), where we also help coordinate shipping when the dealer is open to it.",
+      "plan": "Every dealer in that circle is well within 200 miles of a Tampa Bay ZIP code, so all of them are in play on the Steer Me Right plan ($395), on both sides of the bay. Orlando and Fort Myers dealers are inside the 200 miles too, if you’d make the drive. Steer Me Right Pro ($695) covers dealers nationwide, and on it we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.",
       "faq": [
         ["Do you have an office in Tampa?", "No. We’re based in Austin, Texas, and we work with Tampa Bay dealers by phone and email. You deal with one advisor the whole way, and you pick up the car from the dealer."],
-        ["Will you contact dealers on both sides of Tampa Bay?", "Yes. Tell us how far you’d go to pick up the car and which side of the bay you’d rather drive to, and we ask dealers across that area, from Tampa and Brandon to St. Petersburg and Bradenton. They are all Florida dealers, so both plans cover them."],
+        ["Will you contact dealers on both sides of Tampa Bay?", "Yes. Tell us how far you’d go to pick up the car and which side of the bay you’d rather drive to, and we ask dealers across that area, from Tampa and Brandon to St. Petersburg and Bradenton. They are all well within 200 miles of you, so both plans cover them."],
         ["Will I pay tolls to pick up the car?", "Possibly, if the route crosses the Selmon Expressway or the Sunshine Skyway Bridge. The Skyway takes no cash, and SunPass users pay lower tolls than toll-by-plate users. Tell us where you’d start, and we weigh dealers by how far you’d drive."],
         ["Can you tell if a used car has sun damage?", "Only from photos. We can ask the dealer for pictures of the dashboard, the paint and the battery label, and send them to you. Photos miss things, so have a mechanic you choose look the car over before you sign."]
       ]

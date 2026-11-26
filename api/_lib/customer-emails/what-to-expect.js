@@ -52,8 +52,8 @@ export function render(buyer, { tracker } = {}) {
         {
           title: 'Find the cars',
           body: pro
-            ? 'We search dealer inventory for up to three models, including out-of-state dealers when it makes sense.'
-            : 'We search dealer inventory for cars that match your model, budget and area.'
+            ? 'We search dealer inventory nationwide, for up to three models.'
+            : 'We search dealer inventory within 200 miles of you for cars that match your model and budget.'
         },
         { title: 'Get written prices', body: 'We contact dealers by email and phone and ask for written out-the-door prices: the car, fees, tax and registration.' },
         {

@@ -36,6 +36,20 @@ export function expectedPaidAmount(session, expectedAmount) {
   return discountTotal === amountOff ? expectedAmount - amountOff : null;
 }
 
+// The tier a paid Checkout Session bought, or null when its total fits neither
+// the attempt nor the add-on. The Steer Me Right payment link offers Steer Me
+// Right Pro as an optional item for the difference (2026-11-26), so a Steer Me
+// Right attempt that pays the Pro total is a Pro purchase. Nothing else moves
+// an attempt to another tier.
+export function paidTier(session, attempt, tiers) {
+  const total = Number.isInteger(session.amount_total) ? session.amount_total : null;
+  if (total === null) return null;
+  if (total === expectedPaidAmount(session, attempt.expected_amount)) return attempt.tier_id;
+  const base = tiers.full_service, pro = tiers.concierge;
+  const addOn = attempt.tier_id === 'full_service' && attempt.expected_amount === base.amount && attempt.currency === pro.currency;
+  return addOn && total === expectedPaidAmount(session, pro.amount) ? 'concierge' : null;
+}
+
 export function offerKey(tier, service, paymentLink) {
   return createHash('sha256').update(JSON.stringify([tier, service.amount, service.currency, String(paymentLink)])).digest('hex');
 }

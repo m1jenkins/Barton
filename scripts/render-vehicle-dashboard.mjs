@@ -1101,7 +1101,7 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
         ${planCards.map(card => planCardHtml(card, `vehicle-${vehicle.slug.replace(/-price\.html$/, '')}`)).join('\n        ')}
       </div>
       <p class="vd-ask">Not sure which plan you need? <button type="button" class="vd-btn vd-btn--ghost" data-open-inquiry="Not sure yet" data-inquiry-vehicle="${name}" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-ask">Talk to Mason first</button> No payment needed to ask, and we reply within one business day.</p>
-      <p class="vd-note">You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
+      <p class="vd-note">The Steer Me Right plan covers dealers within 200 miles of you; Steer Me Right Pro covers dealers nationwide. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
     </section>
 
     <section id="more" class="vd-card">

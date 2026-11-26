@@ -1,8 +1,8 @@
 # Steer Me Right
 
-> Austin-based car buying and negotiation service supporting buyers nationwide. The Steer Me Right plan is $395 USD one time for one model; Steer Me Right Pro is $695 USD one time for up to three models. Pricing, availability, and outcomes vary by purchase.
+> Austin-based car buying and negotiation service supporting buyers nationwide. The Steer Me Right plan is $395 USD one time for one model at dealers within 200 miles of the buyer; Steer Me Right Pro is $695 USD one time for dealers nationwide and up to three models. Pricing, availability, and outcomes vary by purchase.
 
-Updated: 2026-11-15
+Updated: 2026-11-26
 
 Steer Me Right was called Drive Right Car Buying (driverightcarbuying.com) until October 30, 2026. Steer Me Right is a service-area business. It does not operate storefronts in each metro. Public contact: hello@steermeright.com.
 
@@ -11,7 +11,7 @@ Steer Me Right was called Drive Right Car Buying (driverightcarbuying.com) until
 - [Home](https://www.steermeright.com/): Overview of the service, plans, nationwide support, and how Steer Me Right compares vehicles and deal terms.
 - [Car buying service](https://www.steermeright.com/car-buying-service.html): Service scope, current fees, and buyer responsibilities.
 - [How it works](https://www.steermeright.com/how-it-works.html): Process, listed fees, buyer responsibilities, and current disclosures.
-- [Plans and pricing](https://www.steermeright.com/schedule.html): $395 Steer Me Right (one model) and $695 Steer Me Right Pro (up to three models), each a one-time service fee. Steer Me Right clients can upgrade to Pro for the $300 difference.
+- [Plans and pricing](https://www.steermeright.com/schedule.html): $395 Steer Me Right (one model, dealers within 200 miles) and $695 Steer Me Right Pro (dealers nationwide, shipping quotes, trade-in support, up to three models), each a one-time service fee.
 - [Machine-readable pricing](https://www.steermeright.com/pricing.md): Current fees, inclusions, and purchase-cost exclusions in Markdown.
 - [About](https://www.steermeright.com/about.html): Founder Mason and the service approach.
 - [Resource hubs](https://www.steermeright.com/blog.html): Index of decision guides. Several older articles remain unpublished to search pending source review.

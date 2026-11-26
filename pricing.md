@@ -1,22 +1,22 @@
 # Steer Me Right pricing
 
-Updated: 2026-10-23
+Updated: 2026-11-26
 
 Steer Me Right offers two flat-fee car-buying service plans for buyers nationwide through remote support. Steer Me Right is a service-area business based in Austin, not a storefront in every listed metro.
 
 ## Steer Me Right
 
 - Service fee: $395 USD one time
-- Best for: Buyers who know the car they want
-- Includes: One model, with any trims, colors, and packages within that model; new, used, and certified pre-owned dealer inventory; price negotiation and fee review; one dedicated advisor from start to finish; and written recommendations (what we found and what we would do)
-- Not included: Switching to a different model
+- Best for: Buyers whose car is within a day’s drive
+- Includes: One model, with any trims, colors, and packages within that model; dealers within 200 miles of the buyer’s ZIP code; new, used, and certified pre-owned dealer inventory; price negotiation and fee review; one dedicated advisor from start to finish; and written recommendations (what we found and what we would do)
+- Not included: Switching to a different model; dealers more than 200 miles away
 - Current plan: https://www.steermeright.com/schedule.html#full-service
 
 ## Steer Me Right Pro
 
 - Service fee: $695 USD one time
-- Best for: Buyers torn between a few cars, such as a BMW X5 and a Mercedes GLE, or a RAV4 Hybrid and a CR-V Hybrid
-- Includes: Everything in Steer Me Right, plus offers on up to three models priced side by side (a model is a make and model; trims, colors, and packages within a model do not count extra); dealers for each model played against each other's written offers; out-of-state dealers, with help coordinating shipping when the out-of-state dealer is open to it; first-in-line service; and our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker
+- Best for: Buyers who want the best deal anywhere in the country
+- Includes: Everything in Steer Me Right, plus dealers nationwide, not just within 200 miles; shipping quotes on long-distance deals (the buyer pays the carrier); trade-in support (we compare offers on the trade-in from several areas and negotiate it with the deal); offers on up to three models priced side by side (a model is a make and model; trims, colors, and packages within a model do not count extra); and our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker
 - Current plan: https://www.steermeright.com/schedule.html#concierge
 
 ## Both plans
@@ -24,10 +24,6 @@ Steer Me Right offers two flat-fee car-buying service plans for buyers nationwid
 - One dedicated advisor from start to finish
 - Full refund if you cancel before negotiations begin.
 - Dealers and lenders pay us nothing.
-
-## Upgrading
-
-A Steer Me Right client can upgrade to Steer Me Right Pro later by paying the $300 difference.
 
 ## Costs not included
 

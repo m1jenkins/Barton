@@ -1,7 +1,9 @@
+import { paidTier } from './_lib/checkout-offer.js';
+import { SERVICE_TIERS } from './_lib/config.js';
 import { database } from './_lib/db.js';
 import { assertSameSiteRead, requestUrl, requireMethod, sendJson, withApiErrors } from './_lib/http.js';
 import { stripeClient } from './_lib/stripe-client.js';
-import { validateSessionId, validateTier } from './_lib/validation.js';
+import { validateClientReferenceId, validateSessionId, validateTier } from './_lib/validation.js';
 
 export function verifiedPurchase(session, purchase, requestedTier) {
   return Boolean(
@@ -35,10 +37,51 @@ async function retrieveSession(sessionId) {
   }
 }
 
+// Where a paid buyer tells us about the car. A payment link can redirect here
+// (?next=intake&tier=<its own tier>&session_id={CHECKOUT_SESSION_ID}) instead of
+// straight to a page, so a Steer Me Right checkout that took the Pro add-on
+// lands on the Pro intake.
+export const INTAKE_PAGES = Object.freeze({
+  full_service: '/payment-success-fullservice.html',
+  concierge: '/payment-success-concierge.html'
+});
+
+export function intakeLocation(tier, fallbackTier, sessionId) {
+  const page = INTAKE_PAGES[tier] ?? INTAKE_PAGES[fallbackTier] ?? INTAKE_PAGES.full_service;
+  return sessionId ? `${page}?session_id=${encodeURIComponent(sessionId)}` : page;
+}
+
+// Stripe sends the buyer here as a cross-site navigation, so this path answers
+// with a redirect only: it never returns purchase data and never fails loudly.
+async function redirectToIntake(url, res) {
+  let sessionId = null, fallbackTier = 'full_service', tier = null;
+  try {
+    fallbackTier = validateTier(url.searchParams.get('tier'));
+    sessionId = validateSessionId(url.searchParams.get('session_id'));
+    const sql = database();
+    const [session, purchases] = await Promise.all([
+      retrieveSession(sessionId),
+      sql`SELECT tier_id FROM purchases WHERE checkout_session_id = ${sessionId}`
+    ]);
+    tier = purchases[0]?.tier_id ?? null;
+    // The webhook may not have landed yet: work the tier out the way it will.
+    const reference = !tier && session?.payment_status === 'paid' ? validateClientReferenceId(session.client_reference_id) : null;
+    if (reference) {
+      const [attempt] = await sql`SELECT tier_id, expected_amount, currency FROM checkout_attempts WHERE client_reference_id = ${reference}`;
+      if (attempt && attempt.currency === String(session.currency || '').toLowerCase()) tier = paidTier(session, attempt, SERVICE_TIERS);
+    }
+  } catch { /* Fall back to the link's own page, which shows its own unverified state. */ }
+  res.statusCode = 303;
+  res.setHeader('Location', intakeLocation(tier, fallbackTier, sessionId));
+  res.setHeader('Cache-Control', 'no-store');
+  res.end();
+}
+
 async function handle(req, res) {
   requireMethod(req, 'GET');
-  assertSameSiteRead(req);
   const url = requestUrl(req);
+  if (url.searchParams.get('next') === 'intake') return redirectToIntake(url, res);
+  assertSameSiteRead(req);
   const sessionId = validateSessionId(url.searchParams.get('session_id'));
   const requestedTier = validateTier(url.searchParams.get('tier'));
 

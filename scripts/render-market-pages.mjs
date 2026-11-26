@@ -60,22 +60,23 @@ export function shell(chrome, { slug, title, description, h1, published, updated
 const attr = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 export const askMason = (location, vehicle = '') => `<p class="ask-mason">Not sure which plan you need? <button type="button" class="ask-mason__button" data-open-inquiry="Not sure yet"${vehicle ? ` data-inquiry-vehicle="${attr(vehicle)}"` : ''} data-cta-location="${location}-ask">Talk to Mason first</button> No payment needed to ask, and we reply within one business day.</p>`;
 
-// The two plan cards, word for word from the approved plan copy (PLAN-NAMES, DRIVE-RIGHT-SCOPE and PRO-SCOPE of 2026-10-23).
+// The two plan cards, word for word from Mason’s plan change of 2026-11-26: the Steer Me Right plan covers dealers within
+// 200 miles of the buyer’s ZIP code (state lines no longer matter) and Steer Me Right Pro covers dealers nationwide.
 // The buttons are plain /schedule.html links; script.js turns them into checkout. Do not add data-plan.
 export const plans = location => `<section class="plan-grid guide-plans" aria-label="Steer Me Right plans">
   <article class="plan-card" data-featured>
-    <h2>Steer Me Right</h2><p class="plan-for">Best if you know the car you want</p><p class="plan-description">One advisor finds it, works the dealers and handles the haggling.</p><p class="plan-price">$395<span>one-time service fee</span></p><p class="plan-assurance">Full refund if you cancel before negotiations begin.</p>
-    <ul><li>One model, with any trims, colors and packages</li><li>New, used and CPO dealer inventory</li><li>We negotiate the price and check the fees</li><li>One dedicated advisor, start to finish</li><li>Written recommendations: what we found and what we’d do</li></ul>
+    <h2>Steer Me Right</h2><p class="plan-for">Best if the car is within a day’s drive</p><p class="plan-description">One advisor finds it, works the dealers and handles the haggling.</p><p class="plan-price">$395<span>one-time service fee</span></p><p class="plan-assurance">Full refund if you cancel before negotiations begin.</p>
+    <ul><li>One model, with any trims, colors and packages</li><li>Dealers within 200 miles of you</li><li>New, used and CPO dealer inventory</li><li>We negotiate the price and check the fees</li><li>One dedicated advisor, start to finish</li><li>Written recommendations: what we found and what we’d do</li></ul>
     <a href="/schedule.html#full-service" data-cta-location="${location}" class="primary-button">Get Steer Me Right</a>
   </article>
   <article class="plan-card">
-    <h2>Steer Me Right Pro</h2><p class="plan-for">Best if you’re torn between a few cars</p><p class="plan-description">Torn between a BMW X5 and a Mercedes GLE? We price up to three models and tell you which deal we’d take.</p><p class="plan-price">$695<span>one-time service fee</span></p><p class="plan-assurance">Full refund if you cancel before negotiations begin.</p>
-    <ul><li>Everything in Steer Me Right</li><li>Offers on up to three models, priced side by side</li><li>We play each model’s dealers against each other’s written offers</li><li>Out-of-state dealers, and we help coordinate shipping when the dealer is open to it</li><li>First in line: your search starts ahead of Steer Me Right plan searches</li><li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li></ul>
+    <h2>Steer Me Right Pro</h2><p class="plan-for">Best if you want the best deal anywhere in the country</p><p class="plan-description">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p><p class="plan-price">$695<span>one-time service fee</span></p><p class="plan-assurance">Full refund if you cancel before negotiations begin.</p>
+    <ul><li>Everything in Steer Me Right</li><li>Dealers nationwide, not just within 200 miles</li><li>Shipping quotes on long-distance deals; you pay the carrier</li><li>Trade-in support: we compare offers on your trade-in from several areas and negotiate it with the deal</li><li>Offers on up to three models, priced side by side</li><li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li></ul>
     <a href="/schedule.html#concierge" data-cta-location="${location}" class="outline-button">Get Steer Me Right Pro</a>
   </article>
 </section>
 ${askMason(location)}
-<p class="plan-policy">A model means a make and model, like a BMW X5. Trims, colors and packages within a model don’t count extra. On the Steer Me Right plan, you can upgrade to Steer Me Right Pro later by paying the $300 difference.</p>`;
+<p class="plan-policy">The 200 miles are measured from your ZIP code. A model means a make and model, like a BMW X5. Trims, colors and packages within a model don’t count extra.</p>`;
 
 // City photos are licensed (Wikimedia Commons) and credited in the folded list under "Sources and updates".
 const picture = (image, sizes) => `<picture>${['avif', 'webp'].map(type => `<source type="image/${type}" srcset="${[640, 960, 1600].map(width => `/assets/external/optimized/${image.file}-${width}.${type} ${width}w`).join(', ')}" sizes="${sizes}">`).join('')}<img src="/assets/external/source/${image.file}-original.jpg" alt="${image.alt}" width="${image.width}" height="${image.height}" decoding="async" fetchpriority="high"></picture>`;
@@ -204,7 +205,7 @@ ${plans('market-hub')}
 <p>So the useful question is not “is there a car buying service in my city?” It is “will this one contact the dealers around me, and who pays it?” We contact dealers that have your car in stock wherever you live. You pay us a flat fee, and nobody else pays us anything.</p>
 
 <h2 id="cities">Cities where we’ve published local numbers</h2>
-<p>For these ${numberWords[listed.length]} metros we pulled how many cars dealers had listed and what they were asking, so you can see the size of the market we’d be working for you. Each page also explains which plan fits if dealers near you sit across a state line.</p>
+<p>For these ${numberWords[listed.length]} metros we pulled how many cars dealers had listed and what they were asking, so you can see the size of the market we’d be working for you. Each page also says which plan covers the dealers around that city.</p>
 <div class="compare-scroll" role="region" aria-labelledby="hub-data-caption" tabindex="0">
 <table class="compare-table">
 <caption id="hub-data-caption" class="sr-only">Dealer listings within ${data.inventory.radiusMiles} miles of each city center on ${pulled}</caption>
@@ -218,14 +219,14 @@ ${rows}
 ${publicOnly.length ? `<p>${joinNames(publicOnly.map(market => `<a href="/${market.slug}">${market.name}</a>`))} have no listing numbers here. For those ${numberWords[publicOnly.length]}, each page shows figures that public sources have published, with the source and date beside each one.</p>\n` : ''}<p>In Texas, where we’re based, see <a href="/austin.html">car buying in Austin</a> and the <a href="/texas-local-market-intelligence.html">Texas local markets</a> page.</p>
 
 <h2 id="other">If your city isn’t listed</h2>
-<p>The list above is only where we’ve published numbers so far. The service is the same everywhere in the United States, at the same fee. One rule changes with where you live: the Steer Me Right plan ($395) does not include out-of-state dealers, and Steer Me Right Pro ($695) does. If the nearest big dealer cluster is across a state line from you, Pro is usually the plan to look at.</p>
+<p>The list above is only where we’ve published numbers so far. The service is the same everywhere in the United States, at the same fee. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. The 200 miles are measured from your ZIP code, and state lines don’t matter. If few dealers within 200 miles of you stock the car you want, Pro is the plan to look at.</p>
 <p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/schedule.html">pricing page</a>.</p>
 
 <h2 id="faq">Common questions</h2>
 ${faq([
     ['Is there a car buying service near me?', 'Steer Me Right works with dealers in every state from one office in Austin, Texas. The work is done by phone and email, so you don’t need a local office. You pick up the car from the dealer.'],
     ['Do you charge more in bigger cities?', 'No. The fee is $395 for one model or $695 for up to three, wherever you live.'],
-    ['Can you use dealers in a neighboring state?', 'Yes, on Steer Me Right Pro, which includes out-of-state dealers and help coordinating shipping when the dealer is open to it. The Steer Me Right plan covers dealers in your own state.'],
+    ['Can you use dealers in a neighboring state?', 'Yes. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. State lines don’t matter on either plan. On Steer Me Right Pro, we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.'],
     ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}

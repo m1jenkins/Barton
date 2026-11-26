@@ -6,6 +6,7 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 - Read `README.md` first: it maps every folder, the two page styles (current `buying/*.css` vs legacy `styles.css`), and which folders are not deployed. `docs/README.md` indexes the docs.
 - Root `*.html` files are live URLs; each page carries its own copy of the header, footer and nav. Do not rename or move them without a `vercel.json` redirect.
 - Public copy uses “car search” or “search details”; never use “brief” (including metadata, accessibility labels, dynamic messages, and downloads).
+- Plans since November 26, 2026: Steer Me Right ($395) works dealers within 200 miles of the buyer; Pro ($695) works them nationwide and adds shipping quotes, trade-in support and up to three models. Never offer a later upgrade to Pro in public copy, and never say the $395 plan excludes out-of-state dealers. Strings, where they live and the Stripe add-on steps: `docs/seo/2026-11-26-plan-reach.md`.
 - Read `.ai_rules` before UI changes (`.cursorrules` is a symlink to it).
 - Homepage CSS/JS URLs use content hashes to avoid stale live caches; `scripts/validate-site.mjs` checks them and reports the required URLs after asset changes.
 - The owner approved all current website content on October 1, 2026; see `docs/content-approval-2026-10-01.md`. Do not add draft warnings or require another content verification/approval for existing website copy.

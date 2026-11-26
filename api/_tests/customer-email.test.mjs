@@ -61,7 +61,7 @@ test('the HTML and text parts carry the same facts', () => {
   const buyer = buyerFromRow(SAMPLE_BUYERS.standard.row);
   const { html, text } = renderCustomerEmail('welcome', buyer);
   for (const fact of ['Subaru Ascent', 'Up to $42,000 out the door', 'Within 150 miles', 'Tuscaloosa, AL', 'Steer Me Right · $395',
-    'Within one business day', '$300 difference']) {
+    'Within one business day', 'Dealers within 200 miles of you']) {
     assert.ok(html.includes(fact.replace('&', '&amp;')), `html: ${fact}`);
     assert.ok(text.includes(fact), `text: ${fact}`);
   }
@@ -72,8 +72,11 @@ test('plans get their own copy', () => {
   const standard = renderCustomerEmail('welcome', buyerFromRow(SAMPLE_BUYERS.standard.row)).text;
   assert.match(pro, /Steer Me Right Pro · \$695/);
   assert.match(pro, /up to three models/);
-  assert.doesNotMatch(pro, /\$300 difference/);
-  assert.match(standard, /\$300 difference/);
+  assert.match(pro, /Dealers nationwide/);
+  assert.match(pro, /Trade-in support/);
+  assert.match(standard, /within 200 miles/);
+  // No email offers an upgrade any more (2026-11-26).
+  assert.doesNotMatch(pro + standard, /\$300 difference|ahead of the line/);
   assert.match(renderCustomerEmail('what_to_expect', buyerFromRow(SAMPLE_BUYERS.standard.row)).text, /trade-in/,
     'buyers with a trade-in get the trade-in tip');
   assert.doesNotMatch(renderCustomerEmail('what_to_expect', buyerFromRow(SAMPLE_BUYERS.pro.row)).text, /trade-in/);
@@ -375,7 +378,7 @@ const patToday = template => renderCustomerEmail(template, buyerFromRow({ ...SAM
 // for the four sample buyers, first 16 hex. Without a live link every email must
 // stay byte-for-byte what Mason approved; change these only with his OK on new copy.
 const TODAY = Object.freeze({
-  welcome: '71a948ee7319e178', what_to_expect: '9f0396b1ae112c44', deal_done: '03fac51172d220da', review_ask: '960a71ae060b6bca'
+  welcome: '96bd0628fd7e3aec', what_to_expect: 'df5cdfba9d000ed0', deal_done: '03fac51172d220da', review_ask: '960a71ae060b6bca'
 });
 function snapshot(template, options) {
   const hash = createHash('sha256');
@@ -417,11 +420,11 @@ test('with a link, each Deal Tracker email carries it, and the welcome and what-
   const welcome = of('standard', 'welcome');
   assert.equal(welcome.subject, 'You’re in, Pat. Here’s what happens next', 'the welcome subject stays');
   for (const fact of ['YOUR DEAL TRACKER', 'Keep this link to yourself', 'WHAT YOU ASKED FOR', 'Subaru Ascent', 'Tuscaloosa, AL',
-    'YOUR PLAN: STEER ME RIGHT', '$300 difference', 'Within one business day']) assert.ok(welcome.text.includes(fact), `welcome: ${fact}`);
+    'YOUR PLAN: STEER ME RIGHT', 'Dealers within 200 miles of you', 'Within one business day']) assert.ok(welcome.text.includes(fact), `welcome: ${fact}`);
   assert.ok(welcome.text.indexOf('YOUR DEAL TRACKER') < welcome.text.indexOf('WHAT YOU ASKED FOR'), 'the link comes first');
   assert.doesNotMatch(welcome.text, /We find the cars and work the dealers/, 'the step-by-step is gone');
   assert.equal((welcome.text.match(/Keep this link to yourself/g) || []).length, 1);
-  assert.match(of('pro', 'welcome').text, /Pro searches start ahead of the line/);
+  assert.doesNotMatch(of('pro', 'welcome').text, /ahead of the line/, 'first in line was withdrawn on 2026-11-26');
 
   for (const key of Object.keys(SAMPLE_BUYERS)) {
     const nudge = of(key, 'what_to_expect');

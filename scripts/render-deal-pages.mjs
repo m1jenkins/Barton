@@ -33,10 +33,10 @@ const needsFor = (slug, list) => (list || []).map(text => ({ slug, text }));
 
 // The two plan cards, word for word from render-vehicle-pages.mjs (a test compares the strings), so the copy stays the approved copy.
 const planCards = [
-  { name: 'Steer Me Right', fit: 'Best if you know the car you want.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
-    items: ['One model, with any trims, colors and packages', 'We contact dozens of dealers that have it in stock', 'We negotiate the price and fees'] },
-  { name: 'Steer Me Right Pro', fit: 'Best if you’re torn between a few cars.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
-    items: ['We present offers on up to three models', 'We handle the paperwork remotely where we can, so you just pick up your car', 'Shipping help in some cases'] },
+  { name: 'Steer Me Right', fit: 'Best if the car is within a day’s drive.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
+    items: ['One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees'] },
+  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
+    items: ['Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models'] },
 ];
 const tick = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 const planCard = (card, location) => `<article class="vp-plan${card.pro ? ' vp-plan--pro' : ''}">
@@ -55,7 +55,7 @@ const plansSection = location => `<section id="plans" class="vp-section vp-plans
 ${planCards.map(card => planCard(card, location)).join('\n')}
 </div>
 ${askMason(location)}
-<p class="vp-note">Dealers and lenders pay us nothing. You can upgrade to Steer Me Right Pro later by paying the $300 difference. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
+<p class="vp-note">Dealers and lenders pay us nothing. The Steer Me Right plan covers dealers within 200 miles of you; Steer Me Right Pro covers dealers nationwide. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
 </section>`;
 const negotiate = 'Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do.';
 const faq = entries => `<div class="vp-faq">\n${entries.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('\n')}\n</div>`;

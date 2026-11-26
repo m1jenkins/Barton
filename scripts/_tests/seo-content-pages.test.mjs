@@ -135,7 +135,7 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   }
 });
 
-test('marketing nav lists three sections, and the schedule header offers one checkout', async () => {
+test('marketing nav lists three sections, and the schedule header leads to the plan cards', async () => {
   for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
     if (file === 'index.html') {
@@ -157,8 +157,11 @@ test('marketing nav lists three sections, and the schedule header offers one che
       assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/schedule.html', '/about.html']);
       assert.doesNotMatch(nav, /car-buying-service\.html/);
       const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
-      assert.deepEqual(plans, [{ tier: 'full_service', label: 'Get Steer Me Right · $395' }], 'one compact header checkout');
-      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|See plans|href="(?:#pricing|https:\/\/[^\"]*stripe)/);
+      // Since 2026-11-26 the header leads to both plan cards and starts no checkout of its own.
+      assert.deepEqual(plans, [], 'no checkout button in the header');
+      assert.doesNotMatch(header, /data-plan=/);
+      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm wz-header-checkout" href="#pricing" data-cta-location="header"><span>See plans<span class="wz-header-price"> · from \$395<\/span><\/span><\/a>/);
+      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|href="https:\/\/[^\"]*stripe/);
       continue;
     }
     if (file === 'about.html') {
@@ -249,7 +252,7 @@ test('homepage Organization schema records owner-confirmed hours and service are
   assert.match(homepage.visibleText, /Mon–Fri, 9 a\.m\.–5 p\.m\. Central/);
   assert.match(await read('policy.html'), /mailto:hello@steermeright\.com/);
   assert.doesNotMatch(await read('policy.html'), /mason@driverightcarbuying\.com/);
-  assert.match(await read('llms.txt'), /\$395 Steer Me Right \(one model\) and \$695 Steer Me Right Pro \(up to three models\)/);
+  assert.match(await read('llms.txt'), /\$395 Steer Me Right \(one model, dealers within 200 miles\) and \$695 Steer Me Right Pro \(dealers nationwide, shipping quotes, trade-in support, up to three models\)/);
   assert.doesNotMatch(await read('llms.txt'), /AI Agent Buying Service/);
 });
 
@@ -338,7 +341,7 @@ test('unreleased legacy blog HTML stays noindex while the three released guides 
   }
 });
 
-test('live pages use the Steer Me Right and Steer Me Right Pro plan names and scopes of 2026-10-23', async () => {
+test('live pages use the plan names of 2026-10-23 and the plan scopes of 2026-11-26', async () => {
   const live = (await readdir(root)).filter(file => file.endsWith('.html'));
   const files = [...live, 'pricing.md', 'llms.txt', 'script.js', 'buying/checkout.js', 'buying/intake-chat.js'];
   // Competitors' own "Full Service" and "Concierge" tiers stay; only Steer Me Right's old names and old Pro scope are retired.
@@ -349,23 +352,32 @@ test('live pages use the Steer Me Right and Steer Me Right Pro plan names and sc
     const text = htmlDocument(await read(file)).visibleText;
     assert.match(text, /Steer Me Right Pro/, file);
     assert.match(text, /up to three models/, file);
-    assert.match(text, /upgrade to Steer Me Right Pro later by paying the \$300 difference/, file);
+    assert.match(text, /within 200 miles/i, file);
+    assert.match(text, /nationwide/i, file);
   }
-  assert.match(await read('policy.html'), /upgrade to Steer Me Right Pro later by paying the \$300 difference/);
-  assert.match(await read('pricing.md'), /upgrade to Steer Me Right Pro later by paying the \$300 difference/);
+  // The 2026-11-26 rule: 200 miles on Steer Me Right, nationwide on Pro, and no advertised upgrade.
+  const withdrawn = /\$300 difference|upgrade to (?:Steer Me Right )?Pro|[Ff]irst in line|does not include out-of-state|doesn’t include out-of-state|coordinate shipping|Shipping help in some cases/;
+  for (const file of files) {
+    const text = await read(file);
+    // The Terms keep the upgrade for plans bought before the change, and only there.
+    assert.doesNotMatch(file === 'policy.html' ? text.replace(/<h3>Plans bought before November 26, 2026<\/h3>\s*<p>[^<]*<\/p>/, '') : text, withdrawn, file);
+  }
+  assert.match(await read('policy.html'), /If you paid for a plan before November 26, 2026, the plan terms in effect when you paid still apply/);
+  assert.match(await read('pricing.md'), /dealers within 200 miles of the buyer’s ZIP code/);
+  assert.match(await read('pricing.md'), /dealers nationwide/);
 });
 
-test('claim rows record the 2026-10-23 plan names, scopes and upgrade term, and the banner matches its row', async () => {
+test('claim rows record the 2026-10-23 plan names and the 2026-11-26 scopes, and the banner matches its row', async () => {
   const claims = new Map(csvRows(await read('data/claims.csv')).map(row => [row.claim_id, row]));
-  for (const id of ['PLAN-NAMES-2026-10-23', 'DRIVE-RIGHT-SCOPE-2026-10-23', 'PRO-SCOPE-2026-10-23', 'PLAN-UPGRADE-2026-10-23']) {
+  for (const id of ['PLAN-NAMES-2026-10-23', 'PLAN-REACH-2026-11-26', 'STEER-ME-RIGHT-SCOPE-2026-11-26', 'PRO-SCOPE-2026-11-26']) {
     const row = claims.get(id);
     assert.equal(row?.status, 'approved', id);
     assert.ok(row.reviewer && row.last_reviewed && row.expires_on && row.approved_copy, `${id} is complete`);
   }
-  for (const id of ['CONCIERGE-SCOPE-2026-10-05', 'CONCIERGE-SHIPPING-2026-10-23']) assert.equal(claims.get(id)?.status, 'retired', id);
+  for (const id of ['CONCIERGE-SCOPE-2026-10-05', 'CONCIERGE-SHIPPING-2026-10-23', 'DRIVE-RIGHT-SCOPE-2026-10-23', 'PRO-SCOPE-2026-10-23', 'PLAN-UPGRADE-2026-10-23']) assert.equal(claims.get(id)?.status, 'retired', id);
   assert.equal(claims.get('SEO-PRICE-2026-09-27').status, 'approved');
 
   const promo = claims.get('PROMO-HALLOWEEN-2026-10-23');
   assert.equal(promo.claim_text, 'Halloween sale: 25% off Steer Me Right or Steer Me Right Pro with code SPOOKY25 at checkout. Ends October 31.');
-  assert.match(claims.get('PLAN-UPGRADE-2026-10-23').claim_text, /upgrade to Steer Me Right Pro later by paying the \$300 difference/);
+  assert.match(claims.get('PLAN-REACH-2026-11-26').claim_text, /within 200 miles of the buyer’s ZIP code[\s\S]*dealers nationwide/);
 });

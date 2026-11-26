@@ -6,15 +6,16 @@ function planCard(buyer) {
   const pro = buyer.isPro;
   return card(`Your plan: ${buyer.plan}`, [
     checklist(pro
-      ? ['Offers on up to three models, priced side by side',
-        'Out-of-state dealers, with help coordinating shipping when the dealer is open to it',
+      ? ['Dealers nationwide, with shipping quotes on long-distance deals',
+        'Trade-in support: we compare offers on your trade-in and negotiate it with the deal',
+        'Offers on up to three models, priced side by side',
         'Paperwork handled remotely where we can, so you just pick up your car',
         'One advisor, start to finish']
       : ['One model, with any trims, colors and packages',
+        'Dealers within 200 miles of you',
         'New, used and certified pre-owned dealer inventory',
         'We negotiate the price and check the fees',
-        'One advisor, start to finish']),
-    !pro && paragraph('Torn between a few models? You can move to Steer Me Right Pro any time by paying the $300 difference.')
+        'One advisor, start to finish'])
   ]);
 }
 
@@ -44,7 +45,7 @@ export function render(buyer, { tracker } = {}) {
         ]),
         recapCard(buyer),
         card('What happens next', [
-          paragraph(`Within one business day, I’ll confirm your search and when it starts.${pro ? ' Pro searches start ahead of the line.' : ''} From then on, you can follow it on your Deal Tracker.`)
+          paragraph(`Within one business day, I’ll confirm your search and when it starts. From then on, you can follow it on your Deal Tracker.`)
         ]),
         planCard(buyer)
       ].filter(Boolean)
@@ -58,13 +59,13 @@ export function render(buyer, { tracker } = {}) {
       card('What happens next', [steps([
         {
           title: 'I confirm your search',
-          body: `Within one business day, I’ll reply to confirm the details and when your search starts.${pro ? ' Pro searches start ahead of the line.' : ''}`
+          body: `Within one business day, I’ll reply to confirm the details and when your search starts.`
         },
         {
           title: 'We find the cars and work the dealers',
           body: pro
-            ? 'We price up to three models side by side, get written out-the-door offers, and play each model’s dealers against each other’s offers.'
-            : 'We search dealer inventory for cars that match, get written out-the-door prices, and negotiate the price and fees.'
+            ? 'We work dealers nationwide, price up to three models side by side and get written out-the-door offers. When the best deal is far away, we get shipping quotes.'
+            : 'We search dealer inventory within 200 miles of you for cars that match, get written out-the-door prices, and negotiate the price and fees.'
         },
         {
           title: 'You decide',

@@ -44,10 +44,12 @@ export const questions = [
   { key: 'payment_method', label: 'Paying', question: 'How are you planning to pay?', placeholder: 'Cash, financing, or a lease', choices: ['Cash', 'Financing', 'Lease', 'Not sure yet'], hint: 'Just your plan for now. No financial documents needed.', maxLength: 80 },
   { key: 'financing_status', label: 'Loan pre-approval', question: 'Do you already have a loan pre-approval from a bank or credit union?', placeholder: 'Yes, or not yet', choices: ['Yes, I’m pre-approved', 'Not yet'], when: answers => answers.payment_method === 'Financing', maxLength: 80 },
   { key: 'trade_in', label: 'Trade-in', question: 'Do you have a car to trade in?', placeholder: 'Yes, no, or maybe', choices: ['Yes, I have a trade-in', 'No trade-in', 'Maybe'], maxLength: 80 },
-  { key: 'trade_vehicle', label: 'Your trade-in', question: 'What’s the trade-in? The year, make, model and rough mileage.', placeholder: 'A 2018 Honda Civic, about 70,000 miles', mobilePlaceholder: '2018 Civic, 70k miles', when: answers => Boolean(answers.trade_in) && answers.trade_in !== 'No trade-in', maxLength: 200 },
+  { key: 'trade_vehicle', label: 'Your trade-in', question: 'What’s the trade-in? The year, make, model and rough mileage.', placeholder: 'A 2018 Honda Civic, about 70,000 miles', mobilePlaceholder: '2018 Civic, 70k miles',
+    byTier: { concierge: { hint: 'Your plan includes trade-in support: we compare offers on it and negotiate it with the deal.' } }, when: answers => Boolean(answers.trade_in) && answers.trade_in !== 'No trade-in', maxLength: 200 },
   { key: 'timeline', label: 'Timing', question: 'When do you need the car?', placeholder: 'A timeframe or a date', choices: ['As soon as possible', 'Within 2 weeks', 'Within a month', 'No rush'], required: true, maxLength: 80 },
   { key: 'city', label: 'Where you live', question: 'Where do you live?', placeholder: 'Austin, TX or 78701', hint: 'A city and state or a ZIP code. We search from here, and taxes and registration depend on it.', required: true, maxLength: 160 },
-  { key: 'search_radius', label: 'How far', question: 'How far would you go for the right car?', placeholder: 'For example, 250 miles', choices: ['Within 50 miles', 'Within 250 miles', 'Anywhere in the US'], maxLength: 80 },
+  { key: 'search_radius', label: 'How far', question: 'How far would you go for the right car?', placeholder: 'For example, 250 miles', choices: ['Within 50 miles', 'Within 250 miles', 'Anywhere in the US'], maxLength: 80,
+    byTier: { full_service: { placeholder: 'For example, 150 miles', choices: ['Within 50 miles', 'Within 100 miles', 'Within 200 miles'], hint: 'Your plan covers dealers within 200 miles of you.' } } },
   { key: 'needs', label: 'What it needs to do', question: 'What does the car need to do for you?', placeholder: 'Two car seats, room for the dog, a long commute…', hint: 'Passengers, cargo, driving habits and must-have features.', multiline: true, maxLength: 1000 },
   { key: 'colors', label: 'Colors', question: 'Any colors you love, or want to avoid?', placeholder: 'Blue or gray, but not white', choices: ['Open to any color'], maxLength: 300 },
   { key: 'delivery_address', label: 'Delivery', question: 'If we coordinate delivery, where should the car go?', placeholder: 'An address, or just a city for now', hint: 'Delivery coordination depends on the car and the seller.', tiers: ['concierge'], maxLength: 300 },
@@ -62,7 +64,8 @@ const questionByKey = key => questions.find(question => question.key === key);
 
 /** Questions this plan asks, given the answers so far (new cars skip years and mileage). */
 export function stepsFor(answers = {}, tier = 'full_service') {
-  return questions.filter(question => (!question.tiers || question.tiers.includes(tier)) && (!question.when || question.when(answers)));
+  return questions.filter(question => (!question.tiers || question.tiers.includes(tier)) && (!question.when || question.when(answers)))
+    .map(question => question.byTier?.[tier] ? { ...question, ...question.byTier[tier] } : question);
 }
 
 function normalizeBudget(text) {
@@ -192,7 +195,7 @@ export function restoreState(value) {
 
 /** The question waiting for an answer, or null once every applicable question is resolved. */
 export function nextQuestion(state, tier) {
-  if (state.editing) return questionByKey(state.editing);
+  if (state.editing) return stepsFor(state.answers, tier).find(question => question.key === state.editing) || questionByKey(state.editing);
   return stepsFor(state.answers, tier).find(question => !(question.key in state.answers) && !state.skipped[question.key]) || null;
 }
 

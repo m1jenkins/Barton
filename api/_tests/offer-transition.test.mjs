@@ -167,3 +167,19 @@ test('an opted-out checkout marks its attempt so the webhook skips the OpenAI pu
   assert.equal(paid.recorded,true);assert.equal(paid.openaiAdsCapi===null,off);
  }
 });
+
+test('a Steer Me Right checkout that takes the Pro add-on is recorded, reported and verified as Pro',async()=>{
+ const db=ledger(attempt()),e=event('full_service',69500);
+ const paid=await recordEvent(e,db.sql);
+ assert.equal(paid.recorded,true);assert.equal(db.status(),'paid');
+ const purchase=[...db.purchases.values()][0];
+ assert.equal(purchase.tier_id,'concierge');assert.equal(purchase.amount_total,69500);
+ const sent=[...db.outbox.values()][0];
+ assert.equal(sent.value,695);assert.match(JSON.stringify(sent),/concierge/);assert.doesNotMatch(JSON.stringify(sent),/full_service/);
+ assert.equal(verifiedPurchase(e.data.object,purchase,'concierge'),true);
+ assert.equal(verifiedPurchase(e.data.object,purchase,'full_service'),false);
+ // Any other total on that link still stops for review.
+ const odd=ledger(attempt());
+ assert.equal((await recordEvent(event('full_service',69400),odd.sql)).recorded,false);
+ assert.equal(odd.status(),'review_required');assert.equal(odd.purchases.size,0);
+});

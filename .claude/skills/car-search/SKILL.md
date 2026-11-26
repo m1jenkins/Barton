@@ -23,14 +23,20 @@ Turn the answers into filters and state them in a line or two before searching:
 - Model years, mileage ceiling, and new, used or certified.
 - The budget is all-in: tax, title, registration and dealer fees come out of it. Set the advertised-price ceiling at the budget minus the buyer's state sales tax and about $1,000 of fees. Keep a car slightly over it only if it looks likely to come down.
 - Must-have features, colors and dealbreakers.
-- Location: the main ZIP code of the buyer's city. Radius: their "How far" answer, or 100 miles if they gave none.
+- Location: the main ZIP code of the buyer's city.
+- Radius, by plan (rule of November 26, 2026):
+  - Steer Me Right (`full_service`): their "How far" answer, or 100 miles if they gave none, and never more than 200 miles, whatever they answered. State lines do not matter.
+  - Steer Me Right Pro (`concierge`): their "How far" answer, or nationwide if they gave none or said "Anywhere in the US".
+  - A buyer who paid before November 26, 2026 keeps the old terms: search as far as their answer says.
 
 ## 3. Search MarketCheck
 
 Use the MarketCheck connector's tools.
 - Find exact filter values first. Call `search_active_cars` with only `facets` (for example `make`, `model`, `trim`, `exterior_color`, `interior_color` or `drivetrain`), the ZIP and radius, and `rows=1`. A filter value that is not an exact facet string silently returns nothing.
 - Search with `search_active_cars`: `car_type`, `year_range`, `price_range`, `miles_range`, `zip`, `radius`, `include_dealer_object=true`, `rows=50`, `sort_by=price`. Page with `start` when there are more.
-- With fewer than about 8 good matches, widen the radius in steps (up to about 350 miles) or relax a soft preference, and say what you changed.
+- With fewer than about 8 good matches, widen the radius in steps or relax a soft preference, and say what you changed. On Steer Me Right stop at 200 miles. On Steer Me Right Pro keep widening, to nationwide if needed.
+- If a Steer Me Right search is still thin at 200 miles, do not search further and do not show the buyer anything from outside it. Tell Mason in the run summary how many matches the 200 miles hold; offering the buyer Pro is his call, and it is no longer advertised.
+- On Steer Me Right Pro, for a car far enough away that the buyer would ship it, note the distance so Mason can get a shipping quote. If the buyer has a trade-in, note it for Mason too: Pro includes comparing offers on the trade-in and negotiating it with the deal. Neither goes in a dealer email.
 - Skip auction, salvage and rebuilt cars, and anything priced far under market without an explanation. Do not describe owners or title history from MarketCheck's `carfax_*` fields; they are incomplete.
 
 ## 4. Check and price the best candidates
