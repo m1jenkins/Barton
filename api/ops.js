@@ -29,9 +29,20 @@ const SECURITY_HEADERS = Object.freeze({
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
-  'Referrer-Policy': 'no-referrer',
+  'Referrer-Policy': 'same-origin',
   'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"
 });
+
+// Under no-referrer (or strict browser policies) a same-origin HTML form POST can
+// carry "Origin: null" alongside "Sec-Fetch-Site: same-origin". Accept that only
+// when Sec-Fetch-Site proves same-origin; reject any cross-site or mismatched Origin.
+function isSameOriginPost(req, url) {
+  const origin = header(req, 'origin');
+  const site = header(req, 'sec-fetch-site');
+  if (site && site !== 'same-origin') return false;
+  if (origin && origin !== 'null') return origin === url.origin;
+  return site === 'same-origin';
+}
 
 function send(res, status, body, extra = {}) {
   res.statusCode = status;
@@ -84,7 +95,7 @@ export function opsHandler({
     if (req.method === 'POST') {
       // The browser resends cookies/Basic credentials on any request, so a form posted
       // from another site must not count. Only this page's own origin may post.
-      if (header(req, 'origin') !== url.origin) throw new HttpError(403, 'origin_not_allowed', 'Request origin is not allowed');
+      if (!isSameOriginPost(req, url)) throw new HttpError(403, 'origin_not_allowed', 'Request origin is not allowed');
       const tracker = authed ? dealTrackerSettings(environment) : null;
       // A Buyer Update is up to 4,000 characters, which can run well past 16 KB once form-encoded.
       const form = new URLSearchParams((await readRawBody(req, tracker ? 65536 : 16384, { allowParsedBody: false })).toString('utf8'));

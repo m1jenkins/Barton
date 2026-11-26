@@ -422,7 +422,11 @@ test('/api/ops magic link emails a 10-minute link, confirms on POST, and sets a 
 
   // Blind POST without a valid challenge or from another origin is refused.
   assert.equal((await call(handler, 'POST', { headers: { origin: 'https://evil.example' }, body: `auth=send&challenge=${challenge}` })).statusCode, 403);
+  assert.equal((await call(handler, 'POST', { headers: { origin: 'null', 'sec-fetch-site': 'cross-site' }, body: `auth=send&challenge=${challenge}` })).statusCode, 403);
+  assert.equal((await call(handler, 'POST', { headers: { origin: 'null' }, body: `auth=send&challenge=${challenge}` })).statusCode, 403);
   assert.equal((await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: 'auth=send&challenge=bad' })).statusCode, 400);
+  // Same-origin browser form POST with Origin: null (e.g. under no-referrer) is allowed when Sec-Fetch-Site is same-origin.
+  assert.equal((await call(handler, 'POST', { headers: { origin: 'null', 'sec-fetch-site': 'same-origin' }, body: 'auth=send&challenge=bad' })).statusCode, 400);
   assert.equal(sent.length, 0);
 
   // Honeypot silently skips sending mail.
