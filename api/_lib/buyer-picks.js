@@ -5,11 +5,13 @@ import { summarizeDeal } from './ops-dashboard.js';
 // this website code writes them: the buyer picks a car or asks us to keep
 // looking on the Deal Tracker (makePick, keepLooking), Mason clears one from the
 // ops dashboard (clearPick), and the alerts job clears a pick whose dealer was
-// dropped (clearDroppedPicks). Agents read them with scripts/deal-desk-db.mjs.
+// dropped (clearDroppedPicks). Agents only read them (listPicks), through
+// /api/car-search (scripts/car-search.mjs picks) or scripts/deal-desk-db.mjs.
 
 const iso = ms => new Date(ms).toISOString();
 const vinKey = vin => String(vin ?? '').trim().toUpperCase();
 const UNIQUE_VIOLATION = '23505';
+const INTAKE_ID = /^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
 
 // The round is opened by the deal's latest posted "ready for your call" update.
 // Taking that update back closes it again (or falls back to an older one).
@@ -125,4 +127,20 @@ export async function clearDroppedPicks(sql) {
     }
   }
   return cleared;
+}
+
+// ---------- Agents ----------
+
+// Standing Buyer Picks, newest first, each with its car's title: one deal's, or
+// every deal's with no intake ID. Read-only: only the buyer makes a pick
+// (adr/0002). A cleared pick (by Mason, or its dealer dropped) never shows.
+export async function listPicks(sql, intakeId = null) {
+  if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('picks takes the full intake ID, or nothing for every deal');
+  const id = intakeId?.toLowerCase() ?? null;
+  return sql`SELECT p.id, p.onboarding_id AS intake_id, p.kind, p.vin, p.dealer_name, p.otd_cents, p.created_at,
+      (SELECT l.title FROM deal_listings l JOIN deals d ON d.id = l.deal_id
+        WHERE d.onboarding_id = p.onboarding_id AND upper(l.vin) = upper(p.vin) ORDER BY l.rank LIMIT 1) AS title
+    FROM buyer_picks p
+    WHERE p.cleared_at IS NULL AND (${id}::uuid IS NULL OR p.onboarding_id = ${id}::uuid)
+    ORDER BY p.created_at DESC, p.id DESC`;
 }

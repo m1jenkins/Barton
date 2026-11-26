@@ -10,16 +10,28 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 //   node scripts/car-search.mjs draft <intake ID> <text file | ->  save a draft Buyer Update for Mason to approve
 //                                                                  on the deal's ops page; it never posts one
 //   node scripts/car-search.mjs document <document id> [output file]
-//                                                                  save one Buyer Document (ids from
-//                                                                  `node scripts/deal-desk-db.mjs documents`), by default to
+//                                                                  save one Buyer Document (ids from `documents`), by default to
 //                                                                  .car-searches/documents/ (git-ignored); prints where, never the contents
+// What an agent working a deal reads, with no database login. Each takes the intake ID or its first 8 characters:
+//   node scripts/car-search.mjs picks <intake ID>                  the standing Buyer Picks, newest first: a car at its price as
+//                                                                  picked, or "keep looking". Read-only: only the buyer makes one
+//                                                                  (adr/0002), and Mason confirms it with the dealer
+//   node scripts/car-search.mjs documents <intake ID>              the Buyer Documents: id, type, content type, size and date.
+//                                                                  Never a file's contents, and deleted files never show
+//   node scripts/car-search.mjs texts <intake ID> [last N]         the buyer's texts with Mason (Buyer Texts, adr/0004), oldest first,
+//                                                                  with when Mason's Mac last synced them
+//   node scripts/car-search.mjs deal <intake ID>                   the shortlist with each car's prices, the full event log
+//                                                                  and the Buyer Updates
 // Reads CAR_SEARCH_TOKEN, and optionally CAR_SEARCH_URL, from the environment
 // or from .env.local in the repository root (git-ignored). handoff also needs
 // DEALER_BOT_URL and DEALER_BOT_KEY, Grokbot's "New deal" webhook
 // (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
 // JSON through as is; the server checks it, including each car's est_otd and
 // color once the Deal Tracker is on.
-const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> | document <document id> [output file]';
+const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> | document <document id> [output file] | picks <intake ID> | documents <intake ID> | texts <intake ID> [last N] | deal <intake ID>';
+// GET-only: none of these can change anything.
+const READS = ['picks', 'documents', 'texts', 'deal'];
+const COMMANDS = ['get', 'submit', 'handoff', 'draft', 'document', ...READS];
 const DOCUMENTS_DIR = fileURLToPath(new URL('../.car-searches/documents/', import.meta.url));
 
 export function localEnv(file = new URL('../.env.local', import.meta.url)) {
@@ -86,23 +98,34 @@ const readText = source => (source === '-' ? new Response(process.stdin).text() 
 export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR, read = readText } = {}) {
   const token = environment.CAR_SEARCH_TOKEN?.trim();
   if (!token) throw new Error('CAR_SEARCH_TOKEN is not set. Add it to .env.local (see "Car search" in docs/implementation-operations.md).');
-  if (!intakeId || !['get', 'submit', 'handoff', 'draft', 'document'].includes(command) || (['submit', 'draft'].includes(command) && !file)) throw new Error(USAGE);
+  if (!intakeId || !COMMANDS.includes(command) || (['submit', 'draft'].includes(command) && !file)) throw new Error(USAGE);
   if (command === 'document' && !/^[1-9]\d{0,17}$/.test(intakeId)) throw new Error(USAGE);
+  if (READS.includes(command) && file != null && !(command === 'texts' && /^[1-9]\d{0,3}$/.test(file))) {
+    throw new Error(command === 'texts' ? 'texts takes a whole number of texts to show' : USAGE);
+  }
   const bot = command === 'handoff' ? dealerBot(environment) : null;
   const base = (environment.CAR_SEARCH_URL?.trim() || 'https://www.steermeright.com').replace(/\/+$/, '');
   const headers = { Authorization: `Bearer ${token}`, Accept: 'application/json' };
   if (command === 'document') return saveDocument(base, headers, intakeId, file, fetchImpl, documentsDir);
-  const response = command === 'get'
-    ? await fetchImpl(`${base}/api/car-search?intake=${encodeURIComponent(intakeId)}`, { headers })
-    : await fetchImpl(`${base}/api/car-search`, {
+  // Every command is named here: one this list doesn't know sends nothing.
+  const post = async () => (command === 'submit' ? { intake_id: intakeId, shortlist: JSON.parse(await readFile(file, 'utf8')) }
+    : command === 'draft' ? { intake_id: intakeId, action: 'draft_update', text: await read(file) }
+      : command === 'handoff' ? { intake_id: intakeId, action: 'handoff' } : null);
+  let response;
+  if (command === 'get') {
+    response = await fetchImpl(`${base}/api/car-search?intake=${encodeURIComponent(intakeId)}`, { headers });
+  } else if (READS.includes(command)) {
+    const query = new URLSearchParams({ intake: intakeId, read: command, ...(file ? { last: file } : {}) });
+    response = await fetchImpl(`${base}/api/car-search?${query}`, { headers });
+  } else {
+    const body = await post();
+    if (!body) throw new Error(USAGE);
+    response = await fetchImpl(`${base}/api/car-search`, {
       method: 'POST',
       headers: { ...headers, 'Content-Type': 'application/json' },
-      body: JSON.stringify(command === 'submit'
-        ? { intake_id: intakeId, shortlist: JSON.parse(await readFile(file, 'utf8')) }
-        : command === 'draft'
-          ? { intake_id: intakeId, action: 'draft_update', text: await read(file) }
-          : { intake_id: intakeId, action: 'handoff' })
+      body: JSON.stringify(body)
     });
+  }
   const body = await response.json().catch(() => ({ ok: false, error: `HTTP ${response.status}` }));
   if (command !== 'handoff' || !body.ok) return { status: response.status, body };
   return postToDealerBot(bot, body.handoff, fetchImpl);

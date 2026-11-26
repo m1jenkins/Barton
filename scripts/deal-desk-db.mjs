@@ -2,9 +2,15 @@ import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import postgres from 'postgres';
 import { localEnv } from './car-search.mjs';
-import { loadTexts } from '../api/_lib/buyer-texts.js';
+import { listDocuments } from '../api/_lib/buyer-documents.js';
+import { listPicks } from '../api/_lib/buyer-picks.js';
+import { agentTexts } from '../api/_lib/buyer-texts.js';
+import { findDeal, loadDeal } from '../api/_lib/car-search.js';
 
-// Neon access for the agents that work deals:
+// Neon access for the agents that work deals. The reads here (deal, picks, documents,
+// texts) are also on scripts/car-search.mjs, which goes through /api/car-search with
+// CAR_SEARCH_TOKEN and needs no database login: use that on Mason's Mac. Both run the
+// same queries, from api/_lib.
 //   node scripts/deal-desk-db.mjs deals                 every deal with its last logged event
 //   node scripts/deal-desk-db.mjs deal <intake ID or its first 8 characters>
 //                                                       one deal's shortlist and its full event log
@@ -104,50 +110,24 @@ export async function listDeals(sql) {
     ORDER BY coalesce(e.occurred_at, d.created_at) DESC`;
 }
 
+// The one deal an intake ID or its first 8 characters names (findDeal), or an error saying why not.
+async function oneDeal(sql, id, none) {
+  const found = await findDeal(sql, id);
+  if (found.error === 'invalid') throw new Error(USAGE);
+  if (found.error) throw new Error(found.matches ? `${id} matches ${found.matches} deals; give more of the intake ID` : none);
+  return found.deal;
+}
+
 // One deal's Buyer Texts (db/014), for an agent.
 export async function showTexts(sql, id, last) {
-  if (!/^[0-9a-f-]{8,36}$/i.test(id ?? '')) throw new Error(USAGE);
   const count = last == null ? null : Number(last);
   if (count != null && !(Number.isInteger(count) && count > 0)) throw new Error('texts takes a whole number of texts to show');
-  const deals = await sql`SELECT onboarding_id FROM deals WHERE onboarding_id::text LIKE ${id.toLowerCase() + '%'}`;
-  if (deals.length !== 1) throw new Error(deals.length ? `${id} matches ${deals.length} deals; give more of the intake ID` : `No deal for ${id}.`);
-  const intakeId = deals[0].onboarding_id;
-  const { last_synced_at, total, texts } = await loadTexts(sql, intakeId, { last: count });
-  return {
-    intake_id: intakeId,
-    last_synced_at,
-    note: !last_synced_at ? 'Never synced: ask Mason what the buyer said by text.'
-      : total ? 'Synced from Mason\'s Mac; anything after last_synced_at is missing.'
-        : 'Synced, but no texts match the phone or email on the intake. The buyer may text from another number: ask Mason.',
-    total,
-    texts: texts.map(text => ({
-      sent_at: text.sent_at, from: text.from_buyer ? 'buyer' : 'mason', body: text.unsent ? '[unsent]' : text.body,
-      ...(text.edited ? { edited: true } : {}), ...(text.attachments.length ? { attachments: text.attachments } : {})
-    }))
-  };
+  const deal = await oneDeal(sql, id, `No deal for ${id}.`);
+  return agentTexts(sql, deal.onboarding_id, { last: count });
 }
 
 export async function showDeal(sql, id) {
-  if (!/^[0-9a-f-]{8,36}$/i.test(id ?? '')) throw new Error(USAGE);
-  const deals = await sql`SELECT id, onboarding_id, search_summary, shortlisted_at FROM deals
-    WHERE onboarding_id::text LIKE ${id.toLowerCase() + '%'}`;
-  if (deals.length !== 1) throw new Error(deals.length ? `${id} matches ${deals.length} deals; give more of the intake ID` : `No deal for ${id}. Deals that never went through /car-search have no row.`);
-  const [deal] = deals;
-  const listings = await sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, mileage,
-      days_on_lot, dealer_name, dealer_location, dealer_email, dealer_phone, listing_url, why
-    FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`;
-  const events = await sql`SELECT id, occurred_at, kind, actor, dealer_name, vin, otd_cents, itemized, note, options, answer, source_message_id, resolves_event_id
-    FROM deal_events WHERE onboarding_id = ${deal.onboarding_id} ORDER BY occurred_at, id`;
-  let updates = null;
-  try {
-    updates = await sql`SELECT id, status, actor, on_masons_say, ready_for_pick, body,
-        created_at, posted_at, emailed_at, retracted_at
-      FROM buyer_updates WHERE onboarding_id = ${deal.onboarding_id} ORDER BY created_at, id`;
-  } catch (error) {
-    // 42P01: db/013 isn't applied yet, so there are no Buyer Updates to show.
-    if (error?.code !== '42P01') throw error;
-  }
-  return { intake_id: deal.onboarding_id, summary: deal.search_summary, shortlisted_at: deal.shortlisted_at, listings, events, updates };
+  return loadDeal(sql, await oneDeal(sql, id, `No deal for ${id}. Deals that never went through /car-search have no row.`));
 }
 
 // One Buyer Update (db/013). Plain tagged values, no sql(row) helper, so tests can run it on PGlite.
@@ -185,30 +165,6 @@ export function parseUpdateArgs(args) {
   }
   if (positional.length !== 2) throw new Error(USAGE);
   return { actor: positional[0], source: positional[1], ...options };
-}
-
-// Standing Buyer Picks (db/013), newest first. Only the website writes them;
-// this only reads. A cleared pick (by Mason, or its dealer dropped) never shows.
-export async function listPicks(sql, intakeId = null) {
-  if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('picks takes the full intake ID, or nothing for every deal');
-  const id = intakeId?.toLowerCase() ?? null;
-  return sql`SELECT p.id, p.onboarding_id AS intake_id, p.kind, p.vin, p.dealer_name, p.otd_cents, p.created_at,
-      (SELECT l.title FROM deal_listings l JOIN deals d ON d.id = l.deal_id
-        WHERE d.onboarding_id = p.onboarding_id AND upper(l.vin) = upper(p.vin) ORDER BY l.rank LIMIT 1) AS title
-    FROM buyer_picks p
-    WHERE p.cleared_at IS NULL AND (${id}::uuid IS NULL OR p.onboarding_id = ${id}::uuid)
-    ORDER BY p.created_at DESC, p.id DESC`;
-}
-
-// Buyer Documents an agent may fetch (db/013), newest first. Read-only: only the
-// website files them (adr/0002). A deleted file is gone for good.
-export async function listDocuments(sql, intakeId = null) {
-  if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('documents takes the full intake ID, or nothing for every deal');
-  const id = intakeId?.toLowerCase() ?? null;
-  return sql`SELECT id, onboarding_id AS intake_id, doc_type, content_type, bytes, created_at
-    FROM buyer_documents
-    WHERE deleted_at IS NULL AND (${id}::uuid IS NULL OR onboarding_id = ${id}::uuid)
-    ORDER BY created_at DESC, id DESC`;
 }
 
 export async function logEvents(sql, inputs) {
@@ -257,7 +213,10 @@ export async function ackAnswer(sql, resolvedId, note) {
 async function main([command, argument, ...rest]) {
   const environment = { ...localEnv(), ...process.env };
   const url = environment.DEAL_DESK_DATABASE_URL?.trim();
-  if (!url) throw new Error('DEAL_DESK_DATABASE_URL is not set. It is the paperclip_agent connection string (db/010_paperclip_agent_grants.sql).');
+  if (!url) {
+    throw new Error('DEAL_DESK_DATABASE_URL is not set. It is the paperclip_agent connection string (db/010_paperclip_agent_grants.sql), '
+      + 'and it is not kept on Mason\'s Mac. For deal, picks, documents and texts run node scripts/car-search.mjs instead: it needs only CAR_SEARCH_TOKEN.');
+  }
   if (!['deals', 'deal', 'log', 'update', 'picks', 'documents', 'texts', 'ran', 'answers', 'ack'].includes(command) || (['deal', 'log', 'update', 'texts', 'ran', 'ack'].includes(command) && !argument)) throw new Error(USAGE);
   const update = command === 'update' ? parseUpdateArgs(rest) : null;
   const read = source => (source === '-' ? new Response(process.stdin).text() : readFile(source, 'utf8'));

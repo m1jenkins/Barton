@@ -2,8 +2,9 @@
 // the Messages app on his Mac by scripts/imessage-sync.mjs through
 // /api/car-search. The Mac asks which threads to send (listTextThreads), reads
 // only those numbers and emails, and posts each thread's messages (saveTexts).
-// Agents read them (loadTexts); the daily cron deletes them 30 days after the
-// deal's latest close (cleanupTexts). Nothing here reaches the buyer's page.
+// Agents read them (agentTexts), through /api/car-search (scripts/car-search.mjs
+// texts) or scripts/deal-desk-db.mjs; the daily cron deletes them 30 days after
+// the deal's latest close (cleanupTexts). Nothing here reaches the buyer's page.
 
 const DAY = 86400000;
 const KEEP_DAYS = 30;
@@ -115,6 +116,24 @@ export async function loadTexts(sql, intakeId, { last = null } = {}) {
     FROM buyer_texts WHERE onboarding_id = ${intakeId} ORDER BY sent_at, message_guid`;
   const texts = last ? rows.slice(-last) : rows;
   return { last_synced_at: thread?.last_synced_at ?? null, total: rows.length, texts };
+}
+
+// What an agent is shown: who sent each text, an unsent one as "[unsent]", and a
+// note on how far to trust the thread. last is how many of the newest to show.
+export async function agentTexts(sql, intakeId, { last = null } = {}) {
+  const { last_synced_at, total, texts } = await loadTexts(sql, intakeId, { last });
+  return {
+    intake_id: intakeId,
+    last_synced_at,
+    note: !last_synced_at ? 'Never synced: ask Mason what the buyer said by text.'
+      : total ? 'Synced from Mason\'s Mac; anything after last_synced_at is missing.'
+        : 'Synced, but no texts match the phone or email on the intake. The buyer may text from another number: ask Mason.',
+    total,
+    texts: texts.map(text => ({
+      sent_at: text.sent_at, from: text.from_buyer ? 'buyer' : 'mason', body: text.unsent ? '[unsent]' : text.body,
+      ...(text.edited ? { edited: true } : {}), ...(text.attachments.length ? { attachments: text.attachments } : {})
+    }))
+  };
 }
 
 // Every text on a deal whose latest close/reopen is a close more than 30 days ago.

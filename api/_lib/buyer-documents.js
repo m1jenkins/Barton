@@ -3,8 +3,9 @@ import { dealTrackerSettings } from './deal-tracker.js';
 
 // Buyer Documents (GLOSSARY.md, docs/adr/0001, plan "Documents"). Write-only
 // through the buyer's link: the page gets an upload URL and a receipt, never a
-// file or its location. Mason downloads from the ops dashboard and agents through
-// /api/car-search; the cleanup job deletes files 30 days after the latest close.
+// file or its location. Mason downloads from the ops dashboard and agents list
+// and download through /api/car-search (scripts/car-search.mjs documents,
+// document); the cleanup job deletes files 30 days after the latest close.
 // Only this file talks to the private Vercel Blob store, through blobStore().
 
 export const DOC_LABELS = Object.freeze({
@@ -33,6 +34,8 @@ const KEEP_DAYS = 30;
 // @vercel/blob 2.9.0 builds it as https://vercel.com/api/blob/?pathname=… The
 // page's connect-src allows this origin, and presignUpload refuses any other.
 export const UPLOAD_ORIGIN = 'https://vercel.com';
+
+const INTAKE_ID = /^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
 
 const iso = ms => new Date(ms).toISOString();
 const baseType = value => String(value ?? '').split(';', 1)[0].trim().toLowerCase();
@@ -181,6 +184,19 @@ export async function listReceipts(sql, onboardingId) {
 }
 
 // ---------- Mason and agents ----------
+
+// The Buyer Documents an agent may fetch, newest first: one deal's, or every
+// deal's with no intake ID. What a file is, never where it is stored or what is
+// in it. Read-only: only the website files them (adr/0002). A deleted file is
+// gone for good and never shows.
+export async function listDocuments(sql, intakeId = null) {
+  if (intakeId != null && !INTAKE_ID.test(intakeId)) throw new Error('documents takes the full intake ID, or nothing for every deal');
+  const id = intakeId?.toLowerCase() ?? null;
+  return sql`SELECT id, onboarding_id AS intake_id, doc_type, content_type, bytes, created_at
+    FROM buyer_documents
+    WHERE deleted_at IS NULL AND (${id}::uuid IS NULL OR onboarding_id = ${id}::uuid)
+    ORDER BY created_at DESC, id DESC`;
+}
 
 export const fileType = contentType => (Object.hasOwn(CONTENT_TYPES, baseType(contentType)) ? baseType(contentType) : 'application/octet-stream');
 

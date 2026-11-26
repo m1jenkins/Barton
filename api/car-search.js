@@ -1,10 +1,11 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
-import { blobStore, documentSettings, readDocument, sendDocument } from './_lib/buyer-documents.js';
+import { blobStore, documentSettings, listDocuments, readDocument, sendDocument } from './_lib/buyer-documents.js';
+import { listPicks } from './_lib/buyer-picks.js';
 import { BuyerUpdateError, draftUpdate } from './_lib/buyer-updates.js';
 import { database } from './_lib/db.js';
 import { dealTrackerEnabled } from './_lib/deal-tracker.js';
-import { ShortlistError, carSearchToken, handOffDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
-import { TextsError, listTextThreads, parseTexts, saveTexts } from './_lib/buyer-texts.js';
+import { DEAL_ID, ShortlistError, carSearchToken, findDeal, handOffDeal, loadDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
+import { TextsError, agentTexts, listTextThreads, parseTexts, saveTexts } from './_lib/buyer-texts.js';
 import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } from './_lib/http.js';
 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
@@ -16,6 +17,11 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 // Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
 // POST "action": "draft_update" saves a draft Buyer Update for Mason to approve
 // on the ops dashboard (scripts/car-search.mjs draft); it never posts one.
+// GET ?intake=<id>&read=picks|documents|texts|deal is what an agent working a
+// deal reads without a database login (scripts/car-search.mjs picks, documents,
+// texts, deal): the standing Buyer Picks, the list of Buyer Documents (never a
+// file), the Buyer Texts, or the shortlist and event log. Nothing here writes a
+// Buyer Pick or a Buyer Document: only the buyer's page does (adr/0002).
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -31,6 +37,46 @@ const DOCUMENT_ERRORS = Object.freeze({
   deleted: [410, 'document_deleted', 'This file was deleted 30 days after the deal closed.'],
   missing: [404, 'document_missing', 'The store has no file for this document.']
 });
+
+const READS = Object.freeze(['picks', 'documents', 'texts', 'deal']);
+const TRACKER_OFF = Object.freeze({ ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
+
+// One of the reads above, for the deal an intake ID or its first 8 characters
+// names. Buyer Picks and Buyer Documents exist only with the Deal Tracker on;
+// off, the answer is 404 before the database is touched.
+async function sendRead(res, params, { environment, getDatabase }) {
+  const read = params.get('read');
+  if (!READS.includes(read)) return sendJson(res, 400, { ok: false, error: 'invalid_read', message: `read must be one of ${READS.join(', ')}` });
+  if (['picks', 'documents'].includes(read) && !dealTrackerEnabled(environment)) return sendJson(res, 404, TRACKER_OFF);
+  const last = params.get('last');
+  if (last != null && !(read === 'texts' && /^[1-9]\d{0,3}$/.test(last))) {
+    return sendJson(res, 400, { ok: false, error: 'invalid_last', message: 'last goes with read=texts only: how many of the newest texts to show, 1 to 9999' });
+  }
+  const intake = params.get('intake') || '';
+  if (!DEAL_ID.test(intake)) return sendJson(res, 400, { ok: false, error: 'invalid_intake', message: 'intake must be an intake ID or its first 8 characters' });
+  const sql = getDatabase();
+  const found = await findDeal(sql, intake);
+  if (found.error === 'ambiguous') return sendJson(res, 409, { ok: false, error: 'ambiguous_intake', message: `That matches ${found.matches} deals; give more of the intake ID.` });
+  if (found.error) return sendJson(res, 404, { ok: false, error: 'deal_not_found', message: 'No deal has that intake ID. An intake has a deal once it has a car search, or from paid intake with the Deal Tracker on.' });
+  const intakeId = found.deal.onboarding_id;
+  if (read === 'picks') {
+    const picks = await listPicks(sql, intakeId);
+    return sendJson(res, 200, { ok: true, intake_id: intakeId,
+      note: 'Standing picks only, newest first. A Buyer Pick is what the buyer wants, not an agreed price: Mason confirms it with the dealer.',
+      picks: picks.map(pick => ({ id: Number(pick.id), kind: pick.kind, title: pick.title ?? null, vin: pick.vin ?? null,
+        dealer_name: pick.dealer_name ?? null, otd_cents: pick.otd_cents == null ? null : Number(pick.otd_cents), created_at: pick.created_at })) });
+  }
+  if (read === 'documents') {
+    // What each file is, never where it is stored or what is in it.
+    const documents = await listDocuments(sql, intakeId);
+    return sendJson(res, 200, { ok: true, intake_id: intakeId,
+      note: 'Newest first; deleted files never show. Fetch one with `node scripts/car-search.mjs document <id>`. They can hold ID and financial details: never quote them to a dealer or in a Buyer Update.',
+      documents: documents.map(doc => ({ id: Number(doc.id), doc_type: doc.doc_type, content_type: doc.content_type,
+        bytes: Number(doc.bytes), created_at: doc.created_at })) });
+  }
+  if (read === 'texts') return sendJson(res, 200, { ok: true, ...await agentTexts(sql, intakeId, { last: last == null ? null : Number(last) }) });
+  return sendJson(res, 200, { ok: true, ...await loadDeal(sql, found.deal) });
+}
 
 // documentStore: the Blob store, for tests; by default built from documentSettings.
 export function carSearchHandler({ environment = process.env, getDatabase = database, documentStore = null } = {}) {
@@ -54,6 +100,10 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
         return sendJson(res, status, { ok: false, error, message });
       }
       return sendDocument(res, file);
+    }
+
+    if (req.method === 'GET' && requestUrl(req).searchParams.has('read')) {
+      return sendRead(res, requestUrl(req).searchParams, { environment, getDatabase });
     }
 
     if (req.method === 'GET' && requestUrl(req).searchParams.get('texts') === 'threads') {

@@ -49,6 +49,38 @@ export async function loadSearch(sql, onboardingId) {
   };
 }
 
+// The one deal an intake ID, or its first 8 or more characters, names. Errors:
+// invalid, not_found, and ambiguous with how many deals matched.
+export const DEAL_ID = /^[0-9a-f]{8}[0-9a-f-]{0,28}$/i;
+export async function findDeal(sql, id) {
+  if (!DEAL_ID.test(id ?? '')) return { error: 'invalid' };
+  const deals = await sql`SELECT id, onboarding_id, search_summary, shortlisted_at FROM deals
+    WHERE onboarding_id::text LIKE ${id.toLowerCase() + '%'}`;
+  if (deals.length === 1) return { deal: deals[0] };
+  return { error: deals.length ? 'ambiguous' : 'not_found', matches: deals.length };
+}
+
+// One deal for an agent working it: its shortlist with each car's prices and
+// dealer, the full event log, and the Buyer Updates, so the agent sees what the
+// buyer was told. deal is a row from findDeal.
+export async function loadDeal(sql, deal) {
+  const listings = await sql`SELECT rank, title, vin, price_cents, market_price_cents, target_price_cents, mileage,
+      days_on_lot, dealer_name, dealer_location, dealer_email, dealer_phone, listing_url, why
+    FROM deal_listings WHERE deal_id = ${deal.id} ORDER BY rank`;
+  const events = await sql`SELECT id, occurred_at, kind, actor, dealer_name, vin, otd_cents, itemized, note, options, answer, source_message_id, resolves_event_id
+    FROM deal_events WHERE onboarding_id = ${deal.onboarding_id} ORDER BY occurred_at, id`;
+  let updates = null;
+  try {
+    updates = await sql`SELECT id, status, actor, on_masons_say, ready_for_pick, body,
+        created_at, posted_at, emailed_at, retracted_at
+      FROM buyer_updates WHERE onboarding_id = ${deal.onboarding_id} ORDER BY created_at, id`;
+  } catch (error) {
+    // 42P01: db/013 isn't applied yet, so there are no Buyer Updates to show.
+    if (error?.code !== '42P01') throw error;
+  }
+  return { intake_id: deal.onboarding_id, summary: deal.search_summary, shortlisted_at: deal.shortlisted_at, listings, events, updates };
+}
+
 export class ShortlistError extends Error {
   constructor(problems) {
     super(`Fix these and submit again:\n- ${problems.join('\n- ')}`);

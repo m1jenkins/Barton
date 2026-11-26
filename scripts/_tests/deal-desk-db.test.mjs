@@ -2,7 +2,9 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { PGlite } from '@electric-sql/pglite';
-import { addUpdate, listDocuments, listPicks, logEvents, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { addUpdate, logEvents, parseEvent, parseUpdateArgs, showDeal } from '../deal-desk-db.mjs';
+import { listDocuments } from '../../api/_lib/buyer-documents.js';
+import { listPicks } from '../../api/_lib/buyer-picks.js';
 
 const intake = '0a1b2c3d-1111-4222-8333-444455556666';
 
