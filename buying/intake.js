@@ -34,30 +34,34 @@ const synonyms = {
 };
 
 const notNew = answers => answers.condition !== 'New';
+const tradeHint = 'Your plan includes trade-in support: we compare offers on it and negotiate it with the deal.';
 
 export const questions = [
-  { key: 'preferred_makes', label: 'Car', question: 'What car are you looking for?', placeholder: 'A Mazda Miata, for example', hint: 'A make and model, or just the kind of car you need.', required: true, maxLength: 200 },
+  { key: 'preferred_makes', label: 'Car', question: 'What car are you looking for?', placeholder: 'A Mazda Miata, for example', hint: 'A make and model, or just the kind of car you need.', required: true, maxLength: 200,
+    byTier: { private_client: { placeholder: 'A Porsche 911 Carrera S, for example', hint: 'A make and model, or several if you’re deciding. Add the spec or build if you have one.' } } },
   { key: 'condition', label: 'New or used', question: 'New, used, or certified pre-owned?', placeholder: 'New, used, or either', choices: ['New', 'Used', 'Certified pre-owned', 'Open to all'], required: true, maxLength: 40 },
   { key: 'model_years', label: 'Model years', question: 'Which model years would work?', placeholder: 'For example, 2020 or newer', choices: ['2023 or newer', '2020 or newer', 'Any year'], when: notNew, maxLength: 40 },
   { key: 'max_mileage', label: 'Mileage', question: 'How many miles is too many?', placeholder: 'For example, under 60,000 miles', choices: ['Under 30,000 mi', 'Under 60,000 mi', 'Flexible'], when: notNew, maxLength: 40 },
-  { key: 'budget', label: 'All-in budget', question: 'What’s the most you’d pay, out the door?', placeholder: 'For example, $42,000', choices: ['$30,000', '$45,000', '$60,000'], hint: 'Include taxes, fees and delivery. A monthly payment works too.', required: true, maxLength: 300 },
+  { key: 'budget', label: 'All-in budget', question: 'What’s the most you’d pay, out the door?', placeholder: 'For example, $42,000', choices: ['$30,000', '$45,000', '$60,000'], hint: 'Include taxes, fees and delivery. A monthly payment works too.', required: true, maxLength: 300,
+    byTier: { private_client: { placeholder: 'For example, $140,000', choices: ['$125,000', '$175,000', '$250,000'] } } },
   { key: 'payment_method', label: 'Paying', question: 'How are you planning to pay?', placeholder: 'Cash, financing, or a lease', choices: ['Cash', 'Financing', 'Lease', 'Not sure yet'], hint: 'Just your plan for now. No financial documents needed.', maxLength: 80 },
   { key: 'financing_status', label: 'Loan pre-approval', question: 'Do you already have a loan pre-approval from a bank or credit union?', placeholder: 'Yes, or not yet', choices: ['Yes, I’m pre-approved', 'Not yet'], when: answers => answers.payment_method === 'Financing', maxLength: 80 },
   { key: 'trade_in', label: 'Trade-in', question: 'Do you have a car to trade in?', placeholder: 'Yes, no, or maybe', choices: ['Yes, I have a trade-in', 'No trade-in', 'Maybe'], maxLength: 80 },
   { key: 'trade_vehicle', label: 'Your trade-in', question: 'What’s the trade-in? The year, make, model and rough mileage.', placeholder: 'A 2018 Honda Civic, about 70,000 miles', mobilePlaceholder: '2018 Civic, 70k miles',
-    byTier: { concierge: { hint: 'Your plan includes trade-in support: we compare offers on it and negotiate it with the deal.' } }, when: answers => Boolean(answers.trade_in) && answers.trade_in !== 'No trade-in', maxLength: 200 },
+    byTier: { concierge: { hint: tradeHint }, private_client: { hint: tradeHint } }, when: answers => Boolean(answers.trade_in) && answers.trade_in !== 'No trade-in', maxLength: 200 },
   { key: 'timeline', label: 'Timing', question: 'When do you need the car?', placeholder: 'A timeframe or a date', choices: ['As soon as possible', 'Within 2 weeks', 'Within a month', 'No rush'], required: true, maxLength: 80 },
   { key: 'city', label: 'Where you live', question: 'Where do you live?', placeholder: 'Austin, TX or 78701', hint: 'A city and state or a ZIP code. We search from here, and taxes and registration depend on it.', required: true, maxLength: 160 },
   { key: 'search_radius', label: 'How far', question: 'How far would you go for the right car?', placeholder: 'For example, 250 miles', choices: ['Within 50 miles', 'Within 250 miles', 'Anywhere in the US'], maxLength: 80,
     byTier: { full_service: { placeholder: 'For example, 150 miles', choices: ['Within 50 miles', 'Within 100 miles', 'Within 200 miles'], hint: 'Your plan covers dealers within 200 miles of you.' } } },
   { key: 'needs', label: 'What it needs to do', question: 'What does the car need to do for you?', placeholder: 'Two car seats, room for the dog, a long commute…', hint: 'Passengers, cargo, driving habits and must-have features.', multiline: true, maxLength: 1000 },
   { key: 'colors', label: 'Colors', question: 'Any colors you love, or want to avoid?', placeholder: 'Blue or gray, but not white', choices: ['Open to any color'], maxLength: 300 },
-  { key: 'delivery_address', label: 'Delivery', question: 'If we coordinate delivery, where should the car go?', placeholder: 'An address, or just a city for now', hint: 'Delivery coordination depends on the car and the seller.', tiers: ['concierge'], maxLength: 300 },
+  { key: 'delivery_address', label: 'Delivery', question: 'If we coordinate delivery, where should the car go?', placeholder: 'An address, or just a city for now', hint: 'Delivery coordination depends on the car and the seller.', tiers: ['concierge', 'private_client'], maxLength: 300 },
   { key: 'name', label: 'Name', question: 'Almost done. What’s your full name?', placeholder: 'Your full name', autocomplete: 'name', required: true, maxLength: 120 },
   { key: 'phone', label: 'Phone', question: 'What’s the best phone number for you?', placeholder: '(512) 555-1234', inputMode: 'tel', autocomplete: 'tel', required: true, maxLength: 40 },
   { key: 'email', label: 'Email', question: 'And your email address?', placeholder: 'you@example.com', inputMode: 'email', autocomplete: 'email', required: true, maxLength: 254 },
   { key: 'contact_preference', label: 'Best way to reach you', question: 'How should your advisor reach you?', placeholder: 'Text, call, or email', choices: ['Text', 'Call', 'Email'], maxLength: 40 },
-  { key: 'notes', label: 'Anything else', question: 'Anything else before we start?', placeholder: 'Listings you like, dealers you’ve talked to, deal-breakers…', hint: 'Up to 1,000 characters. It’s okay to skip.', multiline: true, maxLength: 1000, skipLabel: 'Nothing else to add' },
+  { key: 'notes', label: 'Anything else', question: 'Anything else before we start?', placeholder: 'Listings you like, dealers you’ve talked to, deal-breakers…', hint: 'Up to 1,000 characters. It’s okay to skip.', multiline: true, maxLength: 1000, skipLabel: 'Nothing else to add',
+    byTier: { private_client: { placeholder: 'An allocation you’ve been offered, a build sheet, dealers you’ve talked to…' } } },
 ];
 
 const questionByKey = key => questions.find(question => question.key === key);

@@ -13,7 +13,7 @@ export function carSearchToken(environment = process.env) {
   return token;
 }
 
-const PLAN_NAMES = Object.freeze({ full_service: 'Steer Me Right ($395)', concierge: 'Steer Me Right Pro ($695)' });
+const PLAN_NAMES = Object.freeze({ full_service: 'Steer Me Right ($395)', concierge: 'Steer Me Right Pro ($695)', private_client: 'Steer Me Right Private Client ($1,995)' });
 // Not needed to search, so not handed to the search session.
 const PRIVATE_FIELDS = new Set(['delivery_address', 'trade_identifier', 'consultation_questions']);
 

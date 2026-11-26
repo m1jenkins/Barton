@@ -4,6 +4,17 @@ const recapCard = buyer => buyer.recap.length && card('What you asked for', [row
 
 function planCard(buyer) {
   const pro = buyer.isPro;
+  if (buyer.isPrivateClient) {
+    return card(`Your plan: ${buyer.plan}`, [checklist([
+      'Dealers nationwide, as many models as you like, and trade-in support',
+      'Allocation and build-slot search, and factory orders, when the car isn’t on a lot',
+      'We negotiate market adjustments and dealer-installed add-ons',
+      'An independent inspection arranged on a used car; you pay the shop',
+      'Your lease or loan terms, the buyer’s order and the finance-office products checked before you sign',
+      'Enclosed transport quotes and a delivery-day checklist',
+      'Same-day replies from me on business days'
+    ])]);
+  }
   return card(`Your plan: ${buyer.plan}`, [
     checklist(pro
       ? ['Dealers nationwide, with shipping quotes on long-distance deals',
@@ -63,13 +74,17 @@ export function render(buyer, { tracker } = {}) {
         },
         {
           title: 'We find the cars and work the dealers',
-          body: pro
+          body: buyer.isPrivateClient
+            ? 'We work dealers nationwide for cars in stock, open allocations and incoming builds, and get written out-the-door offers. When the best deal is far away, we get enclosed transport quotes.'
+            : pro
             ? 'We work dealers nationwide, price up to three models side by side and get written out-the-door offers. When the best deal is far away, we get shipping quotes.'
             : 'We search dealer inventory within 200 miles of you for cars that match, get written out-the-door prices, and negotiate the price and fees.'
         },
         {
           title: 'You decide',
-          body: pro
+          body: buyer.isPrivateClient
+            ? 'We tell you which deal we’d take and check the paperwork before you sign. The decision to buy is yours.'
+            : pro
             ? 'We tell you which deal we’d take, judged on out-the-door price plus resale and running costs. The decision to buy is yours.'
             : 'We bring you what we found and what we’d do. You see the car, the numbers and the paperwork, and the decision to buy is yours.'
         }

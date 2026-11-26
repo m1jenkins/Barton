@@ -9,7 +9,7 @@ import { HttpError, assertSameOrigin, readJsonBody, requireMethod, sendJson, wit
 import { idempotencyKey, payloadHash, validateOnboardingPayload } from './_lib/validation.js';
 
 // The two paid plans with a car search, so the two that get a deal and a Deal Tracker.
-const DEAL_TIERS = Object.freeze(['full_service', 'concierge']);
+const DEAL_TIERS = Object.freeze(['full_service', 'concierge', 'private_client']);
 
 async function handle(req, res, { environment, getDatabase }) {
   requireMethod(req, 'POST');

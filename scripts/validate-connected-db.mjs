@@ -26,7 +26,8 @@ Object.assign(process.env, {
   STRIPE_SECRET_KEY: 'sk_test_synthetic_not_an_api_credential',
   STRIPE_WEBHOOK_SECRET: 'whsec_synthetic_local_signature_only',
   STRIPE_PAYMENT_LINK_FULL_SERVICE_URL: 'https://buy.stripe.com/test_synthetic_full',
-  STRIPE_PAYMENT_LINK_CONCIERGE_URL: 'https://buy.stripe.com/test_synthetic_concierge'
+  STRIPE_PAYMENT_LINK_CONCIERGE_URL: 'https://buy.stripe.com/test_synthetic_concierge',
+  STRIPE_PAYMENT_LINK_PRIVATE_CLIENT_URL: 'https://buy.stripe.com/test_synthetic_private_client'
 });
 const originalFetch = globalThis.fetch;
 globalThis.fetch = async () => { throw new Error('External fetch forbidden in database validation'); };
@@ -100,8 +101,9 @@ try {
     assert.equal((await call(leads, { ...body, vehicle: 'Changed vehicle' }, key)).statusCode, 409);
   });
   const current = [];
-  await check('concurrent $395/$695 checkout retries persist one snapshot per tier; AI returns 410', async () => {
-    for (const [tier, amount] of [['full_service', 39500], ['concierge', 69500]]) {
+  // private_client needs db/015_private_client_tier.sql on the database being validated.
+  await check('concurrent $395/$695/$1,995 checkout retries persist one snapshot per tier; AI returns 410', async () => {
+    for (const [tier, amount] of [['full_service', 39500], ['concierge', 69500], ['private_client', 199500]]) {
       const key = randomUUID(), body = { tier, lead_id: leadId, source_page: '/schedule.html' };
       const results = await Promise.all(Array.from({ length: 5 }, () => call(checkout, body, key)));
       assert.equal(results.filter(r => r.statusCode === 201).length, 1);

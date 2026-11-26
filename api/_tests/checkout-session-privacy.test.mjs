@@ -110,11 +110,11 @@ test('the real payment verifier reports an OpenAI purchase only for consented pa
 });
 
 test('every payment page moves the session ID out of the URL before GTM loads', async () => {
-  assert.deepEqual(pages, ['payment-success-concierge.html', 'payment-success-fullservice.html', 'payment-success.html']);
+  assert.deepEqual(pages, ['payment-success-concierge.html', 'payment-success-fullservice.html', 'payment-success-private-client.html', 'payment-success.html']);
   for (const page of pages) {
     const html = await read(page);
     const head = html.slice(html.indexOf('<head>'), html.indexOf('</head>'));
-    assert.match(html, /<body\b[^>]*\bdata-purchase-tier="(?:full_service|concierge|consultation)"/, page);
+    assert.match(html, /<body\b[^>]*\bdata-purchase-tier="(?:full_service|concierge|private_client|consultation)"/, page);
     assert.equal(headScript(html), inlineScript, `${page} carries the same inline script`);
     const first = head.indexOf('<script');
     assert.equal(head.indexOf('<script>'), first, `${page}: the inline script is the first script in <head>`);

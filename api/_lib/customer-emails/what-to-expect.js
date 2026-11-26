@@ -51,20 +51,26 @@ export function render(buyer, { tracker } = {}) {
         { title: 'Confirm the search', body: 'I confirm what you’re after and may ask a question or two. Then your search starts.' },
         {
           title: 'Find the cars',
-          body: pro
+          body: buyer.isPrivateClient
+            ? 'We search dealers nationwide for cars in stock, open allocations and incoming builds, for as many models as you like.'
+            : pro
             ? 'We search dealer inventory nationwide, for up to three models.'
             : 'We search dealer inventory within 200 miles of you for cars that match your model and budget.'
         },
         { title: 'Get written prices', body: 'We contact dealers by email and phone and ask for written out-the-door prices: the car, fees, tax and registration.' },
         {
           title: 'Negotiate',
-          body: pro
+          body: buyer.isPrivateClient
+            ? 'We push on price, market adjustments, dealer-installed add-ons and fees, one dealer’s written offer against another’s.'
+            : pro
             ? 'We push on price, question add-ons and fees, and play each model’s dealers against each other’s written offers.'
             : 'We push on price and question add-ons and fees, one dealer’s written offer against another’s.'
         },
         {
           title: 'Your call',
-          body: pro
+          body: buyer.isPrivateClient
+            ? 'You get the offers side by side and the deal we’d take. Before you sign, we check the lease or loan terms, the buyer’s order and the finance-office products.'
+            : pro
             ? 'You get the offers side by side and the deal we’d take, judged on out-the-door price plus resale and running costs.'
             : 'You get what we found and what we’d do. You decide whether to buy.'
         }

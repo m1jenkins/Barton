@@ -21,7 +21,7 @@ const KIND_LABELS = Object.freeze({
 const STAGES = Object.freeze({
   confirming: 'Confirming search', shortlisted: 'Shortlisted', emailing: 'Emailing dealers', quoted: 'Quotes in', agreed: 'Price agreed', closed: 'Closed'
 });
-const TIERS = Object.freeze({ consultation: 'Consultation', full_service: 'Full service', concierge: 'Concierge' });
+const TIERS = Object.freeze({ consultation: 'Consultation', full_service: 'Full service', concierge: 'Concierge', private_client: 'Private Client' });
 
 // OPS_PASSWORD turns the dashboard on. Unset, it answers 503; too short, it fails loudly.
 export function opsPassword(environment = process.env) {

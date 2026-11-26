@@ -226,7 +226,7 @@ ${publicOnly.length ? `<p>${joinNames(publicOnly.map(market => `<a href="/${mark
 ${faq([
     ['Is there a car buying service near me?', 'Steer Me Right works with dealers in every state from one office in Austin, Texas. The work is done by phone and email, so you don’t need a local office. You pick up the car from the dealer.'],
     ['Do you charge more in bigger cities?', 'No. The fee is $395 for one model or $695 for up to three, wherever you live.'],
-    ['Can you use dealers in a neighboring state?', 'Yes. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. State lines don’t matter on either plan. On Steer Me Right Pro, we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.'],
+    ['Can you use dealers in a neighboring state?', 'Yes. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. State lines don’t matter on any plan. On Steer Me Right Pro, we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.'],
     ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}

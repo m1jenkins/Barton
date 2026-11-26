@@ -1,4 +1,4 @@
-import { questions, stepsFor, restoreState, nextQuestion, progress, isComplete, answerQuestion, skipQuestion, formValues, questionForControl, firstName } from './intake.js?v=da3bb9bf6d26';
+import { questions, stepsFor, restoreState, nextQuestion, progress, isComplete, answerQuestion, skipQuestion, formValues, questionForControl, firstName } from './intake.js?v=ba868af4b3cd';
 
 // Steer Me Right and Steer Me Right Pro payment pages. The form stays the default until
 // this module runs, so a buyer whose browser can't load it still has a working intake.
@@ -6,7 +6,7 @@ import { questions, stepsFor, restoreState, nextQuestion, progress, isComplete, 
 const $ = selector => document.querySelector(selector);
 const chat = $('#intake-view'), form = $('#onboarding-form'), formSection = $('#onboarding');
 const tier = document.body.dataset.purchaseTier;
-const plans = { full_service: 'Steer Me Right', concierge: 'Steer Me Right Pro' };
+const plans = { full_service: 'Steer Me Right', concierge: 'Steer Me Right Pro', private_client: 'Steer Me Right Private Client' };
 
 if (chat && form && formSection && plans[tier]) {
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);

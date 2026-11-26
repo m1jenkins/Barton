@@ -20,12 +20,18 @@ export const SERVICE_TIERS = Object.freeze({
     amount: 69500,
     currency: 'usd',
     paymentLinkEnv: 'STRIPE_PAYMENT_LINK_CONCIERGE_URL'
+  }),
+  // Steer Me Right Private Client (2026-11-26), for cars with an MSRP of $100,000 or more.
+  private_client: Object.freeze({
+    amount: 199500,
+    currency: 'usd',
+    paymentLinkEnv: 'STRIPE_PAYMENT_LINK_PRIVATE_CLIENT_URL'
   })
 });
 
 // Historical tiers remain valid for receipts, webhooks and paid onboarding.
 // Only these tiers can create a new checkout attempt.
-export const NEW_CHECKOUT_TIERS = Object.freeze(['full_service', 'concierge']);
+export const NEW_CHECKOUT_TIERS = Object.freeze(['full_service', 'concierge', 'private_client']);
 
 export function requiredEnv(name) {
   const value = process.env[name]?.trim();

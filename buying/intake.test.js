@@ -146,3 +146,15 @@ test('form controls lead back to the question that fills them', () => {
 test('no question or hint says “brief”', () => {
   assert.doesNotMatch(JSON.stringify(questions), /brief/i);
 });
+
+test('Private Client asks the Pro questions with its own prompts and no 200-mile cap', () => {
+  const steps = stepsFor({}, 'private_client');
+  const byKey = key => steps.find(question => question.key === key);
+  assert.ok(byKey('delivery_address'), 'delivery is asked');
+  assert.deepEqual(byKey('budget').choices, ['$125,000', '$175,000', '$250,000']);
+  assert.match(byKey('preferred_makes').placeholder, /Porsche 911/);
+  assert.deepEqual(byKey('search_radius').choices, ['Within 50 miles', 'Within 250 miles', 'Anywhere in the US']);
+  assert.match(stepsFor({ trade_in: 'Maybe' }, 'private_client').find(question => question.key === 'trade_vehicle').hint, /trade-in support/);
+  // The shared questions are untouched for the other plans.
+  assert.deepEqual(stepsFor({}, 'concierge').find(question => question.key === 'budget').choices, ['$30,000', '$45,000', '$60,000']);
+});

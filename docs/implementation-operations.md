@@ -251,6 +251,7 @@ The launch test ran on the live site as intake `d230f97c-88aa-48e4-97d7-1df79747
 | `CHECKOUT_PAUSED` | Set `true` during coordinated cutover to stop new checkout creation. Does not disable paid receipts/webhooks/onboarding. Default false. |
 | `STRIPE_PAYMENT_LINK_FULL_SERVICE_URL` | Required for the $395 full-service tier; must be the 39500-cent link listed under "Reverted" in [stripe-cutover-2026-10-23.md](seo-execution/stripe-cutover-2026-10-23.md). |
 | `STRIPE_PAYMENT_LINK_CONCIERGE_URL` | Required for the $695 concierge tier; must be the 69500-cent link listed in the same section. |
+| `STRIPE_PAYMENT_LINK_PRIVATE_CLIENT_URL` | Required for the $1,995 Private Client tier (`private_client`); must be a 199500-cent link. Launch steps: `docs/seo/2026-11-26-private-client-plan.md`. |
 | `TURNSTILE_SECRET_KEY` | Optional. When configured, lead requests must include a valid token for an allowed hostname. |
 | `LEAD_FORWARD_URL` | Optional HTTPS downstream destination used only after a lead commit. |
 | `LEAD_FORWARD_BEARER_TOKEN` | Optional bearer credential for that downstream destination. |

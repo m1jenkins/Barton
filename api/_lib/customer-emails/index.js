@@ -12,10 +12,11 @@ export const TEMPLATES = Object.freeze({
 export const TEMPLATE_NAMES = Object.freeze(Object.keys(TEMPLATES));
 
 // Plans that get the emails. The retired consultation plan had no car search.
-export const EMAIL_TIERS = Object.freeze(['full_service', 'concierge']);
+export const EMAIL_TIERS = Object.freeze(['full_service', 'concierge', 'private_client']);
 const PLANS = Object.freeze({
   full_service: { name: 'Steer Me Right', price: '$395' },
-  concierge: { name: 'Steer Me Right Pro', price: '$695' }
+  concierge: { name: 'Steer Me Right Pro', price: '$695' },
+  private_client: { name: 'Steer Me Right Private Client', price: '$1,995' }
 });
 
 // The search answers a buyer sees repeated back in the welcome email. Contact
@@ -45,6 +46,7 @@ export function buyerFromRow(row) {
   return {
     firstName,
     isPro: row.tier_id === 'concierge',
+    isPrivateClient: row.tier_id === 'private_client',
     plan: plan.name,
     price: plan.price,
     hasTradeIn: /^(yes|maybe)/i.test(display(fields.trade_in)),

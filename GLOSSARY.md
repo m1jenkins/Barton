@@ -5,7 +5,7 @@ The language of Steer Me Right's paid car-buying service: who pays, what we sear
 ## People
 
 **Buyer**:
-The person who paid for a full service or concierge plan and is buying the car.
+The person who paid for a full service, concierge or private client plan and is buying the car.
 _Avoid_: Client, customer, user
 
 **Dealer**:

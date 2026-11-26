@@ -10,24 +10,25 @@ const read=file=>readFile(new URL(file,root),'utf8');
 const origin='https://www.steermeright.com';
 const fileFor=href=>new URL(href,origin).pathname==='/'?'index.html':new URL(href,origin).pathname.slice(1);
 
-test('active server, browser, registry, visible cards and schema agree on the two authorized offers',async()=>{
+test('active server, browser, registry, visible cards and schema agree on the three authorized offers',async()=>{
  const registry=JSON.parse(await read('data/services.json'));
  assert.deepEqual(Object.keys(plans),NEW_CHECKOUT_TIERS);
- assert.deepEqual(registry.services.map(s=>s.price),[395,695]);
+ assert.deepEqual(registry.services.map(s=>s.price),[395,695,1995]);
  for(const tier of NEW_CHECKOUT_TIERS)assert.equal(plans[tier].fee*100,SERVICE_TIERS[tier].amount);
  for(const file of ['index.html','schedule.html','how-it-works.html']) {
   const html=await read(file),doc=htmlDocument(html);
   // The homepage shows the two paid plan cards, with a free "Talk to Mason" band under them.
   if(file==='index.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.deepEqual([...html.matchAll(/class="wz-plan-grid">[\s\S]*?<\/div>\s*<p class="wz-fine/g)].flatMap(([grid])=>[...grid.matchAll(/data-plan="([^"]+)"/g)].map(m=>m[1])),['full_service','concierge']);}
   // Pricing uses the homepage's plan cards (2026-10-31), each with its own checkout.
-  else if(file==='schedule.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
+  else if(file==='schedule.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
   else assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
   assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
-  assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);
+  assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);assert.match(doc.visibleText,/\$1,995/);
  }
  for(const file of ['index.html','schedule.html']) {
   const services=htmlDocument(await read(file)).schemas.flatMap(s=>s['@graph']||[]).filter(n=>n['@type']==='Service');
-  assert.deepEqual(services.map(s=>Number(s.offers.price)),[395,695]);
+  // Private Client (2026-11-26) has its card and its Service entry on the plans page only.
+  assert.deepEqual(services.map(s=>Number(s.offers.price)),file==='schedule.html'?[395,695,1995]:[395,695]);
   for(const s of services)assert.equal(s.areaServed.name,'United States');
  }
 });

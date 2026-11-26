@@ -6,7 +6,7 @@
   "sourceOfTruth": {
     "url": "https://www.steermeright.com/schedule.html",
     "file": "schedule.html",
-    "note": "Plan names follow the owner decision of 2026-10-23 (PLAN-NAMES-2026-10-23; docs/seo/2026-10-23-plan-rename.md). Plan scopes follow the owner decision of 2026-11-26 (PLAN-REACH-2026-11-26, STEER-ME-RIGHT-SCOPE-2026-11-26, PRO-SCOPE-2026-11-26 in data/claims.csv; docs/seo/2026-11-26-plan-reach.md). Other published copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
+    "note": "Plan names follow the owner decision of 2026-10-23 (PLAN-NAMES-2026-10-23; docs/seo/2026-10-23-plan-rename.md). Plan scopes follow the owner decision of 2026-11-26 (PLAN-REACH-2026-11-26, STEER-ME-RIGHT-SCOPE-2026-11-26, PRO-SCOPE-2026-11-26 in data/claims.csv; docs/seo/2026-11-26-plan-reach.md). Steer Me Right Private Client follows the owner decision of 2026-11-26 (PRIVATE-CLIENT-2026-11-26; docs/seo/2026-11-26-private-client-plan.md). Other published copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
   },
   "services": [
     {
@@ -50,6 +50,27 @@
       "checkoutUrl": null,
       "availability": "owner_confirmed_all_states_cities",
       "checkoutStatus": "new_695_link_required_before_activation"
+    },
+    {
+      "id": "https://www.steermeright.com/#service-private-client",
+      "name": "Steer Me Right Private Client",
+      "price": 1995,
+      "priceType": "flat_fee",
+      "bestFor": "Buyers of cars with an MSRP of $100,000 or more",
+      "features": [
+        "Everything in Steer Me Right Pro, for as many models as the buyer likes",
+        "Allocation and build-slot search, and factory orders, when the car is not on a lot",
+        "Negotiation of market adjustments and dealer-installed add-ons",
+        "An independent inspection arranged on a used car; the buyer pays the shop",
+        "Lease and loan check: money factor, residual and rate markup",
+        "The buyer’s order and finance-office products reviewed before signing",
+        "Enclosed transport quotes and a delivery-day checklist",
+        "Same-day replies from Mason on business days"
+      ],
+      "capacity": "Four Private Client searches at a time; a buyer who pays when all four are taken is told within one business day and may wait or take a full refund",
+      "checkoutUrl": null,
+      "availability": "owner_confirmed_all_states_cities",
+      "checkoutStatus": "new_1995_link_required_before_activation"
     }
   ],
   "commercialTerms": {

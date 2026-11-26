@@ -375,19 +375,34 @@ const fakeTransport = sent => () => ({ async sendMail(message) { sent.push(messa
 const patToday = template => renderCustomerEmail(template, buyerFromRow({ ...SAMPLE_BUYERS.standard.row, name: 'Pat Rivera' }), { reviewUrl: environment.GOOGLE_REVIEW_URL });
 
 // Taken from the code before step 8: sha256 of [subject, preheader, text, html]
-// for the four sample buyers, first 16 hex. Without a live link every email must
+// for the four sample buyers of that day (the Private Client sample came later
+// and has its own test), first 16 hex. Without a live link every email must
 // stay byte-for-byte what Mason approved; change these only with his OK on new copy.
 const TODAY = Object.freeze({
   welcome: '96bd0628fd7e3aec', what_to_expect: 'df5cdfba9d000ed0', deal_done: '03fac51172d220da', review_ask: '960a71ae060b6bca'
 });
 function snapshot(template, options) {
   const hash = createHash('sha256');
-  for (const sample of Object.values(SAMPLE_BUYERS)) {
+  for (const [key, sample] of Object.entries(SAMPLE_BUYERS)) {
+    if (key === 'privateClient') continue;
     const { subject, preheader, text, html } = renderCustomerEmail(template, buyerFromRow(sample.row), { reviewUrl: SAMPLE_REVIEW_URL, ...options });
     hash.update(JSON.stringify([subject, preheader, text, html]));
   }
   return hash.digest('hex').slice(0, 16);
 }
+
+test('a Private Client buyer gets their own plan lines, never the 200-mile or three-model ones', () => {
+  const buyer = buyerFromRow(SAMPLE_BUYERS.privateClient.row);
+  assert.equal(buyer.plan, 'Steer Me Right Private Client');
+  assert.equal(buyer.price, '$1,995');
+  for (const template of ['welcome', 'what_to_expect']) {
+    const { text } = renderCustomerEmail(template, buyer, { reviewUrl: SAMPLE_REVIEW_URL });
+    assert.match(text, /allocations/i, template);
+    assert.match(text, /market adjustments/, template);
+    assert.doesNotMatch(text, /200 miles|up to three models|\bbrief\b|broker|concierge/i, template);
+  }
+  assert.match(renderCustomerEmail('welcome', buyer, {}).text, /Steer Me Right Private Client · \$1,995|Private Client/);
+});
 
 test('without a live Deal Tracker link every email is byte-for-byte today\'s', () => {
   for (const template of TEMPLATE_NAMES) {

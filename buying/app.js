@@ -1,4 +1,4 @@
-import { plans, createCheckout, createStore } from './checkout.js?v=4ace83b35a3c';
+import { plans, createCheckout, createStore } from './checkout.js?v=9778fc4120df';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
@@ -45,7 +45,7 @@ function showCheckoutError(tier, error) {
   const plan = plans[tier];
   const reason = error.code === 'stale_offer' ? error.message : failureMessages[error.code] || 'We couldn’t open secure checkout.';
   dialog.querySelector('#contact-error').textContent = reason;
-  dialog.querySelector('#chosen-plan').innerHTML = `<span>${escape(plan.name)}<br><small>One-time service fee</small></span><strong>$${plan.fee}</strong>`;
+  dialog.querySelector('#chosen-plan').innerHTML = `<span>${escape(plan.name)}<br><small>One-time service fee</small></span><strong>$${plan.fee.toLocaleString('en-US')}</strong>`;
   dialog.querySelector('#checkout-submit').innerHTML = `${error.code === 'stale_offer' ? 'Restart checkout' : 'Retry secure checkout'} ${icon('arrow')}`;
   if (!dialog.open) dialog.showModal();
 }

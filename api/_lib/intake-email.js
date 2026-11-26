@@ -10,6 +10,7 @@ const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 const PLAN_NAMES = Object.freeze({
   full_service: 'Steer Me Right ($395 plan)',
   concierge: 'Steer Me Right Pro ($695 plan)',
+  private_client: 'Steer Me Right Private Client ($1,995 plan)',
   consultation: 'Consultation (retired plan)'
 });
 

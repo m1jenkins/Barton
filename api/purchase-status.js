@@ -43,7 +43,8 @@ async function retrieveSession(sessionId) {
 // lands on the Pro intake.
 export const INTAKE_PAGES = Object.freeze({
   full_service: '/payment-success-fullservice.html',
-  concierge: '/payment-success-concierge.html'
+  concierge: '/payment-success-concierge.html',
+  private_client: '/payment-success-private-client.html'
 });
 
 export function intakeLocation(tier, fallbackTier, sessionId) {

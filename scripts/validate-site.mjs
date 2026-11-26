@@ -24,6 +24,7 @@ const confirmationPages = [
   'payment-success.html',
   'payment-success-fullservice.html',
   'payment-success-concierge.html',
+  'payment-success-private-client.html',
 ];
 
 const stableSchemaIds = {
@@ -31,12 +32,14 @@ const stableSchemaIds = {
   consultation: `${primaryOrigin}/#service-consultation`,
   fullService: `${primaryOrigin}/#service-full`,
   concierge: `${primaryOrigin}/#service-concierge`,
+  privateClient: `${primaryOrigin}/#service-private-client`,
 };
 
-const requiredStableIds = new Set([stableSchemaIds.organization, stableSchemaIds.fullService, stableSchemaIds.concierge]);
+const requiredStableIds = new Set([stableSchemaIds.organization, stableSchemaIds.fullService, stableSchemaIds.concierge, stableSchemaIds.privateClient]);
 const allowedServiceIds = new Set([
   stableSchemaIds.fullService,
   stableSchemaIds.concierge,
+  stableSchemaIds.privateClient,
 ]);
 
 const failures = [];
@@ -620,7 +623,8 @@ for (const document of parsedJsonLd) {
       }
       const descriptor = `${node.name ?? ''} ${node.serviceType ?? ''}`.toLowerCase();
       let expectedId;
-      if (/concierge/.test(descriptor)) expectedId = stableSchemaIds.concierge;
+      if (/private client/.test(descriptor)) expectedId = stableSchemaIds.privateClient;
+      else if (/concierge/.test(descriptor)) expectedId = stableSchemaIds.concierge;
       else if (/full[\s-]*service/.test(descriptor)) expectedId = stableSchemaIds.fullService;
       else if (/consult(?:ant|ation)|strategy\s+call|ai\s+agent/.test(descriptor)) expectedId = stableSchemaIds.consultation;
 
@@ -727,6 +731,7 @@ const serviceTargets = new Map([
   [stableSchemaIds.consultation, `${primaryOrigin}/schedule.html#consultation`],
   [stableSchemaIds.fullService, `${primaryOrigin}/schedule.html#full-service`],
   [stableSchemaIds.concierge, `${primaryOrigin}/schedule.html#concierge`],
+  [stableSchemaIds.privateClient, `${primaryOrigin}/schedule.html#private-client`],
 ]);
 
 for (const [id, governedService] of serviceIdsByRegistry) {

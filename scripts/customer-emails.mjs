@@ -47,6 +47,16 @@ export const SAMPLE_BUYERS = Object.freeze({
       }
     }
   },
+  privateClient: {
+    label: 'Private Client plan',
+    row: {
+      tier_id: 'private_client', name: 'Avery Stone', city: 'Scottsdale, AZ',
+      fields: {
+        preferred_makes: 'Porsche 911 Carrera S or Mercedes-AMG GT', condition: 'New', budget: 'Up to $175,000 out the door',
+        payment_method: 'Lease', trade_in: 'Yes, I have a trade-in', timeline: 'No rush', search_radius: 'Anywhere in the US'
+      }
+    }
+  },
   sparse: {
     label: 'Sparse answers, no city',
     row: { tier_id: 'full_service', name: 'sam', city: '', fields: { vehicle_type: 'Truck' } }

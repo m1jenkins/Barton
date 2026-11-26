@@ -105,7 +105,7 @@ function onScroll(){nav&&nav.classList.toggle("scrolled",window.scrollY>60||nav.
   let first = null, last = null;
   try { first = read(window.localStorage, 'drive_right_first_touch'); } catch {}
   try { last = read(window.sessionStorage, 'drive_right_last_touch'); } catch {}
-  const paymentReturn = /^\/payment-success(?:-(?:consultant|fullservice|concierge))?\.html$/.test(window.location.pathname);
+  const paymentReturn = /^\/payment-success(?:-(?:consultant|fullservice|concierge|private-client))?\.html$/.test(window.location.pathname);
   const checkoutReferrer = ['https://checkout.stripe.com', 'https://buy.stripe.com', 'https://book.stripe.com'].includes(current.referrer);
   if (checkoutReferrer) current.referrer = '';
   first ||= current;

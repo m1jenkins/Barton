@@ -120,9 +120,10 @@ test('checkout validation uses an allowlisted tier and optional lead UUID', () =
 });
 
 test('legacy AI fulfillment retains $195 while new checkout allows only current plans', () => {
-  assert.deepEqual(NEW_CHECKOUT_TIERS, ['full_service', 'concierge']);
+  assert.deepEqual(NEW_CHECKOUT_TIERS, ['full_service', 'concierge', 'private_client']);
   assert.equal(SERVICE_TIERS.full_service.amount, 39500);
   assert.equal(SERVICE_TIERS.concierge.amount, 69500);
+  assert.equal(SERVICE_TIERS.private_client.amount, 199500);
   assert.throws(() => validateCheckoutPayload({ tier: 'consultation' }), error => error.status === 410 && error.code === 'tier_retired');
   assert.deepEqual(SERVICE_TIERS.consultation, {
     amount: 19500,

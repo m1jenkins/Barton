@@ -1,6 +1,7 @@
 export const plans = Object.freeze({
   full_service: { name: 'Steer Me Right', fee: 395 },
   concierge: { name: 'Steer Me Right Pro', fee: 695 },
+  private_client: { name: 'Steer Me Right Private Client', fee: 1995 },
 });
 
 export const CHECKOUT_KEY = 'drive_right_buying_checkout_v1';
@@ -53,7 +54,7 @@ export function createCheckout({ store, request, createId, attribution, track = 
       if (error.code === 'stale_offer' || error.message === 'stale_offer') {
         checkout.stale = true;
         persist();
-        const stale = new Error(`The offer has changed. Review ${plans[tier].name} at $${plans[tier].fee} USD, then select Restart checkout.`);
+        const stale = new Error(`The offer has changed. Review ${plans[tier].name} at $${plans[tier].fee.toLocaleString('en-US')} USD, then select Restart checkout.`);
         stale.code = 'stale_offer';
         throw stale;
       }
