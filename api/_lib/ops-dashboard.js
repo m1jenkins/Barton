@@ -424,6 +424,20 @@ details.note p{color:var(--text);white-space:pre-wrap}
 .edit .row p{margin:0;flex:1 1 100%}
 .update-body{white-space:pre-wrap}
 .warn-line{color:var(--warn);font-weight:600}
+.header-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.auth-wrap{max-width:420px;margin:48px auto}
+.auth-card{padding:22px}
+.auth-card h1{margin:0 0 8px}
+.auth-card p{margin:0 0 14px}
+.auth-form{display:flex;flex-direction:column;gap:10px}
+.auth-form input[type=password]{font:inherit;font-size:15px;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%}
+.auth-form button{padding:9px 14px;font-size:14px;font-weight:600}
+.auth-notice{padding:10px 12px;border-radius:8px;background:var(--good-bg);color:var(--good);font-size:14px;margin:0 0 14px}
+.auth-error{padding:10px 12px;border-radius:8px;background:var(--warn-bg);color:var(--warn);font-size:14px;margin:0 0 14px}
+.auth-fallback{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.auth-fallback summary{padding:0;font-size:13px}
+.auth-fallback .auth-form{margin-top:10px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media (max-width:640px){.hide-sm{display:none}th,td{padding:9px 10px}}
 `;
 
@@ -604,7 +618,7 @@ export function renderDashboard(data, now = Date.now()) {
     + (data.agents ?? []).filter(agent => agent.overdue).length + picks.length;
   const picked = new Map(picks.map(pick => [pick.onboarding_id, pick.kind]));
   const body = safe`
-<header><h1>Deals</h1><span class="muted">Updated ${absolute(now)} CT · refreshes every 2 minutes</span></header>
+<header><h1>Deals</h1><div class="header-meta"><span class="muted">Updated ${absolute(now)} CT · refreshes every 2 minutes</span><form method="post" action="/api/ops"><input type="hidden" name="auth" value="logout"><button type="submit">Sign out</button></form></div></header>
 <div class="stats">
   <div class="stat"><b>${needCount}</b><span class="muted">Need you</span></div>
   <div class="stat"><b>${open.length}</b><span class="muted">Open deals</span></div>
@@ -802,5 +816,43 @@ ${drafts.length ? safe`<h2>First emails</h2><div class="card"><ul class="list co
 
 export function renderMessage(title, message) {
   return page(title, safe`<p><a href="/api/ops">← All deals</a></p><h1>${title}</h1><p>${message}</p>`, { refresh: false });
+}
+
+export function renderSignIn({ challenge, dealId = null, canEmail = true, sent = false, error = null } = {}) {
+  const dealInput = dealId ? safe`<input type="hidden" name="deal" value="${dealId}">` : '';
+  const passwordForm = safe`<form method="post" action="/api/ops" class="auth-form">
+    <input type="hidden" name="auth" value="password">${dealInput}
+    <input type="password" name="password" autocomplete="current-password" placeholder="Ops password" aria-label="Ops password" required>
+    <button type="submit" class="${canEmail ? '' : 'primary'}">Sign in</button>
+  </form>`;
+  const body = safe`<main class="auth-wrap"><div class="card auth-card">
+    <h1>Steer Me Right ops</h1>
+    <p class="muted">Private deal dashboard.</p>
+    ${sent ? raw('<p class="auth-notice">Check your inbox — a sign-in link is on the way. It expires in 10 minutes.</p>') : ''}
+    ${error ? safe`<p class="auth-error">${error}</p>` : ''}
+    ${canEmail ? safe`<form method="post" action="/api/ops" class="auth-form">
+      <input type="hidden" name="auth" value="send">
+      <input type="hidden" name="challenge" value="${challenge}">${dealInput}
+      <label class="hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <button type="submit" class="primary">${sent ? 'Send another sign-in link' : 'Email me a sign-in link'}</button>
+      <p class="muted" style="font-size:13px;margin:4px 0 0">Sends a 10-minute link to your inbox. Keeps this browser signed in for 30 days.</p>
+    </form>
+    <details class="auth-fallback"><summary>Sign in with password instead</summary>${passwordForm}</details>`
+      : safe`${passwordForm}<p class="muted" style="font-size:13px;margin:12px 0 0">Set INTAKE_SMTP_USER and INTAKE_SMTP_PASSWORD to enable email sign-in links.</p>`}
+  </div></main>`;
+  return page('Sign in · ops', String(body), { refresh: false });
+}
+
+export function renderMagicConfirm({ token }) {
+  const body = safe`<main class="auth-wrap"><div class="card auth-card">
+    <h1>Sign in to ops</h1>
+    <p class="muted">Tap below to finish signing in. This browser will stay signed in for 30 days.</p>
+    <form method="post" action="/api/ops" class="auth-form">
+      <input type="hidden" name="auth" value="verify">
+      <input type="hidden" name="token" value="${token}">
+      <button type="submit" class="primary">Open dashboard</button>
+    </form>
+  </div></main>`;
+  return page('Sign in · ops', String(body), { refresh: false });
 }
 

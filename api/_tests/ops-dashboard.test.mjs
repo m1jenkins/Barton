@@ -149,7 +149,8 @@ test('/api/ops asks for a password, renders every deal from Neon, and takes Maso
   assert.equal((await call(opsHandler({ environment: {}, getDatabase: () => sql }), 'GET')).statusCode, 503);
   const locked = await call(handler, 'GET', { headers: { authorization: basic('wrong') } });
   assert.equal(locked.statusCode, 401);
-  assert.match(locked.headers['www-authenticate'], /^Basic realm=/);
+  assert.equal(locked.headers['www-authenticate'], undefined, 'no browser Basic Auth popup');
+  assert.ok(locked.body.includes('Steer Me Right ops') && locked.body.includes('name="auth" value="password"'));
   assert.ok(!locked.body.includes('Pat'), 'nothing from Neon before sign-in');
 
   const page = await call(handler, 'GET', { headers: { authorization: basic(password) } });
@@ -387,4 +388,119 @@ test('alert payloads go to Postgres as text, so postgres.js can\'t encode them t
   const inserts = queries.filter(query => query.includes('INSERT INTO ops_alert_outbox (dedupe_key, kind, payload)'));
   assert.equal(inserts.length, 2, 'an overdue agent and the digest');
   for (const insert of inserts) assert.match(insert, /\?::text::jsonb\)/);
+});
+
+test('/api/ops magic link emails a 10-minute link, confirms on POST, and sets a 30-day session cookie', async t => {
+  t.mock.method(console, 'error', () => {});
+  const pg = await PGlite.create();
+  t.after(() => pg.close());
+  for (const migration of migrations) await pg.exec(migration);
+  const sql = tagged(pg);
+  const { intake } = await seed(pg);
+  const pat = await intake('Pat Cookie', 'Austin, TX');
+
+  let clock = Date.parse('2026-11-25T20:00:00Z');
+  const sent = [];
+  const createTransport = () => ({ async sendMail(mail) { sent.push(mail); }, close() {} });
+  const env = {
+    ...environment,
+    OPS_ALERT_EMAIL: 'mason@steermeright.com',
+    INTAKE_SMTP_USER: 'mason@steermeright.com',
+    INTAKE_SMTP_PASSWORD: 'app-password-for-tests'
+  };
+  const handler = opsHandler({ environment: env, getDatabase: () => sql, now: () => clock, createTransport });
+
+  // Visiting a deal while signed out shows the magic-link form preserving the deal ID.
+  const gate = await call(handler, 'GET', { url: `/api/ops?deal=${pat.id}` });
+  assert.equal(gate.statusCode, 401);
+  assert.equal(gate.headers['www-authenticate'], undefined);
+  assert.ok(gate.body.includes('Email me a sign-in link'));
+  assert.ok(gate.body.includes(`name="deal" value="${pat.id}"`));
+  assert.ok(!gate.body.includes('Pat Cookie'));
+  const challenge = /name="challenge" value="([^"]+)"/.exec(gate.body)?.[1];
+  assert.ok(challenge);
+
+  // Blind POST without a valid challenge or from another origin is refused.
+  assert.equal((await call(handler, 'POST', { headers: { origin: 'https://evil.example' }, body: `auth=send&challenge=${challenge}` })).statusCode, 403);
+  assert.equal((await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: 'auth=send&challenge=bad' })).statusCode, 400);
+  assert.equal(sent.length, 0);
+
+  // Honeypot silently skips sending mail.
+  const bot = await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: `auth=send&challenge=${encodeURIComponent(challenge)}&website=https://spam.example` });
+  assert.equal(bot.statusCode, 200);
+  assert.equal(sent.length, 0);
+
+  // Legitimate request sends one email to OPS_ALERT_EMAIL using canonical APP_ORIGIN (ignoring spoofed Host).
+  const reqSend = await call(handler, 'POST', {
+    headers: { host: 'spoofed.example', origin: 'https://spoofed.example' },
+    body: `auth=send&challenge=${encodeURIComponent(challenge)}&deal=${pat.id}`
+  });
+  assert.equal(reqSend.statusCode, 200);
+  assert.ok(reqSend.body.includes('Check your inbox'));
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].to, 'mason@steermeright.com');
+  const linkMatch = /https:\/\/www\.steermeright\.com\/api\/ops\?login=([A-Za-z0-9._%-]+)/.exec(sent[0].text);
+  assert.ok(linkMatch, 'email carries a magic link on canonical APP_ORIGIN');
+  const token = decodeURIComponent(linkMatch[1]);
+
+  // Rapid repeat within 60 seconds does not spam SMTP.
+  await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: `auth=send&challenge=${encodeURIComponent(challenge)}` });
+  assert.equal(sent.length, 1);
+
+  // GET ?login=<token> is mail-scanner safe: no Set-Cookie, no deal data, just the POST button.
+  const landing = await call(handler, 'GET', { url: `/api/ops?login=${encodeURIComponent(token)}` });
+  assert.equal(landing.statusCode, 200);
+  assert.equal(landing.headers['set-cookie'], undefined);
+  assert.ok(landing.body.includes('name="auth" value="verify"') && !landing.body.includes('Pat Cookie'));
+
+  // POST auth=verify sets the 30-day HttpOnly Secure SameSite=Lax cookie and redirects to the deal.
+  const verified = await call(handler, 'POST', {
+    headers: { origin: env.APP_ORIGIN },
+    body: `auth=verify&token=${encodeURIComponent(token)}`
+  });
+  assert.equal(verified.statusCode, 303);
+  assert.equal(verified.headers.location, `/api/ops?deal=${pat.id}`);
+  const setCookie = verified.headers['set-cookie'];
+  assert.match(setCookie, /^ops_session=s1\.\d+\.[A-Za-z0-9_-]{43}; Path=\/api\/ops; Max-Age=2592000; HttpOnly; SameSite=Lax; Secure$/);
+  const cookie = setCookie.split(';')[0];
+
+  // The cookie opens the dashboard and deal page without Basic auth for 30 days.
+  const dealPage = await call(handler, 'GET', { url: `/api/ops?deal=${pat.id}`, headers: { cookie } });
+  assert.equal(dealPage.statusCode, 200);
+  assert.ok(dealPage.body.includes('Pat Cookie'));
+
+  // Advance 29 days: still signed in.
+  clock += 29 * 86400 * 1000;
+  assert.equal((await call(handler, 'GET', { headers: { cookie } })).statusCode, 200);
+
+  // Expired magic link is rejected (both GET and POST).
+  const expiredLink = await call(handler, 'GET', { url: `/api/ops?login=${encodeURIComponent(token)}` });
+  assert.equal(expiredLink.statusCode, 401);
+  assert.ok(expiredLink.body.includes('expired or is invalid'));
+  assert.equal((await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: `auth=verify&token=${encodeURIComponent(token)}` })).statusCode, 401);
+
+  // Advance past 30 days: session cookie expires.
+  clock += 2 * 86400 * 1000;
+  assert.equal((await call(handler, 'GET', { headers: { cookie } })).statusCode, 401);
+
+  // Password form fallback sets a 30-day session cookie; wrong password returns 401.
+  assert.equal((await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN }, body: 'auth=password&password=wrong' })).statusCode, 401);
+  const passLogin = await call(handler, 'POST', {
+    headers: { origin: env.APP_ORIGIN },
+    body: `auth=password&password=${encodeURIComponent(password)}&deal=${pat.id}`
+  });
+  assert.equal(passLogin.statusCode, 303);
+  assert.equal(passLogin.headers.location, `/api/ops?deal=${pat.id}`);
+  const passCookie = passLogin.headers['set-cookie'].split(';')[0];
+  assert.equal((await call(handler, 'GET', { headers: { cookie: passCookie } })).statusCode, 200);
+
+  // Rotating OPS_PASSWORD immediately invalidates existing session cookies.
+  const rotated = opsHandler({ environment: { ...env, OPS_PASSWORD: 'brand-new-ops-password-0123456789' }, getDatabase: () => sql, now: () => clock, createTransport });
+  assert.equal((await call(rotated, 'GET', { headers: { cookie: passCookie } })).statusCode, 401);
+
+  // Sign out clears the cookie and redirects to /api/ops.
+  const out = await call(handler, 'POST', { headers: { origin: env.APP_ORIGIN, cookie: passCookie }, body: 'auth=logout' });
+  assert.equal(out.statusCode, 303);
+  assert.equal(out.headers.location, '/api/ops');
+  assert.match(out.headers['set-cookie'], /^ops_session=; Path=\/api\/ops; Max-Age=0; HttpOnly; SameSite=Lax; Secure$/);
 });
