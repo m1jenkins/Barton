@@ -16,7 +16,8 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 // lists the open deals' numbers and POST "action": "texts" saves one thread's
 // Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
 // POST "action": "draft_update" saves a draft Buyer Update for Mason to approve
-// on the ops dashboard (scripts/car-search.mjs draft); it never posts one.
+// on the ops dashboard (scripts/car-search.mjs draft); it never posts one. The
+// draft is signed with the skill that wrote it ("skill", one of DRAFT_SKILLS).
 // GET ?intake=<id>&read=picks|documents|texts|deal is what an agent working a
 // deal reads without a database login (scripts/car-search.mjs picks, documents,
 // texts, deal): the standing Buyer Picks, the list of Buyer Documents (never a
@@ -39,6 +40,9 @@ const DOCUMENT_ERRORS = Object.freeze({
 });
 
 const READS = Object.freeze(['picks', 'documents', 'texts', 'deal']);
+// The skills Mason runs that may save a draft Buyer Update, and so the only
+// names a draft from here can be signed with. Left out, it is car-search.
+const DRAFT_SKILLS = Object.freeze(['car-search', 'car-negotiation', 'dealer-reply']);
 const TRACKER_OFF = Object.freeze({ ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
 
 // One of the reads above, for the deal an intake ID or its first 8 characters
@@ -142,18 +146,21 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       return sendJson(res, 200, { ok: true, saved: result.saved });
     }
     if (body.action === 'draft_update') {
-      // Always a draft, always signed car-search: whatever else the request says,
-      // only Mason's approval on the ops dashboard puts it in front of the buyer.
-      if (!dealTrackerEnabled(environment)) return sendJson(res, 404, { ok: false, error: 'not_found', message: 'The Deal Tracker is off.' });
+      // Always a draft, signed with one of the skills' names and never Mason's:
+      // whatever else the request says, only Mason's approval on the ops
+      // dashboard puts it in front of the buyer.
+      if (!dealTrackerEnabled(environment)) return sendJson(res, 404, TRACKER_OFF);
+      const skill = body.skill ?? 'car-search';
+      if (!DRAFT_SKILLS.includes(skill)) return sendJson(res, 400, { ok: false, error: 'invalid_skill', message: `skill must be one of ${DRAFT_SKILLS.join(', ')}, or left out` });
       let draft;
       try {
-        draft = await draftUpdate(getDatabase(), { onboardingId: intakeId, body: body.text, actor: 'car-search' });
+        draft = await draftUpdate(getDatabase(), { onboardingId: intakeId, body: body.text, actor: skill });
       } catch (error) {
         if (!(error instanceof BuyerUpdateError)) throw error;
         return sendJson(res, 422, { ok: false, error: 'invalid_update', message: error.message });
       }
       if (!draft) return sendJson(res, 404, { ok: false, error: 'deal_not_found', message: 'This intake has no deal, so it has no Deal Tracker to draft for.' });
-      return sendJson(res, 200, { ok: true, update: { id: draft.id, status: 'draft' },
+      return sendJson(res, 200, { ok: true, update: { id: draft.id, status: 'draft', signed: skill },
         next: 'Mason gets an email and approves or discards the draft on the deal\'s ops page. The buyer sees nothing until he approves.' });
     }
     if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts", "draft_update" or left out');

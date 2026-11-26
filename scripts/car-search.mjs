@@ -7,8 +7,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 //   node scripts/car-search.mjs get <intake ID>                    search details for one paid intake
 //   node scripts/car-search.mjs submit <intake ID> <shortlist.json>  save the shortlist and email it to Mason
 //   node scripts/car-search.mjs handoff <intake ID>                hand the deal and its first emails to Grokbot
-//   node scripts/car-search.mjs draft <intake ID> <text file | ->  save a draft Buyer Update for Mason to approve
-//                                                                  on the deal's ops page; it never posts one
+//   node scripts/car-search.mjs draft <intake ID> <text file | -> [skill]
+//                                                                  save a draft Buyer Update for Mason to approve
+//                                                                  on the deal's ops page; it never posts one. skill is who
+//                                                                  signs it: car-search (the default), car-negotiation or dealer-reply
 //   node scripts/car-search.mjs document <document id> [output file]
 //                                                                  save one Buyer Document (ids from `documents`), by default to
 //                                                                  .car-searches/documents/ (git-ignored); prints where, never the contents
@@ -28,10 +30,12 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 // (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
 // JSON through as is; the server checks it, including each car's est_otd and
 // color once the Deal Tracker is on.
-const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> | document <document id> [output file] | picks <intake ID> | documents <intake ID> | texts <intake ID> [last N] | deal <intake ID>';
+const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> [car-search | car-negotiation | dealer-reply] | document <document id> [output file] | picks <intake ID> | documents <intake ID> | texts <intake ID> [last N] | deal <intake ID>';
 // GET-only: none of these can change anything.
 const READS = ['picks', 'documents', 'texts', 'deal'];
 const COMMANDS = ['get', 'submit', 'handoff', 'draft', 'document', ...READS];
+// Who may sign a draft Buyer Update; the server holds the same list.
+const DRAFT_SKILLS = ['car-search', 'car-negotiation', 'dealer-reply'];
 const DOCUMENTS_DIR = fileURLToPath(new URL('../.car-searches/documents/', import.meta.url));
 
 export function localEnv(file = new URL('../.env.local', import.meta.url)) {
@@ -95,11 +99,12 @@ async function saveDocument(base, headers, id, output, fetchImpl, documentsDir) 
 // draft reads its text from a file, or from stdin when the file is -.
 const readText = source => (source === '-' ? new Response(process.stdin).text() : readFile(source, 'utf8'));
 
-export async function carSearchRequest([command, intakeId, file], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR, read = readText } = {}) {
+export async function carSearchRequest([command, intakeId, file, skill], { environment = { ...localEnv(), ...process.env }, fetchImpl = fetch, documentsDir = DOCUMENTS_DIR, read = readText } = {}) {
   const token = environment.CAR_SEARCH_TOKEN?.trim();
   if (!token) throw new Error('CAR_SEARCH_TOKEN is not set. Add it to .env.local (see "Car search" in docs/implementation-operations.md).');
   if (!intakeId || !COMMANDS.includes(command) || (['submit', 'draft'].includes(command) && !file)) throw new Error(USAGE);
   if (command === 'document' && !/^[1-9]\d{0,17}$/.test(intakeId)) throw new Error(USAGE);
+  if (command === 'draft' && skill != null && !DRAFT_SKILLS.includes(skill)) throw new Error(USAGE);
   if (READS.includes(command) && file != null && !(command === 'texts' && /^[1-9]\d{0,3}$/.test(file))) {
     throw new Error(command === 'texts' ? 'texts takes a whole number of texts to show' : USAGE);
   }
@@ -109,7 +114,7 @@ export async function carSearchRequest([command, intakeId, file], { environment 
   if (command === 'document') return saveDocument(base, headers, intakeId, file, fetchImpl, documentsDir);
   // Every command is named here: one this list doesn't know sends nothing.
   const post = async () => (command === 'submit' ? { intake_id: intakeId, shortlist: JSON.parse(await readFile(file, 'utf8')) }
-    : command === 'draft' ? { intake_id: intakeId, action: 'draft_update', text: await read(file) }
+    : command === 'draft' ? { intake_id: intakeId, action: 'draft_update', text: await read(file), ...(skill ? { skill } : {}) }
       : command === 'handoff' ? { intake_id: intakeId, action: 'handoff' } : null);
   let response;
   if (command === 'get') {

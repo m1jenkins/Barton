@@ -283,3 +283,66 @@ test('a /car-search draft is always a draft signed car-search, and the buyer nev
   assert.deepEqual(JSON.parse(calls[0].init.body), { intake_id: id, action: 'draft_update', text: 'From stdin' });
   await assert.rejects(carSearchRequest(['draft', id], { environment: { CAR_SEARCH_TOKEN: token }, fetchImpl }), /Usage/);
 });
+
+// /car-negotiation and /dealer-reply save their updates the same way, signed with
+// their own name. There is no way to post from here: a request can pick which
+// skill signs the draft and nothing else, and never Mason.
+test('a draft from /car-negotiation or /dealer-reply is signed by that skill, is still only a draft, and no other name is taken', async t => {
+  t.mock.method(console, 'error', () => {});
+  const pg = await database(t);
+  const sql = tagged(pg);
+  const id = await intake(pg);
+  const token = 'car-search-token-for-tests-only-0123456789';
+  const post = async body => {
+    const res = response();
+    await carSearchHandler({ environment: { ...environment, CAR_SEARCH_TOKEN: token }, getDatabase: () => sql })({
+      method: 'POST', url: '/api/car-search', body,
+      headers: { host: 'www.steermeright.com', authorization: `Bearer ${token}`, 'content-type': 'application/json' }
+    }, res);
+    return { status: res.statusCode, body: JSON.parse(res.body) };
+  };
+  const rows = async () => (await pg.query(`SELECT status, actor, on_masons_say, ready_for_pick, posted_at, email_after
+    FROM buyer_updates WHERE onboarding_id = $1 ORDER BY id`, [id])).rows;
+  const draft = actor => ({ status: 'draft', actor, on_masons_say: false, ready_for_pick: false, posted_at: null, email_after: null });
+
+  const saved = [];
+  for (const skill of ['car-negotiation', 'dealer-reply', 'car-search']) {
+    const result = await post({ intake_id: id, action: 'draft_update', skill, text: `SKILL-SENTINEL from ${skill}`,
+      status: 'posted', post: true, actor: 'mason', on_masons_say: true, ready_for_pick: true });
+    assert.deepEqual([result.status, result.body.update.status, result.body.update.signed], [200, 'draft', skill]);
+    saved.push(result.body.update.id);
+  }
+  assert.deepEqual(await rows(), [draft('car-negotiation'), draft('dealer-reply'), draft('car-search')]);
+  assert.ok(!(await seen(pg, id)).includes('SKILL-SENTINEL'), 'no draft is on the page or in the view');
+
+  for (const skill of ['mason', 'Mason', ' mason ', 'duet-deals', 'car-negotiation ', '', 42, true, ['dealer-reply'], { name: 'dealer-reply' }]) {
+    const refused = await post({ intake_id: id, action: 'draft_update', skill, text: 'REFUSED-SENTINEL' });
+    assert.deepEqual([refused.status, refused.body.error], [400, 'invalid_skill'], JSON.stringify(skill));
+  }
+  for (const action of ['post_update', 'update', 'post', 'approve_update', 'approve_draft']) {
+    const refused = await post({ intake_id: id, action, skill: 'car-negotiation', text: 'REFUSED-SENTINEL', id: saved[0], update_id: saved[0] });
+    assert.deepEqual([refused.status, refused.body.error], [400, 'invalid_action'], action);
+  }
+  assert.deepEqual(await rows(), [draft('car-negotiation'), draft('dealer-reply'), draft('car-search')], 'nothing else was saved or posted');
+
+  // Only Mason's approval on the ops dashboard posts it, and the row keeps the skill's name.
+  await approveDraft(sql, saved[0]);
+  assert.ok((await seen(pg, id)).includes('SKILL-SENTINEL from car-negotiation'));
+  assert.ok(!(await seen(pg, id)).includes('SKILL-SENTINEL from dealer-reply'));
+  assert.deepEqual((await rows()).map(row => [row.actor, row.status, row.on_masons_say]),
+    [['car-negotiation', 'posted', true], ['dealer-reply', 'draft', false], ['car-search', 'draft', false]]);
+
+  // The script passes the skill's name on, and sends nothing for any other name or a flag.
+  const calls = [];
+  const fetchImpl = async (url, init) => {
+    calls.push({ url, init });
+    return new Response(JSON.stringify({ ok: true, update: { id: 9, status: 'draft', signed: 'dealer-reply' } }), { status: 200 });
+  };
+  const run = args => carSearchRequest(args, { environment: { CAR_SEARCH_TOKEN: token }, fetchImpl, read: async () => 'From stdin' });
+  assert.equal((await run(['draft', id, '-', 'dealer-reply'])).status, 200);
+  assert.deepEqual(JSON.parse(calls[0].init.body), { intake_id: id, action: 'draft_update', text: 'From stdin', skill: 'dealer-reply' });
+  for (const name of ['mason', 'duet-deals', '--post', '--ready-for-pick', '']) {
+    await assert.rejects(run(['draft', id, '-', name]), /Usage/, name);
+  }
+  assert.equal(calls.length, 1, 'nothing else was sent');
+});

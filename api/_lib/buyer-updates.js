@@ -35,9 +35,9 @@ export async function postUpdate(sql, { onboardingId, body, readyForPick = false
   return { id: row.id };
 }
 
-// A draft from the /car-search skill (POST /api/car-search "draft_update"). It
-// never posts: only Mason's approval on the ops dashboard does. Null when the
-// intake has no deal.
+// A draft from one of the skills Mason runs (POST /api/car-search
+// "draft_update"), signed with that skill's name. It never posts: only Mason's
+// approval on the ops dashboard does. Null when the intake has no deal.
 export async function draftUpdate(sql, { onboardingId, body, actor }) {
   const text = cleanBody(body);
   const [row] = await sql`INSERT INTO buyer_updates (onboarding_id, body, status, ready_for_pick, actor)

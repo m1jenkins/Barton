@@ -127,7 +127,7 @@ Every search ends with a draft Buyer Update telling the buyer their shortlist is
 ## Buyer Updates
 
 - A Buyer Update is the only text the buyer sees from us on their Deal Tracker. Every one you write goes in as a draft with `node scripts/car-search.mjs draft <intake ID> <file | ->`, and Mason's approval on the deal's ops page posts it.
-- Buyers ask questions by text to Mason, outside this system (adr/0003). If he passes one on, answer it in a draft update unless he says to post.
+- Buyers ask questions by text to Mason, outside this system (adr/0003). If he passes one on, answer it in a draft update.
 - See what the buyer picked with `node scripts/car-search.mjs picks <intake ID>`. A Buyer Pick is what they want, not an agreed price: Mason confirms with the dealer.
 - List Buyer Documents with `node scripts/car-search.mjs documents <intake ID>` (id, type, size and date, never the contents) and fetch one with `node scripts/car-search.mjs document <id>`. They can hold ID and financial details: use what you need for the deal, never quote them into a dealer email or a Buyer Update, and don't copy them anywhere else.
 - Until Quotes in, a Buyer Update never names a dealer, links a listing or gives a VIN; from Quotes in the buyer's page shows each car's dealer and listing, so an update may name them. An update never gives a target price or walk-away price. Refer to cars by year, model, trim and color.
