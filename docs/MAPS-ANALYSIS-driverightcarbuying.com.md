@@ -25,4 +25,4 @@ Google's profile guidance requires an accurate real-world business representatio
 
 Do not infer zero reviews, absent profiles or poor map rankings from missing tool access. Before any later Maps campaign, the owner should identify the actual eligible business profile, then verify its name, contact information and operating model. Do not create one listing for each city page. No map-score or review-cadence claim is used in the page copy.
 
-The city names and brief local sentences are maintained in `data/city-pages.json`. The current implementation and publication scope are in [the city collection record](city-pages-2026-09-17.md).
+The city names and brief local sentences were kept in `data/city-pages.json`, and the implementation and publication scope in [the city collection record](city-pages-2026-09-17.md). Those drafts were removed on November 26, 2026; the live city pages are in [seo/2026-11-15-market-and-service-pages.md](seo/2026-11-15-market-and-service-pages.md).

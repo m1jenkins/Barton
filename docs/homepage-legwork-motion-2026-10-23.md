@@ -1,6 +1,6 @@
 # Homepage legwork videos (2026-10-23)
 
-The three "How we do the legwork." cards on the homepage (and the generated city drafts) now show short Remotion videos instead of the static SVG drawings. The session user asked for completely new animations that read instantly while scrolling; nothing from the old drawings had to stay.
+The three "How we do the legwork." cards on the homepage now show short Remotion videos instead of the static SVG drawings. The session user asked for completely new animations that read instantly while scrolling; nothing from the old drawings had to stay.
 
 ## What each card shows
 
@@ -31,4 +31,4 @@ npm run studio   # live preview
 npm run render   # writes assets/buying/legwork/{search,negotiate,keys}.{mp4,webp}
 ```
 
-After a render, run `node scripts/validate-site.mjs` from the repo root. It reports the new `?v=` hashes for the video and poster URLs in `index.html`. Then run `npm run draft:cities` so the city drafts match the homepage.
+After a render, run `node scripts/validate-site.mjs` from the repo root. It reports the new `?v=` hashes for the video and poster URLs in `index.html`.

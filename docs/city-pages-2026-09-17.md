@@ -1,5 +1,7 @@
 # Homepage-based city pages
 
+**Removed November 26, 2026.** These drafts, `data/city-pages.json`, their scripts and their test were deleted; they are in git history before that date. The live city pages are generated from `data/market-pages.json` ([seo/2026-11-15-market-and-service-pages.md](seo/2026-11-15-market-and-service-pages.md)).
+
 Revised September 18, 2026 to match the requested homepage exactly, with minimal local copy.
 
 `scripts/render-city-pages.mjs` reads `index.html` directly. All 20 city pages inherit its DOM structure, navigation, typography, photos, illustrated process, prices, FAQs, footer, and complete buying-brief interaction. There is no city stylesheet or separate city application.

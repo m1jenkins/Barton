@@ -257,15 +257,6 @@ test('homepage Organization schema records owner-confirmed hours and service are
 });
 
 test('city and editorial indexing stays consistent with owner-approved public copy', async () => {
-  const cityData = JSON.parse(await read('data/city-pages.json'));
-  for (const city of cityData.cities) {
-    const html = await read(`draft-artifacts/cities/${city.slug}`);
-    const document = htmlDocument(html);
-    assert.equal(document.noindex, true, city.slug);
-    assert.doesNotMatch(document.visibleText, /buyers buyers/i, city.slug);
-    assert.match(document.visibleText, new RegExp(`Here for buyers in ${city.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i'), city.slug);
-  }
-
   const austin = await read('austin.html');
   const austinDocument = htmlDocument(austin);
   assert.equal(austinDocument.noindex, false);

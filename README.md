@@ -26,9 +26,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `scripts/` | Local tools: site validator, preview servers, draft generators. Not deployed. |
 | `data/` | Governed source data (claims, sources, metro and city page data, release gates). Not deployed. |
 | `docs/` | Plans, decision records and evidence. Not deployed. See [docs/README.md](docs/README.md). |
-| `draft-artifacts/` | Private city/metro renders and archived hand-authored guide/worksheet previews. Not deployed. Regenerate city/metro pages with their scripts. |
+| `draft-artifacts/` | Private metro renders and archived hand-authored guide/worksheet previews. Not deployed. Regenerate the metro drafts with `npm run draft:metros`. |
 | `motion/legwork/` | Remotion source for the homepage legwork card videos, rendered to `assets/buying/legwork/` by `npm run render` in that folder. Not deployed. See [docs/homepage-legwork-motion-2026-10-23.md](docs/homepage-legwork-motion-2026-10-23.md). |
-| `.agents/` | Installed agent skills, owned by the skills tool. Not deployed. |
 
 `.vercelignore` lists everything that stays out of the deployment.
 
@@ -64,7 +63,6 @@ node scripts/validate-site.mjs   # page metadata, asset hashes, sitemap, schema
 npm run check:api                # syntax check for the serverless functions
 npm run check:js                 # all first-party JavaScript, including browser modules and local tools
 npm run check:metros             # drafts match their generator
-npm run check:cities
 npm run check:markets            # city pages match data/market-pages.json
 npm run check:vehicles           # vehicle price pages match data/vehicle-pages.json
 npm test
@@ -78,11 +76,11 @@ CI runs the same list in `.github/workflows/checks.yml`. Site validation also fo
 
 `npm run preview` serves the site at `http://127.0.0.1:4175`. API calls return "unavailable" locally, so nothing is charged and no lead is created. Use a Vercel preview deployment for Stripe test purchases.
 
-Other previews: `npm run preview:cities` (city page drafts, port 4177), `npm run preview:metros`, `npm run preview:guides`, `npm run preview:worksheet`.
+Other previews: `npm run preview:metros`, `npm run preview:guides`, `npm run preview:worksheet`.
 
 ## More detail
 
 - Checkout, leads and onboarding: [docs/implementation-operations.md](docs/implementation-operations.md); the plan-first checkout: [docs/checkout-streamline-2026-10-05.md](docs/checkout-streamline-2026-10-05.md)
-- Metro and city page drafts: [docs/metro-execution-2026-09-16.md](docs/metro-execution-2026-09-16.md), [docs/city-pages-2026-09-17.md](docs/city-pages-2026-09-17.md)
+- Metro drafts: [docs/metro-execution-2026-09-16.md](docs/metro-execution-2026-09-16.md)
 - OpenAI ads tracking: [docs/openai-ads-setup.md](docs/openai-ads-setup.md)
 - Fonts: headers are Inter Tight Black caps, subheaders Inter SemiBold, body Inter, and Barlow is only the logo wordmark (rules in `.ai_rules`). The pages load the Latin WOFF2 subsets in `assets/buying/fonts/`, built from the TTF sources there by `node scripts/build-fonts.mjs` (needs `uv`). The TTF sources stay out of the deployment. Font licenses are in the same folder.
