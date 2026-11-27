@@ -63,7 +63,7 @@ test('problems pages are indexable, dated, carry the plan lines and are listed e
     assert.doesNotMatch(JSON.stringify(document.schemas), /AggregateRating|"Review"/, name);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, name);
     assert.doesNotMatch(html, /\{[a-z]+:|\{guide\}|\{base\}|undefined|NaN/, `${name} has an unresolved token`);
-    assert.ok(document.links.includes('/schedule.html#full-service'), `${name} links the plan`);
+    assert.ok(document.links.includes('/#full-service'), `${name} links the plan`);
     assert.ok(document.links.includes(`/${car.guide}`), `${name} links its price guide`);
     for (const cmp of comparisons.filter(entry => entry.cars.some(side => side.slug === car.guide))) assert.ok(document.links.includes(`/${cmp.slug}`), `${name} links ${cmp.slug}`);
     for (const href of document.links.filter(href => href.startsWith('/') && !href.startsWith('//'))) {

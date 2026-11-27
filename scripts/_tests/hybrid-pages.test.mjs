@@ -80,7 +80,7 @@ test('hybrid pages are indexable, dated, lead with a verdict and carry the appro
     assert.doesNotMatch(document.visibleText, banned, name);
     assert.doesNotMatch(JSON.stringify(car), banned, `${car.key} data`);
     assert.doesNotMatch(JSON.stringify(car), /—/, `${car.key} data has no em dashes`);
-    assert.ok(document.links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
+    assert.ok(document.links.includes('/#full-service'), `${name} links the Steer Me Right plan`);
     assert.ok(document.links.includes(`/${car.priceGuide}`), `${name} links its price guide`);
     for (const cmp of comparisons.filter(entry => entry.cars.some(item => item.slug === car.priceGuide))) assert.ok(document.links.includes(`/${cmp.slug}`), `${name} links ${cmp.slug}`);
     assert.ok(document.visibleText.includes(shared.gasPrices.eia.label) && document.visibleText.includes(shared.gasPrices.epa.label), `${name} shows both gas prices`);

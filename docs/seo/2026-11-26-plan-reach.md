@@ -23,8 +23,8 @@ Exact strings are in claim rows `PLAN-REACH-2026-11-26`, `STEER-ME-RIGHT-SCOPE-2
 
 ## Where it lives
 
-- Plan cards: `schedule.html` and `how-it-works.html` (six bullets), `index.html` (three bullets). The generated families copy the homepage card from their renderers; the city pages copy the plans-page card from `scripts/render-market-pages.mjs`.
-- `schedule.html` and `index.html`: the header, sticky bar and fees-section buttons say "See plans" and start no checkout; only the buttons on the two plan cards and the closing band do. The fees chart has a Pro bar.
+- Plan cards: `index.html` and `how-it-works.html` (six bullets; `index.html` took over the six-bullet cards when `schedule.html` was retired on 2026-11-27). The generated families copy the homepage card from their renderers; the city pages copy the plans-page card from `scripts/render-market-pages.mjs`.
+- `index.html`: the header, sticky bar and fees-section buttons say "See plans" and start no checkout; only the buttons on the two plan cards and the closing band do. The fees chart has a Pro bar.
 - `/car-search` skill, step 2 and 3: the radius is capped at 200 miles on Steer Me Right.
 - Intake (`buying/intake.js`): a question can carry `byTier` overrides. The "How far" choices stop at 200 miles on Steer Me Right.
 - Buyer emails: the welcome and what-to-expect plan lines. The byte-for-byte snapshot in `api/_tests/customer-email.test.mjs` (`TODAY`) changes only with Mason's OK on the preview.
@@ -46,5 +46,5 @@ Checked on the day: the live checkout page shows the add-on under "Add to your o
 ## Not changed
 
 - Short price lines such as "$395 for one model or $695 for up to three" stay where the sentence says nothing else about the plans.
-- Page headers outside `schedule.html` and `index.html`.
+- Page headers outside `index.html`.
 - Stripe plan names and prices, and the Pro and Private Client payment links. The Steer Me Right and Steer Me Right Pro product descriptions were updated to the new scopes on November 26, 2026.

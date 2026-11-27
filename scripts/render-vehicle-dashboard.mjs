@@ -226,7 +226,7 @@ export function renderDashboardVehiclePage({
   const make = makeOf(name);
   const brandName = makeNames.find(entry => name.startsWith(`${entry} `) || name === entry) ?? short;
   const isUsed = vehicle.pay.base === 'asking';
-  const ask = '<a class="vd-link" href="/schedule.html">Ask us</a>';
+  const ask = '<a class="vd-link" href="/#plans">Ask us</a>';
   const sourceMark = (source, eager = false) => sourceLogos[source] ? mark(sourceLogos[source], { alt: source, eager }) : source;
   const picture = (image, widths, sizes, priority) => `<picture>${['avif', 'webp'].map(type => `<source type="image/${type}" srcset="${widths.map(width => `/assets/external/optimized/${image.file}-${width}.${type} ${width}w`).join(', ')}" sizes="${sizes}">`).join('')}<img src="/assets/external/source/${image.file}-original.jpg" alt="${image.alt}" width="${image.width}" height="${image.height}" decoding="async"${priority ? ' fetchpriority="high"' : ' loading="lazy"'}></picture>`;
   const credit = (label, image) => `<li>${label}: <a href="${image.sourceUrl}" rel="noopener">${image.author}</a>, ${image.licenseUrl ? `<a href="${image.licenseUrl}" rel="noopener">${image.license}</a>` : image.license}${image.note ? `, ${image.note}` : ''}</li>`;
@@ -711,7 +711,7 @@ ${rows.map(row => {
 <ul role="list">
 ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
 </ul>
-<a class="vp-plan__button" href="${card.href}" data-cta-location="${location}">Get ${card.name}</a>
+<a class="vp-plan__button" href="${card.href}" data-service-tier="${card.tier}" data-cta-location="${location}">Get ${card.name}</a>
 </article>`;
 
   const faqEntries = [
@@ -873,7 +873,7 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
           <div class="vd-calc-cta">
             <p><strong>Rather not haggle for <span data-vd-calc-cta-total>${dollars(initialTotal)}</span> yourself?</strong> We contact the dealers that have your ${short} in stock and negotiate the price and fees for you. $395 one time, with a full refund if you cancel before negotiations begin.</p>
             <div class="vd-calc-cta__actions">
-              <a class="vd-btn" href="/schedule.html#full-service" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-calculator">Get my ${short} negotiated</a>
+              <a class="vd-btn" href="/#full-service" data-service-tier="full_service" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-calculator">Get my ${short} negotiated</a>
               <button type="button" class="vd-btn vd-btn--ghost" data-open-inquiry="Dealer quote review" data-inquiry-vehicle="${name}" data-inquiry-prompt="Paste the dealer’s quote, or the price, fees and add-ons they offered" data-cta-location="vehicle-${vehicle.slug.replace(/-price\.html$/, '')}-quote">Send Mason my quote</button>
             </div>
           </div>
@@ -885,7 +885,7 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
             ${(vehicle.pay.evidence?.intro ?? []).map(p => `<p style="margin-bottom:8px;">${p}</p>`).join('')}
             ${vehicle.pay.evidence?.rows?.length ? `<ul style="list-style:disc;padding-left:18px;margin-bottom:8px;">${vehicle.pay.evidence.rows.map(r => `<li style="margin-bottom:4px;"><strong>${r.trims}.</strong> ${r.why}</li>`).join('')}</ul>` : ''}
             ${(vehicle.pay.after ?? []).map(p => `<p style="margin-bottom:8px;">${p}</p>`).join('')}
-            ${(vehicle.pay.after ?? []).some(p => /hello@steermeright\.com|Talk to Mason/i.test(p)) ? '' : '<p>Have a dealer quote in hand? Email <a class="vd-link" href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a class="vd-link" href="/schedule.html">pricing page</a> for a free gut check within one business day.</p>'}
+            ${(vehicle.pay.after ?? []).some(p => /hello@steermeright\.com|Talk to Mason/i.test(p)) ? '' : '<p>Have a dealer quote in hand? Email <a class="vd-link" href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a class="vd-link" href="/#plans">pricing page</a> for a free gut check within one business day.</p>'}
           </div>
         </details>
         <p class="vd-note">${vehicle.pay.note} Ranges are our estimate from public market data, not a promise.</p>

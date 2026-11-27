@@ -8,7 +8,7 @@ const read = file => readFile(new URL(file, root), 'utf8');
 const newPage = 'car-buying-service.html';
 
 test('service-intent pages publish current prices without retired or unapproved claims', async () => {
-  const files = ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', newPage];
+  const files = ['index.html', 'how-it-works.html', 'about.html', newPage];
   const forbidden = /\$(?:195|495)\b|average savings|savings guarantee|refund(?:s| promise)|streetAddress|reviewCount|aggregateRating|LocalBusiness/i;
 
   for (const file of files) {
@@ -44,7 +44,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.match(homepage.visibleText, /Steer Me Right Pro/);
   assert.doesNotMatch(homepage.visibleText, /Full Service|Ultimate Concierge/);
 
-  for (const file of ['index.html', 'how-it-works.html', 'schedule.html']) {
+  for (const file of ['index.html', 'how-it-works.html']) {
     const head = (await read(file)).match(/<head>([\s\S]*?)<\/head>/i)?.[1] ?? '';
     for (const [label, pattern] of [
       ['meta description', /<meta name="description"\s+content="([^"]+)"/i],
@@ -81,7 +81,7 @@ test('car-buying-service explainer is indexable, canonical, substantial and inte
   assert.match(document.visibleText, /\$695/);
   assert.ok(document.visibleText.split(/\s+/).length >= 650, 'explainer should not be thin');
 
-  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html']) {
+  for (const file of ['index.html', 'how-it-works.html', 'about.html', 'blog.html']) {
     assert.ok(htmlDocument(await read(file)).links.some(link => link.includes(newPage)), `${file} should link to ${newPage}`);
   }
 
@@ -136,8 +136,8 @@ test('dealer-name disclaimer is absent from published HTML', async () => {
   }
 });
 
-test('marketing nav lists three sections, and the schedule header leads to the plan cards', async () => {
-  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
+test('marketing nav lists three sections, and every header leads to the plan cards on the homepage', async () => {
+  for (const file of ['index.html', 'how-it-works.html', 'car-buying-service.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html']) {
     const html = await read(file);
     if (file === 'index.html') {
       // The homepage uses the Wise-style header: the same three sections, with Pricing as an on-page anchor.
@@ -150,38 +150,23 @@ test('marketing nav lists three sections, and the schedule header leads to the p
       assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="#plans" data-cta-location="header">Get started<\/a>/);
       continue;
     }
-    if (file === 'schedule.html') {
-      // Pricing uses the homepage's header (2026-10-31), with one compact checkout; the price hides on phones,
-      // and the button gives way to the sticky buttons on small phones.
-      const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
-      const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
-      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/schedule.html', '/about.html']);
-      assert.doesNotMatch(nav, /car-buying-service\.html/);
-      const plans = [...header.matchAll(/<button\b[^>]*type="button"[^>]*data-plan="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map(([, tier, label]) => ({ tier, label: label.replace(/<[^>]+>/g, '') }));
-      // Since 2026-11-26 the header leads to both plan cards and starts no checkout of its own.
-      assert.deepEqual(plans, [], 'no checkout button in the header');
-      assert.doesNotMatch(header, /data-plan=/);
-      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm wz-header-checkout" href="#pricing" data-cta-location="header"><span>See plans<span class="wz-header-price"> · from \$395<\/span><\/span><\/a>/);
-      assert.doesNotMatch(header, /header-checkout-actions|data-brief-link|Start my brief|href="https:\/\/[^\"]*stripe/);
-      continue;
-    }
     if (file === 'about.html') {
-      // About uses the homepage's header (2026-10-30), with Pricing and Get started leading to the plans page.
+      // About uses the homepage's header (2026-10-30), with Pricing and Get started leading to the homepage's plans.
       const header = html.match(/<header class="site-header wz-header">([\s\S]*?)<\/header>/)?.[1] ?? '';
       const nav = header.match(/<nav class="wz-nav" aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
-      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/schedule.html', '/about.html']);
+      assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href), ['/how-it-works.html', '/#plans', '/about.html']);
       assert.doesNotMatch(nav, /car-buying-service\.html/);
-      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/);
+      assert.match(header, /<a class="wz-btn wz-btn--forest wz-btn--sm" href="\/#plans" data-cta-location="header">Get started<\/a>/);
       continue;
     }
     const header = html.match(/<header class="site-header page-width">([\s\S]*?)<\/header>/)?.[1] ?? '';
     const nav = header.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/)?.[1] ?? '';
     const links = [...nav.matchAll(/href="([^"]+)"/g)].map(([, href]) => href);
-    assert.deepEqual(links, ['/how-it-works.html', '/schedule.html', '/about.html'], `${file} header nav lists the three sections`);
+    assert.deepEqual(links, ['/how-it-works.html', '/#plans', '/about.html'], `${file} header nav lists the three sections`);
     assert.doesNotMatch(nav, /car-buying-service\.html/, `${file} keeps the explainer out of the main nav (the footer still links it)`);
-    assert.match(header, /<a class="header-cta" href="\/schedule\.html" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
+    assert.match(header, /<a class="header-cta" href="\/#plans" data-cta-location="header">Get started<\/a>/, `${file} header CTA leads to the plans`);
   }
-  for (const file of ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html']) {
+  for (const file of ['index.html', 'how-it-works.html', 'about.html', 'blog.html']) {
     assert.match(await read(file), /href="\/car-buying-service\.html"/, `${file} still links the explainer`);
   }
 });
@@ -211,7 +196,7 @@ test('car-buying-service FAQPage schema matches visible questions and approved f
   }));
   assert.deepEqual(encoded, visible);
 
-  const indexable = ['index.html', 'how-it-works.html', 'schedule.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html'];
+  const indexable = ['index.html', 'how-it-works.html', 'about.html', 'blog.html', 'policy.html', 'texas-local-market-intelligence.html'];
   for (const file of indexable) {
     const hasFaq = htmlDocument(await read(file)).schemas.flatMap(schema => schema['@graph'] || [schema]).some(node => node['@type'] === 'FAQPage');
     assert.equal(hasFaq, false, `${file} should not gain FAQPage schema in this change`);
@@ -340,7 +325,7 @@ test('live pages use the plan names of 2026-10-23 and the plan scopes of 2026-11
   const retired = /Ultimate Concierge|Wider search|auctions, forums|forums, private sellers|Get Full Service|Full Service (?:is|at|·|\(\$)|(?:[Ii]ntroductory|[Ff]ounding)[^.]{0,40}\$695/;
   for (const file of files) assert.doesNotMatch(await read(file), retired, file);
 
-  for (const file of ['schedule.html', 'index.html', 'how-it-works.html', 'car-buying-service.html']) {
+  for (const file of ['index.html', 'how-it-works.html', 'car-buying-service.html']) {
     const text = htmlDocument(await read(file)).visibleText;
     assert.match(text, /Steer Me Right Pro/, file);
     assert.match(text, /up to three models/, file);

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { draftRoot } from './render-metro-drafts.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
-const references = new Set(['/how-it-works.html','/schedule.html','/policy.html','/texas-local-market-intelligence.html']);
+const references = new Set(['/','/how-it-works.html','/policy.html','/texas-local-market-intelligence.html']);
 export function createDraftServer() {
   return createServer(async (req, res) => {
     const headers = {'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow', 'Content-Security-Policy':"default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'"};

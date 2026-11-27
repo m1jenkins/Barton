@@ -33,9 +33,9 @@ const needsFor = (slug, list) => (list || []).map(text => ({ slug, text }));
 
 // The two plan cards, word for word from render-vehicle-pages.mjs (a test compares the strings), so the copy stays the approved copy.
 const planCards = [
-  { name: 'Steer Me Right', fit: 'Best if the car is within 200 miles of you.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
+  { name: 'Steer Me Right', fit: 'Best if the car is within 200 miles of you.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/#full-service', tier: 'full_service',
     items: ['One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees'] },
-  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
+  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/#concierge', tier: 'concierge', pro: true,
     items: ['Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models'] },
 ];
 const tick = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
@@ -47,7 +47,7 @@ const planCard = (card, location) => `<article class="vp-plan${card.pro ? ' vp-p
 <ul role="list">
 ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
 </ul>
-<a class="vp-plan__button" href="${card.href}" data-cta-location="${location}">Get ${card.name}</a>
+<a class="vp-plan__button" href="${card.href}" data-service-tier="${card.tier}" data-cta-location="${location}">Get ${card.name}</a>
 </article>`;
 const plansSection = location => `<section id="plans" class="vp-section vp-plans">
 <h2>Pick how much help you want</h2>

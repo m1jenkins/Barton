@@ -41,7 +41,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -75,7 +75,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -110,7 +110,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -144,7 +144,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null,
       "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
@@ -179,7 +179,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null,
       "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
@@ -214,7 +214,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -251,7 +251,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -285,7 +285,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -322,7 +322,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -356,7 +356,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -391,7 +391,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -425,7 +425,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -459,7 +459,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -493,7 +493,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -527,7 +527,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -562,7 +562,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -596,7 +596,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -630,7 +630,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -664,7 +664,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -698,7 +698,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -732,7 +732,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null,
       "baselineStatus": "pending_gsc_ga4_qualified_lead_purchase_backlink_exports"
@@ -767,7 +767,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -801,7 +801,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -835,7 +835,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     },
@@ -869,7 +869,7 @@
       "qa": null,
       "claimIds": [],
       "sourceIds": [],
-      "ctaDestination": "/schedule.html",
+      "ctaDestination": "/#plans",
       "releaseStatus": "draft",
       "publishedSha256": null
     }
@@ -878,9 +878,9 @@
     {
       "slug": "austin.html",
       "marketId": "TX-AUS",
-      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes). Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Re-pinned on 2026-10-06 for the mobile header and consent fit (drive-right.css hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the footer ad-measurement opt-out (script.js hash). Re-pinned on 2026-10-18 for the footer link to the car buying service comparison (compare-car-buying-services.html). Re-pinned on 2026-10-23 for the price cut to $195 Full Service and $345 Ultimate Concierge (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the inquiry questions box and the shared lead email (inquiry.js, inquiry.css and script.js hashes). Re-pinned on 2026-10-23 for the owner-requested revert to $395 and $695 (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the Halloween sale banner (script.js hash). Re-pinned on 2026-10-23 for the Remotion legwork videos (drive-right.css hash). Re-pinned on 2026-10-23 for the plan rename to Steer Me Right and Steer Me Right Pro (copy and script.js hash). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-30 for the site-wide type system: Inter Tight Black caps headers, Inter SemiBold subheaders, Inter body (daisy.css and drive-right.css hashes). Bytes re-pinned on 2026-10-30 for the homepage theme on every page: blue sign header, blue title bands, navy pill buttons, tinted cards and footer, one form field style (daisy.css and drive-right.css hashes). Bytes re-pinned on 2026-10-31 for the car negotiation targeting (title, description, H1, Service schema, a What our car negotiation service does section and two FAQs) aimed at Austin and Texas car negotiator searches. Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-11-20 for the script.js hash (web analytics now measures the new price, comparison, city and review pages). Bytes re-pinned on 2026-11-22 for the script.js hash (web analytics now measures the deal, roundup, hybrid-vs-gas and problems pages). Bytes re-pinned on 2026-11-25 for the script.js hash (web analytics now records cta_click, generate_lead, begin_checkout and phone_click events). Bytes re-pinned on 2026-11-25 for the inquiry.css and inquiry.js hashes (the car search inquiry dialog now opens on the guide pages too). Bytes re-pinned on 2026-11-26 after the plan reach change (200 miles on Steer Me Right, nationwide on Pro; docs/seo/2026-11-26-plan-reach.md). Bytes re-pinned on 2026-11-26 for the script.js and app.js hashes (the Steer Me Right Private Client plan; docs/seo/2026-11-26-private-client-plan.md). Bytes re-pinned on 2026-11-26 for the owner-requested plan copy: “within 200 miles of you” in place of “within a day’s drive”. Bytes re-pinned on 2026-11-27 for the owner-requested removal of “one-time service fee” from the plan cards. Bytes re-pinned on 2026-11-27 for the owner-requested simpler car search inquiry dialog: email or phone plus a message (inquiry.js hash). Bytes re-pinned on 2026-11-27 after the owner-requested cut of “you pay the carrier” lines.",
+      "decision": "Owner-directed publication on 2026-09-29: Daylight layout, index and sitemap. This is not a full metro evidence release. Other Texas city pages stay noindex. Bytes re-pinned after the Austin page change. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-05 for the refreshed daisy.css, drive-right.css and app.js hashes (calmer legwork and button motion). Re-pinned again the same day for the legwork label fit (drive-right.css hash). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the static legwork illustrations (drive-right.css and app.js hashes). Re-pinned on 2026-10-06 for the compressed consent bar (script.js and drive-right.css hashes). Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Re-pinned on 2026-10-06 for the mobile header and consent fit (drive-right.css hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the shorter consent sentence (script.js hash). Re-pinned on 2026-10-06 for the footer ad-measurement opt-out (script.js hash). Re-pinned on 2026-10-18 for the footer link to the car buying service comparison (compare-car-buying-services.html). Re-pinned on 2026-10-23 for the price cut to $195 Full Service and $345 Ultimate Concierge (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the inquiry questions box and the shared lead email (inquiry.js, inquiry.css and script.js hashes). Re-pinned on 2026-10-23 for the owner-requested revert to $395 and $695 (copy, schema and app.js hash). Re-pinned on 2026-10-23 for the Halloween sale banner (script.js hash). Re-pinned on 2026-10-23 for the Remotion legwork videos (drive-right.css hash). Re-pinned on 2026-10-23 for the plan rename to Steer Me Right and Steer Me Right Pro (copy and script.js hash). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-30 for the site-wide type system: Inter Tight Black caps headers, Inter SemiBold subheaders, Inter body (daisy.css and drive-right.css hashes). Bytes re-pinned on 2026-10-30 for the homepage theme on every page: blue sign header, blue title bands, navy pill buttons, tinted cards and footer, one form field style (daisy.css and drive-right.css hashes). Bytes re-pinned on 2026-10-31 for the car negotiation targeting (title, description, H1, Service schema, a What our car negotiation service does section and two FAQs) aimed at Austin and Texas car negotiator searches. Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-11-20 for the script.js hash (web analytics now measures the new price, comparison, city and review pages). Bytes re-pinned on 2026-11-22 for the script.js hash (web analytics now measures the deal, roundup, hybrid-vs-gas and problems pages). Bytes re-pinned on 2026-11-25 for the script.js hash (web analytics now records cta_click, generate_lead, begin_checkout and phone_click events). Bytes re-pinned on 2026-11-25 for the inquiry.css and inquiry.js hashes (the car search inquiry dialog now opens on the guide pages too). Bytes re-pinned on 2026-11-26 after the plan reach change (200 miles on Steer Me Right, nationwide on Pro; docs/seo/2026-11-26-plan-reach.md). Bytes re-pinned on 2026-11-26 for the script.js and app.js hashes (the Steer Me Right Private Client plan; docs/seo/2026-11-26-private-client-plan.md). Bytes re-pinned on 2026-11-26 for the owner-requested plan copy: “within 200 miles of you” in place of “within a day’s drive”. Bytes re-pinned on 2026-11-27 for the owner-requested removal of “one-time service fee” from the plan cards. Bytes re-pinned on 2026-11-27 for the owner-requested simpler car search inquiry dialog: email or phone plus a message (inquiry.js hash). Bytes re-pinned on 2026-11-27 for the owner-requested plan card redesign, a copy of Shopify’s plan cards (drive-right.css hash). Bytes re-pinned on 2026-11-27 after the owner-requested cut of “you pay the carrier” lines. Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
       "indexablePublication": true,
-      "sha256": "e4b00359adcffeccbc8d3190a7ca24ea57ce479ccd4da5862849a814217b69dd",
+      "sha256": "451a38fdc989c2bb932b0b904b0be5232d5e554684c1a3f33cc04343df2a18a3",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -889,8 +889,8 @@
     {
       "slug": "houston.html",
       "marketId": "M05",
-      "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "441535a77139406034306c56b8101183d4dfda36a71abd476a422e739462c241",
+      "decision": "Retain Houston presentation and current indexing. Existing public content owner-approved October 1, 2026. Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (plan-first hero and header), and again the same day for the refreshed drive-right.css and inquiry.css hashes (Michael R. photo review). Bytes re-pinned on 2026-10-06 for the sales-copy rewrite (header phone, explainer out of the main nav, hero mirror on Austin, footer hours) and the refreshed drive-right.css and inquiry.js hashes. Re-pinned on 2026-10-06 for the WOFF2 font subsets (daisy.css and drive-right.css hashes; dead Instrument Serif preload removed from Houston). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "bd72c045db831b031f2f54ee3e2c91eb005319bbb5824562da6fadc50aa54ce3",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -911,8 +911,8 @@
     {
       "slug": "dallas.html",
       "marketId": "M04",
-      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "68272f77b7715bc892c781081db1ae07154b242dc0e0c4f89e2b13c9a4c7712f",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "115cc1e992b9946d79903e87368d19e549d60e4d69ff2b75a2d26ad4f78beb5f",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -921,8 +921,8 @@
     {
       "slug": "fort-worth.html",
       "marketId": "M04",
-      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "3422ac4b1356298c2e78d9ebe34809ecf8f083de7b03150723eef4937a67e3e5",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "60aaa3d420e22bc51747644162ba334cf0ff82cca8799915edd2e6737350ee8c",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -931,8 +931,8 @@
     {
       "slug": "arlington.html",
       "marketId": "M04",
-      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "577374ce187e92dc3e7e77c0ee66ec64a29947d761c173b094198de9f8c92192",
+      "decision": "Preserve; proposed consolidation after GSC/backlinks and approved destination Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "589a95427937e8ad14299a4f1bdcee5c92e9e4130101336c8e2fe2363b624099",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -941,8 +941,8 @@
     {
       "slug": "san-antonio.html",
       "marketId": "TX-SAT",
-      "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "529d63f31d2fcceef896892e29029027ed4be21e519db943d622add3fb4f91be",
+      "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "f2d6274e63f1c9d1a3155f89077188213eb3e7448f9188c515b237c8ee92e202",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -951,8 +951,8 @@
     {
       "slug": "el-paso.html",
       "marketId": "TX-ELP",
-      "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "f197ed3ed935bd23d2e504dec1bdf1858952a15529b34045f9aa9ee984859e74",
+      "decision": "Separate backlog; evidence and demand pending Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "ea495a67218438358e13976830ce98e6c5cd014b985aaeeac2891c5d0b65bddf",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -961,8 +961,8 @@
     {
       "slug": "new-braunfels.html",
       "marketId": "TX-NBF",
-      "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "48aebe6451e8ab7af334946f031b33aff8cb57badd056af7ccc77cfae58105ca",
+      "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "2123e47e3bdaaa64e6d7ff2a3a4a25eede7073f399bb9824c6cfb2b005d3ff29",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,
@@ -971,8 +971,8 @@
     {
       "slug": "san-marcos.html",
       "marketId": "TX-SMA",
-      "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes).",
-      "sha256": "68bed47d3c276d408f13caa2448a54cef591ab701354b056fbedc9fb7c9bfbec",
+      "decision": "Distinct-intent review before retain/merge decision Bytes re-pinned on 2026-10-05 after the owner-requested checkout change (header Get started link). Bytes re-pinned on 2026-10-23 for the versioned favicon link. Bytes re-pinned on 2026-10-23 for the owner-approved copy cleanup (plain-language rewrite). Bytes re-pinned on 2026-10-30 for the new logo: the lowercase steer me right wordmark with a blue arrow t (logo-motion.css and logo-motion.js hashes). Bytes re-pinned on 2026-10-30 for the homepage logo fix: full-size drawn t and a white arrow on the blue header (logo-motion.css hash). Bytes re-pinned on 2026-10-30 for the new link-preview image (Let us deal with the dealer card in og:image and twitter:image). Bytes re-pinned on 2026-10-31 for the amber turn signal in the logo t (logo-motion.css and logo-motion.js hashes). Re-pinned on 2026-11-27 after schedule.html was retired behind a 301 to the homepage: its plan links now point to the homepage plan cards.",
+      "sha256": "80779e123b830cc4588cd036d6e8db1adf6a8befc00f77fc8a6776ea8e9c3dd8",
       "redirectTo": null,
       "gscBaseline": null,
       "backlinkBaseline": null,

@@ -41,7 +41,7 @@ test('city and service pages are indexable guides with approved Steer Me Right c
     const photo = data.markets.find(market => market.slug === name)?.photo;
     const credit = photo ? [photo.sourceUrl, photo.licenseUrl] : [];
     assert.deepEqual(document.links.filter(href => /^https?:/.test(href) && new URL(href).origin !== origin).toSorted(), credit.toSorted(), `${name} outside links`);
-    assert.ok(document.links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
+    assert.ok(document.links.includes('/#full-service'), `${name} links the Steer Me Right plan`);
     assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${name}`)?.lifecycle_status, 'indexable_owner_publication', name);
   }

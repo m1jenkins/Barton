@@ -40,7 +40,7 @@ test('deal pages are indexable, dated, and carry the approved plan lines', async
     assert.doesNotMatch(JSON.stringify(document.schemas), /AggregateRating|"Review"/, page.slug);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, page.slug);
     assert.doesNotMatch(html, /\bbrief\b|\bbrokers?\b/i, `${page.slug} source, including alt text and metadata`);
-    assert.ok(document.links.includes('/schedule.html#full-service'), `${page.slug} links the plan`);
+    assert.ok(document.links.includes('/#full-service'), `${page.slug} links the plan`);
     assert.ok(resources.includes(`/${page.slug}`), `blog.html links /${page.slug}`);
     assert.ok(llms.includes(`${origin}/${page.slug}`), `llms.txt lists ${page.slug}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${page.slug}`)?.lifecycle_status, 'indexable_owner_publication', page.slug);

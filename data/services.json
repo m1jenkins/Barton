@@ -4,8 +4,8 @@
   "lastObservedAt": "2026-11-26",
   "currency": "USD",
   "sourceOfTruth": {
-    "url": "https://www.steermeright.com/schedule.html",
-    "file": "schedule.html",
+    "url": "https://www.steermeright.com/#plans",
+    "file": "index.html",
     "note": "Plan names follow the owner decision of 2026-10-23 (PLAN-NAMES-2026-10-23; docs/seo/2026-10-23-plan-rename.md). Plan scopes follow the owner decision of 2026-11-26 (PLAN-REACH-2026-11-26, STEER-ME-RIGHT-SCOPE-2026-11-26, PRO-SCOPE-2026-11-26 in data/claims.csv; docs/seo/2026-11-26-plan-reach.md). Steer Me Right Private Client follows the owner decision of 2026-11-26 (PRIVATE-CLIENT-2026-11-26; docs/seo/2026-11-26-private-client-plan.md). Other published copy is owner-approved under WEBSITE-CONTENT-2026-10-01. Technical checkout records remain separate."
   },
   "services": [

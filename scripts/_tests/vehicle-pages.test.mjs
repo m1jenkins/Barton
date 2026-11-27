@@ -36,7 +36,7 @@ test('vehicle price pages are indexable, dated, labelled as estimates and carry 
     // Other publishers' scores are quoted with links, never marked up as our own rating.
     assert.doesNotMatch(JSON.stringify(document.schemas), /AggregateRating|"Review"/, name);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, name);
-    assert.ok(document.links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
+    assert.ok(document.links.includes('/#full-service'), `${name} links the Steer Me Right plan`);
     assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${name}`)?.lifecycle_status, 'indexable_owner_publication', name);
   }
@@ -79,7 +79,7 @@ test('comparison pages are indexable, dated, labelled as estimates and carry the
     assert.match(document.visibleText, /our estimate[^.]*, not a promise\./i, name);
     assert.doesNotMatch(JSON.stringify(document.schemas), /AggregateRating|"Review"/, name);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, name);
-    assert.ok(document.links.includes('/schedule.html#concierge'), `${name} links the Pro plan`);
+    assert.ok(document.links.includes('/#concierge'), `${name} links the Pro plan`);
     assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${name}`)?.lifecycle_status, 'indexable_owner_publication', name);
   }

@@ -62,17 +62,18 @@ export const askMason = (location, vehicle = '') => `<p class="ask-mason">Not su
 
 // The two plan cards, word for word from Mason’s plan change of 2026-11-26: the Steer Me Right plan covers dealers within
 // 200 miles of the buyer’s ZIP code (state lines no longer matter) and Steer Me Right Pro covers dealers nationwide.
-// The buttons are plain /schedule.html links; script.js turns them into checkout. Do not add data-plan.
+// The buttons link to the cards on the homepage and carry data-service-tier, which script.js turns into checkout.
+// Do not add data-plan.
 export const plans = location => `<section class="plan-grid guide-plans" aria-label="Steer Me Right plans">
   <article class="plan-card" data-featured>
     <h2>Steer Me Right</h2><p class="plan-for">Best if the car is within 200 miles of you</p><p class="plan-description">We work the dealers and handle the haggling.</p><p class="plan-price">$395</p>
     <ul><li>One model, with any trims, colors and packages</li><li>Dealers within 200 miles of you</li><li>New, used and CPO dealer inventory</li><li>We negotiate the price and check the fees</li><li>One dedicated advisor, start to finish</li><li>Written recommendations: what we found and what we’d do</li></ul>
-    <a href="/schedule.html#full-service" data-cta-location="${location}" class="primary-button">Get Steer Me Right</a>
+    <a href="/#full-service" data-service-tier="full_service" data-cta-location="${location}" class="primary-button">Get Steer Me Right</a>
   </article>
   <article class="plan-card">
     <h2>Steer Me Right Pro</h2><p class="plan-for">Best if you want the best deal anywhere in the country</p><p class="plan-description">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p><p class="plan-price">$695</p>
     <ul><li>Everything in Steer Me Right</li><li>Dealers nationwide, not just within 200 miles</li><li>Shipping quotes on long-distance deals</li><li>Trade-in support: we compare offers on your trade-in from several areas and negotiate it with the deal</li><li>Offers on up to three models, priced side by side</li><li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li></ul>
-    <a href="/schedule.html#concierge" data-cta-location="${location}" class="outline-button">Get Steer Me Right Pro</a>
+    <a href="/#concierge" data-service-tier="concierge" data-cta-location="${location}" class="outline-button">Get Steer Me Right Pro</a>
   </article>
 </section>
 ${askMason(location)}
@@ -143,7 +144,7 @@ ${marketFigures(data, market, pulled)}
 ${market.mapSvg ? `<figure class="market-map">\n${market.mapSvg}<figcaption>${market.map.caption}</figcaption></figure>\n` : ''}${market.local ? `\n<h2 id="local">Buying a car around ${market.name}</h2>\n${market.local.map(([title, text]) => `<h3>${title}</h3>\n<p>${text}</p>`).join('\n')}\n` : ''}
 <h2 id="plan">Which plan fits a ${market.name} buyer</h2>
 <p>${market.plan}</p>
-<p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/schedule.html">pricing page</a>.</p>
+<p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/#plans">pricing page</a>.</p>
 
 <h2 id="how">How it works from ${market.name}</h2>
 <ol>
@@ -165,7 +166,7 @@ ${faq([
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 
-<div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
+<div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/#full-service" data-service-tier="full_service">The Steer Me Right plan is $395</a> and <a href="/#concierge" data-service-tier="concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
 
 <section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no office in ${market.name}. ${market.figures ? 'The market figures come from the public sources named in the table and will be refreshed when this page is updated.' : `The listing figures were pulled on ${pulled} and will be refreshed when this page is updated.`} If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Other cities: ${others} · <a href="/${data.hub.slug}">all cities</a>. Related: <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/car-buying-service-cost.html">what a car buying service costs</a>.</p>${market.photo || market.mapSvg ? credits(market) : ''}</section>
 </div>
@@ -220,7 +221,7 @@ ${publicOnly.length ? `<p>${joinNames(publicOnly.map(market => `<a href="/${mark
 
 <h2 id="other">If your city isn’t listed</h2>
 <p>The list above is only where we’ve published numbers so far. The service is the same everywhere in the United States, at the same fee. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. The 200 miles are measured from your ZIP code, and state lines don’t matter. If few dealers within 200 miles of you stock the car you want, Pro is the plan to look at.</p>
-<p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/schedule.html">pricing page</a>.</p>
+<p>Not sure? Tell us your situation and we’ll tell you which plan fits. No payment needed to ask, and we reply within one business day. Email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> or use “Talk to Mason” on the <a href="/#plans">pricing page</a>.</p>
 
 <h2 id="faq">Common questions</h2>
 ${faq([
@@ -231,7 +232,7 @@ ${faq([
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 
-<div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/schedule.html#full-service">The Steer Me Right plan is $395</a> and <a href="/schedule.html#concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
+<div class="highlight-box"><p><strong>Ready to hand off the dealers?</strong> <a href="/#full-service" data-service-tier="full_service">The Steer Me Right plan is $395</a> and <a href="/#concierge" data-service-tier="concierge">Steer Me Right Pro is $695</a>, for new, used and CPO cars. Full refund if you cancel before negotiations begin. Dealers and lenders pay us nothing.</p></div>
 
 <section class="guide-notes" aria-labelledby="guide-sources"><h2 id="guide-sources">Sources and updates</h2><p>Written by <a href="/about.html">Mason</a>, Steer Me Right’s founder and lead advisor. Steer Me Right is based in Austin, Texas, and has no other office. The listing figures were pulled on ${pulled} and will be refreshed when this page is updated. If something is out of date or wrong, email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a> and we will correct it.</p><p>Related: <a href="/car-buying-service.html">car buying service</a>, <a href="/car-negotiation-service.html">car negotiation service</a> and <a href="/compare-car-buying-services.html">car buying services compared</a>.</p></section>
 </div>

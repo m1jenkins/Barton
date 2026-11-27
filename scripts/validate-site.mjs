@@ -729,9 +729,9 @@ if (entityRegistry?.businessBase && (entityRegistry.businessBase.city !== 'Austi
 const serviceIdsByRegistry = new Map((serviceRegistry?.services ?? []).map((service) => [service.id, service]));
 const serviceTargets = new Map([
   [stableSchemaIds.consultation, `${primaryOrigin}/schedule.html#consultation`],
-  [stableSchemaIds.fullService, `${primaryOrigin}/schedule.html#full-service`],
-  [stableSchemaIds.concierge, `${primaryOrigin}/schedule.html#concierge`],
-  [stableSchemaIds.privateClient, `${primaryOrigin}/schedule.html#private-client`],
+  [stableSchemaIds.fullService, `${primaryOrigin}/#full-service`],
+  [stableSchemaIds.concierge, `${primaryOrigin}/#concierge`],
+  [stableSchemaIds.privateClient, `${primaryOrigin}/#private-client`],
 ]);
 
 for (const [id, governedService] of serviceIdsByRegistry) {

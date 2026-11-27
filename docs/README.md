@@ -21,6 +21,7 @@ Add new files rather than renaming old ones. When a doc stops being current, mov
 
 - [seo/2026-11-26-plan-reach.md](seo/2026-11-26-plan-reach.md): Steer Me Right limited to dealers within 200 miles, Pro nationwide with shipping quotes and trade-in support, the public $300 upgrade withdrawn, and the Stripe steps for Pro as a checkout add-on.
 - [seo/2026-11-26-private-client-plan.md](seo/2026-11-26-private-client-plan.md): Steer Me Right Private Client, the $1,995 plan for cars with an MSRP of $100,000 or more: what it adds over Pro, the rules, where it lives and the launch steps.
+- [seo/2026-11-27-plans-on-homepage.md](seo/2026-11-27-plans-on-homepage.md): The plans moved onto the homepage and `schedule.html` was retired behind a 301: what moved, how plan links open checkout now, what was left alone and the after-deploy steps.
 - [content-approval-2026-10-01.md](content-approval-2026-10-01.md): owner approval of all current website content; replaces older pending-review instructions for public copy.
 - [editorial-policy-draft.md](editorial-policy-draft.md): editorial standards for guide content.
 - [release-readiness.md](release-readiness.md): what must be true before a draft page goes public.

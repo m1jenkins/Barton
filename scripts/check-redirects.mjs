@@ -58,10 +58,12 @@ const requiredRedirects = [
     destination: 'https://www.steermeright.com/:path',
   },
   { name: 'index.html', source: '/index.html', destination: '/' },
-  { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/schedule.html', status: 301 },
-  { name: 'retired AI receipt page', source: '/payment-success-consultant.html', destination: '/schedule.html', status: 301 },
-  { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/schedule.html' },
-  { name: 'pricing route', source: '/pricing.html', destination: '/schedule.html', status: 301 },
+  { name: 'retired AI service', source: '/ai-car-buying-agent.html', destination: '/', status: 301 },
+  { name: 'retired AI receipt page', source: '/payment-success-consultant.html', destination: '/', status: 301 },
+  { name: 'legacy inquiry route', source: '/inquiry.html', destination: '/' },
+  { name: 'pricing route', source: '/pricing.html', destination: '/', status: 301 },
+  // The plans moved onto the homepage on 2026-11-27; the old pricing page 301s there and keeps any #card fragment.
+  { name: 'retired pricing page', source: '/schedule.html', destination: '/', status: 301 },
   {
     name: 'legacy dealer add-ons route',
     source: '/blog-dealer-addons-exposed.html',
@@ -214,7 +216,13 @@ cases.push(
   {
     name: 'Retired AI service',
     source: buildUrl(base, '/ai-car-buying-agent.html', query),
-    target: buildUrl(base, '/schedule.html', query),
+    target: buildUrl(base, '/', query),
+    statuses: new Set([301]),
+  },
+  {
+    name: 'Retired pricing page',
+    source: buildUrl(base, '/schedule.html', query),
+    target: buildUrl(base, '/', query),
     statuses: new Set([301]),
   },
   {
@@ -240,7 +248,7 @@ cases.push(
   {
     name: 'Legacy inquiry route',
     source: buildUrl(base, '/inquiry.html', query),
-    target: buildUrl(base, '/schedule.html', query),
+    target: buildUrl(base, '/', query),
   },
   {
     name: 'Legacy dealer add-ons route',

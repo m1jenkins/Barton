@@ -198,7 +198,7 @@ Check the deals with `SELECT onboarding_id, shortlisted_at FROM deals ORDER BY c
 
 ## Ops dashboard — November 20, 2026
 
-`https://www.steermeright.com/api/ops` is Mason's private overview of every deal. Sign in by requesting a 10-minute email link (sent through `INTAKE_SMTP_*` to `OPS_ALERT_EMAIL`, or `INTAKE_EMAIL_TO` / `mason@steermeright.com`) or using `OPS_PASSWORD`; either sets a 30-day `HttpOnly` `SameSite=Lax` session cookie scoped to `/api/ops` (HTTP Basic auth with `OPS_PASSWORD` is also still accepted). Rotating `OPS_PASSWORD` invalidates all sessions and links immediately; without `OPS_PASSWORD` the page answers 503. It is rendered on the server from Neon on each load (no script, no analytics, `noindex`, `no-store`) and refreshes every two minutes. `?deal=<intake ID>` opens one deal: controls to close, reopen or update it, its shortlist with target and walk-away prices, first emails and full log. Code: `api/ops.js`, `api/_lib/ops-auth.js`, `api/_lib/ops-dashboard.js` and `api/_lib/ops-alerts.js`; tests in `api/_tests/ops-dashboard.test.mjs`.
+`https://www.steermeright.com/api/ops` is Mason's private overview of every deal. Sign in by requesting a 10-minute email link (sent through `INTAKE_SMTP_*` to `OPS_ALERT_EMAIL`, or `INTAKE_EMAIL_TO` / `mason@steermeright.com`) or using `OPS_PASSWORD`; either sets a 30-day `HttpOnly` `SameSite=Lax` session cookie scoped to `/api/ops` (HTTP Basic auth with `OPS_PASSWORD` is also still accepted). Rotating `OPS_PASSWORD` invalidates all sessions and links immediately; without `OPS_PASSWORD` the page answers 503. It is rendered on the server from Neon on each load (no script, no analytics, `noindex`, `no-store`) and refreshes every two minutes. `?deal=<intake ID>` opens one deal: controls to close, reopen or update it, its shortlist with target and walk-away prices, first emails and full log. Code: `api/ops.js`, `api/_lib/ops-auth.js`, `api/_lib/ops-dashboard.js` and `api/_lib/ops-alerts.js`.
 
 - **Needs you**, in this order: open `needs_mason` questions, first emails still `pending` or `failed`, paid intakes from the last 60 days with no car search, agents that are overdue, and open deals with nothing logged for two days.
 - **Agents** lists every agent seen in 30 days: when it last ran, how often it said it runs, and when it last logged a deal event. It is overdue once it misses two runs (twice `expect_minutes`, plus five minutes).
@@ -285,7 +285,7 @@ For new sales, keep the final payable total at full service `39500 usd` and conc
 
 Set each Payment Link's post-payment redirect in Stripe, including the literal Stripe replacement token:
 
-- The historical AI receipt page was removed on 2026-10-23; `/payment-success-consultant.html` now 301s to `/schedule.html`. Deactivate any AI Payment Link that is still live, and do not reactivate AI sales.
+- The historical AI receipt page was removed on 2026-10-23; `/payment-success-consultant.html` now 301s to `/` (it went to `/schedule.html` until that page was retired on 2026-11-27). Deactivate any AI Payment Link that is still live, and do not reactivate AI sales.
 - Full service (Steer Me Right, $395): `https://www.steermeright.com/payment-success-fullservice.html?session_id={CHECKOUT_SESSION_ID}`
 - Concierge (Steer Me Right Pro, $695): `https://www.steermeright.com/payment-success-concierge.html?session_id={CHECKOUT_SESSION_ID}`
 

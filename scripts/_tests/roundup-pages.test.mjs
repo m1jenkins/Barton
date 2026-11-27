@@ -32,7 +32,7 @@ test('roundup pages are indexable, dated, labelled as estimates and carry the ap
     for (const line of [/\$395/, /\$695/, /Dealers and lenders pay us nothing\./, /Full refund if you cancel before negotiations begin\./, /We can’t promise a specific discount/, /our estimate[^.]*, not a promise\./i]) assert.match(document.visibleText, line, name);
     assert.doesNotMatch(JSON.stringify(document.schemas), /AggregateRating|"Review"/, name);
     assert.doesNotMatch(document.visibleText, /\bbrief\b|\bbrokers?\b|average savings|guaranteed|lowest price|best price/i, name);
-    assert.ok(document.links.includes('/schedule.html#full-service') && document.links.includes('/schedule.html#concierge'), `${name} links both plans`);
+    assert.ok(document.links.includes('/#full-service') && document.links.includes('/#concierge'), `${name} links both plans`);
     assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
     assert.equal(inventory.find(row => row.canonical_url === `${origin}/${name}`)?.lifecycle_status, 'indexable_owner_publication', name);
     assert.ok(queries.some(row => row.preferred_url === `${origin}/${name}`), `${name} has query-map rows`);

@@ -22,7 +22,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `.claude/skills/dealer-reply/` | Drafts Mason's next dealer email in his own voice, learned from his sent dealer mail. Mason runs it on a pasted thread. Not deployed. |
 | `db/` | PostgreSQL migrations, applied in number order. |
 | `vercel.json` | Redirects and security headers. Check with `node scripts/check-redirects.mjs --config-only`. |
-| `sitemap.xml`, `robots.txt`, `llms.txt`, `pricing.md` | Public files for search engines and AI assistants. Keep prices in `pricing.md`, `llms.txt` and `schedule.html` in sync. |
+| `sitemap.xml`, `robots.txt`, `llms.txt`, `pricing.md` | Public files for search engines and AI assistants. Keep prices in `pricing.md`, `llms.txt` and the homepage plan cards (`index.html#plans`) in sync. |
 | `scripts/` | Local tools: site validator, preview servers, draft generators. Not deployed. |
 | `data/` | Governed source data (claims, sources, metro and city page data, release gates). Not deployed. |
 | `docs/` | Plans, decision records and evidence. Not deployed. See [docs/README.md](docs/README.md). |
@@ -41,7 +41,7 @@ The vehicle price pages (`<make>-<model>-price.html`, starting with `ford-f-150-
 
 The site is partway through a redesign, so pages come in two families. Match the family of the page you are editing.
 
-- **Current design**: `index.html`, `about.html`, `schedule.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `houston.html`, the three service comparison pages, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. `index.html`, `about.html` and `schedule.html` also load `buying/home-wise.css` and `buying/home-wise.js` (body `.dr.wz`); build new sections on those pages from its `wz-*` components. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
+- **Current design**: `index.html` (which also carries the plans; `schedule.html` 301s to it since 2026-11-27), `about.html`, `how-it-works.html`, `car-buying-service.html`, `blog.html`, `policy.html`, `texas-local-market-intelligence.html`, `houston.html`, the three service comparison pages, and the `payment-success*.html` pages. They load `buying/daisy.css` and `buying/drive-right.css`, and their markup is scoped under `.dr`. `index.html`, `about.html` and `schedule.html` also load `buying/home-wise.css` and `buying/home-wise.js` (body `.dr.wz`); build new sections on those pages from its `wz-*` components. Some of these pages are redirected or `noindex`; the design family does not determine indexability.
 - **Legacy components**: the `blog-*.html` posts, the other Texas city pages (`austin.html`, `dallas.html`, and so on), `inquiry.html`, `success.html`, `tesla-fsd-for-sale.html` and the topic pages. They load `styles.css` and `legacy-refresh.css`. Their indexability is governed per page, independent of styling.
 
 Design rules for all pages are in `.ai_rules` (`.cursorrules` points to the same file).

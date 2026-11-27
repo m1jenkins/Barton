@@ -155,12 +155,12 @@
     },
     {
       "source": "/inquiry.html",
-      "destination": "/schedule.html",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/pricing.html",
-      "destination": "/schedule.html",
+      "destination": "/",
       "statusCode": 301
     },
     {
@@ -200,12 +200,12 @@
     },
     {
       "source": "/ai-car-buying-agent.html",
-      "destination": "/schedule.html",
+      "destination": "/",
       "statusCode": 301
     },
     {
       "source": "/payment-success-consultant.html",
-      "destination": "/schedule.html",
+      "destination": "/",
       "statusCode": 301
     },
     {
@@ -214,14 +214,24 @@
       "permanent": true
     },
     {
-      "source": "/:page(about|austin|blog-buy-new-car-below-msrp|blog-dealership-addons-complete-guide|blog-used-car-inspection-checklist|blog|car-broker-vs-car-buying-service|car-buying-service-cost|car-buying-service|car-negotiation-service|caredge-alternatives|compare-car-buying-services|compare-car-quotes|delivrd-alternatives|delivrd-review|how-it-works|is-caredge-concierge-worth-it|policy|schedule|texas-local-market-intelligence|used-car-buying-service)",
+      "source": "/:page(about|austin|blog-buy-new-car-below-msrp|blog-dealership-addons-complete-guide|blog-used-car-inspection-checklist|blog|car-broker-vs-car-buying-service|car-buying-service-cost|car-buying-service|car-negotiation-service|caredge-alternatives|compare-car-buying-services|compare-car-quotes|delivrd-alternatives|delivrd-review|how-it-works|is-caredge-concierge-worth-it|policy|texas-local-market-intelligence|used-car-buying-service)",
       "destination": "/:page.html",
       "permanent": true
     },
     {
       "source": "/pricing",
-      "destination": "/schedule.html",
+      "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/schedule.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/schedule",
+      "destination": "/",
+      "statusCode": 301
     }
   ],
   "rewrites": [

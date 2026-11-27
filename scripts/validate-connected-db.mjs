@@ -104,7 +104,7 @@ try {
   // private_client needs db/015_private_client_tier.sql on the database being validated.
   await check('concurrent $395/$695/$1,995 checkout retries persist one snapshot per tier; AI returns 410', async () => {
     for (const [tier, amount] of [['full_service', 39500], ['concierge', 69500], ['private_client', 199500]]) {
-      const key = randomUUID(), body = { tier, lead_id: leadId, source_page: '/schedule.html' };
+      const key = randomUUID(), body = { tier, lead_id: leadId, source_page: '/' };
       const results = await Promise.all(Array.from({ length: 5 }, () => call(checkout, body, key)));
       assert.equal(results.filter(r => r.statusCode === 201).length, 1);
       assert.ok(results.every(r => [200, 201].includes(r.statusCode)));

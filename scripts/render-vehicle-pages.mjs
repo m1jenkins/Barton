@@ -63,12 +63,12 @@ ${rows.map(row => `<li><span class="vp-bars__label">${row.label}</span>${meter(r
 const columns = rows => { const max = Math.max(...rows.map(row => row.value)); return `<ol class="vp-cols" role="list">
 ${rows.map(row => `<li><span class="vp-cols__value">${row.display ?? row.value}</span><span class="vp-cols__bar" aria-hidden="true" style="--h:${Math.round((row.value / max) * 1000) / 10}"></span><span class="vp-cols__label">${row.label}</span></li>`).join('\n')}
 </ol>`; };
-// The homepage's two plan cards (index.html, #plans), word for word. The buttons are plain /schedule.html links;
-// script.js turns them into checkout. Do not add data-plan.
+// Short versions of the Steer Me Right and Pro cards; the full cards are on the homepage (index.html, #plans). The
+// buttons link to those cards and carry data-service-tier, which script.js turns into checkout. Do not add data-plan.
 const planCards = [
-  { name: 'Steer Me Right', fit: 'Best if the car is within 200 miles of you.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/schedule.html#full-service',
+  { name: 'Steer Me Right', fit: 'Best if the car is within 200 miles of you.', price: '$395', photo: 'plan-steering-wheel-toyota-192.webp', href: '/#full-service', tier: 'full_service',
     items: ['One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees'] },
-  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/schedule.html#concierge', pro: true,
+  { name: 'Steer Me Right Pro', fit: 'Best if you want the best deal anywhere in the country.', price: '$695', photo: 'plan-steering-wheel-porsche-192.webp', href: '/#concierge', tier: 'concierge', pro: true,
     items: ['Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models'] },
 ];
 const tick = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
@@ -80,7 +80,7 @@ const planCard = (card, location) => `<article class="vp-plan${card.pro ? ' vp-p
 <ul role="list">
 ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
 </ul>
-<a class="vp-plan__button" href="${card.href}" data-cta-location="${location}">Get ${card.name}</a>
+<a class="vp-plan__button" href="${card.href}" data-service-tier="${card.tier}" data-cta-location="${location}">Get ${card.name}</a>
 </article>`;
 
 // Cash or 0%: how much less each Ford deal costs than full price at the average new-car rate, from the loan inputs in the data.
@@ -326,7 +326,7 @@ ${cross.map(crossItem).join('\n')}
 function vehiclePage(vehicle, updated, reddit, sentiment) {
   const checked = longDate(vehicle.checkedOn);
   const name = vehicle.name;
-  const ask = `<a href="/schedule.html">Ask us</a>`;
+  const ask = `<a href="/#plans">Ask us</a>`;
   const topPrice = Math.max(...vehicle.trims.rows.map(trim => trim.prices[0]));
   const walk = vehicle.pay.walk;
   // Headings and fixed lines. A page about used cars (the Tesla Model Y, which Tesla sells new only direct) overrides them in `labels`.

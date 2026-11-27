@@ -15,25 +15,20 @@ test('active server, browser, registry, visible cards and schema agree on the th
  assert.deepEqual(Object.keys(plans),NEW_CHECKOUT_TIERS);
  assert.deepEqual(registry.services.map(s=>s.price),[395,695,1995]);
  for(const tier of NEW_CHECKOUT_TIERS)assert.equal(plans[tier].fee*100,SERVICE_TIERS[tier].amount);
- for(const file of ['index.html','schedule.html','how-it-works.html']) {
+ for(const file of ['index.html','how-it-works.html']) {
   const html=await read(file),doc=htmlDocument(html);
-  // The homepage shows the two mainstream plan cards, a slim Private Client band that links to its card on the
-  // plans page (no checkout from the homepage, 2026-11-26), and a free "Talk to Mason" band.
-  if(file==='index.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.match(html,/<div class="wz-plan-private">(?:(?!data-plan)[\s\S])*?<a href="\/schedule\.html#private-client"[^>]*>See Private Client<\/a>\s*<\/div>/);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.deepEqual([...html.matchAll(/class="wz-plan-grid">[\s\S]*?<\/div>\s*<p class="wz-fine/g)].flatMap(([grid])=>[...grid.matchAll(/data-plan="([^"]+)"/g)].map(m=>m[1])),['full_service','concierge']);}
-  // Pricing uses the homepage's plan cards (2026-10-31), each with its own checkout. On phones they are a row you
-  // swipe through, with arrows that buying/home-wise.js shows only when the row overflows, and each checklist folds
-  // under "What's included" buttons that each open or close all three lists (2026-11-26).
-  else if(file==='schedule.html'){const ids=[...html.matchAll(/<article class="wz-plan[^"]*" id="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(ids,['full-service','concierge','private-client']);for(const id of ids)assert.match(html,new RegExp(`<button type="button" class="wz-plan-more" aria-expanded="false" aria-controls="${ids.map(i=>`${i}-includes`).join(' ')}" data-includes-toggle>What’s included<svg[^>]*><path[^>]*/></svg></button>\\s*<ul class="wz-plan-list" role="list" id="${id}-includes">`));assert.match(html,/<div class="wz-plan-grid wz-plan-row">/);assert.match(html,/<div class="wz-plan-nav" data-plans-nav hidden>\s*<button type="button" class="wz-greviews-arrow" data-plans-step="-1" aria-label="Previous plan">[\s\S]*?data-plans-step="1" aria-label="Next plan">/);assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
+  // The homepage is the only plans page since 2026-11-27, when schedule.html was retired behind a 301 to it. It carries
+  // all three cards, each with its own checkout: side by side on wide screens, stacked on phones with every included
+  // line showing (no swipe row, no arrows, no "What's included" fold), plus a free "Talk to Mason" band.
+  if(file==='index.html'){const ids=[...html.matchAll(/<article class="wz-plan[^"]*" id="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(ids,['full-service','concierge','private-client']);for(const id of ids)assert.match(html,new RegExp(`<ul class="wz-plan-list" role="list" id="${id}-includes">`));assert.match(html,/<div class="wz-plan-grid wz-plan-grid--three">/);assert.doesNotMatch(html,/wz-plan-row|wz-plan-more|wz-plan-nav|wz-plan-private|data-includes-toggle|data-plans-nav|See what’s included/);assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.doesNotMatch(html,/schedule\.html/);}
   else assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
   assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
   assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);assert.match(doc.visibleText,/\$1,995/);
  }
- for(const file of ['index.html','schedule.html']) {
-  const services=htmlDocument(await read(file)).schemas.flatMap(s=>s['@graph']||[]).filter(n=>n['@type']==='Service');
-  // Private Client (2026-11-26) has its card and its Service entry on the plans page only.
-  assert.deepEqual(services.map(s=>Number(s.offers.price)),file==='schedule.html'?[395,695,1995]:[395,695]);
-  for(const s of services)assert.equal(s.areaServed.name,'United States');
- }
+ const services=htmlDocument(await read('index.html')).schemas.flatMap(s=>s['@graph']||[]).filter(n=>n['@type']==='Service');
+ assert.deepEqual(services.map(s=>Number(s.offers.price)),[395,695,1995]);
+ assert.deepEqual(services.map(s=>s.url),['full-service','concierge','private-client'].map(id=>`${origin}/#${id}`));
+ for(const s of services)assert.equal(s.areaServed.name,'United States');
 });
 test('every indexable sitemap landing page is reachable through ordinary homepage links',async()=>{
  const sitemap=await read('sitemap.xml');const expected=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>fileFor(m[1]));
@@ -48,15 +43,21 @@ test('every indexable sitemap landing page is reachable through ordinary homepag
 });
 test('retirement redirects and existing noindex decisions remain consistent',async()=>{
  const config=JSON.parse(await read('vercel.json'));
- assert.ok(config.redirects.some(r=>r.source==='/ai-car-buying-agent.html'&&r.destination==='/schedule.html'&&[301,308].includes(r.statusCode??(r.permanent===true?308:0))));
- assert.ok(config.redirects.some(r=>r.source==='/payment-success-consultant.html'&&r.destination==='/schedule.html'&&r.statusCode===301));
+ assert.ok(config.redirects.some(r=>r.source==='/ai-car-buying-agent.html'&&r.destination==='/'&&[301,308].includes(r.statusCode??(r.permanent===true?308:0))));
+ assert.ok(config.redirects.some(r=>r.source==='/payment-success-consultant.html'&&r.destination==='/'&&r.statusCode===301));
+ // The old pricing page (retired 2026-11-27) 301s to the homepage, whose cards keep its #full-service, #concierge and
+ // #private-client ids, so a browser that carries an old link's fragment through the 301 lands on the card. Nothing on
+ // the site links it any more.
+ assert.ok(config.redirects.some(r=>r.source==='/schedule.html'&&r.destination==='/'&&r.statusCode===301));
+ assert.ok(!config.redirects.some(r=>r.source.includes('schedule')&&r.destination!=='/'));
+ for(const file of (await readdir(root)).filter(name=>name.endsWith('.html')))assert.doesNotMatch(await read(file),/href="[^"]*schedule\.html/,file);
  assert.equal(htmlDocument(await read('tesla-fsd-for-sale.html')).noindex,true);
- for(const file of ['index.html','schedule.html','how-it-works.html','about.html','blog.html'])assert.ok(!htmlDocument(await read(file)).links.some(h=>/ai-car-buying-agent|tesla-fsd-for-sale/.test(h)),file);
+ for(const file of ['index.html','how-it-works.html','about.html','blog.html'])assert.ok(!htmlDocument(await read(file)).links.some(h=>/ai-car-buying-agent|tesla-fsd-for-sale/.test(h)),file);
 });
 test('payment adapter and checkout module URLs invalidate cached old offers',async()=>{
  const hash=s=>createHash('sha256').update(s).digest('hex').slice(0,12);
  const scriptHash=hash(await read('script.js')),appHash=hash(await read('buying/app.js')),checkoutHash=hash(await read('buying/checkout.js'));
- for(const file of ['index.html','schedule.html','how-it-works.html'])assert.ok((await read(file)).includes(`/script.js?v=${scriptHash}`),file);
+ for(const file of ['index.html','how-it-works.html'])assert.ok((await read(file)).includes(`/script.js?v=${scriptHash}`),file);
  assert.ok((await read('buying/app.js')).includes(`./checkout.js?v=${checkoutHash}`));
  // Any root page that versions the shared script or buying app must load the current build.
  let versioned=0;

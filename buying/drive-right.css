@@ -353,7 +353,6 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr #drive-right-ad-privacy .ad-privacy-actions { grid-column:2; flex-wrap:nowrap; gap:10px; }
 .dr #drive-right-ad-privacy .ad-privacy-actions button { flex:none; min-height:40px; padding:8px 16px; }
 /* Pricing cards: Full Service leads; both show what the fee covers. */
-.dr .plan-card[data-featured] { border-color:var(--ink); }
 .dr .plan-card .primary-button { margin-top:auto; width:100%; min-height:48px; padding:12px 16px; font-size:14px; gap:10px; }
 .dr .plan-card .primary-button svg,.dr .plan-card .outline-button svg { width:18px; height:18px; }
 .dr .plan-policy { margin-top:22px; font-size:13px; line-height:1.7; color:var(--muted); }
@@ -480,22 +479,6 @@ html:has(> body.dr) { scroll-padding-top:96px; }
  .dr .closing-cta { padding:28px 24px; margin-bottom:48px; }.dr .closing-cta .primary-button { width:100%; }
 }
 @media(max-width:374px) { .dr .site-header nav { gap:10px; }.dr .nav-link { font-size:13px; }.dr .header-cta { padding-inline:10px; font-size:12px; }.dr .header-phone { font-size:13px; }.dr .hero-plans :is(.primary-button,.outline-button) { gap:10px; padding-inline:12px; font-size:15px; } }
-.dr .plan-card:has([data-plan="concierge"]) { --pro-accent:#A8D5C2; --pro-soft:rgba(255,255,255,.7); background:var(--ink); color:#fff; border-color:var(--ink); box-shadow:0 24px 48px -28px rgba(17,17,17,.55); }
-.dr .plan-card:has([data-plan="concierge"]) :is(.plan-for,.plan-assurance) { color:var(--pro-accent); }
-.dr .plan-card:has([data-plan="concierge"]) li::before { color:var(--pro-accent); }
-.dr .plan-card:has([data-plan="concierge"]) :is(.plan-description,.plan-price span) { color:var(--pro-soft); }
-.dr .plan-card:has([data-plan="concierge"]) ul { border-top-color:rgba(255,255,255,.16); }
-@property --pro-angle { syntax:'<angle>'; inherits:false; initial-value:0deg; }
-@keyframes pro-border { 0% { --pro-angle:0deg; opacity:0; } 15% { opacity:1; } 75% { opacity:1; } 100% { --pro-angle:540deg; opacity:0; } }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button { position:relative; background:#fff; color:var(--ink); border-color:#fff; transition:box-shadow .3s ease, border-color .3s ease; }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button::before { content:''; position:absolute; inset:-3px; padding:3px; border-radius:inherit; pointer-events:none; background:conic-gradient(from var(--pro-angle), #A8D5C2, #7FB3FF, #C9A7FF, #FF9EC4, #FFC38A, #FFE58A, #A8D5C2); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button [data-icon] { transition:transform .3s ease; }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) { background:#fff; color:var(--ink); border-color:var(--pro-accent); box-shadow:0 0 0 2px var(--pro-accent); transition-duration:.5s; transition-delay:.9s; }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible)::before { animation:pro-border 1.3s cubic-bezier(.3,.6,.3,1) forwards; }
-.dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) [data-icon] { transform:translateX(4px); }
-@media (prefers-reduced-motion:reduce) { .dr .plan-card:has([data-plan="concierge"]) .outline-button, .dr .plan-card:has([data-plan="concierge"]) .outline-button:is(:hover,:focus-visible) { transition:box-shadow .2s ease, border-color .2s ease; } .dr .plan-card:has([data-plan="concierge"]) .outline-button::before { display:none; } .dr .plan-card:has([data-plan="concierge"]) .outline-button [data-icon] { transition:none; } }
-.dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button { background:transparent; color:#fff; border-color:rgba(255,255,255,.28); }
-.dr .plan-card:has([data-plan="concierge"]) .plan-inquiry-button:hover { background:rgba(255,255,255,.08); border-color:#fff; }
 /* Homepage theme on every redesigned page (2026-10-30): the blue sign header, a blue band
    behind each page's title, navy pill buttons, tinted cards, a tinted footer and one form
    field style. Colors come from the tokens above; the homepage's own layout is home-wise.css. */
@@ -547,15 +530,28 @@ html:has(> body.dr) { scroll-padding-top:96px; }
 .dr .closing-cta { border-radius:28px; }
 .dr .plan-card { border:0; border-radius:28px; background:var(--sage); padding:40px 32px; }
 .dr .pricing-preview .plan-card { background:var(--paper); }
-.dr .plan-card[data-featured] { background:var(--sign); color:#fff; }
-.dr .plan-card[data-featured] :is(.plan-description,.plan-price span) { color:rgba(255,255,255,.82); }
-.dr .plan-card[data-featured] :is(.plan-for,.plan-assurance),.dr .plan-card[data-featured] li::before { color:var(--sky); }
-.dr .plan-card[data-featured] ul { border-top-color:rgba(255,255,255,.22); }
-.dr .plan-card[data-featured] :is(.primary-button,.outline-button) { background:#fff; border-color:#fff; color:var(--sign); }
-.dr .plan-card[data-featured] :is(.primary-button,.outline-button):hover { background:var(--sky); border-color:var(--sky); }
-.dr .plan-card[data-featured] .plan-inquiry-button { background:transparent; border-color:rgba(255,255,255,.4); color:#fff; }
-.dr .plan-card[data-featured] .plan-inquiry-button:hover { background:rgba(255,255,255,.12); border-color:#fff; }
-.dr .plan-card:has([data-plan="concierge"]) { --pro-accent:#C9D4E3; background:linear-gradient(150deg,#2A3B55 0%,#0E1B2E 48%,#070F1A 100%); border:0; }
+/* Plan cards: Shopify's "Select a plan" card (Mobbin, 2026-11-27), as on the homepage (buying/home-wise.css, .wz-plan):
+   white cards 8px apart on a tinted tray; name, who it's for, price, a full-width squared button, then each included
+   line as a ruled row. Both plans use the one card. Only cards with a price take it; the other .plan-card uses keep
+   the tinted card above. */
+.dr .plan-grid:has(.plan-price) { gap:8px; padding:8px; border-radius:20px; background:var(--sage); }
+.dr .pricing-preview .plan-grid:has(.plan-price) { padding:0; border-radius:0; background:none; }
+.dr .plan-card:has(.plan-price) { padding:22px 24px 8px; border-radius:12px; background:#fff; color:var(--muted); box-shadow:0 0 0 1px rgba(14,27,46,.05), 0 1px 2px rgba(14,27,46,.08); }
+.dr .plan-card:has(.plan-price):not(:has(ul)) { padding-bottom:22px; }
+.dr .plan-card:has(.plan-price) :is(h2,h3) { margin:0; font:600 20px/28px var(--sans); letter-spacing:-.02em; color:var(--ink); }
+.dr .plan-card:has(.plan-price) :is(.plan-for,.plan-description) { min-height:0; margin:2px 0 0; font:400 15px/22px var(--sans); color:var(--muted); }
+.dr .plan-card:has(.plan-price) :is(.plan-for,.plan-price) + .plan-description { margin-top:6px; }
+.dr .plan-card:has(.plan-price) .plan-price { margin:14px 0 0; font:600 28px/36px var(--sans); letter-spacing:-.03em; color:var(--ink); }
+.dr .plan-card:has(.plan-price) .plan-price span { display:inline; margin:0 0 0 2px; font:400 14px/20px var(--sans); letter-spacing:0; color:var(--muted); }
+.dr .plan-card:has(.plan-price) > :is(a,button) { order:1; }
+.dr .plan-card:has(.plan-price) :is(.primary-button,.outline-button) { width:100%; min-height:52px; margin-top:12px; padding:12px 16px; border-radius:12px; border-color:var(--ink); background:var(--ink); color:#fff; font-size:16px; font-weight:600; }
+.dr .plan-card:has(.plan-price) :is(.primary-button,.outline-button):hover { border-color:#1E2F4A; background:#1E2F4A; color:#fff; }
+.dr .plan-card:has(.plan-price) .plan-inquiry-button { margin-top:8px; border-color:var(--field); border-radius:12px; background:#fff; color:var(--ink); }
+.dr .plan-card:has(.plan-price) .plan-inquiry-button:hover { border-color:var(--field); background:var(--sage); color:var(--ink); }
+.dr .plan-card:has(.plan-price) ul { order:2; margin:6px 0 0; padding:0; border-top:0; font-size:16px; line-height:22px; }
+.dr .plan-card:has(.plan-price) li { padding:10px 0; border-top:1px solid var(--line); color:var(--ink); }
+.dr .plan-card:has(.plan-price) li:first-child { border-top:0; }
+.dr .plan-card:has(.plan-price) li::before { content:none; }
 .dr .plan-inquiry-button { border-radius:9999px; font-weight:600; }
 /* Footer: the homepage's tinted band. */
 .dr .site-footer { margin-top:56px; padding:56px 0 32px; border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage); clip-path:inset(0 -100vmax); color:var(--ink); }

@@ -67,12 +67,11 @@ test('the competitor pages link to each other, every page links the hub, and all
     const links = htmlDocument(await read(name)).links;
     const required = competitorPages.includes(name) ? competitorPages : [hub];
     for (const other of required.filter(page => page !== name)) assert.ok(links.includes(`/${other}`), `${name} links /${other}`);
-    assert.ok(links.includes('/schedule.html#full-service'), `${name} links the Steer Me Right plan`);
+    assert.ok(links.includes('/#full-service'), `${name} links the Steer Me Right plan`);
   }
   const resources = htmlDocument(await read('blog.html')).links;
   for (const name of pages) assert.ok(resources.includes(`/${name}`), `blog.html links /${name}`);
   assert.ok(htmlDocument(await read('car-buying-service.html')).links.includes(`/${hub}`));
-  assert.ok(htmlDocument(await read('schedule.html')).links.includes(`/${hub}`));
 
   const inventory = csvRows(await read('data/content-inventory.csv'));
   for (const name of pages) {

@@ -4,9 +4,9 @@ import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 const source = await readFile(new URL('../../script.js', import.meta.url), 'utf8');
 // gtm: undefined (not loaded), 'callback' (runs eventCallback after its tags) or 'silent'.
-function page(href, path = '/car-buying-service.html', failOnce = false, gtm) {
+function page(href, path = '/car-buying-service.html', failOnce = false, gtm, dataset = {}) {
   const attrs = new Map([['href', href]]), handlers = {}, events = {}, calls = [], redirects = [], order = [];
-  const link = {dataset:{},innerHTML:'Choose this plan',textContent:'Choose this plan',getAttribute:k=>attrs.get(k),setAttribute:(k,v)=>attrs.set(k,v),removeAttribute:k=>attrs.delete(k),addEventListener:(k,fn)=>handlers[k]=fn};
+  const link = {dataset:{...dataset},innerHTML:'Choose this plan',textContent:'Choose this plan',getAttribute:k=>attrs.get(k),setAttribute:(k,v)=>attrs.set(k,v),removeAttribute:k=>attrs.delete(k),addEventListener:(k,fn)=>handlers[k]=fn};
   const storage = () => { const data = new Map(); return {getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)}; };
   const location = new URL(path, 'https://www.steermeright.com'); location.assign=url=>{order.push('redirect');redirects.push(url);};
   const dataLayer = [];
@@ -68,8 +68,21 @@ test('without GTM the Stripe redirect does not wait',async t=>{
 test('unrelated and external schedule fragments do not trigger checkout',async()=>{
  for(const href of ['/schedule.html#pricing','https://other.example/schedule.html#concierge']){const p=page(href);await p.click();assert.equal(p.calls.length,0);}
 });
+// The plans moved onto the homepage on 2026-11-27. Links elsewhere point at its cards and carry data-service-tier.
+for(const [hash,tier] of [['full-service','full_service'],['concierge','concierge']]) {
+  test(`a /#${hash} plan link with data-service-tier opens Stripe`,async()=>{
+    const p=page(`/#${hash}`,'/car-buying-service.html',false,undefined,{serviceTier:tier});
+    await p.click();
+    assert.equal(p.calls.length,1);
+    assert.equal(JSON.parse(p.calls[0].body).tier,tier);
+    assert.deepEqual(p.redirects,['https://buy.stripe.com/example']);
+  });
+}
+test('homepage plan links without data-service-tier only navigate',async()=>{
+ for(const href of ['/#plans','/#private-client','/#full-service']){const p=page(href);await p.click();assert.equal(p.calls.length,0);}
+});
 test('pricing retry has no pre-purchase contact inputs',async()=>{
- const html=await readFile(new URL('../../schedule.html',import.meta.url),'utf8');
+ const html=await readFile(new URL('../../index.html',import.meta.url),'utf8');
  assert.doesNotMatch(html,/id="(?:buyer-name|buyer-email|plan-contact-form|checkout-turnstile)"/);
  const app=await readFile(new URL('../../buying/app.js',import.meta.url),'utf8');
  assert.match(app,/id="checkout-submit" class="primary-button" type="button"/);

@@ -173,7 +173,7 @@
       "@id": "https://www.steermeright.com/#service-full",
       "name": "Steer Me Right",
       "serviceType": "Car buying and negotiation for one model, with dealers within 200 miles",
-      "url": "https://www.steermeright.com/schedule.html#full-service",
+      "url": "https://www.steermeright.com/#full-service",
       "provider": {
         "@id": "https://www.steermeright.com/#organization"
       },
@@ -186,7 +186,7 @@
         "name": "Steer Me Right",
         "price": "395",
         "priceCurrency": "USD",
-        "url": "https://www.steermeright.com/schedule.html#full-service"
+        "url": "https://www.steermeright.com/#full-service"
       }
     },
     {
@@ -194,7 +194,7 @@
       "@id": "https://www.steermeright.com/#service-concierge",
       "name": "Steer Me Right Pro",
       "serviceType": "Car buying and negotiation with dealers nationwide, for up to three models",
-      "url": "https://www.steermeright.com/schedule.html#concierge",
+      "url": "https://www.steermeright.com/#concierge",
       "provider": {
         "@id": "https://www.steermeright.com/#organization"
       },
@@ -207,7 +207,28 @@
         "name": "Steer Me Right Pro",
         "price": "695",
         "priceCurrency": "USD",
-        "url": "https://www.steermeright.com/schedule.html#concierge"
+        "url": "https://www.steermeright.com/#concierge"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.steermeright.com/#service-private-client",
+      "name": "Steer Me Right Private Client",
+      "serviceType": "Car buying and negotiation for cars with an MSRP of $100,000 or more",
+      "url": "https://www.steermeright.com/#private-client",
+      "provider": {
+        "@id": "https://www.steermeright.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Steer Me Right Private Client",
+        "price": "1995",
+        "priceCurrency": "USD",
+        "url": "https://www.steermeright.com/#private-client"
       }
     }
   ]
@@ -255,9 +276,9 @@
     <link rel="stylesheet" href="/buying/daisy.css?v=1c17940497d8">
     <link rel="stylesheet" href="accessibility.css">
     <script defer src="accessibility.js"></script>
-    <link rel="stylesheet" href="/buying/drive-right.css?v=1b27b5ae54c3">
+    <link rel="stylesheet" href="/buying/drive-right.css?v=c26db97558e4">
     <link rel="stylesheet" href="/buying/inquiry.css?v=871fcd8e9289">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=8edbfb9cf2ab">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=e6c9daa23c21">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -390,7 +411,7 @@
     <div class="wz-wrap wz-center">
       <h2 id="fees-title" class="wz-display wz-display--md">Compare the fees</h2>
       <p class="wz-lead">Most services where a person negotiates for you charge $999 or more. We charge $395 to work dealers within 200 miles of you and $695 to work them nationwide. Dealers pay us nothing.</p>
-      <a href="/schedule.html" class="wz-btn wz-btn--lime" data-cta-location="fees">See plans</a>
+      <a href="#plans" class="wz-btn wz-btn--lime" data-cta-location="fees">See plans</a>
       <div class="wz-compare">
         <div class="wz-compare-head"><span>Fee for a person to find and negotiate one car</span><span>Published prices</span></div>
         <ol class="wz-bars" role="list">
@@ -410,41 +431,55 @@
       <div class="wz-center">
         <h2 id="plans-title" class="wz-display wz-display--md">Pick how much help you want</h2>
         <p class="wz-lead">Ask a question for free, or hand us the whole deal.</p>
-        <a href="/schedule.html" class="wz-btn wz-btn--lime">See what’s included</a>
       </div>
-      <div class="wz-plan-grid">
-        <article class="wz-plan wz-plan--feature">
-          <span class="wz-icon wz-icon--photo"><img src="/assets/external/optimized/plan-steering-wheel-toyota-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async"></span>
+      <p class="wz-plan-guarantee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Full refund if you cancel before negotiations begin.</p>
+      <div class="wz-plan-grid wz-plan-grid--three">
+        <article class="wz-plan" id="full-service">
           <h3>Steer Me Right</h3>
-          <p class="wz-plan-fit">Best if the car is within 200 miles of you.</p>
-          <p class="wz-plan-price">$395 <span>one-time</span></p>
-          <ul class="wz-plan-list" role="list">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>One model, with any trims, colors and packages</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We contact dealers within 200 miles that have it in stock</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>We negotiate the price and fees</li>
+          <p class="wz-plan-fit">Best if the car is within 200 miles of you</p>
+          <p class="wz-plan-desc">We work the dealers and handle the haggling.</p>
+          <p class="wz-plan-price">$395</p>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="full_service" data-cta-location="plans">Get Steer Me Right</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right">Talk to Mason about my car search</button></div>
+          <ul class="wz-plan-list" role="list" id="full-service-includes">
+            <li>One model, with any trims, colors and packages</li>
+            <li>Dealers within 200 miles of you</li>
+            <li>New, used and CPO dealer inventory</li>
+            <li>We negotiate the price and check the fees</li>
+            <li>One dedicated advisor, start to finish</li>
+            <li>Written recommendations: what we found and what we’d do</li>
           </ul>
-          <a href="/schedule.html" class="wz-btn wz-btn--forest" data-plan="full_service" data-cta-location="plans">Get Steer Me Right</a>
         </article>
-        <article class="wz-plan wz-plan--feature wz-plan--pro" id="pro-card">
-          <span class="wz-icon wz-icon--photo"><img src="/assets/external/optimized/plan-steering-wheel-porsche-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async"></span>
+        <article class="wz-plan" id="concierge">
           <h3>Steer Me Right Pro</h3>
-          <p class="wz-plan-fit">Best if you want the best deal anywhere in the country.</p>
-          <p class="wz-plan-price">$695 <span>one-time</span></p>
-          <ul class="wz-plan-list" role="list">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dealers nationwide, with shipping quotes on long-distance deals</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Trade-in support: we compare offers and negotiate it with the deal</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Offers on up to three models</li>
+          <p class="wz-plan-fit">Best if you want the best deal anywhere in the country</p>
+          <p class="wz-plan-desc">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p>
+          <p class="wz-plan-price">$695</p>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right Pro">Talk to Mason about my car search</button></div>
+          <ul class="wz-plan-list" role="list" id="concierge-includes">
+            <li>Everything in Steer Me Right</li>
+            <li>Dealers nationwide, not just within 200 miles</li>
+            <li>Shipping quotes on long-distance deals</li>
+            <li>Trade-in support: we compare offers on your trade-in from several areas and negotiate it with the deal</li>
+            <li>Offers on up to three models, priced side by side</li>
+            <li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li>
           </ul>
-          <a href="/schedule.html" class="wz-btn wz-btn--forest" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a>
         </article>
-      </div>
-      <div class="wz-plan-private">
-        <div class="wz-plan-private-text">
+        <article class="wz-plan" id="private-client">
           <h3>Steer Me Right Private Client</h3>
-          <p>For cars with an MSRP of $100,000 or more</p>
-        </div>
-        <p class="wz-plan-private-price">$1,995 <span>one-time</span></p>
-        <a href="/schedule.html#private-client" class="wz-btn wz-btn--outline" data-cta-location="plans-private-client">See Private Client</a>
+          <p class="wz-plan-fit">For cars with an MSRP of $100,000 or more</p>
+          <p class="wz-plan-price">$1,995</p>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="private_client" data-cta-location="plans">Get Private Client</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right Private Client">Talk to Mason about my car search</button></div>
+          <ul class="wz-plan-list" role="list" id="private-client-includes">
+            <li>Everything in Steer Me Right Pro, for as many models as you like</li>
+            <li>Allocation and build-slot search, and factory orders, when the car isn’t on a lot</li>
+            <li>We negotiate market adjustments and dealer-installed add-ons</li>
+            <li>An independent inspection arranged on a used car</li>
+            <li>Lease and loan check: money factor, residual and rate markup</li>
+            <li>The buyer’s order and finance-office products reviewed before you sign</li>
+            <li>Enclosed transport quotes and a delivery-day checklist</li>
+            <li>Same-day replies from Mason on business days</li>
+          </ul>
+        </article>
       </div>
       <div class="wz-plan-band">
         <img src="/assets/buying/mason-avatar-96.webp" alt="" width="56" height="56">
@@ -509,7 +544,23 @@
       <div class="wz-split-copy wz-split-copy--center">
         <h2 id="pro-title" class="wz-display wz-display--md">The best deal might not be nearby.</h2>
         <p class="wz-lead wz-lead--left">Steer Me Right Pro works dealers nationwide, gets shipping quotes when the best deal is far away and negotiates your trade-in with the deal. Torn between a few cars? We price up to three models side by side and tell you which deal we’d take.</p>
-        <div class="wz-actions"><a href="/schedule.html" class="wz-btn wz-btn--lime wz-btn--sm" data-plan="concierge" data-cta-location="pro">Get Steer Me Right Pro · $695</a><a class="wz-text-link" href="/schedule.html">Compare plans</a></div>
+        <div class="wz-actions"><a href="#concierge" class="wz-btn wz-btn--lime wz-btn--sm" data-plan="concierge" data-cta-location="pro">Get Steer Me Right Pro · $695</a><a class="wz-text-link" href="#plans">Compare plans</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wz-section wz-section--tint" id="faq" aria-labelledby="faq-title">
+    <div class="wz-wrap wz-faq">
+      <h2 id="faq-title" class="wz-display wz-display--md">Questions before you choose.</h2>
+      <div class="wz-faq-list">
+        <details><summary>Can you get me a price below MSRP?</summary><p>Usually, yes. On new cars, getting you a discount off MSRP is the goal of every negotiation. How much depends on the model, local supply and timing. Some high-demand models sell at or above sticker, and we’ll tell you up front if yours is one of them.</p></details>
+        <details><summary>Which plan is right for me?</summary><p>Steer Me Right if dealers within 200 miles of you are likely to have the car: one model, any trim, color or package. Steer Me Right Pro if you want dealers nationwide in the mix. It adds shipping quotes when the best deal is far away, support on your trade-in, and offers on up to three models if you’re torn between a few. Switching to a different model isn’t included on the Steer Me Right plan. Steer Me Right Private Client is for cars with an MSRP of $100,000 or more: it adds allocation and factory-order work, negotiation of market adjustments, and a check of the lease or loan terms and the paperwork before you sign. Not sure which fits? Ask Mason before you pay.</p></details>
+        <details><summary>What happens after I pay?</summary><p>You tell us what you’re looking for right after checkout. We reply to confirm the search and when it starts, then get to work.</p></details>
+        <details><summary>How long does it take?</summary><p>Most searches take one to two weeks from payment to a signed deal. Rare specs and factory orders take longer, and we tell you that up front.</p></details>
+        <details><summary>Do dealers pay you?</summary><p>No. Dealers and lenders pay us nothing. You’re the only one we work for.</p></details>
+        <details><summary>Do I have to buy the car you find?</summary><p>No. We negotiate; you decide. You review the vehicle, the deal and the final paperwork, and you decide whether to buy. A specific price or vehicle outcome isn’t guaranteed.</p></details>
+        <details><summary>Where do you work?</summary><p>Anywhere in the U.S. We’re based in Austin and work with buyers nationwide, remotely. The Steer Me Right plan covers dealers within 200 miles of you, and Steer Me Right Pro covers dealers nationwide.</p></details>
+        <details><summary>Can I talk to someone first?</summary><p>Yes. <button type="button" class="wz-inline-button" data-open-inquiry>Tell Mason about your car search</button> or email <a href="mailto:hello@steermeright.com">hello@steermeright.com</a>, Monday–Friday, 9 a.m. to 5 p.m. Central.</p></details>
       </div>
     </div>
   </section>
@@ -519,7 +570,7 @@
     <div class="wz-wrap">
       <div class="wz-band-card">
         <h2 id="band-title" class="wz-display wz-display--xl">Tell us the car. We’ll handle the dealer.</h2>
-        <div class="wz-actions wz-actions--center"><a href="/schedule.html" class="wz-btn wz-btn--forest" data-cta-location="closing">See plans · from $395</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="closing">Talk to Mason first</button></div>
+        <div class="wz-actions wz-actions--center"><a href="#plans" class="wz-btn wz-btn--forest" data-cta-location="closing">See plans · from $395</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="closing">Talk to Mason first</button></div>
       </div>
     </div>
   </section>
@@ -566,7 +617,7 @@
 <footer class="site-footer wz-footer" id="footer">
   <div class="wz-wrap">
     <div class="wz-footer-cols">
-      <nav aria-label="Plans"><h2>Plans</h2><a href="/schedule.html">Steer Me Right</a><a href="/schedule.html">Steer Me Right Pro</a><a href="/how-it-works.html">How it works</a></nav>
+      <nav aria-label="Plans"><h2>Plans</h2><a href="#full-service">Steer Me Right</a><a href="#concierge">Steer Me Right Pro</a><a href="/how-it-works.html">How it works</a></nav>
       <nav aria-label="Resources"><h2>Resources</h2><a href="/blog.html">Guides</a><a href="/compare-car-quotes.html">Car quote worksheet</a><a href="/car-buying-service.html">Car buying service</a></nav>
       <nav aria-label="Company"><h2>Company</h2><a href="/about.html">About</a><a href="/policy.html">Policy</a><a href="https://www.youtube.com/channel/UCjshNKt5SKJyIc5Kb1xT-Cg" rel="me">YouTube</a></nav>
       <div id="contact"><h2>Help</h2><span id="call-text-info"></span><a href="mailto:hello@steermeright.com">hello@steermeright.com</a><span>Mon–Fri, 9 a.m.–5 p.m. Central</span></div>
@@ -574,7 +625,7 @@
     <div class="wz-footer-brand"><a class="wordmark" href="/" aria-label="Steer Me Right home"><span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span></a></div>
     <div class="wz-footer-legal"><p id="cities">Car research and negotiation. Based in Austin. Here for buyers nationwide.</p><p>© 2026 Steer Me Right</p><span id="saved-indicator" role="status"></span></div>
   </div>
-</footer><div class="home-sticky-cta wz-sticky" data-sticky-cta inert><a href="/schedule.html" data-cta-location="sticky" class="wz-btn wz-btn--forest">See plans<span class="wz-sticky-price"> · from $395</span></a><button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
+</footer><div class="home-sticky-cta wz-sticky" data-sticky-cta inert><a href="#plans" data-cta-location="sticky" class="wz-btn wz-btn--forest">See plans<span class="wz-sticky-price"> · from $395</span></a><button type="button" class="wz-btn wz-btn--lime" data-open-inquiry data-cta-location="sticky">Talk to Mason</button></div><dialog id="car-search-inquiry" aria-labelledby="car-search-inquiry-title" aria-describedby="car-search-inquiry-description">
   <header class="dialog-header"><h2 id="car-search-inquiry-title">Talk to Mason about your car search.</h2><button class="icon-button" data-close-inquiry type="button" aria-label="Close car search inquiry"><span data-icon="close"></span></button></header>
   <p class="dialog-description" id="car-search-inquiry-description">Tell Mason what you’re looking for and how to reach you.</p>
   <form id="car-search-inquiry-form">
@@ -589,9 +640,9 @@
     <a class="outline-button inquiry-email" data-email-inquiry href="mailto:hello@steermeright.com" hidden>Email Mason these details</a>
     <p class="small-note">See our <a href="/policy.html#privacy-policy">privacy policy</a>.</p>
   </form>
-</dialog><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript><script src="/script.js?v=df0923b40058"></script>
+</dialog><noscript><p class="noscript">Enable JavaScript for secure checkout.</p></noscript><script src="/script.js?v=df0923b40058"></script>
 <script type="module" src="/buying/app.js?v=ee9458e6644c"></script>
 <script type="module" src="/buying/inquiry.js?v=ef20e604d3ba"></script>
-<script type="module" src="/buying/home-wise.js?v=c3f43fcfa7a3"></script>
+<script type="module" src="/buying/home-wise.js?v=910c74986c1f"></script>
 </body>
 </html>

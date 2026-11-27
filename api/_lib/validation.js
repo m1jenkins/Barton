@@ -117,8 +117,8 @@ export function validateLeadPayload(body) {
 
 export function validateCheckoutPayload(body) {
   const tier = validateTier(body.tier ?? body.tier_id);
-  if (!NEW_CHECKOUT_TIERS.includes(tier)) throw new HttpError(410, 'tier_retired', 'Choose a current plan at /schedule.html');
-  const sourcePage = cleanString(body.source_page ?? body.source_path, 'source_page', { max: 300 }) || '/schedule.html';
+  if (!NEW_CHECKOUT_TIERS.includes(tier)) throw new HttpError(410, 'tier_retired', 'Choose a current plan at https://www.steermeright.com/#plans');
+  const sourcePage = cleanString(body.source_page ?? body.source_path, 'source_page', { max: 300 }) || '/';
   if (!sourcePage.startsWith('/') || sourcePage.startsWith('//')) {
     throw new HttpError(422, 'invalid_payload', 'source_page must be a same-site path');
   }
