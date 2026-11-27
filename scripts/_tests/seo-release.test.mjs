@@ -17,10 +17,12 @@ test('active server, browser, registry, visible cards and schema agree on the th
  for(const tier of NEW_CHECKOUT_TIERS)assert.equal(plans[tier].fee*100,SERVICE_TIERS[tier].amount);
  for(const file of ['index.html','schedule.html','how-it-works.html']) {
   const html=await read(file),doc=htmlDocument(html);
-  // The homepage shows the two paid plan cards, with a free "Talk to Mason" band under them.
-  if(file==='index.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.deepEqual([...html.matchAll(/class="wz-plan-grid">[\s\S]*?<\/div>\s*<p class="wz-fine/g)].flatMap(([grid])=>[...grid.matchAll(/data-plan="([^"]+)"/g)].map(m=>m[1])),['full_service','concierge']);}
-  // Pricing uses the homepage's plan cards (2026-10-31), each with its own checkout.
-  else if(file==='schedule.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
+  // The homepage shows the two mainstream plan cards, a slim Private Client band that links to its card on the
+  // plans page (no checkout from the homepage, 2026-11-26), and a free "Talk to Mason" band.
+  if(file==='index.html'){assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,2);assert.match(html,/<div class="wz-plan-private">(?:(?!data-plan)[\s\S])*?<a href="\/schedule\.html#private-client"[^>]*>See Private Client<\/a>\s*<\/div>/);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.deepEqual([...html.matchAll(/class="wz-plan-grid">[\s\S]*?<\/div>\s*<p class="wz-fine/g)].flatMap(([grid])=>[...grid.matchAll(/data-plan="([^"]+)"/g)].map(m=>m[1])),['full_service','concierge']);}
+  // Pricing uses the homepage's plan cards (2026-10-31), each with its own checkout. On phones they are a row you
+  // swipe through, with arrows that buying/home-wise.js shows only when the row overflows (2026-11-26).
+  else if(file==='schedule.html'){assert.match(html,/<div class="wz-plan-grid wz-plan-row">/);assert.match(html,/<div class="wz-plan-nav" data-plans-nav hidden>\s*<button type="button" class="wz-greviews-arrow" data-plans-step="-1" aria-label="Previous plan">[\s\S]*?data-plans-step="1" aria-label="Next plan">/);assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);}
   else assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
   assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
   assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);assert.match(doc.visibleText,/\$1,995/);

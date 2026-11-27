@@ -257,7 +257,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=1b27b5ae54c3">
     <link rel="stylesheet" href="/buying/inquiry.css?v=871fcd8e9289">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=f1707a102b71">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=f5668027a1cc">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -438,6 +438,14 @@
           <a href="/schedule.html" class="wz-btn wz-btn--outline" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a>
         </article>
       </div>
+      <div class="wz-plan-private">
+        <div class="wz-plan-private-text">
+          <h3>Steer Me Right Private Client</h3>
+          <p>For cars with an MSRP of $100,000 or more</p>
+        </div>
+        <p class="wz-plan-private-price">$1,995 <span>one-time</span></p>
+        <a href="/schedule.html#private-client" class="wz-btn wz-btn--outline" data-cta-location="plans-private-client">See Private Client</a>
+      </div>
       <div class="wz-plan-band">
         <img src="/assets/buying/mason-avatar-96.webp" alt="" width="56" height="56">
         <div class="wz-plan-band-text">
@@ -447,7 +455,6 @@
         <button type="button" class="wz-btn wz-btn--outline" data-open-inquiry data-cta-location="plans">Talk to Mason first</button>
       </div>
       <p class="wz-fine wz-center">The 200 miles are measured from your ZIP code. The fee doesn’t cover the car, taxes or registration. <a href="/policy.html#refund-policy">Refund policy</a></p>
-      <p class="wz-fine wz-center">Buying a car with an MSRP of $100,000 or more? See <a href="/schedule.html#private-client">Steer Me Right Private Client</a>, $1,995.</p>
     </div>
   </section>
 
@@ -590,6 +597,6 @@
 </dialog><noscript><p class="noscript">Enable JavaScript for secure checkout, or <a href="/schedule.html">read about our plans</a>.</p></noscript><script src="/script.js?v=df0923b40058"></script>
 <script type="module" src="/buying/app.js?v=ee9458e6644c"></script>
 <script type="module" src="/buying/inquiry.js?v=f6573d0b0718"></script>
-<script type="module" src="/buying/home-wise.js?v=12b2bd4e4843"></script>
+<script type="module" src="/buying/home-wise.js?v=1c96f0c9d1e3"></script>
 </body>
 </html>

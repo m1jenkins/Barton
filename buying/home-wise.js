@@ -11,27 +11,30 @@ if (menuButton && menu) {
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); menuButton.focus(); } });
 }
 
-// Google review carousel: the arrows scroll one card at a time and grey out at either end.
-const reviewList = document.querySelector('.wz-greviews-list');
-const reviewNav = document.querySelector('[data-greviews-nav]');
-if (reviewList && reviewNav) {
-  const arrows = [...reviewNav.querySelectorAll('[data-greviews-step]')];
+// Scrolling rows (the Google reviews, and the pricing page's plan cards on phones): the arrows
+// scroll one card at a time, grey out at either end, and hide when every card fits.
+function scrollRow(list, nav, cardSelector, key) {
+  if (!list || !nav) return;
+  const arrows = [...nav.querySelectorAll(`[data-${key}-step]`)];
+  const step = arrow => Number(arrow.getAttribute(`data-${key}-step`));
   const update = () => {
-    const max = reviewList.scrollWidth - reviewList.clientWidth;
-    reviewNav.hidden = max <= 1;
+    const max = list.scrollWidth - list.clientWidth;
+    nav.hidden = max <= 1;
     arrows.forEach(arrow => {
-      arrow.disabled = Number(arrow.dataset.greviewsStep) < 0 ? reviewList.scrollLeft <= 1 : reviewList.scrollLeft >= max - 1;
+      arrow.disabled = step(arrow) < 0 ? list.scrollLeft <= 1 : list.scrollLeft >= max - 1;
     });
   };
   arrows.forEach(arrow => arrow.addEventListener('click', () => {
-    const card = reviewList.querySelector('li');
-    const gap = parseFloat(getComputedStyle(reviewList).columnGap) || 0;
-    reviewList.scrollBy({ left: Number(arrow.dataset.greviewsStep) * ((card?.offsetWidth ?? 300) + gap) });
+    const card = list.querySelector(cardSelector);
+    const gap = parseFloat(getComputedStyle(list).columnGap) || 0;
+    list.scrollBy({ left: step(arrow) * ((card?.offsetWidth ?? 300) + gap) });
   }));
-  reviewList.addEventListener('scroll', update, { passive: true });
+  list.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   update();
 }
+scrollRow(document.querySelector('.wz-greviews-list'), document.querySelector('[data-greviews-nav]'), 'li', 'greviews');
+scrollRow(document.querySelector('.wz-plan-row'), document.querySelector('[data-plans-nav]'), '.wz-plan', 'plans');
 
 // Resource tabs
 const tabs = [...document.querySelectorAll('[data-tab]')];
