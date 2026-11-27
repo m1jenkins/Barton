@@ -29,22 +29,20 @@ Exact strings are in claim rows `PLAN-REACH-2026-11-26`, `STEER-ME-RIGHT-SCOPE-2
 
 ## Pro as an add-on at checkout
 
-The server accepts it; Stripe is not set up for it yet.
+Live since November 26, 2026 (Mason's instruction, set up directly on the live account with no sandbox run).
 
 - `paidTier()` in `api/_lib/checkout-offer.js`: a Steer Me Right checkout that pays the Pro total ($695, or that total less one approved discount) is recorded as a Pro purchase. Every other total still goes to review.
 - `GET /api/purchase-status?next=intake&tier=<link's tier>&session_id={CHECKOUT_SESSION_ID}` redirects a paid buyer to the intake page of the plan they bought.
 
-To switch it on, in Stripe:
+In Stripe:
 
-1. Create a one-time product for the add-on (for example "Add Steer Me Right Pro", $300 USD, one active price).
-2. Add it to the $395 payment link as an optional item ("Add recommended products"), quantity 1, not adjustable.
-3. Change that link's after-payment redirect to `https://www.steermeright.com/api/purchase-status?next=intake&tier=full_service&session_id={CHECKOUT_SESSION_ID}`.
-4. Pay once in a sandbox with and without the add-on. With it, the buyer should land on `payment-success-concierge.html`, the purchase row should say `concierge`, and the intake should ask the Pro questions.
+- Product "Add Steer Me Right Pro" (`prod_VhdDfeMMXZrNJI`), one-time price $300 (`price_1UgDwq2RwNuweXRLJSbrKZVi`), same tax code as the plans.
+- The $395 payment link (`plink_1UTqg72RwNuweXRL2Gzng7nn`) lists it as an optional item, quantity 1, and redirects after payment to `https://www.steermeright.com/api/purchase-status?next=intake&tier=full_service&session_id={CHECKOUT_SESSION_ID}`.
 
-Until step 4 passes, leave the live link as it is: without the redirect change, a buyer who took the add-on would land on the Steer Me Right intake and fail verification.
+Checked on the day: the live checkout page shows the add-on under "Add to your order", and the redirect sends an unknown session to the Steer Me Right intake page. Not checked: a real payment with the add-on. On the first one, confirm the buyer lands on `payment-success-concierge.html`, the purchase row says `concierge` and the intake asks the Pro questions. To switch the add-on off, remove the optional item from the link; the redirect can stay.
 
 ## Not changed
 
 - Short price lines such as "$395 for one model or $695 for up to three" stay where the sentence says nothing else about the plans.
 - Page headers outside `schedule.html` and `index.html`.
-- Stripe product names and descriptions; update them when the site change deploys.
+- Stripe plan names and prices, and the Pro and Private Client payment links. The Steer Me Right and Steer Me Right Pro product descriptions were updated to the new scopes on November 26, 2026.
