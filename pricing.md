@@ -7,7 +7,7 @@ Steer Me Right offers three flat-fee car-buying service plans for buyers nationw
 ## Steer Me Right
 
 - Service fee: $395 USD one time
-- Best for: Buyers whose car is within a day’s drive
+- Best for: Buyers whose car is within 200 miles
 - Includes: One model, with any trims, colors, and packages within that model; dealers within 200 miles of the buyer’s ZIP code; new, used, and certified pre-owned dealer inventory; price negotiation and fee review; one dedicated advisor from start to finish; and written recommendations (what we found and what we would do)
 - Not included: Switching to a different model; dealers more than 200 miles away
 - Current plan: https://www.steermeright.com/schedule.html#full-service

@@ -14,7 +14,7 @@
       "name": "Steer Me Right",
       "price": 395,
       "priceType": "flat_fee",
-      "bestFor": "Buyers whose car is within a day’s drive",
+      "bestFor": "Buyers whose car is within 200 miles",
       "features": [
         "One model, with any trims, colors and packages within that model",
         "Dealers within 200 miles of the buyer’s ZIP code",

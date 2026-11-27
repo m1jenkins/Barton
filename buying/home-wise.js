@@ -36,15 +36,17 @@ function scrollRow(list, nav, cardSelector, key) {
 scrollRow(document.querySelector('.wz-greviews-list'), document.querySelector('[data-greviews-nav]'), 'li', 'greviews');
 scrollRow(document.querySelector('.wz-plan-row'), document.querySelector('[data-plans-nav]'), '.wz-plan', 'plans');
 
-// Pricing page on phones: each plan's checklist folds under a "What's included" button. The CSS folds it only
+// Pricing page on phones: the plans' checklists fold under "What's included" buttons, and any one of them opens
+// or closes all three, so the same-height cards stay comparable as you swipe. The CSS folds the lists only
 // inside the swipe row and only once this runs, so desktop and no-JavaScript visitors see every list in full.
 const planRow = document.querySelector('.wz-plan-row');
 if (planRow) {
   planRow.dataset.collapsible = '';
-  planRow.querySelectorAll('[data-includes-toggle]').forEach(button => button.addEventListener('click', () => {
-    const open = button.getAttribute('aria-expanded') !== 'true';
-    button.setAttribute('aria-expanded', String(open));
-    button.closest('.wz-plan').classList.toggle('is-open', open);
+  const toggles = [...planRow.querySelectorAll('[data-includes-toggle]')];
+  toggles.forEach(button => button.addEventListener('click', () => {
+    const open = !planRow.classList.contains('is-open');
+    planRow.classList.toggle('is-open', open);
+    toggles.forEach(toggle => toggle.setAttribute('aria-expanded', String(open)));
   }));
 }
 

@@ -72,7 +72,7 @@ test('every outside link on a deal page is a registered, dated source', async ()
 
 test('the plan cards are the price guides’ plan cards, word for word', async () => {
   const guide = await read('scripts/render-vehicle-pages.mjs'), mine = await read('scripts/render-deal-pages.mjs');
-  for (const text of ['Best if the car is within a day’s drive.', '$395', 'One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees', 'Best if you want the best deal anywhere in the country.', '$695', 'Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models']) {
+  for (const text of ['Best if the car is within 200 miles of you.', '$395', 'One model, with any trims, colors and packages', 'We contact dealers within 200 miles that have it in stock', 'We negotiate the price and fees', 'Best if you want the best deal anywhere in the country.', '$695', 'Dealers nationwide, with shipping quotes on long-distance deals', 'Trade-in support: we compare offers and negotiate it with the deal', 'Offers on up to three models']) {
     assert.ok(guide.includes(text) && mine.includes(text), text);
   }
 });

@@ -204,7 +204,6 @@
 /* Pricing page: the plan cards carry a description, refund line and a second button. */
 .dr.wz .wz-hero-kicker { margin-bottom:20px; font-size:16px; line-height:24px; font-weight:600; color:var(--wz-sky); }
 .dr.wz .wz-plan-desc { margin-top:12px; font-size:16px; line-height:24px; }
-.dr.wz .wz-plan-price:has(+ .wz-plan-assurance) { margin-bottom:12px; }
 .dr.wz .wz-plan--wide { grid-column:1/-1; }
 .dr.wz .wz-plan-more { display:none; }
 .dr.wz .wz-plan-nav { display:flex; justify-content:center; gap:12px; margin-top:20px; }
@@ -213,9 +212,9 @@
 .dr.wz .wz-plan-nav .wz-greviews-arrow:hover:not(:disabled) { background:var(--wz-tint); }
 .dr.wz .wz-plan-nav .wz-greviews-arrow:focus-visible { outline-color:var(--wz-sign); }
 .dr.wz .wz-plan--wide .wz-plan-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:40px; }
-.dr.wz .wz-plan-assurance { margin-bottom:24px; font-size:15px; line-height:22px; font-weight:600; }
-.dr.wz .wz-plan--feature .wz-plan-assurance { color:var(--wz-sky); }
-.dr.wz .wz-plan--pro .wz-plan-assurance { color:#C9D4E3; }
+/* The refund promise sits once above the pricing page's plans, not in each card (Mason, 2026-11-26). */
+.dr.wz .wz-plan-guarantee { max-width:640px; margin:0 auto 32px; font:600 18px/26px var(--wz-sans); letter-spacing:-.01em; color:var(--wz-ink); text-align:center; text-wrap:balance; }
+.dr.wz .wz-plan-guarantee svg { display:inline-block; width:24px; height:24px; margin-right:10px; padding:4px; vertical-align:-6px; border-radius:50%; background:var(--wz-sign); color:#fff; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; box-sizing:border-box; }
 .dr.wz .wz-plan-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:auto; }
 .dr.wz .wz-plan-actions .wz-btn { margin-top:0; }
 .dr.wz .wz-plan--feature .wz-btn--outline { color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85); }
@@ -375,20 +374,18 @@
   .dr.wz .wz-plan { padding:28px 20px; }
   .dr.wz .wz-plan .wz-btn { width:100%; }
   .dr.wz .wz-faq summary { padding:18px 0; font-size:17px; line-height:24px; }
-  .dr.wz .wz-plan-price:has(+ .wz-plan-assurance) { flex-direction:column; align-items:flex-start; gap:8px; }
   .dr.wz .wz-plan--wide .wz-plan-list { grid-template-columns:1fr; }
   /* Pricing page: the plan cards become a row you swipe through, with the next card peeking in at the edge. */
   .dr.wz .wz-plan-row { display:flex; align-items:stretch; gap:12px; margin-inline:calc(-1 * var(--wz-gutter)); padding:0 var(--wz-gutter) 4px; scroll-padding-inline:var(--wz-gutter); overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; overscroll-behavior-x:contain; scrollbar-width:none; }
   .dr.wz .wz-plan-row::-webkit-scrollbar { display:none; }
   .dr.wz .wz-plan-row > .wz-plan { flex:0 0 calc(100% - 20px); scroll-snap-align:start; }
   /* Short cards in the row: no steering-wheel photo, tighter price block, and the checklist folded under
-     "What's included" (home-wise.js sets data-collapsible). Each card keeps its own height, so opening one
-     list doesn't stretch the others. */
-  .dr.wz .wz-plan-row { align-items:flex-start; }
+     "What's included" (home-wise.js sets data-collapsible and opens or closes every card's list together).
+     The cards stay the same height, with the buttons lined up at the bottom (Mason, 2026-11-26). */
   .dr.wz .wz-plan-row .wz-icon { display:none; }
   .dr.wz .wz-plan-row > .wz-plan > :is(h2,h3) { margin-top:0; }
-  .dr.wz .wz-plan-row .wz-plan-price { margin-top:16px; }
-  .dr.wz .wz-plan-row .wz-plan-assurance { margin-bottom:16px; }
+  .dr.wz .wz-plan-row .wz-plan-price { flex-direction:column; align-items:flex-start; gap:8px; margin:16px 0 20px; }
+  .dr.wz .wz-plan-guarantee { margin-bottom:24px; font-size:16px; line-height:24px; }
   .dr.wz .wz-plan-row .wz-plan-actions .wz-btn { padding-inline:12px; font-size:14px; }
   .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more { display:flex; align-items:center; justify-content:space-between; align-self:stretch; margin:0 0 16px; padding:14px 0; border:0; border-top:1px solid rgba(255,255,255,.22); background:none; color:#fff; font:600 16px/24px var(--wz-sans); text-align:left; cursor:pointer; }
   .dr.wz .wz-plan-row[data-collapsible] .wz-plan--pro .wz-plan-more { border-top-color:rgba(255,255,255,.16); }
@@ -396,7 +393,7 @@
   .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .2s ease; }
   .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more[aria-expanded="true"] svg { transform:rotate(180deg); }
   .dr.wz .wz-plan-row[data-collapsible] .wz-plan-list { padding-top:0; border-top:0; margin-bottom:28px; }
-  .dr.wz .wz-plan-row[data-collapsible] .wz-plan:not(.is-open) .wz-plan-list { display:none; }
+  .dr.wz .wz-plan-row[data-collapsible]:not(.is-open) .wz-plan-list { display:none; }
   .dr.wz .wz-plan-private { flex-wrap:wrap; align-items:flex-start; padding:24px 20px; }
   .dr.wz .wz-plan-private-text { flex-basis:100%; }
   .dr.wz .wz-plan-private .wz-btn { width:100%; }
