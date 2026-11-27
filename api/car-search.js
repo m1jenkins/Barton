@@ -10,8 +10,8 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
 // GET ?intake=<id> returns the search details; POST saves the shortlist; POST
-// with "action": "handoff" marks the deal's first emails handed off and returns
-// the deal for the script to post to Grokbot. GET ?document=<id> returns a Buyer
+// with "action": "handoff" marks the deal's first emails handed off, which locks
+// the shortlist, and sends nothing. GET ?document=<id> returns a Buyer
 // Document as a download (scripts/car-search.mjs document <id>). GET ?texts=threads
 // lists the open deals' numbers and POST "action": "texts" saves one thread's
 // Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
@@ -29,7 +29,6 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const HANDOFF_ERRORS = Object.freeze({
   intake_not_found: [404, 'No intake has that ID.'],
   no_shortlist: [409, 'Submit a shortlist for this intake first.'],
-  started_in_zoho: [409, 'A first email for this search already went out from Zoho, so finish this deal there.'],
   no_dealer_emails: [409, 'This shortlist has no dealer email left to hand off.']
 });
 
@@ -131,7 +130,7 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
         const [status, message] = HANDOFF_ERRORS[result.error];
         return sendJson(res, status, { ok: false, error: result.error, message });
       }
-      return sendJson(res, 200, { ok: true, handoff: result.handoff });
+      return sendJson(res, 200, { ok: true, ...result });
     }
     if (body.action === 'texts') {
       let messages;
@@ -181,7 +180,7 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
     const saved = await saveShortlist(sql, intakeId, shortlist, { tracker });
     if (saved.locked) {
       return sendJson(res, 409, { ok: false, error: 'emails_already_sent',
-        message: 'This search\'s dealer emails have already gone out or been handed to Grokbot, so its shortlist can no longer be replaced.' });
+        message: 'This search\'s dealer emails have already gone out or been handed off, so its shortlist can no longer be replaced.' });
     }
     return sendJson(res, 200, {
       ok: true,

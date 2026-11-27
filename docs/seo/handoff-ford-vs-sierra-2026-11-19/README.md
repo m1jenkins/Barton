@@ -1,5 +1,7 @@
 # Handoff: finish the Ford F-150 vs GMC Sierra 1500 page (November 19, 2026)
 
+**Done.** The page shipped with option A below ("Too few to call"). The `tools/` and `work/` folders this README describes were removed on November 26, 2026; recover them from git history (commit `bbbbb6a`) if the pair is ever recoded. `briefs/research.md` section E stays, because `scripts/nhtsa-problems.mjs` cites it.
+
 Five car-vs-car pages were built and pushed to `main` on November 19, 2026 (see `docs/seo/2026-11-15-vehicle-price-pages.md`, sections "Head-to-head Reddit top-ups" and one per pair). The sixth, `ford-f-150-vs-gmc-sierra-1500.html`, was stopped by the instructions' own gate: its neutral venue had **95 picks** (F-150 87, Sierra 8), under the 100 floor. This folder holds what is needed to finish it. It contains ids and codes only: no Reddit text, and usernames are hashed.
 
 ## What is here

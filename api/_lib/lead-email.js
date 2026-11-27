@@ -2,9 +2,8 @@ import { ConfigError } from './config.js';
 import { database } from './db.js';
 import { intakeEmailSettings, smtpTransport } from './intake-email.js';
 
-// Each new lead sends a short notice to LEAD_NOTIFY_EMAIL (Grokbot's Client
-// Outreach inbox) from the same Google Workspace mailbox as intake emails, so it passes
-// SPF/DKIM. The notice only carries the lead ID: the receiver reads the lead
+// Each new lead sends a short notice to LEAD_NOTIFY_EMAIL from the same Google
+// Workspace mailbox as intake emails, so it passes SPF/DKIM. The notice only carries the lead ID: the receiver reads the lead
 // itself from Neon, and contact details stay out of the email.
 const EMAIL_PATTERN = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
 

@@ -7,16 +7,14 @@ import { PGlite } from '@electric-sql/pglite';
 import { ConfigError } from '../_lib/config.js';
 import { carSearchToken, loadSearch, parseShortlist, saveShortlist, ShortlistError } from '../_lib/car-search.js';
 import { DETAIL_FIELDS } from '../_lib/listing-media.js';
-import { dealLinkSettings, draftToken, verifyDraftToken } from '../_lib/deal-email.js';
 import { renderIntakeEmail } from '../_lib/intake-email.js';
 import { loadDeal, summarizeDeal } from '../_lib/ops-dashboard.js';
 import { carSearchHandler } from '../car-search.js';
-import { dealerEmailHandler } from '../dealer-email.js';
 import { carSearchRequest, localEnv } from '../../scripts/car-search.mjs';
 
 const token = 'car-search-token-for-tests-only-0123456789';
 const environment = {
-  CAR_SEARCH_TOKEN: token, DEAL_LINK_SECRET: 'link-secret-for-tests-only-0123456789', APP_ORIGIN: 'https://www.steermeright.com',
+  CAR_SEARCH_TOKEN: token, APP_ORIGIN: 'https://www.steermeright.com',
   INTAKE_SMTP_USER: 'mason@steermeright.com', INTAKE_SMTP_PASSWORD: 'app-password-not-real'
 };
 const migrationNames = ['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
@@ -65,12 +63,10 @@ function response() {
 }
 const json = res => JSON.parse(res.body);
 
-test('the car search endpoint and dealer email links stay off until their secrets are set', () => {
+test('the car search endpoint stays off until its token is set', () => {
   assert.equal(carSearchToken({}), null);
   assert.throws(() => carSearchToken({ CAR_SEARCH_TOKEN: 'short' }), ConfigError);
   assert.equal(carSearchToken(environment), token);
-  assert.equal(dealLinkSettings({}), null);
-  assert.throws(() => dealLinkSettings({ DEAL_LINK_SECRET: 'short' }), ConfigError);
 });
 
 test('a shortlist is normalized to cents, and every problem in a bad one is reported at once', () => {
@@ -179,16 +175,6 @@ test('details keep only the named listing fields and up to 40 features; an unkno
   assert.throws(() => parseShortlist({ ...trackerShortlist, listings: [{ ...one, details: ['AWD'] }] }), /details must be an object of listing details/);
 });
 
-test('dealer email links verify only for the draft they were made for', () => {
-  const links = dealLinkSettings(environment);
-  const draftId = '4b4f163a-6c85-4ffd-8b93-df90e5b017e9';
-  const link = draftToken(links, draftId);
-  assert.equal(verifyDraftToken(links, link), draftId);
-  assert.equal(verifyDraftToken(links, link.replace(draftId, 'c2d1f0b4-3a9e-4f7a-9d38-1f6b2e0c5a77')), null);
-  assert.equal(verifyDraftToken(dealLinkSettings({ ...environment, DEAL_LINK_SECRET: 'x'.repeat(40) }), link), null);
-  assert.equal(verifyDraftToken(links, 'not-a-token'), null);
-});
-
 test('the intake email carries the command that starts its car search', () => {
   const onboardingId = '4b4f163a-6c85-4ffd-8b93-df90e5b017e9';
   const { text, html } = renderIntakeEmail({ onboarding_id: onboardingId, name: 'Pat Buyer', email: 'pat@example.test', phone: '',
@@ -197,7 +183,7 @@ test('the intake email carries the command that starts its car search', () => {
   assert.ok(html.includes(`/car-search ${onboardingId}`));
 });
 
-test('a car search goes from intake to a shortlist, and its first emails go out from Zoho or to Grokbot', async t => {
+test('a car search goes from intake to a shortlist, and its first emails are handed off', async t => {
   t.mock.method(console, 'error', () => {});
   const pg = await PGlite.create();
   t.after(() => pg.close());
@@ -219,8 +205,6 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
   };
   const id = await addIntake();
 
-  const mail = [];
-  const createTransport = () => ({ async sendMail(message) { mail.push(message); }, close() {} });
   const api = carSearchHandler({ environment, getDatabase: () => sql });
   const get = async (intake, authorization = `Bearer ${token}`) => {
     const res = response();
@@ -266,7 +250,6 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     assert.deepEqual(body, { ok: true, cars: 2, dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
     assert.deepEqual(drafts.map(row => [row.listing_ranks, row.status]), [[[1], 'pending']]);
 
-    assert.equal(mail.length, 0);
     assert.equal(json(await get(id)).shortlist.cars, 2);
   });
 
@@ -279,58 +262,17 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     assert.equal(drafts.length, 1);
   });
 
-  await t.test('the draft page shows the email, and only a same-origin POST sends it', async () => {
-    const page = dealerEmailHandler({ environment, getDatabase: () => sql, createTransport });
-    const link = draftToken(dealLinkSettings(environment), drafts[0].id);
-
-    const view = response();
-    await page({ method: 'GET', url: `/api/dealer-email?token=${encodeURIComponent(link)}`, headers: { host: 'www.steermeright.com' } }, view);
-    assert.equal(view.statusCode, 200);
-    assert.equal(view.headers['x-robots-tag'], 'noindex, nofollow');
-    assert.ok(view.body.includes('2025 Subaru Ascent Limited availability'));
-    assert.ok(view.body.includes('name="action" value="send"'));
-    assert.equal(mail.length, 0, 'opening the link sends nothing');
-
-    const missing = response();
-    await page({ method: 'GET', url: '/api/dealer-email?token=bad', headers: { host: 'www.steermeright.com' } }, missing);
-    assert.equal(missing.statusCode, 404);
-
-    const form = new URLSearchParams({ token: link, action: 'send', to: 'internet@dealer-one.example',
-      subject: 'Ascent Limited: out-the-door price?', body: 'Hello,\n\nEdited by Mason.' }).toString();
-    const request = (origin = 'http://localhost:3000') => ({ method: 'POST', url: '/api/dealer-email', rawBody: Buffer.from(form),
-      headers: { host: 'www.steermeright.com', origin, 'content-type': 'application/x-www-form-urlencoded' } });
-
-    const crossSite = response();
-    await page(request('https://evil.example'), crossSite);
-    assert.equal(crossSite.statusCode, 403);
-
-    const sent = response();
-    await page(request(), sent);
-    assert.equal(sent.statusCode, 303);
-    assert.match(sent.headers.location, /&done=sent$/);
-    assert.equal(mail.length, 1);
-    assert.deepEqual([mail[0].to, mail[0].subject, mail[0].text], ['internet@dealer-one.example', 'Ascent Limited: out-the-door price?', 'Hello,\n\nEdited by Mason.\n']);
-    assert.deepEqual(mail[0].from, { name: 'Steer Me Right', address: 'mason@steermeright.com' });
-    assert.equal((await pg.query('SELECT status FROM dealer_email_drafts WHERE id = $1', [drafts[0].id])).rows[0].status, 'sent');
-
-    const twice = response();
-    await page(request(), twice);
-    assert.equal(twice.statusCode, 409);
-    assert.ok(twice.body.includes('This email was already sent'));
-    assert.ok(!twice.body.includes('value="send"'), 'a sent draft has no send button');
-    assert.equal(mail.length, 1, 'a second press sends nothing');
-  });
-
-  await t.test('once a dealer email has gone out, the shortlist cannot be replaced or handed to Grokbot', async () => {
+  await t.test('a first email sent from the site before November 3 locks the shortlist too', async () => {
+    await pg.query(`UPDATE dealer_email_drafts SET status = 'sent', sent_at = now() WHERE id = $1`, [drafts[0].id]);
     const res = await post({ intake_id: id, shortlist });
     assert.equal(res.statusCode, 409);
     assert.equal(json(res).error, 'emails_already_sent');
     assert.equal((await pg.query('SELECT count(*)::int AS n FROM deal_listings')).rows[0].n, 1);
     const handoff = await post({ intake_id: id, action: 'handoff' });
-    assert.deepEqual([handoff.statusCode, json(handoff).error], [409, 'started_in_zoho']);
+    assert.deepEqual([handoff.statusCode, json(handoff).error], [409, 'no_dealer_emails']);
   });
 
-  await t.test('a handoff gives Grokbot the deal, and the buyer\'s details stay in Neon', async () => {
+  await t.test('a handoff locks the shortlist and returns only the dealers it covers', async () => {
     const other = await addIntake();
     assert.equal((await post({ intake_id: other, action: 'handoff' })).statusCode, 409, 'no shortlist yet');
     assert.equal((await post({ intake_id: other, action: 'send' })).statusCode, 400);
@@ -339,22 +281,7 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     const res = await post({ intake_id: other, action: 'handoff' });
     assert.equal(res.statusCode, 200);
     const ref = other.slice(0, 8);
-    assert.deepEqual(json(res).handoff, {
-      type: 'new_deal', intake_id: other, deal: ref, label: `Deals/${ref} · Subaru Ascent`,
-      search: { lives_in: 'Tuscaloosa, AL', details: { Car: 'Subaru Ascent', 'Model years': '2024 or newer',
-        'All-in budget': 'Up to $38,000', 'How far': '100 miles', Features: 'AWD, Moonroof' } },
-      summary: shortlist.summary,
-      cars: [
-        { rank: 1, title: '2025 Subaru Ascent Limited, Crimson Red / Slate Black', vin: '4S4WMAUD7P3412345',
-          listing_url: 'https://dealer-one.example/ascent', dealer: 'Dealer One', dealer_location: 'Johnson City, TN (about 370 mi)',
-          dealer_phone: null, asking: 35884, market: 37346, target: 34500, mileage: 15203, days_on_lot: 121, why: 'Price already cut once.' },
-        { rank: 2, title: '2024 Subaru Ascent Touring', vin: null, listing_url: 'https://dealer-two.example/a', dealer: 'Dealer Two',
-          dealer_location: null, dealer_phone: '229-555-0199', asking: 34433, market: null, target: null, mileage: null,
-          days_on_lot: null, why: '' }
-      ],
-      dealers: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example', ranks: [1],
-        subject: '2025 Subaru Ascent Limited availability', body: 'Hello,\n\nIs the Ascent still available?\n\nMason' }]
-    });
+    assert.deepEqual(json(res), { ok: true, deal: ref, dealer_emails: [{ dealer: 'Dealer One', to: 'sales@dealer-one.example' }] });
     for (const hidden of ['Pat Buyer', 'pat@example.test', '205-555-0100', '12 Private Lane', 'ABC1234', 'Steer Me Right']) {
       assert.ok(!res.body.includes(hidden), hidden);
     }
@@ -367,15 +294,9 @@ test('a car search goes from intake to a shortlist, and its first emails go out 
     const replaced = await post({ intake_id: other, shortlist });
     assert.deepEqual([replaced.statusCode, json(replaced).error], [409, 'emails_already_sent']);
 
-    const page = dealerEmailHandler({ environment, getDatabase: () => sql, createTransport });
-    const view = response();
-    await page({ method: 'GET', url: `/api/dealer-email?token=${encodeURIComponent(draftToken(dealLinkSettings(environment), draft.id))}`,
-      headers: { host: 'www.steermeright.com' } }, view);
-    assert.ok(view.body.includes('Handed to Grokbot'));
-    assert.ok(!view.body.includes('value="send"'), 'an old link cannot send a handed-off email from Zoho');
   });
 
-  await t.test('Grokbot logs each deal\'s quotes in deal_events, once per car per Gmail message', async () => {
+  await t.test('an agent logs each deal\'s quotes in deal_events, once per car per Gmail message', async () => {
     const other = (await pg.query('SELECT onboarding_id FROM deals ORDER BY created_at DESC LIMIT 1')).rows[0].onboarding_id;
     const log = (kind, message, otd, vin = '4S4WMAUD7P3412345') => pg.query(`INSERT INTO deal_events (onboarding_id, kind, dealer_name, vin, otd_cents, itemized, source_message_id)
       VALUES ($1, $2, 'Dealer One', $6, $3, $4, $5) ON CONFLICT DO NOTHING RETURNING id`,
@@ -453,36 +374,12 @@ test('the helper script calls the API with the token from .env.local', async t =
 
   await assert.rejects(carSearchRequest(['get', 'abc'], { environment: {}, fetchImpl }), /CAR_SEARCH_TOKEN is not set/);
   await assert.rejects(carSearchRequest(['submit', 'abc'], { environment, fetchImpl }), /Usage/);
-  await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment, fetchImpl }), /DEALER_BOT_URL and DEALER_BOT_KEY are not set/);
-  assert.equal(calls.length, 2, 'a handoff without the webhook settings never reaches the server');
-});
 
-test('handoff posts the server\'s handoff to Grokbot\'s webhook with its key', async () => {
-  const environment = { CAR_SEARCH_TOKEN: token, DEALER_BOT_URL: 'https://bot.example/hooks/new-deal', DEALER_BOT_KEY: 'bot-key-123' };
-  const handoff = { type: 'new_deal', deal: 'abcd1234', dealers: [{ dealer: 'Dealer One' }] };
-  const calls = [];
-  const fetchFor = webhook => async (url, init = {}) => {
-    calls.push({ url, init });
-    return url.startsWith('https://www.steermeright.com') ? { status: 200, json: async () => ({ ok: true, handoff }) } : webhook;
-  };
-
-  const sent = await carSearchRequest(['handoff', 'abc'], { environment,
-    fetchImpl: fetchFor({ ok: true, status: 200, text: async () => '{"success":true,"runUuid":"run-1"}' }) });
-  assert.deepEqual(JSON.parse(calls[0].init.body), { intake_id: 'abc', action: 'handoff' });
-  assert.equal(calls[1].url, 'https://bot.example/hooks/new-deal');
-  assert.deepEqual(calls[1].init.headers, { Authorization: 'Bearer bot-key-123', 'Content-Type': 'application/json' });
-  assert.deepEqual(JSON.parse(calls[1].init.body), handoff);
-  assert.equal(sent.status, 200);
-  assert.deepEqual([sent.body.ok, sent.body.deal, sent.body.dealer_emails, sent.body.grokbot], [true, 'abcd1234', 1, { success: true, runUuid: 'run-1' }]);
-
-  const refused = await carSearchRequest(['handoff', 'abc'], { environment,
-    fetchImpl: fetchFor({ ok: false, status: 401, text: async () => '{"message":"Invalid API key bot-key-123"}' }) });
-  assert.equal(refused.status, 502);
-  assert.equal(refused.body.ok, false);
-  assert.ok(!JSON.stringify(refused.body).includes('bot-key-123'), 'the key is never printed');
-
-  await assert.rejects(carSearchRequest(['handoff', 'abc'], { environment: { ...environment, DEALER_BOT_URL: 'http://bot.example' },
-    fetchImpl: fetchFor(null) }), /https/);
+  const handoff = await carSearchRequest(['handoff', 'abc'], { environment, fetchImpl });
+  assert.deepEqual(JSON.parse(calls[2].init.body), { intake_id: 'abc', action: 'handoff' });
+  assert.equal(calls[2].url, 'http://localhost:3000/api/car-search');
+  assert.deepEqual(handoff, { status: 200, body: { ok: true } });
+  assert.equal(calls.length, 3, 'a handoff calls only the server');
 });
 
 async function addIntake(pg) {

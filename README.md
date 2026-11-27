@@ -16,7 +16,7 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `accessibility.css/js`, `openai-ads.js`, `privacy-choices.js` | Small shared helpers loaded by pages. `privacy-choices.js` adds the footer ad-measurement opt-out. |
 | `logo-motion.css/js` | The header mascot, a Mariner Blue Miata beside the wordmark, loaded by every page. It does the first-visit drive-by intro and headlight winks, and also covers the payment-success celebration. |
 | `assets/` | Images and fonts. `assets/buying/` holds photos and self-hosted fonts for the current design; `assets/external/` holds optimized photos (`source/` keeps the originals); `assets/mascot/` holds the mascot sprites, built by `scripts/build-mascot-sprites.mjs` from `assets/mascot/reference/` (not deployed). |
-| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, `car-search` (used by the `/car-search` skill), the `dealer-email` send page, and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
+| `api/` | Vercel serverless functions: `leads`, `checkout-start`, `stripe-webhook`, `purchase-status`, `onboarding`, `car-search` (used by the `/car-search` skill), and the protected `outbox-dispatch` cron. Shared code in `api/_lib/`, tests in `api/_tests/`. |
 | `.claude/skills/car-search/` | The `/car-search` Claude Code skill Mason runs for each paid intake. Not deployed. See "Car search" in [docs/implementation-operations.md](docs/implementation-operations.md). |
 | `.claude/skills/car-negotiation/` | The `/car-negotiation` skill Mason runs on each dealer reply after a car search: it judges the quote and drafts his next email. Not deployed. Same doc section. |
 | `.claude/skills/dealer-reply/` | Drafts Mason's next dealer email in his own voice, learned from his sent dealer mail. Mason runs it on a pasted thread. Not deployed. |
@@ -27,9 +27,8 @@ Every `.html` file in the repo root is a live page, and its file name is its URL
 | `data/` | Governed source data (claims, sources, metro and city page data, release gates). Not deployed. |
 | `docs/` | Plans, decision records and evidence. Not deployed. See [docs/README.md](docs/README.md). |
 | `draft-artifacts/` | Private city/metro renders and archived hand-authored guide/worksheet previews. Not deployed. Regenerate city/metro pages with their scripts. |
-| `outputs/` | Private ad-campaign review bundle. Not deployed. |
 | `motion/legwork/` | Remotion source for the homepage legwork card videos, rendered to `assets/buying/legwork/` by `npm run render` in that folder. Not deployed. See [docs/homepage-legwork-motion-2026-10-23.md](docs/homepage-legwork-motion-2026-10-23.md). |
-| `.agents/`, `.superdesign/` | Tool-owned folders (installed agent skills, design scratch). Not deployed. |
+| `.agents/` | Installed agent skills, owned by the skills tool. Not deployed. |
 
 `.vercelignore` lists everything that stays out of the deployment.
 

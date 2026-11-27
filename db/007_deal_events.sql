@@ -1,11 +1,10 @@
 BEGIN;
--- Grokbot's record of each deal after the handoff, written by Grokbot straight
--- to Neon (docs/dealer-bot-setup-2026-11-03.md, step 11). One row per thing that
+-- The agents' record of each deal after the handoff. One row per thing that
 -- happened: a first email sent, a dealer's quote, a counter, an agreed price, a
 -- dropped dealer, a note Mason passed on, or the deal closing or reopening.
 -- onboarding_id is the handoff's intake_id. Amounts are cents, as elsewhere.
 -- source_message_id is the Gmail message a row came from or was sent as, so a
--- rerun of Grokbot's inbox check can't log the same email twice.
+-- rerun of an agent's inbox check can't log the same email twice.
 CREATE TABLE IF NOT EXISTS deal_events (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   onboarding_id uuid NOT NULL REFERENCES deals(onboarding_id) ON DELETE CASCADE,

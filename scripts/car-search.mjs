@@ -5,8 +5,9 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 // Helper for the /car-search skill (.claude/skills/car-search/SKILL.md):
 //   node scripts/car-search.mjs get <intake ID>                    search details for one paid intake
-//   node scripts/car-search.mjs submit <intake ID> <shortlist.json>  save the shortlist and email it to Mason
-//   node scripts/car-search.mjs handoff <intake ID>                hand the deal and its first emails to Grokbot
+//   node scripts/car-search.mjs submit <intake ID> <shortlist.json>  save the shortlist; nothing is emailed
+//   node scripts/car-search.mjs handoff <intake ID>                lock the shortlist once Mason says to send the first
+//                                                                  emails; it sends nothing
 //   node scripts/car-search.mjs draft <intake ID> <text file | -> [skill]
 //                                                                  save a draft Buyer Update for Mason to approve
 //                                                                  on the deal's ops page; it never posts one. skill is who
@@ -25,11 +26,9 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 //   node scripts/car-search.mjs deal <intake ID>                   the shortlist with each car's prices, the full event log
 //                                                                  and the Buyer Updates
 // Reads CAR_SEARCH_TOKEN, and optionally CAR_SEARCH_URL, from the environment
-// or from .env.local in the repository root (git-ignored). handoff also needs
-// DEALER_BOT_URL and DEALER_BOT_KEY, Grokbot's "New deal" webhook
-// (docs/dealer-bot-setup-2026-11-03.md, step 6). submit passes the shortlist
-// JSON through as is; the server checks it, including each car's est_otd and
-// color once the Deal Tracker is on.
+// or from .env.local in the repository root (git-ignored). submit passes the
+// shortlist JSON through as is; the server checks it, including each car's
+// est_otd and color once the Deal Tracker is on.
 const USAGE = 'Usage: node scripts/car-search.mjs get <intake ID> | submit <intake ID> <shortlist.json> | handoff <intake ID> | draft <intake ID> <text file | -> [car-search | car-negotiation | dealer-reply] | document <document id> [output file] | picks <intake ID> | documents <intake ID> | texts <intake ID> [last N] | deal <intake ID>';
 // GET-only: none of these can change anything.
 const READS = ['picks', 'documents', 'texts', 'deal'];
@@ -44,37 +43,6 @@ export function localEnv(file = new URL('../.env.local', import.meta.url)) {
     .map(line => /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(line))
     .filter(Boolean)
     .map(([, key, value]) => [key, value.replace(/^(['"])(.*)\1$/, '$2')]));
-}
-
-// Checked before the server marks anything handed off.
-function dealerBot(environment) {
-  const url = environment.DEALER_BOT_URL?.trim();
-  const key = environment.DEALER_BOT_KEY?.trim();
-  if (!url || !key) {
-    throw new Error('DEALER_BOT_URL and DEALER_BOT_KEY are not set. Add them to .env.local (see step 6 of docs/dealer-bot-setup-2026-11-03.md).');
-  }
-  if (!/^https:\/\//.test(url)) throw new Error('DEALER_BOT_URL must be an https URL.');
-  return { url, key };
-}
-
-// A 200 from Grokbot only means it started a run: its cards show up in its chat.
-async function postToDealerBot(bot, handoff, fetchImpl) {
-  const response = await fetchImpl(bot.url, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${bot.key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(handoff)
-  });
-  const text = (await response.text().catch(() => '')).replaceAll(bot.key, '[key]').slice(0, 2000);
-  let reply;
-  try { reply = JSON.parse(text); } catch { reply = text; }
-  return {
-    status: response.ok ? 200 : 502,
-    body: response.ok
-      ? { ok: true, deal: handoff.deal, dealer_emails: handoff.dealers.length, grokbot: reply,
-        next: 'Grokbot started a run. Its approval cards show up in its chat in a minute or two.' }
-      : { ok: false, error: `Grokbot answered HTTP ${response.status}`, grokbot: reply,
-        next: 'Nothing reached a dealer. Fix the webhook, then run handoff again: the server returns the same handoff.' }
-  };
 }
 
 // The server names the file (<type>-<id>.<ext>); only a plain name is kept.
@@ -108,7 +76,6 @@ export async function carSearchRequest([command, intakeId, file, skill], { envir
   if (READS.includes(command) && file != null && !(command === 'texts' && /^[1-9]\d{0,3}$/.test(file))) {
     throw new Error(command === 'texts' ? 'texts takes a whole number of texts to show' : USAGE);
   }
-  const bot = command === 'handoff' ? dealerBot(environment) : null;
   const base = (environment.CAR_SEARCH_URL?.trim() || 'https://www.steermeright.com').replace(/\/+$/, '');
   const headers = { Authorization: `Bearer ${token}`, Accept: 'application/json' };
   if (command === 'document') return saveDocument(base, headers, intakeId, file, fetchImpl, documentsDir);
@@ -132,8 +99,7 @@ export async function carSearchRequest([command, intakeId, file, skill], { envir
     });
   }
   const body = await response.json().catch(() => ({ ok: false, error: `HTTP ${response.status}` }));
-  if (command !== 'handoff' || !body.ok) return { status: response.status, body };
-  return postToDealerBot(bot, body.handoff, fetchImpl);
+  return { status: response.status, body };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -1,12 +1,12 @@
 ---
 name: car-search
-description: Run a paid buyer's car search with MarketCheck, price each car against the market with a target price, draft first emails to dealers, submit it all, and hand the deal to Grokbot, which emails each dealer once Mason approves the email there. Use when Mason runs /car-search with an intake ID, pastes a "Paid intake" email, or asks to start or redo a buyer's car search.
+description: Run a paid buyer's car search with MarketCheck, price each car against the market with a target price, draft first emails to dealers, submit it all, and lock the shortlist once Mason says to send the emails. Use when Mason runs /car-search with an intake ID, pastes a "Paid intake" email, or asks to start or redo a buyer's car search.
 argument-hint: <intake ID from the Paid intake email>
 ---
 
 # Car search
 
-You are running a paid buyer's car search for Mason at Steer Me Right: find the best matching cars for sale, price each against the market, and draft a first email to each dealer. Nothing reaches a dealer from this skill: it hands the first emails to Grokbot, which sends each one from the dealer inbox only after Mason approves it there.
+You are running a paid buyer's car search for Mason at Steer Me Right: find the best matching cars for sale, price each against the market, and draft a first email to each dealer. Nothing reaches a dealer from this skill: it only drafts the first emails.
 
 Intake: $ARGUMENTS
 
@@ -47,7 +47,7 @@ For the strongest 10 to 15:
 - `predict_price_with_comparables` with the VIN, the miles and the car's ZIP, for its market value.
 - Days on lot is `dos_active`.
 
-Set a **target** price per car: the sale price to aim for, before tax and fees. It is for Mason and Grokbot only.
+Set a **target** price per car: the sale price to aim for, before tax and fees. It is for Mason and the agents working the deal only, never the buyer or a dealer.
 - Start from the lower of the asking price and market value, and aim $1,000 to $1,500 under it. Aim lower for cars on the lot 60+ days or already cut in price.
 - For no-haggle sellers such as CarMax and Carvana the target is the asking price; say so.
 - Check that target plus the buyer's state tax and fees fits the all-in budget, and flag cars that do not.
@@ -112,12 +112,11 @@ Then run `node scripts/car-search.mjs submit <intake ID> .car-searches/<intake I
 - On success, list each dealer email and remind Mason that nothing has gone to a dealer yet.
 - If Mason asks for changes, update the file and submit again. A new submission replaces the shortlist until the deal is handed off.
 
-## 8. Hand off to Grokbot
+## 8. Lock the shortlist
 
-When Mason says "send them", run `node scripts/car-search.mjs handoff <intake ID>`. The server marks the first emails handed off, which locks the shortlist, and the script posts the deal to Grokbot's "New deal" webhook. Grokbot gets the cars with their asking, market and target prices, the search details and the first emails, and reads the rest of the intake from Neon.
-- On success, tell Mason the approval cards show up in Grokbot's chat in a minute or two, and nothing reaches a dealer until he taps Send on each.
-- If it says `DEALER_BOT_URL and DEALER_BOT_KEY are not set`, point Mason to step 6 of `docs/dealer-bot-setup-2026-11-03.md`.
-- If Grokbot answered with an error, show it. Nothing reached a dealer. Once the webhook works, run `handoff` again: the server returns the same handoff.
+When Mason says "send them", run `node scripts/car-search.mjs handoff <intake ID>`. The server marks the first emails handed off, which locks the shortlist: the cars those emails ask about stay the ones on the buyer's page, and a later `submit` is refused. It sends nothing.
+- On success it lists the dealers whose first emails are locked in.
+- If it returns an error, show it to Mason. Running `handoff` again is safe: the server gives the same answer.
 
 ## 9. Draft the shortlist update
 
