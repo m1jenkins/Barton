@@ -8,13 +8,15 @@ const leadId = '06a28d37-b5d9-4f0e-a20c-c8e506ef5477';
 
 function inquiry(request, track, web3forms = async () => { throw new Error('Offline'); }) {
   const listeners = {}, requests = [], events = [], dialogListeners = {}, emails = [];
-  const fields = { vehicle: 'Used Mazda CX-5', budget: '$35,000', timeline: 'Within a month', details: '', email: 'buyer@example.com', name: '', website: '' };
-  const submit = { disabled: false, textContent: 'Send my car search inquiry', setAttribute() {}, removeAttribute() {} };
+  const fields = { contact: 'buyer@example.com', details: 'Looking for a used Mazda CX-5 under $35,000', website: '' };
+  const submit = { disabled: false, textContent: 'Send to Mason', setAttribute() {}, removeAttribute() {} };
   const status = { textContent: '', focus() { this.focused = true; } };
   const interest = { value: 'Not sure yet' };
   const emailHandoff = { hidden: true, href: 'mailto:hello@steermeright.com', addEventListener(event, fn) { this.click = fn; } };
   const navigations = [];
-  const form = { elements: { namedItem: () => interest }, querySelector: selector => selector === '[type="submit"]' ? submit : selector === '[data-email-inquiry]' ? emailHandoff : status,
+  const focusable = () => ({ focus() { this.focused = true; } });
+  const named = { service_interest: interest, contact: focusable(), details: focusable() };
+  const form = { elements: { namedItem: name => named[name] }, querySelector: selector => selector === '[type="submit"]' ? submit : selector === '[data-email-inquiry]' ? emailHandoff : status,
     addEventListener: (event, fn) => { listeners[event] = fn; }, reset() { this.wasReset = true; } };
   const close = { addEventListener(event, fn) { this.click = fn; } };
   const dialog = { querySelector: () => close, addEventListener: (event, fn) => { dialogListeners[event] = fn; },
@@ -31,7 +33,7 @@ function inquiry(request, track, web3forms = async () => { throw new Error('Offl
     window: { location: { pathname: '/schedule.html', assign: url => navigations.push(url) }, driveRightClient: client },
     FormData: class { get(key) { return fields[key]; } }
   });
-  return { requests, events, emails, fields, form, status, submit, dialog, opener, close, interest, emailHandoff, navigations,
+  return { requests, events, emails, fields, form, named, status, submit, dialog, opener, close, interest, emailHandoff, navigations,
     send: () => listeners.submit({ preventDefault() {} }) };
 }
 
@@ -55,7 +57,7 @@ test('without a notification connection the saved inquiry offers an explicit ema
   f.emailHandoff.click({ preventDefault() {} });
   const draft = new URL(f.navigations[0]);
   assert.equal(draft.pathname, 'hello@steermeright.com');
-  assert.match(draft.searchParams.get('body'), /Used Mazda CX-5/);
+  assert.match(draft.searchParams.get('body'), /used Mazda CX-5/);
   assert.match(draft.searchParams.get('body'), /buyer@example.com/);
   assert.equal(f.events.length, 1, 'email handoff is not another conversion');
   f.opener.click();
@@ -69,8 +71,8 @@ test('a saved inquiry is emailed to Mason without the email handoff', async () =
   const { lead, id } = f.emails[0];
   assert.equal(id, leadId);
   assert.equal(lead.email, 'buyer@example.com');
-  assert.match(lead.subject, /Used Mazda CX-5/);
-  assert.match(lead.message, /Vehicle budget: \$35,000/);
+  assert.match(lead.subject, /used Mazda CX-5/);
+  assert.match(lead.message, /Message:\nLooking for a used Mazda CX-5 under \$35,000/);
   assert.equal(lead.source_page, '/schedule.html');
   assert.equal(f.emailHandoff.hidden, true);
   assert.match(f.status.textContent, /Mason replies within one business day/);
@@ -114,14 +116,14 @@ test('pricing inquiry persists search and contact details and reports only the d
   assert.equal(f.requests[0].url, '/api/leads');
   assert.equal(payload.source, 'pricing_inquiry');
   assert.equal(payload.name, '');
-  assert.equal(payload.email, f.fields.email);
-  assert.equal(payload.vehicle, f.fields.vehicle);
+  assert.equal(payload.email, f.fields.contact);
+  assert.equal(payload.phone, '');
+  assert.equal(payload.vehicle, '');
   assert.match(payload.message, /Steer Me Right Pro/);
-  assert.match(payload.message, /Vehicle budget: \$35,000/);
-  assert.match(payload.message, /Buying timeline: Within a month/);
+  assert.match(payload.message, /Looking for a used Mazda CX-5/);
   assert.equal(payload.attribution.first_touch.utm_source, 'chatgpt');
   assert.deepEqual(JSON.parse(JSON.stringify(f.events)), [{ event: 'generate_lead', data: { form_name: 'pricing_inquiry', lead_id: leadId } }]);
-  assert.equal(JSON.stringify(f.events).includes(f.fields.email), false);
+  assert.equal(JSON.stringify(f.events).includes(f.fields.contact), false);
   assert.equal(f.form.wasReset, true);
   assert.equal(f.status.focused, true);
   assert.match(f.status.textContent, /inquiry is saved/);
@@ -143,7 +145,7 @@ test('a failed or lost response produces no conversion and retries the identical
 test('editing a failed inquiry creates a new request key instead of conflicting with its prior payload', async () => {
   const f = inquiry(() => { throw new Error('Unavailable'); });
   await f.send();
-  f.fields.vehicle = 'New Toyota RAV4';
+  f.fields.details = 'New Toyota RAV4';
   await f.send();
   assert.notEqual(f.requests[0].headers['Idempotency-Key'], f.requests[1].headers['Idempotency-Key']);
   assert.equal(f.events.length, 0);
@@ -171,14 +173,14 @@ test('a malformed success response never becomes a saved lead conversion', async
   }
 });
 
-test('questions typed in the details box are saved and emailed in full', async () => {
+test('a long message is saved and emailed in full, with a short email subject', async () => {
   const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), undefined, async () => ({ success: true }));
   f.fields.details = `Do you search private sellers and deliver to California? ${'More detail. '.repeat(60)}`;
   await f.send();
   const payload = JSON.parse(f.requests[0].body);
-  assert.equal(payload.vehicle, 'Used Mazda CX-5');
   assert.ok(payload.message.endsWith(f.fields.details.trim()));
-  assert.match(payload.message, /Questions and details:\nDo you search private sellers/);
+  assert.match(payload.message, /Message:\nDo you search private sellers/);
+  assert.ok(f.emails[0].lead.subject.length < 90);
   assert.equal(f.emails[0].lead.message, payload.message);
 });
 
@@ -187,4 +189,36 @@ test('a filled honeypot saves the request without emailing Mason', async () => {
   f.fields.website = 'spam.example';
   await f.send();
   assert.equal(f.emails.length, 0);
+});
+
+test('a phone number alone is enough, and the email to Mason carries no reply address', async () => {
+  const f = inquiry(() => ({ lead_id: leadId, forwarding_configured: false }), undefined, async () => ({ success: true }));
+  f.fields.contact = '(512) 555-0142';
+  await f.send();
+  const payload = JSON.parse(f.requests[0].body);
+  assert.equal(payload.email, '');
+  assert.equal(payload.phone, '(512) 555-0142');
+  assert.equal(f.emails[0].lead.email, undefined);
+  assert.equal(f.emails[0].lead.phone, '(512) 555-0142');
+});
+
+test('a page about one car sends that car with the message', async () => {
+  const f = inquiry(() => ({ lead_id: leadId }));
+  f.opener.dataset.inquiryVehicle = 'Ford F-150';
+  f.opener.click();
+  await f.send();
+  const payload = JSON.parse(f.requests[0].body);
+  assert.equal(payload.vehicle, 'Ford F-150');
+  assert.match(payload.message, /Car on the page: Ford F-150/);
+});
+
+test('an unusable contact or an empty message is stopped before anything is sent', async () => {
+  for (const [contact, details, field] of [['buyer@', 'A Sienna', 'contact'], ['555', 'A Sienna', 'contact'], ['buyer@example.com', '', 'details']]) {
+    const f = inquiry(() => ({ lead_id: leadId }));
+    Object.assign(f.fields, { contact, details });
+    await f.send();
+    assert.equal(f.requests.length, 0);
+    assert.match(f.status.className, /error/);
+    assert.equal(f.named[field].focused, true);
+  }
 });

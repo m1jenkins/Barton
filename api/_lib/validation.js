@@ -87,14 +87,18 @@ export function validateLeadPayload(body) {
   if (honeypot) throw new HttpError(422, 'invalid_payload', 'Invalid form submission');
 
   const source = cleanString(body.source, 'source', { max: 100 }) || 'website';
-  const name = cleanString(body.name, 'name', { required: source !== 'pricing_inquiry', max: 120 });
-  const email = cleanString(body.email, 'email', { required: true, max: 254 }).toLowerCase();
-  if (!EMAIL_PATTERN.test(email)) throw new HttpError(422, 'invalid_payload', 'email is invalid');
+  // The "Talk to Mason" inquiry asks for one way to reply: an email address or a phone number.
+  const inquiry = source === 'pricing_inquiry';
+  const name = cleanString(body.name, 'name', { required: !inquiry, max: 120 });
+  const email = cleanString(body.email, 'email', { required: !inquiry, max: 254 }).toLowerCase();
+  const phone = cleanString(body.phone, 'phone', { max: 40 });
+  if (email && !EMAIL_PATTERN.test(email)) throw new HttpError(422, 'invalid_payload', 'email is invalid');
+  if (inquiry && !email && phone.replace(/\D/g, '').length < 7) throw new HttpError(422, 'invalid_payload', 'email or phone is required');
 
   const result = {
     name,
     email,
-    phone: cleanString(body.phone, 'phone', { max: 40 }),
+    phone,
     message: cleanString(body.message, 'message', { max: 3000 }),
     vehicle: cleanString(body.vehicle, 'vehicle', { max: 300 }),
     source,
@@ -104,7 +108,6 @@ export function validateLeadPayload(body) {
   };
 
   if (!result.message && !result.vehicle) throw new HttpError(422, 'invalid_payload', 'message or vehicle is required');
-  if (source === 'pricing_inquiry' && !result.vehicle) throw new HttpError(422, 'invalid_payload', 'vehicle is required');
   if (!result.source_page.startsWith('/') || result.source_page.startsWith('//')) {
     throw new HttpError(422, 'invalid_payload', 'source_page must be a same-site path');
   }

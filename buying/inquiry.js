@@ -6,12 +6,14 @@ if (dialog && form) {
   const status = form.querySelector('[data-form-status]');
   const emailHandoff = form.querySelector('[data-email-inquiry]');
   const interest = form.elements.namedItem('service_interest');
-  const vehicleField = form.elements.namedItem('vehicle');
+  const contactField = form.elements.namedItem('contact');
   const detailsField = form.elements.namedItem('details');
   const defaultPrompt = detailsField?.placeholder || '';
   let pendingKey = '';
   let pendingPayload = '';
   let opener;
+  // Pages about one car pass it along with the message; there is no car field to fill in.
+  let pageVehicle = '';
   let emailDraft = '';
 
   emailHandoff.addEventListener('click', event => {
@@ -26,8 +28,7 @@ if (dialog && form) {
     button.addEventListener('click', () => {
       opener = button;
       interest.value = button.dataset.openInquiry || 'Not sure yet';
-      // Pages about one car fill it in; the visitor can still change it.
-      if (button.dataset.inquiryVehicle && !vehicleField.value.trim()) vehicleField.value = button.dataset.inquiryVehicle;
+      pageVehicle = button.dataset.inquiryVehicle || '';
       if (detailsField) detailsField.placeholder = button.dataset.inquiryPrompt || defaultPrompt;
       status.textContent = '';
       emailHandoff.hidden = true;
@@ -48,21 +49,28 @@ if (dialog && form) {
       return;
     }
     const fields = new FormData(form);
-    const vehicle = String(fields.get('vehicle') || '').trim();
-    const budget = String(fields.get('budget') || '').trim();
-    const timeline = String(fields.get('timeline') || '').trim();
+    const contact = String(fields.get('contact') || '').trim();
     const details = String(fields.get('details') || '').trim();
+    // One box takes an email address or a phone number: an @ means email.
+    const isEmail = contact.includes('@');
+    const contactError = isEmail
+      ? (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact) ? '' : 'Check the email address, or enter a phone number instead.')
+      : (contact.replace(/\D/g, '').length >= 7 ? '' : 'Enter an email address or a phone number Mason can reach you at.');
+    if (contactError || !details) {
+      status.className = 'form-status form-status--error';
+      status.textContent = contactError || 'Tell Mason what you’re looking for.';
+      (contactError ? contactField : detailsField)?.focus();
+      return;
+    }
     const payload = JSON.stringify({
-      name: String(fields.get('name') || '').trim(),
-      email: String(fields.get('email') || '').trim(),
-      phone: String(fields.get('phone') || '').trim(),
-      vehicle,
+      name: '',
+      email: isEmail ? contact : '',
+      phone: isEmail ? '' : contact,
+      vehicle: pageVehicle,
       message: [
         `Service interest: ${interest.value}`,
-        `Vehicle: ${vehicle}`,
-        budget ? `Vehicle budget: ${budget}` : '',
-        timeline ? `Buying timeline: ${timeline}` : '',
-        details ? `Questions and details:\n${details}` : ''
+        pageVehicle ? `Car on the page: ${pageVehicle}` : '',
+        `Message:\n${details}`
       ].filter(Boolean).join('\n'),
       source: 'pricing_inquiry',
       source_page: window.location.pathname,
@@ -88,9 +96,11 @@ if (dialog && form) {
       // Use the shared success boundary and durable ID; contact details stay out of analytics.
       try { client.track('generate_lead', { form_name: 'pricing_inquiry', lead_id: result.lead_id }); } catch { /* Measurement cannot undo a saved inquiry. */ }
       const saved = JSON.parse(pendingPayload);
-      const emailed = result.forwarding_configured === true || (!saved.honeypot && await client.emailMason?.({ ...saved, subject: `New car search inquiry: ${saved.vehicle}` }, result.lead_id));
+      const topic = saved.vehicle || (details.length > 60 ? `${details.slice(0, 57)}…` : details);
+      // A phone-only inquiry has no reply address, so the email to Mason carries none.
+      const emailed = result.forwarding_configured === true || (!saved.honeypot && await client.emailMason?.({ ...saved, email: saved.email || undefined, subject: `New car search inquiry: ${topic}` }, result.lead_id));
       if (!emailed) {
-        const body = `${saved.name ? `Name: ${saved.name}\n` : ''}Reply email: ${saved.email}\n${saved.phone ? `Phone: ${saved.phone}\n` : ''}\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
+        const body = `${saved.email ? `Reply email: ${saved.email}\n` : ''}${saved.phone ? `Phone: ${saved.phone}\n` : ''}\n${saved.message}\n\nSaved inquiry: ${result.lead_id}`;
         emailDraft = `mailto:hello@steermeright.com?subject=${encodeURIComponent('My car search inquiry')}&body=${encodeURIComponent(body)}`;
         emailHandoff.hidden = false;
       }
@@ -108,7 +118,7 @@ if (dialog && form) {
     } finally {
       submit.disabled = false;
       submit.removeAttribute('aria-busy');
-      submit.textContent = 'Send my car search inquiry';
+      submit.textContent = 'Send to Mason';
     }
   });
 }

@@ -87,14 +87,17 @@ test('lead attribution is allowlisted and normalized', () => {
   assert.equal(result.attribution.last_touch, null);
 });
 
-test('the short pricing inquiry can omit name but still requires valid contact and search details', () => {
-  const payload = { source: 'pricing_inquiry', email: 'BUYER@example.com', vehicle: 'Used Mazda CX-5', source_page: '/schedule.html#full-service' };
+test('the short pricing inquiry needs an email or a phone number and a message, and nothing else', () => {
+  const payload = { source: 'pricing_inquiry', email: 'BUYER@example.com', message: 'Looking for a used Mazda CX-5', source_page: '/schedule.html#full-service' };
   const lead = validateLeadPayload(payload);
   assert.equal(lead.name, '');
   assert.equal(lead.email, 'buyer@example.com');
   assert.equal(lead.source_page, '/schedule.html');
-  for (const invalid of [{ ...payload, source: 'website' }, { ...payload, email: '' },
-    { ...payload, email: 'invalid' }, { ...payload, vehicle: '' }, { ...payload, honeypot: 'spam' }]) {
+  const byPhone = validateLeadPayload({ ...payload, email: '', phone: '512-555-0142' });
+  assert.equal(byPhone.email, '');
+  assert.equal(byPhone.phone, '512-555-0142');
+  for (const invalid of [{ ...payload, source: 'website' }, { ...payload, email: '' }, { ...payload, email: '', phone: '555' },
+    { ...payload, email: 'invalid' }, { ...payload, message: '' }, { ...payload, honeypot: 'spam' }]) {
     assert.throws(() => validateLeadPayload(invalid), error => error.status === 422);
   }
 });
