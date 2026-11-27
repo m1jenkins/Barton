@@ -71,7 +71,7 @@ export const plans = location => `<section class="plan-grid guide-plans" aria-la
   </article>
   <article class="plan-card">
     <h2>Steer Me Right Pro</h2><p class="plan-for">Best if you want the best deal anywhere in the country</p><p class="plan-description">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p><p class="plan-price">$695</p>
-    <ul><li>Everything in Steer Me Right</li><li>Dealers nationwide, not just within 200 miles</li><li>Shipping quotes on long-distance deals; you pay the carrier</li><li>Trade-in support: we compare offers on your trade-in from several areas and negotiate it with the deal</li><li>Offers on up to three models, priced side by side</li><li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li></ul>
+    <ul><li>Everything in Steer Me Right</li><li>Dealers nationwide, not just within 200 miles</li><li>Shipping quotes on long-distance deals</li><li>Trade-in support: we compare offers on your trade-in from several areas and negotiate it with the deal</li><li>Offers on up to three models, priced side by side</li><li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li></ul>
     <a href="/schedule.html#concierge" data-cta-location="${location}" class="outline-button">Get Steer Me Right Pro</a>
   </article>
 </section>
@@ -147,7 +147,7 @@ ${market.mapSvg ? `<figure class="market-map">\n${market.mapSvg}<figcaption>${ma
 
 <h2 id="how">How it works from ${market.name}</h2>
 <ol>
-<li><strong>You pay the flat fee and tell us the car.</strong> Model, trims and colors you’d accept, budget, and how far you’d go to pick it up. Mason replies within one business day to confirm the search and when it starts.</li>
+<li><strong>Tell us the car.</strong> Model, trims and colors you’d accept, budget, and how far you’d go to pick it up. Mason replies within one business day to confirm the search and when it starts.</li>
 <li><strong>We find the cars.</strong> Your advisor searches new, used and CPO dealer inventory for the model.</li>
 <li><strong>We get written offers and negotiate.</strong> Each dealer is asked for an out-the-door price in writing. Offers go against each other, and add-ons and padded fees get questioned before you see a contract.</li>
 <li><strong>You pick.</strong> We send written recommendations and our pick of the best deal. You make the final call, sign the paperwork and pick up the car from the dealer.</li>
@@ -161,7 +161,7 @@ ${market.mapSvg ? `<figure class="market-map">\n${market.mapSvg}<figcaption>${ma
 ${faq([
     ...market.faq,
     [`How much does a car buying service cost in ${market.name}?`, `Steer Me Right charges the same flat fee everywhere: $395 for one model or $695 for up to three. Most services where a person negotiates for you charge $999 or more, by their own published prices; see <a href="/compare-car-buying-services.html">car buying services compared</a>.`],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 
@@ -224,10 +224,10 @@ ${publicOnly.length ? `<p>${joinNames(publicOnly.map(market => `<a href="/${mark
 
 <h2 id="faq">Common questions</h2>
 ${faq([
-    ['Is there a car buying service near me?', 'Steer Me Right works with dealers in every state from one office in Austin, Texas. The work is done by phone and email, so you don’t need a local office. You pick up the car from the dealer.'],
+    ['Is there a car buying service near me?', 'Steer Me Right works with dealers in every state from one office in Austin, Texas. The work is done by phone and email, so you don’t need a local office.'],
     ['Do you charge more in bigger cities?', 'No. The fee is $395 for one model or $695 for up to three, wherever you live.'],
-    ['Can you use dealers in a neighboring state?', 'Yes. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. State lines don’t matter on any plan. On Steer Me Right Pro, we get shipping quotes when the best deal is far away. You pay the carrier; shipping is not part of our fee.'],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Can you use dealers in a neighboring state?', 'Yes. The Steer Me Right plan ($395) covers dealers within 200 miles of you. Steer Me Right Pro ($695) covers dealers nationwide. State lines don’t matter on any plan. On Steer Me Right Pro, we get shipping quotes when the best deal is far away.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 

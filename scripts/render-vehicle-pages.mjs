@@ -501,7 +501,7 @@ ${moreLinks(vehicle, text.moreName ?? name)}
 ${faq([
     ...vehicle.faq,
     [`Can you negotiate a ${text.negotiateName ?? name} for me?`, text.negotiate],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 </section>
@@ -816,7 +816,7 @@ ${askMason(`comparison-${cmp.slug.replace(/\.html$/, '')}`, cmp.cars.map(car => 
 ${faq([
     ...cmp.faq,
     [`Can you get me prices on both the ${a.short} and the ${b.short}?`, `Yes. Steer Me Right Pro is $695 and covers up to three models: we find each in dealer stock, get written out-the-door offers, negotiate for a price below MSRP and give you our pick. Steer Me Right is $395 for one model. We can’t promise a specific discount: the market for a given car sets what a dealer will do.`],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ])}
 </section>

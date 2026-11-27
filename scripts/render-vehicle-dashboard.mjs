@@ -717,7 +717,7 @@ ${card.items.map(item => `<li>${tick}${item}</li>`).join('\n')}
   const faqEntries = [
     ...vehicle.faq,
     [`Can you negotiate a ${vehicle.labels?.negotiateName ?? name} for me?`, text.negotiate],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
     ['What if I change my mind?', 'Cancel before negotiations begin and you get a full refund. During negotiations, refund eligibility depends on the work already done. Read the <a href="/policy.html#refund-policy">refund policy</a>.'],
   ];
 

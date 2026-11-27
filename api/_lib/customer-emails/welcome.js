@@ -9,7 +9,7 @@ function planCard(buyer) {
       'Dealers nationwide, as many models as you like, and trade-in support',
       'Allocation and build-slot search, and factory orders, when the car isn’t on a lot',
       'We negotiate market adjustments and dealer-installed add-ons',
-      'An independent inspection arranged on a used car; you pay the shop',
+      'An independent inspection arranged on a used car',
       'Your lease or loan terms, the buyer’s order and the finance-office products checked before you sign',
       'Enclosed transport quotes and a delivery-day checklist',
       'Same-day replies from me on business days'
