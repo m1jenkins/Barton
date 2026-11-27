@@ -248,7 +248,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. The RAV4 plug-in hybrid is left out: EPA had not rated it on November 16, 2026.",
+      "note": "The RAV4 plug-in hybrid is left out: EPA had not rated it on November 16, 2026.",
       "max": 45,
       "rows": [
        {
@@ -293,7 +293,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Hybrid, front drive",
@@ -460,7 +460,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old cars, 2026 study",
       "a": "185 Toyota",
       "b": "211 Honda",
       "win": "a"
@@ -491,7 +491,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Newer model years have had less time on the road, so their counts are still growing.",
+      "note": "Newer model years have had less time on the road, so their counts are still growing.",
       "rows": [
        {
         "label": "2019",
@@ -748,7 +748,7 @@
      }
     },
     "after": [
-     "Reddit trusts the RAV4’s reliability far more, and NHTSA’s complaint data points the same way. People who drove both mostly preferred sitting in the CR-V. Test-drive both on roads you know before you decide."
+     "Reddit trusts the RAV4’s reliability far more, and NHTSA’s complaint data points the same way. People who drove both mostly preferred sitting in the CR-V."
     ],
     "from": {
      "label": "Comments from",
@@ -764,7 +764,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "Lower is better.",
+      "note": "",
       "max": 25,
       "rows": [
        {
@@ -1460,7 +1460,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 55,
       "rows": [
        {
@@ -1522,7 +1522,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Hybrid sedan",
@@ -1676,7 +1676,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old cars, 2026 study",
       "a": "211 Honda",
       "b": "185 Toyota",
       "win": "b"
@@ -1707,7 +1707,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. The 2022 Civic, the first of this generation, drew 963 complaints, 806 of them about steering, in a year of low sales. Newer model years have had less time on the road.",
+      "note": "The 2022 Civic, the first of this generation, drew 963 complaints, 806 of them about steering, in a year of low sales. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -1965,7 +1965,7 @@
      }
     },
     "after": [
-     "Reddit lines up with the data: it trusts the Corolla to last and finds it dull, and likes driving and sitting in the Civic while worrying about its reliability. Test-drive both on roads you know before you decide."
+     "Reddit lines up with the data: it trusts the Corolla to last and finds it dull, and likes driving and sitting in the Civic while worrying about its reliability."
     ],
     "from": {
      "label": "Comments from",
@@ -1981,7 +1981,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "Lower is better.",
+      "note": "",
       "max": 25,
       "rows": [
        {
@@ -2838,7 +2838,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. 2026 models.",
+      "note": "2026 models.",
       "max": 25,
       "rows": [
        {
@@ -2885,7 +2885,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Most efficient version",
@@ -3067,7 +3067,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study",
       "a": "228 Ford",
       "b": "178 Chevrolet",
       "win": "b"
@@ -3098,7 +3098,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Ford reports only F-Series sales, which include the Super Duty, so we estimate F-150 sales as 59% of them, its share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150 rates would be 41% lower. Newer model years have had less time on the road.",
+      "note": "Ford reports only F-Series sales, which include the Super Duty, so we estimate F-150 sales as 59% of them, its share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150 rates would be 41% lower. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -3366,7 +3366,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -4208,7 +4208,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 55,
       "rows": [
        {
@@ -4247,7 +4247,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Most efficient version",
@@ -4287,7 +4287,7 @@
     "charts": [
      {
       "title": "Rear legroom",
-      "note": "Inches. Higher is better.",
+      "note": "Inches.",
       "rows": [
        {
         "label": "Rear seat",
@@ -4341,7 +4341,7 @@
      },
      {
       "title": "0 to 60 mph",
-      "note": "Edmunds’ test results, in seconds: a Camry and an Accord Sport-L Hybrid. Lower is better.",
+      "note": "Edmunds’ test results, in seconds: a Camry and an Accord Sport-L Hybrid.",
       "rows": [
        {
         "label": "Hybrid",
@@ -4383,7 +4383,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. The Camry was the study’s top midsize car",
+      "note": "Problems per 100 three-year-old cars, 2026 study. The Camry was the study’s top midsize car",
       "a": "185 Toyota",
       "b": "211 Honda",
       "win": "a"
@@ -4414,7 +4414,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year. The 2025 Camry was the first hybrid-only one; the 2023 Accord began the current generation. Newer model years have had less time on the road.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year. The 2025 Camry was the first hybrid-only one; the 2023 Accord began the current generation. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -4671,7 +4671,7 @@
      }
     },
     "after": [
-     "Reddit lines up with the data: it trusts the Camry to last and to save fuel, and likes driving and sitting in the Accord. Even r/accord picked the Accord only 130 times to 79. Test-drive both on roads you know before you decide."
+     "Reddit lines up with the data: it trusts the Camry to last and to save fuel, and likes driving and sitting in the Accord. Even r/accord picked the Accord only 130 times to 79."
     ],
     "from": {
      "label": "Comments from",
@@ -4687,7 +4687,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. iSeeCars’ Camry figure covers the hybrid and the earlier gas cars together.",
+      "note": "iSeeCars. iSeeCars’ Camry figure covers the hybrid and the earlier gas cars together.",
       "max": 30,
       "rows": [
        {
@@ -5482,7 +5482,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. The best 2026 rating for each engine, leaving out the off-road trims.",
+      "note": "The best 2026 rating for each engine, leaving out the off-road trims.",
       "max": 25,
       "rows": [
        {
@@ -5527,7 +5527,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "3.0L Duramax diesel",
@@ -5692,7 +5692,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints by model year over light-duty sales in the matching calendar year, so the two don’t line up exactly. Newer model years have had less time on the road.",
+      "note": "Complaints by model year over light-duty sales in the matching calendar year, so the two don’t line up exactly. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -5957,7 +5957,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -6770,7 +6770,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -6809,7 +6809,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Gas, all-wheel drive",
@@ -6843,7 +6843,7 @@
      },
      {
       "title": "Miles per tank, all-wheel drive",
-      "note": "EPA combined mpg times tank size (16.6 gallons for the Forester, 14 for the CR-V); Subaru prints 581 miles for the hybrid. Higher is better.",
+      "note": "EPA combined mpg times tank size (16.6 gallons for the Forester, 14 for the CR-V); Subaru prints 581 miles for the hybrid.",
       "rows": [
        {
         "label": "Gas",
@@ -6863,7 +6863,7 @@
      },
      {
       "title": "Measured mpg, Consumer Reports",
-      "note": "Consumer Reports’ own test mileage, as of February 2026. Higher is better.",
+      "note": "Consumer Reports’ own test mileage, as of February 2026.",
       "rows": [
        {
         "label": "Gas",
@@ -6895,7 +6895,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. The Forester Base, without the moonroof, holds 29.6.",
+      "note": "Cubic feet. The Forester Base, without the moonroof, holds 29.6.",
       "max": 45,
       "rows": [
        {
@@ -6940,7 +6940,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better.",
+      "note": "Inches.",
       "max": 48,
       "rows": [
        {
@@ -6961,7 +6961,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better.",
+      "note": "Inches.",
       "max": 10,
       "rows": [
        {
@@ -7011,7 +7011,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better.",
+      "note": "Pounds.",
       "max": 4000,
       "rows": [
        {
@@ -7070,7 +7070,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204",
       "a": "181 Subaru",
       "b": "211 Honda",
       "win": "a"
@@ -7108,7 +7108,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year; the CR-V count includes the hybrid, and Subaru reports gas and hybrid Foresters together. The 2025 Forester is a redesign. Newer model years have had less time on the road, and 2022 sales were low for both cars.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year; the CR-V count includes the hybrid, and Subaru reports gas and hybrid Foresters together. The 2025 Forester is a redesign. Newer model years have had less time on the road, and 2022 sales were low for both cars.",
       "rows": [
        {
         "label": "2019",
@@ -7372,7 +7372,7 @@
      }
     },
     "after": [
-     "Reddit leans CR-V, 73 neutral picks to 60, and the topics show why. It scores the CR-V higher on fuel economy (+58 against −30), space (+69 against +45), noise and tech, and the Forester higher on safety (+80 against −14, mostly visibility and EyeSight) and power (+53 against +27, mostly all-wheel drive in snow). Reliability is the surprise: Reddit trusts the CR-V more (+11 against −9), the opposite of NHTSA’s complaint counts, with Forester owners naming older engines and CVTs and CR-V owners naming the 1.5 turbo. r/SubaruForester picked the Forester 36 times to 7, and even r/crv gave the Forester 5 of its 16 picks. Test-drive both on roads you know before you decide."
+     "Reddit leans CR-V, 73 neutral picks to 60, and the topics show why. It scores the CR-V higher on fuel economy (+58 against −30), space (+69 against +45), noise and tech, and the Forester higher on safety (+80 against −14, mostly visibility and EyeSight) and power (+53 against +27, mostly all-wheel drive in snow). Reliability is the surprise: Reddit trusts the CR-V more (+11 against −9), the opposite of NHTSA’s complaint counts, with Forester owners naming older engines and CVTs and CR-V owners naming the 1.5 turbo. r/SubaruForester picked the Forester 36 times to 7, and even r/crv gave the Forester 5 of its 16 picks."
     ],
     "from": {
      "label": "Comments from",
@@ -7388,7 +7388,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. We left out iSeeCars’ Forester Hybrid figure, which looks drawn from an older generation.",
+      "note": "iSeeCars. We left out iSeeCars’ Forester Hybrid figure, which looks drawn from an older generation.",
       "max": 30,
       "rows": [
        {
@@ -7435,7 +7435,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 50,
       "rows": [
        {
@@ -8286,7 +8286,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. The RAV4 plug-in hybrid is left out: EPA had no 2026 record for it on November 18, 2026.",
+      "note": "The RAV4 plug-in hybrid is left out: EPA had no 2026 record for it on November 18, 2026.",
       "max": 45,
       "rows": [
        {
@@ -8333,7 +8333,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Gas, all-wheel drive",
@@ -8369,7 +8369,7 @@
      },
      {
       "title": "Miles per tank, hybrid",
-      "note": "EPA combined mpg times tank size (16.6 gallons for the Forester, 14.5 for the RAV4, a figure reused from our RAV4 vs CR-V page; Cars.com lists 15); Subaru prints 581 miles for the Forester Hybrid. Higher is better.",
+      "note": "EPA combined mpg times tank size (16.6 gallons for the Forester, 14.5 for the RAV4, a figure reused from our RAV4 vs CR-V page; Cars.com lists 15); Subaru prints 581 miles for the Forester Hybrid.",
       "rows": [
        {
         "label": "Front-wheel drive",
@@ -8401,7 +8401,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. The Forester Base, without the moonroof, holds 29.6. The RAV4 figures are iSeeCars’ and KBB’s; Cars.com prints 38.",
+      "note": "Cubic feet. The Forester Base, without the moonroof, holds 29.6. The RAV4 figures are iSeeCars’ and KBB’s; Cars.com prints 38.",
       "max": 45,
       "rows": [
        {
@@ -8438,7 +8438,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. The RAV4 figures are Cars.com’s; iSeeCars prints 37.8 for the rear seat, and Toyota’s spec data lists neither.",
+      "note": "Inches. The RAV4 figures are Cars.com’s; iSeeCars prints 37.8 for the rear seat, and Toyota’s spec data lists neither.",
       "max": 48,
       "rows": [
        {
@@ -8459,7 +8459,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. iSeeCars prints 8.5 for the Woodland; other sources print 8.6.",
+      "note": "Inches. iSeeCars prints 8.5 for the Woodland; other sources print 8.6.",
       "max": 10,
       "rows": [
        {
@@ -8511,7 +8511,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better.",
+      "note": "Pounds.",
       "max": 4000,
       "rows": [
        {
@@ -8572,7 +8572,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. Read in a Motor1 report",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. Read in a Motor1 report",
       "a": "181 Subaru",
       "b": "185 Toyota",
       "win": "a"
@@ -8603,7 +8603,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year. The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row appears to include the hybrids; Subaru reports gas and hybrid Foresters together. The 2025 Forester is a redesign, and so is the 2026 RAV4, which is left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year. The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row appears to include the hybrids; Subaru reports gas and hybrid Foresters together. The 2025 Forester is a redesign, and so is the 2026 RAV4, which is left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -8867,7 +8867,7 @@
      }
     },
     "after": [
-     "Reddit’s picks lean RAV4, 80 neutral picks to 53 from 213 threads, but its opinions lean Forester, 65 on our index against 54, and the topics show why. Reddit scores the RAV4 far higher on fuel economy (+92 against −30) and reliability (+73 against −11), the two reasons people give for picking it. It scores the Forester higher on safety (+84 against −21, mostly visibility and EyeSight), space (+69 against −40), ride (+66 against −35), power (+57 against −1, mostly all-wheel drive in snow) and dealers (+58 against −76, with owners reporting RAV4 markups and waits). r/SubaruForester picked the Forester 24 times to 15, and r/rav4 and r/RAV4Club picked the RAV4 13 to 4. Test-drive both on roads you know before you decide."
+     "Reddit’s picks lean RAV4, 80 neutral picks to 53 from 213 threads, but its opinions lean Forester, 65 on our index against 54, and the topics show why. Reddit scores the RAV4 far higher on fuel economy (+92 against −30) and reliability (+73 against −11), the two reasons people give for picking it. It scores the Forester higher on safety (+84 against −21, mostly visibility and EyeSight), space (+69 against −40), ride (+66 against −35), power (+57 against −1, mostly all-wheel drive in snow) and dealers (+58 against −76, with owners reporting RAV4 markups and waits). r/SubaruForester picked the Forester 24 times to 15, and r/rav4 and r/RAV4Club picked the RAV4 13 to 4."
     ],
     "from": {
      "label": "Comments from",
@@ -8883,7 +8883,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. The 2026 RAV4 has no gas version, so its gas row covers older cars, and iSeeCars’ 5.4% for them is unusually low; we show it as printed. We left out iSeeCars’ Forester Hybrid figure, which looks drawn from an older generation.",
+      "note": "iSeeCars. The 2026 RAV4 has no gas version, so its gas row covers older cars, and iSeeCars’ 5.4% for them is unusually low; we show it as printed. We left out iSeeCars’ Forester Hybrid figure, which looks drawn from an older generation.",
       "max": 30,
       "rows": [
        {
@@ -8930,7 +8930,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 50,
       "rows": [
        {
@@ -9812,7 +9812,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. The RAV4 plug-in hybrid is left out: EPA had no 2026 record for it on November 18, 2026.",
+      "note": "The RAV4 plug-in hybrid is left out: EPA had no 2026 record for it on November 18, 2026.",
       "max": 45,
       "rows": [
        {
@@ -9851,7 +9851,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon.",
       "rows": [
        {
         "label": "Hybrid, front drive",
@@ -9880,7 +9880,7 @@
      },
      {
       "title": "Miles per tank",
-      "note": "EPA combined mpg times tank size (15.3 gallons for the CX-5, per Kelley Blue Book; 14.5 for the RAV4, a figure reused from our RAV4 vs CR-V page). Higher is better.",
+      "note": "EPA combined mpg times tank size (15.3 gallons for the CX-5, per Kelley Blue Book; 14.5 for the RAV4, a figure reused from our RAV4 vs CR-V page).",
       "rows": [
        {
         "label": "Front-wheel drive",
@@ -9913,7 +9913,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. The figures are iSeeCars’, which carries the makers’ data. The plug-in’s 33.6 is for the XSE; the SE, Woodland and GR Sport hold 33.5, and iSeeCars’ page covers the 2027 model year.",
+      "note": "Cubic feet. The figures are iSeeCars’, which carries the makers’ data. The plug-in’s 33.6 is for the XSE; the SE, Woodland and GR Sport hold 33.5, and iSeeCars’ page covers the 2027 model year.",
       "max": 45,
       "rows": [
        {
@@ -9936,7 +9936,7 @@
      },
      {
       "title": "Cargo with the rear seats folded",
-      "note": "Cubic feet. Higher is better.",
+      "note": "Cubic feet.",
       "max": 80,
       "rows": [
        {
@@ -9951,7 +9951,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. iSeeCars’ figures.",
+      "note": "Inches. iSeeCars’ figures.",
       "max": 48,
       "rows": [
        {
@@ -9972,7 +9972,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. The CX-5’s is 8.0 on the 2.5 S and Select and 8.2 on the Preferred, Premium and Premium Plus.",
+      "note": "Inches. The CX-5’s is 8.0 on the 2.5 S and Select and 8.2 on the Preferred, Premium and Premium Plus.",
       "max": 10,
       "rows": [
        {
@@ -10039,7 +10039,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better.",
+      "note": "Pounds.",
       "max": 4000,
       "rows": [
        {
@@ -10086,7 +10086,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. A figure for all Mazdas and all Toyotas. Secondary",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. A figure for all Mazdas and all Toyotas. Secondary",
       "a": "210 Mazda",
       "b": "185 Toyota",
       "win": "b"
@@ -10138,7 +10138,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year; every year shown is the previous generation of both cars. The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row may not include the hybrids. The 2026 CX-5 and RAV4 are redesigns and are left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year; every year shown is the previous generation of both cars. The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row may not include the hybrids. The 2026 CX-5 and RAV4 are redesigns and are left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -10402,7 +10402,7 @@
      }
     },
     "after": [
-     "Reddit’s picks and its opinions point the same way here, to the CX-5: 100 neutral picks to 53 from 228 threads, and 61 on our index against 56. The topics show where each car earns it. Reddit scores the RAV4 far higher on fuel economy (+79 against −55), space (+62 against −38) and reliability (+68 against +35). It scores the CX-5 higher on dealers (+83 against −83, with owners reporting RAV4 markups and waits), price (+78 against −17), interior and tech (+37 against −68) and power and driving (+53 against +2). r/CX5 picked the CX-5 23 times to 15, and r/rav4 and r/RAV4Club picked the RAV4 8 to 2. Test-drive both on roads you know before you decide."
+     "Reddit’s picks and its opinions point the same way here, to the CX-5: 100 neutral picks to 53 from 228 threads, and 61 on our index against 56. The topics show where each car earns it. Reddit scores the RAV4 far higher on fuel economy (+79 against −55), space (+62 against −38) and reliability (+68 against +35). It scores the CX-5 higher on dealers (+83 against −83, with owners reporting RAV4 markups and waits), price (+78 against −17), interior and tech (+37 against −68) and power and driving (+53 against +2). r/CX5 picked the CX-5 23 times to 15, and r/rav4 and r/RAV4Club picked the RAV4 8 to 2."
     ],
     "from": {
      "label": "Comments from",
@@ -10418,7 +10418,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version and the figure looks unusually low. The page doesn’t say what years it covers, and the CX-5 figure may mix generations.",
+      "note": "iSeeCars. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version and the figure looks unusually low. The page doesn’t say what years it covers, and the CX-5 figure may mix generations.",
       "max": 30,
       "rows": [
        {
@@ -10457,7 +10457,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 50,
       "rows": [
        {
@@ -11428,7 +11428,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. 2026 models.",
+      "note": "2026 models.",
       "max": 25,
       "rows": [
        {
@@ -11467,7 +11467,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Most efficient version",
@@ -11696,7 +11696,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study",
       "a": "228 Ford",
       "b": "185 Toyota",
       "win": "b"
@@ -11727,7 +11727,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Ford reports only F-Series sales, which include the Super Duty and Lightning, so we estimate F-150 sales as 59% of them, the method on our F-150 vs Silverado page: the F-150’s share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150’s 2023–2025 rate is 38.1, and the Tundra stays higher unless the F-150 is under 17.6% of F-Series sales. The Tundra was redesigned for 2022, so its 2019–2021 counts are for the older truck. Newer model years have had less time on the road.",
+      "note": "Ford reports only F-Series sales, which include the Super Duty and Lightning, so we estimate F-150 sales as 59% of them, the method on our F-150 vs Silverado page: the F-150’s share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150’s 2023–2025 rate is 38.1, and the Tundra stays higher unless the F-150 is under 17.6% of F-Series sales. The Tundra was redesigned for 2022, so its 2019–2021 counts are for the older truck. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -11768,7 +11768,7 @@
      },
      {
       "title": "What owners complain about, 2023–2025 model years",
-      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part. Lower is better.",
+      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part.",
       "rows": [
        {
         "label": "Engine",
@@ -11996,7 +11996,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better. iSeeCars; the hybrids are the PowerBoost and the i-FORCE MAX.",
+      "note": "iSeeCars; the hybrids are the PowerBoost and the i-FORCE MAX.",
       "max": 50,
       "rows": [
        {
@@ -12956,7 +12956,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. 2026 models, automatic transmissions. Toyota’s own table lists 20 mpg combined for the gas TRD Sport and TRD Off-Road 4x4 where EPA’s records say 21, and 22 for some SR5, TRD Sport and PreRunner 2WD versions.",
+      "note": "2026 models, automatic transmissions. Toyota’s own table lists 20 mpg combined for the gas TRD Sport and TRD Off-Road 4x4 where EPA’s records say 21, and 22 for some SR5, TRD Sport and PreRunner 2WD versions.",
       "max": 25,
       "rows": [
        {
@@ -12987,7 +12987,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate. Lower is better.",
+      "note": "EPA’s estimate.",
       "rows": [
        {
         "label": "Two-wheel drive",
@@ -13015,7 +13015,7 @@
      },
      {
       "title": "Miles on a tank",
-      "note": "EPA combined mpg times fuel tank size, our arithmetic: 21.4 gallons in the Colorado, 18.2 in the Tacoma. Higher is better.",
+      "note": "EPA combined mpg times fuel tank size, our arithmetic: 21.4 gallons in the Colorado, 18.2 in the Tacoma.",
       "rows": [
        {
         "label": "Two-wheel drive",
@@ -13199,7 +13199,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 vehicles, 2026 study; lower is better. Brand level, no Colorado figure; J.D. Power names the Tacoma among the most reliable midsize pickups",
+      "note": "Problems per 100 vehicles, 2026 study. Brand level, no Colorado figure; J.D. Power names the Tacoma among the most reliable midsize pickups",
       "a": "178 Chevrolet",
       "b": "185 Toyota",
       "win": "a"
@@ -13230,7 +13230,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints by model year over U.S. sales in the matching calendar year, so the two don’t line up exactly, and newer model years have had less time on the road. The Colorado was redesigned for 2023 and the Tacoma for 2024, so earlier years are the old trucks. Toyota lists Tacoma Hybrid sales separately; we used its Tacoma total.",
+      "note": "Complaints by model year over U.S. sales in the matching calendar year, so the two don’t line up exactly, and newer model years have had less time on the road. The Colorado was redesigned for 2023 and the Tacoma for 2024, so earlier years are the old trucks. Toyota lists Tacoma Hybrid sales separately; we used its Tacoma total.",
       "rows": [
        {
         "label": "2019",
@@ -13517,7 +13517,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -14463,7 +14463,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. 2026 models. The Sierra’s 4WD diesel record is the one EPA lists with Sport Mode, and some 5.3L records show 17.",
+      "note": "2026 models. The Sierra’s 4WD diesel record is the one EPA lists with Sport Mode, and some 5.3L records show 17.",
       "max": 30,
       "rows": [
        {
@@ -14510,7 +14510,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year at its November 18, 2026 prices: $4.00 regular, $5.01 premium, $6.13 diesel. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year at its November 18, 2026 prices: $4.00 regular, $5.01 premium, $6.13 diesel.",
       "rows": [
        {
         "label": "Most efficient version",
@@ -14768,7 +14768,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study",
       "a": "228 Ford",
       "b": "229 GMC",
       "win": null
@@ -14799,7 +14799,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Ford reports only F-Series sales, which include the Super Duty and Lightning, so we estimate F-150 sales as 59% of them, the method on our F-150 vs Silverado page: the F-150’s share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150’s 2023–2025 rate is 38.1, and the Sierra stays higher unless the F-150 is under 23% of F-Series sales. The Sierra’s sales are its light-duty Sierra 1500 sales. Newer model years have had less time on the road.",
+      "note": "Ford reports only F-Series sales, which include the Super Duty and Lightning, so we estimate F-150 sales as 59% of them, the method on our F-150 vs Silverado page: the F-150’s share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150’s 2023–2025 rate is 38.1, and the Sierra stays higher unless the F-150 is under 23% of F-Series sales. The Sierra’s sales are its light-duty Sierra 1500 sales. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -14840,7 +14840,7 @@
      },
      {
       "title": "What owners complain about, 2023–2025 model years",
-      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part. Lower is better. Without the 118 Sierra engine complaints that mention the 6.2L, its engine rate is 65.3.",
+      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part. Without the 118 Sierra engine complaints that mention the 6.2L, its engine rate is 65.3.",
       "rows": [
        {
         "label": "Engine",
@@ -15086,7 +15086,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better. iSeeCars.",
+      "note": "iSeeCars.",
       "max": 50,
       "rows": [
        {
@@ -15965,7 +15965,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -16004,7 +16004,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon.",
       "rows": [
        {
         "label": "Gas, front drive",
@@ -16042,7 +16042,7 @@
      },
      {
       "title": "Miles per tank",
-      "note": "EPA combined mpg times tank size (14.0 gallons for the CR-V, 15.3 for the CX-5, per Kelley Blue Book). Our arithmetic. Higher is better.",
+      "note": "EPA combined mpg times tank size (14.0 gallons for the CR-V, 15.3 for the CX-5, per Kelley Blue Book). Our arithmetic.",
       "rows": [
        {
         "label": "Gas, all-wheel drive",
@@ -16084,7 +16084,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. The CX-5’s figures are iSeeCars’, which carries the maker’s data; Mazda’s release gives none.",
+      "note": "Cubic feet. The CX-5’s figures are iSeeCars’, which carries the maker’s data; Mazda’s release gives none.",
       "max": 45,
       "rows": [
        {
@@ -16115,7 +16115,7 @@
      },
      {
       "title": "Cargo with the rear seats folded",
-      "note": "Cubic feet. Higher is better.",
+      "note": "Cubic feet.",
       "max": 80,
       "rows": [
        {
@@ -16138,7 +16138,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. The CX-5’s are iSeeCars’ figures.",
+      "note": "Inches. The CX-5’s are iSeeCars’ figures.",
       "max": 48,
       "rows": [
        {
@@ -16159,7 +16159,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. The CR-V’s is 7.8 in front drive and 8.2 with AWD and on the TrailSport.",
+      "note": "Inches. The CR-V’s is 7.8 in front drive and 8.2 with AWD and on the TrailSport.",
       "max": 10,
       "rows": [
        {
@@ -16211,7 +16211,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better. The CX-5’s rating comes from reviewers and Edmunds; Mazda’s page prints none.",
+      "note": "Pounds. The CX-5’s rating comes from reviewers and Edmunds; Mazda’s page prints none.",
       "max": 2000,
       "rows": [
        {
@@ -16258,7 +16258,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. A figure for all Hondas and all Mazdas, one problem apart. Secondary: read in Cars.com’s report",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. A figure for all Hondas and all Mazdas, one problem apart. Secondary: read in Cars.com’s report",
       "a": "211 Honda",
       "b": "210 Mazda",
       "win": null
@@ -16310,7 +16310,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year; the CR-V count includes the hybrid. Every year shown is the previous CX-5; the 2026 CX-5 and CR-V are left out because 2026 sales aren’t final. Newer model years have had less time on the road, and 2022 sales were low for the CR-V.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year; the CR-V count includes the hybrid. Every year shown is the previous CX-5; the 2026 CX-5 and CR-V are left out because 2026 sales aren’t final. Newer model years have had less time on the road, and 2022 sales were low for the CR-V.",
       "rows": [
        {
         "label": "2019",
@@ -16580,7 +16580,7 @@
      }
     },
     "after": [
-     "Reddit’s picks and its index point the same way here, to the CX-5: 114 neutral picks to 72 from 254 threads, and 54 on our index for the CR-V against 63. The topics show where each car earns it. Reddit scores the CR-V far higher on space (+91 against −56), fuel economy (+69 against −42) and ride (+62 against −9). It scores the CX-5 higher on price (+81 against −32), power and driving (+52 against −7), interior and tech (+43 against −32) and reliability (+46 against −21, with CR-V owners naming head gasket and oil dilution trouble on the 1.5 turbo). r/CX5 picked the CX-5 19 times to 4, and r/crv picked the CR-V 3 to 2. Test-drive both on roads you know before you decide."
+     "Reddit’s picks and its index point the same way here, to the CX-5: 114 neutral picks to 72 from 254 threads, and 54 on our index for the CR-V against 63. The topics show where each car earns it. Reddit scores the CR-V far higher on space (+91 against −56), fuel economy (+69 against −42) and ride (+62 against −9). It scores the CX-5 higher on price (+81 against −32), power and driving (+52 against −7), interior and tech (+43 against −32) and reliability (+46 against −21, with CR-V owners naming head gasket and oil dilution trouble on the 1.5 turbo). r/CX5 picked the CX-5 19 times to 4, and r/crv picked the CR-V 3 to 2."
     ],
     "from": {
      "label": "Comments from",
@@ -16596,7 +16596,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. The pages are undated and don’t say which model years they cover, and the CX-5 figure may mix generations.",
+      "note": "iSeeCars. The pages are undated and don’t say which model years they cover, and the CX-5 figure may mix generations.",
       "max": 30,
       "rows": [
        {
@@ -16643,7 +16643,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 50,
       "rows": [
        {
@@ -17610,7 +17610,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. The Sportage’s front-drive hybrid is rated 42 on a 2026 and 41 on a 2027.",
+      "note": "The Sportage’s front-drive hybrid is rated 42 on a 2026 and 41 on a 2027.",
       "max": 45,
       "rows": [
        {
@@ -17664,7 +17664,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year at about $4.00 a gallon. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year at about $4.00 a gallon.",
       "rows": [
        {
         "label": "Gas, front drive",
@@ -17713,7 +17713,7 @@
      },
      {
       "title": "Plug-in hybrid electric range",
-      "note": "Miles on a full charge, EPA. Higher is better. Tucson Plug-in SEL from $40,675; Sportage Plug-in X-Line from $40,490.",
+      "note": "Miles on a full charge, EPA. Tucson Plug-in SEL from $40,675; Sportage Plug-in X-Line from $40,490.",
       "max": 40,
       "rows": [
        {
@@ -17739,7 +17739,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. iSeeCars’ figures, which carry the makers’ data; the Sportage Hybrid’s is Edmunds’.",
+      "note": "Cubic feet. iSeeCars’ figures, which carry the makers’ data; the Sportage Hybrid’s is Edmunds’.",
       "max": 45,
       "rows": [
        {
@@ -17762,7 +17762,7 @@
      },
      {
       "title": "Cargo with the rear seats folded",
-      "note": "Cubic feet. Higher is better. iSeeCars’ figures for gas trims.",
+      "note": "Cubic feet. iSeeCars’ figures for gas trims.",
       "max": 80,
       "rows": [
        {
@@ -17777,7 +17777,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. iSeeCars’ figures.",
+      "note": "Inches. iSeeCars’ figures.",
       "max": 48,
       "rows": [
        {
@@ -17798,7 +17798,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. iSeeCars’ figures; the Tucson XRT and Sportage X-Pro Prestige match any other all-wheel-drive trim.",
+      "note": "Inches. iSeeCars’ figures; the Tucson XRT and Sportage X-Pro Prestige match any other all-wheel-drive trim.",
       "max": 10,
       "rows": [
        {
@@ -17850,7 +17850,7 @@
      },
      {
       "title": "0 to 60 mph",
-      "note": "Seconds, in Edmunds’ tests. Lower is better. The gas Tucson is an all-wheel-drive Limited; Edmunds reports the gas Sportage only as “more than 9.5”.",
+      "note": "Seconds, in Edmunds’ tests. The gas Tucson is an all-wheel-drive Limited; Edmunds reports the gas Sportage only as “more than 9.5”.",
       "max": 12,
       "rows": [
        {
@@ -17871,7 +17871,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds, gas models. Higher is better. Cars.com gives the Tucson’s rating; Kia’s page says “up to 2,500” under X-Line without naming a powertrain.",
+      "note": "Pounds, gas models. Cars.com gives the Tucson’s rating; Kia’s page says “up to 2,500” under X-Line without naming a powertrain.",
       "max": 3000,
       "rows": [
        {
@@ -17910,7 +17910,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. A figure for all Hyundais and all Kias, five problems apart. Secondary: read in Cars.com’s report",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. A figure for all Hyundais and all Kias, five problems apart. Secondary: read in Cars.com’s report",
       "a": "198 Hyundai",
       "b": "193 Kia",
       "win": "b"
@@ -17955,7 +17955,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year, with the hybrid and plug-in listings included. The 2026 models are left out because 2026 sales aren’t final. Newer model years have had less time on the road, and the 2023 Sportage was the first of its generation.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year, with the hybrid and plug-in listings included. The 2026 models are left out because 2026 sales aren’t final. Newer model years have had less time on the road, and the 2023 Sportage was the first of its generation.",
       "rows": [
        {
         "label": "2019",
@@ -17996,7 +17996,7 @@
      },
      {
       "title": "What owners complain about, 2023–2025 model years",
-      "note": "Complaints to NHTSA per 100,000 sold, by the part named in the complaint. One complaint can name more than one part. Lower is better.",
+      "note": "Complaints to NHTSA per 100,000 sold, by the part named in the complaint. One complaint can name more than one part.",
       "rows": [
        {
         "label": "Automatic emergency braking",
@@ -18227,7 +18227,7 @@
      }
     },
     "after": [
-     "Reddit’s picks and its index do not settle this: 22 neutral picks to 12 lean Sportage, the index leans Tucson, 71 to 65, and neither gap is wide enough to trust with this few picks. The topics show where each car earns its score. Reddit rates the Tucson higher on tech and interior (+68 against +35), ride (+74 against +56), noise (+76 against +33), power (+60 against +29) and dealers (+51 against −31, with Kia owners reporting markups). It rates the Sportage higher on fuel economy (+65 against +8) and safety and driver aids (+40 against +5), and slightly higher on price (+37 against +32). Reliability, the most discussed topic after tech, is a wash, −3 for the Tucson and 0 for the Sportage. r/HyundaiTucson picked the Tucson 20 to 1 and r/KiaSportage picked the Sportage 21 to 2. Test-drive both before you decide."
+     "Reddit’s picks and its index do not settle this: 22 neutral picks to 12 lean Sportage, the index leans Tucson, 71 to 65, and neither gap is wide enough to trust with this few picks. The topics show where each car earns its score. Reddit rates the Tucson higher on tech and interior (+68 against +35), ride (+74 against +56), noise (+76 against +33), power (+60 against +29) and dealers (+51 against −31, with Kia owners reporting markups). It rates the Sportage higher on fuel economy (+65 against +8) and safety and driver aids (+40 against +5), and slightly higher on price (+37 against +32). Reliability, the most discussed topic after tech, is a wash, −3 for the Tucson and 0 for the Sportage. r/HyundaiTucson picked the Tucson 20 to 1 and r/KiaSportage picked the Sportage 21 to 2."
     ],
     "from": {
      "label": "Comments from",
@@ -18243,7 +18243,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. The pages are undated and don’t say which model years they cover.",
+      "note": "iSeeCars. The pages are undated and don’t say which model years they cover.",
       "max": 35,
       "rows": [
        {
@@ -18290,7 +18290,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 55,
       "rows": [
        {
@@ -19218,7 +19218,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. EPA’s database had no 2026 record for the RAV4 plug-in on November 21, 2026.",
+      "note": "EPA’s database had no 2026 record for the RAV4 plug-in on November 21, 2026.",
       "max": 45,
       "rows": [
        {
@@ -19272,7 +19272,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon.",
       "rows": [
        {
         "label": "Hybrid, front drive",
@@ -19307,7 +19307,7 @@
      },
      {
       "title": "Plug-in electric range",
-      "note": "Miles on electricity alone. Higher is better. The Tucson’s 32 miles is EPA’s; the RAV4’s 54 is the figure on Toyota’s page as read for the RAV4 price guide, with no EPA record to check it against.",
+      "note": "Miles on electricity alone. The Tucson’s 32 miles is EPA’s; the RAV4’s 54 is the figure on Toyota’s page as read for the RAV4 price guide, with no EPA record to check it against.",
       "max": 60,
       "rows": [
        {
@@ -19334,7 +19334,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. iSeeCars’ figures, which carry the makers’ data; the Tucson’s are for the gas trims, and Edmunds’ spec page lists the same 38.7 for the Hybrid (read through a search summary). We found no cargo figure for the Tucson Plug-in Hybrid.",
+      "note": "Cubic feet. iSeeCars’ figures, which carry the makers’ data; the Tucson’s are for the gas trims, and Edmunds’ spec page lists the same 38.7 for the Hybrid (read through a search summary). We found no cargo figure for the Tucson Plug-in Hybrid.",
       "max": 45,
       "rows": [
        {
@@ -19349,7 +19349,7 @@
      },
      {
       "title": "Cargo with the rear seats folded",
-      "note": "Cubic feet. Higher is better.",
+      "note": "Cubic feet.",
       "max": 80,
       "rows": [
        {
@@ -19364,7 +19364,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. iSeeCars’ figures.",
+      "note": "Inches. iSeeCars’ figures.",
       "max": 48,
       "rows": [
        {
@@ -19385,7 +19385,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. iSeeCars’ figures for the gas Tucson; we did not find the hybrid’s separately.",
+      "note": "Inches. iSeeCars’ figures for the gas Tucson; we did not find the hybrid’s separately.",
       "max": 10,
       "rows": [
        {
@@ -19452,7 +19452,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better. The RAV4’s are Toyota’s; the Tucson’s come from dealer pages and TowingSpecs, which list the same 2,000 for the Hybrid in front and all-wheel drive (the gas Tucson’s rating varies by site).",
+      "note": "Pounds. The RAV4’s are Toyota’s; the Tucson’s come from dealer pages and TowingSpecs, which list the same 2,000 for the Hybrid in front and all-wheel drive (the gas Tucson’s rating varies by site).",
       "max": 4000,
       "rows": [
        {
@@ -19499,7 +19499,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. A figure for all Toyotas and all Hyundais. Secondary",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. A figure for all Toyotas and all Hyundais. Secondary",
       "a": "185 Toyota",
       "b": "198 Hyundai",
       "win": "a"
@@ -19537,7 +19537,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year. Every RAV4 year shown is the previous generation; the Tucson is the current generation from 2022, so 2019 to 2021 describe the one before. The RAV4 count includes its hybrid, Prime and plug-in listings and the Tucson count its Hybrid and Plug-in Hybrid listings, and neither maker’s sales row is confirmed to include every version. The 2026 cars are left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year. Every RAV4 year shown is the previous generation; the Tucson is the current generation from 2022, so 2019 to 2021 describe the one before. The RAV4 count includes its hybrid, Prime and plug-in listings and the Tucson count its Hybrid and Plug-in Hybrid listings, and neither maker’s sales row is confirmed to include every version. The 2026 cars are left out because 2026 sales aren’t final. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -19836,7 +19836,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version and the figure looks unusually low. The pages don’t say what years they cover.",
+      "note": "iSeeCars. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version and the figure looks unusually low. The pages don’t say what years they cover.",
       "max": 35,
       "rows": [
        {
@@ -19883,7 +19883,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 55,
       "rows": [
        {
@@ -20705,7 +20705,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 60,
       "rows": [
        {
@@ -20768,7 +20768,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "max": 3500,
       "rows": [
        {
@@ -20944,7 +20944,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old cars, 2026 study",
       "a": "211 Honda",
       "b": "198 Hyundai",
       "win": "b"
@@ -20982,7 +20982,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. The 2022 Civic, the first of this generation, drew 963 complaints, 806 of them about steering, in a year of low sales. Elantra complaints include the Elantra GT through 2020 and the hybrid and N. Newer model years have had less time on the road.",
+      "note": "The 2022 Civic, the first of this generation, drew 963 complaints, 806 of them about steering, in a year of low sales. Elantra complaints include the Elantra GT through 2020 and the hybrid and N. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -21236,7 +21236,7 @@
      }
     },
     "after": [
-     "Reddit’s picks lean Civic, 91 to 47 in the neutral subreddits, while the overall index is level, Civic 61 and Elantra 62: the index averages three venues, and the Elantra’s home subreddit scores its car 74 against the Civic’s 68 in neutral threads. On reliability Reddit lines up with the data on older cars: the Civic nets +48 and the Elantra −14, much of it owner reports of older Hyundai engines. On power the Elantra nets +77 against the Civic’s +7, largely the N against the Si. Test-drive both on roads you know before you decide."
+     "Reddit’s picks lean Civic, 91 to 47 in the neutral subreddits, while the overall index is level, Civic 61 and Elantra 62: the index averages three venues, and the Elantra’s home subreddit scores its car 74 against the Civic’s 68 in neutral threads. On reliability Reddit lines up with the data on older cars: the Civic nets +48 and the Elantra −14, much of it owner reports of older Hyundai engines. On power the Elantra nets +77 against the Civic’s +7, largely the N against the Si."
     ],
     "from": {
      "label": "Comments from",
@@ -21252,7 +21252,7 @@
     "charts": [
      {
       "title": "Value lost, gas sedans",
-      "note": "Lower is better. iSeeCars, three and five years.",
+      "note": "iSeeCars, three and five years.",
       "max": 45,
       "rows": [
        {
@@ -22019,7 +22019,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better.",
+      "note": "",
       "max": 60,
       "rows": [
        {
@@ -22082,7 +22082,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Most efficient hybrid sedan",
@@ -22202,7 +22202,7 @@
      },
      {
       "title": "0 to 60 mph, gas sedans",
-      "note": "Seconds, as Edmunds timed them; lower is better. The Elantra is its base 147-hp car.",
+      "note": "Seconds, as Edmunds timed them. The Elantra is its base 147-hp car.",
       "rows": [
        {
         "label": "Gas sedan",
@@ -22246,7 +22246,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old cars, 2026 study",
       "a": "185 Toyota",
       "b": "198 Hyundai",
       "win": "a"
@@ -22277,7 +22277,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. The 2023 Elantra drew 174 complaints, 55 of them on the Hybrid; its 2019 and 2020 models drew 253 and 256, with engine problems the most common. Newer model years have had less time on the road.",
+      "note": "The 2023 Elantra drew 174 complaints, 55 of them on the Hybrid; its 2019 and 2020 models drew 253 and 256, with engine problems the most common. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2019",
@@ -22562,7 +22562,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "Lower is better.",
+      "note": "",
       "max": 25,
       "rows": [
        {
@@ -22599,7 +22599,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "Lower is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -23545,7 +23545,7 @@
     "charts": [
      {
       "title": "EPA combined mpg",
-      "note": "Higher is better. 2026 models, automatic transmissions. Toyota’s own table lists 20 mpg combined for the gas TRD Sport and TRD Off-Road 4x4 where EPA’s records say 21, and 22 for some SR5, TRD Sport and PreRunner 2WD versions.",
+      "note": "2026 models, automatic transmissions. Toyota’s own table lists 20 mpg combined for the gas TRD Sport and TRD Off-Road 4x4 where EPA’s records say 21, and 22 for some SR5, TRD Sport and PreRunner 2WD versions.",
       "max": 25,
       "rows": [
        {
@@ -23584,7 +23584,7 @@
      },
      {
       "title": "EPA annual fuel cost",
-      "note": "EPA’s estimate. Lower is better.",
+      "note": "EPA’s estimate.",
       "rows": [
        {
         "label": "Two-wheel drive",
@@ -23620,7 +23620,7 @@
      },
      {
       "title": "Miles on a tank",
-      "note": "EPA combined mpg times fuel tank size, our arithmetic: 18.2 gallons in the Tacoma, 18.8 in the Ranger and 20.3 in the Raptor. Higher is better.",
+      "note": "EPA combined mpg times fuel tank size, our arithmetic: 18.2 gallons in the Tacoma, 18.8 in the Ranger and 20.3 in the Raptor.",
       "rows": [
        {
         "label": "Two-wheel drive",
@@ -23862,7 +23862,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 vehicles, 2026 study; lower is better. Brand level, no Ranger figure; J.D. Power names the Tacoma among the most reliable midsize pickups",
+      "note": "Problems per 100 vehicles, 2026 study. Brand level, no Ranger figure; J.D. Power names the Tacoma among the most reliable midsize pickups",
       "a": "185 Toyota",
       "b": "228 Ford",
       "win": "a"
@@ -23893,7 +23893,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints by model year over U.S. sales in the matching calendar year, so the two don’t line up exactly, and newer model years have had less time on the road. Both trucks were redesigned for 2024, so earlier years are the old trucks. The Ranger returned in 2019, and its sales fell to 32,334 in 2023 as Ford changed over to the new truck. Toyota lists Tacoma Hybrid sales separately; we used its Tacoma total.",
+      "note": "Complaints by model year over U.S. sales in the matching calendar year, so the two don’t line up exactly, and newer model years have had less time on the road. Both trucks were redesigned for 2024, so earlier years are the old trucks. The Ranger returned in 2019, and its sales fell to 32,334 in 2023 as Ford changed over to the new truck. Toyota lists Tacoma Hybrid sales separately; we used its Tacoma total.",
       "rows": [
        {
         "label": "2019",
@@ -24165,7 +24165,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better.",
+      "note": "",
       "max": 35,
       "rows": [
        {
@@ -25025,7 +25025,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. 2026 models.",
+      "note": "2026 models.",
       "max": 25,
       "rows": [
        {
@@ -25072,7 +25072,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better.",
+      "note": "EPA’s estimate for 15,000 miles a year.",
       "rows": [
        {
         "label": "Most efficient version",
@@ -25228,7 +25228,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study",
       "a": "228 Ford",
       "b": "216 Ram",
       "win": "b"
@@ -25266,7 +25266,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA, by model year",
-      "note": "Counts, not rates; lower is better. Ford sells about 2.4 times as many F-150s a year as Ram sells 1500s in 2024–2025 by our estimate (below), so equal counts mean a worse rate for the Ram. Ram reports no 1500-only sales before 2024, so we can’t turn the older years into rates. Newer model years have had less time on the road; the Ram’s 2025 count is higher than its 2024 count.",
+      "note": "Counts, not rates. Ford sells about 2.4 times as many F-150s a year as Ram sells 1500s in 2024–2025 by our estimate (below), so equal counts mean a worse rate for the Ram. Ram reports no 1500-only sales before 2024, so we can’t turn the older years into rates. Newer model years have had less time on the road; the Ram’s 2025 count is higher than its 2024 count.",
       "rows": [
        {
         "label": "2019",
@@ -25308,7 +25308,7 @@
      {
       "type": "cols",
       "title": "Owner complaints per 100,000 sold, 2024 and 2025 model years",
-      "note": "Lower is better. Ram reports its light-duty pickups (the 1500) separately only from 2024: 187,013 sold in 2024 and 204,139 in 2025. Ford reports only F-Series sales, which include the Super Duty, so we estimate F-150 sales as 59% of them, its share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150 rates would be 41% lower. Pooled, the two years come to about 39 for the F-150 and 118 for the Ram.",
+      "note": "Ram reports its light-duty pickups (the 1500) separately only from 2024: 187,013 sold in 2024 and 204,139 in 2025. Ford reports only F-Series sales, which include the Super Duty, so we estimate F-150 sales as 59% of them, its share of F-Series production in the third quarter of 2026. Against all F-Series sales the F-150 rates would be 41% lower. Pooled, the two years come to about 39 for the F-150 and 118 for the Ram.",
       "rows": [
        {
         "label": "2024",
@@ -25324,7 +25324,7 @@
      },
      {
       "title": "What owners complain about, 2024–2025 model years",
-      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part. Lower is better.",
+      "note": "Complaints to NHTSA per 100,000 sold (F-150 estimated as above), by the part named in the complaint. One complaint can name more than one part.",
       "rows": [
        {
         "label": "Electrical",
@@ -25555,7 +25555,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better.",
+      "note": "",
       "max": 45,
       "rows": [
        {
@@ -26476,7 +26476,7 @@
     "charts": [
      {
       "title": "EPA combined mpg, 4x4",
-      "note": "Higher is better. 2026 models. The Tundra has no V8.",
+      "note": "2026 models. The Tundra has no V8.",
       "max": 25,
       "rows": [
        {
@@ -26523,7 +26523,7 @@
      },
      {
       "title": "EPA annual fuel cost, 4x4",
-      "note": "EPA’s estimate for 15,000 miles a year. Lower is better. The Hemi uses midgrade fuel and the high-output engines premium.",
+      "note": "EPA’s estimate for 15,000 miles a year. The Hemi uses midgrade fuel and the high-output engines premium.",
       "max": 5500,
       "rows": [
        {
@@ -26569,7 +26569,7 @@
      },
      {
       "title": "EPA combined mpg, 2WD",
-      "note": "Higher is better. 2026 models.",
+      "note": "2026 models.",
       "max": 25,
       "rows": [
        {
@@ -26788,7 +26788,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old vehicles, 2026 study; lower is better",
+      "note": "Problems per 100 three-year-old vehicles, 2026 study",
       "a": "185 Toyota",
       "b": "216 Ram",
       "win": "a"
@@ -26833,7 +26833,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Only 2024 and 2025 can be charted for both: Stellantis publishes no 1500-only sales before 2024, and the 2024 and 2025 denominators are Ram light-duty pickups (187,013 and 204,139), which include the Classic in 2024 and so understate the Ram’s 2024 rate. Pooled over both years the Tundra’s rate is 167 and the Ram’s 118. Tundra sales are calendar-year U.S. sales (159,528 and 147,610). The Tundra’s 2022 to 2023 trucks drew 420 and 340 per 100,000, and 217 pooled for 2023 to 2025. Newer model years have had less time on the road.",
+      "note": "Only 2024 and 2025 can be charted for both: Stellantis publishes no 1500-only sales before 2024, and the 2024 and 2025 denominators are Ram light-duty pickups (187,013 and 204,139), which include the Classic in 2024 and so understate the Ram’s 2024 rate. Pooled over both years the Tundra’s rate is 167 and the Ram’s 118. Tundra sales are calendar-year U.S. sales (159,528 and 147,610). The Tundra’s 2022 to 2023 trucks drew 420 and 340 per 100,000, and 217 pooled for 2023 to 2025. Newer model years have had less time on the road.",
       "rows": [
        {
         "label": "2024",
@@ -26891,7 +26891,7 @@
      },
      {
       "title": "What owners complain about, 2024–2025 model years",
-      "note": "Complaints to NHTSA per 100,000 sold (Tundra 307,138 sold in 2024 and 2025; Ram light-duty 391,152), by the part named in the complaint. One complaint can name more than one part. Lower is better.",
+      "note": "Complaints to NHTSA per 100,000 sold (Tundra 307,138 sold in 2024 and 2025; Ram light-duty 391,152), by the part named in the complaint. One complaint can name more than one part.",
       "max": 80,
       "rows": [
        {
@@ -27128,7 +27128,7 @@
     "charts": [
      {
       "title": "Value lost",
-      "note": "Lower is better. iSeeCars. The Ram’s five-year figure is the 61.8% resale value iSeeCars prints for the 2026 Ram 1500, turned into a loss; the page does not define its unit, and our Ram guide uses the same 38.2%.",
+      "note": "iSeeCars. The Ram’s five-year figure is the 61.8% resale value iSeeCars prints for the 2026 Ram 1500, turned into a loss; the page does not define its unit, and our Ram guide uses the same 38.2%.",
       "max": 50,
       "rows": [
        {
@@ -27973,7 +27973,7 @@
     "charts": [
      {
       "title": "New 2026 price by version",
-      "note": "Starting MSRP before destination. The Model Y’s versions are Tesla’s names (we match Premium RWD and Premium AWD to EPA’s Long Range RWD and AWD records by name and range). Lower is better.",
+      "note": "Starting MSRP before destination. The Model Y’s versions are Tesla’s names (we match Premium RWD and Premium AWD to EPA’s Long Range RWD and AWD records by name and range).",
       "max": 65000,
       "rows": [
        {
@@ -28063,7 +28063,7 @@
     "charts": [
      {
       "title": "EPA combined: MPGe for the Model Y, mpg for the RAV4",
-      "note": "Higher is better. The bars share one scale, but a Model Y MPGe is electricity energy and a RAV4 mpg is gasoline, so use the cost chart below for dollars. The RAV4 plug-in is left out: EPA had no 2026 record for it on November 21, 2026.",
+      "note": "The bars share one scale, but a Model Y MPGe is electricity energy and a RAV4 mpg is gasoline, so use the cost chart below for dollars. The RAV4 plug-in is left out: EPA had no 2026 record for it on November 21, 2026.",
       "max": 145,
       "rows": [
        {
@@ -28110,7 +28110,7 @@
      },
      {
       "title": "EPA annual energy or fuel cost",
-      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon and 15 cents a kilowatt-hour. Lower is better. The used 2024 Long Range RWD is EPA’s 2024 record at today’s prices.",
+      "note": "EPA’s estimate for 15,000 miles a year at $4.00 a gallon and 15 cents a kilowatt-hour. The used 2024 Long Range RWD is EPA’s 2024 record at today’s prices.",
       "rows": [
        {
         "label": "Rear or front drive, base",
@@ -28148,7 +28148,7 @@
      },
      {
       "title": "Miles on a full charge or a full tank",
-      "note": "Higher is better. The Model Y figures are EPA range. The RAV4 figures are EPA combined mpg times the 14.5-gallon tank (our arithmetic; the tank size is Toyota’s, reused from the RAV4 vs CR-V page). A RAV4 Plug-in adds 54 miles of electric range by Toyota’s figure, then runs as a hybrid.",
+      "note": "The Model Y figures are EPA range. The RAV4 figures are EPA combined mpg times the 14.5-gallon tank (our arithmetic; the tank size is Toyota’s, reused from the RAV4 vs CR-V page). A RAV4 Plug-in adds 54 miles of electric range by Toyota’s figure, then runs as a hybrid.",
       "rows": [
        {
         "label": "Longest",
@@ -28198,7 +28198,7 @@
     "charts": [
      {
       "title": "Cargo behind the rear seats",
-      "note": "Cubic feet. Higher is better. Model Y: Cars.com, rounded, which other sites print as 30.2. RAV4: iSeeCars, which carries the makers’ data. The plug-in’s 33.6 is for the XSE.",
+      "note": "Cubic feet. Model Y: Cars.com, rounded, which other sites print as 30.2. RAV4: iSeeCars, which carries the makers’ data. The plug-in’s 33.6 is for the XSE.",
       "max": 45,
       "rows": [
        {
@@ -28221,7 +28221,7 @@
      },
      {
       "title": "Cargo with the rear seats folded",
-      "note": "Cubic feet. Higher is better. Model Y: Cars.com, rounded; CarsDirect prints 72.1.",
+      "note": "Cubic feet. Model Y: Cars.com, rounded; CarsDirect prints 72.1.",
       "max": 80,
       "rows": [
        {
@@ -28236,7 +28236,7 @@
      },
      {
       "title": "Legroom",
-      "note": "Inches. Higher is better. Model Y: Cars.com, rounded. RAV4: iSeeCars.",
+      "note": "Inches. Model Y: Cars.com, rounded. RAV4: iSeeCars.",
       "max": 48,
       "rows": [
        {
@@ -28257,7 +28257,7 @@
      },
      {
       "title": "Ground clearance",
-      "note": "Inches. Higher is better. Model Y: Cars.com’s minimum figure for the RWD. RAV4: iSeeCars.",
+      "note": "Inches. Model Y: Cars.com’s minimum figure for the RWD. RAV4: iSeeCars.",
       "max": 10,
       "rows": [
        {
@@ -28311,7 +28311,7 @@
      },
      {
       "title": "Towing",
-      "note": "Pounds. Higher is better. Cars.com lists one figure for the Model Y, 3,500, and sources disagree on whether the base RWD is rated to tow.",
+      "note": "Pounds. Cars.com lists one figure for the Model Y, 3,500, and sources disagree on whether the base RWD is rated to tow.",
       "max": 4000,
       "rows": [
        {
@@ -28359,7 +28359,7 @@
      },
      {
       "label": "J.D. Power dependability, brand",
-      "note": "Problems per 100 three-year-old cars, 2026 study; lower is better. Industry average 204. A figure for all Teslas and all Toyotas. Secondary",
+      "note": "Problems per 100 three-year-old cars, 2026 study. Industry average 204. A figure for all Teslas and all Toyotas. Secondary",
       "a": "226 Tesla",
       "b": "185 Toyota",
       "win": "b"
@@ -28397,7 +28397,7 @@
      {
       "type": "cols",
       "title": "Owner complaints to NHTSA per 100,000 sold, by model year",
-      "note": "Lower is better. Complaints for each model year over U.S. sales in the same calendar year. Model Y sales are GoodCarBadCar’s estimates and the 2020 figure is a partial first year (285 complaints on 40,001 sold). The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row may not include the hybrids. Newer model years have had less time on the road, and the 2026 model years are left out because their sales aren’t final.",
+      "note": "Complaints for each model year over U.S. sales in the same calendar year. Model Y sales are GoodCarBadCar’s estimates and the 2020 figure is a partial first year (285 complaints on 40,001 sold). The RAV4 count includes its hybrid, Prime and plug-in listings, and Toyota’s RAV4 sales row may not include the hybrids. Newer model years have had less time on the road, and the 2026 model years are left out because their sales aren’t final.",
       "rows": [
        {
         "label": "2020",
@@ -28667,7 +28667,7 @@
     "charts": [
      {
       "title": "Value lost in three years",
-      "note": "iSeeCars. Lower is better. The class rows differ: all luxury electric compact SUVs for the Model Y, hybrid compact SUVs for the RAV4. The page doesn’t say what years it covers, so the Model Y figure mixes the older, pricier cars with the newer ones. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version.",
+      "note": "iSeeCars. The class rows differ: all luxury electric compact SUVs for the Model Y, hybrid compact SUVs for the RAV4. The page doesn’t say what years it covers, so the Model Y figure mixes the older, pricier cars with the newer ones. We left out iSeeCars’ separate gas-RAV4 line (5.4%): the 2026 RAV4 has no gas version.",
       "max": 50,
       "rows": [
        {
@@ -28698,7 +28698,7 @@
      },
      {
       "title": "Value lost in five years",
-      "note": "iSeeCars. Lower is better.",
+      "note": "iSeeCars.",
       "max": 60,
       "rows": [
        {
