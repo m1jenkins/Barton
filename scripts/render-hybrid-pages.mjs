@@ -345,7 +345,7 @@ ${askMason(`hybrid-${car.key}`, name)}
 ${faq([
     ...car.faq,
     [`Can you negotiate a ${name} for me?`, `Yes. Steer Me Right charges a flat $395 for one model or $695 for up to three. We find it in dealer stock, get written out-the-door offers and negotiate for a price below MSRP. We can’t promise a specific discount: the market for a given car sets what a dealer will do.`],
-    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You pay the flat fee, and you’re the only one we work for.'],
+    ['Do dealers pay you?', 'No. Dealers and lenders pay us nothing. You’re the only one we work for.'],
   ])}
 </section>
 

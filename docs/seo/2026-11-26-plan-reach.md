@@ -11,6 +11,8 @@ Mason's decision of November 26, 2026. Prices and plan names do not change. It r
 | Trade-in | Not included | We compare offers on the trade-in from several areas and negotiate it with the deal |
 | Models | One | Up to three, priced side by side, with our pick |
 
+The buyer still pays any carrier, and on Private Client any inspection shop, but since November 27, 2026 the public cards and copy no longer say so (Mason: it states the obvious).
+
 Withdrawn:
 
 - The public offer to upgrade to Pro later for the $300 difference. Plans bought before November 26, 2026 keep it (Terms of Service, "Plans bought before November 26, 2026"). Mason may still offer Pro for the difference himself when a 200-mile search is thin; nothing public says so.
