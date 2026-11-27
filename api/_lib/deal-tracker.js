@@ -320,9 +320,10 @@ const STAGES = [
 const WORDMARK = '<span class="wordmark-type">steer me righ<svg class="wordmark-t" viewBox="0 0 50 76" aria-hidden="true" focusable="false"><path d="M14.5 6V55q0 8.5 8.5 8.5H31" fill="none" stroke="currentColor" stroke-width="13"/><path class="wordmark-arrow" d="M0 24H34" fill="none" stroke="#0060E8" stroke-width="12"/><path class="wordmark-arrow-head" d="M31 11L50 24L31 37Z" fill="#0060E8"/></svg></span>';
 
 // A private page: nothing from another origin, every URL root-relative. Its look
-// is its own (buying/deal-tracker.css, laid out after Turo's booked-trip page), so
-// it loads none of the site's shared stylesheets but the wordmark's. The one
-// script is this site's own upload helper, only on a page with the document form.
+// is its own (buying/deal-tracker.css: sticky left overview + photo-mosaic car
+// showcases on a cool-slate canvas), so it loads none of the site's shared
+// stylesheets except the wordmark's. The one script is this site's own upload
+// helper, only on a page with the document form.
 function page(title, body, { script = false, contact = null } = {}) {
   return `<!doctype html>
 <html lang="en">
@@ -349,54 +350,66 @@ ${body}
 </html>`;
 }
 
-// Where the deal stands, as the box at the top of the side rail: a line naming
-// the stage, a sentence on what is happening, and the six stages as a checklist
-// (done, current, still to come). A search closed without a purchase shows no
-// checklist: ticking stages it never reached would mislead.
+// Where the deal stands, as a card in the left rail: stage count header and the
+// six stages as a checklist (done, current, still to come). A search closed
+// without a purchase shows no checklist: ticking stages it never reached would
+// mislead.
 function stageBox(view) {
-  const key = view.outcome ?? view.stage;
-  const lead = key === 'agreed' && !view.agreed ? 'We have a price. I’ll be in touch about the next steps.' : LEADS[key];
+  if (view.outcome === 'other') return NOTHING;
   const at = STAGES.findIndex(([name]) => name === view.stage);
-  const now = at < 0 ? NOTHING : safe`<p class="dt-box__now" aria-hidden="true">Stage ${at + 1} of ${STAGES.length} · ${STAGES[at][1]}</p>`;
-  return safe`<div class="dt-box dt-progress">${now}
-  <p class="dt-box__lead">${lead}</p>
-  ${view.outcome === 'other' ? NOTHING : safe`<ol class="dt-stages" aria-label="Where your deal stands">${join(STAGES, ([name, label]) => {
+  const count = at < 0 ? NOTHING : safe`<span class="dt-progress__count">${at + 1} of ${STAGES.length}</span>`;
+  return safe`<div class="dt-box dt-progress">
+  <div class="dt-progress__head"><h2>Deal progress</h2>${count}</div>
+  <ol class="dt-stages" aria-label="Where your deal stands">${join(STAGES, ([name, label]) => {
     const index = STAGES.findIndex(([key]) => key === name);
     const state = index < at ? 'done' : index === at ? 'current' : 'next';
     return name === view.stage
       ? safe`<li class="dt-stage" data-state="${state}" aria-current="step"><span class="dt-stage__name">${label}</span></li>`
       : safe`<li class="dt-stage" data-state="${state}"><span class="dt-stage__name">${label}</span></li>`;
-  })}</ol>`}</div>`;
+  })}</ol>
+</div>`;
 }
 
-const LEADS = {
-  confirming: 'I’m going over your search details. Next I’ll confirm the search with you, then start finding cars.',
-  shortlisted: 'I’ve found the cars below. Next I ask each dealer for a written out-the-door price.',
-  emailing: 'I’ve asked the dealers for written out-the-door prices. Each car updates here as its price comes in.',
-  quoted: 'Written prices are coming in. Each car shows its best price so far.',
-  agreed: 'We have a price. Here’s your car, the dealer, and what to check before you sign.',
-  bought: 'Congratulations on your new car. Thank you for letting me do the haggling.',
-  other: 'This car search is closed.'
-};
-
-// The page's title row: whose search it is and, beside it, the car that matters
-// most right now (the agreed one, else the first on the shortlist) with its
-// main figure, as a link down to that car.
-function titleRow(view, action = null) {
+// The left rail's top overview card: the hero car photo (when available) with
+// Mason's mark overlapping its bottom edge, whose search it is, a single concise
+// stage line, and a compact summary strip for the leading car's price.
+function overviewCard(view, action = null) {
   const name = view.buyer.first_name;
+  const at = STAGES.findIndex(([stageName]) => stageName === view.stage);
+  const stageLine = view.outcome === 'other'
+    ? 'Closed'
+    : at >= 0
+      ? `Stage ${at + 1} of ${STAGES.length} · ${STAGES[at][1]}`
+      : view.buyer.plan;
   // With a price agreed that isn't tied to a car on the shortlist, no car is named here.
   const car = view.cars.find(item => item.agreed) ?? (view.agreed ? null : view.cars[0]) ?? null;
   const main = car ? mainFigure(car, view) : null;
-  const hero = car ? safe`<a class="dt-hero" href="#car-${car.rank}">
-    <span class="dt-hero__text"><span class="dt-hero__title">${car.title}</span>${main ? safe`<span class="dt-hero__sub">${main[0]} ${money(main[1])}</span>` : NOTHING}</span>
-    ${action && Number(car.photo_count) > 0 ? safe`<img class="dt-hero__thumb" src="${action}/photo/${car.rank}/0" alt="" width="136" height="88" decoding="async">` : NOTHING}
-  </a>` : NOTHING;
-  return safe`<div class="dt-title">
-  <div class="dt-title__text">
-    <p class="dt-kicker">Deal Tracker · ${view.buyer.plan}</p>
+  const hasPhoto = Boolean(car && action && Number(car.photo_count) > 0);
+  const media = hasPhoto
+    ? safe`<div class="dt-cover">
+    <img class="dt-cover__img" src="${action}/photo/${car.rank}/0" alt="" width="640" height="400" decoding="async">
+    <span class="dt-cover__avatar" aria-hidden="true">M</span>
+  </div>`
+    : safe`<div class="dt-cover dt-cover--plain">
+    <span class="dt-cover__avatar" aria-hidden="true">M</span>
+  </div>`;
+  const leadCar = car && main ? safe`<div class="dt-overview__best">
+    <div class="dt-overview__best-top">
+      <div>
+        <p class="dt-overview__best-label">${main[0]}</p>
+        <p class="dt-overview__best-price">${money(main[1])}</p>
+      </div>
+      <a class="dt-button dt-button--sm" href="#car-${car.rank}">View car</a>
+    </div>
+    <p class="dt-overview__best-car">${car.title}</p>
+  </div>` : NOTHING;
+  return safe`<div class="dt-overview">
+  ${media}
+  <div class="dt-overview__head">
     <h1>${name ? `${name}’s car search` : 'Your car search'}</h1>
+    <p class="dt-overview__stage">${stageLine}</p>
   </div>
-  ${hero}
+  ${leadCar}
 </div>`;
 }
 
@@ -457,7 +470,7 @@ function photoStrip(car, action) {
   if (!count || !action) return NOTHING;
   const indexes = Array.from({ length: count }, (_, index) => index);
   return safe`<div class="dt-car__media">
-      <div class="dt-photos" role="region" aria-label="Photos of the ${car.title}" tabindex="0">${join(indexes, index => safe`<img class="dt-photo" src="${action}/photo/${car.rank}/${index}" alt="${car.title}, photo ${index + 1} of ${count}" width="640" height="480"${index ? safe` loading="lazy"` : NOTHING} decoding="async">`)}</div>
+      <div class="dt-photos" role="region" aria-label="Photos of the ${car.title}" tabindex="0">${join(indexes, index => safe`<img class="dt-photo" src="${action}/photo/${car.rank}/${index}" alt="${car.title}, photo ${index + 1} of ${count}" width="640" height="480"${index >= 3 ? safe` loading="lazy"` : NOTHING} decoding="async">`)}</div>
       ${count > 1 ? safe`<p class="dt-photos__count">${count} photos</p>` : NOTHING}
     </div>`;
 }
@@ -489,10 +502,10 @@ function mainFigure(car, view) {
 }
 const isWaiting = (car, view) => ['shortlisted', 'emailing', 'quoted'].includes(view.stage) && car.best_cents == null;
 
-// One car as a card: its photos across the top, then its name, color and
-// mileage, the dealer from Quotes in, a few facts as tags, the price (one main
-// figure, the asking price and the pick button together), and the rest of the
-// listing folded away.
+// One car as a showcase card: its photo mosaic/strip across the top, then a
+// clean info-and-pricing row (title, color/mileage, dealer, inline specs on the
+// left; main figure, asking price and pick button on the right), with the rest
+// of the listing folded away underneath.
 function carCard(car, view, action = null) {
   const agreedHere = car.agreed && view.agreed;
   const main = mainFigure(car, view);
@@ -503,19 +516,23 @@ function carCard(car, view, action = null) {
   return safe`<article class="dt-car${agreedHere ? ' dt-car--agreed' : ''}${photos === NOTHING ? ' dt-car--no-photos' : ''}" id="car-${car.rank}">
     ${photos}
     <div class="dt-car__body">
-      <h3 class="dt-car__title">${car.title}</h3>
-      ${meta ? safe`<p class="dt-car__meta">${meta}</p>` : NOTHING}
-      ${dealer ? safe`<p class="dt-car__dealer">At ${dealer.name}${dealer.location ? `, ${dealer.location}` : ''}</p>` : NOTHING}
-      ${open.length ? factList(open, 'dt-specs') : NOTHING}
-      <div class="dt-price">
-        <dl class="dt-figures">
-          ${main ? safe`<div class="dt-figure dt-figure--main"><dt>${main[0]}</dt><dd>${money(main[1])}</dd></div>` : NOTHING}
-          ${car.asking_cents != null ? safe`<div class="dt-figure"><dt>Asking price</dt><dd>${money(car.asking_cents)}</dd></div>` : NOTHING}
-        </dl>
-        ${isWaiting(car, view) ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
-        ${car.can_pick ? pickButton(car, action) : NOTHING}
+      <div class="dt-car__main">
+        <div class="dt-car__info">
+          <h3 class="dt-car__title">${car.title}</h3>
+          ${meta ? safe`<p class="dt-car__meta">${meta}</p>` : NOTHING}
+          ${dealer ? safe`<p class="dt-car__dealer">At ${dealer.name}${dealer.location ? `, ${dealer.location}` : ''}</p>` : NOTHING}
+          ${open.length ? factList(open, 'dt-specs') : NOTHING}
+          ${car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
+        </div>
+        <div class="dt-price">
+          <dl class="dt-figures">
+            ${main ? safe`<div class="dt-figure dt-figure--main"><dt>${main[0]}</dt><dd>${money(main[1])}</dd></div>` : NOTHING}
+            ${car.asking_cents != null ? safe`<div class="dt-figure"><dt>Asking price</dt><dd>${money(car.asking_cents)}</dd></div>` : NOTHING}
+          </dl>
+          ${isWaiting(car, view) ? safe`<p class="dt-car__note">Waiting on a written price</p>` : NOTHING}
+          ${car.can_pick ? pickButton(car, action) : NOTHING}
+        </div>
       </div>
-      ${car.listing_url ? safe`<p class="dt-car__link"><a href="${car.listing_url}" rel="noopener noreferrer" target="_blank">See this car on the dealer’s website</a></p>` : NOTHING}
       ${detailsBlock(car)}
     </div>
   </article>`;
@@ -689,9 +706,11 @@ export function documentsSection(view, { action = null, uploads = true } = {}) {
   <noscript><p class="dt-aside">Sending a file from this page needs JavaScript, which is turned off in your browser. Email the file to me at ${mailto} instead.</p></noscript>`
     : safe`<div class="dt-card"><p>Sending documents from this page isn’t available right now. Please try again later, or email the file to me at ${mailto}.</p></div>`;
   const lead = safe`A loan pre-approval, your trade-in’s title or payoff letter, or a few photos of your trade-in help me negotiate.${view.can_upload_id ? ' Now that we have a price, you can send your ID here too.' : ''} Files come only to me and stay private. Once a file is sent, it can’t be opened from this page: you’ll see a receipt of what you sent and when.`;
-  return section('dt-docs', 'Send me a document', safe`${form}
-  <h3 class="dt-receipts__title"${receipts.length ? NOTHING : safe` hidden`} id="dt-receipts-title">What you’ve sent</h3>
-  ${list}`, lead);
+  return section('dt-docs', 'Send me a document', safe`<div class="dt-docs-wrap">${form}
+  <div class="dt-receipts-panel">
+    <h3 class="dt-receipts__title"${receipts.length ? NOTHING : safe` hidden`} id="dt-receipts-title">What you’ve sent</h3>
+    ${list}
+  </div></div>`, lead);
 }
 
 function stageBody(view, action = null) {
@@ -708,14 +727,15 @@ function stageBody(view, action = null) {
 export function renderTracker(view, { action = null, uploads = true, contact = null } = {}) {
   const shown = { ...view, contact };
   const ask = contactSection(shown);
-  // Two columns from a wide screen: the deal on the left; on the right a rail
-  // with where it stands and how to reach Mason. On a phone the stage box comes
-  // first, then the deal, then the rest of the rail.
+  const progress = stageBox(shown);
+  // Two columns from a wide screen: sticky deal overview, progress and contact
+  // on the left; Mason's latest note, car showcases, earlier updates and
+  // documents on the right. On a phone the overview and stage bar come first.
   const body = safe`<main id="main-content" class="dt-wrap dt-page" tabindex="-1">
-${titleRow(shown, action)}
 <div class="dt-layout">
 <div class="dt-rail dt-rail--top">
-${stageBox(shown)}
+${overviewCard(shown, action)}
+${progress}
 </div>
 <div class="dt-main">
 ${latestUpdate(shown)}

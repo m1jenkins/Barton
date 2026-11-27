@@ -72,6 +72,17 @@
       ],
       "port": 4180,
       "url": "http://127.0.0.1:4180"
+    },
+    {
+      "name": "deal-tracker-redesign",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "DEAL_TRACKER_PREVIEW_PORT=4181",
+        "node",
+        "scripts/preview-deal-tracker.mjs"
+      ],
+      "port": 4181,
+      "url": "http://127.0.0.1:4181"
     }
   ]
 }
