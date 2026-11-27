@@ -2264,18 +2264,19 @@
   background: var(--sky);
 }
 
+/* Pro: the Steer Me Right blue card with an engraved double ring (Mason, 2026-11-27) */
 .dr .vp-plan--pro {
-  background: linear-gradient(150deg, #2A3B55 0%, #0E1B2E 48%, #070F1A 100%);
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(227, 236, 248, 0.5);
 }
 
-.dr .vp-plan--pro .vp-plan__button {
-  background: transparent;
-  color: #fff;
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.85);
-}
-
-.dr .vp-plan--pro .vp-plan__button:hover {
-  background: rgba(255, 255, 255, 0.12);
+.dr .vp-plan--pro::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(227, 236, 248, 0.24);
+  border-radius: 13px;
+  pointer-events: none;
 }
 
 /* More links grid */
