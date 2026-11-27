@@ -34,7 +34,8 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.doesNotMatch(heroSection, /former name|share\.google/);
   assert.doesNotMatch(heroSection, /data-quote-tool/);
   assert.match(homepageHtml, /Dealers pay us nothing\./);
-  assert.match(homepageHtml, /(?:replies|reply) within one business day\./);
+  // The homepage no longer promises a reply time or carries the fee/competitor notes block (owner request, 2026-11-26).
+  assert.doesNotMatch(homepageHtml, /reply within one business day|Competitor fees are each company/);
   assert.match(homepageHtml, /<dialog id="car-search-inquiry"/);
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
