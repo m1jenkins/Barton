@@ -206,6 +206,7 @@
 .dr.wz .wz-plan-desc { margin-top:12px; font-size:16px; line-height:24px; }
 .dr.wz .wz-plan-price:has(+ .wz-plan-assurance) { margin-bottom:12px; }
 .dr.wz .wz-plan--wide { grid-column:1/-1; }
+.dr.wz .wz-plan-more { display:none; }
 .dr.wz .wz-plan-nav { display:flex; justify-content:center; gap:12px; margin-top:20px; }
 .dr.wz .wz-plan-nav[hidden] { display:none; }
 .dr.wz .wz-plan-nav .wz-greviews-arrow { border-color:#C3CBD6; color:var(--wz-navy); }
@@ -380,6 +381,22 @@
   .dr.wz .wz-plan-row { display:flex; align-items:stretch; gap:12px; margin-inline:calc(-1 * var(--wz-gutter)); padding:0 var(--wz-gutter) 4px; scroll-padding-inline:var(--wz-gutter); overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; overscroll-behavior-x:contain; scrollbar-width:none; }
   .dr.wz .wz-plan-row::-webkit-scrollbar { display:none; }
   .dr.wz .wz-plan-row > .wz-plan { flex:0 0 calc(100% - 20px); scroll-snap-align:start; }
+  /* Short cards in the row: no steering-wheel photo, tighter price block, and the checklist folded under
+     "What's included" (home-wise.js sets data-collapsible). Each card keeps its own height, so opening one
+     list doesn't stretch the others. */
+  .dr.wz .wz-plan-row { align-items:flex-start; }
+  .dr.wz .wz-plan-row .wz-icon { display:none; }
+  .dr.wz .wz-plan-row > .wz-plan > :is(h2,h3) { margin-top:0; }
+  .dr.wz .wz-plan-row .wz-plan-price { margin-top:16px; }
+  .dr.wz .wz-plan-row .wz-plan-assurance { margin-bottom:16px; }
+  .dr.wz .wz-plan-row .wz-plan-actions .wz-btn { padding-inline:12px; font-size:14px; }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more { display:flex; align-items:center; justify-content:space-between; align-self:stretch; margin:0 0 16px; padding:14px 0; border:0; border-top:1px solid rgba(255,255,255,.22); background:none; color:#fff; font:600 16px/24px var(--wz-sans); text-align:left; cursor:pointer; }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan--pro .wz-plan-more { border-top-color:rgba(255,255,255,.16); }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more:focus-visible { outline:3px solid #fff; outline-offset:2px; }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .2s ease; }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan-more[aria-expanded="true"] svg { transform:rotate(180deg); }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan-list { padding-top:0; border-top:0; margin-bottom:28px; }
+  .dr.wz .wz-plan-row[data-collapsible] .wz-plan:not(.is-open) .wz-plan-list { display:none; }
   .dr.wz .wz-plan-private { flex-wrap:wrap; align-items:flex-start; padding:24px 20px; }
   .dr.wz .wz-plan-private-text { flex-basis:100%; }
   .dr.wz .wz-plan-private .wz-btn { width:100%; }
@@ -396,7 +413,7 @@
   .dr.wz .wz-sticky { display:grid; }
   .dr.wz .wz-stack { left:12px; bottom:12px; }
 }
-@media (prefers-reduced-motion:reduce) { .dr.wz .wz-sticky, .dr.wz .wz-plan--pro::before { transition:none; } .dr.wz .wz-plan-row { scroll-behavior:auto; } }
+@media (prefers-reduced-motion:reduce) { .dr.wz .wz-sticky, .dr.wz .wz-plan--pro::before, .dr.wz .wz-plan-more svg { transition:none; } .dr.wz .wz-plan-row { scroll-behavior:auto; } }
 .dr.wz .wz-header-actions .wz-btn { white-space:nowrap; }
 @media (max-width:420px) {
   .dr.wz .site-header .wordmark { font-size:20px; }

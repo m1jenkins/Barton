@@ -36,6 +36,18 @@ function scrollRow(list, nav, cardSelector, key) {
 scrollRow(document.querySelector('.wz-greviews-list'), document.querySelector('[data-greviews-nav]'), 'li', 'greviews');
 scrollRow(document.querySelector('.wz-plan-row'), document.querySelector('[data-plans-nav]'), '.wz-plan', 'plans');
 
+// Pricing page on phones: each plan's checklist folds under a "What's included" button. The CSS folds it only
+// inside the swipe row and only once this runs, so desktop and no-JavaScript visitors see every list in full.
+const planRow = document.querySelector('.wz-plan-row');
+if (planRow) {
+  planRow.dataset.collapsible = '';
+  planRow.querySelectorAll('[data-includes-toggle]').forEach(button => button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    button.closest('.wz-plan').classList.toggle('is-open', open);
+  }));
+}
+
 // Resource tabs
 const tabs = [...document.querySelectorAll('[data-tab]')];
 tabs.forEach((tab, index) => {
