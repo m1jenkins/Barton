@@ -15,7 +15,7 @@ const NOW = Date.parse('2026-12-10T18:00:00Z');
 const DAY = 86400000;
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql', '014_buyer_texts.sql']
+  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql', '014_buyer_texts.sql', '016_dealer_texts.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -189,7 +189,7 @@ test('the daily cron runs text_cleanup only where texts can arrive', async t => 
     return res;
   };
   assert.equal((await run({})).body.workers.text_cleanup.configured, false);
-  assert.deepEqual((await run({ CAR_SEARCH_TOKEN: token })).body.workers.text_cleanup, { configured: true, deleted: 0, ok: true });
+  assert.deepEqual((await run({ CAR_SEARCH_TOKEN: token })).body.workers.text_cleanup, { configured: true, deleted: 0, dealer_deleted: 0, ok: true });
 });
 
 test('agents read a deal\'s texts with when they were last synced', async t => {

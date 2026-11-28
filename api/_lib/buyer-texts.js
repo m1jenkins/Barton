@@ -6,8 +6,10 @@
 // texts) or scripts/deal-desk-db.mjs; the daily cron deletes them 30 days after
 // the deal's latest close (cleanupTexts). Nothing here reaches the buyer's page.
 
+import { cleanupDealerTexts } from './dealer-texts.js';
+
 const DAY = 86400000;
-const KEEP_DAYS = 30;
+export const KEEP_DAYS = 30;
 // A buyer often texts about the car before paying, so the thread starts a week
 // before the intake; anything older stays on the Mac.
 export const TEXTS_LEAD_DAYS = 7;
@@ -52,7 +54,9 @@ function shortText(value, path, problems, max) {
 }
 
 // The messages for one thread, checked. Throws TextsError with every problem.
-export function parseTexts(input) {
+// from names the true-or-false field saying the other person sent it:
+// from_buyer for Buyer Texts, from_dealer for Dealer Texts (dealer-texts.js).
+export function parseTexts(input, { from = 'from_buyer' } = {}) {
   const problems = [];
   if (!Array.isArray(input)) throw new TextsError(['messages must be a list']);
   if (input.length > MAX_TEXTS_PER_REQUEST) throw new TextsError([`send at most ${MAX_TEXTS_PER_REQUEST} messages at a time`]);
@@ -63,7 +67,7 @@ export function parseTexts(input) {
     if (!GUID.test(item.guid ?? '')) problems.push(`${path}.guid must be the Messages GUID`);
     const sent = Date.parse(item.sent_at ?? '');
     if (Number.isNaN(sent)) problems.push(`${path}.sent_at must be an ISO date`);
-    if (typeof item.from_buyer !== 'boolean') problems.push(`${path}.from_buyer must be true or false`);
+    if (typeof item[from] !== 'boolean') problems.push(`${path}.${from} must be true or false`);
     const unsent = boolean(item.unsent, `${path}.unsent`, problems);
     const edited = boolean(item.edited, `${path}.edited`, problems);
     let body = item.body ?? '';
@@ -75,7 +79,7 @@ export function parseTexts(input) {
       mime: shortText(file?.mime, `${path}.attachments[${n}].mime`, problems, 100)
     })) : [];
     return {
-      guid: item.guid, sent_at: Number.isNaN(sent) ? null : iso(sent), from_buyer: item.from_buyer === true,
+      guid: item.guid, sent_at: Number.isNaN(sent) ? null : iso(sent), [from]: item[from] === true,
       body: unsent ? '' : body, service: shortText(item.service, `${path}.service`, problems, 20),
       unsent, edited, attachments: files
     };
@@ -154,7 +158,9 @@ export async function cleanupTexts({ sql, now = Date.now() }) {
 export const buyerTextSettings = (environment = process.env) => Boolean(environment.CAR_SEARCH_TOKEN?.trim());
 
 // The worker shape api/outbox-dispatch.js expects; the daily cron runs it.
+// Dealer Texts (dealer-texts.js) are cleared on the same schedule.
 export async function runBuyerTextCleanupWorker({ sql, now = Date.now() } = {}) {
   const result = await cleanupTexts({ sql, now });
-  return { configured: true, ...result, exitCode: 0 };
+  const dealers = await cleanupDealerTexts({ sql, now });
+  return { configured: true, ...result, dealer_deleted: dealers.deleted, exitCode: 0 };
 }

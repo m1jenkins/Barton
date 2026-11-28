@@ -22,7 +22,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 //   node scripts/car-search.mjs documents <intake ID>              the Buyer Documents: id, type, content type, size and date.
 //                                                                  Never a file's contents, and deleted files never show
 //   node scripts/car-search.mjs texts <intake ID> [last N]         the buyer's texts with Mason (Buyer Texts, adr/0004), oldest first,
-//                                                                  with when Mason's Mac last synced them
+//                                                                  with when Mason's Mac last synced them, and under dealer_texts
+//                                                                  Mason's texts with the deal's dealers (Dealer Texts, adr/0005)
 //   node scripts/car-search.mjs deal <intake ID>                   the shortlist with each car's prices, the full event log
 //                                                                  and the Buyer Updates
 // Reads CAR_SEARCH_TOKEN, and optionally CAR_SEARCH_URL, from the environment

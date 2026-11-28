@@ -12,7 +12,7 @@ Add new files rather than renaming old ones. When a doc stops being current, mov
 ### Operations
 
 - [implementation-operations.md](implementation-operations.md): leads, checkout, the Stripe webhook, onboarding (the API contract), paid intake and buyer emails, car search, the ops dashboard and the Deal Tracker.
-- [adr/](adr/) and [GLOSSARY.md](../GLOSSARY.md): the Deal Tracker's lasting decisions (0001 to 0004) and the terms to use exactly.
+- [adr/](adr/) and [GLOSSARY.md](../GLOSSARY.md): the Deal Tracker's lasting decisions (0001 to 0005) and the terms to use exactly.
 - [deal-tracker-build-plan-2026-11-21.md](deal-tracker-build-plan-2026-11-21.md): the Deal Tracker plan, launched in Production on November 25, 2026: Mason's decisions, the data, code and setup, and tests. Code comments cite it.
 - [checkout-streamline-2026-10-05.md](checkout-streamline-2026-10-05.md): the plan-first checkout that replaced the chat intake, and the October 4–6 outage that led to it.
 - [seo-execution/stripe-cutover-2026-10-23.md](seo-execution/stripe-cutover-2026-10-23.md): the live Payment Links (its "Reverted" section, $395/$695) and the 50OFF promotion code. The $195/$345 cut it opens with was reverted the same day.

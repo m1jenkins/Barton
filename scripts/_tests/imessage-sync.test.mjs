@@ -4,7 +4,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import test from 'node:test';
-import { batches, fakePhone, launchAgentPlist, planThreads, syncTexts, toPayload } from '../imessage-sync.mjs';
+import { mkdirSync } from 'node:fs';
+import { batches, fakePhone, launchAgentPlist, planDealerThreads, planThreads, smrTags, syncTexts, tagNamesBuyer, toDealerPayload, toPayload } from '../imessage-sync.mjs';
 
 // The Mac side of Buyer Texts (adr/0004). The rule that matters: only threads
 // the server lists, from their start date, ever leave the Mac. Invented data only.
@@ -46,19 +47,25 @@ function chatFixture(dir) {
   return file;
 }
 
-function fakeServer(threads, { listStatus = 200 } = {}) {
+// dealers: what GET ?texts=dealers answers; null answers 400, as a site
+// without Dealer Texts does. Dealer threads land in dealerPosts.
+function fakeServer(threads, { listStatus = 200, dealers = [] } = {}) {
   const posts = [];
+  const dealerPosts = [];
   const fetchImpl = async (url, options = {}) => {
     assert.equal(options.headers.Authorization, `Bearer ${token}`);
     if (!options.method) {
+      if (/\?texts=dealers$/.test(url)) {
+        return new Response(JSON.stringify(dealers ? { ok: true, deals: dealers } : { ok: false, error: 'invalid_intake' }), { status: dealers ? 200 : 400 });
+      }
       assert.match(url, /\/api\/car-search\?texts=threads$/);
       return new Response(JSON.stringify(listStatus === 200 ? { ok: true, threads } : { ok: false }), { status: listStatus });
     }
     const body = JSON.parse(options.body);
-    posts.push(body);
+    (body.action === 'dealer_texts' ? dealerPosts : posts).push(body);
     return new Response(JSON.stringify({ ok: true, saved: body.messages.length }), { status: 200 });
   };
-  return { fetchImpl, posts };
+  return { fetchImpl, posts, dealerPosts };
 }
 
 const environment = { CAR_SEARCH_TOKEN: token, CAR_SEARCH_URL: 'https://example.test' };
@@ -146,4 +153,128 @@ test('the LaunchAgent runs this script with the given Node every 10 minutes', ()
   const plist = launchAgentPlist({ node: '/opt/node/bin/node', script: '/repo/scripts/imessage-sync.mjs', workingDirectory: '/repo', logFile: '/logs/sync.log' });
   assert.match(plist, /<string>\/opt\/node\/bin\/node<\/string><string>\/repo\/scripts\/imessage-sync\.mjs<\/string>/);
   assert.match(plist, /<key>StartInterval<\/key><integer>600<\/integer>/);
+});
+
+// Dealer Texts (adr/0005). The rules that matter: a dealer is filed only under
+// the one open deal its "SMR:" tag names, a buyer's number is never a dealer,
+// and a tag that names no deal or two deals is skipped, never guessed.
+
+const ACE = '1a2b3c4d-1111-4222-8333-444455556666';
+const ACE_TWO = '2a2b3c4d-1111-4222-8333-444455556666';
+const CHARLES = '3a2b3c4d-1111-4222-8333-444455556666';
+const since = '2026-11-24T00:00:00Z';
+const deal = (intake_id, buyer_name, buyer_phone, extra = {}) => ({ intake_id, buyer_name, buyer_phone, buyer_email: null, since, dealer_contacts: [], ...extra });
+const card = (first, keys, note = '', organization = null) => ({ first, last: null, organization, keys, handles: keys, note });
+
+test('SMR tags are read from any line of Notes, in any case, split on commas and "and"', () => {
+  assert.deepEqual(smrTags('Sales manager\nSMR: Ace, Charles'), ['Ace', 'Charles']);
+  assert.deepEqual(smrTags('smr:ace and  Jalen Bell; ace'), ['ace', 'Jalen Bell']);
+  assert.deepEqual(smrTags('Met at the SMR office\nno tag here'), []);
+  assert.deepEqual(smrTags(null), []);
+  assert.ok(tagNamesBuyer('Ace', 'Ace Example'));
+  assert.ok(tagNamesBuyer('ace example', 'Ace Example'));
+  assert.ok(tagNamesBuyer('Jose', 'José Diaz'));
+  assert.ok(!tagNamesBuyer('Al', 'Alex Example'), 'a whole word, not the start of one');
+  assert.ok(!tagNamesBuyer('', 'Ace Example'));
+});
+
+test('a tagged dealer goes under the one deal its tag names; ambiguous, unknown and buyer tags are skipped', () => {
+  const deals = [deal(ACE, 'Ace Example', '205-555-0100'), deal(CHARLES, 'Charles Sample', '205-555-0111'),
+    deal(ACE_TWO, 'Ace Other', '205-555-0122')];
+  const { ready, skipped } = planDealerThreads(deals, [
+    card('Ruben · Hamer Toyota', ['5125550177'], 'SMR: Ace Example, Charles'),
+    card('Pat · Ford', ['5125550188'], 'SMR: Ace'),
+    card('Lee · Kia', ['5125550199'], 'SMR: Nobody'),
+    card('Ace Example', ['2055550100'], 'SMR: Ace Example'),
+    card('Mom', ['5125550166'])
+  ]);
+  assert.deepEqual(ready.map((plan) => [plan.intake_id, plan.contact.name, plan.contact.key, plan.contact.how]),
+    [[ACE, 'Ruben · Hamer Toyota', '5125550177', 'contact_tag'], [CHARLES, 'Ruben · Hamer Toyota', '5125550177', 'contact_tag']]);
+  assert.deepEqual(skipped.map((skip) => [skip.who, skip.reason]), [
+    ['Pat · Ford', '"SMR: Ace" matches 2 open deals; add the client\'s last name to the tag'],
+    ['Lee · Kia', '"SMR: Nobody" matches no open deal'],
+    ['Ace Example', 'has an SMR tag but is an open deal\'s buyer, so it is never synced as a dealer']
+  ]);
+  assert.ok(!JSON.stringify(ready).includes('5125550166'), 'an untagged, unlisted contact is never read');
+});
+
+test('a deal\'s dealer list covers untagged contacts only, and never a buyer\'s number', () => {
+  const deals = [deal(ACE, 'Ace Example', '205-555-0100', { dealer_contacts: [
+    { key: '5125550188', dealer_name: 'South Honda', contact_name: 'Pat' },
+    { key: '5125550177', dealer_name: 'Hamer Toyota', contact_name: null },
+    { key: '5125550155', dealer_name: 'West VW', contact_name: 'Jo' },
+    { key: '2055550111', dealer_name: 'Mistake', contact_name: null }
+  ] }), deal(CHARLES, 'Charles Sample', '205-555-0111')];
+  const { ready, skipped } = planDealerThreads(deals, [
+    card('Ruben · Hamer Toyota', ['5125550177'], 'SMR: Charles'),
+    card('Jo · West VW', ['5125550155'])
+  ]);
+  assert.deepEqual(ready.map((plan) => [plan.intake_id, plan.contact.key, plan.contact.name, plan.contact.how]), [
+    [CHARLES, '5125550177', 'Ruben · Hamer Toyota', 'contact_tag'],
+    [ACE, '5125550188', 'Pat · South Honda', 'dealer_list'],
+    [ACE, '5125550155', 'Jo · West VW', 'dealer_list']
+  ], 'the tag wins over the list; a listed number takes its Contacts name');
+  assert.deepEqual(skipped.map((skip) => skip.reason), ['is on a dealer list but is an open deal\'s buyer']);
+});
+
+function contactsFixture(dir, rows) {
+  const folder = join(dir, 'Library/Application Support/AddressBook');
+  mkdirSync(folder, { recursive: true });
+  const db = new DatabaseSync(join(folder, 'AddressBook-v22.abcddb'));
+  db.exec(`
+    CREATE TABLE ZABCDRECORD (Z_PK INTEGER PRIMARY KEY, ZFIRSTNAME TEXT, ZMIDDLENAME TEXT, ZLASTNAME TEXT, ZNICKNAME TEXT, ZORGANIZATION TEXT);
+    CREATE TABLE ZABCDPHONENUMBER (ZOWNER INTEGER, ZFULLNUMBER TEXT);
+    CREATE TABLE ZABCDEMAILADDRESS (ZOWNER INTEGER, ZADDRESS TEXT);
+    CREATE TABLE ZABCDNOTE (Z_PK INTEGER PRIMARY KEY, ZCONTACT INTEGER, ZTEXT TEXT);
+  `);
+  rows.forEach(([first, phone, note], index) => {
+    db.prepare('INSERT INTO ZABCDRECORD (Z_PK, ZFIRSTNAME) VALUES (?, ?)').run(index + 1, first);
+    db.prepare('INSERT INTO ZABCDPHONENUMBER VALUES (?, ?)').run(index + 1, phone);
+    if (note) db.prepare('INSERT INTO ZABCDNOTE (ZCONTACT, ZTEXT) VALUES (?, ?)').run(index + 1, note);
+  });
+  db.close();
+}
+
+test('a sync sends the tagged dealer\'s thread as dealer texts, and nothing from untagged contacts', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'imessage-sync-'));
+  try {
+    const chatDb = chatFixture(dir);
+    // chatFixture's second thread (+1 512 555 0199) becomes a dealer here.
+    contactsFixture(dir, [['Sam · North Toyota', '(512) 555-0199', 'SMR: Riley'], ['Riley Buyer', '(205) 555-0100', null]]);
+    const threads = [{ intake_id: BUYER, phone: '(205) 555-0100', email: null, since: '2026-11-24T00:00:00Z' }];
+    const dealers = [{ intake_id: BUYER, buyer_name: 'Riley Buyer', buyer_phone: '(205) 555-0100', buyer_email: null, since: '2026-11-24T00:00:00Z', dealer_contacts: [] }];
+    const { fetchImpl, posts, dealerPosts } = fakeServer(threads, { dealers });
+    const summary = await syncTexts({ environment, fetchImpl, chatDb, home: dir, log: () => {} });
+    assert.equal(posts.length, 1, 'the Buyer Texts sync is unchanged');
+    assert.equal(dealerPosts.length, 1);
+    assert.deepEqual(dealerPosts[0].contact, { key: '5125550199', name: 'Sam · North Toyota', how: 'contact_tag' });
+    assert.deepEqual(dealerPosts[0].messages.map((m) => [m.guid, m.from_dealer, 'from_buyer' in m]), [['FRIEND-1', true, false]]);
+    assert.deepEqual([summary.dealer.dealers, summary.dealer.texts, summary.dealer.failed], [1, 1, []]);
+    assert.ok(!JSON.stringify(dealerPosts).includes('Any quotes yet'), 'the buyer\'s own thread never goes as a dealer');
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a site without Dealer Texts, or a Mac without Contacts, still syncs Buyer Texts', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'imessage-sync-'));
+  try {
+    const chatDb = chatFixture(dir);
+    const lines = [];
+    const threads = [{ intake_id: BUYER, phone: '(205) 555-0100', email: null, since: '2026-11-24T00:00:00Z' }];
+    const old = fakeServer(threads, { dealers: null });
+    const summary = await syncTexts({ environment, fetchImpl: old.fetchImpl, chatDb, home: dir, log: (line) => lines.push(line) });
+    assert.deepEqual([summary.texts, old.posts.length, old.dealerPosts.length], [3, 1, 0]);
+    assert.match(lines.join('\n'), /dealer texts skipped: .*HTTP 400/);
+    assert.deepEqual(summary.dealer.failed, []);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a dealer payload says from_dealer, never from_buyer', () => {
+  const payload = toDealerPayload({ guid: 'G', date: new Date('2026-12-01T12:00:00Z'), fromMe: false, text: 'hi', service: 'SMS', unsent: false, edited: false, attachments: [] });
+  assert.equal(payload.from_dealer, true);
+  assert.ok(!('from_buyer' in payload));
+  assert.equal(toDealerPayload({ guid: null }), null);
 });
