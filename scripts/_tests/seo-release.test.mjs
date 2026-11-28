@@ -10,7 +10,7 @@ const read=file=>readFile(new URL(file,root),'utf8');
 const origin='https://www.steermeright.com';
 const fileFor=href=>new URL(href,origin).pathname==='/'?'index.html':new URL(href,origin).pathname.slice(1);
 
-const RISE_NOTICE=/<p class="wz-plan-rise">Price goes to \$(?:495|845) on January&nbsp;15<\/p>/g;
+const RISE_NOTICE=/<p class="wz-plan-rise">Price goes to \$(?:495|895) on January&nbsp;15<\/p>/g;
 
 test('active server, browser, registry, visible cards and schema agree on the three authorized offers',async()=>{
  const registry=JSON.parse(await read('data/services.json'));
