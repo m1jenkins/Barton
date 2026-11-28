@@ -10,6 +10,8 @@ const read=file=>readFile(new URL(file,root),'utf8');
 const origin='https://www.steermeright.com';
 const fileFor=href=>new URL(href,origin).pathname==='/'?'index.html':new URL(href,origin).pathname.slice(1);
 
+const RISE_NOTICE=/<p class="wz-plan-rise">Price goes to \$(?:495|845) on January&nbsp;15<\/p>/g;
+
 test('active server, browser, registry, visible cards and schema agree on the three authorized offers',async()=>{
  const registry=JSON.parse(await read('data/services.json'));
  assert.deepEqual(Object.keys(plans),NEW_CHECKOUT_TIERS);
@@ -22,7 +24,8 @@ test('active server, browser, registry, visible cards and schema agree on the th
   // line showing (no swipe row, no arrows, no "What's included" fold), plus a free "Talk to Mason" band.
   if(file==='index.html'){const ids=[...html.matchAll(/<article class="wz-plan[^"]*" id="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(ids,['full-service','concierge','private-client']);for(const id of ids)assert.match(html,new RegExp(`<ul class="wz-plan-list" role="list" id="${id}-includes">`));assert.match(html,/<div class="wz-plan-grid wz-plan-grid--three">/);assert.doesNotMatch(html,/wz-plan-row|wz-plan-more|wz-plan-nav|wz-plan-private|data-includes-toggle|data-plans-nav|See what’s included/);assert.equal((html.match(/class="wz-plan(?: [^"]*)?"/g)||[]).length,3);assert.deepEqual([...html.matchAll(/<article class="wz-plan[\s\S]*?<\/article>/g)].map(([card])=>card.match(/data-plan="([^"]+)"/)[1]),NEW_CHECKOUT_TIERS);assert.match(html,/<div class="wz-plan-band">[\s\S]*?data-open-inquiry data-cta-location="plans">Talk to Mason first<\/button>/);assert.doesNotMatch(html,/schedule\.html/);}
   else assert.equal((html.match(/class="plan-card"/g)||[]).length,2);
-  assert.doesNotMatch(html,/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
+  // The January 15, 2027 price-rise notice on the homepage cards is the only place $495 may appear (owner, 2026-11-28).
+  assert.doesNotMatch(html.replace(RISE_NOTICE,''),/data-(?:plan|service-tier)="consultation"|#service-consultation|\$495|\$195/);
   assert.match(doc.visibleText,/\$395/);assert.match(doc.visibleText,/\$695/);assert.match(doc.visibleText,/\$1,995/);
  }
  const services=htmlDocument(await read('index.html')).schemas.flatMap(s=>s['@graph']||[]).filter(n=>n['@type']==='Service');
