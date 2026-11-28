@@ -278,7 +278,7 @@
     <script defer src="accessibility.js"></script>
     <link rel="stylesheet" href="/buying/drive-right.css?v=c26db97558e4">
     <link rel="stylesheet" href="/buying/inquiry.css?v=871fcd8e9289">
-    <link rel="stylesheet" href="/buying/home-wise.css?v=e6c9daa23c21">
+    <link rel="stylesheet" href="/buying/home-wise.css?v=315c3cc37104">
     <script>
       // Logo intro: the Miata drives in on the first page of a visit (logo-motion.js). Without it, the logo shows after 2.5s.
       try { if (!sessionStorage.getItem('dr-logo-intro') && matchMedia('(prefers-reduced-motion: no-preference)').matches) { document.documentElement.classList.add('logo-intro'); window.driveRightLogoFallback = setTimeout(() => document.documentElement.classList.remove('logo-intro'), 2500); } } catch {}
@@ -435,11 +435,14 @@
       <p class="wz-plan-guarantee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Full refund if you cancel before negotiations begin.</p>
       <div class="wz-plan-grid wz-plan-grid--three">
         <article class="wz-plan" id="full-service">
-          <h3>Steer Me Right</h3>
-          <p class="wz-plan-fit">Best if the car is within 200 miles of you</p>
-          <p class="wz-plan-desc">We work the dealers and handle the haggling.</p>
+          <span class="wz-plan-badge"><img src="/assets/external/optimized/plan-steering-wheel-toyota-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async"></span>
+          <div class="wz-plan-head">
+            <h3>Steer Me Right</h3>
+            <p class="wz-plan-fit">Best if the car is within 200 miles of you</p>
+            <p class="wz-plan-desc">We work the dealers and handle the haggling.</p>
+          </div>
           <p class="wz-plan-price">$395</p>
-          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="full_service" data-cta-location="plans">Get Steer Me Right</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right">Talk to Mason about my car search</button></div>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="full_service" data-cta-location="plans">Get Steer Me Right</a></div>
           <ul class="wz-plan-list" role="list" id="full-service-includes">
             <li>One model, with any trims, colors and packages</li>
             <li>Dealers within 200 miles of you</li>
@@ -449,12 +452,15 @@
             <li>Written recommendations: what we found and what we’d do</li>
           </ul>
         </article>
-        <article class="wz-plan" id="concierge">
-          <h3>Steer Me Right Pro</h3>
-          <p class="wz-plan-fit">Best if you want the best deal anywhere in the country</p>
-          <p class="wz-plan-desc">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p>
+        <article class="wz-plan wz-plan--pro" id="concierge">
+          <span class="wz-plan-badge"><img src="/assets/external/optimized/plan-steering-wheel-porsche-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async"></span>
+          <div class="wz-plan-head">
+            <h3>Steer Me Right Pro</h3>
+            <p class="wz-plan-fit">Best if you want the best deal anywhere in the country</p>
+            <p class="wz-plan-desc">We search dealers nationwide, price the shipping and work your trade-in into the deal.</p>
+          </div>
           <p class="wz-plan-price">$695</p>
-          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right Pro">Talk to Mason about my car search</button></div>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="concierge" data-cta-location="plans">Get Steer Me Right Pro</a></div>
           <ul class="wz-plan-list" role="list" id="concierge-includes">
             <li>Everything in Steer Me Right</li>
             <li>Dealers nationwide, not just within 200 miles</li>
@@ -464,11 +470,14 @@
             <li>Our pick of the best deal, judged on out-the-door price plus resale and running costs, not just the sticker</li>
           </ul>
         </article>
-        <article class="wz-plan" id="private-client">
-          <h3>Steer Me Right Private Client</h3>
-          <p class="wz-plan-fit">For cars with an MSRP of $100,000 or more</p>
+        <article class="wz-plan wz-plan--private" id="private-client">
+          <span class="wz-plan-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.4l-5.25 2.7 1-5.8L3.5 9.2l5.9-.9z"/></svg></span>
+          <div class="wz-plan-head">
+            <h3>Steer Me Right Private Client</h3>
+            <p class="wz-plan-fit">For cars with an MSRP of $100,000 or more</p>
+          </div>
           <p class="wz-plan-price">$1,995</p>
-          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="private_client" data-cta-location="plans">Get Private Client</a><button type="button" class="wz-btn wz-btn--outline" data-open-inquiry="Steer Me Right Private Client">Talk to Mason about my car search</button></div>
+          <div class="wz-plan-actions"><a href="#plans" class="wz-btn wz-btn--forest" data-plan="private_client" data-cta-location="plans">Get Private Client</a></div>
           <ul class="wz-plan-list" role="list" id="private-client-includes">
             <li>Everything in Steer Me Right Pro, for as many models as you like</li>
             <li>Allocation and build-slot search, and factory orders, when the car isn’t on a lot</li>

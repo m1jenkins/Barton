@@ -153,46 +153,48 @@
 .dr.wz .wz-bar strong { margin-left:auto; padding-left:12px; font:900 22px/1 var(--wz-display); color:var(--wz-ink); white-space:nowrap; }
 .dr.wz .wz-bar--us strong { font-size:28px; color:var(--wz-on-sign); }
 
-/* Plans: Shopify's "Select a plan" cards, copied from Mobbin at the owner's request (2026-11-27). White cards with 12px
-   corners sit 8px apart on a tinted tray. The markup is in phone order, which is the reference's phone card: name, who
-   it's for, price, a full-width squared button, then every included line as a ruled row. On wide screens the rows move
-   up under the name and the price and button drop to the foot of the card (the reference's desktop card), with each
-   part on a shared row so the cards line up. All three plans use the one card. */
+/* Plans (owner, November 28, 2026, bringing back the personality of the cards from before November 27): three cards
+   that climb in finish with the price. Steer Me Right is the soft tinted card, Pro is the Steer Me Right blue with an
+   engraved double ring, and Private Client is dark brushed metal with a slow sheen. Each has a round photo badge, a big
+   display price, ticked lines and one pill button. The name, "who it's for" and the short description sit together in one
+   block so they read as one thought. On wide screens the parts share rows so the three cards line up. */
 .dr.wz #plans .wz-center > .wz-btn { margin-bottom:48px; }
-.dr.wz .wz-plan-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; max-width:960px; margin-inline:auto; padding:8px; border-radius:20px; background:var(--wz-tint); box-sizing:border-box; }
-.dr.wz .wz-plan-grid--three { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:none; }
-.dr.wz .wz-plan, .dr.wz .wz-plan-private { border-radius:12px; background:#fff; color:var(--wz-body); box-shadow:0 0 0 1px rgba(14,27,46,.05), 0 1px 2px rgba(14,27,46,.08); text-align:left; }
-.dr.wz .wz-plan { display:flex; flex-direction:column; padding:28px; }
-.dr.wz .wz-plan :is(h2,h3) { grid-row:1; margin:0; font:600 24px/32px var(--wz-sans); letter-spacing:-.02em; color:var(--wz-ink); }
-.dr.wz .wz-plan-fit { grid-row:2; margin-top:2px; font-size:16px; line-height:24px; }
-.dr.wz .wz-plan-desc { grid-row:3; margin-top:8px; font-size:16px; line-height:24px; }
-.dr.wz .wz-plan-list { grid-row:4; margin:16px 0 0; padding:0; list-style:none; }
-.dr.wz .wz-plan-list li { padding:12px 0; border-top:1px solid var(--wz-line); font-size:16px; line-height:24px; color:var(--wz-ink); }
-.dr.wz .wz-plan-list li:first-child { border-top:0; }
-.dr.wz .wz-plan-price, .dr.wz .wz-plan-private-price { font:600 32px/40px var(--wz-sans); letter-spacing:-.03em; color:var(--wz-ink); }
-.dr.wz .wz-plan-price { grid-row:5; margin-top:28px; }
-.dr.wz .wz-plan-price span, .dr.wz .wz-plan-private-price span { margin-left:2px; font:400 14px/20px var(--wz-sans); letter-spacing:0; color:var(--wz-body); }
-.dr.wz .wz-plan-actions { grid-row:6; display:grid; gap:8px; margin-top:12px; }
-.dr.wz .wz-plan .wz-btn, .dr.wz .wz-plan-private .wz-btn { min-height:52px; padding:12px 16px; border-radius:12px; text-align:center; }
-.dr.wz .wz-plan .wz-btn--outline, .dr.wz .wz-plan-private .wz-btn--outline { background:#fff; box-shadow:inset 0 0 0 1px #C3CBD6; }
-.dr.wz .wz-plan .wz-btn--outline:hover, .dr.wz .wz-plan-private .wz-btn--outline:hover { background:var(--wz-tint); }
+.dr.wz .wz-plan-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.dr.wz .wz-plan { position:relative; isolation:isolate; display:flex; flex-direction:column; padding:36px 32px 32px; border-radius:28px; background:var(--wz-tint); color:var(--wz-body); text-align:left; }
+.dr.wz .wz-plan-badge { grid-row:1; display:grid; place-items:center; width:64px; height:64px; margin-bottom:24px; border-radius:50%; background:#fff; color:var(--wz-navy); overflow:hidden; box-shadow:0 0 0 4px rgba(255,255,255,.55); }
+.dr.wz .wz-plan-badge img { width:64px; height:64px; object-fit:cover; }
+.dr.wz .wz-plan-badge svg { width:28px; height:28px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.dr.wz .wz-plan-head { grid-row:2; }
+.dr.wz .wz-plan :is(h2,h3) { margin:0; font:600 22px/30px var(--wz-sans); letter-spacing:-.02em; color:var(--wz-ink); }
+.dr.wz .wz-plan-fit { margin-top:6px; font-size:16px; line-height:24px; font-weight:600; color:var(--wz-ink); }
+.dr.wz .wz-plan-desc { margin-top:4px; font-size:16px; line-height:24px; }
+.dr.wz .wz-plan-price { grid-row:3; margin-top:28px; font:900 56px/1 var(--wz-display); letter-spacing:-.02em; color:var(--wz-ink); }
+.dr.wz .wz-plan-actions { grid-row:4; display:grid; margin-top:24px; }
+.dr.wz .wz-plan .wz-btn { width:100%; min-height:52px; }
+.dr.wz .wz-plan-list { grid-row:5; display:grid; align-content:start; gap:12px; margin:28px 0 0; padding:24px 0 0; border-top:1px solid var(--wz-line); list-style:none; }
+.dr.wz .wz-plan-list li { display:grid; grid-template-columns:20px 1fr; gap:12px; font-size:16px; line-height:24px; color:var(--wz-ink); }
+.dr.wz .wz-plan-list li::before { content:""; width:20px; height:20px; margin-top:2px; background:var(--wz-sign); -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat; }
 @supports (grid-template-rows:subgrid) {
-  @media (min-width:761px) { .dr.wz .wz-plan-grid:not(.wz-plan-grid--three) > .wz-plan { display:grid; grid-template-rows:subgrid; grid-row:span 6; row-gap:0; } }
-  @media (min-width:1101px) { .dr.wz .wz-plan-grid--three > .wz-plan { display:grid; grid-template-rows:subgrid; grid-row:span 6; row-gap:0; } }
+  @media (min-width:1101px) { .dr.wz .wz-plan-grid > .wz-plan { display:grid; grid-template-rows:subgrid; grid-row:span 5; row-gap:0; align-items:start; } }
 }
-/* Pricing page: three cards across. Their lists run to eight lines, so the price and buttons stay above the rows here
-   too (the phone order) and are on screen without scrolling; the parts still share rows across the three cards. */
-.dr.wz .wz-plan-grid--three .wz-plan :is(h2,h3) { font-size:20px; line-height:28px; }
-.dr.wz .wz-plan-grid--three .wz-plan-price { grid-row:4; margin-top:20px; }
-.dr.wz .wz-plan-grid--three .wz-plan-actions { grid-row:5; }
-.dr.wz .wz-plan-grid--three .wz-plan-list { grid-row:6; margin-top:8px; }
-/* Private Client on the homepage: the same white card laid on its side, with a link to its card on the pricing page */
-.dr.wz .wz-plan-private { grid-column:1/-1; display:flex; align-items:center; gap:12px 24px; padding:20px 28px; }
-.dr.wz .wz-plan-private-text { flex:1; min-width:0; }
-.dr.wz .wz-plan-private h3 { font:600 20px/28px var(--wz-sans); letter-spacing:-.02em; color:var(--wz-ink); }
-.dr.wz .wz-plan-private-text p { margin-top:2px; font-size:16px; line-height:24px; }
-.dr.wz .wz-plan-private-price { flex:none; font-size:24px; line-height:32px; }
-.dr.wz .wz-plan-private .wz-btn { flex:none; min-height:48px; padding-inline:20px; }
+/* Pro: the Steer Me Right blue with an engraved double ring (a sky hairline at the edge and a fainter one 8px in). */
+.dr.wz .wz-plan--pro { background:var(--wz-sign); color:rgba(255,255,255,.82); box-shadow:inset 0 0 0 1px rgba(227,236,248,.5), 0 24px 48px -28px rgba(26,75,140,.7); }
+.dr.wz .wz-plan--pro::after { content:""; position:absolute; inset:8px; border:1px solid rgba(227,236,248,.24); border-radius:20px; pointer-events:none; }
+.dr.wz .wz-plan--pro .wz-plan-badge { box-shadow:0 0 0 4px rgba(255,255,255,.16); }
+/* Private Client: dark brushed metal; a soft band of light crosses it when it is hovered. */
+.dr.wz .wz-plan--private { overflow:hidden; background:linear-gradient(150deg,#2A3B55 0%,#0E1B2E 48%,#070F1A 100%); color:rgba(255,255,255,.74); box-shadow:inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(255,255,255,.08), 0 24px 48px -28px rgba(7,15,26,.8); }
+.dr.wz .wz-plan--private::before { content:""; position:absolute; inset:-20% -60%; z-index:-1; background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.1) 47%,rgba(255,255,255,.03) 53%,transparent 60%); transform:translateX(-12%); transition:transform 1.4s cubic-bezier(.2,.7,.2,1); pointer-events:none; }
+.dr.wz .wz-plan--private:hover::before { transform:translateX(22%); }
+.dr.wz .wz-plan--private .wz-plan-badge { background:linear-gradient(150deg,#3A4D6A,#132238); color:#E6ECF4; box-shadow:0 0 0 1px rgba(255,255,255,.22), 0 0 0 5px rgba(255,255,255,.06); }
+.dr.wz :is(.wz-plan--pro,.wz-plan--private) :is(h2,h3), .dr.wz :is(.wz-plan--pro,.wz-plan--private) :is(.wz-plan-fit,.wz-plan-price,.wz-plan-list li) { color:#fff; }
+.dr.wz .wz-plan--pro .wz-plan-list { border-top-color:rgba(255,255,255,.22); }
+.dr.wz .wz-plan--private .wz-plan-list { border-top-color:rgba(255,255,255,.16); }
+.dr.wz .wz-plan--pro .wz-plan-list li::before { background:var(--wz-sky); }
+.dr.wz .wz-plan--private .wz-plan-list li::before { background:#C9D4E3; }
+.dr.wz :is(.wz-plan--pro,.wz-plan--private) .wz-btn--forest { background:#fff; color:var(--wz-sign); }
+.dr.wz .wz-plan--private .wz-btn--forest { color:var(--wz-navy); }
+.dr.wz :is(.wz-plan--pro,.wz-plan--private) .wz-btn--forest:hover { background:var(--wz-sky); }
+@media (prefers-reduced-motion:reduce) { .dr.wz .wz-plan--private::before { transition:none; } }
 .dr.wz .wz-plan-band { display:flex; align-items:center; gap:20px; max-width:960px; margin:24px auto 0; padding:24px 32px; border:1px solid var(--wz-line); border-radius:20px; box-sizing:border-box; }
 .dr.wz .wz-plan-band img { width:56px; height:56px; border-radius:50%; flex:none; }
 .dr.wz .wz-plan-band-text { flex:1; min-width:0; }
@@ -299,7 +301,7 @@
 .dr.wz .wz-sticky.is-visible { opacity:1; transform:none; }
 
 @media (max-width:1100px) {
-  .dr.wz .wz-plan-grid--three { grid-template-columns:1fr; max-width:560px; }
+  .dr.wz .wz-plan-grid { grid-template-columns:1fr; max-width:560px; margin-inline:auto; gap:16px; }
   .dr.wz .wz-nav { display:none; }
   .dr.wz .wz-link-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .dr.wz .wz-reviews-inner { grid-template-columns:1fr; }
@@ -355,21 +357,17 @@
   .dr.wz .wz-bar-name { font-size:15px; white-space:normal; }
   .dr.wz .wz-bar strong { font-size:19px; }
   .dr.wz .wz-bar--us strong { font-size:22px; }
-  /* Plan cards on phones, as in the reference: the tray runs edge to edge, the cards stack 8px apart, and every
-     included line shows as a ruled row under the price and button. */
-  .dr.wz .wz-plan-grid { grid-template-columns:1fr; max-width:none; margin-inline:calc(-1 * var(--wz-gutter)); padding:8px; border-radius:0; }
-  .dr.wz .wz-plan { padding:18px 20px 6px; }
+  /* Plan cards on phones: the three cards stack 16px apart, a little tighter inside. */
+  .dr.wz .wz-plan { padding:28px 22px 24px; border-radius:24px; }
+  .dr.wz .wz-plan-badge { width:56px; height:56px; margin-bottom:18px; }
+  .dr.wz .wz-plan-badge img { width:56px; height:56px; }
   .dr.wz .wz-plan :is(h2,h3) { font-size:20px; line-height:28px; }
   .dr.wz .wz-plan-fit, .dr.wz .wz-plan-desc { font-size:15px; line-height:22px; }
-  .dr.wz .wz-plan-desc { margin-top:6px; }
-  .dr.wz .wz-plan-price, .dr.wz .wz-plan-grid--three .wz-plan-price { margin-top:14px; font-size:28px; line-height:36px; }
-  .dr.wz .wz-plan-list, .dr.wz .wz-plan-grid--three .wz-plan-list { margin-top:6px; }
-  .dr.wz .wz-plan-list li { padding:10px 0; line-height:22px; }
+  .dr.wz .wz-plan-price { margin-top:20px; font-size:48px; }
+  .dr.wz .wz-plan-actions { margin-top:20px; }
+  .dr.wz .wz-plan-list { gap:10px; margin-top:22px; padding-top:20px; }
+  .dr.wz .wz-plan-list li { font-size:15px; line-height:22px; }
   .dr.wz .wz-plan-guarantee { margin-bottom:24px; font-size:16px; line-height:24px; }
-  .dr.wz .wz-plan-private { flex-direction:column; align-items:stretch; gap:0; padding:18px 20px 20px; }
-  .dr.wz .wz-plan-private-text p { font-size:15px; line-height:22px; }
-  .dr.wz .wz-plan-private-price { margin-top:14px; font-size:28px; line-height:36px; }
-  .dr.wz .wz-plan-private .wz-btn { min-height:52px; margin-top:12px; }
   .dr.wz .wz-faq summary { padding:18px 0; font-size:17px; line-height:24px; }
   .dr.wz .wz-plan-band { flex-wrap:wrap; align-items:flex-start; margin-top:16px; padding:24px 20px; }
   .dr.wz .wz-plan-band .wz-plan-band-text { flex-basis:calc(100% - 76px); }
