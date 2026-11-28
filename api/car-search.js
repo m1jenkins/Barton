@@ -6,6 +6,7 @@ import { database } from './_lib/db.js';
 import { dealTrackerEnabled } from './_lib/deal-tracker.js';
 import { DEAL_ID, ShortlistError, carSearchToken, findDeal, handOffDeal, loadDeal, loadSearch, parseShortlist, saveShortlist } from './_lib/car-search.js';
 import { TextsError, agentTexts, listTextThreads, parseTexts, saveTexts } from './_lib/buyer-texts.js';
+import { agentDealerTexts, listDealerThreads, parseContact, saveDealerTexts } from './_lib/dealer-texts.js';
 import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } from './_lib/http.js';
 
 // Used by the /car-search skill through scripts/car-search.mjs, never by a browser.
@@ -15,13 +16,15 @@ import { HttpError, header, readJsonBody, requestUrl, sendJson, withApiErrors } 
 // Document as a download (scripts/car-search.mjs document <id>). GET ?texts=threads
 // lists the open deals' numbers and POST "action": "texts" saves one thread's
 // Buyer Texts, both for scripts/imessage-sync.mjs on Mason's Mac (adr/0004).
+// GET ?texts=dealers and POST "action": "dealer_texts" do the same for Dealer
+// Texts, a dealer's thread filed under a deal (adr/0005).
 // POST "action": "draft_update" saves a draft Buyer Update for Mason to approve
 // on the ops dashboard (scripts/car-search.mjs draft); it never posts one. The
 // draft is signed with the skill that wrote it ("skill", one of DRAFT_SKILLS).
 // GET ?intake=<id>&read=picks|documents|texts|deal is what an agent working a
 // deal reads without a database login (scripts/car-search.mjs picks, documents,
 // texts, deal): the standing Buyer Picks, the list of Buyer Documents (never a
-// file), the Buyer Texts, or the shortlist and event log. Nothing here writes a
+// file), the Buyer Texts with the Dealer Texts, or the shortlist and event log. Nothing here writes a
 // Buyer Pick or a Buyer Document: only the buyer's page does (adr/0002).
 export const config = { maxDuration: 30 };
 const digest = value => createHash('sha256').update(value).digest();
@@ -77,7 +80,11 @@ async function sendRead(res, params, { environment, getDatabase }) {
       documents: documents.map(doc => ({ id: Number(doc.id), doc_type: doc.doc_type, content_type: doc.content_type,
         bytes: Number(doc.bytes), created_at: doc.created_at })) });
   }
-  if (read === 'texts') return sendJson(res, 200, { ok: true, ...await agentTexts(sql, intakeId, { last: last == null ? null : Number(last) }) });
+  if (read === 'texts') {
+    const count = last == null ? null : Number(last);
+    return sendJson(res, 200, { ok: true, ...await agentTexts(sql, intakeId, { last: count }),
+      dealer_texts: await agentDealerTexts(sql, intakeId, { last: count }) });
+  }
   return sendJson(res, 200, { ok: true, ...await loadDeal(sql, found.deal) });
 }
 
@@ -113,6 +120,10 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       return sendJson(res, 200, { ok: true, threads: await listTextThreads(getDatabase()) });
     }
 
+    if (req.method === 'GET' && requestUrl(req).searchParams.get('texts') === 'dealers') {
+      return sendJson(res, 200, { ok: true, deals: await listDealerThreads(getDatabase()) });
+    }
+
     if (req.method === 'GET') {
       const intakeId = requestUrl(req).searchParams.get('intake') || '';
       if (!UUID.test(intakeId)) throw new HttpError(400, 'invalid_intake', 'intake must be an intake ID');
@@ -144,6 +155,21 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       if (result.error) return sendJson(res, 409, { ok: false, error: 'not_syncing', message: 'This intake has no open deal, so its texts are not synced.' });
       return sendJson(res, 200, { ok: true, saved: result.saved });
     }
+    if (body.action === 'dealer_texts') {
+      const contact = parseContact(body.contact);
+      let messages;
+      try {
+        if (contact.problems) throw new TextsError(contact.problems);
+        messages = parseTexts(body.messages, { from: 'from_dealer' });
+      } catch (error) {
+        if (!(error instanceof TextsError)) throw error;
+        return sendJson(res, 422, { ok: false, error: 'invalid_texts', problems: error.problems });
+      }
+      const result = await saveDealerTexts(getDatabase(), intakeId, contact, messages);
+      if (result.error === 'not_syncing') return sendJson(res, 409, { ok: false, error: 'not_syncing', message: 'This intake has no open deal, so its texts are not synced.' });
+      if (result.error) return sendJson(res, 409, { ok: false, error: 'buyer_contact', message: 'That number or email is an open deal\'s buyer, so it is never filed as a dealer.' });
+      return sendJson(res, 200, { ok: true, saved: result.saved });
+    }
     if (body.action === 'draft_update') {
       // Always a draft, signed with one of the skills' names and never Mason's:
       // whatever else the request says, only Mason's approval on the ops
@@ -162,7 +188,7 @@ export function carSearchHandler({ environment = process.env, getDatabase = data
       return sendJson(res, 200, { ok: true, update: { id: draft.id, status: 'draft', signed: skill },
         next: 'Mason gets an email and approves or discards the draft on the deal\'s ops page. The buyer sees nothing until he approves.' });
     }
-    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts", "draft_update" or left out');
+    if (body.action !== undefined) throw new HttpError(400, 'invalid_action', 'action must be "handoff", "texts", "dealer_texts", "draft_update" or left out');
 
     // With the Deal Tracker on, every car needs its estimated total and color.
     const tracker = dealTrackerEnabled(environment);

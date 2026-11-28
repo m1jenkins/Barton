@@ -103,12 +103,28 @@ export function contactDatabases(addressBookDir) {
   return found;
 }
 
-// Every contact with its phone numbers and emails, merged across Contacts sources.
+// A contact card's Notes, by record id. Contacts keeps them in ZABCDNOTE
+// (ZCONTACT, ZTEXT); a database without that table gives no notes, not an error.
+function contactNotes(db) {
+  const notes = new Map();
+  try {
+    for (const row of db.prepare('SELECT ZCONTACT AS owner, ZTEXT AS text FROM ZABCDNOTE WHERE ZTEXT IS NOT NULL').all()) {
+      notes.set(row.owner, [notes.get(row.owner), row.text].filter(Boolean).join('\n'));
+    }
+  } catch (error) {
+    if (!/no such (table|column)/i.test(error.message)) throw error;
+  }
+  return notes;
+}
+
+// Every contact with its phone numbers and emails (phones first) and its Notes,
+// merged across Contacts sources.
 export function loadContacts(databases) {
   const contacts = new Map();
   for (const file of databases) {
     const db = new DatabaseSync(file, { readOnly: true });
     try {
+      const notes = contactNotes(db);
       const records = db.prepare(`SELECT Z_PK AS id, ZFIRSTNAME AS first, ZMIDDLENAME AS middle, ZLASTNAME AS last,
         ZNICKNAME AS nickname, ZORGANIZATION AS organization FROM ZABCDRECORD`).all();
       const handles = new Map();
@@ -124,7 +140,10 @@ export function loadContacts(databases) {
         if (!own) continue;
         const contact = { first: record.first, middle: record.middle, last: record.last, nickname: record.nickname, organization: record.organization };
         const identity = `${contactName(contact)}|${[...own.keys()].sort().join(',')}`;
-        if (!contacts.has(identity)) contacts.set(identity, { ...contact, handles: [...own.values()], keys: [...own.keys()] });
+        const note = notes.get(record.id) || '';
+        const seen = contacts.get(identity);
+        if (!seen) contacts.set(identity, { ...contact, handles: [...own.values()], keys: [...own.keys()], note });
+        else if (note && !seen.note.includes(note)) seen.note = [seen.note, note].filter(Boolean).join('\n');
       }
     } finally {
       db.close();

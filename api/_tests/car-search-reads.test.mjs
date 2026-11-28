@@ -20,7 +20,7 @@ const VIN = '2T3P1RFV5SW000001';
 
 const migrations = await Promise.all(['001_durable_leads_and_payments.sql', '002_standard_purchase_analytics.sql',
   '003_checkout_offer_snapshot.sql', '004_intake_email_outbox.sql', '005_deal_search.sql', '006_dealer_handoff.sql',
-  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql', '014_buyer_texts.sql']
+  '007_deal_events.sql', '008_deal_events_per_car.sql', '012_deal_events_agents.sql', '013_deal_tracker.sql', '014_buyer_texts.sql', '016_dealer_texts.sql']
   .map(name => readFile(new URL(`../../db/${name}`, import.meta.url), 'utf8')));
 
 function tagged(client) {
@@ -285,7 +285,8 @@ test('texts and deal give an agent the synced thread and the deal\'s log without
       VALUES ($1, $2, $3, $4, $5, 'RCS', $6, false, '[]'::jsonb, now())`, [guid, id, `2026-12-09T${hour}:00:00Z`, fromBuyer, body, unsent]);
   }
   const texts = await get(sql, `intake=${id}&read=texts&last=2`);
-  assert.deepEqual(Object.keys(texts.body).sort(), ['intake_id', 'last_synced_at', 'note', 'ok', 'texts', 'total']);
+  assert.deepEqual(Object.keys(texts.body).sort(), ['dealer_texts', 'intake_id', 'last_synced_at', 'note', 'ok', 'texts', 'total']);
+  assert.deepEqual([texts.body.dealer_texts.total, texts.body.dealer_texts.threads], [0, []]);
   assert.equal(texts.body.total, 3);
   assert.ok(texts.body.last_synced_at);
   assert.deepEqual(texts.body.texts.map(text => [text.from, text.body]), [['mason', '[unsent]'], ['buyer', 'Blue is fine']]);
