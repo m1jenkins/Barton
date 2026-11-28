@@ -27,6 +27,7 @@ Mason, November 27, 2026: the homepage and `schedule.html` were nearly the same 
 ## After deploying
 
 - Run `npm run indexnow`, and resubmit `sitemap.xml` in Search Console.
-- Point anything outside the repo that links `schedule.html` at `https://www.steermeright.com/#plans`: ad final URLs, the Google Business Profile website or booking links, email signatures, and any agent instructions that read the live pricing page (the Client Outreach instructions in `docs/client-inquiries-setup-2026-11-03.md` say to read `schedule.html`). The 301 covers them meanwhile.
+- Point anything outside the repo that links `schedule.html` at `https://www.steermeright.com/#plans`: ad final URLs, email signatures, and any agent instructions that read the live pricing page (the Client Outreach instructions in `docs/client-inquiries-setup-2026-11-03.md` say to read `schedule.html`). The 301 covers them meanwhile.
+- Done November 27, 2026 (Mason): the Google Business Profile's "Menu or services link" went from `/schedule.html?utm_…` to `https://www.steermeright.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp#plans`. Its website button already pointed at the homepage, and the profile has no booking link, products or posts. Both links are listed under "Campaign tags on links we control" in `docs/implementation-operations.md`.
 - With `BASE_URL` set, `node scripts/check-redirects.mjs` checks the live 301. Also open `https://www.steermeright.com/schedule.html#private-client` in a browser and check it lands on the Private Client card.
 - Check GTM, GA4 and ad conversions for anything keyed on the `/schedule.html` path (page-view triggers, funnels, audiences, conversion URLs). Plan clicks now come from `/` with `cta_location` `plans`.

@@ -363,12 +363,13 @@ Links on channels we run use one lowercase scheme so the sources group cleanly:
 | Channel | Link |
 |---|---|
 | Google Business Profile, website button | `https://www.steermeright.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` |
+| Google Business Profile, menu or services link (shown as "Products and Services") | `https://www.steermeright.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp#plans` |
 | YouTube channel links section | `https://www.steermeright.com/?utm_source=youtube&utm_medium=social&utm_campaign=channel` |
 | YouTube video descriptions | `https://www.steermeright.com/?utm_source=youtube&utm_medium=social&utm_campaign=video&utm_content=<video-slug>` |
 | Reddit posts and comments | `https://www.steermeright.com/?utm_source=reddit&utm_medium=social&utm_campaign=<subreddit>` |
 | Mason's email signature | `https://www.steermeright.com/?utm_source=email&utm_medium=signature&utm_campaign=mason` |
 
-Point a tag at a deeper page by swapping the path, keeping the query. Every page carries a self-canonical, so tagged URLs are not indexed separately. ChatGPT search adds `utm_source=chatgpt.com` to the links it cites and sends no referrer; that is why ChatGPT visits looked like direct traffic in Vercel. From October 15 to November 25, 2026 it was first touch on 6 of 25 leads and 11 started checkouts, but only 1 of 10 paid checkouts. Google referrals were first touch on 6 of those 10.
+Point a tag at a deeper page by swapping the path, keeping the query. For a homepage section, put the `#` fragment after the query (`/?utm_…#plans`). Every page carries a self-canonical, so tagged URLs are not indexed separately. ChatGPT search adds `utm_source=chatgpt.com` to the links it cites and sends no referrer; that is why ChatGPT visits looked like direct traffic in Vercel. From October 15 to November 25, 2026 it was first touch on 6 of 25 leads and 11 started checkouts, but only 1 of 10 paid checkouts. Google referrals were first touch on 6 of those 10.
 
 Lifecycle emails are not tagged: they reach people who have already paid, and their only site links are the shared logo and footer in `api/_lib/email-layout.js`. The Deal Tracker emails share that file.
 
