@@ -169,6 +169,11 @@
 .dr.wz .wz-plan-fit { margin-top:6px; font-size:16px; line-height:24px; font-weight:600; color:var(--wz-ink); }
 .dr.wz .wz-plan-desc { margin-top:4px; font-size:16px; line-height:24px; }
 .dr.wz .wz-plan-price { grid-row:3; margin-top:28px; font:900 56px/1 var(--wz-display); letter-spacing:-.02em; color:var(--wz-ink); }
+/* Price rise notice (owner, November 28, 2026): Steer Me Right goes to $495 and Pro to $845 on January 15, 2027. Remove with the price change. */
+.dr.wz .wz-plan-pricing { grid-row:3; margin-top:28px; }
+.dr.wz .wz-plan-pricing .wz-plan-price { margin-top:0; }
+.dr.wz .wz-plan-rise { display:inline-block; margin-top:14px; padding:5px 10px; border:1px solid var(--wz-line); border-radius:6px; background:#fff; font-size:14px; line-height:20px; font-weight:600; color:var(--wz-ink); }
+.dr.wz .wz-plan--pro .wz-plan-rise { border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.1); color:#fff; }
 .dr.wz .wz-plan-actions { grid-row:4; display:grid; margin-top:24px; }
 .dr.wz .wz-plan .wz-btn { width:100%; min-height:52px; }
 .dr.wz .wz-plan-list { grid-row:5; display:grid; align-content:start; gap:12px; margin:28px 0 0; padding:24px 0 0; border-top:1px solid var(--wz-line); list-style:none; }
@@ -364,6 +369,7 @@
   .dr.wz .wz-plan :is(h2,h3) { font-size:20px; line-height:28px; }
   .dr.wz .wz-plan-fit, .dr.wz .wz-plan-desc { font-size:15px; line-height:22px; }
   .dr.wz .wz-plan-price { margin-top:20px; font-size:48px; }
+  .dr.wz .wz-plan-pricing { margin-top:20px; }
   .dr.wz .wz-plan-actions { margin-top:20px; }
   .dr.wz .wz-plan-list { gap:10px; margin-top:22px; padding-top:20px; }
   .dr.wz .wz-plan-list li { font-size:15px; line-height:22px; }

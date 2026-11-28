@@ -12,7 +12,8 @@ test('service-intent pages publish current prices without retired or unapproved 
   const forbidden = /\$(?:195|495)\b|average savings|savings guarantee|refund(?:s| promise)|streetAddress|reviewCount|aggregateRating|LocalBusiness/i;
 
   for (const file of files) {
-    const html = await read(file);
+    // The homepage's January 15, 2027 price-rise notice may name the new $495 price (owner, 2026-11-28).
+    const html = (await read(file)).replace(/<p class="wz-plan-rise">Price goes to \$(?:495|895) on January&nbsp;15<\/p>/g, '');
     assert.doesNotMatch(html, forbidden, file);
   }
 
@@ -40,7 +41,7 @@ test('service-intent pages publish current prices without retired or unapproved 
   assert.doesNotMatch(homepageHtml, /id="composer"|class="hero-fees"|id="summary-view"/);
   assert.match(homepage.visibleText, /\$395/);
   assert.match(homepage.visibleText, /\$695/);
-  assert.doesNotMatch(homepageHtml, /\$295|\$895/);
+  assert.doesNotMatch(homepageHtml.replace(/<p class="wz-plan-rise">Price goes to \$(?:495|895) on January&nbsp;15<\/p>/g, ''), /\$295|\$895/);
   assert.match(homepage.visibleText, /Steer Me Right Pro/);
   assert.doesNotMatch(homepage.visibleText, /Full Service|Ultimate Concierge/);
 
